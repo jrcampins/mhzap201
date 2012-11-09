@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (C) 2008, EGT Consultores, C.A.
+   Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los términos
+   de la licencia "GNU General Public License" publicada por la Fundación "Free Software Foundation".
+   Este programa se distribuye con la esperanza de que pueda ser útil, pero SIN NINGUNA GARANTIA;
+   vea la licencia "GNU General Public License" para obtener mas información.
+-->
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>com.egt.web.template.Bundle</base-name> 
+            <var>bundle</var> 
+        </resource-bundle> 
+    </application>
+    <managed-bean>
+        <managed-bean-name>ApplicationBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.ApplicationBean1</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>SessionBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.SessionBean1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>RequestBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.RequestBean1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoCabeza1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza2</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoCabeza2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza3</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoCabeza3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoColumnaIzquierda</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoColumnaIzquierda</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoDetalle</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoDetalle</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoFiltro</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro_1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoFiltro_1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoJoin</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoJoin</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoMenuVertical</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoMenuVertical</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie1</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoPie1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie2</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoPie2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie3</managed-bean-name>
+        <managed-bean-class>com.egt.web.template.FragmentoPie3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+</faces-config>
