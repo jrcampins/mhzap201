@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (C) 2008, EGT Consultores, C.A.
+   Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
+   de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
+   Este programa se distribuye con la esperanza de que pueda ser util, pero SIN NINGUNA GARANTIA;
+   vea la licencia "GNU General Public License" para obtener mas informacion.
+-->
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>com.egt.web.gestion.pension.Bundle</base-name> 
+            <var>bundle</var> 
+        </resource-bundle> 
+    </application>
+    <managed-bean>
+        <managed-bean-name>ApplicationBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.ApplicationBean1</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>SessionBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.SessionBean1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>RequestBean1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.RequestBean1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoCabeza1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza2</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoCabeza2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza3</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoCabeza3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoColumnaIzquierda</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoColumnaIzquierda</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoDetalle</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoDetalle</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoFiltro</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro_1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoFiltro_1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoJoin</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoJoin</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoMenuVertical</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoMenuVertical</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoPie1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie2</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoPie2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie3</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.FragmentoPie3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>Persona1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.Persona1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>Persona2</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.Persona2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/Persona1.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/Persona2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
