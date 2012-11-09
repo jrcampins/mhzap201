@@ -1,0 +1,196 @@
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#set($col1 = $utils.sortCollection($systable.columns))
+#set($col2 = $utils.sortCollection($systable.foreignKeys))
+#set($col3 = $utils.sortCollection($systable.refForeignKeys))
+#set($classname = $tabname1)
+#set($objsuffix = '')
+#set($colsuffix = "Collection")
+#writeJavaCode101($domclassid)##license
+package com.egt.ejb.persistence.entity;
+
+import com.egt.base.persistence.entity.${classname}Base;
+import java.io.Serializable;
+#if($hasDecimalColumn != '')
+import java.math.BigDecimal;
+#end
+#if($hasOneToManyRelation != '')
+import java.util.Collection;
+#end
+#if($hasDateTimeColumn != '')
+import java.util.Date;
+#end
+import javax.persistence.Basic;
+#if($hasCascadeRule != '')
+import javax.persistence.CascadeType;
+#end
+import javax.persistence.Column;
+import javax.persistence.Entity;
+#if($hasIdColumn != '')
+import javax.persistence.Id;
+#end
+#if($hasJoinColumn != '')
+import javax.persistence.JoinColumn;
+#end
+#if($hasManyToOneRelation != '')
+import javax.persistence.ManyToOne;
+#end
+#if($hasOneToManyRelation != '')
+import javax.persistence.OneToMany;
+#end
+#if($hasOneToOneRelation != '')
+import javax.persistence.OneToOne;
+#end
+import javax.persistence.Table;
+#if($hasDateTimeColumn != '')
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+#end
+
+@Entity
+@Table(name = "$systable.tabname")
+public class $classname implements ${classname}Base, Comparable, Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+## -----------------------------------------------------------------------------
+#foreach($columna in $col1)
+#setPropiedadesColumna($columna)
+#if($columna.pkcid)
+    @Id
+#end
+#if($columna.pkcid || !$columna.fkcid)
+#if($columna.isnullable == 0)
+    @Basic(optional = false)
+#end
+    @Column(name = "$columna.colname")
+#if($columna.coltype == 3)
+    @Temporal(TemporalType.TIMESTAMP)
+#end
+    private $javatype $colname2;
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col2)
+#setPropiedadesClaveForanea($clave)
+#if($clave.pkcid)
+    @JoinColumn(name = "$clave.colname", referencedColumnName = "$clave.refcolname", insertable = false, updatable = false)
+    @OneToOne
+#elseif($clave.uqcid)
+    @JoinColumn(name = "$clave.colname", referencedColumnName = "$clave.refcolname")
+    @OneToOne
+#else
+    @JoinColumn(name = "$clave.colname", referencedColumnName = "$clave.refcolname")
+    @ManyToOne
+#end
+    private $reftabname1 $reftabname2$colname1;
+
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col3)
+#setPropiedadesClaveForanea($clave)
+#if($clave.pkcid || $clave.uqcid)
+    @OneToOne(${cascade}mappedBy = "$reftabname2$colname1")
+    private $tabname1 $tabname2$colname1$objsuffix;
+#else
+    @OneToMany(${cascade}mappedBy = "$reftabname2$colname1")
+    private Collection<$tabname1> $tabname2$colname1$colsuffix;
+#end
+
+#end
+## -----------------------------------------------------------------------------
+    public $classname() {
+    }
+
+## -----------------------------------------------------------------------------
+#foreach($columna in $col1)
+#setPropiedadesColumna($columna)
+#if($columna.pkcid || !$columna.fkcid)
+    @Override
+    public $javatype get$colname1() {
+        return this.$colname2;
+    }
+
+    public void set$colname1($javatype $colname2) {
+        this.$colname2 = $colname2;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col2)
+#setPropiedadesClaveForanea($clave)
+    @Override
+    public $reftabname1 get$reftabname1$colname1() {
+        return this.$reftabname2$colname1;
+    }
+
+    public void set$reftabname1$colname1($reftabname1 $reftabname2) {
+        this.$reftabname2$colname1 = $reftabname2;
+    }
+
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col3)
+#setPropiedadesClaveForanea($clave)
+#if($clave.pkcid || $clave.uqcid)
+    @Override
+    public $tabname1 get$tabname1$colname1$objsuffix() {
+        return this.$tabname2$colname1$objsuffix;
+    }
+
+    public void set$tabname1$colname1$objsuffix($tabname1 $tabname2) {
+        this.$tabname2$colname1$objsuffix = $tabname2;
+    }
+
+#else
+    @Override
+    public Collection<$tabname1> get$tabname1$colname1$colsuffix() {
+        return this.$tabname2$colname1$colsuffix;
+    }
+
+    public void set$tabname1$colname1$colsuffix(Collection<$tabname1> collection) {
+        this.$tabname2$colname1$colsuffix = collection;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+    @Override
+    public int compareTo(Object object) {
+        // Warning - this method won't work properly in the case the id fields are not set
+##      return object instanceof $classname && ${pkid2} != null ? ${pkid2}.compareTo((($classname) object).${pkid2}) : 0;
+        if (object instanceof $classname) {
+            $classname that = ($classname) object;
+            return ${pkid2} == null ? that.${pkid2} == null ? 0 : -1
+                    : ${pkid2}.compareTo(that.${pkid2});
+        }
+        throw new ClassCastException(object == null ? "null" : object.getClass().getName());
+    }
+
+    @Override
+    public int hashCode() {
+        // Warning - this method won't work properly in the case the id fields are not set
+        int hash = 0;
+        hash += ${pkid2} == null ? 0 : ${pkid2}.hashCode();
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // Warning - this method won't work properly in the case the id fields are not set
+##      return object instanceof $classname && ${pkid2} != null && ${pkid2}.equals((($classname) object).${pkid2});
+        if (object instanceof $classname) {
+            $classname that = ($classname) object;
+            return ((${pkid2} == null && that.${pkid2} == null) ||
+                    (${pkid2} != null && ${pkid2}.equals(that.${pkid2})));
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "#" + ${pkid2};
+    }
+}

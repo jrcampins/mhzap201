@@ -1,0 +1,496 @@
+## =============================================================================
+#macro(writeJavaCode101 $foo)
+## =============================================================================
+/*
+ * $utils.getCopyright($foo)
+ *
+#if($foo >= 30000)
+ * Este archivo fue totalmente generado utilizando herramientas de software de EGT Consultores, C.A.
+ * En consecuencia, partes del archivo podrian ser similares o hasta iguales a las de archivos de
+ * programas de otros clientes, generados por las mismas herramientas; por lo tanto, esta similitud
+ * no podra ser considerada como violacion del copyright.
+ *
+#end
+ * Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
+ * de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
+ *
+ * Este programa se distribuye con la esperanza de que pueda ser util, pero SIN NINGUNA GARANTIA;
+ * vea la licencia "GNU General Public License" para obtener mas informacion.
+ *
+ */
+#end
+## =============================================================================
+#macro(writeJavaCode102 $maxgrid)
+## =============================================================================
+    private Form form1 = new Form();
+
+    @Override
+    public Form getForm1() {
+        return form1;
+    }
+
+    public void setForm1(Form component) {
+        this.form1 = component;
+    }
+
+    private Breadcrumbs breadcrumbs1 = new Breadcrumbs();
+
+    @Override
+    public Breadcrumbs getBreadcrumbs1() {
+        return breadcrumbs1;
+    }
+
+    public void setBreadcrumbs1(Breadcrumbs component) {
+        this.breadcrumbs1 = component;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode102V01 $maxgrid)
+## =============================================================================
+    private Page page1 = new Page();
+
+    public Page getPage1() {
+        return page1;
+    }
+
+    public void setPage1(Page component) {
+        this.page1 = component;
+    }
+
+    private Html html1 = new Html();
+
+    public Html getHtml1() {
+        return html1;
+    }
+
+    public void setHtml1(Html component) {
+        this.html1 = component;
+    }
+
+    private Head head1 = new Head();
+
+    public Head getHead1() {
+        return head1;
+    }
+
+    public void setHead1(Head component) {
+        this.head1 = component;
+    }
+
+    private Link link1 = new Link();
+
+    public Link getLink1() {
+        return link1;
+    }
+
+    public void setLink1(Link component) {
+        this.link1 = component;
+    }
+
+    private Script script1 = new Script();
+
+    public Script getScript1() {
+        return script1;
+    }
+
+    public void setScript1(Script component) {
+        this.script1 = component;
+    }
+
+    private Body body1 = new Body();
+
+    public Body getBody1() {
+        return body1;
+    }
+
+    public void setBody1(Body component) {
+        this.body1 = component;
+    }
+
+    private Form form1 = new Form();
+
+    @Override
+    public Form getForm1() {
+        return form1;
+    }
+
+    public void setForm1(Form component) {
+        this.form1 = component;
+    }
+
+    private Breadcrumbs breadcrumbs1 = new Breadcrumbs();
+
+    @Override
+    public Breadcrumbs getBreadcrumbs1() {
+        return breadcrumbs1;
+    }
+
+    public void setBreadcrumbs1(Breadcrumbs component) {
+        this.breadcrumbs1 = component;
+    }
+
+#foreach($foo in [101..$maxgrid])
+    private HtmlPanelGrid gridPanel$foo = new HtmlPanelGrid();
+
+    public HtmlPanelGrid getGridPanel$foo() {
+        return gridPanel$foo;
+    }
+
+    public void setGridPanel$foo(HtmlPanelGrid component) {
+        this.gridPanel$foo = component;
+    }
+
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode103 $foo)
+## =============================================================================
+#end
+## =============================================================================
+#macro(writeJavaCode103V01 $foo)
+## =============================================================================
+    private ImageComponent imagenMensaje1 = new ImageComponent();
+
+    public ImageComponent getImagenMensaje1() {
+        return imagenMensaje1;
+    }
+
+    public void setImagenMensaje1(ImageComponent component) {
+        this.imagenMensaje1 = component;
+    }
+
+    private ImageHyperlink hipervinculoMensaje1 = new ImageHyperlink();
+
+    public ImageHyperlink getHipervinculoMensaje1() {
+        return hipervinculoMensaje1;
+    }
+
+    public void setHipervinculoMensaje1(ImageHyperlink component) {
+        this.hipervinculoMensaje1 = component;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode104 $foo)
+## =============================================================================
+    private Button botonIrAlPrimero${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonIrAlPrimero${foo}() {
+        return botonIrAlPrimero${foo};
+    }
+
+    public void setBotonIrAlPrimero${foo}(Button component) {
+        this.botonIrAlPrimero${foo} = component;
+    }
+
+    private Button botonIrAlAnterior${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonIrAlAnterior${foo}() {
+        return botonIrAlAnterior${foo};
+    }
+
+    public void setBotonIrAlAnterior${foo}(Button component) {
+        this.botonIrAlAnterior${foo} = component;
+    }
+
+    private Button botonIrAlSiguiente${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonIrAlSiguiente${foo}() {
+        return botonIrAlSiguiente${foo};
+    }
+
+    public void setBotonIrAlSiguiente${foo}(Button component) {
+        this.botonIrAlSiguiente${foo} = component;
+    }
+
+    private Button botonIrAlUltimo${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonIrAlUltimo${foo}() {
+        return botonIrAlUltimo${foo};
+    }
+
+    public void setBotonIrAlUltimo${foo}(Button component) {
+        this.botonIrAlUltimo${foo} = component;
+    }
+
+    private Button botonProcesarFila${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonProcesarFila${foo}() {
+        return botonProcesarFila${foo};
+    }
+
+    public void setBotonProcesarFila${foo}(Button b) {
+        this.botonProcesarFila${foo} = b;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode105 $foo)
+## =============================================================================
+    private Button botonAgregar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonAgregar${foo}() {
+        return botonAgregar${foo};
+    }
+
+    public void setBotonAgregar${foo}(Button component) {
+        this.botonAgregar${foo} = component;
+    }
+
+    private DropDown listaFuncionEdicion${foo} = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaFuncionEdicion${foo}() {
+        return listaFuncionEdicion${foo};
+    }
+
+    public void setListaFuncionEdicion${foo}(DropDown component) {
+        this.listaFuncionEdicion${foo} = component;
+    }
+
+    private LongConverter converterListaFuncionEdicion${foo} = new LongConverter();
+  
+    public LongConverter getConverterListaFuncionEdicion${foo}() {
+        return converterListaFuncionEdicion${foo};
+    } 
+  
+    public void setConverterListaFuncionEdicion${foo}(LongConverter component) {
+        this.converterListaFuncionEdicion${foo} = component;
+    }
+  
+    private Button botonEditar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonEditar${foo}() {
+        return botonEditar${foo};
+    }
+
+    public void setBotonEditar${foo}(Button component) {
+        this.botonEditar${foo} = component;
+    }
+
+    private Button botonDeshacer${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonDeshacer${foo}() {
+        return botonDeshacer${foo};
+    }
+
+    public void setBotonDeshacer${foo}(Button component) {
+        this.botonDeshacer${foo} = component;
+    }
+
+    private Button botonEliminar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonEliminar${foo}() {
+        return botonEliminar${foo};
+    }
+
+    public void setBotonEliminar${foo}(Button component) {
+        this.botonEliminar${foo} = component;
+    }
+
+    private Button botonAplicar${foo} = new com.egt.core.jsf.component.Boton();
+
+#if($pagetype != 3 && $pagetype != 7)
+    @Override
+#end
+    public Button getBotonAplicar${foo}() {
+        return botonAplicar${foo};
+    }
+
+    public void setBotonAplicar${foo}(Button component) {
+        this.botonAplicar${foo} = component;
+    }
+
+    private Button botonConfirmar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonConfirmar${foo}() {
+        return botonConfirmar${foo};
+    }
+
+    public void setBotonConfirmar${foo}(Button component) {
+        this.botonConfirmar${foo} = component;
+    }
+
+    private Button botonDescartar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonDescartar${foo}() {
+        return botonDescartar${foo};
+    }
+
+    public void setBotonDescartar${foo}(Button component) {
+        this.botonDescartar${foo} = component;
+    }
+
+    private DropDown listaFuncionAccion${foo} = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaFuncionAccion${foo}() {
+        return listaFuncionAccion${foo};
+    }
+
+    public void setListaFuncionAccion${foo}(DropDown component) {
+        this.listaFuncionAccion${foo} = component;
+    }
+
+    private LongConverter converterListaFuncionAccion${foo} = new LongConverter();
+  
+    public LongConverter getConverterListaFuncionAccion${foo}() {
+        return converterListaFuncionAccion${foo};
+    } 
+  
+    public void setConverterListaFuncionAccion${foo}(LongConverter component) {
+        this.converterListaFuncionAccion${foo} = component;
+    }
+  
+    private Button botonProcesar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonProcesar${foo}() {
+        return botonProcesar${foo};
+    }
+
+    public void setBotonProcesar${foo}(Button component) {
+        this.botonProcesar${foo} = component;
+    }
+
+    private Button botonRefrescar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonRefrescar${foo}() {
+        return botonRefrescar${foo};
+    }
+
+    public void setBotonRefrescar${foo}(Button component) {
+        this.botonRefrescar${foo} = component;
+    }
+
+    private Button botonReconsultar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonReconsultar${foo}() {
+        return botonReconsultar${foo};
+    }
+
+    public void setBotonReconsultar${foo}(Button component) {
+        this.botonReconsultar${foo} = component;
+    }
+
+    private Button botonRetornar${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonRetornar${foo}() {
+        return botonRetornar${foo};
+    }
+
+    public void setBotonRetornar${foo}(Button component) {
+        this.botonRetornar${foo} = component;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode106 $foo)
+## =============================================================================
+#set($hlcount = $targetscount + 1)
+#foreach($foo in [1..$hlcount])
+    private ImageHyperlink imageHyperlink$foo = new com.egt.core.jsf.component.Hipervinculo();
+
+    public ImageHyperlink getImageHyperlink$foo() {
+        return imageHyperlink$foo;
+    }
+
+    public void setImageHyperlink$foo(ImageHyperlink component) {
+        this.imageHyperlink$foo = component;
+    }
+
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode107 $foo)
+## =============================================================================
+#end
+## =============================================================================
+#macro(writeJavaCode107V01 $foo)
+## =============================================================================
+    private Anchor anclaPie1 = new Anchor();
+
+    public Anchor getAnclaPie1() {
+        return anclaPie1;
+    }
+
+    public void setAnclaPie1(Anchor component) {
+        this.anclaPie1 = component;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode108 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer las acciones de los hipervinculos">
+#set($hlcount = $targetscount + 1)
+#foreach($foo in [1..$hlcount])
+    public String imageHyperlink${foo}_action() {
+        if (this.getGestor().vincular()) {
+        } else {
+            return null;
+        }
+        return "case$foo";
+    }
+
+#end
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode114 $qty)
+## =============================================================================
+#end
+## =============================================================================
+#macro(writeJavaCode114V01 $qty)
+## =============================================================================
+#foreach($foo in [1..$qty])
+    private Anchor ancla${foo} = new Anchor();
+
+    public Anchor getAncla${foo}() {
+        return ancla${foo};
+    }
+
+    public void setAncla${foo}(Anchor component) {
+        this.ancla${foo} = component;
+    }
+
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode115 $qty)
+## =============================================================================
+    private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonAplicar1() {
+        return botonAplicar1;
+    }
+
+    public void setBotonAplicar1(Button component) {
+        this.botonAplicar1 = component;
+    }
+
+    private Button botonProcesar1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonProcesar1() {
+        return botonProcesar1;
+    }
+
+    public void setBotonProcesar1(Button component) {
+        this.botonProcesar1 = component;
+    }
+
+#if(0==1)
+#foreach($foo in [1..$qty])
+    private Button botonAccion${foo} = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonAccion${foo}() {
+        return botonAccion${foo};
+    }
+
+    public void setBotonAccion${foo}(Button component) {
+        this.botonAccion${foo} = component;
+    }
+
+#end
+#end
+#end

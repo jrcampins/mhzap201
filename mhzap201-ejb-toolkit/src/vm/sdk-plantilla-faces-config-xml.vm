@@ -1,0 +1,211 @@
+#setPropiedadesAplicacion($aplicacion)
+#writeJspCode101(0)##license
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>com.egt.${webapppack1}.Bundle</base-name> 
+            <var>bundle</var> 
+        </resource-bundle> 
+    </application>
+    <managed-bean>
+        <managed-bean-name>ApplicationBean1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.ApplicationBean1</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>SessionBean1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.SessionBean1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>RequestBean1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.RequestBean1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoCabeza1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza2</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoCabeza2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoCabeza3</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoCabeza3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoColumnaIzquierda</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoColumnaIzquierda</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoDetalle</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoDetalle</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoFiltro</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoFiltro_1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoFiltro_1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoJoin</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoJoin</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoMenuVertical</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoMenuVertical</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie1</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoPie1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie2</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoPie2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>FragmentoPie3</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.FragmentoPie3</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+#set($tarcolxn = $utils.sortApplicationPagesCollection($aplicacion.paginaIdAplicacionCollection))
+#foreach($pagina in $tarcolxn)
+    <managed-bean>
+        <managed-bean-name>$pagina.codigoPagina</managed-bean-name>
+        <managed-bean-class>com.egt.${webapppack1}.$pagina.codigoPagina</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+#end##foreach-pagina
+#foreach($source in $tarcolxn)
+#set($sourceCodigo = $source.codigoPagina)
+#set($sourceDominio = '')
+#set($sourceMaestro = '')
+#set($sourceParametro = '')
+#set($sourceTipo = -1)
+#if($source.dominioIdDominio)
+#set($sourceDominio = $source.dominioIdDominio.codigoDominio)
+#end
+#if($source.dominioIdDominioMaestro)
+#set($sourceMaestro = $source.dominioIdDominioMaestro.codigoDominio)
+#end
+#if($source.parametroIdParametro)
+#set($sourceParametro = $source.parametroIdParametro.codigoParametro)
+#end
+#if($source.tipoPaginaNumeroTipoPagina)
+#set($sourceTipo = $source.tipoPaginaNumeroTipoPagina.numeroTipoPagina)
+#end
+#set($foo = 0)
+#set($seq = 0)
+#set($d2d = 0)
+#set($detalle = '')
+#foreach($target in $tarcolxn)
+#set($targetCodigo = $target.codigoPagina)
+#set($targetDominio = '')
+#set($targetMaestro = '')
+#set($targetParametro = '')
+#set($targetTipo = -1)
+#if($target.dominioIdDominio)
+#set($targetDominio = $target.dominioIdDominio.codigoDominio)
+#end
+#if($target.dominioIdDominioMaestro)
+#set($targetMaestro = $target.dominioIdDominioMaestro.codigoDominio)
+#end
+#if($target.parametroIdParametro)
+#set($targetParametro = $target.parametroIdParametro.codigoParametro)
+#end
+#if($target.tipoPaginaNumeroTipoPagina)
+#set($targetTipo = $target.tipoPaginaNumeroTipoPagina.numeroTipoPagina)
+#end
+#set($p4r = 0)
+#if($targetTipo == $sourceTipo)
+#elseif($targetMaestro == $sourceMaestro && $targetParametro == $sourceParametro)
+#set($p4r = 1)
+#elseif($targetMaestro == '' && $targetParametro == '' && $targetTipo == 2)
+#set($p4r = 2)
+#end
+#set($outcome = '')
+#if($targetCodigo != $sourceCodigo)
+#if($targetDominio == $sourceDominio)
+#if($p4r == 0)
+#set($outcome = '')
+#elseif($targetTipo == 1 && $sourceTipo == 3 && $p4r == 1)
+#set($outcome = 'tabla')
+#elseif($targetTipo == 2 && $sourceTipo == 1 && $p4r == 1)
+#set($outcome = 'detalle')
+#elseif($targetTipo == 2 && $sourceTipo == 1 && $p4r == 2)
+#set($detalle = $targetCodigo)
+#elseif($targetTipo == 2 && $sourceTipo == 3 && $p4r == 1)
+#set($outcome = 'detalle')
+#elseif($targetTipo == 2 && $sourceTipo == 3 && $p4r == 2)
+#set($detalle = $targetCodigo)
+#elseif($targetTipo == 3 && $sourceTipo == 1 && $p4r == 1)
+#set($outcome = 'arbol')
+#elseif($targetTipo == 5 && $sourceTipo == 7 && $p4r == 1)
+#set($outcome = 'tabla')
+#elseif($targetTipo == 6 && $sourceTipo == 5 && $p4r == 1)
+#set($outcome = 'detalle')
+#elseif($targetTipo == 6 && $sourceTipo == 5 && $p4r == 2)
+#set($detalle = $targetCodigo)
+#elseif($targetTipo == 6 && $sourceTipo == 7 && $p4r == 1)
+#set($outcome = 'detalle')
+#elseif($targetTipo == 6 && $sourceTipo == 7 && $p4r == 2)
+#set($detalle = $targetCodigo)
+#elseif($targetTipo == 7 && $sourceTipo == 5 && $p4r == 1)
+#set($outcome = 'arbol')
+#end
+#elseif($targetMaestro == $sourceDominio)
+#if($targetTipo == 1)
+#set($seq = $seq + 1)
+#set($outcome = "case$seq")
+#end
+#end
+#end
+#if($outcome != '')
+#if($outcome == 'detalle')
+#set($d2d = $d2d + 1)
+#end
+#if($foo == 0)
+    <navigation-rule>
+        <from-view-id>/${sourceCodigo}.jsp</from-view-id>
+#end
+#set($foo = $foo + 1)
+        <navigation-case>
+            <from-outcome>$outcome</from-outcome>
+            <to-view-id>/${targetCodigo}.jsp</to-view-id>
+        </navigation-case>
+#end
+#end##foreach-target
+#if($d2d == 0 && $detalle != '')
+#if($foo == 0)
+    <navigation-rule>
+        <from-view-id>/${sourceCodigo}.jsp</from-view-id>
+#end
+#set($foo = $foo + 1)
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/${detalle}.jsp</to-view-id>
+        </navigation-case>
+#end
+#if($foo != 0)
+    </navigation-rule>
+#end
+#end##foreach-source
+</faces-config>

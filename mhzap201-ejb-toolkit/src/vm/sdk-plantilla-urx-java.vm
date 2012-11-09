@@ -1,0 +1,70 @@
+#ShowTime(0)
+#setPropiedadesSistema($aplicaciones)
+#ShowTime(1)
+#writeJavaCode101(0)##license
+package com.egt.base.constants;
+
+public class URX2 extends URX {
+#foreach($foo in $pagemap1)
+#set($foo1 = 'TABLA')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap2)
+#set($foo1 = 'DETALLE')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap3)
+#set($foo1 = 'ARBOL')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap4)
+#set($foo1 = 'COMANDO')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+#set($foo5 = $foo.dominioIdDominio.idDominio)
+#set($foo6 = $foo.aplicacionIdAplicacion.codigoAplicacion.toUpperCase().replace('-','_'))
+#set($foo7 = $foo.idPagina)
+#set($foo8 = $foo.codigoPagina.toUpperCase())
+
+##  public static final String ${foo1}_${foo2}_${foo7} = "/${foo3}/faces/${foo4}.jsp";
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap5)
+#set($foo1 = 'CONSULTA_TABLA')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap6)
+#set($foo1 = 'CONSULTA_DETALLE')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+#foreach($foo in $pagemap7)
+#set($foo1 = 'CONSULTA_ARBOL')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo3 = $foo.aplicacionIdAplicacion.codigoAplicacion)
+#set($foo4 = $foo.codigoPagina)
+
+    public static final String ${foo1}_${foo2} = "/${foo3}/faces/${foo4}.jsp";
+#end##foreach-foo
+}
+#ShowTime(2)

@@ -1,0 +1,463 @@
+## =============================================================================
+#macro(writeJspCode101 $foo)
+## =============================================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   $utils.getCopyright($foo)
+#if($foo >= 30000)
+   Este archivo fue totalmente generado utilizando herramientas de software de EGT Consultores, C.A.
+   En consecuencia, partes del archivo podrian ser similares o hasta iguales a las de archivos de
+   programas de otros clientes, generados por las mismas herramientas; por lo tanto, esta similitud
+   no podra ser considerada como violacion del copyright.
+#end
+   Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
+   de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
+   Este programa se distribuye con la esperanza de que pueda ser util, pero SIN NINGUNA GARANTIA;
+   vea la licencia "GNU General Public License" para obtener mas informacion.
+-->
+#end
+## =============================================================================
+#macro(writeJspCode102 $foo)
+## =============================================================================
+#set($gridnum = 100)
+<jsp:root version="2.1"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <jsp:directive.page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"/>
+    <f:view>
+##      <webuijsf:page binding="#{${pagecode}.page1}" id="page1">
+##          <webuijsf:html binding="#{${pagecode}.html1}" id="html1">
+##              <webuijsf:head binding="#{${pagecode}.head1}" id="head1" title="#{ApplicationBean1.nombreAplicacion}">
+##                  <webuijsf:link binding="#{${pagecode}.link1}" id="link1" url="/resources/stylesheet.css"/>
+##                  <webuijsf:script binding="#{${pagecode}.script1}" id="script1" url="/resources/javascript1.js"/>
+##              </webuijsf:head>
+        <webuijsf:page id="page1">
+            <webuijsf:html id="html1">
+                <webuijsf:head id="head1" title="#{ApplicationBean1.nombreAplicacion}">
+                    <webuijsf:link id="link1" url="/resources/stylesheet.css"/>
+                    <webuijsf:script id="script1" url="/resources/javascript1.js"/>
+                </webuijsf:head>
+                <webuijsf:body 
+##                  binding="#{${pagecode}.body1}"
+                    focus="#{${pagecode}.gestor.focus}"
+                    id="body1"
+                    onClick="#{ApplicationBean1.contextoAplicacion.onClickJavaScript}"
+                    onDblClick="#{ApplicationBean1.contextoAplicacion.onDblClickJavaScript}"
+                    onKeyPress="#{ApplicationBean1.contextoAplicacion.onKeyPressJavaScript}"
+                    onLoad="#{ApplicationBean1.contextoAplicacion.onLoadJavaScript}"
+                    onUnload="#{ApplicationBean1.contextoAplicacion.onUnloadJavaScript}"
+                    preserveFocus="#{${pagecode}.gestor.preserveFocus}"
+                    preserveScroll="#{${pagecode}.gestor.preserveScroll}"
+##                  style="-rave-layout: grid"
+                    styleClass="pdq-body-1">
+                    <webuijsf:form 
+                        binding="#{${pagecode}.form1}" 
+                        id="form1" 
+                        virtualFormsConfig="$virtualForm1, $virtualForm2, $virtualForm3, $virtualForm4">
+                        <div class="pos-div-cab-1">
+                            <jsp:directive.include file="FragmentoCabeza1.jspf"/>
+                        </div>
+                        <div class="pos-div-cab-2">
+                            <jsp:directive.include file="FragmentoCabeza2.jspf"/>
+                        </div>
+                        <div class="pos-div-fork">
+                            <div class="pos-div-col-izq">
+                                <jsp:directive.include file="FragmentoColumnaIzquierda.jspf"/>
+                            </div>
+                            <div class="pos-div-col-der">
+                                <div class="pos-div-cab-3">
+                                    <jsp:directive.include file="FragmentoCabeza3.jspf"/>
+                                    <webuijsf:breadcrumbs 
+                                        binding="#{${pagecode}.breadcrumbs1}" 
+                                        id="breadcrumbs1" 
+                                        styleClass="pdq-breadcrumbs-1"/>
+                                </div>
+#end
+## =============================================================================
+#macro(writeJspCode103 $foo)
+## =============================================================================
+                                <div class="pos-div-detalle">
+#set($gridnum = $gridnum + 1)
+                                    <h:panelGrid 
+##                                      binding="#{${pagecode}.gridPanel$gridnum}" 
+                                        id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid 
+##                                          binding="#{${pagecode}.gridPanel$gridnum}" 
+                                            id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                columns="2" 
+                                                id="gridPanel$gridnum">
+                                                <webuijsf:image
+##                                                  binding="#{${pagecode}.imagenMensaje1}"
+                                                    id="imagenMensaje1"
+                                                    rendered="#{${pagecode}.gestor.urlImagenSeveridadMensajeDisponible}"
+                                                    url="#{${pagecode}.gestor.urlImagenSeveridadMensaje}"/>
+                                                <webuijsf:imageHyperlink
+                                                    align="middle"
+##                                                  binding="#{${pagecode}.hipervinculoMensaje1}"
+                                                    id="hipervinculoMensaje1"
+                                                    rendered="#{${pagecode}.gestor.mensajeDisponible}"
+                                                    text="#{${pagecode}.gestor.mensaje}"
+                                                    url="#{${pagecode}.gestor.urlAnclaPie1}"/>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+#end
+## =============================================================================
+#macro(writeJspCode104 $foo)
+## =============================================================================
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+                                                styleClass="pdq-grid-detalle-botones">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid 
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                    columns="7"
+                                                    id="gridPanel$gridnum">
+                                                    <webuijsf:button
+                                                        actionExpression="#{${pagecode}.botonIrAlPrimero${foo}_action}"
+                                                        binding="#{${pagecode}.botonIrAlPrimero$foo}"
+                                                        disabled="#{${pagecode}.gestor.loteSinFilas}"
+                                                        id="botonIrAlPrimero$foo"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenIrAlPrimero}"
+                                                        onClick="#{${pagecode}.gestor.scriptIrAlPrimero}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonIrAlPrimero}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonIrAlPrimero}"/>
+                                                    <webuijsf:button
+                                                        actionExpression="#{${pagecode}.botonIrAlAnterior${foo}_action}"
+                                                        binding="#{${pagecode}.botonIrAlAnterior$foo}"
+                                                        disabled="#{${pagecode}.gestor.loteSinFilas}"
+                                                        id="botonIrAlAnterior$foo"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenIrAlAnterior}"
+                                                        onClick="#{${pagecode}.gestor.scriptIrAlAnterior}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonIrAlAnterior}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonIrAlAnterior}"/>
+                                                    <webuijsf:button
+                                                        actionExpression="#{${pagecode}.botonIrAlSiguiente${foo}_action}"
+                                                        binding="#{${pagecode}.botonIrAlSiguiente$foo}"
+                                                        disabled="#{${pagecode}.gestor.loteSinFilas}"
+                                                        id="botonIrAlSiguiente$foo"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenIrAlSiguiente}"
+                                                        onClick="#{${pagecode}.gestor.scriptIrAlSiguiente}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonIrAlSiguiente}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonIrAlSiguiente}"/>
+                                                    <webuijsf:button
+                                                        actionExpression="#{${pagecode}.botonIrAlUltimo${foo}_action}"
+                                                        binding="#{${pagecode}.botonIrAlUltimo$foo}"
+                                                        disabled="#{${pagecode}.gestor.loteSinFilas}"
+                                                        id="botonIrAlUltimo$foo"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenIrAlUltimo}"
+                                                        onClick="#{${pagecode}.gestor.scriptIrAlUltimo}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonIrAlUltimo}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonIrAlUltimo}"/>
+                                                    <webuijsf:button
+                                                        actionExpression="#{${pagecode}.botonProcesarFila${foo}_action}"
+                                                        binding="#{${pagecode}.botonProcesarFila$foo}"
+                                                        disabled="#{${pagecode}.gestor.funcionPickItemInhabilitada}"
+                                                        id="botonProcesarFila$foo"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenProcesar}"
+                                                        onClick="#{${pagecode}.scriptAbrirVentanaProcesarFila$foo}"
+                                                        rendered="#{${pagecode}.asistente.comandoDisponible}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonProcesarFila}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonProcesarFila}"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+#end
+## =============================================================================
+#macro(writeJspCode105 $foo)
+## =============================================================================
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                columns="13"
+                                                id="gridPanel$gridnum">
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonAgregar${foo}_action}"
+                                                    binding="#{${pagecode}.botonAgregar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionInsertInhabilitada}"
+                                                    id="botonAgregar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptAgregar}"
+                                                    rendered="#{${pagecode}.gestor.funcionInsertHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonAgregar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonAgregar}"/>
+                                                <webuijsf:dropDown
+                                                    binding="#{${pagecode}.listaFuncionEdicion$foo}"
+                                                    converter="#{${pagecode}.converterListaFuncionEdicion$foo}"
+                                                    disabled="#{${pagecode}.gestor.loteConCambios}"
+                                                    id="listaFuncionEdicion$foo"
+                                                    items="#{${pagecode}.opcionesListaFuncionEdicion}"
+                                                    onChange="webui.suntheme.common.timeoutSubmitForm(this.form, 'listaFuncionEdicion$foo');"
+                                                    rendered="#{${pagecode}.gestor.edicionMultiFuncionHabilitada}"
+                                                    selected="#{${pagecode}.gestor.funcionEdicionSeleccionada}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipListaFuncionEdicion}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonEditar${foo}_action}"
+                                                    binding="#{${pagecode}.botonEditar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionUpdateInhabilitada}"
+                                                    id="botonEditar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptEditar}"
+##                                                  rendered="#{${pagecode}.gestor.edicionMultiFuncionInhabilitada}"
+                                                    rendered="#{${pagecode}.gestor.funcionUpdateHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.etiquetaOpcionSeleccionadaListaFuncionEdicion}"
+                                                    toolTip="#{${pagecode}.gestor.etiquetaOpcionSeleccionadaListaFuncionEdicion}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonEliminar${foo}_action}"
+                                                    binding="#{${pagecode}.botonEliminar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionDeleteInhabilitada}"
+                                                    id="botonEliminar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptEliminar}"
+                                                    rendered="#{${pagecode}.gestor.funcionDeleteHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonEliminar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonEliminar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonAplicar${foo}_action}"
+                                                    binding="#{${pagecode}.botonAplicar$foo}"
+##                                                  disabled="#{${pagecode}.gestor.funcionCheckChangesInhabilitada}"
+                                                    id="botonAplicar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptAplicar}"
+                                                    rendered="#{${pagecode}.gestor.funcionCheckChangesHabilitada}"
+##                                                  style="margin-left: 12px"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonAplicar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonAplicar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonDeshacer${foo}_action}"
+                                                    binding="#{${pagecode}.botonDeshacer$foo}"
+##                                                  disabled="#{${pagecode}.gestor.funcionCancelUpdateInhabilitada}"
+                                                    id="botonDeshacer$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptDeshacer}"
+                                                    rendered="#{${pagecode}.gestor.funcionCancelUpdateHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonDeshacer}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonDeshacer}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonConfirmar${foo}_action}"
+                                                    binding="#{${pagecode}.botonConfirmar$foo}"
+##                                                  disabled="#{${pagecode}.gestor.funcionCommitInhabilitada}"
+                                                    id="botonConfirmar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptConfirmar}"
+                                                    rendered="#{${pagecode}.gestor.funcionCommitHabilitada}"
+##                                                  style="margin-left: 12px"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonConfirmar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonConfirmar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonDescartar${foo}_action}"
+                                                    binding="#{${pagecode}.botonDescartar$foo}"
+##                                                  disabled="#{${pagecode}.gestor.funcionRevertInhabilitada}"
+                                                    id="botonDescartar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptDescartar}"
+                                                    rendered="#{${pagecode}.gestor.funcionRevertHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonDescartar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonDescartar}"/>
+                                                <webuijsf:dropDown
+                                                    binding="#{${pagecode}.listaFuncionAccion$foo}"
+                                                    converter="#{${pagecode}.converterListaFuncionAccion$foo}"
+##                                                  disabled="#{${pagecode}.gestor.accionMultiFuncionInhabilitada}"
+                                                    id="listaFuncionAccion$foo"
+                                                    items="#{${pagecode}.opcionesListaFuncionAccion}"
+                                                    onChange="webui.suntheme.common.timeoutSubmitForm(this.form, 'listaFuncionAccion$foo');"
+#if($pagetype == 3 || $pagetype == 7)
+                                                    rendered="#{${pagecode}.gestor.designing}"
+#else
+                                                    rendered="#{${pagecode}.gestor.accionMultiFuncionHabilitada}"
+#end
+                                                    selected="#{${pagecode}.gestor.funcionAccionSeleccionada}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipListaFuncionAccion}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonProcesar${foo}_action}"
+                                                    binding="#{${pagecode}.botonProcesar$foo}"
+##                                                  disabled="#{${pagecode}.gestor.funcionExecuteInhabilitada}"
+                                                    id="botonProcesar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptProcesar}"
+#if($pagetype == 3 || $pagetype == 7)
+                                                    rendered="#{${pagecode}.gestor.designing}"
+#else
+##                                                  rendered="#{${pagecode}.gestor.accionMultiFuncionHabilitada}"
+                                                    rendered="#{${pagecode}.gestor.funcionExecuteHabilitada}"
+#end
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonProcesar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonProcesar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonRefrescar${foo}_action}"
+                                                    binding="#{${pagecode}.botonRefrescar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionSelectInhabilitada}"
+                                                    id="botonRefrescar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptRefrescar}"
+                                                    rendered="#{${pagecode}.gestor.funcionRefreshHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonRefrescar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonRefrescar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonReconsultar${foo}_action}"
+                                                    binding="#{${pagecode}.botonReconsultar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionSelectInhabilitada}"
+                                                    id="botonReconsultar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptReconsultar}"
+                                                    rendered="#{${pagecode}.gestor.funcionRequeryHabilitada}"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonReconsultar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonReconsultar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonRetornar${foo}_action}"
+                                                    binding="#{${pagecode}.botonRetornar$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionReturnFilaEscogidaInhabilitada}"
+                                                    id="botonRetornar$foo"
+                                                    onClick="#{${pagecode}.gestor.scriptRetornarRecursoEscogido}"
+                                                    rendered="#{${pagecode}.gestor.funcionReturnVisible}"
+##                                                  style="margin-left: 12px"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonRetornar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonRetornar}"/>
+                                            </h:panelGrid>
+#end
+## =============================================================================
+#macro(writeJspCode106 $foo)
+## =============================================================================
+#if($targetscount >= 10)
+#set($foo = 10)
+#else
+#set($foo = $targetscount + 1)
+#end
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                columns="$foo" 
+                                                id="gridPanel$gridnum"
+                                                rendered="#{${pagecode}.gestor.funcionOpenLinkHabilitada}">
+#set($foo = 0)
+#if($targetscount > 0)
+#foreach($foo in [1..$targetscount])
+#if($targetsjoins.containsKey("target$foo"))
+#if($pagetype == 3 || $pagetype == 7)
+#set($imageHyperlinkDisabled = 'true')
+#else
+#set($imageHyperlinkDisabled = "#{${pagecode}.asistente.imageHyperlink${foo}_disabled}")
+#end
+#else##vinculo-sin-filtro
+#set($imageHyperlinkDisabled = "#{${pagecode}.gestor.funcionOpenLinkInhabilitada}")
+#end
+                                                <webuijsf:imageHyperlink
+                                                    actionExpression="#{${pagecode}.imageHyperlink${foo}_action}"
+                                                    binding="#{${pagecode}.imageHyperlink$foo}"
+                                                    disabled="$imageHyperlinkDisabled"
+                                                    id="imageHyperlink$foo"
+                                                    imageURL="#{${pagecode}.gestor.urlImagenAbrirVinculo}"
+                                                    onClick="#{${pagecode}.gestor.scriptAbrirVinculo}"
+                                                    styleClass="pdq-hyperlink-1"
+                                                    text="Hyperlink$foo"
+                                                    toolTip="#{bundle.${pagecode}_imageHyperlink${foo}_toolTip}"/>
+#end##foreach-foo
+#end##if-targetscount>0
+#set($foo = $targetscount + 1)
+                                                <webuijsf:imageHyperlink
+                                                    actionExpression="#{${pagecode}.imageHyperlink${foo}_action}"
+                                                    binding="#{${pagecode}.imageHyperlink$foo}"
+                                                    disabled="#{${pagecode}.gestor.funcionOpenLinkInhabilitada}"
+                                                    id="imageHyperlink$foo"
+                                                    imageURL="#{${pagecode}.gestor.urlImagenAbrirVinculo}"
+                                                    onClick="#{${pagecode}.gestor.scriptAbrirVinculo}"
+                                                    styleClass="pdq-hyperlink-1"
+                                                    rendered="#{${pagecode}.gestor.designing}"
+                                                    text="Hyperlink$foo"
+##                                                  toolTip="Hyperlink$foo"/>
+##                                                  text="#{bundle.${pagecode}_imageHyperlink${foo}_text}"
+                                                    toolTip="#{bundle.${pagecode}_imageHyperlink${foo}_toolTip}"/>
+                                            </h:panelGrid>
+#end
+## =============================================================================
+#macro(writeJspCode107 $foo)
+## =============================================================================
+                                    </h:panelGrid>
+                                </div>
+                                <div class="pos-div-pie-3">
+                                    <jsp:directive.include file="FragmentoPie3.jspf"/>
+                                </div>
+                            </div>
+                            <div class="pos-div-join">
+                                <jsp:directive.include file="FragmentoJoin.jspf"/>
+                            </div>
+                        </div>
+                        <div class="pos-div-pie-2">
+                            <jsp:directive.include file="FragmentoPie2.jspf"/>
+                        </div>
+                        <div class="pos-div-pie-1">
+                            <jsp:directive.include file="FragmentoPie1.jspf"/>
+                        </div>
+##                      <webuijsf:anchor binding="#{${pagecode}.anclaPie1}" id="anclaPie1"/>
+                        <webuijsf:anchor id="anclaPie1"/>
+                    </webuijsf:form>
+                </webuijsf:body>
+            </webuijsf:html>
+        </webuijsf:page>
+    </f:view>
+</jsp:root>
+#end
+## =============================================================================
+#macro(writeJspCode114 $foo)
+## =============================================================================
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+##                                              rendered="#{${pagecode}.gestor.designing}"
+                                                styleClass="pdq-grid-detalle-botones">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid 
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                    id="gridPanel$gridnum">
+                                                    <webuijsf:anchor 
+##                                                      binding="#{${pagecode}.ancla$foo}" 
+                                                        id="ancla$foo"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+#end
+## =============================================================================
+#macro(writeJspCode115 $qty)
+## =============================================================================
+#set($foo = 2)
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                columns="$foo" 
+                                                id="gridPanel$gridnum">
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonAplicar1_action}"
+                                                    binding="#{${pagecode}.botonAplicar1}"
+                                                    id="botonAplicar1"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonAplicar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonAplicar}"/>
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonProcesar1_action}"
+                                                    binding="#{${pagecode}.botonProcesar1}"
+                                                    id="botonProcesar1"
+                                                    styleClass="pdq-button-1"
+                                                    text="#{${pagecode}.gestor.i18n.textoBotonProcesar}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipBotonProcesar}"/>
+#if(0==1)
+#foreach($foo in [1..$qty])
+                                                <webuijsf:button
+                                                    actionExpression="#{${pagecode}.botonAccion${foo}_action}"
+                                                    binding="#{${pagecode}.botonAccion$foo}"
+                                                    id="botonAccion$foo"
+                                                    styleClass="pdq-button-1"
+                                                    text="Accion$foo"
+##                                                  toolTip="Accion$foo"/>
+##                                                  text="#{bundle.${pagecode}_botonAccion${foo}_text}"
+                                                    toolTip="#{bundle.${pagecode}_botonAccion${foo}_toolTip}"/>
+#end
+#end
+                                            </h:panelGrid>
+#end

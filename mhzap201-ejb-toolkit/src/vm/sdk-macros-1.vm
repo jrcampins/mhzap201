@@ -1,0 +1,205 @@
+## =============================================================================
+#macro(ShowTime $option)
+## =============================================================================
+#if($option == 0)
+#set($ctm0 = $utils.getCurrentTimeMillis())
+#set($ctm1 = $utils.getCurrentTimeMillis())
+##***  $ctm1
+#elseif($option == 1)
+#set($ctm2 = $utils.getCurrentTimeMillis() - $ctm1)
+##*** +$ctm2
+#set($ctm1 = $utils.getCurrentTimeMillis())
+#else
+#set($ctm2 = $utils.getCurrentTimeMillis() - $ctm1)
+##*** +$ctm2
+#set($ctm1 = $utils.getCurrentTimeMillis())
+#set($ctm2 = $utils.getCurrentTimeMillis() - $ctm0)
+##*** =$ctm2
+##***  $ctm1
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesDominio $tabla)
+## =============================================================================
+#set($dominio = $utils.dominioFacade.findByCodigo($tabla.tabname))
+#if($dominio)
+#set($domclassid = $dominio.claseRecursoIdClaseRecurso.idClaseRecurso)
+#set($col1 = $utils.sortCollection($dominio.dominioParametroIdDominioCollection))
+#foreach($foo in $col1)
+#set($foo1 = $foo.tipoParametroDomNumeroTipoParametroDom.codigoTipoParametroDom)
+#set($foo2 = $foo.parametroIdParametro.codigoParametro)
+#set($foo3 = $utils.put($intercols, $foo1, $foo2))
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesDominio $tabla)
+## =============================================================================
+#set($domclassid = -1)
+#set($intercols = $utils.newMap())
+#if($tabla)
+#setValorPropiedadesDominio($tabla)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesTabla $tabla)
+## =============================================================================
+#set($tabname0 = $tabla.tabname)
+#set($tabname1 = $utils.getUpperCamelCase($tabname0))
+#set($tabname2 = $utils.getLowerCamelCase($tabname0))
+#set($tabname3 = $utils.getUnderscoreless($tabname0))
+#foreach($columna in $tabla.columns)
+#if($columna.pkcid)
+#set($hasIdColumn = 'true')
+#set($pkid0 = $columna.colname)
+#set($pkid1 = $utils.getUpperCamelCase($pkid0))
+#set($pkid2 = $utils.getLowerCamelCase($pkid0))
+#set($pkid3 = $utils.getUnderscoreless($pkid0))
+#end
+#if($columna.uqcid && $columna.colname == "codigo_$tabname0" && $columna.coltype == 1)
+#set($code0 = $columna.colname)
+#set($code1 = $utils.getUpperCamelCase($code0))
+#set($code2 = $utils.getLowerCamelCase($code0))
+#set($code3 = $utils.getUnderscoreless($code0))
+#end
+#if($columna.pkcid || !$columna.fkcid)
+#if($columna.coltype == 2)
+#set($hasDecimalColumn = 'true')
+#elseif($columna.coltype == 3)
+#set($hasDateTimeColumn = 'true')
+#end
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $tabla.foreignKeys)
+#set($hasJoinColumn = 'true')
+#if($clave.pkcid || $clave.uqcid)
+#set($hasOneToOneRelation = 'true')
+#else
+#set($hasManyToOneRelation = 'true')
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $tabla.refForeignKeys)
+#if($clave.pkcid || $clave.uqcid)
+#set($hasOneToOneRelation = 'true')
+#else
+#set($hasOneToManyRelation = 'true')
+#end
+#set($hasCascadeRule = 'true')
+#end
+## -----------------------------------------------------------------------------
+#end##macro
+## =============================================================================
+#macro(setPropiedadesTabla $tabla)
+## =============================================================================
+#set($tabname0 = '')
+#set($tabname1 = '')
+#set($tabname2 = '')
+#set($tabname3 = '')
+#set($hasIdColumn = '')
+#set($hasDecimalColumn = '')
+#set($hasDateTimeColumn = '')
+#set($hasJoinColumn = '')
+#set($hasOneToOneRelation = '')
+#set($hasManyToOneRelation = '')
+#set($hasOneToManyRelation = '')
+#set($hasCascadeRule = '')
+#set($pkid0 = '')
+#set($pkid1 = '')
+#set($pkid2 = '')
+#set($pkid3 = '')
+#set($code0 = '')
+#set($code1 = '')
+#set($code2 = '')
+#set($code3 = '')
+#if($tabla)
+#setValorPropiedadesTabla($tabla)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesColumna $columna)
+## =============================================================================
+#set($colname0 = $columna.colname)
+#set($colname1 = $utils.getUpperCamelCase($colname0))
+#set($colname2 = $utils.getLowerCamelCase($colname0))
+#set($colname3 = $utils.getUnderscoreless($colname0))
+#set($javatype = $columna.javatypname)
+#if($columna.pkcid)
+#set($pkid0 = $colname0)
+#set($pkid1 = $colname1)
+#set($pkid2 = $colname2)
+#set($pkid3 = $colname3)
+#if($columna.coltype == 4)
+#set($javatype = "Integer")
+#elseif($columna.coltype == 5)
+#set($javatype = "Long")
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesColumna $columna)
+## =============================================================================
+#set($colname0 = '')
+#set($colname1 = '')
+#set($colname2 = '')
+#set($colname3 = '')
+#set($javatype = '')
+#if($columna)
+#setValorPropiedadesColumna($columna)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesClaveForanea $clave)
+## =============================================================================
+#set($tabname0 = $clave.tabid.tabname)
+#set($tabname1 = $utils.getUpperCamelCase($tabname0))
+#set($tabname2 = $utils.getLowerCamelCase($tabname0))
+#set($tabname3 = $utils.getUnderscoreless($tabname0))
+#set($colname0 = $clave.colname)
+#set($colname1 = $utils.getUpperCamelCase($colname0))
+#set($colname2 = $utils.getLowerCamelCase($colname0))
+#set($colname3 = $utils.getUnderscoreless($colname0))
+#set($reftabname0 = $clave.reftabid.tabname)
+#set($reftabname1 = $utils.getUpperCamelCase($reftabname0))
+#set($reftabname2 = $utils.getLowerCamelCase($reftabname0))
+#set($reftabname3 = $utils.getUnderscoreless($reftabname0))
+#set($refcolname0 = $clave.refcolname)
+#set($refcolname1 = $utils.getUpperCamelCase($refcolname0))
+#set($refcolname2 = $utils.getLowerCamelCase($refcolname0))
+#set($refcolname3 = $utils.getUnderscoreless($refcolname0))
+#if($clave.deleterule == 'CASCADE' && $clave.updaterule == 'CASCADE')
+#set($cascade = "cascade = CascadeType.ALL, ")
+#elseif($clave.updaterule == 'CASCADE')
+#set($cascade = "cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE}, ")
+#elseif($clave.deleterule == 'CASCADE')
+#set($cascade = "cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.REMOVE}, ")
+#else
+#set($cascade = "cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, ")
+#end
+#set($cascade = "cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, ")##usar siempre solo PERSIST y REFRESH
+#end##macro
+## =============================================================================
+#macro(setPropiedadesClaveForanea $clave)
+## =============================================================================
+#set($tabname0 = '')
+#set($tabname1 = '')
+#set($tabname2 = '')
+#set($tabname3 = '')
+#set($colname0 = '')
+#set($colname1 = '')
+#set($colname2 = '')
+#set($colname3 = '')
+#set($reftabname0 = '')
+#set($reftabname1 = '')
+#set($reftabname2 = '')
+#set($reftabname3 = '')
+#set($refcolname0 = '')
+#set($refcolname1 = '')
+#set($refcolname2 = '')
+#set($refcolname3 = '')
+#set($cascade = '')
+#if($clave)
+#setValorPropiedadesClaveForanea($clave)
+#end
+#end##macro

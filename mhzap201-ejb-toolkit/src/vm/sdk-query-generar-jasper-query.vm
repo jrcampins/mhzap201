@@ -1,0 +1,6 @@
+select dominio.*
+from dominio, clase_recurso
+where dominio.id_clase_recurso=clase_recurso.id_clase_recurso
+and dominio.codigo_dominio=clase_recurso.codigo_clase_recurso
+and (clase_recurso.numero_tipo_recurso in (11,13,21,22) or (clase_recurso.numero_tipo_recurso=12 and clase_recurso.id_clase_recurso>=20000))
+order by 1

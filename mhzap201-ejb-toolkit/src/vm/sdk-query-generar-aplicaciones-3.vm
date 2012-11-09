@@ -1,0 +1,6 @@
+select *
+from aplicacion
+where id_aplicacion>10000
+and id_aplicacion<>41100 -- configuracion-basica
+and id_aplicacion<>42100 -- gestion-manual
+order by 1

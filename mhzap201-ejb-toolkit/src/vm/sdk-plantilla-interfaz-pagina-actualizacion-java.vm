@@ -1,0 +1,111 @@
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#setMapasPagina()
+#set($funciones = $utils.sortCollection($pagina.dominioIdDominio.funcionIdDominioCollection))
+#setPropiedadesColeccionFunciones($funciones)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+#set($xrefMap = $utils.newMap())
+#set($foo = "import com.egt.data.${domainpack1}.xdp${domaincrsdp}.${domain1}CachedRowSetDataProvider${domaincrsdp};")
+#set($foo = $utils.put($xrefMap, $domain0, $foo))
+#if($master0 != '')
+#set($foo = "import com.egt.data.${masterpack1}.xdp${mastercrsdp}.${master1}CachedRowSetDataProvider${mastercrsdp};")
+#set($foo = $utils.put($xrefMap, $master0, $foo))
+#end
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+#set($foo = "import com.egt.data.${reftabpack1}.xdp${reftabcrsdp}.${reftabname1}CachedRowSetDataProvider${reftabcrsdp};")
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+$foo
+#end
+## -----------------------------------------------------------------------------
+import com.egt.core.aplicacion.web.PaginaActualizacion;
+###if($master0 != '')
+##import com.egt.core.aplicacion.web.PaginaConsultaConMaestro;
+###end
+#if($iminbiz == 13)
+##import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+##import com.egt.ejb.business.process.${domain1}BusinessProcessLocal;
+#end
+#if($iminrep == 22)
+##import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+#end
+#if($iminexp == 23)
+##import com.egt.ejb.core.exporter.ExporterBrokerLocal;
+#end
+import com.sun.webui.jsf.component.Button;
+import com.sun.webui.jsf.component.DropDown;
+import com.sun.webui.jsf.component.TextArea;
+import com.sun.webui.jsf.component.TextField;
+import com.sun.webui.jsf.component.Upload;
+
+#if($master0 != '')
+public interface PaginaActualizacion${domain1}Por${joinparname4} extends PaginaActualizacion {
+#else
+public interface PaginaActualizacion${domain1} extends PaginaActualizacion {
+#end
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+
+#if($columna.coltype == 3)
+    TextField getTextField$objname1();
+#else
+    $objtype1 get$objname1();
+#end
+#end
+
+    Button getBotonAplicar1();
+
+    ${domain1}CachedRowSetDataProvider${domaincrsdp} get${domain1}DataProvider();
+#if($master0 != '')
+
+    ${master1}CachedRowSetDataProvider${mastercrsdp} get${master1}DataProvider();
+#end
+#set($foo = $xrefMap.clear())
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+#set($foo = $reftabcrsdp)
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+#foreach($key in $xrefMap.keySet())
+#set($foo = $xrefMap.get($key))
+#set($dp1 = $utils.getUpperCamelCase($key))
+#set($dp2 = $utils.getLowerCamelCase($key))
+
+    ${dp1}CachedRowSetDataProvider${foo} get${dp1}ReferenceDataProvider();
+#end
+#if($iminbiz == 13)
+
+##  ${domain1}BusinessProcessLocal get${domain1}BusinessProcess();
+    Object get${domain1}BusinessProcess();
+
+##  BusinessProcessMessengerLocal getMessenger();
+    Object getMessenger();
+#end
+#if($iminrep == 22)
+
+##  ReporterBrokerLocal getReporter();
+    Object getReporter();
+#end
+#if($iminexp == 23)
+
+##  ExporterBrokerLocal getExporter();
+    Object getExporter();
+#end
+}

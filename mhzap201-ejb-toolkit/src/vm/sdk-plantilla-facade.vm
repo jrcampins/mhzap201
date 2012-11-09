@@ -1,0 +1,186 @@
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#set($classname = "${tabname1}Facade")
+#set($localname = "${tabname1}FacadeLocal")
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.ejb.persistence.facade;
+
+import com.egt.base.persistence.enums.EnumTipoQuery;
+import com.egt.ejb.persistence.entity.$tabname1;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import org.eclipse.persistence.config.CascadePolicy;
+import org.eclipse.persistence.config.HintValues;
+import org.eclipse.persistence.config.QueryHints;
+
+@Stateless
+public class $classname implements $localname {
+
+    @PersistenceContext
+    private EntityManager em;
+#if($intercols.containsKey('id'))
+#set($foo = $intercols.get('id'))
+#elseif($intercols.containsKey('numero'))
+#set($foo = $intercols.get('numero'))
+#elseif($intercols.containsKey('codigo'))
+#set($foo = $intercols.get('codigo'))
+#else
+#set($foo = "id$tabname1")
+#end
+#set($foo = $utils.getLowerCamelCase($foo))
+
+    @Override
+    public ${tabname1} find(Object id) {
+        return this.find(id, false);
+    }
+
+    @Override
+    public ${tabname1} find(Object id, boolean refresh) {
+##      ${tabname1} o = em.find(${tabname1}.class, id);
+##      if (refresh && o != null) {
+##          em.refresh(o);
+##      }
+        String query = "select o from ${tabname1} as o where o.$foo = :id";
+        ${tabname1} o = null;
+        Query q;
+        if (id != null) {
+            try {
+                q = em.createQuery(query);
+                q = q.setParameter("id", id);
+                if (refresh) {
+                    q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
+                    q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
+                }
+                o = (${tabname1}) q.getSingleResult();
+##          if (refresh) {
+##              em.refresh(o);
+##          }
+            } catch (NoResultException nrex) {
+                o = null;
+            }
+        }
+        return o;
+    }
+#if($intercols.containsKey('codigo'))
+#set($foo = $intercols.get('codigo'))
+#set($foo = $utils.getLowerCamelCase($foo))
+
+    @Override
+    public ${tabname1} findByCodigo(String codigo) {
+        return this.findByCodigo(codigo, false);
+    }
+
+    @Override
+    public ${tabname1} findByCodigo(String codigo, boolean refresh) {
+        String query = "select o from ${tabname1} as o where o.$foo = :codigo";
+        ${tabname1} o = null;
+        Query q;
+        if (codigo != null) {
+            try {
+                q = em.createQuery(query);
+                q = q.setParameter("codigo", codigo);
+                if (refresh) {
+                    q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
+                    q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
+                }
+                o = (${tabname1}) q.getSingleResult();
+##          if (refresh) {
+##              em.refresh(o);
+##          }
+            } catch (NoResultException nrex) {
+                o = null;
+            }
+        }
+        return o;
+    }
+#end
+
+    @Override
+    public List<${tabname1}> findAll() {
+        return this.findAll(false);
+    }
+
+    @Override
+    public List<${tabname1}> findAll(boolean refresh) {
+        String query = "select object(o) from ${tabname1} as o";
+        return this.findByQuery(query, refresh);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query) {
+        return findByQuery(query, false);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query, boolean refresh) {
+        return findByQuery(query, EnumTipoQuery.JPQL, refresh);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo) {
+        return findByQuery(query, tipo, false);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, boolean refresh) {
+        return findByQuery(query, tipo, 0, refresh);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, int max) {
+        return findByQuery(query, tipo, max, false);
+    }
+
+    @Override
+    public List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh) {
+        Query q;
+        switch (tipo) {
+            case NAMED:
+                q = em.createNamedQuery(query);
+                break;
+            case NATIVE:
+                q = em.createNativeQuery(query, ${tabname1}.class);
+                break;
+            default:
+                q = em.createQuery(query);
+                break;
+        }
+        if (refresh) {
+            q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
+            q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
+        }
+        if (max > 0) {
+            q = q.setMaxResults(max);
+        }
+        return q.getResultList();
+    }
+
+    @Override
+    public void flush() {
+        em.flush();
+    }
+
+    @Override
+    public void merge(${tabname1} ${tabname2}) {
+        em.merge(${tabname2});
+    }
+
+    @Override
+    public void persist(${tabname1} ${tabname2}) {
+        em.persist(${tabname2});
+    }
+
+    @Override
+    public void refresh(${tabname1} ${tabname2}) {
+        em.refresh(${tabname2});
+    }
+
+    @Override
+    public void remove(${tabname1} ${tabname2}) {
+        em.remove(em.merge(${tabname2}));
+    }
+}

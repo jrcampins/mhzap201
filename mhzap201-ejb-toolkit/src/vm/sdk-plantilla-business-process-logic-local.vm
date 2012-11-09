@@ -1,0 +1,35 @@
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+#set($tabla0 = $dominio.nombreTabla)
+#else
+#set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($funciones = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.ejb.business.process.logic;
+
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funtype1 == 13)
+import com.egt.ejb.business.message.${funcion1}Message;
+#end
+#end##foreach
+import com.egt.ejb.persistence.entity.${tabla1};
+import javax.ejb.Local;
+
+@Local
+public interface ${dominio1}BusinessProcessLogicLocal {
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funtype1 == 13)
+
+    public void ${funcion2}(${funcion1}Message message, ${tabla1} ${tabla2}) throws Exception;
+#end
+#end##foreach
+}

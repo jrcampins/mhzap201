@@ -1,0 +1,794 @@
+## =============================================================================
+#macro(writeJavaCode411 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="Entities">
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+    private ${entname1} ${entname2};
+
+    public ${entname1} get${entname1}() {
+        return this.${entname2};
+    }
+
+#end
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode412 $foo)
+## =============================================================================
+#set($foo = $xrefMap.clear())
+#foreach($foo in $entities)
+#if($foo.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)##(views)
+#else
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#set($foo = "private ${entname1}FacadeLocal ${entname2}Facade;")
+#set($foo = $utils.put($xrefMap, $entname0, $foo))
+#end##(views)
+#end
+## -----------------------------------------------------------------------------
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99)
+#set($foo = "private ${reftabname1}FacadeLocal ${reftabname2}Facade;")
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+    // <editor-fold defaultstate="collapsed" desc="Facades">
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+    @EJB
+    $foo
+
+#end
+## -----------------------------------------------------------------------------
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode413 $foo)
+## =============================================================================
+    protected void preiniciar() {
+        /*
+         * Esta funcion debe ejecutarse al comienzo de init(),
+         * *antes* de que se inicien los componentes administrados.
+         */
+        this.getGestor().preiniciar();
+    }
+
+    protected void iniciar() {
+        /*
+         * Esta funcion debe ejecutarse al final de init(),
+         * *despues* de que se inicien los componentes administrados.
+         */
+        this.getGestor().iniciar();
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($converter1 == '')
+#elseif($columna.coltype == 2)
+##FIX 03/04/2010 floating point numbers
+## -----------------------------------------------------------------------------
+#set($decformat = '')
+#if($columna.colprec < 1)
+#set($maxintdig = 1)
+#set($maxfradig = 15)
+#set($decformat = '0.0##############E0')
+#elseif($columna.colscale < 0)
+#set($maxintdig = $columna.colprec)
+#set($maxfradig = 0)
+#elseif($columna.colprec > $columna.colscale)
+#set($maxintdig = $columna.colprec - $columna.colscale)
+#set($maxfradig = $columna.colscale)
+#else
+#set($maxintdig = 1)
+#set($maxfradig = $columna.colscale)
+#end
+        converter${colname1}1.setMinIntegerDigits(1);
+        converter${colname1}1.setMaxIntegerDigits($maxintdig);
+        converter${colname1}1.setMaxFractionDigits($maxfradig);
+#if($decformat != '')
+        converter${colname1}1.setPattern("$decformat");
+#end
+## -----------------------------------------------------------------------------
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($neverinamonthofSundays)##(views)
+#set($fooname0 = '')
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#if($entname0 == $domain0 || $entname0 == $master0)
+#set($x = '  ')
+#else
+#set($x = '//')
+#end
+$x      this.find${entname1}();
+#end
+#else
+## -----------------------------------------------------------------------------
+#if($pagina.dominioIdDominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+#set($entname0 = $pagina.dominioIdDominio.nombreTabla)
+#else
+#set($entname0 = $pagina.dominioIdDominio.codigoDominio)
+#end
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99 && $reftabname0 == $entname0)
+        this.init${reftabname1}${colname1}();
+#end
+#end##foreach
+## -----------------------------------------------------------------------------
+#end##neverinamonthofSundays(views)
+## -----------------------------------------------------------------------------
+    }
+
+    protected void preprocesar() {
+        /*
+         * Esta funcion debe ejecutarse al final de preprocess().
+         */
+        this.getGestor().preprocesar();
+    }
+
+    protected void prepresentar() {
+        /*
+         * Esta funcion debe ejecutarse al final de prerender().
+         */
+        this.getGestor().prepresentar();
+    }
+#end
+## =============================================================================
+#macro(writeJavaCode421 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype1 == 12 || $reftabtype2 == 99)
+#elseif($coltype3 == 1 && $colname0.startsWith('nombre_archivo'))
+#elseif($coltype3 == 3)
+    private java.sql.Timestamp valor$objname1;
+
+    public java.sql.Timestamp getValor$objname1() {
+        return this.valor$objname1;
+    }
+
+    public void setValor$objname1(java.sql.Timestamp valor) {
+        this.valor$objname1 = valor;
+    }
+
+#else
+    private String texto$objname1;
+
+    public String getTexto$objname1() {
+        return this.texto$objname1;
+    }
+
+    public void setTexto$objname1(String valor) {
+        this.texto$objname1 = valor;
+    }
+
+#end
+#end
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode422 $foo)
+## =============================================================================
+#if($pagina.dominioIdDominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+#set($entname0 = $pagina.dominioIdDominio.nombreTabla)
+#else
+#set($entname0 = $pagina.dominioIdDominio.codigoDominio)
+#end
+#set($paramintercols = $utils.newMap())
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99)
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer $colname2">
+## -----------------------------------------------------------------------------
+#set($entity = "${reftabname2}${colname1}")
+#set($facade = "${reftabname2}Facade")
+#setReferencedTableInterfaceColumnsMap($paramintercols $reftabname0)
+## -----------------------------------------------------------------------------
+    private ${reftabname1} ${entity};
+
+#writeFiltroBusqueda()##getFiltroBusqueda
+
+    public ${reftabname1} get${reftabname1}${colname1}() {
+        return this.${entity};
+    }
+
+#if($reftabname0 == $entname0)
+    private void init${reftabname1}${colname1}() {
+        Long id = this.getContextoPeticion().getIdentificacionRecurso();
+        this.${entity} = id == null ? null : this.${facade}.find(id, true);
+    }
+
+#end
+    public void ${objname2}_validate(FacesContext context, UIComponent component, Object value) {
+        this.${entity} = null;
+        String string = STP.getString(value);
+        if (string != null && !string.trim().equals("")) {
+            try {
+#if($paramintercols.containsKey('codigo'))
+                Object o = STP.getObjetoCodigoRecurso(string);
+#else
+                Object o = STP.getObjetoCodigoRecurso(string, true); /* cast String as Long */
+#end
+##              String c = ${reftabname1}CachedRowSetDataProvider${reftabcrsdp}.COLUMNA_ID_$reftabname0.toUpperCase();
+##              String c = ${reftabname1}.COLUMNA_ID_$reftabname0.toUpperCase();
+##              String c = "id_$reftabname0.toLowerCase()"; /*COLUMNA_IDENTIFICACION_RECURSO*/
+                String c = ${reftabname1}Constants.COLUMNA_IDENTIFICACION_RECURSO;
+                FiltroBusqueda filtro = getFiltroBusqueda${colname1}();
+                String query = "select * from ${reftabname0} ";
+                List<${reftabname1}> lista;
+                boolean refresh = false;
+                if (o instanceof Long) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.${entity} = this.${facade}.find(o, refresh);
+                    } else {
+                        filtro.addCriterio(${reftabname1}Constants.COLUMNA_IDENTIFICACION_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.${facade}.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.${entity} = lista.get(0);
+                        }
+                    }
+#if($paramintercols.containsKey('codigo'))
+                } else if (o instanceof String) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.${entity} = this.${facade}.findByCodigo(o.toString(), refresh);
+                    } else {
+                        filtro.addCriterio(${reftabname1}Constants.COLUMNA_CODIGO_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.${facade}.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.${entity} = lista.get(0);
+                        }
+                    }
+#else
+//              } else if (o instanceof String) {
+//                  this.${entity} = this.${facade}.findByCodigo(o.toString(), refresh);
+#end
+                }
+                if (this.${entity} == null) {
+                    throw new ExcepcionAplicacion(Bitacora.getTextoMensaje(CBM2.RECURSO_NO_REFERENCIABLE, "<" + c + ">", ""));
+                }
+            } catch (Exception ex) {
+                if (ex instanceof ValidatorException) {
+                    throw (ValidatorException) ex;
+                } else {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
+                    throw new ValidatorException(message);
+                }
+            }
+        }
+    }
+
+    private String texto$objname1;
+
+    public String getTexto$objname1() {
+        return this.texto$objname1 != null ? this.texto$objname1
+#if($paramintercols.containsKey('codigo'))
+#set($getter = $utils.getUpperCamelCase($paramintercols.get('codigo')))
+                : this.${entity} != null ? this.${entity}.get${getter}()
+#elseif($paramintercols.containsKey('id'))
+#set($getter = $utils.getUpperCamelCase($paramintercols.get('id')))
+                : this.${entity} != null ? STP.getStringCodigoRecurso(this.${entity}.get${getter}())
+#else
+                : this.${entity} != null ? null /* TODO: escoger el getter para obtener el codigo del recurso */
+//              : this.${entity} != null ? this.${entity}.getCodigo${reftabname1}()
+#end
+                : null;
+    }
+
+    public void setTexto$objname1(String valor) {
+        this.texto$objname1 = valor;
+    }
+
+    public String getToolTip$objname1() {
+#if($paramintercols.containsKey('nombre'))
+#set($getter = $utils.getUpperCamelCase($paramintercols.get('nombre')))
+        return this.${entity} == null ? null : STP.trimToStringRecursoSinNombre(this.${entity}.get${getter}());
+#else
+        return this.${entity} == null ? null : STP.trimToStringRecursoSinNombre(null); /* TODO: escoger el getter para obtener el nombre del recurso */
+//      return this.${entity} == null ? null : STP.trimToStringRecursoSinNombre(this.${entity}.getNombre${reftabname1}());
+#end
+    }
+
+#if($cb1type3 != '')
+    public String getScript${objname1}Boton1() {
+#if($paramintercols.containsKey('codigo'))
+#set($metodo = 'getScriptAbrirVentanaBuscarCodigo')
+#elseif($paramintercols.containsKey('id'))
+#set($metodo = 'getScriptAbrirVentanaBuscarIdentificacion')
+#else
+#set($metodo = '')
+#end
+#if($pagemap5.containsKey($reftabname0))
+#set($urx = "URX2.CONSULTA_TABLA_$reftabname0.toUpperCase()")
+#elseif($pagemap1.containsKey($reftabname0))
+#set($refappl1 = $pagemap1.get($reftabname0).aplicacionIdAplicacion)
+#if($pagina.aplicacionIdAplicacion.equals($refappl1))## || $reftabtype1 == 13 || $reftabname0 == $domainclassname0 ??
+#set($urx = '')
+#else
+#set($urx = "URX2.TABLA_$reftabname0.toUpperCase()")
+#end
+#else
+#set($urx = '')
+#end
+        long funcion = ${reftabname1}Constants.FUNCION_CONSULTAR_$reftabname0.toUpperCase();
+        String campo = this.get$objname1().getClientId(this.getFacesContext());
+        String boton = this.getBotonAplicar1().getClientId(this.getFacesContext());
+#if($metodo == '' && $urx == '')
+        String columna = "$colname0";
+        return this.getGestor().getScriptAbrirVentanaBuscar(funcion, columna, campo, boton, getFiltroBusqueda${colname1}());
+#elseif($metodo == '' && $urx != '')
+        String urx = $urx;
+        String columna = "$colname0";
+        return this.getGestor().getScriptAbrirVentanaBuscar(urx, funcion, columna, campo, boton, getFiltroBusqueda${colname1}());
+#elseif($urx == '')
+        return this.getGestor().$metodo(funcion, campo, boton, getFiltroBusqueda${colname1}());
+#else
+        String urx = $urx;
+        return this.getGestor().$metodo(urx, funcion, campo, boton, getFiltroBusqueda${colname1}());
+#end
+    }
+
+#end
+#if($cb2type3 != '')
+    public String getScript${objname1}Boton2() {
+#if($pagemap6.containsKey($reftabname0))
+        String urx = URX2.CONSULTA_DETALLE_$reftabname0.toUpperCase();
+        Long id = this.${entity} == null ? null : this.${entity}.getId${reftabname1}();
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+#elseif($pagemap2.containsKey($reftabname0))
+#set($refappl2 = $pagemap2.get($reftabname0).aplicacionIdAplicacion)
+#if($pagina.aplicacionIdAplicacion.equals($refappl2))
+//      String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+//      Long id = this.${entity} == null ? null : this.${entity}.getId${reftabname1}();
+//      return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+##      return this.getGestor().getScriptAbrirVentanaVerDetalleNoDisponible();
+        return null;
+#else
+        String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+        Long id = this.${entity} == null ? null : this.${entity}.getId${reftabname1}();
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+#end
+#else
+//      String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+//      Long id = this.${entity} == null ? null : this.${entity}.getId${reftabname1}();
+//      return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+##      return this.getGestor().getScriptAbrirVentanaVerDetalleNoDisponible();
+        return null;
+#end
+    }
+
+    private boolean is${objname1}Boton2Rendered() {
+#if($paramintercols.containsKey('nombre'))
+        return this.is${colname1}Rendered();
+#else
+//      return this.is${colname1}Rendered();
+        return false; /* TODO: retornar is${colname1}Rendered() al escoger el getter para obtener el nombre del recurso */
+#end##containsKey
+    }
+
+    private Bit bit${objname1}Boton2Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return is${objname1}Boton2Rendered();
+        }
+    };
+
+    public Bit getBit${objname1}Boton2Rendered() {
+        return bit${objname1}Boton2Rendered;
+    }
+
+    private boolean is${objname1}Boton3Rendered() {
+        return !this.is${objname1}Boton2Rendered();
+    }
+
+    private Bit bit${objname1}Boton3Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return is${objname1}Boton3Rendered();
+        }
+    };
+
+    public Bit getBit${objname1}Boton3Rendered() {
+        return bit${objname1}Boton3Rendered;
+    }
+
+#end
+    // </editor-fold>
+
+#end
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode423 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype1 == 12)
+    public Object getOpciones$objname1() {
+        return JSF.getListaOpciones(${refenuname1}.values(), true, false);
+    }
+
+    private Integer valor$objname1;
+
+    public Integer getValor$objname1() {
+        return this.valor$objname1;
+    }
+
+    public void setValor$objname1(Integer valor) {
+        this.valor$objname1 = valor;
+    }
+
+#end
+#end
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode424 $foo)
+## =============================================================================
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+    // <editor-fold defaultstate="collapsed" desc="botones de accion de la plantilla #4">
+    public String botonAplicar1_action() {
+        return null;
+    }
+
+    public String botonProcesar1_action() {
+#if($col1.size() > 1)
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == 0 ? null
+#foreach($obj1 in $col1)
+#set($accion = $utils.getLowerCamelCase($obj1.funcionIdFuncion.codigoFuncion))
+##              : f == ${obj1.funcionIdFuncion.idFuncion}L ? accion${obj1.funcionIdFuncion.idFuncion}(f)
+##              : f == ${obj1.funcionIdFuncion.idFuncion}L ? $accion$velocityCount(f)
+##              : f == ${fooclass}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase() ? accion${obj1.funcionIdFuncion.idFuncion}(f)
+##              : f == ${fooclass}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase() ? $accion$velocityCount(f)
+##              : f == FUNCION_ACCION_$velocityCount ? $accion$velocityCount(f)
+                : f == FUNCION_ACCION_$velocityCount ? this.accion$velocityCount(f) /* $accion */
+#end##foreach
+                : null;
+#elseif($col1.size() == 1)
+#foreach($obj1 in $col1)
+#set($accion = $utils.getLowerCamelCase($obj1.funcionIdFuncion.codigoFuncion))
+##      return accion${obj1.funcionIdFuncion.idFuncion}();
+##      return $accion$velocityCount();
+        return this.accion$velocityCount(FUNCION_ACCION_$velocityCount); /* $accion */
+#end##foreach
+#else
+        return null;
+#end
+    }
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode425 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para ejecutar funciones">
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#set($paramintercols = $utils.newMap())
+#foreach($obj1 in $col1)
+#setPropiedadesFuncion($obj1.funcionIdFuncion)
+#set($token = $utils.getUnderscoreless($obj1.funcionIdFuncion.codigoFuncion.toLowerCase()))
+#set($accion = $utils.getLowerCamelCase($obj1.funcionIdFuncion.codigoFuncion))
+#if($obj1.funcionIdFuncion.dominioIdDominio)
+#if($obj1.funcionIdFuncion.dominioIdDominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)##(views)
+#set($entname0 = $obj1.funcionIdFuncion.dominioIdDominio.nombreTabla)
+#else
+#set($entname0 = $obj1.funcionIdFuncion.dominioIdDominio.codigoDominio)
+#end##(views)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#setInterfaceColumnsMap($paramintercols $obj1.funcionIdFuncion.dominioIdDominio)
+#else
+#set($entname0 = '')
+#set($entname1 = '')
+#set($entname2 = '')
+#set($foo = $paramintercols.clear())
+#end
+##  private String accion${obj1.funcionIdFuncion.idFuncion}(long f) {
+##  private String $accion$velocityCount(long f) {
+##  private String accion$velocityCount(long f) { /* $accion */
+    private String accion$velocityCount(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+#set($entity = '')##(views)
+#set($getntt = '')
+#if($entname0 != '')
+##          // TODO: establecer ${entname2}
+##          // this.find${entname1}();
+#foreach($parametro in $funparams)
+#if($entity == '')
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99 && $reftabname0 == $entname0)
+#set($entity = "${reftabname2}${colname1}")
+#set($getntt = "get${reftabname1}${colname1}()")
+#end
+#end
+#end
+#end
+#if($entity != '' && $entities.containsKey($obj1.funcionIdFuncion.dominioIdDominio.codigoDominio))
+#setSysTable($entname0)
+#set($paramintercol0 = '')
+#set($expresion1 = '')
+#set($getter = '')
+#set($getpdq = '')
+#if($obj1.funcionIdFuncion.esPersonalizada == 1 && $paramintercols.containsKey('propietario'))
+#set($paramintercol0 = $paramintercols.get('propietario'))
+#set($expresion1 = 'esPropietarioRecurso')
+## -----------------------------------------------------------------------------
+#foreach($columna in $systable.columns)
+#setPropiedadesColumna($columna)
+#if($colname0 == $paramintercol0)
+#if($columna.pkcid || !$columna.fkcid)
+#set($getter = "get${colname1}()")
+#elseif($columna.sysForeignKey)
+#setPropiedadesClaveForanea($columna.sysForeignKey)
+#set($getter = "get${reftabname1}${colname1}().get${refcolname1}()")
+#set($getpdq = "get${reftabname1}${colname1}()")
+#end
+#end
+#end##foreach($columna)
+## -----------------------------------------------------------------------------
+#if($getter == '')
+##          Long p = this.${entname2} == null ? null : null; /* TODO: cambiar el ultimo "null" por el "getter" del id del propietario */
+            Long p = this.${getntt} == null ? null : null; /* TODO: cambiar el ultimo "null" por el "getter" del id del propietario */
+#elseif($getpdq == '')
+##          Long p = this.${entname2} == null ? null : this.${entname2}.${getter};
+            Long p = this.${getntt} == null ? null : this.${getntt}.${getter};
+#else
+##          Long p = this.${entname2} == null ? null : this.${entname2}.${getpdq} == null ? null : this.${entname2}.${getter};
+            Long p = this.${getntt} == null ? null : this.${getntt}.${getpdq} == null ? null : this.${getntt}.${getter};
+#end
+##          String cpr = "$paramintercol0"; /*COLUMNA_PROPIETARIO_RECURSO*/
+            String cpr = ${dominio1}Constants.COLUMNA_PROPIETARIO_RECURSO;
+            boolean $expresion1 = TLC.getControlador().esPropietarioRecurso(p, f);
+#end
+#set($paramintercol0 = '')
+#set($expresion2 = '')
+#set($getter = '')
+#set($getpdq = '')
+#if($obj1.funcionIdFuncion.esSegmentada == 1 && $paramintercols.containsKey('segmento'))
+#set($paramintercol0 = $paramintercols.get('segmento'))
+#set($expresion2 = 'esSegmentoAutorizado')
+## -----------------------------------------------------------------------------
+#foreach($columna in $systable.columns)
+#setPropiedadesColumna($columna)
+#if($colname0 == $paramintercol0)
+#if($columna.pkcid || !$columna.fkcid)
+#set($getter = "get${colname1}()")
+#elseif($columna.sysForeignKey)
+#setPropiedadesClaveForanea($columna.sysForeignKey)
+#set($getter = "get${reftabname1}${colname1}().get${refcolname1}()")
+#set($getpdq = "get${reftabname1}${colname1}()")
+#end
+#end
+#end##foreach($columna)
+## -----------------------------------------------------------------------------
+#if($getter == '')
+##          Long s = this.${entname2} == null ? null : null; /* TODO: cambiar el ultimo "null" por el "getter" del id del segmento */
+            Long s = this.${getntt} == null ? null : null; /* TODO: cambiar el ultimo "null" por el "getter" del id del segmento */
+#elseif($getpdq == '')
+##          Long s = this.${entname2} == null ? null : this.${entname2}.${getter};
+            Long s = this.${getntt} == null ? null : this.${getntt}.${getter};
+#else
+##          Long s = this.${entname2} == null ? null : this.${entname2}.${getpdq} == null ? null : this.${entname2}.${getter};
+            Long s = this.${getntt} == null ? null : this.${getntt}.${getpdq} == null ? null : this.${getntt}.${getter};
+#end
+##          String csr = "$paramintercol0"; /*COLUMNA_SEGMENTO_RECURSO*/
+            String csr = ${dominio1}Constants.COLUMNA_SEGMENTO_RECURSO;
+            boolean $expresion2 = TLC.getControlador().esSegmentoAutorizado(s, f);
+#end
+#if($expresion1 == '' && $expresion2 == '')##no es personalizada ni segmentada
+##          // TODO: ejecutar funcion
+            this.$accion();
+##          TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
+#elseif($expresion2 == '')##no es segmentada pero es personalizada
+            if ($expresion1) {
+##              // TODO: ejecutar funcion
+                this.$accion();
+##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
+            } else {
+                TLC.getBitacora().error(CBM2.USUARIO_NO_PROPIETARIO, "<" + cpr + ">");
+            }
+#elseif($expresion1 == '')##no es personalizada pero es segmentada
+            if ($expresion2) {
+##              // TODO: ejecutar funcion
+                this.$accion();
+##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
+            } else {
+                TLC.getBitacora().error(CBM2.SEGMENTO_NO_AUTORIZADO, "<" + csr + ">");
+            }
+#else##es personalizada y segmentada
+            if ($expresion1 && $expresion2) {
+##              // TODO: ejecutar funcion
+                this.$accion();
+##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
+            } else {
+                if (!$expresion1) {
+                    TLC.getBitacora().error(CBM2.USUARIO_NO_PROPIETARIO, "<" + cpr + ">");
+                }
+                if (!$expresion2) {
+                    TLC.getBitacora().error(CBM2.SEGMENTO_NO_AUTORIZADO, "<" + csr + ">");
+                }
+            }
+#end
+#else##entity==''
+##          // TODO: ejecutar funcion
+            this.$accion();
+##          TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
+#end
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("$token"));
+        }
+        return null;
+    }
+
+#end##foreach($obj1 in $col1)
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode426 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer entidades">
+#set($fooname0 = '')
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+    private void find${entname1}() {
+#if($entname0 == $domain0)
+        Long id = this.getContextoPeticion().getIdentificacionRecurso();
+#elseif($entname0 == $master0)
+        Long id = this.getContextoPeticion().getIdentificacionRecursoMaestro();
+#else
+//      Long id = null;
+#end
+#if($entname0 == $domain0 || $entname0 == $master0)
+#set($x = '  ')
+#else
+#set($x = '//')
+#end
+$x      if (id == null && this.getSessionBean1().get${entname1}RowSet() instanceof RecursoCachedRowSet) {
+$x          RecursoCachedRowSet rcrs = (RecursoCachedRowSet) this.getSessionBean1().get${entname1}RowSet();
+$x          id = rcrs.getIdentificacionFilaEscogida();
+$x      }
+$x      if (id != null) {
+$x          this.${entname2} = this.${entname2}Facade.find(id, true);
+$x          if (this.${entname2} != null) {
+#set($y = '')
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99 && $reftabname0 == $entname0)
+#set($entity = "${reftabname2}${colname1}")
+$x              ${y}this.${entity} = this.${entname2};
+#set($y = '// ')
+#end
+#end
+$x          }
+$x      }
+    }
+
+#end
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeFiltroBusqueda)
+## =============================================================================
+    private FiltroBusqueda getFiltroBusqueda${colname1}() {
+        FiltroBusqueda filtro = new FiltroBusqueda();
+    #if($includedFields.containsKey($colname0))
+        #set($crp = $includedFields.get($colname0))
+        #set($fcrpcolsize = $crp.filtroClaRecParIdClaseRecursoParCollection.size())
+        #if($fcrpcolsize == 0)
+        /*
+        String columna;
+        EnumOperadorCom comparacion;
+        Object valor;
+        filtro.addCriterio(columna, comparacion, valor);
+        */
+        #else
+        ArrayList array = new ArrayList();
+        /**/
+        String columna;
+        EnumOperadorCom comparacion;
+        String string;
+        Object valor;
+            #set($fcrpcol = $utils.sortCollection($crp.filtroClaRecParIdClaseRecursoParCollection))
+            #foreach($fcrp in $fcrpcol)
+        /**/
+                #set($fee = $fcrp.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.codigoParametro.toUpperCase())
+                #set($fee = "${reftabname1}Constants.COLUMNA_${fee}")
+                #set($noc = $fcrp.operadorComNumeroOperadorCom.numeroOperadorCom)
+                #set($faa = "EnumOperadorCom.$operators.get($noc.toString()).toUpperCase()")
+                #set($stp = '')
+                #if($fcrp.claseRecursoParIdClaseRecursoParValor)
+                    #set($fo1 = $utils.getLowerCamelCase($fcrp.claseRecursoParIdClaseRecursoParValor.claseRecursoIdClaseRecursoValor.codigoClaseRecurso))
+                    #set($fo2 = $utils.getUpperCamelCase($fcrp.claseRecursoParIdClaseRecursoParValor.claseRecursoIdClaseRecursoValor.codigoClaseRecurso))
+                    #set($fo3 = $utils.getUpperCamelCase($fcrp.claseRecursoParIdClaseRecursoParValor.parametroIdParametro.codigoParametro))
+                    #set($foo = "${fo1}${fo3} == null ? null : ${fo1}${fo3}.getId${fo2}()")
+                #elseif($fcrp.valor)
+                    #set($stp = $fcrp.valor)
+                    #set($ntd = $fcrp.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.tipoDatoParNumeroTipoDatoPar.numeroTipoDatoPar)
+                    #if($noc == 51 || $noc == 52 || $noc == 161 || $noc == 162)##IN, NOT IN, EXISTS, NOT EXISTS
+                        #set($stp = $utils.getPatronParametrizado($fcrp.valor))
+                        #set($pdq = $utils.getParametros($fcrp.valor))
+        array.clear();
+                        #foreach($p in $pdq)
+                            #set($foo = $utils.getUpperCamelCase($p))
+                            #if($p == 'userid')
+        array.add(TLC.getControlador().getUsuario().getIdUsuario());
+                            #else
+//      array.add(bean.get${domain1}DataProvider().get${foo}(rowKey));
+                            #end
+                        #end##foreach
+                        #set($foo = 'STP.getStringSqlParametrizado(string, array.toArray())')
+                    #elseif($stp == '{userid}')
+                        #set($foo = 'TLC.getControlador().getUsuario().getIdUsuario()')
+                    #elseif($ntd == 1)
+                        #set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ALFANUMERICO)')
+                    #elseif($ntd == 2)
+                        #set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.NUMERICO)')
+                    #elseif($ntd == 3)
+                        #set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.FECHA_HORA)')
+                    #elseif($ntd == 4)
+                        #set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ENTERO)')
+                        #if($fcrp.claseRecursoParIdClaseRecursoParColumna.claseRecursoIdClaseRecursoValor.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso == 12)
+                            #set($crvname = $fcrp.claseRecursoParIdClaseRecursoParColumna.claseRecursoIdClaseRecursoValor.codigoClaseRecurso)
+                            #set($options = $utils.enumMap($crvname))
+                            #if($options.containsKey($fcrp.valor))
+                                #set($foo = "com.egt.base.enums.Enum${utils.getUpperCamelCase($crvname)}.${options.get($fcrp.valor).toUpperCase()}.getOptionValue()")
+                            #end
+                        #end
+                    #elseif($ntd == 5)
+                        #set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ENTERO_GRANDE)')
+                    #else
+                        #set($foo = 'STP.getObjeto(string)')
+                    #end
+                #else
+                    #set($foo = 'null')
+                #end
+                #if($noc == 161 || $noc == 162)##EXISTS, NOT EXISTS
+                #else
+        columna = $fee;
+        comparacion = $faa;
+                #end
+                #if($foo.startsWith('STP'))
+        string = "$stp";
+                #end
+                #if($noc == 51 || $noc == 52)##IN, NOT IN
+        string = $foo;
+        filtro.addCriterio(columna, comparacion, string);
+                #elseif($noc == 161)##EXISTS
+        string = $foo;
+        filtro.addCriterio(true, string);
+                #elseif($noc == 162)##NOT EXISTS
+        string = $foo;
+        filtro.addCriterio(false, string);
+                #else
+        valor = $foo;
+        filtro.addCriterio(columna, comparacion, valor);
+                #end
+            #end##foreach
+        #end
+    #end
+        return filtro;
+    }
+#end

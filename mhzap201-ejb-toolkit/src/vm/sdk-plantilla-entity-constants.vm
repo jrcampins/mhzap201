@@ -1,0 +1,70 @@
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+#set($tabla0 = $dominio.nombreTabla)
+#else
+#set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($systable = $utils.systemTableFacade.findByCodigo($tabla0))
+#set($classname = "${dominio1}Constants")
+#set($objsuffix = '')
+#set($colsuffix = "Collection")
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.base.entity.constants;
+
+public class $classname {
+
+    public static final String CODIGO_DOMINIO_RECURSO = "$dominio.codigoDominio";
+
+    public static final String NOMBRE_DOMINIO_RECURSO = "$utils.getStringJava($dominio.nombreDominio)";
+#foreach($columna in $systable.columns)
+
+    public static final String COLUMNA_$columna.colname.toUpperCase() = "$columna.colname";
+#end
+#set($intercols = $utils.newMap())
+#setInterfaceParametersMap($intercols $dominio)
+#foreach($key in $intercols.keySet())
+
+    public static final String COLUMNA_$key.toUpperCase() = "$intercols.get($key)";
+#end##foreach-parametro
+#set($xrefMap = $utils.newMap())
+#if($dominio.funcionIdDominioCollection)
+#set($col1 = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#foreach($funcion in $col1)
+
+    public static final long FUNCION_$funcion.codigoFuncion.toUpperCase() = ${funcion.idFuncion}L;
+#if($funcion.funcionParametroIdFuncionCollection)
+#set($col2 = $utils.sortCollection($funcion.funcionParametroIdFuncionCollection))
+#foreach($parametro in $col2)
+#if($parametro.funcionIdFuncionReferencia)
+#set($foo = $utils.put($xrefMap, $parametro.funcionIdFuncionReferencia.codigoFuncion, "$parametro.funcionIdFuncionReferencia.idFuncion"))
+#end##if
+#end##foreach-parametro
+#end##if
+#end##foreach-funcion
+#foreach($key in $xrefMap.keySet())
+
+    public static final long FUNCION_REFERENCIA_$key.toUpperCase() = $xrefMap.get($key)L;
+#end##foreach-key
+#foreach($funcion in $col1)
+#if($funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion < 20)
+#set($foo = $utils.getCodigoFuncionAlterno($funcion.codigoFuncion, $dominio.codigoDominio))
+
+    public static final String PROCESO_FUNCION_$funcion.codigoFuncion.toUpperCase() = "$foo";
+#elseif($funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion == 22)
+#set($foo = $utils.getCodigoArchivoInforme($funcion.codigoFuncion, $dominio.codigoDominio))
+
+    public static final String INFORME_FUNCION_$funcion.codigoFuncion.toUpperCase() = "$foo";
+#elseif($funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion == 23)
+#set($foo = $utils.getCodigoArchivoInforme($funcion.codigoFuncion, $dominio.codigoDominio))
+
+    public static final String ARCHIVO_FUNCION_$funcion.codigoFuncion.toUpperCase() = "$foo";
+#end
+#end
+#end
+}

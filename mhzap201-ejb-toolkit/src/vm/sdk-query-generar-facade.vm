@@ -1,0 +1,5 @@
+select *
+from vista_system_systables, clase_recurso
+where tabname=codigo_clase_recurso
+and id_funcion_seleccion is not null
+order by tabname

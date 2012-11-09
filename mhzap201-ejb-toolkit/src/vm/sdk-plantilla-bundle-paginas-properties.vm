@@ -1,0 +1,32 @@
+#set($map = $utils.newMap())
+#foreach($pagina in $paginas)
+#if($map.containsKey($pagina.codigoPagina))
+#set($foo = $map.get($pagina.codigoPagina))
+#else
+#set($foo = $utils.put($map, $pagina.codigoPagina, $pagina))
+#set($cp1 = '')
+#set($ca1 = '')
+#set($ig1 = -1)
+#set($cg1 = '')
+#set($cr1 = '')
+#set($ig2 = -1)
+#set($cg2 = '')
+#set($cp1 = $pagina.codigoPagina)
+#set($ca1 = $pagina.aplicacionIdAplicacion.codigoAplicacion)
+#set($ig1 = $pagina.aplicacionIdAplicacion.grupoAplicacionIdGrupoAplicacion.idGrupoAplicacion)
+#set($cg1 = $pagina.aplicacionIdAplicacion.grupoAplicacionIdGrupoAplicacion.codigoGrupoAplicacion)
+#if($pagina.dominioIdDominio)
+    #set($cr1 = $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.codigoClaseRecurso)
+    #set($ig2 = $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.grupoAplicacionIdGrupoAplicacion.idGrupoAplicacion)
+    #set($cg2 = $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.grupoAplicacionIdGrupoAplicacion.codigoGrupoAplicacion)
+#end
+##$cp1, $ca1, $ig1, $cg1, $cr1, $ig2, $cg2
+#if($ig1 > 0 && $ig1 < 400)
+${cp1}.codigo_grupo_aplicacion=$cg1
+#elseif($ig1 > 0 && $ig2 < 0)
+${cp1}.codigo_grupo_aplicacion=$cg1
+#else
+${cp1}.codigo_grupo_aplicacion=$cg2
+#end
+#end##containsKey
+#end##foreach

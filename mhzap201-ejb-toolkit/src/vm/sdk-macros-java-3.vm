@@ -1,0 +1,1129 @@
+## =============================================================================
+#macro(writeJavaCode301 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy">
+    @Override
+    @PostConstruct
+    public void init() {
+        // Realizar iniciaciones heredadas de la superclase
+        super.init();
+        // Realizar iniciaciones que deben finalizar **antes** de que se inicien los componentes administrados
+        this.preiniciar();
+        // <editor-fold defaultstate="collapsed" desc="Inicio de componentes administrados por el programa">
+        // Iniciar componentes administrados automaticamente
+        // *Nota* - esta logica NO debe modificarse
+        try {
+            _init();
+        } catch (Exception e) {
+            log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+            throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+        }
+        // </editor-fold>
+        // Realizar iniciaciones que deben finalizar *despues* de que se inicien los componentes administrados
+        this.iniciar();
+    }
+
+    @Override
+    public void preprocess() {
+        this.preprocesar();
+    }
+
+    @Override
+    public void prerender() {
+        this.prepresentar();
+    }
+
+    @Override
+    @PreDestroy
+    public void destroy() {
+#if($pagetype != 4)
+#writeJavaCode209(0)##close-data-providers
+#writeJavaCode210(0)##close-reference-data-providers
+#end
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode302 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="propiedades estandar para el manejo de los beans de contexto: request, session y application">
+    protected RequestBean1 getRequestBean1() {
+        return (RequestBean1) getBean("RequestBean1");
+    }
+
+    protected SessionBean1 getSessionBean1() {
+        return (SessionBean1) getBean("SessionBean1");
+    }
+
+    protected ApplicationBean1 getApplicationBean1() {
+        return (ApplicationBean1) getBean("ApplicationBean1");
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode303 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades y metodos de la interfaz PaginaAbstracta">
+    @Override
+    public FacesContext getFacesContext() {
+        return super.getFacesContext();
+    }
+
+    @Override
+    public Object getBean(String name) {
+        return super.getBean(name);
+    }
+
+    @Override
+    public boolean isPostBack() {
+        return super.isPostBack();
+    }
+
+    @Override
+    public void erase() {
+        super.erase();
+    }
+
+    @Override
+    public void info(String summary) {
+        super.info(summary);
+    }
+
+    @Override
+    public void warn(String summary) {
+        super.warn(summary);
+    }
+
+    @Override
+    public void error(String summary) {
+        super.error(summary);
+    }
+
+    @Override
+    public void fatal(String summary) {
+        super.fatal(summary);
+    }
+
+    @Override
+    public void log(String message) {
+        super.log(message);
+    }
+
+    @Override
+    public void log(String message, Throwable throwable) {
+        super.log(message, throwable);
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode304 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades de la interfaz PaginaBasica">
+    @Override
+    public ContextoPeticionEstandar getContextoPeticion() {
+        return (ContextoPeticionEstandar) this.getRequestBean1().getContextoPeticion();
+    }
+
+    @Override
+    public ContextoSesionEstandar getContextoSesion() {
+        return (ContextoSesionEstandar) this.getSessionBean1().getContextoSesion();
+    }
+
+    @Override
+    public ContextoAplicacionEstandar getContextoAplicacion() {
+        return (ContextoAplicacionEstandar) this.getApplicationBean1().getContextoAplicacion();
+    }
+
+    @Override
+    public String getEtiquetaMigasPan() {
+        return ETIQUETA_MIGAS_PAN;
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode305 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades de la interfaz PaginaConsulta">
+    @Override
+    public boolean isConsultaPendiente() {
+        return this.getGestor().isConsultaPendiente();
+    }
+
+    @Override
+    public void setConsultaPendiente(boolean consultaPendiente) {
+        this.getGestor().setConsultaPendiente(consultaPendiente);
+    }
+
+    @Override
+    public String getEtiquetaClaseDetalle() {
+        return ETIQUETA_CLASE_DETALLE;
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode306 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades de la interfaz PaginaConsultaConMaestro">
+#if($master0 != '')
+    @Override
+#end
+    public String getEtiquetaClaseMaestro() {
+        return ETIQUETA_CLASE_MAESTRO;
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode307 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades de la interfaz PaginaConsultaConArbol">
+    @Override
+    public Integer getOpcionZumSeleccionada() {
+        return this.getRecursoDataProvider().getOpcionZumNodo() == null
+                ? null : this.getRecursoDataProvider().getOpcionZumNodo().intValue();
+    }
+
+    @Override
+    public void setOpcionZumSeleccionada(Integer opcionZumSeleccionada) {
+        EnumOpcionZumNodo opcion = opcionZumSeleccionada == null ? null : EnumOpcionZumNodo.valueOf(opcionZumSeleccionada);
+        this.getRecursoDataProvider().setOpcionZumNodo(opcion);
+    }
+
+    @Override
+    public Object getColumnaEtiqueta() {
+        return EnumColumnaEtiqueta.AMBAS_COLUMNAS;
+    }
+
+    @Override
+    public String accionEscogerNodo() {
+        this.getGestor().escoger();
+        return null;
+    }
+    // </editor-fold>
+#end
+## =============================================================================
+#macro(writeJavaCode311 $foo)
+## =============================================================================
+#set($foo = $domain0.toUpperCase())
+#if($pagetype == 2 || $pagetype == 6)
+    private final static String ETIQUETA_MIGAS_PAN = BundleWebui.getString("detalle");
+#else
+    private final static String ETIQUETA_MIGAS_PAN = Bundle.getString("${pagecode}_ETIQUETA_MIGAS_PAN");
+#end
+
+    private final static String ETIQUETA_CLASE_DETALLE = Bundle.getString("${pagecode}_ETIQUETA_CLASE_DETALLE");
+
+    private final static String ETIQUETA_CLASE_MAESTRO = Bundle.getString("${pagecode}_ETIQUETA_CLASE_MAESTRO");
+
+    @Override
+    public RecursoCachedRowSetDataProvider getRecursoDataProvider() {
+        return this.get${domain1}DataProvider();
+    }
+
+    @Override
+    public long getFuncionConsultarRecurso() {
+        return ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_CONSULTAR_$foo;
+    }
+
+    @Override
+    public long getFuncionCrearRecurso() {
+#if($domainclasstype1 == 12 || $domainclasstype1 == 14 || $domainclasstype1 == 22 || $domainclasstype4 == 0 || $pagetype == 5 || $pagetype == 6 || $pagetype == 7)
+        return -1;
+#else
+        return ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_CREAR_$foo;
+#end
+    }
+
+    @Override
+    public long getFuncionModificarRecurso() {
+#if($domainclasstype1 == 14 || $domainclasstype1 == 22 || $domainclasstype5 == 0 || $pagetype == 5 || $pagetype == 6 || $pagetype == 7)
+        return -1;
+#else
+        return ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_MODIFICAR_$foo;
+#end
+    }
+
+    @Override
+    public long getFuncionEliminarRecurso() {
+#if($domainclasstype1 == 12 || $domainclasstype1 == 14 || $domainclasstype1 == 22 || $domainclasstype6 == 0 || $pagetype == 5 || $pagetype == 6 || $pagetype == 7)
+        return -1;
+#else
+        return ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_ELIMINAR_$foo;
+#end
+    }
+
+    @Override
+    public Option[] getOpcionesListaFuncionEdicion() {
+#if($pagetype == 3 || $pagetype == 7)
+        return new Option[]{ //
+                // Al implementar PaginaActualizacionConEdicionMultiple esta lista deberia incluir al menos 2 funciones
+                // new Option("", bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionEdicion()),
+                // new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_MODIFICAR_$foo, BundleWebui.getString("editar")),
+                // new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_DESACTIVAR_$foo, BundleWebui.getString("desactivar")),
+                // new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_REACTIVAR_$foo, BundleWebui.getString("reactivar"))
+                };
+#else
+        return this.getAsistente().getOpcionesListaFuncionEdicion();
+#end
+    }
+
+    @Override
+    public Option[] getOpcionesListaFuncionAccion() {
+#if($pagetype == 3 || $pagetype == 7)
+//      Al implementar PaginaActualizacionConAccionMultiple esta lista deberia incluir al menos 2 funciones; por ejemplo:
+//      Option[] opciones = new Option[]{
+//          new Option("", bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
+//          new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_PROCESAR_$foo, BundleWebui.getString("procesar"))
+//      };
+//      return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
+        return new Option[]{};
+#else
+        return this.getAsistente().getOpcionesListaFuncionAccion();
+#end
+    }
+
+#if($master0 != '')
+    @Override
+#end
+    public RecursoCachedRowSetDataProvider getRecursoMaestroDataProvider() {
+#if($master0 != '')
+        return this.get${master1}DataProvider();
+#else
+        return null;
+#end
+    }
+
+#if($master0 != '')
+    @Override
+#end
+    public String getColumnaIdentificacionRecursoMaestro() {
+#if($master0 != '' && $joincolname0 != '')
+        return ${domain1}CachedRowSetDataProvider${domaincrsdp}.COLUMNA_$joincolname0.toUpperCase();
+#else
+        return null;
+#end
+    }
+#end
+## =============================================================================
+#macro(writeJavaCode312 $foo)
+## =============================================================================
+    @Override
+    public String getVinculoPaginaConsultaDetalle() {
+#if($outcome2 != '')
+        return "detalle";
+#elseif($pagemap2.containsKey($domain0) && ($pagetype == 1 || $pagetype == 3))
+        return "detalle";
+#elseif($pagemap6.containsKey($domain0) && ($pagetype == 5 || $pagetype == 7))
+        return "detalle";
+#else
+//      return "detalle";
+        return null;
+#end
+    }
+
+    public String getScriptAbrirVentanaVerDetalle() {
+#set($foo = $domain0.toUpperCase())
+#if($outcome2 != '')
+        return null;
+#elseif($pagemap2.containsKey($domain0) && ($pagetype == 1 || $pagetype == 3))
+        String urx = URX2.DETALLE_$foo;
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx);
+#elseif($pagemap6.containsKey($domain0) && ($pagetype == 5 || $pagetype == 7))
+        String urx = URX2.CONSULTA_DETALLE_$foo;
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx);
+#else
+//      String urx = URX2.DETALLE_$foo;
+//      return this.getGestor().getScriptAbrirVentanaVerDetalle(urx);
+##      return this.getGestor().getScriptAbrirVentanaVerDetalleNoDisponible();
+        return null;
+#end
+    }
+#end
+## =============================================================================
+#macro(writeJavaCode313 $foo)
+## =============================================================================
+    protected void preiniciar() {
+        /*
+         * Esta funcion debe ejecutarse al comienzo de init(),
+         * *antes* de que se inicien los componentes administrados.
+         */
+        this.getGestor().preiniciar();
+    }
+
+    protected void iniciar() {
+        /*
+         * Esta funcion debe ejecutarse al final de init(),
+         * *despues* de que se inicien los componentes administrados.
+         */
+        this.getGestor().iniciar();
+#if($pagetype == 1 || $pagetype == 2 || $pagetype == 5 || $pagetype == 6)
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($converter1 == '')
+#elseif($columna.coltype == 2)
+##FIX 03/04/2010 floating point numbers
+## -----------------------------------------------------------------------------
+#set($decformat = '')
+#if($columna.colprec < 1)
+#set($maxintdig = 1)
+#set($maxfradig = 15)
+#set($decformat = '0.0##############E0')
+#elseif($columna.colscale < 0)
+#set($maxintdig = $columna.colprec)
+#set($maxfradig = 0)
+#elseif($columna.colprec > $columna.colscale)
+#set($maxintdig = $columna.colprec - $columna.colscale)
+#set($maxfradig = $columna.colscale)
+#else
+#set($maxintdig = 1)
+#set($maxfradig = $columna.colscale)
+#end
+        converter${colname1}1.setMinIntegerDigits(1);
+        converter${colname1}1.setMaxIntegerDigits($maxintdig);
+        converter${colname1}1.setMaxFractionDigits($maxfradig);
+#if($decformat != '')
+        converter${colname1}1.setPattern("$decformat");
+#end
+## -----------------------------------------------------------------------------
+#end
+#end
+#end
+    }
+
+    protected void preprocesar() {
+        /*
+         * Esta funcion debe ejecutarse al final de preprocess().
+         */
+        this.getGestor().preprocesar();
+    }
+
+    protected void prepresentar() {
+        /*
+         * Esta funcion debe ejecutarse al final de prerender().
+         */
+        this.getGestor().prepresentar();
+    }
+#end
+## =============================================================================
+#macro(writeJavaCode314 $foo)
+## =============================================================================
+    @Override
+    public void posconsultar() {
+    /*
+     * ejecutar las funciones de consulta de los data provider "secundarios" de la pagina,
+     * tales como, por ejemplo, los data provider de las listas desplegables y otros componentes,
+     * que NO correspondan a recursos del tipo "Gestión Manual" (NO modificables por el usuario).
+     */
+
+    /*
+     * invocar posrefrescar() para consultar los recursos del tipo "Gestión Manual".
+     */
+    // this.posrefrescar();
+    }
+
+    @Override
+    public void posrefrescar() {
+    /*
+     * ejecutar las funciones de consulta de los data provider "secundarios" de la pagina,
+     * tales como, por ejemplo, los data provider de las listas desplegables y otros componentes,
+     * que correspondan a recursos del tipo "Gestión Manual" (modificables por el usuario).
+     */
+    }
+#end
+## =============================================================================
+#macro(writeJavaCode315 $foo)
+## =============================================================================
+    public String botonIrAlPrimero${foo}_action() {
+        this.getGestor().irAlPrimero();
+        return null;
+    }
+
+    public String botonIrAlAnterior${foo}_action() {
+        this.getGestor().irAlAnterior();
+        return null;
+    }
+
+    public String botonIrAlSiguiente${foo}_action() {
+        this.getGestor().irAlSiguiente();
+        return null;
+    }
+
+    public String botonIrAlUltimo${foo}_action() {
+        this.getGestor().irAlUltimo();
+        return null;
+    }
+
+    public String botonProcesarFila${foo}_action() {
+        return null;
+    }
+
+    public String getScriptAbrirVentanaProcesarFila${foo}() {
+#set($y = 'null')
+#foreach($pagefoo4 in $pagemap4)
+#if($y == 'null' && $pagefoo4.dominioIdDominio.codigoDominio.equals($domain0))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $pagefoo4.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $pagefoo4.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+        String urx = URX2.${foo1}_${foo2};
+#set($y = 'this.getGestor().getScriptAbrirVentana(urx)')
+#end
+#end##foreach
+#if($y == 'null' && $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase)
+#foreach($pagefoo4 in $pagemap4)
+#if($y == 'null' && $pagefoo4.dominioIdDominio.codigoDominio.equals($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase.codigoClaseRecurso))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $pagefoo4.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $pagefoo4.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+        String urx = URX2.${foo1}_${foo2};
+#set($y = 'this.getGestor().getScriptAbrirVentana(urx)')
+#end
+#end##foreach
+#end
+        return $y;
+    }
+
+#end
+## =============================================================================
+#macro(writeJavaCode322 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para abrir archivos adjuntos">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($colname0.startsWith('nombre_archivo'))
+    public String getText${objname1}Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return JSF.getExtensionNombreArchivo(nombre);
+    }
+
+    public String getToolTip${objname1}Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return JSF.getUrlNombreArchivo(nombre);
+    }
+
+    public String getScript${objname1}Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return JSF.getScriptAbrirVentanaArchivo(nombre);
+    }
+
+    public boolean is${objname1}Boton3Rendered() {
+        return bean == null ? true : this.getText${objname1}Boton3() != null;
+    }
+
+    public boolean isTableColumn${colname1}3Rendered() {
+##      return bean == null ? true : bean.getGestor().isFuncionCheckChangesHabilitada() || this.is${objname1}Boton3Rendered();
+##      return bean == null ? true : bean.getGestor().isFilaDisponible();
+        return true;
+    }
+
+#end
+#end
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode323 $foo)
+## =============================================================================
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer $colname2">
+    private GestorBusquedaReferencia gestorBusqueda${colname1} = null;
+
+    private boolean funcionSelectEjecutable${colname1} = true;
+
+    protected GestorBusquedaReferencia getGestorBusqueda${colname1}() {
+        if (this.gestorBusqueda${colname1} == null) {
+            this.gestorBusqueda${colname1} = new GestorBusquedaReferencia(
+                    bean.get${domain1}DataProvider(),
+                    bean.get${reftabname1}ReferenceDataProvider(),
+                    ${domain1}CachedRowSetDataProvider${domaincrsdp}.COLUMNA_$columna.colname.toUpperCase(),
+                    this.funcionSelectEjecutable${colname1});
+        }
+        return this.gestorBusqueda${colname1};
+    }
+
+    protected FiltroBusqueda getFiltroBusqueda${colname1}() {
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        FiltroBusqueda filtro = new FiltroBusqueda();
+#if($includedFields.containsKey($colname0))
+#set($crp = $includedFields.get($colname0))
+#set($fcrpcolsize = $crp.filtroClaRecParIdClaseRecursoParCollection.size())
+#if($fcrpcolsize == 0)
+        /*
+        String columna;
+        EnumOperadorCom comparacion;
+        Object valor;
+        filtro.addCriterio(columna, comparacion, valor);
+        */
+#else
+        ArrayList array = new ArrayList();
+        /**/
+        String columna;
+        EnumOperadorCom comparacion;
+        String string;
+        Object valor;
+#set($fcrpcol = $utils.sortCollection($crp.filtroClaRecParIdClaseRecursoParCollection))
+#foreach($fcrp in $fcrpcol)
+        /**/
+#set($fee = $fcrp.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.codigoParametro.toUpperCase())
+#set($fee = "${reftabname1}CachedRowSetDataProvider${reftabcrsdp}.COLUMNA_${fee}")
+#set($noc = $fcrp.operadorComNumeroOperadorCom.numeroOperadorCom)
+#set($faa = "EnumOperadorCom.$operators.get($noc.toString()).toUpperCase()")
+#set($stp = '')
+#if($fcrp.claseRecursoParIdClaseRecursoParValor)
+#set($foo = $utils.getUpperCamelCase($fcrp.claseRecursoParIdClaseRecursoParValor.parametroIdParametro.codigoParametro))
+#set($foo = "bean.get${domain1}DataProvider().get${foo}(rowKey)")
+#elseif($fcrp.valor)
+#set($stp = $fcrp.valor)
+#set($ntd = $fcrp.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.tipoDatoParNumeroTipoDatoPar.numeroTipoDatoPar)
+#if($noc == 51 || $noc == 52 || $noc == 161 || $noc == 162)##IN, NOT IN, EXISTS, NOT EXISTS
+        array.clear();
+#set($stp = $utils.getPatronParametrizado($fcrp.valor))
+#set($pdq = $utils.getParametros($fcrp.valor))
+#foreach($p in $pdq)
+#set($foo = $utils.getUpperCamelCase($p))
+#if($p == 'userid')
+        array.add(TLC.getControlador().getUsuario().getIdUsuario());
+#else
+        array.add(bean.get${domain1}DataProvider().get${foo}(rowKey));
+#end
+#end##foreach
+#set($foo = 'STP.getStringSqlParametrizado(string, array.toArray())')
+#elseif($stp == '{userid}')
+#set($foo = 'TLC.getControlador().getUsuario().getIdUsuario()')
+#elseif($ntd == 1)
+#set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ALFANUMERICO)')
+#elseif($ntd == 2)
+#set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.NUMERICO)')
+#elseif($ntd == 3)
+#set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.FECHA_HORA)')
+#elseif($ntd == 4)
+#set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ENTERO)')
+#if($fcrp.claseRecursoParIdClaseRecursoParColumna.claseRecursoIdClaseRecursoValor.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso == 12)
+#set($crvname = $fcrp.claseRecursoParIdClaseRecursoParColumna.claseRecursoIdClaseRecursoValor.codigoClaseRecurso)
+#set($options = $utils.enumMap($crvname))
+#if($options.containsKey($fcrp.valor))
+#set($foo = "com.egt.base.enums.Enum${utils.getUpperCamelCase($crvname)}.${options.get($fcrp.valor).toUpperCase()}.getOptionValue()")
+#end
+#end
+#elseif($ntd == 5)
+#set($foo = 'STP.getObjeto(string, EnumTipoDatoPar.ENTERO_GRANDE)')
+#else
+#set($foo = 'STP.getObjeto(string)')
+#end
+#else
+#set($foo = 'null')
+#end
+#if($noc == 161 || $noc == 162)##EXISTS, NOT EXISTS
+#else
+        columna = $fee;
+        comparacion = $faa;
+#end
+#if($foo.startsWith('STP'))
+        string = "$stp";
+#end
+#if($noc == 51 || $noc == 52)##IN, NOT IN
+        string = $foo;
+        filtro.addCriterio(columna, comparacion, string);
+#elseif($noc == 161)##EXISTS
+        string = $foo;
+        filtro.addCriterio(true, string);
+#elseif($noc == 162)##NOT EXISTS
+        string = $foo;
+        filtro.addCriterio(false, string);
+#else
+        valor = $foo;
+        filtro.addCriterio(columna, comparacion, valor);
+#end
+#end##foreach
+#end
+#end
+        return filtro;
+    }
+
+    public void ${objname2}_validate(FacesContext context, UIComponent component, Object value) {
+        if (bean == null) {
+            return;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        this.getGestorBusqueda${colname1}().setFiltroBusqueda(this.getFiltroBusqueda${colname1}());
+        this.getGestorBusqueda${colname1}().validarCodigoRecursoReferenciado(context, component, value, rowKey, false);
+    }
+
+    public String getTexto$objname1() {
+        if (bean == null) {
+            return "abc";
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        if (bean.getGestor().isFilaNoProcesada()) {
+            return STP.getString(bean.get${domain1}DataProvider().get${colname1}(rowKey));
+        }
+        this.getGestorBusqueda${colname1}().setFiltroBusqueda(this.getFiltroBusqueda${colname1}());
+        return this.getGestorBusqueda${colname1}().getCodigoRecursoReferenciado(rowKey);
+    }
+
+    public void setTexto$objname1(String value) {
+        if (bean == null) {
+            return;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        this.getGestorBusqueda${colname1}().setCodigoRecursoReferenciado(rowKey, value);
+    }
+
+    public String getToolTip$objname1() {
+        if (bean == null) {
+            return "abc";
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        if (bean.getGestor().isFilaNoProcesada()) {
+            return STP.getString(bean.get${domain1}DataProvider().get${colname1}(rowKey));
+        }
+        this.getGestorBusqueda${colname1}().setFiltroBusqueda(this.getFiltroBusqueda${colname1}());
+        return this.getGestorBusqueda${colname1}().getNombreRecursoReferenciado(rowKey);
+    }
+
+#if($cb1type3 != '')
+    public String getScript${objname1}Boton1() {
+        if (bean == null) {
+            return null;
+        }
+        long funcion = ${reftabname1}CachedRowSetDataProvider${reftabcrsdp}.FUNCION_CONSULTAR_$reftabname0.toUpperCase();
+        String campo = bean.get$objname1().getClientId(bean.getFacesContext());
+        String boton = bean.getBotonAplicar1().getClientId(bean.getFacesContext());
+    #set($ops = 0)
+    #if($includedFields.containsKey($colname0))
+        #set($crp = $includedFields.get($colname0))
+        #set($ops = $crp.ordenPaginaSeleccion)
+    #end
+    #if($ops == 1)
+        #if($pagemap1.containsKey($reftabname0))
+            #writeScriptBoton1UsingPaginaSeleccion1Switch()
+        #elseif($pagemap5.containsKey($reftabname0))
+            #writeScriptBoton1UsingPaginaSeleccion5()
+        #else
+            #writeScriptBoton1UsingPaginaSeleccionX()
+        #end
+    #elseif($ops == 2)
+        #if($pagemap5.containsKey($reftabname0))
+            #writeScriptBoton1UsingPaginaSeleccion5()
+        #elseif($pagemap1.containsKey($reftabname0))
+            #writeScriptBoton1UsingPaginaSeleccion1Switch()
+        #else
+            #writeScriptBoton1UsingPaginaSeleccionX()
+        #end
+    #elseif($pagemap5.containsKey($reftabname0))
+        #writeScriptBoton1UsingPaginaSeleccion5()
+    #else
+        #writeScriptBoton1UsingPaginaSeleccionX()
+    #end
+    }
+
+#end
+#if($cb2type3 != '')
+    public String getScript${objname1}Boton2() {
+        if (bean == null) {
+            return null;
+        }
+#if($pagemap6.containsKey($reftabname0))
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String urx = URX2.CONSULTA_DETALLE_$reftabname0.toUpperCase();
+        Long id = bean.get${domain1}DataProvider().get$colname1(rowKey);
+        return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+#elseif($pagemap2.containsKey($reftabname0))
+#set($refappl2 = $pagemap2.get($reftabname0).aplicacionIdAplicacion)
+#if($pagina.aplicacionIdAplicacion.equals($refappl2))
+//      RowKey rowKey = bean.getGestor().getCurrentRowKey();
+//      String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+//      Long id = bean.get${domain1}DataProvider().get$colname1(rowKey);
+//      return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+##      return this.getGestor().getScriptAbrirVentanaVerDetalleNoDisponible();
+        return null;
+#else
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+        Long id = bean.get${domain1}DataProvider().get$colname1(rowKey);
+        return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+#end
+#else
+//      RowKey rowKey = bean.getGestor().getCurrentRowKey();
+//      String urx = URX2.DETALLE_$reftabname0.toUpperCase();
+//      Long id = bean.get${domain1}DataProvider().get$colname1(rowKey);
+//      return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+##      return this.getGestor().getScriptAbrirVentanaVerDetalleNoDisponible();
+        return null;
+#end
+    }
+
+    public boolean is${objname1}Boton2Rendered() {
+        return bean == null ? true : bean.get${reftabname1}ReferenceDataProvider().isRecursoNombrable();
+    }
+
+    public boolean is${objname1}Boton3Rendered() {
+        return bean == null ? true : !this.is${objname1}Boton2Rendered();
+    }
+
+    public boolean is${objname1}Panel2Rendered() {
+#if($secname1 == '')
+        return is${objname1}Boton2Rendered();
+#else
+        return is${objname1}Boton2Rendered() && isGrid${colname1}Rendered();
+#end
+    }
+
+#end
+#if($cb1type3 != '' || $cb2type3 != '')
+    public boolean isTableColumn${colname1}3Rendered() {
+#if($cb2type3 == '')
+        return bean == null ? true : bean.getGestor().isFuncionCheckChangesHabilitada();
+#else
+        return bean == null ? true : bean.getGestor().isFuncionCheckChangesHabilitada() || this.is${objname1}Boton3Rendered();
+#end
+    }
+
+#end
+    // </editor-fold>
+
+#end
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode324 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#if($columna.isnullable == 0)
+#set($foo = "false")
+#else
+#set($foo = "true")
+#end
+    public Object getOpciones$objname1() {
+##      return JSF.getListaOpciones(${refenuname1}.values(), $foo, false);
+        return JSF.getListaOpciones(${refenuname1}.values(), true, false);
+    }
+
+#end
+#end
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#if($refenuname1 == 'EnumOpcionBinaria')
+   public boolean is${colname1}() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return BitUtils.valueOf(value);
+    }
+
+    public boolean isNo${colname1}() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return !BitUtils.valueOf(value);
+    }
+
+#else
+    public boolean isNull${colname1}() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return value == null;
+    }
+
+    public boolean isNotNull${colname1}() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return value != null;
+    }
+
+#set($options = $utils.enumMap($reftabname0))
+#foreach($opt in $options)
+    public boolean is${colname1}$utils.getUpperCamelCase($opt)() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.get${domain1}DataProvider().get${colname1}(rowKey);
+        return value != null && value.equals(${refenuname1}.${opt.toUpperCase()}.intValue());
+    }
+
+#end
+#end
+#end
+#end
+## -----------------------------------------------------------------------------------------------------------
+#set($sortedFieldsCollection = $utils.sortIncludedFieldsMap($includedFields))
+#foreach($field in $sortedFieldsCollection)
+#set($colname = $field.parametroIdParametro.codigoParametro)
+#if($includedColumns.containsKey($colname))
+#set($columna = $includedColumns.get($colname))
+#setPropiedadesColumnaWeb($columna)
+#if($field.claseRecursoSecIdClaseRecursoSec)
+#set($secname0 = $utils.getStringAscii($field.claseRecursoSecIdClaseRecursoSec.etiquetaClaseRecursoSec))
+#set($secname1 = $utils.getUpperJavaIdentifier($secname0))
+#set($secname2 = $utils.getLowerJavaIdentifier($secname0))
+#else
+#set($secname0 = '')
+#set($secname1 = '')
+#set($secname2 = '')
+#end
+    public boolean isGrid${colname1}Rendered() {
+#if($secname1 == '')
+        return true;
+#elseif($noInsertFields.containsKey($columna.colname) && $noUpdateFields.containsKey($columna.colname))
+        return bean == null;
+#else
+        if (bean == null) {
+            return true;
+        }
+#if($noInsertFields.containsKey($columna.colname))
+#set($expresion1 = 'bean.getGestor().isFilaModificada()')
+#elseif($noUpdateFields.containsKey($columna.colname))
+#set($expresion1 = 'bean.getGestor().isFilaCreada()')
+#else
+#set($expresion1 = 'bean.getGestor().isFilaProcesada()')
+#end
+#set($expresion2 = " && isSeccion${secname1}Rendered()")
+        return $expresion1$expresion2;
+#end
+    }
+
+#end
+#end##foreach
+## -----------------------------------------------------------------------------------------------------------
+#set($col1 = $utils.sortCollection($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoSecIdClaseRecursoCollection))
+#foreach($obj1 in $col1)
+#set($secname0 = $utils.getStringAscii($obj1.etiquetaClaseRecursoSec))
+#set($secname1 = $utils.getUpperJavaIdentifier($secname0))
+#set($secname2 = $utils.getLowerJavaIdentifier($secname0))
+    public boolean isSeccion${secname1}Rendered() {
+#set($col2 = $utils.sortCollection($obj1.filtroClaRecSecIdClaseRecursoSecCollection))
+#if($col2.size() > 0)
+        if (bean == null) {
+            return true;
+        }
+        boolean b = true;
+#foreach($obj2 in $col2)
+#set($fee = $obj2.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.codigoParametro)
+#if($obj2.operadorComNumeroOperadorCom.numeroOperadorCom)
+#set($faa = $obj2.operadorComNumeroOperadorCom.numeroOperadorCom)
+#else
+#set($faa = 11)
+#end
+#if($obj2.valor)
+#set($foo = $obj2.valor)
+#else
+#set($foo = '')
+#end
+#if($includedColumns.containsKey($fee))
+#set($columna = $includedColumns.get($fee))
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#if($refenuname1 == 'EnumOpcionBinaria')
+#if($faa == 11)
+#if($foo == '' || $foo == '0')
+        b &= isNo${colname1}();
+#else
+        b &= is${colname1}();
+#end
+#else##faa!=11
+#if($foo == '' || $foo == '0')
+        b &= is${colname1}();
+#else
+        b &= isNo${colname1}();
+#end
+#end
+#elseif($faa == 1)
+        b &= isNull${colname1}();
+#elseif($faa == 2)
+        b &= isNotNull${colname1}();
+#elseif($faa == 11 || $faa == 12)
+#set($options = $utils.enumMap($reftabname0))
+#foreach($key in $options.keySet())
+#if($key == $foo)
+#set($opt = $options.get($key))
+#if($faa == 11)
+        b &= is${colname1}$utils.getUpperCamelCase($opt)();
+#else
+        b &= !is${colname1}$utils.getUpperCamelCase($opt)();
+#end
+#end
+#end##foreach-key
+#end
+#end
+#end
+#end##foreach-obj2
+        return b;
+#else##col2.size<=0
+        return true;
+#end##if-col2.size>0
+    }
+
+#set($secname0 = $utils.getStringAscii($obj1.etiquetaClaseRecursoSec))
+#set($secname1 = $utils.getUpperJavaIdentifier($secname0))
+#set($secname2 = $utils.getLowerJavaIdentifier($secname0))
+    public boolean isSeccion${secname1}Hidden() {
+##      if (bean == null) {
+##          return true;
+##      }
+        return !isSeccion${secname1}Rendered();
+    }
+
+#end##foreach-obj1
+#if($targetscount > 0)
+#foreach($target in [1..$targetscount])
+#if($targetsjoins.containsKey("target$target"))
+#set($obj1 = $targetsjoins.get("target$target"))
+    public boolean isImageHyperlink${target}_disabled() {
+        if (bean == null) {
+            return false;
+        }
+#set($col2 = $utils.sortCollection($obj1.filtroClaRecVinIdClaseRecursoParCollection))
+#if($col2.size() > 0)
+        boolean b = !bean.getGestor().isFuncionOpenLinkInhabilitada();
+#foreach($obj2 in $col2)
+#set($fee = $obj2.claseRecursoParIdClaseRecursoParColumna.parametroIdParametro.codigoParametro)
+#if($obj2.operadorComNumeroOperadorCom.numeroOperadorCom)
+#set($faa = $obj2.operadorComNumeroOperadorCom.numeroOperadorCom)
+#else
+#set($faa = 11)
+#end
+#if($obj2.valor)
+#set($foo = $obj2.valor)
+#else
+#set($foo = '')
+#end
+#if($includedColumns.containsKey($fee))
+#set($columna = $includedColumns.get($fee))
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#if($refenuname1 == 'EnumOpcionBinaria')
+#if($faa == 11)
+#if($foo == '' || $foo == '0')
+        b &= isNo${colname1}();
+#else
+        b &= is${colname1}();
+#end
+#else##faa!=11
+#if($foo == '' || $foo == '0')
+        b &= is${colname1}();
+#else
+        b &= isNo${colname1}();
+#end
+#end
+#elseif($faa == 1)
+        b &= isNull${colname1}();
+#elseif($faa == 2)
+        b &= isNotNull${colname1}();
+#elseif($faa == 11 || $faa == 12)
+#set($options = $utils.enumMap($reftabname0))
+#foreach($key in $options.keySet())
+#if($key == $foo)
+#set($opt = $options.get($key))
+#if($faa == 11)
+        b &= is${colname1}$utils.getUpperCamelCase($opt)();
+#else
+        b &= !is${colname1}$utils.getUpperCamelCase($opt)();
+#end
+#end
+#end##foreach-key
+#end
+#end
+#end
+#end##foreach-obj2
+        return !b;
+#else##col2.size<=0
+        return bean.getGestor().isFuncionOpenLinkInhabilitada();
+#end
+    }
+
+#end##targetsjoins.containsKey
+#end##foreach-target
+#end##if-targetscount>0
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeJavaCode325 $foo)
+## =============================================================================
+    // <editor-fold defaultstate="collapsed" desc="metodos para validar referencias">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+    public void ${objname2}_validate(FacesContext context, UIComponent component, Object value) {
+        this.getAsistente().${objname2}_validate(context, component, value);
+    }
+
+#end
+#end
+    // </editor-fold>
+
+#end
+## =============================================================================
+#macro(writeScriptBoton1UsingPaginaSeleccion1Switch)
+## =============================================================================
+    #set($refappl1 = $pagemap1.get($reftabname0).aplicacionIdAplicacion)
+    #if($pagina.aplicacionIdAplicacion.equals($refappl1))
+        #if($pagemap5.containsKey($reftabname0))
+            #writeScriptBoton1UsingPaginaSeleccion5()
+        #else
+            #writeScriptBoton1UsingPaginaSeleccionX()
+        #end
+    #else
+        #writeScriptBoton1UsingPaginaSeleccion1()
+    #end
+#end
+## =============================================================================
+#macro(writeScriptBoton1UsingPaginaSeleccion1)
+## =============================================================================
+        String urx = URX2.TABLA_$reftabname0.toUpperCase();
+        return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, this.getFiltroBusqueda${colname1}());
+#end
+## =============================================================================
+#macro(writeScriptBoton1UsingPaginaSeleccion5)
+## =============================================================================
+        String urx = URX2.CONSULTA_TABLA_$reftabname0.toUpperCase();
+        return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, this.getFiltroBusqueda${colname1}());
+#end
+## =============================================================================
+#macro(writeScriptBoton1UsingPaginaSeleccionX)
+## =============================================================================
+##      String urx = URX2.LISTA_RECURSOS;
+##      return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, this.getFiltroBusqueda${colname1}());
+        return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(funcion, campo, boton, this.getFiltroBusqueda${colname1}());
+#end

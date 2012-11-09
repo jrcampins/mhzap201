@@ -1,0 +1,174 @@
+#setPropiedadesPagina($pagina)
+#set($entities = $utils.newMap())
+#set($inparams = $utils.newMap())
+#setIncludedParametersMap($inparams)
+#setVirtualFormParameterFieldList()
+#set($virtualForm1 = "virtualForm1 | listaFuncionAccion1 $virtualFormFieldList | ")
+#set($virtualForm2 = 'virtualForm2 | | ')
+#set($virtualForm3 = 'virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 ')
+#set($virtualForm4 = 'virtualForm4 | | ')
+#writeJspCode101($domainclassid)##license
+#writeJspCode102(0)##root->cab3
+#writeJspCode103(0)##detalle
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            columns="2"
+                                            id="gridPanel$gridnum"
+                                            styleClass="pdq-grid-detalle-1">
+#writeJspCode114(1)##grid-botones-cursor
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+##                                              rendered="#{${pagecode}.gestor.designing}"
+                                                styleClass="pdq-grid-detalle-mensajes">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}"
+                                                    id="gridPanel$gridnum"
+                                                    styleClass="pdq-grid-detalle-mensajes-2">
+                                                    <webuijsf:staticText
+##                                                      binding="#{${pagecode}.textoTitulo1}"
+                                                        id="textoTitulo1"
+                                                        styleClass="pdq-text-titulo-1"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+## -----------------------------------------------------------------------------
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+#if($acciones < 2)
+                                                rendered="#{${pagecode}.gestor.designing}"
+#end
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.etiquetaListaFuncionAccion1}"
+                                                    id="etiquetaListaFuncionAccion1"
+                                                    for="listaFuncionAccion1"
+                                                    text="#{${pagecode}.gestor.i18n.textoEtiquetaListaFuncionAccion}"/>
+                                            </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                columns="7"
+                                                id="gridPanel$gridnum"
+#if($acciones < 2)
+                                                rendered="#{${pagecode}.gestor.designing}"
+#end
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown
+                                                    binding="#{${pagecode}.listaFuncionAccion1}"
+                                                    converter="#{${pagecode}.converterListaFuncionAccion1}"
+                                                    id="listaFuncionAccion1"
+                                                    items="#{${pagecode}.opcionesListaFuncionAccion}"
+                                                    onChange="webui.suntheme4_2.common.timeoutSubmitForm(this.form, 'listaFuncionAccion1');"
+                                                    required="true"
+                                                    selected="#{${pagecode}.gestor.valorListaFuncionAccion1}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipListaFuncionAccion}"/>
+                                                <webuijsf:staticText
+                                                    binding="#{${pagecode}.listaFuncionAccion1Texto1}"
+                                                    id="listaFuncionAccion1Texto1"/>
+                                                <webuijsf:message
+##                                                  binding="#{${pagecode}.messageListaFuncionAccion1}"
+                                                    for="listaFuncionAccion1"
+                                                    id="messageListaFuncionAccion1"/>
+                                                <webuijsf:helpInline
+                                                    binding="#{${pagecode}.helpInlineListaFuncionAccion1}"
+                                                    id="helpInlineListaFuncionAccion1"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-page"
+                                                    text="#{${pagecode}.gestor.i18n.inlineHelpListaFuncionAccion}"/>
+                                            </h:panelGrid>
+## -----------------------------------------------------------------------------
+#set($dbqt = '"')
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($rendered1 == '')
+#set($rendered1 = " rendered=${dbqt}#{${pagecode}.bit${colname1}Rendered.on}${dbqt}")
+#end
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${colname1}1}"
+                                                id="grid${colname1}1"$rendered1
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${colname1}1}"
+                                                    id="label${colname1}1"
+                                                    for="${objname2}"
+                                                    text="$columnlabel1"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${colname1}2}"
+                                                columns="7"
+                                                id="grid${colname1}2"$rendered1
+                                                styleClass="pdq-grid-elemento-1">
+#writeJspCode401(0)##fields
+                                            </h:panelGrid>
+#if($st2type3 != '')
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${colname1}3}"
+                                                id="grid${colname1}3"
+#if($cb2type3 != '')
+                                                rendered="#{${pagecode}.bit${objname1}Boton2Rendered.on}"
+#else
+                                                $rendered1
+#end
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${colname1}2}"
+                                                    id="label${colname1}2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="$columnlabel2"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${colname1}4}"
+                                                columns="7"
+                                                id="grid${colname1}4"
+#if($cb2type3 != '')
+                                                rendered="#{${pagecode}.bit${objname1}Boton2Rendered.on}"
+#else
+                                                $rendered1
+#end
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{${pagecode}.${objname2}Texto2}"
+                                                    id="${objname2}Texto2"/>
+#if($cb2type3 != '')
+                                                <webuijsf:button
+                                                    binding="#{${pagecode}.${objname2}Boton2}"
+                                                    id="${objname2}Boton2"
+                                                    onClick="#{${pagecode}.script${objname1}Boton2}"/>
+#end
+                                            </h:panelGrid>
+#end
+#end
+## -----------------------------------------------------------------------------
+#writeJspCode114(2)##grid-botones-cursor
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+##                                              rendered="#{${pagecode}.gestor.designing}"
+                                                styleClass="pdq-grid-detalle-mensajes">
+                                                <webuijsf:staticText
+##                                                  binding="#{${pagecode}.textoMensaje1}"
+                                                    id="textoMensaje1"
+                                                    style="font-weight: bold"/>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid 
+##                                          binding="#{${pagecode}.gridPanel$gridnum}" 
+                                            id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                id="gridPanel$gridnum">
+                                                <webuijsf:anchor 
+##                                                  binding="#{${pagecode}.anchor1}" 
+                                                    id="anchor1"/>
+                                            </h:panelGrid>
+#writeJspCode115($acciones)##grid-botones-accion
+                                        </h:panelGrid>
+#writeJspCode107(0)##pie3->root

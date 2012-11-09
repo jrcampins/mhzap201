@@ -1,0 +1,644 @@
+#ShowTime(0)
+#setPropiedadesSistema($aplicaciones)
+#ShowTime(1)
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#ShowTime(1)
+#setMapasPagina()
+#ShowTime(1)
+#set($funciones = $utils.sortCollection($pagina.dominioIdDominio.funcionIdDominioCollection))
+#setPropiedadesColeccionFunciones($funciones)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+## -----------------------------------------------------------------------------
+#writeJavaCode201(0)##imports
+#if($iminbiz == 13 || $iminrep == 22 || $iminexp == 23)
+import javax.ejb.EJB;
+#end
+#if($iminbiz == 13)
+import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+import com.egt.ejb.business.process.${domain1}BusinessProcessLocal;
+#end
+#if($iminrep == 22)
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+#end
+#if($iminexp == 23)
+import com.egt.ejb.core.exporter.ExporterBrokerLocal;
+#end
+## -----------------------------------------------------------------------------
+
+public class ${pagecode} extends AbstractPageBean
+#if($master0 != '')
+        implements PaginaActualizacion${domain1}Por${joinparname4}, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConFiltro, PaginaConsultaConTabla, PaginaConsultaConMaestro {
+#else
+        implements PaginaActualizacion${domain1}, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConFiltro, PaginaConsultaConTabla {
+#end
+
+    // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
+    private void _init() throws Exception {
+        textoFilasPorPagina1Validator1.setMinimum(1L);
+        textoFilasPorPagina1Validator1.setMaximum(50L);
+#writeJavaCode202(0)##init-converters-validators
+#writeJavaCode203(0)##init-data-providers
+#writeJavaCode204(0)##init-reference-data-providers
+    }
+
+## -----------------------------------------------------------------------------
+#writeJavaCode102(109)##root->cab3
+#writeJavaCode103(0)##detalle
+## -----------------------------------------------------------------------------
+    private Table table1 = new Table();
+  
+    @Override
+    public Table getTable1() {
+        return table1;
+    }
+  
+    public void setTable1(Table t) {
+        this.table1 = t;
+    }
+  
+    private TableRowGroup tableRowGroup1 = new com.egt.core.jsf.component.GrupoFilasTabla();
+
+    @Override
+    public TableRowGroup getTableRowGroup1() {
+        return tableRowGroup1;
+    }
+
+    @Override
+    public void setTableRowGroup1(TableRowGroup trg) {
+        this.tableRowGroup1 = trg;
+    }
+
+## -----------------------------------------------------------------------------
+##  private TableColumn tableRowGroup1SelectionColumn = new TableColumn();
+##
+##  public TableColumn getTableRowGroup1SelectionColumn() {
+##      return tableRowGroup1SelectionColumn;
+##  }
+##
+##  public void setTableRowGroup1SelectionColumn(TableColumn tc) {
+##      this.tableRowGroup1SelectionColumn = tc;
+##  }
+##
+    private Checkbox checkbox1 = new Checkbox();
+  
+    @Override
+    public Checkbox getCheckbox1() {
+        return checkbox1;
+    }
+  
+    public void setCheckbox1(Checkbox c) {
+        this.checkbox1 = c;
+    }
+  
+## -----------------------------------------------------------------------------
+    private TableColumn tableColumn1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumn1() {
+        return tableColumn1;
+    }
+
+    public void setTableColumn1(TableColumn tc) {
+        this.tableColumn1 = tc;
+    }
+
+    private Button botonEscogerFila1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonEscogerFila1() {
+        return botonEscogerFila1;
+    }
+
+    public void setBotonEscogerFila1(Button b) {
+        this.botonEscogerFila1 = b;
+    }
+
+    private Button botonDetallarFila1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonDetallarFila1() {
+        return botonDetallarFila1;
+    }
+
+    public void setBotonDetallarFila1(Button b) {
+        this.botonDetallarFila1 = b;
+    }
+
+    private Button botonProcesarFila1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonProcesarFila1() {
+        return botonProcesarFila1;
+    }
+
+    public void setBotonProcesarFila1(Button b) {
+        this.botonProcesarFila1 = b;
+    }
+
+    private Button botonRetornarFila1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonRetornarFila1() {
+        return botonRetornarFila1;
+    }
+
+    public void setBotonRetornarFila1(Button b) {
+        this.botonRetornarFila1 = b;
+    }
+
+## -----------------------------------------------------------------------------
+    private TableColumn tableColumn2 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumn2() {
+        return tableColumn2;
+    }
+
+    public void setTableColumn2(TableColumn tc) {
+        this.tableColumn2 = tc;
+    }
+
+    private ImageHyperlink hipervinculoAccionFila1 = new com.egt.core.jsf.component.Hipervinculo();
+
+    public ImageHyperlink getHipervinculoAccionFila1() {
+        return hipervinculoAccionFila1;
+    }
+
+    public void setHipervinculoAccionFila1(ImageHyperlink ih) {
+        this.hipervinculoAccionFila1 = ih;
+    }
+
+## -----------------------------------------------------------------------------
+    private TableColumn tableColumn3 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumn3() {
+        return tableColumn3;
+    }
+
+    public void setTableColumn3(TableColumn tc) {
+        this.tableColumn3 = tc;
+    }
+
+    private ImageHyperlink hipervinculoDetallarFila1 = new com.egt.core.jsf.component.Hipervinculo();
+
+    public ImageHyperlink getHipervinculoDetallarFila1() {
+        return hipervinculoDetallarFila1;
+    }
+
+    public void setHipervinculoDetallarFila1(ImageHyperlink ih) {
+        this.hipervinculoDetallarFila1 = ih;
+    }
+
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+## -----------------------------------------------------------------------------
+    private TableColumn tableColumn${colname1}1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumn${colname1}1() {
+        return tableColumn${colname1}1;
+    }
+
+    public void setTableColumn${colname1}1(TableColumn component) {
+        this.tableColumn${colname1}1 = component;
+    }
+
+    private Label label${colname1}1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}1() {
+        return label${colname1}1;
+    }
+
+    public void setLabel${colname1}1(Label l) {
+        this.label${colname1}1 = l;
+    }
+
+## -----------------------------------------------------------------------------
+#writeJavaCode205(0)##fields
+#writeJavaCode206(0)##converters, validators
+## -----------------------------------------------------------------------------
+#if($hl2type3 != '')
+    private TableColumn tableColumn${colname1}2 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumn${colname1}2() {
+        return tableColumn${colname1}2;
+    }
+
+    public void setTableColumn${colname1}2(TableColumn component) {
+        this.tableColumn${colname1}2 = component;
+    }
+
+    private Label label${colname1}2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}2() {
+        return label${colname1}2;
+    }
+
+    public void setLabel${colname1}2(Label l) {
+        this.label${colname1}2 = l;
+    }
+
+    private ImageHyperlink ${objname2}Hiper1 = new $hl2type3();
+
+    public ImageHyperlink get${objname1}Hiper1() {
+        return ${objname2}Hiper1;
+    }
+
+    public void set${objname1}Hiper1(ImageHyperlink component) {
+        this.${objname2}Hiper1 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+    private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getEtiquetaTextoFilasPorPagina1() {
+        return etiquetaTextoFilasPorPagina1;
+    }
+
+    public void setEtiquetaTextoFilasPorPagina1(Label l) {
+        this.etiquetaTextoFilasPorPagina1 = l;
+    }
+
+    private TextField textoFilasPorPagina1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getTextoFilasPorPagina1() {
+        return textoFilasPorPagina1;
+    }
+
+    public void setTextoFilasPorPagina1(TextField tf) {
+        this.textoFilasPorPagina1 = tf;
+    }
+
+    private Button botonRepaginar1 = new com.egt.core.jsf.component.Boton();
+
+    public Button getBotonRepaginar1() {
+        return botonRepaginar1;
+    }
+
+    public void setBotonRepaginar1(Button b) {
+        this.botonRepaginar1 = b;
+    }
+
+##  private Message messageFilasPorPagina1 = new Message();
+##
+##  public Message getMessageFilasPorPagina1() {
+##      return messageFilasPorPagina1;
+##  }
+##
+##  public void setMessageFilasPorPagina1(Message m) {
+##      this.messageFilasPorPagina1 = m;
+##  }
+##
+    private IntegerConverter textoFilasPorPagina1Converter1 = new IntegerConverter();
+  
+    public IntegerConverter getTextoFilasPorPagina1Converter1() {
+        return textoFilasPorPagina1Converter1;
+    }
+  
+    public void setTextoFilasPorPagina1Converter1(IntegerConverter ic) {
+        this.textoFilasPorPagina1Converter1 = ic;
+    }
+  
+    private LongRangeValidator textoFilasPorPagina1Validator1 = new LongRangeValidator();
+  
+    public LongRangeValidator getTextoFilasPorPagina1Validator1() {
+        return textoFilasPorPagina1Validator1;
+    }
+  
+    public void setTextoFilasPorPagina1Validator1(LongRangeValidator lrv) {
+        this.textoFilasPorPagina1Validator1 = lrv;
+    }
+  
+## -----------------------------------------------------------------------------
+#writeJavaCode105(1)##grid-botones-accion
+#writeJavaCode106(5)##grid-hiper-vinculos
+#writeJavaCode107(0)##pie3->root    
+## -----------------------------------------------------------------------------
+#writeJavaCode207(0)##data-providers
+#writeJavaCode208(0)##reference-data-providers
+## -----------------------------------------------------------------------------
+    // </editor-fold>
+/**/
+    public ${pagecode}() {
+    }
+
+#writeJavaCode301(0)##metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy
+
+#writeJavaCode302(0)##propiedades estandar para el manejo de los beans de contexto: request, session y application
+
+#writeJavaCode303(0)##implementacion estandar de propiedades y metodos de la interfaz PaginaAbstracta
+
+#writeJavaCode304(0)##implementacion estandar de propiedades de la interfaz PaginaBasica
+
+#writeJavaCode305(0)##implementacion estandar de propiedades de la interfaz PaginaConsulta
+
+#writeJavaCode306(0)##implementacion estandar de propiedades de la interfaz PaginaConsultaConMaestro
+
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades tipo fecha de la interfaz PaginaActualizacion${domain1}...">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($columna.coltype == 3)
+    @Override
+    public TextField getTextField$objname1() {
+        return this.get$objname1();
+    }
+
+#end
+#end
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="propiedad gestor de pagina de actualizacion con tabla">
+    private GestorPaginaActualizacionConTabla gestor = new GestorPaginaActualizacionConTabla(this);
+
+    @Override
+    public GestorPaginaActualizacionConTabla getGestor() {
+        return this.gestor;
+    }
+    // </editor-fold>
+
+#if($master0 != '')
+#set($foo = "AsistentePaginaActualizacion${domain1}Por${joinparname4}")
+#else
+#set($foo = "AsistentePaginaActualizacion${domain1}")
+#end
+    // <editor-fold defaultstate="collapsed" desc="propiedad asistente de pagina de actualizacion">
+    private ${foo} asistente = new ${foo}(this);
+
+    public ${foo} getAsistente() {
+        return this.asistente;
+    }
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="propiedades y metodos estandar: preiniciar, iniciar, preprocesar, prepresentar, consultar, posconsultar, posrefrescar">
+#writeJavaCode311(0)##implementacion estandar de metodos y propiedades
+
+    @Override
+    public String getVinculoPaginaConsultaConArbol() {
+        return "arbol";
+    }
+
+#writeJavaCode312(0)##implementacion estandar de metodos y propiedades
+
+#writeJavaCode313(0)##preiniciar, iniciar, preprocesar, prepresentar
+
+    @Override
+    public void consultar() {
+        FiltroBusqueda filtro = this.getGestor().getFiltroBusqueda(
+                this.getContextoPeticion().getFiltroFuncionSelect(),
+                this.getContextoPeticion().getCodigoFuncionSelect(),
+                this.getContextoPeticion().getNombreFuncionSelect());
+
+        this.consultar(filtro);
+    }
+
+    @Override
+    public void consultar(Long filtro) {
+        try {
+            this.get${domain1}DataProvider().consultar${domain1}(filtro);
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        } finally {
+            this.setConsultaPendiente(false);
+        }
+    }
+
+    @Override
+    public void consultar(FiltroBusqueda filtro) {
+        try {
+            this.get${domain1}DataProvider().consultar${domain1}(filtro);
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        } finally {
+            this.setConsultaPendiente(false);
+        }
+    }
+
+#writeJavaCode314(0)##posconsultar, posrefrescar
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos estandar para refrescar, agregar, editar, deshacer y eliminar de la plantilla #1">
+    public String botonEscogerFila1_action() {
+        this.getGestor().escoger();
+        return null;
+    }
+
+    public String botonDetallarFila1_action() {
+        if (this.getGestor().escoger()) {
+            return this.getGestor().accionVincularDetalle();
+        }
+        return null;
+    }
+
+    public String botonRetornarFila1_action() {
+        this.getGestor().retornar();
+        return null;
+    }
+
+    public String hipervinculoDetallarFila1_action() {
+        if (this.getGestor().escoger()) {
+            return this.getGestor().accionVincularDetalle();
+        }
+        return null;
+    }
+
+    public String botonRepaginar1_action() {
+        this.getGestor().repaginar();
+        return null;
+    }
+
+    public String botonAgregar1_action() {
+#if($requirednotprime1 == 1 && $outcome2 != '')
+        if (this.getGestor().agregar()) {
+            return this.getGestor().accionVincularDetalle();
+        }
+#else
+        this.getGestor().agregar();
+#end
+        return null;
+    }
+
+    public String botonEditar1_action() {
+        this.getGestor().editar();
+        return null;
+    }
+
+    public String botonEliminar1_action() {
+        this.getGestor().eliminar();
+        return null;
+    }
+
+    public String botonAplicar1_action() {
+        this.getGestor().aplicar();
+        return null;
+    }
+
+    public String botonDeshacer1_action() {
+        this.getGestor().deshacer();
+        return null;
+    }
+
+    public String botonConfirmar1_action() {
+        this.getGestor().confirmar();
+        return null;
+    }
+
+    public String botonDescartar1_action() {
+        this.getGestor().descartar();
+        return null;
+    }
+
+    public String botonProcesar1_action() {
+        this.getAsistente().procesar();
+        return null;
+    }
+
+    public String botonRefrescar1_action() {
+        this.getGestor().refrescar();
+        return null;
+    }
+
+    public String botonReconsultar1_action() {
+        this.getGestor().reconsultar();
+        return null;
+    }
+
+    public String botonRetornar1_action() {
+        this.getGestor().retornar();
+        return null;
+    }
+    // </editor-fold>
+
+## -----------------------------------------------------------------------------
+#writeJavaCode325(0)##validate
+#writeJavaCode108(5)##grid-hiper-vinculos
+## -----------------------------------------------------------------------------
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer las acciones especificas de la pagina">
+    public String botonProcesarFila1_action() {
+        return null;
+    }
+
+    public String getScriptAbrirVentanaProcesarFila1() {
+#set($y = 'null')
+#foreach($pagefoo4 in $pagemap4)
+#if($y == 'null' && $pagefoo4.dominioIdDominio.codigoDominio.equals($domain0))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $pagefoo4.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $pagefoo4.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+        String urx = URX2.${foo1}_${foo2};
+#set($y = 'this.getGestor().getScriptAbrirVentana(urx)')
+#end
+#end##foreach
+#if($y == 'null' && $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase)
+#foreach($pagefoo4 in $pagemap4)
+#if($y == 'null' && $pagefoo4.dominioIdDominio.codigoDominio.equals($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase.codigoClaseRecurso))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $pagefoo4.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $pagefoo4.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+        String urx = URX2.${foo1}_${foo2};
+#set($y = 'this.getGestor().getScriptAbrirVentana(urx)')
+#end
+#end##foreach
+#end
+        return $y;
+    }
+
+    public String hipervinculoAccionFila1_action() {
+        this.getGestor().escoger();
+        this.getGestor().procesar(new RowProcessor() {
+            // override metodo processRow
+            @Override
+            public void processRow(RowKey rowKey) throws Exception {
+                accionFila1(rowKey);
+            }
+        });
+        return null;
+    }
+
+    public String getScriptAbrirVentanaAccionFila1() {
+        return null;
+    }
+    // </editor-fold>
+## -----------------------------------------------------------------------------
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para ejecutar funciones">
+##  public void accionFila1() {
+##      accionFila1(this.getGestor().getCurrentRowKey());
+##  }
+##
+##  public void accionFila1(RowKey rowKey) {
+##      accionFila1(rowKey, 0);
+##  }
+##
+##  public void accionFila1(long funcion) {
+##      accionFila1(this.getGestor().getCurrentRowKey(), funcion);
+##  }
+##
+##  public void accionFila1(RowKey rowKey, long funcion) {
+##      // TODO: ejecutar funcion
+##  }
+    public void accionFila1(RowKey rowKey) {
+        long funcion = -1; /* TODO: cambiar -1 por el id de la funcion a ejecutar */
+        boolean ok = this.getRecursoDataProvider().esFilaAutorizada(rowKey, funcion);
+        if (ok) {
+            // TODO: ejecutar funcion
+        }
+    }
+ 
+    // </editor-fold>
+## -----------------------------------------------------------------------------
+/**/
+#if($iminbiz == 13)
+    @EJB
+    ${domain1}BusinessProcessLocal ${domain2}BusinessProcess;
+
+    @Override
+##  public ${domain1}BusinessProcessLocal get${domain1}BusinessProcess() {
+    public Object get${domain1}BusinessProcess() {
+        return ${domain2}BusinessProcess;
+    }
+
+    @EJB
+    private BusinessProcessMessengerLocal messenger;
+
+    @Override
+##  public BusinessProcessMessengerLocal getMessenger() {
+    public Object getMessenger() {
+        return messenger;
+    }
+
+#end
+#if($iminrep == 22)
+    @EJB
+    private ReporterBrokerLocal reporter;
+
+    @Override
+##  public ReporterBrokerLocal getReporter() {
+    public Object getReporter() {
+        return reporter;
+    }
+
+#end
+#if($iminexp == 23)
+    @EJB
+    private ExporterBrokerLocal exporter;
+
+    @Override
+##  public ExporterBrokerLocal getExporter() {
+    public Object getExporter() {
+        return exporter;
+    }
+
+#end
+    String footnote = "a partir de aqui coloque el codigo especifico de la pagina";
+}
+#ShowTime(2)

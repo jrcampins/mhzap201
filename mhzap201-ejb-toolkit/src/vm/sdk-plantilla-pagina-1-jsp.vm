@@ -1,0 +1,304 @@
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#set($tabbedInterface = '')
+#setPropiedadesPagina($pagina)
+#setMapasPagina()
+#setVirtualFormColumnFieldList()
+#set($virtualForm1 = "virtualForm1 | checkbox1 $virtualFormFieldList textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | ")
+#set($virtualForm2 = "virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 ")
+#set($virtualForm3 = "virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 ")
+#set($virtualForm4 = "virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ")
+#writeJspCode101($domainclassid)##license
+#writeJspCode102(0)##root->cab3
+#set($foo = $nivel.intValue() % 2)
+#if($foo == 0)
+#set($foo = 'FragmentoFiltro.jspf')
+#else
+#set($foo = 'FragmentoFiltro_1.jspf')
+#end
+                                <div class="pdq-div-filtro-1">
+                                    <jsp:directive.include file="$foo"/>
+                                </div>
+#writeJspCode103(0)##detalle
+                                        <webuijsf:table
+                                            binding="#{${pagecode}.table1}"
+                                            clearSortButton="true" 
+                                            deselectMultipleButton="true" 
+                                            id="table1"
+                                            paginateButton="false"
+                                            paginationControls="true" 
+                                            selectMultipleButton="true" 
+                                            sortPanelToggleButton="true"
+                                            width="960">
+                                            <webuijsf:tableRowGroup 
+                                                binding="#{${pagecode}.tableRowGroup1}" 
+                                                id="tableRowGroup1" 
+                                                rows="1"
+                                                selected="#{${pagecode}.gestor.filaEscogida}" 
+                                                sourceData="#{${pagecode}.${domain2}DataProvider}" 
+                                                sourceVar="currentRow">
+                                                <webuijsf:tableColumn 
+                                                    align="center" 
+##                                                  binding="#{${pagecode}.tableRowGroup1SelectionColumn}"
+                                                    id="tableRowGroup1SelectionColumn"
+                                                    onClick="setTimeout(function(){document.getElementById('form1:table1').initAllRows()}, 0);" 
+                                                    selectId="checkbox1">
+                                                    <webuijsf:checkbox 
+                                                        binding="#{${pagecode}.checkbox1}" 
+                                                        id="checkbox1"
+                                                        onClick="#{${pagecode}.gestor.scriptElegir}" 
+                                                        selected="#{${pagecode}.gestor.filaElegida}" 
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipCheckboxSeleccionMultiple}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    align="center" 
+                                                    binding="#{${pagecode}.tableColumn1}" 
+                                                    id="tableColumn1">
+                                                    <webuijsf:button 
+                                                        actionExpression="#{${pagecode}.botonEscogerFila1_action}"
+                                                        binding="#{${pagecode}.botonEscogerFila1}"
+                                                        disabled="#{${pagecode}.gestor.funcionPickItemInhabilitada}" 
+                                                        id="botonEscogerFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenEscoger}" 
+                                                        onClick="#{${pagecode}.gestor.scriptEscoger}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonEscogerFila}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonEscogerFila}"/>
+                                                    <webuijsf:button 
+                                                        actionExpression="#{${pagecode}.botonDetallarFila1_action}"
+                                                        binding="#{${pagecode}.botonDetallarFila1}"
+                                                        disabled="#{${pagecode}.gestor.funcionPickItemInhabilitada}" 
+                                                        id="botonDetallarFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenDetallar}" 
+                                                        onClick="#{${pagecode}.scriptAbrirVentanaVerDetalle}"
+                                                        rendered="#{${pagecode}.gestor.detalleDisponible}" 
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonDetallarFila}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonDetallarFila}"/>
+                                                    <webuijsf:button 
+                                                        actionExpression="#{${pagecode}.botonProcesarFila1_action}"
+                                                        binding="#{${pagecode}.botonProcesarFila1}"
+                                                        disabled="#{${pagecode}.gestor.funcionPickItemInhabilitada}" 
+                                                        id="botonProcesarFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenProcesar}" 
+                                                        onClick="#{${pagecode}.scriptAbrirVentanaProcesarFila1}"
+                                                        rendered="#{${pagecode}.asistente.comandoDisponible}" 
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonProcesarFila}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonProcesarFila}"/>
+                                                    <webuijsf:button 
+                                                        actionExpression="#{${pagecode}.botonRetornarFila1_action}"
+                                                        binding="#{${pagecode}.botonRetornarFila1}" 
+                                                        disabled="#{${pagecode}.gestor.funcionReturnInhabilitada}"
+                                                        id="botonRetornarFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenRetornar}"
+                                                        onClick="#{${pagecode}.gestor.scriptRetornarRecursoActual}"
+                                                        rendered="#{${pagecode}.gestor.funcionReturnVisible}" 
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonRetornarFila}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonRetornarFila}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{${pagecode}.tableColumn2}"
+                                                    id="tableColumn2"
+                                                    rendered="#{${pagecode}.gestor.designing}">
+                                                    <webuijsf:imageHyperlink
+                                                        actionExpression="#{${pagecode}.hipervinculoAccionFila1_action}"
+                                                        binding="#{${pagecode}.hipervinculoAccionFila1}"
+                                                        disabled="#{${pagecode}.gestor.loteConCambios}"
+                                                        id="hipervinculoAccionFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenEjecutarVinculo}"
+                                                        onClick="#{${pagecode}.scriptAbrirVentanaAccionFila1}"
+                                                        text="Accion1"
+##                                                      toolTip="Accion1"/>
+##                                                      text="#{bundle.${pagecode}_hipervinculoAccionFila1_text}"
+                                                        toolTip="#{bundle.${pagecode}_hipervinculoAccionFila1_toolTip}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    align="right" 
+                                                    binding="#{${pagecode}.tableColumn3}" 
+                                                    headerText="#{${pagecode}.gestor.i18n.textoEtiquetaIdentificacionFila}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipEtiquetaIdentificacionFila}"
+                                                    id="tableColumn3">
+                                                    <webuijsf:imageHyperlink 
+                                                        actionExpression="#{${pagecode}.hipervinculoDetallarFila1_action}"
+                                                        binding="#{${pagecode}.hipervinculoDetallarFila1}" 
+                                                        id="hipervinculoDetallarFila1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenFilaProcesada}"
+                                                        textPosition="left" 
+                                                        text="#{${pagecode}.gestor.identificacionFila}" 
+                                                        toolTip="#{${pagecode}.gestor.toolTipImagenFilaProcesada}"/>
+                                                </webuijsf:tableColumn>
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#set($foreignCode = '')
+#set($foreignName = '')
+#if($reftabtype1 > 0 && $reftabname0 && $reftabname0 != '')
+#if($jasperQuery)
+#foreach($field1 in $jasperQuery.fields)
+#if($field1.name == $colname0 && $field1.suffix != '')
+#set($codefield0 = "codigo_$reftabname0$field1.suffix")
+#set($namefield0 = "nombre_$reftabname0$field1.suffix")
+#foreach($field2 in $jasperQuery.fields)
+#if($codefield0 == "$field2.alias")
+#set($foreignCode = $field2.name)
+#end
+#if($namefield0 == "$field2.alias")
+#set($foreignName = $field2.name)
+#end
+#end##foreach-field2
+#end
+#end##foreach-field1
+#end
+#end
+                                                <webuijsf:tableColumn
+                                                    binding="#{${pagecode}.tableColumn${colname1}1}"
+                                                    headerText="$columnlabel1"
+                                                    id="tableColumn${colname1}1"$rendered1
+#if($foreignCode != '')
+                                                    sort="$foreignCode">
+#else
+                                                    sort="$columna.colname">
+#end
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticText${colname1}1"
+#if($foreignCode != '')
+                                                    text="#{currentRow.value['$foreignCode']}"
+#else
+                                                    text="#{currentRow.value['$columna.colname']}"
+#end
+                                                    rendered="#{${pagecode}.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${colname1}1}"
+                                                    id="label${colname1}1"
+                                                    for="${objname2}"/>
+#writeJspCode201(0)##fields
+                                                </webuijsf:tableColumn>
+#if($cb1type3 != '' || $cb2type3 != '' || ($cb2type3 == '' && $colname0.startsWith('nombre_archivo')))
+                                                <webuijsf:tableColumn
+                                                    id="tableColumn${colname1}3"$rendered1
+#if($rendered1 == '')
+                                                    rendered="#{${pagecode}.asistente.tableColumn${colname1}3Rendered}"
+#end
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticText${colname1}3"
+                                                    text="#{currentRow.value['$columna.colname']}"
+                                                    rendered="#{${pagecode}.gestor.designing}"/>
+#if($cb1type3 != '')
+                                                <webuijsf:button
+                                                    binding="#{${pagecode}.${objname2}Boton1}"
+                                                    id="${objname2}Boton1"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton1}"/>
+#end
+#if($cb2type3 != '')
+                                                <webuijsf:button
+                                                    binding="#{${pagecode}.${objname2}Boton3}"
+                                                    id="${objname2}Boton3"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton2}"
+                                                    rendered="#{${pagecode}.asistente.${objname2}Boton3Rendered}"/>
+#end
+#if($cb2type3 == '' && $colname0.startsWith('nombre_archivo'))
+                                                <webuijsf:button
+                                                    binding="#{${pagecode}.${objname2}Boton3}"
+                                                    id="${objname2}Boton3"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton3}"
+                                                    rendered="#{${pagecode}.asistente.${objname2}Boton3Rendered}"
+                                                    text="#{${pagecode}.asistente.text${objname1}Boton3}"
+                                                    toolTip="#{${pagecode}.asistente.toolTip${objname1}Boton3}"/>
+#end
+                                                </webuijsf:tableColumn>
+#end
+#if($hl2type3 != '')
+                                                <webuijsf:tableColumn 
+                                                    binding="#{${pagecode}.tableColumn${colname1}2}"
+                                                    headerText="$columnlabel2"
+                                                    id="tableColumn${colname1}2"$rendered1
+#if($rendered1 == '' && $cb2type3 != '')
+                                                    rendered="#{${pagecode}.asistente.${objname2}Boton2Rendered}"
+#end
+#if($foreignName != '')
+                                                    sort="$foreignName"
+#end
+                                                    styleClass="pdq-estilo-id-2">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticText${colname1}2"
+#if($foreignName != '')
+                                                    text="#{currentRow.value['$foreignName']}"
+#else
+                                                    text="#{currentRow.value['$columna.colname']}"
+#end
+                                                    rendered="#{${pagecode}.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${colname1}2}"
+                                                    id="label${colname1}2"
+                                                    text=""/>
+                                                <webuijsf:imageHyperlink
+                                                    binding="#{${pagecode}.${objname2}Hiper1}"
+                                                    id="${objname2}Hiper1"
+#if($foreignName != '')
+                                                    text="#{${sourceVar}.value['$foreignName']}"
+#end
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton2}"/>
+                                                <webuijsf:button
+                                                    id="${objname2}Boton2"
+                                                    rendered="false"/>
+                                                </webuijsf:tableColumn>
+#end
+#end
+## -----------------------------------------------------------------------------
+                                            </webuijsf:tableRowGroup>
+                                        </webuijsf:table>
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid 
+##                                          binding="#{${pagecode}.gridPanel$gridnum}" 
+                                            id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                columns="2" 
+                                                id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid 
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                    id="gridPanel$gridnum">
+                                                    <webuijsf:label 
+                                                        binding="#{${pagecode}.etiquetaTextoFilasPorPagina1}" 
+                                                        for="textoFilasPorPagina1"
+                                                        id="etiquetaTextoFilasPorPagina1" 
+                                                        text="#{${pagecode}.gestor.i18n.textoEtiquetaTextoFilasPorPagina}"/>
+                                                </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid 
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                    columns="3" 
+                                                    id="gridPanel$gridnum">
+                                                    <webuijsf:textField 
+                                                        binding="#{${pagecode}.textoFilasPorPagina1}" 
+                                                        columns="2"
+                                                        converter="#{${pagecode}.textoFilasPorPagina1Converter1}"
+                                                        disabled="#{${pagecode}.gestor.paginacionInhabilitada}" 
+                                                        id="textoFilasPorPagina1" maxLength="2"
+                                                        text="#{${pagecode}.gestor.filasPorPagina}" 
+                                                        validatorExpression="#{${pagecode}.textoFilasPorPagina1Validator1.validate}"/>
+                                                    <webuijsf:button 
+                                                        actionExpression="#{${pagecode}.botonRepaginar1_action}"
+                                                        binding="#{${pagecode}.botonRepaginar1}" 
+                                                        id="botonRepaginar1"
+                                                        imageURL="#{${pagecode}.gestor.urlImagenRepaginar}" 
+                                                        onClick="#{${pagecode}.gestor.scriptRepaginar}"
+                                                        text="#{${pagecode}.gestor.i18n.textoBotonRepaginar}"
+                                                        toolTip="#{${pagecode}.gestor.i18n.toolTipBotonRepaginar}"/>
+                                                    <webuijsf:message 
+##                                                      binding="#{${pagecode}.messageFilasPorPagina1}" 
+                                                        for="textoFilasPorPagina1" 
+                                                        id="messageFilasPorPagina1"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+#writeJspCode105(1)##grid-botones-accion
+#writeJspCode106(5)##grid-hiper-vinculos
+                                        </h:panelGrid>
+#writeJspCode107(0)##pie3->root

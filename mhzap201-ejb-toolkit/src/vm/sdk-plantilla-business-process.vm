@@ -1,0 +1,246 @@
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+#set($tabla0 = $dominio.nombreTabla)
+#else
+#set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($systable = $utils.systemTableFacade.findByCodigo($tabla0))
+#set($funciones = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#set($intercols = $utils.newMap())
+#set($mergecols = $utils.newMap())
+#set($reftables = $utils.newMap())
+#foreach($column in $systable.columns)
+#if($column.sysForeignKey)
+#set($foo = $utils.put($reftables, $column.sysForeignKey.reftabid.tabname, $column.sysForeignKey.reftabid.tabname))
+#end
+#end
+#setInterfaceColumnsMap($intercols $dominio)
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.ejb.business.process;
+
+import com.egt.base.constants.CBM2;
+##import com.egt.base.constants.J2EE;
+import com.egt.base.entity.constants.${dominio1}Constants;
+import com.egt.base.enums.EnumCondicionEjeFun;
+##import com.egt.base.enums.EnumTipoDatoPar;
+import com.egt.base.jms.messages.AbstractMessage;
+## import com.egt.base.util.BundleProcedimientos;
+import com.egt.commons.util.BitUtils;
+##import com.egt.commons.util.IntUtils;
+##import com.egt.commons.util.TimeUtils;
+import com.egt.core.aplicacion.TLC;
+import com.egt.core.control.Auditor;
+import com.egt.core.control.RastroFuncion;
+import com.egt.core.util.STP;
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funtype1 == 13)
+import com.egt.ejb.business.message.${funcion1}Message;
+#end
+#end##foreach
+import com.egt.ejb.business.process.logic.${dominio1}BusinessProcessLogicLocal;
+import com.egt.ejb.core.sqlagent.SqlAgentBrokerLocal;
+import com.egt.ejb.persistence.entity.${tabla1};
+import com.egt.ejb.persistence.facade.${tabla1}FacadeLocal;
+#foreach($tabname0 in $reftables)
+#set($tabname1 = $utils.getUpperCamelCase($tabname0))
+#set($tabname2 = $utils.getLowerCamelCase($tabname0))
+#if($tabname1 != $tabla1)
+import com.egt.ejb.persistence.facade.${tabname1}FacadeLocal;
+#end
+#end
+import java.math.BigDecimal;
+import java.util.Date;
+##import javax.annotation.Resource;
+import javax.ejb.EJB;
+import javax.ejb.EJBException;
+import javax.ejb.Stateless;
+
+@Stateless
+public class ${dominio1}BusinessProcessBean implements ${dominio1}BusinessProcessLocal {
+##
+##  @Resource(name = J2EE.ENTERPRISE_APPLICATION_JDBC_DATABASE)
+##  private javax.sql.DataSource ds;
+
+    // <editor-fold defaultstate="collapsed" desc="@EJB">
+    @EJB
+    private ${dominio1}BusinessProcessLogicLocal logician;
+
+    @EJB
+    private ${tabla1}FacadeLocal facade;
+##
+##  @Override
+##  public ${tabla1}FacadeLocal getFacade() {
+##      return facade;
+##  }
+#foreach($tabname0 in $reftables)
+#set($tabname1 = $utils.getUpperCamelCase($tabname0))
+#set($tabname2 = $utils.getLowerCamelCase($tabname0))
+
+    @EJB
+    private ${tabname1}FacadeLocal ${tabname2}Facade;
+#end
+
+    @EJB
+    private SqlAgentBrokerLocal sqlAgent;
+    // </editor-fold>
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funtype1 == 13)
+#set($x = '//')
+#set($xyz = '')
+#set($id0 = '')
+#set($idtype2 = 'Object')
+#set($foo = $mergecols.clear())
+#if($intercols.containsKey('id'))
+#set($id0 = $intercols.get('id'))
+#set($id1 = $utils.getUpperCamelCase($id0))
+#set($id2 = $utils.getLowerCamelCase($id0))
+#set($xyz = '    ')
+#foreach($obj1 in $funparams)
+#setPropiedadesParametro($obj1.parametroIdParametro)
+#if($id0.equals($parametro0))
+#set($x = '  ')
+#set($idtype2 = $paramtype2)
+#else
+#foreach($column in $systable.columns)
+#if($column.colname.equals($parametro0))
+#set($foo = $utils.put($mergecols, $parametro0, $column))
+#end
+#end##foreach
+#end
+#end##foreach
+#end
+
+    @Override
+    public ${funcion1}Message ${funcion2}(${funcion1}Message message) {
+        ${idtype2} ${id2} = null;
+        ${tabla1} ${tabla2} = null;
+        try {
+#if($id0 != '')
+$x          ${id2} = message.get${id1}();
+$x          ${tabla2} = facade.find(${id2}, true);
+$x          if (${tabla2} == null) {
+$x              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+$x              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, ${id2}));
+#if($intercols.containsKey('inactivo') && !$funcion2.startsWith("reactivar$dominio1") && !$funcion2.startsWith("corregir$dominio1"))##TODO: es ejecutable sobre recursos inactivos?
+#set($foo = $intercols.get('inactivo'))
+#set($foo = $utils.getUpperCamelCase($foo))
+$x          } else if (BitUtils.valueOf(${tabla2}.get${foo}())) {
+$x              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+$x              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_INACTIVO, "<" + ${dominio1}Constants.COLUMNA_$id0.toUpperCase() + ">", ${id2}));
+#end
+$x          } else {
+#end
+$xyz            message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+$xyz            message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+$xyz            this.${funcion2}(message, ${tabla2});
+$xyz            this.grabarRastroFuncion(message, ${tabla2});
+#if($id0 != '')
+$x          }
+#end
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void ${funcion2}(${funcion1}Message message, ${tabla1} ${tabla2}) throws Exception {
+#set($argslength = 0)
+#foreach($obj1 in $funparams)
+#setPropiedadesFuncionParametroWeb($obj1)
+#if($coltype1 != 2)
+#set($argslength = $argslength + 1)
+#end
+#end##foreach
+        String sql = ${dominio1}Constants.PROCESO_FUNCION_$funcion0.toUpperCase();
+##      String spn = BundleProcedimientos.getString(sql);
+##      if (BitUtils.valueOf(spn)) {
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+##             int length = $argslength;
+##             length++; /* el procedimiento actualiza el rastro */
+## #if($argslength > 0)
+##             Object[] args = new Object[length];
+## #else
+##             Object[] args = length == 0 ? null : new Object[length];
+## #end
+##          Object[] args = new Object[$argslength];
+#set($argslength = $argslength + 1)
+            Object[] args = new Object[$argslength]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+#foreach($obj1 in $funparams)
+#setPropiedadesFuncionParametroWeb($obj1)
+#if($coltype1 != 2)
+            args[index++] = message.get${colname1}();
+#end
+#end##foreach
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+## #if($id0 != '')
+$x          logician.${funcion2}(message, ${tabla2});
+$x          facade.flush();
+## #end
+        }
+    }
+
+    protected Long grabarRastroFuncion(${funcion1}Message message, ${tabla1} ${tabla2}) {
+        RastroFuncion rastro = this.getRastroFuncion(message, ${tabla2});
+#foreach($obj1 in $funparams)
+#if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesParametro($obj1.parametroIdParametro)
+        rastro.addParametro(${funcion1}Message.PARAMETRO_$parametro0.toUpperCase(), STP.getString(message.get${parametro1}()));
+#end##No-Omitido
+#end##foreach
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+#end
+#end##foreach
+
+    protected RastroFuncion getRastroFuncion(AbstractMessage message, ${tabla1} ${tabla2}) {
+        RastroFuncion rastro = Auditor.getRastroFuncion(message);
+        if (${tabla2} == null) {
+            return rastro;
+        }
+#if($intercols.containsKey('id'))
+#set($foo = $intercols.get('id'))
+#set($foo = $utils.getUpperCamelCase($foo))
+        rastro.setIdRecurso(${tabla2}.get${foo}());
+#end
+#if($intercols.containsKey('version'))
+#set($foo = $intercols.get('version'))
+#set($foo = $utils.getUpperCamelCase($foo))
+        rastro.setVersionRecurso(${tabla2}.get${foo}());
+#end
+#if($intercols.containsKey('codigo'))
+#set($foo = $intercols.get('codigo'))
+#set($foo = $utils.getUpperCamelCase($foo))
+        rastro.setCodigoRecurso(${tabla2}.get${foo}());
+#end
+#if($intercols.containsKey('nombre'))
+#set($foo = $intercols.get('nombre'))
+#set($foo = $utils.getUpperCamelCase($foo))
+        rastro.setNombreRecurso(${tabla2}.get${foo}());
+#end
+#if($intercols.containsKey('propietario'))
+#set($foo = $intercols.get('propietario'))
+#set($foo = $utils.getUpperCamelCase($foo))
+//      rastro.setIdPropietarioRecurso(${tabla2}.get${foo}());
+#end
+#if($intercols.containsKey('segmento'))
+#set($foo = $intercols.get('segmento'))
+#set($foo = $utils.getUpperCamelCase($foo))
+//      rastro.setIdSegmentoRecurso(${tabla2}.get${foo}());
+#end
+        return rastro;
+    }
+}

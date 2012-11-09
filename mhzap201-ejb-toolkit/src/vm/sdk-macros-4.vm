@@ -1,0 +1,36 @@
+## =============================================================================
+#macro(setPropiedadesColumnaJasper $columna)
+## =============================================================================
+#setPropiedadesColumnaWeb($columna)
+#if($javatype == 'char')
+#set($javatype = 'String')
+#elseif($javatype == 'int')
+#set($javatype = 'Integer')
+#elseif($javatype == 'long')
+#set($javatype = 'Long')
+#end
+#set($javaclass = "java.lang.$javatype")
+#if($javatype == 'Integer')
+#set($pixels = 64)
+#elseif($javatype == 'Long')
+#set($pixels = 80)
+#elseif($javatype == 'Date')
+#set($javaclass = "java.util.$javatype")
+#set($pixels = 64)
+#elseif($javatype == 'BigDecimal')
+#set($javaclass = "java.math.$javatype")
+#set($pixels = 108)
+#elseif($javatype != 'String')
+#set($pixels = 0)
+#elseif($columna.colprec > 100)
+#set($pixels = 0)
+#elseif($columna.colprec > 50)
+#set($pixels = 192)
+#elseif($columna.colprec > 20)
+#set($pixels = 128)
+#elseif($columna.colprec > 10)
+#set($pixels = 96)
+#else
+#set($pixels = 64)
+#end
+#end##macro

@@ -1,0 +1,100 @@
+#set($entities = $utils.newMap())
+#writeJavaCode101(0)##license
+package com.egt.ejb.business.jms;
+
+import com.egt.base.constants.CBM2;
+import com.egt.base.enums.EnumCondicionEjeFun;
+import com.egt.core.aplicacion.TLC;
+import com.egt.core.control.Auditor;
+import com.egt.core.control.Controlador;
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funclassid >= 0)
+#set($foo = $utils.put($entities, $dominio0, $dominio0))
+import com.egt.ejb.business.message.${funcion1}Message;
+#end##if
+#end##foreach
+#foreach($foo0 in $entities)
+#set($foo1 = $utils.getUpperCamelCase($foo0))
+import com.egt.ejb.business.process.${foo1}BusinessProcessLocal;
+#end##foreach
+import com.egt.ejb.core.AuditorLocal;
+import com.egt.ejb.persistence.entity.RastroProceso;
+import com.egt.ejb.persistence.facade.RastroProcesoFacadeLocal;
+import javax.ejb.EJB;
+import javax.ejb.EJBException;
+import javax.ejb.Stateless;
+
+@Stateless
+public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
+
+    // <editor-fold defaultstate="collapsed" desc="@EJB">
+#foreach($foo0 in $entities)
+#set($foo1 = $utils.getUpperCamelCase($foo0))
+#set($foo2 = $utils.getLowerCamelCase($foo0))
+    @EJB
+    private ${foo1}BusinessProcessLocal $foo2;
+
+#end##foreach
+    @EJB
+    private AuditorLocal auditor;
+
+    @EJB
+    RastroProcesoFacadeLocal rastroProcesoFacade;
+    // </editor-fold>
+
+    @Override
+    public BusinessProcessMessage processBusinessProcessMessage(BusinessProcessMessage message) {
+        message = (BusinessProcessMessage) Controlador.ponerProcesoEnEjecucion(message);
+        if (EnumCondicionEjeFun.EJECUCION_EN_PROGRESO.equals(message.getCondicion())) {
+            message.setSubprocesos(0);
+            message.setGrabarRastroPendiente(true);
+            try {
+                // <editor-fold defaultstate="collapsed">
+#set($foo = 'if')
+#foreach($funcion in $funciones)
+#setPropiedadesFuncion($funcion)
+#if($funclassid >= 0)
+#set($message = "${funcion1}Message")
+                $foo (message instanceof $message) {
+                    message = ${dominio2}.${funcion2}(($message) message);
+#set($foo = '} else if')
+#end##if
+#end##foreach
+                } else {
+                    message.setCondicion(EnumCondicionEjeFun.EJECUCION_CANCELADA);
+                    message.setMensaje(TLC.getBitacora().error(CBM2.PROCESS_EXECUTION_ABEND, message.getRastro() + "(" + message.getClass().getName() + ")"));
+                }
+                // </editor-fold>
+                if (message.getSubprocesos() > 0) {
+                    auditor.grabarRastroProceso(message.getRastro(), message.getSubprocesos(), message.getProcedimiento());
+                } else if (message.isGrabarRastroPendiente()) {
+                    auditor.grabarRastroProceso(message.getRastro(), message.getCondicion(), message.getArchivo(), message.getMensaje());
+                }
+                message.setGrabarRastroPendiente(false);
+            } catch (Exception ex) {
+                Auditor.grabarRastroProceso(message, ex);
+                TLC.getBitacora().fatal(message.getMensaje());
+                TLC.getBitacora().fatal(CBM2.PROCESS_EXECUTION_ABEND, message.getRastro());
+                throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+            }
+        }
+        return message;
+    }
+
+    @Override
+    public BusinessProcessMessage processRedeliveredBusinessProcessMessage(BusinessProcessMessage message) {
+        try {
+            message.setCondicion(EnumCondicionEjeFun.EJECUCION_CANCELADA);
+            message.setMensaje(TLC.getBitacora().error(CBM2.PROCESS_EXECUTION_ABEND, message.getRastro()));
+            RastroProceso rastro = rastroProcesoFacade.find(message.getRastro());
+            if (rastro != null) {
+                message.setCondicion(EnumCondicionEjeFun.valueOf(rastro.getCondicionEjeFunNumeroCondicionEjeFun().getNumeroCondicionEjeFun()));
+                message.setMensaje(rastro.getDescripcionError());
+            }
+        } catch (Throwable throwable) {
+            TLC.getBitacora().error(throwable);
+        }
+        return message;
+    }
+}

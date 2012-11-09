@@ -1,0 +1,21 @@
+#setPropiedadesPagina($pagina)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+#if($master0 != '')
+#set($classname = "AsistentePaginaActualizacion${domain1}Por${joinparname4}")
+#set($intername = "PaginaActualizacion${domain1}Por${joinparname4}")
+#else
+#set($classname = "AsistentePaginaActualizacion${domain1}")
+#set($intername = "PaginaActualizacion${domain1}")
+#end
+public class ${classname}2 extends ${classname} {
+
+    public ${classname}2() {
+        super();
+    }
+
+    public ${classname}2($intername bean) {
+        super(bean);
+    }
+}

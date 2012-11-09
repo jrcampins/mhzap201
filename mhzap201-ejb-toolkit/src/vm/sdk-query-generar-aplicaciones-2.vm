@@ -1,0 +1,5 @@
+select *
+from aplicacion
+where es_publica=0
+and id_aplicacion in (select distinct id_aplicacion from pagina)
+order by 1

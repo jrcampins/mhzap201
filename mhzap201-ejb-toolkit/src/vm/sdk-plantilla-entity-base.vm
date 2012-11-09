@@ -1,0 +1,56 @@
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#set($col1 = $utils.sortCollection($systable.columns))
+#set($col2 = $utils.sortCollection($systable.foreignKeys))
+#set($col3 = $utils.sortCollection($systable.refForeignKeys))
+#set($intername = "${tabname1}Base")
+#set($objsuffix = '')
+#set($colsuffix = "Collection")
+#writeJavaCode101($domclassid)##license
+package com.egt.base.persistence.entity;
+
+#if($hasDecimalColumn != '')
+import java.math.BigDecimal;
+#end
+#if($hasOneToManyRelation != '')
+import java.util.Collection;
+#end
+#if($hasDateTimeColumn != '')
+import java.util.Date;
+#end
+
+public interface $intername {
+
+#foreach($columna in $col1)
+#setPropiedadesColumna($columna)
+#if($columna.pkcid || !$columna.fkcid)
+    public $javatype get$colname1();
+//
+//  public void set$colname1($javatype $colname2);
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col2)
+#setPropiedadesClaveForanea($clave)
+    public ${reftabname1}Base get${reftabname1}$colname1();
+//
+//  public void set${reftabname1}$colname1(${reftabname1}Base $reftabname2);
+
+#end
+## -----------------------------------------------------------------------------
+#foreach($clave in $col3)
+#setPropiedadesClaveForanea($clave)
+#if($clave.pkcid || $clave.uqcid)
+    public ${tabname1}Base get$tabname1$colname1$objsuffix();
+//
+//  public void set$tabname1$colname1$objsuffix(${tabname1}Base $tabname2);
+
+#else
+    public Collection<? extends ${tabname1}Base> get$tabname1$colname1$colsuffix();
+//
+//  public void set$tabname1$colname1$colsuffix(Collection<? extends ${tabname1}Base> collection);
+
+#end
+#end
+}

@@ -1,0 +1,594 @@
+## =============================================================================
+#macro(writeJavaCode201 $foo)
+## =============================================================================
+#set($xrefMap = $utils.newMap())
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#set($foo = "import ${refenupack1}.${refenuname1};")
+#set($foo = $utils.put($xrefMap, $refenuname1, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+#set($foo = $xrefMap.clear())
+#set($foo = "import com.egt.data.${domainpack1}.xdp${domaincrsdp}.${domain1}CachedRowSetDataProvider${domaincrsdp};")
+#set($foo = $utils.put($xrefMap, $domain0, $foo))
+#if($master0 != '')
+#set($foo = "import com.egt.data.${masterpack1}.xdp${mastercrsdp}.${master1}CachedRowSetDataProvider${mastercrsdp};")
+#set($foo = $utils.put($xrefMap, $master0, $foo))
+#end
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+#set($foo = "import com.egt.data.${reftabpack1}.xdp${reftabcrsdp}.${reftabname1}CachedRowSetDataProvider${reftabcrsdp};")
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+$foo
+#end
+## -----------------------------------------------------------------------------
+import com.egt.base.constants.CBM2;
+import com.egt.base.constants.URX2;
+import com.egt.base.util.BundleWebui;
+import com.egt.core.aplicacion.Bitacora;
+import com.egt.core.aplicacion.ExcepcionAplicacion;
+import com.egt.core.aplicacion.FiltroBusqueda;
+import com.egt.core.aplicacion.web.ContextoAplicacionEstandar;
+import com.egt.core.aplicacion.web.ContextoPeticionEstandar;
+import com.egt.core.aplicacion.web.ContextoSesionEstandar;
+import com.egt.core.aplicacion.web.GestorBusquedaReferencia;
+import com.egt.core.aplicacion.web.GestorPaginaActualizacion;
+import com.egt.core.aplicacion.web.GestorPaginaActualizacionConArbol;
+import com.egt.core.aplicacion.web.GestorPaginaActualizacionConTabla;
+import com.egt.core.aplicacion.web.PaginaActualizacion;
+import com.egt.core.aplicacion.web.PaginaActualizacionConAccionMultiple;
+import com.egt.core.aplicacion.web.PaginaActualizacionConEdicionMultiple;
+import com.egt.core.aplicacion.web.PaginaConsultaConArbol;
+import com.egt.core.aplicacion.web.PaginaConsultaConFiltro;
+import com.egt.core.aplicacion.web.PaginaConsultaConMaestro;
+import com.egt.core.aplicacion.web.PaginaConsultaConTabla;
+import com.egt.core.aplicacion.web.RowProcessor;
+import com.egt.core.db.xdp.RecursoCachedRowSetDataProvider;
+import com.egt.core.enums.EnumColumnaEtiqueta;
+import com.egt.core.enums.EnumOpcionZumNodo;
+import com.egt.core.jsf.JSF;
+import com.egt.core.util.STP;
+import com.egt.core.util.Utils;
+import com.sun.rave.faces.converter.SqlTimestampConverter;
+import com.sun.data.provider.RowKey;
+import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Anchor;
+import com.sun.webui.jsf.component.Body;
+import com.sun.webui.jsf.component.Breadcrumbs;
+import com.sun.webui.jsf.component.Button;
+import com.sun.webui.jsf.component.Calendar;
+import com.sun.webui.jsf.component.Checkbox;
+import com.sun.webui.jsf.component.DropDown;
+import com.sun.webui.jsf.component.Form;
+import com.sun.webui.jsf.component.Head;
+import com.sun.webui.jsf.component.HelpInline;
+import com.sun.webui.jsf.component.Html;
+import com.sun.webui.jsf.component.ImageComponent;
+import com.sun.webui.jsf.component.ImageHyperlink;
+import com.sun.webui.jsf.component.Label;
+import com.sun.webui.jsf.component.Link;
+import com.sun.webui.jsf.component.Message;
+import com.sun.webui.jsf.component.Page;
+import com.sun.webui.jsf.component.Script;
+import com.sun.webui.jsf.component.StaticText;
+import com.sun.webui.jsf.component.Table;
+import com.sun.webui.jsf.component.TableColumn;
+import com.sun.webui.jsf.component.TableRowGroup;
+import com.sun.webui.jsf.component.TextArea;
+import com.sun.webui.jsf.component.TextField;
+import com.sun.webui.jsf.component.Tree;
+import com.sun.webui.jsf.component.Upload;
+import com.sun.webui.jsf.model.Option;
+import java.io.File;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.faces.FacesException;
+import javax.faces.application.FacesMessage;
+import javax.faces.application.NavigationHandler;
+import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlPanelGrid;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.IntegerConverter;
+import javax.faces.convert.LongConverter;
+import javax.faces.convert.NumberConverter;
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.validator.DoubleRangeValidator;
+import javax.faces.validator.LengthValidator;
+import javax.faces.validator.LongRangeValidator;
+import javax.faces.validator.ValidatorException;
+#end
+## =============================================================================
+#macro(writeJavaCode202 $foo)
+## =============================================================================
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($converter1 == '' || $reftabtype2 == 99)
+#elseif($columna.coltype == 2)
+        converter${colname1}1.setMinIntegerDigits(1);
+        converter${colname1}1.setMaxIntegerDigits(40);
+        converter${colname1}1.setMaxFractionDigits(3);
+#elseif($columna.coltype == 3 && $columna.colname.startsWith('fecha_hora'))
+        converter${colname1}1.setPattern("dd/MM/yyyy hh:mm aa");
+        converter${colname1}1.setType("both");
+#elseif($columna.coltype == 3 && $columna.colname.startsWith('hora'))
+        converter${colname1}1.setPattern("hh:mm aa");
+        converter${colname1}1.setType("time");
+#elseif($columna.coltype == 3)
+        converter${colname1}1.setPattern("dd/MM/yyyy");
+        converter${colname1}1.setType("date");
+#end
+#if($validator1minimum != '')
+        validator${colname1}1.setMinimum($validator1minimum);
+#end
+#if($validator1maximum != '')
+        validator${colname1}1.setMaximum($validator1maximum);
+#end
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode203 $foo)
+## =============================================================================
+#set($foo = $xrefMap.clear())
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+#set($foo = $reftabcrsdp)
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+        ${domain2}DataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.${domain2}RowSet}"));
+#if($master0 != '')
+        ${master2}DataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.${master2}RowSet}"));
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode204 $foo)
+## =============================================================================
+#foreach($key in $xrefMap.keySet())
+#set($foo = $xrefMap.get($key))
+#set($dp1 = $utils.getUpperCamelCase($key))
+#set($dp2 = $utils.getLowerCamelCase($key))
+        ${dp2}ReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.${dp2}ReferenceRowSet}"));
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode205 $foo)
+## =============================================================================
+    private $objtype1 $objname2 = new $objtype3();
+
+#if($pagetype != 4)
+#if($columna.coltype != 3)
+    @Override
+#end
+#end
+    public $objtype1 get$objname1() {
+        return $objname2;
+    }
+
+    public void set$objname1($objtype1 component) {
+        this.$objname2 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+    private $objtype1 $tabbedobjname2 = new $objtype3();
+
+    public $objtype1 get$tabbedobjname1() {
+        return $tabbedobjname2;
+    }
+
+    public void set$tabbedobjname1($objtype1 component) {
+        this.$tabbedobjname2 = component;
+    }
+
+#end
+## -----------------------------------------------------------------------------
+##  private Message message${colname1}1 = new Message();
+##
+##  public Message getMessage${colname1}1() {
+##      return message${colname1}1;
+##  }
+##
+##  public void setMessage${colname1}1(Message m) {
+##      this.message${colname1}1 = m;
+##  }
+##
+## -----------------------------------------------------------------------------
+#if($pagetype == 2 || $pagetype == 4 || $pagetype == 6)
+    private HelpInline helpInline${colname1}1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInline${colname1}1() {
+        return helpInline${colname1}1;
+    }
+
+    public void setHelpInline${colname1}1(HelpInline hi) {
+        this.helpInline${colname1}1 = hi;
+    }
+
+#if($tabbedcolname1 != '' && $tabbedcolname2 != '')
+    private HelpInline helpInline${tabbedcolname1}1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInline${tabbedcolname1}1() {
+        return helpInline${tabbedcolname1}1;
+    }
+
+    public void setHelpInline${tabbedcolname1}1(HelpInline hi) {
+        this.helpInline${tabbedcolname1}1 = hi;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($st1type3 != '')
+    private StaticText ${objname2}Texto1 = new $st1type3();
+
+    public StaticText get${objname1}Texto1() {
+        return ${objname2}Texto1;
+    }
+
+    public void set${objname1}Texto1(StaticText component) {
+        this.${objname2}Texto1 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+    private StaticText ${tabbedobjname2}Texto1 = new $st1type3();
+
+    public StaticText get${tabbedobjname1}Texto1() {
+        return ${tabbedobjname2}Texto1;
+    }
+
+    public void set${tabbedobjname1}Texto1(StaticText component) {
+        this.${tabbedobjname2}Texto1 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($cb1type3 != '')
+    private Button ${objname2}Boton1 = new $cb1type3();
+
+    public Button get${objname1}Boton1() {
+        return ${objname2}Boton1;
+    }
+
+    public void set${objname1}Boton1(Button component) {
+        this.${objname2}Boton1 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+    private Button ${tabbedobjname2}Boton1 = new $cb1type3();
+
+    public Button get${tabbedobjname1}Boton1() {
+        return ${tabbedobjname2}Boton1;
+    }
+
+    public void set${tabbedobjname1}Boton1(Button component) {
+        this.${tabbedobjname2}Boton1 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 != '' || ($cb2type3 == '' && $colname0.startsWith('nombre_archivo')))
+#if($cb2type3 == '')
+    private Button ${objname2}Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+#else
+    private Button ${objname2}Boton3 = new $cb2type3();
+#end
+
+    public Button get${objname1}Boton3() {
+        return ${objname2}Boton3;
+    }
+
+    public void set${objname1}Boton3(Button component) {
+        this.${objname2}Boton3 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+#if($cb2type3 == '')
+    private Button ${tabbedobjname2}Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+#else
+    private Button ${tabbedobjname2}Boton3 = new $cb2type3();
+#end
+
+    public Button get${tabbedobjname1}Boton3() {
+        return ${tabbedobjname2}Boton3;
+    }
+
+    public void set${tabbedobjname1}Boton3(Button component) {
+        this.${tabbedobjname2}Boton3 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#end
+## =============================================================================
+#macro(writeJavaCode206 $foo)
+## =============================================================================
+#if($converter1 == '' || $reftabtype2 == 99)
+#else
+    private $converter1 converter${colname1}1 = new $converter1();
+  
+    public $converter1 getConverter${colname1}1() {
+        return converter${colname1}1;
+    }
+  
+    public void setConverter${colname1}1($converter1 converter) {
+        this.converter${colname1}1 = converter;
+    }
+  
+#end
+## -----------------------------------------------------------------------------
+#if($validator1 == '' || $reftabtype1 != -1)
+#else
+    private $validator1 validator${colname1}1 = new $validator1();
+  
+    public $validator1 getValidator${colname1}1() {
+        return validator${colname1}1;
+    }
+  
+    public void setValidator${colname1}1($validator1 validator) {
+        this.validator${colname1}1 = validator;
+    }
+  
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode207 $foo)
+## =============================================================================
+    private ${domain1}CachedRowSetDataProvider${domaincrsdp} ${domain2}DataProvider = new ${domain1}CachedRowSetDataProvider${domaincrsdp}();
+
+#if($pagetype == 1 || $pagetype == 2 || $pagetype == 5 || $pagetype == 6)
+    @Override
+#end
+    public ${domain1}CachedRowSetDataProvider${domaincrsdp} get${domain1}DataProvider() {
+        return ${domain2}DataProvider;
+    }
+
+    public void set${domain1}DataProvider(${domain1}CachedRowSetDataProvider${domaincrsdp} crsdp) {
+        this.${domain2}DataProvider = crsdp;
+    }
+
+#if($master0 != '')
+    private ${master1}CachedRowSetDataProvider${mastercrsdp} ${master2}DataProvider = new ${master1}CachedRowSetDataProvider${mastercrsdp}();
+
+#if($pagetype == 1 || $pagetype == 2 || $pagetype == 5 || $pagetype == 6)
+    @Override
+#end
+    public ${master1}CachedRowSetDataProvider${mastercrsdp} get${master1}DataProvider() {
+        return ${master2}DataProvider;
+    }
+
+    public void set${master1}DataProvider(${master1}CachedRowSetDataProvider${mastercrsdp} crsdp) {
+        this.${master2}DataProvider = crsdp;
+    }
+
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode208 $foo)
+## =============================================================================
+#foreach($key in $xrefMap.keySet())
+#set($foo = $xrefMap.get($key))
+#set($dp1 = $utils.getUpperCamelCase($key))
+#set($dp2 = $utils.getLowerCamelCase($key))
+    private ${dp1}CachedRowSetDataProvider${foo} ${dp2}ReferenceDataProvider = new ${dp1}CachedRowSetDataProvider${foo}();
+
+#if($pagetype == 1 || $pagetype == 2 || $pagetype == 5 || $pagetype == 6)
+    @Override
+#end
+    public ${dp1}CachedRowSetDataProvider${foo} get${dp1}ReferenceDataProvider() {
+        return ${dp2}ReferenceDataProvider;
+    }
+
+    public void set${dp1}ReferenceDataProvider(${dp1}CachedRowSetDataProvider${foo} crsdp) {
+        this.${dp2}ReferenceDataProvider = crsdp;
+    }
+
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode209 $foo)
+## =============================================================================
+        ${domain2}DataProvider.close();
+#if($master0 != '')
+        ${master2}DataProvider.close();
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode210 $foo)
+## =============================================================================
+#foreach($key in $xrefMap.keySet())
+#set($foo = $xrefMap.get($key))
+#set($dp1 = $utils.getUpperCamelCase($key))
+#set($dp2 = $utils.getLowerCamelCase($key))
+        ${dp2}ReferenceDataProvider.close();
+#end
+#end
+## =============================================================================
+#macro(writeJavaCode211 $foo)
+## =============================================================================
+#set($xrefMap = $utils.newMap())
+## -----------------------------------------------------------------------------
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype1 == 12)
+#set($foo = "import ${refenupack1}.${refenuname1};")
+#set($foo = $utils.put($xrefMap, $refenuname1, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+$foo
+#end
+## -----------------------------------------------------------------------------
+#set($foo = $xrefMap.clear())
+## -----------------------------------------------------------------------------
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99)
+#set($foo = "import com.egt.data.${reftabpack1}.xdp${reftabcrsdp}.${reftabname1}CachedRowSetDataProvider${reftabcrsdp};")
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+##$foo
+#end
+## -----------------------------------------------------------------------------
+#set($foo = $entities.clear())
+## -----------------------------------------------------------------------------
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#foreach($foo in $col1)
+#if($foo.funcionIdFuncion.dominioIdDominio)
+#set($foo = $utils.put($entities, $foo.funcionIdFuncion.dominioIdDominio.codigoDominio, $foo.funcionIdFuncion.dominioIdDominio))
+#end
+#end
+## -----------------------------------------------------------------------------
+#set($foo = $xrefMap.clear())
+## -----------------------------------------------------------------------------
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#if($foo.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)##(views)
+import com.egt.base.entity.constants.${entname1}Constants;
+#else
+#set($foo = $utils.put($xrefMap, $entname0, $entname1))
+#end##(views)
+#end
+## -----------------------------------------------------------------------------
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($reftabtype2 == 99)
+#set($foo = $utils.put($xrefMap, $reftabname0, $reftabname1))
+#end
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+import com.egt.base.entity.constants.${foo}Constants;
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+import com.egt.ejb.persistence.entity.${foo};
+#end
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+import com.egt.ejb.persistence.facade.${foo}FacadeLocal;
+#end
+## -----------------------------------------------------------------------------
+import com.egt.base.persistence.enums.EnumTipoQuery;
+import com.egt.base.constants.CBM2;
+import com.egt.base.constants.FGS;
+import com.egt.base.constants.URX2;
+import com.egt.base.enums.EnumOperadorCom;
+import com.egt.base.enums.EnumTipoDatoPar;
+import com.egt.base.util.BundleWebui;
+import com.egt.commons.util.Bit;
+import com.egt.commons.util.LongUtils;
+import com.egt.core.aplicacion.Bitacora;
+import com.egt.core.aplicacion.ExcepcionAplicacion;
+import com.egt.core.aplicacion.FiltroBusqueda;
+import com.egt.core.aplicacion.TLC;
+import com.egt.core.aplicacion.web.ContextoAplicacionEstandar;
+import com.egt.core.aplicacion.web.ContextoPeticionEstandar;
+import com.egt.core.aplicacion.web.ContextoSesionEstandar;
+import com.egt.core.aplicacion.web.GestorPaginaBasica;
+import com.egt.core.aplicacion.web.PaginaBasicaConAccionMultiple;
+import com.egt.core.db.xdp.RecursoCachedRowSet;
+import com.egt.core.jsf.JSF;
+import com.egt.core.util.STP;
+import com.egt.core.util.Utils;
+import com.sun.rave.faces.converter.SqlTimestampConverter;
+import com.sun.data.provider.RowKey;
+import com.sun.rave.web.ui.appbase.AbstractPageBean;
+import com.sun.webui.jsf.component.Anchor;
+import com.sun.webui.jsf.component.Body;
+import com.sun.webui.jsf.component.Breadcrumbs;
+import com.sun.webui.jsf.component.Button;
+import com.sun.webui.jsf.component.Calendar;
+import com.sun.webui.jsf.component.Checkbox;
+import com.sun.webui.jsf.component.DropDown;
+import com.sun.webui.jsf.component.Form;
+import com.sun.webui.jsf.component.Head;
+import com.sun.webui.jsf.component.HelpInline;
+import com.sun.webui.jsf.component.Html;
+import com.sun.webui.jsf.component.ImageComponent;
+import com.sun.webui.jsf.component.ImageHyperlink;
+import com.sun.webui.jsf.component.Label;
+import com.sun.webui.jsf.component.Link;
+import com.sun.webui.jsf.component.Message;
+import com.sun.webui.jsf.component.Page;
+import com.sun.webui.jsf.component.Script;
+import com.sun.webui.jsf.component.StaticText;
+import com.sun.webui.jsf.component.Table;
+import com.sun.webui.jsf.component.TableColumn;
+import com.sun.webui.jsf.component.TableRowGroup;
+import com.sun.webui.jsf.component.TextArea;
+import com.sun.webui.jsf.component.TextField;
+import com.sun.webui.jsf.component.Tree;
+import com.sun.webui.jsf.component.Upload;
+import com.sun.webui.jsf.model.Option;
+import java.io.File;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.faces.FacesException;
+import javax.faces.application.FacesMessage;
+import javax.faces.application.NavigationHandler;
+import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlPanelGrid;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.IntegerConverter;
+import javax.faces.convert.LongConverter;
+import javax.faces.convert.NumberConverter;
+import javax.faces.event.ValueChangeEvent;
+import javax.faces.validator.DoubleRangeValidator;
+import javax.faces.validator.LengthValidator;
+import javax.faces.validator.LongRangeValidator;
+import javax.faces.validator.ValidatorException;
+import org.apache.commons.lang.StringUtils;
+#end
+## =============================================================================
+#macro(writeJavaCode212 $foo)
+## =============================================================================
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#if($converter1 == '' || $reftabtype2 == 99)
+#elseif($coltype3 == 2)
+        converter${colname1}1.setMinIntegerDigits(1);
+        converter${colname1}1.setMaxIntegerDigits(40);
+        converter${colname1}1.setMaxFractionDigits(3);
+#elseif($coltype3 == 3 && $colname0.startsWith('fecha_hora'))
+        converter${colname1}1.setPattern("dd/MM/yyyy hh:mm aa");
+        converter${colname1}1.setType("both");
+#elseif($coltype3 == 3 && $colname0.startsWith('hora'))
+        converter${colname1}1.setPattern("hh:mm aa");
+        converter${colname1}1.setType("time");
+#elseif($coltype3 == 3)
+        converter${colname1}1.setPattern("dd/MM/yyyy");
+        converter${colname1}1.setType("date");
+#end
+#if($validator1 == '' || $reftabtype1 != -1)
+#elseif($coltype3 == 1)
+        validator${colname1}1.setMaximum(2000);
+#elseif($coltype3 == 2)
+        validator${colname1}1.setMinimum(0.0);
+        validator${colname1}1.setMaximum(1.0E15);
+#elseif($coltype3 == 4)
+        validator${colname1}1.setMinimum(0L);
+        validator${colname1}1.setMaximum(1000000000L);
+#elseif($coltype3 == 5)
+        validator${colname1}1.setMinimum(0L);
+        validator${colname1}1.setMaximum(1000000000000000000L);
+#end
+#end
+#end

@@ -1,0 +1,64 @@
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#set($classname = "${tabname1}Facade")
+#set($localname = "${tabname1}FacadeLocal")
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.ejb.persistence.facade;
+
+import com.egt.base.persistence.enums.EnumTipoQuery;
+import com.egt.base.persistence.facade.${classname}Base;
+import com.egt.ejb.persistence.entity.$tabname1;
+import java.util.List;
+import javax.ejb.Local;
+
+@Local
+public interface $localname extends ${classname}Base {
+
+    @Override
+    ${tabname1} find(Object id);
+
+    @Override
+    ${tabname1} find(Object id, boolean refresh);
+#if($intercols.containsKey('codigo'))
+
+    @Override
+    ${tabname1} findByCodigo(String codigo);
+
+    @Override
+    ${tabname1} findByCodigo(String codigo, boolean refresh);
+#end
+
+    @Override
+    List<${tabname1}> findAll();
+
+    @Override
+    List<${tabname1}> findAll(boolean refresh);
+
+    @Override
+    List<${tabname1}> findByQuery(String query);
+
+    @Override
+    List<${tabname1}> findByQuery(String query, boolean refresh);
+
+    @Override
+    List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo);
+
+    @Override
+    List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, boolean refresh);
+
+    @Override
+    List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, int max);
+
+    @Override
+    List<${tabname1}> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh);
+
+    void flush();
+
+    void merge(${tabname1} ${tabname2});
+
+    void persist(${tabname1} ${tabname2});
+
+    void refresh(${tabname1} ${tabname2});
+
+    void remove(${tabname1} ${tabname2});
+}

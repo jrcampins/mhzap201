@@ -1,0 +1,85 @@
+#setPropiedadesAplicacion($aplicacion)
+#C\u00F3digo de la aplicaci\u00F3n
+application.bean.codigo.aplicacion=$aplicacion.codigoAplicacion
+#Nombre de la aplicaci\u00F3n
+application.bean.nombre.aplicacion=$utils.getStringJava($aplicacion.nombreAplicacion)
+#Propiedad disabled de la lista desplegable listaFiltro1 del fragmento FragmentoFiltro
+fragmento.filtro.lista.filtro.enabled=true
+#Propiedad disabled de los botones botonBuscarFiltro1, botonBuscarFiltro2 y botonBorrarFiltro1 del fragmento FragmentoFiltro
+fragmento.filtro.boton.filtro.enabled=true
+#I18N
+#set($tarcolxn = $utils.sortApplicationPagesCollection($aplicacion.paginaIdAplicacionCollection))
+#foreach($source in $tarcolxn)
+#setPropiedadesPagina($source)
+#if($domainclasstype1 == 0)
+#set($shortpagename = $pagename.replace('Consulta de ','').replace('Ejecución de Procesos de ','').replace('Registro de ',''))
+${pagecode}_ETIQUETA_MIGAS_PAN=$shortpagename
+${pagecode}_ETIQUETA_CLASE_DETALLE=$shortpagename
+#elseif($pagetype == 2 || $pagetype == 6)
+${pagecode}_ETIQUETA_MIGAS_PAN=Detalle
+${pagecode}_ETIQUETA_CLASE_DETALLE=Detalle de $utils.getStringJava("$domainclass.nombreClaseRecurso")
+#elseif($pagetype == 4)
+#set($label = $utils.concatenate('Procesar', $utils.getStringJava("$domainclass.nombreClaseRecurso")))
+#if($source.paginaFuncionIdPaginaCollection)
+#if($source.paginaFuncionIdPaginaCollection.size() == 1)
+#set($col1 = $utils.sortCollection($source.paginaFuncionIdPaginaCollection))
+#foreach($obj1 in $col1)
+#set($label = $utils.getSpaceCamelCase($obj1.funcionIdFuncion.codigoFuncion.toLowerCase()))
+#end
+#end
+#end
+${pagecode}_ETIQUETA_MIGAS_PAN=$label
+${pagecode}_ETIQUETA_CLASE_DETALLE=$label
+#else
+${pagecode}_ETIQUETA_MIGAS_PAN=$domain4
+${pagecode}_ETIQUETA_CLASE_DETALLE=$domain4
+#end
+#if($masterclasstype1 == 0)
+${pagecode}_ETIQUETA_CLASE_MAESTRO=?
+#else
+${pagecode}_ETIQUETA_CLASE_MAESTRO=de $utils.getStringJava("$masterclass.nombreClaseRecurso")
+#end
+#if($pagetype == 4)
+#if($acciones > 0)
+#if(0==1)
+#foreach($seq in [1..$acciones])
+${pagecode}_botonAccion${seq}_text=Accion$seq
+${pagecode}_botonAccion${seq}_toolTip=Accion$seq
+#end
+#end
+#end
+#else
+#if($pagetype == 1 || $pagetype == 5)
+#foreach($seq in [1..1])
+${pagecode}_hipervinculoAccionFila${seq}_text=Accion$seq
+${pagecode}_hipervinculoAccionFila${seq}_toolTip=Accion$seq
+#end
+#end
+#set($seq = 0)
+#foreach($target in $tarcolxn)
+#if($target.codigoPagina != $pagecode)
+#if($target.dominioIdDominio.codigoDominio == $source.dominioIdDominio.codigoDominio)
+#elseif($target.dominioIdDominioMaestro && $target.dominioIdDominioMaestro.codigoDominio == $source.dominioIdDominio.codigoDominio)
+#if($target.tipoPaginaNumeroTipoPagina.numeroTipoPagina == 1)
+#set($seq = $seq + 1)
+#if($target.dominioIdDominio.claseRecursoIdClaseRecurso.etiquetaHipervinculo)
+#set($shortpagename = $target.dominioIdDominio.claseRecursoIdClaseRecurso.etiquetaHipervinculo)
+#else
+#set($shortpagename = $target.nombrePagina.replace('Consulta de ','').replace('Ejecución de Procesos de ','').replace('Registro de ',''))
+#set($indexOfFirstSpaceChar = $shortpagename.indexOf(' '))
+#if($indexOfFirstSpaceChar > 0)
+#set($shortpagename = $shortpagename.substring(0, $indexOfFirstSpaceChar))
+#set($shortpagename = $shortpagename.concat('...'))
+#end
+#end
+${pagecode}_imageHyperlink${seq}_text=$utils.getStringJava($shortpagename)
+${pagecode}_imageHyperlink${seq}_toolTip=$utils.getStringJava($target.descripcionPagina)
+#end
+#end
+#end
+#end##foreach-target
+#set($seq = $seq + 1)
+${pagecode}_imageHyperlink${seq}_text=Hyperlink${seq}
+${pagecode}_imageHyperlink${seq}_toolTip=Hyperlink${seq}
+#end
+#end##foreach-source

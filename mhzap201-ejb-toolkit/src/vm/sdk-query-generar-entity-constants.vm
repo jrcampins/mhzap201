@@ -1,0 +1,7 @@
+select dominio.*
+from dominio, clase_recurso
+where dominio.id_clase_recurso=clase_recurso.id_clase_recurso
+and dominio.codigo_dominio=clase_recurso.codigo_clase_recurso
+and clase_recurso.codigo_clase_recurso <> 'recurso'
+and clase_recurso.codigo_clase_recurso not like'%plus'
+order by 1

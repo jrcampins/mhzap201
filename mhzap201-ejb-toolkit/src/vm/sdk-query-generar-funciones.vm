@@ -1,0 +1,5 @@
+select *
+from funcion
+-- where es_publica=0
+-- and es_programatica=0
+order by 1

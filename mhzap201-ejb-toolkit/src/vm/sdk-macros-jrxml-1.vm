@@ -1,0 +1,93 @@
+## ===================================================================================================================================================
+#macro(writePen $lineWidth $lineStyle $lineColor)
+## ===================================================================================================================================================
+#set($lw = '0.0')
+#set($ls = 'Solid')
+#set($lc = '#000000')
+#if($lineWidth)
+#if($lineWidth != '')
+#set($lw = $lineWidth)
+#end
+#end
+#if($lineStyle)
+#if($lineStyle != '')
+#set($ls = $lineStyle)
+#end
+#end
+#if($lineColor)
+#if($lineColor != '')
+#set($lc = $lineColor)
+#end
+#end
+                    <pen lineWidth="$lw" lineStyle="$ls" lineColor="$lc"/>
+#end##macro
+## ===================================================================================================================================================
+#macro(writeBox $lineWidth $lineStyle $lineColor)
+## ===================================================================================================================================================
+##              <box>
+## #writePen($lineWidth $lineStyle $lineColor)
+##              </box>
+#end##macro
+## ===================================================================================================================================================
+#macro(writeGraphicElement $lineWidth $lineStyle $lineColor)
+## ===================================================================================================================================================
+                <graphicElement>
+#writePen($lineWidth $lineStyle $lineColor)
+                </graphicElement>
+#end##macro
+## ===================================================================================================================================================
+#macro(writeTextElement $fontname $fontsize $bold $italic $underline $strike $horizontalAlignment $verticalAlignment)
+## ===================================================================================================================================================
+#set($fn = 'Arial')
+#set($fs = '10')
+#set($fb = 'false')
+#set($fi = 'false')
+#set($fu = 'false')
+#set($fx = 'false')
+#set($ha = 'Left')
+#set($va = 'Middle')
+#if($fontname)
+#if($fontname != '')
+#set($fn = $fontname)
+#end
+#end
+#if($fontsize)
+#if($fontsize != '')
+#set($fs = $fontsize)
+#end
+#end
+#if($bold)
+#if($bold == 'true')
+#set($fb = $bold)
+#end
+#end
+#if($italic)
+#if($italic == 'true')
+#set($fi = $italic)
+#end
+#end
+#if($underline)
+#if($underline == 'true')
+#set($fu = $underline)
+#end
+#end
+#if($strike)
+#if($strike == 'true')
+#set($fx = $strike)
+#end
+#end
+#if($horizontalAlignment)
+#if($horizontalAlignment != '')
+#set($ha = $horizontalAlignment)
+#end
+#end
+#if($verticalAlignment)
+#if($verticalAlignment != '')
+#set($va = $verticalAlignment)
+#end
+#end
+##              <textElement textAlignment="$ha" verticalAlignment="$va">
+##                  <font fontName="$fn" size="$fs" isBold="$fb" isItalic="$fi" isUnderline="$fu" isStrikeThrough="$fx" isPdfEmbedded="true"/>
+##              </textElement>
+                <textElement textAlignment="$ha" verticalAlignment="$va"/>
+#end##macro

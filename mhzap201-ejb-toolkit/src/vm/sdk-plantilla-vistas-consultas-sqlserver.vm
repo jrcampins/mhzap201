@@ -1,0 +1,27 @@
+#foreach($jasperQuery in $queries)
+#set($viewname = "$prefix$jasperQuery.name$suffix")
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[$viewname]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[$viewname]
+GO
+
+#end##foreach-view
+SET QUOTED_IDENTIFIER ON 
+GO
+
+SET ANSI_NULLS ON 
+GO
+
+#foreach($jasperQuery in $queries)
+#set($viewname = "$prefix$jasperQuery.name$suffix")
+#if($jasperQuery.queryString != '')
+CREATE VIEW [dbo].[$viewname] AS
+$jasperQuery.queryString
+GO
+
+#end
+#end##foreach-view
+SET QUOTED_IDENTIFIER OFF 
+GO
+
+SET ANSI_NULLS ON 
+GO

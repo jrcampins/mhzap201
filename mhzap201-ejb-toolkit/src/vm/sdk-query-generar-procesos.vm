@@ -1,0 +1,12 @@
+select dominio.*
+from dominio, clase_recurso
+where dominio.id_clase_recurso=clase_recurso.id_clase_recurso
+-- and dominio.numero_tipo_dominio=1
+and dominio.id_dominio in (select distinct id_dominio from funcion where numero_tipo_funcion=13)
+and clase_recurso.numero_tipo_recurso<>11
+--  and clase_recurso.codigo_clase_recurso not in
+--  (
+--  'grupo_proceso',
+--  'usuario'
+--  )
+order by 1

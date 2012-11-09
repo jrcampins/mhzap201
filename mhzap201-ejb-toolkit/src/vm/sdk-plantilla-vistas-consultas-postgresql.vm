@@ -1,0 +1,14 @@
+/**/
+#foreach($jasperQuery in $queries)
+#set($viewname = "$prefix$jasperQuery.name$suffix")
+DROP VIEW IF EXISTS $viewname;
+#end##foreach-view
+/**/
+#foreach($jasperQuery in $queries)
+#set($viewname = "$prefix$jasperQuery.name$suffix")
+#if($jasperQuery.queryString != '')
+CREATE OR REPLACE VIEW $viewname AS
+$jasperQuery.queryString;
+
+#end
+#end##foreach-view

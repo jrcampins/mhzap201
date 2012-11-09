@@ -1,0 +1,4 @@
+select *
+from pagina
+where id_aplicacion>10000
+order by codigo_pagina, id_aplicacion

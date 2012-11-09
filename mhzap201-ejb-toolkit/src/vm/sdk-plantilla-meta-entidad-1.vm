@@ -1,0 +1,468 @@
+#macro(setPropiedadesMetaJava)
+#set($metapack1  = "meta.entidad.${paquete}.abstracta")
+#set($metapack2  = "meta.entidad.${paquete}.concreta")
+#set($metapack3  = "meta.entidad.${paquete}.concreta")
+#set($metaclass1 = "${tabname1}")
+#set($metaclass2 = "${tabname1}")
+#set($metaclass3 = "${tabname1}")
+#end##setPropiedadesMetaJava
+## -----------------------------------------------------------------------------
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#setPropiedadesMetaJava()
+#set($sortedSysColumns = $utils.sortCollection($systable.columns))
+#set($sortedSysForeignKeys = $utils.sortCollection($systable.foreignKeys))
+#set($sortedSysRefForeignKeys = $utils.sortCollection($systable.refForeignKeys))
+#set($sortedSysIndexes = $utils.sortCollection($systable.indexes))
+#set($objsuffix = '')
+#set($colsuffix = "Collection")
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+    #set($tabla0 = $dominio.nombreTabla)
+#else
+    #set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($funciones = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#set($intercols = $utils.newMap())
+#set($mergecols = $utils.newMap())
+#set($reftables = $utils.newMap())
+#foreach($column in $systable.columns)
+    #if($column.sysForeignKey)
+        #set($foo = $utils.put($reftables, $column.sysForeignKey.reftabid.tabname, $column.sysForeignKey.reftabid.tabname))
+    #end
+#end
+#setInterfaceColumnsMap($intercols $dominio)
+#set($last132223 = 0)
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+        #set($last132223 = $velocityCount)
+    #end
+#end##foreach
+package $metapack1;
+
+import adalid.core.*;
+import adalid.core.annotations.*;
+##  import adalid.core.data.types.*;
+import adalid.core.enums.*;
+##  import adalid.core.expressions.*;
+import adalid.core.interfaces.*;
+#if($last132223 > 0)
+import adalid.core.operations.*;
+import adalid.core.parameters.*;
+#end
+import adalid.core.properties.*;
+import java.lang.reflect.Field;
+
+#set($baseClass = 'AbstractPersistentEntity')
+#set($baseClass = 'adalid.jee1.JEE1AbstractPersistentEntity')
+#set($enumClass = 'false')
+#foreach($columna in $sortedSysColumns)
+    #setPropiedadesColumna($columna)
+    #if($columna.pkcid && $columna.typname == 'int4')
+        #set($baseClass = 'AbstractPersistentEnumerationEntity')
+        #set($baseClass = 'adalid.jee1.JEE1AbstractPersistentEnumerationEntity')
+        #set($enumClass = 'true')
+        #break
+    #end
+#end
+#if($dominio.claseRecursoIdClaseRecurso.esClaseRecursoIndependiente == 0)
+    #set($independent = 'false')
+#else
+    #set($independent = 'true')
+#end
+#if($dominio.claseRecursoIdClaseRecurso.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso < 20)
+    #set($resourceType = 'CONFIGURATION')
+#else
+    #set($resourceType = 'OPERATION')
+#end
+@EntityMiscellany(independent = $independent, resourceType = ResourceType.$resourceType)
+public abstract class ${metaclass1} extends $baseClass {
+
+    // <editor-fold defaultstate="collapsed" desc="class constructors">
+    @Deprecated()
+    private ${metaclass1}() {
+        this(null, null);
+    }
+
+    public ${metaclass1}(Artifact declaringArtifact, Field declaringField) {
+        super(declaringArtifact, declaringField);
+    }
+    // </editor-fold>
+
+## -----------------------------------------------------------------------------
+#set($tipoColumna = 'primitive')
+#foreach($columna in $sortedSysColumns)
+#setPropiedadesColumna($columna)
+#if($columna.pkcid || !$columna.fkcid)
+#writeColumnAnnotations($tipoColumna $columna)
+#if($columna.typname == 'money' || $columna.typname == 'numeric')
+    #if($columna.colprec < 1 || $columna.colprec > 1000)
+##  @BigDecimalColumnField
+    #elseif($columna.colscale < 0 || $columna.colscale > $columna.colprec)
+    @BigDecimalColumnField(precision = $columna.colprec, scale = 0)
+    #else
+    @BigDecimalColumnField(precision = $columna.colprec, scale = $columna.colscale)
+    #end
+#end
+#if($columna.typname == 'bpchar' || $columna.typname == 'varchar')
+    #if($columna.colprec < 1 || $columna.colprec > 8000)
+##  @StringColumnField
+    #else
+    @StringColumnField(maxLength = $columna.colprec)
+    #end
+#end
+#if($columna.typname == 'time' || $columna.typname == 'timetz')
+    #if($columna.colprec < 0 || $columna.colprec > 6)
+##  @TimeColumnField
+    #else
+    @TimeColumnField(precision = $columna.colprec)
+    #end
+#end
+#if($columna.typname == 'timestamp' || $columna.typname == 'timestamptz')
+    #if($columna.colprec < 0 || $columna.colprec > 6)
+##  @TimestampColumnField
+    #else
+    @TimestampColumnField(precision = $columna.colprec)
+    #end
+#end
+#if($columna.typname == 'timestamptz')
+    #if($colname0.startsWith('fecha_hora'))
+        #set($javaclassname = 'Timestamp')
+    #elseif($colname0.startsWith('hora'))
+        #set($javaclassname = 'Time')
+    #else
+        #set($javaclassname = 'Date')
+    #end
+#else
+    #set($javaclassname = $columna.javaclassname)
+    #set($javaclassname = $javaclassname.replace('java.lang.',''))
+    #set($javaclassname = $javaclassname.replace('java.math.',''))
+#end
+##  public ${javatype} $colname2;
+    public ${javaclassname}Property $colname2;
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#set($tipoColumna = 'reference')
+#foreach($clave in $sortedSysForeignKeys)
+    #setPropiedadesClaveForanea($clave)
+    #setMetaPack3($reftabname0)
+    #set($deleterule = $clave.deleterule.replace('NO ACTION','NONE'))
+    #set($updaterule = $clave.updaterule.replace('NO ACTION','NONE'))
+    @ForeignKey(onDelete = OnDeleteAction.$deleterule, onUpdate = OnUpdateAction.$updaterule)
+    #if($clave.pkcid)
+    @OneToOne(navigability = Navigability.BIDIRECTIONAL)
+    #elseif($clave.uqcid)
+    @OneToOne(navigability = Navigability.BIDIRECTIONAL)
+    #else
+##  @ManyToOne(navigability = Navigability.BIDIRECTIONAL, view = MasterDetailView.BOTH)
+    @ManyToOne(navigability = Navigability.BIDIRECTIONAL)
+    #end
+    #foreach($columna in $sortedSysColumns)
+        #if($columna.colname == $clave.colname)        
+            #setPropiedadesColumna($columna)
+            #writeColumnAnnotations($tipoColumna $columna)
+            #break
+        #end
+    #end##foreach-columna
+    @Allocation(maxDepth = 1, maxRound = 0)
+    public ${metapack3}.${reftabname1} $colname2;
+
+#end
+## -----------------------------------------------------------------------------
+#if(!$sortedSysIndexes.isEmpty())
+#foreach($indice in $sortedSysIndexes)
+    #set($indname = $utils.getLowerCaseSqlIdentifier(${indice.indname}))
+    public Key ${indname};
+
+#end##foreach-indice
+#end
+## -----------------------------------------------------------------------------
+#if($enumClass == 'true')
+    #set($fee = $systable.tabname)
+    #set($options = $utils.enumMap($fee))
+    #set($elabels = $utils.enumLabelsMap($fee))
+    #foreach($key in $options.keySet())
+        #set($opt = $options.get($key))
+        #set($foo = $opt.toUpperCase())
+    public Row $foo;
+
+    #end##foreach-key
+#end
+## -----------------------------------------------------------------------------
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+//  $funcion1 $funcion2;
+//
+    #end
+#end##foreach
+## -----------------------------------------------------------------------------
+#if(!$sortedSysIndexes.isEmpty())
+    @Override
+    protected void instantiateKeys() {
+        super.instantiateKeys();
+#foreach($indice in $sortedSysIndexes)
+    #set($indname = $utils.getLowerCaseSqlIdentifier(${indice.indname}))
+    #if($indice.uqkey == 0)
+        ${indname} = new Key(false);
+    #else
+        ${indname} = new Key(true);
+    #end
+    #set($sortedSysIndexColumns = $utils.sortCollection($indice.columns))
+    #foreach($columna in $sortedSysIndexColumns)
+        #set($indcolname = $utils.getLowerJavaIdentifier(${columna.colid.colname}))
+        ${indname}.newKeyField($indcolname);
+    #end##foreach-columna
+#end##foreach-indice
+    }
+
+#end
+## -----------------------------------------------------------------------------
+#if($enumClass == 'true')
+    @Override
+    protected void instantiateRows() {
+        super.instantiateRows();
+    #foreach($key in $options.keySet())
+        #set($opt = $options.get($key))
+        #set($foo = $opt.toUpperCase())
+        #set($lbl = $elabels.get($key))
+        ${foo} = new Row();
+        ${foo}.newRowField($utils.getLowerCamelCase("numero_${fee}"), $key);
+        #if($fee == 'opcion_binaria')
+        ${foo}.newRowField(codigoOpcionSiNo, "$utils.getUpperCamelCase("_${opt}")");
+        #else
+        ${foo}.newRowField($utils.getLowerCamelCase("codigo_${fee}"), "$utils.getStringJava($lbl)");
+        #end
+    #end##foreach-key
+    }
+
+#end
+## -----------------------------------------------------------------------------
+    @Override
+    protected void customizeAttributes() {
+        super.customizeAttributes();
+    }
+
+## -----------------------------------------------------------------------------
+    @Override
+    protected void customizeProperties() {
+        super.customizeProperties();
+#foreach($columna in $sortedSysColumns)
+    #setPropiedadesColumna($columna)
+    #if($columna.typname == 'varchar')
+        #if($columna.colprec < 1 || $columna.colprec > 250)
+        #else
+##      ${colname2}.setMaxLength($columna.colprec);
+        #end
+    #end
+    #if($columna.hasdefault == 1)
+        #if($columna.typname == 'timestamptz')
+            #set($coldefault = 'SpecialTemporalValue.CURRENT')
+        #else
+            #set($coldefault = "$!columna.coldefault")
+        #end
+        #if($columna.fkcid)
+        #foreach($clave in $sortedSysForeignKeys)
+            #if($clave.colname == $colname0)
+            #set($options = $utils.enumMap($clave.reftabid.tabname))
+            #foreach($key in $options.keySet())
+                #set($opt = $options.get($key))
+                #if($key == $coldefault)
+                    #set($fee = $colname2)
+                    #set($faa = '.')
+                    #set($foo = $opt.toUpperCase())
+        ${colname2}.setInitialValue($fee$faa$foo);
+        ${colname2}.setDefaultValue($fee$faa$foo);
+                #end
+            #end##foreach-key
+            #end
+        #end
+        #else
+        ${colname2}.setInitialValue($coldefault);
+        ${colname2}.setDefaultValue($coldefault);
+        #end
+    #end
+#end
+    }
+
+## -----------------------------------------------------------------------------
+#if($last132223 > 0)
+    #writeOperationsFolder()
+#end
+}
+#break
+
+#macro(writeColumnAnnotations $tipoColumna $columna)
+#set($isUniqueKey = '')
+#if($tipoColumna == 'primitive')
+    #if($columna.pkcid)
+    @PrimaryKey
+        #set($isUniqueKey = 'true')
+    #end
+    #if(${colname0} == "$!intercols.get('version')")
+    @VersionProperty
+    #end
+    #if(${colname0} == "$!intercols.get('numero')" && $columna.uqcid)
+##  @NumericKey
+    @UniqueKey
+        #set($isUniqueKey = 'true')
+    #end
+    #if(${colname0} == "$!intercols.get('codigo')" && $columna.uqcid)
+##  @CharacterKey
+    @BusinessKey
+        #set($isUniqueKey = 'true')
+    #end
+    #if(${colname0} == "$!intercols.get('nombre')")
+    @NameProperty
+    #end
+    #if(${colname0} == "descripcion_${tabname0}")
+    @DescriptionProperty
+    #end
+    #if(${colname0} == "$!intercols.get('inactivo')")
+    @InactiveIndicator
+    #end
+    #if(${colname0} == "url_${tabname0}")
+    @UrlProperty
+    #end
+#end
+#if($tipoColumna == 'reference')
+    #if(${colname0} == "$!intercols.get('superior')")
+    @ParentProperty
+    #end
+    #if(${colname0} == "$!intercols.get('propietario')")
+    @OwnerProperty
+    #end
+    #if(${colname0} == "$!intercols.get('segmento')")
+    @SegmentProperty
+    #end
+#end
+#if($columna.uqcid && $isUniqueKey == '')
+    #if($enumClass == 'true')
+//  @UniqueKey
+    #else
+    @UniqueKey
+    #end
+#end
+#if($columna.isnullable == 1)
+    #if($columna.pkcid || $columna.uqcid)
+//  @ColumnField(nullable = true)
+    #else
+    @ColumnField(nullable = true)
+    #end
+#elseif($columna.pkcid || $columna.uqcid)
+//  @ColumnField(nullable = false)
+#elseif($enumClass == 'true')
+//  @ColumnField(nullable = false)
+#else
+    @ColumnField(nullable = false)
+#end
+#end##writeColumnAnnotations
+
+#macro(writeOperationsFolder)
+    // <editor-fold defaultstate="collapsed" desc="Operations">
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+        #if($funtype1 == 13)
+            #set($operationClass = 'ProcessOperation')
+        #end
+        #if($funtype1 == 22)
+            #set($operationClass = 'ReportOperation')
+        #end
+        #if($funtype1 == 23)
+            #set($operationClass = 'ExportOperation')
+        #end
+        #writeOperationHeader()
+        #set($x = '//')
+        #set($y = '//')
+        #set($z = '//')
+        #if($funparams.size() > 0)
+            #foreach($funparam in $funparams)
+                #setPropiedadesParametro($funparam.parametroIdParametro)
+                #set($numeroTipoParametro = $funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro)
+                #if($numeroTipoParametro == 1)##Obligatorio
+                    #set($required = 'true')
+                #else
+                    #set($required = 'false')
+                #end
+                #set($x = '//')
+                #set($y = '//')
+                #if($numeroTipoParametro == 1)##Obligatorio
+                    #if($parametro0 != "$!intercols.get('id')")
+                        #set($x = '')
+                        #set($y = '  ')
+                        #set($z = '')
+                    #end
+                #elseif($numeroTipoParametro == 2)##Omitido
+                #elseif($numeroTipoParametro == 4)##Programático
+                #else
+                    #set($x = '')
+                    #set($y = '  ')
+                    #set($z = '')
+                #end
+$x
+                #if($funparam.tipoValorNumeroTipoValor.numeroTipoValor == 23)##Recurso
+                    #set($codigoClaseRecurso = $funparam.claseRecursoIdClaseRecursoValor.codigoClaseRecurso)
+                    #setMetaPack3($codigoClaseRecurso)
+                    #if($codigoClaseRecurso == 'opcion_binaria')
+                        #writeOperationParameter1()
+                    #else
+                        #writeOperationParameter2()
+                    #end
+                #else
+                    #writeOperationParameter3()
+                #end
+            #end##foreach
+$z
+        #end
+        #writeOperationFooter()
+    #end
+#end##foreach
+    // </editor-fold>
+
+#end##writeOperationsFolder
+
+#macro(writeOperationHeader)
+    public class $funcion1 extends $operationClass {
+#end##writeOperationHeader
+
+#macro(writeOperationParameter1)
+$y      @ParameterField(required = $required)
+//      protected $utils.getUpperCamelCase($codigoClaseRecurso) $parametro2;
+$y      protected ${paramtype2}Parameter $parametro2;
+#end##writeOperationParameter1
+
+#macro(writeOperationParameter2)
+$y      @Allocation(maxDepth = 1, maxRound = 0)
+$y      @ParameterField(required = $required)
+$y      protected ${metapack3}.$utils.getUpperCamelCase($codigoClaseRecurso) $parametro2;
+#end##writeOperationParameter2
+
+#macro(writeOperationParameter3)
+$y      @ParameterField(required = $required)
+$y      protected ${paramtype2}Parameter $parametro2;
+#end##writeOperationParameter3
+
+#macro(writeOperationFooter)
+    }
+    #if($velocityCount < $last132223)
+
+    #end
+#end##writeOperationFooter
+
+#macro(setMetaPack3 $reftabname33)
+#set($dominio33 = '')
+#set($dominio33 = $utils.dominioFacade.findByCodigo($reftabname33))
+#set($paquete33 = "$!dominio33.paqueteIdPaquete.codigoPaquete")
+#set($paquete33 = "$!paquete33.replace('general', 'comun').replace('generic', 'generica').replace('specific', 'especifica')")
+#set($metapack3 = "meta.entidad.${paquete33}.concreta")
+#end##

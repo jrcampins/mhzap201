@@ -1,0 +1,640 @@
+#ShowTime(0)
+#setPropiedadesSistema($aplicaciones)
+#ShowTime(1)
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#ShowTime(1)
+#setMapasPagina()
+#ShowTime(1)
+#set($foo = $includedColumns.clear())
+#set($operators = $utils.enumMap('operador_com'))
+#set($entities = $utils.newMap())
+#set($entities13 = $utils.newMap())
+#set($inparams = $utils.newMap())
+#set($intercols = $utils.newMap())
+#set($hasExport = '')
+#set($hasReport = '')
+#set($importBigDecimal = '')
+#set($importDate = '')
+#setIncludedParametersMap($inparams)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+## -----------------------------------------------------------------------------
+#writeJavaCode211(0)##imports
+import com.egt.base.enums.EnumTipoDatoPar;
+import com.egt.base.jms.messages.AbstractMessage;
+import com.egt.core.control.Auditor;
+import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#foreach($obj1 in $col1)
+#setPropiedadesFuncion($obj1.funcionIdFuncion)
+#if($hasBigDecimalParam != '')
+#set($importBigDecimal = $hasBigDecimalParam)
+#end
+#if($hasDateParam != '')
+#set($importDate = $hasDateParam)
+#end
+#if($funtype1 == 13 && $funclassid >= 0)
+#set($foo = $utils.put($entities13, $dominio0, $dominio0))
+import com.egt.ejb.business.message.${funcion1}Message;
+#elseif($funtype1 == 22 && $funclassid >= 0)
+#set($hasReport = 'true')
+#elseif($funtype1 == 23 && $funclassid >= 0)
+#set($hasExport = 'true')
+#end
+#end##foreach
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#if($entities13.containsKey($entname0))
+import com.egt.ejb.business.process.${entname1}BusinessProcessLocal;
+#end
+#end##foreach
+#if($hasExport != '')
+import com.egt.ejb.core.exporter.ExporterBrokerLocal;
+#end
+#if($hasReport != '')
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+#end
+#if($importBigDecimal != '')
+import java.math.BigDecimal;
+#end
+#if($importDate != '')
+import java.util.Date;
+#end
+#if($hasExport != '' || $hasReport != '')
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+#end
+import javax.jms.JMSException;
+import javax.jms.ObjectMessage;
+## -----------------------------------------------------------------------------
+
+public class ${pagecode} extends AbstractPageBean
+        implements PaginaBasicaConAccionMultiple {
+
+    // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
+    private void _init() throws Exception {
+#writeJavaCode212(0)##init-converters-validators
+    }
+
+## -----------------------------------------------------------------------------
+#writeJavaCode102(116)##root->cab3
+#writeJavaCode103(0)##detalle
+#writeJavaCode114(2)##grid-botones-cursor
+## -----------------------------------------------------------------------------
+##  private StaticText textoTitulo1 = new StaticText();
+##
+##  public StaticText getTextoTitulo1() {
+##      return textoTitulo1;
+##  }
+##
+##  public void setTextoTitulo1(StaticText st) {
+##      this.textoTitulo1 = st;
+##  }
+##
+## -----------------------------------------------------------------------------
+    private Label etiquetaListaFuncionAccion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getEtiquetaListaFuncionAccion1() {
+        return etiquetaListaFuncionAccion1;
+    }
+
+    public void setEtiquetaListaFuncionAccion1(Label l) {
+        this.etiquetaListaFuncionAccion1 = l;
+    }
+
+## -----------------------------------------------------------------------------
+    private DropDown listaFuncionAccion1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaFuncionAccion1() {
+        return listaFuncionAccion1;
+    }
+
+    public void setListaFuncionAccion1(DropDown component) {
+        this.listaFuncionAccion1 = component;
+    }
+
+    private LongConverter converterListaFuncionAccion1 = new LongConverter();
+  
+    public LongConverter getConverterListaFuncionAccion1() {
+        return converterListaFuncionAccion1;
+    }
+  
+    public void setConverterListaFuncionAccion1(LongConverter component) {
+        this.converterListaFuncionAccion1 = component;
+    }
+  
+##  private Message messageListaFuncionAccion1 = new Message();
+##
+##  public Message getMessageListaFuncionAccion1() {
+##      return messageListaFuncionAccion1;
+##  }
+##
+##  public void setMessageListaFuncionAccion1(Message m) {
+##      this.messageListaFuncionAccion1 = m;
+##  }
+##
+    private HelpInline helpInlineListaFuncionAccion1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineListaFuncionAccion1() {
+        return helpInlineListaFuncionAccion1;
+    }
+
+    public void setHelpInlineListaFuncionAccion1(HelpInline hi) {
+        this.helpInlineListaFuncionAccion1 = hi;
+    }
+
+    private StaticText listaFuncionAccion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaFuncionAccion1Texto1() {
+        return listaFuncionAccion1Texto1;
+    }
+
+    public void setListaFuncionAccion1Texto1(StaticText component) {
+        this.listaFuncionAccion1Texto1 = component;
+    }
+
+## -----------------------------------------------------------------------------
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+## -----------------------------------------------------------------------------
+##  private HtmlPanelGrid grid${colname1}1 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}1() {
+##      return grid${colname1}1;
+##  }
+##
+##  public void setGrid${colname1}1(HtmlPanelGrid hpg) {
+##      this.grid${colname1}1 = hpg;
+##  }
+##
+    private Label label${colname1}1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}1() {
+        return label${colname1}1;
+    }
+
+    public void setLabel${colname1}1(Label l) {
+        this.label${colname1}1 = l;
+    }
+
+##  private HtmlPanelGrid grid${colname1}2 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}2() {
+##      return grid${colname1}2;
+##  }
+##
+##  public void setGrid${colname1}2(HtmlPanelGrid hpg) {
+##      this.grid${colname1}2 = hpg;
+##  }
+##
+## -----------------------------------------------------------------------------
+#writeJavaCode205(0)##fields
+#writeJavaCode206(0)##converters, validators
+## -----------------------------------------------------------------------------
+#if($st2type3 != '')
+##  private HtmlPanelGrid grid${colname1}3 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}3() {
+##      return grid${colname1}3;
+##  }
+##
+##  public void setGrid${colname1}3(HtmlPanelGrid hpg) {
+##      this.grid${colname1}3 = hpg;
+##  }
+##
+    private Label label${colname1}2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}2() {
+        return label${colname1}2;
+    }
+
+    public void setLabel${colname1}2(Label l) {
+        this.label${colname1}2 = l;
+    }
+
+##  private HtmlPanelGrid grid${colname1}4 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}4() {
+##      return grid${colname1}4;
+##  }
+##
+##  public void setGrid${colname1}4(HtmlPanelGrid hpg) {
+##      this.grid${colname1}4 = hpg;
+##  }
+##
+    private StaticText ${objname2}Texto2 = new $st2type3();
+
+    public StaticText get${objname1}Texto2() {
+        return ${objname2}Texto2;
+    }
+
+    public void set${objname1}Texto2(StaticText component) {
+        this.${objname2}Texto2 = component;
+    }
+
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 != '')
+    private Button ${objname2}Boton2 = new $cb2type3();
+
+    public Button get${objname1}Boton2() {
+        return ${objname2}Boton2;
+    }
+
+    public void set${objname1}Boton2(Button component) {
+        this.${objname2}Boton2 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+##  private StaticText textoMensaje1 = new StaticText();
+##
+##  public StaticText getTextoMensaje1() {
+##      return textoMensaje1;
+##  }
+##
+##  public void setTextoMensaje1(StaticText st) {
+##      this.textoMensaje1 = st;
+##  }
+##
+## -----------------------------------------------------------------------------
+##  private Anchor anchor1 = new Anchor();
+##
+##  public Anchor getAnchor1() {
+##      return anchor1;
+##  }
+##
+##  public void setAnchor1(Anchor a) {
+##      this.anchor1 = a;
+##  }
+##
+## -----------------------------------------------------------------------------
+#writeJavaCode115($acciones)##grid-botones-accion
+#writeJavaCode107(0)##pie3->root    
+## -----------------------------------------------------------------------------
+    // </editor-fold>
+/**/
+    public ${pagecode}() {
+    }
+
+#writeJavaCode301(0)##metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy
+
+#writeJavaCode302(0)##propiedades estandar para el manejo de los beans de contexto: request, session y application
+
+#writeJavaCode303(0)##implementacion estandar de propiedades y metodos de la interfaz PaginaAbstracta
+
+#writeJavaCode304(0)##implementacion estandar de propiedades de la interfaz PaginaBasica
+/**/
+    private final static String ETIQUETA_MIGAS_PAN = Bundle.getString("${pagecode}_ETIQUETA_MIGAS_PAN");
+
+    // <editor-fold defaultstate="collapsed" desc="propiedad gestor de pagina basica">
+    private GestorPaginaBasica gestor = new GestorPaginaBasica(this);
+
+    public GestorPaginaBasica getGestor() {
+        return this.gestor;
+    }
+    // </editor-fold>
+##
+##  // <editor-fold defaultstate="collapsed" desc="propiedad sidekick de pagina basica">
+##  ${pagecode}Sidekick sidekick = new ${pagecode}Sidekick(this);
+##
+##  public ${pagecode}Sidekick getSidekick() {
+##      return sidekick;
+##  }
+##  // </editor-fold>
+/**/
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#set($size = $col1.size())
+#foreach($obj1 in $col1)
+#if($obj1.funcionIdFuncion.dominioIdDominio)
+#set($fooclass0 = $obj1.funcionIdFuncion.dominioIdDominio.codigoDominio)
+#set($fooclass1 = $utils.getUpperCamelCase($fooclass0))
+#set($fooclass1 = "${fooclass1}Constants")
+#else
+#set($fooclass0 = '...')
+#set($fooclass1 = 'FGS')
+#end
+##  static long L${obj1.funcionIdFuncion.idFuncion} = ${obj1.funcionIdFuncion.idFuncion}L; /* FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase() */
+##  static long L${obj1.funcionIdFuncion.idFuncion} = ${fooclass1}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase();
+##  static long FUNCION_ACCION_${velocityCount} = ${obj1.funcionIdFuncion.idFuncion}L; /* FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase() */
+    static long FUNCION_ACCION_${velocityCount} = ${fooclass1}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase();
+
+#end##foreach
+    @Override
+    public Option[] getOpcionesListaFuncionAccion() {
+        Option[] opciones = new Option[]{
+#if($size > 0)
+            new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
+#foreach($obj1 in $col1)
+#set($token = $obj1.funcionIdFuncion.codigoFuncion)
+#set($token = $token.concat('_'))
+#set($token = $token.replace("_${fooclass0}_", '_'))
+#set($token = $token.replace('_', ' '))
+#set($token = $token.trim())
+#if($velocityCount == $size)
+#set($comma = '')
+#else
+#set($comma = ',')
+#end
+##          new Option(L${obj1.funcionIdFuncion.idFuncion}, Bundle.getString("$token"))$comma
+##          new Option(${fooclass1}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase(), Bundle.getString("$token"))$comma
+            new Option(FUNCION_ACCION_${velocityCount}, Bundle.getString("$token"))$comma
+#end##foreach
+#end
+        };
+        return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+    public boolean is${colname1}Rendered() {
+#set($fee = '')
+#foreach($obj1 in $col1)
+#set($faa = " || f == FUNCION_ACCION_${velocityCount}")
+#if($obj1.funcionIdFuncion.funcionParametroIdFuncionCollection)
+#if($obj1.funcionIdFuncion.funcionParametroIdFuncionCollection.size() > 0)
+#set($col2 = $utils.sortCollection($obj1.funcionIdFuncion.funcionParametroIdFuncionCollection))
+#foreach($obj2 in $col2)
+#if($obj2.parametroIdParametro.codigoParametro == $colname0)
+#if($obj2.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#set($fee = "$fee$faa")
+#end
+#end
+#end##foreach-obj2
+#end
+#end
+#end##foreach-obj1
+#if($fee == '')
+        return true;
+#elseif($col1.size() > 1)
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+#if($colname0 == $pkid0)
+        return f == 0 || $fee.substring(4);
+#else
+        return $fee.substring(4);
+#end
+#else
+//      long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+//      return $fee.substring(4);
+        return true;
+#end
+    }
+
+    private Bit bit${colname1}Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return is${colname1}Rendered();
+        }
+    };
+
+    public Bit getBit${colname1}Rendered() {
+        return bit${colname1}Rendered;
+    }
+
+#end##foreach-parametro
+    // </editor-fold>
+
+##writeJavaCode411(0)##entidades(views)
+#writeJavaCode412(0)##facades
+    // <editor-fold defaultstate="collapsed" desc="metodos estandar: preiniciar, iniciar, preprocesar, prepresentar">
+#writeJavaCode413(0)##preiniciar, iniciar, preprocesar, prepresentar
+    // </editor-fold>
+
+## -----------------------------------------------------------------------------
+#writeJavaCode421(0)##campos
+#writeJavaCode422(0)##lupas
+#writeJavaCode423(0)##listas
+#writeJavaCode424(0)##botones
+#writeJavaCode425(0)##acciones
+##writeJavaCode426(0)##buscadores(views)
+## -----------------------------------------------------------------------------
+/**/
+    boolean synchronously = false;
+
+    @EJB
+    private BusinessProcessMessengerLocal messenger;
+#foreach($foo in $entities)
+#set($entname0 = $foo.codigoDominio)
+#set($entname1 = $utils.getUpperCamelCase($entname0))
+#set($entname2 = $utils.getLowerCamelCase($entname0))
+#if($entities13.containsKey($entname0))
+
+    @EJB
+    private ${entname1}BusinessProcessLocal ${entname2}BusinessProcess;
+#end
+#end##foreach
+#if($hasExport != '')
+
+    @EJB
+    private ExporterBrokerLocal exporter;
+#end
+#if($hasReport != '')
+
+    @EJB
+    private ReporterBrokerLocal reporter;
+#end
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#set($paramintercols = $utils.newMap())
+#foreach($obj1 in $col1)
+#setPropiedadesFuncion($obj1.funcionIdFuncion)
+#set($fooclass1 = "${dominio1}Constants")
+
+#if($funtype1 == 13 && $funclassid >= 0)
+    private void $funcion2() { /* $funcion3 */
+        this.$funcion2(synchronously);
+    }
+
+    private void $funcion2(boolean synchronously) { /* $funcion3 */
+        try {
+#set($rpl = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+#set($rpl = "$rpl, $parametro2")
+            $paramtype2 $parametro2 = $paramvalue;
+#end##No-Omitido
+#end##foreach
+#if($rpl.length() > 0)
+#set($rpl = $rpl.substring(2))
+#end
+            ${funcion1}Message message = new ${funcion1}Message($rpl);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.${dominio2}BusinessProcess.$funcion2(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+#elseif($funtype1 == 22 && $funclassid >= 0)
+    private void $funcion2() { /* $funcion3 */
+#set($rpl = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+#set($rpl = "$rpl, $parametro2")
+        $paramtype2 $parametro2 = $paramvalue;
+#end##No-Omitido
+#end##foreach
+##      String report = ${fooclass1}.CODIGO_DOMINIO_RECURSO;
+##      long function = ${fooclass1}.FUNCION_CONSULTAR_$dominio0.toUpperCase();
+        String report = ${fooclass1}.INFORME_FUNCION_$funcion0.toUpperCase();
+        long function = ${fooclass1}.FUNCION_$funcion0.toUpperCase();
+#if($rpl.length() > 0)
+        Map parameters = new LinkedHashMap();
+#set($sql = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+#set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
+        parameters.put("$parametro0", $parametro2);
+#end##No-Omitido
+#end##foreach
+#set($rpl = $rpl.substring(2))
+#set($sql = $sql.substring(5))
+#if($funselin == '')
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+##      String select = "select * from ${dominio0} where ($sql)";
+##      Object[] args = new Object[]{$rpl};
+##      this.reporter.executeReport(report, function, select, args, parameters);
+##      ------------------------------------------------------------------------
+        String select = "select * from ${dominio0}";
+        String search = "";
+        ArrayList args = new ArrayList();
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+        if ($parametro2 != null) {
+            args.add($parametro2);
+#if($parametro0.endsWith('_desde'))
+##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+#elseif($parametro0.endsWith('_hasta'))
+##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+#else
+##          search += " and ${dominio0}.$parametro0=?";
+            search += " and $parametro0=?";
+#end##parametro0.endsWith
+        }
+#end##No-Omitido
+#end##foreach
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+#else
+        this.reporter.executeReport(report, function, parameters);
+#end
+#else
+        this.reporter.executeReport(report, function);
+#end##rpl > 0
+    }
+#elseif($funtype1 == 23 && $funclassid >= 0)
+    private void $funcion2() { /* $funcion3 */
+#set($rpl = '')
+#set($sql = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+#set($rpl = "$rpl, $parametro2")
+#set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
+        $paramtype2 $parametro2 = $paramvalue;
+#end##No-Omitido
+#end##foreach
+##      String report = ${fooclass1}.CODIGO_DOMINIO_RECURSO;
+##      long function = ${fooclass1}.FUNCION_CONSULTAR_$dominio0.toUpperCase();
+        String report = ${fooclass1}.ARCHIVO_FUNCION_$funcion0.toUpperCase();
+        long function = ${fooclass1}.FUNCION_$funcion0.toUpperCase();
+#if($rpl.length() > 0)
+#set($rpl = $rpl.substring(2))
+#set($sql = $sql.substring(5))
+//      ------------------------------------------------------------------------
+//      String select = "select * from ${dominio0} where ($sql)";
+//      Object[] args = new Object[]{$rpl};
+//      this.exporter.executeExport(report, function, select, args);
+//      ------------------------------------------------------------------------
+        String select = "select * from ${dominio0}";
+        String search = "";
+        ArrayList args = new ArrayList();
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroRPL($funparam)
+        if ($parametro2 != null) {
+            args.add($parametro2);
+#if($parametro0.endsWith('_desde'))
+##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+#elseif($parametro0.endsWith('_hasta'))
+##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+#else
+##          search += " and ${dominio0}.$parametro0=?";
+            search += " and $parametro0=?";
+#end##parametro0.endsWith
+        }
+#end##No-Omitido
+#end##foreach
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.exporter.executeExport(report, function, select, args.toArray());
+        } else {
+            this.exporter.executeExport(report, function);
+        }
+#else
+        this.exporter.executeExport(report, function);
+#end##rpl > 0
+    }
+#else
+    private void $funcion2() { /* $funcion3 */
+    }
+#end
+#end##foreach
+
+    private AbstractMessage requestReply(AbstractMessage message) throws Exception {
+##      ObjectMessage solicitud = null;
+##      AbstractMessage request = TLC.getControlador().ponerProcesoPendiente(message);
+##      try {
+##          solicitud = this.messenger.sendRequest(request);
+##      } catch (JMSException ex) {
+##          Auditor.grabarRastroProceso(request, ex);
+##          throw ex;
+##      }
+##      ObjectMessage respuesta = this.messenger.receiveReply(solicitud);
+##      AbstractMessage reply = respuesta == null ? request : (AbstractMessage) respuesta.getObject();
+##      TLC.getBitacora().add(reply);
+##      return reply;
+        ObjectMessage solicitud = this.messenger.postRequest(message);
+        ObjectMessage respuesta = this.messenger.receiveReply(solicitud);
+        AbstractMessage mensaje = respuesta == null
+                ? (AbstractMessage) solicitud.getObject()
+                : (AbstractMessage) respuesta.getObject();
+        /**/
+        TLC.getBitacora().add(mensaje);
+        return mensaje;
+    }
+
+    String footnote = "a partir de aqui coloque el codigo especifico de la pagina";
+}

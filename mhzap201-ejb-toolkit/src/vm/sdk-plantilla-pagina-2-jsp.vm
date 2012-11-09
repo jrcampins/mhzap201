@@ -1,0 +1,350 @@
+## =============================================================================
+#macro(writeFields $foo)
+## =============================================================================
+#set($dbqt = '"')
+#if($foo == 1)
+#set($tabbedInterface = 'webuijsf:tab')
+#else
+#set($tabbedInterface = '')
+#end
+#set($tabnum = 0)
+#set($pretabtag = '')
+#set($sortedFieldsCollection = $utils.sortIncludedFieldsMap($includedFields))
+#foreach($field in $sortedFieldsCollection)##($columna in $includedColumns)
+#set($colname = $field.parametroIdParametro.codigoParametro)
+#if($includedColumns.containsKey($colname))
+#set($columna = $includedColumns.get($colname))
+#setPropiedadesColumnaWeb($columna)
+#if($rendered1 == '' && $tabbedInterface == '' && $secname0 != '' && $readOnlyFields.containsKey($colname))
+#set($rendered1 = " rendered=${dbqt}#{${pagecode}.gestor.designing}${dbqt}")
+#end
+#set($foreignCode = '')
+#set($foreignName = '')
+#if($reftabtype1 > 0 && $reftabname0 && $reftabname0 != '')
+#if($jasperQuery)
+#foreach($field1 in $jasperQuery.fields)
+#if($field1.name == $colname0 && $field1.suffix != '')
+#set($codefield0 = "codigo_$reftabname0$field1.suffix")
+#set($namefield0 = "nombre_$reftabname0$field1.suffix")
+#foreach($field2 in $jasperQuery.fields)
+#if($codefield0 == "$field2.alias")
+#set($foreignCode = $field2.name)
+#end
+#if($namefield0 == "$field2.alias")
+#set($foreignName = $field2.name)
+#end
+#end##foreach-field2
+#end
+#end##foreach-field1
+#end
+#end
+#set($tabuji = '')
+#set($tabtag = '')
+#set($fullobjname2 = $objname2)
+#set($fullcolname1 = $colname1)
+#if($field.claseRecursoSecIdClaseRecursoSec)
+#set($tabtag = $field.claseRecursoSecIdClaseRecursoSec.etiquetaClaseRecursoSec)
+#set($tabuji = $utils.getUpperJavaIdentifier($tabtag))
+#set($tabtag = $utils.getStringXml($tabtag))
+#if($tabbedInterface != '')
+#set($fullobjname2 = "${objname2}x1")
+#set($fullcolname1 = "${colname1}1x")
+#end
+#end
+#if($tabbedInterface != '')
+#if($pretabtag != $tabtag)
+#set($pretabtag = $tabtag)
+#if($tabnum > 0)
+                                        </h:panelGrid>
+                                        </webuijsf:tab>
+#else
+##                                      </h:panelGrid>
+                                        <webuijsf:tabSet
+                                            id="tabSet1"
+                                            lite="true"
+                                            mini="true"
+                                            rendered="#{${pagecode}.gestor.filaNoProcesada}"
+                                            selected="tab1">
+#end
+#set($tabnum = $tabnum + 1)
+                                        <webuijsf:tab
+                                            id="tab$tabnum"
+                                            rendered="#{${pagecode}.asistente.seccion${tabuji}Rendered}"
+                                            text="$tabtag">
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+                                            id="gridPanel$gridnum"
+                                            rendered="#{${pagecode}.asistente.seccion${tabuji}Hidden}">
+                                            <webuijsf:staticText
+                                                id="hiddenStaticTextTab$tabnum"
+                                                text="#{${pagecode}.gestor.i18n.textHiddenStaticTextTab}"/>
+                                        </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+                                            columns="2"
+                                            id="gridPanel$gridnum"
+                                            rendered="#{${pagecode}.asistente.seccion${tabuji}Rendered}">
+#end##if-pretabtag
+#end##if-tabbedInterface
+#if($tabbedInterface == '' || $tabuji != '' )
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${fullcolname1}1}"
+                                                id="grid${fullcolname1}1"$rendered1
+#if($rendered1 == '')
+#if($tabbedInterface == '' && $tabuji != '')
+                                                rendered="#{${pagecode}.asistente.grid${colname1}Rendered}"
+#end
+#end
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${fullcolname1}1}"
+                                                    id="label${fullcolname1}1"
+                                                    for="${fullobjname2}"
+                                                    text="$columnlabel1"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${fullcolname1}2}"
+                                                columns="7"
+                                                id="grid${fullcolname1}2"$rendered1
+#if($rendered1 == '')
+#if($tabbedInterface == '' && $tabuji != '')
+                                                rendered="#{${pagecode}.asistente.grid${colname1}Rendered}"
+#end
+#end
+                                                styleClass="pdq-grid-elemento-1">
+#writeJspCode201($foo)##fields
+                                            </h:panelGrid>
+#if($st2type3 != '')
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${fullcolname1}3}"
+                                                id="grid${fullcolname1}3"$rendered1
+#if($rendered1 == '' && $cb2type3 != '')
+#if($tabbedInterface == '' && $tabuji != '')
+                                                rendered="#{${pagecode}.asistente.${objname2}Panel2Rendered}"
+#else
+                                                rendered="#{${pagecode}.asistente.${objname2}Boton2Rendered}"
+#end
+#end
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.label${fullcolname1}2}"
+                                                    id="label${fullcolname1}2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="$columnlabel2"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.grid${fullcolname1}4}"
+                                                columns="7"
+                                                id="grid${fullcolname1}4"$rendered1
+#if($rendered1 == '' && $cb2type3 != '')
+#if($tabbedInterface == '' && $tabuji != '')
+                                                rendered="#{${pagecode}.asistente.${objname2}Panel2Rendered}"
+#else
+                                                rendered="#{${pagecode}.asistente.${objname2}Boton2Rendered}"
+#end
+#end
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{${pagecode}.${fullobjname2}Texto2}"
+#if($foreignName != '')
+                                                    text="#{${sourceVar}.value['$foreignName']}"
+#end
+                                                    id="${fullobjname2}Texto2"/>
+#if($cb2type3 != '')
+                                                <webuijsf:button
+                                                    binding="#{${pagecode}.${fullobjname2}Boton2}"
+                                                    id="${fullobjname2}Boton2"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton2}"/>
+#end
+                                            </h:panelGrid>
+#end
+#end##if-tabbedInterface||tabtag
+#end##if-includedColumns.containsKey
+#end##foreach-field/columna
+## -----------------------------------------------------------------------------
+#if($tabbedInterface == '')
+                                        </h:panelGrid>
+#elseif($tabnum > 0)
+                                        </h:panelGrid>
+                                        </webuijsf:tab>
+                                        </webuijsf:tabSet>
+#end
+#end##macro
+## =============================================================================
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#setMapasPagina()
+#setVirtualFormColumnFieldList()
+#set($virtualForm1 = "virtualForm1 | $virtualFormFieldList listaFuncionEdicion1 listaFuncionAccion1 | ")
+#set($virtualForm2 = "virtualForm2 | | ")
+#set($virtualForm3 = "virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 ")
+#set($virtualForm4 = "virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ")
+#writeJspCode101($domainclassid)##license
+#writeJspCode102(0)##root->cab3
+#writeJspCode103(0)##detalle
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            id="gridPanel$gridnum"
+                                            rendered="#{${pagecode}.gestor.filaDisponible}"
+                                            styleClass="pdq-grid-detalle-1">
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            id="gridPanel$gridnum"
+                                            styleClass="pdq-grid-detalle-cab">
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            columns="2"
+                                            id="gridPanel$gridnum">
+#writeJspCode104(1)##grid-botones-cursor
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+                                                styleClass="pdq-grid-detalle-mensajes">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}"
+                                                    id="gridPanel$gridnum"
+                                                    styleClass="pdq-grid-detalle-mensajes-2">
+                                                    <webuijsf:staticText
+##                                                      binding="#{${pagecode}.textoTituloConsulta1}"
+                                                        id="textoTituloConsulta1"
+                                                        styleClass="pdq-text-titulo-1"
+                                                        text="#{${pagecode}.gestor.tituloConsulta}"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+                                        </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            columns="2"
+                                            id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                id="gridPanel$gridnum"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{${pagecode}.etiquetaIdentificacionFila1}"
+                                                    id="etiquetaIdentificacionFila1"
+                                                    text="#{${pagecode}.gestor.i18n.textoEtiquetaIdentificacionFila}"
+                                                    toolTip="#{${pagecode}.gestor.i18n.toolTipEtiquetaIdentificacionFila}"/>
+                                            </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                columns="7"
+                                                id="gridPanel$gridnum"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+##                                                  binding="#{${pagecode}.textoIdentificacionFila1}"
+                                                    id="textoIdentificacionFila1"
+                                                    style="font-weight: bold"
+                                                    text="#{${pagecode}.gestor.identificacionFila}"/>
+                                                <webuijsf:image
+##                                                  binding="#{${pagecode}.imagenFilaProcesada1}"
+                                                    id="imagenFilaProcesada1"
+                                                    toolTip="#{${pagecode}.gestor.toolTipImagenFilaProcesada}"
+                                                    url="#{${pagecode}.gestor.urlImagenFilaProcesada}"/>
+                                            </h:panelGrid>
+#if($master0 != '')
+#set($fee = "label${joincolname1}1")
+#set($faa = "${pagecode}.label${joincolname1}1")
+#set($foo = "$joincolumnlabel1")
+#else
+#set($fee = "etiquetaDenominacionFilaMaestro1")
+#set($faa = "${pagecode}.etiquetaDenominacionFilaMaestro1")
+#set($foo = "?")
+#end
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+##                                              rendered="#{${pagecode}.gestor.paginaConsultaConMaestro}"
+                                                rendered="#{${pagecode}.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{$faa}"
+                                                    id="$fee"
+                                                    text="$foo"/>
+                                            </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                columns="7"
+                                                id="gridPanel$gridnum"
+##                                              rendered="#{${pagecode}.gestor.paginaConsultaConMaestro}"
+                                                rendered="#{${pagecode}.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+##                                                  binding="#{${pagecode}.textoDenominacionFilaMaestro1}"
+                                                    id="textoDenominacionFilaMaestro1"
+                                                    style="font-weight: bold"
+                                                    text="#{${pagecode}.gestor.denominacionFilaMaestro}"/>
+                                                <webuijsf:image
+##                                                  binding="#{${pagecode}.imagenFilaMaestro1}"
+                                                    id="imagenFilaMaestro1"
+                                                    url="#{${pagecode}.gestor.urlImagenMaestroFilaProcesada}"/>
+                                            </h:panelGrid>
+## -----------------------------------------------------------------------------
+#writeFields(0)
+#writeFields(1)
+## -----------------------------------------------------------------------------
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            id="gridPanel$gridnum"
+                                            styleClass="pdq-grid-detalle-pie">
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid
+##                                          binding="#{${pagecode}.gridPanel$gridnum}"
+                                            columns="2"
+                                            id="gridPanel$gridnum">
+#writeJspCode104(2)##grid-botones-cursor
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid
+##                                              binding="#{${pagecode}.gridPanel$gridnum}"
+                                                id="gridPanel$gridnum"
+                                                styleClass="pdq-grid-detalle-mensajes">
+#set($gridnum = $gridnum + 1)
+                                                <h:panelGrid
+##                                                  binding="#{${pagecode}.gridPanel$gridnum}"
+                                                    id="gridPanel$gridnum"
+                                                    styleClass="pdq-grid-detalle-mensajes-2">
+                                                    <webuijsf:staticText
+##                                                      binding="#{${pagecode}.textoMensajeCambiosPorConfirmar1}"
+                                                        id="textoMensajeCambiosPorConfirmar1"
+                                                        style="font-weight: bold"
+                                                        text="#{${pagecode}.gestor.mensajeCambiosPorConfirmar}"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+                                        </h:panelGrid>
+                                        </h:panelGrid>
+#set($gridnum = $gridnum + 1)
+                                        <h:panelGrid 
+##                                          binding="#{${pagecode}.gridPanel$gridnum}" 
+                                            id="gridPanel$gridnum">
+#set($gridnum = $gridnum + 1)
+                                            <h:panelGrid 
+##                                              binding="#{${pagecode}.gridPanel$gridnum}" 
+                                                id="gridPanel$gridnum">
+                                                <webuijsf:anchor 
+##                                                  binding="#{${pagecode}.anchor1}"
+                                                    id="anchor1"/>
+                                            </h:panelGrid>
+#writeJspCode105(1)##grid-botones-accion
+#writeJspCode106(5)##grid-hiper-vinculos
+                                        </h:panelGrid>
+#writeJspCode107(0)##pie3->root

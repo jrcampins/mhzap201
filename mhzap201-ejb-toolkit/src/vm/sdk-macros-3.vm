@@ -1,0 +1,620 @@
+## =============================================================================
+#macro(setValorPropiedadesColumnaWeb $columna)
+## =============================================================================
+#if($columna.sysForeignKey)
+#set($clave = $columna.sysForeignKey)
+#setPropiedadesClaveForanea($clave)
+#if($joincolname0 == '' && $joinparname0 == $colname0)##OJO sobraba $reftabname1 == $master1 &&
+#set($joincolname0 = $colname0)
+#set($joincolname1 = $colname1)
+#set($joincolname2 = $colname2)
+#set($joincolname3 = $colname3)
+#set($joincolumnlabel1 = " _$joincolname3 ")
+#set($joincolumnlabel1 = $joincolumnlabel1.replace(' _id ', ' ').replace(' _numero ', ' ').replace('_', ' '))
+#set($joincolumnlabel1 = $joincolumnlabel1.replace(' ano ', ' año ').replace(' anos ', ' años '))
+#set($joincolumnlabel1 = $joincolumnlabel1.replace(' any ', ' año ').replace(' anys ', ' años '))
+#set($joincolumnlabel1 = $joincolumnlabel1.replace(' siono ', ' '))
+#set($joincolumnlabel1 = $joincolumnlabel1.trim())
+#end
+#set($dominioReferenciado = $utils.dominioFacade.findByCodigo($reftabname0))
+#if($dominioReferenciado)
+#set($claseRecursoReferenciado = $dominioReferenciado.claseRecursoIdClaseRecurso)
+#if($claseRecursoReferenciado)
+#if($claseRecursoReferenciado.esClaseRecursoExtendida == 1)
+#set($reftabcrsdp = '3')
+#else
+#set($reftabcrsdp = '2')
+#end##esClaseRecursoExtendida
+#set($reftabtype1 = $claseRecursoReferenciado.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso)
+#if($reftabtype1 == 12)
+#set($refenuname1 = "Enum$reftabname1")
+#set($refenupack1 = 'com.egt.base.enums')
+#else
+#set($reftabtype2 = 99)
+#set($reftabpack1 = $dominioReferenciado.paqueteIdPaquete.codigoPaquete.toLowerCase())
+#set($col1 = $utils.sortCollection($dominioReferenciado.dominioParametroIdDominioCollection))
+#foreach($foo in $col1)
+#if($foo.tipoParametroDomNumeroTipoParametroDom.numeroTipoParametroDom == 3)##codigo
+#set($reftabcode0 = $foo.parametroIdParametro.codigoParametro)
+#end##if
+#end##foreach
+#end
+#end
+#end
+#elseif($columna.coltype == 4 && $columna.colname.startsWith('es_'))
+#set($reftabtype1 = 12)
+#set($refenuname1 = 'EnumOpcionBinaria')
+#set($refenupack1 = 'com.egt.base.enums')
+#end
+#if($columna.coltype == 1 && $columna.colprec > 100)
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'TextArea')
+#set($objtype2 = 'textArea')
+#set($objtype3 = 'com.egt.core.jsf.component.AreaTexto')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#elseif($columna.coltype == 3 && ($pagetype == 2 || $pagetype == 6) && $columna.colname.indexOf('fecha_hora') != 0 && $columna.colname.indexOf('hora') != 0)
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'Calendar')
+#set($objtype2 = 'calendar')
+#set($objtype3 = 'com.egt.core.jsf.component.Calendario')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#elseif($reftabtype1 == 12)
+#set($objname1 = "Lista${colname1}1")
+#set($objname2 = "lista${colname1}1")
+#set($objtype1 = 'DropDown')
+#set($objtype2 = 'dropDown')
+#set($objtype3 = 'com.egt.core.jsf.component.ListaDesplegable')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#else
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'TextField')
+#set($objtype2 = 'textField')
+#set($objtype3 = 'com.egt.core.jsf.component.CampoTexto')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#if($reftabtype2 == 99)
+#set($cb1type3 = 'com.egt.core.jsf.component.BotonBuscar')
+#set($cb2type3 = 'com.egt.core.jsf.component.BotonVerDetalle')
+#set($hl1type3 = 'com.egt.core.jsf.component.HipervinculoBuscar')
+#set($hl2type3 = 'com.egt.core.jsf.component.HipervinculoVerDetalle')
+#set($st2type3 = 'com.egt.core.jsf.component.TextoEstaticoComplementario')
+#end
+#end
+#if($columna.coltype == 1)
+#set($converter1 = '')
+#set($validator1 = 'LengthValidator')
+#elseif($columna.coltype == 2)
+#set($converter1 = 'NumberConverter')
+#set($validator1 = 'DoubleRangeValidator')
+#elseif($columna.coltype == 3)
+#set($converter1 = 'SqlTimestampConverter')
+#set($validator1 = '')
+#elseif($columna.coltype == 4)
+#set($converter1 = 'IntegerConverter')
+#set($validator1 = 'LongRangeValidator')
+#elseif($columna.coltype == 5)
+#set($converter1 = 'LongConverter')
+#set($validator1 = 'LongRangeValidator')
+#else
+#set($converter1 = '')
+#set($validator1 = '')
+#end
+#if($columna.colprec > 100 && ($pagetype == 2 || $pagetype == 6))
+#set($columns1 = '100')
+#elseif($columna.colprec > 50)
+#set($columns1 = '50')
+#elseif($columna.colprec > 20)
+#set($columns1 = '20')
+#elseif($columna.colprec > 10)
+#set($columns1 = '10')
+#else
+#set($columns1 = "$columna.colprec")
+#end
+#set($readonly1 = '')
+#if($readOnlyFields.containsKey($colname0))
+#set($readonly1 = 'true')
+#end
+#if($domainclasstype1 != 12)
+#elseif($colname2 == "codigo$tabname1")
+#set($readonly1 = 'true')
+#elseif($colname2 == "numero$tabname1")
+#set($readonly1 = 'true')
+#end
+#set($rendered1 = '')
+#set($required1 = '')
+#if($requiredFields.containsKey($colname0))
+#set($required1 = ' required="true"')
+#end
+#if($columna.isnullable == 0)
+#set($required1 = ' required="true"')
+#end
+#if($domainclasstype3 == 1)## sin detalle
+#elseif($pagetype == 2 || $pagetype == 6)
+#elseif($colname2 == "codigo$tabname1")
+#elseif($colname2 == "nombre$tabname1")
+#elseif($colname2 == "es${tabname1}Inactiva")
+#elseif($colname2 == "es${tabname1}Inactivo")
+#elseif($colname2 == "numeroCondicion$tabname1")
+#elseif($columna.isnullable == 0 && $columna.hasdefault == 0)
+#elseif($mainPageFields.containsKey($colname0))
+#else
+#set($rendered1 = ' rendered="false"')
+#end
+#if($colname0 == $pkid0 && $javatype == 'Long')
+#if($domainclasstype1 == 11)##metadata
+#elseif($reftabcode0 != '')##one-to-one-relationship
+#elseif($code0 == '' && ($pagetype == 2 || $pagetype == 4 || $pagetype == 6))##no-business-key and (p2 or p4 or p6)
+#set($readonly1 = 'true')
+#set($required1 = '')
+#else
+#set($rendered1 = ' rendered="false"')
+#set($required1 = '')
+#end
+#end
+#if($colname0 == $pkid0 && $reftabtype2 == 99)
+#set($columnlabelx = " _$refcolname3 ")
+#else
+#set($columnlabelx = " _$colname3 ")
+#end
+#if($reftabtype1 == 12)
+    #if($tabname3)
+        #set($columnlabel1 = $columnlabelx.replace(' _numero ', ' ').replace(" _es $tabname3 ", ' ').replace(' _es ', ' ').replace('_', ' '))##.replace(" $tabname3 ", ' ')
+        #set($columnlabel2 = '')
+    #end
+#elseif($reftabtype2 == 99)
+#set($columnlabel1 = $columnlabelx.replace(' _id ', ' ').replace('_', ' '))
+#set($columnlabel2 = $columnlabelx.replace(' _id ', ' nombre ').replace('_', ' '))
+#else
+    #if($tabname3)
+        #set($columnlabel1 = $columnlabelx.replace('_', ' '))##.replace(" $tabname3 ", ' ')
+        #set($columnlabel2 = '')
+    #end
+#end
+#set($columnlabel1 = $columnlabel1.replace(' ano ', ' año ').replace(' anos ', ' años '))
+#set($columnlabel1 = $columnlabel1.replace(' any ', ' año ').replace(' anys ', ' años '))
+#set($columnlabel1 = $columnlabel1.replace(' siono ', ' '))
+#set($columnlabel1 = $columnlabel1.trim())
+#set($columnlabel2 = $columnlabel2.replace(' ano ', ' año ').replace(' anos ', ' años '))
+#set($columnlabel2 = $columnlabel2.replace(' any ', ' año ').replace(' anys ', ' años '))
+#set($columnlabel2 = $columnlabel2.replace(' siono ', ' '))
+#set($columnlabel2 = $columnlabel2.trim())
+#if($tabname3)
+    #set($columnlabel1 = $columnlabel1.concat('_').replace(" ${tabname3}_", ' ').replace('_', ' '))
+    #set($columnlabel1 = $columnlabel1.trim())
+    #set($columnlabel2 = $columnlabel2.concat('_').replace(" ${tabname3}_", ' ').replace('_', ' '))
+    #set($columnlabel2 = $columnlabel2.trim())
+#end
+#set($valuerange = '')
+#if($validator1 == '' || $reftabtype1 != -1)
+#elseif($columna.coltype == 1)
+#set($validator1maximum = $columna.colprec)
+#elseif($columna.coltype == 2)
+#if($columna.colprec > $columna.colscale)
+#set($foo = $columna.colprec - $columna.colscale - 1)
+#set($validator1minimum = '0.0')
+#set($validator1maximum = "1.0E$foo")
+#set($valuerange = $utils.getValueRange($columna))
+#end
+#elseif($columna.coltype == 4)
+#set($validator1minimum = '0L')
+#set($validator1maximum = '1000000000L')
+#set($valuerange = $utils.getValueRange($columna))
+#elseif($columna.coltype == 5)
+#set($validator1minimum = '0L')
+#set($validator1maximum = '1000000000000000000L')
+#set($valuerange = $utils.getValueRange($columna))
+#end
+#if($valuerange && $valuerange != '' && $valuerange != '_')
+#set($token = $utils.getToken($valuerange, 0))
+#if($token && $token != '' && $token != $valuerange)
+#if($token.indexOf('.') < 0)
+#set($valueconst = 'L')
+#else
+#set($valueconst = '')
+#end
+#set($validator1minimum = "$token$valueconst")
+#end
+#set($token = $utils.getToken($valuerange, 1))
+#if($token && $token != '' && $token != $valuerange)
+#if($token.indexOf('.') < 0)
+#set($valueconst = 'L')
+#else
+#set($valueconst = '')
+#end
+#set($validator1maximum = "$token$valueconst")
+#end
+#end
+#if($includedFields.containsKey($colname0))
+#set($field = $includedFields.get($colname0))
+#if($field.claseRecursoSecIdClaseRecursoSec)
+#set($secname0 = $field.claseRecursoSecIdClaseRecursoSec.etiquetaClaseRecursoSec)
+#set($secname0 = $utils.getStringAscii($secname0))
+#set($secname1 = $utils.getUpperJavaIdentifier($secname0))
+#set($secname2 = $utils.getLowerJavaIdentifier($secname0))
+#set($tabbedobjname1 = "${objname1}x1")
+#set($tabbedobjname2 = "${objname2}x1")
+#set($tabbedcolname1 = "${colname1}1x")
+#set($tabbedcolname2 = "${colname2}1x")
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesColumnaWeb $columna)
+## =============================================================================
+#set($reftabcrsdp = '')
+#set($reftabtype1 = -1)
+#set($reftabtype2 = -1)
+#set($refenuname1 = '')
+#set($refenupack1 = '')
+#set($reftabpack1 = '')
+#set($reftabcode0 = '')
+#set($objname1 = '')
+#set($objname2 = '')
+#set($cb1type3 = '')
+#set($cb2type3 = '')
+#set($hl1type3 = '')
+#set($hl2type3 = '')
+#set($st1type3 = '')
+#set($st2type3 = '')
+#set($converter1 = '')
+#set($validator1 = '')
+#set($validator1minimum = '')
+#set($validator1maximum = '')
+#set($columns1 = '')
+#set($readonly1 = '')
+#set($rendered1 = '')
+#set($required1 = '')
+#set($columnlabel1 = '')
+#set($columnlabel2 = '')
+#set($secname0 = '')
+#set($secname1 = '')
+#set($secname2 = '')
+#set($tabbedobjname1 = '')
+#set($tabbedobjname2 = '')
+#set($tabbedcolname1 = '')
+#set($tabbedcolname2 = '')
+#setPropiedadesColumna($columna)
+#if($columna)
+#setValorPropiedadesColumnaWeb($columna)
+#end
+#end##macro
+## =============================================================================
+#macro(setMapasPagina)
+## =============================================================================
+#set($foo = $includedFields.clear())
+#set($foo = $readOnlyFields.clear())
+#set($foo = $requiredFields.clear())
+#set($foo = $noInsertFields.clear())
+#set($foo = $noUpdateFields.clear())
+#set($foo = $doSubmitFields.clear())
+#set($foo = $mainPageFields.clear())
+#set($foo = $includedColumns.clear())
+## -----------------------------------------------------------------------------
+#set($col1 = $utils.sortCollection($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoParIdClaseRecursoCollection))
+#foreach($obj1 in $col1)
+#set($fee = $obj1.parametroIdParametro.codigoParametro)
+#set($faa = $obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro)
+#if($faa != 2)
+#set($foo = $utils.put($includedFields, $fee, $obj1))
+#end
+#if($faa == 4)
+#set($foo = $utils.put($readOnlyFields, $fee, $obj1))
+#end
+#if($faa == 1)
+#set($foo = $utils.put($requiredFields, $fee, $obj1))
+#end
+#set($faa = $obj1.esParametroOmisible)
+#if($faa == 1)
+#set($foo = $utils.put($noInsertFields, $fee, $obj1))
+#end
+#set($faa = $obj1.esParametroInmutable)
+#if($faa == 1)
+#set($foo = $utils.put($noUpdateFields, $fee, $obj1))
+#end
+#set($faa = $obj1.esParametroSubmit)
+#if($faa == 1)
+#set($foo = $utils.put($doSubmitFields, $fee, $obj1))
+#end
+#set($faa = $obj1.esParametroPrimordial)
+#if($faa == 1)
+#set($foo = $utils.put($mainPageFields, $fee, $obj1))
+#elseif($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro == 1)
+#set($requirednotprime1 = 1)
+#end
+#end##foreach-obj1
+## -----------------------------------------------------------------------------
+#foreach($columna in $sysdomain.columns)
+#setPropiedadesColumnaWeb($columna)
+#if($master0 != '' && $colname0 == $joincolname0)
+#elseif($colname0 == "version_$tabname0")
+#elseif($includedFields.containsKey($colname0))
+#set($foo = $utils.put($includedColumns, $colname0, $columna))
+#end
+#end##foreach-columna
+#end##macro
+## =============================================================================
+#macro(setVirtualFormColumnFieldList)
+## =============================================================================
+#set($virtualFormFieldList = '')
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#set($virtualFormFieldList = $utils.concatenate($virtualFormFieldList, $objname2))
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesFuncionParametro $parametro)
+## =============================================================================
+#set($colname0 = $parametro.parametroIdParametro.codigoParametro)
+#set($colname1 = $utils.getUpperCamelCase($colname0))
+#set($colname2 = $utils.getLowerCamelCase($colname0))
+#set($colname3 = $utils.getUnderscoreless($colname0))
+#set($coltype1 = $parametro.tipoParametroNumeroTipoParametro.numeroTipoParametro)
+#set($coltype2 = $parametro.tipoValorNumeroTipoValor.numeroTipoValor)
+#set($coltype3 = $parametro.parametroIdParametro.tipoDatoParNumeroTipoDatoPar.numeroTipoDatoPar)
+#end##macro
+## =============================================================================
+#macro(setPropiedadesFuncionParametro $parametro)
+## =============================================================================
+#set($colname0 = '')
+#set($colname1 = '')
+#set($colname2 = '')
+#set($colname3 = '')
+#set($coltype1 = -1)
+#set($coltype2 = -1)
+#set($coltype3 = -1)
+#if($parametro)
+#setValorPropiedadesFuncionParametro($parametro)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesClaseForanea $clase)
+## =============================================================================
+#set($reftabname0 = $clase.codigoClaseRecurso)
+#set($reftabname1 = $utils.getUpperCamelCase($reftabname0))
+#set($reftabname2 = $utils.getLowerCamelCase($reftabname0))
+#set($reftabname3 = $utils.getUnderscoreless($reftabname0))
+#end##macro
+## =============================================================================
+#macro(setPropiedadesClaseForanea $clase)
+## =============================================================================
+#set($reftabname0 = '')
+#set($reftabname1 = '')
+#set($reftabname2 = '')
+#set($reftabname3 = '')
+#if($clase)
+#setValorPropiedadesClaseForanea($clase)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesFuncionParametroWeb $parametro)
+## =============================================================================
+#if($parametro.funcionIdFuncionReferencia)
+    #set($refunction1 = $parametro.funcionIdFuncionReferencia.idFuncion)
+#else
+    #set($refunction1 = '')
+#end
+#if($coltype2 == 23)
+#set($claseRecursoReferenciado = $parametro.claseRecursoIdClaseRecursoValor)
+#setPropiedadesClaseForanea($claseRecursoReferenciado)
+#set($dominioReferenciado = $utils.dominioFacade.findByCodigo($reftabname0))
+#if($dominioReferenciado)
+#if($claseRecursoReferenciado)
+#if($claseRecursoReferenciado.esClaseRecursoExtendida == 1)
+#set($reftabcrsdp = '3')
+#else
+#set($reftabcrsdp = '2')
+#end##esClaseRecursoExtendida
+#set($reftabtype1 = $claseRecursoReferenciado.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso)
+#if($reftabtype1 == 12)
+#set($refenuname1 = "Enum$reftabname1")
+#set($refenupack1 = 'com.egt.base.enums')
+#else
+#set($reftabtype2 = 99)
+#set($reftabpack1 = $dominioReferenciado.paqueteIdPaquete.codigoPaquete.toLowerCase())
+#end
+#end
+#end
+#elseif($colname0.startsWith('es_') && $coltype3 == 4)
+#set($reftabtype1 = 12)
+#set($refenuname1 = 'EnumOpcionBinaria')
+#set($refenupack1 = 'com.egt.base.enums')
+#end
+#if($coltype3 == 1 && $colname0.startsWith('nombre_archivo'))
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'Upload')
+#set($objtype2 = 'upload')
+#set($objtype3 = 'com.egt.core.jsf.component.CampoArchivo')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#elseif($coltype3 == 3 && $colname0.indexOf('fecha_hora') != 0 && $colname0.indexOf('hora') != 0)
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'Calendar')
+#set($objtype2 = 'calendar')
+#set($objtype3 = 'com.egt.core.jsf.component.Calendario')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#elseif($reftabtype1 == 12)
+#set($objname1 = "Lista${colname1}1")
+#set($objname2 = "lista${colname1}1")
+#set($objtype1 = 'DropDown')
+#set($objtype2 = 'dropDown')
+#set($objtype3 = 'com.egt.core.jsf.component.ListaDesplegable')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#else
+#set($objname1 = "Campo${colname1}1")
+#set($objname2 = "campo${colname1}1")
+#set($objtype1 = 'TextField')
+#set($objtype2 = 'textField')
+#set($objtype3 = 'com.egt.core.jsf.component.CampoTexto')
+#set($st1type3 = 'com.egt.core.jsf.component.TextoEstaticoAlternativo')
+#if($reftabtype2 == 99)
+#set($cb1type3 = 'com.egt.core.jsf.component.BotonBuscar')
+#set($cb2type3 = 'com.egt.core.jsf.component.BotonVerDetalle')
+#set($hl1type3 = 'com.egt.core.jsf.component.HipervinculoBuscar')
+#set($hl2type3 = 'com.egt.core.jsf.component.HipervinculoVerDetalle')
+#set($st2type3 = 'com.egt.core.jsf.component.TextoEstaticoComplementario')
+#end
+#end
+#if($coltype3 == 1)
+#set($converter1 = '')
+#set($validator1 = 'LengthValidator')
+#elseif($coltype3 == 2)
+#set($converter1 = 'NumberConverter')
+#set($validator1 = 'DoubleRangeValidator')
+#elseif($coltype3 == 3)
+#set($converter1 = 'SqlTimestampConverter')
+#set($validator1 = '')
+#elseif($coltype3 == 4)
+#set($converter1 = 'IntegerConverter')
+#set($validator1 = 'LongRangeValidator')
+#elseif($coltype3 == 5)
+#set($converter1 = 'LongConverter')
+#set($validator1 = 'LongRangeValidator')
+#else
+#set($converter1 = '')
+#set($validator1 = '')
+#end
+#set($columns1 = '50')
+#set($rendered1 = '')##default=true
+#set($required1 = '')##default=false
+#if($coltype1 == 1)
+#set($required1 = ' required="true"')
+#end
+#set($columnlabelx = " _$colname3 ")
+#if($reftabtype1 == 12)
+    #if($tabname3)
+        #set($columnlabel1 = $columnlabelx.replace(' _numero ', ' ').replace(" _es $tabname3 ", ' ').replace(' _es ', ' ').replace('_', ' '))##.replace(" $tabname3 ", ' ')
+        #set($columnlabel2 = '')
+    #end
+#elseif($reftabtype2 == 99)
+#set($columnlabel1 = $columnlabelx.replace(' _id ', ' ').replace('_', ' '))
+#set($columnlabel2 = $columnlabelx.replace(' _id ', ' nombre ').replace('_', ' '))
+#else
+    #if($tabname3)
+        #set($columnlabel1 = $columnlabelx.replace('_', ' '))##.replace(" $tabname3 ", ' ')
+        #set($columnlabel2 = '')
+    #end
+#end
+#set($columnlabel1 = $columnlabel1.replace(' ano ', ' año ').replace(' anos ', ' años '))
+#set($columnlabel1 = $columnlabel1.replace(' any ', ' año ').replace(' anys ', ' años '))
+#set($columnlabel1 = $columnlabel1.replace(' siono ', ' '))
+#set($columnlabel1 = $columnlabel1.trim())
+#set($columnlabel2 = $columnlabel2.replace(' ano ', ' año ').replace(' anos ', ' años '))
+#set($columnlabel2 = $columnlabel2.replace(' any ', ' año ').replace(' anys ', ' años '))
+#set($columnlabel2 = $columnlabel2.replace(' siono ', ' '))
+#set($columnlabel2 = $columnlabel2.trim())
+#if($tabname3)
+    #set($columnlabel1 = $columnlabel1.concat('_').replace(" ${tabname3}_", ' ').replace('_', ' '))
+    #set($columnlabel1 = $columnlabel1.trim())
+    #set($columnlabel2 = $columnlabel2.concat('_').replace(" ${tabname3}_", ' ').replace('_', ' '))
+    #set($columnlabel2 = $columnlabel2.trim())
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesFuncionParametroWeb $parametro)
+## =============================================================================
+#set($reftabcrsdp = '')
+#set($reftabtype1 = -1)
+#set($reftabtype2 = -1)
+#set($refenuname1 = '')
+#set($refenupack1 = '')
+#set($reftabpack1 = '')
+#set($objname1 = '')
+#set($objname2 = '')
+#set($cb1type3 = '')
+#set($cb2type3 = '')
+#set($hl1type3 = '')
+#set($hl2type3 = '')
+#set($st1type3 = '')
+#set($st2type3 = '')
+#set($converter1 = '')
+#set($validator1 = '')
+#set($columns1 = '')
+#set($rendered1 = '')
+#set($required1 = '')
+#set($columnlabel1 = '')
+#set($columnlabel2 = '')
+#set($secname0 = '')
+#set($secname1 = '')
+#set($secname2 = '')
+#set($tabbedobjname1 = '')
+#set($tabbedobjname2 = '')
+#set($tabbedcolname1 = '')
+#set($tabbedcolname2 = '')
+#setPropiedadesFuncionParametro($parametro)
+#if($parametro)
+#setValorPropiedadesFuncionParametroWeb($parametro)
+#end
+#end##macro
+## =============================================================================
+#macro(setIncludedParametersMap $inparams)
+## =============================================================================
+#set($foo = $inparams.clear())
+#set($col1 = $utils.sortCollection($pagina.paginaFuncionIdPaginaCollection))
+#foreach($obj1 in $col1)
+#set($col2 = $utils.sortCollection($obj1.funcionIdFuncion.funcionParametroIdFuncionCollection))
+#foreach($obj2 in $col2)
+#if($obj2.tipoParametroNumeroTipoParametro.numeroTipoParametro == 2)
+##Omitido
+#else
+#setPropiedadesFuncionParametro($obj2)
+#set($foo = $utils.put($inparams, $colname0, $obj2))##Obligatorio, Opcional o Programatico
+#end
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setVirtualFormParameterFieldList)
+## =============================================================================
+#set($virtualFormFieldList = '')
+#foreach($parametro in $inparams)
+#setPropiedadesFuncionParametroWeb($parametro)
+#set($virtualFormFieldList = $utils.concatenate($virtualFormFieldList, $objname2))
+#end
+#end##macro
+## =============================================================================
+#macro(setInterfaceColumnsMap $intercols $dominio)
+## =============================================================================
+#set($foo = $intercols.clear())
+#if($dominio)
+#set($col1 = $utils.sortCollection($dominio.dominioParametroIdDominioCollection))
+#foreach($foo in $col1)
+#set($foo1 = $foo.tipoParametroDomNumeroTipoParametroDom.codigoTipoParametroDom)
+#set($foo2 = $foo.parametroIdParametro.codigoParametro)
+#set($foo3 = $utils.put($intercols, $foo1, $foo2))
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setInterfaceParametersMap $intercols $dominio)
+## =============================================================================
+#set($foo = $intercols.clear())
+#if($dominio)
+#set($col1 = $utils.sortCollection($dominio.dominioParametroIdDominioCollection))
+#foreach($foo in $col1)
+#set($foo1 = $foo.tipoParametroDomNumeroTipoParametroDom.codigoPropiedadInterfaz)
+#set($foo2 = $foo.parametroIdParametro.codigoParametro)
+#set($foo3 = $utils.put($intercols, $foo1, $foo2))
+#end
+#end
+#end##macro
+## =============================================================================
+#macro(setReferencedTableInterfaceColumnsMap $intercols $reftabname)
+## =============================================================================
+#set($foo = $intercols.clear())
+#if($reftabname)
+#set($dominio = $utils.dominioFacade.findByCodigo($reftabname))
+#setInterfaceColumnsMap($intercols $dominio)
+#end
+#end##macro
+## =============================================================================
+#macro(setSysTable $reftabname)
+## =============================================================================
+#set($systable = $utils.systemTableFacade.findByCodigo($reftabname))
+#if($systable)
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#end
+#end##macro

@@ -1,0 +1,518 @@
+#ShowTime(0)
+#setPropiedadesSistema($aplicaciones)
+#ShowTime(1)
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#ShowTime(1)
+#setMapasPagina()
+#ShowTime(1)
+#set($operators = $utils.enumMap('operador_com'))
+#set($funciones = $utils.sortCollection($pagina.dominioIdDominio.funcionIdDominioCollection))
+#setPropiedadesColeccionFunciones($funciones)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+#set($xrefMap = $utils.newMap())
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype1 == 12)
+#set($foo = "import ${refenupack1}.${refenuname1};")
+#set($foo = $utils.put($xrefMap, $refenuname1, $foo))
+#end
+#end##foreach
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+$foo
+#end##foreach
+## -----------------------------------------------------------------------------
+#set($foo = $xrefMap.clear())
+#set($foo = "import com.egt.data.${domainpack1}.xdp${domaincrsdp}.${domain1}CachedRowSetDataProvider${domaincrsdp};")
+#set($foo = $utils.put($xrefMap, $domain0, $foo))
+#if($master0 != '')
+#set($foo = "import com.egt.data.${masterpack1}.xdp${mastercrsdp}.${master1}CachedRowSetDataProvider${mastercrsdp};")
+#set($foo = $utils.put($xrefMap, $master0, $foo))
+#end
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($reftabtype2 == 99)
+#set($foo = "import com.egt.data.${reftabpack1}.xdp${reftabcrsdp}.${reftabname1}CachedRowSetDataProvider${reftabcrsdp};")
+#set($foo = $utils.put($xrefMap, $reftabname0, $foo))
+#end
+#end##foreach
+## -----------------------------------------------------------------------------
+#foreach($foo in $xrefMap)
+$foo
+#end##foreach
+## -----------------------------------------------------------------------------
+import com.egt.base.constants.URX2;
+import com.egt.base.enums.EnumOperadorCom;
+import com.egt.base.enums.EnumTipoDatoPar;
+#if($iminbiz == 13)
+import com.egt.base.jms.messages.AbstractMessage;
+#end
+import com.egt.base.util.BundleWebui;
+import com.egt.commons.util.BitUtils;
+import com.egt.commons.util.LongUtils;
+import com.egt.core.aplicacion.Bitacora;
+import com.egt.core.aplicacion.FiltroBusqueda;
+##if($iminbiz == 13)
+import com.egt.core.aplicacion.TLC;
+##end
+import com.egt.core.aplicacion.web.GestorBusquedaReferencia;
+import com.egt.core.aplicacion.web.RowProcessor;
+#if($iminbiz == 13)
+import com.egt.core.control.Auditor;
+#end
+import com.egt.core.jsf.JSF;
+import com.egt.core.util.STP;
+#if($iminbiz == 13)
+import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+#end
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable == 13)
+#setPropiedadesFuncion($funcion)
+import com.egt.ejb.business.message.${funcion1}Message;
+#end##executable
+#end##foreach
+#end##funsize
+#if($iminbiz == 13)
+import com.egt.ejb.business.process.${domain1}BusinessProcessLocal;
+#end
+#if($iminrep == 22)
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+#end
+#if($iminexp == 23)
+import com.egt.ejb.core.exporter.ExporterBrokerLocal;
+#end
+import com.sun.data.provider.RowKey;
+import com.sun.webui.jsf.model.Option;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Date;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+#if($iminbiz == 13)
+##import javax.jms.JMSException;##ClassNotFoundException
+import javax.jms.ObjectMessage;
+#end
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+#if($master0 != '')
+#set($classname = "AsistentePaginaActualizacion${domain1}Por${joinparname4}")
+#set($intername = "PaginaActualizacion${domain1}Por${joinparname4}")
+#else
+#set($classname = "AsistentePaginaActualizacion${domain1}")
+#set($intername = "PaginaActualizacion${domain1}")
+#end
+public class ${classname} {
+
+    private $intername bean;
+
+    public ${classname}() {
+        this.bean = null;
+    }
+
+    public ${classname}($intername bean) {
+        this.bean = bean;
+    }
+
+    public Option[] getOpcionesListaFuncionEdicion() {
+        String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionEdicion();
+        return new Option[]{ //
+#set($fee = 0)##step
+#set($faa = 0)##size
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#if($funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion == 32 && $funcion.esProgramatica == 0)
+#set($faa = $faa + 1)
+#end##if
+#end##foreach
+#end##funsize
+#if($faa > 0)## && $pagina.dominioIdDominio ??
+#if($faa > 1 && ($pagetype == 1 || $pagetype == 2))
+#set($x = '  ')
+#else
+#set($x = '//')
+#end
+                $x  new Option("", etiquetaSeleccioneUnaOpcion),
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#set($token = $funcion.codigoFuncion)
+#set($token = $token.concat('_'))
+#set($token = $token.replace("_${domain0}_", '_'))
+#set($token = $token.replace('modificar_', 'editar_'))
+#set($token = $token.replace('_', ' '))
+#set($token = $token.trim())
+#if($funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion == 32 && $funcion.esProgramatica == 0)
+#set($fee = $fee + 1)
+#if($fee == $faa)
+#set($comma = '')
+#else
+#set($comma = ',')
+#end
+                $x  new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase(), BundleWebui.getString("$token"))$comma
+#end##if
+#end##foreach
+#end##funsize
+#end##faa>0
+                };
+    }
+
+    public Option[] getOpcionesListaFuncionAccion() {
+        String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
+        Option[] opciones = new Option[]{
+#set($fee = 0)##step
+#set($faa = 0)##size
+#if($pagina.dominioIdDominio)
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable != '')
+#set($faa = $faa + 1)
+#end##executable
+#end##foreach
+#end##funsize
+#if($faa > 0)
+#if($pagetype == 1 || $pagetype == 2)
+#set($x = '  ')
+#else
+#set($x = '//')
+#end
+        $x  new Option("", etiquetaSeleccioneUnaOpcion),
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable != '')
+#set($token = $funcion.codigoFuncion)
+#set($token = $token.concat('_'))
+#set($token = $token.replace("_${domain0}_", '_'))
+#set($token = $token.replace('_', ' '))
+#set($token = $token.trim())
+#set($fee = $fee + 1)
+#if($fee == $faa)
+#set($comma = '')
+#else
+#set($comma = ',')
+#end
+        $x  new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase(), BundleWebui.getString("$token"))$comma
+#end##executable
+#end##foreach
+#end##faa>0
+#end##dominio
+        };
+        return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
+    }
+
+    void procesar() {
+        if (bean.getRecursoDataProvider().isFuncionBusinessProcessAutorizada()) {
+##          try {
+            bean.getGestor().procesar(new RowProcessor() {
+
+                @Override
+                public void processRow(RowKey rowKey) throws Exception {
+                    procesar(rowKey);
+                }
+            });
+##          } catch (Exception ex) {
+##              bean.getGestor().handle(ex);
+##          }
+        }
+    }
+
+    void procesar(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "procesar", rowKey);
+#if($faa > 0)
+#if($funsize > 0)
+        long f = bean.getRecursoDataProvider().getFuncionBusinessProcess();
+        boolean esFilaAutorizada = bean.getRecursoDataProvider().esFilaAutorizada(rowKey, f);
+        if (!esFilaAutorizada) {
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable != '')
+#set($token = $utils.getLowerCamelCase($funcion.codigoFuncion))
+        } else if (f == ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase()) {
+            this.$token(rowKey);
+#end##executable
+#end##foreach
+        }
+#end##funsize
+#end
+    }
+
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable != '')
+#setPropiedadesFuncion($funcion)
+    private boolean $funcion2(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "$funcion2", rowKey);
+##      // TODO: ejecutar funcion
+#if($executable == 13)
+        bean.getGestor().setReadOnlyProcessing(false);
+#set($rpl = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+#set($rpl = "$rpl, $parametro2")
+#set($foo = "null")
+#if($funparam.parametroIdParametro.codigoParametro == $pkid0)
+#set($foo = "bean.get${domain1}DataProvider().get$parametro1(rowKey)")
+#end
+        $paramtype2 $parametro2 = $foo;
+#end##No-Omitido
+#end##foreach
+#if($rpl.length() > 0)
+#set($rpl = $rpl.substring(2))
+#end
+        ${funcion1}Message message = new ${funcion1}Message($rpl);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.get${domain1}BusinessProcess().$funcion2(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+#elseif($executable == 22)
+        bean.getGestor().setReadOnlyProcessing(true);
+#set($rpl = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+#set($rpl = "$rpl, $parametro2")
+#set($foo = "null")
+#if($funparam.parametroIdParametro.codigoParametro == $pkid0)
+#set($foo = "bean.get${domain1}DataProvider().get$parametro1(rowKey)")
+#end
+        $paramtype2 $parametro2 = $foo;
+#end##No-Omitido
+#end##foreach
+##      String report = ${domain1}CachedRowSetDataProvider${domaincrsdp}.CODIGO_DOMINIO_RECURSO;
+##      long function = ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_CONSULTAR_$domain0.toUpperCase();
+        String report = ${domain1}CachedRowSetDataProvider${domaincrsdp}.INFORME_FUNCION_$funcion0.toUpperCase();
+        long function = ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion0.toUpperCase();
+#if($rpl.length() > 0)
+        Map parameters = new LinkedHashMap();
+#set($sql = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+#set($sql = "$sql and ${domain0}.$parametro0=?")
+        parameters.put("$parametro0", $parametro2);
+#end##No-Omitido
+#end##foreach
+#set($rpl = $rpl.substring(2))
+#set($sql = $sql.substring(5))
+#if($funselin == '')
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+##      String select = "select * from ${domain0} where ($sql)";
+##      Object[] args = new Object[]{$rpl};
+##      this.getReporter().executeReport(report, function, select, args, parameters);
+##      ------------------------------------------------------------------------
+        String select = "select * from ${domain0}";
+        String search = "";
+        ArrayList args = new ArrayList();
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+        if ($parametro2 != null) {
+            args.add($parametro2);
+#if($parametro0.endsWith('_desde'))
+##          search += " and ${domain0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+#elseif($parametro0.endsWith('_hasta'))
+##          search += " and ${domain0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+#else
+##          search += " and ${domain0}.$parametro0=?";
+            search += " and $parametro0=?";
+#end##parametro0.endsWith
+        }
+#end##No-Omitido
+#end##foreach
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+#else
+        this.getReporter().executeReport(report, function, parameters);
+#end
+#else
+        this.getReporter().executeReport(report, function);
+#end##rpl > 0
+        return true;
+#elseif($executable == 23)
+        bean.getGestor().setReadOnlyProcessing(true);
+#set($rpl = '')
+#set($sql = '')
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+#set($rpl = "$rpl, $parametro2")
+#set($sql = "$sql and ${domain0}.$parametro0=?")
+#set($foo = "null")
+#if($funparam.parametroIdParametro.codigoParametro == $pkid0)
+#set($foo = "bean.get${domain1}DataProvider().get$parametro1(rowKey)")
+#end
+        $paramtype2 $parametro2 = $foo;
+#end##No-Omitido
+#end##foreach
+##      String report = ${domain1}CachedRowSetDataProvider${domaincrsdp}.CODIGO_DOMINIO_RECURSO;
+##      long function = ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_CONSULTAR_$domain0.toUpperCase();
+        String report = ${domain1}CachedRowSetDataProvider${domaincrsdp}.ARCHIVO_FUNCION_$funcion0.toUpperCase();
+        long function = ${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion0.toUpperCase();
+#if($rpl.length() > 0)
+#set($rpl = $rpl.substring(2))
+#set($sql = $sql.substring(5))
+//      ------------------------------------------------------------------------
+//      String select = "select * from ${domain0} where ($sql)";
+//      Object[] args = new Object[]{$rpl};
+//      this.getExporter().executeExport(report, function, select, args);
+//      ------------------------------------------------------------------------
+        String select = "select * from ${domain0}";
+        String search = "";
+        ArrayList args = new ArrayList();
+#foreach($funparam in $funparams)
+#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+        if ($parametro2 != null) {
+            args.add($parametro2);
+#if($parametro0.endsWith('_desde'))
+##          search += " and ${domain0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
+#elseif($parametro0.endsWith('_hasta'))
+##          search += " and ${domain0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+            search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
+#else
+##          search += " and ${domain0}.$parametro0=?";
+            search += " and $parametro0=?";
+#end##parametro0.endsWith
+        }
+#end##No-Omitido
+#end##foreach
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getExporter().executeExport(report, function, select, args.toArray());
+        } else {
+            this.getExporter().executeExport(report, function);
+        }
+#else
+        this.getExporter().executeExport(report, function);
+#end##rpl > 0
+        return true;
+#else
+        bean.getGestor().setReadOnlyProcessing(true);
+        return false;
+#end##executable=13
+    }
+
+#end##executable
+#end##foreach
+#end##funsize
+    public boolean isComandoDisponible() {
+        if (bean == null) {
+            return true;
+        }
+#set($y = 'false')
+#foreach($foo in $pagemap4)
+#if($y == 'false' && $foo.dominioIdDominio.codigoDominio.equals($domain0))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $foo.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+//      String urx = URX2.${foo1}_${foo2};
+#set($y = 'bean.getGestor().isLoteSinCambios()')
+#end
+#end##foreach
+#if($y == 'false' && $pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase)
+#foreach($foo in $pagemap4)
+#if($y == 'false' && $foo.dominioIdDominio.codigoDominio.equals($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase.codigoClaseRecurso))
+#set($foo1 = 'COMANDO')
+#set($foo2 = $foo.dominioIdDominio.codigoDominio.toUpperCase())
+#set($foo7 = $foo.idPagina)
+##      String urx = URX2.${foo1}_${foo2}_${foo7};
+//      String urx = URX2.${foo1}_${foo2};
+#set($y = 'bean.getGestor().isLoteSinCambios()')
+#end
+#end##foreach
+#end
+        return $y;
+    }
+
+#writeJavaCode322(0)##archivos-adjuntos
+#writeJavaCode323(0)##lupas
+#writeJavaCode324(0)##listas
+/**/
+#if($iminbiz == 13)
+    boolean synchronously = false;
+
+    private ${domain1}BusinessProcessLocal get${domain1}BusinessProcess() {
+        return (${domain1}BusinessProcessLocal) bean.get${domain1}BusinessProcess();
+    }
+
+    private BusinessProcessMessengerLocal getMessenger() {
+        return (BusinessProcessMessengerLocal) bean.getMessenger();
+    }
+#end
+#if($iminrep == 22)
+
+    private ReporterBrokerLocal getReporter() {
+        return (ReporterBrokerLocal) bean.getReporter();
+    }
+#end
+#if($iminexp == 23)
+
+    private ExporterBrokerLocal getExporter() {
+        return (ExporterBrokerLocal) bean.getExporter();
+    }
+#end
+#if($iminbiz == 13)
+
+    private AbstractMessage requestReply(AbstractMessage message) throws Exception {
+##      ObjectMessage solicitud = null;
+##      AbstractMessage request = TLC.getControlador().ponerProcesoPendiente(message);
+##      try {
+##          solicitud = this.getMessenger().sendRequest(request);
+####    } catch (JMSException ex) { no se puede usar JMSException porque dá un ClassNotFoundException al editar la página con NetBeans
+##      } catch (Exception ex) {
+##          Auditor.grabarRastroProceso(request, ex);
+##          throw ex;
+##      }
+##      ObjectMessage respuesta = this.getMessenger().receiveReply(solicitud);
+##      AbstractMessage reply = respuesta == null ? request : (AbstractMessage) respuesta.getObject();
+##      TLC.getBitacora().add(reply);
+##      return reply;
+        ObjectMessage solicitud = this.getMessenger().postRequest(message);
+        ObjectMessage respuesta = this.getMessenger().receiveReply(solicitud);
+        AbstractMessage mensaje = respuesta == null
+                ? (AbstractMessage) solicitud.getObject()
+                : (AbstractMessage) respuesta.getObject();
+        /**/
+        TLC.getBitacora().add(mensaje);
+        return mensaje;
+    }
+#end
+}
+#ShowTime(2)

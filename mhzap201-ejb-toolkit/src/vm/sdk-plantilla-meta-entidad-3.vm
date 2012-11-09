@@ -1,0 +1,33 @@
+#macro(setPropiedadesMetaJava)
+#set($metapack1  = "meta.entidad.${paquete}.abstracta")
+#set($metapack2  = "meta.entidad.${paquete}.abstracta.extendida")
+#set($metapack3  = "meta.entidad.${paquete}.concreta")
+#set($metaclass1 = "${tabname1}Abstract")
+#set($metaclass2 = "${tabname1}AbstractX")
+#set($metaclass3 = "${tabname1}")
+#end##setPropiedadesMetaJava
+## -----------------------------------------------------------------------------
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#setPropiedadesMetaJava()
+package $metapack3;
+
+import adalid.core.interfaces.Artifact;
+import java.lang.reflect.Field;
+
+#set($baseClass = "${metapack2}.${metaclass2}")
+public class ${metaclass3} extends $baseClass {
+
+    // <editor-fold defaultstate="collapsed" desc="class constructors">
+    @Deprecated()
+    private ${metaclass3}() {
+        this(null, null);
+    }
+
+    public ${metaclass3}(Artifact declaringArtifact, Field declaringField) {
+        super(declaringArtifact, declaringField);
+    }
+    // </editor-fold>
+
+}
+#break

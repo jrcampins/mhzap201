@@ -1,0 +1,255 @@
+## =============================================================================
+#macro(setValorPropiedadesAplicacion $aplicacion)
+## =============================================================================
+#set($projcode = $aplicacion.codigoAplicacion)
+#set($projname = $aplicacion.nombreAplicacion)
+#if($aplicacion.grupoAplicacionIdGrupoAplicacion)
+#set($appgrpcode = $aplicacion.grupoAplicacionIdGrupoAplicacion.codigoGrupoAplicacion)
+#set($appgrpname = $aplicacion.grupoAplicacionIdGrupoAplicacion.nombreGrupoAplicacion)
+#end
+#set($entappcode = $utils.getToken($projcode.replace('-','_')))
+#set($entappname = $entappcode.toUpperCase())
+#set($webapppack1 = $utils.getWebPackageName($projcode))
+#end##macro
+## =============================================================================
+#macro(setPropiedadesAplicacion $aplicacion)
+## =============================================================================
+#set($projcode = '')
+#set($projname = '')
+#set($appgrpcode = '')
+#set($appgrpname = '')
+#set($entappcode = '')
+#set($entappname = '')
+#set($webapppack1 = '')
+#if($aplicacion)
+#setValorPropiedadesAplicacion($aplicacion)
+#end
+#end##macro
+## =============================================================================
+#macro(setValorPropiedadesPagina $pagina)
+## =============================================================================
+#set($pagecode  = $pagina.codigoPagina)
+#set($pagename  = $pagina.codigoPagina)
+#set($acciones  = $pagina.paginaFuncionIdPaginaCollection.size())
+#if($pagina.nombrePagina)
+#set($pagename  = $utils.getStringJava($pagina.nombrePagina))##ETIQUETA_MIGAS_PAN
+#end
+#if($pagina.tipoPaginaNumeroTipoPagina)
+#set($pagetype  = $pagina.tipoPaginaNumeroTipoPagina.numeroTipoPagina)
+#end
+#if($pagina.aplicacionIdAplicacion)
+#set($webapppack1  = $utils.getWebPackageName($pagina.aplicacionIdAplicacion.codigoAplicacion))
+#end
+#if($pagina.dominioIdDominio)
+#set($domain0   = $pagina.dominioIdDominio.codigoDominio)
+#set($domain1   = $utils.getUpperCamelCase($domain0))
+#set($domain2   = $utils.getLowerCamelCase($domain0))
+#set($domain4   = $utils.getStringJava($pagina.dominioIdDominio.nombreDominio))##ETIQUETA_MIGAS_PAN, ETIQUETA_CLASE_DETALLE
+#if($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase)
+#set($sysdomain = $utils.systemTableFacade.findByCodigo($pagina.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase.codigoClaseRecurso))
+#else
+#set($sysdomain = $utils.systemTableFacade.findByCodigo($domain0))
+#end
+#if($pagina.dominioIdDominio.paqueteIdPaquete)
+#set($domainpack1  = $pagina.dominioIdDominio.paqueteIdPaquete.codigoPaquete.toLowerCase())
+#end
+#set($domainclass      = $pagina.dominioIdDominio.claseRecursoIdClaseRecurso)
+#set($domainclassid    = $domainclass.idClaseRecurso)
+#set($domainclassname0 = $domainclass.codigoClaseRecurso)
+#set($domainclasstype1 = $domainclass.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso)
+#set($domainclasstype2 = $domainclass.esClaseRecursoIndependiente)
+#set($domainclasstype3 = $domainclass.esClaseRecursoSinDetalle)
+#set($domainclasstype4 = $domainclass.esClaseRecursoInsertable)
+#set($domainclasstype5 = $domainclass.esClaseRecursoModificable)
+#set($domainclasstype6 = $domainclass.esClaseRecursoEliminable)
+#set($domainclasstype7 = $domainclass.esClaseRecursoExtendida)
+#if($domainclass.esClaseRecursoExtendida == 1)
+#set($domaincrsdp = '3')
+#else
+#set($domaincrsdp = '2')
+#end##esClaseRecursoExtendida
+#end
+#if($pagina.dominioIdDominioMaestro)
+#set($master0   = $pagina.dominioIdDominioMaestro.codigoDominio)
+#set($master1   = $utils.getUpperCamelCase($master0))
+#set($master2   = $utils.getLowerCamelCase($master0))
+#if($pagina.dominioIdDominioMaestro.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase)
+#set($sysmaster = $utils.systemTableFacade.findByCodigo($pagina.dominioIdDominioMaestro.claseRecursoIdClaseRecurso.claseRecursoIdClaseRecursoBase.codigoClaseRecurso))
+#else
+#set($sysmaster = $utils.systemTableFacade.findByCodigo($master0))
+#end
+#if($pagina.dominioIdDominioMaestro.paqueteIdPaquete)
+#set($masterpack1  = $pagina.dominioIdDominioMaestro.paqueteIdPaquete.codigoPaquete.toLowerCase())
+#end
+#set($masterclass      = $pagina.dominioIdDominioMaestro.claseRecursoIdClaseRecurso)
+#set($masterclassid    = $masterclass.idClaseRecurso)
+#set($masterclassname0 = $masterclass.codigoClaseRecurso)
+#set($masterclasstype1 = $masterclass.tipoRecursoNumeroTipoRecurso.numeroTipoRecurso)
+#set($masterclasstype2 = $masterclass.esClaseRecursoIndependiente)
+#set($masterclasstype3 = $masterclass.esClaseRecursoSinDetalle)
+#set($masterclasstype4 = $masterclass.esClaseRecursoInsertable)
+#set($masterclasstype5 = $masterclass.esClaseRecursoModificable)
+#set($masterclasstype6 = $masterclass.esClaseRecursoEliminable)
+#set($masterclasstype7 = $masterclass.esClaseRecursoExtendida)
+#if($masterclass.esClaseRecursoExtendida == 1)
+#set($mastercrsdp = '3')
+#else
+#set($mastercrsdp = '2')
+#end##esClaseRecursoExtendida
+#end
+#if($pagina.parametroIdParametro)
+#set($joinparname0 = $pagina.parametroIdParametro.codigoParametro)
+#set($joinparname4 = $utils.getUpperCamelCase($utils.getIdless($joinparname0)))
+#end
+#setPropiedadesTabla($sysdomain)
+## -----------------------------------------------------------------------------
+#if($domain0 != '' && $pagetype != 0)
+#set($tarcolxn = $utils.sortApplicationPagesCollection($pagina.aplicacionIdAplicacion.paginaIdAplicacionCollection))
+#foreach($target in $tarcolxn)
+#set($tarpagecode  = $target.codigoPagina)
+#if($tarpagecode != $pagecode)
+#set($outcome4 = '')
+#set($outtext4 = '')
+#set($outtool4 = '')
+#if($target.tipoPaginaNumeroTipoPagina)
+#set($tarpagetype = $target.tipoPaginaNumeroTipoPagina.numeroTipoPagina)
+#else
+#set($tarpagetype = 0)
+#end
+#if($target.dominioIdDominio)
+#set($tardomain0 = $target.dominioIdDominio.codigoDominio)
+#else
+#set($tardomain0 = '')
+#end
+#if($target.dominioIdDominioMaestro)
+#set($tarmaster0 = $target.dominioIdDominioMaestro.codigoDominio)
+#else
+#set($tarmaster0 = '')
+#end
+#if($target.parametroIdParametro)
+#set($tarjoinparname0 = $target.parametroIdParametro.codigoParametro)
+#else
+#set($tarjoinparname0 = '')
+#end
+#set($p4r = 0)
+#if($tarpagetype == $pagetype)
+#elseif($tarmaster0 == $master0 && $tarjoinparname0 == $joinparname0)
+#set($p4r = 1)
+#elseif($tarmaster0 == '' && $tarjoinparname0 == '' && $tarpagetype == 2)
+#set($p4r = 2)
+#end
+#if($tarpagetype != 0)
+#if($tardomain0 == $domain0)
+#if($p4r == 0)
+#elseif($tarpagetype == 1 && $pagetype == 3 && $p4r == 1)
+#set($outcome1 = "$tarpagecode")
+#elseif($tarpagetype == 2 && $pagetype == 1)
+#set($outcome2 = "$tarpagecode")
+#elseif($tarpagetype == 2 && $pagetype == 3)
+#set($outcome2 = "$tarpagecode")
+#elseif($tarpagetype == 3 && $pagetype == 1 && $p4r == 1)
+#set($outcome3 = "$tarpagecode")
+#elseif($tarpagetype == 5 && $pagetype == 7 && $p4r == 1)
+#set($outcome1 = "$tarpagecode")
+#elseif($tarpagetype == 6 && $pagetype == 5)
+#set($outcome2 = "$tarpagecode")
+#elseif($tarpagetype == 6 && $pagetype == 7)
+#set($outcome2 = "$tarpagecode")
+#elseif($tarpagetype == 7 && $pagetype == 5 && $p4r == 1)
+#set($outcome3 = "$tarpagecode")
+#end
+#elseif($tarmaster0 == $domain0)
+#if($tarpagetype == 1)
+#set($outcome4 = "$tarpagecode")
+#if($target.nombrePagina)
+#set($outtext4 = $utils.getStringXml($target.nombrePagina))##imageHyperlink.text
+#else
+#set($outtext4 = $outcome4)
+#end
+#if($target.descripcionPagina)
+#set($outtool4 = $utils.getStringXml($target.descripcionPagina))##imageHyperlink.toolTip
+#else
+#set($outtool4 = $outtext4)
+#end
+#end
+#end
+#end
+#if($outcome4 != '')
+#set($targetscount = $targetscount + 1)
+#set($crpcol = $target.dominioIdDominio.claseRecursoIdClaseRecurso.claseRecursoParIdClaseRecursoCollection)
+#foreach($crp in $crpcol)
+#if($crp.parametroIdParametro.codigoParametro == $tarjoinparname0 && $crp.filtroClaRecVinIdClaseRecursoParCollection.size() > 0)
+#set($foo = $utils.put($targetsjoins, "target$targetscount", $crp))
+#end
+#end##foreach-crp
+#end
+#end
+#end##foreach-target
+#end
+## -----------------------------------------------------------------------------
+#end##macro
+## =============================================================================
+#macro(setPropiedadesPagina $pagina)
+## =============================================================================
+#set($pagecode = '')
+#set($pagename = '')
+#set($acciones = 0)
+#set($pagetype = 0)
+#set($requirednotprime1 = 0)
+#set($domain0 = '')
+#set($domain1 = '')
+#set($domain2 = '')
+#set($domain4 = '')
+#set($master0 = '')
+#set($master1 = '')
+#set($master2 = '')
+#set($domaincrsdp = '')
+#set($mastercrsdp = '')
+#set($domainclassid = -1)
+#set($masterclassid = -1)
+#set($domainclassname0 = '')
+#set($masterclassname0 = '')
+#set($domainclasstype1 = 0)
+#set($domainclasstype2 = 0)
+#set($domainclasstype3 = 0)
+#set($domainclasstype4 = 0)
+#set($domainclasstype5 = 0)
+#set($domainclasstype6 = 0)
+#set($domainclasstype7 = 0)
+#set($masterclasstype1 = 0)
+#set($masterclasstype2 = 0)
+#set($masterclasstype3 = 0)
+#set($masterclasstype4 = 0)
+#set($masterclasstype5 = 0)
+#set($masterclasstype6 = 0)
+#set($masterclasstype7 = 0)
+#set($webapppack1 = '')
+#set($domainpack1 = '')
+#set($masterpack1 = '')
+#set($outcome1 = '')
+#set($outcome2 = '')
+#set($outcome3 = '')
+#set($targetscount = 0)
+#set($targetsjoins = $utils.newMap())
+#set($joinparname0 = '')
+#set($joinparname4 = '')
+#set($joincolname0 = '')
+#set($joincolname1 = '')
+#set($joincolname2 = '')
+#set($joincolname3 = '')
+#set($joincolumnlabel1 = '')
+#if($pagina)
+#setValorPropiedadesPagina($pagina)
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesSistema $aplicaciones)
+## =============================================================================
+#set($pagemap1 = $utils.getPageMap1())
+#set($pagemap2 = $utils.getPageMap2())
+#set($pagemap3 = $utils.getPageMap3())
+#set($pagemap4 = $utils.getPageMap4())
+#set($pagemap5 = $utils.getPageMap5())
+#set($pagemap6 = $utils.getPageMap6())
+#set($pagemap7 = $utils.getPageMap7())
+#end##macro

@@ -1,0 +1,21 @@
+#set($xp=false)
+#set($map = $utils.newMap())
+#foreach($procedimiento in $procedimientos)
+#if($map.containsKey($procedimiento.routineName))
+#set($foo = $map.get($procedimiento.routineName))
+#else
+#set($foo = $utils.put($map, $procedimiento.routineName, $procedimiento))
+#if(${procedimiento.functionKey})
+${procedimiento.routineName}=${procedimiento.functionKey}
+#end
+#if($xp && ${procedimiento.functionName})
+${procedimiento.routineName}.name=${procedimiento.functionName}
+#end
+#if($xp && ${procedimiento.routineDataType})
+${procedimiento.routineName}.data_type=${procedimiento.routineDataType}
+#end
+#if($xp && ${procedimiento.typeUdtName})
+${procedimiento.routineName}.user_defined_type=${procedimiento.typeUdtName}
+#end
+#end##containsKey
+#end##foreach

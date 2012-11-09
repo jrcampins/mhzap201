@@ -1,0 +1,49 @@
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#set($classname = "${tabname1}Base")
+#set($intername = "${tabname1}FacadeBase")
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.base.persistence.facade;
+
+import com.egt.base.persistence.entity.$classname;
+import com.egt.base.persistence.enums.EnumTipoQuery;
+import java.util.List;
+
+public interface ${intername} {
+
+    ${classname} find(Object id);
+
+    ${classname} find(Object id, boolean refresh);
+#if($intercols.containsKey('codigo'))
+
+    ${classname} findByCodigo(String codigo);
+
+    ${classname} findByCodigo(String codigo, boolean refresh);
+#end
+
+    List<? extends ${classname}> findAll();
+
+    List<? extends ${classname}> findAll(boolean refresh);
+
+    List<? extends ${classname}> findByQuery(String query);
+
+    List<? extends ${classname}> findByQuery(String query, boolean refresh);
+
+    List<? extends ${classname}> findByQuery(String query, EnumTipoQuery tipo);
+
+    List<? extends ${classname}> findByQuery(String query, EnumTipoQuery tipo, boolean refresh);
+
+    List<? extends ${classname}> findByQuery(String query, EnumTipoQuery tipo, int max);
+
+    List<? extends ${classname}> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh);
+//
+//  void flush();
+//
+//  void merge(${classname} ${tabname2});
+//
+//  void persist(${classname} ${tabname2});
+//
+//  void refresh(${classname} ${tabname2});
+//
+//  void remove(${classname} ${tabname2});
+}

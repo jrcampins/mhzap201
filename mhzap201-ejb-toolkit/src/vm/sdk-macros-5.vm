@@ -1,0 +1,142 @@
+## =============================================================================
+#macro(setExecutable $funcion)
+## =============================================================================
+#set($executable = $funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion)
+#if($funcion.esProgramatica != 0)
+#set($executable = '')
+#elseif($executable == 13 && $domainclasstype1 == 11)
+#set($executable = '')
+#elseif($executable == 13 || $executable == 22 || $executable == 23)
+#if($funcion.funcionParametroIdFuncionCollection && $funcion.funcionParametroIdFuncionCollection.size() > 0)
+#set($funparams = $utils.sortCollection($funcion.funcionParametroIdFuncionCollection))
+#foreach($funparam in $funparams)
+#if($funparam.parametroIdParametro.codigoParametro == $pkid0)
+#elseif($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 1)##No-Obligatorio
+#else
+#set($executable = '')
+#end
+#end##foreach-funparam
+#end##size
+#else
+#set($executable = '')
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesParametro $parametro)
+## =============================================================================
+#set($parametro0 = $parametro.codigoParametro)
+#set($parametro1 = $utils.getUpperCamelCase($parametro0))
+#set($parametro2 = $utils.getLowerCamelCase($parametro0))
+#set($parametro3 = $utils.getUnderscoreless($parametro0))
+#set($paramtype1 = $parametro.tipoDatoParNumeroTipoDatoPar.numeroTipoDatoPar)
+#if($paramtype1 == 1)
+#set($paramtype2 = 'String')
+#elseif($paramtype1 == 2)
+#set($paramtype2 = 'BigDecimal')
+#elseif($paramtype1 == 3)
+#set($paramtype2 = 'Date')
+#elseif($paramtype1 == 4)
+#set($paramtype2 = 'Integer')
+#elseif($paramtype1 == 5)
+#set($paramtype2 = 'Long')
+#else
+#set($paramtype2 = 'Object')
+#end
+#end##macro
+## =============================================================================
+#macro(setPropiedadesFuncion $funcion)
+## =============================================================================
+#set($funcion0 = $funcion.codigoFuncion)
+#set($funcion1 = $utils.getUpperCamelCase($funcion0))
+#set($funcion2 = $utils.getLowerCamelCase($funcion0))
+#set($funcion3 = $utils.getUnderscoreless($funcion0))
+#set($funtype1 = $funcion.tipoFuncionNumeroTipoFuncion.numeroTipoFuncion)
+#set($funclassid = -1)
+#set($dominio0 = '')
+#set($dominio1 = '')
+#set($dominio2 = '')
+#set($dominio3 = '')
+#set($informe0 = '')
+#set($funselin = '')
+#if($funcion.dominioIdDominio)
+#set($funclassid = $funcion.dominioIdDominio.claseRecursoIdClaseRecurso.idClaseRecurso)
+#set($dominio0 = $funcion.dominioIdDominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($funtype1 == 22)
+#set($informe0 = $utils.getCodigoArchivoInforme($funcion0, $dominio0))
+#set($funselin = $utils.getFuncionSelectInforme($informe0))
+#end
+#end
+#set($hasBigDecimalParam = '')
+#set($hasDateParam = '')
+#set($funparams = $utils.sortCollection($funcion.funcionParametroIdFuncionCollection))
+#foreach($obj1 in $funparams)
+#setPropiedadesParametro($obj1.parametroIdParametro)
+#if($paramtype1 == 2)
+#set($hasBigDecimalParam = 'true')
+#elseif($paramtype1 == 3)
+#set($hasDateParam = 'true')
+#end
+#end##foreach
+#end##macro
+## =============================================================================
+#macro(setPropiedadesColeccionFunciones $funciones)
+## =============================================================================
+#set($funsize = 0)
+#set($iminbiz = '')
+#set($iminrep = '')
+#set($iminexp = '')
+#if($funciones)
+#set($funsize = $funciones.size())
+#if($funsize > 0)
+#foreach($funcion in $funciones)
+#setExecutable($funcion)
+#if($executable == 13)
+#set($iminbiz = $executable)
+#elseif($executable == 22)
+#set($iminrep = $executable)
+#elseif($executable == 23)
+#set($iminexp = $executable)
+#end##executable
+#end##foreach
+#end##funsize
+#end##funciones
+#end##macro
+## =============================================================================
+#macro(setPropiedadesFuncionParametroRPL $funparam)
+## =============================================================================
+#setPropiedadesFuncionParametroWeb($funparam)
+#setPropiedadesParametro($funparam.parametroIdParametro)
+#set($fee = "this.getTexto$objname1()")
+#set($faa = "this.getValor$objname1()")
+#if($coltype3 < 0)
+#set($foo = "null")
+#elseif($coltype3 == 1 && $colname0.startsWith('nombre_archivo'))
+#set($foo = "JSF.upload(this.$objname2, ${dominio1}Constants.CODIGO_DOMINIO_RECURSO)")
+#elseif($coltype3 == 1)
+#set($foo = $fee)
+#elseif($coltype3 == 2)
+#set($foo = "($paramtype2) STP.getObjeto($fee, EnumTipoDatoPar.NUMERICO)")
+#elseif($coltype3 == 3)
+#set($foo = $faa)
+#elseif($reftabtype1 == 12)
+#set($foo = $faa)
+#elseif($reftabtype2 == 99)
+#setReferencedTableInterfaceColumnsMap($paramintercols $reftabname0)
+#if($paramintercols.containsKey('id'))
+#set($foo = "this.get${reftabname1}${colname1}().get$utils.getUpperCamelCase($paramintercols.get('id'))()")
+#set($foo = "this.get${reftabname1}${colname1}() == null ? null : $foo")
+#else
+#set($foo = "null")
+#end
+#elseif($coltype3 == 4)
+#set($foo = "($paramtype2) STP.getObjeto($fee, EnumTipoDatoPar.ENTERO)")
+#elseif($coltype3 == 5)
+#set($foo = "($paramtype2) STP.getObjeto($fee, EnumTipoDatoPar.ENTERO_GRANDE)")
+#else
+#set($foo = "null")
+#end
+#set($paramvalue = $foo)
+#end##macro

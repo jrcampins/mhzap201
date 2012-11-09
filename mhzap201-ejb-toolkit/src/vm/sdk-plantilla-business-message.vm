@@ -1,0 +1,60 @@
+#setPropiedadesFuncion($funcion)
+#writeJavaCode101($funclassid)##license
+package com.egt.ejb.business.message;
+
+import com.egt.ejb.business.jms.BusinessProcessMessage;
+import java.io.Serializable;
+#if($hasBigDecimalParam != '')
+import java.math.BigDecimal;
+#end
+#if($hasDateParam != '')
+import java.util.Date;
+#end
+
+#set($classname = "${funcion1}Message")
+public class $classname extends BusinessProcessMessage implements Serializable {
+#foreach($obj1 in $funparams)
+#if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesParametro($obj1.parametroIdParametro)
+
+    public static final long PARAMETRO_$parametro0.toUpperCase() = ${obj1.parametroIdParametro.idParametro}L;
+#end##No-Omitido
+#end##foreach
+#set($rpl = '')
+#foreach($obj1 in $funparams)
+#if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesParametro($obj1.parametroIdParametro)
+#set($rpl = "$rpl, $paramtype2 $parametro2")
+
+    protected $paramtype2 $parametro2;
+#end##No-Omitido
+#end##foreach
+#if($rpl.length() > 0)
+#set($rpl = $rpl.substring(2))
+#end
+
+    public $classname($rpl) {
+        this.init();
+        this.funcion = ${funcion.idFuncion}L;
+#foreach($obj1 in $funparams)
+#if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesParametro($obj1.parametroIdParametro)
+#set($rpl = "$rpl, $paramtype2 $parametro2")
+        this.$parametro2 = $parametro2;
+#end##No-Omitido
+#end##foreach
+    }
+#foreach($obj1 in $funparams)
+#if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#setPropiedadesParametro($obj1.parametroIdParametro)
+
+    public $paramtype2 get$parametro1() {
+        return $parametro2;
+    }
+
+    public void set$parametro1($paramtype2 $parametro2) {
+        this.$parametro2 = $parametro2;
+    }
+#end##No-Omitido
+#end##foreach
+}

@@ -1,0 +1,232 @@
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+    #set($tabla0 = $dominio.nombreTabla)
+#else
+    #set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($systable = $utils.systemTableFacade.findByCodigo($tabla0))
+#set($funciones = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#set($intercols = $utils.newMap())
+#set($mergecols = $utils.newMap())
+#set($reftables = $utils.newMap())
+#foreach($column in $systable.columns)
+    #if($column.sysForeignKey)
+        #set($foo = $utils.put($reftables, $column.sysForeignKey.reftabid.tabname, $column.sysForeignKey.reftabid.tabname))
+    #end
+#end
+#setInterfaceColumnsMap($intercols $dominio)
+#writeJavaCode101($dominio.claseRecursoIdClaseRecurso.idClaseRecurso)##license
+package com.egt.ejb.business.process.logic;
+
+##import com.egt.base.constants.CBM2;
+##import com.egt.base.enums.EnumCondicionEjeFun;
+import com.egt.base.enums.EnumTipoDatoPar;
+##import com.egt.base.jms.messages.AbstractMessage;
+import com.egt.commons.util.BitUtils;
+import com.egt.commons.util.IntUtils;
+import com.egt.commons.util.TimeUtils;
+##import com.egt.core.aplicacion.TLC;
+##import com.egt.core.control.Auditor;
+##import com.egt.core.control.RastroFuncion;
+import com.egt.core.util.STP;
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13)
+import com.egt.ejb.business.message.${funcion1}Message;
+    #end
+#end##foreach
+##import com.egt.base.entity.constants.${dominio1}Constants;
+import com.egt.ejb.persistence.entity.${tabla1};
+import com.egt.ejb.persistence.facade.${tabla1}FacadeLocal;
+#foreach($tabname0 in $reftables)
+    #set($tabname1 = $utils.getUpperCamelCase($tabname0))
+    #set($tabname2 = $utils.getLowerCamelCase($tabname0))
+    #if($tabname1 != $tabla1)
+import com.egt.ejb.persistence.facade.${tabname1}FacadeLocal;
+    #end
+#end
+import java.math.BigDecimal;
+import java.util.Date;
+import javax.ejb.EJB;
+import javax.ejb.EJBException;
+import javax.ejb.Stateless;
+
+@Stateless
+public class ${dominio1}BusinessProcessLogicBean implements ${dominio1}BusinessProcessLogicLocal {
+
+    // <editor-fold defaultstate="collapsed" desc="@EJB">
+    @EJB
+    private ${tabla1}FacadeLocal facade;
+#foreach($tabname0 in $reftables)
+    #set($tabname1 = $utils.getUpperCamelCase($tabname0))
+    #set($tabname2 = $utils.getLowerCamelCase($tabname0))
+
+    @EJB
+    private ${tabname1}FacadeLocal ${tabname2}Facade;
+#end
+    // </editor-fold>
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13)
+        #set($x = '//')
+        #set($xyz = '')
+        #set($id0 = '')
+        #set($idtype2 = 'Object')
+        #set($foo = $mergecols.clear())
+        #if($intercols.containsKey('id'))
+            #set($id0 = $intercols.get('id'))
+            #set($id1 = $utils.getUpperCamelCase($id0))
+            #set($id2 = $utils.getLowerCamelCase($id0))
+            #set($xyz = '    ')
+            #foreach($obj1 in $funparams)
+                #setPropiedadesParametro($obj1.parametroIdParametro)
+                #if($id0.equals($parametro0))
+                    #set($x = '  ')
+                    #set($idtype2 = $paramtype2)
+                #else
+                    #foreach($column in $systable.columns)
+                        #if($column.colname.equals($parametro0))
+                            #set($foo = $utils.put($mergecols, $parametro0, $column))
+                        #end
+                    #end##foreach
+                #end
+            #end##foreach
+        #end
+
+    @Override
+    public void ${funcion2}(${funcion1}Message message, ${tabla1} ${tabla2}) throws Exception {
+        if (message == null) {
+            throw new EJBException(${funcion1}Message.class.getSimpleName());
+        }
+        if (${tabla2} == null) {
+            throw new EJBException(${tabla1}.class.getSimpleName());
+        }
+        #set($argslength = 0)
+        #foreach($obj1 in $funparams)
+            #setPropiedadesFuncionParametroWeb($obj1)
+            #if($coltype1 != 2)
+                #set($argslength = $argslength + 1)
+            #end
+        #end##foreach
+        #if($mergecols.size() == 0)
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+        #else
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+            #if($id0 != '')
+                #foreach($obj1 in $funparams)
+                    #setPropiedadesFuncionParametroWeb($obj1)
+                    #setPropiedadesParametro($obj1.parametroIdParametro)
+                    #if($mergecols.containsKey($parametro0))
+                        #set($column = $mergecols.get($parametro0))
+                        #set($colname1 = $utils.getUpperCamelCase($column.colname))
+                        #if($column.sysForeignKey)
+                            #set($tabname0 = $column.sysForeignKey.reftabid.tabname)
+                            #set($tabname1 = $utils.getUpperCamelCase($tabname0))
+                            #set($tabname2 = $utils.getLowerCamelCase($tabname0))
+                        #else
+                            #set($tabname0 = '')
+                            #set($tabname1 = '')
+                            #set($tabname2 = '')
+                        #end
+##  ----------------------------------------------------------------------------
+##  $fee es el valor por omisión en sql
+##  ----------------------------------------------------------------------------
+                        #if($obj1.valorOmision)
+                            #set($valorOmision = $obj1.valorOmision.trim())
+                        #else
+                            #set($valorOmision = '')
+                        #end
+                        #if($valorOmision != '')
+                            #set($fee = $valorOmision)
+                        #elseif($column.isnullable == 1)
+                            #set($fee = 'null')
+                        #elseif($coltype3 == 1)
+                            #set($fee = '')
+                        #elseif($coltype3 == 2)
+                            #set($fee = '0')
+                        #elseif($coltype3 == 3)
+                            #set($fee = 'getdate()')
+                        #elseif($coltype3 == 4)
+                            #set($fee = '0')
+                        #elseif($coltype3 == 5)
+                            #set($fee = '0')
+                        #else
+                            #set($fee = 'null')
+                        #end
+##  ----------------------------------------------------------------------------
+##  $faa es el valor por omisión en java
+##  ----------------------------------------------------------------------------
+                        #set($dbqt = '"')
+                        #if($fee == 'null')
+                            #set($faa = 'null')
+                        #elseif($coltype3 == 1 && $fee == '')
+                            #set($faa = "${dbqt}${dbqt}")
+                        #elseif($coltype3 == 1 && $fee != '')
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.ALFANUMERICO)")
+                            #set($faa = "${dbqt}$fee${dbqt}")
+                        #elseif($coltype3 == 2)
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.NUMERICO)")
+                            #set($faa = "new $paramtype2(${dbqt}$fee${dbqt})")
+                        #elseif($coltype3 == 3 && $fee == 'getdate()' && $colname0.startsWith('fecha_hora'))
+                            #set($faa = "($paramtype2) TimeUtils.currentTimestamp()")
+                        #elseif($coltype3 == 3 && $fee == 'getdate()' && $colname0.startsWith('hora'))
+                            #set($faa = "($paramtype2) TimeUtils.currentTime()")
+                        #elseif($coltype3 == 3 && $fee == 'getdate()')
+                            #set($faa = "($paramtype2) TimeUtils.currentDate()")
+                        #elseif($coltype3 == 3)
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.FECHA_HORA)")
+                        #elseif($coltype3 == 4 && $parametro0.startsWith('es_') && $fee == 0)
+                            #set($faa = "IntUtils.FALSE")
+                        #elseif($coltype3 == 4 && $parametro0.startsWith('es_') && $fee != 0)
+                            #set($faa = "IntUtils.TRUE")
+                        #elseif($coltype3 == 4 && $reftabtype1 == 12)
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.ENTERO)")
+                            #set($faa = "new $paramtype2(${dbqt}$fee${dbqt})")
+                            #set($options = $utils.enumMap($tabname0))
+                            #if($options.containsKey($fee))
+                                #set($faa = "com.egt.base.enums.Enum${tabname1}.${options.get($fee).toUpperCase()}.intValue()")
+                            #end
+                        #elseif($coltype3 == 4)
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.ENTERO)")
+                            #set($faa = "new $paramtype2(${dbqt}$fee${dbqt})")
+                        #elseif($coltype3 == 5 && $fee == 'getuser()')
+                            #set($faa = 'message.getUsuario()')
+                        #elseif($coltype3 == 5)
+                            #set($faa = "($paramtype2) STP.getObjeto(${dbqt}$fee${dbqt}, EnumTipoDatoPar.ENTERO_GRANDE)")
+                            #set($faa = "new $paramtype2(${dbqt}$fee${dbqt})")
+                        #else
+                            #set($faa = 'null')
+                        #end
+##  ----------------------------------------------------------------------------
+##  $foo es el valor en java
+##  ----------------------------------------------------------------------------
+                        #if($obj1.tipoParametroNumeroTipoParametro.numeroTipoParametro == 2)##Omitido
+                            #set($foo = $faa)
+                        #elseif($column.isnullable == 1 || $faa == 'null')
+                            #set($foo = "message.get${colname1}()")
+                        #else
+                            #set($foo = "message.get${colname1}() == null ? $faa : message.get${colname1}()")
+                        #end
+                        #if($column.sysForeignKey)
+        ${tabla2}.set${tabname1}${colname1}(this.${tabname2}Facade.find($foo));
+                        #else
+        ${tabla2}.set${colname1}($foo);
+                        #end
+                    #end
+                #end##foreach
+            #end
+        #end##mergecols.size
+    }
+    #end
+#end##foreach
+}

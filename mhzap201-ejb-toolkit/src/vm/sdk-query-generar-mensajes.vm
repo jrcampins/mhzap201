@@ -1,0 +1,8 @@
+select funcion.*
+from funcion, dominio, clase_recurso
+where funcion.id_dominio=dominio.id_dominio
+and dominio.id_clase_recurso=clase_recurso.id_clase_recurso
+and funcion.numero_tipo_funcion=13
+-- and dominio.numero_tipo_dominio=1
+and clase_recurso.numero_tipo_recurso<>11
+order by 1

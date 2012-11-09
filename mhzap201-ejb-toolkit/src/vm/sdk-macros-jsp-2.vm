@@ -1,0 +1,233 @@
+## =============================================================================
+#macro(writeJspCode201 $foo)
+## =============================================================================
+#if($pagetype == 1 || $pagetype == 5)
+#set($sourceVar = "currentRow")
+#else
+#set($sourceVar = "${pagecode}.${domain2}DataProvider")
+#end
+#if($objtype2 == 'calendar' && ($columna.colname.startsWith('fecha_hora') || $columna.colname.startsWith('hora')))
+#set($readonly1 = 'true')
+#end
+#if($readonly1 == '')
+#if($noInsertFields.containsKey($columna.colname) && $noUpdateFields.containsKey($columna.colname))
+#set($readonly1 = 'true')
+#set($required1 = '')
+#elseif($noInsertFields.containsKey($columna.colname))
+#set($readonly1 = "#{${pagecode}.gestor.filaNoModificada}")
+#elseif($noUpdateFields.containsKey($columna.colname))
+#set($readonly1 = "#{${pagecode}.gestor.filaNoCreada}")
+#else
+#set($readonly1 = "#{${pagecode}.gestor.filaNoProcesada}")
+#end
+#elseif($readonly1 == 'true')
+#set($required1 = '')
+#end
+#if($tabbedInterface != '')
+#set($fullobjname2 = "${objname2}x1")
+#set($fullcolname1 = "${colname1}1x")
+#else
+#set($fullobjname2 = $objname2)
+#set($fullcolname1 = $colname1)
+#end
+#if($doSubmitFields.containsKey($columna.colname))
+#set($onchange1 = 'submit')
+#else
+#set($onchange1 = '')
+#end
+                                                <webuijsf:$objtype2 id="${fullobjname2}"
+                                                    binding="#{${pagecode}.$fullobjname2}"
+#if($objtype2 == 'textArea')
+                                                    columns="$columns1" rows="3"
+                                                    readOnly="$readonly1"$required1
+                                                    text="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"
+                                                    validatorExpression="#{${pagecode}.validator${colname1}1.validate}"/>
+#elseif($objtype2 == 'calendar')
+                                                    maxDate="#{${pagecode}.gestor.defaultMaxDate}"
+                                                    minDate="#{${pagecode}.gestor.defaultMinDate}"
+                                                    readOnly="$readonly1"$required1
+                                                    selectedDate="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"/>
+#elseif($objtype2 == 'dropDown')
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+                                                    disabled="$readonly1"$required1
+                                                    items="#{${pagecode}.asistente.opciones$objname1}"
+#if($onchange1 == 'submit')
+                                                    onChange="webui.suntheme4_2.common.timeoutSubmitForm(this.form, '${fullobjname2}');"
+#end
+                                                    selected="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"/>
+#elseif($columna.coltype == 1)
+                                                    columns="$columns1"
+                                                    maxLength="$columna.colprec"
+                                                    readOnly="$readonly1"$required1
+                                                    text="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"
+                                                    validatorExpression="#{${pagecode}.validator${colname1}1.validate}"/>
+#elseif($columna.coltype == 3)
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+                                                    readOnly="$readonly1"$required1
+                                                    text="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"/>
+#elseif($reftabtype2 == 99)
+                                                    readOnly="$readonly1"$required1
+                                                    text="#{${pagecode}.asistente.texto$objname1}"
+                                                    toolTip="#{${pagecode}.asistente.toolTip$objname1}"
+                                                    validatorExpression="#{${pagecode}.${objname2}_validate}"/>
+#else
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+                                                    readOnly="$readonly1"$required1
+                                                    text="#{${sourceVar}.value['$columna.colname']}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"
+                                                    validatorExpression="#{${pagecode}.validator${colname1}1.validate}"/>
+#end
+## -----------------------------------------------------------------------------
+#if($st1type3 != '')
+                                                <webuijsf:staticText id="${fullobjname2}Texto1"
+#if($reftabtype1 == -1)
+                                                    binding="#{${pagecode}.${fullobjname2}Texto1}"
+#if($columna.coltype == 2 || $columna.coltype == 3)
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+#end
+                                                    text="#{${sourceVar}.value['$columna.colname']}"/>
+#elseif($foreignCode != '')
+                                                    binding="#{${pagecode}.${fullobjname2}Texto1}"
+                                                    text="#{${sourceVar}.value['$foreignCode']}"/>
+#else
+                                                    binding="#{${pagecode}.${fullobjname2}Texto1}"/>
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($cb1type3 != '' && ($pagetype == 2 || $pagetype == 6))
+                                                <webuijsf:button id="${fullobjname2}Boton1"
+                                                    binding="#{${pagecode}.${fullobjname2}Boton1}"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton1}"/>
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 != '' && ($pagetype == 2 || $pagetype == 6))
+                                                <webuijsf:button id="${fullobjname2}Boton3"
+                                                    binding="#{${pagecode}.${fullobjname2}Boton3}"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton2}"
+                                                    rendered="#{${pagecode}.asistente.${objname2}Boton3Rendered}"/>
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 == '' && ($pagetype == 2 || $pagetype == 6) && $colname0.startsWith('nombre_archivo'))
+                                                <webuijsf:button id="${fullobjname2}Boton3"
+                                                    binding="#{${pagecode}.${fullobjname2}Boton3}"
+                                                    onClick="#{${pagecode}.asistente.script${objname1}Boton3}"
+                                                    rendered="#{${pagecode}.asistente.${objname2}Boton3Rendered}"
+                                                    text="#{${pagecode}.asistente.text${objname1}Boton3}"
+                                                    toolTip="#{${pagecode}.asistente.toolTip${objname1}Boton3}"/>
+#end
+## -----------------------------------------------------------------------------
+                                                <webuijsf:message id="message${fullcolname1}1"
+##                                                  binding="#{${pagecode}.message${fullcolname1}1}"
+                                                    for="${fullobjname2}"/>
+#if($pagetype == 2 || $pagetype == 6)
+                                                <webuijsf:helpInline id="helpInline${fullcolname1}1"
+                                                    binding="#{${pagecode}.helpInline${fullcolname1}1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.${colname0}.${domain0}"
+                                                    type="field"/>
+#end
+#end
+## =============================================================================
+#macro(writeJspCode401 $foo)
+## =============================================================================
+                                                <webuijsf:$objtype2 id="$objname2"
+                                                    binding="#{${pagecode}.$objname2}"
+#if($objtype2 == 'upload')
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    toolTip="BundleParametros.${colname0}"/>
+#elseif($objtype2 == 'calendar')
+                                                    maxDate="#{${pagecode}.gestor.defaultMaxDate}"
+                                                    minDate="#{${pagecode}.gestor.defaultMinDate}"
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    selectedDate="#{${pagecode}.valor$objname1}"
+                                                    toolTip="BundleParametros.${colname0}"/>
+#elseif($objtype2 == 'dropDown')
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+                                                    items="#{${pagecode}.opciones$objname1}"
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    selected="#{${pagecode}.valor$objname1}"
+                                                    toolTip="BundleParametros.${colname0}"/>
+#elseif($coltype3 == 1)
+                                                    columns="$columns1"
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    text="#{${pagecode}.texto$objname1}"
+                                                    toolTip="BundleParametros.${colname0}"
+                                                    validatorExpression="#{${pagecode}.validator${colname1}1.validate}"/>
+#elseif($coltype3 == 3)
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    text="#{${pagecode}.valor$objname1}"
+                                                    toolTip="BundleParametros.${colname0}"/>
+#elseif($reftabtype2 == 99)
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    text="#{${pagecode}.texto$objname1}"
+                                                    toolTip="#{${pagecode}.toolTip$objname1}"
+                                                    validatorExpression="#{${pagecode}.${objname2}_validate}"/>
+#else
+                                                    converter="#{${pagecode}.converter${colname1}1}"
+#if($required1 != '')
+                                                    $required1
+#end
+                                                    text="#{${pagecode}.texto$objname1}"
+                                                    toolTip="BundleParametros.${colname0}"
+                                                    validatorExpression="#{${pagecode}.validator${colname1}1.validate}"/>
+#end
+## -----------------------------------------------------------------------------
+## TODO: asignar el valor de columna en sdk-plantilla-pagina-4-jsp.vm?
+## -----------------------------------------------------------------------------
+#if($st1type3 != '')
+                                                <webuijsf:staticText id="${objname2}Texto1"
+    #if($columna && $columna.coltype)
+##      OJO: $columna.colname}, $columna.coltype
+        #if($columna.coltype == 2 || $columna.coltype == 3)
+                                                    binding="#{${pagecode}.${objname2}Texto1}"
+                                                    converter="#{${pagecode}.converter${colname1}1}"/>
+        #else
+                                                    binding="#{${pagecode}.${objname2}Texto1}"/>
+        #end
+    #else
+                                                    binding="#{${pagecode}.${objname2}Texto1}"/>
+    #end
+#end
+## -----------------------------------------------------------------------------
+#if($cb1type3 != '')
+                                                <webuijsf:button id="${objname2}Boton1"
+                                                    binding="#{${pagecode}.${objname2}Boton1}"
+                                                    onClick="#{${pagecode}.script${objname1}Boton1}"/>
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 != '')
+                                                <webuijsf:button id="${objname2}Boton3"
+                                                    binding="#{${pagecode}.${objname2}Boton3}"
+                                                    onClick="#{${pagecode}.script${objname1}Boton2}"
+                                                    rendered="#{${pagecode}.bit${objname1}Boton3Rendered.on}"/>
+#end
+## -----------------------------------------------------------------------------
+                                                <webuijsf:message id="message${colname1}1"
+##                                                  binding="#{${pagecode}.message${colname1}1}"
+                                                    for="$objname2"/>
+                                                <webuijsf:helpInline id="helpInline${colname1}1"
+                                                    binding="#{${pagecode}.helpInline${colname1}1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.${colname0}"
+                                                    type="field"/>
+#end

@@ -1,0 +1,39 @@
+#set($lcc = $EA.getLcc())
+<?xml version="1.0" encoding="UTF-8"?>
+<application version="5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+    <display-name>${lcc}</display-name>
+    <module>
+        <ejb>${lcc}-ejb-business.jar</ejb>
+    </module>
+    <module>
+        <ejb>${lcc}-ejb-core.jar</ejb>
+    </module>
+    <module>
+        <ejb>${lcc}-ejb-persistence.jar</ejb>
+    </module>
+#foreach($aplicacion in $aplicaciones)
+    <module>
+        <web>
+            <web-uri>${aplicacion.codigoAplicacion}.war</web-uri>
+            <context-root>/${aplicacion.codigoAplicacion}</context-root>
+        </web>
+    </module>
+#end
+##  #foreach($funcion in $funciones)
+##      <security-role>
+##          <description>$funcion.codigoFuncion</description>
+##          <role-name>F$funcion.idFuncion</role-name>
+##      </security-role>
+##  #end
+#foreach($rol in $roles)
+#if($rol.nombreRol)
+    #set($description = $rol.nombreRol)
+#else
+    #set($description = $rol.codigoRol)
+#end
+    <security-role>
+        <description>$utils.getStringXml($description)</description>
+        <role-name>$rol.codigoRol</role-name>
+    </security-role>
+#end
+</application>

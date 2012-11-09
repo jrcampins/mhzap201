@@ -1,0 +1,491 @@
+#ShowTime(0)
+#setPropiedadesSistema($aplicaciones)
+#ShowTime(1)
+#set($includedFields  = $utils.newMap())
+#set($readOnlyFields  = $utils.newMap())
+#set($requiredFields  = $utils.newMap())
+#set($noInsertFields  = $utils.newMap())
+#set($noUpdateFields  = $utils.newMap())
+#set($doSubmitFields  = $utils.newMap())
+#set($mainPageFields  = $utils.newMap())
+#set($includedColumns = $utils.newMap())
+#setPropiedadesPagina($pagina)
+#ShowTime(1)
+#setMapasPagina()
+#ShowTime(1)
+#set($funciones = $utils.sortCollection($pagina.dominioIdDominio.funcionIdDominioCollection))
+#setPropiedadesColeccionFunciones($funciones)
+#writeJavaCode101($domainclassid)##license
+package com.egt.${webapppack1};
+
+## -----------------------------------------------------------------------------
+#writeJavaCode201(0)##imports
+#if($iminbiz == 13 || $iminrep == 22 || $iminexp == 23)
+import javax.ejb.EJB;
+#end
+#if($iminbiz == 13)
+import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+import com.egt.ejb.business.process.${domain1}BusinessProcessLocal;
+#end
+#if($iminrep == 22)
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+#end
+#if($iminexp == 23)
+import com.egt.ejb.core.exporter.ExporterBrokerLocal;
+#end
+## -----------------------------------------------------------------------------
+
+public class ${pagecode} extends AbstractPageBean
+#if($master0 != '')
+        implements PaginaActualizacion${domain1}Por${joinparname4}, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConMaestro {
+#else
+        implements PaginaActualizacion${domain1}, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple {
+#end
+
+    // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
+    private void _init() throws Exception {
+#writeJavaCode202(0)##init-converters-validators
+#writeJavaCode203(0)##init-data-providers
+#writeJavaCode204(0)##init-reference-data-providers
+    }
+
+## -----------------------------------------------------------------------------
+#writeJavaCode102(119)##root->cab3
+#writeJavaCode103(0)##detalle
+#writeJavaCode104(1)##grid-botones-cursor
+## -----------------------------------------------------------------------------
+##  private StaticText textoTituloConsulta1 = new StaticText();
+##
+##  public StaticText getTextoTituloConsulta1() {
+##      return textoTituloConsulta1;
+##  }
+##
+##  public void setTextoTituloConsulta1(StaticText st) {
+##      this.textoTituloConsulta1 = st;
+##  }
+##
+## -----------------------------------------------------------------------------
+    private Label etiquetaIdentificacionFila1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getEtiquetaIdentificacionFila1() {
+        return etiquetaIdentificacionFila1;
+    }
+
+    public void setEtiquetaIdentificacionFila1(Label l) {
+        this.etiquetaIdentificacionFila1 = l;
+    }
+
+##  private StaticText textoIdentificacionFila1 = new StaticText();
+##
+##  public StaticText getTextoIdentificacionFila1() {
+##      return textoIdentificacionFila1;
+##  }
+##
+##  public void setTextoIdentificacionFila1(StaticText st) {
+##      this.textoIdentificacionFila1 = st;
+##  }
+##
+##  private ImageComponent imagenFilaProcesada1 = new ImageComponent();
+##
+##  public ImageComponent getImagenFilaProcesada1() {
+##      return imagenFilaProcesada1;
+##  }
+##
+##  public void setImagenFilaProcesada1(ImageComponent ic) {
+##      this.imagenFilaProcesada1 = ic;
+##  }
+##
+## -----------------------------------------------------------------------------
+#if($master0 != '')
+#set($fee = "label${joincolname1}1")
+#set($faa = "Label${joincolname1}1")
+#else
+#set($fee = 'etiquetaDenominacionFilaMaestro1')
+#set($faa = 'EtiquetaDenominacionFilaMaestro1')
+#end
+    private Label ${fee} = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label get${faa}() {
+        return ${fee};
+    }
+
+    public void set${faa}(Label l) {
+        this.${fee} = l;
+    }
+
+##  private StaticText textoDenominacionFilaMaestro1 = new StaticText();
+##
+##  public StaticText getTextoDenominacionFilaMaestro1() {
+##      return textoDenominacionFilaMaestro1;
+##  }
+##
+##  public void setTextoDenominacionFilaMaestro1(StaticText st) {
+##      this.textoDenominacionFilaMaestro1 = st;
+##  }
+##
+##  private ImageComponent imagenFilaMaestro1 = new ImageComponent();
+##
+##  public ImageComponent getImagenFilaMaestro1() {
+##      return imagenFilaMaestro1;
+##  }
+##
+##  public void setImagenFilaMaestro1(ImageComponent ic) {
+##      this.imagenFilaMaestro1 = ic;
+##  }
+##
+## -----------------------------------------------------------------------------
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+## -----------------------------------------------------------------------------
+##  private HtmlPanelGrid grid${colname1}1 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}1() {
+##      return grid${colname1}1;
+##  }
+##
+##  public void setGrid${colname1}1(HtmlPanelGrid hpg) {
+##      this.grid${colname1}1 = hpg;
+##  }
+##
+    private Label label${colname1}1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}1() {
+        return label${colname1}1;
+    }
+
+    public void setLabel${colname1}1(Label l) {
+        this.label${colname1}1 = l;
+    }
+
+#if($tabbedcolname1 != '' && $tabbedcolname2 != '')
+    private Label label${tabbedcolname1}1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${tabbedcolname1}1() {
+        return label${tabbedcolname1}1;
+    }
+
+    public void setLabel${tabbedcolname1}1(Label l) {
+        this.label${tabbedcolname1}1 = l;
+    }
+
+#end
+##  private HtmlPanelGrid grid${colname1}2 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}2() {
+##      return grid${colname1}2;
+##  }
+##
+##  public void setGrid${colname1}2(HtmlPanelGrid hpg) {
+##      this.grid${colname1}2 = hpg;
+##  }
+##
+## -----------------------------------------------------------------------------
+#writeJavaCode205(0)##fields
+#writeJavaCode206(0)##converters, validators
+## -----------------------------------------------------------------------------
+#if($st2type3 != '')
+##  private HtmlPanelGrid grid${colname1}3 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}3() {
+##      return grid${colname1}3;
+##  }
+##
+##  public void setGrid${colname1}3(HtmlPanelGrid hpg) {
+##      this.grid${colname1}3 = hpg;
+##  }
+##
+    private Label label${colname1}2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${colname1}2() {
+        return label${colname1}2;
+    }
+
+    public void setLabel${colname1}2(Label l) {
+        this.label${colname1}2 = l;
+    }
+
+#if($tabbedcolname1 != '' && $tabbedcolname2 != '')
+    private Label label${tabbedcolname1}2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabel${tabbedcolname1}2() {
+        return label${tabbedcolname1}2;
+    }
+
+    public void setLabel${tabbedcolname1}2(Label l) {
+        this.label${tabbedcolname1}2 = l;
+    }
+
+#end
+##  private HtmlPanelGrid grid${colname1}4 = new HtmlPanelGrid();
+##
+##  public HtmlPanelGrid getGrid${colname1}4() {
+##      return grid${colname1}4;
+##  }
+##
+##  public void setGrid${colname1}4(HtmlPanelGrid hpg) {
+##      this.grid${colname1}4 = hpg;
+##  }
+##
+    private StaticText ${objname2}Texto2 = new $st2type3();
+
+    public StaticText get${objname1}Texto2() {
+        return ${objname2}Texto2;
+    }
+
+    public void set${objname1}Texto2(StaticText component) {
+        this.${objname2}Texto2 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+    private StaticText ${tabbedobjname2}Texto2 = new $st2type3();
+
+    public StaticText get${tabbedobjname1}Texto2() {
+        return ${tabbedobjname2}Texto2;
+    }
+
+    public void set${tabbedobjname1}Texto2(StaticText component) {
+        this.${tabbedobjname2}Texto2 = component;
+    }
+
+#end
+#end
+## -----------------------------------------------------------------------------
+#if($cb2type3 != '')
+    private Button ${objname2}Boton2 = new $cb2type3();
+
+    public Button get${objname1}Boton2() {
+        return ${objname2}Boton2;
+    }
+
+    public void set${objname1}Boton2(Button component) {
+        this.${objname2}Boton2 = component;
+    }
+
+#if($tabbedobjname1 != '' && $tabbedobjname2 != '')
+    private Button ${tabbedobjname2}Boton2 = new $cb2type3();
+
+    public Button get${tabbedobjname1}Boton2() {
+        return ${tabbedobjname2}Boton2;
+    }
+
+    public void set${tabbedobjname1}Boton2(Button component) {
+        this.${tabbedobjname2}Boton2 = component;
+    }
+
+#end
+#end
+#end
+## -----------------------------------------------------------------------------
+##  private StaticText textoMensajeCambiosPorConfirmar1 = new StaticText();
+##
+##  public StaticText getTextoMensajeCambiosPorConfirmar1() {
+##      return textoMensajeCambiosPorConfirmar1;
+##  }
+##
+##  public void setTextoMensajeCambiosPorConfirmar1(StaticText st) {
+##      this.textoMensajeCambiosPorConfirmar1 = st;
+##  }
+##
+## -----------------------------------------------------------------------------
+##  private Anchor anchor1 = new Anchor();
+##
+##  public Anchor getAnchor1() {
+##      return anchor1;
+##  }
+##
+##  public void setAnchor1(Anchor a) {
+##      this.anchor1 = a;
+##  }
+##
+## -----------------------------------------------------------------------------
+#writeJavaCode104(2)##grid-botones-cursor
+#writeJavaCode105(1)##grid-botones-accion
+#writeJavaCode106(5)##grid-hiper-vinculos
+#writeJavaCode107(0)##pie3->root    
+## -----------------------------------------------------------------------------
+#writeJavaCode207(0)##data-providers
+#writeJavaCode208(0)##reference-data-providers
+## -----------------------------------------------------------------------------
+    // </editor-fold>
+/**/
+    public ${pagecode}() {
+    }
+
+#writeJavaCode301(0)##metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy
+
+#writeJavaCode302(0)##propiedades estandar para el manejo de los beans de contexto: request, session y application
+
+#writeJavaCode303(0)##implementacion estandar de propiedades y metodos de la interfaz PaginaAbstracta
+
+#writeJavaCode304(0)##implementacion estandar de propiedades de la interfaz PaginaBasica
+
+#writeJavaCode305(0)##implementacion estandar de propiedades de la interfaz PaginaConsulta
+
+#writeJavaCode306(0)##implementacion estandar de propiedades de la interfaz PaginaConsultaConMaestro
+
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades tipo fecha de la interfaz PaginaActualizacion${domain1}...">
+#foreach($columna in $includedColumns)
+#setPropiedadesColumnaWeb($columna)
+#if($columna.coltype == 3)
+    @Override
+    public TextField getTextField$objname1() {
+        return this.get$objname1();
+    }
+
+#end
+#end
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="propiedad gestor de pagina de actualizacion">
+    private GestorPaginaActualizacion gestor = new GestorPaginaActualizacion(this);
+
+    @Override
+    public GestorPaginaActualizacion getGestor() {
+        return this.gestor;
+    }
+    // </editor-fold>
+
+#if($master0 != '')
+#set($foo = "AsistentePaginaActualizacion${domain1}Por${joinparname4}")
+#else
+#set($foo = "AsistentePaginaActualizacion${domain1}")
+#end
+    // <editor-fold defaultstate="collapsed" desc="propiedad asistente de pagina de actualizacion">
+    private ${foo} asistente = new ${foo}(this);
+
+    public ${foo} getAsistente() {
+        return this.asistente;
+    }
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="propiedades y metodos estandar: preiniciar, iniciar, preprocesar, prepresentar, consultar, posconsultar, posrefrescar">
+#writeJavaCode311(0)##implementacion especial de propiedades de la interfaz PaginaActualizacion
+
+#writeJavaCode313(0)##preiniciar, iniciar, preprocesar, prepresentar
+
+    @Override
+    public void consultar() {
+        if (this.getContextoPeticion().getIdentificacionRecurso() != null) {
+            this.getGestor().posicionar(this.getContextoPeticion().getIdentificacionRecurso());
+        } else {
+            this.getGestor().reposicionar();
+        }
+
+        this.setConsultaPendiente(false);
+    }
+
+#writeJavaCode314(0)##posconsultar, posrefrescar
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos estandar para manejar el cursor">
+#writeJavaCode315(1)##irAlPrimero, irAlAnterior, irAlSiguiente, irAlUltimo
+#writeJavaCode315(2)##irAlPrimero, irAlAnterior, irAlSiguiente, irAlUltimo
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos estandar para refrescar, agregar, editar, deshacer y eliminar de la plantilla #2">
+    public String botonAgregar1_action() {
+        this.getGestor().agregar();
+        return null;
+    }
+
+    public String botonEditar1_action() {
+        this.getGestor().editar();
+        return null;
+    }
+
+    public String botonEliminar1_action() {
+        this.getGestor().eliminar();
+        return null;
+    }
+
+    public String botonAplicar1_action() {
+        this.getGestor().aplicar();
+        return null;
+    }
+
+    public String botonDeshacer1_action() {
+        this.getGestor().deshacer();
+        return null;
+    }
+
+    public String botonConfirmar1_action() {
+        this.getGestor().confirmar();
+        return null;
+    }
+
+    public String botonDescartar1_action() {
+        this.getGestor().descartar();
+        return null;
+    }
+
+    public String botonProcesar1_action() {
+        this.getAsistente().procesar();
+        return null;
+    }
+
+    public String botonRefrescar1_action() {
+        this.getGestor().refrescar();
+        return null;
+    }
+
+    public String botonReconsultar1_action() {
+        this.getGestor().reconsultar();
+        return null;
+    }
+
+    public String botonRetornar1_action() {
+        this.getGestor().retornar();
+        return null;
+    }
+    // </editor-fold>
+
+## -----------------------------------------------------------------------------
+#writeJavaCode325(0)##validate
+#writeJavaCode108(5)##grid-hiper-vinculos
+## -----------------------------------------------------------------------------
+/**/
+#if($iminbiz == 13)
+    @EJB
+    ${domain1}BusinessProcessLocal ${domain2}BusinessProcess;
+
+    @Override
+##  public ${domain1}BusinessProcessLocal get${domain1}BusinessProcess() {
+    public Object get${domain1}BusinessProcess() {
+        return ${domain2}BusinessProcess;
+    }
+
+    @EJB
+    private BusinessProcessMessengerLocal messenger;
+
+    @Override
+##  public BusinessProcessMessengerLocal getMessenger() {
+    public Object getMessenger() {
+        return messenger;
+    }
+
+#end
+#if($iminrep == 22)
+    @EJB
+    private ReporterBrokerLocal reporter;
+
+    @Override
+##  public ReporterBrokerLocal getReporter() {
+    public Object getReporter() {
+        return reporter;
+    }
+
+#end
+#if($iminexp == 23)
+    @EJB
+    private ExporterBrokerLocal exporter;
+
+    @Override
+##  public ExporterBrokerLocal getExporter() {
+    public Object getExporter() {
+        return exporter;
+    }
+
+#end
+    String footnote = "a partir de aqui coloque el codigo especifico de la pagina";
+}
+#ShowTime(2)

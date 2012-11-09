@@ -1,0 +1,174 @@
+#macro(setPropiedadesMetaJava)
+#set($metapack1  = "meta.entidad.${paquete}.abstracta")
+#set($metapack2  = "meta.entidad.${paquete}.concreta")
+#set($metapack3  = "meta.entidad.${paquete}.concreta")
+#set($metaclass1 = "${tabname1}")
+#set($metaclass2 = "${tabname1}")
+#set($metaclass3 = "${tabname1}")
+#end##setPropiedadesMetaJava
+## -----------------------------------------------------------------------------
+#setPropiedadesTabla($systable)
+#setPropiedadesDominio($systable)
+#setPropiedadesMetaJava()
+#set($sortedSysColumns = $utils.sortCollection($systable.columns))
+#set($sortedSysForeignKeys = $utils.sortCollection($systable.foreignKeys))
+#set($sortedSysRefForeignKeys = $utils.sortCollection($systable.refForeignKeys))
+#set($objsuffix = '')
+#set($colsuffix = "Collection")
+#set($dominio0 = $dominio.codigoDominio)
+#set($dominio1 = $utils.getUpperCamelCase($dominio0))
+#set($dominio2 = $utils.getLowerCamelCase($dominio0))
+#set($dominio3 = $utils.getUnderscoreless($dominio0))
+#if($dominio.tipoDominioNumeroTipoDominio.numeroTipoDominio == 2)
+    #set($tabla0 = $dominio.nombreTabla)
+#else
+    #set($tabla0 = $dominio.codigoDominio)
+#end
+#set($tabla1 = $utils.getUpperCamelCase($tabla0))
+#set($tabla2 = $utils.getLowerCamelCase($tabla0))
+#set($tabla3 = $utils.getUnderscoreless($tabla0))
+#set($funciones = $utils.sortCollection($dominio.funcionIdDominioCollection))
+#set($intercols = $utils.newMap())
+#set($mergecols = $utils.newMap())
+#set($reftables = $utils.newMap())
+#foreach($column in $systable.columns)
+    #if($column.sysForeignKey)
+        #set($foo = $utils.put($reftables, $column.sysForeignKey.reftabid.tabname, $column.sysForeignKey.reftabid.tabname))
+    #end
+#end
+#setInterfaceColumnsMap($intercols $dominio)
+#set($last132223 = 0)
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+        #set($last132223 = $velocityCount)
+    #end
+#end##foreach
+package $metapack2;
+
+import adalid.core.interfaces.Artifact;
+import java.lang.reflect.Field;
+
+#set($baseClass = "${metapack1}.${metaclass1}")
+#set($enumClass = 'false')
+#foreach($columna in $sortedSysColumns)
+    #setPropiedadesColumna($columna)
+    #if($columna.pkcid && $columna.typname == 'int4')
+        #set($enumClass = 'true')
+    #end
+#end
+public class ${metaclass2} extends $baseClass {
+
+    // <editor-fold defaultstate="collapsed" desc="class constructors">
+    @Deprecated()
+    private ${metaclass2}() {
+        this(null, null);
+    }
+
+    public ${metaclass2}(Artifact declaringArtifact, Field declaringField) {
+        super(declaringArtifact, declaringField);
+    }
+    // </editor-fold>
+
+## -----------------------------------------------------------------------------
+#foreach($funcion in $funciones)
+    #setPropiedadesFuncion($funcion)
+    #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+    $funcion1 $funcion2;
+
+    #end
+#end##foreach
+## -----------------------------------------------------------------------------
+    @Override
+    protected void instantiateExpressions() {
+        super.instantiateExpressions();
+    }
+
+## -----------------------------------------------------------------------------
+    @Override
+    protected void instantiateTriggers() {
+        super.instantiateTriggers();
+    }
+
+## -----------------------------------------------------------------------------
+    @Override
+    protected void customizeAttributes() {
+        super.customizeAttributes();
+    }
+
+## -----------------------------------------------------------------------------
+    @Override
+    protected void customizeProperties() {
+        super.customizeProperties();
+    }
+
+## -----------------------------------------------------------------------------
+##  @Override
+##  protected void customizeExpressions() {
+##      super.customizeExpressions();
+##  }
+##
+## -----------------------------------------------------------------------------
+##  @Override
+##  protected void customizeTriggers() {
+##      super.customizeTriggers();
+##  }
+##
+## -----------------------------------------------------------------------------
+#if($last132223 > 0)
+    #writeOperationsFolder()
+#end
+}
+#break
+
+#macro(writeOperationsFolder)
+    // <editor-fold defaultstate="collapsed" desc="Operations">
+    #foreach($funcion in $funciones)
+        #setPropiedadesFuncion($funcion)
+        #if($funtype1 == 13 || $funtype1 == 22 || $funtype1 == 23)
+            #set($operationClass = "${metapack1}.${metaclass1}.${funcion1}")
+            #writeOperation()
+        #end
+    #end##foreach
+    // </editor-fold>
+
+#end##writeOperationsFolder
+
+#macro(writeOperation)
+    public class $funcion1 extends $operationClass {
+
+        @Override
+        protected void instantiateExpressions() {
+            super.instantiateExpressions();
+        }
+
+        @Override
+        protected void instantiateTransitions() {
+            super.instantiateTransitions();
+        }
+
+        @Override
+        protected void customizeAttributes() {
+            super.customizeAttributes();
+        }
+
+        @Override
+        protected void customizeParameters() {
+            super.customizeParameters();
+        }
+
+        @Override
+        protected void customizeExpressions() {
+            super.customizeExpressions();
+        }
+
+        @Override
+        protected void customizeTransitions() {
+            super.customizeTransitions();
+        }
+
+    }
+    #if($velocityCount < $last132223)
+
+    #end
+#end##writeOperation
