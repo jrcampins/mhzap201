@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="FragmentoCabeza2P">
+        <h:panelGrid binding="#{FragmentoCabeza2P.gridPanel1}" columns="2" id="gridPanel1" style="width: 100%">
+            <h:panelGrid binding="#{FragmentoCabeza2P.gridPanel2}" columns="10" id="gridPanel2">
+                <webuijsf:staticText binding="#{FragmentoCabeza2P.staticText1}" id="staticText1" style="font-weight: bold" text="#{FragmentoCabeza2P.nombreAplicacion}"/>
+                <webuijsf:staticText binding="#{FragmentoCabeza2P.staticText2}" id="staticText2" style="font-weight: bold; margin-left: 24px" text="#{FragmentoCabeza2P.nombrePagina}"/>
+            </h:panelGrid>
+            <h:panelGrid binding="#{FragmentoCabeza2P.gridPanel3}" columns="20" id="gridPanel3" style="float: right">
+                <webuijsf:imageHyperlink id="imageHyperlink1" imageURL="/resources/go_back.gif" toolTip="Ir al menú de Inicio" url="/faces/Menu.jsp"/>
+                <webuijsf:button binding="#{FragmentoCabeza2P.botonAyuda1}" id="botonAyuda1" imageURL="/resources/help_medium.gif"
+                    onClick="#{FragmentoCabeza2P.scriptAyuda}" style="margin-left: 8px" text="Ayuda" toolTip="Abrir la página de ayuda"/>
+                <webuijsf:button binding="#{FragmentoCabeza2P.botonCerrar1}" id="botonCerrar1" imageURL="/resources/close_medium.gif"
+                    onClick="#{FragmentoCabeza2P.scriptCerrar}" text="Cerrar" toolTip="Cerrar esta ventana"/>
+            </h:panelGrid>
+        </h:panelGrid>
+    </f:subview>
+</div>

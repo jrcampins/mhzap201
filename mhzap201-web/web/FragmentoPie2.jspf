@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="FragmentoPie2">
+        <h:panelGrid binding="#{FragmentoPie2.gridPanel1}" columns="2" id="gridPanel1" style="width: 100%">
+            <h:panelGrid binding="#{FragmentoPie2.gridPanel2}" columns="2" id="gridPanel2">
+                <webuijsf:staticText binding="#{FragmentoPie2.staticText1}" id="staticText1" style="font-weight: bold" 
+                    text="#{FragmentoPie2.nombreUsuario}"/>
+                <webuijsf:staticText binding="#{FragmentoPie2.staticText2}" id="staticText2" style="font-weight: bold; margin-left: 24px" 
+                    text="#{FragmentoPie2.timestampString}"/>
+            </h:panelGrid>
+            <webuijsf:hyperlink binding="#{FragmentoPie2.hyperlink1}" 
+                id="hyperlink1" 
+                onClick="#{FragmentoPie2.scriptCerrar}"
+                rendered="#{FragmentoPie2.gestor.designing}" style="float: right" 
+                text="#{FragmentoPie2.gestor.i18n.textoBotonCerrar}"
+                toolTip="#{FragmentoPie2.gestor.i18n.toolTipBotonCerrar}"/>
+        </h:panelGrid>
+    </f:subview>
+</div>

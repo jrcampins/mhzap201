@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="FragmentoCabeza2M">
+        <h:panelGrid binding="#{FragmentoCabeza2M.gridPanel1}" columns="2" id="gridPanel1" style="width: 100%">
+            <h:panelGrid binding="#{FragmentoCabeza2M.gridPanel2}" columns="10" id="gridPanel2">
+                <webuijsf:staticText binding="#{FragmentoCabeza2M.staticText1}" id="staticText1" style="font-weight: bold" text="#{FragmentoCabeza2M.nombreAplicacion}"/>
+                <webuijsf:staticText binding="#{FragmentoCabeza2M.staticText2}" id="staticText2" style="font-weight: bold; margin-left: 24px" text="#{FragmentoCabeza2M.nombrePagina}"/>
+            </h:panelGrid>
+            <h:panelGrid binding="#{FragmentoCabeza2M.gridPanel3}" columns="20" id="gridPanel3" style="float: right">
+                <webuijsf:button id="botonRetroceder1" imageURL="/resources/go_back.gif" onClick="#{FragmentoCabeza2M.scriptRetroceder}" text="Retroceder" toolTip="Retroceder"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonBitacoraFunciones1}" id="botonBitacoraFunciones1" imageURL="/resources/run.gif"
+                    onClick="#{FragmentoCabeza2M.scriptFunciones}" rendered="false" style="margin-left: 8px" text="Bitácora funciones" toolTip="Abrir la bitácora de ejecución de funciones"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonBitacoraInformes1}" id="botonBitacoraInformes1" imageURL="/resources/run_report_log.gif"
+                    onClick="#{FragmentoCabeza2M.scriptInformes}" rendered="false" text="Bitácora informes" toolTip="Abrir la bitácora de ejecución de informes"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonBitacoraProcesos1}" id="botonBitacoraProcesos1" imageURL="/resources/run_export_log.gif"
+                    onClick="#{FragmentoCabeza2M.scriptProcesos}" rendered="false" text="Bitácora procesos" toolTip="Abrir la bitácora de ejecución de procesos"/>
+                <webuijsf:imageHyperlink id="imageHyperlink1" imageURL="/resources/open_favorites.gif" onClick="#{FragmentoCabeza2M.scriptFavoritos}" toolTip="Abrir la página de Favoritos"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonCambiarPassword1}" id="botonCambiarPassword1" imageURL="/resources/change_password.gif"
+                    onClick="#{FragmentoCabeza2M.scriptCambiarPassword}" text="Cambiar contraseña" toolTip="Abrir la página para cambiar la contraseña"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonAyuda1}" id="botonAyuda1" imageURL="/resources/help_medium.gif"
+                    onClick="#{FragmentoCabeza2M.scriptAyuda}" text="Ayuda" toolTip="Abrir la página de ayuda"/>
+                <webuijsf:button binding="#{FragmentoCabeza2M.botonCerrar1}" id="botonCerrar1" imageURL="/resources/close_medium.gif"
+                    onClick="#{FragmentoCabeza2M.scriptCerrar}" text="Cerrar" toolTip="Cerrar esta ventana"/>
+            </h:panelGrid>
+        </h:panelGrid>
+    </f:subview>
+</div>
