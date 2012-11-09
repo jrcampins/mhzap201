@@ -1,0 +1,326 @@
+/*
+* After modifying this style sheet, refresh the page being designed to see the effect of the modification.
+* Click the Refresh button in the Visual Designer toolbar to refresh the page.
+*/
+
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 70%;
+}
+
+/* Style rules to make Java Server Faces Standard data tables look better */
+
+.list-header {
+    background-color: #eeeeee;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.list-paging-header {
+    background-color: white;
+}
+
+.list-paging-footer {
+    background-color: white;
+}
+
+.list-row-even {
+}
+
+.list-row-odd {
+    background-color: #eeeeee;
+}
+
+/* Style rules for message severity levels */
+
+.infoMessage {
+    color: black;
+}
+
+.warnMessage {
+    color: black;
+    font-weight: bold;
+}
+
+.errorMessage {
+    color: red;
+    font-weight: bold;
+}
+
+.fatalMessage {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Style rules for message groups */
+
+.MsgGrpTbl_sun4 {
+    border: 1px solid #8c8f91;
+    margin-top: 4px; /* 10px */
+    width: 100%;
+}
+
+.MsgGrpTbl_sun4 td {
+    background-color: #e5e9ed;
+}
+
+.MsgGrpTblTtl_sun4 {
+    background-color: #e5e9ed;
+    color: #cc0000;
+}
+
+.MsgGrpDiv_sun4 ul {
+    color: #cc0000;
+    list-style-type: square;
+}
+
+.MsgGrpSumTxt_sun4 {
+    color: #000000;
+}
+
+.MsgGrpTxt_sun4 {
+    color: #333333;
+}
+
+/* Style rules for hyperlinks */
+
+a.Hyp_sun4:link, a.Hyp_sun4:visited, a.Anc_sun4:link, a.Anc_sun4:visited {
+    color: #003399;
+    text-decoration: none;
+}
+
+a.Hyp_sun4:hover, a.Anc_sun4:hover {
+    color: #003399;
+    text-decoration: underline;
+}
+
+a.HypDis_sun4:link, a.HypDis_sun4:visited, a.AncDis_sun4:link, a.AncDis_sun4:visited {
+    color: #000000;
+    cursor: default;
+    text-decoration: none;
+}
+
+a.HypDis_sun4:hover, a.AncDis_sun4:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Style rules for two column page layout (v0->layout:off, v1->layout:on) */
+
+.pos-div-cab-1 {
+    background-color: white;
+    clear: both;
+    position: relative;
+}
+
+.pos-div-cab-2 {
+    background-color: #e5e9ed;
+    border: 1px solid gray;
+    clear: both;
+    position: relative;
+}
+
+.pos-div-fork {
+    clear: both;
+    position: relative;
+}
+
+.pos-div-fork-v0 {
+    clear: both;
+    position: relative;
+}
+
+.pos-div-fork-v1 {
+    clear: both;
+    position: relative;
+    z-index: 10;
+}
+
+.pos-div-col-izq {
+    position: relative;
+}
+
+.pos-div-col-izq-v0 {
+    position: relative;
+}
+
+.pos-div-col-izq-v1 {
+    float: left;
+}
+
+.pos-div-col-der {
+    margin-left: 4px;
+}
+
+.pos-div-col-der-v0 {
+    margin-left: 4px;
+}
+
+.pos-div-col-der-v1 {
+    float: left;
+    margin-left: 12px;
+}
+
+.pos-div-cab-3 {
+}
+
+.pos-div-detalle {
+}
+
+.pos-div-pie-3 {
+}
+
+.pos-div-join {
+    clear: both;
+    position: relative;
+}
+
+.pos-div-join-v0 {
+    clear: both;
+    position: relative;
+}
+
+.pos-div-join-v1 {
+    clear: both;
+    position: relative;
+}
+
+.pos-div-pie-2 {
+    background-color: #e5e9ed;
+    border: 1px solid gray;
+    clear: both;
+    position: relative;
+}
+
+.pos-div-pie-1 {
+    background-color: #fafafa;
+    clear: both;
+    position: relative;
+}
+
+/* Style rules to make Java Server Faces pages look better */
+
+.pdq-body-1 {
+    background-color: #fafafa;
+}
+
+.pdq-body-2 {
+    background-color: #fafafa;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pdq-breadcrumbs-1 {
+    background-color: #fafafa;
+}
+
+.pdq-tree-1 {
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.pdq-button-1 {
+    width: 72px;
+}
+
+.pdq-hyperlink-1 {
+    margin-right: 8px;
+}
+
+.pdq-div-filtro-1 {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+
+.pdq-grid-filtro-1 {
+    background-color: #e5e9ed;
+    border: 1px solid #8c8f91;
+}
+
+.pdq-grid-detalle-1 {
+    background-color: #e5e9ed;
+    border: 1px solid gray;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 100%;
+}
+
+.pdq-grid-detalle-cab {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: gray;
+    width: 100%;
+}
+
+.pdq-grid-detalle-pie {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: gray;
+    width: 100%;
+}
+
+.pdq-grid-detalle-botones {
+    /*
+    background-color: #e5e9ed;
+    border: 1px solid #8c8f91;
+    height: 36px;
+    */
+    width: 100%;
+}
+
+.pdq-grid-detalle-botones-2 {
+    width: 160px;
+}
+
+.pdq-grid-detalle-mensajes {
+    /*
+    background-color: #e5e9ed;
+    border: 1px solid #8c8f91;
+    height: 36px;
+    */
+    width: 100%;
+}
+
+.pdq-grid-detalle-mensajes-2 {
+    width: 800px;
+}
+
+.pdq-grid-etiqueta-1 {
+    text-align: right;
+    width: 100%;
+}
+
+.pdq-text-titulo-1 {
+    font-weight: bold;
+}
+
+.pdq-grid-elemento-1 {
+}
+
+.pdq-estilo-id-1 {
+}
+
+.pdq-estilo-id-2 {
+}
+
+.pdq-helpInline-field {
+}
+
+.pdq-helpInline-page {
+}
+
+/* Table Caption/Title: table.Tbl_sun4 caption.TblTtlTxt_sun4 */
+
+.pdq-table-caption-title {
+    background:#36586F url(../images/table/table_titlebar_gradient.gif) bottom left repeat-x;
+}
+
+/* Tree Selected/Row: ? */
+
+.pdq-tree-selected-row {
+    background-color: #90b7d0;
+}
+

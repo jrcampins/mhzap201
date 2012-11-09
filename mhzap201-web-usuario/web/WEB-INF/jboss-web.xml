@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <context-root>/mhzap201-web-usuario</context-root>
+    <resource-ref>
+        <res-ref-name>jdbc/mhzap201</res-ref-name> <!-- Logical name only. -->
+        <jndi-name>java:/jdbc/mhzap201</jndi-name> <!-- Real JNDI name. -->
+    </resource-ref>
+    <security-domain>java:/jaas/mhzap201-policy</security-domain>
+    <!--<valve>
+        <class-name>org.apache.catalina.authenticator.SingleSignOn</class-name>
+            <param>
+                <param-name>maxEmptyLife</param-name>
+                <param-value>900</param-value>
+            </param>
+    </valve>-->
+</jboss-web>
