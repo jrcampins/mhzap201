@@ -1,0 +1,43 @@
+#if($url)
+#if($rpl)
+    #set($parameters="$rpl")
+    #set($delimiter="&")
+#else
+    #set($parameters="")
+    #set($delimiter="?")
+#end
+#if($sesion)
+    #set($parameters="$parameters$delimiter$sesion")
+#end
+#if($window)
+    #set($windowName="$window")
+#else
+    #set($windowName="")
+#end
+#if($window)
+    #set($windowType="$window")
+#else
+    #set($windowType="")
+#end
+//
+//  js-open-window
+//
+var url = '$url$parameters';
+var windowName = '$windowName';
+var windowType = '$windowType';
+#if($imageInfo)
+var newWidth   = $imageInfo.width + 24;
+var newHeight  = $imageInfo.height + 88;
+openVentanaCentrada(url, windowName, windowType, newWidth, newHeight);
+#else
+openVentana(url, windowName, windowType);
+#end
+return false;
+//
+#elseif($msg)
+//
+var msg = '$msg';
+alert(msg);
+return false;
+//
+#end

@@ -1,0 +1,56 @@
+#set($debug = "")
+//
+//  js-close-window
+//
+if (window.closed) return false;
+if (window.opener) {
+#if($debug != "")
+    alert('window=' + window.name);
+    alert('opener=' + window.opener.name);
+#if($field)
+    alert('field=$field');
+#end
+#if($value)
+    alert('value=$value');
+#end
+#if($button)
+    alert('button=$button');
+#end
+#end##if-debug
+#if($debug == "")
+//  alert('close(' + window.name + ')');
+//  alert('focus(' + window.opener.name + ')');
+    window.opener.focus();
+#end
+#if($field)
+    var campo = window.opener.document.getElementById('$field');
+    if (campo != undefined && campo.type == undefined) campo = window.opener.document.getElementById('$field' + '_field');
+    if (campo != undefined && campo.type != undefined) { // "hidden" || "text"
+#if($value)
+        campo.value = '$value';
+#else
+        var valor = getSessionCookie(getReturnValueCookieName());
+        if (valor != '') campo.value = valor;
+#end
+    }
+#if($debug != "")
+//  ****************************************************************************************************
+//  alert(window.opener.name + " (" + campo.type + ") " + campo.name + " = " + campo.value);
+//  ****************************************************************************************************
+#end
+#end
+#if($button)
+    var boton = window.opener.document.getElementById('$button');
+    if (boton != undefined && boton.type != undefined) boton.click(); // "button" || "submit"
+#if($debug != "")
+//  ****************************************************************************************************
+//  alert(window.opener.name + " (" + boton.type + ") " + boton.name + " = " + boton.value);
+//  ****************************************************************************************************
+#end
+#end
+}
+#if($debug == "")
+window.close();
+#end
+return false;
+//

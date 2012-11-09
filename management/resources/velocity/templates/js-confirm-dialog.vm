@@ -1,0 +1,20 @@
+//
+//  js-confirm-dialog
+//
+#if($table)
+var table = document.getElementById('$table');
+var selected = table.getAllSelectedRowsCount();
+#else
+var selected = 1;
+#end
+#if($alertMessage)
+var alertMessage = '$alertMessage';
+if (selected < 1) alert(alertMessage);
+#end
+#if($confirmMessage)
+var confirmMessage = '$confirmMessage';
+return (selected > 0) ? confirm(confirmMessage) : false;
+#else
+return (selected > 0);
+#end
+//

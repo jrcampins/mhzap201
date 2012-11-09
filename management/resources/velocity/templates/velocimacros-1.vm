@@ -1,0 +1,190 @@
+#macro(writeBeginStatement $runsql)
+#if($runsql == 1)
+/* EXEC SQL */
+#end
+#end
+#macro(writeEndOfStatement $runsql)
+#if($runsql == 1)
+/* END EXEC */
+#end
+#end
+#macro(writeColumnasTabla $tabla)
+#foreach($columna in $tabla.columnas)
+#set($tipo = $columna.tipo)
+#if($tipo == 1)
+#if($columna.longitud)
+#set($tipo = "varchar($columna.longitud)")
+#else
+#set($tipo = "varchar(255)")
+#end
+#elseif($tipo == 2)
+#if($columna.autonumerica == 1)
+#set($tipo = "serial")
+#elseif($columna.precision)
+#if($columna.escala)
+#set($tipo = "decimal($columna.precision,$columna.escala)")
+#else
+#set($tipo = "decimal($columna.precision)")
+#end
+#else
+#set($tipo = "decimal")
+#end
+#elseif($tipo == 3)
+#set($tipo = "timestamp")
+#else
+#set($tipo = "integer")
+#end
+#if($columna.anulable == 1)
+#set($anulable = "")
+#else
+#set($anulable = " not null")
+#end
+#if($velocityCount == $tabla.columnas.size())
+#set($coma = "")
+#else
+#set($coma = ",")
+#end
+    $columna.nombre $tipo$anulable$coma
+#end
+#end
+#macro(writeTabla $tabla $runsql)
+#writeBeginStatement($runsql)
+CREATE TABLE $tabla.nombre
+    (
+#writeColumnasTabla($tabla)
+    )
+    ;
+#writeEndOfStatement($runsql)
+#end
+#macro(writeColumnasNuevas $tabla $runsql)
+#foreach($columna in $tabla.columnas)
+#if($columna.sincronizada == 0)
+#set($tipo = $columna.tipo)
+#if($tipo == 1)
+#if($columna.longitud)
+#set($tipo = "varchar($columna.longitud)")
+#else
+#set($tipo = "varchar(255)")
+#end
+#elseif($tipo == 2)
+#if($columna.autonumerica == 1)
+#set($tipo = "serial")
+#elseif($columna.precision)
+#if($columna.escala)
+#set($tipo = "decimal($columna.precision,$columna.escala)")
+#else
+#set($tipo = "decimal($columna.precision)")
+#end
+#else
+#set($tipo = "decimal")
+#end
+#elseif($tipo == 3)
+#set($tipo = "timestamp")
+#else
+#set($tipo = "integer")
+#end
+#writeBeginStatement($runsql)
+ALTER TABLE $tabla.nombre ADD COLUMN $columna.nombre $tipo;
+#writeEndOfStatement($runsql)
+#end
+#end
+#end
+#macro(writeColumnasClave $clave)
+    (
+#foreach($columna in $clave.columnas)
+#if($velocityCount == $clave.columnas.size())
+#set($coma = "")
+#else
+#set($coma = ",")
+#end
+    $columna.nombre$coma
+#end
+    )
+#end
+#macro(writeClavesTabla $tabla $tipo $opcion $runsql)
+#set($numero = 0)
+#foreach($clave in $tabla.claves)
+#if($clave.tipo == $tipo)
+#if($clave.sincronizada == 0 || $opcion == 0)
+#if($tabla.sincronizada == 0 || $opcion == 0)
+#set($numero = $numero + 1)
+#set($sufijo = "_$numero")
+#else
+#set($sufijo = "_$clave.identificacion")
+#end
+#writeBeginStatement($runsql)
+#if($clave.tipo == 1)
+ALTER TABLE $tabla.nombre ADD CONSTRAINT pk_$tabla.nombre PRIMARY KEY
+#writeColumnasClave($clave)
+    ;
+#elseif($clave.tipo == 2)
+ALTER TABLE $tabla.nombre ADD CONSTRAINT fk_$tabla.nombre$sufijo FOREIGN KEY
+#writeColumnasClave($clave)
+    REFERENCES $clave.nombreTablaReferenciada
+    (
+    $clave.nombreColumnasReferenciadas
+    )
+    ON DELETE $clave.reglaDelete
+    ON UPDATE $clave.reglaUpdate
+    ;
+#elseif($clave.tipo == 3)
+ALTER TABLE $tabla.nombre ADD CONSTRAINT uq_$tabla.nombre$sufijo UNIQUE
+#writeColumnasClave($clave)
+    ;
+#end
+#writeEndOfStatement($runsql)
+#end
+#end
+#end
+#end
+#macro(writeIndicesTabla $tabla $tipo $opcion $runsql)
+#set($numero = 0)
+#foreach($clave in $tabla.claves)
+#if($clave.tipo == $tipo)
+#if($clave.sincronizada == 0 || $opcion == 0)
+#if($tabla.sincronizada == 0 || $opcion == 0)
+#set($numero = $numero + 1)
+#set($sufijo = "_$numero")
+#else
+#set($sufijo = "_$clave.identificacion")
+#end
+#writeBeginStatement($runsql)
+#if($clave.tipo == 1)
+CREATE UNIQUE INDEX pk_$tabla.nombre ON $tabla.nombre
+#elseif($clave.tipo == 2)
+CREATE INDEX fk_$tabla.nombre$sufijo ON $tabla.nombre
+#elseif($clave.tipo == 3)
+CREATE UNIQUE INDEX uq_$tabla.nombre$sufijo ON $tabla.nombre
+#elseif($clave.tipo == 4)
+CREATE INDEX ix_$tabla.nombre$sufijo ON $tabla.nombre
+#end
+#writeColumnasClave($clave)
+    ;
+#writeEndOfStatement($runsql)
+#end
+#end
+#end
+#end
+#macro(writeTablasClase $clase $opcion $runsql)
+#if($runsql == 1)
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- tablas correspondientes a la clase "$clase.nombre"
+-- ----------------------------------------------------------------------------------------------------------------------------------
+#end
+#foreach($tabla in $clase.tablas)
+#if($tabla.sincronizada == 0 || $opcion == 0)
+#writeTabla($tabla $runsql)
+#else
+#writeColumnasNuevas($tabla $runsql)
+#end
+#writeClavesTabla($tabla 1 $opcion $runsql)
+#writeClavesTabla($tabla 2 $opcion $runsql)
+#writeClavesTabla($tabla 3 $opcion $runsql)
+#writeIndicesTabla($tabla 4 $opcion $runsql)
+#end
+#end
+#macro(writeUpdateClase $clase $sincro $runsql)
+#writeBeginStatement($runsql)
+UPDATE clase_objeto SET es_clase_sincronizada = $sincro where id_clase_objeto = $clase.identificacion;
+#writeEndOfStatement($runsql)
+#end

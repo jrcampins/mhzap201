@@ -1,0 +1,6 @@
+#foreach($clase in $clases)
+#writeUpdateClase($clase 0 1)
+#writeTablasClase($clase 1 1)
+#writeFuncionesClase($clase)
+#writeUpdateClase($clase 1 1)
+#end

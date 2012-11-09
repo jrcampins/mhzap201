@@ -1,0 +1,208 @@
+#macro(writeFuncionCreate $clase)
+#set($runsql = 1)
+#set($prefix = "objeto_")
+#set($suffix = "_create()")
+#writeBeginStatement($runsql)
+CREATE OR REPLACE FUNCTION $prefix$clase.nombre$suffix RETURNS integer AS $$
+begin
+#writeUpdateClase($clase 0 0)
+#writeTablasClase($clase 0 0)
+#writeUpdateClase($clase 1 0)
+return 1;
+end;
+$$ LANGUAGE 'plpgsql' VOLATILE;
+#writeEndOfStatement($runsql)
+#end
+#macro(writeFuncionDrop $clase)
+#set($runsql = 1)
+#set($prefix = "objeto_")
+#set($suffix = "_drop()")
+#writeBeginStatement($runsql)
+CREATE OR REPLACE FUNCTION $prefix$clase.nombre$suffix RETURNS integer AS $$
+begin
+#foreach($tabla in $clase.tablas)
+DROP TABLE $tabla.nombre CASCADE;
+#end
+#writeUpdateClase($clase 0 0)
+return 1;
+end;
+$$ LANGUAGE 'plpgsql' VOLATILE;
+#writeEndOfStatement($runsql)
+#end
+#macro(writeFuncionXcopy $clase)
+#set($runsql = 1)
+#set($prefix = "objeto_")
+#set($suffix = "_xcopy")
+#set($params = "(obj objeto)")
+#writeBeginStatement($runsql)
+CREATE OR REPLACE FUNCTION $prefix$clase.nombre$suffix$params RETURNS integer AS $$
+declare
+    c1x  integer := 0;
+    c2x  integer := 0;
+    c3x  integer := 0;
+    c4x  integer := 0;
+    c1y  integer := 0;
+    c2y  integer := 0;
+    c3y  integer := 0;
+    c4y  integer := 0;
+    vpo  record;
+#foreach($tabla in $clase.tablas)
+    row$velocityCount $tabla.nombre;
+#end
+begin
+    delete from $prefix$clase.nombre where id_$clase.nombre = obj.id_objeto;
+    row1.id_$clase.nombre                   = obj.id_objeto;
+    row1.version_$clase.nombre              = obj.version_objeto;
+    row1.codigo_$clase.nombre               = obj.codigo_objeto;
+    row1.nombre_$clase.nombre               = obj.nombre_objeto;
+    row1.descripcion_$clase.nombre          = obj.descripcion_objeto;
+    row1.id_oficina_recepcion_$clase.nombre = obj.id_oficina_recepcion;
+    row1.id_recepcionista_$clase.nombre     = obj.id_recepcionista;
+    row1.fecha_recepcion_$clase.nombre      = obj.fecha_recepcion;
+    row1.id_coleccion_$clase.nombre         = obj.id_coleccion;
+    row1.fecha_hora_$clase.nombre           = CURRENT_TIMESTAMP;
+#set($ppid = ".id_")
+#foreach($tabla in $clase.tablas)
+#if($velocityCount > 1)
+    row$velocityCount$ppid$clase.nombre                   = obj.id_objeto;
+#end
+#end
+    for vpo in 
+        select  es_seccion_multiple   * id_seccion_clase   as c1,
+                es_seccion_multiple   * indice_seccion     as c2, 
+                es_propiedad_multiple * id_propiedad_clase as c3, 
+                es_propiedad_multiple * indice_propiedad   as c4,
+                vista_propiedad_objeto_3.*
+        from    vista_propiedad_objeto_3 
+        where   id_objeto = obj.id_objeto
+        order   by 1, 2, 3, 4
+    loop
+        if vpo.es_seccion_multiple = 0 then
+            c1y = 0;
+            c2y = 0;
+            c3y = vpo.c3;
+            c4y = vpo.c4;
+        else
+            c1y = vpo.c1;
+            c2y = vpo.c2;
+            c3y = 0;
+            c4y = 0;
+        end if;
+        if c1x <> c1y or c2x <> c2y or c3x <> c3y or c4x <> c4y then
+#set($ifkwd = "if")
+#foreach($tabla in $clase.tablas)
+#set($rowid = "row$velocityCount")
+            $ifkwd c1x = $tabla.seccion and c3x = $tabla.propiedad then
+                insert into $tabla.nombre select row$velocityCount.*;
+#set($ifkwd = "elseif")
+#if($tabla.seccion > 0 || $tabla.propiedad > 0)
+#foreach($columna in $tabla.propiedades)
+                $rowid.$columna.nombre = null;
+#end
+#end
+#end
+            end if;
+        end if;
+        c1x = c1y;
+        c2x = c2y;
+        c3x = c3y;
+        c4x = c4y;
+#set($ifkwd = "if")
+#foreach($tabla in $clase.tablas)
+#set($rowid = "row$velocityCount")
+#foreach($columna in $tabla.columnas)
+#if($columna.propiedad > 0)
+        $ifkwd vpo.id_propiedad_clase = $columna.propiedad then
+#if($columna.dominio == 11)
+#if($columna.tipo == 1)
+            $rowid.$columna.nombre = vpo.valor_propiedad;
+#elseif($columna.tipo == 2)
+#if($columna.precision)
+            $rowid.$columna.nombre = cast_varchar_as_decimal(vpo.valor_propiedad);
+#else
+            $rowid.$columna.nombre = cast_varchar_as_decimal(vpo.valor_propiedad);
+#end
+#elseif($columna.tipo == 3)
+            $rowid.$columna.nombre = cast_varchar_as_timestamp(vpo.valor_propiedad);
+#else
+            $rowid.$columna.nombre = cast_varchar_as_integer(vpo.valor_propiedad);
+#end
+#elseif($columna.dominio == 21)
+            $rowid.$columna.nombre = vpo.id_valor_lista;
+#elseif($columna.dominio == 22)
+            $rowid.$columna.nombre = vpo.id_objeto_valor;
+#elseif($columna.dominio == 23)
+            $rowid.$columna.nombre = vpo.id_recurso_valor;
+#else
+            $rowid.$columna.nombre = null;
+#end
+#set($ifkwd = "elseif")
+#end
+#end
+#end
+        end if;
+    end loop;
+##insert de la última fila de la última tabla
+#set($ifkwd = "if")
+#foreach($tabla in $clase.tablas)
+    $ifkwd c1x = $tabla.seccion and c3x = $tabla.propiedad then
+        insert into $tabla.nombre select row$velocityCount.*;
+#set($ifkwd = "elseif")
+#end
+    end if;
+    return obj.version_objeto;
+end;
+$$ LANGUAGE 'plpgsql' VOLATILE;
+#writeEndOfStatement($runsql)
+#set($params = "(id integer)")
+#writeBeginStatement($runsql)
+CREATE OR REPLACE FUNCTION $prefix$clase.nombre$suffix$params RETURNS integer AS $$
+declare
+    obj objeto;
+begin
+    select * into obj from objeto where id_objeto = id;
+    if not found then
+        raise exception 'objeto % no existe', id;
+    end if;
+    update  objeto
+    set     version_objeto = version_objeto + 1,
+            fecha_hora_sincronizacion = CURRENT_TIMESTAMP,
+            es_objeto_sincronizado = 1
+    where   id_objeto = obj.id_objeto;
+#set($params = "(obj)")
+    perform $prefix$clase.nombre$suffix$params;
+    return 1;
+end;
+$$ LANGUAGE 'plpgsql' VOLATILE;
+#writeEndOfStatement($runsql)
+#set($params = "()")
+#writeBeginStatement($runsql)
+CREATE OR REPLACE FUNCTION $prefix$clase.nombre$suffix$params RETURNS integer AS $$
+declare
+    xrc integer := 0;
+    obj objeto;
+begin
+    for obj in select * from objeto where id_clase_objeto = $clase.identificacion and es_objeto_sincronizado = 0 order by id_objeto
+    loop
+        update  objeto
+        set     version_objeto = version_objeto + 1,
+                fecha_hora_sincronizacion = CURRENT_TIMESTAMP,
+                es_objeto_sincronizado = 1
+        where   id_objeto = obj.id_objeto;
+#set($params = "(obj)")
+        perform $prefix$clase.nombre$suffix$params;
+        xrc = xrc + 1;
+    end loop;
+    return xrc;
+end;
+$$ LANGUAGE 'plpgsql' VOLATILE;
+#writeEndOfStatement($runsql)
+#end
+#macro(writeFuncionesClase $clase)
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- funciones correspondientes a la clase "$clase.nombre"
+-- ----------------------------------------------------------------------------------------------------------------------------------
+#writeFuncionCreate($clase)
+#writeFuncionDrop($clase)
+#writeFuncionXcopy($clase)
+#end

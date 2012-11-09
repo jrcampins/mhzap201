@@ -1,0 +1,14 @@
+//
+//  js-confirm-discard
+//
+#if($confirmMessage)
+var confirmMessage = '$confirmMessage';
+var ok = confirm(confirmMessage);
+#else
+var ok = true;
+#end
+#if($blur)
+this.blur();
+#end
+return ok;
+//

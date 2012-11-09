@@ -1,0 +1,15 @@
+#set($debug = "")
+//
+//  js-on-click-row-selector
+//
+    var cookie = getReturnValueCookieName();
+#if($value)
+    if (this.checked) setSessionCookie(cookie, '$value');
+#end
+#if($debug != "")
+//  ****************************************************************************************************
+    window.status = document.cookie;
+    alert(cookie + ' = ' + getSessionCookie(cookie));
+//  ****************************************************************************************************
+#end
+//
