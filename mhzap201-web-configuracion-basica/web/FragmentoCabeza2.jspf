@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="FragmentoCabeza2">
+        <h:panelGrid binding="#{FragmentoCabeza2.gridPanel1}" columns="2" id="gridPanel1" style="width: 100%">
+            <h:panelGrid binding="#{FragmentoCabeza2.gridPanel2}" columns="3" id="gridPanel2">
+                <webuijsf:staticText binding="#{FragmentoCabeza2.staticText1}" id="staticText1" style="font-weight: bold" text="#{FragmentoCabeza2.nombreAplicacion}"/>
+                <webuijsf:staticText binding="#{FragmentoCabeza2.staticText2}" id="staticText2" style="font-weight: bold; margin-left: 24px" text="#{FragmentoCabeza2.nombrePagina}"/>
+                <webuijsf:button id="botonAplicar1" imageURL="/resources/go_dimmed.gif"/>
+            </h:panelGrid>
+            <h:panelGrid binding="#{FragmentoCabeza2.gridPanel3}" columns="20" id="gridPanel3" style="float: right">
+                <h:panelGrid columns="3" id="gridPanel4">
+                    <webuijsf:label for="listaComandoVer1" id="etiquetaListaComandoVer1" rendered="false}" text="#{FragmentoCabeza2.gestor.i18n.textoEtiquetaListaComandoVer}"/>
+                    <webuijsf:dropDown converter="#{FragmentoCabeza2.listaComandoVer1Converter}" id="listaComandoVer1"
+                        items="#{FragmentoCabeza2.opcionesListaComandoVer}" onChange="" rendered="#{FragmentoCabeza2.bitComandoVerDisponible.on}"
+                        selected="#{FragmentoCabeza2.comandoVer}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipListaComandoVer}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonComandoVer1_action}" id="botonComandoVer1" imageURL="/resources/go.gif"
+                        onClick="#{FragmentoCabeza2.scriptComandoVer}" rendered="#{FragmentoCabeza2.bitComandoVerDisponible.on}" style="margin-right: 8px"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonComandoVer}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonComandoVer}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" id="gridPanel5">
+                    <webuijsf:label for="listaComandoGuardar1" id="etiquetaListaComandoGuardar1" rendered="false}" text="#{FragmentoCabeza2.gestor.i18n.textoEtiquetaListaComandoGuardar}"/>
+                    <webuijsf:dropDown converter="#{FragmentoCabeza2.listaComandoGuardar1Converter}" id="listaComandoGuardar1"
+                        items="#{FragmentoCabeza2.opcionesListaComandoGuardar}" onChange="" rendered="#{FragmentoCabeza2.bitComandoGuardarDisponible.on}"
+                        selected="#{FragmentoCabeza2.comandoGuardar}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipListaComandoGuardar}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonComandoGuardar1_action}" id="botonComandoGuardar1" imageURL="/resources/go.gif"
+                        onClick="#{FragmentoCabeza2.scriptComandoGuardar}" rendered="#{FragmentoCabeza2.bitComandoGuardarDisponible.on}"
+                        style="margin-right: 8px" text="#{FragmentoCabeza2.gestor.i18n.textoBotonComandoGuardar}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonComandoGuardar}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" id="gridPanel6">
+                    <webuijsf:label for="listaComandoAbrir1" id="etiquetaListaComandoAbrir1" rendered="false}" text="#{FragmentoCabeza2.gestor.i18n.textoEtiquetaListaComandoAbrir}"/>
+                    <webuijsf:dropDown converter="#{FragmentoCabeza2.listaComandoAbrir1Converter}" id="listaComandoAbrir1"
+                        items="#{FragmentoCabeza2.opcionesListaComandoAbrir}"
+                        onChange="webui.suntheme4_2.common.timeoutSubmitForm(this.form, 'listaComandoAbrir1');"
+                        rendered="#{FragmentoCabeza2.bitComandoAbrirDisponible.on}" selected="#{FragmentoCabeza2.comandoAbrir}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipListaComandoAbrir}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonComandoAbrir1_action}" id="botonComandoAbrir1" imageURL="/resources/go.gif"
+                        mini="true" onClick="#{FragmentoCabeza2.scriptComandoAbrir}" rendered="#{FragmentoCabeza2.bitComandoAbrirDisponible.on}"
+                        style="margin-right: 8px" text="#{FragmentoCabeza2.gestor.i18n.textoBotonComandoAbrir}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonComandoAbrir}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" id="gridPanel7" rendered="false">
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonVerArbol1_action}" binding="#{FragmentoCabeza2.botonVerArbol1}"
+                        disabled="#{FragmentoCabeza2.funcionSelectInhabilitada}" id="botonVerArbol1" imageURL="#{FragmentoCabeza2.urlImagenVerArbol}"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonVerArbol}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonVerArbol}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonVerTabla1_action}" binding="#{FragmentoCabeza2.botonVerTabla1}"
+                        disabled="#{FragmentoCabeza2.funcionSelectInhabilitada}" id="botonVerTabla1" imageURL="#{FragmentoCabeza2.urlImagenVerTabla}"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonVerTabla}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonVerTabla}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonVerDetalle1_action}" binding="#{FragmentoCabeza2.botonVerDetalle1}"
+                        disabled="#{FragmentoCabeza2.funcionDetalleInhabilitada}" id="botonVerDetalle1" imageURL="#{FragmentoCabeza2.urlImagenVerDetalle}"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonVerDetalle}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonVerDetalle}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" id="gridPanel8" rendered="false">
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonEjecutarInforme1_action}" binding="#{FragmentoCabeza2.botonEjecutarInforme1}"
+                        disabled="#{FragmentoCabeza2.funcionSelectInhabilitada}" id="botonEjecutarInforme1"
+                        imageURL="#{FragmentoCabeza2.urlImagenEjecutarInforme}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonEjecutarInforme}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonEjecutarInforme}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonExportarArchivo1_action}" binding="#{FragmentoCabeza2.botonExportarArchivo1}"
+                        disabled="#{FragmentoCabeza2.funcionSelectInhabilitada}" id="botonExportarArchivo1"
+                        imageURL="#{FragmentoCabeza2.urlImagenExportarArchivo}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonExportarArchivo}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonExportarArchivo}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="3" id="gridPanel9" rendered="false">
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonBitacoraFunciones1}" id="botonBitacoraFunciones1" imageURL="/resources/run.gif"
+                        onClick="#{FragmentoCabeza2.scriptFunciones}" style="margin-left: 8px"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonAbrirBitacoraFunciones}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAbrirBitacoraFunciones}"/>
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonBitacoraInformes1}" id="botonBitacoraInformes1" imageURL="/resources/run_report_log.gif"
+                        onClick="#{FragmentoCabeza2.scriptInformes}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonAbrirBitacoraInformes}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAbrirBitacoraInformes}"/>
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonBitacoraProcesos1}" id="botonBitacoraProcesos1" imageURL="/resources/run_export_log.gif"
+                        onClick="#{FragmentoCabeza2.scriptProcesos}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonAbrirBitacoraProcesos}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAbrirBitacoraProcesos}"/>
+                </h:panelGrid>
+                <h:panelGrid columns="5" id="gridPanel10">
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonFavoritos1_action}" id="botonFavoritos1" imageURL="/resources/open_favorites.gif"
+                        onClick="#{FragmentoCabeza2.scriptFavoritos}" rendered="#{FragmentoCabeza2.bitFuncionAbrirFavoritosDisponible.on}"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonAbrirFavoritos}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAbrirFavoritos}"/>
+                    <webuijsf:button actionExpression="#{FragmentoCabeza2.botonFavoritos2_action}" id="botonFavoritos2" imageURL="/resources/add_favorites.gif"
+                        rendered="#{FragmentoCabeza2.bitFuncionAgregarFavoritosDisponible.on}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonAgregarFavoritos}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAgregarFavoritos}"/>
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonCambiarPassword1}" id="botonCambiarPassword1" imageURL="/resources/change_password.gif"
+                        onClick="#{FragmentoCabeza2.scriptCambiarPassword}" rendered="#{FragmentoCabeza2.bitFuncionCambiarPasswordDisponible.on}"
+                        text="#{FragmentoCabeza2.gestor.i18n.textoBotonCambiarPassword}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonCambiarPassword}"/>
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonAyuda1}" id="botonAyuda1" imageURL="/resources/help_medium.gif"
+                        onClick="#{FragmentoCabeza2.scriptAyuda}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonAyudar}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonAyudar}"/>
+                    <webuijsf:button binding="#{FragmentoCabeza2.botonCerrar1}" id="botonCerrar1" imageURL="/resources/close_medium.gif"
+                        onClick="#{FragmentoCabeza2.scriptCerrar}" text="#{FragmentoCabeza2.gestor.i18n.textoBotonCerrar}" toolTip="#{FragmentoCabeza2.gestor.i18n.toolTipBotonCerrar}"/>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:panelGrid>
+    </f:subview>
+</div>

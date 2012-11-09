@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <f:subview id="FragmentoJoin">
+        <h:panelGrid binding="#{FragmentoJoin.gridPanel1}" id="gridPanel1" style="height: 4px; width: 100%"/>
+    </f:subview>
+</div>

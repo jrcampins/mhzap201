@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.web.project</type>
+    <configuration>
+        <creator-data xmlns="http://www.sun.com/creator/ns" jsf.current.theme="woodstock-theme-default" jsf.pagebean.package="com.egt.web.configuracion.basica" jsf.project.libraries.dir="lib" jsf.project.version="4.0"/>
+        <data xmlns="http://www.netbeans.org/ns/web-project/3">
+            <name>mhzap201-web-configuracion-basica</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <web-module-libraries>
+                <library dirs="200">
+                    <file>${libs.com-egt-compile-lib-1.classpath}</file>
+                </library>
+                <library dirs="200">
+                    <file>${libs.jsf12-support.classpath}</file>
+                </library>
+                <library dirs="200">
+                    <file>${libs.woodstock-components.classpath}</file>
+                </library>
+                <library dirs="200">
+                    <file>${libs.woodstock-theme-default.classpath}</file>
+                </library>
+                <library dirs="200">
+                    <file>${reference.commons-lib.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${reference.mhzap201-lib-base.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${reference.mhzap201-lib-core.jar}</file>
+                </library>
+                <library dirs="200">
+                    <file>${reference.mhzap201-lib-data.jar}</file>
+                </library>
+                <library dirs="100">
+                    <file>${reference.mhzap201-ejb-business.dist}</file>
+                </library>
+                <library dirs="100">
+                    <file>${reference.mhzap201-ejb-core.dist}</file>
+                </library>
+                <library dirs="100">
+                    <file>${reference.mhzap201-ejb-persistence.dist}</file>
+                </library>
+            </web-module-libraries>
+            <web-module-additional-libraries/>
+            <source-roots>
+                <root id="src.dir"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.src.dir"/>
+            </test-roots>
+        </data>
+        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
+            <reference>
+                <foreign-project>mhzap201-ejb-business</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-ejb-core</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-lib-base</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-lib-core</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-lib-data</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-ejb-business</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-ejb-persistence</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>commons-lib</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+        </references>
+    </configuration>
+</project>
