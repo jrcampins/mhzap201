@@ -1,0 +1,4 @@
+connect
+batch
+deploy W:\mhzap201\source\mhzap201-jboss\dist\mhzap201.ear
+run-batch

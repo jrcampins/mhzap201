@@ -1,0 +1,8 @@
+\echo
+\echo DATABASE :pgdb :crvl
+\echo
+\set  old1 '"' :pgdb '"'
+\set  new1 '"' :pgdb '_' :crvl '"'
+\echo
+ALTER DATABASE :old1 RENAME TO :new1;
+\echo

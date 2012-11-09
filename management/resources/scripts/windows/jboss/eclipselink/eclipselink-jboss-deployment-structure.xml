@@ -1,0 +1,18 @@
+<jboss-deployment-structure>
+    <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+    <deployment>
+        <dependencies>
+            <module name="com.sun.jsf-impl" export="true" />
+            <module name="javax.faces.api" export="true" />
+            <module name="com.oracle.ojdbc6" export="true" />
+            <module name="org.eclipse.persistence" export="true" />
+            <module name="org.jboss.vfs" export="true" />
+            <system export="true">
+                <paths>
+                    <path name="com/sun/rowset"/>
+                    <path name="com/sun/rowset/internal"/>
+                </paths>
+            </system>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

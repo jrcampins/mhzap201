@@ -1,0 +1,58 @@
+\echo
+\echo DATABASE :pgdb :crvl
+\echo
+\echo
+\echo dir :ddldir
+\echo
+\cd :ddldir
+\!ls -l *.sql
+\echo
+\encoding
+\encoding LATIN1
+\encoding
+\set AUTOCOMMIT off
+\echo --------------------------------------------------------------------------
+BEGIN TRANSACTION;
+\echo --------------------------------------------------------------------------
+\i postgresql/functions/setup.sql
+\echo --------------------------------------------------------------------------
+select * from setup_database_upgrade_count()
+as (tipo varchar, cantidad integer)
+order by 1;
+select  proname||'('||pg_catalog.oidvectortypes(proargtypes)||')' as firma_funcion
+from    pg_proc inner join pg_namespace on pg_namespace.oid = pg_proc.pronamespace
+where   proname like 'setup_database_upgrade_version%'
+and     pg_catalog.oidvectortypes(proargtypes)=''
+order   by proname;
+\echo --------------------------------------------------------------------------
+select setup_database_upgrade_drop();
+\echo --------------------------------------------------------------------------
+select setup_database_upgrade();
+\echo --------------------------------------------------------------------------
+\echo file:MHZDB201_PG_100 (defaults)
+\echo --------------------------------------------------------------------------
+\i postgresql/MHZDB201_PG_DEFAULTS_RENUMBERED.sql
+\echo --------------------------------------------------------------------------
+\echo file:MHZDB201_PG_200_METADATA
+\echo --------------------------------------------------------------------------
+\i MHZDB201_PG_200_METADATA.sql
+\echo --------------------------------------------------------------------------
+\echo file:MHZDB201_PG_300 (constraints, indexes, views)
+\echo --------------------------------------------------------------------------
+\i MHZDB201_PG_300.sql
+\echo --------------------------------------------------------------------------
+\echo file:MHZDB201_PG_400 (functions)
+\echo --------------------------------------------------------------------------
+\i MHZDB201_PG_400.sql
+\echo --------------------------------------------------------------------------
+\echo file:MHZDB201_PG_500 (triggers)
+\echo --------------------------------------------------------------------------
+\i MHZDB201_PG_500.sql
+\echo --------------------------------------------------------------------------
+select * from setup_database_upgrade_count()
+as (tipo varchar, cantidad integer)
+order by 1;
+\echo --------------------------------------------------------------------------
+COMMIT TRANSACTION;
+\echo --------------------------------------------------------------------------
+\q

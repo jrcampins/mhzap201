@@ -1,0 +1,5 @@
+connect
+batch
+undeploy mhzap201.ear
+run-batch
+:reload

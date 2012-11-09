@@ -1,0 +1,5 @@
+ficha_hogar  
+ficha_persona  
+persona  
+potencial_ben  
+visita_censo  

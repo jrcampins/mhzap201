@@ -1,0 +1,4 @@
+connect
+batch
+deploy W:\third-party\lib\jdbc\oracle\ojdbc6.jar
+run-batch

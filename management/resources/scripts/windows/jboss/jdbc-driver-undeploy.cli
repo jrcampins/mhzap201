@@ -1,0 +1,5 @@
+connect
+batch
+undeploy ojdbc6.jar
+run-batch
+:reload
