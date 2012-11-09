@@ -1,0 +1,21 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# ?ste es un ejemplo de archivo HOSTS usado por Microsoft TCP/IP para Windows.
+#
+# Este archivo contiene las asignaciones de las direcciones IP a los nombres de
+# host. Cada entrada debe permanecer en una l?nea individual. La direcci?n IP
+# debe ponerse en la primera columna, seguida del nombre de host correspondiente.
+# La direcci?n IP y el nombre de host deben separarse con al menos un espacio.
+# 
+#
+# Tambi?n pueden insertarse comentarios (como ?ste) en l?neas individuales
+# o a continuaci?n del nombre de equipo indic?ndolos con el s?mbolo "#"
+#
+# Por ejemplo:
+#
+#      102.54.94.97     rhino.acme.com          # servidor origen
+#       38.25.63.10     x.acme.com              # host cliente x
+
+127.0.0.1       localhost
+
+192.168.1.1     bncap101.bnc.ve

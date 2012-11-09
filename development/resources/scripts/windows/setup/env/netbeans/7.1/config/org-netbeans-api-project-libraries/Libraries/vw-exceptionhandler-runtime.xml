@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+	<name>exceptionhandler-runtime</name>
+	<type>j2se</type>
+	<description>Visual Web Exception Handler</description>
+	<volume>
+		<type>classpath</type>
+		<resource>jar:file:/W:/com-egt-lib/j2se/visualweb2/modules/ext/errorhandler.jar!/</resource>
+	</volume>
+	<volume>
+		<type>src</type>
+	</volume>
+	<volume>
+		<type>javadoc</type>
+	</volume>
+	<volume>
+		<type>maven-pom</type>
+	</volume>
+</library>

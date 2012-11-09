@@ -1,0 +1,112 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ConfiguraciÛn de NetBeans en Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+01. Instalar JDK 1.6.0_23, preferiblemente en "C:\Archivos de programa\Java\jdk1.6.0_23"
+
+02. Copiar jdk-6-doc.zip al directorio de instalaciÛn del JDK
+
+03. Definir directorio para instalar NetBeans, preferiblemente "C:\NetBeans\NB69"
+
+04. Definir directorios para los workspaces, preferiblemente en "C:\CVSNT\desarrollo"
+    Por ejemplo:
+
+    md C:\CVSNT\desarrollo\mhzap201
+
+
+05. Definir unidades virtuales J, N, y W (bat en la carpeta Inicio de Windows)
+
+    J: Directorio de instalaciÛn de Java
+    N: Directorio de instalaciÛn de NetBeans
+    W: Directorio de workspaces
+
+Por ejemplo:
+
+    subst J: /d
+    subst J: "C:\Archivos de programa\Java"
+    subst N: /d
+    subst N: "C:\NetBeans\NB69"
+    subst W: /d
+    subst W: "C:\CVSNT\desarrollo"
+
+
+06. Definir variables de entorno correspondientes a workspaces y productos
+    Por ejemplo:
+
+    Mi PC > Propiedades > Opciones avanzadas > Variables de entorno > Variables del sistema
+
+    set MHZAP201_VSWS=W:\mhzap201
+    set MHZAP201_HOME=W:\mhzap201\management
+    set GLASSFISH_HOME=N:\glassfish
+    set POSTGRESQL_HOME=C:\Archivos de programa\PostgreSQL\9.0
+
+
+07. Instalar en N:
+
+    07.01   Desinstalar las versiones preliminares (Beta y/o RC: 6.9beta, 6.9rc1, , 6.9rc2...)
+
+    07.02.  NetBeans en N:\netbeans
+            - utilizar el JDK instalado en J:\jdk1.6.0_23
+
+    07.03.  GlassFish V3 en N:\glassfish
+            - utilizar el JDK instalado en J:\jdk1.6.0_23
+
+    07.04.  Tomcat 6.0 en N:\tomcat
+            - utilizar el JDK instalado en J:\jdk1.6.0_23
+
+    07.05.  Modificar el acceso directo a NetBeans
+            - Destino: N:\netbeans\bin\netbeans.exe --userdir N:\userdir
+            - Iniciar en: N:\netbeans
+            - Cambiar icono...
+            	- Buscar iconos en este archivo: C:\NetBeans\NB69\netbeans\bin\netbeans.exe
+            
+
+08. Abrir el IDE e instalar actualizaciones
+
+09. Personalizar
+
+	- Actualizar Javadoc del JDK
+
+	    Tools > Java Platform > Javadoc > Add ZIP/Folder ...
+
+		Seleccionar J:\jdk1.6.0_23\jdk-6-doc.zip
+
+	- Formato de cÛdigo java
+
+	    Tools > Options > Editor > Formatting
+
+		Language: All Languages
+		Category: Tabs and Indents
+
+			Right margin: 110
+
+		Language: Java
+		Category: Wrapping
+
+			Cambiar los "Never" por "If Long" y dejar los "Always" tal como est√°n
+
+		Language: Java
+		Category: Blank Lines
+
+			Colocar 1 en todas las casillas
+
+
+10. Extraer (Checkout) del proyecto mhzap201 en W:\mhzap201
+
+	CVS Root
+		CVS Root:     :pserver:user@192.168.5.130:/CVSNT/cvsroots/mhzap201
+		Password:     password
+
+	Module to Checkout
+		Module:       xxx
+		Branch:
+		Local Folder: W:\mhzap201
+
+
+11. Cerrar el IDE
+ 
+12. Ejecutar "W:\mhzap201\management\setup\netbeans\6.9\xcopy-config.bat"
+
+13. Abrir el IDE
+
+14. Configurar GlassFish (W:\mhzap201\management\setup\glassfish\V3\configuracion-glassfish-windows.txt)

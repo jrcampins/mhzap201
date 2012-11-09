@@ -1,0 +1,27 @@
+/*
+W:\mhzap201\source\mhzap201-web-consulta\src\java\com\egt\web\consulta\ArchivoAdjunto6.java
+*/
+
+import com.egt.core.aplicacion.TLC;
+import com.egt.ejb.business.message.ReactivarArchivoAdjuntoMessage;
+
+    protected void iniciar() {
+        /*
+         * Esta funcion debe ejecutarse al final de init(),
+         * *despues* de que se inicien los componentes administrados.
+         */
+        this.getGestor().iniciar();
+        this.reactivarArchivoAdjunto();
+    }
+
+    private void reactivarArchivoAdjunto() {
+        Bitacora.trace(this.getClass(), "reactivarArchivoAdjunto");
+        Long idArchivoAdjunto = this.getContextoPeticion().getIdentificacionRecurso();
+        if (idArchivoAdjunto != null) {
+            this.getGestor().setReadOnlyProcessing(false);
+            ReactivarArchivoAdjuntoMessage message = new ReactivarArchivoAdjuntoMessage(idArchivoAdjunto);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            archivoAdjuntoBusinessProcess.reactivarArchivoAdjunto(message);
+            TLC.getBitacora().clear();
+        }
+    }

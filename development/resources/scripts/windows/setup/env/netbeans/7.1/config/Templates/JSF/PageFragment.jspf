@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="${encoding}"?>
+<#if name == "">
+<!-- 
+    Document   : ${name}
+    Created on : ${date}, ${time}
+    Author     : ${user}
+-->
+</#if>
+<#if j2eePlatformVersion?? && j2eePlatformVersion = "1.5">
+<div style="-rave-layout: grid; width: 400px; height: 200px" xmlns:f="http://java.sun.com/jsf/core" >
+  <f:subview id="${name}">
+  </f:subview>
+</div>
+<#else>
+<div style="-rave-layout: grid; width: 400px; height: 200px" xmlns:f="http://java.sun.com/jsf/core" >
+  <f:subview id="${name}">
+  </f:subview>
+</div>
+</#if>

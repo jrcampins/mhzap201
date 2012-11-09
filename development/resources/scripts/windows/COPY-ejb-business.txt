@@ -1,0 +1,4 @@
+XBusinessProcessLogicBean.java
+GrupoProcesoBusinessProcessLogicBean.java
+RolBusinessProcessLogicBean.java
+UsuarioBusinessProcessLogicBean.java

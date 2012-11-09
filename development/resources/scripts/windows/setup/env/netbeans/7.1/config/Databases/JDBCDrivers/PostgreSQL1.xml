@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE driver PUBLIC '-//NetBeans//DTD JDBC Driver 1.1//EN' 'http://www.netbeans.org/dtds/jdbc-driver-1_1.dtd'>
+<driver>
+  <name value='PostgreSQL 8.4 jdbc3'/>
+  <display-name value='PostgreSQL 8.4 jdbc3'/>
+  <class value='org.postgresql.Driver'/>
+  <urls>
+    <url value='file:/W:/com-egt-lib/j2se/jdbc/postgresql/postgresql-8.4-701.jdbc3.jar'/>
+  </urls>
+</driver>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+	<name>glassfish-core-modules</name>
+	<type>j2se</type>
+	<description>GlassFish modules used by the core library</description>
+	<volume>
+		<type>classpath</type>
+		<resource>jar:file:/N:/glassfish/glassfish/modules/javax.jms.jar!/</resource>
+		<resource>jar:file:/N:/glassfish/glassfish/modules/javax.servlet.jar!/</resource>
+		<resource>jar:file:/N:/glassfish/glassfish/modules/javax.servlet.jsp.jar!/</resource>
+		<resource>jar:file:/N:/glassfish/glassfish/modules/jsf-api.jar!/</resource>
+	</volume>
+	<volume>
+		<type>src</type>
+	</volume>
+	<volume>
+		<type>javadoc</type>
+	</volume>
+	<volume>
+		<type>maven-pom</type>
+	</volume>
+</library>

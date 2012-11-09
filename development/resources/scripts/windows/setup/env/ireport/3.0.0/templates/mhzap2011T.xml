@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+    name="mhzap201"
+    columnCount="1"
+    printOrder="Vertical"
+    orientation="Landscape"
+    pageWidth="1008"
+    pageHeight="612"
+    columnWidth="948"
+    columnSpacing="0"
+    leftMargin="30"
+    rightMargin="30"
+    topMargin="30"
+    bottomMargin="30"
+    whenNoDataType="NoPages"
+    isTitleNewPage="false"
+    isSummaryNewPage="false">
+<!--
+    resourceBundle="mhzap201"
+    whenResourceMissingType="Key"
+-->
+    <property name="ireport.scriptlethandling" value="0" />
+    <property name="ireport.encoding" value="UTF-8" />
+    <import value="java.util.*" />
+    <import value="net.sf.jasperreports.engine.*" />
+    <import value="net.sf.jasperreports.engine.data.*" />
+    <import value="com.egt.base.enums.*" />
+    <import value="com.egt.base.util.*" />
+    <import value="com.egt.commons.enums.*" />
+    <import value="com.egt.commons.util.*" />
+
+    <group minHeightToStartNewPage="132" name="Group1" >
+        <groupExpression><![CDATA[
+        
+        ]]></groupExpression>
+        <groupHeader>
+            <band height="24"  isSplitAllowed="true" >
+                <rectangle radius="0" >
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="24"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                    <graphicElement stretchType="NoStretch">
+                            <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </graphicElement>
+                </rectangle>
+                <staticText>
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="158"
+                        height="24"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="18"/>
+                    </textElement>
+                    <text><![CDATA[G1Label]]></text>
+                </staticText>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="158"
+                        y="0"
+                        width="316"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="18"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[G1Field]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="474"
+                        y="0"
+                        width="474"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="18"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="12"  isSplitAllowed="true" >
+            </band>
+        </groupFooter>
+    </group>
+    <group minHeightToStartNewPage="108" name="Group2" >
+        <groupExpression><![CDATA[
+        
+        ]]></groupExpression>
+        <groupHeader>
+            <band height="24"  isSplitAllowed="true" >
+                <rectangle>
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="24"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                    <graphicElement stretchType="NoStretch">
+                            <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </graphicElement>
+                </rectangle>
+                <staticText>
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="158"
+                        height="24"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="16"/>
+                    </textElement>
+                    <text><![CDATA[G2Label]]></text>
+                </staticText>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="158"
+                        y="0"
+                        width="316"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="16"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[G2Field]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="474"
+                        y="0"
+                        width="474"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" size="16"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="12"  isSplitAllowed="true" >
+            </band>
+        </groupFooter>
+    </group>
+    <group minHeightToStartNewPage="84" name="Group3" >
+        <groupExpression><![CDATA[
+        
+        ]]></groupExpression>
+        <groupHeader>
+            <band height="24"  isSplitAllowed="true" >
+                <rectangle radius="0" >
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="24"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                    <graphicElement stretchType="NoStretch">
+                            <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </graphicElement>
+                </rectangle>
+                <staticText>
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="158"
+                        height="24"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[G3Label]]></text>
+                </staticText>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="158"
+                        y="0"
+                        width="316"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[G3Field]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="474"
+                        y="0"
+                        width="474"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="12"  isSplitAllowed="true" >
+            </band>
+        </groupFooter>
+    </group>
+    <group minHeightToStartNewPage="60" name="Group4" >
+        <groupExpression><![CDATA[
+        
+        ]]></groupExpression>
+        <groupHeader>
+            <band height="24"  isSplitAllowed="true" >
+                <rectangle radius="0" >
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="24"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                    <graphicElement stretchType="NoStretch">
+                            <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </graphicElement>
+                </rectangle>
+                <staticText>
+                    <reportElement
+                        x="0"
+                        y="0"
+                        width="158"
+                        height="24"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[G4Label]]></text>
+                </staticText>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="158"
+                        y="0"
+                        width="316"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[G4Field]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                        x="474"
+                        y="0"
+                        width="474"
+                        height="24"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textElement>
+                        <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+                    </textElement>
+                    <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="12"  isSplitAllowed="true" >
+            </band>
+        </groupFooter>
+    </group>
+    <group minHeightToStartNewPage="36" name="detailGroup" isReprintHeaderOnEachPage="true" >
+        <groupExpression><![CDATA[]]></groupExpression>
+        <groupHeader>
+            <band height="20"  isSplitAllowed="true" >
+                <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="0"  isSplitAllowed="true" >
+            </band>
+        </groupFooter>
+    </group>
+    <background>
+        <band height="0"  isSplitAllowed="true" >
+        </band>
+    </background>
+    <title>
+    </title>
+    <pageHeader>
+        <band height="64"  isSplitAllowed="true" >
+            <rectangle>
+                <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="64"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                <graphicElement stretchType="NoStretch">
+                        <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </graphicElement>
+            </rectangle>
+            <image  onErrorType="Icon" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                            x="0"
+                            y="0"
+                            width="104"
+                            height="30"
+                            key="image-1"/>
+                    <box></box>
+                    <graphicElement stretchType="NoStretch"/>
+                    <imageExpression class="java.lang.String"><![CDATA["./imagenes/mhzap2011.jpg"]]></imageExpression>
+            </image>
+            <staticText>
+                    <reportElement
+                            x="104"
+                            y="0"
+                            width="54"
+                            height="32"
+                            key="staticText"/>
+                    <box></box>
+                    <textElement textAlignment="Left" verticalAlignment="Middle">
+                            <font fontName="SansSerif" size="10"/>
+                    </textElement>
+            <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                    <reportElement
+                            x="158"
+                            y="0"
+                            width="316"
+                            height="32"
+                            key="staticText"/>
+                    <box></box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font fontName="SansSerif" size="10"/>
+                    </textElement>
+            <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                    <reportElement
+                            x="474"
+                            y="0"
+                            width="316"
+                            height="32"
+                            key="staticText"/>
+                    <box></box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font fontName="SansSerif" size="10"/>
+                    </textElement>
+            <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                    <reportElement
+                            x="790"
+                            y="0"
+                            width="72"
+                            height="32"
+                            key="staticText"/>
+                    <box></box>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font fontName="SansSerif" size="10"/>
+                    </textElement>
+            <text><![CDATA[]]></text>
+            </staticText>
+            <image  onErrorType="Icon" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                    <reportElement
+                            x="862"
+                            y="0"
+                            width="86"
+                            height="30"
+                            key="image-2"/>
+                    <box></box>
+                    <graphicElement stretchType="NoStretch"/>
+                    <imageExpression class="java.lang.String"><![CDATA["./imagenes/mhzap2012.jpg"]]></imageExpression>
+            </image>
+            <staticText isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="0"
+                        y="32"
+                        width="474"
+                        height="32"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="SansSerif" pdfFontName="Helvetica-Oblique" size="20" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Título del Informe]]></text>
+            </staticText>
+            <staticText isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="474"
+                        y="32"
+                        width="316"
+                        height="32"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="20"/>
+                </textElement>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="790"
+                        y="32"
+                        width="158"
+                        height="32"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="20"/>
+                </textElement>
+                <text><![CDATA[]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="20"  isSplitAllowed="true" >
+            <rectangle>
+                <reportElement
+                        x="0"
+                        y="0"
+                        width="948"
+                        height="20"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                <graphicElement stretchType="NoStretch">
+                        <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </graphicElement>
+            </rectangle>
+            <line direction="TopDown">
+                <reportElement
+                        x="0"
+                        y="16"
+                        width="948"
+                        height="0"
+                        key="line"/>
+                <graphicElement stretchType="NoStretch"/>
+            </line>
+            <staticText>
+                <reportElement
+                        x="0"
+                        y="0"
+                        width="127"
+                        height="16"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement>
+                    <font fontName="SansSerif" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+                </textElement>
+                <text><![CDATA[DetailLabel]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="16"  isSplitAllowed="true" >
+            <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="0"
+                        y="0"
+                        width="127"
+                        height="16"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement>
+                    <font size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[DetailField]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="0"  isSplitAllowed="true" >
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="20"  isSplitAllowed="true" >
+            <line direction="TopDown">
+                <reportElement
+                        x="0"
+                        y="3"
+                        width="948"
+                        height="0"
+                        key="line"/>
+                <graphicElement stretchType="NoStretch"/>
+            </line>
+            <rectangle>
+                <reportElement
+                        x="0"
+                        y="4"
+                        width="948"
+                        height="16"
+                        backcolor="#FFFFFF"
+                        key="rectangle"/>
+                <graphicElement stretchType="NoStretch">
+                        <pen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </graphicElement>
+            </rectangle>
+            <staticText isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="0"
+                        y="7"
+                        width="316"
+                        height="12"
+                        key="staticText"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <text><![CDATA[Título del Informe]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Page" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="316"
+                        y="7"
+                        width="158"
+                        height="12"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Right" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+<!--
+                <textFieldExpression class="java.lang.String"><![CDATA[$R{Página} + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+-->
+                <textFieldExpression class="java.lang.String"><![CDATA["Página" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="474"
+                        y="7"
+                        width="158"
+                        height="12"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Left" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+<!--
+                <textFieldExpression class="java.lang.String"><![CDATA[" " + $R{de} + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+-->
+                <textFieldExpression class="java.lang.String"><![CDATA[" " + "de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="632"
+                        y="7"
+                        width="158"
+                        height="12"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+                <reportElement
+                        x="790"
+                        y="7"
+                        width="158"
+                        height="12"
+                        key="textField"/>
+                    <box>
+                            <topPen    lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen   lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen  lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                <textElement textAlignment="Right" verticalAlignment="Top">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="0"  isSplitAllowed="true" >
+        </band>
+    </summary>
+</jasperReport>

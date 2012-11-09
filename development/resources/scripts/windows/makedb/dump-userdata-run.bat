@@ -1,0 +1,14 @@
+call "%BAT%" archivo_datos_ext                                                                                    
+call "%BAT%" etnia_indigena                                                                                       
+call "%BAT%" ficha_hogar                                                                                          
+call "%BAT%" ficha_persona                                                                                        
+call "%BAT%" funcionario                                                                                          
+call "%BAT%" informe                                                                                              
+call "%BAT%" objecion_ele_pen                                                                                     
+call "%BAT%" persona                                                                                              
+call "%BAT%" potencial_ben                                                                                        
+call "%BAT%" proceso                                                                                              
+call "%BAT%" proveedor_dat_ext                                                                                    
+call "%BAT%" ubicacion                                                                                            
+call "%BAT%" ubicacion_plus                                                                                       
+call "%BAT%" visita_censo                                                                                         

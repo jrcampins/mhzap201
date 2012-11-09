@@ -1,0 +1,8 @@
+javax.persistence
+org.eclipse.persistence.antlr
+org.eclipse.persistence.asm
+org.eclipse.persistence.core
+org.eclipse.persistence.jpa
+org.eclipse.persistence.jpa.modelgen
+org.eclipse.persistence.moxy
+org.eclipse.persistence.oracle

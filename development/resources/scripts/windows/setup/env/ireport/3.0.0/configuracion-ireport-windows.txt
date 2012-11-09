@@ -1,0 +1,15 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Configuracion de iReport en Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+01. Instalar iReport (classic), preferiblemente en "C:\Archivos de programa\iReport-3.0.0"
+
+02. Abrir y Cerrar iReport
+
+03. Ejecutar "W:\mhzap201\management\setup\ireport\3.0.0\xcopy-config"
+
+04. Ejecutar "W:\mhzap201\management\setup\ireport\3.0.0\xcopy-imagenes"
+
+05. Ejecutar "W:\mhzap201\management\setup\ireport\3.0.0\xcopy-templates"
+
+06. Ejecutar "W:\mhzap201\management\setup\ireport\3.0.0\xmd-syswk1"

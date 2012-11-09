@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+	<name>com-egt-compile-lib-1</name>
+	<type>j2se</type>
+	<volume>
+		<type>classpath</type>
+		<resource>jar:file:/W:/com-egt-lib/j2se/commons-collections-3.2.1.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/commons-fileupload-1.2.2.jar!/</resource>
+        	<resource>jar:file:/W:/com-egt-lib/j2se/commons-io-1.4.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/commons-lang-2.6.jar!/</resource>
+                <resource>jar:file:/W:/com-egt-lib/j2se/jasperreports-4.0.0.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/joda-time-1.6.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/log4j-1.2.16.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/velocity-1.7.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/xstream-1.3.1.jar!/</resource>
+	</volume>
+	<volume>
+		<type>src</type>
+	</volume>
+	<volume>
+		<type>javadoc</type>
+	</volume>
+	<volume>
+		<type>maven-pom</type>
+	</volume>
+</library>

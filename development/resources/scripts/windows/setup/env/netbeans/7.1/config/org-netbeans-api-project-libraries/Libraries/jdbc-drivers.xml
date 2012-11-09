@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+	<name>jdbc-drivers</name>
+	<type>j2se</type>
+	<description>JDBC drivers</description>
+	<volume>
+		<type>classpath</type>
+		<resource>jar:file:/W:/com-egt-lib/j2se/jdbc/sqlserver/sqljdbc4.jar!/</resource>
+		<resource>jar:file:/W:/com-egt-lib/j2se/jdbc/postgresql/postgresql-8.4-701.jdbc4.jar!/</resource>
+	</volume>
+	<volume>
+		<type>src</type>
+	</volume>
+	<volume>
+		<type>javadoc</type>
+	</volume>
+	<volume>
+		<type>maven-pom</type>
+	</volume>
+</library>

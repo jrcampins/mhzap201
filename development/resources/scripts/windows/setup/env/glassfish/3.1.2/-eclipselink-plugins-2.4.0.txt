@@ -1,0 +1,12 @@
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.dbws.builder_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.dbws_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpa.equinox.weaving_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpa.equinox_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpa.jpql_2.0.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpa.osgi_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpa_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.jpars_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.nosql_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.oracle.nosql_2.4.0.v20120608-r11652.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.oracleddlparser_1.0.0.v20120530.jar
+W:\zip\eclipselink-plugins-2.4.0.v20120608-r11652\org.eclipse.persistence.sdo_2.4.0.v20120608-r11652.jar

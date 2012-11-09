@@ -1,0 +1,77 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Normas para la programación de informes con iReport 4.0.0
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+01. El nombre del archivo jrxml se deriva del código de la función que ejecuta el informe, sustituyendo el prefijo "emitir" por el nombre de la tabla
+    a la cual está asociada la función, y eliminando cualquier otra aparición del nombre de la tabla en el resto del código.
+
+    Ejemplo: el informe "solicitud de desembolso de crédito" se ejecuta mediante la función "emitir_solicitud_desembolso_credito",
+    la cual está asociada a la tabla "credito"; por lo tanto, el nombre del archivo jrxml sería "credito_solicitud_desembolso.jrxml"
+
+02. Como regla general, todo informe utiliza una vista. El nombre de la vista también se deriva del código de la función que ejecuta el informe,
+    sustituyendo el prefijo "emitir" por "informe" mas el nonbre de la tabla a la cual está asociada la función, y eliminando cualquier otra aparición
+    del nombre de la tabla en el resto del código.
+
+    Ejemplo: el informe "solicitud de desembolso de crédito" se ejecuta mediante la función "emitir_solicitud_desembolso_credito",
+    la cual está asociada a la tabla "credito"; por lo tanto, el nombre de la vista sería "informe_credito_solicitud_desembolso"
+
+03. Eventualmente, en lugar de una vista, el informe utiliza una función. En este caso, el nombre de la función se debe especificar en el archivo
+    BundleInformes.properties
+
+04. Si el informe utiliza un query o una vista, la cláusula WHERE se sustituye en tiempo de ejecución por la cláusula que prepara la P4 utilizando los
+    valores para los parámetros del informe suministrados por el usuario. Por lo tanto, el query o vista debe incluir columnas con el mismo nombre que
+    los parámetros. Además, si el query utiliza mas de una tabla, solo una puede contener una columna con el nombre del algún parámetro; es por esta
+    restricción los informes generalmente utilizan una vista.
+
+    ADVERTENCIA: el query builder de iReport define el nombre de las columnas del query colocándo el nombre de la tabla como prefijo, aun si el query
+    trabaja sobre una sola tabla. Por ejemplo, en el query del informe "solicitud de desembolso de crédito" la columna "id_credito" de la tabla
+    "credito" se denomina "credito_id_credito" (en el query aparece asi: "credito."id_credito" AS credito_id_credito"); por otra  parte, el parámetro
+    de la función es "id_credito" (sin el prefijo "credito_"); por lo tanto, o se renombran las columnas definidas por iReport que correspondan a los,
+    parámetros o simplmente se añaden columnas, preferiblemente al principio del query y en el mismo orden en el que aparecen los parámetros en la
+    función, para cada parámetro; en el ejemplo anterior, bastaría con añadir "credito."id_credito" AS id_credito" al principio del query.
+
+05. En tiempo de ejecución, el informe recibe como parámetros ($P) todos los valores para los parámetros del informe suministrados por el usuario.
+    Para utilizarlos, definalos en el informe con el mismo tipo de dato que tiene en la aplicación y utilice la sintaxis propia de jasper para hacer
+    referencia a ellos.
+
+    Por ejemplo, el parametro "id_credito" se definiría así:
+
+    <parameter name="id_credito"    isForPrompting="false" class="java.lang.Long"/>
+
+    Y se le haría referencia asi: $P{id_credito}
+
+
+06. Adicionalmente, también recibe el id, el código y el nombre del usuario que ejecuta el informe, como END_USER_ID, END_USER_CODE y END_USER_NAME;
+    y el directorio donde se encuentran los subinformes, el cual es el mismo directorio donde se encuentran los informes, como SUBREPORT_DIR.
+
+    Para utilizar estos parámetros, definalos asi:
+
+    <parameter name="END_USER_ID"   isForPrompting="false" class="java.lang.Long"/>
+    <parameter name="END_USER_CODE" isForPrompting="false" class="java.lang.String"/>
+    <parameter name="END_USER_NAME" isForPrompting="false" class="java.lang.String"/>
+    <parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String"/>
+
+    Finalmente, utilice la sintaxis propia de jasper para hacer referencia a ellos: $P{END_USER_ID}, $P{END_USER_CODE}, $P{END_USER_NAME}, etc.
+
+07. Si el informe tiene subinformes, debe compilar los subinformes y colocar los archivos jasper resultantes en el mismo directorio del archivo jrxml
+    del informe.
+
+08. Asegúrese de que el lenguaje del informe sea Java.
+
+    ADVERTENCIA: el template de iReport 4.0.0 viene con language="groovy" en lugar de language="java". Modifique o elimine la cláusula (el default es
+    language="java").
+
+09. Para utilizar los templates de la aplicación, deberá copiarlos a C:\Archivos de programa\Jaspersoft\iReport-4.0.0\ireport\templates
+
+    La aplicación actualmente dispone de los siguientes templates:
+
+    - mhzap2011T.xml
+    - mhzap2012T.xml
+
+10. Para utilizar las imagenes  de la aplicación, deberá crear un subdirectorio "imagenes" en el directorio que contiene los archivos jrxml de los
+    informes y copiarlas allí. Al hacer referencia a ellas, debe especificar el path relativo, asi: [CDATA["imagenes/nombre-del-archivo"]]
+
+    La aplicación actualmente dispone de las siguientes imagenes:
+
+    - mhzap2011.jpg
+    - mhzap2012.jpg

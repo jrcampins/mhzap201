@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- iReport 2 Configuration file - Tue May 06 13:16:58 VET 2008 -->
+<!DOCTYPE iReportProperties PUBLIC "-//iReport/DTD iReport Configuration//EN" "http://ireport.sourceforge.net/dtds/iReportProperties.dtd">
+<iReportProperties>
+	<iReportProperty name="BackupPolicy"><![CDATA[2]]></iReportProperty>
+	<iReportProperty name="ExternalPDFViewer"><![CDATA[I:\Adobe\Reader 8.0\Reader\AcroRd32.exe]]></iReportProperty>
+	<iReportProperty name="usingMultiLineExpressions"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="DefaultCompilationDirectory"><![CDATA[C:\syswk1\ireport\compilation]]></iReportProperty>
+	<iReportProperty name="ExternalXLSViewer"><![CDATA[I:\Microsoft Office\Office12\EXCEL.EXE]]></iReportProperty>
+	<iReportProperty name="UseAutoRegiesterFields"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="ExternalRTFViewer"><![CDATA[I:\Microsoft Office\Office12\WINWORD.EXE]]></iReportProperty>
+	<iReportProperty name="DefaultStyle"><![CDATA[]]></iReportProperty>
+	<iReportProperty name="AutoReload"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="ReportVirtualizerMinGrownCount"><![CDATA[100]]></iReportProperty>
+	<iReportProperty name="toolbarTextVisible"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="ReportVirtualizer"><![CDATA[JRFileVirtualizer]]></iReportProperty>
+	<iReportProperty name="Compatibility"><![CDATA[999999]]></iReportProperty>
+	<iReportProperty name="AskToSave"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="showCompatibilityMessageLoad"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="snapToGrid"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="MagneticPower"><![CDATA[5]]></iReportProperty>
+	<iReportProperty name="enableRMIServer"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="SaveBeforeCompiling"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="EnableTextResizeClick"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="CurrentDirectory"><![CDATA[C:\Mis documentos]]></iReportProperty>
+	<iReportProperty name="ExternalTXTViewer"><![CDATA[I:\TextPad 4\TextPad.exe]]></iReportProperty>
+	<iReportProperty name="ViewBorderForTextElements"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="panelStylesLibrary"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="LookAndFeel"><![CDATA[System]]></iReportProperty>
+	<iReportProperty name="ViewRules"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="SynchronizeReportName"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="overrideDefaultFont"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="ReportVirtualizerBlockSize"><![CDATA[100]]></iReportProperty>
+	<iReportProperty name="classpath"><![CDATA[N:\netbeans\ide9\modules\ext\postgresql-8.3-603.jdbc3.jar
+W:\mhzap201\mhzap201-lib-base\dist\mhzap201-lib-base.jar
+W:\mhzap201\commons-lib\dist\commons-lib.jar
+]]></iReportProperty>
+	<iReportProperty name="Antialias"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="DefaultCompiler"><![CDATA[0]]></iReportProperty>
+	<iReportProperty name="ShowToolTipsInDesign"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="RealTimeValidation"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="DontUseTemplateFromMenu"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="DefaultTemplate"><![CDATA[]]></iReportProperty>
+	<iReportProperty name="alreadyRegistered"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="showGrid"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="ExternalODFViewer"><![CDATA[]]></iReportProperty>
+	<iReportProperty name="ReportVirtualizerDirectory"><![CDATA[C:\syswk1\ireport\virtualizer]]></iReportProperty>
+	<iReportProperty name="DefaultScriptingLanguage"><![CDATA[java]]></iReportProperty>
+	<iReportProperty name="LoadFontOnStartup"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="panelLibrary"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="DefaultUnit"><![CDATA[pixels]]></iReportProperty>
+	<iReportProperty name="Country"><![CDATA[VE]]></iReportProperty>
+	<iReportProperty name="ExternalCSVViewer"><![CDATA[I:\Microsoft Office\Office12\EXCEL.EXE]]></iReportProperty>
+	<iReportProperty name="GridSize"><![CDATA[24]]></iReportProperty>
+	<iReportProperty name="RestoreLayout"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="overrideDefaultFontAttrs"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="DefaultBackupDirectory"><![CDATA[C:\syswk1\ireport\backup]]></iReportProperty>
+	<iReportProperty name="ReportVirtualizerSize"><![CDATA[100]]></iReportProperty>
+	<iReportProperty name="toolbarFormattingVisible"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="RMIServerPort"><![CDATA[2100]]></iReportProperty>
+	<iReportProperty name="Variant"><![CDATA[]]></iReportProperty>
+	<iReportProperty name="DefaultConnection"><![CDATA[MHZDB201]]></iReportProperty>
+	<iReportProperty name="overrideDefaultFontSize"><![CDATA[11]]></iReportProperty>
+	<iReportProperty name="useCurrentFilesDirectoryForCompiles"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="KeepJavaFile"><![CDATA[false]]></iReportProperty>
+	<iReportProperty name="ExternalHTMLViewer"><![CDATA[I:\Mozilla Firefox\firefox.exe]]></iReportProperty>
+	<iReportProperty name="showCompatibilityMessage"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="NewViewBorderColor"><![CDATA[-4144960]]></iReportProperty>
+	<iReportProperty name="Language"><![CDATA[es]]></iReportProperty>
+	<iReportProperty name="panelDocumentStructure"><![CDATA[true]]></iReportProperty>
+	<iReportProperty name="DefaultReportViewer"><![CDATA[32]]></iReportProperty>
+	<iReportProperty name="ExternalEditor"><![CDATA[I:\TextPad 4\TextPad.exe]]></iReportProperty>
+	<iReportProperty name="RecentFilesLength"><![CDATA[10]]></iReportProperty>
+	<iReportProperty name="overrideDefaultFontName"><![CDATA[Tahoma]]></iReportProperty>
+	<iReportConnection name="MHZDB201" connectionClass="it.businesslogic.ireport.connection.JDBCConnection">
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:postgresql://localhost:5432/MHZDB201]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[org.postgresql.Driver]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[postgres]]></connectionParameter>
+		<connectionParameter name="Username"><![CDATA[postgres]]></connectionParameter>
+	</iReportConnection>
+	<iReportConnection name="SCIDB100" connectionClass="it.businesslogic.ireport.connection.JDBCConnection">
+		<connectionParameter name="ServerAddress"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="SavePassword"><![CDATA[true]]></connectionParameter>
+		<connectionParameter name="Url"><![CDATA[jdbc:postgresql://localhost:5432/SCIDB100]]></connectionParameter>
+		<connectionParameter name="JDBCDriver"><![CDATA[org.postgresql.Driver]]></connectionParameter>
+		<connectionParameter name="Database"><![CDATA[]]></connectionParameter>
+		<connectionParameter name="Password"><![CDATA[postgres]]></connectionParameter>
+		<connectionParameter name="Username"><![CDATA[postgres]]></connectionParameter>
+	</iReportConnection>
+	<QueryExecuter factory="com.jaspersoft.jrx.query.JRXPathQueryExecuterFactory" fieldsProvider=""><![CDATA[xpath2]]></QueryExecuter>
+</iReportProperties>

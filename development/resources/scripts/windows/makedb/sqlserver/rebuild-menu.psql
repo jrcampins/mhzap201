@@ -1,0 +1,26 @@
+--
+-- DATABASE @ssdb @crvl
+--
+--
+--\encoding
+--\encoding LATIN1
+--\encoding
+--\set AUTOCOMMIT on
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- ordena las opciones del menu
+-- ----------------------------------------------------------------------------------------------------------------------------------
+select opcion_menu_rebuild()
+go
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- esconde las opciones del menu correspondientes al SDK
+-- ----------------------------------------------------------------------------------------------------------------------------------
+update opcion_menu set es_opcion_menu_inactiva=1 where codigo_opcion_menu like'N9%'
+go
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- muestra las opciones del menu correspondientes al SDK
+-- ----------------------------------------------------------------------------------------------------------------------------------
+update opcion_menu set es_opcion_menu_inactiva=0 where codigo_opcion_menu like'N9%' and codigo_opcion_menu not like'N92%'
+go
+select clave_opcion_menu,codigo_opcion_menu,nombre_opcion_menu,es_opcion_menu_inactiva 
+from opcion_menu where codigo_opcion_menu like'N9%' order by 1,2
+go
