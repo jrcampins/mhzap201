@@ -1,0 +1,9 @@
+DROP VIEW relacion_rastro_funcion_par;
+DROP VIEW favoritos;
+DROP VIEW lista_recurso;
+DROP VIEW relacion_rastro_funcion;
+DROP VIEW relacion_rastro_informe;
+DROP VIEW relacion_rastro_proceso;
+DROP VIEW vista_autenticacion_1;
+DROP VIEW vista_autenticacion_2;
+DROP VIEW vista_autenticacion_3;
