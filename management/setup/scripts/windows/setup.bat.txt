@@ -1,0 +1,165 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Instalación de mhzap201 1.0 en Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+01. Crear el directorio mhzap201, preferiblemente en C:\
+
+    cd /d C:\
+    md mhzap201
+
+    El path del directorio NO puede contener espacios en blanco ni caracteres especiales
+
+02. Establecer la variable de entorno MHZAP201_HOME e incluirla en el arranque de Windows
+
+    Por ejemplo:
+
+    set MHZAP201_HOME=C:\mhzap201
+
+    Alternativamente puede ejecutar el script home2scripts.bat en el siguiente paso.
+
+
+03. Descomprimir el archivo zip V10Raammdd (aammdd corresponde a la fecha del release) en %MHZAP201_HOME%
+
+    Esta acción crea el directorio %MHZAP201_HOME%\V10Raammdd
+
+    Si en el paso anterior no se establece la variable de entorno MHZAP201_HOME, ejecutar el script V10Raammdd\home2scripts.bat
+
+
+04. Ejecutar el script %MHZAP201_HOME%\V10Raammdd\scripts2home.bat
+
+    Este script copia a %MHZAP201_HOME% los siguientes archivos:
+
+    variables-home.bat
+    variables-dbdc.bat
+    variables-j2ee.bat
+    asadmin.password
+
+
+05. Ajustar las variables de entorno en %MHZAP201_HOME%\variables-home.bat y %MHZAP201_HOME%\variables-dbdc.bat
+
+    Los valores predeterminados coinciden con los valores predeterminados de instalación de Java, GlassFish y PostgreSQL
+    
+    En variables-home.bat:
+    
+    set JAVA_HOME=C:\Archivos de programa\Java\jdk1.6.0_30
+    set GLASSFISH_HOME=C:\Archivos de programa\glassfish-3.1.1\glassfish
+    set POSTGRESQL_HOME=C:\Archivos de programa\PostgreSQL\9.0
+
+    En variables-dbdc.bat:
+    
+    dbhost=localhost
+    dbport=5432
+    dbuser=postgres
+    dbpass=postgres
+    dbpassfile="%MHZAP201_HOME%\pgadmin.password"
+    dbname=MHZDB201
+    dbcurl=jdbc:postgresql://%dbhost%:%dbport%/%dbname%
+    driver=org.postgresql.Driver
+
+    ashost=localhost
+    asport=4848
+    asuser=admin
+    aspass=admin
+    aspassfile="%MHZAP201_HOME%\asadmin.password"
+    ascst1=--user %asuser% --passwordfile %aspassfile%
+    ascst2=--host %ashost% --port %asport% %ascst1%
+    domain=domain1
+
+
+06. Ajustar las contraseñas
+
+    06.01.  Acceso a glassfish en %MHZAP201_HOME%\asadmin.password
+
+            Los valores predeterminados coinciden con los valores predeterminados de GlassFish y son los siguientes:
+
+            AS_ADMIN_MASTERPASSWORD=changeit
+            AS_ADMIN_PASSWORD=admin
+            AS_ADMIN_USERPASSWORD=admin
+
+
+07. Configurar GlassFish (seguir los pasos indicados en el archivo "%MHZAP201_HOME%\V10Raammdd\configuracion-glassfish-windows.txt")
+
+
+08. Ejecutar el script de instalación
+
+    08.01.  Para instalar por primera vez, ejecutar el script de instalación %MHZAP201_HOME%\V10Raammdd\install.bat
+
+            Este script lleva a cabo las siguientes acciones:
+
+            08.01.01. createdb: crea la base de datos
+            08.01.02. restore: restaura la base de datos a partir de un archivo respaldo
+            08.01.03. rebuild: reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
+            08.01.04. vacuumdb: comprime la base de datos
+            08.01.05. domain-start: inicia la ejecucion del servidor de aplicaciones
+            08.01.06. server-config: establece parametros de configuracion del servidor de aplicaciones
+            08.01.07. create-jdbc: crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
+            08.01.08. create-jms: crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
+            08.01.09. deploy: implementa la aplicacion de empresa en el servidor de aplicaciones
+            08.01.10. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
+            08.01.11. copy-imagenes: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
+            08.01.12. copy-properties: copia los archivos de propiedades a la carpeta de configuracion del servidor de aplicaciones
+
+    08.02.  Para reemplazar una versión ya instalada, ejecutar el script de instalación %MHZAP201_HOME%\V10Raammdd\upgrade.bat
+
+            Este script lleva a cabo las siguientes acciones:
+
+            08.02.01. domain-start: inicia la ejecucion del servidor de aplicaciones
+            08.02.02. undeploy: anula la implementacion de la aplicacion de empresa del servidor de aplicaciones
+            08.02.03. delete-jms: elimina las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
+            08.02.04. delete-jdbc: elimina el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
+            08.02.05. domain-stop: detiene la ejecucion del servidor de aplicaciones
+            08.02.06. dump: crea un archivo respaldo de la base de datos
+            08.02.07. upgradedb: actualiza la base de datos
+            08.02.08. rebuild: reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
+            08.02.09. vacuumdb: comprime la base de datos
+            08.02.10. domain-start: inicia la ejecucion del servidor de aplicaciones
+            08.02.11. server-config: establece parametros de configuracion del servidor de aplicaciones
+            08.02.12. create-jdbc: crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
+            08.02.13. create-jms: crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
+            08.02.14. deploy: implementa la aplicacion de empresa en el servidor de aplicaciones
+            08.02.15. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
+            08.02.16. copy-images: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
+            08.02.17. copy-properties: copia los archivos de propiedades a la carpeta de configuracion del servidor de aplicaciones
+
+09. Ajustar las variables en mhzap201.properties
+
+    En el paso anterior se copia el archivo de propiedades a la carpeta de configuracion del servidor de aplicaciones
+    Esta carpeta suele ser: %GLASSFISH_HOME%\domains\domain1\config
+    En el archivo de propiedades se establecen los siguientes valores:
+
+    DIR=C:\\mhzap201\\V10Raammdd\\resources
+    JDBC_DRIVER=org.postgresql.Driver
+    JDBC_URL=jdbc:postgresql://localhost:5432/MHZDB201
+    JDBC_USER=postgres
+    JDBC_PASSWORD=postgres
+
+    Modifique el valor de DIR para que refleje la ubicación actual de la carpeta resources y compruebe el valor de los parámetros JDBC.
+
+    Note que en el valor de DIR el separador debe ser escrito \\ en lugar de \
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Operación de mhzap201 1.0 en Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir su operación normal. Utilice su navegador web para abrir la página
+http://localhost:8080/mhzap201-web/ (sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el puerto HTTP que le asignó al instalarlo).
+La sesión de trabajo comienza por la pÃ¡gina de autenticación del usuario. Al instalar se define el usuario "admin" y su contraseña es "sesamo".
+
+De ser necesario detener el servidor de aplicaciones, éste deberá ser reiniciado utilizando el script domain-start.bat que se encuentra el en directorio
+%MHZAP201_HOME%\V10Raammdd\resources\scripts\windows\glassfish. Este script establece las variables de entorno requeridas para la operación del producto.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Ejecutar GlassFish como un servicio de Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Después de configurar GlassFish seguiendo los pasos indicados en el archivo "%MHZAP201_HOME%\V10Raammdd\configuracion-glassfish-windows.txt", ejecute el
+script %MHZAP201_HOME%\V10Raammdd\resources\scripts\windows\glassfish\service-create.bat y reinicie el servidor.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Desinstalación de mhzap201 1.0 en Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Para desintalar el producto, ejecute el script %MHZAP201_HOME%\V10Raammdd\uninstall.bat
+

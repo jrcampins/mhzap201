@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------
+Configuraci�n de GlassFish en Unix
+--------------------------------------------------------------------------------
+
+01. Añadir a $GLASSFISH_HOME/domains/domain1/config/server.policy (antes de: permission java.lang.RuntimePermission  "loadLibrary.*";)
+
+    permission java.lang.RuntimePermission  "getenv.*";
+
+
+02. Añadir a $GLASSFISH_HOME/domains/domain1/config/default-web.xml (en Default MIME Type Mappings,
+
+    - entre las extensiones "css" y "dib":
+
+  <mime-mapping>
+    <extension>csv</extension>
+    <mime-type>application/vnd.ms-excel</mime-type>
+  </mime-mapping>
+
+    - entre las extensiones "latex" y "m3u":
+
+  <mime-mapping>
+    <extension>log</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
+
+
+03. Establecer la propiedad listings del servlet DefaultServlet como false en $GLASSFISH_HOME/domains/domain1/config/default-web.xml
+
+  <servlet>
+    <servlet-name>default</servlet-name>
+    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>0</param-value>
+    </init-param>
+    <init-param>
+      <param-name>listings</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+
+04. Establecer la propiedad sso-enabled como true en $GLASSFISH_HOME/domains/domain1/config/domain.xml:
+
+      <virtual-server ...>
+          <property name="sso-enabled" value="true"/>
+      </virtual-server>
+
+
+05. Ajustar parámetros de la JVM
+
+    Añadir o modificar las siguientes opciones en $GLASSFISH_HOME/domains/domain1/config/domain.xml:
+
+        <jvm-options>-XX:MaxPermSize=384m</jvm-options>
+        <jvm-options>-Xmx1024m</jvm-options>
+

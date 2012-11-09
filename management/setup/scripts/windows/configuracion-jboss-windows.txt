@@ -1,0 +1,150 @@
+--------------------------------------------------------------------------------
+Configuración de JBoss en Windows
+--------------------------------------------------------------------------------
+
+01. Cambiar 8080 por 8082 en los archivos xml de jboss (12 veces en 8 archivos)
+
+        standalone-hornetq-colocated.xml
+        standalone-jts.xml
+        standalone-xts.xml
+        domain.xml
+        standalone-full-ha.xml
+        standalone-full.xml
+        standalone-ha.xml
+        standalone.xml
+
+
+02. Agregar entradas a C:\jboss\standalone\configuration\standalone-full.xml
+
+    <datasources>
+
+        <datasource jta="true" jndi-name="java:/jdbc/mhzap201" pool-name="mhzap201-pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
+            <connection-url>jdbc:oracle:thin:@localhost:1521:XE</connection-url>
+            <driver>ojdbc6</driver>
+            <security>
+                <user-name>MHZ</user-name>
+                <password>sesamo</password>
+            </security>
+        </datasource>
+
+        <drivers>
+
+            <driver name="ojdbc6" module="com.oracle.ojdbc6"/>
+
+        </drivers>
+
+    </datasources>
+
+
+    <jms-connection-factories>
+
+        <connection-factory name="BusinessProcessMessageFactory">
+            <connectors>
+                <connector-ref connector-name="in-vm"/>
+            </connectors>
+            <entries>
+                <entry name="jms/BusinessProcessMessageFactory"/>
+            </entries>
+        </connection-factory>
+        <connection-factory name="UtilityProcessMessageFactory">
+            <connectors>
+                <connector-ref connector-name="in-vm"/>
+            </connectors>
+            <entries>
+                <entry name="jms/UtilityProcessMessageFactory"/>
+            </entries>
+        </connection-factory>
+
+    </jms-connection-factories>
+
+
+    <jms-destinations>
+
+        <jms-queue name="BusinessProcessRequestMessageQueue">
+            <entry name="jms/BusinessProcessRequestMessageQueue"/>
+            <entry name="java:jboss/exported/jms/BusinessProcessRequestMessageQueue"/>
+        </jms-queue>
+        <jms-queue name="BusinessProcessReplyMessageQueue">
+            <entry name="jms/BusinessProcessReplyMessageQueue"/>
+            <entry name="java:jboss/exported/jms/BusinessProcessReplyMessageQueue"/>
+        </jms-queue>
+        <jms-queue name="BusinessProcessReturnMessageQueue">
+            <entry name="jms/BusinessProcessReturnMessageQueue"/>
+            <entry name="java:jboss/exported/jms/BusinessProcessReturnMessageQueue"/>
+        </jms-queue>
+        <jms-queue name="UtilityProcessRequestMessageQueue">
+            <entry name="jms/UtilityProcessRequestMessageQueue"/>
+            <entry name="java:jboss/exported/jms/UtilityProcessRequestMessageQueue"/>
+        </jms-queue>
+        <jms-queue name="UtilityProcessReplyMessageQueue">
+            <entry name="jms/UtilityProcessReplyMessageQueue"/>
+            <entry name="java:jboss/exported/jms/UtilityProcessReplyMessageQueue"/>
+        </jms-queue>
+        <jms-queue name="UtilityProcessReturnMessageQueue">
+            <entry name="jms/UtilityProcessReturnMessageQueue"/>
+            <entry name="java:jboss/exported/jms/UtilityProcessReturnMessageQueue"/>
+        </jms-queue>
+
+    </jms-destinations>
+
+
+    <security-domains>
+
+        <security-domain name="mhzap201-policy">
+            <authentication>
+                <login-module code="Database" flag="required">
+                    <module-option name="multi-threaded" value="true"/>
+                    <module-option name="dsJndiName" value="java:/jdbc/mhzap201"/>
+                    <module-option name="hashAlgorithm" value="MD5"/>
+                    <module-option name="hashEncoding" value="rfc2617"/>
+                    <module-option name="principalsQuery" value="select password_usuario from  vista_autenticacion_1 where codigo_usuario=?"/>
+                    <module-option name="rolesQuery" value="select codigo_rol, 'Roles' from  vista_autenticacion_3 where  codigo_usuario=?"/>
+                </login-module>
+            </authentication>
+        </security-domain>
+
+    </security-domains>
+
+    Por ultimo, agregar <sso reauthenticate="false"/> a la definicion de default-host:
+
+    <subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host" native="false">
+        <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
+        <virtual-server name="default-host" enable-welcome-root="true">
+            <alias name="localhost"/>
+            <alias name="example.com"/>
+            <sso reauthenticate="false"/>
+        </virtual-server>
+    </subsystem>
+
+
+03. Crear el modulo com.oracle.ojdbc6
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <module xmlns="urn:jboss:module:1.1" name="com.oracle.ojdbc6">
+        <resources>
+            <resource-root path="ojdbc6.jar"/>
+        </resources>
+        <dependencies>
+            <module name="javax.api"/>
+            <module name="javax.transaction.api"/>
+        </dependencies>
+    </module>
+
+
+04. Ajustar parametros de la JVM
+
+    Modificar -Xms, -Xmx y -XX:MaxPermSize
+    Agregar -Dorg.apache.el.parser.COERCE_TO_ZERO=false
+
+    En C:\jboss\bin\standalone.conf.bat, donde dice:
+        rem # JVM memory allocation pool parameters - modify as appropriate.
+        set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M"
+
+    Colocar:
+        set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M -Dorg.apache.el.parser.COERCE_TO_ZERO=false"
+
+
+05. Ejecutar script W:\mhzap201\source\management\resources\scripts\windows\jboss\standalone\standalone-start.bat
+
+06. Ejecutar script W:\mhzap201\source\management\resources\scripts\windows\jboss\standalone\ear-deploy.bat
+
