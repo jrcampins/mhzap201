@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application version="5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+  <display-name>mhzap201-sdk</display-name>
+  <module>
+    <web>
+      <web-uri>mhzap201-web-toolkit.war</web-uri>
+      <context-root>/mhzap201-web-toolkit</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>mhzap201-ejb-core.jar</ejb>
+  </module>
+  <module>
+    <ejb>mhzap201-ejb-toolkit.jar</ejb>
+  </module>
+  <module>
+    <ejb>mhzap201-ejb-persistence.jar</ejb>
+  </module>
+  <security-role>
+    <description>permite ejecutar todas las funciones del sistema</description>
+    <role-name>SuperGestor</role-name>
+  </security-role>
+  <security-role>
+    <description>permite ejecutar todas las funciones de lectura</description>
+    <role-name>SuperLector</role-name>
+  </security-role>
+  <security-role>
+    <description>permite el acceso a los modulos web basicos</description>
+    <role-name>Operador</role-name>
+  </security-role>
+</application>

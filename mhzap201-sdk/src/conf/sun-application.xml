@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sun-application PUBLIC "-//Sun Microsystems, Inc.//DTD Application Server 9.0 Java EE Application 5.0//EN" "http://www.sun.com/software/appserver/dtds/sun-application_5_0-0.dtd">
+<sun-application>
+  <realm>mhzap201-jdbc-realm</realm>
+  <security-role-mapping>
+    <role-name>SuperGestor</role-name>
+    <group-name>SuperGestor</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>SuperLector</role-name>
+    <group-name>SuperLector</group-name>
+  </security-role-mapping>
+  <security-role-mapping>
+    <role-name>Operador</role-name>
+    <group-name>Operador</group-name>
+  </security-role-mapping>
+</sun-application>
