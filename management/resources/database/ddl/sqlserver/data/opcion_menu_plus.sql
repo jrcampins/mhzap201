@@ -1,0 +1,3 @@
+SET DATEFORMAT ymd
+GO
+GO
