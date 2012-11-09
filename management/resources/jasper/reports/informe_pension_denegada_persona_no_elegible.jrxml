@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informe_pension_denegada_persona_no_elegible" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="720" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="com.egt.commons.enums.*"/>
+	<import value="java.util.*"/>
+	<import value="java.math.BigDecimal"/>
+	<import value="com.egt.base.enums.*"/>
+	<import value="com.egt.base.util.*"/>
+	<import value="com.egt.commons.util.*"/>
+	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
+	<style name="rh-band1" style="rh-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="rf-band1" style="rf-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="ph-band1" style="ph-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="pf-band1" style="pf-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh1band1" style="gh1band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf1band1" style="gf1band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh2band1" style="gh2band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf2band1" style="gf2band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh3band1" style="gh3band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf3band1" style="gf3band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh4band1" style="gh4band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf4band1" style="gf4band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh5band1" style="gh5band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf5band1" style="gf5band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="ch-band1" style="ch-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="cf-band1" style="cf-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dx-band1" style="dx-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dy-band1" style="dy-band1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_BAND}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh1text1" style="gh1text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh1text2" style="gh1text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf1text1" style="gf1text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf1text2" style="gf1text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh2text1" style="gh2text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh2text2" style="gh2text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf2text1" style="gf2text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf2text2" style="gf2text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh3text1" style="gh3text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh3text2" style="gh3text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf3text1" style="gf3text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf3text2" style="gf3text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh4text1" style="gh4text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh4text2" style="gh4text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf4text1" style="gf4text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf4text2" style="gf4text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh5text1" style="gh5text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gh5text2" style="gh5text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf5text1" style="gf5text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="gf5text2" style="gf5text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="ch-text1" style="ch-text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="ch-text2" style="ch-text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="cf-text1" style="cf-text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="cf-text2" style="cf-text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dx-text1" style="dx-text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dx-text2" style="dx-text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dy-text1" style="dy-text1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="dy-text2" style="dy-text2">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{BOXY_STYLE_TEXT}]]></conditionExpression>
+			<style>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<parameter name="BOXY_STYLE_BAND" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BOXY_STYLE_TEXT" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1010.jrtx"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1011.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1012.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUPER_REPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="END_USER_NAME" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="es_informe_resumido" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_credito" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="id_linea_credito" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="id_persona" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="SQL_WHERE_CLAUSE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQL_LIMIT_CLAUSE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  persona.codigo_persona as cedula,
+        persona.nombre_persona as nombre_persona,
+        date_part('year',age(persona.fecha_nacimiento)) as edad,
+	ubicacion_1x4.nombre_ubicacion as departamento,
+	ubicacion_1x5.nombre_ubicacion as distrito,
+	ubicacion_1x7.nombre_ubicacion as barrio,
+        persona.direccion as direccion,
+        denegacion.codigo_causa_denegacion_pension as causa
+from
+    persona persona
+    left outer join ubicacion ubicacion_1x4 on ubicacion_1x4.id_ubicacion = persona.id_departamento
+    left outer join  ubicacion ubicacion_1x5 on ubicacion_1x5.id_ubicacion = persona.id_distrito
+    left outer join ubicacion ubicacion_1x7 on ubicacion_1x7.id_ubicacion = persona.id_barrio
+    left outer join causa_denegacion_pension denegacion on denegacion.numero_causa_denegacion_pension = persona.numero_causa_denegacion_pension
+where persona.numero_causa_denegacion_pension >=20 and persona.numero_causa_denegacion_pension<=29;]]>
+	</queryString>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="nombre_persona" class="java.lang.String"/>
+	<field name="edad" class="java.lang.Double"/>
+	<field name="departamento" class="java.lang.String"/>
+	<field name="distrito" class="java.lang.String"/>
+	<field name="barrio" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="causa" class="java.lang.String"/>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="ph-band1" x="0" y="0" width="720" height="32"/>
+				<image onErrorType="Icon">
+					<reportElement key="image-1" x="0" y="0" width="70" height="30"/>
+					<imageExpression class="java.lang.String"><![CDATA[]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement key="staticText" style="ph-text1" x="120" y="0" width="480" height="32"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[PENSIONES DENEGADAS POR NO ELEGIBILIDAD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ph-text1" x="600" y="0" width="120" height="32"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="ch-band1" x="0" y="0" width="720" height="20"/>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="0" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Cédula]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="90" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Nombres ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="180" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Edad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="270" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Departamento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="360" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Distrito]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="450" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Barrio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="540" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[Dirección]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText" style="ch-text1" x="630" y="0" width="90" height="20"/>
+					<textElement/>
+					<text><![CDATA[No Elegibilidad]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="dx-band1" x="0" y="0" width="720" height="16"/>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{cedula}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="90" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="180" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$F{edad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="270" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="360" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="450" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="540" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="630" y="0" width="90" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{causa}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="pf-band1" x="0" y="0" width="720" height="20"/>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="0" y="0" width="240" height="20"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Page" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="240" y="0" width="120" height="20"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pagina" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="360" y="0" width="120" height="20"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + "de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" pattern="" isBlankWhenNull="true">
+					<reportElement key="staticText" style="pf-text2" stretchType="RelativeToBandHeight" x="480" y="0" width="240" height="20"/>
+					<textElement textAlignment="Right" markup="none"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_NAME}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

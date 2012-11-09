@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="potencial_ben_constancia_registro" pageWidth="612" pageHeight="1008" columnWidth="540" leftMargin="36" rightMargin="36" topMargin="36" bottomMargin="36">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<import value="com.egt.commons.enums.*"/>
+	<import value="java.util.*"/>
+	<import value="java.math.BigDecimal"/>
+	<import value="com.egt.base.enums.*"/>
+	<import value="com.egt.base.util.*"/>
+	<import value="com.egt.commons.util.*"/>
+	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
+	<parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1010.jrtx"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1011.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/mhzap1012.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUPER_REPORT" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="END_USER_NAME" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="es_informe_resumido" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_credito" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="id_linea_credito" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="id_persona" class="java.lang.Long" isForPrompting="false"/>
+	<parameter name="SQL_WHERE_CLAUSE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQL_LIMIT_CLAUSE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from potencial_ben_constancia_reg]]>
+	</queryString>
+	<field name="id_potencial_ben" class="java.lang.Long"/>
+	<field name="nombre_potencial_ben" class="java.lang.String"/>
+	<field name="codigo_potencial_ben" class="java.lang.String"/>
+	<field name="fecha_nacimiento" class="java.sql.Timestamp"/>
+	<field name="edad" class="java.lang.Integer"/>
+	<field name="letra_cedula" class="java.lang.String"/>
+	<field name="numero_cedula" class="java.lang.Integer"/>
+	<field name="cedula" class="java.lang.String"/>
+	<field name="fecha_expedicion_cedula" class="java.sql.Timestamp"/>
+	<field name="fecha_vencimiento_cedula" class="java.sql.Timestamp"/>
+	<field name="nombre_responsable_hogar" class="java.lang.String"/>
+	<field name="telefono_responsable_hogar" class="java.lang.String"/>
+	<field name="departamento" class="java.lang.String"/>
+	<field name="id_departamento" class="java.lang.Long"/>
+	<field name="distrito" class="java.lang.String"/>
+	<field name="id_distrito" class="java.lang.Long"/>
+	<field name="barrio" class="java.lang.String"/>
+	<field name="id_barrio" class="java.lang.Long"/>
+	<field name="manzana" class="java.lang.Long"/>
+	<field name="area" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="tiene_jubilacion" class="java.lang.Integer"/>
+	<field name="fecha_registro_pot_ben" class="java.sql.Timestamp"/>
+	<field name="anho" class="java.lang.Double"/>
+	<field name="nombre_referente" class="java.lang.String"/>
+	<field name="telefono_referente" class="java.lang.String"/>
+	<variable name="tiene_letra_cedula" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$F{letra_cedula}.equals("")]]></variableExpression>
+	</variable>
+	<variable name="tiene_jubilacion" class="java.lang.Boolean">
+		<variableExpression><![CDATA[$F{tiene_jubilacion}.toString().equals("1")]]></variableExpression>
+	</variable>
+	<group name="Group1" minHeightToStartNewPage="132">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="45" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{SUPER_REPORT}=="" && $P{es_informe_resumido}==0]]></printWhenExpression>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Group2" minHeightToStartNewPage="108">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="24" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{SUPER_REPORT}=="" && $P{es_informe_resumido}==0]]></printWhenExpression>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Group3" minHeightToStartNewPage="84">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="24" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{SUPER_REPORT}=="" && $P{es_informe_resumido}==0]]></printWhenExpression>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group4" minHeightToStartNewPage="60">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<pageHeader>
+		<band height="140" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="ph-band1" x="0" y="0" width="540" height="140"/>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="0" width="540" height="140" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="430" y="10" width="90" height="92"/>
+					<imageExpression class="java.lang.String"><![CDATA["./resources/logoMh.PNG"]]></imageExpression>
+				</image>
+				<image hAlign="Center" vAlign="Middle">
+					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="10" y="10" width="93" height="92"/>
+					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_dgeec.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement key="staticText-2" x="170" y="33" width="200" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+					<text><![CDATA[LEY DE ADULTOS MAYORES - LAM]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" x="103" y="66" width="327" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+					<text><![CDATA[CONSTANCIA DE REGISTRO DE POTENCIAL BENEFICIARIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-3" x="90" y="50" width="360" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+					<text><![CDATA[Proceso de Identificación y Validación de Potenciales Beneficiarios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-4" x="10" y="119" width="491" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[ Ley 3728/2009 "Que establece el derecho a la pensión alimentario para las personas adultas mayores en situación de pobreza"]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-3" style="default1" x="27" y="102" width="493" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="12" isBold="false" isItalic="false" pdfFontName="Helvetica-Oblique"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["POTENCIAL BENEFICIARIO: "+$F{codigo_potencial_ben}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="415" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="default1" x="0" y="30" width="540" height="385"/>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="29" width="540" height="232" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="29" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="58" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="87" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="116" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="145" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="174" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="203" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement key="rectangle-1" x="0" y="232" width="540" height="29" backcolor="#FFFFFF"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="29" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NOMBRES Y APELLIDOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="337" y="29" width="69" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CÉDULA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="29" width="192" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_potencial_ben}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="419" y="29" width="121" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{cedula}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="58" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA DE NACIMIENTO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="58" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_nacimiento}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="58" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EDAD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="232" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NOMBRE DEL REFERENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="232" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TELÉFONO DEL REFERENTE]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="232" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_referente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="232" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{telefono_referente}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="58" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{edad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="87" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DEPARTAMENTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="87" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DISTRITO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="116" width="67" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BARRIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="116" width="67" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[MANZANA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="406" y="116" width="66" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[TIPO DE ÁREA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="87" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="87" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="78" y="116" width="192" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="347" y="116" width="58" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{manzana}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" mode="Transparent" x="483" y="116" width="57" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{area}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="145" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DIRECCIÓN]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="145" width="395" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="174" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[	¿TIENE JUBILACIÓN?]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="174" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FECHA DE REGISTRO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="174" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[( new Boolean($F{tiene_jubilacion}.equals(new Integer(1))) ? "Si": "No" )]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="174" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_registro_pot_ben}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="203" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NOMBRE DEL RESPONSABLE DEL HOGAR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="270" y="203" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TELÉFONO DEL RESPONSABLE DEL HOGAR]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="203" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_responsable_hogar}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="203" width="125" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{telefono_responsable_hogar}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-10" mode="Opaque" x="0" y="356" width="200" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FIRMA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="481" y="356" width="59" height="29"/>
+					<textElement/>
+					<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-2" x="406" y="356" width="68" height="29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="11"/>
+					</textElement>
+					<text><![CDATA[FECHA]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{SUPER_REPORT}==""]]></printWhenExpression>
+			<frame>
+				<reportElement key="frame" style="pf-band1" x="0" y="0" width="540" height="20"/>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="0" y="0" width="180" height="20"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Page" pattern="" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="180" y="0" width="90" height="20"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Pagina" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="270" y="0" width="90" height="20"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + "de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement key="staticText" style="pf-text2" stretchType="RelativeToBandHeight" x="360" y="0" width="180" height="20"/>
+					<textElement textAlignment="Right" markup="none"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_NAME}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

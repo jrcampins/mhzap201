@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="rastro_funcion_par"
+    columnCount="1"
+    printOrder="Vertical"
+    orientation="Landscape"
+    pageWidth="1008"
+    pageHeight="612"
+    columnWidth="960"
+    columnSpacing="0"
+    leftMargin="24"
+    rightMargin="24"
+    topMargin="24"
+    bottomMargin="24"
+    whenNoDataType="NoPages"
+    isTitleNewPage="false"
+    isSummaryNewPage="false">
+
+    <property name="ireport.scriptlethandling" value="0"/>
+    <property name="ireport.encoding" value="UTF-8"/>
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+
+    <import value="com.egt.base.enums.*"/>
+    <import value="com.egt.base.util.*"/>
+    <import value="com.egt.commons.enums.*"/>
+    <import value="com.egt.commons.util.*"/>
+    <import value="java.math.BigDecimal"/>
+    <import value="java.util.*"/>
+
+    <template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
+    <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2011.jpg"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2012.jpg"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="END_USER_NAME" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="es_informe_resumido" class="java.lang.Integer" isForPrompting="false">
+        <defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SQL_WHERE_CLAUSE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SQL_LIMIT_CLAUSE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+
+    <queryString><![CDATA[select * from consulta_rastro_funcion_par_1]]></queryString>
+
+    <field name="id_rastro_funcion_par" class="java.lang.Long"/>
+    <field name="id_rastro_funcion" class="java.lang.Long"/>
+    <field name="fecha_hora_ejecucion_1x1y2" class="java.util.Date"/>
+    <field name="id_usuario_1x1y3" class="java.lang.Long"/>
+    <field name="id_funcion_1x1y4" class="java.lang.Long"/>
+    <field name="id_recurso_1x1y5" class="java.lang.Long"/>
+    <field name="version_recurso_1x1y6" class="java.lang.Long"/>
+    <field name="codigo_recurso_1x1y7" class="java.lang.String"/>
+    <field name="nombre_recurso_1x1y8" class="java.lang.String"/>
+    <field name="id_propietario_recurso_1x1y9" class="java.lang.Long"/>
+    <field name="id_segmento_recurso_1x1y10" class="java.lang.Long"/>
+    <field name="numero_error_1x1y11" class="java.lang.Integer"/>
+    <field name="descripcion_error_1x1y12" class="java.lang.String"/>
+    <field name="id_parametro" class="java.lang.Long"/>
+    <field name="codigo_parametro_1x2y3" class="java.lang.String"/>
+    <field name="nombre_parametro_1x2y4" class="java.lang.String"/>
+    <field name="detalle_parametro_1x2y5" class="java.lang.String"/>
+    <field name="descripcion_parametro_1x2y6" class="java.lang.String"/>
+    <field name="numero_tipo_dato_par_1x2y7" class="java.lang.Integer"/>
+    <field name="alias_parametro_1x2y8" class="java.lang.String"/>
+    <field name="valor_parametro" class="java.lang.String"/>
+
+
+<group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh1band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh1text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh1text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh1text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup2" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="108">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh2band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh2text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh2text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh2text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup3" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="84">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh3band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh3text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh3text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh3text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup4" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="60">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh4band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh4text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh4text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh4text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="detailGroup" isReprintHeaderOnEachPage="true" minHeightToStartNewPage="36">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="20" splitType="Prevent">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="ch-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="20"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="0"
+                    y="0"
+                    width="480"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[parametro]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[valor parametro]]></text>
+            </staticText>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="0" splitType="Prevent">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+
+    <pageHeader>
+        <band height="32" splitType="Stretch">
+            <frame>
+                <reportElement
+                    style="ph-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="32"
+                    key="frame"/>
+            <image onErrorType="Icon" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self">
+                <reportElement
+                    style="ph-text1"
+                    x="0"
+                    y="0"
+                    width="70"
+                    height="30"
+                    key="image-1"/>
+                <imageExpression class="java.lang.String"><![CDATA[$P{PAGE_HEADER_IMAGE_1}]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement
+                    style="ph-text1"
+                    x="160"
+                    y="0"
+                    width="640"
+                    height="32"
+                    key="staticText"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[RASTROS DE PARAMETROS DE EJECUCIONES DE FUNCIONES]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ph-text1"
+                    x="800"
+                    y="0"
+                    width="160"
+                    height="32"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            </frame>
+        </band>
+    </pageHeader>
+
+    <detail>
+        <band height="16" splitType="Stretch">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="dx-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="16"
+                    key="frame"/>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="0"
+                    y="0"
+                    width="480"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_parametro_1x2y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{valor_parametro}]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <frame>
+                <reportElement
+                    style="pf-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="20"
+                    key="frame"/>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="0"
+                    y="0"
+                    width="320"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Page"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA["Pagina" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA["de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="640"
+                    y="0"
+                    width="320"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_NAME}]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </pageFooter>
+
+</jasperReport>

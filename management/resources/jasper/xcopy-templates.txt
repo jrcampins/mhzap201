@@ -1,0 +1,4 @@
+.lnk
+.jasper
+web
+xcopy

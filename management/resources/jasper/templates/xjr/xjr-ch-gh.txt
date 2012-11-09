@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Pasos para sustituir el Column Header del informe con un Group Header
+------------------------------------------------------------------------------------------------------------------------------------------------------
+1.  Agregar el grupo Detail-1, pegando el siguiente código justo antes de la etiqueta <pageHeader>
+
+	<group name="Detail-1" isReprintHeaderOnEachPage="true" minHeightToStartNewPage="36">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="20" splitType="Prevent">
+				<printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+			</band>
+		</groupHeader>
+	</group>
+
+2.  Expandir el nodo Column Header y cortar el frame
+
+3.  Pegar el frame en el header del grupo Detail-1, agregado en el punto 1
+
+4.  Eliminar el nodo Column Header

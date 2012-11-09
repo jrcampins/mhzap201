@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="ficha_hogar"
+    columnCount="1"
+    printOrder="Vertical"
+    orientation="Landscape"
+    pageWidth="1008"
+    pageHeight="612"
+    columnWidth="960"
+    columnSpacing="0"
+    leftMargin="24"
+    rightMargin="24"
+    topMargin="24"
+    bottomMargin="24"
+    whenNoDataType="NoPages"
+    isTitleNewPage="false"
+    isSummaryNewPage="false">
+
+    <property name="ireport.scriptlethandling" value="0"/>
+    <property name="ireport.encoding" value="UTF-8"/>
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+
+    <import value="com.egt.base.enums.*"/>
+    <import value="com.egt.base.util.*"/>
+    <import value="com.egt.commons.enums.*"/>
+    <import value="com.egt.commons.util.*"/>
+    <import value="java.math.BigDecimal"/>
+    <import value="java.util.*"/>
+
+    <template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
+    <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2011.jpg"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/mhzap2012.jpg"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="END_USER_NAME" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="es_informe_resumido" class="java.lang.Integer" isForPrompting="false">
+        <defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SQL_WHERE_CLAUSE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <parameter name="SQL_LIMIT_CLAUSE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+
+    <queryString><![CDATA[select * from consulta_ficha_hogar_1]]></queryString>
+
+    <field name="id_ficha_hogar" class="java.lang.Long"/>
+    <field name="version_ficha_hogar" class="java.lang.Long"/>
+    <field name="codigo_ficha_hogar" class="java.lang.String"/>
+    <field name="fecha_entrevista" class="java.util.Date"/>
+    <field name="id_funcionario_censista" class="java.lang.Long"/>
+    <field name="codigo_funcionario_1x1y3" class="java.lang.String"/>
+    <field name="nombre_funcionario_1x1y4" class="java.lang.String"/>
+    <field name="numero_cedula_1x1y5" class="java.lang.Integer"/>
+    <field name="letra_cedula_1x1y6" class="java.lang.String"/>
+    <field name="primer_nombre_1x1y7" class="java.lang.String"/>
+    <field name="segundo_nombre_1x1y8" class="java.lang.String"/>
+    <field name="primer_apellido_1x1y9" class="java.lang.String"/>
+    <field name="segundo_apellido_1x1y10" class="java.lang.String"/>
+    <field name="apellido_casada_1x1y11" class="java.lang.String"/>
+    <field name="id_funcionario_supervisor" class="java.lang.Long"/>
+    <field name="codigo_funcionario_1x2y3" class="java.lang.String"/>
+    <field name="nombre_funcionario_1x2y4" class="java.lang.String"/>
+    <field name="numero_cedula_1x2y5" class="java.lang.Integer"/>
+    <field name="letra_cedula_1x2y6" class="java.lang.String"/>
+    <field name="primer_nombre_1x2y7" class="java.lang.String"/>
+    <field name="segundo_nombre_1x2y8" class="java.lang.String"/>
+    <field name="primer_apellido_1x2y9" class="java.lang.String"/>
+    <field name="segundo_apellido_1x2y10" class="java.lang.String"/>
+    <field name="apellido_casada_1x2y11" class="java.lang.String"/>
+    <field name="id_funcionario_critico_deco" class="java.lang.Long"/>
+    <field name="codigo_funcionario_1x3y3" class="java.lang.String"/>
+    <field name="nombre_funcionario_1x3y4" class="java.lang.String"/>
+    <field name="numero_cedula_1x3y5" class="java.lang.Integer"/>
+    <field name="letra_cedula_1x3y6" class="java.lang.String"/>
+    <field name="primer_nombre_1x3y7" class="java.lang.String"/>
+    <field name="segundo_nombre_1x3y8" class="java.lang.String"/>
+    <field name="primer_apellido_1x3y9" class="java.lang.String"/>
+    <field name="segundo_apellido_1x3y10" class="java.lang.String"/>
+    <field name="apellido_casada_1x3y11" class="java.lang.String"/>
+    <field name="id_funcionario_digitador" class="java.lang.Long"/>
+    <field name="codigo_funcionario_1x4y3" class="java.lang.String"/>
+    <field name="nombre_funcionario_1x4y4" class="java.lang.String"/>
+    <field name="numero_cedula_1x4y5" class="java.lang.Integer"/>
+    <field name="letra_cedula_1x4y6" class="java.lang.String"/>
+    <field name="primer_nombre_1x4y7" class="java.lang.String"/>
+    <field name="segundo_nombre_1x4y8" class="java.lang.String"/>
+    <field name="primer_apellido_1x4y9" class="java.lang.String"/>
+    <field name="segundo_apellido_1x4y10" class="java.lang.String"/>
+    <field name="apellido_casada_1x4y11" class="java.lang.String"/>
+    <field name="observaciones" class="java.lang.String"/>
+    <field name="huso_utm" class="java.lang.Integer"/>
+    <field name="franja_utm" class="java.lang.String"/>
+    <field name="distancia_este_utm" class="java.lang.Integer"/>
+    <field name="distancia_norte_utm" class="java.lang.Integer"/>
+    <field name="numero_formulario" class="java.lang.Integer"/>
+    <field name="numero_vivienda" class="java.lang.Integer"/>
+    <field name="numero_hogar" class="java.lang.Integer"/>
+    <field name="id_departamento" class="java.lang.Long"/>
+    <field name="codigo_ubicacion_1x5y3" class="java.lang.String"/>
+    <field name="nombre_ubicacion_1x5y4" class="java.lang.String"/>
+    <field name="id_ubicacion_superior_1x5y5" class="java.lang.Long"/>
+    <field name="numero_tipo_nodo_1x5y6" class="java.lang.Integer"/>
+    <field name="numero_nivel_ubicacion_1x5y7" class="java.lang.Integer"/>
+    <field name="secuencia_ubicacion_1x5y8" class="java.lang.Integer"/>
+    <field name="clave_ubicacion_1x5y9" class="java.lang.String"/>
+    <field name="numero_tipo_area_1x5y10" class="java.lang.Integer"/>
+    <field name="id_distrito" class="java.lang.Long"/>
+    <field name="codigo_ubicacion_1x6y3" class="java.lang.String"/>
+    <field name="nombre_ubicacion_1x6y4" class="java.lang.String"/>
+    <field name="id_ubicacion_superior_1x6y5" class="java.lang.Long"/>
+    <field name="numero_tipo_nodo_1x6y6" class="java.lang.Integer"/>
+    <field name="numero_nivel_ubicacion_1x6y7" class="java.lang.Integer"/>
+    <field name="secuencia_ubicacion_1x6y8" class="java.lang.Integer"/>
+    <field name="clave_ubicacion_1x6y9" class="java.lang.String"/>
+    <field name="numero_tipo_area_1x6y10" class="java.lang.Integer"/>
+    <field name="numero_tipo_area" class="java.lang.Integer"/>
+    <field name="codigo_tipo_area_1x7y2" class="java.lang.String"/>
+    <field name="id_barrio" class="java.lang.Long"/>
+    <field name="codigo_ubicacion_1x8y3" class="java.lang.String"/>
+    <field name="nombre_ubicacion_1x8y4" class="java.lang.String"/>
+    <field name="id_ubicacion_superior_1x8y5" class="java.lang.Long"/>
+    <field name="numero_tipo_nodo_1x8y6" class="java.lang.Integer"/>
+    <field name="numero_nivel_ubicacion_1x8y7" class="java.lang.Integer"/>
+    <field name="secuencia_ubicacion_1x8y8" class="java.lang.Integer"/>
+    <field name="clave_ubicacion_1x8y9" class="java.lang.String"/>
+    <field name="numero_tipo_area_1x8y10" class="java.lang.Integer"/>
+    <field name="id_manzana" class="java.lang.Long"/>
+    <field name="codigo_ubicacion_1x9y3" class="java.lang.String"/>
+    <field name="nombre_ubicacion_1x9y4" class="java.lang.String"/>
+    <field name="id_ubicacion_superior_1x9y5" class="java.lang.Long"/>
+    <field name="numero_tipo_nodo_1x9y6" class="java.lang.Integer"/>
+    <field name="numero_nivel_ubicacion_1x9y7" class="java.lang.Integer"/>
+    <field name="secuencia_ubicacion_1x9y8" class="java.lang.Integer"/>
+    <field name="clave_ubicacion_1x9y9" class="java.lang.String"/>
+    <field name="numero_tipo_area_1x9y10" class="java.lang.Integer"/>
+    <field name="manzana" class="java.lang.String"/>
+    <field name="direccion" class="java.lang.String"/>
+    <field name="total_personas" class="java.lang.Integer"/>
+    <field name="total_hombres" class="java.lang.Integer"/>
+    <field name="total_mujeres" class="java.lang.Integer"/>
+    <field name="numero_tipo_mat_paredes" class="java.lang.Integer"/>
+    <field name="codigo_tipo_mat_paredes_1x10y2" class="java.lang.String"/>
+    <field name="numero_tipo_mat_piso" class="java.lang.Integer"/>
+    <field name="codigo_tipo_mat_piso_1x11y2" class="java.lang.String"/>
+    <field name="numero_tipo_mat_techo" class="java.lang.Integer"/>
+    <field name="codigo_tipo_mat_techo_1x12y2" class="java.lang.String"/>
+    <field name="numero_tipo_ocupacion_viv" class="java.lang.Integer"/>
+    <field name="codigo_tipo_ocupacion_v_1x13y2" class="java.lang.String"/>
+    <field name="otro_tipo_ocupacion_viv" class="java.lang.String"/>
+    <field name="cantidad_piezas" class="java.lang.Integer"/>
+    <field name="cantidad_dormitorios" class="java.lang.Integer"/>
+    <field name="numero_siono_pieza_cocina" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x14y2" class="java.lang.String"/>
+    <field name="numero_tipo_combustible" class="java.lang.Integer"/>
+    <field name="codigo_tipo_combustible_1x15y2" class="java.lang.String"/>
+    <field name="numero_tipo_pieza_bano" class="java.lang.Integer"/>
+    <field name="codigo_tipo_pieza_bano_1x16y2" class="java.lang.String"/>
+    <field name="numero_tipo_servicio_san" class="java.lang.Integer"/>
+    <field name="codigo_tipo_servicio_sa_1x17y2" class="java.lang.String"/>
+    <field name="numero_tipo_servicio_agua" class="java.lang.Integer"/>
+    <field name="codigo_tipo_servicio_ag_1x18y2" class="java.lang.String"/>
+    <field name="numero_tipo_aba_agua" class="java.lang.Integer"/>
+    <field name="codigo_tipo_aba_agua_1x19y2" class="java.lang.String"/>
+    <field name="numero_siono_corriente_elec" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x20y2" class="java.lang.String"/>
+    <field name="numero_tipo_desecho_bas" class="java.lang.Integer"/>
+    <field name="codigo_tipo_desecho_bas_1x21y2" class="java.lang.String"/>
+    <field name="numero_siono_telefono_celular" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x22y2" class="java.lang.String"/>
+    <field name="numero_telefono_celular" class="java.lang.String"/>
+    <field name="numero_siono_tlf_linea_baja" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x23y2" class="java.lang.String"/>
+    <field name="numero_telefono_linea_baja" class="java.lang.String"/>
+    <field name="numero_siono_disp_heladera" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x24y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_lavarropas" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x25y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_termo" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x26y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_aire_acon" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x27y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_automovil" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x28y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_camion" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x29y2" class="java.lang.String"/>
+    <field name="numero_siono_disp_motocicleta" class="java.lang.Integer"/>
+    <field name="codigo_siono_1x30y2" class="java.lang.String"/>
+    <field name="nombre_jefe_hogar" class="java.lang.String"/>
+    <field name="numero_cedula_jefe_hogar" class="java.lang.Integer"/>
+    <field name="letra_cedula_jefe_hogar" class="java.lang.String"/>
+    <field name="numero_orden_iden_jefe_hogar" class="java.lang.Integer"/>
+    <field name="nombre_respondente" class="java.lang.String"/>
+    <field name="numero_cedula_respondente" class="java.lang.Integer"/>
+    <field name="letra_cedula_respondente" class="java.lang.String"/>
+    <field name="numero_orden_iden_respondente" class="java.lang.Integer"/>
+    <field name="id_proveedor_dat_ext" class="java.lang.Long"/>
+    <field name="codigo_proveedor_dat_ex_1x31y3" class="java.lang.String"/>
+    <field name="nombre_proveedor_dat_ex_1x31y4" class="java.lang.String"/>
+    <field name="indice_calidad_vida" class="java.math.BigDecimal"/>
+    <field name="es_ficha_hogar_inactiva" class="java.lang.Integer"/>
+
+
+<group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh1band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh1text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh1text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh1text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup2" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="108">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh2band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh2text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh2text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh2text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup3" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="84">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh3band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh3text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh3text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh3text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="reportGroup4" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="60">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="gh4band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="24"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="gh4text1"
+                    x="0"
+                    y="0"
+                    width="160"
+                    height="24"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh4text2"
+                    stretchType="RelativeToBandHeight"
+                    x="160"
+                    y="0"
+                    width="320"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="gh4text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="480"
+                    height="24"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="24" splitType="Prevent">
+            <printWhenExpression><![CDATA[Boolean.FALSE]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+<group name="detailGroup" isReprintHeaderOnEachPage="true" minHeightToStartNewPage="36">
+    <groupExpression><![CDATA[]]></groupExpression>
+    <groupHeader>
+        <band height="20" splitType="Prevent">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="ch-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="20"
+                    key="frame"/>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="0"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[codigo]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="128"
+                    y="0"
+                    width="64"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[fecha entrevista]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="192"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[funcionario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="320"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[funcionario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="448"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[funcionario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="576"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[funcionario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="704"
+                    y="0"
+                    width="64"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[huso utm]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="768"
+                    y="0"
+                    width="48"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[franja utm]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="816"
+                    y="0"
+                    width="64"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[distancia este utm]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="880"
+                    y="0"
+                    width="80"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[distancia norte utm]]></text>
+            </staticText>
+            </frame>
+        </band>
+    </groupHeader>
+
+    <groupFooter>
+        <band height="0" splitType="Prevent">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+        </band>
+    </groupFooter>
+
+</group>
+
+
+    <pageHeader>
+        <band height="32" splitType="Stretch">
+            <frame>
+                <reportElement
+                    style="ph-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="32"
+                    key="frame"/>
+            <image onErrorType="Icon" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self">
+                <reportElement
+                    style="ph-text1"
+                    x="0"
+                    y="0"
+                    width="70"
+                    height="30"
+                    key="image-1"/>
+                <imageExpression class="java.lang.String"><![CDATA[$P{PAGE_HEADER_IMAGE_1}]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement
+                    style="ph-text1"
+                    x="160"
+                    y="0"
+                    width="640"
+                    height="32"
+                    key="staticText"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[FICHAS DE HOGAR]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ph-text1"
+                    x="800"
+                    y="0"
+                    width="160"
+                    height="32"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[]]></text>
+            </staticText>
+            </frame>
+        </band>
+    </pageHeader>
+
+    <detail>
+        <band height="16" splitType="Stretch">
+            <printWhenExpression><![CDATA[$P{es_informe_resumido}==0]]></printWhenExpression>
+            <frame>
+                <reportElement
+                    style="dx-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="16"
+                    key="frame"/>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="0"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ficha_hogar}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern="dd/MM/yyyy"
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="128"
+                    y="0"
+                    width="64"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_entrevista}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="192"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x1y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x2y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="448"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x3y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="576"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x4y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern="#,##0;-#,##0"
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="704"
+                    y="0"
+                    width="64"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{huso_utm}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="768"
+                    y="0"
+                    width="48"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{franja_utm}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern="#,##0;-#,##0"
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="816"
+                    y="0"
+                    width="64"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{distancia_este_utm}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern="#,##0;-#,##0"
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="880"
+                    y="0"
+                    width="80"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{distancia_norte_utm}]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <frame>
+                <reportElement
+                    style="pf-band1"
+                    x="0"
+                    y="0"
+                    width="960"
+                    height="20"
+                    key="frame"/>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="0"
+                    y="0"
+                    width="320"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Page"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA["Pagina" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA["de" + " " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Report"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="pf-text2"
+                    stretchType="RelativeToBandHeight"
+                    x="640"
+                    y="0"
+                    width="320"
+                    height="20"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_NAME}]]></textFieldExpression>
+            </textField>
+            </frame>
+        </band>
+    </pageFooter>
+
+</jasperReport>
