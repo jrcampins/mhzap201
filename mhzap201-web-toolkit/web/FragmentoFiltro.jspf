@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:webuijsf="http://www.sun.com/webui/webuijsf">
+    <f:subview id="FragmentoFiltro">
+        <webuijsf:hiddenField binding="#{FragmentoFiltro.campoAplicarFiltro1}" id="campoAplicarFiltro1"/>
+        <h:panelGrid columns="2" id="gridPanel1" rendered="#{FragmentoFiltro.bitFuncionViewFilterHabilitada.on}">
+            <h:panelGrid id="gridPanel2" styleClass="pdq-grid-filtro-1">
+                <h:panelGrid columns="3" id="gridPanel3">
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelCodigo1}" columns="2" id="gridPanelCodigo1">
+                        <webuijsf:image binding="#{FragmentoFiltro.imagenTextoFiltro1}" id="imagenTextoFiltro1" url="#{FragmentoFiltro.urlImagenTextoFiltro1}"/>
+                        <webuijsf:label binding="#{FragmentoFiltro.etiquetaTextoFiltro1}" id="etiquetaTextoFiltro1" text="#{FragmentoFiltro.etiquetaCodigo}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelCodigo2}" id="gridPanelCodigo2">
+                        <webuijsf:textField binding="#{FragmentoFiltro.textoFiltro1}" columns="70" disabled="#{FragmentoFiltro.funcionSelectInhabilitada}"
+                            id="textoFiltro1" text="#{FragmentoFiltro.valorTextoFiltro1}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelCodigo3}" id="gridPanelCodigo3">
+                        <webuijsf:button actionExpression="#{FragmentoFiltro.botonBorrar1_action}" binding="#{FragmentoFiltro.botonBorrar1}"
+                            disabled="#{FragmentoFiltro.funcionSelectInhabilitada}" id="botonBorrar1" imageURL="resources/minus.gif"
+                            text="#{FragmentoFiltro.gestor.i18n.textoBotonBorrarCriterio}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonBorrarCriterio}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelNombre1}" columns="2" id="gridPanelNombre1">
+                        <webuijsf:image binding="#{FragmentoFiltro.imagenTextoFiltro2}" id="imagenTextoFiltro2" url="#{FragmentoFiltro.urlImagenTextoFiltro2}"/>
+                        <webuijsf:label binding="#{FragmentoFiltro.etiquetaTextoFiltro2}" id="etiquetaTextoFiltro2" text="#{FragmentoFiltro.etiquetaNombre}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelNombre2}" id="gridPanelNombre2">
+                        <webuijsf:textField binding="#{FragmentoFiltro.textoFiltro2}" columns="70" disabled="#{FragmentoFiltro.funcionSelectInhabilitada}"
+                            id="textoFiltro2" text="#{FragmentoFiltro.valorTextoFiltro2}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelNombre3}" id="gridPanelNombre3">
+                        <webuijsf:button actionExpression="#{FragmentoFiltro.botonBorrar2_action}" binding="#{FragmentoFiltro.botonBorrar2}"
+                            disabled="#{FragmentoFiltro.funcionSelectInhabilitada}" id="botonBorrar2" imageURL="resources/minus.gif"
+                            text="#{FragmentoFiltro.gestor.i18n.textoBotonBorrarCriterio}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonBorrarCriterio}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelFiltro1}" columns="2" id="gridPanelFiltro1">
+                        <webuijsf:image binding="#{FragmentoFiltro.imagenListaFiltro1}" id="imagenListaFiltro1" url="#{FragmentoFiltro.urlImagenListaFiltro1}"/>
+                        <webuijsf:label binding="#{FragmentoFiltro.etiquetaListaFiltro1}" id="etiquetaListaFiltro1" text="#{FragmentoFiltro.gestor.i18n.textoEtiquetaListaFiltro}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelFiltro2}" columns="3" id="gridPanelFiltro2">
+                        <webuijsf:dropDown binding="#{FragmentoFiltro.listaFiltro1}" converter="#{FragmentoFiltro.longConverter1}"
+                            disabled="#{FragmentoFiltro.listaFiltroInhabilitada}" id="listaFiltro1" items="#{FragmentoFiltro.itemsListaFiltro1}" selected="#{FragmentoFiltro.valorListaFiltro1}"/>
+                        <webuijsf:button actionExpression="#{FragmentoFiltro.botonBuscarFiltro1_action}" binding="#{FragmentoFiltro.botonBuscarFiltro1}"
+                            disabled="#{FragmentoFiltro.botonFiltroInhabilitado}" id="botonBuscarFiltro1" imageURL="resources/search.gif"
+                            onClick="#{FragmentoFiltro.scriptBotonBuscarFiltro1}" rendered="#{FragmentoFiltro.botonFiltroHabilitado}"
+                            text="#{FragmentoFiltro.gestor.i18n.textoBotonBuscarFiltro1}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonBuscarFiltro1}"/>
+                        <webuijsf:button actionExpression="#{FragmentoFiltro.botonBuscarFiltro1_action}" binding="#{FragmentoFiltro.botonBuscarFiltro2}"
+                            disabled="#{FragmentoFiltro.botonFiltroInhabilitado}" id="botonBuscarFiltro2" imageURL="resources/detail.gif"
+                            onClick="#{FragmentoFiltro.scriptBotonBuscarFiltro2}" rendered="#{FragmentoFiltro.botonFiltroHabilitado}"
+                            text="#{FragmentoFiltro.gestor.i18n.textoBotonBuscarFiltro2}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonBuscarFiltro2}"/>
+                    </h:panelGrid>
+                    <h:panelGrid binding="#{FragmentoFiltro.gridPanelFiltro3}" id="gridPanelFiltro3">
+                        <webuijsf:button actionExpression="#{FragmentoFiltro.botonBorrarFiltro1_action}" binding="#{FragmentoFiltro.botonBorrarFiltro1}"
+                            disabled="#{FragmentoFiltro.listaFiltroInhabilitada}" id="botonBorrarFiltro1" imageURL="resources/minus.gif"
+                            text="#{FragmentoFiltro.gestor.i18n.textoBotonBorrarCriterio}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonBorrarCriterio}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </h:panelGrid>
+            <h:panelGrid id="gridPanel4" style="float:left">
+                <webuijsf:button actionExpression="#{FragmentoFiltro.botonAplicarFiltro1_action}" binding="#{FragmentoFiltro.botonAplicarFiltro1}"
+                    rendered="#{FragmentoFiltro.funcionApplyFilterHabilitada}" id="botonAplicarFiltro1" style="margin-left: 12px" styleClass="pdq-button-1"
+                    text="#{FragmentoFiltro.gestor.i18n.textoBotonAplicarFiltro}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonAplicarFiltro}"/>
+                <webuijsf:button actionExpression="#{FragmentoFiltro.botonQuitarFiltro1_action}" binding="#{FragmentoFiltro.botonQuitarFiltro1}"
+                    rendered="#{FragmentoFiltro.funcionRemoveFilterHabilitada}" id="botonQuitarFiltro1" style="margin-left: 12px" styleClass="pdq-button-1"
+                    text="#{FragmentoFiltro.gestor.i18n.textoBotonQuitarFiltro}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonQuitarFiltro}"/>
+                <webuijsf:button actionExpression="#{FragmentoFiltro.botonRestaurarFiltro1_action}" binding="#{FragmentoFiltro.botonRestaurarFiltro1}"
+                    rendered="#{FragmentoFiltro.funcionRestoreFilterHabilitada}" id="botonRestaurarFiltro1" style="margin-left: 12px" styleClass="pdq-button-1"
+                    text="#{FragmentoFiltro.gestor.i18n.textoBotonRestaurarFiltro}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonRestaurarFiltro}"/>
+                <webuijsf:button actionExpression="#{FragmentoFiltro.botonOcultarFiltro1_action}" binding="#{FragmentoFiltro.botonOcultarFiltro1}"
+                    rendered="#{FragmentoFiltro.bitFuncionHideFilterHabilitada.on}" id="botonOcultarFiltro1" style="margin-left: 12px" styleClass="pdq-button-1"
+                    text="#{FragmentoFiltro.gestor.i18n.textoBotonOcultarFiltro}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonOcultarFiltro}"/>
+            </h:panelGrid>
+        </h:panelGrid>
+        <h:panelGrid columns="1" id="gridPanel5" rendered="#{FragmentoFiltro.bitFuncionShowFilterHabilitada.on}">
+                <webuijsf:button actionExpression="#{FragmentoFiltro.botonMostrarFiltro1_action}" binding="#{FragmentoFiltro.botonMostrarFiltro1}"
+                    id="botonMostrarFiltro1" styleClass="pdq-button-1"
+                    text="#{FragmentoFiltro.gestor.i18n.textoBotonMostrarFiltro}" toolTip="#{FragmentoFiltro.gestor.i18n.toolTipBotonMostrarFiltro}"/>
+        </h:panelGrid>
+    </f:subview>
+</div>
