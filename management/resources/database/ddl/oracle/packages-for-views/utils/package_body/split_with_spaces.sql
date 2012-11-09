@@ -1,0 +1,10 @@
+-- function split_with_spaces(str varchar2) return varchar2[] is
+--     aux varchar2[];
+-- begin
+--     if str is null then
+--         return null;
+--     end if;
+--     str:=trim(str);
+--     aux:=regexp_split_to_array(str, E'\\s+');
+-- return aux;
+-- end;

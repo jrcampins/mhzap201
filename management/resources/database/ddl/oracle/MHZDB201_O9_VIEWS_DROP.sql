@@ -1,0 +1,9 @@
+exec xsp.dropone('VIEW','relacion_rastro_funcion_par');
+exec xsp.dropone('VIEW','favoritos');
+exec xsp.dropone('VIEW','lista_recurso');
+exec xsp.dropone('VIEW','relacion_rastro_funcion');
+exec xsp.dropone('VIEW','relacion_rastro_informe');
+exec xsp.dropone('VIEW','relacion_rastro_proceso');
+exec xsp.dropone('VIEW','vista_autenticacion_1');
+exec xsp.dropone('VIEW','vista_autenticacion_2');
+exec xsp.dropone('VIEW','vista_autenticacion_3');
