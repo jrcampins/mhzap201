@@ -38,11 +38,11 @@ import com.egt.core.aplicacion.web.ContextoSesion;
 import com.egt.core.aplicacion.web.ContextoSesionBasico;
 import com.egt.core.db.xdp.RecursoCachedRowSet;
 import com.sun.rave.web.ui.appbase.AbstractSessionBean;
-import com.sun.sql.rowset.CachedRowSetXImpl;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
+import com.sun.sql.rowset.CachedRowSetXImpl;
 import javax.faces.FacesException;
 import javax.faces.context.FacesContext;
 
