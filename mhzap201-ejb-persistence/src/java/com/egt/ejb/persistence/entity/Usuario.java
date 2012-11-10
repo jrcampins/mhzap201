@@ -269,8 +269,8 @@ public class Usuario implements UsuarioBase, Comparable, Serializable {
         // Warning - this method won't work properly in the case the id fields are not set
         if (object instanceof Usuario) {
             Usuario that = (Usuario) object;
-            return ((idUsuario == null && that.idUsuario == null)
-                    || (idUsuario != null && idUsuario.equals(that.idUsuario)));
+            return ((idUsuario == null && that.idUsuario == null) ||
+                    (idUsuario != null && idUsuario.equals(that.idUsuario)));
         }
         return false;
     }
@@ -279,5 +279,4 @@ public class Usuario implements UsuarioBase, Comparable, Serializable {
     public String toString() {
         return this.getClass().getSimpleName() + "#" + idUsuario;
     }
-
 }

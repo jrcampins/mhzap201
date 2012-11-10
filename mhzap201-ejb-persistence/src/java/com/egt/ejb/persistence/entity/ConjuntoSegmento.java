@@ -157,8 +157,8 @@ public class ConjuntoSegmento implements ConjuntoSegmentoBase, Comparable, Seria
         // Warning - this method won't work properly in the case the id fields are not set
         if (object instanceof ConjuntoSegmento) {
             ConjuntoSegmento that = (ConjuntoSegmento) object;
-            return ((idConjuntoSegmento == null && that.idConjuntoSegmento == null)
-                    || (idConjuntoSegmento != null && idConjuntoSegmento.equals(that.idConjuntoSegmento)));
+            return ((idConjuntoSegmento == null && that.idConjuntoSegmento == null) ||
+                    (idConjuntoSegmento != null && idConjuntoSegmento.equals(that.idConjuntoSegmento)));
         }
         return false;
     }
@@ -167,5 +167,4 @@ public class ConjuntoSegmento implements ConjuntoSegmentoBase, Comparable, Seria
     public String toString() {
         return this.getClass().getSimpleName() + "#" + idConjuntoSegmento;
     }
-
 }

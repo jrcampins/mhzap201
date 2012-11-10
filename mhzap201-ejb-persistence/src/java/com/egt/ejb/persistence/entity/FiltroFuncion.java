@@ -195,8 +195,8 @@ public class FiltroFuncion implements FiltroFuncionBase, Comparable, Serializabl
         // Warning - this method won't work properly in the case the id fields are not set
         if (object instanceof FiltroFuncion) {
             FiltroFuncion that = (FiltroFuncion) object;
-            return ((idFiltroFuncion == null && that.idFiltroFuncion == null)
-                    || (idFiltroFuncion != null && idFiltroFuncion.equals(that.idFiltroFuncion)));
+            return ((idFiltroFuncion == null && that.idFiltroFuncion == null) ||
+                    (idFiltroFuncion != null && idFiltroFuncion.equals(that.idFiltroFuncion)));
         }
         return false;
     }
@@ -205,5 +205,4 @@ public class FiltroFuncion implements FiltroFuncionBase, Comparable, Serializabl
     public String toString() {
         return this.getClass().getSimpleName() + "#" + idFiltroFuncion;
     }
-
 }

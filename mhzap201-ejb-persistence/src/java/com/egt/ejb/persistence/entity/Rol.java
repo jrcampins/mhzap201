@@ -206,8 +206,8 @@ public class Rol implements RolBase, Comparable, Serializable {
         // Warning - this method won't work properly in the case the id fields are not set
         if (object instanceof Rol) {
             Rol that = (Rol) object;
-            return ((idRol == null && that.idRol == null)
-                    || (idRol != null && idRol.equals(that.idRol)));
+            return ((idRol == null && that.idRol == null) ||
+                    (idRol != null && idRol.equals(that.idRol)));
         }
         return false;
     }
@@ -216,5 +216,4 @@ public class Rol implements RolBase, Comparable, Serializable {
     public String toString() {
         return this.getClass().getSimpleName() + "#" + idRol;
     }
-
 }

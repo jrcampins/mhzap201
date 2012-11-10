@@ -269,8 +269,8 @@ public class Dominio implements DominioBase, Comparable, Serializable {
         // Warning - this method won't work properly in the case the id fields are not set
         if (object instanceof Dominio) {
             Dominio that = (Dominio) object;
-            return ((idDominio == null && that.idDominio == null)
-                    || (idDominio != null && idDominio.equals(that.idDominio)));
+            return ((idDominio == null && that.idDominio == null) ||
+                    (idDominio != null && idDominio.equals(that.idDominio)));
         }
         return false;
     }
@@ -279,5 +279,4 @@ public class Dominio implements DominioBase, Comparable, Serializable {
     public String toString() {
         return this.getClass().getSimpleName() + "#" + idDominio;
     }
-
 }
