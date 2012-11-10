@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 call variables-date-time
-if exist "%~f1" (set folder=%~f1) else (set folder=V10R%aa%%mm%%dd%)
+if exist "%~f1" (set folder=%~f1) else (set folder=V10R%aammdd%)
 if not exist "%folder%" goto:eof
 call:echo1 %~n0 %folder%
 
@@ -17,6 +17,9 @@ for /R "%folder%" %%f in (*.*)	do call:sweep-delete %%f
 call:echo2 sweep-delete-file *.#*
 for /R "%folder%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
 
+pause
+echo.
+
 call:dos2unix *.jrxml
 call:dos2unix *.password
 call:dos2unix *.properties
@@ -25,6 +28,9 @@ call:dos2unix *.sh
 call:dos2unix *.sql
 call:dos2unix *.txt
 call:dos2unix *.vm
+
+pause
+echo.
 
 call:echo2 %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
 call %abf% %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
