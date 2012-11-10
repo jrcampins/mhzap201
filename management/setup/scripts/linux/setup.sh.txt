@@ -18,16 +18,16 @@ Instalación de mhzap201 1.0 en Unix
     Si no se establece la variable de entorno MHZAP201_HOME, ejecutar el script home2scripts.sh en el siguiente paso.
 
 
-03. Descomprimir el archivo zip V10Raammdd (aammdd corresponde a la fecha del release) en $MHZAP201_HOME. Esta acción crea el
-    directorio $MHZAP201_HOME/V10Raammdd
+03. Descomprimir el archivo zip VnnRaammdd en $MHZAP201_HOME. Esta acción crea el
+    directorio $MHZAP201_HOME/VnnRaammdd
 
-    unzip V10Raammdd -d $MHZAP201_HOME
-    chmod -R 0777 $MHZAP201_HOME/V10Raammdd
+    unzip VnnRaammdd -d $MHZAP201_HOME
+    chmod -R 0777 $MHZAP201_HOME/VnnRaammdd
 
-    Si en el paso anterior no se establece la variable de entorno MHZAP201_HOME, ejecutar el script V10Raammdd/home2scripts.sh
+    Si en el paso anterior no se establece la variable de entorno MHZAP201_HOME, ejecutar el script VnnRaammdd/home2scripts.sh
 
 
-04. Ejecutar el script $MHZAP201_HOME/V10Raammdd/scripts2home.sh. Este script copia a $MHZAP201_HOME los siguientes archivos:
+04. Ejecutar el script $MHZAP201_HOME/VnnRaammdd/scripts2home.sh. Este script copia a $MHZAP201_HOME los siguientes archivos:
 
     variables-home.sh
     variables-dbdc.sh
@@ -67,12 +67,12 @@ Instalación de mhzap201 1.0 en Unix
             AS_ADMIN_USERPASSWORD=admin
 
 
-07. Configurar GlassFish (seguir los pasos indicados en el archivo "$MHZAP201_HOME/V10Raammdd/configuracion-glassfish-unix.txt")
+07. Configurar GlassFish (seguir los pasos indicados en el archivo "$MHZAP201_HOME/VnnRaammdd/configuracion-glassfish-unix.txt")
 
 
 08. Ejecutar el script de instalación
 
-    08.01.  Para instalar por primera vez, ejecutar el script de instalación $MHZAP201_HOME/V10Raammdd/install.sh.
+    08.01.  Para instalar por primera vez, ejecutar el script de instalación $MHZAP201_HOME/VnnRaammdd/install.sh.
             Este script lleva a cabo las siguientes acciones:
 
             08.01.01. chmod: otorga los permisos necesarios
@@ -89,7 +89,7 @@ Instalación de mhzap201 1.0 en Unix
             08.01.12. copy-imagenes: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
             08.01.13. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
 
-    08.02.  Para reemplazar una versión ya instalada, ejecutar el script de instalación $MHZAP201_HOME/V10Raammdd/upgrade.sh.
+    08.02.  Para reemplazar una versión ya instalada, ejecutar el script de instalación $MHZAP201_HOME/VnnRaammdd/upgrade.sh.
             Este script lleva a cabo las siguientes acciones:
 
             08.02.01. chmod: otorga los permisos necesarios
@@ -121,13 +121,13 @@ http://localhost:8080/mhzap201-web/ (sustituya localhost:8080 por el IP del serv
 La sesión de trabajo comienza por la pÃ¡gina de autenticación del usuario. Al instalar se define el usuario "admin" y su contraseÃ±a es "sesamo".
 
 De ser necesario detener el servidor de aplicaciones, Ã©ste deberÃ¡ ser reiniciado utilizando el script domain-start.sh que se encuentra el en directorio
-$MHZAP201_HOME/V10Raammdd/resources/scripts/linux/glassfish. Este script establece las variables de entorno requeridas para la operación del producto.
+$MHZAP201_HOME/VnnRaammdd/resources/scripts/linux/glassfish. Este script establece las variables de entorno requeridas para la operación del producto.
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Desinstalación de mhzap201 1.0 en Unix
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Para desintalar el producto, ejecute el script $MHZAP201_HOME/V10Raammdd/uninstall.sh.
+Para desintalar el producto, ejecute el script $MHZAP201_HOME/VnnRaammdd/uninstall.sh.
 
 
