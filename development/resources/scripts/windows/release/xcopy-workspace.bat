@@ -70,7 +70,7 @@ set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-file "%MHZAP201_X3RD%\lib\jdbc\oracle\ojdbc6.jar"                      %CRVLSUBDIR%
+call:xcopy-file "%MHZAP201_X3RD%\lib\jdbc\oracle\ojdbc6.jar"                    %CRVLSUBDIR%
 
 rem pause
 rem echo.
@@ -80,7 +80,7 @@ set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-file-batch "%MGMT%\resources\env\linux\*.*"                          %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %CRVLSUBDIR%
 call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
 call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
 
@@ -92,7 +92,7 @@ set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-file-batch "%MGMT%\resources\env\windows\*.*"                        %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %CRVLSUBDIR%
 call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
 call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
 

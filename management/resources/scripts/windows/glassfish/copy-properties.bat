@@ -7,7 +7,7 @@ call variables "%~f0"
 if not defined variables goto EOJ
 
 @echo.
-set   SOURCE=%CRVLDIR%\resources\env\windows
+set   SOURCE=%CRVLDIR%\resources\bootstrapping\%EEASKEY%\%DBMSKEY%\windows
 set   SOURCE
 @echo.
 set   TARGET="%GLASSFISH_HOME%\domains\%GFDOMAINNAME%\resources"
