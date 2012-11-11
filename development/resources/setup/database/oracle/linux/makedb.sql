@@ -12,6 +12,16 @@ from user_objects
 group by object_type, status
 order by object_type, status;
 
+set echo off
+define folder = /opt/mhzap201/VnnRaammdd/resources/database/ddl/
+define tokens = MHZDB201_O9_
+define custom = oracle/custom/packages/xsp
+define script = &folder&custom
+prompt RUN> &script
+set echo on
+@&script
+
+set echo off
 exec xsp.dropall();
 
 select object_type, status, count(*)
@@ -21,59 +31,53 @@ order by object_type, status;
 
 select object_type, timestamp, status, object_name
 from user_objects
-where object_type <> 'INDEX'
 order by object_type, object_name;
 
-define bs = /opt/mhzap201/VnnRaammdd/resources/database/ddl/MHZDB201_O9_
-define us = _
-
 set echo off
-define numero = 100
-define script = &bs&numero
+define suffix = 100
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 200
-define script = &bs&numero
+define suffix = 200
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 300
-define script = &bs&numero
+define suffix = 300
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 400
-define sufijo = PACKAGES
-define script = &bs&numero&us&sufijo
+define suffix = 400_PACKAGES
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 400
-define sufijo = FUNCTIONS
-define script = &bs&numero&us&sufijo
+define suffix = 400_FUNCTIONS
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 500
-define script = &bs&numero
+define suffix = 500
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 600
-define script = &bs&numero
+define suffix = 600
+define script = &folder&tokens&suffix
 prompt RUN> &script
 set echo on
 @&script

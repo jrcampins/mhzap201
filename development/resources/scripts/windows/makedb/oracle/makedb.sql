@@ -21,59 +21,56 @@ order by object_type, status;
 
 select object_type, timestamp, status, object_name
 from user_objects
-where object_type <> 'INDEX'
 order by object_type, object_name;
 
-define bs = \
 define us = _
+define tokens = &1&us&2&us
 
 set echo off
-define numero = 100
-define script = &1&us&2&us&numero
+define suffix = 100
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 200
-define script = &1&us&2&us&numero
+define suffix = 200
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 300
-define script = &1&us&2&us&numero
+define suffix = 300
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 400
-define sufijo = PACKAGES
-define script = &1&us&2&us&numero&us&sufijo
+define suffix = 400_PACKAGES
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 400
-define sufijo = FUNCTIONS
-define script = &1&us&2&us&numero&us&sufijo
+define suffix = 400_FUNCTIONS
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 500
-define script = &1&us&2&us&numero
+define suffix = 500
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define numero = 600
-define script = &1&us&2&us&numero
+define suffix = 600
+define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
