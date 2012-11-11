@@ -20,6 +20,11 @@ for /R "%folder%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
 rem pause
 rem echo.
 
+call:replaceVnnRaammdd
+
+rem pause
+rem echo.
+
 call:dos2unix *.jrtx
 call:dos2unix *.jrxml
 call:dos2unix *.osql
@@ -82,6 +87,24 @@ rem echo %~n0 %1
 if not exist %1 goto:eof
 echo del %1
 del %1
+goto:eof
+
+:replaceVnnRaammdd
+set replacer="%ProgramFiles%\ABF\Tools\Replacer\Replacer.exe"
+set findstring="VnnRaammdd"
+set replacestring=%CRVL%
+call:replacer %CRVLDIR% bat
+call:replacer %CRVLDIR% properties
+call:replacer %CRVLDIR% sh
+call:replacer %CRVLDIR% sql
+call:replacer %CRVLDIR% txt
+goto:eof
+
+:replacer
+set wildcard="%~f1\*.%2"
+echo %replacer% %wildcard% %findstring% %replacestring% /r
+call %replacer% %wildcard% %findstring% %replacestring% /r
+echo.
 goto:eof
 
 :dos2unix

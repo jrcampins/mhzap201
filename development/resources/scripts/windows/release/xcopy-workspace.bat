@@ -117,8 +117,6 @@ call:renameRunTimeVelocityProperties
 rem pause
 rem echo.
 
-call:changeVnnRaammdd
-
 sweep %CRVLDIR%
 
 pause
@@ -183,12 +181,13 @@ ren "%vd%\run-time-%vp%" %vp%
 echo.
 goto:eof
 
-:changeVnnRaammdd
+:fartVnnRaammdd
 set fart="%ProgramFiles%\WinUtils\fart.exe"
 set findstring="VnnRaammdd"
 set replacestring=%CRVL%
 call:fart %CRVLDIR% bat
 call:fart %CRVLDIR% properties
+call:fart %CRVLDIR% sh
 call:fart %CRVLDIR% sql
 call:fart %CRVLDIR% txt
 goto:eof
