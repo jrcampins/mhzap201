@@ -2,7 +2,7 @@
 Configuración de NetBeans en Windows
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-01. Instalar JDK 1.6.0_23, preferiblemente en "C:\Archivos de programa\Java\jdk1.6.0_23"
+01. Instalar JDK 1.6.0_23, preferiblemente en "%ProgramFiles%\Java\jdk1.6.0_23"
 
 02. Copiar jdk-6-doc.zip al directorio de instalación del JDK
 
@@ -23,7 +23,7 @@ Configuración de NetBeans en Windows
 Por ejemplo:
 
     subst J: /d
-    subst J: "C:\Archivos de programa\Java"
+    subst J: "%ProgramFiles%\Java"
     subst N: /d
     subst N: "C:\NetBeans\NB69"
     subst W: /d
@@ -38,7 +38,7 @@ Por ejemplo:
     set MHZAP201_VSWS=W:\mhzap201
     set MHZAP201_HOME=W:\mhzap201\management
     set GLASSFISH_HOME=N:\glassfish
-    set POSTGRESQL_HOME=C:\Archivos de programa\PostgreSQL\9.0
+    set POSTGRESQL_HOME=%ProgramFiles%\PostgreSQL\9.0
 
 
 07. Instalar en N:

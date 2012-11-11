@@ -184,7 +184,7 @@ echo.
 goto:eof
 
 :changeVnnRaammdd
-set fart="C:\Archivos de programa\WinUtils\fart.exe"
+set fart="%ProgramFiles%\WinUtils\fart.exe"
 set findstring="VnnRaammdd"
 set replacestring=%CRVL%
 call:fart %CRVLDIR% bat

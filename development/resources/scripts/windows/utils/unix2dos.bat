@@ -1,5 +1,5 @@
 @echo off
-set U2D="C:\Archivos de programa\GnuWin32\bin\unix2dos.exe"
+set U2D="%ProgramFiles%\GnuWin32\bin\unix2dos.exe"
 if not exist %U2D% exit
 if not defined MHZAP201_VSWS exit
 cd  /d "%MHZAP201_VSWS%\management\resources"

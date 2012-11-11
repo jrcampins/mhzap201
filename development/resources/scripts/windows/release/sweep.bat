@@ -6,7 +6,7 @@ if not exist "%folder%" goto:eof
 call:echo1 %~n0 %folder%
 
 set abf="C:\Setup\abfTools\FileDate\FileDate"
-set gnu="C:\Archivos de programa\GnuWin32\bin\dos2unix.exe"
+set gnu="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
 
 call:echo2 sweep-remove .
 for /R "%folder%" %%f in (.)	do call:sweep-remove %%f

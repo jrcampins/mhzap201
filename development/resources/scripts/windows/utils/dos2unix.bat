@@ -1,5 +1,5 @@
 @echo off
-set D2U="C:\Archivos de programa\GnuWin32\bin\dos2unix.exe"
+set D2U="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
 if not exist %D2U% exit
 if not defined MHZAP201_VSWS exit
 cd  /d "%MHZAP201_VSWS%\management\resources"

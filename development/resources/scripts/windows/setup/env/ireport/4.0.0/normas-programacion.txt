@@ -61,7 +61,7 @@ Normas para la programación de informes con iReport 4.0.0
     ADVERTENCIA: el template de iReport 4.0.0 viene con language="groovy" en lugar de language="java". Modifique o elimine la cláusula (el default es
     language="java").
 
-09. Para utilizar los templates de la aplicación, deberá copiarlos a C:\Archivos de programa\Jaspersoft\iReport-4.0.0\ireport\templates
+09. Para utilizar los templates de la aplicación, deberá copiarlos a %ProgramFiles%\Jaspersoft\iReport-4.0.0\ireport\templates
 
     La aplicación actualmente dispone de los siguientes templates:
 

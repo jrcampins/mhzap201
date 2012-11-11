@@ -2,7 +2,7 @@
 Configuracion de iReport en Windows
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-01. Instalar iReport (classic), preferiblemente en "C:\Archivos de programa\iReport-3.0.0"
+01. Instalar iReport (classic), preferiblemente en "%ProgramFiles%\iReport-3.0.0"
 
 02. Abrir y Cerrar iReport
 

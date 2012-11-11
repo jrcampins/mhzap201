@@ -3,9 +3,9 @@ cd /d "%~dp0"
 set log="%~d0\%~n0.log"
 echo %DATE% %TIME%>%log%
 if exist "I:\" subst I: /d
-subst I: "C:\Archivos de programa"
+subst I: "%ProgramFiles%"
 if exist "J:\" subst J: /d
-subst J: "C:\Archivos de programa\Java"
+subst J: "%ProgramFiles%\Java"
 if exist "N:\" subst N: /d
 subst N: "C:\NetBeans\NB67"
 if exist "P:\" subst P: /d
