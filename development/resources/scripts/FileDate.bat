@@ -22,13 +22,13 @@ set /p hh24=%pregunta%
 
 :PDQ2
 set nn=00
-echo C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
+echo %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
 pause
 
 :PDQ3
 del %log%
-echo C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r>>%log%
-     C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r>>%log%
+echo %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r>>%log%
+     %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r>>%log%
 
 :PDQ4
 pause

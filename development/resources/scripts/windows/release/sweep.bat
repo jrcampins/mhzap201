@@ -5,7 +5,7 @@ if exist "%~f1" (set folder=%~f1) else (set folder=V10R%aammdd%)
 if not exist "%folder%" goto:eof
 call:echo1 %~n0 %folder%
 
-set abf="C:\Setup\abfTools\FileDate\FileDate"
+set abf="%ProgramFiles%\ABF\Tools\FileDate\FileDate"
 set gnu="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
 
 call:echo2 sweep-remove .

@@ -11,12 +11,12 @@ set folder="%~dp0"
 set /p nn="nn [%nn%] "
 if not defined nn goto ask4nn
 
-echo C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00
+echo %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00
 pause
 
 del %log%
-echo C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00>>%log%
-     C:\Setup\abfTools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00>>%log%
+echo %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00>>%log%
+     %ProgramFiles%\ABF\Tools\FileDate\FileDate %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-%nn%-00>>%log%
 
 pause
 del %log%
