@@ -17,10 +17,12 @@ for /R "%folder%" %%f in (*.*)	do call:sweep-delete %%f
 call:echo2 sweep-delete-file *.#*
 for /R "%folder%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
 
-pause
-echo.
+rem pause
+rem echo.
 
+call:dos2unix *.jrtx
 call:dos2unix *.jrxml
+call:dos2unix *.osql
 call:dos2unix *.password
 call:dos2unix *.properties
 call:dos2unix *.psql
@@ -28,9 +30,10 @@ call:dos2unix *.sh
 call:dos2unix *.sql
 call:dos2unix *.txt
 call:dos2unix *.vm
+call:dos2unix *.xml
 
-pause
-echo.
+rem pause
+rem echo.
 
 call:echo2 %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
 call %abf% %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
@@ -42,7 +45,8 @@ goto:eof
 echo.
 echo %*
 echo.
-pause
+rem pause
+rem echo.
 goto:eof
 
 :echo2
@@ -85,5 +89,6 @@ echo.
 echo dos2unix %1
 echo.
 rem pause
+rem echo.
 for /R "%folder%" %%f in (%1) do %gnu% -U "%%f"
 goto:eof

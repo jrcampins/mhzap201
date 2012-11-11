@@ -1,8 +1,12 @@
 @echo off
 cd /d "%~dp0"
 
+set MHZAP201_X3RD=W:\third-party
+set MHZAP201
+
 if not defined MHZAP201_VSWS goto:eof
 call variables-date-time
+echo.
 
 :ask
 set nn=10
@@ -17,51 +21,101 @@ goto check
 echo.
 set CRVL
 echo.
-pause
-echo.
 echo rmdir %CRVLDIR%
-echo.
 if exist %CRVLDIR% rmdir %CRVLDIR% /s /q
-echo mkdir %CRVLDIR%
 echo.
+echo md %CRVLDIR%
 md %CRVLDIR%
-md "%CRVLDIR:~1,-1%\setup\linux\as\resources"
-md "%CRVLDIR:~1,-1%\setup\linux\db\oracle"
-md "%CRVLDIR:~1,-1%\setup\windows\as\resources"
-md "%CRVLDIR:~1,-1%\setup\windows\db\oracle"
-pause
 echo.
+
+rem pause
+rem echo.
 
 set DVLP=%MHZAP201_VSWS%\development
 set MGMT=%MHZAP201_VSWS%\management
 
-call:xcopy-folder %MGMT% %CRVLDIR% resources
+call:xcopy-folder %MGMT%                                                        %CRVLDIR% resources S
 
-call:xcopy-file "%MHZAP201_VSWS%\mhzap201\dist\mhzap201.ear" %CRVLDIR%
+rem pause
+rem echo.
 
-call:xcopy-file "%MHZAP201_VSWS%\management\backup\MHZDB201_%aaaammdd%.backup" %CRVLDIR%
+call:xcopy-file "%MHZAP201_VSWS%\mhzap201\dist\mhzap201.ear"                    %CRVLDIR%
+call:xcopy-file "%MHZAP201_VSWS%\management\backup\MHZDB201_%aaaammdd%.backup"  %CRVLDIR%
 
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"  %CRVLDIR%
+rem pause
+rem echo.
 
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt" %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"                         %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt"                        %CRVLDIR%
 
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.bat" %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.bat"                      %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt"                      %CRVLDIR%
 
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt" %CRVLDIR%
+rem pause
+rem echo.
 
-call:xcopy-file-batch "%MGMT%\resources\env\linux\*.*"                          "%CRVLDIR:~1,-1%\setup\linux\as\resources"
-call:xcopy-file-batch "%MGMT%\resources\env\windows\*.*"                        "%CRVLDIR:~1,-1%\setup\windows\as\resources"
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
 
-call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       "%CRVLDIR:~1,-1%\setup\linux\as\resources"
-call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       "%CRVLDIR:~1,-1%\setup\windows\as\resources"
+call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% jboss  E
+call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% oracle E
 
-call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         "%CRVLDIR:~1,-1%\setup\linux\as\resources"
-call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         "%CRVLDIR:~1,-1%\setup\windows\as\resources"
+rem pause
+rem echo.
 
-call:xcopy-file-batch "%DVLP%\resources\setup\database\oracle\linux\*.*"        "%CRVLDIR:~1,-1%\setup\linux\db\oracle"
-call:xcopy-file-batch "%DVLP%\resources\setup\database\oracle\windows\*.*"      "%CRVLDIR:~1,-1%\setup\windows\db\oracle"
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\modules\com\oracle\ojdbc6\main"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+call:xcopy-file "%MHZAP201_X3RD%\lib\jdbc\oracle\ojdbc6.jar"                      %CRVLSUBDIR%
+
+rem pause
+rem echo.
+
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\resources\linux"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+call:xcopy-file-batch "%MGMT%\resources\env\linux\*.*"                          %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
+
+rem pause
+rem echo.
+
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\resources\windows"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+call:xcopy-file-batch "%MGMT%\resources\env\windows\*.*"                        %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
+
+rem pause
+rem echo.
+
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\welcome-content\mhzap201\attachments"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\welcome-content\mhzap201\spool"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+rem pause
+rem echo.
 
 call:renameRunTimeVelocityProperties
+
+rem pause
+rem echo.
 
 call:changeVnnRaammdd
 
@@ -113,8 +167,8 @@ if not exist %SOURCE% (
 if exist %TARGET% rmdir %TARGET% /s /q
 if not exist %TARGET% md %TARGET%
 rem dir %SOURCE% /a:d
-echo xcopy %SOURCE% %TARGET% /i /s
-call xcopy %SOURCE% %TARGET% /i /s
+echo xcopy %SOURCE% %TARGET% /i /%4
+call xcopy %SOURCE% %TARGET% /i /%4
 echo.
 goto:eof
 
@@ -133,6 +187,7 @@ goto:eof
 set fart="C:\Archivos de programa\WinUtils\fart.exe"
 set findstring="VnnRaammdd"
 set replacestring=%CRVL%
+call:fart %CRVLDIR% bat
 call:fart %CRVLDIR% properties
 call:fart %CRVLDIR% sql
 call:fart %CRVLDIR% txt

@@ -117,34 +117,52 @@ Configuración de JBoss en Windows
     </subsystem>
 
 
-03. Crear el modulo com.oracle.ojdbc6
-
-    <?xml version="1.0" encoding="UTF-8"?>
-    <module xmlns="urn:jboss:module:1.1" name="com.oracle.ojdbc6">
-        <resources>
-            <resource-root path="ojdbc6.jar"/>
-        </resources>
-        <dependencies>
-            <module name="javax.api"/>
-            <module name="javax.transaction.api"/>
-        </dependencies>
-    </module>
-
-
-04. Ajustar parametros de la JVM
+03. Ajustar parametros de la JVM
 
     Modificar -Xms, -Xmx y -XX:MaxPermSize
+    
     Agregar -Dorg.apache.el.parser.COERCE_TO_ZERO=false
 
     En C:\jboss\bin\standalone.conf.bat, donde dice:
+
         rem # JVM memory allocation pool parameters - modify as appropriate.
         set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M"
 
     Colocar:
+
         set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M -Dorg.apache.el.parser.COERCE_TO_ZERO=false"
 
 
-05. Ejecutar script W:\mhzap201\source\management\resources\scripts\windows\jboss\standalone\standalone-start.bat
+04. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\modules\com\oracle a C:\jboss\modules\com    
 
-06. Ejecutar script W:\mhzap201\source\management\resources\scripts\windows\jboss\standalone\ear-deploy.bat
+05. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\welcome-content\mhzap201 a C:\jboss\welcome-content
+
+06. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\resources\windows a C:\jboss
+
+07. Ajustar las variables en C:\jboss\resources\mhzap201.properties
+
+    Especifique la ruta completa de la carpeta resources de mhzap201 en la propiedad DIR.
+    Habilite y especifique la ruta completa de la carpeta welcome-content de JBoss en la propiedad DOC.
+    Habilite y especifique las propiedades JDBC que corresponden a Oracle.
+    
+    DIR=C:\\mhzap201\\VnnRaammdd\\resources
+    #
+    # JBoss
+    #
+    DOC=C:\\jboss\\welcome-content
+    #
+    # Oracle
+    #
+    JDBC_DRIVER=oracle.jdbc.OracleDriver
+    JDBC_URL=jdbc:oracle:thin:@localhost:1521:XE
+    JDBC_USER=MHZ
+    JDBC_PASSWORD=sesamo
+
+    NOTA: Los valores predeterminados coinciden con los valores predeterminados de instalación.
+    NOTA: el separador de las rutas (DIR y DOC) tiene que ser doble backslash (\\).
+    
+
+08. Ejecutar el script C:\mhzap201\VnnRaammdd\setup\jboss\standalone\scripts\windows\standalone-start.bat
+
+09. Ejecutar el script C:\mhzap201\VnnRaammdd\setup\jboss\standalone\scripts\windows\ear-deploy.bat
 
