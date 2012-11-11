@@ -1,4 +1,5 @@
 set logging=true
 set NOPAUSE=true
 cd /d %JBOSS_HOME%
-.\bin\standalone -c standalone-full.xml
+del standalone\log\*.log /q
+bin\standalone.bat -c standalone-full.xml
