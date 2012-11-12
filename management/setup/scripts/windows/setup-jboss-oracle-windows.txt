@@ -28,14 +28,16 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
 
     Establezca la variable de entorno JBOSS_HOME con la ruta del directorio donde instaló JBoss.
 
-    NOTA: el resto de la documentacion asume que JBOSS_HOME es C:\jboss
+    NOTA: si no instaló JBoss en C:\jboss, puede crear el enlace simbólico C:\jboss para JBOSS_HOME
+    NOTA: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ describe como crear enlaces simbólicos
 
 
 04. Crear el directorio mhzap201, preferiblemente en C:\
 
     Establezca la variable de entorno MHZAP201_HOME con la ruta del directorio mhzap201.
 
-    NOTA: el resto de la documentacion asume que MHZAP201_HOME es C:\mhzap201
+    NOTA: si no creó el directorio mhzap201 en C:\mhzap201, puede crear el enlace simbólico C:\mhzap201 para MHZAP201_HOME
+    NOTA: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ describe como crear enlaces simbólicos
 
 
 05. Descomprimir el archivo zip VnnRaammdd en C:\mhzap201

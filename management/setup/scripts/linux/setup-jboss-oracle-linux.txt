@@ -28,20 +28,18 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
 
     Establezca la variable de entorno JBOSS_HOME con la ruta del directorio donde instaló JBoss.
 
-    NOTA: el resto de la documentacion asume que JBOSS_HOME es /opt/jboss
-    NOTA: si no instaló JBoss en /opt/jboss, puede crear el "symbolic link" /opt/jboss para JBOSS_HOME, asi:
-        cd /opt
-        ln -s $JBOSS_HOME jboss
+    NOTA: si no instaló JBoss en /opt/jboss, puede crear el enlace simbólico /opt/jboss para JBOSS_HOME
+
+        ln -s $JBOSS_HOME /opt/jboss
 
 
 04. Crear el directorio mhzap201, preferiblemente en /opt
 
     Establezca la variable de entorno MHZAP201_HOME con la ruta del directorio mhzap201.
 
-    NOTA: el resto de la documentacion asume que MHZAP201_HOME es /opt/mhzap201
-    NOTA: si no creó el directorio mhzap201 en /opt, puede crear el "symbolic link" /opt/mhzap201 para MHZAP201_HOME, asi:
-        cd /opt
-        ln -s $MHZAP201_HOME mhzap201
+    NOTA: si no creó el directorio mhzap201 en /opt, puede crear el enlace simbólico /opt/mhzap201 para MHZAP201_HOME
+
+        ln -s $MHZAP201_HOME /opt/mhzap201
 
 
 05. Descomprimir el archivo zip VnnRaammdd en /opt/mhzap201

@@ -9,6 +9,7 @@ Instalación de mhzap201 1.0 en Windows
 
     El path del directorio NO puede contener espacios en blanco ni caracteres especiales
 
+
 02. Establecer la variable de entorno MHZAP201_HOME e incluirla en el arranque de Windows
 
     Por ejemplo:
@@ -16,6 +17,10 @@ Instalación de mhzap201 1.0 en Windows
     set MHZAP201_HOME=C:\mhzap201
 
     Alternativamente puede ejecutar el script home2scripts.bat en el siguiente paso.
+
+    Si no creó el directorio mhzap201 en C:\mhzap201, puede crear el enlace simbólico C:\mhzap201 para MHZAP201_HOME
+    
+    http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ describe como crear enlaces simbólicos
 
 
 03. Descomprimir el archivo zip VnnRaammdd en %MHZAP201_HOME%
@@ -121,6 +126,7 @@ Instalación de mhzap201 1.0 en Windows
             08.02.16. copy-images: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
             08.02.17. copy-properties: copia los archivos de propiedades a la carpeta de configuracion del servidor de aplicaciones
 
+
 09. Ajustar las variables en mhzap201.properties
 
     En el paso anterior se copia el archivo de propiedades a la carpeta de configuracion del servidor de aplicaciones
@@ -136,6 +142,7 @@ Instalación de mhzap201 1.0 en Windows
     Modifique el valor de DIR para que refleje la ubicación actual de la carpeta resources y compruebe el valor de los parámetros JDBC.
 
     Note que en el valor de DIR el separador debe ser escrito \\ en lugar de \
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Operación de mhzap201 1.0 en Windows
@@ -162,4 +169,3 @@ Desinstalación de mhzap201 1.0 en Windows
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Para desintalar el producto, ejecute el script %MHZAP201_HOME%\VnnRaammdd\uninstall.bat
-

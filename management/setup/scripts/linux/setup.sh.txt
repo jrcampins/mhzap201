@@ -17,11 +17,16 @@ Instalación de mhzap201 1.0 en Unix
 
     Si no se establece la variable de entorno MHZAP201_HOME, ejecutar el script home2scripts.sh en el siguiente paso.
 
+    Si no creó el directorio mhzap201 en /opt, puede crear el enlace simbólico /opt/mhzap201 para MHZAP201_HOME
+
+        ln -s $MHZAP201_HOME /opt/mhzap201
+
 
 03. Descomprimir el archivo zip VnnRaammdd en $MHZAP201_HOME. Esta acción crea el
     directorio $MHZAP201_HOME/VnnRaammdd
 
     unzip VnnRaammdd -d $MHZAP201_HOME
+
     chmod -R 0777 $MHZAP201_HOME/VnnRaammdd
 
     Si en el paso anterior no se establece la variable de entorno MHZAP201_HOME, ejecutar el script VnnRaammdd/home2scripts.sh
@@ -112,6 +117,21 @@ Instalación de mhzap201 1.0 en Unix
             08.01.18. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
 
 
+09. Ajustar las variables en mhzap201.properties
+
+    En el paso anterior se copia el archivo de propiedades a la carpeta de configuracion del servidor de aplicaciones
+    Esta carpeta suele ser: $GLASSFISH_HOME\domains\domain1\config
+    En el archivo de propiedades se establecen los siguientes valores:
+
+    DIR=/opt/mhzap201/VnnRaammdd/resources
+    JDBC_DRIVER=org.postgresql.Driver
+    JDBC_URL=jdbc:postgresql://localhost:5432/MHZDB201
+    JDBC_USER=postgres
+    JDBC_PASSWORD=postgres
+
+    Modifique el valor de DIR para que refleje la ubicación actual de la carpeta resources y compruebe el valor de los parámetros JDBC.
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 Operación de mhzap201 1.0 en Unix
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -129,5 +149,3 @@ Desinstalación de mhzap201 1.0 en Unix
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Para desintalar el producto, ejecute el script $MHZAP201_HOME/VnnRaammdd/uninstall.sh.
-
-
