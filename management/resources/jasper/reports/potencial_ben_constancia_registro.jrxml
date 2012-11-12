@@ -13,7 +13,7 @@
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
 	<parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["./resources/mhzap1010.jrtx"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["./resources/mhzap1011.jpg"]]></defaultValueExpression>
