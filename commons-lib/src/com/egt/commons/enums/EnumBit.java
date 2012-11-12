@@ -13,6 +13,7 @@ import com.egt.commons.list.ListOption;
 import com.egt.commons.list.ListOptions;
 import com.egt.commons.util.BitUtils;
 import com.egt.commons.util.IntUtils;
+import java.math.BigDecimal;
 
 public enum EnumBit implements ListOption {
 
@@ -26,30 +27,30 @@ public enum EnumBit implements ListOption {
     public static EnumBit valueOf(Boolean b) {
         return valueOf(BitUtils.valueOf(b));
     }
-//
-//  public static EnumBit valueOf(Character c) {
-//      return valueOf(BitUtils.valueOf(c));
-//  }
-//
-//  public static EnumBit valueOf(char c) {
-//      return valueOf(BitUtils.valueOf(c));
-//  }
-//
-//  public static EnumBit valueOf(Integer i) {
-//      return valueOf(BitUtils.valueOf(i));
-//  }
-//
-//  public static EnumBit valueOf(Long l) {
-//      return valueOf(BitUtils.valueOf(l));
-//  }
+
+    public static EnumBit valueOf(Character c) {
+        return valueOf(BitUtils.valueOf(c));
+    }
+
+    public static EnumBit valueOf(char c) {
+        return valueOf(BitUtils.valueOf(c));
+    }
+
+    public static EnumBit valueOf(Integer i) {
+        return valueOf(BitUtils.valueOf(i));
+    }
+
+    public static EnumBit valueOf(Long l) {
+        return valueOf(BitUtils.valueOf(l));
+    }
 //
 //  public static boolean valueOf(String s) {
 //      return valueOf(BitUtils.valueOf(s));
 //  }
-//
-//  public static EnumBit valueOf(BigDecimal bd) {
-//      return valueOf(BitUtils.valueOf(bd));
-//  }
+
+    public static EnumBit valueOf(BigDecimal bd) {
+        return valueOf(BitUtils.valueOf(bd));
+    }
 
     public static ListOptions getListOptions() {
         return getListOptions(EnumBitLabelSet.SI_NO);
@@ -88,7 +89,6 @@ public enum EnumBit implements ListOption {
 //  public long longValue() {
 //      return LongUtils.valueOf(value);
 //  }
-//
 
     public String getLabel() {
         return BitUtils.getLabel(value);
