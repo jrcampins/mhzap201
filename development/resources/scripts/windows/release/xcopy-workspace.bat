@@ -194,21 +194,3 @@ echo ren "%vd%\run-time-%vp%" %vp%
 ren "%vd%\run-time-%vp%" %vp%
 echo.
 goto:eof
-
-:fartVnnRaammdd
-set fart="%ProgramFiles%\WinUtils\fart.exe"
-set findstring="VnnRaammdd"
-set replacestring=%CRVL%
-call:fart %CRVLDIR% bat
-call:fart %CRVLDIR% properties
-call:fart %CRVLDIR% sh
-call:fart %CRVLDIR% sql
-call:fart %CRVLDIR% txt
-goto:eof
-
-:fart
-set wildcard="%~f1\*.%2"
-echo %fart% -r -c -i %wildcard% %findstring% %replacestring%
-call %fart% -r -c -i %wildcard% %findstring% %replacestring%
-echo.
-goto:eof
