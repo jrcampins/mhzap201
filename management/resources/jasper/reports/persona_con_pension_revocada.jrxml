@@ -94,7 +94,7 @@
 				</staticText>
 				<image>
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="23" y="9" width="109" height="104"/>
-					<imageExpression class="java.lang.String"><![CDATA["./resources/logoMh.PNG"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_mh.png"]]></imageExpression>
 				</image>
 				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
 					<reportElement key="textField" x="858" y="8" width="75" height="13"/>

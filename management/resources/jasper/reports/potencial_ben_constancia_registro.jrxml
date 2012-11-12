@@ -130,7 +130,7 @@
 				</rectangle>
 				<image hAlign="Center" vAlign="Middle">
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="430" y="10" width="90" height="92"/>
-					<imageExpression class="java.lang.String"><![CDATA["./resources/logoMh.PNG"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_mh.png"]]></imageExpression>
 				</image>
 				<image hAlign="Center" vAlign="Middle">
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="10" y="10" width="93" height="92"/>
