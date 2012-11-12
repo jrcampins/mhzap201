@@ -68,8 +68,8 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
 
     Ejecutar el script makedb.sql que se encuentra en C:\mhzap201\VnnRaammdd\setup\oracle\windows:
 
-        spool C:\mhzap201\V10R121111\setup\oracle\windows\makedb.log
-        @C:\mhzap201\V10R121111\setup\oracle\windows\makedb
+        spool C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log
+        @C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb
 
     Comprobar el resultado de la ejecución (revisar el archivo C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log).
 
