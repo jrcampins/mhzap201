@@ -40,8 +40,12 @@ public class AgenteSql {
 
     private PreparedStatement preparedStatement = null;
 
-    public AgenteSql() {
+    private void stamp() {
         Bitacora.stamp(this);
+    }
+
+    public AgenteSql() {
+        stamp();
         connect(TLC.getConnection());
     }
 

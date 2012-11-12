@@ -1,15 +1,20 @@
 @echo off
 cd /d "%~dp0"
 
-set MHZAP201_X3RD=W:\third-party
 set MHZAP201
+set W_THIRD_PARTY=W:\third-party
+set W_THIRD_PARTY
+
+set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
+if not exist %junction% set junction=
+set junction
 
 if not defined MHZAP201_VSWS goto:eof
 call variables-date-time
 echo.
 
 :ask
-set nn=10
+set nn=20
 set /p nn="version (nn) [%nn%] "
 if not defined nn goto ask
 set VR=V%nn%R%aammdd%
@@ -27,6 +32,15 @@ echo.
 echo md %CRVLDIR%
 md %CRVLDIR%
 echo.
+
+if defined junction (
+    if exist latest (
+        echo %junction% -d latest
+        call %junction% -d latest
+    )
+    echo %junction% -s latest %CRVLDIR%
+    call %junction% -s latest %CRVLDIR%
+)
 
 rem pause
 rem echo.
@@ -70,7 +84,7 @@ set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-file "%MHZAP201_X3RD%\lib\jdbc\oracle\ojdbc6.jar"                    %CRVLSUBDIR%
+call:xcopy-file "%W_THIRD_PARTY%\lib\jdbc\oracle\ojdbc6.jar"                    %CRVLSUBDIR%
 
 rem pause
 rem echo.

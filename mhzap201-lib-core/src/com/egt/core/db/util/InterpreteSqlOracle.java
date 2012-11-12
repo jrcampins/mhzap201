@@ -51,8 +51,12 @@ public class InterpreteSqlOracle extends InterpreteSqlAbstracto {
     /* para funciones que retornan tipos compuestos (records, rows, sets, ...) */
     private static final String FIN_COMANDO_EXECUTE_COMPUESTO = "";
 
-    InterpreteSqlOracle() {
+    private void stamp() {
         Bitacora.stamp(this);
+    }
+
+    InterpreteSqlOracle() {
+        stamp();
     }
 
     @Override
@@ -62,21 +66,21 @@ public class InterpreteSqlOracle extends InterpreteSqlAbstracto {
         String select = StringUtils.stripToNull(comando);
         if (select != null && limite > 0) {
             String query = select.toUpperCase();
-            String where = " WHERE ";
+            String where = "WHERE";
             String limit = "(ROWNUM <= " + limite + ")";
             i = StringUtils.indexOf(query, where);
             j = i + where.length();
             if (i > 0) {
-                select = select.substring(0, j) + limit + " AND " + select.substring(j);
+                select = select.substring(0, j) + " " + limit + " AND " + select.substring(j);
                 Bitacora.trace("{0}", select);
             } else {
                 String order = " ORDER BY ";
                 i = StringUtils.indexOf(query, order);
                 if (i > 0) {
-                    select = select.substring(0, i) + where + limit + select.substring(i);
+                    select = select.substring(0, i) + " " + where + " " + limit + select.substring(i);
                     Bitacora.trace("{0}", select);
                 } else {
-                    select += where + limit;
+                    select += " " + where + " " + limit;
                     Bitacora.trace("{0}", select);
                 }
             }

@@ -14,13 +14,12 @@ import com.egt.base.constants.CBM2;
 import com.egt.base.enums.EnumCondicionEjeFun;
 import com.egt.base.jms.messages.ReporterMessage;
 import com.egt.base.util.BundleInformes;
+import com.egt.commons.enums.EnumFormatoInforme;
+import com.egt.commons.util.ThrowableUtils;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.ExcepcionAplicacion;
 import com.egt.core.aplicacion.TLC;
 import com.egt.core.constants.EAC;
-import com.egt.core.constants.SEV;
-import com.egt.commons.enums.EnumFormatoInforme;
-import com.egt.commons.util.ThrowableUtils;
 import com.egt.core.constants.Global;
 import com.egt.core.control.Auditor;
 import com.egt.core.util.EA;
@@ -28,13 +27,11 @@ import com.egt.core.util.STP;
 import com.egt.core.util.Utils;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -45,7 +42,6 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
 import net.sf.jasperreports.engine.fill.JRFillParameter;
-import net.sf.jasperreports.view.JasperViewer;
 import org.apache.commons.lang.StringUtils;
 
 public class Reporter {
@@ -74,7 +70,7 @@ public class Reporter {
     }
 
     public static String getReportFormat(EnumFormatoInforme tipo) {
-        String formato = null;
+        String formato;
         switch (tipo) {
             case XLS:
                 formato = EnumFormatoInforme.XLS.getExtension();
@@ -285,16 +281,16 @@ public class Reporter {
                 if (TLC.getControlador().esFuncionAutorizada(funcion)) {
                     rastro = TLC.getControlador().ponerInformePendiente(funcion);
                     return report(informe,
-                        rastro,
-                        TLC.getControlador().getUsuario().getIdUsuario(),
-                        TLC.getControlador().getUsuario().getCodigoUsuario(),
-                        TLC.getControlador().getUsuario().getNombreUsuario(),
-                        destino,
-                        tipo,
-                        select,
-                        args,
-                        parametros,
-                        false);
+                            rastro,
+                            TLC.getControlador().getUsuario().getIdUsuario(),
+                            TLC.getControlador().getUsuario().getCodigoUsuario(),
+                            TLC.getControlador().getUsuario().getNombreUsuario(),
+                            destino,
+                            tipo,
+                            select,
+                            args,
+                            parametros,
+                            false);
                 } else {
                     throw new ExcepcionAplicacion(Bitacora.getTextoMensaje(CBM2.FUNCION_NO_AUTORIZADA, informe));
                 }
@@ -312,16 +308,16 @@ public class Reporter {
 
     public static ReporterMessage report(ReporterMessage message) {
         return report(message.getInforme(),
-            message.getRastro(),
-            message.getUsuario(),
-            message.getCodigoUsuario(),
-            message.getNombreUsuario(),
-            message.getDestino(),
-            message.getTipo(),
-            message.getSelect(),
-            message.getArgs(),
-            message.getParameters(),
-            false);
+                message.getRastro(),
+                message.getUsuario(),
+                message.getCodigoUsuario(),
+                message.getNombreUsuario(),
+                message.getDestino(),
+                message.getTipo(),
+                message.getSelect(),
+                message.getArgs(),
+                message.getParameters(),
+                false);
     }
 
     static ReporterMessage report(String report, String number, String userid, String target, String format, String select, Object[] args, boolean logging) {
@@ -420,7 +416,7 @@ public class Reporter {
 
     private static String report(JasperPrint jasperPrint, String target, String format, Long usuario) throws Exception {
         Bitacora.trace(Reporter.class, "report", jasperPrint.getName(), target, format);
-        String targetFileName = null;
+        String targetFileName;
         if (target == null) {
             targetFileName = jasperPrint.getName() + "_" + System.currentTimeMillis() + "_" + jasperPrint.hashCode();
         } else {
@@ -463,12 +459,12 @@ public class Reporter {
 //      }
 //      return System.getenv(SEV.REPORT_RUNNER_LOG);
 //  }
-
-    private static String trimToDefaultNumber(String number) {
-        String str = StringUtils.trimToEmpty(number);
-        return StringUtils.isEmpty(str) || !StringUtils.isNumeric(str) ? DEFAULT_NUMBER_KW : str;
-    }
-
+//
+//  private static String trimToDefaultNumber(String number) {
+//      String str = StringUtils.trimToEmpty(number);
+//      return StringUtils.isEmpty(str) || !StringUtils.isNumeric(str) ? DEFAULT_NUMBER_KW : str;
+//  }
+//
     private static String trimToDefaultTarget(String target) {
         String str = StringUtils.trimToEmpty(target);
         return StringUtils.isEmpty(str) || !STP.esIdentificadorArchivoValido(str) ? DEFAULT_TARGET_KW : str;
@@ -502,10 +498,10 @@ public class Reporter {
         Object[] args = new Object[n];
         Set set = parameters.keySet();
         Iterator iterator = set.iterator();
-        Object key = null;
-        Object val = null;
-        String psi = null;
-        String str = null;
+        Object key;
+        Object val;
+        String psi;
+        String str;
         for (int i = 0; i < n && iterator.hasNext(); i++) {
             key = iterator.next();
             val = parameters.get(key);
@@ -557,48 +553,49 @@ public class Reporter {
         return parameters;
     }
 
-    private static Map getReportParametersMap(File file, String format, Long userid, String usercode, String username, Object[] args) {
-        Map parameters = getReportParametersMap(file, format, userid, usercode, username);
-        if (args != null) {
-            String pdq = null;
-            String key = null;
-            String str = null;
-            Object val = null;
-            for (int i = 0; i < args.length; i++) {
-                if (args[i] instanceof String) {
-                    pdq = StringUtils.trimToEmpty((String) args[i]);
-                    if (StringUtils.isNotEmpty(pdq)) {
-                        int p = pdq.indexOf("=");
-                        if (p > 0) {
-                            key = StringUtils.trimToEmpty(pdq.substring(0, p));
-                            str = StringUtils.trimToEmpty(pdq.substring(p + 1));
-                            if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(str)) {
-                                val = STP.getObjeto(str);
-                                parameters.put(key, val);
-                                Bitacora.trace("args [" + i + "] = " + key + "=(" + val.getClass().getSimpleName() + ")" + str);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return parameters;
-    }
-
-    private static void edit(String filename) throws IOException {
-        if (filename.endsWith(".csv")) {
-            Runtime.getRuntime().exec(EA.getString(EAC.JASPER_CSV_EDITOR) + " " + filename);
-        }
-        if (filename.endsWith(".xls")) {
-            Runtime.getRuntime().exec(EA.getString(EAC.JASPER_XLS_EDITOR) + " " + filename);
-        }
-    }
-
-    private static void read(String filename) throws IOException {
-        Runtime.getRuntime().exec(EA.getString(EAC.JASPER_PDF_READER) + " " + filename);
-    }
-
-    private static void view(JasperPrint jasperPrint) throws JRException {
-        JasperViewer.viewReport(jasperPrint, false);
-    }
+//  private static Map getReportParametersMap(File file, String format, Long userid, String usercode, String username, Object[] args) {
+//      Map parameters = getReportParametersMap(file, format, userid, usercode, username);
+//      if (args != null) {
+//          String pdq;
+//          String key;
+//          String str;
+//          Object val;
+//          for (int i = 0; i < args.length; i++) {
+//              if (args[i] instanceof String) {
+//                  pdq = StringUtils.trimToEmpty((String) args[i]);
+//                  if (StringUtils.isNotEmpty(pdq)) {
+//                      int p = pdq.indexOf("=");
+//                      if (p > 0) {
+//                          key = StringUtils.trimToEmpty(pdq.substring(0, p));
+//                          str = StringUtils.trimToEmpty(pdq.substring(p + 1));
+//                          if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(str)) {
+//                              val = STP.getObjeto(str);
+//                              parameters.put(key, val);
+//                              Bitacora.trace("args [" + i + "] = " + key + "=(" + val.getClass().getSimpleName() + ")" + str);
+//                          }
+//                      }
+//                  }
+//              }
+//          }
+//      }
+//      return parameters;
+//  }
+//
+//  private static void edit(String filename) throws IOException {
+//      if (filename.endsWith(".csv")) {
+//          Runtime.getRuntime().exec(EA.getString(EAC.JASPER_CSV_EDITOR) + " " + filename);
+//      }
+//      if (filename.endsWith(".xls")) {
+//          Runtime.getRuntime().exec(EA.getString(EAC.JASPER_XLS_EDITOR) + " " + filename);
+//      }
+//  }
+//
+//  private static void read(String filename) throws IOException {
+//      Runtime.getRuntime().exec(EA.getString(EAC.JASPER_PDF_READER) + " " + filename);
+//  }
+//
+//  private static void view(JasperPrint jasperPrint) throws JRException {
+//      JasperViewer.viewReport(jasperPrint, false);
+//  }
+//
 }
