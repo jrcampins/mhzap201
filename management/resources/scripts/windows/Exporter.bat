@@ -1,6 +1,6 @@
 @echo off
 set CLASSPATH=.
-call %MHZAP201_DIR%\scripts\windows\classpath.bat
+call %CRVLDIR%\resources\scripts\windows\classpath.bat
 set CLASS=com.egt.core.db.util.ExporterShell
 set JAVA_PARAMETER_LIST="%*"
 set EXPORT_RUNNER_LOG=%1_%2.log

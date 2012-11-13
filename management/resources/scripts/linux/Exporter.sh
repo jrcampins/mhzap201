@@ -1,7 +1,7 @@
 #!/bin/sh
 set +v
 CLASSPATH=.
-. $MHZAP201_DIR/scripts/linux/classpath.sh
+. $CRVLDIR/resources/scripts/linux/classpath.sh
 CLASS=com.egt.core.db.util.ExporterShell
 export JAVA_PARAMETER_LIST="$*"
 export EXPORT_RUNNER_LOG=$1_$2.log
