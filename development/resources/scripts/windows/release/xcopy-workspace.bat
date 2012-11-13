@@ -37,13 +37,15 @@ if defined junction (
     if exist latest (
         echo %junction% -d latest
         call %junction% -d latest
+        echo.
     )
-    echo %junction% -s latest %CRVLDIR%
-    call %junction% -s latest %CRVLDIR%
+    echo %junction% latest %CRVLDIR%
+    call %junction% latest %CRVLDIR%
+    echo.
 )
 
-rem pause
-rem echo.
+pause
+echo.
 
 set DVLP=%MHZAP201_VSWS%\development
 set MGMT=%MHZAP201_VSWS%\management

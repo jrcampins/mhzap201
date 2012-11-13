@@ -1,16 +1,25 @@
 set variables="%~f0"
 call:bat variables-date-time
+set PROJKEY=
+set PROJDIR=
 set HOMEDIR=
 set CRVLDIR=
-set DBMSKEY=
 set EEASKEY=
-set PROJKEY=
+set EEASDIR=
+set DBMSKEY=
+set DBMSDIR=
 call:checkHome
 if not defined variables pause
 if not defined variables goto:eof
-set HOMEDIR=%MHZAP201_HOME%
-call:setCurrentVersionDir
 set PROJKEY=mhzap201
+set PROJDIR=mhzap201
+set HOMEDIR=%MHZAP201_HOME%
+echo setCurrentVersionDir
+if exist "%HOMEDIR%\VnnRaammdd" (
+    set CRVLDIR=%HOMEDIR%\VnnRaammdd
+) else (
+    set CRVLDIR=%HOMEDIR%
+)
 call "%HOMEDIR%\variables-home.bat"
 call:checkJava
 call:checkJavaApplicationServer
@@ -23,6 +32,20 @@ goto:eof
 :bat
 call:checkFile "%~dp0%1.bat"
 if defined variables call "%~dp0%1.bat"
+goto:eof
+
+:checkHome
+if defined     MHZAP201_HOME call:checkDir "%MHZAP201_HOME%"
+if not defined MHZAP201_HOME call:notDefined MHZAP201_HOME
+if not defined variables goto:eof
+call:checkHomeFiles
+goto:eof
+
+:checkHomeFiles
+call:checkFile %MHZAP201_HOME% variables.bat
+call:checkFile %MHZAP201_HOME% variables-dbdc.bat
+call:checkFile %MHZAP201_HOME% variables-home.bat
+call:checkFile %MHZAP201_HOME% variables-j2ee.bat
 goto:eof
 
 :setCurrentVersionDir
@@ -40,27 +63,12 @@ set tokens1=
 set tokens2=
 goto:eof
 
-:checkHome
-if defined     MHZAP201_HOME call:checkDir "%MHZAP201_HOME%"
-if not defined MHZAP201_HOME call:notDefined MHZAP201_HOME
-if not defined variables goto:eof
-call:checkHomeFiles
-goto:eof
-
-:checkHomeFiles
-call:checkFile %MHZAP201_HOME% variables.bat
-call:checkFile %MHZAP201_HOME% variables-dbdc.bat
-call:checkFile %MHZAP201_HOME% variables-home.bat
-call:checkFile %MHZAP201_HOME% variables-j2ee.bat
-goto:eof
-
 :checkJava
 if defined     JAVA_HOME call:checkDir "%JAVA_HOME%"
 if not defined JAVA_HOME call:notDefined JAVA_HOME
 goto:eof
 
 :checkJavaApplicationServer
-set EEASKEY=
 set default=GlassFish
 if /i "%MHZAP201_EEAS%" == "GlassFish"  set EEASKEY=%MHZAP201_EEAS%
 if /i "%MHZAP201_EEAS%" == "JBoss"      set EEASKEY=%MHZAP201_EEAS%
@@ -73,19 +81,20 @@ if /i "%EEASKEY%" == "JBoss"      call:checkJBoss
 goto:eof
 
 :checkGlassFish
+set EEASDIR=glassfish
 if defined     GLASSFISH_HOME call:checkDir "%GLASSFISH_HOME%"
 if not defined GLASSFISH_HOME call:notDefined GLASSFISH_HOME
 call:checkFile %MHZAP201_HOME% asadmin.password
 goto:eof
 
 :checkJBoss
+set EEASDIR=jboss
 if defined     JBOSS_HOME call:checkDir "%JBOSS_HOME%"
 if not defined JBOSS_HOME call:notDefined JBOSS_HOME
 call:checkFile %MHZAP201_HOME% jbadmin.password
 goto:eof
 
 :checkDatabase
-set DBMSKEY=
 set default=PostgreSQL
 if /i "%MHZAP201_DBMS%" == "Oracle"     set DBMSKEY=%MHZAP201_DBMS%
 if /i "%MHZAP201_DBMS%" == "PostgreSQL" set DBMSKEY=%MHZAP201_DBMS%
@@ -101,18 +110,21 @@ if /i "%DBMSKEY%" == "SQLServer"  call:checkSQLServer
 goto:eof
 
 :checkOracle
+set DBMSDIR=oracle
 if defined     ORACLE_HOME  call:checkDir "%ORACLE_HOME%"
 if not defined ORACLE_HOME  call:notDefined ORACLE_HOME
 call:checkFile %MHZAP201_HOME% oradmin.password
 goto:eof
 
 :checkPostgreSQL
+set DBMSDIR=postgresql
 if defined     POSTGRESQL_HOME  call:checkDir "%POSTGRESQL_HOME%"
 if not defined POSTGRESQL_HOME  call:notDefined POSTGRESQL_HOME
 call:checkFile %MHZAP201_HOME% pgadmin.password
 goto:eof
 
 :checkSQLServer
+set DBMSDIR=sqlserver
 if defined     SQLSERVER_HOME   call:checkDir "%SQLSERVER_HOME%"
 if not defined SQLSERVER_HOME   call:notDefined SQLSERVER_HOME
 if defined     SQLSERVER_MSSQL  call:checkDir "%SQLSERVER_MSSQL%"
@@ -145,14 +157,15 @@ set variables=
 goto:eof
 
 :trace
-if not defined variables pause
-goto:eof
 set MHZAP201
+set PROJKEY
+set PROJDIR
 set HOMEDIR
 set CRVLDIR
-set DBMSKEY
 set EEASKEY
-set PROJKEY
+set EEASDIR
+set DBMSKEY
+set DBMSDIR
 set variables
 set>c:\set.log
 if not defined variables pause

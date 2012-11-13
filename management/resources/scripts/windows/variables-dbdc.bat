@@ -23,10 +23,6 @@ set dbpassfile=
 set dbname=
 set dbcurl=
 set driver=
-set LOWER_EEASKEY=
-set UPPER_EEASKEY=
-set LOWER_DBMSKEY=
-set UPPER_DBMSKEY=
 if not defined variables goto:eof
 
 if /i "%EEASKEY%" == "GlassFish"  call:setGlassFish
@@ -48,8 +44,6 @@ set aspassfile="%HOMEDIR%\asadmin.password"
 set ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
 set domain=domain1
-set LOWER_EEASKEY=glassfish
-set UPPER_EEASKEY=GLASSFISH
 goto:eof
 
 :setJBoss
@@ -64,8 +58,6 @@ set jbpassfile="%HOMEDIR%\jbadmin.password"
 set jbcst1=--user %jbuser% --passwordfile %jbpassfile%
 set jbcst2=--host %jbhost% --port %jbport% %jbcst1%
 set domain=server-one
-set LOWER_EEASKEY=jboss
-set UPPER_EEASKEY=JBOSS
 goto:eof
 
 :setOracle
@@ -82,8 +74,6 @@ set dbpassfile="%HOMEDIR%\oradmin.password"
 set dbname=MHZDB201
 set dbcurl=jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%
 set driver=oracle.jdbc.OracleDriver
-set LOWER_DBMSKEY=oracle
-set UPPER_DBMSKEY=ORACLE
 goto:eof
 
 :setPostgreSQL
@@ -99,8 +89,6 @@ set dbpassfile="%HOMEDIR%\pgadmin.password"
 set dbname=MHZDB201
 set dbcurl=jdbc:postgresql://%dbhost%:%dbport%/%dbname%
 set driver=org.postgresql.Driver
-set LOWER_DBMSKEY=postgresql
-set UPPER_DBMSKEY=POSTGRESQL
 goto:eof
 
 :setSQLServer
@@ -116,6 +104,4 @@ set dbpassfile=
 set dbname=MHZDB201
 set dbcurl=jdbc:sqlserver://%dbhost%:%dbport%;databaseName=MHZDB201
 set driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
-set LOWER_DBMSKEY=sqlserver
-set UPPER_DBMSKEY=SQLSERVER
 goto:eof
