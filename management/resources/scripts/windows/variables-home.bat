@@ -1,7 +1,7 @@
 set JAVA_HOME=%ProgramFiles%\Java\jdk1.6.0_30
 set JAVA_HOME=%ProgramFiles%\Java\jdk1.7.0_05
 
-set GLASSFISH_HOME=C:\glassfish
+set GLASSFISH_HOME=C:\glassfish\glassfish
 
 set JBOSS_HOME=C:\jboss
 
