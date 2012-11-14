@@ -11,6 +11,7 @@
 package com.egt.core.db.util;
 
 import com.egt.base.constants.CBM2;
+import com.egt.base.constants.EAB;
 import com.egt.base.enums.EnumCondicionEjeFun;
 import com.egt.base.jms.messages.ReporterMessage;
 import com.egt.base.util.BundleInformes;
@@ -520,9 +521,11 @@ public class Reporter {
         Map parameters = new HashMap();
         EnumFormatoInforme type = getReportType(format);
         String sep = System.getProperties().getProperty("file.separator");
-        String srd = file.getParent() + sep + "subreports" + sep;
         parameters.put(JRFillParameter.REPORT_CONNECTION, TLC.getConnection());
-        parameters.put("SUBREPORT_DIR", srd);
+        parameters.put("ENTERPRISE_APPLICATION_CODE", EAB.ENTERPRISE_APPLICATION_CODE);
+        parameters.put("ENTERPRISE_APPLICATION_NAME", EAB.ENTERPRISE_APPLICATION_NAME);
+        parameters.put("RESOURCES_DIR", file.getParent() + sep + "resources" + sep);
+        parameters.put("SUBREPORTS_DIR", file.getParent() + sep + "subreports" + sep);
         parameters.put("END_USER_ID", userid);
         parameters.put("END_USER_CODE", usercode);
         parameters.put("END_USER_NAME", username);
