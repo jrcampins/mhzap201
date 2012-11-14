@@ -24,7 +24,7 @@ CREATE OR REPLACE VIEW persona_con_pension_revocada (
     referencia_casa,
     numero_telefono,
     observaciones,
-    numero_causa_den_pension)
+    numero_causa_rev_pension)
 AS
 SELECT persona.codigo_persona AS cedula, persona.nombre_persona,
     utils.years_since(persona.fecha_nacimiento) as edad,
