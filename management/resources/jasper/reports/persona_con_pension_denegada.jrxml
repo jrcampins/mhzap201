@@ -8,6 +8,9 @@
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
+        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+        </parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[select * from persona_con_pension_denegada]]>
@@ -95,7 +98,7 @@
 				</staticText>
 				<image>
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="23" y="9" width="109" height="104"/>
-					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_mh.png"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_mh.png"]]></imageExpression>
 				</image>
 				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
 					<reportElement key="textField" x="858" y="8" width="75" height="13"/>

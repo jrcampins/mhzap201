@@ -12,18 +12,27 @@
 	<import value="com.egt.base.util.*"/>
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
-	<parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
-	</parameter>
-	<parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["./resources/mhzap1011.jpg"]]></defaultValueExpression>
-	</parameter>
-	<parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["./resources/mhzap1012.jpg"]]></defaultValueExpression>
-	</parameter>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
-	</parameter>
+        <parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA["mhzap201"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="ENTERPRISE_APPLICATION_NAME" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA["Gestion de Recursos"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "0.jrtx"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "1.jpg"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "2.jpg"]]></defaultValueExpression>
+        </parameter>
+        <parameter name="SUBREPORTS_DIR" class="java.lang.String" isForPrompting="false">
+            <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+        </parameter>
 	<parameter name="SUPER_REPORT" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
@@ -130,11 +139,11 @@
 				</rectangle>
 				<image hAlign="Center" vAlign="Middle">
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="430" y="10" width="90" height="92"/>
-					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_mh.png"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_mh.png"]]></imageExpression>
 				</image>
 				<image hAlign="Center" vAlign="Middle">
 					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="10" y="10" width="93" height="92"/>
-					<imageExpression class="java.lang.String"><![CDATA["./resources/logo_dgeec.jpg"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_dgeec.jpg"]]></imageExpression>
 				</image>
 				<staticText>
 					<reportElement key="staticText-2" x="170" y="33" width="200" height="17"/>
