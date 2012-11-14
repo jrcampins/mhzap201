@@ -4,6 +4,7 @@ call variables
 if not defined variables goto:eof
 if not defined f0 set f0="%~f0"
 
+set MHZAP201_WORKSPACE=W:\workspace
 call:erase "%MHZAP201_WORKSPACE%"
 if %f0% == "%~f0" pause
 goto:eof

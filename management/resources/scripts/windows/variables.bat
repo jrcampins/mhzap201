@@ -169,4 +169,5 @@ set DBMSDIR
 set variables
 set>c:\set.log
 if not defined variables pause
+echo.
 goto:eof
