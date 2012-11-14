@@ -52,28 +52,28 @@
 				<staticText>
 					<reportElement key="staticText-1" x="202" y="17" width="159" height="16"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="10"/>
+						<font fontName="Arial" size="10"/>
 					</textElement>
 					<text><![CDATA[MINISTERIO DE HACIENDA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-2" x="141" y="34" width="255" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-3" x="94" y="47" width="385" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[ "PENSION ALIMENTARIA PARA LAS PERSONAS ADULTAS MAYORES EN SITUACION DE POBREZA" ]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-4" x="199" y="73" width="165" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[CUADRO DE RESUMEN POR BARRIO]]></text>
 				</staticText>
@@ -141,7 +141,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[RESUMEN POR
  BARRIO]]></text>
@@ -149,7 +149,7 @@
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" x="160" y="101" width="242" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8" isBold="true" isItalic="true" pdfFontName="Helvetica-BoldOblique"/>
+						<font fontName="Arial" size="8" isBold="true" isItalic="true" />
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: "
 + new java.text.DecimalFormat("#,###").format($F{anho})]]></textFieldExpression>
@@ -200,7 +200,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[ENTREGADO
 PARA
@@ -216,7 +216,7 @@ CENSAR]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[CENSADO]]></text>
 				</staticText>
@@ -230,7 +230,7 @@ CENSAR]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[NO
 CENSADO]]></text>
@@ -245,7 +245,7 @@ CENSADO]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[POTENCIAL
 BENEFICIARIO
@@ -261,7 +261,7 @@ BENEFICIARIO
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[TOTAL]]></text>
 				</staticText>
@@ -275,7 +275,7 @@ BENEFICIARIO
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[CON
 CI]]></text>
@@ -290,7 +290,7 @@ CI]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[SIN
 CI]]></text>
@@ -305,7 +305,7 @@ CI]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[NO
 POTENCIAL
@@ -323,7 +323,7 @@ A 65)]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[VALIDADO, CENSADO TEKOPORA]]></text>
 				</staticText>
@@ -337,7 +337,7 @@ A 65)]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[RESULTADO DE DPNC
  (ELEGIBILIDAD)]]></text>
@@ -352,7 +352,7 @@ A 65)]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[BENEFICIARIO]]></text>
 				</staticText>
@@ -366,7 +366,7 @@ A 65)]]></text>
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="7"/>
+						<font fontName="Arial" size="7"/>
 					</textElement>
 					<text><![CDATA[NO
 BENEFICIARIO]]></text>
@@ -374,7 +374,7 @@ BENEFICIARIO]]></text>
 				<staticText>
 					<reportElement key="staticText-33" x="230" y="59" width="103" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[LEY N° 3728/09]]></text>
 				</staticText>
@@ -401,7 +401,7 @@ BENEFICIARIO]]></text>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="4" y="1" width="131" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="8"/>
+					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
 			</textField>
@@ -418,7 +418,7 @@ BENEFICIARIO]]></text>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="446" height="16" backcolor="#CCCCCC"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9" isBold="true" isItalic="true" isUnderline="false" pdfFontName="Helvetica-BoldOblique"/>
+					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false" />
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de personas solicitantes acreditadas sin objeciones:  " + $V{total_personas_solicitantes}]]></textFieldExpression>
 			</textField>

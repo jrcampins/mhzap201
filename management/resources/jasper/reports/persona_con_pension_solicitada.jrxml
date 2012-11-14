@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona_con_pension_solicitada" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="948" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona_con_pension_solicitada" pageWidth="1008" pageHeight="612" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="948" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
@@ -10,7 +10,7 @@
 	<import value="net.sf.jasperreports.engine.data.*"/>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[select * from persona_con_pension_solicitada]]>
+		<![CDATA[SELECT * FROM PERSONA_CON_PENSION_SOLICITADA]]>
 	</queryString>
 	<field name="cedula" class="java.lang.String"/>
 	<field name="nombre_persona" class="java.lang.String"/>
@@ -56,28 +56,28 @@
 				<staticText>
 					<reportElement key="staticText-1" x="395" y="12" width="159" height="22"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="12"/>
+						<font fontName="Arial" size="12"/>
 					</textElement>
 					<text><![CDATA[MINISTERIO DE HACIENDA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-2" x="282" y="35" width="384" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-3" x="176" y="53" width="597" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[ "PENSION ALIMENTARIA PARA LAS PERSONAS ADULTAS MAYORES EN SITUACION DE POBREZA" LEY N° 3728/09]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-4" x="292" y="69" width="364" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[LISTADO DE PENSIONES SOLICITADAS]]></text>
 				</staticText>
@@ -145,7 +145,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[Nº]]></text>
 				</staticText>
@@ -159,7 +159,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[NRO. C.I.]]></text>
 				</staticText>
@@ -173,7 +173,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[NOMBRES
 ]]></text>
@@ -188,7 +188,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[EDAD
 ]]></text>
@@ -203,7 +203,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
@@ -217,17 +217,17 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[FECHA DE SOLICITUD ]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" x="228" y="91" width="493" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="10" isItalic="true" pdfFontName="Helvetica-Oblique"/>
+						<font fontName="Arial" size="10" isItalic="true"/>
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: "
-+ new java.text.DecimalFormat("#,###").format($F{anho})]]></textFieldExpression>
++new DecimalFormat("0").format($F{anho})]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="780" y="34" width="78" height="13"/>
@@ -275,7 +275,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[ICV]]></text>
 				</staticText>
@@ -289,7 +289,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[DISTRITO]]></text>
 				</staticText>
@@ -303,7 +303,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[DEPARTAMENTO]]></text>
 				</staticText>
@@ -330,63 +330,63 @@
 			<textField pattern="#,##0" isBlankWhenNull="true">
 				<reportElement key="textField" x="45" y="2" width="56" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_cedula}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="102" y="2" width="205" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" x="315" y="2" width="23" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$F{edad}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="593" y="2" width="131" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField" x="724" y="2" width="106" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_solicitud_pension}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="10" y="2" width="33" height="12"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{contador_item_anho_distrito}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0.0" isBlankWhenNull="true">
 				<reportElement key="textField-7" x="830" y="2" width="109" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{indice_calidad_vida}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-8" x="341" y="2" width="119" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-9" x="462" y="2" width="129" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
 			</textField>
@@ -403,7 +403,7 @@
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="446" height="16" backcolor="#CCCCCC"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9" isBold="true" isItalic="true" isUnderline="false" pdfFontName="Helvetica-BoldOblique"/>
+					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de pensiones otorgadas:  " + $V{total_personas_solicitantes}]]></textFieldExpression>
 			</textField>

@@ -49,28 +49,28 @@
 				<staticText>
 					<reportElement key="staticText-1" x="395" y="12" width="159" height="22"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="12"/>
+						<font fontName="Arial" size="12"/>
 					</textElement>
 					<text><![CDATA[MINISTERIO DE HACIENDA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-2" x="282" y="35" width="384" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-3" x="176" y="53" width="597" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[ "PENSION ALIMENTARIA PARA LAS PERSONAS ADULTAS MAYORES EN SITUACION DE POBREZA" LEY N° 3728/09]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-4" x="292" y="69" width="364" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[LISTADO DE SOLICITANTES POR CENSAR]]></text>
 				</staticText>
@@ -138,7 +138,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[ORDEN]]></text>
 				</staticText>
@@ -152,7 +152,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[NRO. C.I.]]></text>
 				</staticText>
@@ -166,7 +166,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[NOMBRES]]></text>
 				</staticText>
@@ -180,7 +180,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[EDAD]]></text>
 				</staticText>
@@ -194,7 +194,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
@@ -208,7 +208,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[DIRECCION]]></text>
 				</staticText>
@@ -222,7 +222,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[REFERENCIA PARA LLEGAR A LA CASA]]></text>
 				</staticText>
@@ -236,7 +236,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[Nº TELÉFONO REFERENTE]]></text>
 				</staticText>
@@ -250,14 +250,14 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[NOMBRES Y APELLIDOS DEL  REFERENTE]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" x="228" y="91" width="493" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="10" isItalic="true" pdfFontName="Helvetica-Oblique"/>
+						<font fontName="Arial" size="10" isItalic="true" />
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: "
 + new java.text.DecimalFormat("#,###").format($F{anho})]]></textFieldExpression>
@@ -308,7 +308,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[II. DATOS DEL ADULTO MAYOR]]></text>
 				</staticText>
@@ -322,7 +322,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[III. DIRECCION DE LA VIVIENDA]]></text>
 				</staticText>
@@ -336,7 +336,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[IV. DATOS DEL/A REFERENTE]]></text>
 				</staticText>
@@ -363,63 +363,63 @@
 			<textField pattern="#,##0" isBlankWhenNull="true">
 				<reportElement key="textField" x="48" y="2" width="58" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_cedula}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="111" y="2" width="169" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" x="286" y="2" width="23" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$F{edad}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="313" y="2" width="106" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="424" y="2" width="134" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="8"/>
+					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="561" y="2" width="145" height="12"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="8"/>
+					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{referencia_casa}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="707" y="2" width="92" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{numero_telefono_resp_hogar}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" x="800" y="2" width="141" height="12"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_referente}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="15" y="2" width="26" height="12"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Calibri" size="9"/>
+					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{contador_item_anho_distrito}]]></textFieldExpression>
 			</textField>
@@ -436,7 +436,7 @@
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="446" height="16" backcolor="#CCCCCC"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="9" isBold="true" isItalic="true" isUnderline="false" pdfFontName="Helvetica-BoldOblique"/>
+					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false" />
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de personas solicitantes a censar:  " + $V{total_personas_solicitantes}]]></textFieldExpression>
 			</textField>

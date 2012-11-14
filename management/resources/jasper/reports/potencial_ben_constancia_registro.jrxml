@@ -139,35 +139,35 @@
 				<staticText>
 					<reportElement key="staticText-2" x="170" y="33" width="200" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[LEY DE ADULTOS MAYORES - LAM]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-4" x="103" y="66" width="327" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[CONSTANCIA DE REGISTRO DE POTENCIAL BENEFICIARIO]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-3" x="90" y="50" width="360" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[Proceso de Identificación y Validación de Potenciales Beneficiarios]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-4" x="10" y="119" width="491" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="8" isItalic="true"/>
+						<font fontName="Arial" size="8" isItalic="true"/>
 					</textElement>
 					<text><![CDATA[ Ley 3728/2009 "Que establece el derecho a la pensión alimentario para las personas adultas mayores en situación de pobreza"]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" style="default1" x="27" y="102" width="493" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="12" isBold="false" isItalic="false" pdfFontName="Helvetica-Oblique"/>
+						<font fontName="Arial" size="12" isBold="false" isItalic="false" />
 					</textElement>
 					<textFieldExpression class="java.lang.String"><![CDATA["POTENCIAL BENEFICIARIO: "+$F{codigo_potencial_ben}]]></textFieldExpression>
 				</textField>
@@ -243,7 +243,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[NOMBRES Y APELLIDOS]]></text>
 				</staticText>
@@ -257,7 +257,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[CÉDULA]]></text>
 				</staticText>
@@ -281,7 +281,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[FECHA DE NACIMIENTO]]></text>
 				</staticText>
@@ -300,7 +300,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[EDAD]]></text>
 				</staticText>
@@ -314,7 +314,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[NOMBRE DEL REFERENTE]]></text>
 				</staticText>
@@ -328,7 +328,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[TELÉFONO DEL REFERENTE]]></text>
 				</staticText>
@@ -357,7 +357,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[DEPARTAMENTO]]></text>
 				</staticText>
@@ -371,7 +371,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[DISTRITO]]></text>
 				</staticText>
@@ -385,7 +385,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
@@ -399,7 +399,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[MANZANA]]></text>
 				</staticText>
@@ -413,7 +413,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9"/>
+						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[TIPO DE ÁREA]]></text>
 				</staticText>
@@ -452,7 +452,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[DIRECCIÓN]]></text>
 				</staticText>
@@ -471,7 +471,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[	¿TIENE JUBILACIÓN?]]></text>
 				</staticText>
@@ -485,7 +485,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[FECHA DE REGISTRO]]></text>
 				</staticText>
@@ -509,7 +509,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[NOMBRE DEL RESPONSABLE DEL HOGAR]]></text>
 				</staticText>
@@ -523,7 +523,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[TELÉFONO DEL RESPONSABLE DEL HOGAR]]></text>
 				</staticText>
@@ -547,7 +547,7 @@
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="9" isBold="true"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[FIRMA]]></text>
 				</staticText>
@@ -559,7 +559,7 @@
 				<staticText>
 					<reportElement key="staticText-2" x="406" y="356" width="68" height="29"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Calibri" size="11"/>
+						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[FECHA]]></text>
 				</staticText>
