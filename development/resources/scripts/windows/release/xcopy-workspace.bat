@@ -20,14 +20,15 @@ if not defined nn goto ask
 set VR=V%nn%R%aammdd%
 set CRVL="%VR%"
 set CRVLDIR="%~dp0%VR%"
+set CRVLDIR11=%CRVLDIR:~1,-1%
 goto check
 
 :check
 echo.
 set CRVL
 echo.
-echo rmdir %CRVLDIR%
-if exist %CRVLDIR% rmdir %CRVLDIR% /s /q
+echo rd %CRVLDIR%
+if exist %CRVLDIR% rd %CRVLDIR% /s /q
 echo.
 echo md %CRVLDIR%
 md %CRVLDIR%
@@ -50,13 +51,32 @@ echo.
 set DVLP=%MHZAP201_VSWS%\development
 set MGMT=%MHZAP201_VSWS%\management
 
+pushd %MGMT%\resources\jasper
+del reports\*.pdf /s
+echo.
+del reports\*.jasper
+echo.
+del reports\web\*.jasper
+echo.
+call xcopy-resources.bat
+popd
+
 call:xcopy-folder %MGMT%                                                        %CRVLDIR% resources S
 
 rem pause
 rem echo.
 
+call:setsiono copiar el ear
+echo.
+if /i "%siono%" == "S" (
 call:xcopy-file "%MHZAP201_VSWS%\mhzap201\dist\mhzap201.ear"                    %CRVLDIR%
+)
+
+call:setsiono copiar el backup de postgresql
+echo.
+if /i "%siono%" == "S" (
 call:xcopy-file "%MHZAP201_VSWS%\management\backup\MHZDB201_%aaaammdd%.backup"  %CRVLDIR%
+)
 
 rem pause
 rem echo.
@@ -70,7 +90,7 @@ call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt"                      
 rem pause
 rem echo.
 
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup"
+set CRVLSUBDIR="%CRVLDIR11%\setup"
 set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
@@ -81,57 +101,70 @@ call:xcopy-folder %MGMT%\setup                                                  
 rem pause
 rem echo.
 
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\modules\com\oracle\ojdbc6\main"
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\resources\linux"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %CRVLSUBDIR%
+echo xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
+echo xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
+
+rem pause
+rem echo.
+
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\resources\windows"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %CRVLSUBDIR%
+echo xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
+echo xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
+
+rem pause
+rem echo.
+
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\welcome-content\mhzap201\attachments"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\welcome-content\mhzap201\spool"
+set CRVLSUBDIR
+if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+echo.
+
+rem pause
+rem echo.
+
+call:setsiono copiar los jar de los modulos jboss
+echo.
+if /i "%siono%" == "N" goto nomodjars
+
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\modules\com\oracle\ojdbc6\main"
 set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
 call:xcopy-file "%W_THIRD_PARTY%\lib\jdbc\oracle\ojdbc6.jar"                    %CRVLSUBDIR%
 
-rem pause
-rem echo.
-
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\resources\linux"
+set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\modules\com\microsoft\core\fonts\main"
 set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %CRVLSUBDIR%
-call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
-call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
+call:xcopy-file "%W_THIRD_PARTY%\lib\microsoft-core-fonts-for-the-web.jar"      %CRVLSUBDIR%
 
 rem pause
 rem echo.
 
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\resources\windows"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
-echo.
-
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %CRVLSUBDIR%
-call:xcopy-file-batch "%MGMT%\resources\jasper\fonts\*.*"                       %CRVLSUBDIR%
-call:xcopy-file-batch "%MGMT%\resources\jasper\templates\resources\*.*"         %CRVLSUBDIR%
-
-rem pause
-rem echo.
-
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\welcome-content\mhzap201\attachments"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
-echo.
-
-set CRVLSUBDIR="%CRVLDIR:~1,-1%\setup\jboss\welcome-content\mhzap201\spool"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
-echo.
-
-rem pause
-rem echo.
+:nomodjars
 
 call:renameRunTimeVelocityProperties
 
-rem pause
-rem echo.
+pause
+echo.
 
 sweep %CRVLDIR%
 
@@ -154,7 +187,7 @@ if "%2" == "" goto:eof
 set SOURCE="%~f1"
 set TARGET="%~f2"
 if not exist %SOURCE% (
-    echo copy %SOURCE% ********** no existe **********
+    echo %SOURCE% no existe!
     echo.
     pause
     echo.
@@ -172,7 +205,7 @@ if "%3" == "" goto:eof
 set SOURCE="%~f1\%3"
 set TARGET="%~f2\%3"
 if not exist %SOURCE% (
-    echo copy %SOURCE% ********** no existe **********
+    echo %SOURCE% no existe!
     echo.
     pause
     echo.
@@ -187,7 +220,7 @@ echo.
 goto:eof
 
 :renameRunTimeVelocityProperties
-set vd=%CRVLDIR:~1,-1%\resources\velocity
+set vd=%CRVLDIR11%\resources\velocity
 set vp=velocity.properties
 if not exist "%vd%\run-time-%vp%" goto:eof
 echo del "%vd%\%vp%"
@@ -196,3 +229,12 @@ echo ren "%vd%\run-time-%vp%" %vp%
 ren "%vd%\run-time-%vp%" %vp%
 echo.
 goto:eof
+
+:setsiono
+set siono=S
+set pregunta="%* ? (S/N) [%siono%] "
+:preguntar
+set /p siono=%pregunta%
+if /i "%siono%" == "S" goto:eof
+if /i "%siono%" == "N" goto:eof
+goto preguntar
