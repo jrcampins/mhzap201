@@ -33,16 +33,25 @@
     <import value="java.util.*"/>
 
     <template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
+    <parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["mhzap201"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="ENTERPRISE_APPLICATION_NAME" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Gestion de Recursos"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+    </parameter>
     <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "0.jrtx"]]></defaultValueExpression>
     </parameter>
     <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2011.jpg"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "1.jpg"]]></defaultValueExpression>
     </parameter>
     <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2012.jpg"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "2.jpg"]]></defaultValueExpression>
     </parameter>
-    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+    <parameter name="SUBREPORTS_DIR" class="java.lang.String" isForPrompting="false">
         <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
     </parameter>
     <parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
