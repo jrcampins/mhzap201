@@ -19,6 +19,7 @@ import com.egt.base.persistence.facade.RolFacadeBase;
 import com.egt.base.persistence.facade.UsuarioFacadeBase;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.constants.EAC;
+import com.egt.core.constants.SEV;
 import com.egt.core.util.EA;
 import java.text.MessageFormat;
 import javax.naming.InitialContext;
@@ -86,9 +87,15 @@ public class EJBL {
 
     private static Object lookup(Class<?> clazz) {
         Bitacora.trace(EJBL.class, "lookup", clazz);
-        String key = EAC.JNDI_WEB_FACADE_LOCATOR;
+        String key = SEV.ENTERPRISE_JNDI_EJB_PERSISTENCE_PATTERN;
         String env = System.getenv(key);
-        String jndi = StringUtils.isBlank(env) ? EA.getString(key) : env.trim();
+        String jndi;
+        if (StringUtils.isNotBlank(env)) {
+            jndi = env.trim();
+        } else {
+            key = EAC.JNDI_EJB_PERSISTENCE_PATTERN;
+            jndi = EA.getString(key);
+        }
         String base = clazz.getSimpleName();
         String arg0 = StringUtils.removeEnd(base, "Base");
         String name = MessageFormat.format(jndi, arg0);
@@ -108,7 +115,7 @@ public class EJBL {
 //
     //  <editor-fold defaultstate="collapsed">
 //  private static FacadeBeanLocatorLocal getFacadeBeanLocator() {
-//      return lookupFacadeBeanLocator(EA.getString(EAC.JNDI_WEB_FACADE_LOCATOR));
+//      return lookupFacadeBeanLocator(EA.getString(EAC.JNDI_EJB_PERSISTENCE_PATTERN));
 //  }
 //
 //  private static FacadeBeanLocatorLocal lookupFacadeBeanLocator(String name) {

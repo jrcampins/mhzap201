@@ -14,9 +14,9 @@ public class EAC {
 
     public static final String RBAC = "RBAC";
 
-    public static final String JNDI_EJB_FACADE_LOCATOR = "JNDI_EJB_FACADE_LOCATOR";
-
-    public static final String JNDI_WEB_FACADE_LOCATOR = "JNDI_WEB_FACADE_LOCATOR";
+//  public static final String JNDI_EJB_FACADE_LOCATOR = "JNDI_EJB_FACADE_LOCATOR";
+//
+    public static final String JNDI_EJB_PERSISTENCE_PATTERN = "JNDI_EJB_PERSISTENCE_PATTERN";
 
     public static final String JDBC_DATASOURCE = "JDBC_DATASOURCE";
 

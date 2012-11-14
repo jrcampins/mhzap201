@@ -34,6 +34,10 @@ public class SEV {
 
     public static final String ENTERPRISE_APPLICATION_PROPERTIES = EAC2UC + "_PROPERTIES";
 
+    public static final String ENTERPRISE_VELOCITY_PROPERTIES = EAC2UC + "_VELOCITY_PROPERTIES";
+
+    public static final String ENTERPRISE_JNDI_EJB_PERSISTENCE_PATTERN = EAC2UC + "_" + EAC.JNDI_EJB_PERSISTENCE_PATTERN;
+
     public static final String ENTERPRISE_VELOCITY_FILE_RESOURCE_LOADER_PATH = EAC2UC + "_" + EAC.VELOCITY_FILE_RESOURCE_LOADER_PATH;
 
     public static final String JAVA_PARAMETER_LIST = "JAVA_PARAMETER_LIST";
@@ -43,4 +47,5 @@ public class SEV {
     public static final String REPORT_RUNNER_LOG = "REPORT_RUNNER_LOG";
 
     public static final String SQLPRC_RUNNER_LOG = "SQLPRC_RUNNER_LOG";
+
 }

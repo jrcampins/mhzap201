@@ -13,6 +13,7 @@ import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.TLC;
 import com.egt.core.constants.EAC;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,10 +27,9 @@ import org.apache.velocity.app.Velocity;
 
 public class VelocityEngineer {
 
-//  private static final String VELOCITY_FILE_KEY = "velocity.properties.file";
-//  private static final String TEMPLATE_PATH_KEY = "file.resource.loader.path";
-//  private static final String TEMPLATE_ENCODING = "ASCII"; /* ASCII, UTF8, ...  */
     private static boolean initialized = false;
+
+    private static File propertiesFile = null;
 
     public static boolean init() {
         if (initialized) {
@@ -39,17 +39,19 @@ public class VelocityEngineer {
             return false;
         }
         Bitacora.trace(VelocityEngineer.class, "init");
-//      for (Enumeration e = BundleVelocity.getKeys(); e.hasMoreElements();) {
-//          Bitacora.trace(e.nextElement());
-//      }
         try {
-//          Properties p = new Properties();
-//          p.setProperty(TEMPLATE_PATH_KEY, BundleVelocity.getString(TEMPLATE_PATH_KEY));
-//          Velocity.init(p);
-            String filename = EA.getString(EAC.VELOCITY_SOURCE_DIR) + EA.getString(EAC.VELOCITY_PROPERTIES);
-            if (Utils.isFile(filename)) {
-//              Velocity.init(filename);
-                Velocity.init(getProperties(filename));
+            String fileName = EA.getVelocityPropertiesFile();
+            if (StringUtils.isNotBlank(fileName)) {
+                propertiesFile = new File(fileName);
+            }
+            if (propertiesFile == null || !propertiesFile.isFile()) {
+                fileName = EA.getString(EAC.VELOCITY_SOURCE_DIR) + EA.getString(EAC.VELOCITY_PROPERTIES);
+                if (StringUtils.isNotBlank(fileName)) {
+                    propertiesFile = new File(fileName);
+                }
+            }
+            if (propertiesFile != null && propertiesFile.isFile()) {
+                Velocity.init(getProperties(fileName));
                 initialized = true;
             }
         } catch (Exception ex) {
@@ -61,33 +63,38 @@ public class VelocityEngineer {
     private static Properties getProperties(String propsFilename) throws Exception {
         Bitacora.trace(VelocityEngineer.class, "getProperties", propsFilename);
         Properties p = new Properties();
-        FileInputStream inStream = new FileInputStream(propsFilename);
-        p.load(inStream);
-        inStream.close();
+        try (FileInputStream inStream = new FileInputStream(propsFilename)) {
+            p.load(inStream);
+        }
+        String comma = System.getProperties().getProperty("path.separator");
         String key;
         String value;
-        String repl1 = "$" + EAC.VELOCITY_SOURCE_DIR;
-        String with1 = EA.getString(EAC.VELOCITY_SOURCE_DIR);
+//      String repl1 = "$" + EAC.VELOCITY_SOURCE_DIR;
+//      String with1 = EA.getString(EAC.VELOCITY_SOURCE_DIR);
+//      with1 = StringUtils.trimToEmpty(with1);
+//      with1 = with1.replace('\\', '/');
         String repl2 = "$" + EAC.VELOCITY_FILE_RESOURCE_LOADER_PATH;
         String with2 = EA.getVelocityFileResourceLoaderPath();
-        String comma = System.getProperties().getProperty("path.separator");
+        if (!Utils.isPath(with2)) {
+            File templates = new File(propertiesFile.getParent(), "templates");
+            if (templates.isDirectory()) {
+                with2 = templates.getPath();
+            }
+        }
+        with2 = StringUtils.trimToEmpty(with2);
+        with2 = with2.replace(comma, ", ");
+//      with2 = with2.replace('\\', '/').replace("/", "//");
+        with2 = with2.replace('\\', '/');
         for (Enumeration e = p.propertyNames(); e.hasMoreElements();) {
             key = (String) e.nextElement();
             value = p.getProperty(key);
             Bitacora.trace(key + "=" + value);
-            if (StringUtils.isNotBlank(value) && value.startsWith(repl1)) {
-//              with1 = with1.replace('\\', '/').replace("/", "//");
-                with1 = with1.replace('\\', '/');
-//              value = value.replace(repl1, with1).replace("////", "//");
-                value = value.replace(repl1, with1);
-                p.setProperty(key, value);
-                Bitacora.trace(key + "=" + value);
-            }
+//          if (StringUtils.isNotBlank(value) && value.startsWith(repl1)) {
+//              value = value.replace(repl1, with1);
+//              p.setProperty(key, value);
+//              Bitacora.trace(key + "=" + value);
+//          }
             if (StringUtils.isNotBlank(value) && value.startsWith(repl2)) {
-                with2 = with2.replace(comma, ", ");
-//              with2 = with2.replace('\\', '/').replace("/", "//");
-                with2 = with2.replace('\\', '/');
-//              value = value.replace(repl2, with2).replace("////", "//");
                 value = value.replace(repl2, with2);
                 p.setProperty(key, value);
                 Bitacora.trace(key + "=" + value);
@@ -98,7 +105,7 @@ public class VelocityEngineer {
 
     public static StringWriter write(VelocityContext context, String tempname) throws Exception {
 //      Bitacora.trace(VelocityEngineer.class, "write", context, tempname);
-        Template template = null;
+        Template template;
         StringWriter sw = null;
         if (init()) {
             template = Velocity.getTemplate(tempname);
@@ -138,4 +145,5 @@ public class VelocityEngineer {
             }
         }
     }
+
 }
