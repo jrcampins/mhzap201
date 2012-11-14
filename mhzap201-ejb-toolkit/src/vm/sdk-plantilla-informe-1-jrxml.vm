@@ -133,16 +133,25 @@
     <import value="java.util.*"/>
 
     <template><![CDATA[${BOP}CUSTOM_STYLE_TEMPLATE${EOP}]]></template>
+    <parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["mhzap201"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="ENTERPRISE_APPLICATION_NAME" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Gestion de Recursos"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+    </parameter>
     <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2010.jrtx"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[${BOP}RESOURCES_DIR${EOP} + ${BOP}ENTERPRISE_APPLICATION_CODE${EOP} + "0.jrtx"]]></defaultValueExpression>
     </parameter>
     <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2011.jpg"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[${BOP}RESOURCES_DIR${EOP} + ${BOP}ENTERPRISE_APPLICATION_CODE${EOP} + "1.jpg"]]></defaultValueExpression>
     </parameter>
     <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
-        <defaultValueExpression><![CDATA["./resources/mhzap2012.jpg"]]></defaultValueExpression>
+        <defaultValueExpression><![CDATA[${BOP}RESOURCES_DIR${EOP} + ${BOP}ENTERPRISE_APPLICATION_CODE${EOP} + "2.jpg"]]></defaultValueExpression>
     </parameter>
-    <parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+    <parameter name="SUBREPORTS_DIR" class="java.lang.String" isForPrompting="false">
         <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
     </parameter>
     <parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false">
