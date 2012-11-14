@@ -158,14 +158,15 @@ goto:eof
 
 :trace
 set MHZAP201
-set PROJKEY
-set PROJDIR
-set HOMEDIR
-set CRVLDIR
-set EEASKEY
-set EEASDIR
-set DBMSKEY
-set DBMSDIR
+rem PROJKEY
+rem PROJDIR
+rem HOMEDIR
+rem CRVLDIR
+rem EEASKEY
+rem EEASDIR
+rem DBMSKEY
+rem DBMSDIR
+echo.
 set variables
 set>c:\set.log
 if not defined variables pause
