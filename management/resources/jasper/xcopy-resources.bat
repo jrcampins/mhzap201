@@ -1,37 +1,20 @@
 @echo off
 cd /d "%~dp0"
 
-call:xc1 %~dp0reports
-call:xc1 %~dp0reports\subreports
-call:xc1 %~dp0reports\web
-call:xc1 N:\glassfish\glassfish\domains\domain1
-call:xc1 N:\glassfish\glassfish\domains\domain1\config
+call:xc reports
+call:xc reports\subreports
+call:xc reports\web
 
 pause
 goto:eof
 
-:xc1
-set SOURCE=%~dp0templates
-set TARGET=%1
+:xc
+set SOURCE=templates\resources
 set SOURCE
+set TARGET=%1\resources
 set TARGET
 echo.
-pause
-
-call:xc3
-goto:eof
-
-call:xc2 jrtx
-call:xc2 jpg
-goto:eof
-
-:xc2
-echo xcopy "%SOURCE%\*.%1" "%TARGET%" /i /s /exclude:%~dpn0.txt
-call xcopy "%SOURCE%\*.%1" "%TARGET%" /i /s /exclude:%~dpn0.txt
+if not exist %TARGET%\nul md %TARGET%
+copy %SOURCE% %TARGET%
 echo.
-goto:eof
-
-:xc3
-if not exist "%TARGET%\resources\nul" md "%TARGET%\resources"
-copy "%SOURCE%\resources" "%TARGET%\resources"
 goto:eof
