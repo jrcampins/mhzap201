@@ -10,24 +10,14 @@
 package com.egt.base.constants;
 
 /**
- * Application Server Contants (GlassFish/JBoss)
+ * Application Server Constants (GlassFish/JBoss)
  */
 public class ASC {
 
-    /**
-     *  GlassFish
-     *      JDBC_JNDI_PREFIX = "";
-     *  JBoss
-     *      JDBC_JNDI_PREFIX = "java:";
-     */
-    public static final String JDBC_JNDI_PREFIX = "java:";
+    private static final boolean JBOSS = true;
 
-    /** 
-     *  GlassFish
-     *      JMS_JNDI_PREFIX = "";
-     *  JBoss
-     *      JMS_JNDI_PREFIX = "jms/";
-     */
-    public static final String JMS_JNDI_PREFIX = "jms/";
+    public static final String JDBC_JNDI_PREFIX = JBOSS ? "java:" : "";
+
+    public static final String JMS_JNDI_PREFIX = JBOSS ? "jms/" : "";
 
 }
