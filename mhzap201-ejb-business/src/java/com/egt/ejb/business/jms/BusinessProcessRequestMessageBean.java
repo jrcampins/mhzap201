@@ -9,6 +9,7 @@
  */
 package com.egt.ejb.business.jms;
 
+import com.egt.base.constants.ASC;
 import com.egt.base.constants.EAB;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.TLC;
@@ -25,16 +26,7 @@ import javax.jms.ObjectMessage;
 
 @MessageDriven(mappedName = "jms/BusinessProcessRequestMessageQueue", activationConfig = {
     @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
-//
-//  GlassFish/JBoss conditional compilation
-//
-//  if GlassFish: destination property must not contain special characters
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "BusinessProcessRequestMessageQueue"),
-//
-//  if JBoss:
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/BusinessProcessRequestMessageQueue"),
-//
-    @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/BusinessProcessRequestMessageQueue"),
+    @ActivationConfigProperty(propertyName = "destination", propertyValue = ASC.JMS_JNDI_PREFIX + "BusinessProcessRequestMessageQueue"),
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
 })
 public class BusinessProcessRequestMessageBean implements MessageListener {

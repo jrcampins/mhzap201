@@ -9,14 +9,25 @@
  */
 package com.egt.base.constants;
 
-public class EAB {
+/*
+ * Application Server Contants (GlassFish/JBoss)
+ */
+public class ASC {
 
-    public static final String ENTERPRISE_APPLICATION_CODE = "mhzap201";
+    /*  
+     *  GlassFish
+     *      JDBC_JNDI_PREFIX = "";
+     *  JBoss
+     *      JDBC_JNDI_PREFIX = "java:";
+     */
+    public static final String JDBC_JNDI_PREFIX = "java:";
 
-    public static final String ENTERPRISE_APPLICATION_NAME = "Gestión del Programa de Pensión Alimentaria";
-
-    public static final String ENTERPRISE_APPLICATION_JDBC_DATABASE = "jdbc/" + ENTERPRISE_APPLICATION_CODE;
-
-    public static final String ENTERPRISE_APPLICATION_JNDI_DATABASE = ASC.JDBC_JNDI_PREFIX + ENTERPRISE_APPLICATION_JDBC_DATABASE;
+    /*  
+     *  GlassFish
+     *      JMS_JNDI_PREFIX = "";
+     *  JBoss
+     *      JMS_JNDI_PREFIX = "jms/";
+     */
+    public static final String JMS_JNDI_PREFIX = "jms/";
 
 }

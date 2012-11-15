@@ -9,6 +9,7 @@
  */
 package com.egt.ejb.core.jms;
 
+import com.egt.base.constants.ASC;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.TLC;
 import javax.ejb.ActivationConfigProperty;
@@ -19,16 +20,7 @@ import javax.jms.ObjectMessage;
 
 @MessageDriven(mappedName = "jms/UtilityProcessReturnMessageQueue", activationConfig = {
     @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
-//
-//  GlassFish/JBoss conditional compilation
-//
-//  if GlassFish: destination property must not contain special characters
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "UtilityProcessReturnMessageQueue"),
-//
-//  if JBoss:
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/UtilityProcessReturnMessageQueue"),
-//
-    @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/UtilityProcessReturnMessageQueue"),
+    @ActivationConfigProperty(propertyName = "destination", propertyValue = ASC.JMS_JNDI_PREFIX + "UtilityProcessReturnMessageQueue"),
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
 })
 public class UtilityProcessReturnMessageBean implements MessageListener {

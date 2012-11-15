@@ -9,6 +9,7 @@
  */
 package com.egt.ejb.core.jms;
 
+import com.egt.base.constants.ASC;
 import com.egt.base.jms.messages.ExporterMessage;
 import com.egt.base.jms.messages.ReporterMessage;
 import com.egt.base.jms.messages.SqlAgentMessage;
@@ -24,16 +25,7 @@ import javax.jms.ObjectMessage;
 @MessageDriven(mappedName = "jms/UtilityProcessReplyMessageQueue", activationConfig = {
     @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
     @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "JMSCorrelationID IS NULL"),
-//
-//  GlassFish/JBoss conditional compilation
-//
-//  if GlassFish: destination property must not contain special characters
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "UtilityProcessReplyMessageQueue"),
-//
-//  if JBoss:
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/UtilityProcessReplyMessageQueue"),
-//
-    @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/UtilityProcessReplyMessageQueue"),
+    @ActivationConfigProperty(propertyName = "destination", propertyValue = ASC.JMS_JNDI_PREFIX + "UtilityProcessReplyMessageQueue"),
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
 })
 public class UtilityProcessReplyMessageBean implements MessageListener {

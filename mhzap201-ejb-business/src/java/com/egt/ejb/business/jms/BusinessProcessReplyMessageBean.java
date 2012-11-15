@@ -9,6 +9,7 @@
  */
 package com.egt.ejb.business.jms;
 
+import com.egt.base.constants.ASC;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.TLC;
 import javax.ejb.ActivationConfigProperty;
@@ -21,16 +22,7 @@ import javax.jms.ObjectMessage;
 @MessageDriven(mappedName = "jms/BusinessProcessReplyMessageQueue", activationConfig = {
     @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "JMSCorrelationID IS NULL"),
     @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
-//
-//  GlassFish/JBoss conditional compilation
-//
-//  if GlassFish: destination property must not contain special characters
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "BusinessProcessReplyMessageQueue"),
-//
-//  if JBoss:
-//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/BusinessProcessReplyMessageQueue"),
-//
-    @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/BusinessProcessReplyMessageQueue"),
+    @ActivationConfigProperty(propertyName = "destination", propertyValue = ASC.JMS_JNDI_PREFIX + "BusinessProcessReplyMessageQueue"),
     @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
 })
 public class BusinessProcessReplyMessageBean implements MessageListener {
@@ -63,4 +55,5 @@ public class BusinessProcessReplyMessageBean implements MessageListener {
         }
         TLC.destruir();
     }
+
 }
