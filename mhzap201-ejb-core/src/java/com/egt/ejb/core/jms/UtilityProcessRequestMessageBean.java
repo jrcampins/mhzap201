@@ -34,7 +34,8 @@ import javax.jms.ObjectMessage;
 //
 //  GlassFish/JBoss conditional compilation
 //
-//  if GlassFish: destination property must NOT be specified
+//  if GlassFish: destination property must not contain special characters
+//  @ActivationConfigProperty(propertyName = "destination", propertyValue = "UtilityProcessRequestMessageQueue"),
 //
 //  if JBoss:
 //  @ActivationConfigProperty(propertyName = "destination", propertyValue = "jms/UtilityProcessRequestMessageQueue"),
