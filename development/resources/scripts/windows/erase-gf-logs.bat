@@ -9,13 +9,15 @@ set /p siono="Eliminar logs de GlassFish ? (S/N) [%siono%] "
 if /i "%siono%" NEQ "S" goto:eof
 echo.
 
-set target="%GLASSFISH_HOME%\domains\domain1\log4j.appender.rolling.log"
 set target="%GLASSFISH_HOME%\domains\domain1\*.log"
+del %target% /q
+set target="%GLASSFISH_HOME%\domains\domain1\log4j.appender.rolling.log.*"
 del %target% /q
 echo.
 
-set target="%GLASSFISH_HOME%\domains\domain1\config\log4j.appender.rolling.log"
 set target="%GLASSFISH_HOME%\domains\domain1\config\*.log"
+del %target% /q
+set target="%GLASSFISH_HOME%\domains\domain1\config\log4j.appender.rolling.log.*"
 del %target% /q
 echo.
 
