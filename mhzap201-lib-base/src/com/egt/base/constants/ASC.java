@@ -16,7 +16,7 @@ public class ASC {
 
     private static final boolean JBOSS = true;
 
-    public static final String JDBC_JNDI_PREFIX = JBOSS ? "java:" : "";
+    public static final String JDBC_JNDI_PREFIX = JBOSS ? "java:/" : "";
 
     public static final String JMS_JNDI_PREFIX = JBOSS ? "jms/" : "";
 

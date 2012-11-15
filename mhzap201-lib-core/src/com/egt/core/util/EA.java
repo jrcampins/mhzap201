@@ -13,7 +13,6 @@ import com.egt.base.constants.EAB;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.constants.EAC;
 import com.egt.core.constants.SEV;
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Properties;
@@ -21,6 +20,7 @@ import org.apache.commons.lang.StringUtils;
 
 public class EA {
 
+    // <editor-fold defaultstate="collapsed" desc="private static final">
     private static final String LCC = "$LCC";
 
     private static final String UCC = "$UCC";
@@ -29,12 +29,6 @@ public class EA {
 
     private static final String DOC = "$DOC";
 
-//  private static final String EAR = "$EAR";
-//
-//  private static final String WAR = "$WAR";
-//
-//  private static final String WEB = "$WEB";
-//
     private static final String JDBC_DRIVER = "$" + EAC.JDBC_DRIVER;
 
     private static final String JDBC_URL = "$" + EAC.JDBC_URL;
@@ -57,10 +51,6 @@ public class EA {
 
     private static String doc;
 
-//  private static String ear;
-//
-//  private static String war;
-//
     private static String epf;
 
     private static String cpf;
@@ -90,6 +80,7 @@ public class EA {
     private static final int CHECK_FILE = 3;
 
     private static final int CHECK_PATH = 4;
+    // </editor-fold>
 
     static {
         init();
@@ -101,66 +92,33 @@ public class EA {
         loadEnvironmentVariables();
         String sep = System.getProperties().getProperty("file.separator");
         String osname1 = System.getProperties().getProperty("os.name");
-        String userdir = System.getProperties().getProperty("user.dir");
+        String osname2 = StringUtils.containsIgnoreCase(osname1, "windows") ? "windows" : "linux";
+        String rootdir = System.getProperties().getProperty("com.sun.aas.instanceRoot");
         String homedir = System.getProperties().getProperty("jboss.home.dir");
-        String platform = System.getProperties().getProperty("GlassFish_Platform");
-        boolean windows = StringUtils.containsIgnoreCase(osname1, "windows");
-//      boolean glassfish = StringUtils.containsIgnoreCase(userdir, "glassfish");
-        boolean glassfish = StringUtils.isNotBlank(platform);
-//      boolean jboss = StringUtils.containsIgnoreCase(userdir, "jboss");
+        String userdir = System.getProperties().getProperty("user.dir");
+        boolean windows = osname2.equals("windows");
+        boolean glassfish = StringUtils.isNotBlank(rootdir);
         boolean jboss = StringUtils.isNotBlank(homedir);
-        String osname2 = windows ? "windows" : "linux";
-        String rootdir = windows ? "C:" : "/opt";
-        File file1 = new File(userdir);
-        if (file1 != null && file1.isDirectory()) {
-            if (StringUtils.isBlank(dir)) {
-                dir = rootdir + sep + lcc + sep + "resources";
-                Bitacora.trace(SEV.ENTERPRISE_APPLICATION_DIR + "=" + dir);
-                isDirectory(dir);
-            }
+        if (StringUtils.isBlank(dir)) {
+            dir = (windows ? "C:" : "/opt") + sep + lcc + sep + "resources";
+            Bitacora.trace(SEV.ENTERPRISE_APPLICATION_DIR + "=" + dir);
+            isDirectory(dir);
+        }
+        if (StringUtils.isBlank(doc)) {
             if (glassfish) {
-                File file2 = file1.getParentFile();
-                if (file2 != null && file2.isDirectory()) {
-                    String domain1 = file2.getName().equals("domains") ? file1.getPath() : file2.getPath();
-                    if (StringUtils.isBlank(doc)) {
-                        doc = domain1 + sep + "docroot";
-                        Bitacora.trace(SEV.ENTERPRISE_APPLICATION_DOC + "=" + doc);
-                        isDirectory(doc);
-                    }
-//                  if (StringUtils.isBlank(ear)) {
-////                    ear = domain1 + sep + "applications" + sep + "j2ee-apps" + sep + lcc;
-//                      ear = domain1 + sep + "applications" + sep + lcc;
-//                      Bitacora.trace(SEV.ENTERPRISE_APPLICATION_EAR + "=" + ear);
-//                      isDirectory(ear);
-//                  }
-//                  if (StringUtils.isBlank(war)) {
-//                      war = ear + sep + lcc + "-" + "web" + "_" + "war";
-//                      Bitacora.trace(SEV.ENTERPRISE_APPLICATION_WAR + "=" + war);
-//                      isDirectory(war);
-//                  }
-                }
+                doc = rootdir + sep + "docroot";
             } else if (jboss) {
-                if (StringUtils.isBlank(doc)) {
-                    doc = homedir + sep + "welcome-content";
-                    Bitacora.trace(SEV.ENTERPRISE_APPLICATION_DOC + "=" + doc);
-                    isDirectory(doc);
-                }
+                doc = homedir + sep + "welcome-content";
+            } else {
+                doc = userdir + sep + "ROOT";
             }
-            if (StringUtils.isBlank(cpf)) {
-                cpf = dir + sep + "config" + sep + osname2 + sep + lcc + "." + "properties";
-                Bitacora.trace(SEV.ENTERPRISE_APPLICATION_PROPERTIES + "=" + cpf);
-                isFile(cpf);
-            }
-//          if (StringUtils.isBlank(vpf)) {
-//              vpf = dir + sep + "velocity" + sep + "velocity" + "." + "properties";
-//              Bitacora.trace(SEV.ENTERPRISE_VELOCITY_PROPERTIES + "=" + vpf);
-//              isFile(vpf);
-//          }
-//          if (StringUtils.isBlank(vlp)) {
-//              vlp = dir + sep + "velocity" + sep + "templates";
-//              Bitacora.trace(SEV.ENTERPRISE_VELOCITY_FILE_RESOURCE_LOADER_PATH + "=" + vlp);
-//              isPath(vlp);
-//          }
+            Bitacora.trace(SEV.ENTERPRISE_APPLICATION_DOC + "=" + doc);
+            isDirectory(doc);
+        }
+        if (StringUtils.isBlank(cpf)) {
+            cpf = dir + sep + "config" + sep + osname2 + sep + lcc + "." + "properties";
+            Bitacora.trace(SEV.ENTERPRISE_APPLICATION_PROPERTIES + "=" + cpf);
+            isFile(cpf);
         }
         loadConfigurationPropertiesFile();
     }
@@ -173,8 +131,15 @@ public class EA {
 //      String value;
 //      for (String name : names) {
 //          value = properties.getProperty(name);
-//          Bitacora.trace(name + "=" + value);
+//          try {
+//              Bitacora.trace(name + "=" + value);
+//          } catch (Exception ex) {
+//              Bitacora.trace(name + "=" + ex.getClass().getSimpleName());
+//          }
 //      }
+        getProperty("com.sun.aas.instanceRoot");
+        getProperty("jboss.home.dir");
+        getProperty("jboss.server.base.dir");
         getProperty("file.separator");
         getProperty("path.separator");
         getProperty("java.class.path");
@@ -184,8 +149,6 @@ public class EA {
         getProperty("user.dir");
         getProperty("user.home");
         getProperty("user.name");
-        getProperty("jboss.home.dir");
-        getProperty("GlassFish_Platform");
     }
 
     private static String getProperty(String name) {
@@ -196,17 +159,28 @@ public class EA {
 
     private static void loadEnvironmentPropertiesFile() {
         String sep = System.getProperties().getProperty("file.separator");
+        String rootdir = System.getProperties().getProperty("com.sun.aas.instanceRoot");
+        String basedir = System.getProperties().getProperty("jboss.server.base.dir");
         String userdir = System.getProperties().getProperty("user.dir");
-        epf = userdir + sep + "resources" + sep + lcc + "." + "properties";
+        boolean glassfish = StringUtils.isNotBlank(rootdir);
+        boolean jboss = StringUtils.isNotBlank(basedir);
+        if (glassfish) {
+            epf = rootdir + sep + "config";
+        } else if (jboss) {
+            epf = basedir + sep + "configuration";
+        } else {
+            epf = userdir + sep + "conf";
+        }
+        epf += sep + "environment" + sep + lcc + "." + "properties";
         environment = new Properties();
-        try {
-            if (Utils.isFile(epf)) {
+        if (Utils.isFile(epf)) {
+            try {
                 try (FileInputStream inStream = new FileInputStream(epf)) {
                     environment.load(inStream);
                 }
+            } catch (Exception ex) {
+                Bitacora.logFatal(ex);
             }
-        } catch (Exception ex) {
-            Bitacora.logFatal(ex);
         }
         ikq = !environment.isEmpty();
         if (ikq) {
@@ -229,8 +203,6 @@ public class EA {
     private static void loadEnvironmentVariables() {
         dir = getenv(SEV.ENTERPRISE_APPLICATION_DIR, CHECK_DIRECTORY);
         doc = getenv(SEV.ENTERPRISE_APPLICATION_DOC, CHECK_DIRECTORY);
-//      ear = getenv(SEV.ENTERPRISE_APPLICATION_EAR, CHECK_DIRECTORY);
-//      war = getenv(SEV.ENTERPRISE_APPLICATION_WAR, CHECK_DIRECTORY);
         cpf = getenv(SEV.ENTERPRISE_APPLICATION_PROPERTIES, CHECK_FILE);
         vpf = getenv(SEV.ENTERPRISE_VELOCITY_PROPERTIES, CHECK_FILE);
         vlp = getenv(SEV.ENTERPRISE_VELOCITY_FILE_RESOURCE_LOADER_PATH, CHECK_PATH);
@@ -256,7 +228,7 @@ public class EA {
             key = StringUtils.removeStartIgnoreCase(name, EAB.ENTERPRISE_APPLICATION_CODE + '_');
             var = environment.getProperty(key, "");
             if (StringUtils.isNotBlank(var)) {
-                printenv(epf + sep + key, var);
+                printenv(epf.substring(1 + epf.lastIndexOf(sep)) + sep + key, var);
             }
         }
         return StringUtils.trimToEmpty(var);
@@ -355,10 +327,6 @@ public class EA {
                 exists(valor);
             } else if (value.startsWith(DOC)) {
                 exists(valor);
-//          } else if (value.startsWith(EAR)) {
-//              exists(valor);
-//          } else if (value.startsWith(WAR)) {
-//              exists(valor);
             }
         }
     }
@@ -383,14 +351,6 @@ public class EA {
         return doc;
     }
 
-//  public static String getEar() {
-//      return ear;
-//  }
-//
-//  public static String getWar() {
-//      return war;
-//  }
-//
     public static String getEnvironmentPropertiesFile() {
         return epf;
     }
@@ -415,12 +375,6 @@ public class EA {
             value = value.replace(DIR, dir);
         } else if (value.startsWith(DOC)) {
             value = value.replace(DOC, doc);
-//      } else if (value.startsWith(EAR)) {
-//          value = value.replace(EAR, ear);
-//      } else if (value.startsWith(WAR)) {
-//          value = value.replace(WAR, war);
-//      } else if (value.startsWith(WEB)) {
-//          value = value.replace(WEB, URX2.WEB);
         } else if (value.startsWith(JDBC_DRIVER)) {
             value = value.replace(JDBC_DRIVER, jdbc_driver);
         } else if (value.startsWith(JDBC_URL)) {
