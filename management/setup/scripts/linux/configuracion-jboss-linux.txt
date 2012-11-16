@@ -16,6 +16,20 @@ Configuración de JBoss en Windows
 
 02. Agregar entradas a /opt/jboss/standalone/configuration/standalone-full.xml
 
+    Especifique las propiedades JDBC que corresponden a su base de datos
+    Especifique la ruta completa de la carpeta resources de mhzap201 en la propiedad mhzap201.resources.dir
+    
+    <system-properties>
+    	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+    	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+    	<property name="mhzap201.jdbc.user" value="MHZ"/>
+    	<property name="mhzap201.jdbc.password" value="sesamo"/>
+        <property name="mhzap201.resources.dir" value="/opt/mhzap201/VnnRaammdd/resources"/>
+    </system-properties>
+
+    NOTA: <system-properties> debe colocarse inmediatamente después de </extensions>
+
+
     <datasources>
 
         <datasource jta="true" jndi-name="java:/jdbc/mhzap201" pool-name="mhzap201-pool" enabled="true" use-java-context="true" spy="false" use-ccm="true">
@@ -137,23 +151,7 @@ Configuración de JBoss en Windows
 
 05. Copiar el directorio /opt/mhzap201/VnnRaammdd/setup/jboss/welcome-content/mhzap201 a /opt/jboss/welcome-content
 
-06. Copiar /opt/mhzap201/VnnRaammdd/resources/bootstrapping/jboss/oracle/linux/mhzap201.properties a /opt/jboss/standalone
+06. Ejecutar el script /opt/mhzap201/VnnRaammdd/setup/jboss/standalone/scripts/windows/standalone-start.sh
 
-07. Ajustar las variables en /opt/jboss/standalone/mhzap201.properties
-
-    Especifique la ruta completa de la carpeta resources de mhzap201 en la propiedad RESOURCES_DIR.
-    Especifique las propiedades JDBC que corresponden a su base de datos.
-    
-    RESOURCES_DIR=/opt/mhzap201/VnnRaammdd/resources
-    JDBC_DRIVER=oracle.jdbc.OracleDriver
-    JDBC_URL=jdbc:oracle:thin:@localhost:1521:XE
-    JDBC_USER=MHZ
-    JDBC_PASSWORD=sesamo
-
-    NOTA: Los valores predeterminados coinciden con los valores predeterminados de instalación.
-    
-
-08. Ejecutar el script /opt/mhzap201/VnnRaammdd/setup/jboss/standalone/scripts/windows/standalone-start.sh
-
-09. Ejecutar el script /opt/mhzap201/VnnRaammdd/setup/jboss/standalone/scripts/windows/ear-deploy.sh
+07. Ejecutar el script /opt/mhzap201/VnnRaammdd/setup/jboss/standalone/scripts/windows/ear-deploy.sh
 

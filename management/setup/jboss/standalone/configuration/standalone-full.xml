@@ -33,6 +33,14 @@
         <extension module="org.jboss.as.weld"/>
     </extensions>
 
+    <system-properties>
+    	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+    	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+    	<property name="mhzap201.jdbc.user" value="MHZ"/>
+    	<property name="mhzap201.jdbc.password" value="sesamo"/>
+        <property name="mhzap201.resources.dir" value="C:\mhzap201\VnnRaammdd\resources"/>
+    </system-properties>
+
     <management>
         <security-realms>
             <security-realm name="ManagementRealm">
