@@ -147,7 +147,7 @@ Configuración de JBoss en Windows
         set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M -Dorg.apache.el.parser.COERCE_TO_ZERO=false"
 
 
-04. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\modules\com\oracle a C:\jboss\modules\com    
+04. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\modules a C:\jboss    
 
 05. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\welcome-content\mhzap201 a C:\jboss\welcome-content
 
