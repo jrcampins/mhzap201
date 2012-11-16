@@ -132,13 +132,6 @@
             <form-error-page>/error.jsp</form-error-page>
         </form-login-config>
     </login-config>
-    <ejb-local-ref>
-        <description>FacadeBeanLocator EJB Local Reference</description>
-        <ejb-ref-name>ejb/FacadeBeanLocator</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>com.egt.ejb.persistence.FacadeBeanLocatorLocal</local>
-        <ejb-link>mhzap201-ejb-persistence.jar#FacadeBeanLocatorBean</ejb-link>
-    </ejb-local-ref>
     <resource-ref>
         <description>Visual Web generated DataSource Reference</description>
         <res-ref-name>jdbc/mhzap201</res-ref-name>
