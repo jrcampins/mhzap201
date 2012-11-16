@@ -14,9 +14,9 @@ public class EAC {
 
     public static final String RBAC = "RBAC";
 
-//  public static final String JNDI_EJB_FACADE_LOCATOR = "JNDI_EJB_FACADE_LOCATOR";
-//
-    public static final String JNDI_EJB_PERSISTENCE_PATTERN = "JNDI_EJB_PERSISTENCE_PATTERN";
+    public static final String CONTENT_ROOT_DIR = "CONTENT_ROOT_DIR";
+
+    public static final String RESOURCES_DIR = "RESOURCES_DIR";
 
     public static final String JDBC_DATASOURCE = "JDBC_DATASOURCE";
 
@@ -27,6 +27,12 @@ public class EAC {
     public static final String JDBC_USER = "JDBC_USER";
 
     public static final String JDBC_PASSWORD = "JDBC_PASSWORD";
+
+    public static final String JNDI_EJB_PERSISTENCE_PATTERN = "JNDI_EJB_PERSISTENCE_PATTERN";
+
+    public static final String VELOCITY_PROPERTIES_FILE = "VELOCITY_PROPERTIES_FILE";
+
+    public static final String VELOCITY_FILE_RESOURCE_LOADER_PATH = "VELOCITY_FILE_RESOURCE_LOADER_PATH";
 
     public static final String EXPORT_RUNNER_CMD = "EXPORT_RUNNER_CMD";
 
@@ -59,11 +65,5 @@ public class EAC {
     public static final String SPOOLED_FILES_DIR = "SPOOLED_FILES_DIR";
 
     public static final String SPOOLED_FILES_WEB_DIR = "SPOOLED_FILES_WEB_DIR";
-
-    public static final String VELOCITY_SOURCE_DIR = "VELOCITY_SOURCE_DIR";
-
-    public static final String VELOCITY_PROPERTIES = "VELOCITY_PROPERTIES";
-
-    public static final String VELOCITY_FILE_RESOURCE_LOADER_PATH = "VELOCITY_FILE_RESOURCE_LOADER_PATH";
 
 }

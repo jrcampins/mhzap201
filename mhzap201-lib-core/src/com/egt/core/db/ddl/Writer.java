@@ -38,8 +38,6 @@ public class Writer {
         boolean ok = Utils.checkEnterpriseApplicationJDBC();
         String[] params = Utils.checkEnvironmentVariableStringArray(SEV.JAVA_PARAMETER_LIST);
         ok &= (params != null);
-        ok &= Utils.checkEnterpriseApplicationProperty(EAC.VELOCITY_PROPERTIES);
-        ok &= Utils.checkEnterpriseApplicationProperty(EAC.VELOCITY_SOURCE_DIR);
         if (ok) {
             TLC.iniciar();
             String vm = params[0] + "." + "vm";
@@ -105,4 +103,5 @@ public class Writer {
             ex.printStackTrace();
         }
     }
+
 }

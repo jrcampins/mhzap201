@@ -421,7 +421,7 @@ public class UsuarioAutenticado implements Principal, Serializable {
         if (funciones == null || funciones.isEmpty()) {
             return;
         }
-        boolean dynrbac = EA.getLcc().equals(EA.getString(EAC.RBAC));
+        boolean dynrbac = EA.getLowerCaseCode().equals(EA.getString(EAC.RBAC));
 //      roles = dynrbac ? null : EJBL.getRolFacade().findAll(true);
         roles = findRoles();
         conjuntos = findConjuntos();

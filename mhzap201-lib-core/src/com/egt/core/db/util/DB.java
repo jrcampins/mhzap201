@@ -54,9 +54,7 @@ public class DB {
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url, user, password);
-        } catch (java.lang.ClassNotFoundException ex) {
-            Bitacora.logFatal(ex);
-        } catch (java.sql.SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Bitacora.logFatal(ex);
         }
         Bitacora.stamp(connection, url);
@@ -77,9 +75,7 @@ public class DB {
                 Bitacora.stamp(connection, dataSourceName);
                 return connection;
             }
-        } catch (NamingException ex) {
-            Bitacora.logFatal(ex);
-        } catch (SQLException ex) {
+        } catch (NamingException | SQLException ex) {
             Bitacora.logFatal(ex);
         }
         close(connection);

@@ -19,91 +19,96 @@ import com.egt.base.persistence.facade.RolFacadeBase;
 import com.egt.base.persistence.facade.UsuarioFacadeBase;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.constants.EAC;
-import com.egt.core.constants.SEV;
 import com.egt.core.util.EA;
 import java.text.MessageFormat;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import org.apache.commons.lang.StringUtils;
 
 public class EJBL {
+
+    public static final String ClaseRecursoFacade = "ClaseRecursoFacade";
 
     /**
      * @see com.egt.data.general.xdp3.PropiedadObjetoCachedRowSetDataProvider3
      */
     public static ClaseRecursoFacadeBase getClaseRecursoFacade() {
-        return (ClaseRecursoFacadeBase) lookup(ClaseRecursoFacadeBase.class);
+        return (ClaseRecursoFacadeBase) lookup(ClaseRecursoFacade, ClaseRecursoFacadeBase.class);
     }
+
+    public static final String ConjuntoSegmentoFacade = "ConjuntoSegmentoFacade";
 
     /**
      * @see com.egt.core.aplicacion.FiltroBusqueda
      */
     public static ConjuntoSegmentoFacadeBase getConjuntoSegmentoFacade() {
-        return (ConjuntoSegmentoFacadeBase) lookup(ConjuntoSegmentoFacadeBase.class);
+        return (ConjuntoSegmentoFacadeBase) lookup(ConjuntoSegmentoFacade, ConjuntoSegmentoFacadeBase.class);
     }
+
+    public static final String DominioFacade = "DominioFacade";
 
     /**
      * @see com.egt.core.db.xdp.ListaRecursoCachedRowSetDataProvider
      */
     public static DominioFacadeBase getDominioFacade() {
-        return (DominioFacadeBase) lookup(DominioFacadeBase.class);
+        return (DominioFacadeBase) lookup(DominioFacade, DominioFacadeBase.class);
     }
+
+    public static final String FiltroFuncionFacade = "FiltroFuncionFacade";
 
     /**
      * @see com.egt.core.aplicacion.FiltroBusqueda
      */
     public static FiltroFuncionFacadeBase getFiltroFuncionFacade() {
-        return (FiltroFuncionFacadeBase) lookup(FiltroFuncionFacadeBase.class);
+        return (FiltroFuncionFacadeBase) lookup(FiltroFuncionFacade, FiltroFuncionFacadeBase.class);
     }
+
+    public static final String FuncionFacade = "FuncionFacade";
 
     /**
      * @see com.egt.core.control.UsuarioAutenticado
      * @see com.egt.core.db.xdp.ListaRecursoCachedRowSetDataProvider
      */
     public static FuncionFacadeBase getFuncionFacade() {
-        return (FuncionFacadeBase) lookup(FuncionFacadeBase.class);
+        return (FuncionFacadeBase) lookup(FuncionFacade, FuncionFacadeBase.class);
     }
+
+    public static final String FuncionParametroFacade = "FuncionParametroFacade";
 
     /**
      * @see com.egt.data.general.xdp3.FiltroFuncionParCachedRowSetDataProvider3
      */
     public static FuncionParametroFacadeBase getFuncionParametroFacade() {
-        return (FuncionParametroFacadeBase) lookup(FuncionParametroFacadeBase.class);
+        return (FuncionParametroFacadeBase) lookup(FuncionParametroFacade, FuncionParametroFacadeBase.class);
     }
+
+    public static final String RolFacade = "RolFacade";
 
     /**
      * @see com.egt.core.control.UsuarioAutenticado
      */
     public static RolFacadeBase getRolFacade() {
-        return (RolFacadeBase) lookup(RolFacadeBase.class);
+        return (RolFacadeBase) lookup(RolFacade, RolFacadeBase.class);
     }
+
+    public static final String UsuarioFacade = "UsuarioFacade";
 
     /**
      * @see com.egt.core.control.UsuarioAutenticado
      */
     public static UsuarioFacadeBase getUsuarioFacade() {
-        return (UsuarioFacadeBase) lookup(UsuarioFacadeBase.class);
+        return (UsuarioFacadeBase) lookup(UsuarioFacade, UsuarioFacadeBase.class);
     }
 
-    private static Object lookup(Class<?> clazz) {
-        Bitacora.trace(EJBL.class, "lookup", clazz);
-        String key = SEV.ENTERPRISE_JNDI_EJB_PERSISTENCE_PATTERN;
-        String env = System.getenv(key);
-        String jndi;
-        if (StringUtils.isNotBlank(env)) {
-            jndi = env.trim();
-        } else {
-            key = EAC.JNDI_EJB_PERSISTENCE_PATTERN;
-            jndi = EA.getString(key);
-        }
+    private static Object lookup(String name, Class<?> clazz) {
+        Bitacora.trace(EJBL.class, "lookup", name, clazz);
+        String key = EAC.JNDI_EJB_PERSISTENCE_PATTERN;
+        String pattern = EA.getString(key);
+        String jndi = MessageFormat.format(pattern, name);
         String base = clazz.getSimpleName();
-        String arg0 = StringUtils.removeEnd(base, "Base");
-        String name = MessageFormat.format(jndi, arg0);
-        Bitacora.trace(key + "=" + env);
+        Bitacora.trace(key + "=" + pattern);
         Bitacora.trace(key + "=" + jndi);
-        Bitacora.trace(key + "=" + name);
         try {
-            Object facade = InitialContext.doLookup(name);
+            Object facade = InitialContext.doLookup(jndi);
             boolean assignable = facade != null && clazz.isAssignableFrom(facade.getClass());
             Bitacora.trace(name + "=" + facade);
             Bitacora.trace(base + "=" + assignable);
@@ -112,24 +117,5 @@ public class EJBL {
             throw new RuntimeException(ex);
         }
     }
-//
-    //  <editor-fold defaultstate="collapsed">
-//  private static FacadeBeanLocatorLocal getFacadeBeanLocator() {
-//      return lookupFacadeBeanLocator(EA.getString(EAC.JNDI_EJB_PERSISTENCE_PATTERN));
-//  }
-//
-//  private static FacadeBeanLocatorLocal lookupFacadeBeanLocator(String name) {
-//      Bitacora.trace(EJBL.class, "lookupFacadeBeanLocator", name);
-//      Object facadeBeanLocator;
-//      try {
-//          facadeBeanLocator = InitialContext.doLookup(name);
-//          Bitacora.trace(EJBL.class, "lookupFacadeBeanLocator", facadeBeanLocator);
-//          Bitacora.trace(EJBL.class, "lookupFacadeBeanLocator", facadeBeanLocator.getClass().getName());
-//          return (FacadeBeanLocatorLocal) facadeBeanLocator;
-//      } catch (NamingException ex) {
-//          throw new RuntimeException(ex);
-//      }
-//  }
-    //  </editor-fold>
 
 }

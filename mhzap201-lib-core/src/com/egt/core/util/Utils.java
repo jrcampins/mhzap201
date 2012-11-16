@@ -15,8 +15,10 @@ import com.egt.commons.util.ThrowableUtils;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.constants.EAC;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.Principal;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
@@ -44,8 +46,6 @@ public class Utils {
     private static final String DOUBLE_QUOTE = "\"";
 
     private static final String SINGLE_QUOTE = "'";
-
-    private static final Long X18L = 1000000000000000000L;
 
     /**
      * Digest password using MD5 algorithm and convert the result to a corresponding hex string. If exception,
@@ -78,7 +78,7 @@ public class Utils {
             }
             // Digest the credentials and return as hexadecimal
             return HexUtils.convert(md.digest());
-        } catch (Exception ex) {
+        } catch (NoSuchAlgorithmException | CloneNotSupportedException | UnsupportedEncodingException ex) {
             return credentials;
         }
     }
@@ -89,7 +89,7 @@ public class Utils {
 
     public static String getAttachedFileName(URL url) {
         String sep = System.getProperties().getProperty("file.separator");
-        String pdq = EA.getDoc() + url.getPath();
+        String pdq = EA.getString(EAC.CONTENT_ROOT_DIR) + url.getPath();
         Bitacora.trace(pdq);
         return pdq.replace('\\', '/').replace("/", sep);
     }
