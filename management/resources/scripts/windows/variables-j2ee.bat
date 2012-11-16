@@ -1,4 +1,4 @@
-set MHZAP201_DIR=
+set MHZAP201_RESOURCES_DIR=
 set MHZAP201_JDBC_DRIVER=
 set MHZAP201_JDBC_URL=
 set MHZAP201_JDBC_USER=
@@ -6,8 +6,8 @@ set MHZAP201_JDBC_PASSWORD=
 if not defined variables goto:eof
 
 set resdir=%CRVLDIR%\resources
-set MHZAP201_DIR=%resdir%
-call:checkDir "%MHZAP201_DIR%"
+set MHZAP201_RESOURCES_DIR=%resdir%
+call:checkDir "%MHZAP201_RESOURCES_DIR%"
 if defined driver set MHZAP201_JDBC_DRIVER=%driver%
 if defined dbcurl set MHZAP201_JDBC_URL=%dbcurl%
 if defined dbuser set MHZAP201_JDBC_USER=%dbuser%
