@@ -13,7 +13,6 @@ import com.egt.base.constants.EAB;
 import com.egt.base.enums.EnumTipoPagina;
 import com.egt.base.util.BundleInformes;
 import com.egt.core.db.util.DB;
-import com.egt.core.util.EA;
 import com.egt.core.util.STP;
 import com.egt.ejb.core.sqlagent.SqlAgentBrokerLocal;
 import com.egt.ejb.persistence.entity.Aplicacion;
@@ -108,20 +107,20 @@ public class ToolKitUtils {
 
     public static String getWebTmpPrj() {
         String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + "WEB_TEMPLATE_PROJECT_NAME";
-        return EA.getenv(var);
+        return System.getenv(var);
     }
 
     public static String getWebTmpPrjDir() {
         String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + "WEB_TEMPLATE_PROJECT_ROOT";
         String sep = System.getProperties().getProperty("file.separator");
-        String dir = EA.getenv(var);
+        String dir = System.getenv(var);
         return dir + sep + getWebTmpPrj() + sep;
     }
 
     public static String getWorkspaceDir() {
         String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + "WORKSPACE";
         String sep = System.getProperties().getProperty("file.separator");
-        String dir = EA.getenv(var);
+        String dir = System.getenv(var);
         return dir + sep;
     }
 
@@ -185,7 +184,7 @@ public class ToolKitUtils {
         }
         String x = string.trim();
         String y = x.replace('-', '.');
-        int i = 0;
+        int i;
         if (y.endsWith('.' + keyword)) {
             i = y.indexOf('.' + keyword);
         } else {
@@ -283,7 +282,7 @@ public class ToolKitUtils {
     }
 
     public static Collection sortIncludedFieldsMap(Map map) {
-        List<ClaseRecursoPar> list = new ArrayList<ClaseRecursoPar>(map.values());
+        List<ClaseRecursoPar> list = new ArrayList<>(map.values());
         return ColUtils.sort(list, includedFieldsComparator());
     }
 
@@ -624,10 +623,10 @@ public class ToolKitUtils {
             String codigo = tabla.equals("opcion_binaria") ? "codigo_opcion_si_no" : "codigo_" + tabla;
             String comando = "SELECT " + numero + ", " + codigo + " FROM " + tabla + " ORDER BY " + numero;
             String sql1 = comando;
-            Object resultado1 = null;
+            Object resultado1;
             ResultSet resultSet1 = null;
-            Object objeto1 = null;
-            String objeto2 = null;
+            Object objeto1;
+            String objeto2;
             try {
                 if (this.getSqlAgent().connected()) {
                     resultado1 = this.getSqlAgent().executeQuery(sql1);
@@ -659,10 +658,10 @@ public class ToolKitUtils {
             String codigo = tabla.equals("opcion_binaria") ? "codigo_opcion_si_no" : "codigo_" + tabla;
             String comando = "SELECT " + numero + ", " + codigo + " FROM " + tabla + " ORDER BY " + numero;
             String sql1 = comando;
-            Object resultado1 = null;
+            Object resultado1;
             ResultSet resultSet1 = null;
-            Object objeto1 = null;
-            String objeto2 = null;
+            Object objeto1;
+            String objeto2;
             try {
                 if (this.getSqlAgent().connected()) {
                     resultado1 = this.getSqlAgent().executeQuery(sql1);

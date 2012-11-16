@@ -124,7 +124,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
     @Override
     public void generarEntityClass(SystemTable systemTable) throws Exception {
         String root = ToolKitUtils.getWorkspaceDir();
-        String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-persistence", "entity");
+        String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-persistence", "entity");
         String filename = filedir + ToolKitUtils.getCamelCase('_' + systemTable.getTabname()) + ".java";
         ToolKitUtils utils = this.getToolKitUtils();
         VelocityContext context = new VelocityContext();
@@ -132,7 +132,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         context.put("systable", systemTable);
         write(context, "sdk-plantilla-entity-class.vm", filename);
 //
-        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLcc() + "-lib-base", "persistence.entity");
+        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLowerCaseCode() + "-lib-base", "persistence.entity");
         filename = filedir + ToolKitUtils.getCamelCase('_' + systemTable.getTabname()) + "Base.java";
         write(context, "sdk-plantilla-entity-base.vm", filename);
 //
@@ -184,7 +184,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
     @Override
     public void generarFacade(SystemTable systemTable) throws Exception {
         String root = ToolKitUtils.getWorkspaceDir();
-        String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-persistence", "facade");
+        String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-persistence", "facade");
         String filename;
         ToolKitUtils utils = this.getToolKitUtils();
         VelocityContext context = new VelocityContext();
@@ -197,7 +197,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         filename = filedir + ToolKitUtils.getCamelCase('_' + systemTable.getTabname()) + "FacadeLocal.java";
         write(context, "sdk-plantilla-facade-local.vm", filename);
 //
-        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLcc() + "-lib-base", "persistence.facade");
+        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLowerCaseCode() + "-lib-base", "persistence.facade");
         filename = filedir + ToolKitUtils.getCamelCase('_' + systemTable.getTabname()) + "FacadeBase.java";
         write(context, "sdk-plantilla-facade-base.vm", filename);
     }
@@ -221,7 +221,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
     @Override
     public void generarURX(List<Aplicacion> aplicaciones) throws Exception {
         String root = ToolKitUtils.getWorkspaceDir();
-        String filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLcc() + "-lib-base", "constants");
+        String filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLowerCaseCode() + "-lib-base", "constants");
         String filename = filedir + "URX2.java";
         ToolKitUtils utils = this.getToolKitUtils();
         utils.setPageMaps(aplicaciones);
@@ -255,7 +255,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         Utils.traceContext();
         try {
             String root = ToolKitUtils.getWorkspaceDir();
-            String filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLcc() + "-lib-base", "bundles");
+            String filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLowerCaseCode() + "-lib-base", "bundles");
             String filename;
             String query;
             ToolKitUtils utils = this.getToolKitUtils();
@@ -282,7 +282,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
             List<Aplicacion> aplicaciones = getAplicaciones("sdk-query-generar-aplicaciones-3.vm");
             context.put("aplicaciones", aplicaciones);
             context.put(EA.class.getSimpleName(), EA.class);
-            filedir = ToolKitUtils.mkLibDir(root, EA.getLcc(), "src-conf");
+            filedir = ToolKitUtils.mkLibDir(root, EA.getLowerCaseCode(), "src-conf");
             filename = filedir + "application.xml";
             write(context, "sdk-plantilla-application-xml.vm", filename);
             filename = filedir + "sun-application.xml";
@@ -335,7 +335,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         context.put("utils", utils);
         context.put("dominio", dominio);
 //
-        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLcc() + "-lib-base", "entity-constants");
+        filedir = ToolKitUtils.mkLibSrcDir(root, EA.getLowerCaseCode() + "-lib-base", "entity-constants");
         filename = filedir + ToolKitUtils.getCamelCase('_' + dominio.getCodigoDominio()) + "Constants.java";
         write(context, "sdk-plantilla-entity-constants.vm", filename);
     }
@@ -449,7 +449,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
             String query = VelocityEngineer.write(context, "sdk-query-generar-mensajes.vm").toString();
             List<Funcion> funciones = funcionFacade.findByQuery(query, EnumTipoQuery.NATIVE, REFRESH);
             String root = ToolKitUtils.getWorkspaceDir();
-            String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-business", "jms");
+            String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-business", "jms");
             String filename = filedir + "BusinessProcessBrokerBean.java";
             ToolKitUtils utils = this.getToolKitUtils();
             context.put("utils", utils);
@@ -482,7 +482,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
     public void generarBusinessMessage(Funcion funcion) throws Exception {
         if (funcion.getDominioIdDominio() != null) {
             String root = ToolKitUtils.getWorkspaceDir();
-            String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-business", "message");
+            String filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-business", "message");
             String filename = filedir + ToolKitUtils.getCamelCase('_' + funcion.getCodigoFuncion()) + "Message.java";
             ToolKitUtils utils = this.getToolKitUtils();
             VelocityContext context = new VelocityContext();
@@ -527,7 +527,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         String filedir;
         String filename;
         String root = ToolKitUtils.getWorkspaceDir();
-        filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-business", "process");
+        filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-business", "process");
         ToolKitUtils utils = this.getToolKitUtils();
         VelocityContext context = new VelocityContext();
         context.put("utils", utils);
@@ -539,7 +539,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         filename = filedir + ToolKitUtils.getCamelCase('_' + dominio.getCodigoDominio()) + "BusinessProcessLocal.java";
         write(context, "sdk-plantilla-business-process-local.vm", filename);
 //
-        filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLcc() + "-ejb-business", "process-logic");
+        filedir = ToolKitUtils.mkEjbSrcDir(root, EA.getLowerCaseCode() + "-ejb-business", "process-logic");
 //
         filename = filedir + ToolKitUtils.getCamelCase('_' + dominio.getCodigoDominio()) + "BusinessProcessLogicBean.java";
         write(context, "sdk-plantilla-business-process-logic.vm", filename);
