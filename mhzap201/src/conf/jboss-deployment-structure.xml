@@ -14,14 +14,6 @@
             <module name="org.apache.log4j" export="true" />
             <module name="org.apache.velocity" export="true" />
             <module name="org.joda.time" export="true" />
-        <!--
-            <system export="true">
-                <paths>
-                    <path name="com/sun/rowset"/>
-                    <path name="com/sun/rowset/internal"/>
-                </paths>
-            </system>
-        -->
         </dependencies>
     </deployment>
 </jboss-deployment-structure>
