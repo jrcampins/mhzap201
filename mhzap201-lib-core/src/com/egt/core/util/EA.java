@@ -128,14 +128,16 @@ public class EA {
             "com.sun.aas.instanceRoot",
             "jboss.home.dir",
             "jboss.server.base.dir",
-//          "file.separator",
-//          "path.separator",
             "java.class.path",
-//          "os.arch",
+            "java.library.path",
             "os.name",
-//          "os.version",
-//          "user.home",
-//          "user.name",
+            // "os.arch",
+            // "os.version",
+            // "file.separator",
+            // "path.separator",
+            // "line.separator",
+            // "user.name",
+            // "user.home",
             "user.dir"
         };
         for (String name : names) {

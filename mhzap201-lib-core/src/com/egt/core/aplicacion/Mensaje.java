@@ -13,6 +13,7 @@ package com.egt.core.aplicacion;
 import com.egt.core.enums.EnumSeveridadMensaje;
 
 public class Mensaje {
+
     /**
      * Conserva el valor de la propiedad texto.
      */
@@ -23,7 +24,9 @@ public class Mensaje {
      */
     private EnumSeveridadMensaje severidad;
 
-    /** Creates a new instance of Mensaje */
+    /**
+     * Creates a new instance of Mensaje
+     */
     public Mensaje() {
         texto = null;
         severidad = EnumSeveridadMensaje.TRAZA;
@@ -41,7 +44,7 @@ public class Mensaje {
 
     /**
      * Getter para propiedad texto.
-     * 
+     *
      * @return Valor de la propiedad texto.
      */
     public String getTexto() {
@@ -50,7 +53,7 @@ public class Mensaje {
 
     /**
      * Getter para propiedad severidad.
-     * 
+     *
      * @return Valor de la propiedad severidad.
      */
     public EnumSeveridadMensaje getSeveridad() {
@@ -61,4 +64,5 @@ public class Mensaje {
     public String toString() {
         return texto;
     }
+
 }

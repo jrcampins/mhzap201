@@ -14,6 +14,7 @@ import com.egt.base.jms.messages.AbstractMessage;
 import com.egt.base.util.BundleMensajes;
 import com.egt.base.util.BundleParametros;
 import com.egt.commons.util.ThrowableUtils;
+import com.egt.core.constants.SEV;
 import com.egt.core.enums.EnumSeveridadMensaje;
 import com.egt.core.util.STP;
 import com.egt.core.util.Utils;
@@ -35,40 +36,64 @@ public class Bitacora implements Serializable {
 
     private static final String METODO_TRACKING = "track";
 
+    private static boolean logging;
+
+    private static org.apache.log4j.Logger logger;
+
     private static String DASHES;
 
-    private static org.apache.log4j.Logger log4jLogger;
-//
-//  private static java.util.logging.Logger loggingLogger;
-
     private static void init() {
-        DASHES = STP.getString(150, '-');
-        String key = "logging";
-        String env = System.getenv(key);
-        String log = StringUtils.isBlank(env) ? "default" : env.trim().toLowerCase();
-        String[] ayes = new String[]{"default", "yes", "true", "on"};
-        boolean logging = ArrayUtils.contains(ayes, log);
-        trace(key + "=" + log);
-        trace(key + "=" + logging);
-        log4jLogger = null;
-//      loggingLogger = null;
+        setLogging();
+        setLogger();
+        sayHi();
+    }
+
+    private static void setLogging() {
+        String key = SEV.ENT_APP_VAR_PREFFIX + "LOGGING";
+        String log = getKeyValue(key).toLowerCase();
+        String[] noes = new String[]{"disabled", "false", "off", "on"};
+        logging = !ArrayUtils.contains(noes, log);
+        System.out.println("logging" + "=" + logging);
+    }
+
+    private static void setLogger() {
+        logger = null;
         if (logging) {
             try {
-                log4jLogger = org.apache.log4j.Logger.getLogger(Bitacora.class);
-                trace(key + "=" + log4jLogger);
-            } catch (Throwable throwable1) {
-                System.err.println(ThrowableUtils.getString(throwable1));
-//              try {
-//                  loggingLogger = java.util.logging.Logger.getLogger(Bitacora.class.getName());
-//                  trace(key + "=" + loggingLogger);
-//              } catch (Throwable throwable2) {
-//                  System.err.println(ThrowableUtils.getString(throwable2));
-//              }
+                logger = org.apache.log4j.Logger.getLogger(Bitacora.class);
+                System.out.println("logger" + "=" + logger);
+            } catch (Throwable throwable) {
+                System.err.println(ThrowableUtils.getString(throwable));
             }
-        } else {
-            trace(key + "=" + System.out.toString());
         }
-        stamp(Bitacora.class.getSimpleName());
+    }
+
+    public static void sayHi() {
+        DASHES = StringUtils.repeat("-", 100);
+        String thread = "[" + Thread.currentThread().getId() + "]" + " ";
+        String simpleName = Bitacora.class.getSimpleName();
+        if (logger != null) {
+            logger.debug(thread + DASHES);
+            logger.debug(thread + simpleName);
+            logger.debug(thread + DASHES);
+        } else {
+            System.out.println(thread + DASHES);
+            System.out.println(thread + simpleName);
+            System.out.println(thread + DASHES);
+        }
+    }
+
+    private static String getKeyValue(String key) {
+        String clave = key;
+        String value = System.getenv(clave);
+        if (StringUtils.isBlank(value)) {
+            System.out.println(clave + "=");
+            clave = key.replace('_', '.').toLowerCase();
+            value = System.getProperties().getProperty(clave);
+        }
+        String trimmed = StringUtils.trimToEmpty(value);
+        System.out.println(clave + "=" + trimmed);
+        return trimmed;
     }
 
     public static void stack() {
@@ -203,21 +228,13 @@ public class Bitacora implements Serializable {
 
     public static void logTrace(String texto, Throwable throwable) {
         String message = getLogMessage(texto, EnumSeveridadMensaje.TRAZA);
-        if (log4jLogger != null) {
-            if (log4jLogger.isDebugEnabled()) {
-                if (throwable == null) {
-                    log4jLogger.debug(message);
-                } else {
-                    log4jLogger.debug(message, throwable);
-                }
+        if (logger != null) {
+            if (throwable == null) {
+                logger.debug(message);
+            } else {
+                logger.debug(message, throwable);
             }
-//      } else if (loggingLogger != null) {
-//          if (throwable == null) {
-//              loggingLogger.log(java.util.logging.Level.FINE, message);
-//          } else {
-//              loggingLogger.log(java.util.logging.Level.FINE, message, throwable);
-//          }
-        } else {
+        } else if (logging) {
             if (throwable == null) {
                 System.out.println(message);
             } else {
@@ -237,21 +254,13 @@ public class Bitacora implements Serializable {
 
     public static void logInfo(String texto, Throwable throwable) {
         String message = getLogMessage(texto, EnumSeveridadMensaje.INFORMATIVO);
-        if (log4jLogger != null) {
-            if (log4jLogger.isInfoEnabled()) {
-                if (throwable == null) {
-                    log4jLogger.info(message);
-                } else {
-                    log4jLogger.info(message, throwable);
-                }
+        if (logger != null) {
+            if (throwable == null) {
+                logger.info(message);
+            } else {
+                logger.info(message, throwable);
             }
-//      } else if (loggingLogger != null) {
-//          if (throwable == null) {
-//              loggingLogger.log(java.util.logging.Level.INFO, message);
-//          } else {
-//              loggingLogger.log(java.util.logging.Level.INFO, message, throwable);
-//          }
-        } else {
+        } else if (logging) {
             if (throwable == null) {
                 System.out.println(message);
             } else {
@@ -271,19 +280,13 @@ public class Bitacora implements Serializable {
 
     public static void logWarn(String texto, Throwable throwable) {
         String message = getLogMessage(texto, EnumSeveridadMensaje.ADVERTENCIA);
-        if (log4jLogger != null) {
+        if (logger != null) {
             if (throwable == null) {
-                log4jLogger.warn(message);
+                logger.warn(message);
             } else {
-                log4jLogger.warn(message, throwable);
+                logger.warn(message, throwable);
             }
-//      } else if (loggingLogger != null) {
-//          if (throwable == null) {
-//              loggingLogger.log(java.util.logging.Level.WARNING, message);
-//          } else {
-//              loggingLogger.log(java.util.logging.Level.WARNING, message, throwable);
-//          }
-        } else {
+        } else if (logging) {
             if (throwable == null) {
                 System.out.println(message);
             } else {
@@ -303,19 +306,13 @@ public class Bitacora implements Serializable {
 
     public static void logError(String texto, Throwable throwable) {
         String message = getLogMessage(texto, EnumSeveridadMensaje.ERROR);
-        if (log4jLogger != null) {
+        if (logger != null) {
             if (throwable == null) {
-                log4jLogger.error(message);
+                logger.error(message);
             } else {
-                log4jLogger.error(message, throwable);
+                logger.error(message, throwable);
             }
-//      } else if (loggingLogger != null) {
-//          if (throwable == null) {
-//              loggingLogger.log(java.util.logging.Level.SEVERE, message);
-//          } else {
-//              loggingLogger.log(java.util.logging.Level.SEVERE, message, throwable);
-//          }
-        } else {
+        } else if (logging) {
             if (throwable == null) {
                 System.err.println(message);
             } else {
@@ -348,19 +345,13 @@ public class Bitacora implements Serializable {
 
     public static void logFatal(String texto, Throwable throwable) {
         String message = getLogMessage(texto, EnumSeveridadMensaje.FATAL);
-        if (log4jLogger != null) {
+        if (logger != null) {
             if (throwable == null) {
-                log4jLogger.fatal(message);
+                logger.fatal(message);
             } else {
-                log4jLogger.fatal(message, throwable);
+                logger.fatal(message, throwable);
             }
-//      } else if (loggingLogger != null) {
-//          if (throwable == null) {
-//              loggingLogger.log(java.util.logging.Level.SEVERE, message);
-//          } else {
-//              loggingLogger.log(java.util.logging.Level.SEVERE, message, throwable);
-//          }
-        } else {
+        } else if (logging) {
             if (throwable == null) {
                 System.err.println(message);
             } else {
@@ -535,9 +526,9 @@ public class Bitacora implements Serializable {
     private boolean sinDuplicados;
 
     public Bitacora() {
-        this.mensajes = new LinkedHashSet();
-        this.severidadMinima = EnumSeveridadMensaje.INFORMATIVO;
-        this.sinDuplicados = false;
+        mensajes = new LinkedHashSet();
+        severidadMinima = EnumSeveridadMensaje.INFORMATIVO;
+        sinDuplicados = false;
         stamp();
     }
 
@@ -547,7 +538,7 @@ public class Bitacora implements Serializable {
      * @return Valor de la propiedad severidadMinima.
      */
     public EnumSeveridadMensaje getSeveridadMinima() {
-        return this.severidadMinima;
+        return severidadMinima;
     }
 
     /**
@@ -565,7 +556,7 @@ public class Bitacora implements Serializable {
      * @return Valor de la propiedad sinDuplicados.
      */
     public boolean isSinDuplicados() {
-        return this.sinDuplicados;
+        return sinDuplicados;
     }
 
     /**
@@ -579,133 +570,133 @@ public class Bitacora implements Serializable {
 
     public String info(String clave) {
         String texto = getTextoMensaje(clave, null, null, null, null);
-        this.add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
+        add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
         return texto;
     }
 
     public String info(String clave, Object arg0) {
         String texto = getTextoMensaje(clave, arg0, null, null, null);
-        this.add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
+        add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
         return texto;
     }
 
     public String info(String clave, Object arg0, Object arg1) {
         String texto = getTextoMensaje(clave, arg0, arg1, null, null);
-        this.add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
+        add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
         return texto;
     }
 
     public String info(String clave, Object arg0, Object arg1, Object arg2) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, null);
-        this.add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
+        add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
         return texto;
     }
 
     public String info(String clave, Object arg0, Object arg1, Object arg2, Object arg3) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, arg3);
-        this.add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
+        add(EnumSeveridadMensaje.INFORMATIVO, texto, null);
         return texto;
     }
 
     public String warn(String clave) {
         String texto = getTextoMensaje(clave, null, null, null, null);
-        this.add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
+        add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
         return texto;
     }
 
     public String warn(String clave, Object arg0) {
         String texto = getTextoMensaje(clave, arg0, null, null, null);
-        this.add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
+        add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
         return texto;
     }
 
     public String warn(String clave, Object arg0, Object arg1) {
         String texto = getTextoMensaje(clave, arg0, arg1, null, null);
-        this.add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
+        add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
         return texto;
     }
 
     public String warn(String clave, Object arg0, Object arg1, Object arg2) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, null);
-        this.add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
+        add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
         return texto;
     }
 
     public String warn(String clave, Object arg0, Object arg1, Object arg2, Object arg3) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, arg3);
-        this.add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
+        add(EnumSeveridadMensaje.ADVERTENCIA, texto, null);
         return texto;
     }
 
     public String error(String clave) {
         String texto = getTextoMensaje(clave, null, null, null, null);
-        this.add(EnumSeveridadMensaje.ERROR, texto, null);
+        add(EnumSeveridadMensaje.ERROR, texto, null);
         return texto;
     }
 
     public String error(String clave, Object arg0) {
         String texto = getTextoMensaje(clave, arg0, null, null, null);
-        this.add(EnumSeveridadMensaje.ERROR, texto, null);
+        add(EnumSeveridadMensaje.ERROR, texto, null);
         return texto;
     }
 
     public String error(String clave, Object arg0, Object arg1) {
         String texto = getTextoMensaje(clave, arg0, arg1, null, null);
-        this.add(EnumSeveridadMensaje.ERROR, texto, null);
+        add(EnumSeveridadMensaje.ERROR, texto, null);
         return texto;
     }
 
     public String error(String clave, Object arg0, Object arg1, Object arg2) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, null);
-        this.add(EnumSeveridadMensaje.ERROR, texto, null);
+        add(EnumSeveridadMensaje.ERROR, texto, null);
         return texto;
     }
 
     public String error(String clave, Object arg0, Object arg1, Object arg2, Object arg3) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, arg3);
-        this.add(EnumSeveridadMensaje.ERROR, texto, null);
+        add(EnumSeveridadMensaje.ERROR, texto, null);
         return texto;
     }
 
     public String error(Throwable throwable) {
         String texto = throwable == null ? null : ThrowableUtils.getString(throwable);
-        this.add(EnumSeveridadMensaje.ERROR, texto, throwable);
+        add(EnumSeveridadMensaje.ERROR, texto, throwable);
         return texto;
     }
 
     public String fatal(String clave) {
         String texto = getTextoMensaje(clave, null, null, null, null);
-        this.add(EnumSeveridadMensaje.FATAL, texto, null);
+        add(EnumSeveridadMensaje.FATAL, texto, null);
         return texto;
     }
 
     public String fatal(String clave, Object arg0) {
         String texto = getTextoMensaje(clave, arg0, null, null, null);
-        this.add(EnumSeveridadMensaje.FATAL, texto, null);
+        add(EnumSeveridadMensaje.FATAL, texto, null);
         return texto;
     }
 
     public String fatal(String clave, Object arg0, Object arg1) {
         String texto = getTextoMensaje(clave, arg0, arg1, null, null);
-        this.add(EnumSeveridadMensaje.FATAL, texto, null);
+        add(EnumSeveridadMensaje.FATAL, texto, null);
         return texto;
     }
 
     public String fatal(String clave, Object arg0, Object arg1, Object arg2) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, null);
-        this.add(EnumSeveridadMensaje.FATAL, texto, null);
+        add(EnumSeveridadMensaje.FATAL, texto, null);
         return texto;
     }
 
     public String fatal(String clave, Object arg0, Object arg1, Object arg2, Object arg3) {
         String texto = getTextoMensaje(clave, arg0, arg1, arg2, arg3);
-        this.add(EnumSeveridadMensaje.FATAL, texto, null);
+        add(EnumSeveridadMensaje.FATAL, texto, null);
         return texto;
     }
 
     public String fatal(Throwable throwable) {
         String texto = throwable == null ? null : ThrowableUtils.getString(throwable);
-        this.add(EnumSeveridadMensaje.FATAL, texto, throwable);
+        add(EnumSeveridadMensaje.FATAL, texto, throwable);
         return texto;
     }
 
@@ -727,42 +718,51 @@ public class Bitacora implements Serializable {
     }
 
     private void add(EnumSeveridadMensaje severidad, String texto, Throwable throwable) {
-        log(severidad, texto, throwable);
-        if (severidad.intValue() < this.severidadMinima.intValue() || StringUtils.isBlank(texto) || (this.sinDuplicados && this.contiene(texto))) {
+        if (severidad.intValue() < severidadMinima.intValue()) {
+        } else if (StringUtils.isBlank(texto)) {
+        } else if (sinDuplicados && contiene(texto)) {
         } else {
-            this.mensajes.add(new Mensaje(texto, severidad));
+            mensajes.add(new Mensaje(texto, severidad));
         }
-
+        switch (severidad) {
+            case INFORMATIVO:
+            case ADVERTENCIA:
+            case ERROR:
+                break;
+            default:
+                log(severidad, texto, throwable);
+                break;
+        }
     }
 
     public Iterator iterator() {
-        return this.mensajes.iterator();
+        return mensajes.iterator();
     }
 
     public boolean isEmpty() {
-        return this.mensajes.isEmpty();
+        return mensajes.isEmpty();
     }
 
     public void clear() {
-        this.mensajes.clear();
-        trace(this.getClass(), "clear");
+        mensajes.clear();
+        trace(getClass(), "clear");
     }
 
     public void close() {
-        if (log4jLogger != null) {
-            log4jLogger.removeAllAppenders();
+        if (logger != null) {
+            logger.removeAllAppenders();
         }
     }
 
     public boolean contains(Object o) {
-        return this.mensajes.contains(o);
+        return mensajes.contains(o);
     }
 
     public boolean contiene(String texto) {
         if (StringUtils.isNotBlank(texto)) {
             Mensaje mensaje;
             String textoMensaje;
-            Iterator iterator = this.mensajes.iterator();
+            Iterator iterator = mensajes.iterator();
             while (iterator.hasNext()) {
                 mensaje = (Mensaje) iterator.next();
                 if (mensaje != null) {
@@ -784,7 +784,7 @@ public class Bitacora implements Serializable {
 
     public String getLogString(EnumSeveridadMensaje severidad) {
         String str = "";
-        Iterator iterator = this.mensajes.iterator();
+        Iterator iterator = mensajes.iterator();
         while (iterator.hasNext()) {
             Mensaje mensaje = (Mensaje) iterator.next();
             if (mensaje != null && mensaje.getSeveridad().intValue() >= severidad.intValue()) {

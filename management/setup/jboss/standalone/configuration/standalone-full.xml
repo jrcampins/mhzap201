@@ -70,12 +70,12 @@
             <console-handler name="CONSOLE">
                 <level name="INFO"/>
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p %s%E%n"/>
                 </formatter>
             </console-handler>
             <periodic-rotating-file-handler name="FILE">
                 <formatter>
-                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n"/>
+                    <pattern-formatter pattern="%d{HH:mm:ss,SSS} %-5p [%c] %s%E%n"/>
                 </formatter>
                 <file relative-to="jboss.server.log.dir" path="server.log"/>
                 <suffix value=".yyyy-MM-dd"/>
@@ -84,17 +84,8 @@
             <logger category="com.arjuna">
                 <level name="WARN"/>
             </logger>
-            <logger category="org.jboss.jdbc">
+            <logger category="com.egt">
                 <level name="INFO"/>
-            </logger>
-            <logger category="org.apache.tomcat.util.modeler">
-                <level name="WARN"/>
-            </logger>
-            <logger category="org.springframework">
-                <level name="WARN"/>
-            </logger>
-            <logger category="sun.rmi">
-                <level name="WARN"/>
             </logger>
             <logger category="jacorb">
                 <level name="WARN"/>
@@ -102,11 +93,29 @@
             <logger category="jacorb.config">
                 <level name="ERROR"/>
             </logger>
-            <logger category="com.egt.core">
-                <level name="DEBUG"/>
+            <logger category="org.apache.catalina.core.ContainerBase">
+                <level name="FATAL"/>
             </logger>
-            <logger category="com.egt.core.jsf.component">
+            <logger category="org.apache.tomcat.util.modeler">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.jboss.as">
                 <level name="INFO"/>
+            </logger>
+            <logger category="org.jboss.as.dependency.private">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.jboss.as.ejb3.deployment.processors">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.jboss.jdbc">
+                <level name="WARN"/>
+            </logger>
+            <logger category="org.springframework">
+                <level name="WARN"/>
+            </logger>
+            <logger category="sun.rmi">
+                <level name="WARN"/>
             </logger>
             <root-logger>
                 <level name="WARN"/>

@@ -61,19 +61,24 @@ public enum EnumSeveridadMensaje implements ListOption {
         return label;
     }
 
+    @Override
     public Object getOptionValue() {
         return Integer.valueOf(value);
     }
 
+    @Override
     public String getOptionLabel() {
         return getLabel();
     }
 
+    @Override
     public String getOptionDescription() {
         return null;
     }
 
+    @Override
     public boolean isOptionDisabled() {
         return false;
     }
+
 }
