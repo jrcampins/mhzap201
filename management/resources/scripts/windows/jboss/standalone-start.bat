@@ -6,7 +6,7 @@ call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set MHZAP201
-set logging=false
+set logging=true
 set NOPAUSE=true
 cd /d %JBOSS_HOME%
 echo %JBOSS_HOME%\bin\standalone -c standalone-full.xml

@@ -39,6 +39,7 @@
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
     	<property name="mhzap201.jdbc.password" value="sesamo"/>
         <property name="mhzap201.resources.dir" value="C:\mhzap201\VnnRaammdd\resources"/>
+        <property name="mhzap201.bootstrapping.properties.file" value="C:\mhzap201\VnnRaammdd\resources\bootstrapping\jboss\oracle\windows\mhzap201.properties"/>
     </system-properties>
 
     <management>
@@ -89,6 +90,9 @@
             <logger category="org.apache.tomcat.util.modeler">
                 <level name="WARN"/>
             </logger>
+            <logger category="org.springframework">
+                <level name="WARN"/>
+            </logger>
             <logger category="sun.rmi">
                 <level name="WARN"/>
             </logger>
@@ -98,8 +102,14 @@
             <logger category="jacorb.config">
                 <level name="ERROR"/>
             </logger>
-            <root-logger>
+            <logger category="com.egt.core">
+                <level name="DEBUG"/>
+            </logger>
+            <logger category="com.egt.core.jsf.component">
                 <level name="INFO"/>
+            </logger>
+            <root-logger>
+                <level name="WARN"/>
                 <handlers>
                     <handler name="CONSOLE"/>
                     <handler name="FILE"/>
