@@ -2,16 +2,26 @@
     <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
     <deployment>
         <dependencies>
-            <module name="com.sun.jsf-impl" export="true" />
-            <module name="javax.faces.api" export="true" />
             <module name="com.microsoft.core.fonts" export="true" />
             <module name="com.oracle.ojdbc6" export="true" />
+            <module name="com.sun.jsf-impl" export="true" services="export" />
+            <module name="javax.faces.api" export="true" />
+            <!-- Insert additional dependencies here -->
+            <module name="net.sourceforge.jasperreports" export="true" />
+            <module name="org.apache.commons.collections" export="true" />
+            <module name="org.apache.commons.io" export="true" />
+            <module name="org.apache.commons.lang" export="true" />
+            <module name="org.apache.log4j" export="true" />
+            <module name="org.apache.velocity" export="true" />
+            <module name="org.joda.time" export="true" />
+        <!--
             <system export="true">
                 <paths>
                     <path name="com/sun/rowset"/>
                     <path name="com/sun/rowset/internal"/>
                 </paths>
             </system>
+        -->
         </dependencies>
     </deployment>
 </jboss-deployment-structure>

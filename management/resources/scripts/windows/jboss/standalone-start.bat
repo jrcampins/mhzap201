@@ -15,6 +15,10 @@ call ..\setsiono eliminar los logs?
 if /i "%siono%" NEQ "S" goto RUN
 del %JBOSS_HOME%\standalone\log\*.log /q
 
+call ..\setsiono eliminar los archivos temporales?
+if /i "%siono%" NEQ "S" goto RUN
+rd C:\jboss\standalone\tmp /s /q
+
 :RUN
 set MHZAP201
 set logging=false
