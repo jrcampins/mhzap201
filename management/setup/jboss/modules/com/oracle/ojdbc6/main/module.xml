@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="urn:jboss:module:1.1" name="com.oracle.ojdbc6">
-    <resources>
-        <resource-root path="ojdbc6.jar"/>
-    </resources>
     <dependencies>
         <module name="javax.api"/>
         <module name="javax.transaction.api"/>
     </dependencies>
+
+    <!--
+    <UnresolvedDependencies>
+        <Package>oracle.i18n.text.converter</Package>
+        <Package>oracle.i18n.text</Package>
+        <Package>oracle.ons</Package>
+        <Package>oracle.security.pki</Package>
+        <Package>oracle.xdb</Package>
+        <Package>oracle.xml.parser.v2</Package>
+    </UnresolvedDependencies>
+    -->
+
+    <resources>
+        <resource-root path="ojdbc6.jar"/>
+    </resources>
+
 </module>
