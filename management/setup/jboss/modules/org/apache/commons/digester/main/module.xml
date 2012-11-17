@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.apache.commons.digester">
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="org.apache.commons.beanutils"/>
+        <module name="org.apache.commons.collections"/>
+        <module name="org.apache.commons.logging"/>
+    </dependencies>
+
+    <!--
+    <UnresolvedDependencies>
+        <Package>org.apache.commons.beanutils</Package>
+        <Package>org.apache.commons.collections</Package>
+        <Package>org.apache.commons.logging.impl</Package>
+        <Package>org.apache.commons.logging</Package>
+    </UnresolvedDependencies>
+    -->
+
+    <resources>
+        <resource-root path="commons-digester-1.7.jar"/>
+    </resources>
+
+</module>

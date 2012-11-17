@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.apache.commons.fileupload">
+    <dependencies>
+        <module name="org.apache.commons.io"/>
+    </dependencies>
+
+    <!--
+    <UnresolvedDependencies>
+        <Package>org.apache.commons.io.output</Package>
+        <Package>org.apache.commons.io</Package>
+    </UnresolvedDependencies>
+    -->
+
+    <resources>
+        <resource-root path="commons-fileupload-1.2.2.jar"/>
+    </resources>
+
+</module>

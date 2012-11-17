@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.apache.commons.javaflow">
+    <dependencies>
+        <module name="org.apache.commons.logging"/>
+    </dependencies>
+
+    <!--
+    <UnresolvedDependencies>
+        <Package>org.apache.bcel.classfile</Package>
+        <Package>org.apache.bcel.generic</Package>
+        <Package>org.apache.bcel.util</Package>
+        <Package>org.apache.bcel.verifier.exc</Package>
+        <Package>org.apache.bcel</Package>
+        <Package>org.apache.commons.jci.stores</Package>
+        <Package>org.apache.commons.logging</Package>
+        <Package>org.apache.tools.ant.taskdefs</Package>
+        <Package>org.apache.tools.ant.types</Package>
+        <Package>org.apache.tools.ant</Package>
+        <Package>org.objectweb.asm.commons</Package>
+        <Package>org.objectweb.asm.tree.analysis</Package>
+        <Package>org.objectweb.asm.tree</Package>
+        <Package>org.objectweb.asm.util</Package>
+        <Package>org.objectweb.asm</Package>
+    </UnresolvedDependencies>
+    -->
+
+    <resources>
+        <resource-root path="commons-javaflow-20060411.jar"/>
+    </resources>
+
+</module>
