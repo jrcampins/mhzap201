@@ -100,7 +100,7 @@ set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
 
-call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% jboss  E
+call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% jboss\standalone  E
 call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% oracle E
 
 rem pause
@@ -136,30 +136,6 @@ set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\welcome-content\mhzap201\spool"
 set CRVLSUBDIR
 if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
 echo.
-
-rem pause
-rem echo.
-
-goto x-080
-
-:x-070
-call:setsiono copiar los jar de los modulos jboss
-echo.
-if /i "%siono%" == "N" goto x-080
-
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\modules\com\oracle\ojdbc6\main"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
-echo.
-
-call:xcopy-file "%W_THIRD_PARTY%\lib\jdbc\oracle\ojdbc6.jar"                    %CRVLSUBDIR%
-
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\modules\com\microsoft\core\fonts\main"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
-echo.
-
-call:xcopy-file "%W_THIRD_PARTY%\lib\microsoft-core-fonts-for-the-web.jar"      %CRVLSUBDIR%
 
 rem pause
 rem echo.
