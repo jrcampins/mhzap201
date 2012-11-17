@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="net.sourceforge.jasperreports">
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="org.apache.commons.beanutils"/>
+        <module name="org.apache.commons.collections"/>
+        <module name="org.apache.commons.digester"/>
+        <module name="org.apache.commons.fileupload"/>
+        <module name="org.apache.commons.io"/>
+        <module name="org.apache.commons.javaflow"/>
+        <module name="org.apache.commons.lang"/>
+        <module name="org.apache.commons.logging"/>
+        <module name="org.apache.commons.pool"/>
+        <module name="org.apache.log4j"/>
+        <module name="org.apache.velocity"/>
+    </dependencies>
+
+    <!--
+    <UnresolvedDependencies>
+        <Package>bsh</Package>
+        <Package>com.caucho.burlap.client</Package>
+        <Package>com.caucho.burlap.io</Package>
+        <Package>com.caucho.burlap.server</Package>
+        <Package>com.caucho.hessian.client</Package>
+        <Package>com.caucho.hessian.io</Package>
+        <Package>com.caucho.hessian.server</Package>
+        <Package>com.ibatis.common.util</Package>
+        <Package>com.ibatis.sqlmap.client.event</Package>
+        <Package>com.ibatis.sqlmap.client</Package>
+        <Package>com.ibatis.sqlmap.engine.impl</Package>
+        <Package>com.ibatis.sqlmap.engine.transaction</Package>
+        <Package>com.ibatis.sqlmap.engine.type</Package>
+        <Package>com.ibm.wsspi.uow</Package>
+        <Package>com.jamonapi</Package>
+        <Package>com.mchange.v2.c3p0</Package>
+        <Package>commonj.timers</Package>
+        <Package>commonj.work</Package>
+        <Package>edu.emory.mathcs.backport.java.util.concurrent</Package>
+        <Package>freemarker.cache</Package>
+        <Package>freemarker.template</Package>
+        <Package>groovy.lang</Package>
+        <Package>net.sf.cglib.asm</Package>
+        <Package>net.sf.cglib.core</Package>
+        <Package>net.sf.cglib.proxy</Package>
+        <Package>net.sf.cglib.transform.impl</Package>
+        <Package>net.sf.ehcache.bootstrap</Package>
+        <Package>net.sf.ehcache.constructs.blocking</Package>
+        <Package>net.sf.ehcache.event</Package>
+        <Package>net.sf.ehcache.store</Package>
+        <Package>net.sf.ehcache</Package>
+        <Package>oracle.classloader.util</Package>
+        <Package>oracle.toplink.essentials.ejb.cmp3</Package>
+        <Package>oracle.toplink.essentials.internal.databaseaccess</Package>
+        <Package>oracle.toplink.essentials.internal.sessions</Package>
+        <Package>oracle.toplink.essentials.sessions</Package>
+        <Package>oracle.toplink.exceptions</Package>
+        <Package>oracle.toplink.expressions</Package>
+        <Package>oracle.toplink.internal.databaseaccess</Package>
+        <Package>oracle.toplink.jndi</Package>
+        <Package>oracle.toplink.logging</Package>
+        <Package>oracle.toplink.publicinterface</Package>
+        <Package>oracle.toplink.queryframework</Package>
+        <Package>oracle.toplink.sessionbroker</Package>
+        <Package>oracle.toplink.sessions</Package>
+        <Package>oracle.toplink.threetier</Package>
+        <Package>oracle.toplink.tools.sessionconfiguration</Package>
+        <Package>oracle.toplink.tools.sessionmanagement</Package>
+        <Package>org.apache.axis.encoding.ser</Package>
+        <Package>org.apache.catalina.loader</Package>
+        <Package>org.apache.commons.attributes</Package>
+        <Package>org.apache.commons.collections.map</Package>
+        <Package>org.apache.commons.collections</Package>
+        <Package>org.apache.commons.fileupload.disk</Package>
+        <Package>org.apache.commons.fileupload.servlet</Package>
+        <Package>org.apache.commons.fileupload</Package>
+        <Package>org.apache.commons.httpclient.methods</Package>
+        <Package>org.apache.commons.httpclient.params</Package>
+        <Package>org.apache.commons.httpclient</Package>
+        <Package>org.apache.commons.logging</Package>
+        <Package>org.apache.commons.pool.impl</Package>
+        <Package>org.apache.commons.pool</Package>
+        <Package>org.apache.log4j.xml</Package>
+        <Package>org.apache.log4j</Package>
+        <Package>org.apache.openjpa.persistence</Package>
+        <Package>org.apache.taglibs.standard.lang.support</Package>
+        <Package>org.apache.velocity.app</Package>
+        <Package>org.apache.velocity.exception</Package>
+        <Package>org.apache.velocity.runtime.log</Package>
+        <Package>org.apache.velocity.runtime.resource.loader</Package>
+        <Package>org.apache.velocity.runtime.resource</Package>
+        <Package>org.apache.velocity.runtime</Package>
+        <Package>org.apache.velocity</Package>
+        <Package>org.aspectj.bridge</Package>
+        <Package>org.aspectj.lang.annotation</Package>
+        <Package>org.aspectj.lang.reflect</Package>
+        <Package>org.aspectj.lang</Package>
+        <Package>org.aspectj.runtime.internal</Package>
+        <Package>org.aspectj.util</Package>
+        <Package>org.aspectj.weaver.ast</Package>
+        <Package>org.aspectj.weaver.bcel</Package>
+        <Package>org.aspectj.weaver.internal.tools</Package>
+        <Package>org.aspectj.weaver.loadtime</Package>
+        <Package>org.aspectj.weaver.patterns</Package>
+        <Package>org.aspectj.weaver.reflect</Package>
+        <Package>org.aspectj.weaver.tools</Package>
+        <Package>org.aspectj.weaver</Package>
+        <Package>org.codehaus.groovy.control</Package>
+        <Package>org.enhydra.jdbc.core</Package>
+        <Package>org.hibernate.cfg</Package>
+        <Package>org.hibernate.classic</Package>
+        <Package>org.hibernate.connection</Package>
+        <Package>org.hibernate.context</Package>
+        <Package>org.hibernate.criterion</Package>
+        <Package>org.hibernate.dialect</Package>
+        <Package>org.hibernate.ejb</Package>
+        <Package>org.hibernate.engine</Package>
+        <Package>org.hibernate.event.def</Package>
+        <Package>org.hibernate.event</Package>
+        <Package>org.hibernate.exception</Package>
+        <Package>org.hibernate.impl</Package>
+        <Package>org.hibernate.persister.entity</Package>
+        <Package>org.hibernate.tool.hbm2ddl</Package>
+        <Package>org.hibernate.transaction</Package>
+        <Package>org.hibernate.type</Package>
+        <Package>org.hibernate.usertype</Package>
+        <Package>org.hibernate.util</Package>
+        <Package>org.hibernate</Package>
+        <Package>org.jruby.ast</Package>
+        <Package>org.jruby.exceptions</Package>
+        <Package>org.jruby.javasupport</Package>
+        <Package>org.jruby.runtime.builtin</Package>
+        <Package>org.jruby.runtime</Package>
+        <Package>org.jruby</Package>
+        <Package>org.objectweb.jotm</Package>
+        <Package>org.quartz.impl.jdbcjobstore</Package>
+        <Package>org.quartz.impl</Package>
+        <Package>org.quartz.simpl</Package>
+        <Package>org.quartz.spi</Package>
+        <Package>org.quartz.utils</Package>
+        <Package>org.quartz.xml</Package>
+        <Package>org.quartz</Package>
+    </UnresolvedDependencies>
+    -->
+
+    <resources>
+        <resource-root path="iText-2.1.7.jar"/>
+        <resource-root path="jasperreports-4.0.0.jar"/>
+        <resource-root path="jasperreports-chart-themes-4.0.0.jar"/>
+        <resource-root path="jasperreports-extensions-3.5.3.jar"/>
+        <resource-root path="jasperreports-fonts-4.0.0.jar"/>
+        <resource-root path="jcommon-1.0.15.jar"/>
+        <resource-root path="jdt-compiler-3.1.1.jar"/>
+        <resource-root path="jfreechart-1.0.12.jar"/>
+        <resource-root path="jxl-2.6.10.jar"/>
+        <resource-root path="poi-3.6-20091214.jar"/>
+        <resource-root path="spring.jar"/>
+    </resources>
+
+</module>
