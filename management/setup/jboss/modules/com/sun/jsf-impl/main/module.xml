@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2011, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  -->
+
+<module xmlns="urn:jboss:module:1.1" name="com.sun.jsf-impl">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <dependencies>
+        <module name="javax.faces.api"/>
+        <module name="javaee.api"/>
+        <module name="javax.servlet.jstl.api"/>
+        <module name="org.apache.xerces" services="import"/>
+        <module name="org.apache.xalan" services="import"/>
+        <!-- Insert additional dependencies here -->
+        <module name="javax.api"/>
+        <module name="javax.servlet.api"/>
+        <module name="org.apache.commons.io"/>
+        <module name="sun.jdk"/>
+        <system export="true">
+            <paths>
+                <path name="com/sun/rowset"/>
+                <path name="com/sun/rowset/internal"/>
+            </paths>
+        </system>
+    </dependencies>
+
+    <resources>
+        <resource-root path="jsf-impl-2.1.7-jbossorg-2.jar"/>
+        <!-- com.sun.jsf-impl-extensions -->
+        <resource-root path="jsf-extensions-common-0.1.jar"/>
+        <resource-root path="jsf-extensions-dynamic-faces-0.1.jar"/>
+        <!-- com.sun.jsf-impl-support -->
+        <resource-root path="appbase.jar"/>
+        <resource-root path="dataprovider.jar"/>
+        <resource-root path="jsfcl.jar"/>
+        <resource-root path="sqlx.jar"/>
+        <!-- com.sun.jsf-impl-web-extensions -->
+        <resource-root path="errorhandler.jar"/>
+        <!-- com.sun.jsf-impl-webui -->
+        <resource-root path="json-2.jar"/>
+        <resource-root path="webui-jsf-suntheme.jar"/>
+        <resource-root path="webui-jsf-suntheme_es.jar"/>
+        <resource-root path="webui-jsf.jar"/>
+        <!-- org.apache.commons.fileupload -->
+        <resource-root path="commons-fileupload-1.2.2.jar"/>
+        <!-- Insert additional resources here -->
+    </resources>
+</module>
