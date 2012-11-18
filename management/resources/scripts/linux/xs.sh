@@ -40,6 +40,6 @@ if [ -f "$0" ]; then
     done
     unset subdirectorio archivo
 else
-    echo "Modo de empleo: bash $me"
+    echo "Modo de empleo: bash $me.sh"
 fi
 unset me
