@@ -9,4 +9,5 @@ call variables "%~f0"
 if not defined variables goto EOJ
 
 set NOPAUSE=
+echo %JBADMIN% %JBDOMAINCST2% command=:shutdown
 %JBADMIN% %JBDOMAINCST2% command=:shutdown

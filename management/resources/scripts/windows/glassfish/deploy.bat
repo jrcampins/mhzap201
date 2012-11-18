@@ -5,9 +5,11 @@ call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
 if not defined variables goto EOJ
+if not defined MHZAP201_DIST set MHZAP201_DIST=%CRVLDIR%
+set ear=%MHZAP201_DIST%\%PROJKEY%.ear
 echo.
-echo %ASADMIN% %GFDOMAINCST2% deploy --property compatibility=v2 %CRVLDIR%\%PROJKEY%.ear
-call %ASADMIN% %GFDOMAINCST2% deploy --property compatibility=v2 %CRVLDIR%\%PROJKEY%.ear
+echo %ASADMIN% %GFDOMAINCST2% deploy --property %ear%
+call %ASADMIN% %GFDOMAINCST2% deploy --property %ear%
 echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components
 call %ASADMIN% %GFDOMAINCST2% list-components

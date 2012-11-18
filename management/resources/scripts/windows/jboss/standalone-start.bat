@@ -7,5 +7,5 @@ if /i "%siono%" NEQ "S" goto:eof
 
 set NOPAUSE=true
 cd /d %JBOSS_HOME%
-echo %JBOSS_HOME%\bin\standalone --server-config standalone-full.xml --properties=standalone-full.properties -Djboss.socket.binding.port-offset=10000
+rem %JBOSS_HOME%\bin\standalone --server-config standalone-full.xml --properties=standalone-full.properties -Djboss.socket.binding.port-offset=0
 bin\standalone -c standalone-full.xml
