@@ -2,16 +2,10 @@
 Configuración de JBoss en Windows
 --------------------------------------------------------------------------------
 
-01. Cambiar 8080 por 8082 en los archivos xml de jboss (12 veces en 8 archivos)
+01. Hacer una copia de respaldo de los siguientes archivos:
 
-        standalone-hornetq-colocated.xml
-        standalone-jts.xml
-        standalone-xts.xml
-        domain.xml
-        standalone-full-ha.xml
-        standalone-full.xml
-        standalone-ha.xml
-        standalone.xml
+    /opt/jboss/bin/standalone.conf
+    /opt/jboss/standalone/configuration/standalone-full.xml
 
 
 02. Agregar entradas a /opt/jboss/standalone/configuration/standalone-full.xml
@@ -20,6 +14,7 @@ Configuración de JBoss en Windows
     Especifique la ruta completa de la carpeta resources de mhzap201 en la propiedad mhzap201.resources.dir
     
     <system-properties>
+        <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
     	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
     	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
@@ -144,7 +139,7 @@ Configuración de JBoss en Windows
 
     Colocar:
 
-        set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M -Dorg.apache.el.parser.COERCE_TO_ZERO=false"
+        set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M"
 
 
 04. Copiar el directorio /opt/mhzap201/VnnRaammdd/setup/jboss/modules a /opt/jboss    

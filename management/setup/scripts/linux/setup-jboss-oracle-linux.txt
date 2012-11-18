@@ -81,5 +81,5 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
 
 09. Comprobar el funcionamiento de la aplicación.
 
-    NOTA: el link de la aplicación es http://localhost:8082/mhzap201-web/
+    NOTA: el link de la aplicación es http://localhost:8080/mhzap201-web/
 

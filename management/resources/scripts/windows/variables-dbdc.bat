@@ -43,6 +43,7 @@ set aspass=admin
 set aspassfile="%HOMEDIR%\asadmin.password"
 set ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
+set ascst2=--host %ashost% --port %asport%
 set domain=domain1
 goto:eof
 
@@ -51,12 +52,13 @@ rem
 rem parametros para la conexion al servidor de aplicaciones JBoss
 rem
 set jbhost=localhost
-set jbport=9990
+set jbport=9999
 set jbuser=admin
 set jbpass=sesamo
 set jbpassfile="%HOMEDIR%\jbadmin.password"
 set jbcst1=--user %jbuser% --passwordfile %jbpassfile%
-set jbcst2=--host %jbhost% --port %jbport% %jbcst1%
+set jbcst2=--connect controller=%jbhost%:%jbport% %jbcst1%
+set jbcst2=--connect controller=%jbhost%:%jbport%
 set domain=server-one
 goto:eof
 
