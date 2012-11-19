@@ -14,8 +14,8 @@ goto:eof
 :set-root-dir-loop
 set currdir=%CD%
 set currdir
-if exist root (
-    if not exist root\nul (
+if exist ROOT (
+    if not exist ROOT\nul (
         set ROOTDIR=%currdir%
         goto:eof
     )

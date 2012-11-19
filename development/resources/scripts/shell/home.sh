@@ -9,7 +9,7 @@ while true
 do
     pwd
     currdir=$(pwd)
-    if [ -f "home" ]; then
+    if [ -f "HOME" ]; then
         HOMEDIR=$currdir
         break
     fi

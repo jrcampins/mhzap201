@@ -14,8 +14,8 @@ goto:eof
 :set-home-dir-loop
 set currdir=%CD%
 set currdir
-if exist home (
-    if not exist home\nul (
+if exist HOME (
+    if not exist HOME\nul (
         set HOMEDIR=%currdir%
         goto:eof
     )
