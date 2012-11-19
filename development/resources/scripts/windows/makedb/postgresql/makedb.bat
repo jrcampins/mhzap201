@@ -27,7 +27,7 @@ if %xerrorlevel% GEQ 1 goto EOJ
 rem echo copy-userdata
 rem if %xerrorlevel% GEQ 1 goto EOJ
 
-cd /d "%MHZAP201_VSWS%\management\resources\scripts\windows\%dbms%"
+cd /d "%MHZAP201_SOURCE%\management\resources\scripts\windows\%dbms%"
 
 call dropdb
 if %xerrorlevel% GEQ 1 goto EOJ

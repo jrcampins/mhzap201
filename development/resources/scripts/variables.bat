@@ -1,4 +1,4 @@
-set CVS=%MHZAP201_VSWS%
+set CVS=%MHZAP201_SOURCE%
 set CAP=mhzap201
 set CDB=MHZDB201
 

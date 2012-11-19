@@ -10,7 +10,7 @@ goto:eof
 set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components
-for /D %%d in (%MHZAP201_VSWS%\*) do call:sub2 %%d
+for /D %%d in (%MHZAP201_SOURCE%\*) do call:sub2 %%d
 echo.
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components

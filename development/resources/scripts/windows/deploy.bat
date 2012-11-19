@@ -10,8 +10,8 @@ goto:eof
 set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components
-REM for /D %%d in (%MHZAP201_VSWS%\*) do call:sub2 %%d --property "compatibility=v2"
-    for /D %%d in (%MHZAP201_VSWS%\*) do call:sub2 %%d
+REM for /D %%d in (%MHZAP201_SOURCE%\*) do call:sub2 %%d --property "compatibility=v2"
+    for /D %%d in (%MHZAP201_SOURCE%\*) do call:sub2 %%d
 echo.
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components

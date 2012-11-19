@@ -1,6 +1,6 @@
 @echo off
 echo.
-set   TARGET=%MHZAP201_VSWS%\mhzap201\src\resources\lib
+set   TARGET=%MHZAP201_SOURCE%\mhzap201\src\resources\lib
 set   TARGET
 del   %TARGET%\*.jar
 echo.

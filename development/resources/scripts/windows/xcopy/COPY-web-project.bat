@@ -1,7 +1,7 @@
 set SOURCE="%~f1"
 set ORIGEN="%~f1\*.*"
-set TARGET="%MHZAP201_VSWS%\%~n1"
-set CVSDIR="%MHZAP201_VSWS%\%~n1\CVS"
+set TARGET="%MHZAP201_SOURCE%\%~n1"
+set CVSDIR="%MHZAP201_SOURCE%\%~n1\CVS"
 
 if exist %CVSDIR% goto SKIP1
 if not exist %SOURCE% goto SKIP2

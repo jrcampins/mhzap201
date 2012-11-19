@@ -1,6 +1,6 @@
 @echo off
 set root1=W:\workspace
-set root2=%MHZAP201_VSWS%
+set root2=%MHZAP201_SOURCE%
 for /D %%d in (%root1%\mhzap201-web-*) do call:copy-web-project %%d
 pause
 goto:eof

@@ -1,8 +1,8 @@
 @echo off
 set U2D="%ProgramFiles%\GnuWin32\bin\unix2dos.exe"
 if not exist %U2D% exit
-if not defined MHZAP201_VSWS exit
-cd  /d "%MHZAP201_VSWS%\management\resources"
+if not defined MHZAP201_SOURCE exit
+cd  /d "%MHZAP201_SOURCE%\management\resources"
 for /R "%CD%" %%f in (*.jrxml)      do %U2D% -D "%%f"
 for /R "%CD%" %%f in (*.password)   do %U2D% -D "%%f"
 for /R "%CD%" %%f in (*.properties) do %U2D% -D "%%f"

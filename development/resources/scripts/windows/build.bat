@@ -29,7 +29,7 @@ rem path=%ProgramFiles%\QuickTime\QTSystem\
 
 :main1
 set project=mhzap201
-set workspace=%MHZAP201_VSWS%
+set workspace=%MHZAP201_SOURCE%
 set build_and_deploy=N
 set jdk_update=30
 

@@ -1,6 +1,6 @@
 @echo off
 cd /d "%~dp0"
-if not defined MHZAP201_VSWS goto ERR0
+if not defined MHZAP201_SOURCE goto ERR0
 
 @echo.
 set   SOURCE=%CD%\config
@@ -19,7 +19,7 @@ call xcopy "%SOURCE%\*.txt" "%TARGET%" /S
 echo xcopy "%SOURCE%\*.xml" "%TARGET%" /S
 goto DONE
 :ERR0
-set ERRMSG=variable de entorno MHZAP201_VSWS no definida (MHZAP201_VSWS corresponde a la ruta de su directorio de trabajo de CVS)
+set ERRMSG=variable de entorno MHZAP201_SOURCE no definida (MHZAP201_SOURCE corresponde a la ruta de su directorio de trabajo de CVS)
 goto TELL
 :ERR1
 set ERRMSG=directorio %SOURCE% no existe

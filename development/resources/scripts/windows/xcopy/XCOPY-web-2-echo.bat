@@ -1,7 +1,7 @@
 @echo off
 set APPLID=%~n1
 set SOURCE=W:\workspace\%APPLID%
-set TARGET=%MHZAP201_VSWS%\%APPLID%
+set TARGET=%MHZAP201_SOURCE%\%APPLID%
 set CVSDIR=%TARGET%\CVS
 if exist "%SOURCE%\." set SOURCE
 if exist "%TARGET%\." set TARGET

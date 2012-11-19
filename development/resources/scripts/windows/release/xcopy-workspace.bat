@@ -9,7 +9,7 @@ set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction
 
-if not defined MHZAP201_VSWS goto:eof
+if not defined MHZAP201_SOURCE goto:eof
 call variables-date-time
 echo.
 
@@ -48,8 +48,8 @@ if defined junction (
 pause
 echo.
 
-set DVLP=%MHZAP201_VSWS%\development
-set MGMT=%MHZAP201_VSWS%\management
+set DVLP=%MHZAP201_SOURCE%\development
+set MGMT=%MHZAP201_SOURCE%\management
 
 :x-010
 pushd %MGMT%\resources\jasper
@@ -72,13 +72,13 @@ rem echo.
 call:setsiono copiar el ear
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%MHZAP201_VSWS%\mhzap201\dist\mhzap201.ear"                    %CRVLDIR%
+call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                    %CRVLDIR%
 )
 
 call:setsiono copiar el backup de postgresql
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%MHZAP201_VSWS%\management\backup\MHZDB201_%aaaammdd%.backup"  %CRVLDIR%
+call:xcopy-file "%MHZAP201_SOURCE%\management\backup\MHZDB201_%aaaammdd%.backup"  %CRVLDIR%
 )
 
 rem pause

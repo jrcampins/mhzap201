@@ -26,7 +26,7 @@ if not defined SQLPLUS_SPOOL (
     echo %~f0 >> %PLOG%
 )
 
-cd /d "%MHZAP201_VSWS%\management\resources\scripts\windows\%dbms%"
+cd /d "%MHZAP201_SOURCE%\management\resources\scripts\windows\%dbms%"
 call sqlplus "%~dpn0.sql"
 cd /d "%~dp0"
 

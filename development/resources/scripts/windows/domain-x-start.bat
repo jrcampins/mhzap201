@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
-set MHZAP201_RESOURCES_DIR=%MHZAP201_VSWS%\management\resources
+set MHZAP201_RESOURCES_DIR=%MHZAP201_SOURCE%\management\resources
 set MHZAP201
 
 set ASADMIN="N:\glassfish\glassfish\bin\asadmin.bat"

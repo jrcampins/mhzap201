@@ -6,23 +6,23 @@ set /p delete_ignored="eliminar todos los archivos ignorados ? (S/N) [%delete_ig
 if not defined delete_ignored goto:eof
 if /i "%delete_ignored%" NEQ "S" goto:eof
 
-call:del1 %MHZAP201_VSWS% *.lnk
-call:del1 %MHZAP201_VSWS% *.log
+call:del1 %MHZAP201_SOURCE% *.lnk
+call:del1 %MHZAP201_SOURCE% *.log
 
-call:del2 %MHZAP201_VSWS%\management\backup\*.backup
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\*.sql
+call:del2 %MHZAP201_SOURCE%\management\backup\*.backup
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\*.sql
 
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\oracle\custom\packages\*.sql
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\oracle\functions\*.sql
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\oracle\packages\*.sql
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\oracle\packages-for-views\*.sql
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\oracle\triggers\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\oracle\custom\packages\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\oracle\functions\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\oracle\packages\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\oracle\packages-for-views\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\oracle\triggers\*.sql
 
-call:del2 %MHZAP201_VSWS%\management\resources\database\ddl\postgresql\functions\*.sql
+call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\postgresql\functions\*.sql
 
-call:del2 %MHZAP201_VSWS%\management\resources\jasper\reports\resources\*.*
-call:del2 %MHZAP201_VSWS%\management\resources\jasper\reports\subreports\resources\*.*
-call:del2 %MHZAP201_VSWS%\management\resources\jasper\reports\web\resources\*.*
+call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\resources\*.*
+call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\subreports\resources\*.*
+call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\web\resources\*.*
 
 
 pause

@@ -1,7 +1,7 @@
 if not defined variables goto:eof
 
-set BACKUPDIR=%MHZAP201_VSWS%\management\backup
-set SQLDDLDIR=%MHZAP201_VSWS%\management\resources\database\ddl
+set BACKUPDIR=%MHZAP201_SOURCE%\management\backup
+set SQLDDLDIR=%MHZAP201_SOURCE%\management\resources\database\ddl
 
 if defined MAINBAT goto:eof
 
