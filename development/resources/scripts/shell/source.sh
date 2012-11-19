@@ -3,22 +3,22 @@ if [ ! -f "$0" ]; then
     exit 1
 fi
 
-unset ROOTDIR
+unset SOURCEDIR
 pushd $(dirname "$0") > /dev/null
 while true
 do
     pwd
     currdir=$(pwd)
-    if [ -f "root" ]; then
-        ROOTDIR=$currdir
+    if [ -d ".svn" ]; then
+        SOURCEDIR=$currdir
         break
     fi
     cd ..
     if [ "$currdir" = "$(pwd)" ]; then
-        ROOTDIR=${currdir}mhzap201/root
+        SOURCEDIR=${currdir}mhzap201/source
         break
     fi
 done
 popd > /dev/null
-export ROOTDIR
-echo ROOTDIR=$ROOTDIR
+export SOURCEDIR
+echo SOURCEDIR=$SOURCEDIR

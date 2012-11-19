@@ -3,22 +3,22 @@ if [ ! -f "$0" ]; then
     exit 1
 fi
 
-unset ROOTDIR
+unset HOMEDIR
 pushd $(dirname "$0") > /dev/null
 while true
 do
     pwd
     currdir=$(pwd)
-    if [ -f "root" ]; then
-        ROOTDIR=$currdir
+    if [ -f "home" ]; then
+        HOMEDIR=$currdir
         break
     fi
     cd ..
     if [ "$currdir" = "$(pwd)" ]; then
-        ROOTDIR=${currdir}mhzap201/root
+        HOMEDIR=${currdir}mhzap201/home
         break
     fi
 done
 popd > /dev/null
-export ROOTDIR
-echo ROOTDIR=$ROOTDIR
+export HOMEDIR
+echo HOMEDIR=$HOMEDIR
