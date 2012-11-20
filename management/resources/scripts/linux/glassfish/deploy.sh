@@ -12,8 +12,8 @@ if [ "$siono" = "s" ]; then
                     CYGWIN*) ear=`cygpath --windows $ear`
                 esac
                 echo ""
-                echo $ASADMIN $GFDOMAINCST2 deploy --property compatibility=v2 $ear
-                bash $ASADMIN $GFDOMAINCST2 deploy --property compatibility=v2 $ear
+                echo $ASADMIN $GFDOMAINCST2 deploy $ear
+                bash $ASADMIN $GFDOMAINCST2 deploy $ear
                 echo ""
                 echo $ASADMIN $GFDOMAINCST2 list-components
                 bash $ASADMIN $GFDOMAINCST2 list-components

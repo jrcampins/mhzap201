@@ -20,3 +20,33 @@ set MHZAP201_DBMS=SQLServer
 set MHZAP201_DBMS=PostgreSQL
 
 set MHZAP201_DIST=%MHZAP201_HOME%
+
+rem ----------------------------------------------------------------------------
+rem Entorno de desarrollo
+rem ----------------------------------------------------------------------------
+call:set-source-dir
+set GLASSFISH_HOME=N:\glassfish\glassfish
+set MHZAP201_DIST=%sourcedir%\mhzap201\dist
+set sourcedir=
+goto:eof
+
+:set-source-dir
+set sourcedir=
+pushd "%~dp0"
+call:set-source-dir-loop
+popd
+goto:eof
+
+:set-source-dir-loop
+set currdir=%CD%
+if exist .svn\nul (
+    set sourcedir=%currdir%
+    goto:eof
+)
+cd ..
+if "%currdir%" == "%CD%" (
+    set sourcedir=%currdir%mhzap201\source
+    goto:eof
+)
+call:set-source-dir-loop
+goto:eof

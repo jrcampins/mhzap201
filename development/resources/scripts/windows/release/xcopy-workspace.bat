@@ -77,17 +77,18 @@ if /i "%siono%" == "S" (
 call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
 )
 
-set backup=MHZDB201_%aaaammdd%.backup
 call:setsiono copiar el backup de postgresql
 echo.
 if /i "%siono%" == "S" (
-    call:xcopy-file "%MHZAP201_SOURCE%\management\backup\%backup%"              %DQPATH%
+    call:xcopy-file "%MGMT%\backup\MHZDB201_%aaaammdd%.backup"                  %DQPATH%
 )
 
 rem pause
 rem echo.
 
 :x-040
+call:xcopy-file "%MGMT%\resources\scripts\asadmin.password"                     %DQPATH%
+
 call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"                         %DQPATH%
 call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt"                        %DQPATH%
 
