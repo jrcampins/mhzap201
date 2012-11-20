@@ -54,8 +54,8 @@ rem parametros para la conexion al servidor de aplicaciones JBoss
 rem
 set jbhost=localhost
 set jbport=9999
-set jbuser=admin
-set jbpass=sesamo
+rem jbuser=admin
+rem jbpass=sesamo
 rem jbpassfile=%HOMEDIR%\jbadmin.password
 rem jbcst1=--user %jbuser% --passwordfile %jbpassfile%
 rem jbcst2=--connect controller=%jbhost%:%jbport% %jbcst1%
@@ -74,7 +74,7 @@ set dbconnid=XE
 set dbuser=MHZ
 set dbpass=sesamo
 rem dbpassfile=%HOMEDIR%\oradmin.password
-set dbname=MHZDB201
+rem dbname=MHZDB201
 set dbcurl=jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%
 set driver=oracle.jdbc.OracleDriver
 goto:eof

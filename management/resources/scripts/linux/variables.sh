@@ -9,11 +9,12 @@ if [ -d "$MHZAP201_HOME" ]; then
 #   for directorio in $(find "$HOMEDIR" -mindepth 1 -maxdepth 1 -type d -name "V??R??????*" | sort -f); do continue; done
 #   export CRVLDIR="$directorio"
 #   unset directorio
-    if [ -d "$HOMEDIR/VnnRaammdd" ]; then
-        export CRVLDIR="$HOMEDIR/VnnRaammdd"
-    else
-        export CRVLDIR="$HOMEDIR"
-    fi
+#   if [ -d "$HOMEDIR/VnnRaammdd" ]; then
+#       export CRVLDIR="$HOMEDIR/VnnRaammdd"
+#   else
+#       export CRVLDIR="$HOMEDIR"
+#   fi
+    export CRVLDIR=$MHZAP201_HOME
     xs="$HOMEDIR/variables-home.sh"
     if [ -x "$xs" ]; then
         . "$xs"
@@ -48,13 +49,13 @@ if [ -d "$MHZAP201_HOME" ]; then
         echo No es posible ejecutar el script "$xs"
         unset variables
     fi
-    xs="$HOMEDIR/variables-j2ee.sh"
-    if [ -x "$xs" ]; then
-        . "$xs"
-    else
-        echo No es posible ejecutar el script "$xs"
-        unset variables
-    fi
+#   xs="$HOMEDIR/variables-j2ee.sh"
+#   if [ -x "$xs" ]; then
+#       . "$xs"
+#   else
+#       echo No es posible ejecutar el script "$xs"
+#       unset variables
+#   fi
     unset xs
 else
     echo La variable de entorno MHZAP201_HOME no esta correctamente definida
@@ -66,12 +67,22 @@ if [ ! -d "$JAVA_HOME" ]; then
     unset variables
 fi
 
-if [ ! -d "$GLASSFISH_HOME" ]; then
+if [ "$EEASKEY" = "GlassFish" -a ! -d "$GLASSFISH_HOME" ]; then
     echo La variable de entorno GLASSFISH_HOME no esta correctamente definida
     unset variables
 fi
 
-if [ ! -d "$POSTGRESQL_HOME" ]; then
+if [ "$EEASKEY" = "JBoss" -a ! -d "$JBOSS_HOME" ]; then
+    echo La variable de entorno JBOSS_HOME no esta correctamente definida
+    unset variables
+fi
+
+if [ "$DBMSKEY" = "Oracle" -a ! -d "$ORACLE_HOME" ]; then
+    echo La variable de entorno ORACLE_HOME no esta correctamente definida
+    unset variables
+fi
+
+if [ "$DBMSKEY" = "PostgreSQL" -a ! -d "$POSTGRESQL_HOME" ]; then
     echo La variable de entorno POSTGRESQL_HOME no esta correctamente definida
     unset variables
 fi
