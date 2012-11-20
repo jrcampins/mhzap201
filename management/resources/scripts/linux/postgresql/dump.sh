@@ -28,7 +28,7 @@ if [ "$siono" = "s" ]; then
                     archivo="${archivo/.backup/}"
                     [ "$(basename ""$archivo"")" = ''  ] && archivo=$backupfile
                     [ "$(basename ""$archivo"")" = '.' ] && archivo=$backupfile
-                    [ "$(dirname ""$archivo"")"  = '.' ] && archivo="$BACKUPDIR/${archivo}"
+                    [ "$(dirname  ""$archivo"")" = '.' ] && archivo="$BACKUPDIR/${archivo}"
                     archivo="${archivo/.backup/}.backup"
                     if [ -e $archivo ]; then
                         echo el archivo "$archivo" ya existe
