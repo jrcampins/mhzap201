@@ -3,8 +3,8 @@ me=rebuild
 echo $me reconstruye las tablas '"'plus'"' correspondientes a cada tabla '"'arbol'"'
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             export PSQL="$scriptpath/$scriptname.psql"
             export PLOG="$scriptpath/$scriptname.plog"

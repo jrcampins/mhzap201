@@ -3,8 +3,8 @@ me=copy-fonts
 echo $me copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             source="$CRVLDIR/resources/jasper/fonts"
             if [ -d $source ]; then

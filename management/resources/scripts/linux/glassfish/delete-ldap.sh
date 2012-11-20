@@ -3,8 +3,8 @@ me=delete-ldap
 echo $me elimina el dominio de seguridad LDAP
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             REALMID="${PROJKEY}-ldap-realm"
             echo ""

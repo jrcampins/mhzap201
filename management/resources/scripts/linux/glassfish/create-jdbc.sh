@@ -3,8 +3,8 @@ me=create-jdbc
 echo $me crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             POOLID="${PROJKEY}-pool"
             DS=org.postgresql.ds.PGSimpleDataSource

@@ -3,8 +3,8 @@ me=restore
 echo $me restaura la base de datos a partir de un archivo respaldo
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             echo ""
             echo Escriba el numero correspondiente al archivo de respaldo que desea utilizar para restaurar la base de datos

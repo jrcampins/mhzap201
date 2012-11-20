@@ -3,8 +3,8 @@ me=undeploy
 echo $me anula la implementacion de la aplicacion de empresa del servidor de aplicaciones
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             if [ -n "${PROJKEY}" ]; then
                 echo ""

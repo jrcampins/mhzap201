@@ -1,7 +1,7 @@
 #!/bin/sh
 me=xs
-if [ -f "$0" ]; then
-    cd $(dirname "$0")
+if [ -f "$BASH_SOURCE" ]; then
+    cd $(dirname "$BASH_SOURCE")
     directorio=$(pwd)
     unset subdirectorio
     while [ -z "$subdirectorio" ]; do

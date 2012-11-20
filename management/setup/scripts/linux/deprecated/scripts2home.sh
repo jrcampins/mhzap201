@@ -1,7 +1,7 @@
 #!/bin/sh
 me=scripts2home
-if [ -f "$0" ]; then
-    cd $(dirname "$0")
+if [ -f "$BASH_SOURCE" ]; then
+    cd $(dirname "$BASH_SOURCE")
     wd=$(pwd)
     xs=$wd/resources/scripts/linux/setup/$me.sh
     if [ -x "$xs" ]; then

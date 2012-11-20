@@ -3,8 +3,8 @@ me=dump
 echo $me crea un archivo respaldo de la base de datos
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             unset archivo
             while [ -z "$archivo" ]; do

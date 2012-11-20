@@ -1,9 +1,9 @@
 #!/bin/sh
 export MHZAP201_HOME=${MHZAP201_HOME:-"$HOME/mhzap201"}
-if [ -f "$0" ]; then
-    cd $(dirname "$0")
+if [ -f "$BASH_SOURCE" ]; then
+    cd $(dirname "$BASH_SOURCE")
     export scriptpath=$(pwd)
-    export scriptname=$(basename "$0")
+    export scriptname=$(basename "$BASH_SOURCE")
     unset variables
     xs="$MHZAP201_HOME/variables.sh"
     [ -d "$MHZAP201_HOME" -a -x "$xs" ] || echo No es posible ejecutar el script "$xs"

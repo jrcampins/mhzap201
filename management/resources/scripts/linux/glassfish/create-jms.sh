@@ -3,8 +3,8 @@ me=create-jms
 echo $me crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
 read -p "ejecutar $me ? (s/n): " siono
 if [ "$siono" = "s" ]; then
-    if [ -f "$0" ]; then
-        . $(dirname "$0")/variables.sh
+    if [ -f "$BASH_SOURCE" ]; then
+        . $(dirname "$BASH_SOURCE")/variables.sh
         if [ -n "$variables" ]; then
             RA="jmsra"
             CC="javax.jms.QueueConnectionFactory"

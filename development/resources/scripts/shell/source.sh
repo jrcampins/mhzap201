@@ -1,10 +1,10 @@
 #!/bin/sh
-if [ ! -f "$0" ]; then
+if [ ! -f "$BASH_SOURCE" ]; then
     exit 1
 fi
 
 unset SOURCEDIR
-pushd $(dirname "$0") > /dev/null
+pushd $(dirname "$BASH_SOURCE") > /dev/null
 while true
 do
     pwd

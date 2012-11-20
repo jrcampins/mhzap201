@@ -1,7 +1,7 @@
 #!/bin/sh
 me=psql
-if [ -f "$0" ]; then
-    . $(dirname "$0")/variables.sh
+if [ -f "$BASH_SOURCE" ]; then
+    . $(dirname "$BASH_SOURCE")/variables.sh
     if [ -n "$variables" ]; then
         [ -f "$PSQL" ] || PSQL="$scriptpath/$scriptname.psql"
         [ -n "$PLOG" ] || PLOG="$scriptpath/$scriptname.plog"
