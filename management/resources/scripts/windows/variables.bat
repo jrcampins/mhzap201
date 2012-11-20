@@ -81,14 +81,12 @@ goto:eof
 set EEASDIR=glassfish
 if defined     GLASSFISH_HOME call:checkDir "%GLASSFISH_HOME%"
 if not defined GLASSFISH_HOME call:notDefined GLASSFISH_HOME
-call:checkFile %MHZAP201_HOME% asadmin.password
 goto:eof
 
 :checkJBoss
 set EEASDIR=jboss
 if defined     JBOSS_HOME call:checkDir "%JBOSS_HOME%"
 if not defined JBOSS_HOME call:notDefined JBOSS_HOME
-call:checkFile %MHZAP201_HOME% jbadmin.password
 goto:eof
 
 :checkDatabase
@@ -110,14 +108,12 @@ goto:eof
 set DBMSDIR=oracle
 if defined     ORACLE_HOME  call:checkDir "%ORACLE_HOME%"
 if not defined ORACLE_HOME  call:notDefined ORACLE_HOME
-call:checkFile %MHZAP201_HOME% oradmin.password
 goto:eof
 
 :checkPostgreSQL
 set DBMSDIR=postgresql
 if defined     POSTGRESQL_HOME  call:checkDir "%POSTGRESQL_HOME%"
 if not defined POSTGRESQL_HOME  call:notDefined POSTGRESQL_HOME
-call:checkFile %MHZAP201_HOME% pgadmin.password
 goto:eof
 
 :checkSQLServer

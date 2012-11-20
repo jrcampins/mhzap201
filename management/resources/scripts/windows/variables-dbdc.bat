@@ -56,9 +56,9 @@ set jbhost=localhost
 set jbport=9999
 set jbuser=admin
 set jbpass=sesamo
-set jbpassfile=%HOMEDIR%\jbadmin.password
-set jbcst1=--user %jbuser% --passwordfile %jbpassfile%
-set jbcst2=--connect controller=%jbhost%:%jbport% %jbcst1%
+rem jbpassfile=%HOMEDIR%\jbadmin.password
+rem jbcst1=--user %jbuser% --passwordfile %jbpassfile%
+rem jbcst2=--connect controller=%jbhost%:%jbport% %jbcst1%
 set jbcst2=--connect controller=%jbhost%:%jbport%
 set offset=-Djboss.socket.binding.port-offset=0
 goto:eof
@@ -73,7 +73,7 @@ set dbport=1521
 set dbconnid=XE
 set dbuser=MHZ
 set dbpass=sesamo
-set dbpassfile=%HOMEDIR%\oradmin.password
+rem dbpassfile=%HOMEDIR%\oradmin.password
 set dbname=MHZDB201
 set dbcurl=jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%
 set driver=oracle.jdbc.OracleDriver
@@ -88,7 +88,7 @@ set dbhost=localhost
 set dbport=5432
 set dbuser=postgres
 set dbpass=postgres
-set dbpassfile=%HOMEDIR%\pgadmin.password
+rem dbpassfile=%HOMEDIR%\pgadmin.password
 set dbname=MHZDB201
 set dbcurl=jdbc:postgresql://%dbhost%:%dbport%/%dbname%
 set driver=org.postgresql.Driver
@@ -103,7 +103,7 @@ set dbhost=localhost
 set dbport=1433
 set dbuser=sa
 set dbpass=sa
-set dbpassfile=
+rem dbpassfile=%HOMEDIR%\ssadmin.password
 set dbname=MHZDB201
 set dbcurl=jdbc:sqlserver://%dbhost%:%dbport%;databaseName=MHZDB201
 set driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
