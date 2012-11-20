@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 call variables
 
-set MHZAP201_RESOURCES_DIR=%MHZAP201_SOURCE%\management\resources
+rem MHZAP201_RESOURCES_DIR=%MHZAP201_SOURCE%\management\resources
 set MHZAP201_JNDI_EJB_PERSISTENCE_PATTERN=java:global/mhzap201-sdk/mhzap201-ejb-persistence/{0}
 set MHZAP201_VELOCITY_PROPERTIES_FILE=%MHZAP201_SOURCE%\management\resources\velocity\sdk-velocity.properties
 set MHZAP201_WEB_TEMPLATE_PROJECT_NAME=mhzap201-web-template
