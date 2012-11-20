@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call:set-source-dir
 
 set MHZAP201
 set W_THIRD_PARTY=W:\third-party
@@ -17,22 +18,23 @@ echo.
 set nn=20
 set /p nn="version (nn) [%nn%] "
 if not defined nn goto ask
-set VR=V%nn%R%aammdd%
-set CRVL="%VR%"
-set CRVLDIR="%~dp0%VR%"
-set CRVLDIR11=%CRVLDIR:~1,-1%
+set VRNAME=V%nn%R%aammdd%
+set VRPATH=%~dp0%VRNAME%
+set DQPATH="%VRPATH%"
 goto check
 
 :check
 echo.
-set CRVL
+set VR
 echo.
-echo rd %CRVLDIR%
-if exist %CRVLDIR% rd %CRVLDIR% /s /q
+echo rd %DQPATH%
+if exist %DQPATH% rd %DQPATH% /s /q
 echo.
-echo md %CRVLDIR%
-md %CRVLDIR%
+echo md %DQPATH%
+md %DQPATH%
 echo.
+
+echo.>"%VRPATH%\HOME"
 
 if defined junction (
     if exist latest (
@@ -40,8 +42,8 @@ if defined junction (
         call %junction% -d latest
         echo.
     )
-    echo %junction% latest %CRVLDIR%
-    call %junction% latest %CRVLDIR%
+    echo %junction% latest %DQPATH%
+    call %junction% latest %DQPATH%
     echo.
 )
 
@@ -63,7 +65,7 @@ call xcopy-resources.bat
 popd
 
 :x-020
-call:xcopy-folder %MGMT%                                                        %CRVLDIR% resources S
+call:xcopy-folder %MGMT%                                                        %DQPATH% resources S
 
 rem pause
 rem echo.
@@ -72,36 +74,37 @@ rem echo.
 call:setsiono copiar el ear
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                    %CRVLDIR%
+call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
 )
 
+set backup=MHZDB201_%aaaammdd%.backup
 call:setsiono copiar el backup de postgresql
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%MHZAP201_SOURCE%\management\backup\MHZDB201_%aaaammdd%.backup"  %CRVLDIR%
+    call:xcopy-file "%MHZAP201_SOURCE%\management\backup\%backup%"              %DQPATH%
 )
 
 rem pause
 rem echo.
 
 :x-040
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"                         %CRVLDIR%
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt"                        %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"                         %DQPATH%
+call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt"                        %DQPATH%
 
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.bat"                      %CRVLDIR%
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt"                      %CRVLDIR%
+call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.bat"                      %DQPATH%
+call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt"                      %DQPATH%
 
 rem pause
 rem echo.
 
 :x-050
-set CRVLSUBDIR="%CRVLDIR11%\setup"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+set SUBDIR="%VRPATH%\setup"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
 echo.
 
-call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% jboss\standalone  E
-call:xcopy-folder %MGMT%\setup                                                  %CRVLSUBDIR% oracle E
+call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss\standalone  E
+call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% oracle E
 
 rem pause
 rem echo.
@@ -109,32 +112,32 @@ rem echo.
 goto x-070
 
 :x-060
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\standalone\linux"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+set SUBDIR="%VRPATH%\setup\jboss\standalone\linux"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
 echo.
 
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %SUBDIR%
 
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\standalone\windows"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+set SUBDIR="%VRPATH%\setup\jboss\standalone\windows"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
 echo.
 
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %CRVLSUBDIR%
+call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %SUBDIR%
 
 rem pause
 rem echo.
 
 :x-070
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\welcome-content\mhzap201\attachments"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+set SUBDIR="%VRPATH%\setup\jboss\welcome-content\mhzap201\attachments"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
 echo.
 
-set CRVLSUBDIR="%CRVLDIR11%\setup\jboss\welcome-content\mhzap201\spool"
-set CRVLSUBDIR
-if not exist %CRVLSUBDIR% md %CRVLSUBDIR%
+set SUBDIR="%VRPATH%\setup\jboss\welcome-content\mhzap201\spool"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
 echo.
 
 rem pause
@@ -147,7 +150,7 @@ pause
 echo.
 
 :x-090
-sweep %CRVLDIR%
+sweep %DQPATH%
 
 pause
 goto:eof
@@ -201,7 +204,7 @@ echo.
 goto:eof
 
 :renameRunTimeVelocityProperties
-set vd=%CRVLDIR11%\resources\velocity
+set vd=%VRPATH%\resources\velocity
 set vp=velocity.properties
 if not exist "%vd%\run-time-%vp%" goto:eof
 echo del "%vd%\%vp%"
@@ -219,3 +222,24 @@ set /p siono=%pregunta%
 if /i "%siono%" == "S" goto:eof
 if /i "%siono%" == "N" goto:eof
 goto preguntar
+goto:eof
+
+:set-source-dir
+pushd "%~dp0"
+call:set-source-dir-loop
+popd
+goto:eof
+
+:set-source-dir-loop
+set currdir=%CD%
+if exist .svn\nul (
+    set MHZAP201_SOURCE=%currdir%
+    goto:eof
+)
+cd ..
+if "%currdir%" == "%CD%" (
+    set MHZAP201_SOURCE=%currdir%mhzap201\source
+    goto:eof
+)
+call:set-source-dir-loop
+goto:eof

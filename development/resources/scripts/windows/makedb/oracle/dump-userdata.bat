@@ -8,7 +8,7 @@ if not defined variables goto EOJ
 set /p CRVL="version actualmente instalada "
 rem if not defined CRVL goto ask
 
-call:setexe %O9BINDIR% dump.exe
+set EXE="%O9BINDIR%\dump.exe"
 set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql"
 set BAT="%~dp0dump-data-run-cmd"
 set CMD=%EXE% -a -D -E UTF8 -F p -i -v -t
@@ -31,8 +31,4 @@ echo dump: %xerrorlevel%
 
 :EOJ
 call %DIRBAT2%\eoj "%~f0"
-goto:eof
-
-:setexe
-set EXE="%~f1\%~nx2"
 goto:eof

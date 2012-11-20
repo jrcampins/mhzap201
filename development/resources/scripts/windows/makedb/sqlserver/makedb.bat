@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
-call variables "%~f0"
+if not defined variables call variables "%~f0"
 if not defined variables goto EOJ
 
 if not exist "%~dp0logs" md "%~dp0logs"

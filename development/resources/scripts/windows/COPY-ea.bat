@@ -1,4 +1,6 @@
 @echo off
+cd /d "%~dp0"
+call variables
 
 set   APPLID=mhzap201
 set   SOURCE=W:\workspace\%APPLID%

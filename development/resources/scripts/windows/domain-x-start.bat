@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call variables
 
 set MHZAP201_RESOURCES_DIR=%MHZAP201_SOURCE%\management\resources
 set MHZAP201
@@ -16,4 +17,4 @@ call %ASADMIN% %GFDOMAINCST2% list-components
 echo.
 
 pause
-goto.eof
+goto:eof

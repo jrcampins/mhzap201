@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call variables
 
 set log="%~dpn0.log"
 set>%log%

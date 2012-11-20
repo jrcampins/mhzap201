@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call variables
 
 set MHZAP201_RESOURCES_DIR=%MHZAP201_SOURCE%\management\resources
 set MHZAP201_JNDI_EJB_PERSISTENCE_PATTERN=java:global/mhzap201-sdk/mhzap201-ejb-persistence/{0}
@@ -21,4 +22,4 @@ call %ASADMIN% %GFDOMAINCST2% list-components
 echo.
 
 pause
-goto.eof
+goto:eof

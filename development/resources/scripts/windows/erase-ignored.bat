@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call variables
 
 set delete_ignored=N
 set /p delete_ignored="eliminar todos los archivos ignorados ? (S/N) [%delete_ignored%] "
@@ -23,7 +24,6 @@ call:del2 %MHZAP201_SOURCE%\management\resources\database\ddl\postgresql\functio
 call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\resources\*.*
 call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\subreports\resources\*.*
 call:del2 %MHZAP201_SOURCE%\management\resources\jasper\reports\web\resources\*.*
-
 
 pause
 goto:eof

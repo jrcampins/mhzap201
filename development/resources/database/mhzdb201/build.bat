@@ -10,7 +10,7 @@ set PLOG="%~dpn0.log"
 set XLOG=%PLOG%
 if exist %PLOG% del %PLOG%
 
-call:setexe %SSBINDIR% osql.exe
+set EXE="%SSBINDIR%\osql.exe"
 
 set CMD=%EXE% -d MHZMD201 -h-1 -w 250 -n -m-1
 set OSQLUSER=%SSUSER%
@@ -27,10 +27,6 @@ call:runSQLFile %INDIR%\build-dump-userdata-run.sql	%OUTDIR1%\dump-userdata-run.
 call:runSQLFile %INDIR%\build-dump-userdata-tokens.sql	%OUTDIR2%\dump-table-tokens.txt
 
 pause
-goto:eof
-
-:setexe
-set EXE="%~f1\%~nx2"
 goto:eof
 
 :runSQLFile

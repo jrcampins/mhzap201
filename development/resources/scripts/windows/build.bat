@@ -6,27 +6,6 @@ call:main1
 pause
 goto:eof
 
-rem CLASSPATH=.;%ProgramFiles%\Java\jre6\lib\ext\QTJava.zip
-rem QTJAVA=%ProgramFiles%\Java\jre6\lib\ext\QTJava.zip
-rem path=%ProgramFiles%\PC Connectivity Solution\
-rem path=C:\oraclexe\app\oracle\product\11.2.0\server\bin
-rem path=
-rem path=%SystemRoot%\system32
-rem path=%SystemRoot%
-rem path=%SystemRoot%\System32\Wbem
-rem path=%ProgramFiles%\Apache Software Foundation\apache-maven-3.0.3\bin
-rem path=C:\cygwin\bin
-rem path=%ProgramFiles%\JavaFX\javafx-sdk1.3\bin
-rem path=%ProgramFiles%\JavaFX\javafx-sdk1.3\emulator\bin
-rem path=%ProgramFiles%\JavaFX\javafx-sdk1.2\bin
-rem path=%ProgramFiles%\JavaFX\javafx-sdk1.2\emulator\bin
-rem path=%ProgramFiles%\SSH Communications Security\SSH Secure Shell
-rem path=%ProgramFiles%\Wave Systems Corp\Dell Preboot Manager\Access Client\v5\
-rem path=%ProgramFiles%\Archivos comunes\Roxio Shared\DLLShared\
-rem path=%ProgramFiles%\CVSNT\
-rem path=C:\svn\bin
-rem path=%ProgramFiles%\QuickTime\QTSystem\
-
 :main1
 set project=mhzap201
 set workspace=%MHZAP201_SOURCE%
@@ -245,6 +224,7 @@ if  not exist %EAR% goto deploy-done
 :deploy-loop
 shift
 set str=%1
+rem remove double quotes
 for /f "useback tokens=*" %%a in ('%str%') do set str=%%~a
 if "%str%"=="" goto deploy-doit
 set CMD=%CMD% %str%
@@ -283,3 +263,24 @@ goto:eof
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components
 goto:eof
+
+rem CLASSPATH=.;%ProgramFiles%\Java\jre6\lib\ext\QTJava.zip
+rem QTJAVA=%ProgramFiles%\Java\jre6\lib\ext\QTJava.zip
+rem path=%ProgramFiles%\PC Connectivity Solution\
+rem path=C:\oraclexe\app\oracle\product\11.2.0\server\bin
+rem path=
+rem path=%SystemRoot%\system32
+rem path=%SystemRoot%
+rem path=%SystemRoot%\System32\Wbem
+rem path=%ProgramFiles%\Apache Software Foundation\apache-maven-3.0.3\bin
+rem path=C:\cygwin\bin
+rem path=%ProgramFiles%\JavaFX\javafx-sdk1.3\bin
+rem path=%ProgramFiles%\JavaFX\javafx-sdk1.3\emulator\bin
+rem path=%ProgramFiles%\JavaFX\javafx-sdk1.2\bin
+rem path=%ProgramFiles%\JavaFX\javafx-sdk1.2\emulator\bin
+rem path=%ProgramFiles%\SSH Communications Security\SSH Secure Shell
+rem path=%ProgramFiles%\Wave Systems Corp\Dell Preboot Manager\Access Client\v5\
+rem path=%ProgramFiles%\Archivos comunes\Roxio Shared\DLLShared\
+rem path=%ProgramFiles%\CVSNT\
+rem path=C:\svn\bin
+rem path=%ProgramFiles%\QuickTime\QTSystem\

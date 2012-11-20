@@ -30,6 +30,7 @@ if  not exist %EAQ% goto DONE
 :LOOP
 shift
 set str=%1
+rem remove double quotes
 for /f "useback tokens=*" %%a in ('%str%') do set str=%%~a
 if "%str%"=="" goto DOIT
 set CMD=%CMD% %str%

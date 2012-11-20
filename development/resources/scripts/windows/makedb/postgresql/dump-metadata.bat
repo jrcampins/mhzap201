@@ -4,7 +4,7 @@ cd /d "%~dp0"
 if not defined variables call variables "%~f0"
 if not defined variables goto EOJ
 
-call:setexe %PGBINDIR% pg_dump.exe
+set EXE="%PGBINDIR%\pg_dump.exe"
 set BAK="%SQLDDLDIR%\%PGDATABASE%_PG_200_METADATA.sql"
 set BAT="%~dp0dump-data-run-cmd"
 set CMD=%EXE% -a -D -E LATIN1 -F p -i -v -t
@@ -26,8 +26,4 @@ echo dump: %xerrorlevel%
 
 :EOJ
 call %DIRBAT2%\eoj "%~f0"
-goto:eof
-
-:setexe
-set EXE="%~f1\%~nx2"
 goto:eof
