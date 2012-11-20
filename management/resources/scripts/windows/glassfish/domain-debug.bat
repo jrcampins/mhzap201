@@ -5,8 +5,8 @@ call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
 if not defined variables goto EOJ
-set xs="%HOMEDIR%\variables-j2ee.bat"
-if exist %xs% call %xs%
+rem set xs="%HOMEDIR%\variables-j2ee.bat"
+rem if exist %xs% call %xs%
 call %ASADMIN% %GFDOMAINCST2% start-domain --debug %GFDOMAINNAME%
 echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components
