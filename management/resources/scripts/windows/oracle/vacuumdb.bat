@@ -6,7 +6,7 @@ if /i "%siono%" NEQ "S" goto EOJ
 call variables "%~f0"
 if not defined variables goto EOJ
 
-set EXE="%O9BINDIR:~1,-1%\vacuumdb.exe"
+set EXE="%O9BINDIR%\vacuumdb.exe"
 set CMD=%EXE% -e -f -q -z
 echo.
 echo %CMD%

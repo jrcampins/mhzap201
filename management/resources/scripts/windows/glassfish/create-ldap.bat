@@ -25,4 +25,4 @@ echo.
 
 :EOJ
 call ..\eoj "%~f0"
-goto.eof
+goto:eof

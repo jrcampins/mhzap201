@@ -36,8 +36,8 @@ if /i "%archivo%" == "0" goto EOJ
 if exist %tokens2% for /f "tokens=1*" %%t in (%tokens2%) do call select-token %%t %archivo%
 if not defined token goto ask3
 
-set EXE="%PGBINDIR:~1,-1%\pg_dump.exe"
-set BAK="%BACKUPDIR:~1,-1%\%PGDATABASE%_%token%_%SUFIJO%.%extension%"
+set EXE="%PGBINDIR%\pg_dump.exe"
+set BAK="%BACKUPDIR%\%PGDATABASE%_%token%_%SUFIJO%.%extension%"
 set CMD=%EXE% -a -E UTF8 -f %BAK% -F %formato% -i -t public.%token% -v
 if not exist "%~dp0logs" md "%~dp0logs"
 set LOG="%~dp0logs\%~n0.log"

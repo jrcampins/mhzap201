@@ -14,7 +14,7 @@ if not defined CRVL set CRVL=10%aammdd%
 
 call:checkFile %PSQL%
 if not defined variables goto EOJ
-call:setexe %PGBINDIR% psql.exe
+set EXE="%PGBINDIR%\psql.exe"
 set CMD=%EXE% -e -f %PSQL% -q -v ddldir=%SQLDDLDIR% -v pgdb=%PGDB% -v crvl=%CRVL%
 
 echo.
@@ -59,12 +59,4 @@ rem echo check %archivo%
 if exist %archivo% goto:eof
 echo el archivo %archivo% no existe
 set variables=
-goto:eof
-
-:setdir
-set SQLDIR=%~f1
-goto:eof
-
-:setexe
-set EXE="%~f1\%~nx2"
 goto:eof

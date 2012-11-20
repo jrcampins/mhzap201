@@ -20,7 +20,7 @@ if not defined CRVL set CRVL=10%aammdd%
 call:checkFile %PSQL%
 if not defined variables goto EOJ
 call:buildOSQLFile
-call:setexe %SSBINDIR% osql.exe
+set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
 
 echo.
@@ -57,10 +57,6 @@ call ..\eoj "%~f0"
 goto:eof
 
 :buildOSQLFile
-call:setdir %SQLDATDIR%
-set datdir=%SQLDIR%
-call:setdir %SQLDDLDIR%
-set ddldir=%SQLDIR%
 if exist %OSQLFILE% del %OSQLFILE%
 echo declare @crvl   integer        >>%OSQLFILE%
 echo declare @ssdb   varchar(100)   >>%OSQLFILE%
@@ -68,8 +64,8 @@ echo declare @datdir varchar(2000)  >>%OSQLFILE%
 echo declare @ddldir varchar(2000)  >>%OSQLFILE%
 echo select  @crvl   =  %CRVL%      >>%OSQLFILE%
 echo select  @ssdb   = '%SSDB%'     >>%OSQLFILE%
-echo select  @datdir = '%datdir%'   >>%OSQLFILE%
-echo select  @ddldir = '%ddldir%'   >>%OSQLFILE%
+echo select  @datdir = '%SQLDATDIR%'>>%OSQLFILE%
+echo select  @ddldir = '%SQLDDLDIR%'>>%OSQLFILE%
 echo print   @crvl                  >>%OSQLFILE%
 echo print   @ssdb                  >>%OSQLFILE%
 echo print   @datdir                >>%OSQLFILE%
@@ -86,12 +82,4 @@ rem echo check %archivo%
 if exist %archivo% goto:eof
 echo el archivo %archivo% no existe
 set variables=
-goto:eof
-
-:setdir
-set SQLDIR=%~f1
-goto:eof
-
-:setexe
-set EXE="%~f1\%~nx2"
 goto:eof

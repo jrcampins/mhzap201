@@ -6,7 +6,7 @@ if /i "%siono%" NEQ "S" goto EOJ
 call variables "%~f0"
 if not defined variables goto EOJ
 
-set EXE="%O9BINDIR:~1,-1%\dropdb.exe"
+set EXE="%O9BINDIR%\dropdb.exe"
 set CMD=%EXE% -e -i %O9DATABASE%
 echo.
 echo %CMD%

@@ -29,7 +29,7 @@ if not exist %token% goto ask
 if exist %tokens1% del %tokens1% /q
 if exist %tokens2% del %tokens2% /q
 
-set EXE="%PGBINDIR:~1,-1%\pg_restore.exe"
+set EXE="%PGBINDIR%\pg_restore.exe"
 rem CMD=%EXE% -c -i -d "%PGDATABASE%" -v %token%
 set CMD=%EXE%    -i -d "%PGDATABASE%" -v %token%
 if not exist "%~dp0logs" md "%~dp0logs"

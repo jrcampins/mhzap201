@@ -6,7 +6,7 @@ if /i "%siono%" NEQ "S" goto EOJ
 call variables "%~f0"
 if not defined variables goto EOJ
 
-set EXE="%PGBINDIR:~1,-1%\dropdb.exe"
+set EXE="%PGBINDIR%\dropdb.exe"
 set CMD=%EXE% -e -i %PGDATABASE%
 echo.
 echo %CMD%

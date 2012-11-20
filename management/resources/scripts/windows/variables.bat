@@ -1,5 +1,4 @@
-set variables="%~f0"
-call:bat variables-date-time
+set variables=%~f0
 set PROJKEY=
 set PROJDIR=
 set HOMEDIR=
@@ -14,28 +13,18 @@ if not defined variables goto:eof
 set PROJKEY=mhzap201
 set PROJDIR=mhzap201
 set HOMEDIR=%MHZAP201_HOME%
-echo setCurrentVersionDir
-if exist "%HOMEDIR%\VnnRaammdd" (
-    set CRVLDIR=%HOMEDIR%\VnnRaammdd
-) else (
-    set CRVLDIR=%HOMEDIR%
-)
-call "%HOMEDIR%\variables-home.bat"
+set CRVLDIR=%MHZAP201_HOME%
+call %HOMEDIR%\variables-home.bat
 call:checkJava
 call:checkJavaApplicationServer
 call:checkDatabase
-call "%HOMEDIR%\variables-dbdc.bat"
-call "%HOMEDIR%\variables-j2ee.bat"
+call %HOMEDIR%\variables-dbdc.bat
+rem  %HOMEDIR%\variables-j2ee.bat
 call:trace
 goto:eof
 
-:bat
-call:checkFile "%~dp0%1.bat"
-if defined variables call "%~dp0%1.bat"
-goto:eof
-
 :checkHome
-if defined     MHZAP201_HOME call:checkDir "%MHZAP201_HOME%"
+if defined     MHZAP201_HOME call:checkDir  %MHZAP201_HOME%
 if not defined MHZAP201_HOME call:notDefined MHZAP201_HOME
 if not defined variables goto:eof
 call:checkHomeFiles
@@ -45,10 +34,10 @@ goto:eof
 call:checkFile %MHZAP201_HOME% variables.bat
 call:checkFile %MHZAP201_HOME% variables-dbdc.bat
 call:checkFile %MHZAP201_HOME% variables-home.bat
-call:checkFile %MHZAP201_HOME% variables-j2ee.bat
+rem  checkFile %MHZAP201_HOME% variables-j2ee.bat
 goto:eof
 
-:setCurrentVersionDir
+:setCurrentVersionDir1
 set CRVLDIR=%HOMEDIR%
 set tokens1=token-list-1
 set tokens2=token-list-2
@@ -61,6 +50,14 @@ if exist %tokens1% del %tokens1% /q
 if exist %tokens2% del %tokens2% /q
 set tokens1=
 set tokens2=
+goto:eof
+
+:setCurrentVersionDir2
+if exist %HOMEDIR%\VnnRaammdd (
+    set CRVLDIR=%HOMEDIR%\VnnRaammdd
+) else (
+    set CRVLDIR=%HOMEDIR%
+)
 goto:eof
 
 :checkJava
@@ -157,7 +154,7 @@ set variables=
 goto:eof
 
 :trace
-set MHZAP201
+rem MHZAP201
 rem PROJKEY
 rem PROJDIR
 rem HOMEDIR
@@ -166,9 +163,10 @@ rem EEASKEY
 rem EEASDIR
 rem DBMSKEY
 rem DBMSDIR
-echo.
-set variables
-set>c:\set.log
-if not defined variables pause
+rem variables
+set>"%~dpn0.log"
+if defined variables goto:eof
+start /d %windir% notepad "%~dpn0.log"
+pause
 echo.
 goto:eof

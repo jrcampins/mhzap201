@@ -17,4 +17,4 @@ echo create %service1% binPath= %binPath1% start= auto DisplayName= %display1%
 
 :EOJ
 call ..\eoj "%~f0"
-goto.eof
+goto:eof

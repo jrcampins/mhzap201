@@ -5,6 +5,7 @@ set aspass=
 set aspassfile=
 set ascst1=
 set ascst2=
+set domain=
 set jbhost=
 set jbport=
 set jbuser=
@@ -12,7 +13,7 @@ set jbpjbs=
 set jbpassfile=
 set jbcst1=
 set jbcst2=
-set domain=
+set offset=
 set dbmsys=
 set dbhost=
 set dbport=
@@ -40,7 +41,7 @@ set ashost=localhost
 set asport=4848
 set asuser=admin
 set aspass=admin
-set aspassfile="%HOMEDIR%\asadmin.password"
+set aspassfile=%HOMEDIR%\asadmin.password
 set ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
 set ascst2=--host %ashost% --port %asport%
@@ -55,11 +56,11 @@ set jbhost=localhost
 set jbport=9999
 set jbuser=admin
 set jbpass=sesamo
-set jbpassfile="%HOMEDIR%\jbadmin.password"
+set jbpassfile=%HOMEDIR%\jbadmin.password
 set jbcst1=--user %jbuser% --passwordfile %jbpassfile%
 set jbcst2=--connect controller=%jbhost%:%jbport% %jbcst1%
 set jbcst2=--connect controller=%jbhost%:%jbport%
-set domain=server-one
+set offset=-Djboss.socket.binding.port-offset=0
 goto:eof
 
 :setOracle
@@ -72,7 +73,7 @@ set dbport=1521
 set dbconnid=XE
 set dbuser=MHZ
 set dbpass=sesamo
-set dbpassfile="%HOMEDIR%\oradmin.password"
+set dbpassfile=%HOMEDIR%\oradmin.password
 set dbname=MHZDB201
 set dbcurl=jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%
 set driver=oracle.jdbc.OracleDriver
@@ -87,7 +88,7 @@ set dbhost=localhost
 set dbport=5432
 set dbuser=postgres
 set dbpass=postgres
-set dbpassfile="%HOMEDIR%\pgadmin.password"
+set dbpassfile=%HOMEDIR%\pgadmin.password
 set dbname=MHZDB201
 set dbcurl=jdbc:postgresql://%dbhost%:%dbport%/%dbname%
 set driver=org.postgresql.Driver

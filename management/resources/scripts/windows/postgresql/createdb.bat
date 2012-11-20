@@ -6,7 +6,7 @@ if /i "%siono%" NEQ "S" goto EOJ
 call variables "%~f0"
 if not defined variables goto EOJ
 
-set EXE="%PGBINDIR:~1,-1%\createdb.exe"
+set EXE="%PGBINDIR%\createdb.exe"
 set CMD=%EXE% -e -E UTF8
 echo.
 echo %CMD%

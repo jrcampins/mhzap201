@@ -12,4 +12,4 @@ echo delete %service1%
 
 :EOJ
 call ..\eoj "%~f0"
-goto.eof
+goto:eof

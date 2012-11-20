@@ -1,5 +1,7 @@
 @echo off
 cd /d "%~dp0"
+call variables
+if not defined variables goto:eof
 
 :undeploy
 call ear-undeploy
@@ -19,7 +21,7 @@ echo.
 echo.
 call ..\setsiono eliminar los archivos temporales?
 if /i "%siono%" NEQ "S" goto start
-rd C:\jboss\standalone\tmp /s /q
+rd %JBOSS_HOME%\standalone\tmp /s /q
 echo.
 
 :start

@@ -10,8 +10,8 @@ set SUFIJO=%aaaammdd%
 set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
 if not defined SUFIJO goto ask
 
-set EXE="%O9BINDIR:~1,-1%\dump.exe"
-set BAK="%BACKUPDIR:~1,-1%\%O9DATABASE%_%SUFIJO%.backup"
+set EXE="%O9BINDIR%\dump.exe"
+set BAK="%BACKUPDIR%\%O9DATABASE%_%SUFIJO%.backup"
 set CMD=%EXE% -b -f %BAK% -F c -i -v
 if not exist "%~dp0logs" md "%~dp0logs"
 set LOG="%~dp0logs\%~n0.log"

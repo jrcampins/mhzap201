@@ -14,7 +14,7 @@ if [ -d "$MHZAP201_HOME" ]; then
     else
         export CRVLDIR="$HOMEDIR"
     fi
-    xs="$MHZAP201_HOME/variables-home.sh"
+    xs="$HOMEDIR/variables-home.sh"
     if [ -x "$xs" ]; then
         . "$xs"
     else
@@ -41,14 +41,14 @@ if [ -d "$MHZAP201_HOME" ]; then
         export DBMSKEY=$MHZAP201_DBMS
         export DBMSDIR=sqlserver
     fi
-    xs="$MHZAP201_HOME/variables-dbdc.sh"
+    xs="$HOMEDIR/variables-dbdc.sh"
     if [ -x "$xs" ]; then
         . "$xs"
     else
         echo No es posible ejecutar el script "$xs"
         unset variables
     fi
-    xs="$MHZAP201_HOME/variables-j2ee.sh"
+    xs="$HOMEDIR/variables-j2ee.sh"
     if [ -x "$xs" ]; then
         . "$xs"
     else

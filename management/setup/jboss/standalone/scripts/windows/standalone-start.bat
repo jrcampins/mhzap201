@@ -1,5 +1,11 @@
+@echo off
+cd /d "%~dp0"
+call variables
+if not defined variables goto:eof
+
 set NOPAUSE=true
 cd /d %JBOSS_HOME%
-rem del standalone\log\*.log /q
-rem rd C:\jboss\standalone\tmp /s /q
-bin\standalone.bat -c standalone-full.xml
+set cli=bin\standalone -c standalone-full.xml %offset%
+echo %CD%\%cli%
+%cli%
+pause

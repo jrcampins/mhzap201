@@ -2,10 +2,10 @@ declare @crvl   integer
 declare @ssdb   varchar(100)   
 declare @datdir varchar(2000)  
 declare @ddldir varchar(2000)  
-select  @crvl   =  "10121109"      
+select  @crvl   =  "10"      
 select  @ssdb   = 'MHZDB201'     
-select  @datdir = 'C:\Archivos de programa\Microsoft SQL Server\MSSQL\Data'   
-select  @ddldir = 'W:\mhzap201\source\management\resources\database\ddl'   
+select  @datdir = 'C:\Archivos de programa\Microsoft SQL Server\MSSQL\Data'
+select  @ddldir = 'W:\mhzap201\source\management\resources\database\ddl'
 print   @crvl                  
 print   @ssdb                  
 print   @datdir                
