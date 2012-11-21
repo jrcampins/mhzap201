@@ -105,3 +105,6 @@ end;
 
 set echo on
 update usuario set nombre_usuario=nombre_usuario||'/Oracle' where id_usuario=101;
+
+commit;
+exit
