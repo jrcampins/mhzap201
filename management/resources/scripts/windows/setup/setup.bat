@@ -7,75 +7,71 @@ echo "%~n0" desinstala y reinstala los componentes de la aplicacion de empresa e
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-cd /d "%MHZAP201_HOME%"
-rem ----------------------------------------------------------------------------
-if /i "%2" EQU "install" goto INSTALL
-rem ----------------------------------------------------------------------------
-:UNINSTALL
-rem ----------------------------------------------------------------------------
-set sd=%MHZAP201_HOME%\resources\scripts\windows\glassfish
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\domain-start
-echo.
-call %sd%\undeploy
-echo.
-call %sd%\delete-jms
-echo.
-call %sd%\delete-jdbc
-echo.
-call %sd%\domain-stop
-rem ----------------------------------------------------------------------------
-set sd=%MHZAP201_HOME%\resources\scripts\windows\postgresql
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\dump
-rem ----------------------------------------------------------------------------
-if /i "%2" NEQ "uninstall" goto UPGRADE
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\dropdb
-goto:eof
-rem ----------------------------------------------------------------------------
-:UPGRADE
-echo.
-call %sd%\upgradedb
-goto REBUILD
-rem ----------------------------------------------------------------------------
-:INSTALL
-rem ----------------------------------------------------------------------------
-set sd=%MHZAP201_HOME%\resources\scripts\windows\postgresql
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\createdb
-echo.
-call %sd%\restore
-rem ----------------------------------------------------------------------------
-:REBUILD
-rem ----------------------------------------------------------------------------
-set sd=%MHZAP201_HOME%\resources\scripts\windows\postgresql
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\rebuild
-echo.
-call %sd%\vacuumdb
-rem ----------------------------------------------------------------------------
-set sd=%MHZAP201_HOME%\resources\scripts\windows\glassfish
-rem ----------------------------------------------------------------------------
-echo.
-call %sd%\domain-start
-echo.
-call %sd%\server-config
-echo.
-call %sd%\create-jdbc
-echo.
-call %sd%\create-jms
-echo.
-call %sd%\deploy
-echo.
-call %sd%\copy-fonts
-echo.
-call %sd%\copy-images
-echo.
-call %sd%\copy-properties
+set resources=%MHZAP201_HOME%\resources
+set windows=%resources%\scripts\windows
+set setup=%windows%\setup
+set glassfish=%windows%\glassfish
+set postgresql=%windows%\postgresql
+set upgrade_or_install=
+set upgrade_or_uninstall=
+if /i "%1" == "upgrade"     set upgrade_or_install=true
+if /i "%1" == "install"     set upgrade_or_install=true
+if /i "%1" == "upgrade"     set upgrade_or_uninstall=true
+if /i "%1" == "uninstall"   set upgrade_or_uninstall=true
+
+if defined upgrade_or_uninstall (
+    call %glassfish%\domain-start
+    echo.
+    call %glassfish%\undeploy
+    echo.
+    call %glassfish%\delete-jms
+    echo.
+    call %glassfish%\delete-jdbc
+    echo.
+    call %glassfish%\domain-stop
+    echo.
+    call %postgresql%\dump
+    echo.
+)
+
+if /i "%1" == "uninstall" (
+    call %postgresql%\dropdb
+    echo.
+)
+
+if /i "%1" == "upgrade" (
+    call %postgresql%\upgradedb
+    echo.
+)
+
+if defined upgrade_or_install (
+    call %postgresql%\createdb
+    echo.
+    call ..\setsiono restaurar de la base de datos a partir de un archivo respaldo
+)
+
+if defined upgrade_or_install (
+    if /i "%siono%" == "S" (
+        call %postgresql%\restore
+        echo.
+    ) else (
+        call %postgresql%\makedb
+        echo.
+    )
+    call %postgresql%\rebuild
+    echo.
+    call %postgresql%\vacuumdb
+    echo.
+    call %glassfish%\domain-start
+    echo.
+    call %glassfish%\server-config
+    echo.
+    call %glassfish%\create-jdbc
+    echo.
+    call %glassfish%\create-jms
+    echo.
+    call %glassfish%\deploy
+    echo.
+)
+
 goto:eof

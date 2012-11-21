@@ -1,20 +1,19 @@
 #!/bin/sh
-export MHZAP201_HOME=${MHZAP201_HOME:-"$HOME/mhzap201"}
 variables=ok
 if [ -d "$MHZAP201_HOME" ]; then
-    export PROJKEY="mhzap201"
-    export PROJDIR="mhzap201"
-    export HOMEDIR=$MHZAP201_HOME
+    PROJKEY="mhzap201"
+    PROJDIR="mhzap201"
+    HOMEDIR=$MHZAP201_HOME
 #   directorio=$HOMEDIR
 #   for directorio in $(find "$HOMEDIR" -mindepth 1 -maxdepth 1 -type d -name "V??R??????*" | sort -f); do continue; done
-#   export CRVLDIR="$directorio"
+#   CRVLDIR="$directorio"
 #   unset directorio
 #   if [ -d "$HOMEDIR/VnnRaammdd" ]; then
-#       export CRVLDIR="$HOMEDIR/VnnRaammdd"
+#       CRVLDIR="$HOMEDIR/VnnRaammdd"
 #   else
-#       export CRVLDIR="$HOMEDIR"
+#       CRVLDIR="$HOMEDIR"
 #   fi
-    export CRVLDIR=$MHZAP201_HOME
+    CRVLDIR=$MHZAP201_HOME
     xs="$HOMEDIR/variables-home.sh"
     if [ -x "$xs" ]; then
         . "$xs"
@@ -23,24 +22,24 @@ if [ -d "$MHZAP201_HOME" ]; then
         unset variables
     fi
     if [ "$MHZAP201_EEAS" = "GlassFish" ]; then
-        export EEASKEY=$MHZAP201_EEAS
-        export EEASDIR=glassfish
+        EEASKEY=$MHZAP201_EEAS
+        EEASDIR=glassfish
     fi
     if [ "$MHZAP201_EEAS" = "JBoss" ]; then
-        export EEASKEY=$MHZAP201_EEAS
-        export EEASDIR=jboss
+        EEASKEY=$MHZAP201_EEAS
+        EEASDIR=jboss
     fi
     if [ "$MHZAP201_DBMS" = "Oracle" ]; then
-        export DBMSKEY=$MHZAP201_DBMS
-        export DBMSDIR=oracle
+        DBMSKEY=$MHZAP201_DBMS
+        DBMSDIR=oracle
     fi
     if [ "$MHZAP201_DBMS" = "PostgreSQL" ]; then
-        export DBMSKEY=$MHZAP201_DBMS
-        export DBMSDIR=postgresql
+        DBMSKEY=$MHZAP201_DBMS
+        DBMSDIR=postgresql
     fi
     if [ "$MHZAP201_DBMS" = "SQLServer" ]; then
-        export DBMSKEY=$MHZAP201_DBMS
-        export DBMSDIR=sqlserver
+        DBMSKEY=$MHZAP201_DBMS
+        DBMSDIR=sqlserver
     fi
     xs="$HOMEDIR/variables-dbdc.sh"
     if [ -x "$xs" ]; then
@@ -56,7 +55,6 @@ if [ -d "$MHZAP201_HOME" ]; then
 #       echo No es posible ejecutar el script "$xs"
 #       unset variables
 #   fi
-    unset xs
 else
     echo La variable de entorno MHZAP201_HOME no esta correctamente definida
     unset variables

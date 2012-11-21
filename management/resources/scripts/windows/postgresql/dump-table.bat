@@ -2,9 +2,9 @@
 cd /d "%~dp0"
 echo "%~n0" crea un archivo respaldo de la base de datos
 call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto EOJ
+if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0"
-if not defined variables goto EOJ
+if not defined variables goto:eof
 :ask1
 set SUFIJO=%aaaammdd%
 set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
@@ -32,7 +32,7 @@ echo.
 set tokenum=
 set archivo=
 set /p archivo="numero del archivo ? "
-if /i "%archivo%" == "0" goto EOJ
+if /i "%archivo%" == "0" goto:eof
 if exist %tokens2% for /f "tokens=1*" %%t in (%tokens2%) do call select-token %%t %archivo%
 if not defined token goto ask3
 
@@ -55,12 +55,12 @@ echo %DATE% %TIME% %CD% %PGDATABASE%>>%LOG%
 echo.
 echo dump: %xerrorlevel%
 echo.
-if defined XLOG goto EOJ
-call ..\setsiono desea ver el log de la ejecucion (%LOG%)
-if /i "%siono%" NEQ "S" goto EOJ
-type %LOG% | more
 
-echo.
-pause
-:EOJ
+if defined XLOG goto:eof
+call ..\setsiono desea ver el log de la ejecucion (%LOG%)
+if /i "%siono%" == "S" start /d %windir% notepad %LOG%
+goto:eof
+
+:unreachable-statements
 call ..\eoj "%~f0"
+goto:eof

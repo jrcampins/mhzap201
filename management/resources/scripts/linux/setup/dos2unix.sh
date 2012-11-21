@@ -1,10 +1,10 @@
 #!/bin/sh
-me=dos2unix
-echo $me convierte los archivos de texto de formato DOS a formato UNIX
-read -p "ejecutar $me ? (s/n): " siono
-if [ "$siono" = "s" ]; then
-    if [ -d "$1" ]; then
-        cd "$1"
+if [ -d "$1" ]; then
+    pushd "$1" > /dev/null
+    me=dos2unix
+    echo $me convierte los archivos de texto de formato DOS a formato UNIX
+    read -p "ejecutar $me ? (s/n): " siono
+    if [ "$siono" = "s" ]; then
         wd=$(pwd)
         echo $me $wd>$me.log
     #   for directorio in $(find "$wd" -type d | sort -f); do
@@ -23,8 +23,6 @@ if [ "$siono" = "s" ]; then
         echo ""
         read -p "cat $me.log ? (s/n): " siono
         [ "$siono" = "s" ] && cat $me.log | more
-    else
-        echo "Modo de empleo: bash $me.sh"
     fi
+    popd > /dev/null
 fi
-unset me wd name directorio archivo siono

@@ -1,3 +1,4 @@
+set variables=
 set eeas=glassfish
 set EEAS_OVERRIDE=GlassFish
 call:set-home-dir

@@ -2,17 +2,15 @@
 cd /d "%~dp0"
 echo "%~n0" limpia las tablas de la base de datos
 call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto EOJ
+if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0"
-if not defined variables goto EOJ
+if not defined variables goto:eof
 
 if not exist "%~dp0logs" md "%~dp0logs"
 if not defined PLOG set PLOG="%~dp0logs\%~n0.log"
-if not defined PSQL set PSQL="%~dpn0.psql"
+
+set PSQL="%~dpn0.psql"
 if not exist "%PSQL%" call ..\unset-variables el archivo "%PSQL%" no existe
-if not defined variables goto EOJ
-
-call psql
-
-:EOJ
+if defined variables call psql
+set PSQL=
 call ..\eoj "%~f0"

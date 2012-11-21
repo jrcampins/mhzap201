@@ -2,9 +2,9 @@
 cd /d "%~dp0"
 echo "%~n0" crea un archivo respaldo de la base de datos
 call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto EOJ
+if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0"
-if not defined variables goto EOJ
+if not defined variables goto:eof
 :ask
 set SUFIJO=%aaaammdd%
 set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
@@ -32,12 +32,12 @@ echo %DATE% %TIME% %CD% %O9DATABASE%>>%LOG%
 echo.
 echo dump: %xerrorlevel%
 echo.
-if defined XLOG goto EOJ
-call ..\setsiono desea ver el log de la ejecucion (%LOG%)
-if /i "%siono%" NEQ "S" goto EOJ
-type %LOG% | more
 
-echo.
-pause
-:EOJ
+if defined XLOG goto:eof
+call ..\setsiono desea ver el log de la ejecucion (%LOG%)
+if /i "%siono%" == "S" start /d %windir% notepad %LOG%
+goto:eof
+
+:unreachable-statements
 call ..\eoj "%~f0"
+goto:eof

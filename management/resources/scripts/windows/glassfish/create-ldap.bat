@@ -4,7 +4,7 @@ echo "%~n0" crea el dominio de seguridad LDAP
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
-if not defined variables goto EOJ
+if not defined variables goto:eof
 set CLASS=com.sun.enterprise.security.auth.realm.ldap.LDAPRealm
 set P1=jaas-context="ldapRealm"
 set P2=directory="ldap\://localhost\:3268"
@@ -22,7 +22,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 call %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 echo.
-
-:EOJ
 call ..\eoj "%~f0"
-goto:eof

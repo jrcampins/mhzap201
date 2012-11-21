@@ -1,3 +1,4 @@
+set variables=
 set dbms=oracle
 set DBMS_OVERRIDE=Oracle
 call:set-home-dir

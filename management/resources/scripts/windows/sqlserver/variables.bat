@@ -1,3 +1,4 @@
+set variables=
 set dbms=sqlserver
 set DBMS_OVERRIDE=SQLServer
 call:set-home-dir

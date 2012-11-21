@@ -5,7 +5,6 @@
 \echo dir :ddldir
 \echo
 \cd :ddldir
-\!ls -l *.sql
 \echo
 \encoding
 \encoding LATIN1

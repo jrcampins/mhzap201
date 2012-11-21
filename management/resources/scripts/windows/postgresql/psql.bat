@@ -1,5 +1,5 @@
 if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+if not defined variables goto:eof
 
 if "%~x1" == ".sql" set PSQL="%~f1"
 if "%~x1" ==".psql" set PSQL="%~f1"
@@ -37,14 +37,12 @@ echo.>>%PLOG%
 echo.
 echo psql: %xerrorlevel%
 echo.
+set PSQL=
 
-if defined XLOG goto EOJ
+if defined XLOG goto:eof
 call ..\setsiono desea ver el log de la ejecucion (%PLOG%)
-if /i "%siono%" NEQ "S" goto EOJ
-type %PLOG% | more
-
-echo.
-pause
+if /i "%siono%" == "S" start /d %windir% notepad %PLOG%
+goto:eof
 
 :EOJ
 call ..\eoj "%~f0"

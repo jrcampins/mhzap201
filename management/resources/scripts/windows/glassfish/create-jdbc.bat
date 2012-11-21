@@ -4,7 +4,7 @@ echo "%~n0" crea el dominio de seguridad, los conjuntos de conexiones y demas re
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
-if not defined variables goto EOJ
+if not defined variables goto:eof
 if /i "%dbmsys%" == "Oracle"     set DS=oracle.jdbc.pool.OracleDataSource
 if /i "%dbmsys%" == "PostgreSQL" set DS=org.postgresql.ds.PGConnectionPoolDataSource
 if /i "%dbmsys%" == "PostgreSQL" set DS=org.postgresql.ds.PGSimpleDataSource
@@ -57,7 +57,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 call %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 echo.
-
-:EOJ
 call ..\eoj "%~f0"
-goto:eof

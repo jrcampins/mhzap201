@@ -1,20 +1,18 @@
 #!/bin/sh
-me=vacuumdb
-echo $me comprime la base de datos
-read -p "ejecutar $me ? (s/n): " siono
-if [ "$siono" = "s" ]; then
-    if [ -f "$BASH_SOURCE" ]; then
-        . $(dirname "$BASH_SOURCE")/variables.sh
-        if [ -n "$variables" ]; then
-            EXE="$PGBINDIR/vacuumdb"
-            CMD="$EXE -e -f -q -z"
-            echo $CMD
-            $CMD
-            echo $me: $?
-            unset EXE CMD
-        fi
-    else
-        echo "Modo de empleo: bash $me.sh"
+scriptname=$(basename "$BASH_SOURCE")
+scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+me=$scriptname
+xs=$scriptpath/variables.sh
+# [ -x "$xs" ] && echo "$xs"
+[ -x "$xs" ] && . "$xs"
+if [ -n "$variables" ]; then
+    echo $me comprime la base de datos
+    read -p "ejecutar $me ? (s/n): " siono
+    if [ "$siono" = "s" ]; then
+        EXE="$PGBINDIR/vacuumdb"
+        CMD="$EXE -e -f -q -z"
+        echo $CMD
+        $CMD
+        echo $me: $?
     fi
 fi
-unset me siono

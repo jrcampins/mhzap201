@@ -1,15 +1,5 @@
 #!/bin/sh
-me=install
-if [ -f "$BASH_SOURCE" ]; then
-    cd $(dirname "$BASH_SOURCE")
-    wd=$(pwd)
-    xs=$wd/resources/scripts/linux/setup/setup.sh
-    if [ -x "$xs" ]; then
-    #   export CRVLDIR="$wd"
-        clear
-        $xs $wd $me
-    fi
-else
-    echo "Modo de empleo: bash $me.sh"
-fi
-unset me wd xs
+scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+xs=$scriptpath/resources/scripts/linux/setup/setup.sh
+[ -x "$xs" ] && clear
+[ -x "$xs" ] && . $xs install

@@ -74,7 +74,7 @@ set dbconnid=XE
 set dbuser=MHZ
 set dbpass=sesamo
 rem dbpassfile=%HOMEDIR%\oradmin.password
-rem dbname=MHZDB201
+set dbname=MHZDB201
 set dbcurl=jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%
 set driver=oracle.jdbc.OracleDriver
 goto:eof
@@ -86,6 +86,7 @@ rem
 set dbmsys=PostgreSQL
 set dbhost=localhost
 set dbport=5432
+rem dbconnid=XE
 set dbuser=postgres
 set dbpass=postgres
 rem dbpassfile=%HOMEDIR%\pgadmin.password
@@ -101,6 +102,7 @@ rem
 set dbmsys=SQLServer
 set dbhost=localhost
 set dbport=1433
+rem dbconnid=XE
 set dbuser=sa
 set dbpass=sa
 rem dbpassfile=%HOMEDIR%\ssadmin.password

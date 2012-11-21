@@ -4,7 +4,7 @@ echo "%~n0" establece parametros de configuracion del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
-if not defined variables goto EOJ
+if not defined variables goto:eof
 rem .
 rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal
 rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal
@@ -27,7 +27,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
 call %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
 echo.
-
-:EOJ
 call ..\eoj "%~f0"
-goto:eof

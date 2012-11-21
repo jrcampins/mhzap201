@@ -10,11 +10,11 @@ export ORACLE_HOME=/opt/oraclexe/app/oracle/product/11.2.0/server
 
 export POSTGRESQL_HOME=/opt/postgresql
 
-export MHZAP201_EEAS=JBoss
-export MHZAP201_EEAS=GlassFish
+MHZAP201_EEAS=JBoss
+MHZAP201_EEAS=GlassFish
 
-export MHZAP201_DBMS=Oracle
-export MHZAP201_DBMS=SQLServer
-export MHZAP201_DBMS=PostgreSQL
+MHZAP201_DBMS=Oracle
+MHZAP201_DBMS=SQLServer
+MHZAP201_DBMS=PostgreSQL
 
-export MHZAP201_DIST=$MHZAP201_HOME
+MHZAP201_DIST=$MHZAP201_HOME

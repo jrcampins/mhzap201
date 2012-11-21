@@ -4,7 +4,7 @@ echo "%~n0" copia las imagenes usadas por los informes a la carpeta de configura
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
-if not defined variables goto EOJ
+if not defined variables goto:eof
 
 @echo.
 set   SOURCE=%CRVLDIR%\resources\jasper\templates\resources
@@ -19,7 +19,8 @@ set   TARGET
 @echo.
 call:copyToTarget
 
-goto DONE
+call ..\eoj "%~f0"
+goto:eof
 
 :copyToTarget
 if not exist %SOURCE% goto ERR1
@@ -30,18 +31,7 @@ goto:eof
 
 :ERR1
 set ERRMSG=directorio %SOURCE% no existe
-goto TELL
-
-:ERR2
-set ERRMSG=directorio %TARGET% no existe
-goto TELL
-
-:TELL
 @echo.
 @echo %ERRMSG%
 @echo.
-
-:DONE
-:EOJ
-call ..\eoj "%~f0"
 goto:eof

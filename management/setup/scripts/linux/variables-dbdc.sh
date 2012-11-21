@@ -8,6 +8,9 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     asuser="admin"
     aspass="admin"
     aspassfile="$HOMEDIR/asadmin.password"
+    case "`uname`" in
+        CYGWIN*) aspassfile=`cygpath --windows $aspassfile`
+    esac
     ascst1="--user ${asuser} --passwordfile ${aspassfile}"
     ascst2="--host ${ashost} --port ${asport} ${ascst1}"
     ascst2="--host ${ashost} --port ${asport}"
@@ -26,14 +29,15 @@ fi
 #   parametros para la conexion al servidor de base de datos Oracle
 #
 if [ "$DBMSKEY" = "Oracle" ]; then
-     dbmsys="Oracle"
-     dbhost="localhost"
-     dbport="1521"
-     dbconnid="XE"
-     dbuser="MHZ"
-     dbpass="sesamo"
-     dbcurl="jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%"
-     driver="oracle.jdbc.OracleDriver"
+    dbmsys="Oracle"
+    dbhost="localhost"
+    dbport="1521"
+    dbconnid="XE"
+    dbuser="MHZ"
+    dbpass="sesamo"
+    dbname="MHZDB201"
+    dbcurl="jdbc:oracle:thin:@%dbhost%:%dbport%:%dbconnid%"
+    driver="oracle.jdbc.OracleDriver"
 fi
 #
 #   parametros para la conexion al servidor de base de datos PostgreSQL
@@ -42,6 +46,7 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
     dbmsys="PostgreSQL"
     dbhost="localhost"
     dbport="5432"
+#   dbconnid="?"
     dbuser="postgres"
     dbpass="postgres"
     dbname="MHZDB201"

@@ -1,3 +1,4 @@
+set variables=
 call:set-home-dir
 set xs=%MHZAP201_HOME%\variables.bat
 if exist %xs% call %xs%

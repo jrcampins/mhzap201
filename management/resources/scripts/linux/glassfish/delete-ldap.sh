@@ -1,20 +1,18 @@
 #!/bin/sh
-me=delete-ldap
-echo $me elimina el dominio de seguridad LDAP
-read -p "ejecutar $me ? (s/n): " siono
-if [ "$siono" = "s" ]; then
-    if [ -f "$BASH_SOURCE" ]; then
-        . $(dirname "$BASH_SOURCE")/variables.sh
-        if [ -n "$variables" ]; then
-            REALMID="${PROJKEY}-ldap-realm"
-            echo ""
-        #   echo $REALMID
-            echo $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
-            bash $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
-            unset REALMID
-        fi
-    else
-        echo "Modo de empleo: bash $me.sh"
+scriptname=$(basename "$BASH_SOURCE")
+scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+me=$scriptname
+xs=$scriptpath/variables.sh
+# [ -x "$xs" ] && echo "$xs"
+[ -x "$xs" ] && . "$xs"
+if [ -n "$variables" ]; then
+    echo $me elimina el dominio de seguridad LDAP
+    read -p "ejecutar $me ? (s/n): " siono
+    if [ "$siono" = "s" ]; then
+        REALMID="${PROJKEY}-ldap-realm"
+        echo ""
+    #   echo $REALMID
+        echo $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
+        bash $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
     fi
 fi
-unset me siono

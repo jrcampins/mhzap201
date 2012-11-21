@@ -1,3 +1,4 @@
+set variables=
 set dbms=postgresql
 set DBMS_OVERRIDE=PostgreSQL
 call:set-home-dir

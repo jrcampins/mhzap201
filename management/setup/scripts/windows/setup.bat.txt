@@ -93,6 +93,7 @@ Instalación de mhzap201 1.0 en Windows
 
             08.01.01. createdb: crea la base de datos
             08.01.02. restore: restaura la base de datos a partir de un archivo respaldo
+                      makedb: crea los objetos de la base de datos
             08.01.03. rebuild: reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
             08.01.04. vacuumdb: comprime la base de datos
             08.01.05. domain-start: inicia la ejecucion del servidor de aplicaciones
@@ -100,9 +101,6 @@ Instalación de mhzap201 1.0 en Windows
             08.01.07. create-jdbc: crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
             08.01.08. create-jms: crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
             08.01.09. deploy: implementa la aplicacion de empresa en el servidor de aplicaciones
-            08.01.10. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
-            08.01.11. copy-imagenes: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
-            08.01.12. copy-properties: copia los archivos de propiedades a la carpeta de configuracion del servidor de aplicaciones
 
     08.02.  Para reemplazar una versión ya instalada, ejecutar el script de instalación %MHZAP201_HOME%\VnnRaammdd\upgrade.bat
 
@@ -122,9 +120,6 @@ Instalación de mhzap201 1.0 en Windows
             08.02.12. create-jdbc: crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
             08.02.13. create-jms: crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
             08.02.14. deploy: implementa la aplicacion de empresa en el servidor de aplicaciones
-            08.02.15. copy-fonts: copia las fuentes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
-            08.02.16. copy-images: copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
-            08.02.17. copy-properties: copia los archivos de propiedades a la carpeta de configuracion del servidor de aplicaciones
 
 
 09. Ajustar las variables en mhzap201.properties

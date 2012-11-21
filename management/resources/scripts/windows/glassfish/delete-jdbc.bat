@@ -4,7 +4,7 @@ echo "%~n0" elimina el dominio de seguridad, los conjuntos de conexiones y demas
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 call variables "%~f0" 
-if not defined variables goto EOJ
+if not defined variables goto:eof
 echo.
 set JDBC
 echo.
@@ -26,7 +26,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
 call %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
 echo.
-
-:EOJ
 call ..\eoj "%~f0"
-goto:eof
