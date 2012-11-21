@@ -28,6 +28,8 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
 
 04. Crear y otorgar privilegios al usuario MHZ en Oracle.
 
+    /opt/oraclexe/app/oracle/product/11.2.0/server/bin/sqlplus
+
     Conectar con el usuario SYS:
 
         connect SYS/password as SYSDBA; 
@@ -45,16 +47,19 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
 
 05. Crear la base de datos en Oracle.
 
+    cd /opt/mhzap201/VnnRaammdd/setup/oracle/linux
+    /opt/oraclexe/app/oracle/product/11.2.0/server/bin/sqlplus
+
     Conectar con el usuario MHZ:
 
         connect MHZ/sesamo;
 
-    Ejecutar el script makedb.sql que se encuentra en /opt/mhzap201/VnnRaammdd/setup/oracle/windows:
+    Ejecutar el script makedb.sql que se encuentra en /opt/mhzap201/VnnRaammdd/setup/oracle/linux:
 
-        spool /opt/mhzap201/VnnRaammdd/setup/oracle/windows/makedb.log
-        @/opt/mhzap201/VnnRaammdd/setup/oracle/windows/makedb
+        spool makedb.log
+        @makedb
         spool off
 
-    Comprobar el resultado de la ejecución (revisar el archivo /opt/mhzap201/VnnRaammdd/setup/oracle/windows/makedb.log).
+    Comprobar el resultado de la ejecución (revisar el archivo /opt/mhzap201/VnnRaammdd/setup/oracle/linux/makedb.log).
 
-06. Configurar JBoss (seguir los pasos indicados en el archivo /opt/mhzap201/VnnRaammdd/configuracion-jboss-windows.txt).
+06. Configurar JBoss (seguir los pasos indicados en el archivo /opt/mhzap201/VnnRaammdd/configuracion-jboss-linux.txt).

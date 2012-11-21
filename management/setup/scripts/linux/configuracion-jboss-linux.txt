@@ -143,7 +143,7 @@ Configuración de JBoss en Linux
 
 05. Copiar el directorio /opt/mhzap201/VnnRaammdd/setup/jboss/welcome-content/mhzap201 a /opt/jboss/welcome-content
 
-06. Ejecutar el script /opt/mhzap201/VnnRaammdd/resources/scripts/windows/jboss/standalone-start.sh
+06. Ejecutar el script /opt/mhzap201/VnnRaammdd/resources/scripts/linux/jboss/standalone-start.sh
 
-07. Ejecutar el script /opt/mhzap201/VnnRaammdd/resources/scripts/windows/jboss/ear-deploy.sh
+07. Ejecutar el script /opt/mhzap201/VnnRaammdd/resources/scripts/linux/jboss/ear-deploy.sh
 

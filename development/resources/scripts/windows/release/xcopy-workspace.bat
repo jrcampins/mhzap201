@@ -64,7 +64,6 @@ popd
 
 :x-020
 call:xcopy-folder %MGMT%                                                        %DQPATH% resources S
-
 rem pause
 rem echo.
 
@@ -74,59 +73,43 @@ echo.
 if /i "%siono%" == "S" (
 call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
 )
-
-call:setsiono copiar el backup de postgresql
-echo.
-if /i "%siono%" == "S" (
-    call:xcopy-file "%MGMT%\backup\MHZDB201_%aaaammdd%.backup"                  %DQPATH%
-)
-
 rem pause
 rem echo.
 
 :x-040
-call:xcopy-file       "%MGMT%\setup\scripts\asadmin.password"                   %DQPATH%
+call:xcopy-file-batch "%MGMT%\setup\scripts\*.*"                                %DQPATH%
 call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.*"                          %DQPATH%
 call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.*"                        %DQPATH%
-
 rem pause
 rem echo.
 
+goto x-060
+
 :x-050
-set SUBDIR="%VRPATH%\setup"
-set SUBDIR
-if not exist %SUBDIR% md %SUBDIR%
-echo.
+call:set-sub-dir "%VRPATH%\setup"
+call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss S
+rem pause
+rem echo.
 
-call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss\standalone E
-call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% oracle E
-
+:x-060
+call:set-sub-dir "%VRPATH%\setup"
+call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% oracle S
 rem pause
 rem echo.
 
 :x-070
-set SUBDIR="%VRPATH%\setup\jboss\welcome-content\mhzap201\attachments"
-set SUBDIR
-if not exist %SUBDIR% md %SUBDIR%
-echo.
-
-set SUBDIR="%VRPATH%\setup\jboss\welcome-content\mhzap201\spool"
-set SUBDIR
-if not exist %SUBDIR% md %SUBDIR%
-echo.
-
+call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\mhzap201\attachments"
+call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\mhzap201\spool"
 rem pause
 rem echo.
 
 :x-080
 call:renameRunTimeVelocityProperties
-
 pause
 echo.
 
 :x-090
 sweep
-
 pause
 goto:eof
 
@@ -217,4 +200,11 @@ if "%currdir%" == "%CD%" (
     goto:eof
 )
 call:set-source-dir-loop
+goto:eof
+
+:set-sub-dir
+set SUBDIR="%~f1"
+set SUBDIR
+if not exist %SUBDIR% md %SUBDIR%
+echo.
 goto:eof

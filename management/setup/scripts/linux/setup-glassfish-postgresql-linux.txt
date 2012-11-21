@@ -30,7 +30,7 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
 
 
 05. Configurar GlassFish (seguir la secuencia de pasos indicados en el archivo
-    /opt/mhzap201/VnnRaammdd/configuracion-glassfish-windows.txt)
+    /opt/mhzap201/VnnRaammdd/configuracion-glassfish-linux.txt)
 
 
 06. Ejecutar el script de instalación
