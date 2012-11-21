@@ -146,7 +146,7 @@ Configuración de JBoss en Windows
 
 05. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\welcome-content\mhzap201 a C:\jboss\welcome-content
 
-06. Ejecutar el script C:\mhzap201\VnnRaammdd\setup\jboss\standalone\scripts\windows\standalone-start.bat
+06. Ejecutar el script C:\mhzap201\VnnRaammdd\resources\scripts\windows\jboss\standalone-start.bat
 
-07. Ejecutar el script C:\mhzap201\VnnRaammdd\setup\jboss\standalone\scripts\windows\ear-deploy.bat
+07. Ejecutar el script C:\mhzap201\VnnRaammdd\resources\scripts\windows\jboss\ear-deploy.bat
 

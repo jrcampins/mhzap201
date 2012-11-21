@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export JAVA_HOME=/opt/java/jre7
+export JAVA_HOME=/opt/java/jdk1.7.0_05
 
 export GLASSFISH_HOME=/opt/glassfish/glassfish
 
