@@ -4,16 +4,14 @@ if [ -d "$MHZAP201_HOME" ]; then
     PROJKEY="mhzap201"
     PROJDIR="mhzap201"
     HOMEDIR=$MHZAP201_HOME
-#   directorio=$HOMEDIR
-#   for directorio in $(find "$HOMEDIR" -mindepth 1 -maxdepth 1 -type d -name "V??R??????*" | sort -f); do continue; done
-#   CRVLDIR="$directorio"
-#   unset directorio
-#   if [ -d "$HOMEDIR/VnnRaammdd" ]; then
-#       CRVLDIR="$HOMEDIR/VnnRaammdd"
-#   else
-#       CRVLDIR="$HOMEDIR"
-#   fi
     CRVLDIR=$MHZAP201_HOME
+    xs="$HOMEDIR/variables-conf.sh"
+    if [ -x "$xs" ]; then
+        . "$xs"
+    else
+        echo No es posible ejecutar el script "$xs"
+        unset variables
+    fi
     xs="$HOMEDIR/variables-home.sh"
     if [ -x "$xs" ]; then
         . "$xs"
@@ -21,7 +19,7 @@ if [ -d "$MHZAP201_HOME" ]; then
         echo No es posible ejecutar el script "$xs"
         unset variables
     fi
-    if [ "$MHZAP201_EEAS" = "GlassFish" ]; then
+    if [ -z "$MHZAP201_EEAS" -o "$MHZAP201_EEAS" = "GlassFish" ]; then
         EEASKEY=$MHZAP201_EEAS
         EEASDIR=glassfish
     fi
@@ -33,7 +31,7 @@ if [ -d "$MHZAP201_HOME" ]; then
         DBMSKEY=$MHZAP201_DBMS
         DBMSDIR=oracle
     fi
-    if [ "$MHZAP201_DBMS" = "PostgreSQL" ]; then
+    if [ -z  "$MHZAP201_DBMS" -o "$MHZAP201_DBMS" = "PostgreSQL" ]; then
         DBMSKEY=$MHZAP201_DBMS
         DBMSDIR=postgresql
     fi
@@ -48,13 +46,6 @@ if [ -d "$MHZAP201_HOME" ]; then
         echo No es posible ejecutar el script "$xs"
         unset variables
     fi
-#   xs="$HOMEDIR/variables-j2ee.sh"
-#   if [ -x "$xs" ]; then
-#       . "$xs"
-#   else
-#       echo No es posible ejecutar el script "$xs"
-#       unset variables
-#   fi
 else
     echo La variable de entorno MHZAP201_HOME no esta correctamente definida
     unset variables

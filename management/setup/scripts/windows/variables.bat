@@ -14,12 +14,12 @@ set PROJKEY=mhzap201
 set PROJDIR=mhzap201
 set HOMEDIR=%MHZAP201_HOME%
 set CRVLDIR=%MHZAP201_HOME%
+call %HOMEDIR%\variables-conf.bat
 call %HOMEDIR%\variables-home.bat
 call:checkJava
 call:checkJavaApplicationServer
 call:checkDatabase
 call %HOMEDIR%\variables-dbdc.bat
-rem  %HOMEDIR%\variables-j2ee.bat
 call:trace
 goto:eof
 
@@ -31,10 +31,9 @@ call:checkHomeFiles
 goto:eof
 
 :checkHomeFiles
-call:checkFile %MHZAP201_HOME% variables.bat
-call:checkFile %MHZAP201_HOME% variables-dbdc.bat
+call:checkFile %MHZAP201_HOME% variables-conf.bat
 call:checkFile %MHZAP201_HOME% variables-home.bat
-rem  checkFile %MHZAP201_HOME% variables-j2ee.bat
+call:checkFile %MHZAP201_HOME% variables-dbdc.bat
 goto:eof
 
 :setCurrentVersionDir1
