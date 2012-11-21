@@ -22,7 +22,7 @@ fi
 if [ "$EEASKEY" = "JBoss" ]; then
     jbhost="localhost"
     jbport="9999"
-    jbcst2="--host ${jbhost} --port ${jbport}"
+    jbcst2="--connect controller=$jbhost:$jbport"
     offset="-Djboss.socket.binding.port-offset=0"
 fi
 #

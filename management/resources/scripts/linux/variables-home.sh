@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export JAVA_HOME=/cygdrive/p/Java/jre7
+export JAVA_HOME=/cygdrive/p/Java/jdk1.7.0_05
 
 export GLASSFISH_HOME=/cygdrive/n/glassfish/glassfish
 

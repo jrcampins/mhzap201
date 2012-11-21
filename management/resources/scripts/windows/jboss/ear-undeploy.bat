@@ -3,7 +3,7 @@ cd /d "%~dp0"
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" undeploys application ear
+echo "%~n0" anula la implementacion de la aplicacion de empresa del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
