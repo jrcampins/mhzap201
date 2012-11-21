@@ -1,4 +1,3 @@
-set PSQL=
 if "%~f1" == "" goto:eof
 if defined NOPAUSE goto:eof
 if defined MAINBAT (

@@ -67,4 +67,5 @@ goto:eof
 :runSQLFile
 set PSQL="%~f1"
 if exist %PSQL% call psql %PSQL%
+set PSQL=
 goto:eof

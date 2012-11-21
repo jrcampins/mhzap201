@@ -5,7 +5,8 @@ if not defined variables call variables "%~f0"
 if not defined variables goto EOJ
 
 if not defined PLOG call:setPlog
-if not defined PSQL set PSQL="%~dpn0.psql"
+
+set PSQL="%~dpn0.psql"
 if not exist %PSQL% call %DIRBAT2%\variables-reset el archivo %PSQL% no existe
 if not defined variables goto EOJ
 
