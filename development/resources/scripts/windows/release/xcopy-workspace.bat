@@ -104,28 +104,8 @@ set SUBDIR
 if not exist %SUBDIR% md %SUBDIR%
 echo.
 
-call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss\standalone  E
+call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss\standalone E
 call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% oracle E
-
-rem pause
-rem echo.
-
-goto x-070
-
-:x-060
-set SUBDIR="%VRPATH%\setup\jboss\standalone\linux"
-set SUBDIR
-if not exist %SUBDIR% md %SUBDIR%
-echo.
-
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\linux\*.*"   %SUBDIR%
-
-set SUBDIR="%VRPATH%\setup\jboss\standalone\windows"
-set SUBDIR
-if not exist %SUBDIR% md %SUBDIR%
-echo.
-
-call:xcopy-file-batch "%MGMT%\resources\bootstrapping\jboss\oracle\windows\*.*" %SUBDIR%
 
 rem pause
 rem echo.
@@ -151,7 +131,7 @@ pause
 echo.
 
 :x-090
-sweep %DQPATH%
+sweep
 
 pause
 goto:eof

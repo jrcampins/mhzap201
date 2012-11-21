@@ -1,22 +1,23 @@
 @echo off
 cd /d "%~dp0"
-call variables-date-time
-if exist "%~f1" (set folder=%~f1) else (set folder=V10R%aammdd%)
-if not exist "%folder%" goto:eof
-call:echo1 %~n0 %folder%
+
+if not defined VRNAME goto:eof
+if not defined VRPATH goto:eof
+
+call:echo1 %~n0 %VRNAME% "%VRPATH%"
 
 set replacer="%ProgramFiles%\ABF\Tools\Replacer\Replacer.exe"
 set dos2unix="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
 set filedate="%ProgramFiles%\ABF\Tools\FileDate\FileDate.exe"
 
 call:echo2 sweep-remove .
-for /R "%folder%" %%f in (.)	do call:sweep-remove %%f
+for /R "%VRPATH%" %%f in (.)	do call:sweep-remove %%f
 
 call:echo2 sweep-delete *.*
-for /R "%folder%" %%f in (*.*)	do call:sweep-delete %%f
+for /R "%VRPATH%" %%f in (*.*)	do call:sweep-delete %%f
 
 call:echo2 sweep-delete-file *.#*
-for /R "%folder%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
+for /R "%VRPATH%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
 
 call:replaceVnnRaammdd
 call:convertTextFiles
@@ -71,16 +72,16 @@ goto:eof
 
 :replaceVnnRaammdd
 set findstring="VnnRaammdd"
-set replacestring=%CRVL%
-call:replacer %CRVLDIR% bat
-call:replacer %CRVLDIR% properties
-call:replacer %CRVLDIR% sh
-call:replacer %CRVLDIR% sql
-call:replacer %CRVLDIR% txt
+set replacestring="%VRNAME%"
+call:replacer bat
+call:replacer properties
+call:replacer sh
+call:replacer sql
+call:replacer txt
 goto:eof
 
 :replacer
-set wildcard="%~f1\*.%2"
+set wildcard="%VRPATH%\*.%1"
 echo %replacer% %wildcard% %findstring% %replacestring% /r
 call %replacer% %wildcard% %findstring% %replacestring% /r
 echo.
@@ -106,10 +107,11 @@ echo dos2unix %1
 echo.
 rem pause
 rem echo.
-for /R "%folder%" %%f in (%1) do %dos2unix% -U "%%f"
+for /R "%VRPATH%" %%f in (%1) do %dos2unix% -U "%%f"
 goto:eof
 
 :modifyFilesDate
-call:echo2 %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
-call %filedate% %folder%\*.* %mm%/%dd%/%aaaa% %hh24%-00-00 /r
+set string=%filedate% "%VRPATH%\*.*" %mm%/%dd%/%aaaa% %hh24%-00-00 /r
+call:echo2 %string%
+call %string%
 goto:eof
