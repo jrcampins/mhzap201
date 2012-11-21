@@ -58,7 +58,7 @@ echo.
 
 if defined XLOG goto:eof
 call ..\setsiono desea ver el log de la ejecucion (%LOG%)
-if /i "%siono%" == "S" start /d %windir% notepad %LOG%
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %LOG%
 goto:eof
 
 :unreachable-statements

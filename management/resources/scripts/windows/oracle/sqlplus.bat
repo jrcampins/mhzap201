@@ -67,7 +67,7 @@ if defined SQLPATH (
     echo.
 )
 
-if defined OPEN_SQLPLUS_SPOOL start /d %windir% notepad %SQLPLUS_SPOOL%
+if defined OPEN_SQLPLUS_SPOOL start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
 goto:eof
 
 :setParameterVariables

@@ -59,7 +59,7 @@ call sqlplus %sql%
 call ..\setsiono desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
 if /i "%siono%" NEQ "S" goto:eof
 
-start /d %windir% notepad %SQLPLUS_SPOOL%
+start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
 goto:eof
 
 :set-package

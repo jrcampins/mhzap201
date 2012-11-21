@@ -14,7 +14,7 @@ call:compare-tree
 
 set siono=S
 set /p siono="desea ver el log de la ejecucion (%log%) ? (Si/No) [%siono%] "
-if /i "%siono%" == "S" start /d %windir% notepad %log%
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
 
 :compare

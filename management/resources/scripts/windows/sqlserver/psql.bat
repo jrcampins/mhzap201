@@ -47,7 +47,7 @@ set PSQL=
 
 if defined XLOG goto:eof
 call ..\setsiono desea ver el log de la ejecucion (%PLOG%)
-if /i "%siono%" == "S" start /d %windir% notepad %PLOG%
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %PLOG%
 goto:eof
 
 :EOJ

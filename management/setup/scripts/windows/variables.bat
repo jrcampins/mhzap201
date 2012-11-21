@@ -162,7 +162,7 @@ rem DBMSDIR
 rem variables
 rem set>"%~dpn0.log"
 if defined variables goto:eof
-rem start /d %windir% notepad "%~dpn0.log"
+rem start /d %SystemRoot% notepad "%~dpn0.log"
 pause
 echo.
 goto:eof

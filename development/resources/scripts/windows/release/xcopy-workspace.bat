@@ -3,8 +3,6 @@ cd /d "%~dp0"
 call:set-source-dir
 
 set MHZAP201
-set W_THIRD_PARTY=W:\third-party
-set W_THIRD_PARTY
 
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
@@ -87,13 +85,9 @@ rem pause
 rem echo.
 
 :x-040
-call:xcopy-file "%MGMT%\resources\scripts\asadmin.password"                     %DQPATH%
-
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.sh"                         %DQPATH%
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.txt"                        %DQPATH%
-
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.bat"                      %DQPATH%
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.txt"                      %DQPATH%
+call:xcopy-file       "%MGMT%\setup\scripts\asadmin.password"                   %DQPATH%
+call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.*"                          %DQPATH%
+call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.*"                        %DQPATH%
 
 rem pause
 rem echo.
