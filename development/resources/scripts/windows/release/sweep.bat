@@ -59,6 +59,7 @@ rem echo %~n0 %1
 if /i "%~x1" == ".cvsignore"	call:sweep-delete-file "%1"
 if /i "%~x1" == ".lnk"		call:sweep-delete-file "%1"
 if /i "%~x1" == ".log"		call:sweep-delete-file "%1"
+if /i "%~x1" == ".plog"		call:sweep-delete-file "%1"
 goto:eof
 
 :sweep-delete-file

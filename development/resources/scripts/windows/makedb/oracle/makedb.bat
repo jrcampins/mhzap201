@@ -47,6 +47,9 @@ REM call createdb
 if %xerrorlevel% GEQ 1 goto EOJ
 
 echo.
+pause
+echo.
+
 set SQLPATH=%SQLDDLDIR%
 call sqlplus "%~dpn0.sql" %O9DATABASE% O9
 if %xerrorlevel% GEQ 1 goto EOJ
