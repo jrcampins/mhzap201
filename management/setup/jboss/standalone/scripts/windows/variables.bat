@@ -1,3 +1,4 @@
+set variables=
 set eeas=jboss
 set EEAS_OVERRIDE=JBoss
 call:set-home-dir
