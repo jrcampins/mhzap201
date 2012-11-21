@@ -160,9 +160,9 @@ rem EEASDIR
 rem DBMSKEY
 rem DBMSDIR
 rem variables
-set>"%~dpn0.log"
+rem set>"%~dpn0.log"
 if defined variables goto:eof
-start /d %windir% notepad "%~dpn0.log"
+rem start /d %windir% notepad "%~dpn0.log"
 pause
 echo.
 goto:eof
