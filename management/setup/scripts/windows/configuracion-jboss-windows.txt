@@ -1,7 +1,6 @@
 --------------------------------------------------------------------------------
 Configuración de JBoss en Windows
 --------------------------------------------------------------------------------
-
 01. Hacer una copia de respaldo de los siguientes archivos:
 
     C:\jboss\bin\standalone.conf.bat
@@ -10,20 +9,22 @@ Configuración de JBoss en Windows
 
 02. Agregar entradas a C:\jboss\standalone\configuration\standalone-full.xml
 
-    Especifique las propiedades JDBC que corresponden a su base de datos
-    Especifique la ruta completa de la carpeta resources de mhzap201 en la propiedad mhzap201.resources.dir
+    Especificar la ruta completa de la aplicación en la propiedad mhzap201.home.dir
+    Especificar las propiedades JDBC que corresponden a su base de datos
+    Especificar la propiedad org.apache.el.parser.COERCE_TO_ZERO
     
     <system-properties>
-        <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
+        <property name="mhzap201.home.dir" value="C:\mhzap201\VnnRaammdd"/>
     	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
     	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
     	<property name="mhzap201.jdbc.password" value="sesamo"/>
-        <property name="mhzap201.resources.dir" value="C:\mhzap201\VnnRaammdd\resources"/>
+        <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
     </system-properties>
 
     NOTA: <system-properties> debe colocarse inmediatamente después de </extensions>
 
+    Especificar los recursos JDBC (datasource y driver) de la aplicación
 
     <datasources>
 
@@ -44,6 +45,7 @@ Configuración de JBoss en Windows
 
     </datasources>
 
+    Especificar los recursos JMS (connection-factories y destinations) de la aplicación
 
     <jms-connection-factories>
 
@@ -65,7 +67,6 @@ Configuración de JBoss en Windows
         </connection-factory>
 
     </jms-connection-factories>
-
 
     <jms-destinations>
 
@@ -96,6 +97,7 @@ Configuración de JBoss en Windows
 
     </jms-destinations>
 
+    Especificar el security-domain de la aplicación
 
     <security-domains>
 
@@ -114,7 +116,7 @@ Configuración de JBoss en Windows
 
     </security-domains>
 
-    Por ultimo, agregar <sso reauthenticate="false"/> a la definicion de default-host:
+    Por último, agregar <sso reauthenticate="false"/> a la definición del virtual-server "default-host":
 
     <subsystem xmlns="urn:jboss:domain:web:1.1" default-virtual-server="default-host" native="false">
         <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
@@ -126,15 +128,10 @@ Configuración de JBoss en Windows
     </subsystem>
 
 
-03. Ajustar parametros de la JVM
+03. Ajustar los parámetros de la JVM en C:\jboss\bin\standalone.conf.bat
 
-    Modificar -Xms, -Xmx y -XX:MaxPermSize
-    
-    Agregar -Dorg.apache.el.parser.COERCE_TO_ZERO=false
+    Donde dice:
 
-    En C:\jboss\bin\standalone.conf.bat, donde dice:
-
-        rem # JVM memory allocation pool parameters - modify as appropriate.
         set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MaxPermSize=256M"
 
     Colocar:
@@ -142,7 +139,7 @@ Configuración de JBoss en Windows
         set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M"
 
 
-04. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\modules a C:\jboss    
+04. Copiar el directorio modules (https://www.dropbox.com/sh/sdgogsijs50m291/e4nevcdMBh) a C:\jboss\modules
 
 05. Copiar el directorio C:\mhzap201\VnnRaammdd\setup\jboss\welcome-content\mhzap201 a C:\jboss\welcome-content
 

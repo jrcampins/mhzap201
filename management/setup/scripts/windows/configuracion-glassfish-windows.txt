@@ -1,71 +1,85 @@
 --------------------------------------------------------------------------------
 Configuraci�n de GlassFish en Windows
 --------------------------------------------------------------------------------
+01. Hacer una copia de respaldo de los siguientes archivos:
 
-01. Añadir a N:\glassfish\glassfish\domains\domain1\config\server.policy (antes de: permission java.lang.RuntimePermission  "loadLibrary.*";)
+    N:\glassfish\glassfish\domains\domain1\config\server.policy
+    N:\glassfish\glassfish\domains\domain1\config\default-web.xml
+    N:\glassfish\glassfish\domains\domain1\config\domain.xml
+    N:\glassfish\glassfish\lib\processLauncher.xml
+
+
+02. Agregar a N:\glassfish\glassfish\domains\domain1\config\server.policy,
+
+    antes de permission java.lang.RuntimePermission  "loadLibrary.*";):
 
     permission java.lang.RuntimePermission  "getenv.*";
 
 
-02. Añadir a N:\glassfish\glassfish\domains\domain1\config\default-web.xml (en Default MIME Type Mappings,
+03. Agregar a N:\glassfish\glassfish\domains\domain1\config\default-web.xml, en
+    la secci�n "Default MIME Type Mappings",
 
-    - entre las extensiones "css" y "dib":
+    entre las extensiones "css" y "dib":
 
-  <mime-mapping>
-    <extension>csv</extension>
-    <mime-type>application/vnd.ms-excel</mime-type>
-  </mime-mapping>
+    <mime-mapping>
+        <extension>csv</extension>
+        <mime-type>application/vnd.ms-excel</mime-type>
+    </mime-mapping>
 
-    - entre las extensiones "latex" y "m3u":
+    entre las extensiones "latex" y "m3u":
 
-  <mime-mapping>
-    <extension>log</extension>
-    <mime-type>text/plain</mime-type>
-  </mime-mapping>
-
-
-03. Establecer la propiedad listings del servlet DefaultServlet como false en N:\glassfish\glassfish\domains\domain1\config\default-web.xml
-
-  <servlet>
-    <servlet-name>default</servlet-name>
-    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
-    <init-param>
-      <param-name>debug</param-name>
-      <param-value>0</param-value>
-    </init-param>
-    <init-param>
-      <param-name>listings</param-name>
-      <param-value>false</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+    <mime-mapping>
+        <extension>log</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
 
 
-04. Establecer la propiedad sso-enabled como true en N:\glassfish\glassfish\domains\domain1\config\domain.xml:
+04. Establecer la propiedad listings del servlet DefaultServlet como false en
+    N:\glassfish\glassfish\domains\domain1\config\default-web.xml:
 
-      <virtual-server ...>
-          <property name="sso-enabled" value="true"/>
-      </virtual-server>
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
 
-05. Ajustar parámetros de la JVM
-
-    Añadir o modificar las siguientes opciones en N:\glassfish\glassfish\domains\domain1\config\domain.xml
-
-        <jvm-options>-XX:MaxPermSize=384m</jvm-options>
-        <jvm-options>-Xmx1024m</jvm-options>
-
-    Adicionalmente, para ejecutar GlassFish como un servicio Windows:
-
-        Añadir la siguiente opcion en N:\glassfish\glassfish\domains\domain1\config\domain.xml
-
-            <jvm-options>-Xrs</jvm-options>
-
-        Añadir la propiedad "-Xrs" al proceso "as9-server" en N:\glassfish\glassfish\lib\processLauncher.xml
-
-        <process name="as9-server">
+05. En N:\glassfish\glassfish\domains\domain1\config\domain.xml, en la seccion
+    <config name="server-config">
+    
+    Especificar la ruta completa de la aplicacion en la propiedad mhzap201.home.dir
+    Especificar las propiedades JDBC que corresponden a su base de datos
+    
+    <configs>
+        <config name="server-config">
+            <system-property name="mhzap201.home.dir" value="C:\mhzap201\VnnRaammdd"></system-property>
+            <system-property name="mhzap201.jdbc.url" value="jdbc:postgresql://localhost:5432/MHZDB201"></system-property>
+            <system-property name="mhzap201.jdbc.driver" value="org.postgresql.Driver"></system-property>
+            <system-property name="mhzap201.jdbc.user" value="postgres"></system-property>
+            <system-property name="mhzap201.jdbc.password" value="postgres"></system-property>
             ...
-            <sysproperty key="-Xrs"/>
+
+    Establecer la propiedad sso-enabled del http-service
+
+            ...
+            <http-service sso-enabled="true">
+            ...
+
+
+    Ajustar par�metros de la JVM, a�adiendo o modificando las siguientes opciones
+            ...
+            <java-config ...>
+                <jvm-options>-Xms128m</jvm-options>
+                <jvm-options>-Xmx1024m</jvm-options>
+                <jvm-options>-XX:MaxPermSize=384m</jvm-options>
             ...
 
 

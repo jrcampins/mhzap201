@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------------
+Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
+--------------------------------------------------------------------------------
+01. Crear el directorio mhzap201, preferiblemente en /opt
+
+    cd /opt
+    mkdir mhzap201
+
+    Si no creó el directorio mhzap201 en /opt, puede crear el enlace simbólico /opt/mhzap201
+
+    ln -s ruta-completa-del-directorio-mhzap201 /opt/mhzap201
+
+02. Descomprimir el archivo zip VnnRaammdd en /opt/mhzap201
+
+    Esta acción crea el directorio /opt/mhzap201/VnnRaammdd
+
+    unzip VnnRaammdd -d /opt/mhzap201
+
+    chmod -R 0777 /opt/mhzap201/VnnRaammdd
+
+
+03. Ajustar las variables de entorno en:
+
+    /opt/mhzap201/VnnRaammdd/variables-conf.sh
+    /opt/mhzap201/VnnRaammdd/variables-dbdc.sh
+    /opt/mhzap201/VnnRaammdd/variables-home.sh
+
+
+04. Ajustar las contraseñas de acceso a GlassFish en /opt/mhzap201/VnnRaammdd/asadmin.password
+
+
+05. Configurar GlassFish (seguir la secuencia de pasos indicados en el archivo
+    /opt/mhzap201/VnnRaammdd/configuracion-glassfish-windows.txt)
+
+
+06. Ejecutar el script de instalación
+
+    06.01.  Para instalar por primera vez, ejecutar el script de instalación
+            /opt/mhzap201/VnnRaammdd/install.sh.
+
+            Este script lleva a cabo las siguientes acciones:
+
+            06.01.01. chmod: otorga los permisos necesarios
+            06.01.02. dos2unix: convierte los archivos de texto de formato DOS a
+                      formato UNIX
+            06.01.03. createdb: crea la base de datos
+            06.01.04. restore/makedb: restaura la base de datos a partir de un
+                      archivo respaldo ó crea los objetos de la base de datos
+            06.01.05. rebuild: reconstruye las tablas "plus" correspondientes a
+                      cada tabla "arbol"
+            06.01.06. vacuumdb: comprime la base de datos
+            06.01.07. domain-start: inicia la ejecucion del servidor de aplicaciones
+            06.01.08. server-config: establece parametros de configuracion del
+                      servidor de aplicaciones
+            06.01.09. create-jdbc: crea el dominio de seguridad, los conjuntos de
+                      conexiones y demas recursos JDBC del servidor de aplicaciones
+            06.01.10. create-jms: crea las fabricas de conexiones, conjuntos de
+                      conexiones y demas recursos JMS del servidor de aplicaciones
+            06.01.11. deploy: implementa la aplicacion de empresa en el servidor
+                      de aplicaciones
+
+    06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
+            instalación /opt/mhzap201/VnnRaammdd/upgrade.sh.
+
+            Este script lleva a cabo las siguientes acciones:
+
+            06.02.01. chmod: otorga los permisos necesarios
+            06.02.02. dos2unix: convierte los archivos de texto de formato DOS a
+                      formato UNIX
+            06.02.03. domain-start: inicia la ejecucion del servidor de aplicaciones
+            06.02.04. undeploy: anula la implementacion de la aplicacion de empresa
+                      del servidor de aplicaciones
+            06.02.05. delete-jms: elimina las fabricas de conexiones, conjuntos 
+                      de conexiones y demas recursos JMS del servidor de aplicaciones
+            06.02.06. delete-jdbc: elimina el dominio de seguridad, los conjuntos
+                      de conexiones y demas recursos JDBC del servidor de aplicaciones
+            06.02.07. domain-stop: detiene la ejecucion del servidor de aplicaciones
+            06.02.08. dump: crea un archivo respaldo de la base de datos
+            06.02.09. upgradedb: actualiza la base de datos
+            06.02.10. rebuild: reconstruye las tablas "plus" correspondientes a 
+                      cada tabla "arbol"
+            06.02.11. vacuumdb: comprime la base de datos
+            06.02.12. domain-start: inicia la ejecucion del servidor de aplicaciones
+            06.02.13. server-config: establece parametros de configuracion del
+                      servidor de aplicaciones
+            06.02.14. create-jdbc: crea el dominio de seguridad, los conjuntos de
+                      conexiones y demas recursos JDBC del servidor de aplicaciones
+            06.02.15. create-jms: crea las fabricas de conexiones, conjuntos de
+                      conexiones y demas recursos JMS del servidor de aplicaciones
+            06.02.16. deploy: implementa la aplicacion de empresa en el servidor
+                      de aplicaciones
+
+
+--------------------------------------------------------------------------------
+Operación de mhzap201 en Linux
+--------------------------------------------------------------------------------
+Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
+su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
+(sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el 
+puerto HTTP que le asignó al instalarlo). La sesión de trabajo comienza por la
+pagina de autenticación del usuario. Al instalar se define el usuario "admin" y 
+su contraseña es "sesamo".
+
+
+--------------------------------------------------------------------------------
+Desinstalación de mhzap201 en Linux
+--------------------------------------------------------------------------------
+Para desintalar el producto, ejecute el script /opt/mhzap201/VnnRaammdd/uninstall.sh
+

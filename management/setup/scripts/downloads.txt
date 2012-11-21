@@ -1,0 +1,27 @@
+01. Descargar e instalar JDK 1.7.
+
+    El link de descarga es http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html	
+
+    Establezca la variable de entorno JAVA_HOME con la ruta del directorio donde
+    se instaló el JDK.
+
+
+02. Descargar JBoss AS 7.1.1 Final.
+
+    El link de descarga es http://www.jboss.org/jbossas/downloads/
+
+    Para instalar basta con extraer la carpeta comprimida en un directorio.
+    Es recomendable instalar en el directorio C:\jboss
+
+    Si no instaló JBoss en C:\jboss, puede crear el enlace simbólico C:\jboss
+    En http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ 
+    se describe como crear enlaces simbólicos.
+
+
+03. Descargar e instalar Oracle 11g R2 Express Edition.
+
+    El link de descarga es http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
+
+    Opcionalmente, instalar Oracle SQL Developer 3.2.2 (3.2.20.09.87).
+
+    El link de descarga es http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html

@@ -1,57 +1,33 @@
 --------------------------------------------------------------------------------
-Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
+Instalación de mhzap201 en Windows, con JBoss y Oracle
 --------------------------------------------------------------------------------
+01. Crear el directorio mhzap201, preferiblemente en C:\
 
-01. Descargar e instalar Oracle 11g R2 Express Edition.
-
-    NOTA: el link de descarga es http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
-
-    Opcionalmente, instalar Oracle SQL Developer 3.2.2 (3.2.20.09.87).
-
-    NOTA: el link de descarga es http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
-
-    Establezca la variable de entorno ORACLE_HOME con la ruta del directorio donde instaló Oracle.
+    El path del directorio NO debe contener espacios ni caracteres especiales
+    Si no creó el directorio mhzap201 en C:\, puede crear el enlace simbólico C:\mhzap201
+    http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+    describe como crear enlaces simbólicos.
 
 
-02. Descargar e instalar JDK 1.7.
+02. Descomprimir el archivo zip VnnRaammdd en C:\mhzap201
 
-    NOTA: el link de descarga es http://www.oracle.com/technetwork/java/javase/downloads/java-se-jdk-7-download-432154.html	
-
-    Establezca la variable de entorno JAVA_HOME con la ruta del directorio donde instaló el JDK.
+    Esta acción crea el directorio C:\mhzap201\VnnRaammdd
 
 
-03. Descargar JBoss AS 7.1.1 Final.
+03. Ajustar las variables de entorno en:
 
-    NOTA: el link de descarga es http://www.jboss.org/jbossas/downloads/
-
-    Para instalar basta con extraer la carpeta comprimida en un directorio. Es recomendable instalar en el directorio C:\jboss
-
-    Establezca la variable de entorno JBOSS_HOME con la ruta del directorio donde instaló JBoss.
-
-    NOTA: si no instaló JBoss en C:\jboss, puede crear el enlace simbólico C:\jboss para JBOSS_HOME
-    NOTA: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ describe como crear enlaces simbólicos
+    C:\mhzap201\variables-conf.bat
+    C:\mhzap201\variables-dbdc.bat
+    C:\mhzap201\variables-home.bat
 
 
-04. Crear el directorio mhzap201, preferiblemente en C:\
-
-    Establezca la variable de entorno MHZAP201_HOME con la ruta del directorio mhzap201.
-
-    NOTA: si no creó el directorio mhzap201 en C:\mhzap201, puede crear el enlace simbólico C:\mhzap201 para MHZAP201_HOME
-    NOTA: http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/ describe como crear enlaces simbólicos
-
-
-05. Descomprimir el archivo zip VnnRaammdd en C:\mhzap201
-
-    NOTA: esta acción crea el directorio C:\mhzap201\VnnRaammdd
-
-
-06. Crear y otorgar privilegios al usuario MHZ en Oracle.
+04. Crear y otorgar privilegios al usuario MHZ en Oracle.
 
     Conectar con el usuario SYS:
 
         connect SYS/password as SYSDBA; 
 
-        NOTA: el password es definido al instalar Oracle.
+        NOTA: el password de SYS es definido al instalar Oracle.
 
     Crear el usuario MHZ:
         
@@ -62,7 +38,7 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
         grant connect, DBA to MHZ;
 
 
-07. Crear la base de datos en Oracle.
+05. Crear la base de datos en Oracle.
 
     Conectar con el usuario MHZ:
 
@@ -72,12 +48,8 @@ Instalación de mhzap201 1.0 en Windows, con JBoss y Oracle
 
         spool C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log
         @C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb
+        spool off
 
     Comprobar el resultado de la ejecución (revisar el archivo C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log).
 
-08. Configurar JBoss (seguir los pasos indicados en el archivo C:\mhzap201\VnnRaammdd\configuracion-jboss-windows.txt).
-
-09. Comprobar el funcionamiento de la aplicación.
-
-    NOTA: el link de la aplicación es http://localhost:8080/mhzap201-web/
-
+06. Configurar JBoss (seguir los pasos indicados en el archivo C:\mhzap201\VnnRaammdd\configuracion-jboss-windows.txt).
