@@ -34,13 +34,12 @@
     </extensions>
 
     <system-properties>
-        <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
+        <property name="mhzap201.home.dir" value="W:\mhzap201\source\management"/>
     	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
     	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
     	<property name="mhzap201.jdbc.password" value="sesamo"/>
-        <property name="mhzap201.resources.dir" value="C:\mhzap201\VnnRaammdd\resources"/>
-        <property name="mhzap201.bootstrapping.properties.file" value="C:\mhzap201\VnnRaammdd\resources\bootstrapping\jboss\oracle\windows\mhzap201.properties"/>
+        <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
     </system-properties>
 
     <management>
