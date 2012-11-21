@@ -16,7 +16,7 @@ public class EAC {
 
     public static final String CONTENT_ROOT_DIR = "CONTENT_ROOT_DIR";
 
-    public static final String RESOURCES_DIR = "RESOURCES_DIR";
+    public static final String HOME_DIR = "HOME_DIR";
 
     public static final String JDBC_DATASOURCE = "JDBC_DATASOURCE";
 

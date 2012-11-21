@@ -33,7 +33,7 @@ public class EA {
 
     private static final String CONTENT_ROOT_DIR = "$CONTENT_ROOT_DIR";
 
-    private static final String RESOURCES_DIR = "$RESOURCES_DIR";
+    private static final String HOME_DIR = "$HOME_DIR";
 
     private static final String JDBC_DRIVER = "$" + EAC.JDBC_DRIVER;
 
@@ -59,7 +59,7 @@ public class EA {
     // <editor-fold defaultstate="collapsed" desc="private static fields">
     private static String content_root_dir;
 
-    private static String resources_dir;
+    private static String home_dir;
 
     private static String bootstrapping_properties_file;
 
@@ -174,9 +174,9 @@ public class EA {
         }
         if (!ok) {
             String sep = System.getProperties().getProperty("file.separator");
-            String rootdir = System.getProperties().getProperty("com.sun.aas.instanceRoot");
-            String basedir = System.getProperties().getProperty("jboss.server.base.dir");
-            String somedir = coalesceToUserDir(rootdir, basedir);
+            String glassRoot = System.getProperties().getProperty("com.sun.aas.instanceRoot");
+            String jbossBase = System.getProperties().getProperty("jboss.server.base.dir");
+            String somedir = coalesceToUserDir(glassRoot, jbossBase);
             key = StringUtils.removeStart(SEV.ENT_APP_BOOTSTRAPPING_PROPERTIES_FILE, SEV.ENT_APP_VAR_PREFFIX);
             bootstrapping_properties_file = somedir + sep + lower_case_code + "." + "properties";
             show(key, bootstrapping_properties_file);
@@ -213,7 +213,7 @@ public class EA {
     private static void loadEnvironmentVariables() {
         Bitacora.trace(EA.class, "loadEnvironmentVariables");
         content_root_dir = get(SEV.ENT_APP_CONTENT_ROOT_DIR, CheckOption.CHECK_DIRECTORY);
-        resources_dir = get(SEV.ENT_APP_RESOURCES_DIR, CheckOption.CHECK_DIRECTORY);
+        home_dir = get(SEV.ENT_APP_HOME_DIR, CheckOption.CHECK_DIRECTORY);
         configuration_properties_file = get(SEV.ENT_APP_CONFIGURATION_PROPERTIES_FILE, CheckOption.CHECK_FILE);
         jdbc_driver = get(SEV.ENT_APP_JDBC_DRIVER, CheckOption.CHECK_NOT_BLANK);
         jdbc_url = get(SEV.ENT_APP_JDBC_URL, CheckOption.CHECK_NOT_BLANK);
@@ -230,15 +230,15 @@ public class EA {
         String sep = System.getProperties().getProperty("file.separator");
         String osname1 = System.getProperties().getProperty("os.name");
         String osname2 = StringUtils.containsIgnoreCase(osname1, "windows") ? "windows" : "linux";
-        String rootdir = System.getProperties().getProperty("com.sun.aas.instanceRoot");
-        String homedir = System.getProperties().getProperty("jboss.home.dir");
-        String basedir = System.getProperties().getProperty("jboss.server.base.dir");
+        String glassRoot = System.getProperties().getProperty("com.sun.aas.instanceRoot");
+        String jbossHome = System.getProperties().getProperty("jboss.home.dir");
+        String jbossBase = System.getProperties().getProperty("jboss.server.base.dir");
         String somedir;
-        boolean glassfish = StringUtils.isNotBlank(rootdir);
-        boolean jboss = StringUtils.isNotBlank(homedir);
+        boolean glassfish = StringUtils.isNotBlank(glassRoot);
+        boolean jboss = StringUtils.isNotBlank(jbossHome);
         if (StringUtils.isBlank(content_root_dir)) {
             key = StringUtils.removeStart(SEV.ENT_APP_CONTENT_ROOT_DIR, SEV.ENT_APP_VAR_PREFFIX);
-            somedir = coalesceToUserDir(rootdir, homedir);
+            somedir = coalesceToUserDir(glassRoot, jbossHome);
             if (glassfish) {
                 content_root_dir = somedir + sep + "docroot";
             } else if (jboss) {
@@ -249,16 +249,16 @@ public class EA {
             show(key, content_root_dir);
             isDirectory(content_root_dir);
         }
-        if (StringUtils.isBlank(resources_dir)) {
-            key = StringUtils.removeStart(SEV.ENT_APP_RESOURCES_DIR, SEV.ENT_APP_VAR_PREFFIX);
-            somedir = coalesceToUserDir(rootdir, basedir);
-            resources_dir = somedir + sep + lower_case_code + sep + "resources";
-            show(key, resources_dir);
-            isDirectory(resources_dir);
+        if (StringUtils.isBlank(home_dir)) {
+            key = StringUtils.removeStart(SEV.ENT_APP_HOME_DIR, SEV.ENT_APP_VAR_PREFFIX);
+            somedir = coalesceToUserDir(glassRoot, jbossBase);
+            home_dir = somedir + sep + lower_case_code;
+            show(key, home_dir);
+            isDirectory(home_dir);
         }
         if (StringUtils.isBlank(configuration_properties_file)) {
             key = StringUtils.removeStart(SEV.ENT_APP_CONFIGURATION_PROPERTIES_FILE, SEV.ENT_APP_VAR_PREFFIX);
-            configuration_properties_file = resources_dir + sep + "config" + sep + osname2 + sep + lower_case_code + ".properties";
+            configuration_properties_file = home_dir + sep + "resources" + sep + "config" + sep + osname2 + sep + lower_case_code + ".properties";
             show(key, configuration_properties_file);
             isFile(configuration_properties_file);
         }
@@ -289,13 +289,13 @@ public class EA {
         }
         if (StringUtils.isBlank(velocity_properties_file)) {
             key = StringUtils.removeStart(SEV.ENT_APP_VELOCITY_PROPERTIES_FILE, SEV.ENT_APP_VAR_PREFFIX);
-            velocity_properties_file = resources_dir + sep + "velocity" + sep + "velocity.properties";
+            velocity_properties_file = home_dir + sep + "resources" + sep + "velocity" + sep + "velocity.properties";
             show(key, velocity_properties_file);
             isFile(velocity_properties_file);
         }
         if (StringUtils.isBlank(velocity_file_resource_loader_path)) {
             key = StringUtils.removeStart(SEV.ENT_APP_VELOCITY_FILE_RESOURCE_LOADER_PATH, SEV.ENT_APP_VAR_PREFFIX);
-            velocity_file_resource_loader_path = resources_dir + sep + "velocity" + sep + "templates";
+            velocity_file_resource_loader_path = home_dir + sep + "resources" + sep + "velocity" + sep + "templates";
             show(key, velocity_file_resource_loader_path);
             isDirectory(velocity_file_resource_loader_path);
         }
@@ -310,10 +310,10 @@ public class EA {
         if (!ok) {
             messages += content_root_dir + " no existe o no es un directorio; ";
         }
-        ok = Utils.isDirectory(resources_dir);
+        ok = Utils.isDirectory(home_dir);
         locked &= ok;
         if (!ok) {
-            messages += resources_dir + " no existe o no es un directorio; ";
+            messages += home_dir + " no existe o no es un directorio; ";
         }
         ok = Utils.isFile(configuration_properties_file);
         locked &= ok;
@@ -369,7 +369,7 @@ public class EA {
         value = value.replace(LOWER_CASE_CODE, lower_case_code);
         value = value.replace(UPPER_CASE_CODE, upper_case_code);
         value = value.replace(CONTENT_ROOT_DIR, content_root_dir);
-        value = value.replace(RESOURCES_DIR, resources_dir);
+        value = value.replace(HOME_DIR, home_dir);
         value = value.replace(JDBC_DRIVER, jdbc_driver);
         value = value.replace(JDBC_URL, jdbc_url);
         value = value.replace(JDBC_USER, jdbc_user);
