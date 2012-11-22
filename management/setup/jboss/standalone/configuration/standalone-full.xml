@@ -34,12 +34,14 @@
     </extensions>
 
     <system-properties>
-        <property name="mhzap201.home.dir" value="W:\mhzap201\source\management"/>
+        <property name="mhzap201.home.dir" value="/opt/mhzap201/latest"/>
     	<property name="mhzap201.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
     	<property name="mhzap201.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
     	<property name="mhzap201.jdbc.password" value="sesamo"/>
         <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
+        <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
+        <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
     </system-properties>
 
     <management>
@@ -85,6 +87,9 @@
                 <level name="WARN"/>
             </logger>
             <logger category="com.egt">
+                <level name="DEBUG"/>
+            </logger>
+            <logger category="com.egt.core.jsf.component">
                 <level name="INFO"/>
             </logger>
             <logger category="jacorb">
@@ -455,7 +460,7 @@
             <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
             <virtual-server name="default-host" enable-welcome-root="true">
                 <alias name="localhost"/>
-                <alias name="my-host.com"/>
+                <alias name="example.com"/>
                 <sso reauthenticate="false"/>
             </virtual-server>
         </subsystem>
