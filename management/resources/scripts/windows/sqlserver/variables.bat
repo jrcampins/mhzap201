@@ -1,16 +1,16 @@
-set variables=
-set dbms=sqlserver
-set DBMS_OVERRIDE=SQLServer
-call:set-home-dir
-set xs=%MHZAP201_HOME%\variables.bat
+set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
 
+set xs="%~dp0..\variables-date-time.bat"
+if exist %xs% call %xs%
+
+set dbms=sqlserver
+set DBMS_OVERRIDE=SQLServer
 set SSHOST=%dbhost%
 set SSPORT=%dbport%
 set SSUSER=%dbuser%
 set SSPASS=%dbpass%
-rem SSPASSFILE=%dbpassfile%
 set SSDATABASE=%dbname%
 set SSBINDIR=%SQLSERVER_TOOLS%\Binn
 set BACKUPDIR=%HOMEDIR%\backup
@@ -24,6 +24,7 @@ call:check-exist BACKUPDIR
 call:check-exist SQLDDLDIR
 call:check-exist SQLDATDIR
 
+if not defined variables pause
 goto:eof
 
 :check-exist
@@ -40,26 +41,4 @@ if defined %1 (
 ) else (
     call ..\unset-variables la variable de entorno %1 no esta definida
 )
-goto:eof
-
-:set-home-dir
-pushd "%~dp0"
-call:set-home-dir-loop
-popd
-goto:eof
-
-:set-home-dir-loop
-set currdir=%CD%
-if exist HOME (
-    if not exist HOME\nul (
-        set MHZAP201_HOME=%currdir%
-        goto:eof
-    )
-)
-cd ..
-if "%currdir%" == "%CD%" (
-    set MHZAP201_HOME=%currdir%mhzap201\home
-    goto:eof
-)
-call:set-home-dir-loop
 goto:eof

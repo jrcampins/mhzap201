@@ -2,13 +2,15 @@ set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
 
+set xs="%~dp0..\variables-date-time.bat"
+if exist %xs% call %xs%
+
 set dbms=oracle
 set DBMS_OVERRIDE=Oracle
 set O9HOST=%dbhost%
 set O9PORT=%dbport%
 set O9USER=%dbuser%
 set O9PASSWORD=%dbpass%
-rem O9PASSFILE=%dbpassfile%
 set O9DATABASE=%dbname%
 set O9BINDIR=%ORACLE_HOME%\bin
 set BACKUPDIR=%HOMEDIR%\backup

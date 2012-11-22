@@ -11,7 +11,6 @@ set PGHOST=%dbhost%
 set PGPORT=%dbport%
 set PGUSER=%dbuser%
 set PGPASSWORD=%dbpass%
-rem PGPASSFILE=%dbpassfile%
 set PGDATABASE=%dbname%
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 set BACKUPDIR=%HOMEDIR%\backup
