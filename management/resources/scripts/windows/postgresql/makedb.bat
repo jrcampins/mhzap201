@@ -1,11 +1,13 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" crea los objetos de la base de datos
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" crea los objetos de la base de datos
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
 if not exist "%~dp0logs" md "%~dp0logs"
 if not defined PLOG set PLOG="%~dp0logs\%~n0.log"

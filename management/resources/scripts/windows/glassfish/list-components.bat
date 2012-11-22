@@ -1,11 +1,13 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" produce una lista de los componentes implementados en el servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" produce una lista de los componentes implementados en el servidor de aplicaciones
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
 echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components

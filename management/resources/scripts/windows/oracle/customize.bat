@@ -1,11 +1,13 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" ejecuta todos los scripts que se encuentran en oracle\custom\functions
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" ejecuta los scripts que se encuentran en oracle\custom\functions
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
 if not exist "%~dp0logs" md "%~dp0logs"
 set log="%~dp0logs\%~n0.log"

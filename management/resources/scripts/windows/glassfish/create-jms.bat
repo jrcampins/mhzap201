@@ -1,11 +1,14 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
+
 set RA="jmsra"
 set CC="javax.jms.QueueConnectionFactory"
 set AO="javax.jms.Queue"

@@ -1,11 +1,13 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" comprime la base de datos
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" comprime la base de datos
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
 set EXE="%PGBINDIR%\vacuumdb.exe"
 set CMD=%EXE% -e -f -q -z

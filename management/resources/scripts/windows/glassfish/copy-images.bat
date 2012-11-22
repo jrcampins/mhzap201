@@ -1,11 +1,13 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
 @echo.
 set   SOURCE=%CRVLDIR%\resources\jasper\templates\resources

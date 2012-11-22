@@ -1,11 +1,14 @@
 @echo off
 cd /d "%~dp0"
-echo "%~n0" establece parametros de configuracion del servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
+
 set variables=
 call variables
 if not defined variables goto:eof
+
+echo "%~n0" establece parametros de configuracion del servidor de aplicaciones
+call ..\setsiono ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
+
 rem .
 rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal
 rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal

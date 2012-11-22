@@ -1,13 +1,14 @@
 @echo off
 cd /d "%~dp0"
+
+set variables=
+call variables
+if not defined variables goto:eof
+
 echo "%~n0" inicia la ejecucion del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-set variables=
-call variables
-rem set xs="%HOMEDIR%\variables-j2ee.bat"
-rem if not defined variables goto:eof
-if exist %xs% call %xs%
+
 call %ASADMIN% %GFDOMAINCST2% start-domain %GFDOMAINNAME%
 echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components
