@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" crea un archivo respaldo de la base de datos
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0"
+set variables=
+call variables
 if not defined variables goto:eof
 :ask1
 set SUFIJO=%aaaammdd%

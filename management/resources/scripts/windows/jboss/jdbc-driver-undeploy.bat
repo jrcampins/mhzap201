@@ -5,7 +5,8 @@ echo "%~n0" undeploys jdbc drivers
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-call variables "%~f0" 
+set variables=
+call variables
 if not defined variables goto:eof
 
 rem set xs="%HOMEDIR%\variables-j2ee.bat"

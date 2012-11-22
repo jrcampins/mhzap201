@@ -3,7 +3,7 @@ scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname
 xs=$scriptpath/variables.sh
-# [ -x "$xs" ] && echo "$xs"
+unset variables
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
     echo $me copia las imagenes usadas por los informes a la carpeta de configuracion del servidor de aplicaciones

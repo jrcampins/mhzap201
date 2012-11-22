@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" restaura la base de datos a partir de un archivo respaldo
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0"
+set variables=
+call variables
 if not defined variables goto:eof
 
 :ask

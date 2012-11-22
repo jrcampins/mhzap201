@@ -3,7 +3,7 @@ scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname
 xs=$scriptpath/variables.sh
-# [ -x "$xs" ] && echo "$xs"
+unset variables
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
     echo $me elimina el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones

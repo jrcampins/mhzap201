@@ -1,24 +1,9 @@
 #!/bin/sh
-unset variables
-pushd $(dirname "$BASH_SOURCE") > /dev/null
-while true
-do
-    currdir=$(pwd)
-    if [ -f "HOME" ]; then
-        MHZAP201_HOME=$currdir
-        break
-    fi
-    cd ..
-    if [ "$currdir" = "$(pwd)" ]; then
-        MHZAP201_HOME=${currdir}mhzap201/home
-        break
-    fi
-done
-popd > /dev/null
-xs=$MHZAP201_HOME/variables.sh
-# [ -x "$xs" ] && echo "$xs"
+xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
+    eeas=glassfish
+    EEAS_OVERRIDE=GlassFish
     JDBC_HOST=$dbhost
     JDBC_PORT=$dbport
     JDBC_CONNECTION_ID=$dbconnid

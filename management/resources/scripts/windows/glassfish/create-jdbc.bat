@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0" 
+set variables=
+call variables
 if not defined variables goto:eof
 if /i "%dbmsys%" == "Oracle"     set DS=oracle.jdbc.pool.OracleDataSource
 if /i "%dbmsys%" == "PostgreSQL" set DS=org.postgresql.ds.PGConnectionPoolDataSource

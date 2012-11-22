@@ -1,11 +1,9 @@
-set variables=
-set dbms=oracle
-set DBMS_OVERRIDE=Oracle
-call:set-home-dir
-set xs=%MHZAP201_HOME%\variables.bat
+set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
 
+set dbms=oracle
+set DBMS_OVERRIDE=Oracle
 set O9HOST=%dbhost%
 set O9PORT=%dbport%
 set O9USER=%dbuser%
@@ -22,6 +20,7 @@ call:check-exist O9BINDIR
 call:check-exist BACKUPDIR
 call:check-exist SQLDDLDIR
 
+if not defined variables pause
 goto:eof
 
 :check-exist
@@ -38,26 +37,4 @@ if defined %1 (
 ) else (
     call ..\unset-variables la variable de entorno %1 no esta definida
 )
-goto:eof
-
-:set-home-dir
-pushd "%~dp0"
-call:set-home-dir-loop
-popd
-goto:eof
-
-:set-home-dir-loop
-set currdir=%CD%
-if exist HOME (
-    if not exist HOME\nul (
-        set MHZAP201_HOME=%currdir%
-        goto:eof
-    )
-)
-cd ..
-if "%currdir%" == "%CD%" (
-    set MHZAP201_HOME=%currdir%mhzap201\home
-    goto:eof
-)
-call:set-home-dir-loop
 goto:eof

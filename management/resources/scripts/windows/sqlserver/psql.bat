@@ -1,4 +1,3 @@
-if not defined variables call variables "%~f0"
 if not defined variables goto:eof
 
 set OSQLFILE="%~dpn0.osql"

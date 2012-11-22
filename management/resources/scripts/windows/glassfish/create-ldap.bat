@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" crea el dominio de seguridad LDAP
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0" 
+set variables=
+call variables
 if not defined variables goto:eof
 set CLASS=com.sun.enterprise.security.auth.realm.ldap.LDAPRealm
 set P1=jaas-context="ldapRealm"

@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" elimina las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0" 
+set variables=
+call variables
 if not defined variables goto:eof
 set S1=MessageFactoryPool
 set S2=MessageFactory

@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" crea el servicio para iniciar y detener la ejecucion del servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0"
+set variables=
+call variables
 if not defined variables goto:eof
 set win32sc1="%SystemRoot%\system32\sc.exe"
 set appserv1="%GLASSFISH_HOME%\lib\appservService.exe"

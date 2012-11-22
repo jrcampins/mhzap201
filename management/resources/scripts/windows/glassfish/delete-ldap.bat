@@ -3,7 +3,8 @@ cd /d "%~dp0"
 echo "%~n0" elimina el dominio de seguridad LDAP
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
-call variables "%~f0" 
+set variables=
+call variables
 if not defined variables goto:eof
 echo.
 set REALMID="%PROJKEY%-ldap-realm"

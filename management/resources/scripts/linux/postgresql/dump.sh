@@ -3,7 +3,7 @@ scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname
 xs=$scriptpath/variables.sh
-# [ -x "$xs" ] && echo "$xs"
+unset variables
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
     echo $me crea un archivo respaldo de la base de datos

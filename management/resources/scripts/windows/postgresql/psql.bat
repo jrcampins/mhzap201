@@ -1,4 +1,3 @@
-if not defined variables call variables "%~f0"
 if not defined variables goto:eof
 
 if "%~x1" == ".sql" set PSQL="%~f1"

@@ -1,7 +1,6 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
 if not defined variables goto:eof
 
 set xerror=
