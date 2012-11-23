@@ -4,7 +4,7 @@ call variables
 
 set   APPLID=mhzap201-ejb-persistence
 set   SOURCE=W:\workspace\%APPLID%
-set   TARGET=%MHZAP201_SOURCE%\%APPLID%
+set   TARGET=%sourcedir%\%APPLID%
 
 set   APPLID
 set   SOURCE

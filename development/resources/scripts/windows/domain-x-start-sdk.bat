@@ -5,11 +5,11 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-rem MHZAP201_HOME_DIR=%MHZAP201_SOURCE%\management
+rem MHZAP201_HOME_DIR=%sourcedir%\management
 set MHZAP201_JNDI_EJB_PERSISTENCE_PATTERN=java:global/mhzap201-sdk/mhzap201-ejb-persistence/{0}
-set MHZAP201_VELOCITY_PROPERTIES_FILE=%MHZAP201_SOURCE%\management\resources\velocity\sdk-velocity.properties
+set MHZAP201_VELOCITY_PROPERTIES_FILE=%sourcedir%\management\resources\velocity\sdk-velocity.properties
 set MHZAP201_WEB_TEMPLATE_PROJECT_NAME=mhzap201-web-template
-set MHZAP201_WEB_TEMPLATE_PROJECT_ROOT=%MHZAP201_SOURCE%
+set MHZAP201_WEB_TEMPLATE_PROJECT_ROOT=%sourcedir%
 set MHZAP201_WORKSPACE=W:\workspace
 set MHZAP201
 

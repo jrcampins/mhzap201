@@ -5,7 +5,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-set MHZAP201_HOME_DIR=%MHZAP201_SOURCE%\management
+set MHZAP201_HOME_DIR=%sourcedir%\management
 set MHZAP201
 
 set ASADMIN="N:\glassfish\glassfish\bin\asadmin.bat"

@@ -4,7 +4,7 @@ call variables
 
 set   APPLID=management
 set   SOURCE=W:\workspace\%APPLID%
-set   TARGET=%MHZAP201_SOURCE%\%APPLID%
+set   TARGET=%sourcedir%\%APPLID%
 
 set   APPLID
 set   SOURCE

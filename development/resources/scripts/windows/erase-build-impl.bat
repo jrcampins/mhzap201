@@ -9,7 +9,7 @@ set log="%~dpn0.log"
 set>%log%
 del %log% /q
 
-call:deleteSomeFiles %MHZAP201_SOURCE%
+call:deleteSomeFiles %sourcedir%
 pause
 goto:eof
 

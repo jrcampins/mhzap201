@@ -3,7 +3,7 @@ cd /d "%~dp0"
 call variables
 
 set root1=W:\workspace
-set root2=%MHZAP201_SOURCE%
+set root2=%sourcedir%
 for /D %%d in (%root1%\mhzap201-web-*) do call:copy-web-project %%d
 pause
 goto:eof
