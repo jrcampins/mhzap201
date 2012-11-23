@@ -5,4 +5,5 @@ CLASSPATH=.
 source $HOMEDIR/resources/scripts/linux/classpath.sh
 export JAVA_PARAMETER_LIST="$*"
 export EXPORT_RUNNER_LOG=$1_$2.log
-java -cp $CLASSPATH $CLASS 1>$MHZAP201_WAR/spool/$EXPORT_RUNNER_LOG 2>&1
+printenv>%PROJWAR%\spool\%1_%2_environment_variables.log
+java -cp $CLASSPATH $CLASS 1>$PROJWAR/spool/$EXPORT_RUNNER_LOG 2>&1

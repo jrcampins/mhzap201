@@ -13,6 +13,6 @@ do
     fi
 done
 popd > /dev/null
-echo MHZAP201_HOME=$homedir
+echo HOME=$homedir
 xs=$homedir/variables.sh
 [ -x "$xs" ] && . "$xs"

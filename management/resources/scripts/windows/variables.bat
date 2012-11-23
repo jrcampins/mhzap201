@@ -1,9 +1,9 @@
 pushd "%~dp0"
 call:set-home-dir-loop
 popd
-echo MHZAP201_HOME=%homedir%
+echo HOME=%homedir%
 set xs=%homedir%\variables.bat
-if exist %xs% call %xs%
+if exist "%xs%" call "%xs%"
 goto:eof
 
 :set-home-dir-loop
