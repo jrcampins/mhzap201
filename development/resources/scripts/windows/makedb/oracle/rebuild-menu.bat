@@ -6,7 +6,7 @@ if not defined variables goto EOJ
 
 echo "%~n0" reconstruye las tabla "plus" correspondiente al menu
 set siono=S
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto EOJ
 
 if not exist "%~dp0logs" md "%~dp0logs"
