@@ -10,7 +10,7 @@ call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set ear=mhzap201.ear
-set cli=%JBOSS_HOME%\bin\jboss-cli %jbcst2% --command="undeploy %ear%"
+set cli=%JBOSS_HOME%\bin\jboss-cli %ascst2% --command="undeploy %ear%"
 echo %cli%
 %cli%
 pause

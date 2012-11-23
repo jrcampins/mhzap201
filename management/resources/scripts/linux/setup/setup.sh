@@ -9,7 +9,7 @@ if [ -n "$variables" ]; then
     echo $me desinstala y reinstala los componentes de la aplicacion de empresa en el servidor de aplicaciones y en el servidor de base de datos
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        resources=$MHZAP201_HOME/resources
+        resources=$HOMEDIR/resources
         linux=$resources/scripts/linux
         setup=$linux/setup
         glassfish=$linux/glassfish
@@ -18,7 +18,7 @@ if [ -n "$variables" ]; then
         chmod -R 0777 $resources
         echo ""
     #   echo dos2unix convierte los archivos de texto de formato DOS a formato UNIX
-        source $setup/dos2unix.sh $MHZAP201_HOME
+        source $setup/dos2unix.sh $HOMEDIR
         echo ""
         if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
         #   echo domain-start inicia la ejecucion del servidor de aplicaciones

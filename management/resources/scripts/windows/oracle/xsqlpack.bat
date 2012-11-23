@@ -181,7 +181,7 @@ call:setdir2 %CD%
 goto:eof
 
 :ask4dir
-set rootdir=%1
+set xsqlrootdir=%1
 set scripts=
 set tokenum=
 set chosen1=
@@ -189,7 +189,7 @@ set tokens1=tokens1
 set tokens2=tokens2
 if exist %tokens1% del %tokens1% /q
 if exist %tokens2% del %tokens2% /q
-for /D %%d in (%rootdir%\*.*) do (
+for /D %%d in (%xsqlrootdir%\*.*) do (
     if exist %%d\package.sql echo %%d>>%tokens1%
 )
 if exist %tokens1% sort %tokens1% /o %tokens2%

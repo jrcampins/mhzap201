@@ -1,9 +1,9 @@
 #!/bin/sh
+eeas=glassfish
+EEAS_OVERRIDE=GlassFish
 xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
-    eeas=glassfish
-    EEAS_OVERRIDE=GlassFish
     JDBC_HOST=$dbhost
     JDBC_PORT=$dbport
     JDBC_CONNECTION_ID=$dbconnid

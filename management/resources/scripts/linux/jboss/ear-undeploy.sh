@@ -11,7 +11,7 @@ if [ -n "$variables" ]; then
     if [ "$siono" = "s" ]; then
         ear="${PROJKEY}.ear"
         cd $JBOSS_HOME
-        echo bin/jboss-cli.sh $jbcst2 --command="undeploy $ear"
-        bash bin/jboss-cli.sh $jbcst2 --command="undeploy $ear"
+        echo bin/jboss-cli.sh $ascst2 --command="undeploy $ear"
+        bash bin/jboss-cli.sh $ascst2 --command="undeploy $ear"
     fi
 fi

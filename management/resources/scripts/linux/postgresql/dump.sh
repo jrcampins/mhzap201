@@ -12,7 +12,7 @@ if [ -n "$variables" ]; then
         unset archivo
         while [ -z "$archivo" ]; do
             echo ""
-            for backupfile in $(find "$CRVLDIR" -type f -name *.backup | sort -f); do echo $backupfile; done
+            for backupfile in $(find "$HOMEDIR" -type f -name *.backup | sort -f); do echo $backupfile; done
             echo ""
             backupfile="${PGDATABASE:-$me}_$(date +%Y%m%d%H%M).backup"
             echo ""

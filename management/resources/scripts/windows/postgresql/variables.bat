@@ -1,3 +1,5 @@
+set dbms=postgresql
+set DBMS_OVERRIDE=PostgreSQL
 set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
@@ -5,8 +7,6 @@ if not defined variables goto:eof
 set xs="%~dp0..\variables-date-time.bat"
 if exist %xs% call %xs%
 
-set dbms=postgresql
-set DBMS_OVERRIDE=PostgreSQL
 set PGHOST=%dbhost%
 set PGPORT=%dbport%
 set PGUSER=%dbuser%
@@ -14,7 +14,7 @@ set PGPASSWORD=%dbpass%
 set PGDATABASE=%dbname%
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 set BACKUPDIR=%HOMEDIR%\backup
-set SQLDDLDIR=%CRVLDIR%\resources\database\ddl
+set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 
 if not exist %BACKUPDIR% md %BACKUPDIR%
 

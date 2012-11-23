@@ -90,7 +90,7 @@ call:setdir2 %CD%
 goto:eof
 
 :ask4dir
-set rootdir=%1
+set xsqlrootdir=%1
 set scripts=
 set tokenum=
 set chosen1=
@@ -98,7 +98,7 @@ set tokens1=tokens1
 set tokens2=tokens2
 if exist %tokens1% del %tokens1% /q
 if exist %tokens2% del %tokens2% /q
-for /D %%d in (%rootdir%\*.*) do (
+for /D %%d in (%xsqlrootdir%\*.*) do (
     set dotsql=
     if not exist %%d\package.sql (
         for %%f in (%%d\*.sql) do set dotsql=%%f
@@ -108,7 +108,7 @@ for /D %%d in (%rootdir%\*.*) do (
     )
 )
 if exist %tokens1% sort %tokens1% /o %tokens2%
-echo (.) %rootdir%
+echo (.) %xsqlrootdir%
 if exist %tokens2% for /f "tokens=1*" %%t in (%tokens2%) do call:render1token %%t
 echo.
 echo (X) Ninguno de los anteriores
@@ -124,7 +124,7 @@ if /i "%chosen1%" == "X" (
     goto:eof
 )
 if /i "%chosen1%" == "." (
-    set scripts=%rootdir%
+    set scripts=%xsqlrootdir%
     call:remove-tokens
     goto:eof
 )

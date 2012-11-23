@@ -1,28 +1,24 @@
 @echo off
-cd /d "%~dp0"
-call:set-home-dir
-echo "%MHZAP201_HOME%\resources\scripts\windows\oracle\xsqlpack.bat"
-"%MHZAP201_HOME%\resources\scripts\windows\oracle\xsqlpack.bat" %*
-pause
-goto:eof
-
-:set-home-dir
 pushd "%~dp0"
 call:set-home-dir-loop
 popd
+echo MHZAP201_HOME=%homedir%
+set xsqlbat="%homedir%\resources\scripts\windows\oracle\%~nx0"
+set xsqlbat
+%xsqlbat% %*
+pause
 goto:eof
 
 :set-home-dir-loop
-set currdir=%CD%
 if exist HOME (
     if not exist HOME\nul (
-        set MHZAP201_HOME=%currdir%
+        set homedir=%CD%
         goto:eof
     )
 )
 cd ..
-if "%currdir%" == "%CD%" (
-    set MHZAP201_HOME=%currdir%mhzap201\home
+if "%CD%" == "%~d0\" (
+    set homedir=%~d0\mhzap201
     goto:eof
 )
 call:set-home-dir-loop

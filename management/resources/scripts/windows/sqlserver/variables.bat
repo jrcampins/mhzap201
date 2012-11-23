@@ -1,3 +1,5 @@
+set dbms=sqlserver
+set DBMS_OVERRIDE=SQLServer
 set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
@@ -5,8 +7,6 @@ if not defined variables goto:eof
 set xs="%~dp0..\variables-date-time.bat"
 if exist %xs% call %xs%
 
-set dbms=sqlserver
-set DBMS_OVERRIDE=SQLServer
 set SSHOST=%dbhost%
 set SSPORT=%dbport%
 set SSUSER=%dbuser%
@@ -14,7 +14,7 @@ set SSPASS=%dbpass%
 set SSDATABASE=%dbname%
 set SSBINDIR=%SQLSERVER_TOOLS%\Binn
 set BACKUPDIR=%HOMEDIR%\backup
-set SQLDDLDIR=%CRVLDIR%\resources\database\ddl
+set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 
 if not exist %BACKUPDIR% md %BACKUPDIR%

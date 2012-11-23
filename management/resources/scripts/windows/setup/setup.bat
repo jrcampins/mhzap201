@@ -9,7 +9,7 @@ echo "%~n0" desinstala y reinstala los componentes de la aplicacion de empresa e
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set resources=%MHZAP201_HOME%\resources
+set resources=%HOMEDIR%\resources
 set windows=%resources%\scripts\windows
 set setup=%windows%\setup
 set glassfish=%windows%\glassfish

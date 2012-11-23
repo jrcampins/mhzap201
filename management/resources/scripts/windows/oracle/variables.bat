@@ -1,3 +1,5 @@
+set dbms=oracle
+set DBMS_OVERRIDE=Oracle
 set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
@@ -5,8 +7,6 @@ if not defined variables goto:eof
 set xs="%~dp0..\variables-date-time.bat"
 if exist %xs% call %xs%
 
-set dbms=oracle
-set DBMS_OVERRIDE=Oracle
 set O9HOST=%dbhost%
 set O9PORT=%dbport%
 set O9USER=%dbuser%
@@ -14,7 +14,7 @@ set O9PASSWORD=%dbpass%
 set O9DATABASE=%dbname%
 set O9BINDIR=%ORACLE_HOME%\bin
 set BACKUPDIR=%HOMEDIR%\backup
-set SQLDDLDIR=%CRVLDIR%\resources\database\ddl
+set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 
 if not exist %BACKUPDIR% md %BACKUPDIR%
 

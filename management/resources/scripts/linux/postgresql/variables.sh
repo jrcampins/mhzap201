@@ -1,9 +1,9 @@
 #!/bin/sh
+dbms=postgresql
+DBMS_OVERRIDE=PostgreSQL
 xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
-    dbms=postgresql
-    DBMS_OVERRIDE=PostgreSQL
     PGHOST=$dbhost
     PGPORT=$dbport
     PGUSER=$dbuser
@@ -11,7 +11,7 @@ if [ -n "$variables" ]; then
     PGDATABASE=$dbname
     PGBINDIR=$POSTGRESQL_HOME/bin
     BACKUPDIR=$HOMEDIR/backup
-    SQLDDLDIR=$CRVLDIR/resources/database/ddl
+    SQLDDLDIR=$HOMEDIR/resources/database/ddl
     [ -d "$BACKUPDIR"  ] || mkdir -p "$BACKUPDIR"
     [ -d "$PGBINDIR"   ] || . $scriptpath/unset-variables.sh el directorio "$PGBINDIR"  no existe
     [ -d "$BACKUPDIR"  ] || . $scriptpath/unset-variables.sh el directorio "$BACKUPDIR" no existe

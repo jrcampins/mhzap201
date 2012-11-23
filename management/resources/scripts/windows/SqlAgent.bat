@@ -1,6 +1,6 @@
 @echo off
 set CLASSPATH=.
-call %CRVLDIR%\resources\scripts\windows\classpath.bat
+call %HOMEDIR%\resources\scripts\windows\classpath.bat
 set CLASS=com.egt.core.db.util.SqlAgentShell
 set JAVA_PARAMETER_LIST="%*"
 set SQLPRC_RUNNER_LOG=%1_%2.log

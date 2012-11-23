@@ -10,7 +10,7 @@ if [ -n "$variables" ]; then
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
         cd $JBOSS_HOME
-        echo bin/jboss-cli.sh $jbcst2 command=:shutdown
-        bash bin/jboss-cli.sh $jbcst2 command=:shutdown
+        echo bin/jboss-cli.sh $ascst2 command=:shutdown
+        bash bin/jboss-cli.sh $ascst2 command=:shutdown
     fi
 fi
