@@ -55,6 +55,14 @@
             <module name="com.sun.jsf-impl" slot="plus" export="true" services="export" />
         </dependencies>
     </sub-deployment>
+    <sub-deployment name="mhzap201-web-configuracion-basica.war">
+        <exclusions>
+            <module name="com.sun.jsf-impl" slot="main" />
+        </exclusions> 
+        <dependencies>
+            <module name="com.sun.jsf-impl" slot="plus" export="true" services="export" />
+        </dependencies>
+    </sub-deployment>
     <sub-deployment name="mhzap201-web-configuracion-fija.war">
         <exclusions>
             <module name="com.sun.jsf-impl" slot="main" />

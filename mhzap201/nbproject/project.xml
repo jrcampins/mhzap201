@@ -40,6 +40,10 @@
                     <path-in-war>/</path-in-war>
                 </library>
                 <library>
+                    <file>${reference.mhzap201-web-configuracion-basica.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+                <library>
                     <file>${reference.mhzap201-web-configuracion-fija.dist-ear}</file>
                     <path-in-war>/</path-in-war>
                 </library>
@@ -152,6 +156,14 @@
             </reference>
             <reference>
                 <foreign-project>mhzap201-web</foreign-project>
+                <artifact-type>j2ee_ear_archive</artifact-type>
+                <script>build.xml</script>
+                <target>dist-ear</target>
+                <clean-target>clean-ear</clean-target>
+                <id>dist-ear</id>
+            </reference>
+            <reference>
+                <foreign-project>mhzap201-web-configuracion-basica</foreign-project>
                 <artifact-type>j2ee_ear_archive</artifact-type>
                 <script>build.xml</script>
                 <target>dist-ear</target>

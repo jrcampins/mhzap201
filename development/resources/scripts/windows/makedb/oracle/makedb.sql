@@ -98,3 +98,8 @@ end;
 
 set echo on
 update usuario set nombre_usuario=nombre_usuario||'/Oracle' where id_usuario=101;
+
+update opcion_menu set es_opcion_menu_inactiva=0
+where codigo_opcion_menu like'N9%'
+and codigo_opcion_menu not like'N912%'
+and codigo_opcion_menu not like'N92%';
