@@ -1,14 +1,11 @@
 @echo off
 cd /d "%~dp0"
-call:set-source-dir
-
-set MHZAP201
-
+set sourcedir=%~d0\mhzap201\source
+set sourcedir
+echo.
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction
-
-if not defined MHZAP201_SOURCE goto:eof
 call variables-date-time
 echo.
 
@@ -32,7 +29,7 @@ echo md %DQPATH%
 md %DQPATH%
 echo.
 
-echo %VRNAME%>"%VRPATH%\HOME"
+echo mhzap201/%VRNAME%>"%VRPATH%\HOME"
 
 if defined junction (
     if exist latest (
@@ -48,8 +45,8 @@ if defined junction (
 pause
 echo.
 
-set DVLP=%MHZAP201_SOURCE%\development
-set MGMT=%MHZAP201_SOURCE%\management
+set DVLP=%sourcedir%\development
+set MGMT=%sourcedir%\management
 
 :x-010
 pushd %MGMT%\resources\jasper
@@ -71,7 +68,7 @@ rem echo.
 call:setsiono copiar el ear
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%MHZAP201_SOURCE%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
+call:xcopy-file "%sourcedir%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
 )
 rem pause
 rem echo.
@@ -187,24 +184,4 @@ set SUBDIR="%~f1"
 set SUBDIR
 if not exist %SUBDIR% md %SUBDIR%
 echo.
-goto:eof
-
-:set-source-dir
-pushd "%~dp0"
-call:set-source-dir-loop
-popd
-set MHZAP201_SOURCE
-goto:eof
-
-:set-source-dir-loop
-if exist .svn\nul (
-    set MHZAP201_SOURCE=%CD%
-    goto:eof
-)
-cd ..
-if "%CD%" == "%~d0\" (
-    set MHZAP201_SOURCE=%~d0\mhzap201\source
-    goto:eof
-)
-call:set-source-dir-loop
 goto:eof
