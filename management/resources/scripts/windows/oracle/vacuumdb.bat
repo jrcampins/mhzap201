@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" comprime la base de datos
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set EXE="%O9BINDIR%\vacuumdb.exe"
@@ -24,4 +24,4 @@ set /a xerrorlevel=%ERRORLEVEL%
 echo.
 echo vacuumdb: %xerrorlevel%
 echo.
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"

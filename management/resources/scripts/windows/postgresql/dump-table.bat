@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" crea un archivo respaldo de la base de datos
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 :ask1
@@ -17,7 +17,7 @@ set SUFIJO
 
 :ask2
 set formato=p
-set /p formato="formato (p=plain, ...) [%formato%] "
+set /p formato="formato (p=sql, c=backup, t=tar) [%formato%] "
 set extension=
 if /i "%formato%" == "p" set extension=sql
 if /i "%formato%" == "c" set extension=backup
@@ -61,10 +61,10 @@ echo dump: %xerrorlevel%
 echo.
 
 if defined XLOG goto:eof
-call ..\setsiono desea ver el log de la ejecucion (%LOG%)
+call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%LOG%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %LOG%
 goto:eof
 
 :unreachable-statements
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"
 goto:eof

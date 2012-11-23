@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" produce una lista de los componentes implementados en el servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
@@ -27,7 +27,7 @@ call %ASADMIN% %GFDOMAINCST2% list-jndi-entries --context jdbc
 echo.
 call %ASADMIN% %GFDOMAINCST2% list-jndi-entries --context jms
 
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"
 goto:eof
 
 echo.

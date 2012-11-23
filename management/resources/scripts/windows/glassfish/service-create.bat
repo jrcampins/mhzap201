@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" crea el servicio para iniciar y detener la ejecucion del servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set win32sc1="%SystemRoot%\system32\sc.exe"
@@ -18,4 +18,4 @@ set service1=appserv-service-%domain%
 set display1="/appserv/service/%domain%"
 echo create %service1% binPath= %binPath1% start= auto DisplayName= %display1%
 %win32sc1% create %service1% binPath= %binPath1% start= auto DisplayName= %display1%
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"

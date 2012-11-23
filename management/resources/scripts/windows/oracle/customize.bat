@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" ejecuta los scripts que se encuentran en oracle\custom\functions
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 if not exist "%~dp0logs" md "%~dp0logs"
@@ -24,7 +24,7 @@ if exist "%packages%" (
     echo %packages% is not a valid script folder
 )
 
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"
 goto:eof
 
 --------------------------------------------------------------------------------

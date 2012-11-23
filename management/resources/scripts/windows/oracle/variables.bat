@@ -33,9 +33,9 @@ if defined %1 (
     if exist "%pdq%" (
         rem set %1
     ) else (
-        call ..\unset-variables %1 "%pdq%" no existe
+        call "%~dp0..\unset-variables.bat" %1 "%pdq%" no existe
     )
 ) else (
-    call ..\unset-variables la variable de entorno %1 no esta definida
+    call "%~dp0..\unset-variables.bat" la variable de entorno %1 no esta definida
 )
 goto:eof

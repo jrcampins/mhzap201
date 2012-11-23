@@ -39,7 +39,7 @@ call:type-package-footing
 cd /d "%~dp0"
 set scripts=%CD%
 
-call ..\setsiono ejecutar %sql%
+call "%~dp0..\setsiono" ejecutar %sql%
 if /i "%siono%" NEQ "S" goto:eof
 
 set variables=
@@ -57,7 +57,7 @@ echo "%~f0" >> %SQLPLUS_SPOOL%
 echo.
 call sqlplus %sql%
 
-call ..\setsiono desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
 if /i "%siono%" NEQ "S" goto:eof
 
 start /d %SystemRoot% notepad %SQLPLUS_SPOOL%

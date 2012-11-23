@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" implementa la aplicacion de empresa en el servidor de aplicaciones
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set ear=%DISTDIR%\%PROJKEY%.ear
@@ -17,4 +17,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components
 call %ASADMIN% %GFDOMAINCST2% list-components
 echo.
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"

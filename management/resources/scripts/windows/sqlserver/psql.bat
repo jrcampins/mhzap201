@@ -45,12 +45,12 @@ echo.
 set PSQL=
 
 if defined XLOG goto:eof
-call ..\setsiono desea ver el log de la ejecucion (%PLOG%)
+call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%PLOG%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %PLOG%
 goto:eof
 
 :EOJ
-call ..\eoj "%~f0"
+call "%~dp0..\eoj.bat" "%~f0"
 goto:eof
 
 :buildOSQLFile

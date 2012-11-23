@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" desinstala y reinstala los componentes de la aplicacion de empresa en el servidor de aplicaciones y en el servidor de base de datos
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set resources=%HOMEDIR%\resources
@@ -49,7 +49,7 @@ if /i "%1" == "upgrade" (
 if defined upgrade_or_install (
     call %postgresql%\createdb
     echo.
-    call ..\setsiono restaurar de la base de datos a partir de un archivo respaldo
+    call "%~dp0..\setsiono.bat" restaurar de la base de datos a partir de un archivo respaldo
 )
 
 if defined upgrade_or_install (

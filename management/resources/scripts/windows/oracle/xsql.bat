@@ -16,7 +16,7 @@ echo "%~n0" ejecuta todos los scripts que se encuentran en %SQLDIR%
 cd /d "%~dp0"
 set scripts=%CD%
 
-call ..\setsiono ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set variables=
@@ -38,7 +38,7 @@ for /R "%SQLDIR%" %%f in (*.sql) do (
     call sqlplus "%%f"
 )
 
-call ..\setsiono desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
 if /i "%siono%" NEQ "S" goto:eof
 
 start /d %SystemRoot% notepad %SQLPLUS_SPOOL%

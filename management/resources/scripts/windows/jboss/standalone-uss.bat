@@ -10,14 +10,14 @@ call standalone-stop
 
 :delete-log
 echo.
-call ..\setsiono eliminar los logs?
+call "%~dp0..\setsiono.bat" eliminar los logs?
 if /i "%siono%" NEQ "S" goto start
 del %JBOSS_HOME%\standalone\log\*.log /q
 echo.
 
 :delete-tmp
 echo.
-call ..\setsiono eliminar los archivos temporales?
+call "%~dp0..\setsiono.bat" eliminar los archivos temporales?
 if /i "%siono%" NEQ "S" goto start
 rd %JBOSS_HOME%\standalone\tmp /s /q
 echo.
