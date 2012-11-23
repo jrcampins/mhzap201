@@ -16,9 +16,10 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
 
 03. Ajustar las variables de entorno en:
 
-    C:\mhzap201\variables-conf.bat
-    C:\mhzap201\variables-dbdc.bat
-    C:\mhzap201\variables-home.bat
+    C:\mhzap201\VnnRaammdd\variables-conf.bat
+    C:\mhzap201\VnnRaammdd\variables-home.bat
+    C:\mhzap201\VnnRaammdd\variables-jboss.bat
+    C:\mhzap201\VnnRaammdd\variables-oracle.bat
 
 
 04. Crear y otorgar privilegios al usuario MHZ en Oracle.

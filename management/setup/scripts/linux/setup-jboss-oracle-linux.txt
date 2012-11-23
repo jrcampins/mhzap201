@@ -22,8 +22,9 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
 03. Ajustar las variables de entorno en:
 
     /opt/mhzap201/VnnRaammdd/variables-conf.sh
-    /opt/mhzap201/VnnRaammdd/variables-dbdc.sh
     /opt/mhzap201/VnnRaammdd/variables-home.sh
+    /opt/mhzap201/VnnRaammdd/variables-jboss.sh
+    /opt/mhzap201/VnnRaammdd/variables-oracle.sh
 
 
 04. Crear y otorgar privilegios al usuario MHZ en Oracle.

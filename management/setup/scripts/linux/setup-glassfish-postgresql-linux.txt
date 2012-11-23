@@ -22,8 +22,9 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
 03. Ajustar las variables de entorno en:
 
     /opt/mhzap201/VnnRaammdd/variables-conf.sh
-    /opt/mhzap201/VnnRaammdd/variables-dbdc.sh
     /opt/mhzap201/VnnRaammdd/variables-home.sh
+    /opt/mhzap201/VnnRaammdd/variables-glassfish.sh
+    /opt/mhzap201/VnnRaammdd/variables-postgresql.sh
 
 
 04. Ajustar las contraseñas de acceso a GlassFish en /opt/mhzap201/VnnRaammdd/asadmin.password

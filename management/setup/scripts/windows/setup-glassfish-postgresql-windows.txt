@@ -17,8 +17,9 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
 03. Ajustar las variables de entorno en:
 
     C:\mhzap201\VnnRaammdd\variables-conf.bat
-    C:\mhzap201\VnnRaammdd\variables-dbdc.bat
     C:\mhzap201\VnnRaammdd\variables-home.bat
+    C:\mhzap201\VnnRaammdd\variables-glassfish.bat
+    C:\mhzap201\VnnRaammdd\variables-postgresql.bat
 
 
 04. Ajustar las contraseñas de acceso a GlassFish en C:\mhzap201\VnnRaammdd\asadmin.password
