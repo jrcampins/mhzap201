@@ -9,8 +9,7 @@ echo "%~n0" implementa la aplicacion de empresa en el servidor de aplicaciones
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-if not defined MHZAP201_DIST set MHZAP201_DIST=%HOMEDIR%
-set ear=%MHZAP201_DIST%\%PROJKEY%.ear
+set ear=%DISTDIR%\%PROJKEY%.ear
 echo.
 echo %ASADMIN% %GFDOMAINCST2% deploy %ear%
 call %ASADMIN% %GFDOMAINCST2% deploy %ear%

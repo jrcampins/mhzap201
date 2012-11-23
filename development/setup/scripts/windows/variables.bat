@@ -2,6 +2,7 @@ set variables=%~f0
 set PROJKEY=mhzap201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
+set DISTDIR=%HOMEDIR%
 call:run %HOMEDIR%\variables-home.bat
 if defined JAVA_HOME (
     call:check-dir "%JAVA_HOME%"

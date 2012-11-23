@@ -2,6 +2,7 @@
 variables=$BASH_SOURCE
 PROJKEY="mhzap201"
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
+DISTDIR=$HOMEDIR
 
 xs="$HOMEDIR/variables-home.sh"
 if [ -x "$xs" ]; then

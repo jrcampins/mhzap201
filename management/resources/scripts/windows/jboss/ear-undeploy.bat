@@ -9,7 +9,7 @@ echo "%~n0" anula la implementacion de la aplicacion de empresa del servidor de 
 call ..\setsiono ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set ear=mhzap201.ear
+set ear=%PROJKEY%.ear
 set cli=%JBOSS_HOME%\bin\jboss-cli %ascst2% --command="undeploy %ear%"
 echo %cli%
 %cli%
