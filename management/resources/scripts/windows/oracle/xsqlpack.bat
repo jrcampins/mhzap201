@@ -1,10 +1,10 @@
 echo %~f0 %*
-set dp0=%CD%
+set callerdir=%CD%
 cd /d "%~dp0"
 echo.
 
 call:setdir0 %1
-if not defined scripts call:ask4dir %dp0%
+if not defined scripts call:ask4dir %callerdir%
 if not defined scripts (
     pause
     goto:eof

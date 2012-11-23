@@ -1,11 +1,11 @@
 @echo off
-pushd "%~dp0"
+cd /d "%~dp0"
 call:set-home-dir-loop
-popd
-echo MHZAP201_HOME=%homedir%
-set xsqlbat="%homedir%\resources\scripts\windows\oracle\%~nx0"
-set xsqlbat
-%xsqlbat% %*
+cd /d "%~dp0"
+echo %homedir%
+set xsqlbat=%homedir%\resources\scripts\windows\oracle\%~nx0
+echo %xsqlbat%
+"%xsqlbat%"
 pause
 goto:eof
 
