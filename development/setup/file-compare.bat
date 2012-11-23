@@ -1,17 +1,13 @@
 @echo off
 cd /d "%~dp0"
 call variables
-
 set log="%~dpn0.log"
 if exist %log% del %log% /q
-
-set target=%MHZAP201_SOURCE%\management
+set target=%sourcedir%\management
 call:compare
-
 set source=%~dp0scripts
-set target=%MHZAP201_SOURCE%\management\setup\scripts
+set target=%sourcedir%\management\setup\scripts
 call:compare-tree
-
 set siono=S
 set /p siono="desea ver el log de la ejecucion (%log%) ? (Si/No) [%siono%] "
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%

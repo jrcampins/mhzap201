@@ -2,9 +2,10 @@
 cd /d "%~dp0"
 call variables
 call variables-date-time
+set nn=00
 set filedate="%ProgramFiles%\ABF\Tools\FileDate\FileDate.exe"
 set source=%~dp0scripts
-set management=%MHZAP201_SOURCE%\management
+set management=%sourcedir%\management
 %filedate% "%source%\*.*"       %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
 echo.
 %filedate% "%management%\HOME"  %mm%/%dd%/%aaaa% %hh24%-%nn%-00
@@ -13,7 +14,7 @@ call:xcopy-to-management
 call:xcopy-to-management-setup-scripts
 dir /a:-d/o:n   %management%
 echo.
-dir /a:-d/o:n/s %management%\setup\scripts\*.password
+rem dir /a:-d/o:n/s %management%\setup\scripts\*.password
 echo.
 dir /a:-d/o:n/s %management%\setup\scripts\variables*.*
 echo.
@@ -27,11 +28,11 @@ xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
 echo.
 set source=%~dp0scripts\linux
 set target=%management%
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt /y
 echo.
 set source=%~dp0scripts\windows
 set target=%management%
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt /y
 echo.
 goto:eof
 
@@ -42,10 +43,10 @@ xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
 echo.
 set source=%~dp0scripts\linux
 set target=%management%\setup\scripts\linux
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt /y
 echo.
 set source=%~dp0scripts\windows
 set target=%management%\setup\scripts\windows
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt /y
 echo.
 goto:eof

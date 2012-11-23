@@ -1,21 +1,12 @@
 @echo off
 cd /d "%~dp0"
-
 call variables
-set MHZAP201
-pause
-if not exist "%MHZAP201_SOURCE%" goto:eof
-echo.
-
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 set junction
-pause
 if not exist %junction% goto:eof
 echo.
-
 call:link "N:\glassfish"            "%SystemDrive%\glassfish"
 call:link "C:\jboss-as-7.1.1.Final" "%SystemDrive%\jboss"
-
 pause
 goto:eof
 
