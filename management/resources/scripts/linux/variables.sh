@@ -8,7 +8,7 @@ do
     fi
     cd ..
     if [ "$(pwd)" = "/" ]; then
-        homedir=$HOME/mhzap201
+        homedir=$HOME
         break
     fi
 done

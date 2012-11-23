@@ -18,7 +18,7 @@ if exist HOME (
 )
 cd ..
 if "%CD%" == "%~d0\" (
-    set homedir=%~d0\mhzap201
+    set homedir=%~d0\mhzap201\source\management
     goto:eof
 )
 call:set-home-dir-loop

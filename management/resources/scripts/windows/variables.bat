@@ -15,7 +15,7 @@ if exist HOME (
 )
 cd ..
 if "%CD%" == "%~d0\" (
-    set homedir=%~d0\mhzap201
+    for /F "delims=*" %%s in ("%HOMEDRIVE%%HOMEPATH%") do set homedir=%%~ss
     goto:eof
 )
 call:set-home-dir-loop
