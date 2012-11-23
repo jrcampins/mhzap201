@@ -1,6 +1,5 @@
 #!/bin/sh
-dbms=postgresql
-DBMS_OVERRIDE=PostgreSQL
+DBMS=postgresql
 xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then

@@ -1,5 +1,4 @@
-set dbms=postgresql
-set DBMS_OVERRIDE=PostgreSQL
+set DBMS=postgresql
 set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof

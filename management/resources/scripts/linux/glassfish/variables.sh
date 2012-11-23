@@ -1,6 +1,5 @@
 #!/bin/sh
-eeas=glassfish
-EEAS_OVERRIDE=GlassFish
+EEAS=glassfish
 xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then

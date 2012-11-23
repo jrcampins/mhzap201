@@ -1,6 +1,5 @@
 #!/bin/sh
-dbms=oracle
-DBMS_OVERRIDE=Oracle
+DBMS=oracle
 xs=$scriptpath/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then

@@ -1,5 +1,4 @@
-set dbms=sqlserver
-set DBMS_OVERRIDE=SQLServer
+set DBMS=sqlserver
 set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
