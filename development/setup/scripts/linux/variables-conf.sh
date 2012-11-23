@@ -9,4 +9,3 @@
 # ----------------------------------------------------------------------------
 # MHZAP201_DBMS=Oracle
 # MHZAP201_DBMS=PostgreSQL
-# MHZAP201_DBMS=SQLServer
