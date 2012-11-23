@@ -1,11 +1,11 @@
 rem ----------------------------------------------------------------------------
-rem Si no se establece el valor de la variable MHZAP201_EEAS se usara GlassFish
+rem Si no se establece el valor de la variable EEAS se usara GlassFish
 rem ----------------------------------------------------------------------------
-rem set MHZAP201_EEAS=GlassFish
-rem set MHZAP201_EEAS=JBoss
+rem set EEAS=GlassFish
+rem set EEAS=JBoss
 rem ----------------------------------------------------------------------------
-rem Si no se establece el valor de la variable MHZAP201_DBMS se usara PostgreSQL
+rem Si no se establece el valor de la variable DBMS se usara PostgreSQL
 rem ----------------------------------------------------------------------------
-rem set MHZAP201_DBMS=Oracle
-rem set MHZAP201_DBMS=PostgreSQL
-rem set MHZAP201_DBMS=SQLServer
+rem set DBMS=Oracle
+rem set DBMS=PostgreSQL
+rem set DBMS=SQLServer

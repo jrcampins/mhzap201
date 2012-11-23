@@ -1,11 +1,11 @@
 #!/bin/sh
 # ----------------------------------------------------------------------------
-# Si no se establece el valor de la variable MHZAP201_EEAS se usara GlassFish
+# Si no se establece el valor de la variable EEAS se usara GlassFish
 # ----------------------------------------------------------------------------
-# MHZAP201_EEAS=GlassFish
-# MHZAP201_EEAS=JBoss
+# EEAS=GlassFish
+# EEAS=JBoss
 # ----------------------------------------------------------------------------
-# Si no se establece el valor de la variable MHZAP201_DBMS se usara PostgreSQL
+# Si no se establece el valor de la variable DBMS se usara PostgreSQL
 # ----------------------------------------------------------------------------
-# MHZAP201_DBMS=Oracle
-# MHZAP201_DBMS=PostgreSQL
+# DBMS=Oracle
+# DBMS=PostgreSQL
