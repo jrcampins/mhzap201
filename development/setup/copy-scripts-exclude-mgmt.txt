@@ -1,0 +1,2 @@
+pgadmin.password
+variables-server
