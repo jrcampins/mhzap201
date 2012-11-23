@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 
 set variables=
-call variables-sqlserver "%~f0"
+call variables "%~f0"
 if not defined variables goto:eof
 
 set PDQ1="%~dpn0.1"
@@ -18,9 +18,9 @@ set OSQLUSER=%SSUSER%
 set OSQLPASSWORD=%SSPASS%
 set OSQLSERVER=%SSHOST%
 
-set INDIR=%MHZAP201_SOURCE%\development\resources\scripts\sql\build
-set OUTDIR1=%MHZAP201_SOURCE%\development\resources\scripts\windows\makedb
-set OUTDIR2=%MHZAP201_SOURCE%\management\resources\scripts\windows\postgresql
+set INDIR=%sourcedir%\development\resources\scripts\sql\build
+set OUTDIR1=%sourcedir%\development\resources\scripts\windows\makedb
+set OUTDIR2=%sourcedir%\management\resources\scripts\windows\postgresql
 
 call:runSQLFile %INDIR%\build-delete-metadata.sql	%OUTDIR1%\delete-metadata.sql
 call:runSQLFile %INDIR%\build-dump-metadata-run.sql	%OUTDIR1%\dump-metadata-run.bat
