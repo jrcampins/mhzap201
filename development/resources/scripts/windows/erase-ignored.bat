@@ -1,6 +1,9 @@
 @echo off
 cd /d "%~dp0"
+
+set variables=
 call variables
+if not defined variables goto:eof
 
 set delete_ignored=N
 set /p delete_ignored="eliminar todos los archivos ignorados ? (S/N) [%delete_ignored%] "

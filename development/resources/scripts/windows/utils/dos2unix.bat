@@ -1,9 +1,13 @@
 @echo off
 cd /d "%~dp0"
+
+set variables=
 call variables
+if not defined variables goto:eof
+
 set D2U="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
-if not exist %D2U% exit
-if not defined MHZAP201_SOURCE exit
+if not exist %D2U% goto:eof
+
 cd  /d "%MHZAP201_SOURCE%\management\resources"
 rem /R "%CD%" %%f in (*.jrxml)      do %D2U% -U "%%f"
 for /R "%CD%" %%f in (*.password)   do %D2U% -U "%%f"

@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+set variables=
 call variables-sqlserver "%~f0"
 if not defined variables goto:eof
 

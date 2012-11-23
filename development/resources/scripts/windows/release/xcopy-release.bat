@@ -14,17 +14,17 @@ goto:eof
 pushd "%~dp0"
 call:set-source-dir-loop
 popd
+set MHZAP201_SOURCE
 goto:eof
 
 :set-source-dir-loop
-set currdir=%CD%
 if exist .svn\nul (
-    set MHZAP201_SOURCE=%currdir%
+    set MHZAP201_SOURCE=%CD%
     goto:eof
 )
 cd ..
-if "%currdir%" == "%CD%" (
-    set MHZAP201_SOURCE=%currdir%mhzap201\source
+if "%CD%" == "%~d0\" (
+    set MHZAP201_SOURCE=%~d0\mhzap201\source
     goto:eof
 )
 call:set-source-dir-loop

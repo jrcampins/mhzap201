@@ -1,8 +1,9 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables "%~f0"
+if not defined variables goto:eof
 
 if not exist "%~dp0logs" md "%~dp0logs"
 set PLOG="%~dp0logs\%~n0.log"

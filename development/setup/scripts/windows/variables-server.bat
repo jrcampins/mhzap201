@@ -1,5 +1,5 @@
 if defined HOMEDIR (
-    if exist "%HOMEDIR%\nul" (
+    if exist "%HOMEDIR%" (
         set MHZAP201_HOME_DIR=%HOMEDIR%
     )
 )

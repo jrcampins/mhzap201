@@ -1,8 +1,9 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables "%~f0"
+if not defined variables goto:eof
 
 call:concat %SQLDDLDIR% %dbms%
 set ORADDLDIR=%string%

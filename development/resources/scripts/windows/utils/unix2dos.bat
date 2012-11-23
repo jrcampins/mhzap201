@@ -1,7 +1,13 @@
 @echo off
+cd /d "%~dp0"
+
+set variables=
+call variables
+if not defined variables goto:eof
+
 set U2D="%ProgramFiles%\GnuWin32\bin\unix2dos.exe"
-if not exist %U2D% exit
-if not defined MHZAP201_SOURCE exit
+if not exist %U2D% goto:eof
+
 cd  /d "%MHZAP201_SOURCE%\management\resources"
 for /R "%CD%" %%f in (*.jrxml)      do %U2D% -D "%%f"
 for /R "%CD%" %%f in (*.password)   do %U2D% -D "%%f"

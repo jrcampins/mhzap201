@@ -1,6 +1,9 @@
 @echo off
 cd /d "%~dp0"
+
+set variables=
 call variables
+if not defined variables goto:eof
 
 set MHZAP201_HOME_DIR=%MHZAP201_SOURCE%\management
 set MHZAP201

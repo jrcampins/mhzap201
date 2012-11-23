@@ -1,6 +1,9 @@
 @echo off
 cd /d "%~dp0"
+
+set variables=
 call variables
+if not defined variables goto:eof
 
 rem MHZAP201_HOME_DIR=%MHZAP201_SOURCE%\management
 set MHZAP201_JNDI_EJB_PERSISTENCE_PATTERN=java:global/mhzap201-sdk/mhzap201-ejb-persistence/{0}

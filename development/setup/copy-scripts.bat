@@ -1,38 +1,51 @@
 @echo off
 cd /d "%~dp0"
 call variables
-
-set target=%MHZAP201_SOURCE%\management
-
+call variables-date-time
+set filedate="%ProgramFiles%\ABF\Tools\FileDate\FileDate.exe"
 set source=%~dp0scripts
-set source
-set target
+set management=%MHZAP201_SOURCE%\management
+%filedate% "%source%\*.*"       %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
 echo.
-rem xcopy "%source%\*.password" "%target%"
-xcopy "%source%\asadmin.password" "%target%"
+%filedate% "%management%\HOME"  %mm%/%dd%/%aaaa% %hh24%-%nn%-00
 echo.
-
-set source=%~dp0scripts\linux
-set source
-set target
+call:xcopy-to-management
+call:xcopy-to-management-setup-scripts
+dir /a:-d/o:n   %management%
 echo.
-xcopy "%source%\*.sh"   "%target%"
+dir /a:-d/o:n/s %management%\setup\scripts\*.password
 echo.
-
-set source=%~dp0scripts\windows
-set source
-set target
-echo.
-xcopy "%source%\*.bat"  "%target%"
-echo.
-
-set siono=S
-set /p siono="eliminar variables-j2ee ? (Si/No) [%siono%] "
-if /i "%siono%" == "S" (
-    del "%target%\variables-j2ee.*"
-    echo.
-)
-
-dir /a:-d/o:n %target%
+dir /a:-d/o:n/s %management%\setup\scripts\variables*.*
 echo.
 pause
+goto:eof
+
+:xcopy-to-management
+set source=%~dp0scripts
+set target=%management%
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
+echo.
+set source=%~dp0scripts\linux
+set target=%management%
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
+echo.
+set source=%~dp0scripts\windows
+set target=%management%
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt
+echo.
+goto:eof
+
+:xcopy-to-management-setup-scripts
+set source=%~dp0scripts
+set target=%management%\setup\scripts
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
+echo.
+set source=%~dp0scripts\linux
+set target=%management%\setup\scripts\linux
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
+echo.
+set source=%~dp0scripts\windows
+set target=%management%\setup\scripts\windows
+xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
+echo.
+goto:eof
