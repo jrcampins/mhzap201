@@ -1,8 +1,6 @@
 @echo off
 cd /d "%~dp0"
 set sourcedir=%~d0\mhzap201\source
-set sourcedir
-echo.
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction

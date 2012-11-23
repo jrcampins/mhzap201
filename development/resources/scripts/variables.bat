@@ -1,7 +1,4 @@
 set sourcedir=%~d0\mhzap201\source
-set sourcedir
-echo.
-
 set CVS=%sourcedir%
 set CAP=mhzap201
 set CDB=MHZDB201
