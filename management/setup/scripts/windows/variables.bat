@@ -18,13 +18,11 @@ goto:eof
 
 :checkEEAS
 set EEASKEY=
-if /i "%MHZAP201_EEAS%" == "GlassFish"  set EEASKEY=GlassFish
-if /i "%MHZAP201_EEAS%" == "JBoss"      set EEASKEY=JBoss
-if /i "%EEAS_OVERRIDE%" == "GlassFish"  set EEASKEY=GlassFish
-if /i "%EEAS_OVERRIDE%" == "JBoss"      set EEASKEY=JBoss
-if not defined EEASKEY                  set EEASKEY=GlassFish
-if /i "%EEASKEY%" == "GlassFish"        call:checkGlassFish
-if /i "%EEASKEY%" == "JBoss"            call:checkJBoss
+if /i "%EEAS%" == "GlassFish"    set EEASKEY=GlassFish
+if /i "%EEAS%" == "JBoss"        set EEASKEY=JBoss
+if not defined EEASKEY           set EEASKEY=GlassFish
+if /i "%EEASKEY%" == "GlassFish" call:checkGlassFish
+if /i "%EEASKEY%" == "JBoss"     call:checkJBoss
 goto:eof
 
 :checkGlassFish
@@ -49,16 +47,13 @@ goto:eof
 
 :checkDBMS
 set DBMSKEY=
-if /i "%MHZAP201_DBMS%" == "Oracle"     set DBMSKEY=Oracle
-if /i "%MHZAP201_DBMS%" == "PostgreSQL" set DBMSKEY=PostgreSQL
-if /i "%MHZAP201_DBMS%" == "SQLServer"  set DBMSKEY=SQLServer
-if /i "%DBMS_OVERRIDE%" == "Oracle"     set DBMSKEY=Oracle
-if /i "%DBMS_OVERRIDE%" == "PostgreSQL" set DBMSKEY=PostgreSQL
-if /i "%DBMS_OVERRIDE%" == "SQLServer"  set DBMSKEY=SQLServer
-if not defined DBMSKEY                  set DBMSKEY=PostgreSQL
-if /i "%DBMSKEY%" == "Oracle"           call:checkOracle
-if /i "%DBMSKEY%" == "PostgreSQL"       call:checkPostgreSQL
-if /i "%DBMSKEY%" == "SQLServer"        call:checkSQLServer
+if /i "%DBMS%" == "Oracle"        set DBMSKEY=Oracle
+if /i "%DBMS%" == "PostgreSQL"    set DBMSKEY=PostgreSQL
+if /i "%DBMS%" == "SQLServer"     set DBMSKEY=SQLServer
+if not defined DBMSKEY            set DBMSKEY=PostgreSQL
+if /i "%DBMSKEY%" == "Oracle"     call:checkOracle
+if /i "%DBMSKEY%" == "PostgreSQL" call:checkPostgreSQL
+if /i "%DBMSKEY%" == "SQLServer"  call:checkSQLServer
 goto:eof
 
 :checkOracle
