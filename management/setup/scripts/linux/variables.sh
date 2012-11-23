@@ -26,11 +26,11 @@ fi
 
 shopt -s nocasematch
 unset EEASKEY
-[ "$MHZAP201_EEAS" = "GlassFish" ] && EEASKEY = "GlassFish"
-[ "$MHZAP201_EEAS" = "JBoss"     ] && EEASKEY = "JBoss"
-[ "$EEAS_OVERRIDE" = "GlassFish" ] && EEASKEY = "GlassFish"
-[ "$EEAS_OVERRIDE" = "JBoss"     ] && EEASKEY = "JBoss"
-[ -z "$EEASKEY"                  ] && EEASKEY = "GlassFish"
+[ "$MHZAP201_EEAS" = "GlassFish" ] && EEASKEY="GlassFish"
+[ "$MHZAP201_EEAS" = "JBoss"     ] && EEASKEY="JBoss"
+[ "$EEAS_OVERRIDE" = "GlassFish" ] && EEASKEY="GlassFish"
+[ "$EEAS_OVERRIDE" = "JBoss"     ] && EEASKEY="JBoss"
+[ -z "$EEASKEY"                  ] && EEASKEY="GlassFish"
 shopt -u nocasematch
 
 if [ "$EEASKEY" = "GlassFish" ]; then
@@ -65,11 +65,11 @@ fi
 
 shopt -s nocasematch
 unset DBMSKEY
-[ "$MHZAP201_DBMS" = "Oracle"     ] && DBMSKEY = "Oracle"
-[ "$MHZAP201_DBMS" = "PostgreSQL" ] && DBMSKEY = "PostgreSQL"
-[ "$DBMS_OVERRIDE" = "Oracle"     ] && DBMSKEY = "Oracle"
-[ "$DBMS_OVERRIDE" = "PostgreSQL" ] && DBMSKEY = "PostgreSQL"
-[ -z "$DBMSKEY"                   ] && DBMSKEY = "PostgreSQL"
+[ "$MHZAP201_DBMS" = "Oracle"     ] && DBMSKEY="Oracle"
+[ "$MHZAP201_DBMS" = "PostgreSQL" ] && DBMSKEY="PostgreSQL"
+[ "$DBMS_OVERRIDE" = "Oracle"     ] && DBMSKEY="Oracle"
+[ "$DBMS_OVERRIDE" = "PostgreSQL" ] && DBMSKEY="PostgreSQL"
+[ -z "$DBMSKEY"                   ] && DBMSKEY="PostgreSQL"
 shopt -u nocasematch
 
 if [ "$DBMSKEY" = "Oracle" ]; then
