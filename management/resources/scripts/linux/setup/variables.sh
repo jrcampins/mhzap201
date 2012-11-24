@@ -1,3 +1,3 @@
 #!/bin/sh
-xs=$scriptpath/../variables.sh
+xs=$(dirname "$BASH_SOURCE")/../variables.sh
 [ -x "$xs" ] && . "$xs"

@@ -1,6 +1,6 @@
 #!/bin/sh
 EEAS=glassfish
-xs=$scriptpath/../variables.sh
+xs=$(dirname "$BASH_SOURCE")/../variables.sh
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
     JDBC_HOST=$dbhost
@@ -17,7 +17,6 @@ if [ -n "$variables" ]; then
     GFDOMAINCST1=$ascst1
     GFDOMAINCST2=$ascst2
     GFDOMAINCST2=$ascst2
-    [ -x "$ASADMIN"      ] || . $scriptpath/unset-variables.sh el archivo "$ASADMIN" no existe
-#   [ -f "$aspassfile"   ] || . $scriptpath/unset-variables.sh el archivo "$aspassfile" no existe
-    [ -d "$GFDOMAINCDIR" ] || . $scriptpath/unset-variables.sh el directorio "$GFDOMAINCDIR" no existe
+    [ -x "$ASADMIN"      ] || . $(dirname "$BASH_SOURCE")/../unset-variables.sh el archivo "$ASADMIN" no existe
+    [ -d "$GFDOMAINCDIR" ] || . $(dirname "$BASH_SOURCE")/../unset-variables.sh el directorio "$GFDOMAINCDIR" no existe
 fi

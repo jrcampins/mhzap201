@@ -15,6 +15,8 @@ fi
 if [ ! -d "$JAVA_HOME" ]; then
     echo La variable de entorno JAVA_HOME no esta correctamente definida
     unset variables
+elif [ -n "on_properly_defined_variables" ]; then
+    echo JAVA_HOME=$JAVA_HOME
 fi
 
 xs="$HOMEDIR/variables-conf.sh"
@@ -25,12 +27,13 @@ else
     unset variables
 fi
 
-shopt -s nocasematch
+# shopt -s nocasematch
+eeas=`echo $EEAS|tr '[:upper:]' '[:lower:]'`
 unset EEASKEY
-[ "$EEAS" = "GlassFish" ] && EEASKEY="GlassFish"
-[ "$EEAS" = "JBoss"     ] && EEASKEY="JBoss"
+[ "$EEAS" = "glassfish" ] && EEASKEY="GlassFish"
+[ "$EEAS" = "jboss"     ] && EEASKEY="JBoss"
 [ -z "$EEASKEY"         ] && EEASKEY="GlassFish"
-shopt -u nocasematch
+# shopt -u nocasematch
 
 if [ "$EEASKEY" = "GlassFish" ]; then
     EEASDIR=glassfish
@@ -44,6 +47,14 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     if [ ! -d "$GLASSFISH_HOME" ]; then
         echo La variable de entorno GLASSFISH_HOME no esta correctamente definida
         unset variables
+    elif [ -n "on_properly_defined_variables" ]; then
+        echo GLASSFISH_HOME=$GLASSFISH_HOME
+    fi
+    if [ ! -f "$aspassfile" ]; then
+        echo La variable de entorno aspassfile no esta correctamente definida
+        unset variables
+    elif [ -n "on_properly_defined_variables" ]; then
+        echo aspassfile=$aspassfile
     fi
 fi
 
@@ -59,15 +70,18 @@ if [ "$EEASKEY" = "JBoss" ]; then
     if [ ! -d "$JBOSS_HOME" ]; then
         echo La variable de entorno JBOSS_HOME no esta correctamente definida
         unset variables
+    elif [ -n "on_properly_defined_variables" ]; then
+        echo JBOSS_HOME=$JBOSS_HOME
     fi
 fi
 
-shopt -s nocasematch
+# shopt -s nocasematch
+dbms=`echo $DBMS|tr '[:upper:]' '[:lower:]'`
 unset DBMSKEY
-[ "$DBMS" = "Oracle"     ] && DBMSKEY="Oracle"
-[ "$DBMS" = "PostgreSQL" ] && DBMSKEY="PostgreSQL"
+[ "$DBMS" = "oracle"     ] && DBMSKEY="Oracle"
+[ "$DBMS" = "postgresql" ] && DBMSKEY="PostgreSQL"
 [ -z "$DBMSKEY"          ] && DBMSKEY="PostgreSQL"
-shopt -u nocasematch
+# shopt -u nocasematch
 
 if [ "$DBMSKEY" = "Oracle" ]; then
     DBMSDIR=oracle
@@ -81,6 +95,8 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     if [ ! -d "$ORACLE_HOME" ]; then
         echo La variable de entorno ORACLE_HOME no esta correctamente definida
         unset variables
+    elif [ -n "on_properly_defined_variables" ]; then
+        echo ORACLE_HOME=$ORACLE_HOME
     fi
 fi
 
@@ -96,6 +112,8 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
     if [ ! -d "$POSTGRESQL_HOME" ]; then
         echo La variable de entorno POSTGRESQL_HOME no esta correctamente definida
         unset variables
+    elif [ -n "on_properly_defined_variables" ]; then
+        echo POSTGRESQL_HOME=$POSTGRESQL_HOME
     fi
 fi
 

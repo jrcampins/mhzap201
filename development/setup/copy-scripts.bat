@@ -12,6 +12,8 @@ echo.
 echo.
 call:xcopy-to-management
 call:xcopy-to-management-setup-scripts
+pause
+goto:eof
 dir /a:-d/o:n   %management%
 echo.
 rem dir /a:-d/o:n/s %management%\setup\scripts\*.password
