@@ -37,8 +37,8 @@ fi
 # shopt -s nocasematch
 eeas=`echo $EEAS|tr '[:upper:]' '[:lower:]'`
 unset EEASKEY
-[ "$EEAS" = "glassfish" ] && EEASKEY="GlassFish"
-[ "$EEAS" = "jboss"     ] && EEASKEY="JBoss"
+[ "$eeas" = "glassfish" ] && EEASKEY="GlassFish"
+[ "$eeas" = "jboss"     ] && EEASKEY="JBoss"
 [ -z "$EEASKEY"         ] && EEASKEY="GlassFish"
 # shopt -u nocasematch
 
@@ -107,8 +107,8 @@ fi
 # shopt -s nocasematch
 dbms=`echo $DBMS|tr '[:upper:]' '[:lower:]'`
 unset DBMSKEY
-[ "$DBMS" = "oracle"     ] && DBMSKEY="Oracle"
-[ "$DBMS" = "postgresql" ] && DBMSKEY="PostgreSQL"
+[ "$dbms" = "oracle"     ] && DBMSKEY="Oracle"
+[ "$dbms" = "postgresql" ] && DBMSKEY="PostgreSQL"
 [ -z "$DBMSKEY"          ] && DBMSKEY="PostgreSQL"
 # shopt -u nocasematch
 
