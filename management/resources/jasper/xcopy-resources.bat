@@ -14,7 +14,7 @@ set SOURCE
 set TARGET=%1\resources
 set TARGET
 echo.
-if not exist %TARGET%\nul md %TARGET%
+if not exist %TARGET% md %TARGET%
 copy %SOURCE% %TARGET%
 echo.
 goto:eof

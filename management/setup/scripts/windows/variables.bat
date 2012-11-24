@@ -1,14 +1,12 @@
+@echo off
+rem on_properly_defined_variables=echo
 set variables=%~f0
 set PROJKEY=mhzap201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
 set DISTDIR=%HOMEDIR%
 call:run %HOMEDIR%\variables-home.bat
-if defined JAVA_HOME (
-    call:check-dir "%JAVA_HOME%"
-) else (
-    call:not-defined JAVA_HOME
-)
+call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat
 call:checkEEAS
 call:checkDBMS
@@ -21,28 +19,21 @@ set EEASKEY=
 if /i "%EEAS%" == "GlassFish"    set EEASKEY=GlassFish
 if /i "%EEAS%" == "JBoss"        set EEASKEY=JBoss
 if not defined EEASKEY           set EEASKEY=GlassFish
-if /i "%EEASKEY%" == "GlassFish" call:checkGlassFish
-if /i "%EEASKEY%" == "JBoss"     call:checkJBoss
+if /i "%EEASKEY%" == "GlassFish" call:check-glassfish
+if /i "%EEASKEY%" == "JBoss"     call:check-jboss
 goto:eof
 
-:checkGlassFish
+:check-glassfish
 set EEASDIR=glassfish
 call:run %HOMEDIR%\variables-glassfish.bat
-if defined GLASSFISH_HOME (
-    call:check-dir "%GLASSFISH_HOME%"
-) else (
-    call:not-defined GLASSFISH_HOME
-)
+call:check-dir GLASSFISH_HOME
+call:check-file aspassfile
 goto:eof
 
-:checkJBoss
+:check-jboss
 set EEASDIR=jboss
 call:run %HOMEDIR%\variables-jboss.bat
-if defined JBOSS_HOME (
-    call:check-dir "%JBOSS_HOME%"
-) else (
-    call:not-defined JBOSS_HOME
-)
+call:check-dir JBOSS_HOME
 goto:eof
 
 :checkDBMS
@@ -51,49 +42,29 @@ if /i "%DBMS%" == "Oracle"        set DBMSKEY=Oracle
 if /i "%DBMS%" == "PostgreSQL"    set DBMSKEY=PostgreSQL
 if /i "%DBMS%" == "SQLServer"     set DBMSKEY=SQLServer
 if not defined DBMSKEY            set DBMSKEY=PostgreSQL
-if /i "%DBMSKEY%" == "Oracle"     call:checkOracle
-if /i "%DBMSKEY%" == "PostgreSQL" call:checkPostgreSQL
-if /i "%DBMSKEY%" == "SQLServer"  call:checkSQLServer
+if /i "%DBMSKEY%" == "Oracle"     call:check-oracle
+if /i "%DBMSKEY%" == "PostgreSQL" call:check-postgresql
+if /i "%DBMSKEY%" == "SQLServer"  call:check-sqlserver
 goto:eof
 
-:checkOracle
+:check-oracle
 set DBMSDIR=oracle
 call:run %HOMEDIR%\variables-oracle.bat
-if defined ORACLE_HOME (
-    call:check-dir "%ORACLE_HOME%"
-) else (
-    call:not-defined ORACLE_HOME
-)
+call:check-dir ORACLE_HOME
 goto:eof
 
-:checkPostgreSQL
+:check-postgresql
 set DBMSDIR=postgresql
 call:run %HOMEDIR%\variables-postgresql.bat
-if defined POSTGRESQL_HOME (
-    call:check-dir "%POSTGRESQL_HOME%"
-) else (
-    call:not-defined POSTGRESQL_HOME
-)
+call:check-dir POSTGRESQL_HOME
 goto:eof
 
-:checkSQLServer
+:check-sqlserver
 set DBMSDIR=sqlserver
 call:run %HOMEDIR%\variables-sqlserver.bat
-if defined SQLSERVER_HOME (
-    call:check-dir "%SQLSERVER_HOME%"
-) else (
-    call:not-defined SQLSERVER_HOME
-)
-if defined SQLSERVER_MSSQL (
-    call:check-dir "%SQLSERVER_MSSQL%"
-) else (
-    call:not-defined SQLSERVER_MSSQL
-)
-if defined SQLSERVER_TOOLS (
-    call:check-dir "%SQLSERVER_TOOLS%"
-) else (
-    call:not-defined SQLSERVER_TOOLS
-)
+call:check-dir SQLSERVER_HOME
+call:check-dir SQLSERVER_MSSQL
+call:check-dir SQLSERVER_TOOLS
 goto:eof
 
 :run
@@ -112,13 +83,58 @@ if exist "%~f1" (
 goto:eof
 
 :check-dir
-if not exist "%~f1" (
-    echo el directorio "%~f1" no existe
+call:check-exist %1
+if not defined dirname (
     set variables=
+    echo *** %1 "%winname%" no es un directorio
+    echo.
 )
 goto:eof
 
-:not-defined
-set %1
-set variables=
+:check-file
+call:check-exist %1
+if defined dirname (
+    set variables=
+    echo *** %1 "%winname%" no es un archivo, es un directorio
+    echo.
+)
+goto:eof
+
+:check-exist
+set varname=%1
+call set winname=%%%varname%%%
+if defined winname set winname=%winname:"=%
+set dirname=
+set dosname=
+if defined %1 (
+    if exist "%winname%" (
+        call:set-dirname "%winname%"
+        call:set-dosname "%winname%"
+        if defined on_properly_defined_variables echo %1="%winname%"
+    ) else (
+        set variables=
+        echo.
+        echo *** %1 "%winname%" no existe
+        echo.
+    )
+) else (
+    set variables=
+    echo.
+    echo *** la variable de entorno %1 no esta definida
+    echo.
+)
+goto:eof
+set varname
+set winname
+set dirname
+set dosname
+echo.
+goto:eof
+
+:set-dirname
+for /D %%d in ("%~f1\..\*") do if /i "%%~nxd" == "%~nx1" set dirname=%~f1
+goto:eof
+
+:set-dosname
+for /F "delims=*" %%s in ("%~f1") do set dosname=%%~ss
 goto:eof
