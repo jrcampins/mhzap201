@@ -2,10 +2,8 @@
 #
 #   parametros para la conexion al servidor de base de datos PostgreSQL
 #
-dbmsys="PostgreSQL"
 dbhost="localhost"
 dbport="5432"
-dbconnid="MHZDB201"
 dbuser="postgres"
 dbpass="postgres"
 dbname="MHZDB201"

@@ -8,6 +8,18 @@ set DISTDIR=%HOMEDIR%
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat
+if defined on_properly_defined_variables (
+    if defined EEAS (
+        echo EEAS=%EEAS%
+    ) else (
+        echo Advertencia: el valor de la variable de entorno EEAS no esta definido. Si se necesita, se usara GlassFish
+    )
+    if defined DBMS (
+        echo DBMS=%DBMS%
+    ) else (
+        echo Advertencia: el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL
+    )
+)
 call:checkEEAS
 call:checkDBMS
 call:run-quietly %HOMEDIR%\variables-server.bat
@@ -27,13 +39,35 @@ goto:eof
 set EEASDIR=glassfish
 call:run %HOMEDIR%\variables-glassfish.bat
 call:check-dir GLASSFISH_HOME
+if defined on_properly_defined_variables (
+    echo ashost=%ashost%
+    echo asport=%asport%
+    echo asuser=%asuser%
+    echo aspass=********
+)
 call:check-file aspassfile
+set ascst1=--user %asuser% --passwordfile %aspassfile%
+set ascst2=--host %ashost% --port %asport% %ascst1%
+set ascst2=--host %ashost% --port %asport%
+if defined on_properly_defined_variables (
+    echo domain=%domain%
+)
 goto:eof
 
 :check-jboss
 set EEASDIR=jboss
 call:run %HOMEDIR%\variables-jboss.bat
 call:check-dir JBOSS_HOME
+if defined on_properly_defined_variables (
+    echo ashost=%ashost%
+    echo asport=%asport%
+)
+set ascst1=--user %asuser% --password %aspass%
+set ascst2=--connect controller=%ashost%:%asport% %ascst1%
+set ascst2=--connect controller=%ashost%:%asport%
+if defined on_properly_defined_variables (
+    echo offset=%offset%
+)
 goto:eof
 
 :checkDBMS
@@ -45,12 +79,24 @@ if not defined DBMSKEY            set DBMSKEY=PostgreSQL
 if /i "%DBMSKEY%" == "Oracle"     call:check-oracle
 if /i "%DBMSKEY%" == "PostgreSQL" call:check-postgresql
 if /i "%DBMSKEY%" == "SQLServer"  call:check-sqlserver
+if defined on_properly_defined_variables (
+    echo dbhost=%dbhost%
+    echo dbport=%dbport%
+    echo dbuser=%dbuser%
+    echo dbpass=********
+    echo dbname=%dbname%
+    echo dbcurl=%dbcurl%
+    echo driver=%driver%
+)
 goto:eof
 
 :check-oracle
 set DBMSDIR=oracle
 call:run %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
+if defined on_properly_defined_variables (
+    echo dbcoid=%dbcoid%
+)
 goto:eof
 
 :check-postgresql
