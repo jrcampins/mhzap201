@@ -5,7 +5,7 @@ xs=$(dirname "$BASH_SOURCE")/../variables.sh
 if [ -n "$variables" ]; then
     JDBC_HOST=$dbhost
     JDBC_PORT=$dbport
-    JDBC_CONNECTION_ID=$dbconnid
+    JDBC_CONNECTION_ID=$dbcoid
     JDBC_USER=$dbuser
     JDBC_PASSWORD=$dbpass
     JDBC_DATABASE=$dbname

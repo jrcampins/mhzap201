@@ -27,6 +27,13 @@ else
     unset variables
 fi
 
+if [ -n "$on_properly_defined_variables" ]; then
+    [ -n "$EEAS" ] && echo EEAS=$EEAS
+    [ -z "$EEAS" ] && echo Advertencia: el valor de la variable de entorno EEAS no esta definido. Si se necesita, se usara GlassFish.
+    [ -n "$DBMS" ] && echo DBMS=$DBMS
+    [ -z "$DBMS" ] && echo Advertencia: el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL.
+fi
+
 # shopt -s nocasematch
 eeas=`echo $EEAS|tr '[:upper:]' '[:lower:]'`
 unset EEASKEY
@@ -50,11 +57,23 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     elif [ -n "$on_properly_defined_variables" ]; then
         echo GLASSFISH_HOME=$GLASSFISH_HOME
     fi
+    if [ -n "$on_properly_defined_variables" ]; then
+        echo ashost=$ashost
+        echo asport=$asport
+        echo asuser=$asuser
+        echo aspass=********
+    fi
     if [ ! -f "$aspassfile" ]; then
         echo La variable de entorno aspassfile no esta correctamente definida
         unset variables
     elif [ -n "$on_properly_defined_variables" ]; then
         echo aspassfile=$aspassfile
+    fi
+    ascst1="--user ${asuser} --passwordfile ${aspassfile}"
+    ascst2="--host ${ashost} --port ${asport} ${ascst1}"
+    ascst2="--host ${ashost} --port ${asport}"
+    if [ -n "$on_properly_defined_variables" ]; then
+        echo domain=$domain
     fi
 fi
 
@@ -72,6 +91,16 @@ if [ "$EEASKEY" = "JBoss" ]; then
         unset variables
     elif [ -n "$on_properly_defined_variables" ]; then
         echo JBOSS_HOME=$JBOSS_HOME
+    fi
+    if [ -n "$on_properly_defined_variables" ]; then
+        echo ashost=$ashost
+        echo asport=$asport
+    fi
+    ascst1="--user ${asuser} --password ${aspass}"
+    ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
+    ascst2="--connect controller=${ashost}:${asport}"
+    if [ -n "$on_properly_defined_variables" ]; then
+        echo offset=$offset
     fi
 fi
 
@@ -98,6 +127,9 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     elif [ -n "$on_properly_defined_variables" ]; then
         echo ORACLE_HOME=$ORACLE_HOME
     fi
+    if [ -n "$on_properly_defined_variables" ]; then
+        echo dbcoid=$dbcoid
+    fi
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -115,6 +147,16 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
     elif [ -n "$on_properly_defined_variables" ]; then
         echo POSTGRESQL_HOME=$POSTGRESQL_HOME
     fi
+fi
+
+if [ -n "$on_properly_defined_variables" ]; then
+    echo dbhost=$dbhost
+    echo dbport=$dbport
+    echo dbuser=$dbuser
+    echo dbpass=********
+    echo dbname=$dbname
+    echo dbcurl=$dbcurl
+    echo driver=$driver
 fi
 
 xs="$HOMEDIR/variables-server.sh"

@@ -7,7 +7,7 @@ if not defined variables goto:eof
 
 set JDBC_HOST=%dbhost%
 set JDBC_PORT=%dbport%
-set JDBC_CONNECTION_ID=%dbconnid%
+set JDBC_CONNECTION_ID=%dbcoid%
 set JDBC_USER=%dbuser%
 set JDBC_PASSWORD=%dbpass%
 set JDBC_DATABASE=%dbname%
