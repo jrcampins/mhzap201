@@ -9,5 +9,6 @@ echo "%~n0" detiene la ejecucion del servidor de aplicaciones
 call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
+echo %ASADMIN% %GFDOMAINCST2% stop-domain %GFDOMAINNAME%
 call %ASADMIN% %GFDOMAINCST2% stop-domain %GFDOMAINNAME%
 call "%~dp0..\eoj.bat" "%~f0"

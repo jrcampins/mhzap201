@@ -9,7 +9,8 @@ echo "%~n0" inicia la ejecucion del servidor de aplicaciones
 call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-call %ASADMIN% %GFDOMAINCST2% start-domain %GFDOMAINNAME%
+echo %ASADMIN% %GFDOMAINCST1% start-domain %GFDOMAINNAME%
+call %ASADMIN% %GFDOMAINCST1% start-domain %GFDOMAINNAME%
 echo.
 echo %ASADMIN% %GFDOMAINCST2% list-components
 call %ASADMIN% %GFDOMAINCST2% list-components
