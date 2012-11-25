@@ -1,3 +1,4 @@
-xcopy-release.bat
-xcopy-release.lnk
-xcopy-release.txt
+dos2unix
+filedate
+sweep
+xcopy-release

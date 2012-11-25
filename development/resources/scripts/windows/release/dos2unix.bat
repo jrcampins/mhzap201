@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 call variables
 call variables-date-time
-set folder=V10R%aa%%mm%%dd%
+set folder=V20R%aa%%mm%%dd%
 if not exist "%folder%" goto:eof
 set d2u="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
 for /R "%folder%" %%f in (*.jrxml) do %d2u% -U "%%f"

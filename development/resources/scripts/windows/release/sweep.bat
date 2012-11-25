@@ -19,9 +19,9 @@ for /R "%VRPATH%" %%f in (*.*)	do call:sweep-delete %%f
 call:echo2 sweep-delete-file *.#*
 for /R "%VRPATH%" %%f in (*.#*)	do call:sweep-delete-file "%%f"
 
-call:replaceVnnRaammdd
-call:convertTextFiles
-call:modifyFilesDate
+call:replace-VnnRaammdd
+call:convert-text-files
+call:modify-files-date
 
 pause
 goto:eof
@@ -70,7 +70,7 @@ echo del %1
 del %1
 goto:eof
 
-:replaceVnnRaammdd
+:replace-VnnRaammdd
 set findstring="VnnRaammdd"
 set replacestring="%VRNAME%"
 call:replacer bat
@@ -82,12 +82,11 @@ goto:eof
 
 :replacer
 set wildcard="%VRPATH%\*.%1"
-echo %replacer% %wildcard% %findstring% %replacestring% /r
-call %replacer% %wildcard% %findstring% %replacestring% /r
+%replacer% %wildcard% %findstring% %replacestring% /r
 echo.
 goto:eof
 
-:convertTextFiles
+:convert-text-files
 call:dos2unix *.jrtx
 call:dos2unix *.jrxml
 call:dos2unix *.osql
@@ -108,10 +107,10 @@ echo.
 rem pause
 rem echo.
 for /R "%VRPATH%" %%f in (%1) do %dos2unix% -U "%%f"
+echo.
 goto:eof
 
-:modifyFilesDate
-set string=%filedate% "%VRPATH%\*.*" %mm%/%dd%/%aaaa% %hh24%-00-00 /r
-call:echo2 %string%
-call %string%
+:modify-files-date
+%filedate% "%VRPATH%\*.*" %mm%/%dd%/%aaaa% %hh24%-00-00 /r
+echo.
 goto:eof
