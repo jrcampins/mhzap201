@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+call variables
 call variables-date-time
 set folder=V10R%aa%%mm%%dd%
 if not exist "%folder%" goto:eof

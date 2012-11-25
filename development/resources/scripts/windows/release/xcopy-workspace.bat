@@ -1,13 +1,10 @@
 @echo off
 cd /d "%~dp0"
-set project=mhzap201
-set project_source_dir=%~d0\%project%\source
-set project
-echo.
+call variables
+call variables-date-time
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction
-call variables-date-time
 echo.
 
 :ask
