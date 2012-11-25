@@ -1,1 +1,2 @@
 xcopy-release.bat
+xcopy-release.txt

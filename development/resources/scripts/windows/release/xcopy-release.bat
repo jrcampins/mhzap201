@@ -1,10 +1,20 @@
 @echo off
-cd /d "%~dp0"
-set project=mhzap201
-set project_source_dir=%~d0\%project%\source
-set project
+set source=%~dp0
+set source
+set target=%CD%\
+set target
+if /i %source% == %target% (
+    echo ***
+    echo *** source=target
+    echo ***
+    pause
+    goto:eof
+)
 echo.
-set source=%project_source_dir%\development\resources\scripts\windows\release
-set target="%~dp0%"
-xcopy "%source%\*.bat" %target% /exclude:%source%\%~n0.txt
+echo xcopy "%source%*.*" "%target%"
+echo.
+pause
+echo.
+call xcopy "%source%*.*" "%target%" /y /exclude:%source%%~n0.txt
+echo.
 pause
