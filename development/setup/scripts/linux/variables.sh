@@ -1,16 +1,22 @@
 #!/bin/sh
+#
+# cxms checks and executes a mandatory script
+#
+cxms () {
+    if [ -x "$1" ]; then
+        . "$1"
+    else
+        echo No es posible ejecutar el script "$1"
+        unset variables
+    fi
+}
+
 variables=$BASH_SOURCE
 PROJKEY="mhzap201"
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
 DISTDIR=$HOMEDIR
 
-xs="$HOMEDIR/variables-home.sh"
-if [ -x "$xs" ]; then
-    . "$xs"
-else
-    echo No es posible ejecutar el script "$xs"
-    unset variables
-fi
+cxms "$HOMEDIR/variables-home.sh"
 
 if [ ! -d "$JAVA_HOME" ]; then
     echo La variable de entorno JAVA_HOME no esta correctamente definida
@@ -19,13 +25,7 @@ elif [ -n "$on_properly_defined_variables" ]; then
     echo JAVA_HOME=$JAVA_HOME
 fi
 
-xs="$HOMEDIR/variables-conf.sh"
-if [ -x "$xs" ]; then
-    . "$xs"
-else
-    echo No es posible ejecutar el script "$xs"
-    unset variables
-fi
+cxms "$HOMEDIR/variables-conf.sh"
 
 if [ -n "$on_properly_defined_variables" ]; then
     [ -n "$EEAS" ] && echo EEAS=$EEAS
@@ -44,13 +44,7 @@ unset EEASKEY
 
 if [ "$EEASKEY" = "GlassFish" ]; then
     EEASDIR=glassfish
-    xs="$HOMEDIR/variables-glassfish.sh"
-    if [ -x "$xs" ]; then
-        . "$xs"
-    else
-        echo No es posible ejecutar el script "$xs"
-        unset variables
-    fi
+    cxms "$HOMEDIR/variables-glassfish.sh"
     if [ ! -d "$GLASSFISH_HOME" ]; then
         echo La variable de entorno GLASSFISH_HOME no esta correctamente definida
         unset variables
@@ -66,8 +60,11 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     if [ ! -f "$aspassfile" ]; then
         echo La variable de entorno aspassfile no esta correctamente definida
         unset variables
-    elif [ -n "$on_properly_defined_variables" ]; then
-        echo aspassfile=$aspassfile
+    else
+        [ -n "$on_properly_defined_variables" ] && echo aspassfile=$aspassfile
+        case "`uname`" in
+            CYGWIN*) aspassfile=`cygpath --windows $aspassfile`
+        esac        
     fi
     ascst1="--user ${asuser} --passwordfile ${aspassfile}"
     ascst2="--host ${ashost} --port ${asport} ${ascst1}"
@@ -79,13 +76,7 @@ fi
 
 if [ "$EEASKEY" = "JBoss" ]; then
     EEASDIR=jboss
-    xs="$HOMEDIR/variables-jboss.sh"
-    if [ -x "$xs" ]; then
-        . "$xs"
-    else
-        echo No es posible ejecutar el script "$xs"
-        unset variables
-    fi
+    cxms "$HOMEDIR/variables-jboss.sh"
     if [ ! -d "$JBOSS_HOME" ]; then
         echo La variable de entorno JBOSS_HOME no esta correctamente definida
         unset variables
@@ -114,13 +105,7 @@ unset DBMSKEY
 
 if [ "$DBMSKEY" = "Oracle" ]; then
     DBMSDIR=oracle
-    xs="$HOMEDIR/variables-oracle.sh"
-    if [ -x "$xs" ]; then
-        . "$xs"
-    else
-        echo No es posible ejecutar el script "$xs"
-        unset variables
-    fi
+    cxms "$HOMEDIR/variables-oracle.sh"
     if [ ! -d "$ORACLE_HOME" ]; then
         echo La variable de entorno ORACLE_HOME no esta correctamente definida
         unset variables
@@ -134,13 +119,7 @@ fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
     DBMSDIR=postgresql
-    xs="$HOMEDIR/variables-postgresql.sh"
-    if [ -x "$xs" ]; then
-        . "$xs"
-    else
-        echo No es posible ejecutar el script "$xs"
-        unset variables
-    fi
+    cxms "$HOMEDIR/variables-postgresql.sh"
     if [ ! -d "$POSTGRESQL_HOME" ]; then
         echo La variable de entorno POSTGRESQL_HOME no esta correctamente definida
         unset variables
@@ -159,7 +138,6 @@ if [ -n "$on_properly_defined_variables" ]; then
     echo driver=$driver
 fi
 
+unset cxms
 xs="$HOMEDIR/variables-server.sh"
-if [ -x "$xs" ]; then
-    . "$xs"
-fi
+[ -x "$xs" ] && . "$xs"
