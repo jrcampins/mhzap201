@@ -1,7 +1,7 @@
-@echo off
 :preguntar
-set pregunta="%~1? (S/N) "
-if defined siono set pregunta="%~1? (S/N) [%siono%] "
+set siono=S
+set pregunta="%* ? (S/N) "
+set pregunta="%* ? (S/N) [%siono%] "
 set /p siono=%pregunta%
 if /i "%siono%" == "S" goto si
 if /i "%siono%" == "N" goto no

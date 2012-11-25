@@ -5,74 +5,30 @@ set variables=
 call variables "%~f0"
 if not defined variables goto:eof
 
-call:concat %SQLDDLDIR% %dbms%
-set ORADDLDIR=%string%
-if not exist %ORADDLDIR% call %DIRBAT2%\variables-reset el directorio %ORADDLDIR% no existe
-if not defined variables goto EOJ
-
-if not exist "%~dp0logs" md "%~dp0logs"
-set PLOG="%~dp0logs\%~n0.log"
-set XLOG=%PLOG%
-if exist %PLOG% del %PLOG%
-
-set PSQL="%~dpn0.sql"
-if not exist %PSQL% call %DIRBAT2%\variables-reset el archivo %PSQL% no existe
-if not defined variables goto EOJ
-
-if not defined SQLPLUS_SPOOL (
-    set SQLPLUS_SPOOL=%PLOG%
-    if exist %PLOG% del %PLOG%
-    echo %~f0 >> %PLOG%
+set log="%~dp0logs\%~n0.log"
+if defined SQLPLUS_SPOOL (
+    set makedb_log=
+) else (
+    set makedb_log=%log%
+    set SQLPLUS_SPOOL=%log%
+    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
 )
-
-:ask
-set nn=10
-set CRVL=%nn%%aammdd%
-set /p CRVL="version del esquema de la base de datos (aaaammddhh) [%CRVL%] "
-if not defined CRVL goto ask
-set CRVL="%CRVL%"
+echo "%~f0" >> %SQLPLUS_SPOOL%
 
 set /a xerrorlevel=0
 call concatsql
 if %xerrorlevel% GEQ 1 goto EOJ
 
-rem echo copy-userdata
-rem if %xerrorlevel% GEQ 1 goto EOJ
-
-cd /d "%sourcedir%\management\resources\scripts\windows\%dbms%"
-
-REM call dropdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-REM call createdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-echo.
-pause
-echo.
-
-set SQLPATH=%SQLDDLDIR%
-call sqlplus "%~dpn0.sql" %O9DATABASE% O9
-if %xerrorlevel% GEQ 1 goto EOJ
-
-REM call rebuild
-if %xerrorlevel% GEQ 1 goto EOJ
-
-REM call vacuumdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-REM call dump
-if %xerrorlevel% GEQ 1 goto EOJ
-
-cd /d "%~dp0"
-
-REM call rebuild-menu
-if %xerrorlevel% GEQ 1 goto EOJ
+pushd "%sourcedir%\management\resources\scripts\windows\%dbms%"
+call makedb
+echo rebuild
+popd
 
 :EOJ
-call %DIRBAT2%\eoj "%~f0"
-goto:eof
+if not defined makedb_log goto:eof
 
-:concat
-set string="%~f1\%2"
-goto:eof
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
+if /i "%siono%" NEQ "S" goto:eof
+
+start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
+rem call "%~dp0..\eoj.bat" "%~f0"

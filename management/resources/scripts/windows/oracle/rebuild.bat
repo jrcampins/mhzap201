@@ -9,21 +9,23 @@ echo "%~n0" reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
 call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-if not exist "%~dp0logs" md "%~dp0logs"
 set log="%~dp0logs\%~n0.log"
-if not defined PLOG (
-    set PLOG=%log%
-    if exist %log% del %log%
+if defined SQLPLUS_SPOOL (
+    set rebuild_log=
+) else (
+    set rebuild_log=%log%
+    set SQLPLUS_SPOOL=%log%
+    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
 )
+echo "%~f0" >> %SQLPLUS_SPOOL%
 
-if not defined SQLPLUS_SPOOL (
-    set SQLPLUS_SPOOL=%PLOG%
-    if exist %PLOG% del %PLOG%
-    echo "%~f0" >> %PLOG%
-)
+set SQLPATH=%SQLDDLDIR%
+call sqlplus "%~dpn0.sql"
 
-set PSQL="%~dpn0.sql"
-if not exist "%PSQL%" call "%~dp0..\unset-variables.bat" el archivo "%PSQL%" no existe
-if defined variables call sqlplus "%~dpn0.sql"
-set PSQL=
-call "%~dp0..\eoj.bat" "%~f0"
+if not defined rebuild_log goto:eof
+
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
+if /i "%siono%" NEQ "S" goto:eof
+
+start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
+rem call "%~dp0..\eoj.bat" "%~f0"

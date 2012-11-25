@@ -16,17 +16,21 @@ if not exist %SQLPLUS_START% (
     echo SQLPLUS_START %SQLPLUS_START% is not a valid script file
 )
 
-set log="%~dpn0.log"
-if not defined SQLPLUS_SPOOL (
-    set SQLPLUS_SPOOL=%log%
-    if exist %log% del %log%
-)
-
 if defined xerror (
     echo.
     pause
     goto:eof
 )
+
+set log="%~dp0logs\%~n0.log"
+if defined SQLPLUS_SPOOL (
+    set sqlplus_log=
+) else (
+    set sqlplus_log=%log%
+    set SQLPLUS_SPOOL=%log%
+    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
+)
+echo "%~f0" >> %SQLPLUS_SPOOL%
 
 pushd "%~dp1"
 set cd1=%cd%
@@ -66,7 +70,12 @@ if defined SQLPATH (
     echo.
 )
 
-if defined OPEN_SQLPLUS_SPOOL start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
+if not defined sqlplus_log goto:eof
+
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
+if /i "%siono%" NEQ "S" goto:eof
+
+start /d %SystemRoot% notepad %SQLPLUS_SPOOL%
 goto:eof
 
 :setParameterVariables

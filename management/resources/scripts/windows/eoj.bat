@@ -1,5 +1,5 @@
 if "%~f1" == "" goto:eof
-rem if defined NOPAUSE goto:eof
+if defined NOPAUSE goto:eof
 if defined MAINBAT (
     rem remove double quotes from MAINBAT
     set pdq=%MAINBAT:"=%

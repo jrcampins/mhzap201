@@ -46,16 +46,20 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-if not exist "%~dp0logs" md "%~dp0logs"
 set log="%~dp0logs\%~n0.log"
-if not defined SQLPLUS_SPOOL (
+if defined SQLPLUS_SPOOL (
+    set xsqlpack_log=
+) else (
+    set xsqlpack_log=%log%
     set SQLPLUS_SPOOL=%log%
-    if exist %log% del %log%
+    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
 )
-
 echo "%~f0" >> %SQLPLUS_SPOOL%
+
 echo.
 call sqlplus %sql%
+
+if not defined xsqlpack_log goto:eof
 
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
 if /i "%siono%" NEQ "S" goto:eof

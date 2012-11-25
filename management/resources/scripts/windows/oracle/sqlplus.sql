@@ -10,21 +10,17 @@ rem
 rem define spfile = &1
 rem define dbuser = &2
 rem define dbpass = &3
-rem define folder = &4
-rem define script = &5
 rem 
 rem prompt spfile = &spfile
 rem prompt dbuser = &dbuser
 rem prompt dbpass = *******
-rem prompt folder = &folder
-rem prompt script = &script
 rem 
 rem spool &spfile
 rem 
 rem connect "&dbuser"/"&dbpass";
 rem
 host set SQLPATH
-prompt SPL: @&1,&2,&3,&4,&5,&6,&7,&8,&9
+prompt RUN> @&1, &2, &3, &4, &5, &6, &7, &8, &9
 set echo on
 @&1 &2 &3 &4 &5 &6 &7 &8 &9
 commit;
