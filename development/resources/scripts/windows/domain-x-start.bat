@@ -1,22 +1,27 @@
 @echo off
 cd /d "%~dp0"
 
+set EEAS=glassfish
+set DBMS=postgresql
+set on_properly_defined_variables=echo
 set variables=
 call variables
 if not defined variables goto:eof
 
-set MHZAP201_HOME_DIR=%sourcedir%\management
-set MHZAP201
-
-set ASADMIN="N:\glassfish\glassfish\bin\asadmin.bat"
-set GFDOMAINCST2=--host localhost --port 4848
-
-echo %ASADMIN% %GFDOMAINCST2% start-domain
-call %ASADMIN% %GFDOMAINCST2% start-domain
+set %UPPER_CASE_PROJECT%_HOME_DIR=%project_source_dir%\management
+set %UPPER_CASE_PROJECT%
 echo.
 
-echo %ASADMIN% %GFDOMAINCST2% list-components
-call %ASADMIN% %GFDOMAINCST2% list-components
+set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
+set ASADMIN
+echo.
+
+echo %ASADMIN% %ascst1% start-domain
+call %ASADMIN% %ascst1% start-domain
+echo.
+
+echo %ASADMIN% %ascst2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 
 pause

@@ -9,7 +9,7 @@ if [ -n "$variables" ]; then
     echo $me crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        POOLID="${PROJKEY}-pool"
+        POOLID="${lower_case_project}-pool"
         DS=org.postgresql.ds.PGSimpleDataSource
         P1=serverName="$JDBC_HOST"
         P2=portNumber="$JDBC_PORT"
@@ -23,12 +23,12 @@ if [ -n "$variables" ]; then
     #   echo $POOLID
         echo $ASADMIN $GFDOMAINCST2 create-jdbc-connection-pool --datasourceclassname $DS --property $PX $POOLID
         bash $ASADMIN $GFDOMAINCST2 create-jdbc-connection-pool --datasourceclassname $DS --property $PX $POOLID
-        RESOURCEID="jdbc/${PROJKEY}"
+        RESOURCEID="jdbc/${lower_case_project}"
         echo ""
     #   echo $RESOURCEID
         echo $ASADMIN $GFDOMAINCST2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
         bash $ASADMIN $GFDOMAINCST2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
-        REALMID="${PROJKEY}-jdbc-realm"
+        REALMID="${lower_case_project}-jdbc-realm"
         CLASS=com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm
         P1=jaas-context="jdbcRealm"
         P2=datasource-jndi="$RESOURCEID"

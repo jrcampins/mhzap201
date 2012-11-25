@@ -9,7 +9,7 @@ if [ -n "$variables" ]; then
     echo $me implementa la aplicacion de empresa en el servidor de aplicaciones
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        ear="$DISTDIR/${PROJKEY}.ear"
+        ear="$DISTDIR/${lower_case_project}.ear"
         if [ -f $ear ]; then
             case "`uname`" in
                 CYGWIN*) ear=`cygpath --windows $ear`

@@ -7,7 +7,7 @@ if not defined variables goto:eof
 
 if not defined f0 set f0="%~f0"
 
-set workspace=W:\workspace
+set workspace=%~d0\workspace
 call:erase "%workspace%"
 if %f0% == "%~f0" pause
 goto:eof

@@ -1,7 +1,7 @@
 rem
-set CLASSPATH=%CLASSPATH%;%PROJLIB%\%PROJKEY%-lib-base.jar
-set CLASSPATH=%CLASSPATH%;%PROJLIB%\%PROJKEY%-lib-core.jar
-set CLASSPATH=%CLASSPATH%;%PROJLIB%\%PROJKEY%-lib-data.jar
+set CLASSPATH=%CLASSPATH%;%PROJLIB%\%lower_case_project%-lib-base.jar
+set CLASSPATH=%CLASSPATH%;%PROJLIB%\%lower_case_project%-lib-core.jar
+set CLASSPATH=%CLASSPATH%;%PROJLIB%\%lower_case_project%-lib-data.jar
 set CLASSPATH=%CLASSPATH%;%PROJLIB%\commons-beanutils-1.8.2.jar
 set CLASSPATH=%CLASSPATH%;%PROJLIB%\commons-collections-3.2.1.jar
 set CLASSPATH=%CLASSPATH%;%PROJLIB%\commons-digester-1.7.jar

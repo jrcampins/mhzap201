@@ -5,7 +5,7 @@ call variables-date-time
 set nn=00
 set filedate="%ProgramFiles%\ABF\Tools\FileDate\FileDate.exe"
 set source=%~dp0scripts
-set management=%sourcedir%\management
+set management=%project_source_dir%\management
 %filedate% "%source%\*.*"       %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
 echo.
 %filedate% "%management%\HOME"  %mm%/%dd%/%aaaa% %hh24%-%nn%-00

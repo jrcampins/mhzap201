@@ -19,7 +19,7 @@ set /a xerrorlevel=0
 call concatsql
 if %xerrorlevel% GEQ 1 goto EOJ
 
-pushd "%sourcedir%\management\resources\scripts\windows\%dbms%"
+pushd "%project_source_dir%\management\resources\scripts\windows\%dbms%"
 call makedb
 echo rebuild
 popd

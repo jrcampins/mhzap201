@@ -1,7 +1,8 @@
 @echo off
 rem on_properly_defined_variables=echo
 set variables=%~f0
-set PROJKEY=mhzap201
+set lower_case_project=mhzap201
+set UPPER_CASE_PROJECT=MHZAP201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
 set DISTDIR=%HOMEDIR%
@@ -46,9 +47,9 @@ if defined on_properly_defined_variables (
     echo aspass=********
 )
 call:check-file aspassfile
-set ascst1=--user %asuser% --passwordfile %aspassfile%
+set ascst1=
+rem ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
-set ascst2=--host %ashost% --port %asport%
 if defined on_properly_defined_variables (
     echo domain=%domain%
 )
@@ -62,9 +63,9 @@ if defined on_properly_defined_variables (
     echo ashost=%ashost%
     echo asport=%asport%
 )
-set ascst1=--user %asuser% --password %aspass%
+set ascst1=
+rem ascst1=--user %asuser% --password %aspass%
 set ascst2=--connect controller=%ashost%:%asport% %ascst1%
-set ascst2=--connect controller=%ashost%:%asport%
 if defined on_properly_defined_variables (
     echo offset=%offset%
 )

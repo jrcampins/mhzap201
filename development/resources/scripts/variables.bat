@@ -1,6 +1,10 @@
-set sourcedir=%~d0\mhzap201\source
-set CVS=%sourcedir%
-set CAP=mhzap201
+set project=mhzap201
+set project_source_dir=%~d0\%project%\source
+set project
+echo.
+
+set CVS=%project_source_dir%
+set CAP=%project%
 set CDB=MHZDB201
 
 set DDL=%CVS%\management\resources\database\ddl

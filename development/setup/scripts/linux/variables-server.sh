@@ -1,6 +1,6 @@
 #!/bin/sh
-[ -d "$HOMEDIR" ] && MHZAP201_HOME_DIR="$HOMEDIR"
-[ -n "$driver"  ] && MHZAP201_JDBC_DRIVER="$driver"
-[ -n "$dbcurl"  ] && MHZAP201_JDBC_URL="$dbcurl"
-[ -n "$dbuser"  ] && MHZAP201_JDBC_USER="$dbuser"
-[ -n "$dbpass"  ] && MHZAP201_JDBC_PASSWORD="$dbpass"
+[ -d "$HOMEDIR" ] && ${UPPER_CASE_PROJECT}_HOME_DIR="$HOMEDIR"
+[ -n "$driver"  ] && ${UPPER_CASE_PROJECT}_JDBC_DRIVER="$driver"
+[ -n "$dbcurl"  ] && ${UPPER_CASE_PROJECT}_JDBC_URL="$dbcurl"
+[ -n "$dbuser"  ] && ${UPPER_CASE_PROJECT}_JDBC_USER="$dbuser"
+[ -n "$dbpass"  ] && ${UPPER_CASE_PROJECT}_JDBC_PASSWORD="$dbpass"

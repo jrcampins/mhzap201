@@ -10,8 +10,7 @@ pause
 goto:eof
 
 :main1
-set project=mhzap201
-set workspace=%sourcedir%
+set workspace=%project_source_dir%
 set build_and_deploy=N
 set jdk_update=30
 

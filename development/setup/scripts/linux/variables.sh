@@ -12,7 +12,8 @@ cxms () {
 }
 
 variables=$BASH_SOURCE
-PROJKEY="mhzap201"
+lower_case_project=mhzap201
+UPPER_CASE_PROJECT=MHZAP201
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
 DISTDIR=$HOMEDIR
 
@@ -66,9 +67,9 @@ if [ "$EEASKEY" = "GlassFish" ]; then
             CYGWIN*) aspassfile=`cygpath --windows $aspassfile`
         esac        
     fi
-    ascst1="--user ${asuser} --passwordfile ${aspassfile}"
+    unset ascst1
+#   ascst1="--user ${asuser} --passwordfile ${aspassfile}"
     ascst2="--host ${ashost} --port ${asport} ${ascst1}"
-    ascst2="--host ${ashost} --port ${asport}"
     if [ -n "$on_properly_defined_variables" ]; then
         echo domain=$domain
     fi
@@ -87,9 +88,9 @@ if [ "$EEASKEY" = "JBoss" ]; then
         echo ashost=$ashost
         echo asport=$asport
     fi
-    ascst1="--user ${asuser} --password ${aspass}"
+    unset ascst1
+#   ascst1="--user ${asuser} --password ${aspass}"
     ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
-    ascst2="--connect controller=${ashost}:${asport}"
     if [ -n "$on_properly_defined_variables" ]; then
         echo offset=$offset
     fi

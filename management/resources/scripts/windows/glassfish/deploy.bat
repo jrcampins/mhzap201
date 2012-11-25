@@ -9,7 +9,7 @@ echo "%~n0" implementa la aplicacion de empresa en el servidor de aplicaciones
 call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set ear=%DISTDIR%\%PROJKEY%.ear
+set ear=%DISTDIR%\%lower_case_project%.ear
 echo.
 echo %ASADMIN% %GFDOMAINCST2% deploy %ear%
 call %ASADMIN% %GFDOMAINCST2% deploy %ear%

@@ -9,7 +9,7 @@ if [ -n "$variables" ]; then
     echo $me elimina el dominio de seguridad LDAP
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        REALMID="${PROJKEY}-ldap-realm"
+        REALMID="${lower_case_project}-ldap-realm"
         echo ""
     #   echo $REALMID
         echo $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID

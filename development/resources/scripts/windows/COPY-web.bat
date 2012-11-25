@@ -2,9 +2,9 @@
 cd /d "%~dp0"
 call variables
 
-set root1=W:\workspace
-set root2=%sourcedir%
-for /D %%d in (%root1%\mhzap201-web-*) do call:copy-web-project %%d
+set root1=%~d0\workspace
+set root2=%project_source_dir%
+for /D %%d in (%root1%\%lower_case_project%-web-*) do call:copy-web-project %%d
 pause
 goto:eof
 

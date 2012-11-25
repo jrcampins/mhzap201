@@ -10,7 +10,7 @@ call "%~dp0..\setsiono.bat" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
-set REALMID="%PROJKEY%-ldap-realm"
+set REALMID="%lower_case_project%-ldap-realm"
 set REALMID
 echo.
 echo %ASADMIN% %GFDOMAINCST2% delete-auth-realm %REALMID%

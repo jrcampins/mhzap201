@@ -3,10 +3,10 @@ cd /d "%~dp0"
 call variables
 set log="%~dpn0.log"
 if exist %log% del %log% /q
-set target=%sourcedir%\management
+set target=%project_source_dir%\management
 call:compare
 set source=%~dp0scripts
-set target=%sourcedir%\management\setup\scripts
+set target=%project_source_dir%\management\setup\scripts
 call:compare-tree
 set siono=S
 set /p siono="desea ver el log de la ejecucion (%log%) ? (Si/No) [%siono%] "

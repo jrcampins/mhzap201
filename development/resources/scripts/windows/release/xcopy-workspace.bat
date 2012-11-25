@@ -1,6 +1,9 @@
 @echo off
 cd /d "%~dp0"
-set sourcedir=%~d0\mhzap201\source
+set project=mhzap201
+set project_source_dir=%~d0\%project%\source
+set project
+echo.
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction
@@ -27,7 +30,7 @@ echo md %DQPATH%
 md %DQPATH%
 echo.
 
-echo mhzap201/%VRNAME%>"%VRPATH%\HOME"
+echo %VRNAME%>"%VRPATH%\HOME"
 
 if defined junction (
     if exist latest (
@@ -43,8 +46,8 @@ if defined junction (
 pause
 echo.
 
-set DVLP=%sourcedir%\development
-set MGMT=%sourcedir%\management
+set DVLP=%project_source_dir%\development
+set MGMT=%project_source_dir%\management
 
 :x-010
 pushd %MGMT%\resources\jasper
@@ -66,7 +69,7 @@ rem echo.
 call:setsiono copiar el ear
 echo.
 if /i "%siono%" == "S" (
-call:xcopy-file "%sourcedir%\mhzap201\dist\mhzap201.ear"                  %DQPATH%
+call:xcopy-file "%project_source_dir%\%project%\dist\%project%.ear"                  %DQPATH%
 )
 rem pause
 rem echo.
@@ -93,8 +96,8 @@ rem pause
 rem echo.
 
 :x-070
-call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\mhzap201\attachments"
-call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\mhzap201\spool"
+call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\%project%\attachments"
+call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\%project%\spool"
 rem pause
 rem echo.
 

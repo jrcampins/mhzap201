@@ -1,27 +1,32 @@
 @echo off
 cd /d "%~dp0"
 
+set EEAS=glassfish
+set DBMS=postgresql
+set on_properly_defined_variables=echo
 set variables=
 call variables
 if not defined variables goto:eof
 
-rem MHZAP201_HOME_DIR=%sourcedir%\management
-set MHZAP201_JNDI_EJB_PERSISTENCE_PATTERN=java:global/mhzap201-sdk/mhzap201-ejb-persistence/{0}
-set MHZAP201_VELOCITY_PROPERTIES_FILE=%sourcedir%\management\resources\velocity\sdk-velocity.properties
-set MHZAP201_WEB_TEMPLATE_PROJECT_NAME=mhzap201-web-template
-set MHZAP201_WEB_TEMPLATE_PROJECT_ROOT=%sourcedir%
-set MHZAP201_WORKSPACE=W:\workspace
-set MHZAP201
-
-set ASADMIN="N:\glassfish\glassfish\bin\asadmin.bat"
-set GFDOMAINCST2=--host localhost --port 4848
-
-echo %ASADMIN% %GFDOMAINCST2% start-domain
-call %ASADMIN% %GFDOMAINCST2% start-domain
+rem %UPPER_CASE_PROJECT%_HOME_DIR=%project_source_dir%\management
+set %UPPER_CASE_PROJECT%_JNDI_EJB_PERSISTENCE_PATTERN=java:global/%lower_case_project%-sdk/%lower_case_project%-ejb-persistence/{0}
+set %UPPER_CASE_PROJECT%_VELOCITY_PROPERTIES_FILE=%project_source_dir%\management\resources\velocity\sdk-velocity.properties
+set %UPPER_CASE_PROJECT%_WEB_TEMPLATE_PROJECT_NAME=%lower_case_project%-web-template
+set %UPPER_CASE_PROJECT%_WEB_TEMPLATE_PROJECT_ROOT=%project_source_dir%
+set %UPPER_CASE_PROJECT%_WORKSPACE=%~d0\workspace
+set %UPPER_CASE_PROJECT%
 echo.
 
-echo %ASADMIN% %GFDOMAINCST2% list-components
-call %ASADMIN% %GFDOMAINCST2% list-components
+set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
+set ASADMIN
+echo.
+
+echo %ASADMIN% %ascst1% start-domain
+call %ASADMIN% %ascst1% start-domain
+echo.
+
+echo %ASADMIN% %ascst2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 
 pause

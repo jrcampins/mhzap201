@@ -9,10 +9,10 @@ if [ -n "$variables" ]; then
     echo $me anula la implementacion de la aplicacion de empresa del servidor de aplicaciones
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        if [ -n "${PROJKEY}" ]; then
+        if [ -n "${lower_case_project}" ]; then
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 undeploy ${PROJKEY}
-            bash $ASADMIN $GFDOMAINCST2 undeploy ${PROJKEY}
+            echo $ASADMIN $GFDOMAINCST2 undeploy ${lower_case_project}
+            bash $ASADMIN $GFDOMAINCST2 undeploy ${lower_case_project}
             echo ""
             echo $ASADMIN $GFDOMAINCST2 list-components
             bash $ASADMIN $GFDOMAINCST2 list-components

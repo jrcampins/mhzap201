@@ -2,17 +2,17 @@
 cd /d "%~dp0"
 call variables
 
-set   APPLID=management
-set   SOURCE=W:\workspace\%APPLID%
-set   TARGET=%sourcedir%\%APPLID%
+set   applid=management
+set   source=%~d0\workspace\%applid%
+set   target=%project_source_dir%\%applid%
 
-set   APPLID
-set   SOURCE
-set   TARGET
+set   applid
+set   source
+set   target
 
+echo.
 pause
+echo.
 
-if    exist "%SOURCE%\." xcopy "%SOURCE%\*.*" "%TARGET%" /S /exclude:%~dpn0.txt
-
-:DONE
-REM pause
+echo xcopy "%source%\*.*" "%target%" /s /exclude:%~dpn0.txt
+if exist "%source%" xcopy "%source%\*.*" "%target%" /s /exclude:%~dpn0.txt

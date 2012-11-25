@@ -28,7 +28,7 @@ if %xerrorlevel% GEQ 1 goto EOJ
 rem echo copy-userdata
 rem if %xerrorlevel% GEQ 1 goto EOJ
 
-cd /d "%sourcedir%\management\resources\scripts\windows\%dbms%"
+cd /d "%project_source_dir%\management\resources\scripts\windows\%dbms%"
 
 call dropdb
 if %xerrorlevel% GEQ 1 goto EOJ

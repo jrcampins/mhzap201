@@ -13,7 +13,7 @@ goto:eof
 set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components
-for /D %%d in (%sourcedir%\*) do call:sub2 %%d
+for /D %%d in (%project_source_dir%\*) do call:sub2 %%d
 echo.
 echo %ASADMIN% %ascst2% list-components
 call %ASADMIN% %ascst2% list-components

@@ -1,7 +1,7 @@
 #!/bin/sh
-CLASSPATH=$CLASSPATH:$PROJLIB/$PROJKEY-lib-base.jar
-CLASSPATH=$CLASSPATH:$PROJLIB/$PROJKEY-lib-core.jar
-CLASSPATH=$CLASSPATH:$PROJLIB/$PROJKEY-lib-data.jar
+CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-base.jar
+CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-core.jar
+CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-data.jar
 CLASSPATH=$CLASSPATH:$PROJLIB/commons-beanutils-1.8.2.jar
 CLASSPATH=$CLASSPATH:$PROJLIB/commons-collections-3.2.1.jar
 CLASSPATH=$CLASSPATH:$PROJLIB/commons-digester-1.7.jar

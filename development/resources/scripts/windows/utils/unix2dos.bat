@@ -4,7 +4,7 @@ call variables
 set U2D="%ProgramFiles%\GnuWin32\bin\unix2dos.exe"
 if not exist %U2D% goto:eof
 
-cd  /d "%sourcedir%\management\resources"
+cd  /d "%project_source_dir%\management\resources"
 for /R "%CD%" %%f in (*.jrxml)      do %U2D% -D "%%f"
 for /R "%CD%" %%f in (*.password)   do %U2D% -D "%%f"
 for /R "%CD%" %%f in (*.properties) do %U2D% -D "%%f"

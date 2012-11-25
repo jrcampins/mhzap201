@@ -10,7 +10,7 @@ set PSQL="%~dpn0.psql"
 if not exist %PSQL% call %DIRBAT2%\variables-reset el archivo %PSQL% no existe
 if not defined variables goto EOJ
 
-cd /d "%sourcedir%\management\resources\scripts\windows\%dbms%"
+cd /d "%project_source_dir%\management\resources\scripts\windows\%dbms%"
 set PSQL="%~dpn0.psql"
 call psql %PSQL%
 cd /d "%~dp0"

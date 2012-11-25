@@ -2,11 +2,17 @@
 cd /d "%~dp0"
 call variables
 
-set   APPLID=mhzap201-ejb-business
-set   SOURCE=W:\workspace\%APPLID%
-set   TARGET=%sourcedir%\%APPLID%
-set   APPLID
-set   SOURCE
-set   TARGET
+set   applid=%lower_case_project%-ejb-business
+set   source=%~d0\workspace\%applid%
+set   target=%project_source_dir%\%applid%
+
+set   applid
+set   source
+set   target
+
+echo.
 pause
-if exist "%SOURCE%\." xcopy "%SOURCE%\*.*" "%TARGET%" /S /exclude:%~dpn0.txt
+echo.
+
+echo xcopy "%source%\*.*" "%target%" /s /exclude:%~dpn0.txt
+if exist "%source%" xcopy "%source%\*.*" "%target%" /s /exclude:%~dpn0.txt

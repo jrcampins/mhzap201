@@ -18,9 +18,9 @@ set OSQLUSER=%SSUSER%
 set OSQLPASSWORD=%SSPASS%
 set OSQLSERVER=%SSHOST%
 
-set INDIR=%sourcedir%\development\resources\scripts\sql\build
-set OUTDIR1=%sourcedir%\development\resources\scripts\windows\makedb
-set OUTDIR2=%sourcedir%\management\resources\scripts\windows\postgresql
+set INDIR=%project_source_dir%\development\resources\scripts\sql\build
+set OUTDIR1=%project_source_dir%\development\resources\scripts\windows\makedb
+set OUTDIR2=%project_source_dir%\management\resources\scripts\windows\postgresql
 
 call:runSQLFile %INDIR%\build-delete-metadata.sql	%OUTDIR1%\delete-metadata.sql
 call:runSQLFile %INDIR%\build-dump-metadata-run.sql	%OUTDIR1%\dump-metadata-run.bat

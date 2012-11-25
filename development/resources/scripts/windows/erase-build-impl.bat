@@ -9,7 +9,7 @@ set log="%~dpn0.log"
 set>%log%
 del %log% /q
 
-call:deleteSomeFiles %sourcedir%
+call:deleteSomeFiles %project_source_dir%
 pause
 goto:eof
 

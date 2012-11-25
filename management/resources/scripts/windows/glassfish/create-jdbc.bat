@@ -29,7 +29,7 @@ if /i "%DBMSKEY%" == "SQLServer"  set PX=%P1%:%P2%:%P3%:%P4%:%P5%:%P6%:%P7%
 echo.
 set JDBC
 echo.
-set POOLID="%PROJKEY%-pool"
+set POOLID="%lower_case_project%-pool"
 set POOLID
 echo.
 echo %ASADMIN% %GFDOMAINCST2% create-jdbc-connection-pool --datasourceclassname %DS% --restype %RT% --property %PX% %POOLID%
@@ -38,7 +38,7 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% ping-connection-pool %POOLID%
 call %ASADMIN% %GFDOMAINCST2% ping-connection-pool %POOLID%
 echo.
-set RESOURCEID="jdbc/%PROJKEY%"
+set RESOURCEID="jdbc/%lower_case_project%"
 set RESOURCEID
 echo.
 echo %ASADMIN% %GFDOMAINCST2% create-jdbc-resource --connectionpoolid %POOLID% %RESOURCEID%
@@ -46,7 +46,7 @@ call %ASADMIN% %GFDOMAINCST2% create-jdbc-resource --connectionpoolid %POOLID% %
 echo.
 set CLASS=com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm
 set P1=jaas-context="jdbcRealm"
-set P2=datasource-jndi="jdbc/%PROJKEY%"
+set P2=datasource-jndi="jdbc/%lower_case_project%"
 set P3=user-table="vista_autenticacion_1"
 set P4=user-name-column="codigo_usuario"
 set P5=password-column="password_usuario"
@@ -55,7 +55,7 @@ set P7=group-name-column="codigo_rol"
 set P8=digest-algorithm="MD5"
 set PX=%P1%:%P2%:%P3%:%P4%:%P5%:%P6%:%P7%:%P8%
 echo.
-set REALMID="%PROJKEY%-jdbc-realm"
+set REALMID="%lower_case_project%-jdbc-realm"
 set REALMID
 echo.
 echo %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
