@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 
 set variables=
-call variables "%~f0"
+call variables
 if not defined variables goto:eof
 
 set PDQ1="%~dpn0.1"
