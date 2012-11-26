@@ -17,7 +17,7 @@ if not defined SSDB set SSDB=%SSDATABASE%
 if not defined CRVL set CRVL=10%aammdd%
 
 call:checkFile %PSQL%
-if not defined variables goto EOJ
+if not defined variables goto:eof
 call:buildOSQLFile
 set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
@@ -49,10 +49,6 @@ call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%PLOG%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %PLOG%
 goto:eof
 
-:EOJ
-call "%~dp0..\eoj.bat" "%~f0"
-goto:eof
-
 :buildOSQLFile
 if exist %OSQLFILE% del %OSQLFILE%
 echo declare @crvl   integer        >>%OSQLFILE%
@@ -71,12 +67,11 @@ if exist %PSQL% type %PSQL%         >>%OSQLFILE%
 goto:eof
 
 :checkFile
-set carpeta="%~f1"
-set archivo="%~f1"
-if "%2" == "" set carpeta="%~dp1"
-if not "%2" == "" set archivo="%~f1\%~nx2"
-rem echo check %archivo%
-if exist %archivo% goto:eof
-echo el archivo %archivo% no existe
+if exist "%~f1" goto:eof
 set variables=
+echo.
+echo el archivo "%~f1" no existe
+echo.
+pause
+echo.
 goto:eof

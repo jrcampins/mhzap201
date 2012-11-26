@@ -22,16 +22,6 @@ if defined xerror (
     goto:eof
 )
 
-set log="%~dp0logs\%~n0.log"
-if defined SQLPLUS_SPOOL (
-    set sqlplus_log=
-) else (
-    set sqlplus_log=%log%
-    set SQLPLUS_SPOOL=%log%
-    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
-)
-echo "%~f0" >> %SQLPLUS_SPOOL%
-
 pushd "%~dp1"
 set cd1=%cd%
 set cd2=%cd%
@@ -45,13 +35,16 @@ if defined SQLPATH (
 if "%cd1%" == "%cd2%" (
     set SQLPATH=%cd1%
 ) else (
-    rem sqlpath="%SQLPATH%"
     set SQLPATH=%cd1%;%cd2%
 )
 
-echo sqlpath="%SQLPATH%"
-echo sqlplus %*
-echo.
+set log="%~dp0logs\%~n0.log"
+if not defined SQLPLUS_SPOOL (
+    set SQLPLUS_SPOOL=%log%
+    if exist %log% (del %log%) else (if not exist "%~dp0logs" md "%~dp0logs")
+)
+echo "%~f0" >> %SQLPLUS_SPOOL%
+
 pushd %O9BINDIR%
 call:setParameterVariables %*
 sqlplus "%O9USER%"/"%O9PASSWORD%" @%SQLPLUS_START% %SQLPLUS_SNAME% %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %SQLPLUS_SPOOL% 2>$1
@@ -65,12 +58,7 @@ if defined htaplqs (
     set SQLPATH=
 )
 
-if defined SQLPATH (
-    rem sqlpath="%SQLPATH%"
-    echo.
-)
-
-if not defined sqlplus_log goto:eof
+if /i %SQLPLUS_SPOOL% == "%~dp0logs\%~n0.log" (echo.) else (goto:eof)
 
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%SQLPLUS_SPOOL%)
 if /i "%siono%" NEQ "S" goto:eof

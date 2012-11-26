@@ -12,7 +12,7 @@ if not defined PGDB set PGDB=%PGDATABASE%
 if not defined CRVL set CRVL=10%aammdd%
 
 call:checkFile %PSQL%
-if not defined variables goto EOJ
+if not defined variables goto:eof
 set EXE="%PGBINDIR%\psql.exe"
 set CMD=%EXE% -e -f %PSQL% -q -v ddldir=%SQLDDLDIR% -v pgdb=%PGDB% -v crvl=%CRVL%
 
@@ -43,17 +43,12 @@ call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%PLOG%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %PLOG%
 goto:eof
 
-:EOJ
-call "%~dp0..\eoj.bat" "%~f0"
-goto:eof
-
 :checkFile
-set carpeta="%~f1"
-set archivo="%~f1"
-if "%2" == "" set carpeta="%~dp1"
-if not "%2" == "" set archivo="%~f1\%~nx2"
-rem echo check %archivo%
-if exist %archivo% goto:eof
-echo el archivo %archivo% no existe
+if exist "%~f1" goto:eof
 set variables=
+echo.
+echo el archivo "%~f1" no existe
+echo.
+pause
+echo.
 goto:eof
