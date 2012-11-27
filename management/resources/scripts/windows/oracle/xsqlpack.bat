@@ -1,19 +1,21 @@
 setlocal
+echo.
 echo %~n0 %*
+echo.
 
-call:init-log "%~f1" "%~dp0logs\%~nx0.log"
+call:init-log "%~f1"
 if /i "%~x1" == ".log" shift /1
 
 call:setdir1 %1
-if not defined scripts call:ask4dir %CD%
+if not defined scripts call:ask4dir
 if not defined scripts (
     pause
     goto:eof
 )
 
 set SQLDIR=%scripts%
-echo "%~n0" empaqueta los scripts que se encuentran en %SQLDIR%
 call:set-package %SQLDIR%
+echo "%~n0" empaqueta los scripts que se encuentran en %SQLDIR%
 echo.
 
 pushd %SQLDIR%
@@ -21,7 +23,6 @@ cd ..
 set sql="%CD%\%package%.sql"
 if exist %sql% del %sql%
 popd
-echo.
 
 call:type-package-heading
 for /R "%SQLDIR%" %%f in (*.sql) do (
@@ -49,14 +50,18 @@ call:open-log
 goto:eof
 
 :init-log
+set log="%~dp0logs\%~nx0.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
-    if not exist "%~dp1" md "%~dp1"
+    call:make-dir "%~f1"
 ) else (
-    set log="%~f2"
-    if exist "%~f2" (del "%~f2") else (if not exist "%~dp2" md "%~dp2")
+    if exist %log% (del %log%) else (call:make-dir %log%)
 )
 echo %~f0 >> %log%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log
@@ -119,6 +124,7 @@ goto:eof
 :setdir1
 set scripts=
 set directory=
+if "%~f1" == "" goto:eof
 if exist "%~f1" for /D %%d in ("%~f1\..\*") do if /i "%%~nxd" == "%~nx1" set directory=%~f1
 if defined directory (
     if exist "%directory%\package.sql" (
@@ -132,7 +138,8 @@ if defined directory (
 goto:eof
 
 :ask4dir
-set xsqlrootdir=%1
+set xsqlrootdir=%CD%
+pushd "%~dp0"
 set scripts=
 set tokenum=
 set chosen1=
@@ -165,6 +172,7 @@ pushd %token%
 set scripts=%CD%
 popd
 call:remove-tokens
+popd
 goto:eof
 
 :render1token

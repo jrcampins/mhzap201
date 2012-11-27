@@ -16,21 +16,25 @@ echo "%~n0" ejecuta los scripts que se encuentran en oracle\custom\functions
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-call:init-log "%~f1" "%~dp0logs\%~nx0.log"
+call:init-log "%~f1"
 if /i "%~x1" == ".log" shift /1
 for /D %%d in (%packages%\*.*) do call xsqlpack %log% %%d
 call:open-log
 goto:eof
 
 :init-log
+set log="%~dp0logs\%~nx0.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
-    if not exist "%~dp1" md "%~dp1"
+    call:make-dir "%~f1"
 ) else (
-    set log="%~f2"
-    if exist "%~f2" (del "%~f2") else (if not exist "%~dp2" md "%~dp2")
+    if exist %log% (del %log%) else (call:make-dir %log%)
 )
 echo %~f0 >> %log%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log

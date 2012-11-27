@@ -1,13 +1,16 @@
-if not defined variables goto:eof
 setlocal
+echo.
 echo %~n0 %*
+echo.
+
+if not defined variables goto:eof
 
 if not exist "%~dpn0.sql" (
     set /p x="ERROR: el script "%~dpn0.sql" no existe "
     goto:eof
 )
 
-call:init-log "%~f1" "%~dp0logs\%~nx0.%~nx1.log"
+call:init-log "%~f1"
 if /i "%~x1" == ".log" shift /1
 
 if not exist "%~f1" (
@@ -39,14 +42,18 @@ call:open-log "%~f1"
 goto:eof
 
 :init-log
+set log="%~dp0logs\%~nx0.%~nx1.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
-    if not exist "%~dp1" md "%~dp1"
+    call:make-dir "%~f1"
 ) else (
-    set log="%~f2"
-    if exist "%~f2" (del "%~f2") else (if not exist "%~dp2" md "%~dp2")
+    if exist %log% (del %log%) else (call:make-dir %log%)
 )
 echo %~f0 >> %log%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log
