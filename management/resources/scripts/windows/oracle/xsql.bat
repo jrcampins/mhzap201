@@ -1,7 +1,11 @@
-echo %~f0 %*
+setlocal
+echo %~n0 %*
 set callerdir=%CD%
 cd /d "%~dp0"
 echo.
+
+call:init-log "%~f1" "%~dp0logs\%~nx0.log"
+if /i "%~x1" == ".log" shift /1
 
 call:setdir1 %1
 if not defined scripts call:ask4dir %callerdir%
@@ -23,29 +27,27 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-call:init-sqlplus-spool
 set SQLPATH=%SQLDIR%
 for /R "%SQLDIR%" %%f in (*.sql) do (
     rem  SQLPATH=%%~dpf
-    call sqlplus "%%f"
+    call sqlplus %log% "%%f"
 )
-call:open-sqlplus-spool
+call:open-log
 goto:eof
 
-:init-sqlplus-spool
-set dir="%~dp0logs"
-set log="%~dp0logs\%~nx0.log"
-if not defined SQLPLUS_SPOOL (
-    set SQLPLUS_SPOOL=%log%
-    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
+:init-log
+if /i "%~x1" == ".log" (
+    set log="%~f1"
+    if not exist "%~dp1" md "%~dp1"
+) else (
+    set log="%~f2"
+    if exist "%~f2" (del "%~f2") else (if not exist "%~dp2" md "%~dp2")
 )
-echo %~f0 >> %SQLPLUS_SPOOL%
+echo %~f0 >> %log%
 goto:eof
 
-:open-sqlplus-spool
-set log="%~dp0logs\%~nx0.log"
-if /i %SQLPLUS_SPOOL% == %log% (echo.) else (goto:eof)
-set SQLPLUS_SPOOL=
+:open-log
+if /i %log% == "%~dp0logs\%~nx0.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
@@ -161,12 +163,3 @@ if exist %tokens1% del %tokens1% /q
 if exist %tokens2% del %tokens2% /q
 echo.
 goto:eof
-
-----------------------------------------------------------------------------------------------------
-call:setdir2
-if not defined scripts (
-    pause
-    goto:eof
-)
-cd /d %scripts%
-----------------------------------------------------------------------------------------------------

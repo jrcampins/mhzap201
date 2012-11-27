@@ -1,25 +1,21 @@
-@echo off
-cd /d "%~dp0"
-
 if not defined variables goto:eof
+setlocal
+echo %~n0 %*
+set callerdir=%CD%
+cd /d "%~dp0"
+echo.
 
-set xerror=
-set script="%~f1"
-if not exist %script% (
-    set xerror=true
-    echo El archivo %script% no existe
+set fq_start="%~dpn0.sql"
+if not exist %fq_start% (
+    set /p x="ERROR: el script %fq_start% no existe "
+    goto:eof
 )
 
-set SQLPLUS_START="%~dpn0.sql"
-if not exist %SQLPLUS_START% (
-    set xerror=true
-    echo SQLPLUS_START %SQLPLUS_START% no existe
-)
+call:init-log "%~f1" "%~dp0logs\%~nx0.%~nx1.log"
+if /i "%~x1" == ".log" shift /1
 
-if defined xerror (
-    echo.
-    pause
-    echo.
+if not exist "%~f1" (
+    set /p x="ERROR: el script "%~f1" no existe "
     goto:eof
 )
 
@@ -27,55 +23,45 @@ pushd "%~dp1"
 set cd1=%cd%
 set cd2=%cd%
 popd
-set htaplqs=
 if defined SQLPATH (
-    set htaplqs=%SQLPATH%
     set cd2=%SQLPATH%
 )
-
 if "%cd1%" == "%cd2%" (
     set SQLPATH=%cd1%
 ) else (
     set SQLPATH=%cd1%;%cd2%
 )
 
-call:setParameterVariables %*
-call:init-sqlplus-spool
+call:set-parameter-variables %*
 pushd %O9BINDIR%
-sqlplus "%O9USER%"/"%O9PASSWORD%" @%SQLPLUS_START% %SQLPLUS_SQL_SCRIPT_FILE% %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %SQLPLUS_SPOOL% 2>$1
+sqlplus "%O9USER%"/"%O9PASSWORD%" @%fq_start% %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>$1
 set /a xerrorlevel=%ERRORLEVEL%
 popd
 echo sqlplus: %xerrorlevel%
 echo.
-if defined htaplqs (
-    set SQLPATH=%htaplqs%
+call:open-log "%~f1"
+goto:eof
+
+:init-log
+if /i "%~x1" == ".log" (
+    set log="%~f1"
+    if not exist "%~dp1" md "%~dp1"
 ) else (
-    set SQLPATH=
+    set log="%~f2"
+    if exist "%~f2" (del "%~f2") else (if not exist "%~dp2" md "%~dp2")
 )
-call:open-sqlplus-spool
+echo %~f0 >> %log%
 goto:eof
 
-:init-sqlplus-spool
-set dir="%~dp0logs"
-set log="%~dp0logs\%SQLPLUS_SQL_SCRIPT_FILE%.log"
-if not defined SQLPLUS_SPOOL (
-    set SQLPLUS_SPOOL=%log%
-    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
-)
-echo %~f0 >> %SQLPLUS_SPOOL%
-goto:eof
-
-:open-sqlplus-spool
-set log="%~dp0logs\%SQLPLUS_SQL_SCRIPT_FILE%.log"
-if /i %SQLPLUS_SPOOL% == %log% (echo.) else (goto:eof)
-set SQLPLUS_SPOOL=
+:open-log
+if /i %log% == "%~dp0logs\%~nx0.%~nx1.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
 
-:setParameterVariables
-set SQLPLUS_SQL_SCRIPT_FILE=%~nx1
-shift
+:set-parameter-variables
+if /i "%~x1" == ".log" shift /1
+shift /1
 if "%1"=="" (set p1=?) else (set p1=%1)
 if "%2"=="" (set p2=?) else (set p2=%2)
 if "%3"=="" (set p3=?) else (set p3=%3)
