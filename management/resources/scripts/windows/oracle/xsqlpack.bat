@@ -1,14 +1,11 @@
 setlocal
 echo %~n0 %*
-set callerdir=%CD%
-cd /d "%~dp0"
-echo.
 
 call:init-log "%~f1" "%~dp0logs\%~nx0.log"
 if /i "%~x1" == ".log" shift /1
 
-call:setdir0 %1
-if not defined scripts call:ask4dir %callerdir%
+call:setdir1 %1
+if not defined scripts call:ask4dir %CD%
 if not defined scripts (
     pause
     goto:eof
@@ -40,17 +37,14 @@ for /R "%SQLDIR%" %%f in (*.sql) do (
 call:type-package-body-footing
 call:type-package-footing
 
-cd /d "%~dp0"
-set scripts=%CD%
-
 call "%~dp0..\setsiono" ejecutar %sql%
 if /i "%siono%" NEQ "S" goto:eof
 
 set variables=
-call variables
+call "%~dp0variables"
 if not defined variables goto:eof
 
-call sqlplus %log% %sql%
+call "%~dp0sqlplus" %log% %sql%
 call:open-log
 goto:eof
 
@@ -122,70 +116,19 @@ echo />>%sql%
 echo show errors>>%sql%
 goto:eof
 
-:setdir0
-set scripts=
-call:chkdir0 %1
-if defined directory (
-   set scripts=%directory%
-)
-goto:eof
-
-:chkdir0
-set directory=
-set chkdir0p1=%~s1
-if defined chkdir0p1 (
-   if exist %chkdir0p1%\package.sql (
-      set directory=%~f1
-      goto:eof
-   ) else (
-      echo %1 no es un directorio empaquetable
-   )
-)
-goto:eof
-
 :setdir1
 set scripts=
-call:chkdir1 %1
-if defined directory (
-   set scripts=%directory%
-)
-goto:eof
-
-:chkdir1
 set directory=
-set chkdir1p1=%~s1
-if defined chkdir1p1 (
-   if exist %chkdir1p1%\nul (
-      set directory=%~f1
-      goto:eof
+if exist "%~f1" for /D %%d in ("%~f1\..\*") do if /i "%%~nxd" == "%~nx1" set directory=%~f1
+if defined directory (
+    if exist "%directory%\package.sql" (
+        set scripts=%directory%
    ) else (
-      echo %1 no es un directorio
+        echo %1 no es un directorio empaquetable
    )
+) else (
+   echo %1 no es un directorio
 )
-goto:eof
-
-:setdir2
-set scripts=
-set resources=
-set setdir2p1=%~s1
-if defined setdir2p1 (
-   if exist %setdir2p1%\nul (
-      if "%~n1" == "resources" (
-         set resources=%~f1
-         call:setdir1 %~f1\scripts\windows\%dbms%
-         goto:eof
-      )
-   ) else (
-      set setdir2p1
-   )
-)
-if defined setdir2p1 (
-   cd ..
-)
-if defined setdir2p1 (
-   if "%setdir2p1%" == "%CD%" goto:eof
-)
-call:setdir2 %CD%
 goto:eof
 
 :ask4dir

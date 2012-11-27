@@ -1,13 +1,9 @@
 if not defined variables goto:eof
 setlocal
 echo %~n0 %*
-set callerdir=%CD%
-cd /d "%~dp0"
-echo.
 
-set fq_start="%~dpn0.sql"
-if not exist %fq_start% (
-    set /p x="ERROR: el script %fq_start% no existe "
+if not exist "%~dpn0.sql" (
+    set /p x="ERROR: el script "%~dpn0.sql" no existe "
     goto:eof
 )
 
@@ -34,7 +30,7 @@ if "%cd1%" == "%cd2%" (
 
 call:set-parameter-variables %*
 pushd %O9BINDIR%
-sqlplus "%O9USER%"/"%O9PASSWORD%" @%fq_start% %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>$1
+sqlplus "%O9USER%"/"%O9PASSWORD%" @"%~dpn0.sql" %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>$1
 set /a xerrorlevel=%ERRORLEVEL%
 popd
 echo sqlplus: %xerrorlevel%
