@@ -1,4 +1,5 @@
 if not defined variables goto:eof
+setlocal
 set  SOURCE=%SQLDDLDIR%\%dbms%\%2
 set  SOURCE
 set  TARGET=%SQLDDLDIR%\%O9DATABASE%_O9_%1.sql

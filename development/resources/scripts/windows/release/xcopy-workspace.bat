@@ -1,5 +1,6 @@
 @echo off
 cd /d "%~dp0"
+setlocal
 call variables
 call variables-date-time
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"

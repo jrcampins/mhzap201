@@ -1,12 +1,14 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 set variables=
 call variables
 if not defined variables goto:eof
 
-pushd "%project_source_dir%\management\resources\scripts\windows\%dbms%"
-call psql "%~dpn0.psql"
-popd
+echo "%~n0" reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
+call "%~dp0..\setsiono" ejecutar "%~n0"
+if /i "%siono%" NEQ "S" goto:eof
 
-call "%~dp0..\eoj" "%~f0"
+set SQLPATH=%SQLDDLDIR%
+call "%project_source_dir%\management\resources\scripts\windows\%dbms%\psql" "%~dpn0.psql"

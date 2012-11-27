@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 if not defined first_bat set first_bat="%~f0"
 set variables=
 call variables

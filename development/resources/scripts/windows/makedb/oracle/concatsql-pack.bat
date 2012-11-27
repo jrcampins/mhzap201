@@ -1,4 +1,5 @@
 if not defined variables goto:eof
+setlocal
 set s1=%~s1
 if not defined s1 (
      echo %~n0 necesita un directorio empaquetable como primer argumento 
