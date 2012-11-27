@@ -1,3 +1,4 @@
+@echo off
 setlocal
 echo.
 echo %~n0 %*
@@ -138,6 +139,7 @@ if defined directory (
 goto:eof
 
 :ask4dir
+echo.
 set xsqlrootdir=%CD%
 pushd "%~dp0"
 set scripts=
