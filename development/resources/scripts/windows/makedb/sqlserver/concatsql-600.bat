@@ -1,16 +1,15 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 call:deleteFile %SQLDDLDIR%\%SSDATABASE%_SS_600.sql
-if /i "%funciones%" == "n"  goto EOJ
-REM call %DIRBAT1%\concatsql-for 600 sequences
+if /i "%funciones%" == "n"  goto:eof
+REM call "%~dp0concatsql-for" 600 sequences
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :deleteFile

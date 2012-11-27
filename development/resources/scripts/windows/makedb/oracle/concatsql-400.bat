@@ -1,26 +1,25 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 call:concatsql-401
 if /i "%funciones%" == "n" (
-    call %DIRBAT1%\concatsql-key 400_FUNCTIONS functions
+    call "%~dp0concatsql-key" 400_FUNCTIONS functions
 ) else (
-    call %DIRBAT1%\concatsql-for 400_FUNCTIONS functions
+    call "%~dp0concatsql-for" 400_FUNCTIONS functions
 )
 
 call:concatsql-411
 if /i "%funciones%" == "n" (
-    call %DIRBAT1%\concatsql-key 400_PACKAGES packages
+    call "%~dp0concatsql-key" 400_PACKAGES packages
 ) else (
-    call %DIRBAT1%\concatsql-for 400_PACKAGES packages
+    call "%~dp0concatsql-for" 400_PACKAGES packages
 )
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :concatsql-401

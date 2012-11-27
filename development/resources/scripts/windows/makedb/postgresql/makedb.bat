@@ -1,18 +1,10 @@
 @echo off
 cd /d "%~dp0"
 
+if not defined first_bat set first_bat="%~f0"
 set variables=
-call variables "%~f0"
+call variables
 if not defined variables goto:eof
-
-if not exist "%~dp0logs" md "%~dp0logs"
-set PLOG="%~dp0logs\%~n0.log"
-set XLOG=%PLOG%
-if exist %PLOG% del %PLOG%
-
-set PSQL="%~dpn0.psql"
-if not exist %PSQL% call %DIRBAT2%\variables-reset el archivo %PSQL% no existe
-if not defined variables goto EOJ
 
 :ask
 set nn=10
@@ -23,36 +15,52 @@ set CRVL="%CRVL%"
 
 set /a xerrorlevel=0
 call concatsql
-if %xerrorlevel% GEQ 1 goto EOJ
+if not %xerrorlevel% == 0 (pause & goto:eof)
 
-rem echo copy-userdata
-rem if %xerrorlevel% GEQ 1 goto EOJ
-
-cd /d "%project_source_dir%\management\resources\scripts\windows\%dbms%"
-
-call dropdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-call createdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-set PSQL="%~dpn0.psql"
-call psql %PSQL%
-if %xerrorlevel% GEQ 1 goto EOJ
-
-call rebuild
-if %xerrorlevel% GEQ 1 goto EOJ
-
-call vacuumdb
-if %xerrorlevel% GEQ 1 goto EOJ
-
-call dump
-if %xerrorlevel% GEQ 1 goto EOJ
+call:init-psql-spool
 
 cd /d "%~dp0"
+pushd "%project_source_dir%\management\resources\scripts\windows\%dbms%"
+
+call dropdb
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+call createdb
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+call makedb
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+call rebuild
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+call vacuumdb
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+call dump
+if not %xerrorlevel% == 0 (pause & goto:eof)
+
+popd
 
 call rebuild-menu
-if %xerrorlevel% GEQ 1 goto EOJ
+if not %xerrorlevel% == 0 (pause & goto:eof)
 
-:EOJ
-call %DIRBAT2%\eoj "%~f0"
+call:open-psql-spool
+goto:eof
+
+:init-psql-spool
+set dir="%~dp0logs"
+set log="%~dp0logs\%~nx0.log"
+if not defined PLOG (
+    set PLOG=%log%
+    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
+)
+echo %~f0 >> %PLOG%
+goto:eof
+
+:open-psql-spool
+set log="%~dp0logs\%~nx0.log"
+if /i %PLOG% == %log% (echo.) else (goto:eof)
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+goto:eof

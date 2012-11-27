@@ -1,21 +1,23 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+if not defined first_bat set first_bat="%~f0"
+set variables=
+call variables
+if not defined variables goto:eof
 
 set  siono=S
-call %DIRBAT2%\setsiono "concatenar datos, funciones, triggers, vistas, etc."
+call "%~dp0..\setsiono" concatenar datos, funciones, triggers, vistas, etc.
 set  todos=%siono%
-if /i "%todos%" == "n" call %DIRBAT2%\setsiono "concatenar datos"
+if /i "%todos%" == "n" call "%~dp0..\setsiono" concatenar datos
 set  datos=%siono%
-if /i "%todos%" == "n" call %DIRBAT2%\setsiono "concatenar funciones, triggers, etc."
+if /i "%todos%" == "n" call "%~dp0..\setsiono" concatenar funciones, triggers, etc.
 set  funciones=%siono%
-if /i "%todos%" == "n" call %DIRBAT2%\setsiono "concatenar vistas"
+if /i "%todos%" == "n" call "%~dp0..\setsiono" concatenar vistas
 set  vistas=%siono%
-if /i "%siono%" == "s" call %DIRBAT2%\setsiono "concatenar vistas-jasper"
+if /i "%siono%" == "s" call "%~dp0..\setsiono" concatenar vistas-jasper
 set  jasper=%siono%
-if /i "%siono%" == "s" call %DIRBAT2%\setsiono "concatenar vistas-web"
+if /i "%siono%" == "s" call "%~dp0..\setsiono" concatenar vistas-web
 set  web=%siono%
 echo.
 
@@ -26,12 +28,12 @@ set  jasper
 set  web
 echo.
 
-call %DIRBAT1%\concatsql-100
-call %DIRBAT1%\concatsql-200
-call %DIRBAT1%\concatsql-300
-call %DIRBAT1%\concatsql-400
-call %DIRBAT1%\concatsql-500
-call %DIRBAT1%\concatsql-600
+call "%~dp0concatsql-100"
+call "%~dp0concatsql-200"
+call "%~dp0concatsql-300"
+call "%~dp0concatsql-400"
+call "%~dp0concatsql-500"
+call "%~dp0concatsql-600"
 goto PWD
 
 set  SOURCE=%SQLDDLDIR%
@@ -50,8 +52,7 @@ goto PWD
 :PWD
 dir  %SQLDDLDIR%\%SSDATABASE%*.sql
 
-:EOJ
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :deleteFile

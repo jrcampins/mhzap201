@@ -1,40 +1,32 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
-echo -->%SQLDDLDIR%\%O9DATABASE%_O9_200.sql
-echo -->%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql
-echo -->%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql
-if /i "%datos%" == "n"  goto EOJ
-call %DIRBAT1%\concatsql-for 200 data
-
+set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200.sql"
+if exist %BAK% del %BAK%
 set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql"
-set BAT="%~dpn0-run-cmd"
-if not exist "%~dp0logs" md "%~dp0logs"
-set LOG="%~dp0logs\%~n0.log"
-
-echo %BAT%>%LOG%
-echo.>>%LOG%
-echo %BAK%>>%LOG%
-echo.>>%LOG%
-echo.
-type %DIRBAT2%\delete-metadata.sql>%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql
-call %DIRBAT2%\dump-metadata-run
-echo.
+if exist %BAK% del %BAK%
 set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql"
-echo.>>%LOG%
-echo %BAK%>>%LOG%
-echo.>>%LOG%
-echo.
-call %DIRBAT2%\dump-userdata-run
-echo.
+if exist %BAK% del %BAK%
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+if /i "%datos%" == "n"  goto:eof
+call "%~dp0concatsql-for" 200 data
+call "%~dp0..\eoj" "%~f0"
+goto:eof
+
+:never-called
+if not exist "%~dp0logs" md "%~dp0logs"
+set log="%~dp0logs\%~nx0.log"
+set BAT="%~dpn0-run-cmd"
+set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql"
+type "%~dp0..\delete-metadata.sql">%BAK%
+call "%~dp0..\dump-metadata-run"
+set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql"
+call "%~dp0..\dump-userdata-run"
 if defined keep_200_log goto:eof
-if not defined LOG goto:eof
-if exist %LOG% del %LOG%
+if not defined log goto:eof
+if exist %log% del %log%
 goto:eof

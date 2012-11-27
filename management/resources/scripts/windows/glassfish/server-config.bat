@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" establece parametros de configuracion del servidor de aplicaciones
-call "%~dp0..\setsiono.bat" ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 rem .
@@ -31,4 +31,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
 call %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
 echo.
-call "%~dp0..\eoj.bat" "%~f0"
+call "%~dp0..\eoj" "%~f0"

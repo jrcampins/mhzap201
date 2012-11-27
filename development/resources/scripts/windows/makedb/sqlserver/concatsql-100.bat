@@ -1,8 +1,9 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 set  SOURCE=%SQLDDLDIR%\%dbms%
 set  SOURCE
@@ -20,9 +21,7 @@ echo.>>%TARGET%
 type %SOURCE%\%SSDATABASE%_SS_DEFAULTS_RENUMBERED.sql>>%TARGET%
 echo.>>%TARGET%
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :deleteFile

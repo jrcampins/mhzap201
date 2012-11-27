@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" restaura la base de datos a partir de un archivo respaldo
-call "%~dp0..\setsiono.bat" ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 :ask
@@ -35,27 +35,36 @@ if exist %tokens2% del %tokens2% /q
 set EXE="%PGBINDIR%\pg_restore.exe"
 rem CMD=%EXE% -c -i -d "%PGDATABASE%" -v %token%
 set CMD=%EXE%    -i -d "%PGDATABASE%" -v %token%
-if not exist "%~dp0logs" md "%~dp0logs"
-set LOG="%~dp0logs\%~n0.log"
 
 echo.
 echo %CMD%
 echo.
-rem pause
-echo %CMD%>%LOG%
-echo %DATE% %TIME%>>%LOG%
-%CMD% 1>>%LOG% 2>&1
+
+call:init-psql-spool
+echo %CMD%>>%PLOG%
+echo %DATE% %TIME%>>%PLOG%
+%CMD% 1>>%PLOG% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
-echo %DATE% %TIME%>>%LOG%
+echo %DATE% %TIME%>>%PLOG%
 echo.
 echo restore: %xerrorlevel%
 echo.
-
-if defined XLOG goto:eof
-call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%LOG%)
-if /i "%siono%" == "S" start /d %SystemRoot% notepad %LOG%
+call:open-psql-spool
 goto:eof
 
-:unreachable-statements
-call "%~dp0..\eoj.bat" "%~f0"
+:init-psql-spool
+set dir="%~dp0logs"
+set log="%~dp0logs\%~nx0.log"
+if not defined PLOG (
+    set PLOG=%log%
+    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
+)
+echo %~f0 >> %PLOG%
+goto:eof
+
+:open-psql-spool
+set log="%~dp0logs\%~nx0.log"
+if /i %PLOG% == %log% (echo.) else (goto:eof)
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof

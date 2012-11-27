@@ -6,14 +6,8 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
-call "%~dp0..\setsiono.bat" ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-if not exist "%~dp0logs" md "%~dp0logs"
-if not defined PLOG set PLOG="%~dp0logs\%~n0.log"
-
-set PSQL="%~dpn0.psql"
-if not exist "%PSQL%" call "%~dp0..\unset-variables.bat" el archivo "%PSQL%" no existe
-if defined variables call psql
-set PSQL=
-call "%~dp0..\eoj.bat" "%~f0"
+call psql "%~dpn0.psql"
+call "%~dp0..\eoj" "%~f0"

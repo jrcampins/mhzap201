@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" elimina el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
-call "%~dp0..\setsiono.bat" ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
@@ -30,4 +30,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
 call %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
 echo.
-call "%~dp0..\eoj.bat" "%~f0"
+call "%~dp0..\eoj" "%~f0"

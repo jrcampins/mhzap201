@@ -1,21 +1,19 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 echo -->%SQLDDLDIR%\%O9DATABASE%_O9_500.sql
-REM if /i "%funciones%" == "n"  goto EOJ
 call:concatsql-501
 if /i "%funciones%" == "n" (
-    call %DIRBAT1%\concatsql-key 500 triggers
+    call "%~dp0concatsql-key" 500 triggers
 ) else (
-    call %DIRBAT1%\concatsql-for 500 triggers
+    call "%~dp0concatsql-for" 500 triggers
 )
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :concatsql-501

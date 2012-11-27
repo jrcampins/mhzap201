@@ -3,7 +3,7 @@ set homedir=
 pushd "%~dp0"
 call:set-home-dir-loop
 popd
-echo HOME=%homedir%
+rem echo HOME=%homedir%
 set xs=%homedir%\variables.bat
 if exist "%xs%" call "%xs%"
 goto:eof

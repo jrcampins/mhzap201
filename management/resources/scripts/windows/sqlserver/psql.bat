@@ -1,3 +1,4 @@
+set PSQL=
 if not defined variables goto:eof
 
 set OSQLFILE="%~dpn0.osql"
@@ -8,27 +9,25 @@ set OSQLSERVER=%SSHOST%
 if "%~x1" == ".sql" set PSQL="%~f1"
 if "%~x1" ==".psql" set PSQL="%~f1"
 
-if not exist "%~dp0logs" md "%~dp0logs"
-if not defined PLOG set PLOG="%~dp0logs\%~n0.log"
-if not defined PSQL set PSQL="%~dpn0.psql"
+call:check-psql
+if not defined PSQL goto:eof
+
 if not defined TXT1 set TXT1="%~dpn0-log.txt"
 if not defined TXT2 set TXT2="%~dpn0-out.txt"
 if not defined SSDB set SSDB=%SSDATABASE%
 if not defined CRVL set CRVL=10%aammdd%
 
-call:checkFile %PSQL%
-if not defined variables goto:eof
 call:buildOSQLFile
 set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
 
 echo.
 echo %EXE%
-rem echo %PLOG%
 echo %PSQL%
 echo.
 pause
 
+call:init-psql-spool "%~f1"
 echo %CMD%>>%PLOG%
 echo.
 echo.>>%PLOG%
@@ -42,11 +41,24 @@ echo.>>%PLOG%
 echo.
 echo psql: %xerrorlevel%
 echo.
-set PSQL=
+call:open-psql-spool "%~f1"
+goto:eof
 
-if defined XLOG goto:eof
-call "%~dp0..\setsiono.bat" desea ver el log de la ejecucion (%PLOG%)
-if /i "%siono%" == "S" start /d %SystemRoot% notepad %PLOG%
+:init-psql-spool
+set dir="%~dp0logs"
+set log="%~dp0logs\%~nx1.log"
+if not defined PLOG (
+    set PLOG=%log%
+    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
+)
+echo %~f0 >> %PLOG%
+goto:eof
+
+:open-psql-spool
+set log="%~dp0logs\%~nx1.log"
+if /i %PLOG% == %log% (echo.) else (goto:eof)
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
 
 :buildOSQLFile
@@ -63,15 +75,19 @@ echo print   @crvl                  >>%OSQLFILE%
 echo print   @ssdb                  >>%OSQLFILE%
 echo print   @datdir                >>%OSQLFILE%
 echo print   @ddldir                >>%OSQLFILE%
-if exist %PSQL% type %PSQL%         >>%OSQLFILE%
+type %PSQL%                         >>%OSQLFILE%
 goto:eof
 
-:checkFile
-if exist "%~f1" goto:eof
-set variables=
+:check-psql
+if exist %PSQL% goto:eof
 echo.
-echo el archivo "%~f1" no existe
+echo El archivo %PSQL% no existe
 echo.
 pause
 echo.
+set PSQL=
+goto:eof
+
+:set-psql-script
+set PSQL_SCRIPT=%~nx1
 goto:eof

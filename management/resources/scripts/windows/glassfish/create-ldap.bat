@@ -6,7 +6,7 @@ call variables
 if not defined variables goto:eof
 
 echo "%~n0" crea el dominio de seguridad LDAP
-call "%~dp0..\setsiono.bat" ejecutar "%~n0"
+call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set CLASS=com.sun.enterprise.security.auth.realm.ldap.LDAPRealm
@@ -26,4 +26,4 @@ echo.
 echo %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 call %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 echo.
-call "%~dp0..\eoj.bat" "%~f0"
+call "%~dp0..\eoj" "%~f0"

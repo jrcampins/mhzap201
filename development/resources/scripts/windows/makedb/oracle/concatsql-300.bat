@@ -1,8 +1,9 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 set  SOURCE=%SQLDDLDIR%\%dbms%
 set  SOURCE
@@ -80,7 +81,4 @@ set  SOURCE
 set  TARGET
 for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
-goto:eof
+call "%~dp0..\eoj" "%~f0"

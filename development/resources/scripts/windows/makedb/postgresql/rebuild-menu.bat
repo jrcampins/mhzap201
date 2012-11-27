@@ -1,26 +1,12 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
-if not defined PLOG call:setPlog
+pushd "%project_source_dir%\management\resources\scripts\windows\%dbms%"
+call psql "%~dpn0.psql"
+popd
 
-set PSQL="%~dpn0.psql"
-if not exist %PSQL% call %DIRBAT2%\variables-reset el archivo %PSQL% no existe
-if not defined variables goto EOJ
-
-cd /d "%project_source_dir%\management\resources\scripts\windows\%dbms%"
-set PSQL="%~dpn0.psql"
-call psql %PSQL%
-cd /d "%~dp0"
-
-:EOJ
-call %DIRBAT2%\eoj "%~f0"
-goto:eof
-
-:setPlog
-if not exist "%~dp0logs" md "%~dp0logs"
-set PLOG="%~dp0logs\%~n0.log"
-if exist %PLOG% del %PLOG%
-goto:eof
+call "%~dp0..\eoj" "%~f0"

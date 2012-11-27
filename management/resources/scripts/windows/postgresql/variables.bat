@@ -5,8 +5,7 @@ set xs="%~dp0..\variables.bat"
 if exist %xs% call %xs%
 if not defined variables goto:eof
 
-set xs="%~dp0..\variables-date-time.bat"
-if exist %xs% call %xs%
+call "%~dp0..\variables-date-time"
 
 set PGHOST=%dbhost%
 set PGPORT=%dbport%

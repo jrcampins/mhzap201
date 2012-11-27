@@ -1,21 +1,19 @@
 @echo off
 cd /d "%~dp0"
 
-if not defined variables call variables "%~f0"
-if not defined variables goto EOJ
+set variables=
+call variables
+if not defined variables goto:eof
 
 echo -->%SQLDDLDIR%\%SSDATABASE%_SS_400.sql
-REM if /i "%funciones%" == "n"  goto EOJ
 call:concatsql-401
 if /i "%funciones%" == "n" (
-    call %DIRBAT1%\concatsql-key 400 functions
+    call "%~dp0concatsql-key" 400 functions
 ) else (
-    call %DIRBAT1%\concatsql-for 400 functions
+    call "%~dp0concatsql-for" 400 functions
 )
 
-:EOJ
-echo.
-call %DIRBAT2%\eoj "%~f0"
+call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :concatsql-401
