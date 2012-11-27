@@ -15,8 +15,6 @@ if not defined scripts (
 )
 
 set SQLDIR=%scripts%
-echo "%~n0" ejecuta todos los scripts que se encuentran en %SQLDIR%
-echo.
 
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
@@ -52,6 +50,7 @@ goto:eof
 if /i %log% == "%~dp0logs\%~nx0.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof
 
 :setdir1

@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 set variables=
 call variables
 if not defined variables goto:eof
@@ -17,38 +18,33 @@ if not defined SUFIJO goto ask
 set EXE="%PGBINDIR%\pg_dump.exe"
 set BAK="%BACKUPDIR%\%PGDATABASE%_%SUFIJO%.backup"
 set CMD=%EXE% -b -f %BAK% -F c -i -v
+if exist "%BAK%" del "%BAK%"
 
 echo.
 echo %CMD%
 echo.
-if exist "%BAK%" del "%BAK%"
-
-call:init-psql-spool
-echo %CMD%>>%PLOG%
-echo %DATE% %TIME% %CD% %PGDATABASE%>>%PLOG%
-%CMD% 1>>%PLOG% 2>&1
+call:init-log
+%CMD% 1>>%log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
-echo %DATE% %TIME% %CD% %PGDATABASE%>>%PLOG%
 echo.
-echo dump: %xerrorlevel%
+echo %~n0: %xerrorlevel%
 echo.
-call:open-psql-spool
+call:open-log
 goto:eof
 
-:init-psql-spool
-set dir="%~dp0logs"
+:init-log
 set log="%~dp0logs\%~nx0.log"
-if not defined PLOG (
-    set PLOG=%log%
-    if exist %log% (del %log%) else (if not exist %dir% md %dir%)
-)
-echo %~f0 >> %PLOG%
+if exist %log% (del %log%) else (call:make-dir %log%)
+echo %~f0 >> %log%
 goto:eof
 
-:open-psql-spool
-set log="%~dp0logs\%~nx0.log"
-if /i %PLOG% == %log% (echo.) else (goto:eof)
-set PLOG=
+:make-dir
+if not exist "%~dp1" md "%~dp1"
+goto:eof
+
+:open-log
+echo.
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof

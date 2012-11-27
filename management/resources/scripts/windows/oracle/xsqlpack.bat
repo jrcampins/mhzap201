@@ -16,8 +16,6 @@ if not defined scripts (
 
 set SQLDIR=%scripts%
 call:set-package %SQLDIR%
-echo "%~n0" empaqueta los scripts que se encuentran en %SQLDIR%
-echo.
 
 pushd %SQLDIR%
 cd ..
@@ -69,6 +67,7 @@ goto:eof
 if /i %log% == "%~dp0logs\%~nx0.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof
 
 :set-package

@@ -16,7 +16,7 @@ echo "%~n0" ejecuta los scripts que se encuentran en oracle\custom\functions
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-call:init-log "%~f1"
+call:init-log
 if /i "%~x1" == ".log" shift /1
 for /D %%d in (%packages%\*.*) do call xsqlpack %log% %%d
 call:open-log
@@ -24,12 +24,7 @@ goto:eof
 
 :init-log
 set log="%~dp0logs\%~nx0.log"
-if /i "%~x1" == ".log" (
-    set log="%~f1"
-    call:make-dir "%~f1"
-) else (
-    if exist %log% (del %log%) else (call:make-dir %log%)
-)
+if exist %log% (del %log%) else (call:make-dir %log%)
 echo %~f0 >> %log%
 goto:eof
 
@@ -38,7 +33,8 @@ if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log
-if /i %log% == "%~dp0logs\%~nx0.log" (echo.) else (goto:eof)
+echo.
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof

@@ -12,4 +12,3 @@ if /i "%siono%" NEQ "S" goto:eof
 
 set SQLPATH=%SQLDDLDIR%
 call sqlplus "%~dpn0.sql"
-call "%~dp0..\eoj" "%~f0"

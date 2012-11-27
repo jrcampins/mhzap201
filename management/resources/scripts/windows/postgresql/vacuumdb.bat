@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 set variables=
 call variables
 if not defined variables goto:eof
@@ -14,11 +15,9 @@ set CMD=%EXE% -e -f -q -z
 echo.
 echo %CMD%
 echo.
-rem pause
-echo.
 %CMD%
 set /a xerrorlevel=%ERRORLEVEL%
 echo.
-echo vacuumdb: %xerrorlevel%
+echo %~n0: %xerrorlevel%
 echo.
 call "%~dp0..\eoj" "%~f0"

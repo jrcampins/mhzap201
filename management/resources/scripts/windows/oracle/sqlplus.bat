@@ -37,7 +37,6 @@ sqlplus "%O9USER%"/"%O9PASSWORD%" @"%~dpn0.sql" %~nx1 %p1% %p2% %p3% %p4% %p5% %
 set /a xerrorlevel=%ERRORLEVEL%
 popd
 echo sqlplus: %xerrorlevel%
-echo.
 call:open-log "%~f1"
 goto:eof
 
@@ -60,6 +59,7 @@ goto:eof
 if /i %log% == "%~dp0logs\%~nx0.%~nx1.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof
 
 :set-parameter-variables
