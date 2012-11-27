@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 set log="%~dpn0.log"
 call variables-date-time
 set>%log%
