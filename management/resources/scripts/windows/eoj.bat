@@ -1,8 +1,3 @@
 echo.
-if defined first_bat (
-    if /i %first_bat% == "%~f1" (
-        pause
-    )
-) else (
-    pause
-)
+if not defined first_bat (pause & goto:eof)
+if /i %first_bat% == "%~f1" (pause & set first_bat=)

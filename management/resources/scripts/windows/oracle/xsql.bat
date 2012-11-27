@@ -45,6 +45,7 @@ goto:eof
 :open-sqlplus-spool
 set log="%~dp0logs\%~nx0.log"
 if /i %SQLPLUS_SPOOL% == %log% (echo.) else (goto:eof)
+set SQLPLUS_SPOOL=
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof

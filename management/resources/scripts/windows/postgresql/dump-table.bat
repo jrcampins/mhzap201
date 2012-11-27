@@ -74,6 +74,7 @@ goto:eof
 :open-psql-spool
 set log="%~dp0logs\%~nx0.log"
 if /i %PLOG% == %log% (echo.) else (goto:eof)
+set PLOG=
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
