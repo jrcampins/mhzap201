@@ -1,13 +1,14 @@
 #!/bin/sh
 if [ -n "$variables" ]; then
     echo sqlplus $*
-    nx0=$(basename "$BASH_SOURCE")
-    dp0=`cd $(dirname "$BASH_SOURCE"); pwd`
-    sql="$BASH_SOURCE.sql"
-    if [ -f "$sql" ]; then
-        if [ -f "$1" ]; then            
-            nx1=$(basename "$1")
-            dp1=`cd $(dirname "$1"); pwd`
+    sf0="$BASH_SOURCE.sql"
+    if [ -f "$sf0" ]; then
+        nx0=$(basename "$BASH_SOURCE")
+        dp0=`cd $(dirname "$BASH_SOURCE"); pwd`
+        sf1=$1
+        if [ -f "$sf1" ]; then
+            nx1=$(basename "$sf1")
+            dp1=`cd $(dirname "$sf1"); pwd`
             dir="$HOMEDIR/logs"
             log="$dir/${nx0}.${nx1}.log"
             [ -d "$dir" ] || mkdir "$dir"
@@ -19,7 +20,8 @@ if [ -n "$variables" ]; then
             fi
             case "`uname`" in
                 CYGWIN*)
-                    sql=`cygpath --windows $sql`
+                    sf0=`cygpath --windows $sf0`
+                    sf1=`cygpath --windows $sf1`
                     SQLPATH=`cygpath --windows --path $SQLPATH`
                     ORACLE_HOME=`cygpath --windows $ORACLE_HOME`
                     ;;
@@ -31,7 +33,7 @@ if [ -n "$variables" ]; then
             echo ORACLE_HOME=$ORACLE_HOME >> $log 2>&1
             echo working_directory=$(pwd) >> $log 2>&1
             shift
-            $ORACLE_HOME/bin/sqlplus $O9USER/$O9PASSWORD @$sql $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
+            $ORACLE_HOME/bin/sqlplus $O9USER/$O9PASSWORD @$sf0 $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
             echo $nx1: $?
             popd > /dev/null
             echo ""
@@ -39,9 +41,9 @@ if [ -n "$variables" ]; then
             echo ""
             [ "$siono" = "s" ] && cat $log | more
         else
-            echo "ERROR: el script "$1" no existe "
+            echo "ERROR: el script "$sf1" no existe "
         fi
     else
-        echo "ERROR: el script "$sql" no existe "
+        echo "ERROR: el script "$sf0" no existe "
     fi
 fi

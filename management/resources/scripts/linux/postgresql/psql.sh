@@ -1,27 +1,36 @@
 #!/bin/sh
 if [ -n "$variables" ]; then
-    [ -f "$PSQL" ] || PSQL="$scriptpath/$scriptname.psql"
-    [ -n "$PLOG" ] || PLOG="$scriptpath/$scriptname.plog"
-    [ -n "$TXT1" ] || TXT1="$scriptpath/$scriptname.txt1"
-    [ -n "$TXT2" ] || TXT2="$scriptpath/$scriptname.txt2"
-    [ -n "$PGDB" ] || PGDB="$PGDATABASE"
-    [ -n "$CRVL" ] || CRVL=""
-    case "`uname`" in
-        CYGWIN*)
-            PSQL=`cygpath --windows $PSQL`
-            SQLDDLDIR=`cygpath --windows $SQLDDLDIR`
-            ;;
-    esac
-    EXE="$PGBINDIR/psql"
-#   CMD="$EXE -e -f $PSQL -L $TXT1 -o $TXT2 -q -1"
-    CMD="$EXE -e -f $PSQL -q -v ddldir=$SQLDDLDIR -v pgdb=$PGDB -v crvl=$CRVL"
-    echo $CMD
-    echo $(date)>$PLOG
-    echo $CMD>>$PLOG
-    $CMD 1>>$PLOG 2>&1
-    echo $me: $?
-    echo ""
-    read -p "cat $PLOG ? (s/n): " siono
-    echo ""
-    [ "$siono" = "s" ] && cat $PLOG | more
+    echo psql $*
+    nx0=$(basename "$BASH_SOURCE")
+    dp0=`cd $(dirname "$BASH_SOURCE"); pwd`
+    sf1=$1
+    if [ -f "$sf1" ]; then
+        nx1=$(basename "$sf1")
+        dp1=`cd $(dirname "$sf1"); pwd`
+        dir="$HOMEDIR/logs"
+        log="$dir/${nx0}.${nx1}.log"
+        [ -d "$dir" ] || mkdir "$dir"
+        [ -f "$log" ] && rm "$log"
+        [ -n "$PGDB" ] || PGDB="$PGDATABASE"
+        [ -n "$CRVL" ] || CRVL=""
+        case "`uname`" in
+            CYGWIN*)
+                sf1=`cygpath --windows $sf1`
+                SQLDDLDIR=`cygpath --windows $SQLDDLDIR`
+                ;;
+        esac
+        echo SQLDDLDIR=$SQLDDLDIR >> $log 2>&1
+        echo POSTGRESQL_HOME=$POSTGRESQL_HOME >> $log 2>&1
+        echo working_directory=$(pwd) >> $log 2>&1
+        EXE="$PGBINDIR/psql"
+        CMD="$EXE -e -f $sf1 -q -v ddldir=$SQLDDLDIR -v pgdb=$PGDB -v crvl=$CRVL"
+        $CMD 1>>$log 2>&1
+        echo $nx1: $?
+        echo ""
+        read -p "cat $log ? (s/n): " siono
+        echo ""
+        [ "$siono" = "s" ] && cat $log | more
+    else
+        echo "ERROR: el script "$sf1" no existe "
+    fi
 fi

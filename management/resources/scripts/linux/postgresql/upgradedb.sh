@@ -9,13 +9,9 @@ if [ -n "$variables" ]; then
     echo $me actualiza la base de datos
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        PSQL="$scriptpath/$scriptname.psql"
-        PLOG="$scriptpath/$scriptname.plog"
-        if [ -f "$PSQL" ]; then
-            echo $scriptpath/psql.sh
-            source $scriptpath/psql.sh
-        else
-            echo el archivo "$PSQL" no existe
+        unset SQLPATH
+        xs1="$scriptpath/psql.sh"
+        xs2="$scriptpath/$scriptname.psql"
+        [ -x "$xs1" ] && . "$xs1" "$xs2"
         fi
     fi
-fi
