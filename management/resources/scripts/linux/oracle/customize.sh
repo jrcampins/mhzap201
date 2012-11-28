@@ -10,7 +10,7 @@ if [ -n "$variables" ]; then
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
         xs1="$scriptpath/sqlplus.sh"
-        xs2="$scriptpath/$scriptname.sql"
+        xs2="$SQLDDLDIR/oracle/custom/packages/xsp.sql"
         [ -x "$xs1" -a -f "$xs2" ] && . "$xs1" "$xs2"
     fi
 fi

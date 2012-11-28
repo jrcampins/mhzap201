@@ -6,12 +6,17 @@ if [ -n "$variables" ]; then
     sql="$BASH_SOURCE.sql"
     if [ -f "$sql" ]; then
         if [ -f "$1" ]; then            
-            dir="$HOMEDIR/logs"
             nx1=$(basename "$1")
+            dp1=`cd $(dirname "$1"); pwd`
+            dir="$HOMEDIR/logs"
             log="$dir/${nx0}.${nx1}.log"
             [ -d "$dir" ] || mkdir "$dir"
             [ -f "$log" ] && rm "$log"
-            SQLPATH=$dp0:$SQLPATH
+            if [ -n "$SQLPATH" ]; then
+                SQLPATH=$dp1:$SQLPATH
+            else
+                SQLPATH=$dp1
+            fi
             case "`uname`" in
                 CYGWIN*)
                     sql=`cygpath --windows $sql`
