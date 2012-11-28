@@ -16,10 +16,11 @@ set CRVL="%CRVL%"
 cd /d "%~dp0"
 set this=%CD%
 set that=%project_source_dir%\management\resources\scripts\windows\%dbms%
+set ssdbmsdir=%SQLDDLDIR%\%dbms%
 
 set /a xerrorlevel=0
 if %xerrorlevel% == 0 call "%this%\concatsql"
-if %xerrorlevel% == 0 call:run-sql "%SQLDDLDIR%\%dbms%\%SSDATABASE%_SS.sql" master
+if %xerrorlevel% == 0 call:run-sql "%ssdbmsdir%\%SSDATABASE%_SS.sql" *
 if %xerrorlevel% == 0 call:run-sql "%SQLDDLDIR%\%SSDATABASE%_SS_100.sql"
 if %xerrorlevel% == 0 call:run-sql "%SQLDDLDIR%\%SSDATABASE%_SS_200.sql"
 if %xerrorlevel% == 0 call:run-sql "%SQLDDLDIR%\%SSDATABASE%_SS_300.sql"
@@ -37,12 +38,17 @@ if not exist "%~f1" (
     pause
     goto:eof
 )
-echo psql "%~f1"
 set SSDB=%SSDATABASE%
-if /i "%2" == "master" (
+set siono=S
+if /i "%2" == "*" (
     set SSDB=master
     echo.
-    pause
+    call "%~dp0..\setsiono" eliminar y volver a crear la base de datos %SSDATABASE%
+    echo.
 )
-call "%that%\psql" "%~f1"
+if /i "%siono%" == "S" (
+    call "%that%\osql" "%~f1"
+) else (
+    set /a xerrorlevel=1
+)
 goto:eof

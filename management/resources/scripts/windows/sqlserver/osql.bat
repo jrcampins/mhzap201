@@ -13,7 +13,7 @@ if not exist "%~f1" (
     goto:eof
 )
 
-set OSQLFILE="%~dpn0.osql"
+set OSQLFILE="%homedir%\osql\%~n0.%~nx1"
 set OSQLUSER=%SSUSER%
 set OSQLPASSWORD=%SSPASS%
 set OSQLSERVER=%SSHOST%
@@ -24,7 +24,6 @@ if not defined SSDB set SSDB=%SSDATABASE%
 if not defined CRVL set CRVL=%aaaammdd%
 
 call:build-osql-file "%~f1"
-
 call:init-log %f1%
 set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
@@ -60,7 +59,9 @@ echo.
 goto:eof
 
 :build-osql-file
-if exist %OSQLFILE% del %OSQLFILE%
+echo %~n0(%OSQLFILE%)
+echo.
+if exist %OSQLFILE% (del %OSQLFILE%) else (call:make-dir %OSQLFILE%)
 echo declare @crvl   integer        >>%OSQLFILE%
 echo declare @ssdb   varchar(100)   >>%OSQLFILE%
 echo declare @datdir varchar(2000)  >>%OSQLFILE%

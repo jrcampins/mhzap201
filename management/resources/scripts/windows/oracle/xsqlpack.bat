@@ -17,6 +17,9 @@ if not defined scripts (
 set SQLDIR=%scripts%
 call:set-package %SQLDIR%
 
+call "%~dp0..\setsiono" ejecutar %~n0(%package%)
+if /i "%siono%" NEQ "S" goto:eof
+
 pushd %SQLDIR%
 cd ..
 set sql="%CD%\%package%.sql"
