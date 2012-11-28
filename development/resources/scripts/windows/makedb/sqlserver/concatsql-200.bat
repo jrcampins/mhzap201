@@ -19,15 +19,29 @@ call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :never-called
-if not exist "%~dp0logs" md "%~dp0logs"
-set log="%~dp0logs\%~nx0.log"
+call:init-log
 set BAT="%~dpn0-run-cmd"
 set BAK="%SQLDDLDIR%\%SSDATABASE%_SS_200_METADATA.sql"
 type "%~dp0..\delete-metadata.sql">%BAK%
 call "%~dp0..\dump-metadata-run"
 set BAK="%SQLDDLDIR%\%SSDATABASE%_SS_200_USERDATA.sql"
 call "%~dp0..\dump-userdata-run"
-if defined keep_200_log goto:eof
-if not defined log goto:eof
-if exist %log% del %log%
+call:open-log
+goto:eof
+
+:init-log
+set log="%homedir%\logs\%~nx0.log"
+if exist %log% (del %log%) else (call:make-dir %log%)
+echo %~f0 >> %log%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
+goto:eof
+
+:open-log
+echo.
+call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
+if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
+echo.
 goto:eof
