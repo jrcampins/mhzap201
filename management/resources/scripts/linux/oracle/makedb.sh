@@ -15,4 +15,3 @@ if [ -n "$variables" ]; then
         [ -x "$xs1" -a -f "$xs2" ] && . "$xs1" "$xs2" "$O9DATABASE" "O9"
     fi
 fi
-
