@@ -17,7 +17,6 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 call:init-log
-if /i "%~x1" == ".log" shift /1
 for /D %%d in (%packages%\*.*) do call xsqlpack %log% %%d
 call:open-log
 goto:eof
