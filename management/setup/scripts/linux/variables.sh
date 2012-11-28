@@ -16,6 +16,11 @@ lower_case_project=mhzap201
 UPPER_CASE_PROJECT=MHZAP201
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
 DISTDIR=$HOMEDIR
+BACKUPDIR=$HOMEDIR/backup
+LOGSDIR=$HOMEDIR/logs
+
+[ -d "$BACKUPDIR"  ] || mkdir -p "$BACKUPDIR"
+[ -d "$LOGSDIR"    ] || mkdir -p "$LOGSDIR"
 
 cxms "$HOMEDIR/variables-home.sh"
 

@@ -13,6 +13,6 @@ if [ -n "$variables" ]; then
         CMD="$EXE -e -f -q -z"
         echo $CMD
         $CMD
-        echo $me: $?
+        echo vacuumdb: $?
     fi
 fi

@@ -7,9 +7,7 @@ if [ -n "$variables" ]; then
     if [ -f "$sf1" ]; then
         nx1=$(basename "$sf1")
         dp1=`cd $(dirname "$sf1"); pwd`
-        dir="$HOMEDIR/logs"
-        log="$dir/${nx0}.${nx1}.log"
-        [ -d "$dir" ] || mkdir "$dir"
+        log="$LOGSDIR/${nx0}.${nx1}.log"
         [ -f "$log" ] && rm "$log"
         [ -n "$PGDB" ] || PGDB="$PGDATABASE"
         [ -n "$CRVL" ] || CRVL=""

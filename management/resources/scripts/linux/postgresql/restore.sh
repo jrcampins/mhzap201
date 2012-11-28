@@ -24,18 +24,16 @@ if [ -n "$variables" ]; then
                     CYGWIN*) archivo=`cygpath --windows $archivo`
                 esac
                 EXE="$PGBINDIR/pg_restore"
-            #   CMD="$EXE -c -i -d $PGDATABASE -v $archivo"
                 CMD="$EXE -i -d $PGDATABASE -v $archivo"
-                LOG=./$me.log
+                log="$LOGSDIR/${scriptname}.${PGDATABASE}.log"
+                [ -f "$log" ] && rm "$log"
                 echo $CMD
-                echo $(date)>$LOG
-                echo $CMD>>$LOG
-                $CMD 1>>$LOG 2>&1
-                echo $me: $?
+                $CMD 1>>$log 2>&1
+                echo pg_restore: $?
                 echo ""
-                read -p "cat $LOG ? (s/n): " siono
+                read -p "cat $log ? (s/n): " siono
                 echo ""
-                [ "$siono" = "s" ] && cat $LOG | more
+                [ "$siono" = "s" ] && cat $log | more
             fi
             unset archivo
         fi

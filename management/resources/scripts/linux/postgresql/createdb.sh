@@ -13,6 +13,6 @@ if [ -n "$variables" ]; then
         CMD="$EXE -e -E UTF8"
         echo $CMD
         $CMD
-        echo $me: $?
+        echo createdb: $?
     fi
 fi

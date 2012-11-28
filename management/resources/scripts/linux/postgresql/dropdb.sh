@@ -13,6 +13,6 @@ if [ -n "$variables" ]; then
         CMD="$EXE -e -i $PGDATABASE"
         echo $CMD
         $CMD
-        echo $me: $?
+        echo dropdb: $?
     fi
 fi

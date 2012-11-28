@@ -42,16 +42,15 @@ if [ -n "$variables" ]; then
                     esac
                     EXE="$PGBINDIR/pg_dump"
                     CMD="$EXE -b -f $archivo -F c -i -v"
-                    LOG=./$me.log
+                    log="$LOGSDIR/${scriptname}.${PGDATABASE}.log"
+                    [ -f "$log" ] && rm "$log"
                     echo $CMD
-                    echo $(date)>$LOG
-                    echo $CMD>>$LOG
-                    $CMD 1>>$LOG 2>&1
-                    echo $me: $?
+                    $CMD 1>>$log 2>&1
+                    echo pg_dump: $?
                     echo ""
-                    read -p "cat $LOG ? (s/n): " siono
+                    read -p "cat $log ? (s/n): " siono
                     echo ""
-                    [ "$siono" = "s" ] && cat $LOG | more
+                    [ "$siono" = "s" ] && cat $log | more
                 fi
             fi
         done

@@ -9,9 +9,7 @@ if [ -n "$variables" ]; then
         if [ -f "$sf1" ]; then
             nx1=$(basename "$sf1")
             dp1=`cd $(dirname "$sf1"); pwd`
-            dir="$HOMEDIR/logs"
-            log="$dir/${nx0}.${nx1}.log"
-            [ -d "$dir" ] || mkdir "$dir"
+            log="$LOGSDIR/${nx0}.${nx1}.log"
             [ -f "$log" ] && rm "$log"
             if [ -n "$SQLPATH" ]; then
                 SQLPATH=$dp1:$SQLPATH
@@ -22,12 +20,10 @@ if [ -n "$variables" ]; then
                 CYGWIN*)
                     sf0=`cygpath --windows $sf0`
                     sf1=`cygpath --windows $sf1`
-                    SQLPATH=`cygpath --windows --path $SQLPATH`
-                    ORACLE_HOME=`cygpath --windows $ORACLE_HOME`
+                    export SQLPATH=`cygpath --windows --path $SQLPATH`
+                    export ORACLE_HOME=`cygpath --windows $ORACLE_HOME`
                     ;;
             esac
-            export SQLPATH
-            export ORACLE_HOME
             pushd $ORACLE_HOME/bin > /dev/null
             echo SQLPATH=$SQLPATH >> $log 2>&1
             echo ORACLE_HOME=$ORACLE_HOME >> $log 2>&1
