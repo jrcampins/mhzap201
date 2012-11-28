@@ -12,6 +12,29 @@ if /i "%siono%" NEQ "S" goto:eof
 set S1=MessageFactoryPool
 set S2=MessageFactory
 set S3=MessageQueue
-for /f "tokens=1*" %%t in (jms-connection) do call delete-jms-connection %%t
+for /f "tokens=1*" %%t in (jms-connection) do call:delete-jms-connection %%t
 echo.
 call "%~dp0..\eoj" "%~f0"
+goto:eof
+
+:delete-jms-connection
+echo.
+set P1=%1
+set P1
+for /f "tokens=1*" %%t in (jms-destination) do call:delete-jms-destination %%t
+echo.
+echo %ASADMIN% %GFDOMAINCST2% delete-connector-resource "jms/%P1%%S2%"
+call %ASADMIN% %GFDOMAINCST2% delete-connector-resource "jms/%P1%%S2%"
+echo.
+echo %ASADMIN% %GFDOMAINCST2% delete-connector-connection-pool "jms/%P1%%S1%"
+call %ASADMIN% %GFDOMAINCST2% delete-connector-connection-pool "jms/%P1%%S1%"
+goto:eof
+
+:delete-jms-destination
+echo.
+set Q1=%1
+set Q1
+echo.
+echo %ASADMIN% %GFDOMAINCST2% delete-admin-object "jms/%P1%%Q1%%S3%"
+call %ASADMIN% %GFDOMAINCST2% delete-admin-object "jms/%P1%%Q1%%S3%"
+goto:eof
