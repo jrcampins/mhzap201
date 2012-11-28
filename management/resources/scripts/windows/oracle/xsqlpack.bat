@@ -4,7 +4,7 @@ echo.
 echo %~n0 %*
 echo.
 
-call:init-log "%~f1"
+set f1="%~f1"
 if /i "%~x1" == ".log" shift /1
 
 call:setdir1 %1
@@ -44,12 +44,13 @@ set variables=
 call "%~dp0variables"
 if not defined variables goto:eof
 
+call:init-log %f1%
 call "%~dp0sqlplus" %log% %sql%
 call:open-log
 goto:eof
 
 :init-log
-set log="%homedir%\logs\%~nx0.log"
+set log="%homedir%\logs\%~n0.%package%.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
     call:make-dir "%~f1"
@@ -64,7 +65,7 @@ if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log
-if /i %log% == "%homedir%\logs\%~nx0.log" (echo.) else (goto:eof)
+if /i %log% == "%homedir%\logs\%~n0.%package%.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.

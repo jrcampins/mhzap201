@@ -59,7 +59,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%homedir%\logs\%~nx0.log"
+set log="%homedir%\logs\%~n0.%token%.log"
 if exist %log% (del %log%) else (call:make-dir %log%)
 echo %~f0 >> %log%
 goto:eof

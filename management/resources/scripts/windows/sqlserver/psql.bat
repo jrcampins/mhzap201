@@ -5,7 +5,7 @@ echo.
 
 if not defined variables goto:eof
 
-call:init-log "%~f1"
+set f1="%~f1"
 if /i "%~x1" == ".log" shift /1
 
 if not exist "%~f1" (
@@ -25,6 +25,7 @@ if not defined CRVL set CRVL=%aaaammdd%
 
 call:build-osql-file "%~f1"
 
+call:init-log %f1%
 set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
 pushd "%SQLDDLDIR%"
@@ -36,7 +37,7 @@ call:open-log "%~f1"
 goto:eof
 
 :init-log
-set log="%homedir%\logs\%~nx0.%~nx1.log"
+set log="%homedir%\logs\%~n0.%~nx1.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
     call:make-dir "%~f1"
@@ -52,7 +53,7 @@ goto:eof
 
 :open-log
 echo.
-if /i not %log% == "%homedir%\logs\%~nx0.%~nx1.log" goto:eof
+if /i not %log% == "%homedir%\logs\%~n0.%~nx1.log" goto:eof
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.

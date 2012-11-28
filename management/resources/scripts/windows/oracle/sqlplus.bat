@@ -10,7 +10,7 @@ if not exist "%~dpn0.sql" (
     goto:eof
 )
 
-call:init-log "%~f1"
+set f1="%~f1"
 if /i "%~x1" == ".log" shift /1
 
 if not exist "%~f1" (
@@ -31,6 +31,7 @@ if "%cd1%" == "%cd2%" (
     set SQLPATH=%cd1%;%cd2%
 )
 
+call:init-log %f1%
 call:set-parameter-variables %*
 pushd %O9BINDIR%
 sqlplus "%O9USER%"/"%O9PASSWORD%" @"%~dpn0.sql" %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>$1
@@ -41,7 +42,7 @@ call:open-log "%~f1"
 goto:eof
 
 :init-log
-set log="%homedir%\logs\%~nx0.%~nx1.log"
+set log="%homedir%\logs\%~n0.%~nx1.log"
 if /i "%~x1" == ".log" (
     set log="%~f1"
     call:make-dir "%~f1"
@@ -56,7 +57,7 @@ if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :open-log
-if /i %log% == "%homedir%\logs\%~nx0.%~nx1.log" (echo.) else (goto:eof)
+if /i %log% == "%homedir%\logs\%~n0.%~nx1.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.
