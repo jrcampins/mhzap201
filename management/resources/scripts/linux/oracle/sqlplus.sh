@@ -1,33 +1,42 @@
 #!/bin/sh
 if [ -n "$variables" ]; then
     echo sqlplus $*
-    scriptname=$(basename "$BASH_SOURCE")
-    scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
-    PSQL="$scriptpath/$scriptname.sql"
-    if [ -f "$PSQL" ]; then
+    nx0=$(basename "$BASH_SOURCE")
+    dp0=`cd $(dirname "$BASH_SOURCE"); pwd`
+    sql="$BASH_SOURCE.sql"
+    if [ -f "$sql" ]; then
         if [ -f "$1" ]; then            
-            psql=$(basename "$1")
-            LOGS="$scriptpath/logs"
-            [ -e "$LOGS" ] || mkdir $LOGS
-            PLOG="$scriptpath/logs/${scriptname}.${psql}.log"
-            [ -f "$PLOG" ] && rm $PLOG
-            SQLPATH=$scriptpath:$SQLPATH
+            dir="$HOMEDIR/logs"
+            nx1=$(basename "$1")
+            log="$dir/${nx0}.${nx1}.log"
+            [ -d "$dir" ] || mkdir "$dir"
+            [ -f "$log" ] && rm "$log"
+            SQLPATH=$dp0:$SQLPATH
             case "`uname`" in
                 CYGWIN*)
-                    PSQL=`cygpath --windows $PSQL`
+                    sql=`cygpath --windows $sql`
                     SQLPATH=`cygpath --windows --path $SQLPATH`
+                    ORACLE_HOME=`cygpath --windows $ORACLE_HOME`
                     ;;
             esac
-            echo SQLPATH=$SQLPATH >> $PLOG 2>&1
             export SQLPATH
+            export ORACLE_HOME
+            pushd $ORACLE_HOME/bin > /dev/null
+            echo SQLPATH=$SQLPATH >> $log 2>&1
+            echo ORACLE_HOME=$ORACLE_HOME >> $log 2>&1
+            echo working_directory=$(pwd) >> $log 2>&1
             shift
-            pushd $O9BINDIR > /dev/null
-            echo sqlplus $O9USER/$O9PASSWORD @$PSQL $psql $* >> $PLOG 2>&1
+            $ORACLE_HOME/bin/sqlplus $O9USER/$O9PASSWORD @$sql $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
+            echo $nx1: $?
             popd > /dev/null
+            echo ""
+            read -p "cat $log ? (s/n): " siono
+            echo ""
+            [ "$siono" = "s" ] && cat $log | more
         else
             echo "ERROR: el script "$1" no existe "
         fi
     else
-        echo "ERROR: el script "$PSQL" no existe "
+        echo "ERROR: el script "$sql" no existe "
     fi
 fi
