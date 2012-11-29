@@ -1,23 +1,31 @@
 @echo off
-cd /d "%~dp0"
 setlocal
-call variables
-call variables-date-time
-set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
-if not exist %junction% set junction=
-set junction
-echo.
+set source=%~dp0
+set source
+set target=%CD%
+set target
+if /i "%source%" == "%target%\" (
+    echo ***
+    echo *** source=target
+    echo ***
+    pause
+    goto:eof
+)
+pause
+
+call "%~dp0variables"
+call "%~dp0variables-date-time"
 
 :ask
 set nn=20
 set /p nn="version (nn) [%nn%] "
 if not defined nn goto ask
-set VRNAME=V%nn%R%aammdd%
-set VRPATH=%~dp0%VRNAME%
-set DQPATH="%VRPATH%"
-goto check
 
-:check
+set VRNAME=V%nn%R%aammdd%
+set VRPATH=%target%\%VRNAME%
+set DQPATH="%VRPATH%"
+set management=%project_source_dir%\management
+set development=%project_source_dir%\development
 echo.
 set VR
 echo.
@@ -27,9 +35,25 @@ echo.
 echo md %DQPATH%
 md %DQPATH%
 echo.
+call:x-symlink
+call:x-concatsql
+call:x-jasper
+call:x-home
+call:x-resources
+call:x-ear
+call:x-scripts
+pause
+echo.
+call:sweep
+pause
+echo.
+goto:eof
 
-echo %VRNAME%>"%VRPATH%\HOME"
-
+:x-symlink
+set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
+if not exist %junction% set junction=
+set junction
+echo.
 if defined junction (
     if exist latest (
         echo %junction% -d latest
@@ -40,15 +64,21 @@ if defined junction (
     call %junction% latest %DQPATH%
     echo.
 )
+goto:eof
 
-pause
+:x-concatsql
+pushd %development%\resources\scripts\windows\makedb\oracle
+call concatsql
+popd
 echo.
+pushd %development%\resources\scripts\windows\makedb\postgresql
+call concatsql
+popd
+echo.
+goto:eof
 
-set DVLP=%project_source_dir%\development
-set MGMT=%project_source_dir%\management
-
-:x-010
-pushd %MGMT%\resources\jasper
+:x-jasper
+pushd %management%\resources\jasper
 del reports\*.pdf /s
 echo.
 del reports\*.jasper
@@ -57,55 +87,35 @@ del reports\web\*.jasper
 echo.
 call xcopy-resources.bat
 popd
-
-:x-020
-call:xcopy-folder %MGMT%                                                        %DQPATH% resources S
-rem pause
-rem echo.
-
-:x-030
-call:setsiono copiar el ear
 echo.
-if /i "%siono%" == "S" (
-call:xcopy-file "%project_source_dir%\%project%\dist\%project%.ear"                  %DQPATH%
-)
-rem pause
-rem echo.
+goto:eof
 
-:x-040
-call:xcopy-file-batch "%MGMT%\setup\scripts\*.*"                                %DQPATH%
-call:xcopy-file-batch "%MGMT%\setup\scripts\linux\*.*"                          %DQPATH%
-call:xcopy-file-batch "%MGMT%\setup\scripts\windows\*.*"                        %DQPATH%
-rem pause
-rem echo.
+:x-home
+echo %VRNAME%>"%VRPATH%\HOME"
+goto:eof
 
-goto x-060
+:x-resources
+call:xcopy-folder %management% %DQPATH% resources s
+goto:eof
 
-:x-050
+:x-ear
+call:xcopy-file "%project_source_dir%\%project%\dist\%project%.ear" %DQPATH%
+goto:eof
+
+:x-scripts
+call:xcopy-file-batch "%management%\setup\scripts\*.*"         %DQPATH%
+call:xcopy-file-batch "%management%\setup\scripts\linux\*.*"   %DQPATH%
+call:xcopy-file-batch "%management%\setup\scripts\windows\*.*" %DQPATH%
+goto:eof
+
+:x-jboss
 call:set-sub-dir "%VRPATH%\setup"
-call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% jboss S
-rem pause
-rem echo.
+call:xcopy-folder %management%\setup %SUBDIR% jboss s
+goto:eof
 
-:x-060
+:x-oracle
 call:set-sub-dir "%VRPATH%\setup"
-call:xcopy-folder %MGMT%\setup                                                  %SUBDIR% oracle S
-rem pause
-rem echo.
-
-:x-070
-call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\%project%\attachments"
-call:set-sub-dir "%VRPATH%\setup\jboss\welcome-content\%project%\spool"
-rem pause
-rem echo.
-
-:x-080
-call:rename-run-time-velocity-properties
-pause
-echo.
-
-:x-090
-call:sweep
+call:xcopy-folder %management%\setup %SUBDIR% oracle s
 goto:eof
 
 :xcopy-file-batch
@@ -150,7 +160,6 @@ if not exist %SOURCE% (
 )
 if exist %TARGET% rmdir %TARGET% /s /q
 if not exist %TARGET% md %TARGET%
-rem dir %SOURCE% /a:d
 echo xcopy %SOURCE% %TARGET% /i /%4
 call xcopy %SOURCE% %TARGET% /i /%4
 echo.
@@ -188,7 +197,7 @@ goto:eof
 if not defined VRNAME goto:eof
 if not defined VRPATH goto:eof
 
-call:echo1 %~n0 %VRNAME% "%VRPATH%"
+call:echo1 sweep %VRNAME% "%VRPATH%"
 
 set replacer="%ProgramFiles%\ABF\Tools\Replacer\Replacer.exe"
 set dos2unix="%ProgramFiles%\GnuWin32\bin\dos2unix.exe"
@@ -207,15 +216,12 @@ call:replace-VnnRaammdd
 call:convert-text-files
 call:modify-files-date
 
-pause
 goto:eof
 
 :echo1
 echo.
 echo %*
 echo.
-rem pause
-rem echo.
 goto:eof
 
 :echo2
@@ -225,7 +231,6 @@ echo.
 goto:eof
 
 :sweep-remove
-rem echo %~n0 %1
 if "%~n1" == "build"		call:sweep-remove-folder "%~dpn1"
 if "%~n1" == "dist"		call:sweep-remove-folder "%~dpn1"
 if "%~n1" == "CVS"		call:sweep-remove-folder "%~dpn1"
@@ -233,14 +238,12 @@ if "%~n1" == "RevisionCache"	call:sweep-remove-folder "%~dpn1"
 goto:eof
 
 :sweep-remove-folder
-rem echo %~n0 %1
 if not exist %1 goto:eof
 echo rmdir %1
 rmdir %1 /s /q
 goto:eof
 
 :sweep-delete
-rem echo %~n0 %1
 if /i "%~x1" == ".cvsignore"	call:sweep-delete-file "%1"
 if /i "%~x1" == ".lnk"		call:sweep-delete-file "%1"
 if /i "%~x1" == ".log"		call:sweep-delete-file "%1"
@@ -248,7 +251,6 @@ if /i "%~x1" == ".plog"		call:sweep-delete-file "%1"
 goto:eof
 
 :sweep-delete-file
-rem echo %~n0 %1
 if not exist %1 goto:eof
 echo del %1
 del %1
@@ -288,8 +290,6 @@ goto:eof
 echo.
 echo dos2unix %1
 echo.
-rem pause
-rem echo.
 for /R "%VRPATH%" %%f in (%1) do %dos2unix% -U "%%f"
 echo.
 goto:eof

@@ -36,23 +36,18 @@ call:open-log "%~f1"
 goto:eof
 
 :init-log
-set log="%homedir%\logs\%~n0.%~nx1.log"
+set log="%LOGSDIR%\%~n0.%~nx1.log"
+if exist %log% del %log%
 if /i "%~x1" == ".log" (
     set log="%~f1"
-    call:make-dir "%~f1"
-) else (
-    if exist %log% (del %log%) else (call:make-dir %log%)
+    if not exist "%~dp1" md "%~dp1"
 )
 echo %~f0 >> %log%
 goto:eof
 
-:make-dir
-if not exist "%~dp1" md "%~dp1"
-goto:eof
-
 :open-log
 echo.
-if /i not %log% == "%homedir%\logs\%~n0.%~nx1.log" goto:eof
+if /i not %log% == "%LOGSDIR%\%~n0.%~nx1.log" goto:eof
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.
@@ -75,4 +70,8 @@ echo print   @ssdb                  >>%OSQLFILE%
 echo print   @datdir                >>%OSQLFILE%
 echo print   @ddldir                >>%OSQLFILE%
 type "%~f1"                         >>%OSQLFILE%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof

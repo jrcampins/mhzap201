@@ -19,7 +19,7 @@ if /i "%1" == "upgrade"     set upgrade_or_uninstall=true
 if /i "%1" == "uninstall"   set upgrade_or_uninstall=true
 
 if defined upgrade_or_uninstall (
-    start /d %jboss% %jboss%\standalone-start
+    call:jbstart
     echo.
     call %jboss%\ear-undeploy
     echo.
@@ -30,11 +30,14 @@ rem echo.
 )
 
 set siono=N
-rem if /i "%1" == "install" (
-rem     echo.
-rem     call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
-rem     echo.
-rem )
+set jbdir1="%JBOSS_HOME%/welcome-content/%lower_case_project%/attachments"
+set jbdir2="%JBOSS_HOME%/welcome-content/%lower_case_project%/spool"
+if /i "%1" == "install" (
+    if not exist %jbdir1% md %jbdir1%
+    if not exist %jbdir2% md %jbdir2%
+rem call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
+rem echo.
+)
 
 if /i "%1" == "install" (
     if /i "%siono%" == "S" (
@@ -61,7 +64,7 @@ if /i "%1" == "upgrade" (
 if defined upgrade_or_install (
     call %oracle%\rebuild
     echo.
-    start /d %jboss% %jboss%\standalone-start
+    call:jbstart
     echo.
     call %jboss%\ear-deploy
     echo.
@@ -71,3 +74,15 @@ echo.
 echo fin del procedimiento de instalacion
 echo.
 pause
+goto:eof
+
+:jbstart
+set me=standalone-start
+echo "%me%" inicia la ejecucion del servidor de aplicaciones en modo standalone
+set siono=S
+set pregunta="ejecutar %me% ? (S/N) [%siono%] "
+set /p siono=%pregunta%
+if /i not "%siono%" == "S" goto:eof
+set ask_before_starting=
+start /d %jboss% %jboss%\standalone-start
+goto:eof

@@ -13,13 +13,9 @@ set PGUSER=%dbuser%
 set PGPASSWORD=%dbpass%
 set PGDATABASE=%dbname%
 set PGBINDIR=%POSTGRESQL_HOME%\bin
-set BACKUPDIR=%HOMEDIR%\backup
 set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 
-if not exist %BACKUPDIR% md %BACKUPDIR%
-
 call:check-dir PGBINDIR
-call:check-dir BACKUPDIR
 call:check-dir SQLDDLDIR
 
 if not defined variables pause

@@ -39,6 +39,10 @@ if [ -n "$variables" ]; then
 #       echo ""
     fi
     if [ "$1" = "install" ]; then
+        dir="$JBOSS_HOME/welcome-content/$lower_case_project/attachments"
+        [ -d "$dir" ] || mkdir -p "$dir"
+        dir="$JBOSS_HOME/welcome-content/$lower_case_project/spool"
+        [ -d "$dir" ] || mkdir -p "$dir"
         siono=n
 #       read -p "restaurar de la base de datos a partir de un archivo respaldo? (s/n): " siono
 #       echo ""

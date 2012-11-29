@@ -6,6 +6,10 @@ set UPPER_CASE_PROJECT=MHZAP201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
 set DISTDIR=%HOMEDIR%
+set BACKUPDIR=%HOMEDIR%\backup
+set LOGSDIR=%HOMEDIR%\logs
+if not exist %BACKUPDIR% md %BACKUPDIR%
+if not exist %LOGSDIR% md %LOGSDIR%
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat

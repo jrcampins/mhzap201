@@ -1,6 +1,7 @@
 @echo off
 cd /d "%~dp0"
 
+setlocal
 set variables=
 call variables
 if not defined variables goto:eof
@@ -56,17 +57,17 @@ if /i "%jdk_update%" EQU "30" goto got3
 goto ask3a
 
 :got3
-set BATSDIR=%CD%
-set BUILDLOG=%BATSDIR%\build.log
-set LOGSDIR=W:\logs
-set ANTSDIR=N:\netbeans\java\ant\bin
+set batsxdir=%CD%
+set logsxdir=%~d0\logs
+set antsxdir=N:\netbeans\java\ant\bin
+set buildlog=%batsxdir%\build.log
 echo.
 echo %0 begun @ %time%
-echo %0 begun @ %time% > %BUILDLOG%
-echo.>>%BUILDLOG%
+echo %0 begun @ %time% > %buildlog%
+echo.>>%buildlog%
 if not defined workspace   goto ERR1
 if not exist "%workspace%" goto ERR2
-if not exist "%ANTSDIR%"   goto ERR4
+if not exist "%antsxdir%"   goto ERR4
 if not exist "%JAVA_HOME%" goto ERR5
 set ANT_OPTS=-Xms256m -Xmx256m
 rem time
@@ -76,8 +77,8 @@ rem if defined RUNTIME echo %RUNTIME%
 :CLEAN-ALL
 echo.
 echo CLEAN-ALL
-if exist %LOGSDIR% rmdir %LOGSDIR% /s /q
-if not exist %LOGSDIR% md %LOGSDIR%
+if exist %logsxdir% rmdir %logsxdir% /s /q
+if not exist %logsxdir% md %logsxdir%
 
 set target=clean
 echo %target%
@@ -90,8 +91,8 @@ goto BUILD-JARS
 :BUILD-JARS
 echo.
 echo BUILD-JARS
-if exist %LOGSDIR% rmdir %LOGSDIR% /s /q
-if not exist %LOGSDIR% md %LOGSDIR%
+if exist %logsxdir% rmdir %logsxdir% /s /q
+if not exist %logsxdir% md %logsxdir%
 
 set target=build
 echo %target%
@@ -157,11 +158,11 @@ set ERRMSG=directorio %workspace% no existe
 goto TELL
 
 :ERR3
-set ERRMSG=directorio %LOGSDIR% no existe
+set ERRMSG=directorio %logsxdir% no existe
 goto TELL
 
 :ERR4
-set ERRMSG=directorio %ANTSDIR% no existe
+set ERRMSG=directorio %antsxdir% no existe
 goto TELL
 
 :ERR5
@@ -175,13 +176,13 @@ echo.
 
 :DONE
 echo %0 ended @ %time%
-echo %0 ended @ %time% >> %BUILDLOG%
+echo %0 ended @ %time% >> %buildlog%
 echo.
 goto:eof
 
 :ant-build
 set BLDFILE="%~f1\build.xml"
-set LOGFILE="%LOGSDIR%\%~n1.log"
+set LOGFILE="%logsxdir%\%~n1.log"
 set MANFILE="%~f1\src\conf\MANIFEST.MF"
 set WEBFILE="%~f1\web\WEB-INF\web.xml"
 set STDFILE="%~f1\src\conf\application.xml"
@@ -200,14 +201,14 @@ if "%1" NEQ "build" set TARGETS=%TARGETS% %1
 goto ant-build-loop
 
 :ant-build-doit
-cd /d %ANTSDIR%
+cd /d %antsxdir%
 if defined RUNTIME time %RUNTIME%
 echo.
-echo ant -buildfile %BLDFILE% -logfile %LOGFILE%%TARGETS%>>%BUILDLOG%
+echo ant -buildfile %BLDFILE% -logfile %LOGFILE%%TARGETS%>>%buildlog%
 call ant -buildfile %BLDFILE% -logfile %LOGFILE%%TARGETS%
 
 :ant-build-done
-echo.>>%BUILDLOG%
+echo.>>%buildlog%
 goto:eof
 
 :deploy
@@ -243,18 +244,18 @@ set /p siono="%CMD% (S/N) [%siono%] "
 if /i "%siono%" NEQ "S" goto deploy-done
 if  not exist %EAQ% goto deploy-exec
 echo.
-echo.>>%BUILDLOG%
+echo.>>%buildlog%
 echo %ASADMIN% %ascst2% undeploy %EAP%
 echo.
-echo %ASADMIN% %ascst2% undeploy %EAP%>>%BUILDLOG%
+echo %ASADMIN% %ascst2% undeploy %EAP%>>%buildlog%
 call %ASADMIN% %ascst2% undeploy %EAP% 2>&1
 
 :deploy-exec
 echo.
-echo.>>%BUILDLOG%
+echo.>>%buildlog%
 echo %ASADMIN% %ascst2% %CMD%
 echo.
-echo %ASADMIN% %ascst2% %CMD%>>%BUILDLOG%
+echo %ASADMIN% %ascst2% %CMD%>>%buildlog%
 call %ASADMIN% %ascst2% %CMD% 2>&1
 
 :deploy-done

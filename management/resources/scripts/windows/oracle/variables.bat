@@ -13,13 +13,9 @@ set O9USER=%dbuser%
 set O9PASSWORD=%dbpass%
 set O9DATABASE=%dbname%
 set O9BINDIR=%ORACLE_HOME%\bin
-set BACKUPDIR=%HOMEDIR%\backup
 set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 
-if not exist %BACKUPDIR% md %BACKUPDIR%
-
 call:check-dir O9BINDIR
-call:check-dir BACKUPDIR
 call:check-dir SQLDDLDIR
 
 if not defined variables pause

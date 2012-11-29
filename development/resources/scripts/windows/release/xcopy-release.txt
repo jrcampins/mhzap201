@@ -1,4 +1,0 @@
-dos2unix
-filedate
-sweep
-xcopy-release

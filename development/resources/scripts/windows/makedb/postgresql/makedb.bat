@@ -9,7 +9,7 @@ if not defined variables goto:eof
 
 :ask
 set CRVL=%aaaammdd%
-set /p CRVL="version del esquema de la base de datos (aaaammddhh) [%CRVL%] "
+set /p CRVL="version del esquema de la base de datos (aaaammdd) [%CRVL%] "
 if not defined CRVL goto ask
 set CRVL="%CRVL%"
 

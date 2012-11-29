@@ -13,14 +13,10 @@ set SSUSER=%dbuser%
 set SSPASS=%dbpass%
 set SSDATABASE=%dbname%
 set SSBINDIR=%SQLSERVER_TOOLS%\Binn
-set BACKUPDIR=%HOMEDIR%\backup
 set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 
-if not exist %BACKUPDIR% md %BACKUPDIR%
-
 call:check-dir SSBINDIR
-call:check-dir BACKUPDIR
 call:check-dir SQLDDLDIR
 call:check-dir SQLDATDIR
 
