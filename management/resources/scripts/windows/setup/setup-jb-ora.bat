@@ -25,21 +25,29 @@ if defined upgrade_or_uninstall (
     echo.
     call %jboss%\standalone-stop
     echo.
-rem call %oracle%\dump
-rem echo.
+    rem call %oracle%\dump
+    rem echo.
 )
 
+set xdir1="%JBOSS_HOME%\welcome-content\%lower_case_project%\attachments"
+set xdir2="%JBOSS_HOME%\welcome-content\%lower_case_project%\spool"
+set siono=N
 if /i "%1" == "install" (
-    set xdir1="%JBOSS_HOME%/welcome-content/%lower_case_project%/attachments"
-    set xdir2="%JBOSS_HOME%/welcome-content/%lower_case_project%/spool"
-    set siono=N
     rem call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
     rem echo.
 )
 
 if /i "%1" == "install" (
-    if not exist %xdir1% md %xdir1%
-    if not exist %xdir2% md %xdir2%
+    if not exist %xdir1% (
+        echo md %xdir1%
+        echo.
+        md %xdir1%
+    )
+    if not exist %xdir2% (
+        echo md %xdir2%
+        echo.
+        md %xdir2%
+    )
     if /i "%siono%" == "S" (
         call %oracle%\restore
         echo.
@@ -82,6 +90,7 @@ echo "%me%" inicia la ejecucion del servidor de aplicaciones en modo standalone
 set siono=S
 set pregunta="ejecutar %me% ? (S/N) [%siono%] "
 set /p siono=%pregunta%
+echo.
 if /i not "%siono%" == "S" goto:eof
 set ask_before_starting=
 start /d %jboss% %jboss%\standalone-start

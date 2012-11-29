@@ -3,6 +3,7 @@ jbstart () {
     me="standalone-start"
     echo $me inicia la ejecucion del servidor de aplicaciones en modo standalone
     read -p "ejecutar $me ? (s/n): " siono
+    echo ""
     if [ "$siono" = "s" ]; then
         pushd $LOGSDIR
         rm -f nohup.out

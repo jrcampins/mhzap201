@@ -16,5 +16,5 @@ set NOPAUSE=true
 cd /d %JBOSS_HOME%
 set cli=bin\standalone -c standalone-full.xml %offset%
 echo %CD%\%cli%
-%cli%
-pause
+call %cli%
+exit

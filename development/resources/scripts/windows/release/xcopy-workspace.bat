@@ -11,7 +11,6 @@ if /i "%source%" == "%target%\" (
     pause
     goto:eof
 )
-pause
 
 call "%~dp0variables"
 call "%~dp0variables-date-time"
@@ -24,6 +23,7 @@ if not defined nn goto ask
 set VRNAME=V%nn%R%aammdd%
 set VRPATH=%target%\%VRNAME%
 set DQPATH="%VRPATH%"
+set EARDIR="%VRPATH%\resources"
 set management=%project_source_dir%\management
 set development=%project_source_dir%\development
 echo.
@@ -35,13 +35,16 @@ echo.
 echo md %DQPATH%
 md %DQPATH%
 echo.
-call:x-symlink
-call:x-concatsql
-call:x-jasper
+call:setsiono actualizar workspace antes de copiarlo
+echo.
+if /i "%siono%" == "S" call:x-concatsql
+if /i "%siono%" == "S" call:x-copy-scripts
+if /i "%siono%" == "S" call:x-copy-resources
 call:x-home
 call:x-resources
 call:x-ear
 call:x-scripts
+call:x-junction
 pause
 echo.
 call:sweep
@@ -49,7 +52,7 @@ pause
 echo.
 goto:eof
 
-:x-symlink
+:x-junction
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 if not exist %junction% set junction=
 set junction
@@ -67,6 +70,7 @@ if defined junction (
 goto:eof
 
 :x-concatsql
+set concat_without_asking=true
 pushd %development%\resources\scripts\windows\makedb\oracle
 call concatsql
 popd
@@ -77,7 +81,14 @@ popd
 echo.
 goto:eof
 
-:x-jasper
+:x-copy-scripts
+pushd %development%\setup
+call copy-scripts
+popd
+echo.
+goto:eof
+
+:x-copy-resources
 pushd %management%\resources\jasper
 del reports\*.pdf /s
 echo.
@@ -99,7 +110,7 @@ call:xcopy-folder %management% %DQPATH% resources s
 goto:eof
 
 :x-ear
-call:xcopy-file "%project_source_dir%\%project%\dist\%project%.ear" %DQPATH%
+call:xcopy-file "%project_source_dir%\%project%\dist\%project%.ear" %EARDIR%
 goto:eof
 
 :x-scripts
