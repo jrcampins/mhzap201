@@ -29,17 +29,17 @@ rem call %oracle%\dump
 rem echo.
 )
 
-set siono=N
-set jbdir1="%JBOSS_HOME%/welcome-content/%lower_case_project%/attachments"
-set jbdir2="%JBOSS_HOME%/welcome-content/%lower_case_project%/spool"
 if /i "%1" == "install" (
-    if not exist %jbdir1% md %jbdir1%
-    if not exist %jbdir2% md %jbdir2%
-rem call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
-rem echo.
+    set xdir1="%JBOSS_HOME%/welcome-content/%lower_case_project%/attachments"
+    set xdir2="%JBOSS_HOME%/welcome-content/%lower_case_project%/spool"
+    set siono=N
+    rem call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
+    rem echo.
 )
 
 if /i "%1" == "install" (
+    if not exist %xdir1% md %xdir1%
+    if not exist %xdir2% md %xdir2%
     if /i "%siono%" == "S" (
         call %oracle%\restore
         echo.
