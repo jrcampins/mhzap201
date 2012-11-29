@@ -12,7 +12,7 @@ if not exist "%packages%" (
     goto:eof
 )
 
-echo "%~n0" ejecuta los scripts que se encuentran en oracle\custom\functions
+echo "%~n0" ejecuta crea paquetes de utilidad en la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 

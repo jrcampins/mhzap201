@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" crea los objetos de la base de datos
+echo "%~n0" crea los objetos de la aplicacion en la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 

@@ -6,7 +6,7 @@ xs=$scriptpath/variables.sh
 unset variables
 [ -x "$xs" ] && . "$xs"
 if [ -n "$variables" ]; then
-    echo $me crea los objetos de la base de datos
+    echo $me crea paquetes de utilidad en la base de datos
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
         unset SQLPATH
