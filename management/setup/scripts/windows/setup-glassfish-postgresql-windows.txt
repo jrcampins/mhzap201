@@ -52,33 +52,21 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
             06.01.09. deploy: implementa la aplicacion de empresa en el servidor
                       de aplicaciones
 
-    06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
-            actualización C:\mhzap201\VnnRaammdd\gf-pg-upgrade.bat
+    06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
+            C:\mhzap201\VnnRaammdd\gf-pg-uninstall.bat
 
             Este script lleva a cabo las siguientes acciones:
 
             06.02.01. domain-start: inicia la ejecucion del servidor de aplicaciones
             06.02.02. undeploy: anula la implementacion de la aplicacion de empresa
-                      del servidor de aplicaciones
+                      en el servidor de aplicaciones
             06.02.03. delete-jms: elimina las fabricas de conexiones, conjuntos
-                      de conexiones y demas recursos JMS del servidor de aplicaciones
+                      de conexiones y demas recursos JMS en el servidor de aplicaciones
             06.02.04. delete-jdbc: elimina el dominio de seguridad, los conjuntos
-                      de conexiones y demas recursos JDBC del servidor de aplicaciones
+                      de conexiones y demas recursos JDBC en el servidor de aplicaciones
             06.02.05. domain-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.06. dump: crea un archivo respaldo de la base de datos
-            06.02.07. upgradedb: actualiza la base de datos
-            06.02.08. rebuild: reconstruye las tablas "plus" correspondientes a
-                      cada tabla "arbol"
-            06.02.09. vacuumdb: comprime la base de datos
-            06.02.10. domain-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.11. server-config: establece parametros de configuracion del
-                      servidor de aplicaciones
-            06.02.12. create-jdbc: crea el dominio de seguridad, los conjuntos de
-                      conexiones y demas recursos JDBC del servidor de aplicaciones
-            06.02.13. create-jms: crea las fabricas de conexiones, conjuntos de
-                      conexiones y demas recursos JMS del servidor de aplicaciones
-            06.02.14. deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+            06.02.07. dropdb: elimina la base de datos
 
 
 --------------------------------------------------------------------------------
@@ -86,10 +74,8 @@ Operación de mhzap201 en Windows
 --------------------------------------------------------------------------------
 Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
 su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
-(sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el 
-puerto HTTP que le asignó al instalarlo). La sesión de trabajo comienza por la
-pagina de autenticación del usuario. Al instalar se define el usuario "admin" y 
-su contraseña es "sesamo".
+La sesión de trabajo comienza por la pagina de autenticación del usuario. Al 
+instalar se define el usuario "admin" y su contraseña es "sesamo".
 
 
 --------------------------------------------------------------------------------
@@ -99,10 +85,3 @@ Después de configurar GlassFish seguiendo los pasos indicados en el archivo
 C:\mhzap201\VnnRaammdd\configuracion-glassfish-windows.txt, ejecute el script 
 C:\mhzap201\VnnRaammdd\resources\scripts\windows\glassfish\service-create.bat y 
 reinicie el servidor.
-
-
---------------------------------------------------------------------------------
-Desinstalación de mhzap201 en Windows
---------------------------------------------------------------------------------
-Para desintalar, ejecute el script C:\mhzap201\VnnRaammdd\gf-pg-uninstall.bat
-

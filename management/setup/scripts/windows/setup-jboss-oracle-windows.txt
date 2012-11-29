@@ -39,18 +39,39 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
         grant connect, DBA to MHZ;
 
 
-05. Crear la base de datos en Oracle.
+05. Configurar JBoss (seguir los pasos indicados en el archivo C:\mhzap201\VnnRaammdd\configuracion-jboss-windows.txt).
 
-    Conectar con el usuario MHZ:
+06. Ejecutar el script de instalación
 
-        connect MHZ/sesamo;
+    06.01.  Para instalar por primera vez, ejecutar el script de instalación
+            C:\mhzap201\VnnRaammdd\jb-ora-install.bat.
 
-    Ejecutar el script makedb.sql que se encuentra en C:\mhzap201\VnnRaammdd\setup\oracle\windows:
+            Este script lleva a cabo las siguientes acciones:
 
-        spool C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log
-        @C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb
-        spool off
+            06.01.01. customize: crea paquetes de utilidad en la base de datos
+            06.01.02. makedb: crea los objetos de la aplicacion en la base de datos
+            06.01.03. rebuild: reconstruye las tablas "plus" correspondientes a
+                      cada tabla "arbol"
+            06.01.04. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.01.05. ear-deploy: implementa la aplicacion de empresa en el servidor
+                      de aplicaciones
 
-    Comprobar el resultado de la ejecución (revisar el archivo C:\mhzap201\VnnRaammdd\setup\oracle\windows\makedb.log).
+    06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
+            C:\mhzap201\VnnRaammdd\jb-ora-uninstall.bat.
 
-06. Configurar JBoss (seguir los pasos indicados en el archivo C:\mhzap201\VnnRaammdd\configuracion-jboss-windows.txt).
+            Este script lleva a cabo las siguientes acciones:
+
+            06.02.01. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.02.02. ear-undeploy: anula la implementacion de la aplicacion de empresa
+                      en el servidor de aplicaciones
+            06.02.03. standalone-stop: detiene la ejecucion del servidor de aplicaciones
+            06.02.04. dropdb: elimina los objetos de la aplicacion en la base de datos
+
+
+--------------------------------------------------------------------------------
+Operación de mhzap201 en Windows
+--------------------------------------------------------------------------------
+Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
+su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
+La sesión de trabajo comienza por la pagina de autenticación del usuario. Al 
+instalar se define el usuario "admin" y su contraseña es "sesamo".

@@ -67,8 +67,8 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
             06.01.07. ear-deploy: implementa la aplicacion de empresa en el servidor
                       de aplicaciones
 
-    06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
-            instalación /opt/mhzap201/VnnRaammdd/jb-ora-upgrade.sh.
+    06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
+            /opt/mhzap201/VnnRaammdd/jb-ora-uninstall.sh.
 
             Este script lleva a cabo las siguientes acciones:
 
@@ -77,13 +77,9 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
                       formato UNIX
             06.02.03. standalone-start: inicia la ejecucion del servidor de aplicaciones
             06.02.04. ear-undeploy: anula la implementacion de la aplicacion de empresa
-                      del servidor de aplicaciones
+                      en el servidor de aplicaciones
             06.02.05. standalone-stop: detiene la ejecucion del servidor de aplicaciones
-            06.02.06. rebuild: reconstruye las tablas "plus" correspondientes a 
-                      cada tabla "arbol"
-            06.02.07. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.08. ear-deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+            06.02.06. dropdb: elimina los objetos de la aplicacion en la base de datos
 
 
 --------------------------------------------------------------------------------
@@ -91,14 +87,5 @@ Operación de mhzap201 en Linux
 --------------------------------------------------------------------------------
 Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
 su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
-(sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el 
-puerto HTTP que le asignó al instalarlo). La sesión de trabajo comienza por la
-pagina de autenticación del usuario. Al instalar se define el usuario "admin" y 
-su contraseña es "sesamo".
-
-
---------------------------------------------------------------------------------
-Desinstalación de mhzap201 en Linux
---------------------------------------------------------------------------------
-Para desintalar, ejecute el script /opt/mhzap201/VnnRaammdd/jb-ora-uninstall.sh
-
+La sesión de trabajo comienza por la pagina de autenticación del usuario. Al 
+instalar se define el usuario "admin" y su contraseña es "sesamo".

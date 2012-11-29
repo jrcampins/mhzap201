@@ -60,8 +60,8 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
             06.01.11. deploy: implementa la aplicacion de empresa en el servidor
                       de aplicaciones
 
-    06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
-            instalación /opt/mhzap201/VnnRaammdd/gf-pg-upgrade.sh.
+    06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
+            /opt/mhzap201/VnnRaammdd/gf-pg-uninstall.sh.
 
             Este script lleva a cabo las siguientes acciones:
 
@@ -70,26 +70,14 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
                       formato UNIX
             06.02.03. domain-start: inicia la ejecucion del servidor de aplicaciones
             06.02.04. undeploy: anula la implementacion de la aplicacion de empresa
-                      del servidor de aplicaciones
+                      en el servidor de aplicaciones
             06.02.05. delete-jms: elimina las fabricas de conexiones, conjuntos 
-                      de conexiones y demas recursos JMS del servidor de aplicaciones
+                      de conexiones y demas recursos JMS en el servidor de aplicaciones
             06.02.06. delete-jdbc: elimina el dominio de seguridad, los conjuntos
-                      de conexiones y demas recursos JDBC del servidor de aplicaciones
+                      de conexiones y demas recursos JDBC en el servidor de aplicaciones
             06.02.07. domain-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.08. dump: crea un archivo respaldo de la base de datos
-            06.02.09. upgradedb: actualiza la base de datos
-            06.02.10. rebuild: reconstruye las tablas "plus" correspondientes a 
-                      cada tabla "arbol"
-            06.02.11. vacuumdb: comprime la base de datos
-            06.02.12. domain-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.13. server-config: establece parametros de configuracion del
-                      servidor de aplicaciones
-            06.02.14. create-jdbc: crea el dominio de seguridad, los conjuntos de
-                      conexiones y demas recursos JDBC del servidor de aplicaciones
-            06.02.15. create-jms: crea las fabricas de conexiones, conjuntos de
-                      conexiones y demas recursos JMS del servidor de aplicaciones
-            06.02.16. deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+            06.02.09. dropdb: elimina la base de datos
 
 
 --------------------------------------------------------------------------------
@@ -97,14 +85,5 @@ Operación de mhzap201 en Linux
 --------------------------------------------------------------------------------
 Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
 su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
-(sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el 
-puerto HTTP que le asignó al instalarlo). La sesión de trabajo comienza por la
-pagina de autenticación del usuario. Al instalar se define el usuario "admin" y 
-su contraseña es "sesamo".
-
-
---------------------------------------------------------------------------------
-Desinstalación de mhzap201 en Linux
---------------------------------------------------------------------------------
-Para desintalar, ejecute el script /opt/mhzap201/VnnRaammdd/gf-pg-uninstall.sh
-
+La sesión de trabajo comienza por la pagina de autenticación del usuario. Al 
+instalar se define el usuario "admin" y su contraseña es "sesamo".

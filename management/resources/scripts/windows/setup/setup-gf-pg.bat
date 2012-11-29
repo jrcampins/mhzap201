@@ -78,6 +78,6 @@ if defined upgrade_or_install (
 )
 
 echo.
-echo final del procedimiento de instalacion
+echo fin del procedimiento de instalacion
 echo.
 pause
