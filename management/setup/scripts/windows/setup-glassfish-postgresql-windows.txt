@@ -32,7 +32,7 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
 06. Ejecutar el script de instalación
 
     06.01.  Para instalar por primera vez, ejecutar el script de instalación
-            C:\mhzap201\VnnRaammdd\install.bat
+            C:\mhzap201\VnnRaammdd\gf-pg-install.bat
 
             Este script lleva a cabo las siguientes acciones:
 
@@ -53,7 +53,7 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
                       de aplicaciones
 
     06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
-            actualización C:\mhzap201\VnnRaammdd\upgrade.bat
+            actualización C:\mhzap201\VnnRaammdd\gf-pg-upgrade.bat
 
             Este script lleva a cabo las siguientes acciones:
 
@@ -104,5 +104,5 @@ reinicie el servidor.
 --------------------------------------------------------------------------------
 Desinstalación de mhzap201 en Windows
 --------------------------------------------------------------------------------
-Para desintalar el producto, ejecute el script C:\mhzap201\VnnRaammdd\uninstall.bat
+Para desintalar, ejecute el script C:\mhzap201\VnnRaammdd\gf-pg-uninstall.bat
 

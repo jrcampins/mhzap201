@@ -6,10 +6,6 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" desinstala y reinstala los componentes de la aplicacion de empresa en el servidor de aplicaciones y en el servidor de base de datos
-call "%~dp0..\setsiono" ejecutar "%~n0"
-if /i "%siono%" NEQ "S" goto:eof
-
 set resources=%HOMEDIR%\resources
 set windows=%resources%\scripts\windows
 set setup=%windows%\setup
@@ -37,6 +33,23 @@ if defined upgrade_or_uninstall (
     echo.
 )
 
+if /i "%1" == "install" (
+    call %postgresql%\createdb
+    echo.
+    call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
+    echo.
+)
+
+if /i "%1" == "install" (
+    if /i "%siono%" == "S" (
+        call %postgresql%\restore
+        echo.
+    ) else (
+        call %postgresql%\makedb
+        echo.
+    )
+)
+
 if /i "%1" == "uninstall" (
     call %postgresql%\dropdb
     echo.
@@ -48,19 +61,6 @@ if /i "%1" == "upgrade" (
 )
 
 if defined upgrade_or_install (
-    call %postgresql%\createdb
-    echo.
-    call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
-)
-
-if defined upgrade_or_install (
-    if /i "%siono%" == "S" (
-        call %postgresql%\restore
-        echo.
-    ) else (
-        call %postgresql%\makedb
-        echo.
-    )
     call %postgresql%\rebuild
     echo.
     call %postgresql%\vacuumdb
