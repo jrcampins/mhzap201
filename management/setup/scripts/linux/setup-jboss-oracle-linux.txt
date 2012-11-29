@@ -46,21 +46,59 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
         grant connect, DBA to MHZ;
 
 
-05. Crear la base de datos en Oracle.
+05. Configurar JBoss (seguir los pasos indicados en el archivo /opt/mhzap201/VnnRaammdd/configuracion-jboss-linux.txt).
 
-    cd /opt/mhzap201/VnnRaammdd/setup/oracle/linux
-    /opt/oraclexe/app/oracle/product/11.2.0/server/bin/sqlplus
 
-    Conectar con el usuario MHZ:
+06. Ejecutar el script de instalación
 
-        connect MHZ/sesamo;
+    06.01.  Para instalar por primera vez, ejecutar el script de instalación
+            /opt/mhzap201/VnnRaammdd/jb-ora-install.sh.
 
-    Ejecutar el script makedb.sql que se encuentra en /opt/mhzap201/VnnRaammdd/setup/oracle/linux:
+            Este script lleva a cabo las siguientes acciones:
 
-        spool makedb.log
-        @makedb
-        spool off
+            06.01.01. chmod: otorga los permisos necesarios
+            06.01.02. dos2unix: convierte los archivos de texto de formato DOS a
+                      formato UNIX
+            06.01.03. customize: crea paquetes de utilidad en la base de datos
+            06.01.04. makedb: crea los objetos de la aplicacion en la base de datos
+            06.01.05. rebuild: reconstruye las tablas "plus" correspondientes a
+                      cada tabla "arbol"
+            06.01.06. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.01.07. ear-deploy: implementa la aplicacion de empresa en el servidor
+                      de aplicaciones
 
-    Comprobar el resultado de la ejecución (revisar el archivo /opt/mhzap201/VnnRaammdd/setup/oracle/linux/makedb.log).
+    06.02.  Para reemplazar una versión ya instalada, ejecutar el script de
+            instalación /opt/mhzap201/VnnRaammdd/jb-ora-upgrade.sh.
 
-06. Configurar JBoss (seguir los pasos indicados en el archivo /opt/mhzap201/VnnRaammdd/configuracion-jboss-linux.txt).
+            Este script lleva a cabo las siguientes acciones:
+
+            06.02.01. chmod: otorga los permisos necesarios
+            06.02.02. dos2unix: convierte los archivos de texto de formato DOS a
+                      formato UNIX
+            06.02.03. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.02.04. ear-undeploy: anula la implementacion de la aplicacion de empresa
+                      del servidor de aplicaciones
+            06.02.05. standalone-stop: detiene la ejecucion del servidor de aplicaciones
+            06.02.06. rebuild: reconstruye las tablas "plus" correspondientes a 
+                      cada tabla "arbol"
+            06.02.07. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.02.08. ear-deploy: implementa la aplicacion de empresa en el servidor
+                      de aplicaciones
+
+
+--------------------------------------------------------------------------------
+Operación de mhzap201 en Linux
+--------------------------------------------------------------------------------
+Una vez instalado el producto, el servidor de aplicaciones queda listo para permitir
+su operación normal. Con su navegador web abra http://localhost:8080/mhzap201-web/
+(sustituya localhost:8080 por el IP del servidor donde instaló GlassFish y el 
+puerto HTTP que le asignó al instalarlo). La sesión de trabajo comienza por la
+pagina de autenticación del usuario. Al instalar se define el usuario "admin" y 
+su contraseña es "sesamo".
+
+
+--------------------------------------------------------------------------------
+Desinstalación de mhzap201 en Linux
+--------------------------------------------------------------------------------
+Para desintalar, ejecute el script /opt/mhzap201/VnnRaammdd/jb-ora-uninstall.sh
+
