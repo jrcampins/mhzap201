@@ -12,7 +12,7 @@ if [ -n "$variables" ]; then
         echo ""
         echo Escriba el numero correspondiente al archivo de respaldo que desea utilizar para restaurar la base de datos
         echo ""
-        select archivo in $(find "$HOMEDIR/" -type f -name "*.backup" | sort -f); do
+        select archivo in $(find -L "$HOMEDIR" -type f -name "*.backup" | sort -f); do
             break
         done
         echo ""

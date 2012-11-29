@@ -10,7 +10,7 @@ if [ -d "$HOMEDIR" ]; then
             CYGWIN*)    comando="dos2unix";;
             *)          comando="dos2unix -o";;
         esac
-        for name in "*.jrxml" "*.password" "*.properties" "*.psql" "*.sh" "*.sql" "*.vm" ; do
+        for name in "*.jrtx" "*.jrxml" "*.password" "*.properties" "*.psql" "*.sh" "*.sql" "*.txt" "*.vm" "*.xml" ; do
             echo "$comando $HOMEDIR/$name"
             for archivo in $(find -L "$HOMEDIR" -type f -name "$name" | sort -f); do
                 $comando "$archivo" >> $log 2>&1

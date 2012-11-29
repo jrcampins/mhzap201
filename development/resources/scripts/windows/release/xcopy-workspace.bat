@@ -286,7 +286,6 @@ goto:eof
 :convert-text-files
 call:dos2unix *.jrtx
 call:dos2unix *.jrxml
-call:dos2unix *.osql
 call:dos2unix *.password
 call:dos2unix *.properties
 call:dos2unix *.psql
