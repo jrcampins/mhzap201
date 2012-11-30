@@ -5,7 +5,7 @@ set lower_case_project=mhzap201
 set UPPER_CASE_PROJECT=MHZAP201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
-set DISTDIR=%HOMEDIR%
+set DISTDIR=%HOMEDIR%\resources
 set BACKUPDIR=%HOMEDIR%\backup
 set LOGSDIR=%HOMEDIR%\logs
 if not exist %BACKUPDIR% md %BACKUPDIR%

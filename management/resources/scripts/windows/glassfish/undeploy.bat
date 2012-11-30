@@ -11,10 +11,10 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
-echo %ASADMIN% %GFDOMAINCST2% undeploy %lower_case_project%
-call %ASADMIN% %GFDOMAINCST2% undeploy %lower_case_project%
+echo %ASADMIN% %ascst2% undeploy %lower_case_project%
+call %ASADMIN% %ascst2% undeploy %lower_case_project%
 echo.
-echo %ASADMIN% %GFDOMAINCST2% list-components
-call %ASADMIN% %GFDOMAINCST2% list-components
+echo %ASADMIN% %ascst2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 call "%~dp0..\eoj" "%~f0"

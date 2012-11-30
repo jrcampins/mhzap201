@@ -22,7 +22,7 @@ if [ -n "$variables" ]; then
         PX="${P1}:${P2}:${P3}:${P4}:${P5}:${P6}:${P7}:${P8}"
         echo ""
     #   echo $REALMID
-        echo $ASADMIN $GFDOMAINCST2 create-auth-realm --classname $CLASS --property $PX $REALMID
-        bash $ASADMIN $GFDOMAINCST2 create-auth-realm --classname $CLASS --property $PX $REALMID
+        echo $ASADMIN $ascst2 create-auth-realm --classname $CLASS --property $PX $REALMID
+        bash $ASADMIN $ascst2 create-auth-realm --classname $CLASS --property $PX $REALMID
     fi
 fi

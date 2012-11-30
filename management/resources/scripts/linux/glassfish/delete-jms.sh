@@ -20,15 +20,15 @@ if [ -n "$variables" ]; then
                 echo ""
                 echo $Q1
                 echo ""
-                echo $ASADMIN $GFDOMAINCST2 delete-admin-object "jms/$P1$Q1$S3"
-                bash $ASADMIN $GFDOMAINCST2 delete-admin-object "jms/$P1$Q1$S3"
+                echo $ASADMIN $ascst2 delete-admin-object "jms/$P1$Q1$S3"
+                bash $ASADMIN $ascst2 delete-admin-object "jms/$P1$Q1$S3"
             done
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 delete-connector-resource "jms/$P1$S2"
-            bash $ASADMIN $GFDOMAINCST2 delete-connector-resource "jms/$P1$S2"
+            echo $ASADMIN $ascst2 delete-connector-resource "jms/$P1$S2"
+            bash $ASADMIN $ascst2 delete-connector-resource "jms/$P1$S2"
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 delete-connector-connection-pool "jms/$P1$S1"
-            bash $ASADMIN $GFDOMAINCST2 delete-connector-connection-pool "jms/$P1$S1"
+            echo $ASADMIN $ascst2 delete-connector-connection-pool "jms/$P1$S1"
+            bash $ASADMIN $ascst2 delete-connector-connection-pool "jms/$P1$S1"
         done
     fi
 fi

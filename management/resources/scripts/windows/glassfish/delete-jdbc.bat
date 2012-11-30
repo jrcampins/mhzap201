@@ -16,19 +16,19 @@ echo.
 set REALMID="%lower_case_project%-jdbc-realm"
 set REALMID
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-auth-realm %REALMID%
-call %ASADMIN% %GFDOMAINCST2% delete-auth-realm %REALMID%
+echo %ASADMIN% %ascst2% delete-auth-realm %REALMID%
+call %ASADMIN% %ascst2% delete-auth-realm %REALMID%
 echo.
 set RESOURCEID="jdbc/%lower_case_project%"
 set RESOURCEID
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-jdbc-resource %RESOURCEID%
-call %ASADMIN% %GFDOMAINCST2% delete-jdbc-resource %RESOURCEID%
+echo %ASADMIN% %ascst2% delete-jdbc-resource %RESOURCEID%
+call %ASADMIN% %ascst2% delete-jdbc-resource %RESOURCEID%
 echo.
 set POOLID="%lower_case_project%-pool"
 set POOLID
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
-call %ASADMIN% %GFDOMAINCST2% delete-jdbc-connection-pool %POOLID%
+echo %ASADMIN% %ascst2% delete-jdbc-connection-pool %POOLID%
+call %ASADMIN% %ascst2% delete-jdbc-connection-pool %POOLID%
 echo.
 call "%~dp0..\eoj" "%~f0"

@@ -6,11 +6,11 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200.sql"
+set BAK="%SQLDDLDIR%\%ORADATABASE%_O9_200.sql"
 if exist %BAK% del %BAK%
-set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql"
+set BAK="%SQLDDLDIR%\%ORADATABASE%_O9_200_METADATA.sql"
 if exist %BAK% del %BAK%
-set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql"
+set BAK="%SQLDDLDIR%\%ORADATABASE%_O9_200_USERDATA.sql"
 if exist %BAK% del %BAK%
 
 if /i "%datos%" == "n"  goto:eof
@@ -21,10 +21,10 @@ goto:eof
 :never-called
 call:init-log
 set BAT="%~dpn0-run-cmd"
-set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_METADATA.sql"
+set BAK="%SQLDDLDIR%\%ORADATABASE%_O9_200_METADATA.sql"
 type "%~dp0..\delete-metadata.sql">%BAK%
 call "%~dp0..\dump-metadata-run"
-set BAK="%SQLDDLDIR%\%O9DATABASE%_O9_200_USERDATA.sql"
+set BAK="%SQLDDLDIR%\%ORADATABASE%_O9_200_USERDATA.sql"
 call "%~dp0..\dump-userdata-run"
 call:open-log
 goto:eof

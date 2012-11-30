@@ -29,7 +29,7 @@ if [ -n "$variables" ]; then
             echo ORACLE_HOME=$ORACLE_HOME >> $log 2>&1
             echo working_directory=$(pwd) >> $log 2>&1
             shift
-            $ORACLE_HOME/bin/sqlplus $O9USER/$O9PASSWORD @$sf0 $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
+            $ORACLE_HOME/bin/sqlplus $ORAUSER/$ORAPASSWORD @$sf0 $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
             echo $nx1: $?
             popd > /dev/null
             echo ""

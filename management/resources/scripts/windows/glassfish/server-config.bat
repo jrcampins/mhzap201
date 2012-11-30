@@ -11,25 +11,25 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 rem .
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal=principal
+rem  %ASADMIN% %ascst2% set server-config.security-service.default-principal=principal
+rem  %ASADMIN% %ascst2% set server-config.security-service.default-principal=principal
 rem .
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal-password=password
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.default-principal-password=password
+rem  %ASADMIN% %ascst2% set server-config.security-service.default-principal-password=password
+rem  %ASADMIN% %ascst2% set server-config.security-service.default-principal-password=password
 rem .
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
-rem  %ASADMIN% %GFDOMAINCST2% set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
+rem  %ASADMIN% %ascst2% set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
+rem  %ASADMIN% %ascst2% set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
 echo.
-echo %ASADMIN% %GFDOMAINCST2% set server-config.security-service.activate-default-principal-to-role-mapping=false
-call %ASADMIN% %GFDOMAINCST2% set server-config.security-service.activate-default-principal-to-role-mapping=false
+echo %ASADMIN% %ascst2% set server-config.security-service.activate-default-principal-to-role-mapping=false
+call %ASADMIN% %ascst2% set server-config.security-service.activate-default-principal-to-role-mapping=false
 echo.
-echo %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-enabled="true"
-call %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-enabled="true"
+echo %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-enabled="true"
+call %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-enabled="true"
 echo.
-echo %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-max-inactive-seconds="300"
-call %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-max-inactive-seconds="300"
+echo %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-max-inactive-seconds="300"
+call %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-max-inactive-seconds="300"
 echo.
-echo %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
-call %ASADMIN% %GFDOMAINCST2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
+echo %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
+call %ASADMIN% %ascst2% set server-config.http-service.virtual-server.server.property.sso-reap-interval-seconds="60"
 echo.
 call "%~dp0..\eoj" "%~f0"

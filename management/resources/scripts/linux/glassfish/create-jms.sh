@@ -20,17 +20,17 @@ if [ -n "$variables" ]; then
             echo ""
             echo $P1
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 create-connector-connection-pool --raname $RA --connectiondefinition $CC "jms/$P1$S1"
-            bash $ASADMIN $GFDOMAINCST2 create-connector-connection-pool --raname $RA --connectiondefinition $CC "jms/$P1$S1"
+            echo $ASADMIN $ascst2 create-connector-connection-pool --raname $RA --connectiondefinition $CC "jms/$P1$S1"
+            bash $ASADMIN $ascst2 create-connector-connection-pool --raname $RA --connectiondefinition $CC "jms/$P1$S1"
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 create-connector-resource --poolname "jms/$P1$S1" "jms/$P1$S2"
-            bash $ASADMIN $GFDOMAINCST2 create-connector-resource --poolname "jms/$P1$S1" "jms/$P1$S2"
+            echo $ASADMIN $ascst2 create-connector-resource --poolname "jms/$P1$S1" "jms/$P1$S2"
+            bash $ASADMIN $ascst2 create-connector-resource --poolname "jms/$P1$S1" "jms/$P1$S2"
             for Q1 in "Request" "Reply" "Return"; do
                 echo ""
                 echo $Q1
                 echo ""
-                echo $ASADMIN $GFDOMAINCST2 create-admin-object --restype $AO --raname $RA --property Name="$P1$Q1$S3" "jms/$P1$Q1$S3"
-                bash $ASADMIN $GFDOMAINCST2 create-admin-object --restype $AO --raname $RA --property Name="$P1$Q1$S3" "jms/$P1$Q1$S3"
+                echo $ASADMIN $ascst2 create-admin-object --restype $AO --raname $RA --property Name="$P1$Q1$S3" "jms/$P1$Q1$S3"
+                bash $ASADMIN $ascst2 create-admin-object --restype $AO --raname $RA --property Name="$P1$Q1$S3" "jms/$P1$Q1$S3"
             done
         done
     fi

@@ -10,7 +10,7 @@ if [ -n "$variables" ]; then
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
         echo ""
-        echo $ASADMIN $GFDOMAINCST1 stop-domain $GFDOMAINNAME
-        bash $ASADMIN $GFDOMAINCST1 stop-domain $GFDOMAINNAME
+        echo $ASADMIN $ascst1 stop-domain $domain
+        bash $ASADMIN $ascst1 stop-domain $domain
     fi
 fi

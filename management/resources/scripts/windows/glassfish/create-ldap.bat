@@ -24,7 +24,7 @@ echo.
 set REALMID="%lower_case_project%-ldap-realm"
 set REALMID
 echo.
-echo %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
-call %ASADMIN% %GFDOMAINCST2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
+echo %ASADMIN% %ascst2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
+call %ASADMIN% %ascst2% create-auth-realm --classname %CLASS% --property %PX% %REALMID%
 echo.
 call "%~dp0..\eoj" "%~f0"

@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo -->%SQLDDLDIR%\%O9DATABASE%_O9_500.sql
+echo -->%SQLDDLDIR%\%ORADATABASE%_O9_500.sql
 call:concatsql-501
 if /i "%funciones%" == "n" (
     call "%~dp0concatsql-key" 500 triggers

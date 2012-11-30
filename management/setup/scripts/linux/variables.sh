@@ -15,7 +15,7 @@ variables=$BASH_SOURCE
 lower_case_project=mhzap201
 UPPER_CASE_PROJECT=MHZAP201
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
-DISTDIR=$HOMEDIR
+DISTDIR=$HOMEDIR/resources
 BACKUPDIR=$HOMEDIR/backup
 LOGSDIR=$HOMEDIR/logs
 

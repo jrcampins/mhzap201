@@ -18,9 +18,20 @@ HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
 DISTDIR=$HOMEDIR/resources
 BACKUPDIR=$HOMEDIR/backup
 LOGSDIR=$HOMEDIR/logs
+SQLDDLDIR=$HOMEDIR/resources/database/ddl
+
+if [ ! -d "$DISTDIR"  ]; then
+    echo El directorio "$DISTDIR" no existe
+    unset variables
+fi
 
 [ -d "$BACKUPDIR"  ] || mkdir -p "$BACKUPDIR"
 [ -d "$LOGSDIR"    ] || mkdir -p "$LOGSDIR"
+
+if [ ! -d "$SQLDDLDIR"  ]; then
+    echo El directorio "$SQLDDLDIR" no existe
+    unset variables
+fi
 
 cxms "$HOMEDIR/variables-home.sh"
 
@@ -78,6 +89,11 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     if [ -n "$on_properly_defined_variables" ]; then
         echo domain=$domain
     fi
+    ASADMIN=$GLASSFISH_HOME/bin/asadmin
+    if [ ! -x "$ASADMIN" ]; then
+        echo El archivo "$ASADMIN" no existe o no es ejecutable
+        unset variables
+    fi
 fi
 
 if [ "$EEASKEY" = "JBoss" ]; then
@@ -121,6 +137,11 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     if [ -n "$on_properly_defined_variables" ]; then
         echo dbcoid=$dbcoid
     fi
+    ORABINDIR=$ORACLE_HOME/bin
+    if [ ! -d "$ORABINDIR" ]; then
+        echo El directorio "$ORABINDIR" no existe
+        unset variables
+    fi
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -131,6 +152,11 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
         unset variables
     elif [ -n "$on_properly_defined_variables" ]; then
         echo POSTGRESQL_HOME=$POSTGRESQL_HOME
+    fi
+    PGBINDIR=$POSTGRESQL_HOME/bin
+    if [ ! -d "$PGBINDIR" ]; then
+        echo El directorio "$PGBINDIR" no existe
+        unset variables
     fi
 fi
 

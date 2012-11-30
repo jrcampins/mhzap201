@@ -9,25 +9,33 @@ if [ -n "$variables" ]; then
     echo $me crea el dominio de seguridad, los conjuntos de conexiones y demas recursos JDBC del servidor de aplicaciones
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
+        [ "$DBMSKEY" = "Oracle"     ] && DS=oracle.jdbc.pool.OracleDataSource
+    #   [ "$DBMSKEY" = "PostgreSQL" ] && DS=org.postgresql.ds.PGConnectionPoolDataSource
+        [ "$DBMSKEY" = "PostgreSQL" ] && DS=org.postgresql.ds.PGSimpleDataSource
+        RT=javax.sql.DataSource
+        P1=serverName="$dbhost"
+        P2=portNumber="$dbport"
+        P3=databaseName="$dbname"
+        P4=driverClass="$driver"
+        [ "$DBMSKEY" = "Oracle"     ] && P5=URL="jdbc\:oracle\:thin\:@$dbhost\:$dbport\:$dbcoid"
+        [ "$DBMSKEY" = "PostgreSQL" ] && P5=URL="jdbc\:postgresql\://$dbhost\:$dbport/$dbname"
+        P6=User="$dbuser"
+        P7=Password="$dbpass"
+        [ "$DBMSKEY" = "Oracle"     ] && PX="${P5}:${P6}:${P7}"
+        [ "$DBMSKEY" = "PostgreSQL" ] && PX="${P1}:${P2}:${P3}:${P4}:${P5}:${P6}:${P7}"
+        echo ""
         POOLID="${lower_case_project}-pool"
-        DS=org.postgresql.ds.PGSimpleDataSource
-        P1=serverName="$JDBC_HOST"
-        P2=portNumber="$JDBC_PORT"
-        P3=databaseName="$JDBC_DATABASE"
-        P4=driverClass="$JDBC_DRIVER"
-        P5=URL="jdbc\:postgresql\://$JDBC_HOST\:$JDBC_PORT/$JDBC_DATABASE"
-        P6=User="$JDBC_USER"
-        P7=Password="$JDBC_PASSWORD"
-        PX="${P1}:${P2}:${P3}:${P4}:${P5}:${P6}:${P7}"
+    #   echo POOLID=$POOLID
+        echo $ASADMIN $ascst2 create-jdbc-connection-pool --datasourceclassname $DS --restype $RT --property $PX $POOLID
+        bash $ASADMIN $ascst2 create-jdbc-connection-pool --datasourceclassname $DS --restype $RT --property $PX $POOLID
         echo ""
-    #   echo $POOLID
-        echo $ASADMIN $GFDOMAINCST2 create-jdbc-connection-pool --datasourceclassname $DS --property $PX $POOLID
-        bash $ASADMIN $GFDOMAINCST2 create-jdbc-connection-pool --datasourceclassname $DS --property $PX $POOLID
+        echo $ASADMIN $ascst2 ping-connection-pool $POOLID
+        bash $ASADMIN $ascst2 ping-connection-pool $POOLID
+        echo ""
         RESOURCEID="jdbc/${lower_case_project}"
-        echo ""
-    #   echo $RESOURCEID
-        echo $ASADMIN $GFDOMAINCST2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
-        bash $ASADMIN $GFDOMAINCST2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
+    #   echo RESOURCEID=$RESOURCEID
+        echo $ASADMIN $ascst2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
+        bash $ASADMIN $ascst2 create-jdbc-resource --connectionpoolid $POOLID $RESOURCEID
         REALMID="${lower_case_project}-jdbc-realm"
         CLASS=com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm
         P1=jaas-context="jdbcRealm"
@@ -41,7 +49,7 @@ if [ -n "$variables" ]; then
         PX="${P1}:${P2}:${P3}:${P4}:${P5}:${P6}:${P7}:${P8}"
         echo ""
     #   echo $REALMID
-        echo $ASADMIN $GFDOMAINCST2 create-auth-realm --classname $CLASS --property $PX $REALMID
-        bash $ASADMIN $GFDOMAINCST2 create-auth-realm --classname $CLASS --property $PX $REALMID
+        echo $ASADMIN $ascst2 create-auth-realm --classname $CLASS --property $PX $REALMID
+        bash $ASADMIN $ascst2 create-auth-realm --classname $CLASS --property $PX $REALMID
     fi
 fi

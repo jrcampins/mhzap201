@@ -10,19 +10,19 @@ if [ -n "$variables" ]; then
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
     #   echo ""
-    #   echo $ASADMIN $GFDOMAINCST2 set server-config.security-service.default-principal=principal
-    #   bash $ASADMIN $GFDOMAINCST2 set server-config.security-service.default-principal=principal
+    #   echo $ASADMIN $ascst2 set server-config.security-service.default-principal=principal
+    #   bash $ASADMIN $ascst2 set server-config.security-service.default-principal=principal
 
     #   echo ""
-    #   echo $ASADMIN $GFDOMAINCST2 set server-config.security-service.default-principal-password=password
-    #   bash $ASADMIN $GFDOMAINCST2 set server-config.security-service.default-principal-password=password
+    #   echo $ASADMIN $ascst2 set server-config.security-service.default-principal-password=password
+    #   bash $ASADMIN $ascst2 set server-config.security-service.default-principal-password=password
 
         echo ""
-        echo $ASADMIN $GFDOMAINCST2 set server-config.security-service.activate-default-principal-to-role-mapping=false
-        bash $ASADMIN $GFDOMAINCST2 set server-config.security-service.activate-default-principal-to-role-mapping=false
+        echo $ASADMIN $ascst2 set server-config.security-service.activate-default-principal-to-role-mapping=false
+        bash $ASADMIN $ascst2 set server-config.security-service.activate-default-principal-to-role-mapping=false
 
     #   echo ""
-    #   echo $ASADMIN $GFDOMAINCST2 set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
-    #   bash $ASADMIN $GFDOMAINCST2 set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
+    #   echo $ASADMIN $ascst2 set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
+    #   bash $ASADMIN $ascst2 set server-config.security-service.mapped-principal-class=CustomPrincipalImplClass
     fi
 fi

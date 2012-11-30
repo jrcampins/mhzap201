@@ -14,7 +14,7 @@ echo.
 set REALMID="%lower_case_project%-ldap-realm"
 set REALMID
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-auth-realm %REALMID%
-call %ASADMIN% %GFDOMAINCST2% delete-auth-realm %REALMID%
+echo %ASADMIN% %ascst2% delete-auth-realm %REALMID%
+call %ASADMIN% %ascst2% delete-auth-realm %REALMID%
 echo.
 call "%~dp0..\eoj" "%~f0"

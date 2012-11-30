@@ -10,10 +10,10 @@ echo "%~n0" inicia la ejecucion del servidor de aplicaciones en modo debug
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-echo %ASADMIN% %GFDOMAINCST1% start-domain --debug %GFDOMAINNAME%
-call %ASADMIN% %GFDOMAINCST1% start-domain --debug %GFDOMAINNAME%
+echo %ASADMIN% %ascst1% start-domain --debug %domain%
+call %ASADMIN% %ascst1% start-domain --debug %domain%
 echo.
-echo %ASADMIN% %GFDOMAINCST2% list-components
-call %ASADMIN% %GFDOMAINCST2% list-components
+echo %ASADMIN% %ascst2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 call "%~dp0..\eoj" "%~f0"

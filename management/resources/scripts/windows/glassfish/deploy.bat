@@ -12,10 +12,10 @@ if /i "%siono%" NEQ "S" goto:eof
 
 set ear=%DISTDIR%\%lower_case_project%.ear
 echo.
-echo %ASADMIN% %GFDOMAINCST2% deploy %ear%
-call %ASADMIN% %GFDOMAINCST2% deploy %ear%
+echo %ASADMIN% %ascst2% deploy %ear%
+call %ASADMIN% %ascst2% deploy %ear%
 echo.
-echo %ASADMIN% %GFDOMAINCST2% list-components
-call %ASADMIN% %GFDOMAINCST2% list-components
+echo %ASADMIN% %ascst2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 call "%~dp0..\eoj" "%~f0"

@@ -11,11 +11,11 @@ if [ -n "$variables" ]; then
     if [ "$siono" = "s" ]; then
         if [ -n "${lower_case_project}" ]; then
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 undeploy ${lower_case_project}
-            bash $ASADMIN $GFDOMAINCST2 undeploy ${lower_case_project}
+            echo $ASADMIN $ascst2 undeploy ${lower_case_project}
+            bash $ASADMIN $ascst2 undeploy ${lower_case_project}
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 list-components
-            bash $ASADMIN $GFDOMAINCST2 list-components
+            echo $ASADMIN $ascst2 list-components
+            bash $ASADMIN $ascst2 list-components
         fi
     fi
 fi

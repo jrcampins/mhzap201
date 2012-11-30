@@ -10,7 +10,7 @@ if [ -n "$variables" ]; then
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
         echo ""
-        echo $ASADMIN $GFDOMAINCST2 list-components
-        bash $ASADMIN $GFDOMAINCST2 list-components
+        echo $ASADMIN $ascst2 list-components
+        bash $ASADMIN $ascst2 list-components
     fi
 fi

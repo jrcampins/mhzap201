@@ -10,6 +10,6 @@ echo "%~n0" detiene la ejecucion del servidor de aplicaciones
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-echo %ASADMIN% %GFDOMAINCST2% stop-domain %GFDOMAINNAME%
-call %ASADMIN% %GFDOMAINCST2% stop-domain %GFDOMAINNAME%
+echo %ASADMIN% %ascst2% stop-domain %domain%
+call %ASADMIN% %ascst2% stop-domain %domain%
 call "%~dp0..\eoj" "%~f0"

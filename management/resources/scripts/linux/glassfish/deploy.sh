@@ -15,11 +15,11 @@ if [ -n "$variables" ]; then
                 CYGWIN*) ear=`cygpath --windows $ear`
             esac
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 deploy $ear
-            bash $ASADMIN $GFDOMAINCST2 deploy $ear
+            echo $ASADMIN $ascst2 deploy $ear
+            bash $ASADMIN $ascst2 deploy $ear
             echo ""
-            echo $ASADMIN $GFDOMAINCST2 list-components
-            bash $ASADMIN $GFDOMAINCST2 list-components
+            echo $ASADMIN $ascst2 list-components
+            bash $ASADMIN $ascst2 list-components
         else
             echo el archivo $ear no existe
         fi

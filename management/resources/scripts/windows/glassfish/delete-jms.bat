@@ -24,11 +24,11 @@ set P1=%1
 set P1
 for /f "tokens=1*" %%t in (jms-destination) do call:delete-jms-destination %%t
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-connector-resource "jms/%P1%%S2%"
-call %ASADMIN% %GFDOMAINCST2% delete-connector-resource "jms/%P1%%S2%"
+echo %ASADMIN% %ascst2% delete-connector-resource "jms/%P1%%S2%"
+call %ASADMIN% %ascst2% delete-connector-resource "jms/%P1%%S2%"
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-connector-connection-pool "jms/%P1%%S1%"
-call %ASADMIN% %GFDOMAINCST2% delete-connector-connection-pool "jms/%P1%%S1%"
+echo %ASADMIN% %ascst2% delete-connector-connection-pool "jms/%P1%%S1%"
+call %ASADMIN% %ascst2% delete-connector-connection-pool "jms/%P1%%S1%"
 goto:eof
 
 :delete-jms-destination
@@ -36,6 +36,6 @@ echo.
 set Q1=%1
 set Q1
 echo.
-echo %ASADMIN% %GFDOMAINCST2% delete-admin-object "jms/%P1%%Q1%%S3%"
-call %ASADMIN% %GFDOMAINCST2% delete-admin-object "jms/%P1%%Q1%%S3%"
+echo %ASADMIN% %ascst2% delete-admin-object "jms/%P1%%Q1%%S3%"
+call %ASADMIN% %ascst2% delete-admin-object "jms/%P1%%Q1%%S3%"
 goto:eof

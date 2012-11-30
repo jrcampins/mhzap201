@@ -6,4 +6,4 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-call %ASADMIN% %GFDOMAINCST2% stop-domain %GFDOMAINNAME%
+call %ASADMIN% %ascst2% stop-domain %domain%

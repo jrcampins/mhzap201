@@ -11,29 +11,29 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
-echo %ASADMIN% %GFDOMAINCST2% list-components
+echo %ASADMIN% %ascst2% list-components
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-components
+call %ASADMIN% %ascst2% list-components
 echo.
 
 echo.
-echo %ASADMIN% %GFDOMAINCST2% list-jndi-entries
+echo %ASADMIN% %ascst2% list-jndi-entries
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries
+call %ASADMIN% %ascst2% list-jndi-entries
 
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries --context ejb
+call %ASADMIN% %ascst2% list-jndi-entries --context ejb
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries --context jdbc
+call %ASADMIN% %ascst2% list-jndi-entries --context jdbc
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries --context jms
+call %ASADMIN% %ascst2% list-jndi-entries --context jms
 
 call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries
+call %ASADMIN% %ascst2% list-jndi-entries
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries server
+call %ASADMIN% %ascst2% list-jndi-entries server
 echo.
-call %ASADMIN% %GFDOMAINCST2% list-jndi-entries domain
+call %ASADMIN% %ascst2% list-jndi-entries domain

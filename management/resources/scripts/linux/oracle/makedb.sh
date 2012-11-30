@@ -12,6 +12,6 @@ if [ -n "$variables" ]; then
         SQLPATH=$SQLDDLDIR
         xs1="$scriptpath/sqlplus.sh"
         xs2="$scriptpath/$scriptname.sql"
-        [ -x "$xs1" ] && . "$xs1" "$xs2" "$O9DATABASE" "O9"
+        [ -x "$xs1" ] && . "$xs1" "$xs2" "$ORADATABASE" "O9"
     fi
 fi

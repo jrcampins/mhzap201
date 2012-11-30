@@ -12,7 +12,7 @@ if [ -n "$variables" ]; then
         REALMID="${lower_case_project}-ldap-realm"
         echo ""
     #   echo $REALMID
-        echo $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
-        bash $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
+        echo $ASADMIN $ascst2 delete-auth-realm $REALMID
+        bash $ASADMIN $ascst2 delete-auth-realm $REALMID
     fi
 fi

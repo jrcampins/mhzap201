@@ -12,17 +12,17 @@ if [ -n "$variables" ]; then
         REALMID="${lower_case_project}-jdbc-realm"
         echo ""
     #   echo $REALMID
-        echo $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
-        bash $ASADMIN $GFDOMAINCST2 delete-auth-realm $REALMID
+        echo $ASADMIN $ascst2 delete-auth-realm $REALMID
+        bash $ASADMIN $ascst2 delete-auth-realm $REALMID
         RESOURCEID="jdbc/${lower_case_project}"
         echo ""
     #   echo $RESOURCEID
-        echo $ASADMIN $GFDOMAINCST2 delete-jdbc-resource $RESOURCEID
-        bash $ASADMIN $GFDOMAINCST2 delete-jdbc-resource $RESOURCEID
+        echo $ASADMIN $ascst2 delete-jdbc-resource $RESOURCEID
+        bash $ASADMIN $ascst2 delete-jdbc-resource $RESOURCEID
         POOLID="${lower_case_project}-pool"
         echo ""
     #   echo $POOLID
-        echo $ASADMIN $GFDOMAINCST2 delete-jdbc-connection-pool $POOLID
-        bash $ASADMIN $GFDOMAINCST2 delete-jdbc-connection-pool $POOLID
+        echo $ASADMIN $ascst2 delete-jdbc-connection-pool $POOLID
+        bash $ASADMIN $ascst2 delete-jdbc-connection-pool $POOLID
     fi
 fi
