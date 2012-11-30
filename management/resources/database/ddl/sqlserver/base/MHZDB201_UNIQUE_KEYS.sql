@@ -104,6 +104,8 @@ ALTER TABLE opcion_binaria ADD CONSTRAINT UQ_opcion_binaria_0006_ZYX UNIQUE NONC
 GO
 ALTER TABLE opcion_menu ADD CONSTRAINT UQ_opcion_menu_0001_ZYX UNIQUE NONCLUSTERED (codigo_opcion_menu) ON [PRIMARY]
 GO
+ALTER TABLE opcion_sistema ADD CONSTRAINT UQ_opcion_sistema_0001_ZYX UNIQUE NONCLUSTERED (clave_opcion_sistema) ON [PRIMARY]
+GO
 ALTER TABLE operador_com ADD CONSTRAINT UQ_operador_com_0001_ZYX UNIQUE NONCLUSTERED (codigo_operador_com) ON [PRIMARY]
 GO
 ALTER TABLE pagina ADD CONSTRAINT UQ_pagina_0001_ZYX UNIQUE NONCLUSTERED (codigo_pagina, id_aplicacion) ON [PRIMARY]

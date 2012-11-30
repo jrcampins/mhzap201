@@ -51,6 +51,7 @@ ALTER TABLE opcion_binaria ADD CONSTRAINT UQ_opcion_binaria_0004_ZYX UNIQUE (cod
 ALTER TABLE opcion_binaria ADD CONSTRAINT UQ_opcion_binaria_0005_ZYX UNIQUE (codigo_opcion_pos_neg);
 ALTER TABLE opcion_binaria ADD CONSTRAINT UQ_opcion_binaria_0006_ZYX UNIQUE (codigo_opcion_verdadero_falso);
 ALTER TABLE opcion_menu ADD CONSTRAINT UQ_opcion_menu_0001_ZYX UNIQUE (codigo_opcion_menu);
+ALTER TABLE opcion_sistema ADD CONSTRAINT UQ_opcion_sistema_0001_ZYX UNIQUE (clave_opcion_sistema);
 ALTER TABLE operador_com ADD CONSTRAINT UQ_operador_com_0001_ZYX UNIQUE (codigo_operador_com);
 ALTER TABLE pagina ADD CONSTRAINT UQ_pagina_0001_ZYX UNIQUE (codigo_pagina, id_aplicacion);
 ALTER TABLE pagina_funcion ADD CONSTRAINT UQ_pagina_funcion_0001_ZYX UNIQUE (id_pagina, id_funcion);

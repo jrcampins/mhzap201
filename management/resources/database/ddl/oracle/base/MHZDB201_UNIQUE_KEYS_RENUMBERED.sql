@@ -104,6 +104,8 @@ CREATE UNIQUE INDEX UQ_opcion_binaria_0006_IX ON opcion_binaria (codigo_opcion_v
 ALTER TABLE opcion_binaria ADD (CONSTRAINT UQ_opcion_binaria_0006_ZYX UNIQUE (codigo_opcion_verdadero_falso));
 CREATE UNIQUE INDEX UQ_opcion_menu_0001_IX ON opcion_menu (codigo_opcion_menu);
 ALTER TABLE opcion_menu ADD (CONSTRAINT UQ_opcion_menu_0001_ZYX UNIQUE (codigo_opcion_menu));
+CREATE UNIQUE INDEX UQ_opcion_sistema_0001_IX ON opcion_sistema (clave_opcion_sistema);
+ALTER TABLE opcion_sistema ADD (CONSTRAINT UQ_opcion_sistema_0001_ZYX UNIQUE (clave_opcion_sistema));
 CREATE UNIQUE INDEX UQ_operador_com_0001_IX ON operador_com (codigo_operador_com);
 ALTER TABLE operador_com ADD (CONSTRAINT UQ_operador_com_0001_ZYX UNIQUE (codigo_operador_com));
 CREATE UNIQUE INDEX UQ_pagina_0001_IX ON pagina (codigo_pagina, id_aplicacion);

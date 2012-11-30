@@ -51,6 +51,7 @@ ALTER TABLE opcion_binaria DROP CONSTRAINT UQ_opcion_binaria_0004_ZYX;
 ALTER TABLE opcion_binaria DROP CONSTRAINT UQ_opcion_binaria_0005_ZYX;
 ALTER TABLE opcion_binaria DROP CONSTRAINT UQ_opcion_binaria_0006_ZYX;
 ALTER TABLE opcion_menu DROP CONSTRAINT UQ_opcion_menu_0001_ZYX;
+ALTER TABLE opcion_sistema DROP CONSTRAINT UQ_opcion_sistema_0001_ZYX;
 ALTER TABLE operador_com DROP CONSTRAINT UQ_operador_com_0001_ZYX;
 ALTER TABLE pagina DROP CONSTRAINT UQ_pagina_0001_ZYX;
 ALTER TABLE pagina_funcion DROP CONSTRAINT UQ_pagina_funcion_0001_ZYX;

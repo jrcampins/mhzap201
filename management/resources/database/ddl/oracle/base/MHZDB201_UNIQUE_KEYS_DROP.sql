@@ -104,6 +104,8 @@ ALTER TABLE opcion_binaria DROP (CONSTRAINT UQ_opcion_binaria_0006_ZYX);
 DROP INDEX opcion_binaria.UQ_opcion_binaria_0006_ZYX;
 ALTER TABLE opcion_menu DROP (CONSTRAINT UQ_opcion_menu_0001_ZYX);
 DROP INDEX opcion_menu.UQ_opcion_menu_0001_ZYX;
+ALTER TABLE opcion_sistema DROP (CONSTRAINT UQ_opcion_sistema_0001_ZYX);
+DROP INDEX opcion_sistema.UQ_opcion_sistema_0001_ZYX;
 ALTER TABLE operador_com DROP (CONSTRAINT UQ_operador_com_0001_ZYX);
 DROP INDEX operador_com.UQ_operador_com_0001_ZYX;
 ALTER TABLE pagina DROP (CONSTRAINT UQ_pagina_0001_ZYX);
