@@ -1,5 +1,3 @@
--- delimiter ??
--- DROP FUNCTION IF EXISTS setup_database_upgrade();
 CREATE OR REPLACE FUNCTION setup_database_upgrade() RETURNS integer AS
 $body$
 DECLARE
@@ -16,12 +14,11 @@ BEGIN
     order   by proname
     )
     LOOP
-    comando = 'select ' || funcion.firma_funcion;
---  RAISE NOTICE 'execute: "%"', comando;
-    execute comando;
-	END LOOP;
+        comando = 'select ' || funcion.firma_funcion;
+--      RAISE NOTICE 'execute: "%"', comando;
+        execute comando;
+    END LOOP;
     return 0;
 END;
 $body$
 LANGUAGE 'plpgsql' VOLATILE CALLED ON NULL INPUT SECURITY INVOKER;
--- ??
