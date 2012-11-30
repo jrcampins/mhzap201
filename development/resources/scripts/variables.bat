@@ -15,10 +15,10 @@ set FO9=oracle
 set FPG=postgresql
 set FSS=sqlserver
 
-set PMD=%CDB%_MD
-set PO9=%CDB%_O9
-set PPG=%CDB%_PG
-set PSS=%CDB%_SS
+set PMD=%CDB%
+set PO9=%CDB%
+set PPG=%CDB%
+set PSS=%CDB%
 
 set SMD=%FMD%\%PSS%
 set SO9=%FO9%\%PO9%
