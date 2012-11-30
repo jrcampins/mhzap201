@@ -10,8 +10,8 @@ set BACKUPDIR=%HOMEDIR%\backup
 set LOGSDIR=%HOMEDIR%\logs
 set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 call:check-dir DISTDIR
-if not exist %BACKUPDIR% md %BACKUPDIR%
-if not exist %LOGSDIR% md %LOGSDIR%
+if not exist "%BACKUPDIR%" md "%BACKUPDIR%"
+if not exist "%LOGSDIR%" md "%LOGSDIR%"
 call:check-dir SQLDDLDIR
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
@@ -109,6 +109,8 @@ if defined on_properly_defined_variables (
 )
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
+set SQLJOINDIR=%HOMEDIR%\resources\database\join\oracle
+if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :check-postgresql
@@ -117,6 +119,8 @@ call:run %HOMEDIR%\variables-postgresql.bat
 call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
+set SQLJOINDIR=%HOMEDIR%\resources\database\join\postgresql
+if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :check-sqlserver
@@ -129,6 +133,8 @@ set SSBINDIR=%SQLSERVER_TOOLS%\Binn
 set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
+set SQLJOINDIR=%HOMEDIR%\resources\database\join\sqlserver
+if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :run
