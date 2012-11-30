@@ -20,11 +20,9 @@ if not defined CRVL set CRVL=%aaaammdd%
 
 call:init-log %f1%
 set EXE="%PGBINDIR%\psql.exe"
-set CMD=%EXE% -e -f "%~f1" -q -v ddldir=%SQLDDLDIR% -v pgdb=%PGDB% -v crvl=%CRVL%
-pushd "%SQLDDLDIR%"
+set CMD=%EXE% -e -f "%~f1" -q -v crvl=%CRVL% -v pgdb=%PGDB% -v ddldir=%SQLDDLDIR% -v joindir=%SQLJOINDIR%
 %CMD% 1>>%log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
-popd
 echo %~n0: %xerrorlevel%
 call:open-log "%~f1"
 goto:eof

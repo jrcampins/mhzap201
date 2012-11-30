@@ -27,10 +27,8 @@ call:build-osql-file "%~f1"
 call:init-log %f1%
 set EXE="%SSBINDIR%\osql.exe"
 set CMD=%EXE% -e -i %OSQLFILE% -d %SSDB% -n
-pushd "%SQLDDLDIR%"
 %CMD% 1>>%log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
-popd
 echo %~n0: %xerrorlevel%
 call:open-log "%~f1"
 goto:eof
@@ -57,21 +55,27 @@ goto:eof
 echo %~n0(%OSQLFILE%)
 echo.
 if exist %OSQLFILE% (del %OSQLFILE%) else (call:make-dir %OSQLFILE%)
-echo declare @crvl   integer        >>%OSQLFILE%
-echo declare @ssdb   varchar(100)   >>%OSQLFILE%
-echo declare @datdir varchar(2000)  >>%OSQLFILE%
-echo declare @ddldir varchar(2000)  >>%OSQLFILE%
-echo select  @crvl   =  %CRVL%      >>%OSQLFILE%
-echo select  @ssdb   = '%SSDB%'     >>%OSQLFILE%
-echo select  @datdir = '%SQLDATDIR%'>>%OSQLFILE%
-echo select  @ddldir = '%SQLDDLDIR%'>>%OSQLFILE%
-echo print   @crvl                  >>%OSQLFILE%
-echo print   @ssdb                  >>%OSQLFILE%
-echo print   @datdir                >>%OSQLFILE%
-echo print   @ddldir                >>%OSQLFILE%
-type "%~f1"                         >>%OSQLFILE%
+if /i "%SSDB%" == "master" (
+    call:echo1 "declare @crvl   integer"
+    call:echo1 "declare @ssdb   varchar(100)"
+    call:echo1 "declare @datdir varchar(2000)"
+    call:echo1 "select  @crvl   =  %CRVL%"
+    call:echo1 "select  @ssdb   = '%SSDB%'"
+    call:echo1 "select  @datdir = '%SQLDATDIR%'"
+    call:echo1 "print   getdate()"
+    call:echo1 "print   ''"
+) else (
+    call:echo1 "print getdate()"
+    call:echo1 "print ''"
+    call:echo1 "go"
+)
+type "%~f1">>%OSQLFILE%
 goto:eof
 
 :make-dir
 if not exist "%~dp1" md "%~dp1"
+goto:eof
+
+:echo1
+echo %~1>>%OSQLFILE%
 goto:eof

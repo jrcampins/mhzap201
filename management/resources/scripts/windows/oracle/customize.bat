@@ -6,6 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
+set SQLPATH=
 set packages=%SQLDDLDIR%\oracle\custom\packages
 if not exist "%packages%" (
     echo El directorio %packages% no existe

@@ -10,5 +10,5 @@ echo "%~n0" crea los objetos de la aplicacion en la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set SQLPATH=%SQLDDLDIR%
+set SQLPATH=
 call sqlplus "%~dpn0.sql"

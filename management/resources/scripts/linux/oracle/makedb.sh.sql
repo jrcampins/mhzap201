@@ -15,7 +15,7 @@ from user_objects
 order by object_type, object_name;
 
 define us = _
-define tokens = &1&us&2&us
+define tokens = &1&us
 
 set echo off
 define suffix = 100
@@ -39,14 +39,14 @@ set echo on
 @&script
 
 set echo off
-define suffix = 400_PACKAGES
+define suffix = 410
 define script = &tokens&suffix
 prompt RUN> &script
 set echo on
 @&script
 
 set echo off
-define suffix = 400_FUNCTIONS
+define suffix = 420
 define script = &tokens&suffix
 prompt RUN> &script
 set echo on

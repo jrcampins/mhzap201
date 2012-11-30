@@ -11,7 +11,7 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 :ask
-set SUFIJO=%aaaammdd%
+set SUFIJO=%aaaammdd%%hh24mm%
 set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
 if not defined SUFIJO goto ask
 
