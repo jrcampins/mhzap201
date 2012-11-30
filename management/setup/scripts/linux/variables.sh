@@ -142,6 +142,8 @@ if [ "$DBMSKEY" = "Oracle" ]; then
         echo El directorio "$ORABINDIR" no existe
         unset variables
     fi
+    SQLJOINDIR=$HOMEDIR/resources/database/join/oracle
+    [ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -158,6 +160,8 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
         echo El directorio "$PGBINDIR" no existe
         unset variables
     fi
+    SQLJOINDIR=$HOMEDIR/resources/database/join/postgresql
+    [ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 fi
 
 if [ -n "$on_properly_defined_variables" ]; then
