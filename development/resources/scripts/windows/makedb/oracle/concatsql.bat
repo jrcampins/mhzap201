@@ -40,5 +40,5 @@ call "%~dp0concatsql-300"
 call "%~dp0concatsql-400"
 call "%~dp0concatsql-500"
 call "%~dp0concatsql-600"
-dir %SQLDDLDIR%\%ORADATABASE%_O9*.sql
+dir %SQLJOINDIR%\*.sql
 call "%~dp0..\eoj" "%~f0"

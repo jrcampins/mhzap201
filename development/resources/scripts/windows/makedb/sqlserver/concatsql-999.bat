@@ -6,21 +6,20 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-set  SOURCE=%SQLDDLDIR%\%dbms%
-set  SOURCE
-set  TARGET=%SQLDDLDIR%\%SSDATABASE%_SS_999.sql
+set  SOURCE=%SQLDDLDIR%\%dbms%\base
+set  TARGET=%SQLJOINDIR%\%dbname%_999.sql
 set  TARGET
+set  SOURCE
 
-call:deleteFile "%TARGET%"
+if exist "%TARGET%" del "%TARGET%"
 
-type %SOURCE%\%SSDATABASE%_SS_TABLES_DROP.sql>>%TARGET%
+type %SOURCE%\%dbname%_TABLES_DROP.sql>>%TARGET%
 echo.>>%TARGET%
 
-REM type %SOURCE%\%SSDATABASE%_SS_SEQUENCES_DROP.sql>>%TARGET%
+rem type %SOURCE%\%dbname%_SEQUENCES_DROP.sql>>%TARGET%
+rem echo.>>%TARGET%
+
+rem type %SOURCE%\%dbname%_VIEWS_DROP.sql>>%TARGET%
+rem echo.>>%TARGET%
 
 call "%~dp0..\eoj" "%~f0"
-goto:eof
-
-:deleteFile
-if exist "%~f1" del "%~f1"
-goto:eof

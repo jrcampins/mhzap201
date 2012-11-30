@@ -1,3 +1,4 @@
+:concatsql-pack
 if not defined variables goto:eof
 setlocal
 set s1=%~s1
@@ -13,10 +14,10 @@ set package=%~n1
 set packdir=%~f1
 pushd %packdir%
 cd ..
-set sql="%CD%\%package%.sql"
-if exist %sql% del %sql%
+set sql=%CD%\%package%.sql
+if exist "%sql%" del "%sql%"
 popd
-echo +pack: %1
+echo target=%sql%
 call:type-package-heading
 for /R "%packdir%" %%f in (*.sql) do (
     if /i "%%~nf" == "package" (

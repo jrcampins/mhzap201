@@ -6,16 +6,20 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-set  SOURCE=%SQLDDLDIR%\%dbms%
-set  SOURCE
-set  TARGET=%SQLDDLDIR%\%PGDATABASE%_PG_100.sql
+set  SOURCE=%SQLDDLDIR%\%dbms%\base
+set  TARGET=%SQLJOINDIR%\%dbname%_100.sql
 set  TARGET
+set  SOURCE
 
 if exist "%TARGET%" del "%TARGET%"
-type %SOURCE%\%PGDATABASE%_PG_SEQUENCES.sql>>%TARGET%
+
+type %SOURCE%\%dbname%_SEQUENCES.sql>>%TARGET%
 echo.>>%TARGET%
-type %SOURCE%\%PGDATABASE%_PG_TABLES.sql>>%TARGET%
+
+type %SOURCE%\%dbname%_TABLES.sql>>%TARGET%
 echo.>>%TARGET%
-type %SOURCE%\%PGDATABASE%_PG_DEFAULTS_RENUMBERED.sql>>%TARGET%
+
+type %SOURCE%\%dbname%_DEFAULTS_RENUMBERED.sql>>%TARGET%
+echo.>>%TARGET%
 
 call "%~dp0..\eoj" "%~f0"

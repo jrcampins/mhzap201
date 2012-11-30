@@ -6,57 +6,58 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-call:concatsql-401
-if /i "%funciones%" == "n" (
-    call "%~dp0concatsql-key" 400_FUNCTIONS functions
-) else (
-    call "%~dp0concatsql-for" 400_FUNCTIONS functions
-)
-
 call:concatsql-411
 if /i "%funciones%" == "n" (
-    call "%~dp0concatsql-key" 400_PACKAGES packages
+    call "%~dp0concatsql-key" 410 packages
 ) else (
-    call "%~dp0concatsql-for" 400_PACKAGES packages
+    call "%~dp0concatsql-for" 410 packages
+)
+echo.
+
+call:concatsql-421
+if /i "%funciones%" == "n" (
+    call "%~dp0concatsql-key" 420 functions
+) else (
+    call "%~dp0concatsql-for" 420 functions
 )
 
 call "%~dp0..\eoj" "%~f0"
 goto:eof
 
-:concatsql-401
-set SOURCE=%SQLDDLDIR%\%dbms%\functions
-for /D %%f in (%SOURCE%\*.*) do call:concatsql-402 %%f
-echo.
-goto:eof
-
-:concatsql-402
-if "%~n1" == "CVS" goto:eof
-set SOURCE="%~f1\*.sql"
-rem SOURCE
-set TARGET="%~dpn1.sql"
-set TARGET
-if exist "%TARGET%" del "%TARGET%"
-set SQLFILE=
-for %%f in (%SOURCE%) do set SQLFILE=%%f
-if not defined SQLFILE goto:eof
-call:concatsql-file-heading %1
-for %%f in (%SOURCE%) do call:concatsql-403 %%f
-goto:eof
-
-:concatsql-403
-call:concatsql-file-heading %1
-type "%~f1">>%TARGET%
-echo.>>%TARGET%
-goto:eof
-
-:concatsql-file-heading
-echo -->>%TARGET%
-echo -- %~nx1>>%TARGET%
-echo -->>%TARGET%
-goto:eof
-
 :concatsql-411
 set SOURCE=%SQLDDLDIR%\%dbms%\packages
 for /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
-for %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+echo.
+goto:eof
+
+:concatsql-421
+set SOURCE=%SQLDDLDIR%\%dbms%\functions
+for /D %%f in (%SOURCE%\*.*) do call:concatsql-422 %%f
+echo.
+set target=
+goto:eof
+
+:concatsql-422
+if "%~n1" == "CVS" goto:eof
+set folder=%~f1\*.sql
+set target=%~dpn1.sql
+set target
+if exist "%target%" del "%target%"
+set SQLFILE=
+for %%f in (%folder%) do set SQLFILE=%%f
+if not defined SQLFILE goto:eof
+call:concatsql-file-heading %1
+for %%f in (%folder%) do call:concatsql-423 %%f
+goto:eof
+
+:concatsql-423
+call:concatsql-file-heading %1
+type "%~f1">>%target%
+echo.>>%target%
+goto:eof
+
+:concatsql-file-heading
+echo -->>%target%
+echo -- %~nx1>>%target%
+echo -->>%target%
 goto:eof
