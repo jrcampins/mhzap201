@@ -8,8 +8,11 @@ set HOMEDIR=%HOMEDIR:~0,-1%
 set DISTDIR=%HOMEDIR%\resources
 set BACKUPDIR=%HOMEDIR%\backup
 set LOGSDIR=%HOMEDIR%\logs
+set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
+call:check-dir DISTDIR
 if not exist %BACKUPDIR% md %BACKUPDIR%
 if not exist %LOGSDIR% md %LOGSDIR%
+call:check-dir SQLDDLDIR
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat
@@ -25,13 +28,13 @@ if defined on_properly_defined_variables (
         echo Advertencia: el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL
     )
 )
-call:checkEEAS
-call:checkDBMS
+call:check-eeas
+call:check-dbms
 call:run-quietly %HOMEDIR%\variables-server.bat
 call:run-quietly %HOMEDIR%\variables-dev.bat
 goto:eof
 
-:checkEEAS
+:check-eeas
 set EEASKEY=
 if /i "%EEAS%" == "GlassFish"    set EEASKEY=GlassFish
 if /i "%EEAS%" == "JBoss"        set EEASKEY=JBoss
@@ -57,6 +60,8 @@ set ascst2=--host %ashost% --port %asport% %ascst1%
 if defined on_properly_defined_variables (
     echo domain=%domain%
 )
+set ASADMIN=%GLASSFISH_HOME%\bin\asadmin.bat
+call:check-file ASADMIN
 goto:eof
 
 :check-jboss
@@ -75,7 +80,7 @@ if defined on_properly_defined_variables (
 )
 goto:eof
 
-:checkDBMS
+:check-dbms
 set DBMSKEY=
 if /i "%DBMS%" == "Oracle"        set DBMSKEY=Oracle
 if /i "%DBMS%" == "PostgreSQL"    set DBMSKEY=PostgreSQL
@@ -102,12 +107,16 @@ call:check-dir ORACLE_HOME
 if defined on_properly_defined_variables (
     echo dbcoid=%dbcoid%
 )
+set ORABINDIR=%ORACLE_HOME%\bin
+call:check-dir ORABINDIR
 goto:eof
 
 :check-postgresql
 set DBMSDIR=postgresql
 call:run %HOMEDIR%\variables-postgresql.bat
 call:check-dir POSTGRESQL_HOME
+set PGBINDIR=%POSTGRESQL_HOME%\bin
+call:check-dir PGBINDIR
 goto:eof
 
 :check-sqlserver
@@ -116,6 +125,10 @@ call:run %HOMEDIR%\variables-sqlserver.bat
 call:check-dir SQLSERVER_HOME
 call:check-dir SQLSERVER_MSSQL
 call:check-dir SQLSERVER_TOOLS
+set SSBINDIR=%SQLSERVER_TOOLS%\Binn
+set SQLDATDIR=%SQLSERVER_MSSQL%\Data
+call:check-dir SSBINDIR
+call:check-dir SQLDATDIR
 goto:eof
 
 :run
