@@ -3,8 +3,7 @@
 \echo
 \echo
 \echo dir :ddldir
-\echo
-\cd :ddldir
+\echo dir :joindir
 \echo
 \encoding
 \encoding LATIN1
@@ -13,11 +12,13 @@
 \echo --------------------------------------------------------------------------
 BEGIN TRANSACTION;
 \echo --------------------------------------------------------------------------
+\cd :ddldir
 \i postgresql/functions/setup.sql
 \echo --------------------------------------------------------------------------
 select * from setup_database_upgrade_count()
 as (tipo varchar, cantidad integer)
 order by 1;
+\echo --------------------------------------------------------------------------
 select  proname||'('||pg_catalog.oidvectortypes(proargtypes)||')' as firma_funcion
 from    pg_proc inner join pg_namespace on pg_namespace.oid = pg_proc.pronamespace
 where   proname like 'setup_database_upgrade_version%'
@@ -28,25 +29,35 @@ select setup_database_upgrade_drop();
 \echo --------------------------------------------------------------------------
 select setup_database_upgrade();
 \echo --------------------------------------------------------------------------
-\echo file:MHZDB201_PG_100 (defaults)
+\echo file:MHZDB201_100
 \echo --------------------------------------------------------------------------
-\i postgresql/MHZDB201_PG_DEFAULTS_RENUMBERED.sql
+\cd :ddldir
+\i postgresql/base/MHZDB201_DEFAULTS_RENUMBERED.sql
 \echo --------------------------------------------------------------------------
-\echo file:MHZDB201_PG_200_METADATA
+\echo file:MHZDB201_200
 \echo --------------------------------------------------------------------------
-\i MHZDB201_PG_200_METADATA.sql
+\cd :joindir
+\i MHZDB201_200_METADATA.sql
 \echo --------------------------------------------------------------------------
-\echo file:MHZDB201_PG_300 (constraints, indexes, views)
+\echo file:MHZDB201_300
 \echo --------------------------------------------------------------------------
-\i MHZDB201_PG_300.sql
+\cd :joindir
+\i MHZDB201_300.sql
 \echo --------------------------------------------------------------------------
-\echo file:MHZDB201_PG_400 (functions)
+\cd :joindir
+\echo file:MHZDB201_400
 \echo --------------------------------------------------------------------------
-\i MHZDB201_PG_400.sql
+\i MHZDB201_400.sql
 \echo --------------------------------------------------------------------------
-\echo file:MHZDB201_PG_500 (triggers)
+\cd :joindir
+\echo file:MHZDB201_500
 \echo --------------------------------------------------------------------------
-\i MHZDB201_PG_500.sql
+\i MHZDB201_500.sql
+\echo --------------------------------------------------------------------------
+\cd :joindir
+\echo file:MHZDB201_600
+\echo --------------------------------------------------------------------------
+\i MHZDB201_600.sql
 \echo --------------------------------------------------------------------------
 select * from setup_database_upgrade_count()
 as (tipo varchar, cantidad integer)

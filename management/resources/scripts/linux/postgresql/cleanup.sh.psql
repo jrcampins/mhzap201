@@ -6,9 +6,9 @@
 \encoding LATIN1
 \encoding
 \set AUTOCOMMIT on
-\echo ----------------------------------------------------------------------------------------------------------------------------------
+\echo --------------------------------------------------------------------------
 \echo elimina los rastros de auditoria de hace mas de un mes
-\echo ----------------------------------------------------------------------------------------------------------------------------------
+\echo --------------------------------------------------------------------------
 delete from rastro_funcion where age(fecha_hora_ejecucion)     > interval '1 month';
 delete from rastro_informe where age(fecha_hora_fin_ejecucion) > interval '1 month';
 delete from rastro_proceso where age(fecha_hora_fin_ejecucion) > interval '1 month';

@@ -12,6 +12,6 @@ if [ -n "$variables" ]; then
         SQLPATH=$SQLJOINDIR
         xs1="$scriptpath/sqlplus.sh"
         xs2="$scriptpath/$scriptname.sql"
-        [ -x "$xs1" ] && . "$xs1" "$xs2" "$ORADATABASE"
+        [ -x "$xs1" ] && . "$xs1" "$xs2" "$ORADATABASE" "$(date +%Y%m%d)"
     fi
 fi

@@ -1,3 +1,5 @@
+prompt DATABASE &1 &2
+
 select object_type, status, count(*)
 from user_objects
 group by object_type, status
