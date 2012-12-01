@@ -7,12 +7,8 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-cd /d "%~dp0"
-set this=%CD%
-set that=%project_source_dir%\management\resources\scripts\windows\%dbms%
-
 set /a xerrorlevel=0
-if %xerrorlevel% == 0 call "%this%\concatsql"
-if %xerrorlevel% == 0 call "%that%\customize"
-if %xerrorlevel% == 0 call "%that%\makedb"
+if %xerrorlevel% == 0 call "%thisdir%\concatsql"
+if %xerrorlevel% == 0 call "%thatdir%\customize"
+if %xerrorlevel% == 0 call "%thatdir%\makedb"
 call "%~dp0..\eoj" "%~f0"

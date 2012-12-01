@@ -2,13 +2,14 @@
 cd /d "%~dp0"
 
 setlocal
+if not defined first_bat set first_bat="%~f0"
 set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" reconstruye las tablas "plus" correspondientes a cada tabla "arbol"
+echo "%~n0" reconstruye el menu
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set SQLPATH=%SQLDDLDIR%
-call "%project_source_dir%\management\resources\scripts\windows\%dbms%\psql" "%~dpn0.psql"
+call "%thatdir%\psql" "%~dpn0.psql"
+call "%~dp0..\eoj" "%~f0"

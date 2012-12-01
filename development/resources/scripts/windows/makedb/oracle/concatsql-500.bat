@@ -17,7 +17,7 @@ call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :concatsql-501
-set SOURCE=%SQLDDLDIR%\%dbms%\triggers
+set SOURCE=%SQLDDLXDIR%\triggers
 for /D %%f in (%SOURCE%\*.*) do call:concatsql-502 %%f
 set target=
 goto:eof

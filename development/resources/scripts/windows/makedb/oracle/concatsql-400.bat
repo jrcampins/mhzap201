@@ -25,13 +25,13 @@ call "%~dp0..\eoj" "%~f0"
 goto:eof
 
 :concatsql-411
-set SOURCE=%SQLDDLDIR%\%dbms%\packages
+set SOURCE=%SQLDDLXDIR%\packages
 for /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
 echo.
 goto:eof
 
 :concatsql-421
-set SOURCE=%SQLDDLDIR%\%dbms%\functions
+set SOURCE=%SQLDDLXDIR%\functions
 for /D %%f in (%SOURCE%\*.*) do call:concatsql-422 %%f
 echo.
 set target=

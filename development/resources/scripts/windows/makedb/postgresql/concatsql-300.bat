@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\base
+set  SOURCE=%SQLDDLXDIR%\base
 set  TARGET=%SQLJOINDIR%\%dbname%_300.sql
 set  TARGET
 set  SOURCE
@@ -27,17 +27,17 @@ echo.>>%TARGET%
 
 if /i "%vistas%" == "n" goto SYS
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\functions-for-views
+set  SOURCE=%SQLDDLXDIR%\functions-for-views
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\base
+set  SOURCE=%SQLDDLXDIR%\base
 set  SOURCE
 rem  TARGET
 type %SOURCE%\%dbname%_VIEWS.sql>>%TARGET%
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\views
+set  SOURCE=%SQLDDLXDIR%\views
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
@@ -45,12 +45,12 @@ for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 :JASPER
 if /i "%jasper%" == "n" goto WEB
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\views\jasper
+set  SOURCE=%SQLDDLXDIR%\views\jasper
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\views\jasper\override
+set  SOURCE=%SQLDDLXDIR%\views\jasper\override
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
@@ -58,18 +58,18 @@ for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 :WEB
 if /i "%web%" == "n" goto SYS
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\views\web
+set  SOURCE=%SQLDDLXDIR%\views\web
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
-set  SOURCE=%SQLDDLDIR%\%dbms%\views\web\override
+set  SOURCE=%SQLDDLXDIR%\views\web\override
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 :SYS
-set  SOURCE=%SQLDDLDIR%\%dbms%\views\system
+set  SOURCE=%SQLDDLXDIR%\views\system
 set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f

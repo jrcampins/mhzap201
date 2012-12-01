@@ -18,7 +18,7 @@ echo.
 goto:eof
 
 :concat-metadata
-set  SOURCE=%SQLDDLDIR%\%dbms%\data
+set  SOURCE=%SQLDDLXDIR%\data
 set  TARGET=%SQLJOINDIR%\%dbname%_200_METADATA.sql
 set  TARGET
 set  SOURCE

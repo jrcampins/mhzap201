@@ -1,7 +1,7 @@
 :concatsql-for
 if not defined variables goto:eof
 setlocal
-set  SOURCE=%SQLDDLDIR%\%dbms%\%2
+set  SOURCE=%SQLDDLXDIR%\%2
 set  TARGET=%SQLJOINDIR%\%dbname%_%1.sql
 set  TARGET
 set  SOURCE

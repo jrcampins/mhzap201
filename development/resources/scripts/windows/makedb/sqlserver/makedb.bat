@@ -7,12 +7,8 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-cd /d "%~dp0"
-set this=%CD%
-set that=%project_source_dir%\management\resources\scripts\windows\%dbms%
-
 set /a xerrorlevel=0
-call "%this%\concatsql"
+call "%thisdir%\concatsql"
 
 set siono=N
 if %xerrorlevel% == 0 (
@@ -22,20 +18,19 @@ if %xerrorlevel% == 0 (
 )
 
 set SSDB=master
-set sqldbmsdir=%SQLDDLDIR%\%dbms%\database
+set ddlx=%SQLDDLXDIR%\database
 if /i "%siono%" == "S" (
-    if %xerrorlevel% == 0 call "%that%\osql" "%sqldbmsdir%\dropdb.sql"
-    if %xerrorlevel% == 0 call "%that%\osql" "%sqldbmsdir%\createdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%ddlx%\dropdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%ddlx%\createdb.sql"
 ) else (
     set /a xerrorlevel=1
 )
 
 set SSDB=%dbname%
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_100.sql"
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_200.sql"
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_300.sql"
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_400.sql"
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_500.sql"
-if %xerrorlevel% == 0 call "%that%\osql" "%SQLJOINDIR%\%dbname%_600.sql"
-
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_100.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_200.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_300.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_400.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_500.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_600.sql"
 call "%~dp0..\eoj" "%~f0"
