@@ -18,10 +18,9 @@ if %xerrorlevel% == 0 (
 )
 
 set SSDB=master
-set ddlx=%SQLDDLXDIR%\database
 if /i "%siono%" == "S" (
-    if %xerrorlevel% == 0 call "%thatdir%\osql" "%ddlx%\dropdb.sql"
-    if %xerrorlevel% == 0 call "%thatdir%\osql" "%ddlx%\createdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLXSQLDIR%\dropdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLXSQLDIR%\createdb.sql"
 ) else (
     set /a xerrorlevel=1
 )
