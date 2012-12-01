@@ -1,10 +1,5 @@
 USE MHZMD201
 GO
-/*
-W:\mhzap201\source\development\resources\scripts\windows\makedb\dump-metadata-run.bat
-*/
--- select 'call "%BAT%" dual'
--- union
 select 'call "%BAT%" ' + codigo_clase_recurso
 from clase_recurso
 where numero_tipo_clase_recurso=1 and (numero_tipo_recurso<=12 or id_clase_recurso<20000)
