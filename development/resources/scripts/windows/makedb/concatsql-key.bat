@@ -6,11 +6,11 @@ set  TARGET=%SQLJOINDIR%\%dbname%_%1.sql
 set  TARGET
 set  SOURCE
 if exist "%TARGET%" del "%TARGET%"
-call:concatsql-file-heading key %2
-for /f "tokens=1*" %%t in ("%~dp0..\key-%2") do call concatsql-pdq %SOURCE%\%%t.sql
+call:add-group-heading key %2
+for /f "tokens=1*" %%t in ("%~dp0..\key-%2") do call "%~dp0concatsql-sql" %%t
 goto:eof
 
-:concatsql-file-heading
+:add-group-heading
 echo -->>%TARGET%
 echo -- %*>>%TARGET%
 echo -->>%TARGET%
