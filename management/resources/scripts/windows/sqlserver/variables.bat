@@ -9,4 +9,5 @@ set SSUSER=%dbuser%
 set SSPASS=%dbpass%
 set SSDATABASE=%dbname%
 call "%~dp0..\variables-date-time"
-if defined on_properly_defined_variables pause
+if not defined variables (pause & echo. & goto:eof)
+if defined on_properly_defined_variables (pause & echo.)

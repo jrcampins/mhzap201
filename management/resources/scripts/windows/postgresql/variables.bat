@@ -9,4 +9,5 @@ set PGUSER=%dbuser%
 set PGPASSWORD=%dbpass%
 set PGDATABASE=%dbname%
 call "%~dp0..\variables-date-time"
-if defined on_properly_defined_variables pause
+if not defined variables (pause & echo. & goto:eof)
+if defined on_properly_defined_variables (pause & echo.)

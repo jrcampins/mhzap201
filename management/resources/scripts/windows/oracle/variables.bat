@@ -9,4 +9,5 @@ set ORAUSER=%dbuser%
 set ORAPASSWORD=%dbpass%
 set ORADATABASE=%dbname%
 call "%~dp0..\variables-date-time"
-if defined on_properly_defined_variables pause
+if not defined variables (pause & echo. & goto:eof)
+if defined on_properly_defined_variables (pause & echo.)

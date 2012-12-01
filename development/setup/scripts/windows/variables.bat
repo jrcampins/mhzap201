@@ -12,20 +12,10 @@ call:mkdir-dir LOGSDIR
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat
-if defined on_properly_defined_variables (
-    if defined EEAS (
-        echo EEAS=%EEAS%
-    ) else (
-        call:echo-warn "el valor de la variable de entorno EEAS no esta definido. Si se necesita, se usara GlassFish"
-    )
-    if defined DBMS (
-        echo DBMS=%DBMS%
-    ) else (
-        call:echo-warn "el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL"
-    )
-)
 call:check-eeas
 call:check-dbms
+call:check-eeaskey
+call:check-dbmskey
 set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
 set SQLJOINDIR=%HOMEDIR%\resources\database\join\%DBMSDIR%
@@ -38,13 +28,23 @@ call:check-dir SQLDDLXDIR
 call:check-dir SQLXSQLDIR
 call:run %HOMEDIR%\variables-server.bat /q
 call:run %HOMEDIR%\variables-dev.bat /q
+call:checkout
 goto:eof
 
 :check-eeas
 set EEASKEY=
 if /i "%EEAS%" == "GlassFish"    set EEASKEY=GlassFish
 if /i "%EEAS%" == "JBoss"        set EEASKEY=JBoss
-if not defined EEASKEY           set EEASKEY=GlassFish
+if not defined EEASKEY (
+    set EEASKEY=GlassFish
+    call:xwarn el valor de la variable de entorno EEAS no esta correctamente definido. Si se necesita, se usara GlassFish
+    call:xinfo el valor de la variable de entorno EEAS se debe definir en "%HOMEDIR%\variables-conf.bat"
+) else (
+    if defined on_properly_defined_variables call:xinfo EEAS=%EEAS%
+)
+goto:eof
+
+:check-eeaskey
 if /i "%EEASKEY%" == "GlassFish" call:check-glassfish
 if /i "%EEASKEY%" == "JBoss"     call:check-jboss
 goto:eof
@@ -54,17 +54,17 @@ set EEASDIR=glassfish
 call:run %HOMEDIR%\variables-glassfish.bat
 call:check-dir GLASSFISH_HOME
 if defined on_properly_defined_variables (
-    echo ashost=%ashost%
-    echo asport=%asport%
-    echo asuser=%asuser%
-    echo aspass=********
+    call:xinfo ashost=%ashost%
+    call:xinfo asport=%asport%
+    call:xinfo asuser=%asuser%
+    call:xinfo aspass=********
 )
 call:check-file aspassfile
 set ascst1=
 rem ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
 if defined on_properly_defined_variables (
-    echo domain=%domain%
+    call:xinfo domain=%domain%
 )
 set ASADMIN=%GLASSFISH_HOME%\bin\asadmin.bat
 call:check-file ASADMIN
@@ -75,14 +75,14 @@ set EEASDIR=jboss
 call:run %HOMEDIR%\variables-jboss.bat
 call:check-dir JBOSS_HOME
 if defined on_properly_defined_variables (
-    echo ashost=%ashost%
-    echo asport=%asport%
+    call:xinfo ashost=%ashost%
+    call:xinfo asport=%asport%
 )
 set ascst1=
 rem ascst1=--user %asuser% --password %aspass%
 set ascst2=--connect controller=%ashost%:%asport% %ascst1%
 if defined on_properly_defined_variables (
-    echo offset=%offset%
+    call:xinfo offset=%offset%
 )
 goto:eof
 
@@ -91,18 +91,27 @@ set DBMSKEY=
 if /i "%DBMS%" == "Oracle"        set DBMSKEY=Oracle
 if /i "%DBMS%" == "PostgreSQL"    set DBMSKEY=PostgreSQL
 if /i "%DBMS%" == "SQLServer"     set DBMSKEY=SQLServer
-if not defined DBMSKEY            set DBMSKEY=PostgreSQL
+if not defined DBMSKEY (
+    set DBMSKEY=PostgreSQL
+    call:xwarn el valor de la variable de entorno DBMS no esta correctamente definido. Si se necesita, se usara PostgreSQL
+    call:xinfo el valor de la variable de entorno DBMS se debe definir en "%HOMEDIR%\variables-conf.bat"
+) else (
+    if defined on_properly_defined_variables call:xinfo DBMS=%DBMS%
+)
+goto:eof
+
+:check-dbmskey
 if /i "%DBMSKEY%" == "Oracle"     call:check-oracle
 if /i "%DBMSKEY%" == "PostgreSQL" call:check-postgresql
 if /i "%DBMSKEY%" == "SQLServer"  call:check-sqlserver
 if defined on_properly_defined_variables (
-    echo dbhost=%dbhost%
-    echo dbport=%dbport%
-    echo dbuser=%dbuser%
-    echo dbpass=********
-    echo dbname=%dbname%
-    echo dbcurl=%dbcurl%
-    echo driver=%driver%
+    call:xinfo dbhost=%dbhost%
+    call:xinfo dbport=%dbport%
+    call:xinfo dbuser=%dbuser%
+    call:xinfo dbpass=********
+    call:xinfo dbname=%dbname%
+    call:xinfo dbcurl=%dbcurl%
+    call:xinfo driver=%driver%
 )
 goto:eof
 
@@ -111,7 +120,7 @@ set DBMSDIR=oracle
 call:run %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 if defined on_properly_defined_variables (
-    echo dbcoid=%dbcoid%
+    call:xinfo dbcoid=%dbcoid%
 )
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
@@ -141,7 +150,11 @@ goto:eof
 if exist "%~f1" (
     call "%~f1"
 ) else (
-    if /i not "%2" == "/q" call:echo-error "'%~f1' no existe"
+    if /i "%2" == "/q" (
+        if defined on_properly_defined_variables call:xinfo "%~f1" no existe
+    ) else (
+        call:xerr1 "%~f1" no existe
+    )
 )
 goto:eof
 
@@ -149,9 +162,9 @@ goto:eof
 call:check-exist %1
 if defined variables (
     if defined dirname (
-        if defined on_properly_defined_variables echo %1="%winname%"
+        if defined on_properly_defined_variables call:xinfo %1="%winname%"
     ) else (
-        call:echo-error "%1 '%winname%' no es un directorio"
+        call:xerr1 %1 "%winname%" no es un directorio
     )
 )
 goto:eof
@@ -160,9 +173,9 @@ goto:eof
 call:check-exist %1
 if defined variables (
     if defined dirname (
-        echo-error "%1 '%winname%' no es un archivo, es un directorio"
+        xerr1 %1 "%winname%" no es un archivo, es un directorio
     ) else (
-        if defined on_properly_defined_variables echo %1="%winname%"
+        if defined on_properly_defined_variables call:xinfo %1="%winname%"
     )
 )
 goto:eof
@@ -178,10 +191,10 @@ if defined %1 (
         call:set-dirname "%winname%"
         call:set-dosname "%winname%"
     ) else (
-        if /i not "%2" == "/q" call:echo-error "%1 '%winname%' no existe"
+        if /i not "%2" == "/q" call:xerr1 %1 "%winname%" no existe
     )
 ) else (
-    if /i not "%2" == "/q" call:echo-error "la variable de entorno %1 no esta definida"
+    call:xerr1 la variable de entorno %1 no esta definida
 )
 goto:eof
 
@@ -196,16 +209,25 @@ goto:eof
 :mkdir-dir
 call:check-exist %1 /q
 if not defined dirname md "%winname%"
-if defined on_properly_defined_variables echo %1="%winname%"
+if defined on_properly_defined_variables call:xinfo %1="%winname%"
 goto:eof
 
-:echo-warn
-echo Advertencia: %~1
+:xinfo
+set messages=true
+echo [Informacion] %*
 goto:eof
 
-:echo-error
+:xwarn
+set messages=true
+echo [ADVERTENCIA] %*
+goto:eof
+
+:xerr1
+set messages=true
 set variables=
-echo.
-echo ERROR: %~1
-echo.
+echo [***ERROR***] %*
+goto:eof
+
+:checkout
+if defined messages echo.
 goto:eof
