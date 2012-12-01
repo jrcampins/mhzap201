@@ -10,4 +10,4 @@ echo "%~n0" renombra la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-call psql "%~dpn0.psql"
+call psql "%SQLXSQLDIR%\%~n0.psql"

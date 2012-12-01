@@ -166,6 +166,7 @@ SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
 SQLLOGSDIR=$HOMEDIR/logs/$DBMSDIR
 SQLJOINDIR=$HOMEDIR/resources/database/join/$DBMSDIR
 SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR
+SQLXSQLDIR=$HOMEDIR/resources/database/scripts/$DBMSDIR
 
 [ -d "$SQLBACKDIR" ] || mkdir -p "$SQLBACKDIR"
 [ -d "$SQLLOGSDIR" ] || mkdir -p "$SQLLOGSDIR"
@@ -173,6 +174,11 @@ SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR
 
 if [ ! -d "$SQLDDLXDIR" ]; then
     echo El directorio "$SQLDDLXDIR" no existe
+    unset variables
+fi
+
+if [ ! -d "$SQLXSQLDIR" ]; then
+    echo El directorio "$SQLXSQLDIR" no existe
     unset variables
 fi
 

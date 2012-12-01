@@ -2,7 +2,7 @@
 \echo DATABASE :pgdb :crvl
 \echo
 \echo
-\echo dir :ddldir
+\echo dir :ddlxdir
 \echo dir :joindir
 \echo
 \encoding
@@ -12,8 +12,8 @@
 \echo --------------------------------------------------------------------------
 BEGIN TRANSACTION;
 \echo --------------------------------------------------------------------------
-\cd :ddldir
-\i postgresql/functions/setup.sql
+\cd :ddlxdir
+\i functions/setup.sql
 \echo --------------------------------------------------------------------------
 select * from setup_database_upgrade_count()
 as (tipo varchar, cantidad integer)
@@ -31,8 +31,8 @@ select setup_database_upgrade();
 \echo --------------------------------------------------------------------------
 \echo file:MHZDB201_100
 \echo --------------------------------------------------------------------------
-\cd :ddldir
-\i postgresql/base/MHZDB201_DEFAULTS_RENUMBERED.sql
+\cd :ddlxdir
+\i base/MHZDB201_DEFAULTS_RENUMBERED.sql
 \echo --------------------------------------------------------------------------
 \echo file:MHZDB201_200
 \echo --------------------------------------------------------------------------

@@ -30,10 +30,12 @@ set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
 set SQLJOINDIR=%HOMEDIR%\resources\database\join\%DBMSDIR%
 set SQLDDLXDIR=%HOMEDIR%\resources\database\ddl\%DBMSDIR%
+set SQLXSQLDIR=%HOMEDIR%\resources\database\scripts\%DBMSDIR%
 call:mkdir-dir SQLBACKDIR
 call:mkdir-dir SQLLOGSDIR
 call:mkdir-dir SQLJOINDIR
 call:check-dir SQLDDLXDIR
+call:check-dir SQLXSQLDIR
 call:run %HOMEDIR%\variables-server.bat /q
 call:run %HOMEDIR%\variables-dev.bat /q
 goto:eof

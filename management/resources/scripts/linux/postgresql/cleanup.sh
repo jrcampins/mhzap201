@@ -11,7 +11,7 @@ if [ -n "$variables" ]; then
     if [ "$siono" = "s" ]; then
         unset SQLPATH
         xs1="$scriptpath/psql.sh"
-        xs2="$scriptpath/$scriptname.psql"
+        xs2="$SQLXSQLDIR/${scriptname%%.*}.psql"
         [ -x "$xs1" ] && . "$xs1" "$xs2"
     fi
 fi

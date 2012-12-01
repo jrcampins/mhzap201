@@ -1,15 +1,17 @@
 #!/bin/sh
+scriptname=$(basename "$BASH_SOURCE")
+scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+me=$scriptname
 if [ -d "$HOMEDIR" ]; then
-    me=$(basename "$BASH_SOURCE")
     echo $me convierte los archivos de texto de formato DOS a formato UNIX
     read -p "ejecutar $me ? (s/n): " siono
     if [ "$siono" = "s" ]; then
-        log=$LOGSDIR/$me.log
-        echo $me $HOMEDIR > $log
+        log=$LOGSDIR/${scriptname%%.*}.log
         case "`uname`" in
             CYGWIN*)    comando="dos2unix";;
             *)          comando="dos2unix -o";;
         esac
+        echo $comando $HOMEDIR > $log
         for name in "*.jrtx" "*.jrxml" "*.password" "*.properties" "*.psql" "*.sh" "*.sql" "*.txt" "*.vm" "*.xml" ; do
             echo "$comando $HOMEDIR/$name"
             for archivo in $(find -L "$HOMEDIR" -type f -name "$name" | sort -f); do

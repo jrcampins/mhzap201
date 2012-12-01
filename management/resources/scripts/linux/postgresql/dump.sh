@@ -14,7 +14,7 @@ if [ -n "$variables" ]; then
             echo ""
             for backupfile in $(find -L "$HOMEDIR" -type f -name *.backup | sort -f); do echo $backupfile; done
             echo ""
-            backupfile="${PGDATABASE:-$me}_$(date +%Y%m%d%H%M).backup"
+            backupfile="${PGDATABASE}_$(date +%Y%m%d%H%M).backup"
             echo ""
             echo Escriba un nuevo nombre del archivo de respaldo en el formato: "directorio/archivo"
             echo ""
@@ -42,7 +42,7 @@ if [ -n "$variables" ]; then
                     esac
                     EXE="$PGBINDIR/pg_dump"
                     CMD="$EXE -b -f $archivo -F c -i -v"
-                    log="$SQLLOGSDIR/${scriptname}.${PGDATABASE}.log"
+                    log="$SQLLOGSDIR/${scriptname%%.*}.${PGDATABASE}.log"
                     [ -f "$log" ] && rm "$log"
                     echo $CMD
                     $CMD 1>>$log 2>&1

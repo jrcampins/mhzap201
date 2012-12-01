@@ -16,7 +16,6 @@ jbstart () {
 
 scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
-me=$scriptname
 xs=$scriptpath/variables.sh
 unset variables
 [ -x "$xs" ] && . "$xs"

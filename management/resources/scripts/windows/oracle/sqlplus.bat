@@ -5,8 +5,9 @@ echo.
 
 if not defined variables goto:eof
 
-if not exist "%~dpn0.sql" (
-    set /p x="ERROR: el script "%~dpn0.sql" no existe "
+set sf0="%SQLXSQLDIR%\%~n0.sql"
+if not exist %sf0% (
+    set /p x="ERROR: el script %sf0% no existe "
     goto:eof
 )
 
@@ -18,24 +19,18 @@ if not exist "%~f1" (
     goto:eof
 )
 
-pushd "%~dp1"
-set cd1=%cd%
-set cd2=%cd%
-popd
-if defined SQLPATH (
-    set cd2=%SQLPATH%
-)
-if "%cd1%" == "%cd2%" (
-    set SQLPATH=%cd1%
-) else (
-    set SQLPATH=%cd1%;%cd2%
-)
+set pdq=%SQLXSQLDIR%
+set dp1=%~dp1
+set dp1=%dp1:~0,-1%
+if /i not "%pdq%" == "%dp1%" set pdq=%pdq%;%dp1%
+if defined SQLPATH set pdq=%pdq%;%SQLPATH%
+set SQLPATH=%pdq%
 
 call:init-log %f1%
 set SQLPATH >> %log% 2>&1
 call:set-parameter-variables %*
 pushd %ORACLE_HOME%\bin
-sqlplus "%ORAUSER%"/"%ORAPASSWORD%" @"%~dpn0.sql" %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>&1
+sqlplus "%ORAUSER%"/"%ORAPASSWORD%" @%sf0% %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
 popd
 echo sqlplus: %xerrorlevel%

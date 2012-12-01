@@ -25,9 +25,8 @@ call "%~dp0variables"
 if not defined variables goto:eof
 
 call:init-log %f1%
-set SQLPATH=%SQLDIR%
+set SQLPATH=
 for /R "%SQLDIR%" %%f in (*.sql) do (
-    rem  SQLPATH=%%~dpf
     call "%~dp0sqlplus" %log% "%%f"
 )
 call:open-log
