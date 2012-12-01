@@ -16,7 +16,7 @@ set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
 if not defined SUFIJO goto ask
 
 set EXE="%PGBINDIR%\pg_dump.exe"
-set BAK="%BACKUPDIR%\%PGDATABASE%_%SUFIJO%.backup"
+set BAK="%SQLBACKDIR%\%PGDATABASE%_%SUFIJO%.backup"
 set CMD=%EXE% -b -f %BAK% -F c -i -v
 if exist "%BAK%" del "%BAK%"
 
@@ -33,7 +33,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~n0.%PGDATABASE%.log"
+set log="%SQLLOGSDIR%\%~n0.%PGDATABASE%.log"
 echo %~f0 > %log%
 goto:eof
 

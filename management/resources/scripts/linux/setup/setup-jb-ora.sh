@@ -5,7 +5,8 @@ jbstart () {
     read -p "ejecutar $me ? (s/n): " siono
     echo ""
     if [ "$siono" = "s" ]; then
-        pushd $LOGSDIR
+        [ -d "$LOGSDIR/nohup" ] || mkdir -p "$LOGSDIR/nohup"
+        pushd $LOGSDIR/nohup
         rm -f nohup.out
         unset ask_before_starting
         nohup $jboss/standalone-start.sh &

@@ -18,7 +18,7 @@ if [ -n "$variables" ]; then
             echo ""
             echo Escriba un nuevo nombre del archivo de respaldo en el formato: "directorio/archivo"
             echo ""
-            echo Si no escribe directorio o si escribe '.' el directorio seria $BACKUPDIR
+            echo Si no escribe directorio o si escribe '.' el directorio seria $SQLBACKDIR
             echo Si no escribe archivo o si escribe '.' el archivo seria $backupfile
             echo Si no escribe nada no se creara el respaldo
             echo ""
@@ -31,7 +31,7 @@ if [ -n "$variables" ]; then
                 archivo="${archivo/.backup/}"
                 [ "$(basename ""$archivo"")" = ''  ] && archivo=$backupfile
                 [ "$(basename ""$archivo"")" = '.' ] && archivo=$backupfile
-                [ "$(dirname  ""$archivo"")" = '.' ] && archivo="$BACKUPDIR/${archivo}"
+                [ "$(dirname  ""$archivo"")" = '.' ] && archivo="$SQLBACKDIR/${archivo}"
                 archivo="${archivo/.backup/}.backup"
                 if [ -e $archivo ]; then
                     echo el archivo "$archivo" ya existe
@@ -42,7 +42,7 @@ if [ -n "$variables" ]; then
                     esac
                     EXE="$PGBINDIR/pg_dump"
                     CMD="$EXE -b -f $archivo -F c -i -v"
-                    log="$LOGSDIR/${scriptname}.${PGDATABASE}.log"
+                    log="$SQLLOGSDIR/${scriptname}.${PGDATABASE}.log"
                     [ -f "$log" ] && rm "$log"
                     echo $CMD
                     $CMD 1>>$log 2>&1

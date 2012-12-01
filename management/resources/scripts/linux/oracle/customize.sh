@@ -11,7 +11,7 @@ if [ -n "$variables" ]; then
     if [ "$siono" = "s" ]; then
         unset SQLPATH
         xs1="$scriptpath/sqlplus.sh"
-        xs2="$SQLDDLDIR/oracle/custom/packages/xsp.sql"
+        xs2="$SQLDDLXDIR/custom/packages/xsp.sql"
         [ -x "$xs1" ] && . "$xs1" "$xs2"
     fi
 fi

@@ -20,7 +20,7 @@ if not defined CRVL set CRVL=%aaaammdd%
 
 call:init-log %f1%
 set EXE="%PGBINDIR%\psql.exe"
-set CMD=%EXE% -e -f "%~f1" -q -v crvl=%CRVL% -v pgdb=%PGDB% -v ddldir=%SQLDDLDIR% -v joindir=%SQLJOINDIR%
+set CMD=%EXE% -e -f "%~f1" -q -v crvl=%CRVL% -v pgdb=%PGDB% -v ddldir=%SQLDDLXDIR% -v joindir=%SQLJOINDIR%
 %CMD% 1>>%log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
 echo %~n0: %xerrorlevel%
@@ -28,7 +28,7 @@ call:open-log "%~f1"
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~n0.%~nx1.log"
+set log="%SQLLOGSDIR%\%~n0.%~nx1.log"
 if exist %log% del %log%
 if /i "%~x1" == ".log" (
     set log="%~f1"
@@ -39,7 +39,7 @@ goto:eof
 
 :open-log
 echo.
-if /i not %log% == "%LOGSDIR%\%~n0.%~nx1.log" goto:eof
+if /i not %log% == "%SQLLOGSDIR%\%~n0.%~nx1.log" goto:eof
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.

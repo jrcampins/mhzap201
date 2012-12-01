@@ -6,13 +6,9 @@ set UPPER_CASE_PROJECT=MHZAP201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
 set DISTDIR=%HOMEDIR%\resources
-set BACKUPDIR=%HOMEDIR%\backup
 set LOGSDIR=%HOMEDIR%\logs
-set SQLDDLDIR=%HOMEDIR%\resources\database\ddl
 call:check-dir DISTDIR
-if not exist "%BACKUPDIR%" md "%BACKUPDIR%"
-if not exist "%LOGSDIR%" md "%LOGSDIR%"
-call:check-dir SQLDDLDIR
+call:mkdir-dir LOGSDIR
 call:run %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
 call:run %HOMEDIR%\variables-conf.bat
@@ -20,18 +16,26 @@ if defined on_properly_defined_variables (
     if defined EEAS (
         echo EEAS=%EEAS%
     ) else (
-        echo Advertencia: el valor de la variable de entorno EEAS no esta definido. Si se necesita, se usara GlassFish
+        call:echo-warn "el valor de la variable de entorno EEAS no esta definido. Si se necesita, se usara GlassFish"
     )
     if defined DBMS (
         echo DBMS=%DBMS%
     ) else (
-        echo Advertencia: el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL
+        call:echo-warn "el valor de la variable de entorno DBMS no esta definido. Si se necesita, se usara PostgreSQL"
     )
 )
 call:check-eeas
 call:check-dbms
-call:run-quietly %HOMEDIR%\variables-server.bat
-call:run-quietly %HOMEDIR%\variables-dev.bat
+set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
+set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
+set SQLJOINDIR=%HOMEDIR%\resources\database\join\%DBMSDIR%
+set SQLDDLXDIR=%HOMEDIR%\resources\database\ddl\%DBMSDIR%
+call:mkdir-dir SQLBACKDIR
+call:mkdir-dir SQLLOGSDIR
+call:mkdir-dir SQLJOINDIR
+call:check-dir SQLDDLXDIR
+call:run %HOMEDIR%\variables-server.bat /q
+call:run %HOMEDIR%\variables-dev.bat /q
 goto:eof
 
 :check-eeas
@@ -109,8 +113,6 @@ if defined on_properly_defined_variables (
 )
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
-set SQLJOINDIR=%HOMEDIR%\resources\database\join\oracle
-if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :check-postgresql
@@ -119,8 +121,6 @@ call:run %HOMEDIR%\variables-postgresql.bat
 call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
-set SQLJOINDIR=%HOMEDIR%\resources\database\join\postgresql
-if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :check-sqlserver
@@ -133,40 +133,35 @@ set SSBINDIR=%SQLSERVER_TOOLS%\Binn
 set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
-set SQLJOINDIR=%HOMEDIR%\resources\database\join\sqlserver
-if not exist "%SQLJOINDIR%" md "%SQLJOINDIR%"
 goto:eof
 
 :run
 if exist "%~f1" (
     call "%~f1"
 ) else (
-    echo El archivo "%~f1" no existe
-    set variables=
-)
-goto:eof
-
-:run-quietly
-if exist "%~f1" (
-    call "%~f1"
+    if /i not "%2" == "/q" call:echo-error "'%~f1' no existe"
 )
 goto:eof
 
 :check-dir
 call:check-exist %1
-if not defined dirname (
-    set variables=
-    echo *** %1 "%winname%" no es un directorio
-    echo.
+if defined variables (
+    if defined dirname (
+        if defined on_properly_defined_variables echo %1="%winname%"
+    ) else (
+        call:echo-error "%1 '%winname%' no es un directorio"
+    )
 )
 goto:eof
 
 :check-file
 call:check-exist %1
-if defined dirname (
-    set variables=
-    echo *** %1 "%winname%" no es un archivo, es un directorio
-    echo.
+if defined variables (
+    if defined dirname (
+        echo-error "%1 '%winname%' no es un archivo, es un directorio"
+    ) else (
+        if defined on_properly_defined_variables echo %1="%winname%"
+    )
 )
 goto:eof
 
@@ -180,25 +175,12 @@ if defined %1 (
     if exist "%winname%" (
         call:set-dirname "%winname%"
         call:set-dosname "%winname%"
-        if defined on_properly_defined_variables echo %1="%winname%"
     ) else (
-        set variables=
-        echo.
-        echo *** %1 "%winname%" no existe
-        echo.
+        if /i not "%2" == "/q" call:echo-error "%1 '%winname%' no existe"
     )
 ) else (
-    set variables=
-    echo.
-    echo *** la variable de entorno %1 no esta definida
-    echo.
+    if /i not "%2" == "/q" call:echo-error "la variable de entorno %1 no esta definida"
 )
-goto:eof
-set varname
-set winname
-set dirname
-set dosname
-echo.
 goto:eof
 
 :set-dirname
@@ -207,4 +189,21 @@ goto:eof
 
 :set-dosname
 for /F "delims=*" %%s in ("%~f1") do set dosname=%%~ss
+goto:eof
+
+:mkdir-dir
+call:check-exist %1 /q
+if not defined dirname md "%winname%"
+if defined on_properly_defined_variables echo %1="%winname%"
+goto:eof
+
+:echo-warn
+echo Advertencia: %~1
+goto:eof
+
+:echo-error
+set variables=
+echo.
+echo ERROR: %~1
+echo.
 goto:eof

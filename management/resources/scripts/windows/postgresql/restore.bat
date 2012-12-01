@@ -50,7 +50,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~n0.%PGDATABASE%.log"
+set log="%SQLLOGSDIR%\%~n0.%PGDATABASE%.log"
 echo %~f0 > %log%
 goto:eof
 

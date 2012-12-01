@@ -11,7 +11,7 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 :ask1
-set SUFIJO=%aaaammdd%
+set SUFIJO=%aaaammdd%%hh24mm%
 set /p SUFIJO="sufijo del archivo de respaldo [%SUFIJO%] "
 if not defined SUFIJO goto ask1
 set SUFIJO
@@ -42,7 +42,7 @@ if exist %tokens2% for /f "tokens=1*" %%t in (%tokens2%) do call select-token %%
 if not defined token goto ask3
 
 set EXE="%PGBINDIR%\pg_dump.exe"
-set BAK="%BACKUPDIR%\%PGDATABASE%_%token%_%SUFIJO%.%extension%"
+set BAK="%SQLBACKDIR%\%PGDATABASE%_%token%_%SUFIJO%.%extension%"
 set CMD=%EXE% -a -E UTF8 -f %BAK% -F %formato% -i -t public.%token% -v
 if exist "%BAK%" del "%BAK%"
 
@@ -59,7 +59,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~n0.%token%.log"
+set log="%SQLLOGSDIR%\%~n0.%token%.log"
 echo %~f0 > %log%
 goto:eof
 

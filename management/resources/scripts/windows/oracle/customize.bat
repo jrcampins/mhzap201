@@ -7,7 +7,7 @@ call variables
 if not defined variables goto:eof
 
 set SQLPATH=
-set packages=%SQLDDLDIR%\oracle\custom\packages
+set packages=%SQLDDLXDIR%\custom\packages
 if not exist "%packages%" (
     echo El directorio %packages% no existe
     goto:eof
@@ -23,7 +23,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~nx0.log"
+set log="%SQLLOGSDIR%\%~nx0.log"
 echo %~f0 > %log%
 goto:eof
 

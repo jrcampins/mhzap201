@@ -7,23 +7,23 @@ if [ -n "$variables" ]; then
     if [ -f "$sf1" ]; then
         nx1=$(basename "$sf1")
         dp1=`cd $(dirname "$sf1"); pwd`
-        log="$LOGSDIR/${nx0}.${nx1}.log"
+        log="$SQLLOGSDIR/${nx0}.${nx1}.log"
         [ -f "$log" ] && rm "$log"
         [ -n "$PGDB" ] || PGDB="$PGDATABASE"
         [ -n "$CRVL" ] || CRVL="$(date +%Y%m%d)"
         case "`uname`" in
             CYGWIN*)
                 sf1=`cygpath --windows $sf1`
-                SQLDDLDIR=`cygpath --windows $SQLDDLDIR`
+                SQLDDLXDIR=`cygpath --windows $SQLDDLXDIR`
                 SQLJOINDIR=`cygpath --windows $SQLJOINDIR`
                 ;;
         esac
-        echo SQLDDLDIR=$SQLDDLDIR >> $log 2>&1
+        echo SQLDDLXDIR=$SQLDDLXDIR >> $log 2>&1
         echo SQLJOINDIR=$SQLJOINDIR >> $log 2>&1
         echo POSTGRESQL_HOME=$POSTGRESQL_HOME >> $log 2>&1
         echo working_directory=$(pwd) >> $log 2>&1
         EXE="$PGBINDIR/psql"
-        CMD="$EXE -e -f $sf1 -q -v crvl=$CRVL -v pgdb=$PGDB -v ddldir=$SQLDDLDIR -v joindir=$SQLJOINDIR"
+        CMD="$EXE -e -f $sf1 -q -v crvl=$CRVL -v pgdb=$PGDB -v ddldir=$SQLDDLXDIR -v joindir=$SQLJOINDIR"
         $CMD 1>>$log 2>&1
         echo $nx1: $?
         echo ""

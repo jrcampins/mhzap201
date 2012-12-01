@@ -34,7 +34,7 @@ call:open-log
 goto:eof
 
 :init-log
-set log="%LOGSDIR%\%~n0.%package%.log"
+set log="%SQLLOGSDIR%\%~n0.%package%.log"
 if exist %log% del %log%
 if /i "%~x1" == ".log" (
     set log="%~f1"
@@ -44,7 +44,7 @@ echo %~f0 >> %log%
 goto:eof
 
 :open-log
-if /i %log% == "%LOGSDIR%\%~n0.%package%.log" (echo.) else (goto:eof)
+if /i %log% == "%SQLLOGSDIR%\%~n0.%package%.log" (echo.) else (goto:eof)
 call "%~dp0..\setsiono" desea ver el log de la ejecucion (%log%)
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 echo.

@@ -25,7 +25,7 @@ if [ -n "$variables" ]; then
                 esac
                 EXE="$PGBINDIR/pg_restore"
                 CMD="$EXE -i -d $PGDATABASE -v $archivo"
-                log="$LOGSDIR/${scriptname}.${PGDATABASE}.log"
+                log="$SQLLOGSDIR/${scriptname}.${PGDATABASE}.log"
                 [ -f "$log" ] && rm "$log"
                 echo $CMD
                 $CMD 1>>$log 2>&1

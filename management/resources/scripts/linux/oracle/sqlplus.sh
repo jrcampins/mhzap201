@@ -9,7 +9,7 @@ if [ -n "$variables" ]; then
         if [ -f "$sf1" ]; then
             nx1=$(basename "$sf1")
             dp1=`cd $(dirname "$sf1"); pwd`
-            log="$LOGSDIR/${nx0}.${nx1}.log"
+            log="$SQLLOGSDIR/${nx0}.${nx1}.log"
             [ -f "$log" ] && rm "$log"
             if [ -n "$SQLPATH" ]; then
                 SQLPATH=$dp1:$SQLPATH

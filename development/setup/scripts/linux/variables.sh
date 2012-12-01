@@ -16,22 +16,14 @@ lower_case_project=mhzap201
 UPPER_CASE_PROJECT=MHZAP201
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
 DISTDIR=$HOMEDIR/resources
-BACKUPDIR=$HOMEDIR/backup
 LOGSDIR=$HOMEDIR/logs
-SQLDDLDIR=$HOMEDIR/resources/database/ddl
 
-if [ ! -d "$DISTDIR"  ]; then
+if [ ! -d "$DISTDIR" ]; then
     echo El directorio "$DISTDIR" no existe
     unset variables
 fi
 
-[ -d "$BACKUPDIR"  ] || mkdir -p "$BACKUPDIR"
-[ -d "$LOGSDIR"    ] || mkdir -p "$LOGSDIR"
-
-if [ ! -d "$SQLDDLDIR"  ]; then
-    echo El directorio "$SQLDDLDIR" no existe
-    unset variables
-fi
+[ -d "$LOGSDIR" ] || mkdir -p "$LOGSDIR"
 
 cxms "$HOMEDIR/variables-home.sh"
 
@@ -142,8 +134,6 @@ if [ "$DBMSKEY" = "Oracle" ]; then
         echo El directorio "$ORABINDIR" no existe
         unset variables
     fi
-    SQLJOINDIR=$HOMEDIR/resources/database/join/oracle
-    [ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -160,8 +150,6 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
         echo El directorio "$PGBINDIR" no existe
         unset variables
     fi
-    SQLJOINDIR=$HOMEDIR/resources/database/join/postgresql
-    [ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 fi
 
 if [ -n "$on_properly_defined_variables" ]; then
@@ -172,6 +160,20 @@ if [ -n "$on_properly_defined_variables" ]; then
     echo dbname=$dbname
     echo dbcurl=$dbcurl
     echo driver=$driver
+fi
+
+SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
+SQLLOGSDIR=$HOMEDIR/logs/$DBMSDIR
+SQLJOINDIR=$HOMEDIR/resources/database/join/$DBMSDIR
+SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR
+
+[ -d "$SQLBACKDIR" ] || mkdir -p "$SQLBACKDIR"
+[ -d "$SQLLOGSDIR" ] || mkdir -p "$SQLLOGSDIR"
+[ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
+
+if [ ! -d "$SQLDDLXDIR" ]; then
+    echo El directorio "$SQLDDLXDIR" no existe
+    unset variables
 fi
 
 unset cxms
