@@ -30,13 +30,13 @@ if /i "%vistas%" == "n" goto SYS
 set  SOURCE=%SQLDDLDIR%\%dbms%\functions-for-views
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLDIR%\%dbms%\packages-for-views
 for  /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLDIR%\%dbms%\base
 set  SOURCE
@@ -46,7 +46,7 @@ type %SOURCE%\%dbname%_VIEWS.sql>>%TARGET%
 set  SOURCE=%SQLDDLDIR%\%dbms%\views
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 :JASPER
 if /i "%jasper%" == "n" goto WEB
@@ -54,12 +54,12 @@ if /i "%jasper%" == "n" goto WEB
 set  SOURCE=%SQLDDLDIR%\%dbms%\views\jasper
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLDIR%\%dbms%\views\jasper\override
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 :WEB
 if /i "%web%" == "n" goto SYS
@@ -67,17 +67,17 @@ if /i "%web%" == "n" goto SYS
 set  SOURCE=%SQLDDLDIR%\%dbms%\views\web
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLDIR%\%dbms%\views\web\override
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 :SYS
 set  SOURCE=%SQLDDLDIR%\%dbms%\views\system
 set  SOURCE
 rem  TARGET
-for  %%f in (%SOURCE%\*.sql) do call concatsql-pdq %%f
+for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 call "%~dp0..\eoj" "%~f0"

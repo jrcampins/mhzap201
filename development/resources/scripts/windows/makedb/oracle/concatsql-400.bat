@@ -8,17 +8,17 @@ if not defined variables goto:eof
 
 call:concatsql-411
 if /i "%funciones%" == "n" (
-    call "%~dp0concatsql-key" 410 packages
+    call "%~dp0..\concatsql-key" 410 packages
 ) else (
-    call "%~dp0concatsql-for" 410 packages
+    call "%~dp0..\concatsql-for" 410 packages
 )
 echo.
 
 call:concatsql-421
 if /i "%funciones%" == "n" (
-    call "%~dp0concatsql-key" 420 functions
+    call "%~dp0..\concatsql-key" 420 functions
 ) else (
-    call "%~dp0concatsql-for" 420 functions
+    call "%~dp0..\concatsql-for" 420 functions
 )
 
 call "%~dp0..\eoj" "%~f0"

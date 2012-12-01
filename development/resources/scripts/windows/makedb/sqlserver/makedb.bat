@@ -7,15 +7,9 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-:ask
-set CRVL=%aaaammdd%
-set /p CRVL="version del esquema de la base de datos (aaaammdd) [%CRVL%] "
-if not defined CRVL goto ask
-
 cd /d "%~dp0"
 set this=%CD%
 set that=%project_source_dir%\management\resources\scripts\windows\%dbms%
-set sqldbmsdir=%SQLDDLDIR%\%dbms%\database
 
 set /a xerrorlevel=0
 call "%this%\concatsql"
@@ -28,6 +22,7 @@ if %xerrorlevel% == 0 (
 )
 
 set SSDB=master
+set sqldbmsdir=%SQLDDLDIR%\%dbms%\database
 if /i "%siono%" == "S" (
     if %xerrorlevel% == 0 call "%that%\osql" "%sqldbmsdir%\dropdb.sql"
     if %xerrorlevel% == 0 call "%that%\osql" "%sqldbmsdir%\createdb.sql"

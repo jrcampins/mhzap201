@@ -13,10 +13,10 @@ set  SOURCE
 
 if exist "%TARGET%" del "%TARGET%"
 
-type %SOURCE%\%dbname%_SEQUENCES.sql>>%TARGET%
+type %SOURCE%\%dbname%_TABLES.sql>>%TARGET%
 echo.>>%TARGET%
 
-type %SOURCE%\%dbname%_TABLES.sql>>%TARGET%
+type %SOURCE%\%dbname%_SEQUENCES.sql>>%TARGET%
 echo.>>%TARGET%
 
 type %SOURCE%\%dbname%_DEFAULTS_RENUMBERED.sql>>%TARGET%

@@ -7,12 +7,6 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-:ask
-set CRVL=%aaaammdd%
-set /p CRVL="version del esquema de la base de datos (aaaammdd) [%CRVL%] "
-if not defined CRVL goto ask
-set CRVL="%CRVL%"
-
 cd /d "%~dp0"
 set this=%CD%
 set that=%project_source_dir%\management\resources\scripts\windows\%dbms%

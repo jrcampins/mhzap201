@@ -1,6 +1,6 @@
 USE MHZMD201
 GO
-select 'call "%BAT%" ' + codigo_clase_recurso
+select 'call "%~f1" ' + codigo_clase_recurso
 from clase_recurso
 where numero_tipo_clase_recurso=1 and (numero_tipo_recurso<=12 or id_clase_recurso<20000)
 /*
