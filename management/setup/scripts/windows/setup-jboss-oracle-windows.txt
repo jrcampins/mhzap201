@@ -48,12 +48,13 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
 
             Este script lleva a cabo las siguientes acciones:
 
-            06.01.01. customize: crea paquetes de utilidad en la base de datos
-            06.01.02. makedb: crea los objetos de la aplicacion en la base de datos
-            06.01.03. rebuild: reconstruye las tablas "plus" correspondientes a
+            06.01.01. createdba: crea el usuario propietario de la aplicacion en la base de datos
+            06.01.02. customize: crea paquetes de utilidad en la base de datos
+            06.01.03. makedb: crea los objetos de la aplicacion en la base de datos
+            06.01.04. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
-            06.01.04. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.01.05. ear-deploy: implementa la aplicacion de empresa en el servidor
+            06.01.05. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.01.06. ear-deploy: implementa la aplicacion de empresa en el servidor
                       de aplicaciones
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación

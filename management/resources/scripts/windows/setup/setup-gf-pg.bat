@@ -2,6 +2,8 @@
 cd /d "%~dp0"
 
 setlocal
+set EEAS=GlassFish
+set DBMS=PostgreSQL
 set variables=
 call variables
 if not defined variables goto:eof

@@ -1,4 +1,6 @@
 #!/bin/sh
+EEAS=GlassFish
+DBMS=PostgreSQL
 scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 xs=$scriptpath/variables.sh
@@ -12,55 +14,55 @@ if [ -n "$variables" ]; then
     postgresql=$linux/postgresql
     chmod -R 0777 $resources
     echo ""
-    source $setup/dos2unix.sh $HOMEDIR
+    bash $setup/dos2unix.sh $HOMEDIR
     echo ""
     if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
-        source $glassfish/domain-start.sh
+        bash $glassfish/domain-start.sh
         echo ""
-        source $glassfish/undeploy.sh
+        bash $glassfish/undeploy.sh
         echo ""
-        source $glassfish/delete-jms.sh
+        bash $glassfish/delete-jms.sh
         echo ""
-        source $glassfish/delete-jdbc.sh
+        bash $glassfish/delete-jdbc.sh
         echo ""
-        source $glassfish/domain-stop.sh
+        bash $glassfish/domain-stop.sh
         echo ""
-        source $postgresql/dump.sh
+        bash $postgresql/dump.sh
         echo ""
     fi
     if [ "$1" = "install" ]; then
-        source $postgresql/createdb.sh
+        bash $postgresql/createdb.sh
         echo ""
         read -p "restaurar de la base de datos a partir de un archivo respaldo? (s/n): " siono
         echo ""
         if [ "$siono" = "s" ]; then
-            source $postgresql/restore.sh
+            bash $postgresql/restore.sh
             echo ""
         else
-            source $postgresql/makedb.sh
+            bash $postgresql/makedb.sh
             echo ""
         fi
     elif [ "$1" = "uninstall" ]; then
-        source $postgresql/dropdb.sh
+        bash $postgresql/dropdb.sh
         echo ""
     elif [ "$1" = "upgrade" ]; then
-        source $postgresql/upgradedb.sh
+        bash $postgresql/upgradedb.sh
         echo ""
     fi
     if [ "$1" = "upgrade" -o "$1" = "install" ]; then
-        source $postgresql/rebuild.sh
+        bash $postgresql/rebuild.sh
         echo ""
-        source $postgresql/vacuumdb.sh
+        bash $postgresql/vacuumdb.sh
         echo ""
-        source $glassfish/domain-start.sh
+        bash $glassfish/domain-start.sh
         echo ""
-        source $glassfish/server-config.sh
+        bash $glassfish/server-config.sh
         echo ""
-        source $glassfish/create-jdbc.sh
+        bash $glassfish/create-jdbc.sh
         echo ""
-        source $glassfish/create-jms.sh
+        bash $glassfish/create-jms.sh
         echo ""
-        source $glassfish/deploy.sh
+        bash $glassfish/deploy.sh
         echo ""
     fi
 fi

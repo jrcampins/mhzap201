@@ -2,6 +2,8 @@
 cd /d "%~dp0"
 
 setlocal
+set EEAS=JBoss
+set DBMS=Oracle
 set variables=
 call variables
 if not defined variables goto:eof
@@ -48,6 +50,8 @@ if /i "%1" == "install" (
         echo.
         md %xdir2%
     )
+    call %oracle%\createdba
+    echo.
     if /i "%siono%" == "S" (
         call %oracle%\restore
         echo.

@@ -14,6 +14,8 @@ jbstart () {
     fi
 }
 
+EEAS=JBoss
+DBMS=Oracle
 scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 xs=$scriptpath/variables.sh
@@ -27,16 +29,16 @@ if [ -n "$variables" ]; then
     oracle=$linux/oracle
     chmod -R 0777 $resources
     echo ""
-    source $setup/dos2unix.sh $HOMEDIR
+    bash $setup/dos2unix.sh $HOMEDIR
     echo ""
     if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
         jbstart
         echo ""
-        source $jboss/ear-undeploy.sh
+        bash $jboss/ear-undeploy.sh
         echo ""
-        source $jboss/standalone-stop.sh
+        bash $jboss/standalone-stop.sh
         echo ""
-#       source $oracle/dump.sh
+#       bash $oracle/dump.sh
 #       echo ""
     fi
     if [ "$1" = "install" ]; then
@@ -44,31 +46,33 @@ if [ -n "$variables" ]; then
         [ -d "$dir" ] || mkdir -p "$dir"
         dir="$JBOSS_HOME/welcome-content/$lower_case_project/spool"
         [ -d "$dir" ] || mkdir -p "$dir"
+        bash $oracle/createdba.sh
+        echo ""
         siono=n
 #       read -p "restaurar de la base de datos a partir de un archivo respaldo? (s/n): " siono
 #       echo ""
         if [ "$siono" = "s" ]; then
-            source $oracle/restore.sh
+            bash $oracle/restore.sh
             echo ""
         else
-            source $oracle/customize.sh
+            bash $oracle/customize.sh
             echo ""
-            source $oracle/makedb.sh
+            bash $oracle/makedb.sh
             echo ""
         fi
     elif [ "$1" = "uninstall" ]; then
-        source $oracle/dropdb.sh
+        bash $oracle/dropdb.sh
         echo ""
     elif [ "$1" = "upgrade" ]; then
-        source $oracle/upgradedb.sh
+        bash $oracle/upgradedb.sh
         echo ""
     fi
     if [ "$1" = "upgrade" -o "$1" = "install" ]; then
-        source $oracle/rebuild.sh
+        bash $oracle/rebuild.sh
         echo ""
         jbstart
         echo ""
-        source $jboss/ear-deploy.sh
+        bash $jboss/ear-deploy.sh
         echo ""
     fi
 fi

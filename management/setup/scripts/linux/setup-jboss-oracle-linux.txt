@@ -59,12 +59,13 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
             06.01.01. chmod: otorga los permisos necesarios
             06.01.02. dos2unix: convierte los archivos de texto de formato DOS a
                       formato UNIX
-            06.01.03. customize: crea paquetes de utilidad en la base de datos
-            06.01.04. makedb: crea los objetos de la aplicacion en la base de datos
-            06.01.05. rebuild: reconstruye las tablas "plus" correspondientes a
+            06.01.03. createdba: crea el usuario propietario de la aplicacion en la base de datos
+            06.01.04. customize: crea paquetes de utilidad en la base de datos
+            06.01.05. makedb: crea los objetos de la aplicacion en la base de datos
+            06.01.06. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
-            06.01.06. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.01.07. ear-deploy: implementa la aplicacion de empresa en el servidor
+            06.01.07. standalone-start: inicia la ejecucion del servidor de aplicaciones
+            06.01.08. ear-deploy: implementa la aplicacion de empresa en el servidor
                       de aplicaciones
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
