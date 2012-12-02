@@ -17,7 +17,7 @@ if [ -n "$variables" ]; then
         P2=portNumber="$dbport"
         P3=databaseName="$dbname"
         P4=driverClass="$driver"
-        [ "$DBMSKEY" = "Oracle"     ] && P5=URL="jdbc\:oracle\:thin\:@$dbhost\:$dbport\:$dbcoid"
+        [ "$DBMSKEY" = "Oracle"     ] && P5=URL="jdbc\:oracle\:thin\:@$dbhost\:$dbport\:$dbserv"
         [ "$DBMSKEY" = "PostgreSQL" ] && P5=URL="jdbc\:postgresql\://$dbhost\:$dbport/$dbname"
         P6=User="$dbuser"
         P7=Password="$dbpass"

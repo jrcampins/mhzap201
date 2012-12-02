@@ -1,3 +1,4 @@
+set echo off
 rem
 rem ordena las opciones del menu
 rem
@@ -16,6 +17,7 @@ end;
 column clave    format a20
 column codigo   format a20
 column nombre   format a40
+set echo on
 select clave_opcion_menu as clave, codigo_opcion_menu as codigo, nombre_opcion_menu as nombre, es_opcion_menu_inactiva as inactiva
 from opcion_menu
 where codigo_opcion_menu like'N9%'

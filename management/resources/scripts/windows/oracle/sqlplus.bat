@@ -30,7 +30,10 @@ call:init-log %f1%
 set SQLPATH >> %log% 2>&1
 call:set-parameter-variables %*
 pushd %ORACLE_HOME%\bin
-sqlplus "%ORAUSER%"/"%ORAPASSWORD%" @%sf0% %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>&1
+set logon=/
+if not "%ORAUSER%" == "" if not "%ORAPASSWORD%" == "" set logon=%ORAUSER%/%ORAPASSWORD%@%dbhost%:%dbport%/%dbserv%
+if not "%ORAROLE%" == "" set logon=%logon% AS %ORAROLE%
+sqlplus -L %logon% @%sf0% %~nx1 %p1% %p2% %p3% %p4% %p5% %p6% %p7% %p8% %p9% >> %log% 2>&1
 set /a xerrorlevel=%ERRORLEVEL%
 popd
 echo sqlplus: %xerrorlevel%

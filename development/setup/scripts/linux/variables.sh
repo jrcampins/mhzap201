@@ -143,7 +143,7 @@ if [ "$DBMSKEY" = "Oracle" ]; then
         xinfo ORACLE_HOME=$ORACLE_HOME
     fi
     if [ -n "$on_properly_defined_variables" ]; then
-        xinfo dbcoid=$dbcoid
+        xinfo dbserv=$dbserv
     fi
     ORABINDIR=$ORACLE_HOME/bin
     if [ ! -d "$ORABINDIR" ]; then

@@ -120,7 +120,7 @@ set DBMSDIR=oracle
 call:run %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 if defined on_properly_defined_variables (
-    call:xinfo dbcoid=%dbcoid%
+    call:xinfo dbserv=%dbserv%
 )
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
