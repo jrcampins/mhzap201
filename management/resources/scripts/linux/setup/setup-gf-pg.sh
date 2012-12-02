@@ -1,6 +1,7 @@
 #!/bin/sh
-EEAS=GlassFish
-DBMS=PostgreSQL
+clear
+export EEAS=GlassFish
+export DBMS=PostgreSQL
 scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 xs=$scriptpath/variables.sh
@@ -12,9 +13,9 @@ if [ -n "$variables" ]; then
     setup=$linux/setup
     glassfish=$linux/glassfish
     postgresql=$linux/postgresql
-    chmod -R 0777 $resources
-    echo ""
-    bash $setup/dos2unix.sh $HOMEDIR
+#   chmod -R 0777 $resources
+#   echo ""
+    source $setup/dos2unix.sh $HOMEDIR
     echo ""
     if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
         bash $glassfish/domain-start.sh
