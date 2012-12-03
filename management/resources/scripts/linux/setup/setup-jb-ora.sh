@@ -17,10 +17,7 @@ jbstart () {
             started="?"
         else
             unset ask_before_starting
-            pushd $nohupdir > /dev/null
             nohup $jboss/standalone-start.sh >> $nohupout 2>&1 &
-        #   $! process ID of the most recently executed background (asynchronous) command
-            popd > /dev/null
             seconds="$1"
             echo esperando $seconds segundos para continuar
             while [ -n "$seconds" ]; do
@@ -39,7 +36,7 @@ jbstart () {
             if [ -n "$errores" -a "$errores" != "0" ]; then
                 echo "$errores errores"
                 cat "$nohupout" | grep "ERROR"
-                kill -- -$$
+#               kill -- -$$
                 kill -9 -$$
             fi
             [ -n "$started" ] && echo $started
