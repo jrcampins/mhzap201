@@ -1,5 +1,6 @@
 @echo off
 rem on_properly_defined_variables=echo
+set messages=
 set variables=%~f0
 set lower_case_project=mhzap201
 set UPPER_CASE_PROJECT=MHZAP201
@@ -9,9 +10,9 @@ set DISTDIR=%HOMEDIR%\resources
 set LOGSDIR=%HOMEDIR%\logs
 call:check-dir DISTDIR
 call:mkdir-dir LOGSDIR
-call:run %HOMEDIR%\variables-home.bat
+call:xcall %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
-call:run %HOMEDIR%\variables-conf.bat
+call:xcall %HOMEDIR%\variables-conf.bat
 call:check-eeas
 call:check-dbms
 call:check-eeaskey
@@ -26,8 +27,8 @@ call:mkdir-dir SQLLOGSDIR
 call:mkdir-dir SQLJOINDIR
 call:check-dir SQLDDLXDIR
 call:check-dir SQLXSQLDIR
-call:run %HOMEDIR%\variables-server.bat /q
-call:run %HOMEDIR%\variables-dev.bat /q
+call:xcall %HOMEDIR%\variables-server.bat /q
+call:xcall %HOMEDIR%\variables-dev.bat /q
 call:checkout
 goto:eof
 
@@ -51,7 +52,7 @@ goto:eof
 
 :check-glassfish
 set EEASDIR=glassfish
-call:run %HOMEDIR%\variables-glassfish.bat
+call:xcall %HOMEDIR%\variables-glassfish.bat
 call:check-dir GLASSFISH_HOME
 if defined on_properly_defined_variables (
     call:xinfo ashost=%ashost%
@@ -72,7 +73,7 @@ goto:eof
 
 :check-jboss
 set EEASDIR=jboss
-call:run %HOMEDIR%\variables-jboss.bat
+call:xcall %HOMEDIR%\variables-jboss.bat
 call:check-dir JBOSS_HOME
 if defined on_properly_defined_variables (
     call:xinfo ashost=%ashost%
@@ -117,7 +118,7 @@ goto:eof
 
 :check-oracle
 set DBMSDIR=oracle
-call:run %HOMEDIR%\variables-oracle.bat
+call:xcall %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 if defined on_properly_defined_variables (
     call:xinfo dbserv=%dbserv%
@@ -128,7 +129,7 @@ goto:eof
 
 :check-postgresql
 set DBMSDIR=postgresql
-call:run %HOMEDIR%\variables-postgresql.bat
+call:xcall %HOMEDIR%\variables-postgresql.bat
 call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
@@ -136,7 +137,7 @@ goto:eof
 
 :check-sqlserver
 set DBMSDIR=sqlserver
-call:run %HOMEDIR%\variables-sqlserver.bat
+call:xcall %HOMEDIR%\variables-sqlserver.bat
 call:check-dir SQLSERVER_HOME
 call:check-dir SQLSERVER_MSSQL
 call:check-dir SQLSERVER_TOOLS
@@ -146,25 +147,13 @@ call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
 goto:eof
 
-:run
-if exist "%~f1" (
-    call "%~f1"
-) else (
-    if /i "%2" == "/q" (
-        if defined on_properly_defined_variables call:xinfo "%~f1" no existe
-    ) else (
-        call:xerr1 "%~f1" no existe
-    )
-)
-goto:eof
-
 :check-dir
 call:check-exist %1
 if defined variables (
     if defined dirname (
         if defined on_properly_defined_variables call:xinfo %1="%winname%"
     ) else (
-        call:xerr1 %1 "%winname%" no es un directorio
+        call:xerror %1 "%winname%" no es un directorio
     )
 )
 goto:eof
@@ -173,7 +162,7 @@ goto:eof
 call:check-exist %1
 if defined variables (
     if defined dirname (
-        xerr1 %1 "%winname%" no es un archivo, es un directorio
+        xerror %1 "%winname%" no es un archivo, es un directorio
     ) else (
         if defined on_properly_defined_variables call:xinfo %1="%winname%"
     )
@@ -191,10 +180,10 @@ if defined %1 (
         call:set-dirname "%winname%"
         call:set-dosname "%winname%"
     ) else (
-        if /i not "%2" == "/q" call:xerr1 %1 "%winname%" no existe
+        if /i not "%2" == "/q" call:xerror %1 "%winname%" no existe
     )
 ) else (
-    call:xerr1 la variable de entorno %1 no esta definida
+    call:xerror la variable de entorno %1 no esta definida
 )
 goto:eof
 
@@ -222,10 +211,22 @@ set messages=true
 echo [ADVERTENCIA] %*
 goto:eof
 
-:xerr1
+:xerror
 set messages=true
 set variables=
 echo [***ERROR***] %*
+goto:eof
+
+:xcall
+if exist "%~f1" (
+    call "%~f1"
+) else (
+    if /i "%2" == "/q" (
+        if defined on_properly_defined_variables call:xinfo "%~f1" no existe
+    ) else (
+        call:xerror "%~f1" no existe
+    )
+)
 goto:eof
 
 :checkout

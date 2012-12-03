@@ -1,27 +1,31 @@
 #!/bin/sh
 xinfo() {
+    messages=true
     echo [Informacion] $*
 }
 
 xwarn() {
+    messages=true
     echo [ADVERTENCIA] $*
 }
 
-xerr1() {
+xerror() {
+    messages=true
     unset variables
     echo [***ERROR***] $*
 }
 
 xsource () {
     if [ -x "$1" ]; then
-        . "$1"
+        source "$1"
     elif [ "%2" = "/q" ]; then 
         [ -n "$on_properly_defined_variables" ] && xinfo "$1" no existe o no es un archivo ejecutable
     else
-        xerr1 "$1" no existe o no es un archivo ejecutable
+        xerror "$1" no existe o no es un archivo ejecutable
     fi
 }
 
+unset messages
 variables=$BASH_SOURCE
 lower_case_project=mhzap201
 UPPER_CASE_PROJECT=MHZAP201
@@ -30,7 +34,7 @@ DISTDIR=$HOMEDIR/resources
 LOGSDIR=$HOMEDIR/logs
 
 if [ ! -d "$DISTDIR" ]; then
-    xerr1 "$DISTDIR" no existe o no es un directorio
+    xerror "$DISTDIR" no existe o no es un directorio
 fi
 
 [ -d "$LOGSDIR" ] || mkdir -p "$LOGSDIR"
@@ -38,7 +42,7 @@ fi
 xsource "$HOMEDIR/variables-home.sh"
 
 if [ ! -d "$JAVA_HOME" ]; then
-    xerr1 JAVA_HOME "$JAVA_HOME" no existe o no es un directorio
+    xerror JAVA_HOME "$JAVA_HOME" no existe o no es un directorio
     xinfo JAVA_HOME se debe definir en "$HOMEDIR/variables-home.sh"
 elif [ -n "$on_properly_defined_variables" ]; then
     xinfo JAVA_HOME=$JAVA_HOME
@@ -80,7 +84,7 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     EEASDIR=glassfish
     xsource "$HOMEDIR/variables-glassfish.sh"
     if [ ! -d "$GLASSFISH_HOME" ]; then
-        xerr1 GLASSFISH_HOME "$GLASSFISH_HOME" no existe o no es un directorio
+        xerror GLASSFISH_HOME "$GLASSFISH_HOME" no existe o no es un directorio
         xinfo GLASSFISH_HOME se debe definir en "$HOMEDIR/variables-home.sh"
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo GLASSFISH_HOME=$GLASSFISH_HOME
@@ -92,7 +96,7 @@ if [ "$EEASKEY" = "GlassFish" ]; then
         xinfo aspass=********
     fi
     if [ ! -f "$aspassfile" ]; then
-        xerr1 aspassfile "$aspassfile" no existe o no es un archivo
+        xerror aspassfile "$aspassfile" no existe o no es un archivo
         xinfo aspassfile se debe definir en "$HOMEDIR/variables-glassfish.sh"
     else
         [ -n "$on_properly_defined_variables" ] && xinfo aspassfile=$aspassfile
@@ -108,7 +112,7 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     fi
     ASADMIN=$GLASSFISH_HOME/bin/asadmin
     if [ ! -x "$ASADMIN" ]; then
-        xerr1 "$ASADMIN" no existe o no es un archivo ejecutable
+        xerror "$ASADMIN" no existe o no es un archivo ejecutable
     fi
 fi
 
@@ -116,7 +120,7 @@ if [ "$EEASKEY" = "JBoss" ]; then
     EEASDIR=jboss
     xsource "$HOMEDIR/variables-jboss.sh"
     if [ ! -d "$JBOSS_HOME" ]; then
-        xerr1 JBOSS_HOME "$JBOSS_HOME" no existe o no es un directorio
+        xerror JBOSS_HOME "$JBOSS_HOME" no existe o no es un directorio
         xinfo JBOSS_HOME se debe definir en "$HOMEDIR/variables-home.sh"
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo JBOSS_HOME=$JBOSS_HOME
@@ -137,7 +141,7 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     DBMSDIR=oracle
     xsource "$HOMEDIR/variables-oracle.sh"
     if [ ! -d "$ORACLE_HOME" ]; then
-        xerr1 ORACLE_HOME "$ORACLE_HOME" no existe o no es un directorio
+        xerror ORACLE_HOME "$ORACLE_HOME" no existe o no es un directorio
         xinfo ORACLE_HOME se debe definir en "$HOMEDIR/variables-home.sh"
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo ORACLE_HOME=$ORACLE_HOME
@@ -147,7 +151,7 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     fi
     ORABINDIR=$ORACLE_HOME/bin
     if [ ! -d "$ORABINDIR" ]; then
-        xerr1 "$ORABINDIR" no existe o no es un directorio
+        xerror "$ORABINDIR" no existe o no es un directorio
     fi
 fi
 
@@ -155,14 +159,14 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
     DBMSDIR=postgresql
     xsource "$HOMEDIR/variables-postgresql.sh"
     if [ ! -d "$POSTGRESQL_HOME" ]; then
-        xerr1 POSTGRESQL_HOME "$POSTGRESQL_HOME" no existe o no es un directorio
+        xerror POSTGRESQL_HOME "$POSTGRESQL_HOME" no existe o no es un directorio
         xinfo POSTGRESQL_HOME se debe definir en "$HOMEDIR/variables-home.sh"
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo POSTGRESQL_HOME=$POSTGRESQL_HOME
     fi
     PGBINDIR=$POSTGRESQL_HOME/bin
     if [ ! -d "$PGBINDIR" ]; then
-        xerr1 "$PGBINDIR" no existe o no es un directorio
+        xerror "$PGBINDIR" no existe o no es un directorio
     fi
 fi
 
@@ -187,13 +191,15 @@ SQLXSQLDIR=$HOMEDIR/resources/database/scripts/$DBMSDIR
 [ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 
 if [ ! -d "$SQLDDLXDIR" ]; then
-    xerr1 "$SQLDDLXDIR" no existe o no es un directorio
+    xerror "$SQLDDLXDIR" no existe o no es un directorio
 fi
 
 if [ ! -d "$SQLXSQLDIR" ]; then
-    xerr1 "$SQLXSQLDIR" no existe o no es un directorio
+    xerror "$SQLXSQLDIR" no existe o no es un directorio
 fi
 
-unset xsource
 xs="$HOMEDIR/variables-server.sh"
 [ -x "$xs" ] && . "$xs"
+
+[ -n "$messages" ] && echo ""
+unset xinfo xwarn xerror xsource
