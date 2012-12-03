@@ -1,13 +1,13 @@
 #!/bin/sh
-clear
-export EEAS=GlassFish
-export DBMS=PostgreSQL
-scriptname=$(basename "$BASH_SOURCE")
-scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
-xs=$scriptpath/variables.sh
-unset variables
-[ -x "$xs" ] && . "$xs"
-if [ -n "$variables" ]; then
+setup() {
+    export EEAS=GlassFish
+    export DBMS=PostgreSQL
+    scriptname=$(basename "$BASH_SOURCE")
+    scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+    xs=$scriptpath/variables.sh
+    unset variables
+    [ -x "$xs" ] && . "$xs"
+    [ -n "$variables" ] || return 1
     resources=$HOMEDIR/resources
     linux=$resources/scripts/linux
     setup=$linux/setup
@@ -66,7 +66,11 @@ if [ -n "$variables" ]; then
         bash $glassfish/deploy.sh
         echo ""
     fi
-fi
-echo ""
-echo fin del procedimiento de instalacion
-echo ""
+    echo ""
+    echo fin del procedimiento de instalacion
+    echo ""
+}
+
+clear
+setup "$@"
+unset setup

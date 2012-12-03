@@ -1,59 +1,58 @@
 #!/bin/sh
-jbstart () {
+jbstart() {
     unset started stopped errores
     me="standalone-start"
     echo $me inicia la ejecucion del servidor de aplicaciones en modo standalone
     read -p "ejecutar $me ? (s/n): " siono
-    if [ "$siono" = "s" ]; then
-        echo ""
-        nohupdir="$LOGSDIR/jboss"
-        [ -d "$nohupdir" ] || mkdir -p "$nohupdir"
-        nohupout=`echo "${ashost}-${offset##*-}"|tr '[:punct:]' '-'|tr -s '-'`
-        nohupout="$nohupdir/${nohupout}.log"
-        [ -e "$nohupout" ] && rm -f "$nohupout"
-        if [ -e "$nohupout" ]; then
-            echo "no se pudo eliminar $nohupout"
-            echo "probablemente JBoss ya se encuentra en ejecucion"
-            started="?"
-        else
-            unset ask_before_starting
-            nohup $jboss/standalone-start.sh >> $nohupout 2>&1 &
-            seconds="$1"
-            echo esperando $seconds segundos para continuar
-            while [ -n "$seconds" ]; do
-                sleep $seconds
-                started=$(cat "$nohupout" | grep "JBAS015874")
-                [ -n "$started" ] && break
-                started=$(cat "$nohupout" | grep "JBAS015875") # with errors
-                [ -n "$started" ] && break
-                stopped=$(cat "$nohupout" | grep "JBAS015950")
-                [ -n "$stopped" ] && break
-                errores=$(cat "$nohupout" | grep "ERROR" | wc -l)
-                [ -n "$errores" -a "$errores" != "0" ] && break
-                read -p "continuar sin esperar mas? (s/n): " siono
-                [ "$siono" = "s" ] && unset seconds
-            done
-            if [ -n "$errores" -a "$errores" != "0" ]; then
-                echo "$errores errores"
-                cat "$nohupout" | grep "ERROR"
-#               kill -- -$$
-                kill -9 -$$
-            fi
-            [ -n "$started" ] && echo $started
-            [ -n "$stopped" ] && echo $stopped
-        fi
+    [ "$siono" = "s" ] || return 1
+    echo ""
+    nohupdir="$LOGSDIR/jboss"
+    [ -d "$nohupdir" ] || mkdir -p "$nohupdir"
+    nohupout=`echo "${ashost}-${offset##*-}"|tr '[:punct:]' '-'|tr -s '-'`
+    nohupout="$nohupdir/${nohupout}.log"
+    [ -e "$nohupout" ] && rm -f "$nohupout"
+    if [ -e "$nohupout" ]; then
+        echo "no se pudo eliminar $nohupout"
+        echo "probablemente JBoss ya se encuentra en ejecucion"
+        started="?"
+        return 2
     fi
+    unset ask_before_starting
+    nohup $jboss/standalone-start.sh >> $nohupout 2>&1 &
+    seconds="$1"
+    echo esperando $seconds segundos para continuar
+    while [ -n "$seconds" ]; do
+        sleep $seconds
+        started=$(cat "$nohupout" | grep "JBAS015874")
+        [ -n "$started" ] && break
+        started=$(cat "$nohupout" | grep "JBAS015875") # with errors
+        [ -n "$started" ] && break
+        stopped=$(cat "$nohupout" | grep "JBAS015950")
+        [ -n "$stopped" ] && break
+        errores=$(cat "$nohupout" | grep "ERROR" | wc -l)
+        [ -n "$errores" -a "$errores" != "0" ] && break
+        read -p "continuar sin esperar mas? (s/n): " siono
+        [ "$siono" = "s" ] && unset seconds
+    done
+    if [ -n "$errores" -a "$errores" != "0" ]; then
+        echo "$errores errores"
+        cat "$nohupout" | grep "ERROR"
+#       kill -- -$$
+        kill -9 -$$
+    fi
+    [ -n "$started" ] && echo $started
+    [ -n "$stopped" ] && echo $stopped
 }
 
-clear
-export EEAS=JBoss
-export DBMS=Oracle
-scriptname=$(basename "$BASH_SOURCE")
-scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
-xs=$scriptpath/variables.sh
-unset variables
-[ -x "$xs" ] && . "$xs"
-if [ -n "$variables" ]; then
+setup() {
+    export EEAS=JBoss
+    export DBMS=Oracle
+    scriptname=$(basename "$BASH_SOURCE")
+    scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
+    xs=$scriptpath/variables.sh
+    unset variables
+    [ -x "$xs" ] && . "$xs"
+    [ -n "$variables" ] || return 1
     resources=$HOMEDIR/resources
     linux=$resources/scripts/linux
     setup=$linux/setup
@@ -111,7 +110,11 @@ if [ -n "$variables" ]; then
             echo ""
         fi
     fi
-fi
-echo ""
-echo fin del procedimiento de instalacion
-echo ""
+    echo ""
+    echo fin del procedimiento de instalacion
+    echo ""
+}
+
+clear
+setup "$@"
+unset setup jbstart

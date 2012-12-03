@@ -38,7 +38,7 @@ if [ -n "$variables" ]; then
             [ -n "$ORAUSER" -a -n "$ORAPASSWORD" ] && logon="${ORAUSER}/${ORAPASSWORD}@${dbhost}:${dbport}/${dbserv}"
             [ -n "$ORAROLE" ] && logon="$logon AS $ORAROLE"
             shift
-            $ORACLE_HOME/bin/sqlplus -L $logon @$sf0 $nx1 $* "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
+            $ORACLE_HOME/bin/sqlplus -L $logon @$sf0 $nx1 "$@" "?" "?" "?" "?" "?" "?" "?" "?" >> $log 2>&1
             echo $nx1: $?
             popd > /dev/null
             [ -n "$sqlpath" ] || export SQLPATH=$sqlpath
