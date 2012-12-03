@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 #   parametros para la conexion al servidor de aplicaciones JBoss
 #

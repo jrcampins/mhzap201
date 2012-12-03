@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-base.jar
 CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-core.jar
 CLASSPATH=$CLASSPATH:$PROJLIB/$lower_case_project-lib-data.jar

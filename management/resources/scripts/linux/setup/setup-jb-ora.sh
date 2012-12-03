@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 jbstart() {
     unset started stopped errores
     me="standalone-start"

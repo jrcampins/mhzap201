@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set +v
 CLASS=com.egt.core.db.util.SqlAgentShell
 CLASSPATH=.

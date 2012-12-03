@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 JAVA_HOME=/cygdrive/p/Java
 GLASSFISH_HOME=/cygdrive/n/glassfish

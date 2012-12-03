@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 xinfo() {
     messages=true
     echo [Informacion] $*

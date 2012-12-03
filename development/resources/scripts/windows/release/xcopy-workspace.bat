@@ -79,6 +79,10 @@ pushd %development%\resources\scripts\windows\makedb\postgresql
 call concatsql
 popd
 echo.
+pushd %development%\resources\scripts\windows\makedb\sqlserver
+call concatsql
+popd
+echo.
 goto:eof
 
 :x-copy-scripts

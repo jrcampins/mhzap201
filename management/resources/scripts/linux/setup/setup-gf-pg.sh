@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 funky() {
     export EEAS=GlassFish
     export DBMS=PostgreSQL

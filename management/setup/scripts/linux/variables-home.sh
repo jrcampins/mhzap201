@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 export JAVA_HOME=/opt/java/jdk1.7.0_05
 export GLASSFISH_HOME=/opt/glassfish/glassfish
 export JBOSS_HOME=/opt/jboss

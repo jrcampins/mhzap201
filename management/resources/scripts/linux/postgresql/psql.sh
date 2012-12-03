@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 funky() {
    [ -n "$variables" ] || return 1
     echo psql $*

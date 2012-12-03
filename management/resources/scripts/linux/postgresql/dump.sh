@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 scriptname=$(basename "$BASH_SOURCE")
 scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname

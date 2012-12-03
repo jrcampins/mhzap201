@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 DBMS=postgresql
 xs=$(dirname "$BASH_SOURCE")/../variables.sh
 [ -x "$xs" ] && . "$xs"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 [ -d "$HOMEDIR" ] && ${UPPER_CASE_PROJECT}_HOME_DIR="$HOMEDIR"
 [ -n "$driver"  ] && ${UPPER_CASE_PROJECT}_JDBC_DRIVER="$driver"
 [ -n "$dbcurl"  ] && ${UPPER_CASE_PROJECT}_JDBC_URL="$dbcurl"
