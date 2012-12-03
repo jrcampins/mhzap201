@@ -1,5 +1,5 @@
 #!/bin/sh
-setup() {
+funky() {
     export EEAS=GlassFish
     export DBMS=PostgreSQL
     scriptname=$(basename "$BASH_SOURCE")
@@ -71,6 +71,5 @@ setup() {
     echo ""
 }
 
-clear
-setup "$@"
-unset setup
+funky "$@"
+unset funky

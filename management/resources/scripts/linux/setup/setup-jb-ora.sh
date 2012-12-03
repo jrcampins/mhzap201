@@ -44,7 +44,7 @@ jbstart() {
     [ -n "$stopped" ] && echo $stopped
 }
 
-setup() {
+funky() {
     export EEAS=JBoss
     export DBMS=Oracle
     scriptname=$(basename "$BASH_SOURCE")
@@ -115,6 +115,5 @@ setup() {
     echo ""
 }
 
-clear
-setup "$@"
-unset setup jbstart
+funky "$@"
+unset funky jbstart
