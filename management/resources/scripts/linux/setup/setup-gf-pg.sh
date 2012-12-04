@@ -65,5 +65,5 @@ if [ "$1" = "upgrade" -o "$1" = "install" ]; then
     echo ""
 fi
 echo ""
-echo fin del procedimiento de instalacion
+echo fin del procedimiento $scriptname
 echo ""

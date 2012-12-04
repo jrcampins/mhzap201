@@ -86,7 +86,7 @@ if defined upgrade_or_install (
 )
 
 echo.
-echo fin del procedimiento de instalacion
+echo fin del procedimiento %~n0
 echo.
 pause
 goto:eof

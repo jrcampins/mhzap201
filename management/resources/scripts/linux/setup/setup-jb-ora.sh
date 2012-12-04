@@ -1,6 +1,6 @@
 #!/bin/bash
 jbstart() {
-    unset started stopped errores
+    unset started witherr stopped
     me="standalone-start"
     echo $me inicia la ejecucion del servidor de aplicaciones en modo standalone
     read -p "ejecutar $me? (s/n): " -n 1; echo ""
@@ -23,25 +23,27 @@ jbstart() {
     echo esperando $seconds segundos para continuar
     while [ -n "$seconds" ]; do
         sleep $seconds
-        started=$(cat "$nohupout" | grep "JBAS015874")
+        started=$(cat "$nohupout" | grep "JBAS015874") # started
         [ -n "$started" ] && break
-        started=$(cat "$nohupout" | grep "JBAS015875") # with errors
-        [ -n "$started" ] && break
-        stopped=$(cat "$nohupout" | grep "JBAS015950")
+        witherr=$(cat "$nohupout" | grep "JBAS015875") # started with errors
+        [ -n "$witherr" ] && break
+        stopped=$(cat "$nohupout" | grep "JBAS015950") # stopped
         [ -n "$stopped" ] && break
-        errores=$(cat "$nohupout" | grep "ERROR" | wc -l)
-        [ -n "$errores" -a "$errores" != "0" ] && break
-        read -p "continuar sin esperar mas? (s/n): " -n 1; echo ""
+        read -p "cancelar el proceso? (s/n): " -n 1; echo ""
         [ "$REPLY" != "s" ] || unset seconds
     done
-    if [ -n "$errores" -a "$errores" != "0" ]; then
-        echo "$errores errores"
-        cat "$nohupout" | grep "ERROR"
+    cat "$nohupout" | grep "ERROR"
+    cat "$nohupout" | grep "JBAS015874" # started
+    cat "$nohupout" | grep "JBAS015875" # started with errors
+    cat "$nohupout" | grep "JBAS015950" # stopped
+    cat "$nohupout" | grep "JBAS015951" # console listening on...
+#   cat "$nohupout" | grep "JBAS017100" # listening on...
+    if [ -z "$started" ]; then
+        cat "$nohupout"
 #       kill -- -$$
-        kill -9 -$$
+#       kill -9 -$$
+        kill -9 -$PPID
     fi
-    [ -n "$started" ] && echo $started
-    [ -n "$stopped" ] && echo $stopped
 }
 
 export EEAS=JBoss
@@ -66,8 +68,12 @@ if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
     echo ""
     if [ -n "$started" ]; then
         bash $jboss/ear-undeploy.sh
+        cat "$nohupout" 2>/dev/null | grep "ERROR"
+        cat "$nohupout" 2>/dev/null | grep "JBAS018558" # undeployed
         echo ""
         bash $jboss/standalone-stop.sh
+        cat "$nohupout" 2>/dev/null | grep "ERROR"
+        cat "$nohupout" 2>/dev/null | grep "JBAS015950" # stopped
         echo ""
     fi
 #   bash $oracle/dump.sh
@@ -102,12 +108,16 @@ if [ "$1" = "upgrade" -o "$1" = "install" ]; then
     echo ""
     if [ -n "$started" ]; then
         bash $jboss/ear-deploy.sh
+        cat "$nohupout" 2>/dev/null | grep "ERROR"
+        cat "$nohupout" 2>/dev/null | grep "JBAS018559" # deployed
         echo ""
         bash $jboss/standalone-stop.sh
+        cat "$nohupout" 2>/dev/null | grep "ERROR"
+        cat "$nohupout" 2>/dev/null | grep "JBAS015950" # stopped
         echo ""
     fi
 fi
 echo ""
-echo fin del procedimiento de instalacion
+echo fin del procedimiento $scriptname
 echo ""
 unset jbstart
