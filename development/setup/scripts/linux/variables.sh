@@ -129,8 +129,8 @@ if [ "$EEASKEY" = "JBoss" ]; then
     unset ascst1
 #   ascst1="--user ${asuser} --password ${aspass}"
     ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
-    asport = "${asport##*=}"
-    offset = "${offset##*=}"
+    asport="${asport##*=}"
+    offset="${offset##*=}"
     [ "$asport" -eq "$asport" ] 2>/dev/null || asport="9999"
     [ "$offset" -eq "$offset" ] 2>/dev/null || offset="0"
     asport=$(($asport + $offset))
