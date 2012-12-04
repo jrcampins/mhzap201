@@ -61,6 +61,8 @@ if [ "$1" = "upgrade" -o "$1" = "install" ]; then
     echo ""
     bash $glassfish/deploy.sh
     echo ""
+    bash $glassfish/domain-stop.sh
+    echo ""
 fi
 echo ""
 echo fin del procedimiento de instalacion

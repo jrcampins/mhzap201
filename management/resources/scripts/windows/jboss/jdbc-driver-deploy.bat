@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" deploys jdbc drivers
+echo "%~n0" despliega los drivers JDBC
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 

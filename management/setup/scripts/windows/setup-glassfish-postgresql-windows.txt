@@ -38,7 +38,8 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
 
             06.01.01. createdb: crea la base de datos
             06.01.02. restore/makedb: restaura la base de datos a partir de un
-                      archivo respaldo ó crea los objetos de la base de datos
+                      archivo respaldo ó crea los objetos de la aplicacion en la
+                      base de datos
             06.01.03. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
             06.01.04. vacuumdb: comprime la base de datos
@@ -46,11 +47,11 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
             06.01.06. server-config: establece parametros de configuracion del
                       servidor de aplicaciones
             06.01.07. create-jdbc: crea el dominio de seguridad, los conjuntos de
-                      conexiones y demas recursos JDBC del servidor de aplicaciones
+                      conexiones y demas recursos JDBC
             06.01.08. create-jms: crea las fabricas de conexiones, conjuntos de
-                      conexiones y demas recursos JMS del servidor de aplicaciones
-            06.01.09. deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+                      conexiones y demas recursos JMS
+            06.01.09. deploy: despliega la aplicacion de empresa
+            06.01.10. domain-stop: detiene la ejecucion del servidor de aplicaciones
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
             C:\mhzap201\VnnRaammdd\gf-pg-uninstall.bat
@@ -58,12 +59,11 @@ Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
             Este script lleva a cabo las siguientes acciones:
 
             06.02.01. domain-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.02. undeploy: anula la implementacion de la aplicacion de empresa
-                      en el servidor de aplicaciones
+            06.02.02. undeploy: anula el despliegue de la aplicacion de empresa
             06.02.03. delete-jms: elimina las fabricas de conexiones, conjuntos
-                      de conexiones y demas recursos JMS en el servidor de aplicaciones
+                      de conexiones y demas recursos JMS
             06.02.04. delete-jdbc: elimina el dominio de seguridad, los conjuntos
-                      de conexiones y demas recursos JDBC en el servidor de aplicaciones
+                      de conexiones y demas recursos JDBC
             06.02.05. domain-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.06. dump: crea un archivo respaldo de la base de datos
             06.02.07. dropdb: elimina la base de datos

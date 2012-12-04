@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" anula la implementacion de la aplicacion de empresa del servidor de aplicaciones
+echo "%~n0" anula el despliegue de la aplicacion de empresa
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 

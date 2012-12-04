@@ -81,6 +81,8 @@ if defined upgrade_or_install (
     echo.
     call %jboss%\ear-deploy
     echo.
+    call %jboss%\standalone-stop
+    echo.
 )
 
 echo.

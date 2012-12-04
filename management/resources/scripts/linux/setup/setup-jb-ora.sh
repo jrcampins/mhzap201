@@ -103,6 +103,8 @@ if [ "$1" = "upgrade" -o "$1" = "install" ]; then
     if [ -n "$started" ]; then
         bash $jboss/ear-deploy.sh
         echo ""
+        bash $jboss/standalone-stop.sh
+        echo ""
     fi
 fi
 echo ""

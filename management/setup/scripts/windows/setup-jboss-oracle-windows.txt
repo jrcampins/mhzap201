@@ -22,23 +22,6 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
     C:\mhzap201\VnnRaammdd\variables-oracle.bat
 
 
-04. Crear y otorgar privilegios al usuario MHZ en Oracle.
-
-    Conectar con el usuario SYS:
-
-        connect SYS/password as SYSDBA; 
-
-        NOTA: el password de SYS es definido al instalar Oracle.
-
-    Crear el usuario MHZ:
-        
-        create user MHZ identified by sesamo;
-
-    Otorgar privilegios al usuario MHZ:
-        
-        grant connect, DBA to MHZ;
-
-
 05. Configurar JBoss (seguir los pasos indicados en el archivo C:\mhzap201\VnnRaammdd\configuracion-jboss-windows.txt).
 
 06. Ejecutar el script de instalación
@@ -48,14 +31,13 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
 
             Este script lleva a cabo las siguientes acciones:
 
-            06.01.01. createdba: crea el usuario propietario de la aplicacion en la base de datos
+            06.01.01. createdba: crea el propietario de la aplicacion en la base de datos
             06.01.02. customize: crea paquetes de utilidad en la base de datos
             06.01.03. makedb: crea los objetos de la aplicacion en la base de datos
             06.01.04. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
             06.01.05. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.01.06. ear-deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+            06.01.06. ear-deploy: despliega la aplicacion de empresa
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
             C:\mhzap201\VnnRaammdd\jb-ora-uninstall.bat.
@@ -63,8 +45,7 @@ Instalación de mhzap201 en Windows, con JBoss y Oracle
             Este script lleva a cabo las siguientes acciones:
 
             06.02.01. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.02. ear-undeploy: anula la implementacion de la aplicacion de empresa
-                      en el servidor de aplicaciones
+            06.02.02. ear-undeploy: anula el despliegue de la aplicacion de empresa
             06.02.03. standalone-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.04. dropdb: elimina los objetos de la aplicacion en la base de datos
 

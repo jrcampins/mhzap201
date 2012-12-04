@@ -10,13 +10,12 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
 
     ln -s ruta-completa-del-directorio-mhzap201 /opt/mhzap201
 
+
 02. Descomprimir el archivo zip VnnRaammdd en /opt/mhzap201
 
     Esta acción crea el directorio /opt/mhzap201/VnnRaammdd
 
     unzip VnnRaammdd -d /opt/mhzap201
-
-    chmod -R 0777 /opt/mhzap201/VnnRaammdd
 
 
 03. Ajustar las variables de entorno en:
@@ -25,25 +24,6 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
     /opt/mhzap201/VnnRaammdd/variables-home.sh
     /opt/mhzap201/VnnRaammdd/variables-jboss.sh
     /opt/mhzap201/VnnRaammdd/variables-oracle.sh
-
-
-04. Crear y otorgar privilegios al usuario MHZ en Oracle.
-
-    /opt/oraclexe/app/oracle/product/11.2.0/server/bin/sqlplus
-
-    Conectar con el usuario SYS:
-
-        connect SYS/password as SYSDBA; 
-
-        NOTA: el password de SYS es definido al instalar Oracle.
-
-    Crear el usuario MHZ:
-        
-        create user MHZ identified by sesamo;
-
-    Otorgar privilegios al usuario MHZ:
-        
-        grant connect, DBA to MHZ;
 
 
 05. Configurar JBoss (seguir los pasos indicados en el archivo /opt/mhzap201/VnnRaammdd/configuracion-jboss-linux.txt).
@@ -59,14 +39,14 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
             06.01.01. chmod: otorga los permisos necesarios
             06.01.02. dos2unix: convierte los archivos de texto de formato DOS a
                       formato UNIX
-            06.01.03. createdba: crea el usuario propietario de la aplicacion en la base de datos
+            06.01.03. createdba: crea el propietario de la aplicacion en la base de datos
             06.01.04. customize: crea paquetes de utilidad en la base de datos
             06.01.05. makedb: crea los objetos de la aplicacion en la base de datos
             06.01.06. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
             06.01.07. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.01.08. ear-deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+            06.01.08. ear-deploy: despliega la aplicacion de empresa
+            06.01.09. standalone-stop: detiene la ejecucion del servidor de aplicaciones
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
             /opt/mhzap201/VnnRaammdd/jb-ora-uninstall.sh.
@@ -77,8 +57,7 @@ Instalación de mhzap201 en Linux, con JBoss y Oracle
             06.02.02. dos2unix: convierte los archivos de texto de formato DOS a
                       formato UNIX
             06.02.03. standalone-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.04. ear-undeploy: anula la implementacion de la aplicacion de empresa
-                      en el servidor de aplicaciones
+            06.02.04. ear-undeploy: anula el despliegue de la aplicacion de empresa
             06.02.05. standalone-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.06. dropdb: elimina los objetos de la aplicacion en la base de datos
 

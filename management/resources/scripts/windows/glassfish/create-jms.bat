@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS del servidor de aplicaciones
+echo "%~n0" crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 

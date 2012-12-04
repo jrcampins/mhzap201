@@ -10,13 +10,12 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
 
     ln -s ruta-completa-del-directorio-mhzap201 /opt/mhzap201
 
+
 02. Descomprimir el archivo zip VnnRaammdd en /opt/mhzap201
 
     Esta acción crea el directorio /opt/mhzap201/VnnRaammdd
 
     unzip VnnRaammdd -d /opt/mhzap201
-
-    chmod -R 0777 /opt/mhzap201/VnnRaammdd
 
 
 03. Ajustar las variables de entorno en:
@@ -46,7 +45,8 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
                       formato UNIX
             06.01.03. createdb: crea la base de datos
             06.01.04. restore/makedb: restaura la base de datos a partir de un
-                      archivo respaldo ó crea los objetos de la base de datos
+                      archivo respaldo ó crea los objetos de la aplicacion en la
+                      base de datos
             06.01.05. rebuild: reconstruye las tablas "plus" correspondientes a
                       cada tabla "arbol"
             06.01.06. vacuumdb: comprime la base de datos
@@ -54,11 +54,11 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
             06.01.08. server-config: establece parametros de configuracion del
                       servidor de aplicaciones
             06.01.09. create-jdbc: crea el dominio de seguridad, los conjuntos de
-                      conexiones y demas recursos JDBC del servidor de aplicaciones
+                      conexiones y demas recursos JDBC
             06.01.10. create-jms: crea las fabricas de conexiones, conjuntos de
-                      conexiones y demas recursos JMS del servidor de aplicaciones
-            06.01.11. deploy: implementa la aplicacion de empresa en el servidor
-                      de aplicaciones
+                      conexiones y demas recursos JMS
+            06.01.11. deploy: despliega la aplicacion de empresa
+            06.01.12. domain-stop: detiene la ejecucion del servidor de aplicaciones
 
     06.02.  Para desinstalar posteriormente, ejecutar el script de desinstalación
             /opt/mhzap201/VnnRaammdd/gf-pg-uninstall.sh.
@@ -69,12 +69,11 @@ Instalación de mhzap201 en Linux, con GlassFish y PostgreSQL
             06.02.02. dos2unix: convierte los archivos de texto de formato DOS a
                       formato UNIX
             06.02.03. domain-start: inicia la ejecucion del servidor de aplicaciones
-            06.02.04. undeploy: anula la implementacion de la aplicacion de empresa
-                      en el servidor de aplicaciones
+            06.02.04. undeploy: anula el despliegue de la aplicacion de empresa
             06.02.05. delete-jms: elimina las fabricas de conexiones, conjuntos 
-                      de conexiones y demas recursos JMS en el servidor de aplicaciones
+                      de conexiones y demas recursos JMS
             06.02.06. delete-jdbc: elimina el dominio de seguridad, los conjuntos
-                      de conexiones y demas recursos JDBC en el servidor de aplicaciones
+                      de conexiones y demas recursos JDBC
             06.02.07. domain-stop: detiene la ejecucion del servidor de aplicaciones
             06.02.08. dump: crea un archivo respaldo de la base de datos
             06.02.09. dropdb: elimina la base de datos

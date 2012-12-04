@@ -78,6 +78,8 @@ if defined upgrade_or_install (
     echo.
     call %glassfish%\deploy
     echo.
+    call %glassfish%\domain-stop
+    echo.
 )
 
 echo.

@@ -6,7 +6,7 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-echo "%~n0" produce una lista de los componentes implementados en el servidor de aplicaciones
+echo "%~n0" produce una lista de componentes desplegados
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
