@@ -75,9 +75,6 @@ goto:eof
 set EEASDIR=jboss
 call:xcall %HOMEDIR%\variables-jboss.bat
 call:check-dir JBOSS_HOME
-set ascst1=
-rem ascst1=--user %asuser% --password %aspass%
-set ascst2=--connect controller=%ashost%:%asport% %ascst1%
 set number=
 for /F "tokens=1* delims==" %%m in ("%offset%") do set number=%%n
 if defined number set offset=%number%
@@ -85,6 +82,9 @@ if not defined asport set asport=9999
 if not defined offset set offset=0
 set /a asport=%asport% + %offset%
 set offset=-Djboss.socket.binding.port-offset=%offset%
+set ascst1=
+rem ascst1=--user %asuser% --password %aspass%
+set ascst2=--connect controller=%ashost%:%asport% %ascst1%
 if defined on_properly_defined_variables (
     call:xinfo ashost=%ashost%
     call:xinfo asport=%asport%

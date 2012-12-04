@@ -126,15 +126,15 @@ if [ "$EEASKEY" = "JBoss" ]; then
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo "JBOSS_HOME=$JBOSS_HOME"
     fi
-    unset ascst1
-#   ascst1="--user ${asuser} --password ${aspass}"
-    ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
     asport="${asport##*=}"
     offset="${offset##*=}"
     [ "$asport" -eq "$asport" ] 2>/dev/null || asport="9999"
     [ "$offset" -eq "$offset" ] 2>/dev/null || offset="0"
     asport=$(($asport + $offset))
     offset="-Djboss.socket.binding.port-offset=$offset"
+    unset ascst1
+#   ascst1="--user ${asuser} --password ${aspass}"
+    ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
     if [ -n "$on_properly_defined_variables" ]; then
         xinfo ashost=$ashost
         xinfo asport=$asport
