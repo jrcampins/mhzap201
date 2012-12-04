@@ -4,4 +4,4 @@
 #
 ashost="localhost"
 asport="9999"
-offset="-Djboss.socket.binding.port-offset=0"
+offset="0"

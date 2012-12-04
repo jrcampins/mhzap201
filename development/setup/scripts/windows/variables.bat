@@ -82,6 +82,8 @@ if defined on_properly_defined_variables (
 set ascst1=
 rem ascst1=--user %asuser% --password %aspass%
 set ascst2=--connect controller=%ashost%:%asport% %ascst1%
+if not defined offset set offset=0
+if not "%offset:~0,1%" == "-" set offset=-Djboss.socket.binding.port-offset=%offset%
 if defined on_properly_defined_variables (
     call:xinfo offset=%offset%
 )
@@ -120,11 +122,11 @@ goto:eof
 set DBMSDIR=oracle
 call:xcall %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
+set ORABINDIR=%ORACLE_HOME%\bin
+call:check-dir ORABINDIR
 if defined on_properly_defined_variables (
     call:xinfo dbserv=%dbserv%
 )
-set ORABINDIR=%ORACLE_HOME%\bin
-call:check-dir ORABINDIR
 goto:eof
 
 :check-postgresql

@@ -132,6 +132,8 @@ if [ "$EEASKEY" = "JBoss" ]; then
     unset ascst1
 #   ascst1="--user ${asuser} --password ${aspass}"
     ascst2="--connect controller=${ashost}:${asport} ${ascst1}"
+    [ -z "$offset" ] && offset="0"
+    [ "${offset:0:1}" != "-" ] && offset="-Djboss.socket.binding.port-offset=$offset"
     if [ -n "$on_properly_defined_variables" ]; then
         xinfo offset=$offset
     fi
@@ -146,12 +148,12 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     elif [ -n "$on_properly_defined_variables" ]; then
         xinfo ORACLE_HOME=$ORACLE_HOME
     fi
-    if [ -n "$on_properly_defined_variables" ]; then
-        xinfo dbserv=$dbserv
-    fi
     ORABINDIR=$ORACLE_HOME/bin
     if [ ! -d "$ORABINDIR" ]; then
         xerror "$ORABINDIR" no existe o no es un directorio
+    fi
+    if [ -n "$on_properly_defined_variables" ]; then
+        xinfo dbserv=$dbserv
     fi
 fi
 
