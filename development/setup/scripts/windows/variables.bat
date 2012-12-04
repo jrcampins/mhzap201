@@ -75,16 +75,19 @@ goto:eof
 set EEASDIR=jboss
 call:xcall %HOMEDIR%\variables-jboss.bat
 call:check-dir JBOSS_HOME
-if defined on_properly_defined_variables (
-    call:xinfo ashost=%ashost%
-    call:xinfo asport=%asport%
-)
 set ascst1=
 rem ascst1=--user %asuser% --password %aspass%
 set ascst2=--connect controller=%ashost%:%asport% %ascst1%
+set number=
+for /F "tokens=1* delims==" %%m in ("%offset%") do set number=%%n
+if defined number set offset=%number%
+if not defined asport set asport=9999
 if not defined offset set offset=0
-if not "%offset:~0,1%" == "-" set offset=-Djboss.socket.binding.port-offset=%offset%
+set /a asport=%asport% + %offset%
+set offset=-Djboss.socket.binding.port-offset=%offset%
 if defined on_properly_defined_variables (
+    call:xinfo ashost=%ashost%
+    call:xinfo asport=%asport%
     call:xinfo offset=%offset%
 )
 goto:eof
@@ -110,6 +113,7 @@ if /i "%DBMSKEY%" == "SQLServer"  call:check-sqlserver
 if defined on_properly_defined_variables (
     call:xinfo dbhost=%dbhost%
     call:xinfo dbport=%dbport%
+    if defined dbserv call:xinfo dbserv=%dbserv%
     call:xinfo dbuser=%dbuser%
     call:xinfo dbpass=********
     call:xinfo dbname=%dbname%
@@ -124,9 +128,6 @@ call:xcall %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
-if defined on_properly_defined_variables (
-    call:xinfo dbserv=%dbserv%
-)
 goto:eof
 
 :check-postgresql
@@ -135,6 +136,7 @@ call:xcall %HOMEDIR%\variables-postgresql.bat
 call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
+set dbserv=
 goto:eof
 
 :check-sqlserver
@@ -147,6 +149,7 @@ set SSBINDIR=%SQLSERVER_TOOLS%\Binn
 set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
+set dbserv=
 goto:eof
 
 :check-dir
