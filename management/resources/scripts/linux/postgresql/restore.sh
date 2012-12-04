@@ -7,7 +7,7 @@ unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
 echo $me restaura la base de datos a partir de un archivo respaldo
-read -p "ejecutar $me? (s/n): " -n 1; echo ""
+read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 echo ""
 echo Escriba el numero correspondiente al archivo de respaldo que desea utilizar para restaurar la base de datos
@@ -32,5 +32,5 @@ echo $CMD
 $CMD 1>>$log 2>&1
 echo pg_restore: $?
 echo ""
-read -p "cat $log ? (s/n): " -n 1; echo ""
+read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] || cat $log | more

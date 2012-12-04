@@ -7,7 +7,7 @@ unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
 echo $me crea un archivo respaldo de la base de datos
-read -p "ejecutar $me? (s/n): " -n 1; echo ""
+read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 while [ true ]; do
     echo ""
@@ -45,7 +45,7 @@ while [ true ]; do
     $CMD 1>>$log 2>&1
     echo pg_dump: $?
     echo ""
-    read -p "cat $log ? (s/n): " -n 1; echo ""
+    read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
     [ "$REPLY" != "s" ] || cat $log | more
     break
 done

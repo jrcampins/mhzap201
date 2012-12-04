@@ -7,7 +7,7 @@ unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
 echo $me limpia las tablas de la aplicacion en la base de datos
-read -p "ejecutar $me? (s/n): " -n 1; echo ""
+read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 unset SQLPATH
 xs1="$scriptpath/psql.sh"

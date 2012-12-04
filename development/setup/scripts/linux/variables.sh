@@ -91,8 +91,8 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     fi
     ASADMIN=$GLASSFISH_HOME/bin/asadmin
     if [ ! -x "$ASADMIN" ]; then
-        xerror \$GLASSFISH_HOME/bin/asadmin no existe o no es un archivo ejecutable
-        xinfo "\$GLASSFISH_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
+        xerror GLASSFISH_HOME/bin/asadmin no existe o no es un archivo ejecutable
+        xinfo "GLASSFISH_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
     if [ -n "$on_properly_defined_variables" ]; then
         xinfo ashost=$ashost
@@ -153,8 +153,8 @@ if [ "$DBMSKEY" = "Oracle" ]; then
     fi
     ORABINDIR=$ORACLE_HOME/bin
     if [ ! -d "$ORABINDIR" ]; then
-        xerror \$ORACLE_HOME/bin no existe o no es un directorio
-        xinfo "\$ORACLE_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
+        xerror ORACLE_HOME/bin no existe o no es un directorio
+        xinfo "ORACLE_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
 fi
 
@@ -169,8 +169,8 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
     fi
     PGBINDIR=$POSTGRESQL_HOME/bin
     if [ ! -d "$PGBINDIR" ]; then
-        xerror \$POSTGRESQL_HOME/bin no existe o no es un directorio
-        xinfo "\$POSTGRESQL_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
+        xerror POSTGRESQL_HOME/bin no existe o no es un directorio
+        xinfo "POSTGRESQL_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
     unset dbserv
 fi

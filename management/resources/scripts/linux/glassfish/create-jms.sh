@@ -7,7 +7,7 @@ unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
 echo $me crea las fabricas de conexiones, conjuntos de conexiones y demas recursos JMS
-read -p "ejecutar $me? (s/n): " -n 1; echo ""
+read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 RA="jmsra"
 CC="javax.jms.QueueConnectionFactory"

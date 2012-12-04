@@ -51,7 +51,7 @@ funky() {
     [ -n "$sqlpath" ] || export SQLPATH=$sqlpath
     [ -z "$sqlpath" ] || unset SQLPATH
     echo ""
-    read -p "cat $log ? (s/n): " -n 1; echo ""
+    read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
     [ "$REPLY" != "s" ] || cat $log | more
 }
 

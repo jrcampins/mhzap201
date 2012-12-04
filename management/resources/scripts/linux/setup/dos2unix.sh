@@ -7,7 +7,7 @@ unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
 echo $me convierte los archivos de texto de formato DOS a formato UNIX
-read -p "ejecutar $me? (s/n): " -n 1; echo ""
+read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 log=$LOGSDIR/${scriptname%%.*}.log
 case "`uname`" in
@@ -22,5 +22,5 @@ for name in "*.jrtx" "*.jrxml" "*.password" "*.properties" "*.psql" "*.sh" "*.sq
     done
 done
 echo ""
-read -p "cat $log ? (s/n): " -n 1; echo ""
+read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] || cat $log | more

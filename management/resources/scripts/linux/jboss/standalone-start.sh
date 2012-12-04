@@ -9,7 +9,7 @@ unset variables
 REPLY="s"
 if [ -n "$ask_before_starting" ]; then
     echo $me inicia la ejecucion del servidor de aplicaciones en modo standalone
-    read -p "ejecutar $me? (s/n): " -n 1; echo ""
+    read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 fi
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 cd $JBOSS_HOME

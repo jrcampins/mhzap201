@@ -31,7 +31,7 @@ funky() {
     $CMD 1>>$log 2>&1
     echo $nx1: $?
     echo ""
-    read -p "cat $log ? (s/n): " -n 1; echo ""
+    read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
     [ "$REPLY" != "s" ] || cat $log | more
 }
 
