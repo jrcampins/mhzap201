@@ -26,7 +26,7 @@ while [ -z "$subdirectorio" ]; do
                 bash "$archivo"
                 unset archivo
                 echo ""
-                read -p "presione ENTER para continuar " archivo
+                read -p "presione INTRO para continuar "
             else
                 archivo='.'
             fi

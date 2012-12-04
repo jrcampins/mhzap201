@@ -199,7 +199,7 @@ if [ ! -d "$SQLXSQLDIR" ]; then
 fi
 
 xs="$HOMEDIR/variables-server.sh"
-[ -x "$xs" ] && . "$xs"
+[ -x "$xs" ] && source "$xs"
 
 [ -n "$messages" ] && echo ""
 unset xinfo xwarn xerror xsource

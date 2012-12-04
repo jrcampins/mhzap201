@@ -15,4 +15,4 @@ done
 popd > /dev/null
 # echo HOME=$homedir
 xs=$homedir/variables.sh
-[ -x "$xs" ] && . "$xs"
+[ -x "$xs" ] && source "$xs"

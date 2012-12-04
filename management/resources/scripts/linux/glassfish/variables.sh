@@ -1,4 +1,4 @@
 #!/bin/bash
 EEAS=glassfish
 xs=$(dirname "$BASH_SOURCE")/../variables.sh
-[ -x "$xs" ] && . "$xs"
+[ -x "$xs" ] && source "$xs"

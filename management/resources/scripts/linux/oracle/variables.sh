@@ -1,7 +1,7 @@
 #!/bin/bash
 DBMS=oracle
 xs=$(dirname "$BASH_SOURCE")/../variables.sh
-[ -x "$xs" ] && . "$xs"
+[ -x "$xs" ] && source "$xs"
 if [ -n "$variables" ]; then
     ORAHOST=$dbhost
     ORAPORT=$dbport

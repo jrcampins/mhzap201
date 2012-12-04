@@ -4,14 +4,12 @@ scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname
 xs=$scriptpath/variables.sh
 unset variables
-[ -x "$xs" ] && . "$xs"
-if [ -n "$variables" ]; then
-    echo $me crea paquetes de utilidad en la base de datos
-    read -p "ejecutar $me ? (s/n): " siono
-    if [ "$siono" = "s" ]; then
-        unset SQLPATH
-        xs1="$scriptpath/sqlplus.sh"
-        xs2="$SQLDDLXDIR/custom/packages/xsp.sql"
-        [ -x "$xs1" ] && . "$xs1" "$xs2"
-    fi
-fi
+[ -x "$xs" ] && source "$xs"
+[ -z "$variables" ] && exit 100 # environment variables not set
+echo $me crea paquetes de utilidad en la base de datos
+read -p "ejecutar $me? (s/n): " -n 1; echo ""
+[ "$REPLY" != "s" ] && exit 101 # cancelled by user
+unset SQLPATH
+xs1="$scriptpath/sqlplus.sh"
+xs2="$SQLDDLXDIR/custom/packages/xsp.sql"
+[ -x "$xs1" ] && source "$xs1" "$xs2"

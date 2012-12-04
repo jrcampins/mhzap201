@@ -4,13 +4,11 @@ scriptpath=`cd $(dirname "$BASH_SOURCE"); pwd`
 me=$scriptname
 xs=$scriptpath/variables.sh
 unset variables
-[ -x "$xs" ] && . "$xs"
-if [ -n "$variables" ]; then
-    echo $me detiene la ejecucion del servidor de aplicaciones en modo standalone
-    read -p "ejecutar $me ? (s/n): " siono
-    if [ "$siono" = "s" ]; then
-        cd $JBOSS_HOME
-        echo bin/jboss-cli.sh $ascst2 command=:shutdown
-        bash bin/jboss-cli.sh $ascst2 command=:shutdown
-    fi
-fi
+[ -x "$xs" ] && source "$xs"
+[ -z "$variables" ] && exit 100 # environment variables not set
+echo $me detiene la ejecucion del servidor de aplicaciones
+read -p "ejecutar $me? (s/n): " -n 1; echo ""
+[ "$REPLY" != "s" ] && exit 101 # cancelled by user
+cd $JBOSS_HOME
+echo bin/jboss-cli.sh $ascst2 command=:shutdown
+bash bin/jboss-cli.sh $ascst2 command=:shutdown
