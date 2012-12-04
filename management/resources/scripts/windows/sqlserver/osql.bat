@@ -41,6 +41,7 @@ if /i "%~x1" == ".log" (
     if not exist "%~dp1" md "%~dp1"
 )
 echo %~f0 >> %log%
+echo %date% %time% >> %log%
 goto:eof
 
 :open-log
@@ -52,23 +53,21 @@ echo.
 goto:eof
 
 :build-osql-file
+if /i not "%SSDB%" == "master" (
+    set OSQLFILE="%~f1"
+    goto:eof
+)
 echo %~n0(%OSQLFILE%)
 echo.
 if exist %OSQLFILE% (del %OSQLFILE%) else (call:make-dir %OSQLFILE%)
-if /i "%SSDB%" == "master" (
-    call:echo1 "declare @crvl   integer"
-    call:echo1 "declare @ssdb   varchar(100)"
-    call:echo1 "declare @datdir varchar(2000)"
-    call:echo1 "select  @crvl   =  %CRVL%"
-    call:echo1 "select  @ssdb   = '%SSDB%'"
-    call:echo1 "select  @datdir = '%SQLDATDIR%'"
-    call:echo1 "print   getdate()"
-    call:echo1 "print   ''"
-) else (
-    call:echo1 "print getdate()"
-    call:echo1 "print ''"
-    call:echo1 "go"
-)
+call:echo1 "declare @crvl   integer"
+call:echo1 "declare @ssdb   varchar(100)"
+call:echo1 "declare @datdir varchar(2000)"
+call:echo1 "select  @crvl   =  %CRVL%"
+call:echo1 "select  @ssdb   = '%SSDB%'"
+call:echo1 "select  @datdir = '%SQLDATDIR%'"
+call:echo1 "print   ''"
+call:echo1 "print   ''"
 type "%~f1">>%OSQLFILE%
 goto:eof
 
