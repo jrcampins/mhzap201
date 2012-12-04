@@ -8,7 +8,6 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-clear
 set resources=%HOMEDIR%\resources
 set windows=%resources%\scripts\windows
 set setup=%windows%\setup
