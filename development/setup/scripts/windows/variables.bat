@@ -1,5 +1,4 @@
 @echo off
-rem on_properly_defined_variables=echo
 set messages=
 set variables=%~f0
 set lower_case_project=mhzap201
@@ -38,10 +37,12 @@ if /i "%EEAS%" == "GlassFish"    set EEASKEY=GlassFish
 if /i "%EEAS%" == "JBoss"        set EEASKEY=JBoss
 if not defined EEASKEY (
     set EEASKEY=GlassFish
-    call:xwarn el valor de la variable de entorno EEAS no esta correctamente definido. Si se necesita, se usara GlassFish
-    call:xinfo el valor de la variable de entorno EEAS se debe definir en "%HOMEDIR%\variables-conf.bat"
+    if defined on_warning_messages (
+        call:xwarn el valor de la variable de entorno EEAS no esta correctamente definido. Si se necesita, se usara GlassFish
+        call:xinfo el valor de la variable de entorno EEAS se debe definir en "%HOMEDIR%\variables-conf.bat"
+    )
 ) else (
-    if defined on_properly_defined_variables call:xinfo EEAS=%EEAS%
+    if defined on_info_messages call:xinfo EEAS=%EEAS%
 )
 goto:eof
 
@@ -54,7 +55,7 @@ goto:eof
 set EEASDIR=glassfish
 call:xcall %HOMEDIR%\variables-glassfish.bat
 call:check-dir GLASSFISH_HOME
-if defined on_properly_defined_variables (
+if defined on_info_messages (
     call:xinfo ashost=%ashost%
     call:xinfo asport=%asport%
     call:xinfo asuser=%asuser%
@@ -64,7 +65,7 @@ call:check-file aspassfile
 set ascst1=
 rem ascst1=--user %asuser% --passwordfile %aspassfile%
 set ascst2=--host %ashost% --port %asport% %ascst1%
-if defined on_properly_defined_variables (
+if defined on_info_messages (
     call:xinfo domain=%domain%
 )
 set ASADMIN=%GLASSFISH_HOME%\bin\asadmin.bat
@@ -85,7 +86,7 @@ set offset=-Djboss.socket.binding.port-offset=%offset%
 set ascst1=
 rem ascst1=--user %asuser% --password %aspass%
 set ascst2=--connect controller=%ashost%:%asport% %ascst1%
-if defined on_properly_defined_variables (
+if defined on_info_messages (
     call:xinfo ashost=%ashost%
     call:xinfo asport=%asport%
     call:xinfo offset=%offset%
@@ -99,10 +100,12 @@ if /i "%DBMS%" == "PostgreSQL"    set DBMSKEY=PostgreSQL
 if /i "%DBMS%" == "SQLServer"     set DBMSKEY=SQLServer
 if not defined DBMSKEY (
     set DBMSKEY=PostgreSQL
-    call:xwarn el valor de la variable de entorno DBMS no esta correctamente definido. Si se necesita, se usara PostgreSQL
-    call:xinfo el valor de la variable de entorno DBMS se debe definir en "%HOMEDIR%\variables-conf.bat"
+    if defined on_warning_messages (
+        call:xwarn el valor de la variable de entorno DBMS no esta correctamente definido. Si se necesita, se usara PostgreSQL
+        call:xinfo el valor de la variable de entorno DBMS se debe definir en "%HOMEDIR%\variables-conf.bat"
+    )
 ) else (
-    if defined on_properly_defined_variables call:xinfo DBMS=%DBMS%
+    if defined on_info_messages call:xinfo DBMS=%DBMS%
 )
 goto:eof
 
@@ -110,7 +113,7 @@ goto:eof
 if /i "%DBMSKEY%" == "Oracle"     call:check-oracle
 if /i "%DBMSKEY%" == "PostgreSQL" call:check-postgresql
 if /i "%DBMSKEY%" == "SQLServer"  call:check-sqlserver
-if defined on_properly_defined_variables (
+if defined on_info_messages (
     call:xinfo dbhost=%dbhost%
     call:xinfo dbport=%dbport%
     if defined dbserv call:xinfo dbserv=%dbserv%
@@ -156,7 +159,7 @@ goto:eof
 call:check-exist %1
 if defined variables (
     if defined dirname (
-        if defined on_properly_defined_variables call:xinfo %1="%winname%"
+        if defined on_info_messages call:xinfo %1="%winname%"
     ) else (
         call:xerror %1 "%winname%" no es un directorio
     )
@@ -169,7 +172,7 @@ if defined variables (
     if defined dirname (
         xerror %1 "%winname%" no es un archivo, es un directorio
     ) else (
-        if defined on_properly_defined_variables call:xinfo %1="%winname%"
+        if defined on_info_messages call:xinfo %1="%winname%"
     )
 )
 goto:eof
@@ -203,7 +206,7 @@ goto:eof
 :mkdir-dir
 call:check-exist %1 /q
 if not defined dirname md "%winname%"
-if defined on_properly_defined_variables call:xinfo %1="%winname%"
+if defined on_info_messages call:xinfo %1="%winname%"
 goto:eof
 
 :xinfo
@@ -227,7 +230,9 @@ if exist "%~f1" (
     call "%~f1"
 ) else (
     if /i "%2" == "/q" (
-        if defined on_properly_defined_variables call:xinfo "%~f1" no existe
+        if defined on_warning_messages (
+            call:xwarn "%~f1" no existe
+        )
     ) else (
         call:xerror "%~f1" no existe
     )

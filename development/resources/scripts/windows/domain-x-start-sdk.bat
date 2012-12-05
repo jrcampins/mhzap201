@@ -3,7 +3,6 @@ cd /d "%~dp0"
 
 set EEAS=glassfish
 set DBMS=postgresql
-set on_properly_defined_variables=echo
 set variables=
 call variables
 if not defined variables goto:eof
