@@ -3,7 +3,6 @@ rem Variables del Entorno de desarrollo
 rem ----------------------------------------------------------------------------
 call:set-project-source-dir
 set DISTDIR=%project_source_dir%\%lower_case_project%\dist
-set project_source_dir=
 if defined on_info_messages echo [Informacion] DISTDIR=%DISTDIR%
 goto:eof
 

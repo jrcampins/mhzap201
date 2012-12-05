@@ -6,97 +6,70 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-call:main1
+call:build
 pause
 goto:eof
 
-:main1
+:build
+set build_and_deploy=N
 set workspace=%project_source_dir%
-set build_and_deploy=N
-set jdk_update=30
 
-if defined clean_and_build goto ask1b
+if defined clean_and_build goto check-clean-and-build
 
-:ask1a
-set clean_and_build=N
-set /p clean_and_build="build despues del clean ? (G=GlassFish, J=JBoss, S=SDK, E=EJBs, N=None) [%clean_and_build%] "
-if not defined clean_and_build goto ask1a
+:get-clean-and-build
+set clean_and_build=T
+set /p clean_and_build="build despues del clean ? (E=%project%, S=%project%-sdk, J=JARs, W=WARs, T=Todos, N=Ninguno, X=Salir) [%clean_and_build%] "
+if not defined clean_and_build goto get-clean-and-build
 
-:ask1b
+:check-clean-and-build
+if /i "%clean_and_build%" EQU "E" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "S" goto get-build-and-deploy
+if /i "%clean_and_build%" EQU "J" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "W" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "T" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "N" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "X" goto:eof
+goto get-clean-and-build
+
+:get-build-and-deploy
+set /p build_and_deploy="deploy despues del build ? (S=Si, N=No) [%build_and_deploy%] "
+if not defined build_and_deploy goto get-build-and-deploy
+
+:check-build-and-deploy
+if /i "%build_and_deploy%" EQU "S" goto got-build-and-deploy
+if /i "%build_and_deploy%" EQU "N" goto got-build-and-deploy
+goto get-build-and-deploy
+
+:got-build-and-deploy
 set clean_and_build
-if /i "%clean_and_build%" EQU "G" goto got2
-if /i "%clean_and_build%" EQU "J" goto got2
-if /i "%clean_and_build%" EQU "S" goto got1
-if /i "%clean_and_build%" EQU "E" goto got2
-if /i "%clean_and_build%" EQU "N" goto got3
-goto ask1a
-
-:got1
-:ask2a
-set build_and_deploy=N
-set /p build_and_deploy="deploy despues del build ? (Y=YES, N=NO) [%build_and_deploy%] "
-if not defined build_and_deploy goto ask2a
-
-:ask2b
 set build_and_deploy
-if /i "%build_and_deploy%" EQU "Y" goto got2
-if /i "%build_and_deploy%" EQU "N" goto got2
-goto ask2a
+echo.
 
-:got2
-:ask3a
-set jdk_update=30
-goto ask3b
-set /p jdk_update="jdk update ? (25/30) [%jdk_update%] "
-if not defined jdk_update goto ask3a
-
-:ask3b
-set jdk_update
-if /i "%jdk_update%" EQU "25" goto got3
-if /i "%jdk_update%" EQU "30" goto got3
-goto ask3a
-
-:got3
+set ANT_OPTS=-Xms256m -Xmx256m
 set batsxdir=%CD%
 set logsxdir=%~d0\logs
 set antsxdir=N:\netbeans\java\ant\bin
 set buildlog=%batsxdir%\build.log
-echo.
-echo %0 begun @ %time%
-echo %0 begun @ %time% > %buildlog%
-echo.>>%buildlog%
+if exist "%buildlog%" del "%buildlog%"
 if not defined workspace   goto ERR1
 if not exist "%workspace%" goto ERR2
-if not exist "%antsxdir%"   goto ERR4
+if not exist "%antsxdir%"  goto ERR4
 if not exist "%JAVA_HOME%" goto ERR5
-set ANT_OPTS=-Xms256m -Xmx256m
-rem time
-rem set RUNTIME=%time%
-rem if defined RUNTIME echo %RUNTIME%
 
-:CLEAN-ALL
-echo.
-echo CLEAN-ALL
-if exist %logsxdir% rmdir %logsxdir% /s /q
-if not exist %logsxdir% md %logsxdir%
-
+:clean-all
 set target=clean
 echo %target%
-
+echo.
+if exist "%logsxdir%" (del "%logsxdir%\*.log" /s /q >> "%buildlog%") else (md "%logsxdir%")
 for /D %%d in (%workspace%\*) do call:ant-build %%d %target%
 echo.
-if /i "%clean_and_build%" EQU "N" goto DONE
-goto BUILD-JARS
+if /i "%clean_and_build%" EQU "N" goto:eof
+if exist "%logsxdir%" (del "%logsxdir%\*.log" /s /q >> "%buildlog%") else (md "%logsxdir%")
 
-:BUILD-JARS
-echo.
-echo BUILD-JARS
-if exist %logsxdir% rmdir %logsxdir% /s /q
-if not exist %logsxdir% md %logsxdir%
-
+:build-jars
 set target=build
 echo %target%
-
+echo.
 call:ant-build %workspace%\commons-lib                %target%
 call:ant-build %workspace%\%project%-lib-base         %target%
 call:ant-build %workspace%\%project%-lib-core         %target%
@@ -107,47 +80,45 @@ call:ant-build %workspace%\%project%-ejb-business     %target%
 call:ant-build %workspace%\%project%-ejb-toolkit      %target%
 call:ant-build %workspace%\%project%-eac-toolkit      %target%
 echo.
-if /i "%clean_and_build%" EQU "E" goto DONE
-goto BUILD-EARS
+if /i "%clean_and_build%" EQU "J" goto:eof
+if /i "%clean_and_build%" EQU "E" goto build-ears
+if /i "%clean_and_build%" EQU "S" goto build-ears
+if /i "%clean_and_build%" EQU "T" goto build-ears
 
-:BUILD-WARS
-echo.
-echo BUILD-WARS
+:build-wars
 set target=build
+echo %target%
+echo.
 call:ant-build %workspace%\%project%-web                          %target%
 for /D %%d in (%workspace%\%project%-web-*) do call:ant-build %%d %target%
 echo.
-goto BUILD-EARS
+if /i "%clean_and_build%" EQU "W" goto:eof
 
-:BUILD-EARS
-echo.
-echo BUILD-EARS
-
+:build-ears
 set target=build
-rem if /i "%build_and_deploy%" EQU "Y" set target=run-deploy
 echo %target%
-
-if /i "%clean_and_build%" EQU "G" call:ant-build %workspace%\%project% %target%
-if /i "%clean_and_build%" EQU "J" call:ant-build %workspace%\%project% %target%
+echo.
+if /i "%clean_and_build%" EQU "E" call:ant-build %workspace%\%project% %target%
+if /i "%clean_and_build%" EQU "T" call:ant-build %workspace%\%project% %target%
 if /i "%clean_and_build%" EQU "S" call:ant-build %workspace%\%project%-sdk %target%
+if /i "%clean_and_build%" EQU "T" call:ant-build %workspace%\%project%-sdk %target%
 echo.
+if /i "%build_and_deploy%" EQU "N" goto:eof
 
-if /i "%build_and_deploy%" EQU "N" goto DONE
-
-set target=build
-if /i "%build_and_deploy%" EQU "Y" set target=run-deploy
+:deploy-ears
+set target=run-deploy
 echo %target%
-
+echo.
 set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
 call:list-components
-rem --property "compatibility=v2"
 set siono=S
-if /i "%clean_and_build%" EQU "G" call:deploy %workspace%\%project%
+if /i "%clean_and_build%" EQU "E" call:deploy %workspace%\%project%
+echo.
 set siono=S
 if /i "%clean_and_build%" EQU "S" call:deploy %workspace%\%project%-sdk
 echo.
 call:list-components
-goto DONE
+goto:eof
 
 :ERR1
 set ERRMSG=variable de entorno workspace no definida (workspace corresponde a la ruta de su directorio de trabajo de CVS)
@@ -174,12 +145,6 @@ echo.
 echo %ERRMSG%
 echo.
 
-:DONE
-echo %0 ended @ %time%
-echo %0 ended @ %time% >> %buildlog%
-echo.
-goto:eof
-
 :ant-build
 set BLDFILE="%~f1\build.xml"
 set LOGFILE="%logsxdir%\%~n1.log"
@@ -202,18 +167,15 @@ goto ant-build-loop
 
 :ant-build-doit
 cd /d %antsxdir%
-if defined RUNTIME time %RUNTIME%
-echo.
 echo ant -buildfile %BLDFILE% -logfile %LOGFILE%%TARGETS%>>%buildlog%
 call ant -buildfile %BLDFILE% -logfile %LOGFILE%%TARGETS%
 
 :ant-build-done
-echo.>>%buildlog%
 goto:eof
 
 :deploy
-echo.
 echo %*
+echo.
 set CMD=deploy
 set STD="%~f1\src\conf\application.xml"
 set SUN="%~f1\src\conf\sun-application.xml"
@@ -229,32 +191,26 @@ shift
 set str=%1
 rem remove double quotes
 for /f "useback tokens=*" %%a in ('%str%') do set str=%%~a
-if "%str%"=="" goto deploy-doit
+if "%str%"=="" goto deploy-one
 set CMD=%CMD% %str%
 goto deploy-loop
 
-:deploy-doit
+:deploy-one
 set CMD=%CMD% %EAR%
 if defined siono goto deploy-test
-echo.
 set siono=S
 set /p siono="%CMD% (S/N) [%siono%] "
+echo.
 
 :deploy-test
 if /i "%siono%" NEQ "S" goto deploy-done
 if  not exist %EAQ% goto deploy-exec
-echo.
-echo.>>%buildlog%
 echo %ASADMIN% %ascst2% undeploy %EAP%
-echo.
 echo %ASADMIN% %ascst2% undeploy %EAP%>>%buildlog%
 call %ASADMIN% %ascst2% undeploy %EAP% 2>&1
 
 :deploy-exec
-echo.
-echo.>>%buildlog%
 echo %ASADMIN% %ascst2% %CMD%
-echo.
 echo %ASADMIN% %ascst2% %CMD%>>%buildlog%
 call %ASADMIN% %ascst2% %CMD% 2>&1
 
