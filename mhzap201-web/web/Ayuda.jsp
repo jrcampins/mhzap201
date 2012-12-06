@@ -20,10 +20,6 @@
                             <jsp:directive.include file="FragmentoCabeza2A.jspf"/>
                         </div>
                         <div class="pos-div-detalle">
-                            <!--
-                            jsp:directive.include file="resources/ayuda.html"/
-                            -->
-                            <jsp:directive.include/>
                         </div>
                         <div class="pos-div-pie-2">
                             <jsp:directive.include file="FragmentoPie2.jspf"/>
