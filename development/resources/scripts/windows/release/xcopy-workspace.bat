@@ -1,19 +1,12 @@
 @echo off
 setlocal
-set source=%~dp0
-set source
-set target=%CD%
-set target
-if /i "%source%" == "%target%\" (
-    echo ***
-    echo *** source=target
-    echo ***
-    pause
-    goto:eof
-)
-
 call "%~dp0variables"
 call "%~dp0variables-date-time"
+cd /d "%project_source_dir%\.."
+if not exist release md release
+cd release
+set release=%CD%
+set release
 
 :ask
 set nn=20
@@ -21,7 +14,7 @@ set /p nn="version (nn) [%nn%] "
 if not defined nn goto ask
 
 set VRNAME=V%nn%R%aammdd%
-set VRPATH=%target%\%VRNAME%
+set VRPATH=%release%\%VRNAME%
 set DQPATH="%VRPATH%"
 set EARDIR="%VRPATH%\resources"
 set management=%project_source_dir%\management
