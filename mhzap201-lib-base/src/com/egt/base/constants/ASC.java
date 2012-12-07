@@ -14,7 +14,7 @@ package com.egt.base.constants;
  */
 public class ASC {
 
-    private static final boolean JBOSS = true;
+    private static final boolean JBOSS = false;
 
     public static final String JDBC_JNDI_PREFIX = JBOSS ? "java:/" : "";
 

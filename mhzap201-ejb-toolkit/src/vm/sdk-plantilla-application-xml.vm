@@ -19,6 +19,12 @@
         </web>
     </module>
 #end
+    <module>
+        <web>
+            <web-uri>${lcc}-web-configuracion-basica.war</web-uri>
+            <context-root>/${lcc}-web-configuracion-basica</context-root>
+        </web>
+    </module>
 ##  #foreach($funcion in $funciones)
 ##      <security-role>
 ##          <description>$funcion.codigoFuncion</description>

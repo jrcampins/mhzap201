@@ -8,30 +8,6 @@
             <web-module-libraries/>
             <web-module-additional-libraries>
                 <library>
-                    <file>${libs.com-egt-runtime-lib-1.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
-                    <file>${libs.exceptionhandler-runtime.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
-                    <file>${libs.jsf12-support.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
-                    <file>${libs.jstl11.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
-                    <file>${libs.woodstock-components.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
-                    <file>${libs.woodstock-theme-default.classpath}</file>
-                    <path-in-war>/lib</path-in-war>
-                </library>
-                <library>
                     <file>${reference.commons-lib.jar}</file>
                     <path-in-war>/lib</path-in-war>
                 </library>
@@ -62,6 +38,30 @@
                 <library>
                     <file>${reference.mhzap201-web-toolkit.dist-ear}</file>
                     <path-in-war>/</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.com-egt-runtime-lib-1.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.exceptionhandler-runtime.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.jsf12-support.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.jstl11.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.woodstock-components.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
+                </library>
+                <library>
+                    <file>${libs.woodstock-theme-default.classpath}</file>
+                    <path-in-war>/lib</path-in-war>
                 </library>
             </web-module-additional-libraries>
         </data>
