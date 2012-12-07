@@ -126,7 +126,7 @@ public class Ayuda extends AbstractPageBean {
      * property values that were saved for this view when it was rendered.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -179,7 +179,7 @@ public class Ayuda extends AbstractPageBean {
      * <code>prerender()</code> methods (or acquired during execution of an event handler).</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
     }
 

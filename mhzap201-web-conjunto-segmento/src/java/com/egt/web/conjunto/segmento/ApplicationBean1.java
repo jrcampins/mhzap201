@@ -60,7 +60,7 @@ public class ApplicationBean1 extends AbstractApplicationBean implements Context
      * lifetime of the application.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -94,7 +94,7 @@ public class ApplicationBean1 extends AbstractApplicationBean implements Context
      * at any later time during the lifetime of the application.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         this.destruir();
     }

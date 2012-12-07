@@ -315,7 +315,7 @@ public class Menu extends AbstractPageBean
      * representan los valores de propiedades que se guardaron para esta vista cuando se proceso.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".init");
         // Realizar iniciaciones heredadas de la superclase
@@ -370,7 +370,7 @@ public class Menu extends AbstractPageBean
      * <code>prerender()</code> (o durante la ejecucion de un controlador de eventos).</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".destroy");
         opcionMenuDataProvider.close();

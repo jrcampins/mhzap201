@@ -611,7 +611,7 @@ public class Proceso4 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy">
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Realizar iniciaciones heredadas de la superclase
         super.init();
@@ -642,7 +642,7 @@ public class Proceso4 extends AbstractPageBean
     }
 
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
     }
     // </editor-fold>

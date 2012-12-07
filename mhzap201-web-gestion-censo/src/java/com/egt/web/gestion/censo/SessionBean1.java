@@ -354,7 +354,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * user session.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -389,7 +389,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * or resources that can not be serialized with the session itself.</p>
      */
     @Override
-    @PrePassivate
+    //@PrePassivate
     public void passivate() {
         this.desactivar();
     }
@@ -403,7 +403,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * session itself.</p>
      */
     @Override
-    @PostActivate
+    //@PostActivate
     public void activate() {
         this.activar();
     }
@@ -418,7 +418,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * at any later time during the lifetime of the application.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         this.destruir();
     }

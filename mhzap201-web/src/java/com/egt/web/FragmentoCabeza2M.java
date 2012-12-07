@@ -162,7 +162,7 @@ public class FragmentoCabeza2M extends AbstractFragmentBean {
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -195,7 +195,7 @@ public class FragmentoCabeza2M extends AbstractFragmentBean {
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
     }
 

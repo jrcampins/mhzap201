@@ -55,7 +55,7 @@ public class ApplicationBean1 extends AbstractApplicationBean implements Context
      * the lifetime of the application.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".init");
         // Perform initializations inherited from our superclass
@@ -88,7 +88,7 @@ public class ApplicationBean1 extends AbstractApplicationBean implements Context
      * <code>init()</code> method, or at any later time during the lifetime of the application.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".destroy");
         this.destruir();

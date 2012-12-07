@@ -105,7 +105,7 @@ public class FragmentoPie2 extends AbstractFragmentBean {
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -139,7 +139,7 @@ public class FragmentoPie2 extends AbstractFragmentBean {
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
     }
 

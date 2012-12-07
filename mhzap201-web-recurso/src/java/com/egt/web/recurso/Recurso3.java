@@ -415,7 +415,7 @@ public class Recurso3 extends AbstractPageBean
      * valores de propiedades que se guardaron para esta vista cuando se proceso.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Realizar iniciaciones heredadas de la superclase
         super.init();
@@ -469,7 +469,7 @@ public class Recurso3 extends AbstractPageBean
      * durante la ejecucion de un controlador de eventos).</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         listaRecursoDataProvider.close();
     }

@@ -137,7 +137,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * the lifetime of a particular user session.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".init");
         // Perform initializations inherited from our superclass
@@ -172,7 +172,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * serialized with the session itself.</p>
      */
     @Override
-    @PrePassivate
+    //@PrePassivate
     public void passivate() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".passivate");
         this.desactivar();
@@ -185,7 +185,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * serialized with the session itself.</p>
      */
     @Override
-    @PostActivate
+    //@PostActivate
     public void activate() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".activate");
         this.activar();
@@ -199,7 +199,7 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * <code>init()</code> method, or at any later time during the lifetime of the application.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".destroy");
         this.destruir();

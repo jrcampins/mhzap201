@@ -61,7 +61,7 @@ public class RequestBean1 extends AbstractRequestBean implements ContextoPeticio
      * for the lifetime of the current request.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -95,7 +95,7 @@ public class RequestBean1 extends AbstractRequestBean implements ContextoPeticio
      * at any later time during the lifetime of the request.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         this.destruir();
     }

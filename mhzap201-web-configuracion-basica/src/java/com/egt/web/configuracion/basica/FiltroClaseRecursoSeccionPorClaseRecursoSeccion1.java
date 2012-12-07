@@ -848,7 +848,7 @@ public class FiltroClaseRecursoSeccionPorClaseRecursoSeccion1 extends AbstractPa
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy">
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Realizar iniciaciones heredadas de la superclase
         super.init();
@@ -879,7 +879,7 @@ public class FiltroClaseRecursoSeccionPorClaseRecursoSeccion1 extends AbstractPa
     }
 
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         filtroClaRecSecDataProvider.close();
         claseRecursoSecDataProvider.close();

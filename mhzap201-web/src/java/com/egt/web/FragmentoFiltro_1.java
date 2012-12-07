@@ -386,7 +386,7 @@ public class FragmentoFiltro_1 extends AbstractFragmentBean implements Fragmento
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -418,7 +418,7 @@ public class FragmentoFiltro_1 extends AbstractFragmentBean implements Fragmento
      * <p>The default implementation does nothing.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         filtroDataProvider.close();
     }

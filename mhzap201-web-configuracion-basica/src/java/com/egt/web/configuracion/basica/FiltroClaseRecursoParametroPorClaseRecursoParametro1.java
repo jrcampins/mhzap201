@@ -847,7 +847,7 @@ public class FiltroClaseRecursoParametroPorClaseRecursoParametro1 extends Abstra
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy">
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         // Realizar iniciaciones heredadas de la superclase
         super.init();
@@ -878,7 +878,7 @@ public class FiltroClaseRecursoParametroPorClaseRecursoParametro1 extends Abstra
     }
 
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         filtroClaRecParDataProvider.close();
         claseRecursoParDataProvider.close();

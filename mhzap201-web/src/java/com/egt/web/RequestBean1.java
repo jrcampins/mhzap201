@@ -57,7 +57,7 @@ public class RequestBean1 extends AbstractRequestBean implements ContextoPeticio
      * current request.</p>
      */
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".init");
         // Perform initializations inherited from our superclass
@@ -90,7 +90,7 @@ public class RequestBean1 extends AbstractRequestBean implements ContextoPeticio
      * <code>init()</code> method, or at any later time during the lifetime of the request.</p>
      */
     @Override
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         com.egt.core.aplicacion.Bitacora.trace(getClass().getName() + ".destroy");
         this.destruir();
