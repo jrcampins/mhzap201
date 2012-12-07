@@ -105,7 +105,11 @@ begin
     :new.codigo_persona := sp$persona.concat_codigo(xnew);
     :new.nombre_persona := sp$persona.concat_nombre(xnew);
     /**/
-    /**/
+    
+--     dbms_output.put_line('Concatenando codigo y nombre '||:new.id_persona
+--         ||' ('||:old.codigo_persona||','||:new.codigo_persona||') '
+--         ||' ('||:old.nombre_persona||','||:new.nombre_persona||') ');
+        
     if :new.fecha_nacimiento > sysdate then
         msg_string := 'la fecha de nacimiento no puede ser mayor que la fecha de hoy';
         raise_application_error(err_number, msg_string, true);
@@ -135,7 +139,7 @@ begin
             :new.es_persona_acreditada_para_pen:=0;
         end if;
      --Si se está colocando el id_ficha_persona en null   
-    elsif(:old.id_ficha_persona is not null and :new.id_ficha_persona is null) then
+     elsif(:old.id_ficha_persona is not null and :new.id_ficha_persona is null) then
         --No se pueden cambiar los datos de ficha si la pension ya fue aprobada
         if(:new.numero_condicion_pension=2) then
             msg_string := 'Persona con Pensión Aprobada. No se puede modificar ficha';
@@ -144,7 +148,7 @@ begin
         :new.indice_calidad_vida:=null;
         :new.fecha_ficha_persona:=null;
         :new.es_persona_acreditada_para_pen:=0;
-    end if;   
+    end if;
 end;
 /
 show errors
