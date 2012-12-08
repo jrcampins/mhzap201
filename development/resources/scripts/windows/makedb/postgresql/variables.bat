@@ -18,10 +18,7 @@ popd
 goto:eof
 
 :set-project-source-dir-loop
-if exist ROOT (
-    set project_source_dir=%CD%
-    for /D %%d in ("%CD%\ROOT\..\*") do if /i "%%~nxd" == "ROOT" set project_source_dir=
-)
+if exist .metadata set project_source_dir=%CD%
 if defined project_source_dir goto:eof
 cd ..
 if "%CD%" == "%~d0\" (
