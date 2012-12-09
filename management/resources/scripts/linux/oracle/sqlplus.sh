@@ -4,7 +4,7 @@ funky() {
     echo sqlplus $*
     nx0=$(basename "$BASH_SOURCE")
     dp0=`cd $(dirname "$BASH_SOURCE"); pwd`
-    sf0="$SQLXSQLDIR/${nx0%%.*}.sql"
+    sf0="$SQLSCRXDIR/${nx0%%.*}.sql"
     if [ ! -f "$sf0" ]; then
         echo "ERROR: el script "$sf0" no existe "
         return 2
@@ -18,7 +18,7 @@ funky() {
     dp1=`cd $(dirname "$sf1"); pwd`
     log="$SQLLOGSDIR/${nx0%%.*}.${nx1}.log"
     [ -f "$log" ] && rm "$log"
-    pdq=$SQLXSQLDIR
+    pdq=$SQLSCRXDIR
     [ "$pdq" = "$dp1" ] || pdq=$pdq:$dp1
     if [ -n "$SQLPATH" ]; then
         sqlpath=$SQLPATH

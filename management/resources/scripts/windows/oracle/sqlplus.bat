@@ -5,7 +5,7 @@ echo.
 
 if not defined variables goto:eof
 
-set sf0="%SQLXSQLDIR%\%~n0.sql"
+set sf0="%SQLSCRXDIR%\%~n0.sql"
 if not exist %sf0% (
     set /p x="ERROR: el script %sf0% no existe "
     goto:eof
@@ -19,7 +19,7 @@ if not exist "%~f1" (
     goto:eof
 )
 
-set pdq=%SQLXSQLDIR%
+set pdq=%SQLSCRXDIR%
 set dp1=%~dp1
 set dp1=%dp1:~0,-1%
 if /i not "%pdq%" == "%dp1%" set pdq=%pdq%;%dp1%

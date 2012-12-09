@@ -193,21 +193,21 @@ if [ -n "$on_info_messages" ]; then
 fi
 
 SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
+SQLHOMEDIR=$HOMEDIR/sql/$DBMSDIR
 SQLLOGSDIR=$HOMEDIR/logs/$DBMSDIR
-SQLJOINDIR=$HOMEDIR/resources/database/join/$DBMSDIR
 SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR
-SQLXSQLDIR=$HOMEDIR/resources/database/scripts/$DBMSDIR
+SQLSCRXDIR=$HOMEDIR/resources/database/scripts/$DBMSDIR
 
 [ -d "$SQLBACKDIR" ] || mkdir -p "$SQLBACKDIR"
+[ -d "$SQLHOMEDIR" ] || mkdir -p "$SQLHOMEDIR"
 [ -d "$SQLLOGSDIR" ] || mkdir -p "$SQLLOGSDIR"
-[ -d "$SQLJOINDIR" ] || mkdir -p "$SQLJOINDIR"
 
 if [ ! -d "$SQLDDLXDIR" ]; then
     xerror $SQLDDLXDIR no existe o no es un directorio
 fi
 
-if [ ! -d "$SQLXSQLDIR" ]; then
-    xerror $SQLXSQLDIR no existe o no es un directorio
+if [ ! -d "$SQLSCRXDIR" ]; then
+    xerror $SQLSCRXDIR no existe o no es un directorio
 fi
 
 xs="$HOMEDIR/variables-server.sh"

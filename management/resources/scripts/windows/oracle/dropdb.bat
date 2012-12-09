@@ -11,4 +11,4 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 set SQLPATH=
-call sqlplus "%SQLXSQLDIR%\%~n0.sql"
+call sqlplus "%SQLSCRXDIR%\%~n0.sql"

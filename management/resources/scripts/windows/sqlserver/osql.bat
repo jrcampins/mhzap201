@@ -13,15 +13,15 @@ if not exist "%~f1" (
     goto:eof
 )
 
-set OSQLFILE="%homedir%\osql\%~n0.%~nx1"
-set OSQLUSER=%SSUSER%
-set OSQLPASSWORD=%SSPASS%
-set OSQLSERVER=%SSHOST%
-
 if not defined TXT1 set TXT1="%~dpn0-log.txt"
 if not defined TXT2 set TXT2="%~dpn0-out.txt"
 if not defined SSDB set SSDB=%SSDATABASE%
 if not defined CRVL set CRVL=%aaaammdd%
+
+set OSQLFILE="%SQLHOMEDIR%\%SSDB%\%~n0.%~nx1"
+set OSQLUSER=%SSUSER%
+set OSQLPASSWORD=%SSPASS%
+set OSQLSERVER=%SSHOST%
 
 call:build-osql-file "%~f1"
 call:init-log %f1%

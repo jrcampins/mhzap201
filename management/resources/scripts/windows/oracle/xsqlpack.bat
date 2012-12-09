@@ -23,7 +23,9 @@ if /i "%siono%" NEQ "S" goto:eof
 pushd %SQLDIR%
 cd ..
 set sql="%CD%\%package%.sql"
-if exist %sql% del %sql%
+call set sql=%%sql:%SQLDDLXDIR%=%SQLHOMEDIR%%%
+rem set sql
+if exist %sql% (del %sql%) else (call:make-dir %sql%)
 popd
 
 call:type-package-heading
@@ -71,6 +73,10 @@ goto:eof
 
 :set-package
 set package=%~n1
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :type-file

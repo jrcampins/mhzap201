@@ -15,9 +15,10 @@ set packdir=%~f1
 pushd %packdir%
 cd ..
 set sql=%CD%\%package%.sql
-if exist "%sql%" del "%sql%"
-popd
+call set sql=%%sql:%SQLDDLXDIR%=%SQLHOMEDIR%%%
 echo target=%sql%
+if exist %sql% (del %sql%) else (call:make-dir %sql%)
+popd
 call:type-package-heading
 for /R "%packdir%" %%f in (*.sql) do (
     if /i "%%~nf" == "package" (
@@ -31,6 +32,10 @@ for /R "%packdir%" %%f in (*.sql) do (
 )
 call:type-package-body-footing
 call:type-package-footing
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof
 
 :type-file

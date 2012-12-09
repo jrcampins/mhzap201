@@ -7,7 +7,7 @@ call variables
 if not defined variables goto:eof
 
 set  SOURCE=%SQLDDLXDIR%\base
-set  TARGET=%SQLJOINDIR%\%dbname%_300.sql
+set  TARGET=%SQLHOMEDIR%\%dbname%_300.sql
 set  TARGET
 set  SOURCE
 if exist "%TARGET%" del "%TARGET%"
@@ -33,9 +33,12 @@ rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLXDIR%\packages-for-views
-for  /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
 set  SOURCE
+for  /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
+rem  SOURCE
 rem  TARGET
+call set SOURCE=%%SOURCE:%SQLDDLXDIR%=%SQLHOMEDIR%%%
+set  SOURCE
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
 set  SOURCE=%SQLDDLXDIR%\base

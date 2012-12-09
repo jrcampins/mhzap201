@@ -19,15 +19,15 @@ funky() {
         CYGWIN*)
             sf1=`cygpath --windows $sf1`
             SQLDDLXDIR=`cygpath --windows $SQLDDLXDIR`
-            SQLJOINDIR=`cygpath --windows $SQLJOINDIR`
+            SQLHOMEDIR=`cygpath --windows $SQLHOMEDIR`
             ;;
     esac
     echo SQLDDLXDIR=$SQLDDLXDIR >> $log 2>&1
-    echo SQLJOINDIR=$SQLJOINDIR >> $log 2>&1
+    echo SQLHOMEDIR=$SQLHOMEDIR >> $log 2>&1
     echo POSTGRESQL_HOME=$POSTGRESQL_HOME >> $log 2>&1
     echo working_directory=$(pwd) >> $log 2>&1
     EXE="$PGBINDIR/psql"
-    CMD="$EXE -e -f $sf1 -q -v crvl=$CRVL -v pgdb=$PGDB -v ddlxdir=$SQLDDLXDIR -v joindir=$SQLJOINDIR"
+    CMD="$EXE -e -f $sf1 -q -v crvl=$CRVL -v pgdb=$PGDB -v ddlxdir=$SQLDDLXDIR -v joindir=$SQLHOMEDIR"
     $CMD 1>>$log 2>&1
     echo $nx1: $?
     echo ""

@@ -19,17 +19,17 @@ if %xerrorlevel% == 0 (
 
 set SSDB=master
 if /i "%siono%" == "S" (
-    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLXSQLDIR%\dropdb.sql"
-    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLXSQLDIR%\createdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLSCRXDIR%\dropdb.sql"
+    if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLSCRXDIR%\createdb.sql"
 ) else (
     set /a xerrorlevel=1
 )
 
 set SSDB=%dbname%
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_100.sql"
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_200.sql"
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_300.sql"
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_400.sql"
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_500.sql"
-if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLJOINDIR%\%dbname%_600.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_100.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_200.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_300.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_400.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_500.sql"
+if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLHOMEDIR%\%dbname%_600.sql"
 call "%~dp0..\eoj" "%~f0"

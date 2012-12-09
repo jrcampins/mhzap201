@@ -104,6 +104,7 @@ goto:eof
 
 :x-resources
 call:xcopy-folder %management% %DQPATH% resources s
+call:xcopy-folder %management% %DQPATH% sql s
 goto:eof
 
 :x-ear

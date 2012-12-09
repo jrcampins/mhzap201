@@ -8,9 +8,9 @@ if not defined variables goto:eof
 
 call:concatsql-421
 if /i "%funciones%" == "n" (
-    call "%~dp0..\concatsql-key" 400 functions
+    call "%~dp0..\concatsql-key" 400 functions @SQLHOMEDIR
 ) else (
-    call "%~dp0..\concatsql-for" 400 functions
+    call "%~dp0..\concatsql-for" 400 functions @SQLHOMEDIR
 )
 
 call "%~dp0..\eoj" "%~f0"
@@ -27,8 +27,9 @@ goto:eof
 if "%~n1" == "CVS" goto:eof
 set folder=%~f1\*.sql
 set target=%~dpn1.sql
+call set target=%%target:%SQLDDLXDIR%=%SQLHOMEDIR%%%
 set target
-if exist "%target%" del "%target%"
+if exist %target% (del %target%) else (call:make-dir %target%)
 set SQLFILE=
 for %%f in (%folder%) do set SQLFILE=%%f
 if not defined SQLFILE goto:eof
@@ -46,4 +47,8 @@ goto:eof
 echo -->>%target%
 echo -- %~nx1>>%target%
 echo -->>%target%
+goto:eof
+
+:make-dir
+if not exist "%~dp1" md "%~dp1"
 goto:eof

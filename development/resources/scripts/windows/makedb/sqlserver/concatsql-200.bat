@@ -19,7 +19,7 @@ goto:eof
 
 :concat-metadata
 set  SOURCE=%SQLDDLXDIR%\data
-set  TARGET=%SQLJOINDIR%\%dbname%_200_METADATA.sql
+set  TARGET=%SQLHOMEDIR%\%dbname%_200_METADATA.sql
 set  TARGET
 set  SOURCE
 if exist "%TARGET%" del "%TARGET%"

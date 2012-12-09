@@ -3,12 +3,14 @@ cd /d "%~dp0"
 call variables
 call variables-date-time
 set nn=00
+echo %mm%/%dd%/%aaaa% %hh24%-%nn%-00
+echo.
 set filedate="%ProgramFiles%\ABF\Tools\FileDate\FileDate.exe"
 set source=%~dp0scripts
 set management=%project_source_dir%\management
-%filedate% "%source%\*.*"       %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
+call %filedate% "%source%\*.*" %mm%/%dd%/%aaaa% %hh24%-%nn%-00 /r
 echo.
-%filedate% "%management%\HOME"  %mm%/%dd%/%aaaa% %hh24%-%nn%-00
+call %filedate% "%management%\HOME" %mm%/%dd%/%aaaa% %hh24%-%nn%-00
 echo.
 call:xcopy-to-management
 call:xcopy-to-management-setup-scripts

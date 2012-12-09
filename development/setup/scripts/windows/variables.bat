@@ -17,15 +17,15 @@ call:check-dbms
 call:check-eeaskey
 call:check-dbmskey
 set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
+set SQLHOMEDIR=%HOMEDIR%\sql\%DBMSDIR%
 set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
-set SQLJOINDIR=%HOMEDIR%\resources\database\join\%DBMSDIR%
 set SQLDDLXDIR=%HOMEDIR%\resources\database\ddl\%DBMSDIR%
-set SQLXSQLDIR=%HOMEDIR%\resources\database\scripts\%DBMSDIR%
+set SQLSCRXDIR=%HOMEDIR%\resources\database\scripts\%DBMSDIR%
 call:mkdir-dir SQLBACKDIR
+call:mkdir-dir SQLHOMEDIR
 call:mkdir-dir SQLLOGSDIR
-call:mkdir-dir SQLJOINDIR
 call:check-dir SQLDDLXDIR
-call:check-dir SQLXSQLDIR
+call:check-dir SQLSCRXDIR
 call:xcall %HOMEDIR%\variables-server.bat /q
 call:xcall %HOMEDIR%\variables-dev.bat /q
 call:checkout

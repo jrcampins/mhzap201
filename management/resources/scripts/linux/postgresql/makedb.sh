@@ -11,5 +11,5 @@ read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]'
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 unset SQLPATH
 xs1="$scriptpath/psql.sh"
-xs2="$SQLXSQLDIR/${scriptname%%.*}.psql"
+xs2="$SQLSCRXDIR/${scriptname%%.*}.psql"
 [ -x "$xs1" ] && source "$xs1" "$xs2"

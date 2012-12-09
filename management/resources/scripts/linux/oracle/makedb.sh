@@ -9,7 +9,7 @@ unset variables
 echo $me crea los objetos de la aplicacion en la base de datos
 read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
-SQLPATH=$SQLJOINDIR
+SQLPATH=$SQLHOMEDIR
 xs1="$scriptpath/sqlplus.sh"
-xs2="$SQLXSQLDIR/${scriptname%%.*}.sql"
+xs2="$SQLSCRXDIR/${scriptname%%.*}.sql"
 [ -x "$xs1" ] && source "$xs1" "$xs2" "$ORADATABASE" "$(date +%Y%m%d)"

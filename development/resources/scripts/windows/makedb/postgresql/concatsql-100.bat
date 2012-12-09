@@ -7,7 +7,7 @@ call variables
 if not defined variables goto:eof
 
 set  SOURCE=%SQLDDLXDIR%\base
-set  TARGET=%SQLJOINDIR%\%dbname%_100.sql
+set  TARGET=%SQLHOMEDIR%\%dbname%_100.sql
 set  TARGET
 set  SOURCE
 

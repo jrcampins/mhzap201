@@ -10,5 +10,5 @@ echo "%~n0" crea los objetos de la aplicacion en la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
-set SQLPATH=%SQLJOINDIR%
-call sqlplus "%SQLXSQLDIR%\%~n0.sql" %ORADATABASE% %aaaammdd%
+set SQLPATH=%SQLHOMEDIR%
+call sqlplus "%SQLSCRXDIR%\%~n0.sql" %ORADATABASE% %aaaammdd%
