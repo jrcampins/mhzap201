@@ -11,3 +11,4 @@ function invalidar_censo(beneficiario number, funcionario number, numero_causa n
 function reg_recl_cen(beneficiario_consultado number, comentarios varchar2) return varchar2;
 function aprobar_recl_cen(beneficiario_consultado number, comentarios varchar2) return varchar2;
 function denegar_recl_cen(beneficiario_consultado number, numero_causa number, otra_causa varchar2, comentarios varchar2) return varchar2;
+function reg_ult_vis_cen(beneficiario number, fecha timestamp, funcionario number, comentarios varchar2) return varchar2;

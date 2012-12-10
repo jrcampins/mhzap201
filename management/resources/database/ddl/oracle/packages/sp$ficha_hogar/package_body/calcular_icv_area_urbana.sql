@@ -381,7 +381,7 @@ procedure calcular_icv_area_urbana (row_ficha_hogar ficha_hogar%rowtype, icv out
          --Variables intermedias que dependen de los miembros del hogar.
          loop
             fetch cursor_ficha_persona into row_ficha_persona;
-            exit when not sql%found;
+            exit when cursor_ficha_persona%notfound;
             --Los que no pertenezcan al hogar se ignoran
             continue when row_ficha_persona.numero_siono_miembro_hogar <>1;
             --Se actualizan numero de miembros del hogar
