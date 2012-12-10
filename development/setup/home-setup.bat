@@ -11,7 +11,7 @@ echo.
 call:make-subdir "%home%\dist"
 pushd %subdir%
 call:link "%~d0\%project%\eclipse\%project%\dist"   jboss
-call:link "%~d0\%project%\source\%project%\dist"    glassfish
+call:link "%~d0\%project%\netbeans\%project%\dist"  glassfish
 popd
 echo.
 call %home%\check-variables
@@ -26,13 +26,13 @@ goto:eof
 set folder="%~f1"
 set symlnk="%~f2"
 if exist %symlnk% (
-    rem echo %junction% -d %symlnk%
-    rem call %junction% -d %symlnk%
-    rem echo.
     echo %junction% %symlnk% %folder%
     echo ***
     echo *** %symlnk% ya existe
     echo ***
+    echo.
+    echo %junction% -d %symlnk%
+    call %junction% -d %symlnk%
     echo.
 )
 if not exist %symlnk% (
