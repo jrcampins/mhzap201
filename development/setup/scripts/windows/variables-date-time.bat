@@ -35,10 +35,9 @@ if "%t1%" == "08" set /a hh24=8
 if "%t1%" == "09" set /a hh24=9
 if "%t1%" == "10" set /a hh24=10
 if "%t1%" == "11" set /a hh24=11
+if "%t1%" == "12" set /a hh24=0
 if "%xx%" == "PM" set /a hh24=hh24+12
-
-if "%t1%%xx%" == "12AM" set /a hh24=0
-if "%t1%%xx%" == "12PM" set /a hh24=12
+if %hh24% LSS 10 set hh24=0%hh24%
 
 set hhmm=%hh%%nn%
 set hh24mm=%hh24%%nn%
@@ -46,7 +45,6 @@ set hhmmxx=%hh%%nn%%xx%
 set xxhhmm=%xx%%hh%%nn%
 
 :FINALLY
-REM dd=
 set d1=
 set d2=
 set d3=
