@@ -21,6 +21,7 @@ jbstart() {
     nohup $jboss/standalone-start.sh >> $nohupout 2>&1 &
     seconds="$1"
     echo esperando $seconds segundos para continuar
+    echo ""
     while [ -n "$seconds" ]; do
         sleep $seconds
         started=$(cat "$nohupout" | grep "JBAS015874") # started

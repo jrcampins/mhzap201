@@ -1,10 +1,6 @@
-setlocal
-echo.
-echo %~n0 %*
-echo.
-
 if not defined variables goto:eof
 
+setlocal
 set sf0="%SQLSCRXDIR%\%~n0.sql"
 if not exist %sf0% (
     set /p x="ERROR: el script %sf0% no existe "
@@ -13,6 +9,10 @@ if not exist %sf0% (
 
 set f1="%~f1"
 if /i "%~x1" == ".log" shift /1
+
+echo.
+echo %~n0 %1
+echo.
 
 if not exist "%~f1" (
     set /p x="ERROR: el script "%~f1" no existe "

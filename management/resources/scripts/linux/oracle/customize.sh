@@ -11,5 +11,5 @@ read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]'
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"
-xs2="$SQLDDLXDIR/custom/packages/xsp.sql"
+xs2="$SQLHOMEDIR/custom/packages/xsp.sql"
 [ -x "$xs1" ] && source "$xs1" "$xs2"

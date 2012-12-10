@@ -9,6 +9,5 @@ set SSPORT=%dbport%
 set SSUSER=%dbuser%
 set SSPASS=%dbpass%
 set SSDATABASE=%dbname%
-call "%~dp0..\variables-date-time"
 if not defined variables (pause & echo. & goto:eof)
 if defined on_info_messages (pause & echo.)

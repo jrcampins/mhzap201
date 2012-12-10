@@ -17,6 +17,7 @@ echo "%~n0" ejecuta crea paquetes de utilidad en la base de datos
 call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
+set execute_without_asking=true
 call:init-log
 for /D %%d in (%packages%\*.*) do call xsqlpack %log% %%d
 call:open-log

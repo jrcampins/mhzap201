@@ -1,11 +1,11 @@
 @echo off
 setlocal
-echo.
-echo %~n0 %*
-echo.
-
 set f1="%~f1"
 if /i "%~x1" == ".log" shift /1
+
+echo.
+echo %~n0 %1
+echo.
 
 call:setdir1 %1
 if not defined scripts call:ask4dir
@@ -17,8 +17,9 @@ if not defined scripts (
 set SQLDIR=%scripts%
 call:set-package %SQLDIR%
 
-call "%~dp0..\setsiono" ejecutar %~n0(%package%)
-if /i "%siono%" NEQ "S" goto:eof
+set siono=S
+if not defined execute_without_asking (call "%~dp0..\setsiono" ejecutar sqlplus %SQLDIR%\*.sql & echo.)
+if /i not "%siono%" == "S" goto:eof
 
 set variables=
 call "%~dp0variables"

@@ -18,7 +18,7 @@ if not defined TXT2 set TXT2="%~dpn0-out.txt"
 if not defined SSDB set SSDB=%SSDATABASE%
 if not defined CRVL set CRVL=%aaaammdd%
 
-set OSQLFILE="%SQLHOMEDIR%\%SSDB%\%~n0.%~nx1"
+set OSQLFILE="%SQLHOMEDIR%\%SSDB%\%~nx1"
 set OSQLUSER=%SSUSER%
 set OSQLPASSWORD=%SSPASS%
 set OSQLSERVER=%SSHOST%
