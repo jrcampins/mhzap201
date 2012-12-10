@@ -21,6 +21,7 @@ set SSDB=master
 if /i "%siono%" == "S" (
     if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLSCRXDIR%\dropdb.sql"
     if %xerrorlevel% == 0 call "%thatdir%\osql" "%SQLSCRXDIR%\createdb.sql"
+    pause
 ) else (
     set /a xerrorlevel=1
 )

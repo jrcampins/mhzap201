@@ -2,8 +2,8 @@
 cd /d "%~dp0"
 
 setlocal
+call variables
 set log="%~dpn0.log"
-call variables-date-time
 set>%log%
 
 set folder="%~dp0"

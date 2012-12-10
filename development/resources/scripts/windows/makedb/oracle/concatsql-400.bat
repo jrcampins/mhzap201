@@ -14,12 +14,18 @@ if /i "%funciones%" == "n" (
 )
 echo.
 
+set subdir="%SQLHOMEDIR%\packages"
+if exist %subdir% rd %subdir% /s /q
+
 call:concatsql-421
 if /i "%funciones%" == "n" (
     call "%~dp0..\concatsql-key" 420 functions @SQLHOMEDIR
 ) else (
     call "%~dp0..\concatsql-for" 420 functions @SQLHOMEDIR
 )
+
+set subdir="%SQLHOMEDIR%\functions"
+if exist %subdir% rd %subdir% /s /q
 
 call "%~dp0..\eoj" "%~f0"
 goto:eof

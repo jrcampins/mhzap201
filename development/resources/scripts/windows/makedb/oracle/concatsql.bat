@@ -40,5 +40,14 @@ call "%~dp0concatsql-300"
 call "%~dp0concatsql-400"
 call "%~dp0concatsql-500"
 call "%~dp0concatsql-600"
-dir %SQLHOMEDIR%\*.sql
+call:pack-custom-packages
+dir %SQLHOMEDIR%\*.sql /s
 call "%~dp0..\eoj" "%~f0"
+goto:eof
+
+:pack-custom-packages
+set packages=%SQLDDLXDIR%\custom\packages
+set execute_without_asking=true
+set pack_without_executing=true
+for /D %%d in (%packages%\*.*) do call "%thatdir%\xsqlpack" %log% %%d
+goto:eof

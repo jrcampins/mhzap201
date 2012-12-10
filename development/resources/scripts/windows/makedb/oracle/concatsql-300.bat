@@ -32,6 +32,9 @@ set  SOURCE
 rem  TARGET
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
 
+set subdir="%SQLHOMEDIR%\functions-for-views"
+if exist %subdir% rd %subdir% /s /q
+
 set  SOURCE=%SQLDDLXDIR%\packages-for-views
 set  SOURCE
 for  /D %%d in (%SOURCE%\*.*) do call concatsql-pack %%d
@@ -40,6 +43,9 @@ rem  TARGET
 call set SOURCE=%%SOURCE:%SQLDDLXDIR%=%SQLHOMEDIR%%%
 set  SOURCE
 for  %%f in (%SOURCE%\*.sql) do call "%~dp0..\concatsql-file" %%f
+
+set subdir="%SQLHOMEDIR%\packages-for-views"
+if exist %subdir% rd %subdir% /s /q
 
 set  SOURCE=%SQLDDLXDIR%\base
 set  SOURCE

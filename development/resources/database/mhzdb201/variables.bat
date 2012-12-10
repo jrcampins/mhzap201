@@ -4,10 +4,7 @@ call:set-further-variables
 goto:eof
 
 :set-further-variables
-set thisdir=%~dp0
-set thisdir=%thisdir:~0,-1%
-set thatdir=%project_source_dir%\management\resources\scripts\windows\sqlserver
-call "%thatdir%\variables"
+call %project_source_dir%\development\setup\scripts\windows\variables-date-time
 goto:eof
 
 :set-project-source-dir

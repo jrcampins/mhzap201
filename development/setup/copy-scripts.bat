@@ -1,7 +1,6 @@
 @echo off
 cd /d "%~dp0"
 call variables
-call variables-date-time
 set nn=00
 echo %mm%/%dd%/%aaaa% %hh24%-%nn%-00
 echo.
@@ -13,15 +12,6 @@ echo.
 call %filedate% "%management%\HOME" %mm%/%dd%/%aaaa% %hh24%-%nn%-00
 echo.
 call:xcopy-to-management
-call:xcopy-to-management-setup-scripts
-pause
-goto:eof
-dir /a:-d/o:n   %management%
-echo.
-rem dir /a:-d/o:n/s %management%\setup\scripts\*.password
-echo.
-dir /a:-d/o:n/s %management%\setup\scripts\variables*.*
-echo.
 pause
 goto:eof
 
@@ -38,19 +28,6 @@ set source=%~dp0scripts\windows
 set target=%management%
 xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-mgmt.txt /y
 echo.
-goto:eof
-
-:xcopy-to-management-setup-scripts
-set source=%~dp0scripts
-set target=%management%\setup\scripts
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt
-echo.
-set source=%~dp0scripts\linux
-set target=%management%\setup\scripts\linux
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt /y
-echo.
-set source=%~dp0scripts\windows
-set target=%management%\setup\scripts\windows
-xcopy "%source%\*.*" "%target%" /exclude:%~dpn0-exclude-setup.txt /y
+dir /a:-d/o:n %management%
 echo.
 goto:eof

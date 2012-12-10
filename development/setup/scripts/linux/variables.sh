@@ -32,12 +32,7 @@ variables=$BASH_SOURCE
 lower_case_project=mhzap201
 UPPER_CASE_PROJECT=MHZAP201
 HOMEDIR=`cd $(dirname "$BASH_SOURCE"); pwd`
-DISTDIR=$HOMEDIR/resources
 LOGSDIR=$HOMEDIR/logs
-
-if [ ! -d "$DISTDIR" ]; then
-    xerror $DISTDIR no existe o no es un directorio
-fi
 
 [ -d "$LOGSDIR" ] || mkdir -p "$LOGSDIR"
 
@@ -146,6 +141,11 @@ if [ "$EEASKEY" = "JBoss" ]; then
         xinfo asport=$asport
         xinfo offset=$offset
     fi
+fi
+
+DISTDIR=$HOMEDIR/dist/$EEASDIR
+if [ ! -d "$DISTDIR" ]; then
+    xerror $DISTDIR no existe o no es un directorio
 fi
 
 if [ "$DBMSKEY" = "Oracle" ]; then

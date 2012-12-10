@@ -13,6 +13,9 @@ if /i "%funciones%" == "n" (
     call "%~dp0..\concatsql-for" 500 triggers @SQLHOMEDIR
 )
 
+set subdir="%SQLHOMEDIR%\triggers"
+if exist %subdir% rd %subdir% /s /q
+
 call "%~dp0..\eoj" "%~f0"
 goto:eof
 

@@ -4,6 +4,7 @@ cd /d "%~dp0"
 setlocal
 set variables=
 call variables
+call:set-sqlserver-variables
 if not defined variables goto:eof
 
 set PDQ1="%~dpn0.1"
@@ -29,6 +30,13 @@ call:runSQLFile %INDIR%\build-dump-userdata-run.sql	%OUTDIR1%\dump-userdata-run.
 call:runSQLFile %INDIR%\build-dump-userdata-tokens.sql	%OUTDIR2%\dump-table-tokens.txt
 
 pause
+goto:eof
+
+:set-sqlserver-variables
+set thisdir=%~dp0
+set thisdir=%thisdir:~0,-1%
+set thatdir=%project_source_dir%\management\resources\scripts\windows\sqlserver
+call "%thatdir%\variables"
 goto:eof
 
 :runSQLFile

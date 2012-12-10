@@ -37,6 +37,9 @@ set  SOURCE
 rem  TARGET
 type %SOURCE%\%dbname%_VIEWS.sql>>%TARGET%
 
+set subdir="%SQLHOMEDIR%\functions-for-views"
+if exist %subdir% rd %subdir% /s /q
+
 set  SOURCE=%SQLDDLXDIR%\views
 set  SOURCE
 rem  TARGET

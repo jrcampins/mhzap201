@@ -4,6 +4,7 @@ call:set-further-variables
 goto:eof
 
 :set-further-variables
+call %project_source_dir%\development\setup\scripts\windows\variables-date-time
 set CVS=%project_source_dir%
 set CAP=%project%
 set CDB=MHZDB201

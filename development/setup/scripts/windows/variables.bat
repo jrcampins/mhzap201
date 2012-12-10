@@ -5,9 +5,8 @@ set lower_case_project=mhzap201
 set UPPER_CASE_PROJECT=MHZAP201
 set HOMEDIR=%~dp0
 set HOMEDIR=%HOMEDIR:~0,-1%
-set DISTDIR=%HOMEDIR%\resources
 set LOGSDIR=%HOMEDIR%\logs
-call:check-dir DISTDIR
+call:xcall %HOMEDIR%\variables-date-time.bat
 call:mkdir-dir LOGSDIR
 call:xcall %HOMEDIR%\variables-home.bat
 call:check-dir JAVA_HOME
@@ -49,6 +48,8 @@ goto:eof
 :check-eeaskey
 if /i "%EEASKEY%" == "GlassFish" call:check-glassfish
 if /i "%EEASKEY%" == "JBoss"     call:check-jboss
+set DISTDIR=%HOMEDIR%\dist\%EEASDIR%
+call:check-dir DISTDIR
 goto:eof
 
 :check-glassfish
