@@ -4,7 +4,7 @@ call:set-further-variables
 goto:eof
 
 :set-further-variables
-call %project_source_dir%\development\setup\scripts\windows\variables-date-time
+call %project_source_dir%\management\setup\scripts\windows\variables-date-time
 goto:eof
 
 :set-project-source-dir
