@@ -8,6 +8,8 @@ set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 set junction
 if not exist %junction% goto:eof
 echo.
+call:make-subdir "%~d0\%project%\eclipse\%project%\dist"
+call:make-subdir "%~d0\%project%\netbeans\%project%\dist"
 call:make-subdir "%home%\dist"
 pushd %subdir%
 call:link "%~d0\%project%\eclipse\%project%\dist"   jboss
