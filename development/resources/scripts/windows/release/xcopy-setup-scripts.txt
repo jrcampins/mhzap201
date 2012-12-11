@@ -1,2 +1,3 @@
 pgadmin.password
 variables-server
+variables-sqlserver
