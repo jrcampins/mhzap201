@@ -5,28 +5,25 @@ set log="%~dpn0.log"
 if exist %log% del %log% /q
 set target=%project_source_dir%\management
 call:compare
-set source=%~dp0scripts
-set target=%project_source_dir%\management\setup\scripts
-call:compare-tree
 set siono=S
 set /p siono="desea ver el log de la ejecucion (%log%) ? (Si/No) [%siono%] "
 if /i "%siono%" == "S" start /d %SystemRoot% notepad %log%
 goto:eof
 
 :compare
-set source=%~dp0scripts
+set source=%project_source_dir%\management\setup\scripts
 set source
 set target
 echo.
 call:compare-loop password
 echo.
-set source=%~dp0scripts\linux
+set source=%project_source_dir%\management\setup\scripts\linux
 set source
 set target
 echo.
 call:compare-loop sh
 echo.
-set source=%~dp0scripts\windows
+set source=%project_source_dir%\management\setup\scripts\windows
 set source
 set target
 echo.

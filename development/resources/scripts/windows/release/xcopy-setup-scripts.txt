@@ -1,3 +1,2 @@
 pgadmin.password
-variables-dev
 variables-server

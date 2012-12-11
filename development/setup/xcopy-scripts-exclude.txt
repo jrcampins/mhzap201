@@ -1,4 +1,3 @@
+.txt
 pgadmin.password
-variables-dev
 variables-server
-variables-sqlserver

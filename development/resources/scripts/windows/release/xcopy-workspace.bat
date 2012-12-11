@@ -149,20 +149,18 @@ if /i "%siono%" == "S" (
     set /a target_dbms_count+=1
     call:xcopy-file-batch "%management%\sql\postgresql\*.sql" %SUBDIR%
 )
+pause
 goto:eof
 
 :x-scripts
-call:xcopy-file-batch "%management%\setup\scripts\*.*"         %DQPATH%
-call:xcopy-file-batch "%management%\setup\scripts\linux\*.*"   %DQPATH%
-call:xcopy-file-batch "%management%\setup\scripts\windows\*.*" %DQPATH%
-set exclude=%development%\setup\copy-scripts-exclude-setup.txt
+set exclude=%~dp0xcopy-setup-scripts.txt
 set exclude
 echo.
-xcopy "%development%\setup\scripts\*.*"         %DQPATH% /exclude:%exclude%
+xcopy "%management%\setup\scripts\*.*"         %DQPATH% /exclude:%exclude%
 echo.
-xcopy "%development%\setup\scripts\linux\*.*"   %DQPATH% /exclude:%exclude%
+xcopy "%management%\setup\scripts\linux\*.*"   %DQPATH% /exclude:%exclude%
 echo.
-xcopy "%development%\setup\scripts\windows\*.*" %DQPATH% /exclude:%exclude%
+xcopy "%management%\setup\scripts\windows\*.*" %DQPATH% /exclude:%exclude%
 echo.
 set single_target=
 if %target_eeas_count% == 1 set single_target=true

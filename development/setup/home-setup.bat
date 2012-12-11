@@ -2,11 +2,10 @@
 cd /d "%~dp0"
 call variables
 set home=%project_source_dir%\management
-call copy-scripts
-echo.
+call xcopy-scripts
 set junction="%ProgramFiles%\Sysinternals\Junction\junction.exe"
 set junction
-if not exist %junction% goto:eof
+if not exist %junction% (pause & goto:eof)
 echo.
 call:make-subdir "%~d0\%project%\eclipse\%project%\dist"
 call:make-subdir "%~d0\%project%\netbeans\%project%\dist"
@@ -16,6 +15,13 @@ call:link "%~d0\%project%\eclipse\%project%\dist"   jboss
 call:link "%~d0\%project%\netbeans\%project%\dist"  glassfish
 popd
 echo.
+pause
+echo.
+set EEAS=GlassFish
+set DBMS=PostgreSQL
+call %home%\check-variables
+set EEAS=JBoss
+set DBMS=Oracle
 call %home%\check-variables
 goto:eof
 
