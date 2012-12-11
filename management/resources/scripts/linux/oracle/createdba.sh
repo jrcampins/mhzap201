@@ -18,6 +18,7 @@ sql="$scriptpath/${scriptname%%.*}.sql"
 [ -f "$sql" ] && rm "$sql"
 echo "create user $dbuser identified by $dbpass;" >> $sql
 echo "grant connect, DBA to $dbuser;" >> $sql
+echo "grant execute on sys.utl_file to $dbuser;" >> $sql
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"
 xs2="$sql"
