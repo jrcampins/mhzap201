@@ -61,6 +61,7 @@ setup=$linux/setup
 jboss=$linux/jboss
 oracle=$linux/oracle
 chmod -R 0777 $resources
+chmod -R 0777 $SQLBACKDIR
 echo ""
 bash $setup/dos2unix.sh
 echo ""
@@ -79,24 +80,24 @@ if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
         cat "$nohupout" 2>/dev/null | grep "JBAS015950" # stopped
         echo ""
     fi
-#   bash $oracle/dump.sh
-#   echo ""
+    bash $oracle/export.sh
+    echo ""
 fi
 if [ "$1" = "install" ]; then
     dir="$JBOSS_HOME/welcome-content/$lower_case_project/attachments"
     [ -d "$dir" ] || mkdir -p "$dir"
     dir="$JBOSS_HOME/welcome-content/$lower_case_project/spool"
     [ -d "$dir" ] || mkdir -p "$dir"
-    bash $oracle/createdba.sh
+    bash $oracle/createdb.sh
     echo ""
-#   bash $oracle/restore.sh; status=$?
-#   echo ""
-#   if [ "$status" = "101" ]; then
+    bash $oracle/import.sh; status=$?
+    echo ""
+    if [ "$status" = "101" ]; then
         bash $oracle/customize.sh
         echo ""
         bash $oracle/makedb.sh
         echo ""
-#   fi
+    fi
 elif [ "$1" = "uninstall" ]; then
     bash $oracle/dropdb.sh
     echo ""

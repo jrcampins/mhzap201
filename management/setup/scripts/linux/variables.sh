@@ -162,6 +162,7 @@ if [ "$DBMSKEY" = "Oracle" ]; then
         xerror ORACLE_HOME/bin no existe o no es un directorio
         xinfo "ORACLE_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
+    SQLBACKDIR=/var/backup/$DBMSDIR
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -179,6 +180,7 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
         xinfo "POSTGRESQL_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
     unset dbserv
+    SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
 fi
 
 if [ -n "$on_info_messages" ]; then
@@ -192,7 +194,6 @@ if [ -n "$on_info_messages" ]; then
     xinfo driver=$driver
 fi
 
-SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
 SQLHOMEDIR=$HOMEDIR/sql/$DBMSDIR
 SQLLOGSDIR=$HOMEDIR/logs/$DBMSDIR
 SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR

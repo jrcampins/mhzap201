@@ -15,7 +15,6 @@ call:check-eeas
 call:check-dbms
 call:check-eeaskey
 call:check-dbmskey
-set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 set SQLHOMEDIR=%HOMEDIR%\sql\%DBMSDIR%
 set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
 set SQLDDLXDIR=%HOMEDIR%\resources\database\ddl\%DBMSDIR%
@@ -131,6 +130,7 @@ call:xcall %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
+set SQLBACKDIR=%SystemDrive%\backup\%DBMSDIR%
 goto:eof
 
 :check-postgresql
@@ -140,6 +140,7 @@ call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
 set dbserv=
+set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 goto:eof
 
 :check-sqlserver
@@ -153,6 +154,7 @@ set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
 set dbserv=
+set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 goto:eof
 
 :check-dir

@@ -27,18 +27,12 @@ if defined upgrade_or_uninstall (
     echo.
     call %jboss%\standalone-stop
     echo.
-    rem call %oracle%\dump
-    rem echo.
+    call %oracle%\export
+    echo.
 )
 
 set xdir1="%JBOSS_HOME%\welcome-content\%lower_case_project%\attachments"
 set xdir2="%JBOSS_HOME%\welcome-content\%lower_case_project%\spool"
-set siono=N
-if /i "%1" == "install" (
-    rem call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
-    rem echo.
-)
-
 if /i "%1" == "install" (
     if not exist %xdir1% (
         echo md %xdir1%
@@ -50,10 +44,19 @@ if /i "%1" == "install" (
         echo.
         md %xdir2%
     )
-    call %oracle%\createdba
+    call %oracle%\createdb
     echo.
+)
+
+set siono=N
+if /i "%1" == "install" (
+    call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
+    echo.
+)
+
+if /i "%1" == "install" (
     if /i "%siono%" == "S" (
-        call %oracle%\restore
+        call %oracle%\import
         echo.
     ) else (
         call %oracle%\customize

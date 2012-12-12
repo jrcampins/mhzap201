@@ -6,10 +6,20 @@ xs=$scriptpath/variables.sh
 unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
-echo $me elimina los objetos de la aplicacion en la base de datos
+echo $me elimina el propietario de la aplicacion y todos sus objetos en la base de datos
 read -p "ejecutar $me? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`
 [ "$REPLY" != "s" ] && exit 101 # cancelled by user
+read -s -p "password de SYS: "; echo ""
+[ -z "$REPLY" ] && REPLY=$DBMS
+ORAUSER="SYS"
+ORAROLE="SYSDBA"
+ORAPASSWORD="$REPLY"
+sql="${scriptpath}/${scriptname}.sql"
+[ -f "$sql" ] && rm "$sql"
+echo "drop user $dbuser cascade;" >> $sql
+echo "drop directory ${dbuser}DIR;" >> $sql
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"
-xs2="$SQLSCRXDIR/${scriptname%%.*}.sql"
+xs2="$sql"
 [ -x "$xs1" ] && source "$xs1" "$xs2"
+[ -f "$sql" ] && rm "$sql"
