@@ -14,17 +14,28 @@ read -s -p "password de SYS: "; echo ""
 ORAUSER="SYS"
 ORAROLE="SYSDBA"
 ORAPASSWORD="$REPLY"
-directorio=$SQLBACKDIR
+archives=$SQLBACKDIR
+attachments=$WEBATTCHDIR
+spool=$WEBSPOOLDIR
 case "`uname`" in
-    CYGWIN*) directorio=`cygpath --windows $directorio`
+    CYGWIN*)
+        archives=`cygpath --windows $archives`
+        attachments=`cygpath --windows $attachments`
+        spool=`cygpath --windows $spool`
+        ;;
 esac
 sql="${scriptpath}/${scriptname}.sql"
 [ -f "$sql" ] && rm "$sql"
 echo "create user $dbuser identified by $dbpass;" >> $sql
-echo "create or replace directory ${dbuser}DIR as '$directorio';" >> $sql
+echo "create or replace directory ${UPPER_CASE_PROJECT}_ARCHIVES as '$archives';" >> $sql
+echo "create or replace directory ${UPPER_CASE_PROJECT}_ATTACHMENTS as '$attachments';" >> $sql
+echo "create or replace directory ${UPPER_CASE_PROJECT}_SPOOL as '$spool';" >> $sql
 echo "grant connect, DBA to $dbuser;" >> $sql
+echo "grant create any table to $dbuser;" >> $sql
 echo "grant execute on SYS.UTL_FILE to $dbuser;" >> $sql
-echo "grant read,write on directory ${dbuser}DIR to $dbuser;" >> $sql
+echo "grant read, write on directory ${UPPER_CASE_PROJECT}_ARCHIVES to $dbuser;" >> $sql
+echo "grant read, write on directory ${UPPER_CASE_PROJECT}_ATTACHMENTS to $dbuser;" >> $sql
+echo "grant read, write on directory ${UPPER_CASE_PROJECT}_SPOOL to $dbuser;" >> $sql
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"
 xs2="$sql"

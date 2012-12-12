@@ -26,7 +26,7 @@ if exist %log% del %log%
 set logon=%dbuser%/%dbpass%@%dbhost%:%dbport%/%dbserv%
 
 pushd "%ORACLE_HOME%\bin"
-expdp %logon% SCHEMAS=%dbuser% DIRECTORY=%dbuser%DIR DUMPFILE=%DUMPFILE% LOGFILE=%LOGFILE%
+expdp %logon% SCHEMAS=%dbuser% DIRECTORY=%UPPER_CASE_PROJECT%_ARCHIVES DUMPFILE=%DUMPFILE% LOGFILE=%LOGFILE%
 popd
 call "%~dp0..\eoj" "%~f0"
 goto:eof

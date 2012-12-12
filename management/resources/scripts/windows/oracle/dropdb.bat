@@ -23,7 +23,9 @@ set ORAPASSWORD=%SYS_PASSWORD%
 set sql="%~dpnx0.sql"
 if exist %sql% del %sql%
 echo drop user %dbuser% cascade;>>%sql%
-echo drop directory %dbuser%DIR;>>%sql%
+echo drop directory %UPPER_CASE_PROJECT%_ARCHIVES;>>%sql%
+echo drop directory %UPPER_CASE_PROJECT%_ATTACHMENTS;>>%sql%
+echo drop directory %UPPER_CASE_PROJECT%_SPOOL;>>%sql%
 
 call sqlplus %sql%
 del %sql%

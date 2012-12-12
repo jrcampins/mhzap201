@@ -14,8 +14,11 @@ call:xcall %HOMEDIR%\variables-conf.bat
 call:check-eeas
 call:check-dbms
 call:check-eeaskey
+call:mkdir-dir WEBATTCHDIR
+call:mkdir-dir WEBSPOOLDIR
 call:check-dbmskey
 set SQLHOMEDIR=%HOMEDIR%\sql\%DBMSDIR%
+set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 set SQLLOGSDIR=%HOMEDIR%\logs\%DBMSDIR%
 set SQLDDLXDIR=%HOMEDIR%\resources\database\ddl\%DBMSDIR%
 set SQLSCRXDIR=%HOMEDIR%\resources\database\scripts\%DBMSDIR%
@@ -69,6 +72,8 @@ if defined on_info_messages (
 )
 set ASADMIN=%GLASSFISH_HOME%\bin\asadmin.bat
 call:check-file ASADMIN
+set WEBATTCHDIR=%GLASSFISH_HOME%\domains\%domain%\docroot\%lower_case_project%\attachments
+set WEBSPOOLDIR=%GLASSFISH_HOME%\domains\%domain%\docroot\%lower_case_project%\spool
 goto:eof
 
 :check-jboss
@@ -90,6 +95,8 @@ if defined on_info_messages (
     call:xinfo asport=%asport%
     call:xinfo offset=%offset%
 )
+set WEBATTCHDIR=%JBOSS_HOME%\welcome-content\%lower_case_project%\attachments
+set WEBSPOOLDIR=%JBOSS_HOME%\welcome-content\%lower_case_project%\spool
 goto:eof
 
 :check-dbms
@@ -130,7 +137,6 @@ call:xcall %HOMEDIR%\variables-oracle.bat
 call:check-dir ORACLE_HOME
 set ORABINDIR=%ORACLE_HOME%\bin
 call:check-dir ORABINDIR
-set SQLBACKDIR=%SystemDrive%\backup\%DBMSDIR%
 goto:eof
 
 :check-postgresql
@@ -140,7 +146,6 @@ call:check-dir POSTGRESQL_HOME
 set PGBINDIR=%POSTGRESQL_HOME%\bin
 call:check-dir PGBINDIR
 set dbserv=
-set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 goto:eof
 
 :check-sqlserver
@@ -154,7 +159,6 @@ set SQLDATDIR=%SQLSERVER_MSSQL%\Data
 call:check-dir SSBINDIR
 call:check-dir SQLDATDIR
 set dbserv=
-set SQLBACKDIR=%HOMEDIR%\backup\%DBMSDIR%
 goto:eof
 
 :check-dir

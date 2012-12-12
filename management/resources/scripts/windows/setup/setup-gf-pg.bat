@@ -38,6 +38,10 @@ if defined upgrade_or_uninstall (
 if /i "%1" == "install" (
     call %postgresql%\createdb
     echo.
+)
+
+set siono=N
+if /i "%1" == "install" (
     call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
     echo.
 )

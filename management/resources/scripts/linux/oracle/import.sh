@@ -31,8 +31,7 @@ esac
 export ORACLE_HOME
 logon=${dbuser}/${dbpass}@${dbhost}:${dbport}/${dbserv}
 pushd $ORACLE_HOME/bin > /dev/null
-echo impdp $logon SCHEMAS=$dbuser DIRECTORY=${dbuser}DIR DUMPFILE=$DUMPFILE EXCLUDE=USER TABLE_EXISTS_ACTION=REPLACE LOGFILE=$LOGFILE
-$ORACLE_HOME/bin/impdp $logon SCHEMAS=$dbuser DIRECTORY=${dbuser}DIR DUMPFILE=$DUMPFILE EXCLUDE=USER TABLE_EXISTS_ACTION=REPLACE LOGFILE=$LOGFILE
+$ORACLE_HOME/bin/impdp $logon SCHEMAS=$dbuser DIRECTORY=${UPPER_CASE_PROJECT}_ARCHIVES DUMPFILE=$DUMPFILE EXCLUDE=USER TABLE_EXISTS_ACTION=REPLACE LOGFILE=$LOGFILE
 popd > /dev/null
 echo ""
 read -p "cat $log? (s/n): " -n 1; echo ""; REPLY=`echo $REPLY|tr '[:upper:]' '[:lower:]'`

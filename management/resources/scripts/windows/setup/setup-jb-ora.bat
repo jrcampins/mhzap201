@@ -31,19 +31,7 @@ if defined upgrade_or_uninstall (
     echo.
 )
 
-set xdir1="%JBOSS_HOME%\welcome-content\%lower_case_project%\attachments"
-set xdir2="%JBOSS_HOME%\welcome-content\%lower_case_project%\spool"
 if /i "%1" == "install" (
-    if not exist %xdir1% (
-        echo md %xdir1%
-        echo.
-        md %xdir1%
-    )
-    if not exist %xdir2% (
-        echo md %xdir2%
-        echo.
-        md %xdir2%
-    )
     call %oracle%\createdb
     echo.
 )

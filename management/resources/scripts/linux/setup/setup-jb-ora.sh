@@ -55,13 +55,17 @@ xs=$scriptpath/variables.sh
 unset variables
 [ -x "$xs" ] && source "$xs"
 [ -z "$variables" ] && exit 100 # environment variables not set
+chmod -R 0777 $HOMEDIR
+chmod -R 0777 $WEBATTCHDIR
+chmod -R 0777 $WEBSPOOLDIR
+chmod -R 0777 $SQLBACKDIR
+chmod -R 0777 $SQLHOMEDIR
+chmod -R 0777 $SQLLOGSDIR
 resources=$HOMEDIR/resources
 linux=$resources/scripts/linux
 setup=$linux/setup
 jboss=$linux/jboss
 oracle=$linux/oracle
-chmod -R 0777 $resources
-chmod -R 0777 $SQLBACKDIR
 echo ""
 bash $setup/dos2unix.sh
 echo ""
@@ -84,10 +88,6 @@ if [ "$1" = "upgrade" -o "$1" = "uninstall" ]; then
     echo ""
 fi
 if [ "$1" = "install" ]; then
-    dir="$JBOSS_HOME/welcome-content/$lower_case_project/attachments"
-    [ -d "$dir" ] || mkdir -p "$dir"
-    dir="$JBOSS_HOME/welcome-content/$lower_case_project/spool"
-    [ -d "$dir" ] || mkdir -p "$dir"
     bash $oracle/createdb.sh
     echo ""
     bash $oracle/import.sh; status=$?

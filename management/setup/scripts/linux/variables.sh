@@ -116,6 +116,8 @@ if [ "$EEASKEY" = "GlassFish" ]; then
     if [ -n "$on_info_messages" ]; then
         xinfo domain=$domain
     fi
+    WEBATTCHDIR=${GLASSFISH_HOME}/domains/${domain}/docroot/${lower_case_project}/attachments
+    WEBSPOOLDIR=${GLASSFISH_HOME}/domains/${domain}/docroot/${lower_case_project}/spool
 fi
 
 if [ "$EEASKEY" = "JBoss" ]; then
@@ -141,7 +143,12 @@ if [ "$EEASKEY" = "JBoss" ]; then
         xinfo asport=$asport
         xinfo offset=$offset
     fi
+    WEBATTCHDIR=${JBOSS_HOME}/welcome-content/${lower_case_project}/attachments
+    WEBSPOOLDIR=${JBOSS_HOME}/welcome-content/${lower_case_project}/spool
 fi
+
+[ -d "$WEBATTCHDIR" ] || mkdir -p "$WEBATTCHDIR"
+[ -d "$WEBSPOOLDIR" ] || mkdir -p "$WEBSPOOLDIR"
 
 DISTDIR=$HOMEDIR/dist/$EEASDIR
 if [ ! -d "$DISTDIR" ]; then
@@ -162,7 +169,6 @@ if [ "$DBMSKEY" = "Oracle" ]; then
         xerror ORACLE_HOME/bin no existe o no es un directorio
         xinfo "ORACLE_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
-    SQLBACKDIR=/var/backup/$DBMSDIR
 fi
 
 if [ "$DBMSKEY" = "PostgreSQL" ]; then
@@ -180,7 +186,6 @@ if [ "$DBMSKEY" = "PostgreSQL" ]; then
         xinfo "POSTGRESQL_HOME" se debe definir en "$HOMEDIR/variables-home.sh"
     fi
     unset dbserv
-    SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
 fi
 
 if [ -n "$on_info_messages" ]; then
@@ -195,6 +200,7 @@ if [ -n "$on_info_messages" ]; then
 fi
 
 SQLHOMEDIR=$HOMEDIR/sql/$DBMSDIR
+SQLBACKDIR=$HOMEDIR/backup/$DBMSDIR
 SQLLOGSDIR=$HOMEDIR/logs/$DBMSDIR
 SQLDDLXDIR=$HOMEDIR/resources/database/ddl/$DBMSDIR
 SQLSCRXDIR=$HOMEDIR/resources/database/scripts/$DBMSDIR
