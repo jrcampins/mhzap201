@@ -66,6 +66,10 @@ call:make-link-201 domain-stop                  management\resources\scripts\win
 call:make-link-202 go-server-log                N:\glassfish\glassfish\domains\domain1\logs\server.log
 dir /a:-d/o:n *.lnk >> %log% 2>&1
 popd
+pushd %project_source_dir%\management
+call:make-link-102 management                   C:\CVSNT\desarrollo\mhzap201\netbeans\management
+dir /a:-d/o:n *.lnk >> %log% 2>&1
+popd
 goto:eof
 
 :make-link-101
