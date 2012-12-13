@@ -12,6 +12,7 @@ package com.egt.web.proceso;
 
 import com.egt.base.enums.EnumCausaDenPension;
 import com.egt.base.enums.EnumCausaRevPension;
+import com.egt.base.enums.EnumOpcionBinaria;
 import com.egt.base.enums.EnumCausaDenRecoPen;
 import com.egt.base.entity.constants.PersonaConstants;
 import com.egt.base.entity.constants.UbicacionConstants;
@@ -95,22 +96,23 @@ import com.egt.base.enums.EnumTipoDatoPar;
 import com.egt.base.jms.messages.AbstractMessage;
 import com.egt.core.control.Auditor;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
+import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
+import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
+import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
+import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
-import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
-import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
-import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.business.process.PersonaBusinessProcessLocal;
 import com.egt.ejb.core.reporter.ReporterBrokerLocal;
 import java.util.Date;
@@ -125,18 +127,6 @@ public class Persona4 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     private void _init() throws Exception {
-        validatorComentariosAprobacionPension1.setMaximum(2000);
-        validatorOtraCausaDenPension1.setMaximum(2000);
-        validatorComentariosDenegacionPension1.setMaximum(2000);
-        validatorOtraCausaRevPension1.setMaximum(2000);
-        validatorComentariosRevocacionPension1.setMaximum(2000);
-        validatorComentariosSolicitudRecoPen1.setMaximum(2000);
-        validatorComentariosAprRecoPen1.setMaximum(2000);
-        validatorOtraCausaDenRecoPen1.setMaximum(2000);
-        validatorComentariosDenRecoPen1.setMaximum(2000);
-        validatorComentariosRegistroDenuPen1.setMaximum(2000);
-        validatorComentariosConfDenuPen1.setMaximum(2000);
-        validatorComentariosDesDenuPen1.setMaximum(2000);
         validatorCertificadoVida1.setMaximum(2000);
         converterFechaCertificadoVida1.setPattern("dd/MM/yyyy");
         converterFechaCertificadoVida1.setType("date");
@@ -145,13 +135,28 @@ public class Persona4 extends AbstractPageBean
         converterFechaCertificadoDefuncion1.setPattern("dd/MM/yyyy");
         converterFechaCertificadoDefuncion1.setType("date");
         validatorComentariosAnulCerDefuncion1.setMaximum(2000);
-        converterFechaUltimoCobroPension1.setPattern("dd/MM/yyyy");
-        converterFechaUltimoCobroPension1.setType("date");
-        validatorNotasAnulFecUltCobPen1.setMaximum(2000);
+        validatorComentariosAprobacionPension1.setMaximum(2000);
+        validatorOtraCausaDenPension1.setMaximum(2000);
+        validatorNumeroResolucionDenPen1.setMaximum(2000);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
+        validatorComentariosDenegacionPension1.setMaximum(2000);
+        validatorOtraCausaRevPension1.setMaximum(2000);
+        validatorComentariosRevocacionPension1.setMaximum(2000);
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
         validatorComentariosOtorgamientoPen1.setMaximum(2000);
+        validatorComentariosSolicitudRecoPen1.setMaximum(2000);
+        validatorComentariosAprRecoPen1.setMaximum(2000);
+        validatorOtraCausaDenRecoPen1.setMaximum(2000);
+        validatorComentariosDenRecoPen1.setMaximum(2000);
+        validatorComentariosRegistroDenuPen1.setMaximum(2000);
+        validatorComentariosConfDenuPen1.setMaximum(2000);
+        validatorComentariosDesDenuPen1.setMaximum(2000);
+        converterFechaUltimoCobroPension1.setPattern("dd/MM/yyyy");
+        converterFechaUltimoCobroPension1.setType("date");
+        validatorNotasAnulFecUltCobPen1.setMaximum(2000);
         converterFechaSolicitudPensionDesde1.setPattern("dd/MM/yyyy");
         converterFechaSolicitudPensionDesde1.setType("date");
         converterFechaSolicitudPensionHasta1.setPattern("dd/MM/yyyy");
@@ -168,14 +173,14 @@ public class Persona4 extends AbstractPageBean
         converterFechaRevocacionPensionDesde1.setType("date");
         converterFechaRevocacionPensionHasta1.setPattern("dd/MM/yyyy");
         converterFechaRevocacionPensionHasta1.setType("date");
-        converterFechaHoraUltActJupeDesde1.setPattern("dd/MM/yyyy hh:mm aa");
-        converterFechaHoraUltActJupeDesde1.setType("both");
-        converterFechaHoraUltActJupeHasta1.setPattern("dd/MM/yyyy hh:mm aa");
-        converterFechaHoraUltActJupeHasta1.setType("both");
         converterFechaOtorgamientoPenDesde1.setPattern("dd/MM/yyyy");
         converterFechaOtorgamientoPenDesde1.setType("date");
         converterFechaOtorgamientoPenHasta1.setPattern("dd/MM/yyyy");
         converterFechaOtorgamientoPenHasta1.setType("date");
+        converterFechaHoraUltActJupeDesde1.setPattern("dd/MM/yyyy hh:mm aa");
+        converterFechaHoraUltActJupeDesde1.setType("both");
+        converterFechaHoraUltActJupeHasta1.setPattern("dd/MM/yyyy hh:mm aa");
+        converterFechaHoraUltActJupeHasta1.setType("both");
     }
 
     private Form form1 = new Form();
@@ -341,6 +346,306 @@ public class Persona4 extends AbstractPageBean
         this.campoIdPersona1Boton2 = component;
     }
 
+    private Label labelCertificadoVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCertificadoVida1() {
+        return labelCertificadoVida1;
+    }
+
+    public void setLabelCertificadoVida1(Label l) {
+        this.labelCertificadoVida1 = l;
+    }
+
+    private TextField campoCertificadoVida1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCertificadoVida1() {
+        return campoCertificadoVida1;
+    }
+
+    public void setCampoCertificadoVida1(TextField component) {
+        this.campoCertificadoVida1 = component;
+    }
+
+    private HelpInline helpInlineCertificadoVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCertificadoVida1() {
+        return helpInlineCertificadoVida1;
+    }
+
+    public void setHelpInlineCertificadoVida1(HelpInline hi) {
+        this.helpInlineCertificadoVida1 = hi;
+    }
+
+    private StaticText campoCertificadoVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCertificadoVida1Texto1() {
+        return campoCertificadoVida1Texto1;
+    }
+
+    public void setCampoCertificadoVida1Texto1(StaticText component) {
+        this.campoCertificadoVida1Texto1 = component;
+    }
+
+    private LengthValidator validatorCertificadoVida1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCertificadoVida1() {
+        return validatorCertificadoVida1;
+    }
+  
+    public void setValidatorCertificadoVida1(LengthValidator validator) {
+        this.validatorCertificadoVida1 = validator;
+    }
+  
+    private Label labelFechaCertificadoVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaCertificadoVida1() {
+        return labelFechaCertificadoVida1;
+    }
+
+    public void setLabelFechaCertificadoVida1(Label l) {
+        this.labelFechaCertificadoVida1 = l;
+    }
+
+    private Calendar campoFechaCertificadoVida1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaCertificadoVida1() {
+        return campoFechaCertificadoVida1;
+    }
+
+    public void setCampoFechaCertificadoVida1(Calendar component) {
+        this.campoFechaCertificadoVida1 = component;
+    }
+
+    private HelpInline helpInlineFechaCertificadoVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaCertificadoVida1() {
+        return helpInlineFechaCertificadoVida1;
+    }
+
+    public void setHelpInlineFechaCertificadoVida1(HelpInline hi) {
+        this.helpInlineFechaCertificadoVida1 = hi;
+    }
+
+    private StaticText campoFechaCertificadoVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaCertificadoVida1Texto1() {
+        return campoFechaCertificadoVida1Texto1;
+    }
+
+    public void setCampoFechaCertificadoVida1Texto1(StaticText component) {
+        this.campoFechaCertificadoVida1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaCertificadoVida1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaCertificadoVida1() {
+        return converterFechaCertificadoVida1;
+    }
+  
+    public void setConverterFechaCertificadoVida1(SqlTimestampConverter converter) {
+        this.converterFechaCertificadoVida1 = converter;
+    }
+  
+    private Label labelComentariosAnulCerVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosAnulCerVida1() {
+        return labelComentariosAnulCerVida1;
+    }
+
+    public void setLabelComentariosAnulCerVida1(Label l) {
+        this.labelComentariosAnulCerVida1 = l;
+    }
+
+    private TextField campoComentariosAnulCerVida1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoComentariosAnulCerVida1() {
+        return campoComentariosAnulCerVida1;
+    }
+
+    public void setCampoComentariosAnulCerVida1(TextField component) {
+        this.campoComentariosAnulCerVida1 = component;
+    }
+
+    private HelpInline helpInlineComentariosAnulCerVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosAnulCerVida1() {
+        return helpInlineComentariosAnulCerVida1;
+    }
+
+    public void setHelpInlineComentariosAnulCerVida1(HelpInline hi) {
+        this.helpInlineComentariosAnulCerVida1 = hi;
+    }
+
+    private StaticText campoComentariosAnulCerVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosAnulCerVida1Texto1() {
+        return campoComentariosAnulCerVida1Texto1;
+    }
+
+    public void setCampoComentariosAnulCerVida1Texto1(StaticText component) {
+        this.campoComentariosAnulCerVida1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosAnulCerVida1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosAnulCerVida1() {
+        return validatorComentariosAnulCerVida1;
+    }
+  
+    public void setValidatorComentariosAnulCerVida1(LengthValidator validator) {
+        this.validatorComentariosAnulCerVida1 = validator;
+    }
+  
+    private Label labelCertificadoDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCertificadoDefuncion1() {
+        return labelCertificadoDefuncion1;
+    }
+
+    public void setLabelCertificadoDefuncion1(Label l) {
+        this.labelCertificadoDefuncion1 = l;
+    }
+
+    private TextField campoCertificadoDefuncion1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCertificadoDefuncion1() {
+        return campoCertificadoDefuncion1;
+    }
+
+    public void setCampoCertificadoDefuncion1(TextField component) {
+        this.campoCertificadoDefuncion1 = component;
+    }
+
+    private HelpInline helpInlineCertificadoDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCertificadoDefuncion1() {
+        return helpInlineCertificadoDefuncion1;
+    }
+
+    public void setHelpInlineCertificadoDefuncion1(HelpInline hi) {
+        this.helpInlineCertificadoDefuncion1 = hi;
+    }
+
+    private StaticText campoCertificadoDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCertificadoDefuncion1Texto1() {
+        return campoCertificadoDefuncion1Texto1;
+    }
+
+    public void setCampoCertificadoDefuncion1Texto1(StaticText component) {
+        this.campoCertificadoDefuncion1Texto1 = component;
+    }
+
+    private LengthValidator validatorCertificadoDefuncion1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCertificadoDefuncion1() {
+        return validatorCertificadoDefuncion1;
+    }
+  
+    public void setValidatorCertificadoDefuncion1(LengthValidator validator) {
+        this.validatorCertificadoDefuncion1 = validator;
+    }
+  
+    private Label labelFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaCertificadoDefuncion1() {
+        return labelFechaCertificadoDefuncion1;
+    }
+
+    public void setLabelFechaCertificadoDefuncion1(Label l) {
+        this.labelFechaCertificadoDefuncion1 = l;
+    }
+
+    private Calendar campoFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaCertificadoDefuncion1() {
+        return campoFechaCertificadoDefuncion1;
+    }
+
+    public void setCampoFechaCertificadoDefuncion1(Calendar component) {
+        this.campoFechaCertificadoDefuncion1 = component;
+    }
+
+    private HelpInline helpInlineFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaCertificadoDefuncion1() {
+        return helpInlineFechaCertificadoDefuncion1;
+    }
+
+    public void setHelpInlineFechaCertificadoDefuncion1(HelpInline hi) {
+        this.helpInlineFechaCertificadoDefuncion1 = hi;
+    }
+
+    private StaticText campoFechaCertificadoDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaCertificadoDefuncion1Texto1() {
+        return campoFechaCertificadoDefuncion1Texto1;
+    }
+
+    public void setCampoFechaCertificadoDefuncion1Texto1(StaticText component) {
+        this.campoFechaCertificadoDefuncion1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaCertificadoDefuncion1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaCertificadoDefuncion1() {
+        return converterFechaCertificadoDefuncion1;
+    }
+  
+    public void setConverterFechaCertificadoDefuncion1(SqlTimestampConverter converter) {
+        this.converterFechaCertificadoDefuncion1 = converter;
+    }
+  
+    private Label labelComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosAnulCerDefuncion1() {
+        return labelComentariosAnulCerDefuncion1;
+    }
+
+    public void setLabelComentariosAnulCerDefuncion1(Label l) {
+        this.labelComentariosAnulCerDefuncion1 = l;
+    }
+
+    private TextField campoComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoComentariosAnulCerDefuncion1() {
+        return campoComentariosAnulCerDefuncion1;
+    }
+
+    public void setCampoComentariosAnulCerDefuncion1(TextField component) {
+        this.campoComentariosAnulCerDefuncion1 = component;
+    }
+
+    private HelpInline helpInlineComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosAnulCerDefuncion1() {
+        return helpInlineComentariosAnulCerDefuncion1;
+    }
+
+    public void setHelpInlineComentariosAnulCerDefuncion1(HelpInline hi) {
+        this.helpInlineComentariosAnulCerDefuncion1 = hi;
+    }
+
+    private StaticText campoComentariosAnulCerDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosAnulCerDefuncion1Texto1() {
+        return campoComentariosAnulCerDefuncion1Texto1;
+    }
+
+    public void setCampoComentariosAnulCerDefuncion1Texto1(StaticText component) {
+        this.campoComentariosAnulCerDefuncion1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosAnulCerDefuncion1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosAnulCerDefuncion1() {
+        return validatorComentariosAnulCerDefuncion1;
+    }
+  
+    public void setValidatorComentariosAnulCerDefuncion1(LengthValidator validator) {
+        this.validatorComentariosAnulCerDefuncion1 = validator;
+    }
+  
     private Label labelComentariosAprobacionPension1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelComentariosAprobacionPension1() {
@@ -489,6 +794,106 @@ public class Persona4 extends AbstractPageBean
   
     public void setValidatorOtraCausaDenPension1(LengthValidator validator) {
         this.validatorOtraCausaDenPension1 = validator;
+    }
+  
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionDenPen1() {
+        return helpInlineNumeroResolucionDenPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionDenPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private Calendar campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(Calendar component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionDenPen1() {
+        return helpInlineFechaResolucionDenPen1;
+    }
+
+    public void setHelpInlineFechaResolucionDenPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
     }
   
     private Label labelComentariosDenegacionPension1 = new com.egt.core.jsf.component.Etiqueta();
@@ -689,6 +1094,256 @@ public class Persona4 extends AbstractPageBean
   
     public void setValidatorComentariosRevocacionPension1(LengthValidator validator) {
         this.validatorComentariosRevocacionPension1 = validator;
+    }
+  
+    private Label labelNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionOtorPen1() {
+        return labelNumeroResolucionOtorPen1;
+    }
+
+    public void setLabelNumeroResolucionOtorPen1(Label l) {
+        this.labelNumeroResolucionOtorPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionOtorPen1() {
+        return campoNumeroResolucionOtorPen1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1(TextField component) {
+        this.campoNumeroResolucionOtorPen1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionOtorPen1() {
+        return helpInlineNumeroResolucionOtorPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionOtorPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionOtorPen1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionOtorPen1Texto1() {
+        return campoNumeroResolucionOtorPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionOtorPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionOtorPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionOtorPen1() {
+        return validatorNumeroResolucionOtorPen1;
+    }
+  
+    public void setValidatorNumeroResolucionOtorPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionOtorPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionOtorPen1() {
+        return labelFechaResolucionOtorPen1;
+    }
+
+    public void setLabelFechaResolucionOtorPen1(Label l) {
+        this.labelFechaResolucionOtorPen1 = l;
+    }
+
+    private Calendar campoFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionOtorPen1() {
+        return campoFechaResolucionOtorPen1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1(Calendar component) {
+        this.campoFechaResolucionOtorPen1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionOtorPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionOtorPen1() {
+        return helpInlineFechaResolucionOtorPen1;
+    }
+
+    public void setHelpInlineFechaResolucionOtorPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionOtorPen1 = hi;
+    }
+
+    private StaticText campoFechaResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionOtorPen1Texto1() {
+        return campoFechaResolucionOtorPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1Texto1(StaticText component) {
+        this.campoFechaResolucionOtorPen1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionOtorPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionOtorPen1() {
+        return converterFechaResolucionOtorPen1;
+    }
+  
+    public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionOtorPen1 = converter;
+    }
+  
+    private Label labelComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosOtorgamientoPen1() {
+        return labelComentariosOtorgamientoPen1;
+    }
+
+    public void setLabelComentariosOtorgamientoPen1(Label l) {
+        this.labelComentariosOtorgamientoPen1 = l;
+    }
+
+    private TextField campoComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoComentariosOtorgamientoPen1() {
+        return campoComentariosOtorgamientoPen1;
+    }
+
+    public void setCampoComentariosOtorgamientoPen1(TextField component) {
+        this.campoComentariosOtorgamientoPen1 = component;
+    }
+
+    private HelpInline helpInlineComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosOtorgamientoPen1() {
+        return helpInlineComentariosOtorgamientoPen1;
+    }
+
+    public void setHelpInlineComentariosOtorgamientoPen1(HelpInline hi) {
+        this.helpInlineComentariosOtorgamientoPen1 = hi;
+    }
+
+    private StaticText campoComentariosOtorgamientoPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosOtorgamientoPen1Texto1() {
+        return campoComentariosOtorgamientoPen1Texto1;
+    }
+
+    public void setCampoComentariosOtorgamientoPen1Texto1(StaticText component) {
+        this.campoComentariosOtorgamientoPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosOtorgamientoPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosOtorgamientoPen1() {
+        return validatorComentariosOtorgamientoPen1;
+    }
+  
+    public void setValidatorComentariosOtorgamientoPen1(LengthValidator validator) {
+        this.validatorComentariosOtorgamientoPen1 = validator;
+    }
+  
+    private Label labelEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPersonaConCopiaCedula1() {
+        return labelEsPersonaConCopiaCedula1;
+    }
+
+    public void setLabelEsPersonaConCopiaCedula1(Label l) {
+        this.labelEsPersonaConCopiaCedula1 = l;
+    }
+
+    private DropDown listaEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPersonaConCopiaCedula1() {
+        return listaEsPersonaConCopiaCedula1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1(DropDown component) {
+        this.listaEsPersonaConCopiaCedula1 = component;
+    }
+
+    private HelpInline helpInlineEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsPersonaConCopiaCedula1() {
+        return helpInlineEsPersonaConCopiaCedula1;
+    }
+
+    public void setHelpInlineEsPersonaConCopiaCedula1(HelpInline hi) {
+        this.helpInlineEsPersonaConCopiaCedula1 = hi;
+    }
+
+    private StaticText listaEsPersonaConCopiaCedula1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConCopiaCedula1Texto1() {
+        return listaEsPersonaConCopiaCedula1Texto1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1Texto1(StaticText component) {
+        this.listaEsPersonaConCopiaCedula1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPersonaConCopiaCedula1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPersonaConCopiaCedula1() {
+        return converterEsPersonaConCopiaCedula1;
+    }
+  
+    public void setConverterEsPersonaConCopiaCedula1(IntegerConverter converter) {
+        this.converterEsPersonaConCopiaCedula1 = converter;
+    }
+  
+    private Label labelEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPersonaConDeclaracionJur1() {
+        return labelEsPersonaConDeclaracionJur1;
+    }
+
+    public void setLabelEsPersonaConDeclaracionJur1(Label l) {
+        this.labelEsPersonaConDeclaracionJur1 = l;
+    }
+
+    private DropDown listaEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPersonaConDeclaracionJur1() {
+        return listaEsPersonaConDeclaracionJur1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1(DropDown component) {
+        this.listaEsPersonaConDeclaracionJur1 = component;
+    }
+
+    private HelpInline helpInlineEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsPersonaConDeclaracionJur1() {
+        return helpInlineEsPersonaConDeclaracionJur1;
+    }
+
+    public void setHelpInlineEsPersonaConDeclaracionJur1(HelpInline hi) {
+        this.helpInlineEsPersonaConDeclaracionJur1 = hi;
+    }
+
+    private StaticText listaEsPersonaConDeclaracionJur1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConDeclaracionJur1Texto1() {
+        return listaEsPersonaConDeclaracionJur1Texto1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1Texto1(StaticText component) {
+        this.listaEsPersonaConDeclaracionJur1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPersonaConDeclaracionJur1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPersonaConDeclaracionJur1() {
+        return converterEsPersonaConDeclaracionJur1;
+    }
+  
+    public void setConverterEsPersonaConDeclaracionJur1(IntegerConverter converter) {
+        this.converterEsPersonaConDeclaracionJur1 = converter;
     }
   
     private Label labelComentariosSolicitudRecoPen1 = new com.egt.core.jsf.component.Etiqueta();
@@ -1091,306 +1746,6 @@ public class Persona4 extends AbstractPageBean
         this.validatorComentariosDesDenuPen1 = validator;
     }
   
-    private Label labelCertificadoVida1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelCertificadoVida1() {
-        return labelCertificadoVida1;
-    }
-
-    public void setLabelCertificadoVida1(Label l) {
-        this.labelCertificadoVida1 = l;
-    }
-
-    private TextField campoCertificadoVida1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoCertificadoVida1() {
-        return campoCertificadoVida1;
-    }
-
-    public void setCampoCertificadoVida1(TextField component) {
-        this.campoCertificadoVida1 = component;
-    }
-
-    private HelpInline helpInlineCertificadoVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineCertificadoVida1() {
-        return helpInlineCertificadoVida1;
-    }
-
-    public void setHelpInlineCertificadoVida1(HelpInline hi) {
-        this.helpInlineCertificadoVida1 = hi;
-    }
-
-    private StaticText campoCertificadoVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoCertificadoVida1Texto1() {
-        return campoCertificadoVida1Texto1;
-    }
-
-    public void setCampoCertificadoVida1Texto1(StaticText component) {
-        this.campoCertificadoVida1Texto1 = component;
-    }
-
-    private LengthValidator validatorCertificadoVida1 = new LengthValidator();
-  
-    public LengthValidator getValidatorCertificadoVida1() {
-        return validatorCertificadoVida1;
-    }
-  
-    public void setValidatorCertificadoVida1(LengthValidator validator) {
-        this.validatorCertificadoVida1 = validator;
-    }
-  
-    private Label labelFechaCertificadoVida1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaCertificadoVida1() {
-        return labelFechaCertificadoVida1;
-    }
-
-    public void setLabelFechaCertificadoVida1(Label l) {
-        this.labelFechaCertificadoVida1 = l;
-    }
-
-    private Calendar campoFechaCertificadoVida1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaCertificadoVida1() {
-        return campoFechaCertificadoVida1;
-    }
-
-    public void setCampoFechaCertificadoVida1(Calendar component) {
-        this.campoFechaCertificadoVida1 = component;
-    }
-
-    private HelpInline helpInlineFechaCertificadoVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaCertificadoVida1() {
-        return helpInlineFechaCertificadoVida1;
-    }
-
-    public void setHelpInlineFechaCertificadoVida1(HelpInline hi) {
-        this.helpInlineFechaCertificadoVida1 = hi;
-    }
-
-    private StaticText campoFechaCertificadoVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaCertificadoVida1Texto1() {
-        return campoFechaCertificadoVida1Texto1;
-    }
-
-    public void setCampoFechaCertificadoVida1Texto1(StaticText component) {
-        this.campoFechaCertificadoVida1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaCertificadoVida1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaCertificadoVida1() {
-        return converterFechaCertificadoVida1;
-    }
-  
-    public void setConverterFechaCertificadoVida1(SqlTimestampConverter converter) {
-        this.converterFechaCertificadoVida1 = converter;
-    }
-  
-    private Label labelComentariosAnulCerVida1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerVida1() {
-        return labelComentariosAnulCerVida1;
-    }
-
-    public void setLabelComentariosAnulCerVida1(Label l) {
-        this.labelComentariosAnulCerVida1 = l;
-    }
-
-    private TextField campoComentariosAnulCerVida1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoComentariosAnulCerVida1() {
-        return campoComentariosAnulCerVida1;
-    }
-
-    public void setCampoComentariosAnulCerVida1(TextField component) {
-        this.campoComentariosAnulCerVida1 = component;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerVida1() {
-        return helpInlineComentariosAnulCerVida1;
-    }
-
-    public void setHelpInlineComentariosAnulCerVida1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerVida1 = hi;
-    }
-
-    private StaticText campoComentariosAnulCerVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerVida1Texto1() {
-        return campoComentariosAnulCerVida1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerVida1Texto1(StaticText component) {
-        this.campoComentariosAnulCerVida1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosAnulCerVida1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosAnulCerVida1() {
-        return validatorComentariosAnulCerVida1;
-    }
-  
-    public void setValidatorComentariosAnulCerVida1(LengthValidator validator) {
-        this.validatorComentariosAnulCerVida1 = validator;
-    }
-  
-    private Label labelCertificadoDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelCertificadoDefuncion1() {
-        return labelCertificadoDefuncion1;
-    }
-
-    public void setLabelCertificadoDefuncion1(Label l) {
-        this.labelCertificadoDefuncion1 = l;
-    }
-
-    private TextField campoCertificadoDefuncion1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoCertificadoDefuncion1() {
-        return campoCertificadoDefuncion1;
-    }
-
-    public void setCampoCertificadoDefuncion1(TextField component) {
-        this.campoCertificadoDefuncion1 = component;
-    }
-
-    private HelpInline helpInlineCertificadoDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineCertificadoDefuncion1() {
-        return helpInlineCertificadoDefuncion1;
-    }
-
-    public void setHelpInlineCertificadoDefuncion1(HelpInline hi) {
-        this.helpInlineCertificadoDefuncion1 = hi;
-    }
-
-    private StaticText campoCertificadoDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoCertificadoDefuncion1Texto1() {
-        return campoCertificadoDefuncion1Texto1;
-    }
-
-    public void setCampoCertificadoDefuncion1Texto1(StaticText component) {
-        this.campoCertificadoDefuncion1Texto1 = component;
-    }
-
-    private LengthValidator validatorCertificadoDefuncion1 = new LengthValidator();
-  
-    public LengthValidator getValidatorCertificadoDefuncion1() {
-        return validatorCertificadoDefuncion1;
-    }
-  
-    public void setValidatorCertificadoDefuncion1(LengthValidator validator) {
-        this.validatorCertificadoDefuncion1 = validator;
-    }
-  
-    private Label labelFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaCertificadoDefuncion1() {
-        return labelFechaCertificadoDefuncion1;
-    }
-
-    public void setLabelFechaCertificadoDefuncion1(Label l) {
-        this.labelFechaCertificadoDefuncion1 = l;
-    }
-
-    private Calendar campoFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaCertificadoDefuncion1() {
-        return campoFechaCertificadoDefuncion1;
-    }
-
-    public void setCampoFechaCertificadoDefuncion1(Calendar component) {
-        this.campoFechaCertificadoDefuncion1 = component;
-    }
-
-    private HelpInline helpInlineFechaCertificadoDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaCertificadoDefuncion1() {
-        return helpInlineFechaCertificadoDefuncion1;
-    }
-
-    public void setHelpInlineFechaCertificadoDefuncion1(HelpInline hi) {
-        this.helpInlineFechaCertificadoDefuncion1 = hi;
-    }
-
-    private StaticText campoFechaCertificadoDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaCertificadoDefuncion1Texto1() {
-        return campoFechaCertificadoDefuncion1Texto1;
-    }
-
-    public void setCampoFechaCertificadoDefuncion1Texto1(StaticText component) {
-        this.campoFechaCertificadoDefuncion1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaCertificadoDefuncion1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaCertificadoDefuncion1() {
-        return converterFechaCertificadoDefuncion1;
-    }
-  
-    public void setConverterFechaCertificadoDefuncion1(SqlTimestampConverter converter) {
-        this.converterFechaCertificadoDefuncion1 = converter;
-    }
-  
-    private Label labelComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerDefuncion1() {
-        return labelComentariosAnulCerDefuncion1;
-    }
-
-    public void setLabelComentariosAnulCerDefuncion1(Label l) {
-        this.labelComentariosAnulCerDefuncion1 = l;
-    }
-
-    private TextField campoComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoComentariosAnulCerDefuncion1() {
-        return campoComentariosAnulCerDefuncion1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1(TextField component) {
-        this.campoComentariosAnulCerDefuncion1 = component;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerDefuncion1() {
-        return helpInlineComentariosAnulCerDefuncion1;
-    }
-
-    public void setHelpInlineComentariosAnulCerDefuncion1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerDefuncion1 = hi;
-    }
-
-    private StaticText campoComentariosAnulCerDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerDefuncion1Texto1() {
-        return campoComentariosAnulCerDefuncion1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1Texto1(StaticText component) {
-        this.campoComentariosAnulCerDefuncion1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosAnulCerDefuncion1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosAnulCerDefuncion1() {
-        return validatorComentariosAnulCerDefuncion1;
-    }
-  
-    public void setValidatorComentariosAnulCerDefuncion1(LengthValidator validator) {
-        this.validatorComentariosAnulCerDefuncion1 = validator;
-    }
-  
     private Label labelFechaUltimoCobroPension1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaUltimoCobroPension1() {
@@ -1489,156 +1844,6 @@ public class Persona4 extends AbstractPageBean
   
     public void setValidatorNotasAnulFecUltCobPen1(LengthValidator validator) {
         this.validatorNotasAnulFecUltCobPen1 = validator;
-    }
-  
-    private Label labelNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelNumeroResolucionOtorPen1() {
-        return labelNumeroResolucionOtorPen1;
-    }
-
-    public void setLabelNumeroResolucionOtorPen1(Label l) {
-        this.labelNumeroResolucionOtorPen1 = l;
-    }
-
-    private TextField campoNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoNumeroResolucionOtorPen1() {
-        return campoNumeroResolucionOtorPen1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1(TextField component) {
-        this.campoNumeroResolucionOtorPen1 = component;
-    }
-
-    private HelpInline helpInlineNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineNumeroResolucionOtorPen1() {
-        return helpInlineNumeroResolucionOtorPen1;
-    }
-
-    public void setHelpInlineNumeroResolucionOtorPen1(HelpInline hi) {
-        this.helpInlineNumeroResolucionOtorPen1 = hi;
-    }
-
-    private StaticText campoNumeroResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoNumeroResolucionOtorPen1Texto1() {
-        return campoNumeroResolucionOtorPen1Texto1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1Texto1(StaticText component) {
-        this.campoNumeroResolucionOtorPen1Texto1 = component;
-    }
-
-    private LengthValidator validatorNumeroResolucionOtorPen1 = new LengthValidator();
-  
-    public LengthValidator getValidatorNumeroResolucionOtorPen1() {
-        return validatorNumeroResolucionOtorPen1;
-    }
-  
-    public void setValidatorNumeroResolucionOtorPen1(LengthValidator validator) {
-        this.validatorNumeroResolucionOtorPen1 = validator;
-    }
-  
-    private Label labelFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaResolucionOtorPen1() {
-        return labelFechaResolucionOtorPen1;
-    }
-
-    public void setLabelFechaResolucionOtorPen1(Label l) {
-        this.labelFechaResolucionOtorPen1 = l;
-    }
-
-    private Calendar campoFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaResolucionOtorPen1() {
-        return campoFechaResolucionOtorPen1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1(Calendar component) {
-        this.campoFechaResolucionOtorPen1 = component;
-    }
-
-    private HelpInline helpInlineFechaResolucionOtorPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaResolucionOtorPen1() {
-        return helpInlineFechaResolucionOtorPen1;
-    }
-
-    public void setHelpInlineFechaResolucionOtorPen1(HelpInline hi) {
-        this.helpInlineFechaResolucionOtorPen1 = hi;
-    }
-
-    private StaticText campoFechaResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionOtorPen1Texto1() {
-        return campoFechaResolucionOtorPen1Texto1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1Texto1(StaticText component) {
-        this.campoFechaResolucionOtorPen1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaResolucionOtorPen1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaResolucionOtorPen1() {
-        return converterFechaResolucionOtorPen1;
-    }
-  
-    public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
-        this.converterFechaResolucionOtorPen1 = converter;
-    }
-  
-    private Label labelComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosOtorgamientoPen1() {
-        return labelComentariosOtorgamientoPen1;
-    }
-
-    public void setLabelComentariosOtorgamientoPen1(Label l) {
-        this.labelComentariosOtorgamientoPen1 = l;
-    }
-
-    private TextField campoComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoComentariosOtorgamientoPen1() {
-        return campoComentariosOtorgamientoPen1;
-    }
-
-    public void setCampoComentariosOtorgamientoPen1(TextField component) {
-        this.campoComentariosOtorgamientoPen1 = component;
-    }
-
-    private HelpInline helpInlineComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosOtorgamientoPen1() {
-        return helpInlineComentariosOtorgamientoPen1;
-    }
-
-    public void setHelpInlineComentariosOtorgamientoPen1(HelpInline hi) {
-        this.helpInlineComentariosOtorgamientoPen1 = hi;
-    }
-
-    private StaticText campoComentariosOtorgamientoPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosOtorgamientoPen1Texto1() {
-        return campoComentariosOtorgamientoPen1Texto1;
-    }
-
-    public void setCampoComentariosOtorgamientoPen1Texto1(StaticText component) {
-        this.campoComentariosOtorgamientoPen1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosOtorgamientoPen1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosOtorgamientoPen1() {
-        return validatorComentariosOtorgamientoPen1;
-    }
-  
-    public void setValidatorComentariosOtorgamientoPen1(LengthValidator validator) {
-        this.validatorComentariosOtorgamientoPen1 = validator;
     }
   
     private Label labelIdDepartamento1 = new com.egt.core.jsf.component.Etiqueta();
@@ -2311,106 +2516,6 @@ public class Persona4 extends AbstractPageBean
         this.converterFechaRevocacionPensionHasta1 = converter;
     }
   
-    private Label labelFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaHoraUltActJupeDesde1() {
-        return labelFechaHoraUltActJupeDesde1;
-    }
-
-    public void setLabelFechaHoraUltActJupeDesde1(Label l) {
-        this.labelFechaHoraUltActJupeDesde1 = l;
-    }
-
-    private TextField campoFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaHoraUltActJupeDesde1() {
-        return campoFechaHoraUltActJupeDesde1;
-    }
-
-    public void setCampoFechaHoraUltActJupeDesde1(TextField component) {
-        this.campoFechaHoraUltActJupeDesde1 = component;
-    }
-
-    private HelpInline helpInlineFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaHoraUltActJupeDesde1() {
-        return helpInlineFechaHoraUltActJupeDesde1;
-    }
-
-    public void setHelpInlineFechaHoraUltActJupeDesde1(HelpInline hi) {
-        this.helpInlineFechaHoraUltActJupeDesde1 = hi;
-    }
-
-    private StaticText campoFechaHoraUltActJupeDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaHoraUltActJupeDesde1Texto1() {
-        return campoFechaHoraUltActJupeDesde1Texto1;
-    }
-
-    public void setCampoFechaHoraUltActJupeDesde1Texto1(StaticText component) {
-        this.campoFechaHoraUltActJupeDesde1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaHoraUltActJupeDesde1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaHoraUltActJupeDesde1() {
-        return converterFechaHoraUltActJupeDesde1;
-    }
-  
-    public void setConverterFechaHoraUltActJupeDesde1(SqlTimestampConverter converter) {
-        this.converterFechaHoraUltActJupeDesde1 = converter;
-    }
-  
-    private Label labelFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaHoraUltActJupeHasta1() {
-        return labelFechaHoraUltActJupeHasta1;
-    }
-
-    public void setLabelFechaHoraUltActJupeHasta1(Label l) {
-        this.labelFechaHoraUltActJupeHasta1 = l;
-    }
-
-    private TextField campoFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaHoraUltActJupeHasta1() {
-        return campoFechaHoraUltActJupeHasta1;
-    }
-
-    public void setCampoFechaHoraUltActJupeHasta1(TextField component) {
-        this.campoFechaHoraUltActJupeHasta1 = component;
-    }
-
-    private HelpInline helpInlineFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaHoraUltActJupeHasta1() {
-        return helpInlineFechaHoraUltActJupeHasta1;
-    }
-
-    public void setHelpInlineFechaHoraUltActJupeHasta1(HelpInline hi) {
-        this.helpInlineFechaHoraUltActJupeHasta1 = hi;
-    }
-
-    private StaticText campoFechaHoraUltActJupeHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaHoraUltActJupeHasta1Texto1() {
-        return campoFechaHoraUltActJupeHasta1Texto1;
-    }
-
-    public void setCampoFechaHoraUltActJupeHasta1Texto1(StaticText component) {
-        this.campoFechaHoraUltActJupeHasta1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaHoraUltActJupeHasta1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaHoraUltActJupeHasta1() {
-        return converterFechaHoraUltActJupeHasta1;
-    }
-  
-    public void setConverterFechaHoraUltActJupeHasta1(SqlTimestampConverter converter) {
-        this.converterFechaHoraUltActJupeHasta1 = converter;
-    }
-  
     private Label labelFechaOtorgamientoPenDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaOtorgamientoPenDesde1() {
@@ -2509,6 +2614,106 @@ public class Persona4 extends AbstractPageBean
   
     public void setConverterFechaOtorgamientoPenHasta1(SqlTimestampConverter converter) {
         this.converterFechaOtorgamientoPenHasta1 = converter;
+    }
+  
+    private Label labelFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaHoraUltActJupeDesde1() {
+        return labelFechaHoraUltActJupeDesde1;
+    }
+
+    public void setLabelFechaHoraUltActJupeDesde1(Label l) {
+        this.labelFechaHoraUltActJupeDesde1 = l;
+    }
+
+    private TextField campoFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaHoraUltActJupeDesde1() {
+        return campoFechaHoraUltActJupeDesde1;
+    }
+
+    public void setCampoFechaHoraUltActJupeDesde1(TextField component) {
+        this.campoFechaHoraUltActJupeDesde1 = component;
+    }
+
+    private HelpInline helpInlineFechaHoraUltActJupeDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaHoraUltActJupeDesde1() {
+        return helpInlineFechaHoraUltActJupeDesde1;
+    }
+
+    public void setHelpInlineFechaHoraUltActJupeDesde1(HelpInline hi) {
+        this.helpInlineFechaHoraUltActJupeDesde1 = hi;
+    }
+
+    private StaticText campoFechaHoraUltActJupeDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaHoraUltActJupeDesde1Texto1() {
+        return campoFechaHoraUltActJupeDesde1Texto1;
+    }
+
+    public void setCampoFechaHoraUltActJupeDesde1Texto1(StaticText component) {
+        this.campoFechaHoraUltActJupeDesde1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaHoraUltActJupeDesde1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaHoraUltActJupeDesde1() {
+        return converterFechaHoraUltActJupeDesde1;
+    }
+  
+    public void setConverterFechaHoraUltActJupeDesde1(SqlTimestampConverter converter) {
+        this.converterFechaHoraUltActJupeDesde1 = converter;
+    }
+  
+    private Label labelFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaHoraUltActJupeHasta1() {
+        return labelFechaHoraUltActJupeHasta1;
+    }
+
+    public void setLabelFechaHoraUltActJupeHasta1(Label l) {
+        this.labelFechaHoraUltActJupeHasta1 = l;
+    }
+
+    private TextField campoFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaHoraUltActJupeHasta1() {
+        return campoFechaHoraUltActJupeHasta1;
+    }
+
+    public void setCampoFechaHoraUltActJupeHasta1(TextField component) {
+        this.campoFechaHoraUltActJupeHasta1 = component;
+    }
+
+    private HelpInline helpInlineFechaHoraUltActJupeHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaHoraUltActJupeHasta1() {
+        return helpInlineFechaHoraUltActJupeHasta1;
+    }
+
+    public void setHelpInlineFechaHoraUltActJupeHasta1(HelpInline hi) {
+        this.helpInlineFechaHoraUltActJupeHasta1 = hi;
+    }
+
+    private StaticText campoFechaHoraUltActJupeHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaHoraUltActJupeHasta1Texto1() {
+        return campoFechaHoraUltActJupeHasta1Texto1;
+    }
+
+    public void setCampoFechaHoraUltActJupeHasta1Texto1(StaticText component) {
+        this.campoFechaHoraUltActJupeHasta1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaHoraUltActJupeHasta1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaHoraUltActJupeHasta1() {
+        return converterFechaHoraUltActJupeHasta1;
+    }
+  
+    public void setConverterFechaHoraUltActJupeHasta1(SqlTimestampConverter converter) {
+        this.converterFechaHoraUltActJupeHasta1 = converter;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -2672,85 +2877,94 @@ public class Persona4 extends AbstractPageBean
     }
     // </editor-fold>
 /**/
-    static long FUNCION_ACCION_1 = PersonaConstants.FUNCION_APROBAR_PENSION_PERSONA;
+    static long FUNCION_ACCION_1 = PersonaConstants.FUNCION_REGISTRAR_CER_VIDA_PERSONA;
 
-    static long FUNCION_ACCION_2 = PersonaConstants.FUNCION_DENEGAR_PENSION_PERSONA;
+    static long FUNCION_ACCION_2 = PersonaConstants.FUNCION_ANULAR_CER_VIDA_PERSONA;
 
-    static long FUNCION_ACCION_3 = PersonaConstants.FUNCION_REVOCAR_PENSION_PERSONA;
+    static long FUNCION_ACCION_3 = PersonaConstants.FUNCION_REGISTRAR_CER_DEFUN_PERSONA;
 
-    static long FUNCION_ACCION_4 = PersonaConstants.FUNCION_SOLICITAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_4 = PersonaConstants.FUNCION_ANULAR_CER_DEFUN_PERSONA;
 
-    static long FUNCION_ACCION_5 = PersonaConstants.FUNCION_APROBAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_5 = PersonaConstants.FUNCION_APROBAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_6 = PersonaConstants.FUNCION_DENEGAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_6 = PersonaConstants.FUNCION_DENEGAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_7 = PersonaConstants.FUNCION_REGISTRAR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_7 = PersonaConstants.FUNCION_REVOCAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_8 = PersonaConstants.FUNCION_CONFIRMAR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_8 = PersonaConstants.FUNCION_OTORGAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_9 = PersonaConstants.FUNCION_DESMENTIR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_9 = PersonaConstants.FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA;
 
-    static long FUNCION_ACCION_10 = PersonaConstants.FUNCION_REGISTRAR_CER_VIDA_PERSONA;
+    static long FUNCION_ACCION_10 = PersonaConstants.FUNCION_SOLICITAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_11 = PersonaConstants.FUNCION_ANULAR_CER_VIDA_PERSONA;
+    static long FUNCION_ACCION_11 = PersonaConstants.FUNCION_APROBAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_12 = PersonaConstants.FUNCION_REGISTRAR_CER_DEFUN_PERSONA;
+    static long FUNCION_ACCION_12 = PersonaConstants.FUNCION_DENEGAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_13 = PersonaConstants.FUNCION_ANULAR_CER_DEFUN_PERSONA;
+    static long FUNCION_ACCION_13 = PersonaConstants.FUNCION_REGISTRAR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_14 = PersonaConstants.FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
+    static long FUNCION_ACCION_14 = PersonaConstants.FUNCION_CONFIRMAR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_15 = PersonaConstants.FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
+    static long FUNCION_ACCION_15 = PersonaConstants.FUNCION_DESMENTIR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_16 = PersonaConstants.FUNCION_OTORGAR_PENSION_PERSONA;
+    static long FUNCION_ACCION_16 = PersonaConstants.FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
 
-    static long FUNCION_ACCION_17 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
+    static long FUNCION_ACCION_17 = PersonaConstants.FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
 
-    static long FUNCION_ACCION_18 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
+    static long FUNCION_ACCION_18 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
 
-    static long FUNCION_ACCION_19 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
+    static long FUNCION_ACCION_19 = PersonaConstants.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA;
 
-    static long FUNCION_ACCION_20 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
+    static long FUNCION_ACCION_20 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
 
-    static long FUNCION_ACCION_21 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+    static long FUNCION_ACCION_21 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
 
-    static long FUNCION_ACCION_22 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+    static long FUNCION_ACCION_22 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
 
-    static long FUNCION_ACCION_23 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
+    static long FUNCION_ACCION_23 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
 
-    static long FUNCION_ACCION_24 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+    static long FUNCION_ACCION_24 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
 
     static long FUNCION_ACCION_25 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
+
+    static long FUNCION_ACCION_26 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+
+    static long FUNCION_ACCION_27 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+
+    static long FUNCION_ACCION_28 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC;
 
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("aprobar pension")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("denegar pension")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("revocar pension")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("solicitar reco pen")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("aprobar reco pen")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("denegar reco pen")),
-            new Option(FUNCION_ACCION_7, Bundle.getString("registrar denu pen")),
-            new Option(FUNCION_ACCION_8, Bundle.getString("confirmar denu pen")),
-            new Option(FUNCION_ACCION_9, Bundle.getString("desmentir denu pen")),
-            new Option(FUNCION_ACCION_10, Bundle.getString("registrar cer vida")),
-            new Option(FUNCION_ACCION_11, Bundle.getString("anular cer vida")),
-            new Option(FUNCION_ACCION_12, Bundle.getString("registrar cer defun")),
-            new Option(FUNCION_ACCION_13, Bundle.getString("anular cer defun")),
-            new Option(FUNCION_ACCION_14, Bundle.getString("act fec ult cob pen")),
-            new Option(FUNCION_ACCION_15, Bundle.getString("anul fec ult cob pen")),
-            new Option(FUNCION_ACCION_16, Bundle.getString("otorgar pension")),
-            new Option(FUNCION_ACCION_17, Bundle.getString("emitir acreditada sin objeciones")),
-            new Option(FUNCION_ACCION_18, Bundle.getString("emitir con pension aprobada")),
-            new Option(FUNCION_ACCION_19, Bundle.getString("emitir con pension denegada")),
-            new Option(FUNCION_ACCION_20, Bundle.getString("emitir con pension revocada")),
-            new Option(FUNCION_ACCION_21, Bundle.getString("emitir cuadro resumen pension")),
-            new Option(FUNCION_ACCION_22, Bundle.getString("emitir ultima actualizacion en jupe")),
-            new Option(FUNCION_ACCION_23, Bundle.getString("emitir acreditada con objeciones")),
-            new Option(FUNCION_ACCION_24, Bundle.getString("emitir con pension solicitada")),
-            new Option(FUNCION_ACCION_25, Bundle.getString("emitir con pension otorgada"))
+            new Option(FUNCION_ACCION_1, Bundle.getString("registrar cer vida")),
+            new Option(FUNCION_ACCION_2, Bundle.getString("anular cer vida")),
+            new Option(FUNCION_ACCION_3, Bundle.getString("registrar cer defun")),
+            new Option(FUNCION_ACCION_4, Bundle.getString("anular cer defun")),
+            new Option(FUNCION_ACCION_5, Bundle.getString("aprobar pension")),
+            new Option(FUNCION_ACCION_6, Bundle.getString("denegar pension")),
+            new Option(FUNCION_ACCION_7, Bundle.getString("revocar pension")),
+            new Option(FUNCION_ACCION_8, Bundle.getString("otorgar pension")),
+            new Option(FUNCION_ACCION_9, Bundle.getString("registrar entrega doc")),
+            new Option(FUNCION_ACCION_10, Bundle.getString("solicitar reco pen")),
+            new Option(FUNCION_ACCION_11, Bundle.getString("aprobar reco pen")),
+            new Option(FUNCION_ACCION_12, Bundle.getString("denegar reco pen")),
+            new Option(FUNCION_ACCION_13, Bundle.getString("registrar denu pen")),
+            new Option(FUNCION_ACCION_14, Bundle.getString("confirmar denu pen")),
+            new Option(FUNCION_ACCION_15, Bundle.getString("desmentir denu pen")),
+            new Option(FUNCION_ACCION_16, Bundle.getString("act fec ult cob pen")),
+            new Option(FUNCION_ACCION_17, Bundle.getString("anul fec ult cob pen")),
+            new Option(FUNCION_ACCION_18, Bundle.getString("emitir con pension solicitada")),
+            new Option(FUNCION_ACCION_19, Bundle.getString("emitir sin cedula con pension solicitada")),
+            new Option(FUNCION_ACCION_20, Bundle.getString("emitir acreditada sin objeciones")),
+            new Option(FUNCION_ACCION_21, Bundle.getString("emitir acreditada con objeciones")),
+            new Option(FUNCION_ACCION_22, Bundle.getString("emitir con pension aprobada")),
+            new Option(FUNCION_ACCION_23, Bundle.getString("emitir con pension denegada")),
+            new Option(FUNCION_ACCION_24, Bundle.getString("emitir con pension revocada")),
+            new Option(FUNCION_ACCION_25, Bundle.getString("emitir con pension otorgada")),
+            new Option(FUNCION_ACCION_26, Bundle.getString("emitir ultima actualizacion en jupe")),
+            new Option(FUNCION_ACCION_27, Bundle.getString("emitir cuadro resumen pension")),
+            new Option(FUNCION_ACCION_28, Bundle.getString("emitir cuadro resumen pension sin doc"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -2758,7 +2972,7 @@ public class Persona4 extends AbstractPageBean
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
     public boolean isIdPersonaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == 0 || f == FUNCION_ACCION_1 || f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_7 || f == FUNCION_ACCION_8 || f == FUNCION_ACCION_9 || f == FUNCION_ACCION_10 || f == FUNCION_ACCION_11 || f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == 0 || f == FUNCION_ACCION_1 || f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_7 || f == FUNCION_ACCION_8 || f == FUNCION_ACCION_9 || f == FUNCION_ACCION_10 || f == FUNCION_ACCION_11 || f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitIdPersonaRendered = new Bit() {
@@ -2773,264 +2987,9 @@ public class Persona4 extends AbstractPageBean
         return bitIdPersonaRendered;
     }
 
-    public boolean isComentariosAprobacionPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_1;
-    }
-
-    private Bit bitComentariosAprobacionPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosAprobacionPensionRendered();
-        }
-    };
-
-    public Bit getBitComentariosAprobacionPensionRendered() {
-        return bitComentariosAprobacionPensionRendered;
-    }
-
-    public boolean isNumeroCausaDenPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_19;
-    }
-
-    private Bit bitNumeroCausaDenPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isNumeroCausaDenPensionRendered();
-        }
-    };
-
-    public Bit getBitNumeroCausaDenPensionRendered() {
-        return bitNumeroCausaDenPensionRendered;
-    }
-
-    public boolean isOtraCausaDenPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2;
-    }
-
-    private Bit bitOtraCausaDenPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isOtraCausaDenPensionRendered();
-        }
-    };
-
-    public Bit getBitOtraCausaDenPensionRendered() {
-        return bitOtraCausaDenPensionRendered;
-    }
-
-    public boolean isComentariosDenegacionPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2;
-    }
-
-    private Bit bitComentariosDenegacionPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosDenegacionPensionRendered();
-        }
-    };
-
-    public Bit getBitComentariosDenegacionPensionRendered() {
-        return bitComentariosDenegacionPensionRendered;
-    }
-
-    public boolean isNumeroCausaRevPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3 || f == FUNCION_ACCION_8 || f == FUNCION_ACCION_20;
-    }
-
-    private Bit bitNumeroCausaRevPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isNumeroCausaRevPensionRendered();
-        }
-    };
-
-    public Bit getBitNumeroCausaRevPensionRendered() {
-        return bitNumeroCausaRevPensionRendered;
-    }
-
-    public boolean isOtraCausaRevPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3 || f == FUNCION_ACCION_8;
-    }
-
-    private Bit bitOtraCausaRevPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isOtraCausaRevPensionRendered();
-        }
-    };
-
-    public Bit getBitOtraCausaRevPensionRendered() {
-        return bitOtraCausaRevPensionRendered;
-    }
-
-    public boolean isComentariosRevocacionPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3;
-    }
-
-    private Bit bitComentariosRevocacionPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosRevocacionPensionRendered();
-        }
-    };
-
-    public Bit getBitComentariosRevocacionPensionRendered() {
-        return bitComentariosRevocacionPensionRendered;
-    }
-
-    public boolean isComentariosSolicitudRecoPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_4;
-    }
-
-    private Bit bitComentariosSolicitudRecoPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosSolicitudRecoPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosSolicitudRecoPenRendered() {
-        return bitComentariosSolicitudRecoPenRendered;
-    }
-
-    public boolean isComentariosAprRecoPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_5;
-    }
-
-    private Bit bitComentariosAprRecoPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosAprRecoPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosAprRecoPenRendered() {
-        return bitComentariosAprRecoPenRendered;
-    }
-
-    public boolean isNumeroCausaDenRecoPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
-    }
-
-    private Bit bitNumeroCausaDenRecoPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isNumeroCausaDenRecoPenRendered();
-        }
-    };
-
-    public Bit getBitNumeroCausaDenRecoPenRendered() {
-        return bitNumeroCausaDenRecoPenRendered;
-    }
-
-    public boolean isOtraCausaDenRecoPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
-    }
-
-    private Bit bitOtraCausaDenRecoPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isOtraCausaDenRecoPenRendered();
-        }
-    };
-
-    public Bit getBitOtraCausaDenRecoPenRendered() {
-        return bitOtraCausaDenRecoPenRendered;
-    }
-
-    public boolean isComentariosDenRecoPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
-    }
-
-    private Bit bitComentariosDenRecoPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosDenRecoPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosDenRecoPenRendered() {
-        return bitComentariosDenRecoPenRendered;
-    }
-
-    public boolean isComentariosRegistroDenuPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_7;
-    }
-
-    private Bit bitComentariosRegistroDenuPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosRegistroDenuPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosRegistroDenuPenRendered() {
-        return bitComentariosRegistroDenuPenRendered;
-    }
-
-    public boolean isComentariosConfDenuPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_8;
-    }
-
-    private Bit bitComentariosConfDenuPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosConfDenuPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosConfDenuPenRendered() {
-        return bitComentariosConfDenuPenRendered;
-    }
-
-    public boolean isComentariosDesDenuPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_9;
-    }
-
-    private Bit bitComentariosDesDenuPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosDesDenuPenRendered();
-        }
-    };
-
-    public Bit getBitComentariosDesDenuPenRendered() {
-        return bitComentariosDesDenuPenRendered;
-    }
-
     public boolean isCertificadoVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10;
+        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_9;
     }
 
     private Bit bitCertificadoVidaRendered = new Bit() {
@@ -3047,7 +3006,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaCertificadoVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10;
+        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_9;
     }
 
     private Bit bitFechaCertificadoVidaRendered = new Bit() {
@@ -3064,7 +3023,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosAnulCerVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_11;
+        return f == FUNCION_ACCION_2;
     }
 
     private Bit bitComentariosAnulCerVidaRendered = new Bit() {
@@ -3081,7 +3040,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isCertificadoDefuncionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12;
+        return f == FUNCION_ACCION_3;
     }
 
     private Bit bitCertificadoDefuncionRendered = new Bit() {
@@ -3098,7 +3057,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaCertificadoDefuncionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12;
+        return f == FUNCION_ACCION_3;
     }
 
     private Bit bitFechaCertificadoDefuncionRendered = new Bit() {
@@ -3115,7 +3074,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosAnulCerDefuncionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_13;
+        return f == FUNCION_ACCION_4;
     }
 
     private Bit bitComentariosAnulCerDefuncionRendered = new Bit() {
@@ -3130,43 +3089,162 @@ public class Persona4 extends AbstractPageBean
         return bitComentariosAnulCerDefuncionRendered;
     }
 
-    public boolean isFechaUltimoCobroPensionRendered() {
+    public boolean isComentariosAprobacionPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_14;
+        return f == FUNCION_ACCION_5;
     }
 
-    private Bit bitFechaUltimoCobroPensionRendered = new Bit() {
+    private Bit bitComentariosAprobacionPensionRendered = new Bit() {
         // override metodo isOn
         @Override
         public boolean isOn() {
-            return isFechaUltimoCobroPensionRendered();
+            return isComentariosAprobacionPensionRendered();
         }
     };
 
-    public Bit getBitFechaUltimoCobroPensionRendered() {
-        return bitFechaUltimoCobroPensionRendered;
+    public Bit getBitComentariosAprobacionPensionRendered() {
+        return bitComentariosAprobacionPensionRendered;
     }
 
-    public boolean isNotasAnulFecUltCobPenRendered() {
+    public boolean isNumeroCausaDenPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_15;
+        return f == FUNCION_ACCION_6 || f == FUNCION_ACCION_23;
     }
 
-    private Bit bitNotasAnulFecUltCobPenRendered = new Bit() {
+    private Bit bitNumeroCausaDenPensionRendered = new Bit() {
         // override metodo isOn
         @Override
         public boolean isOn() {
-            return isNotasAnulFecUltCobPenRendered();
+            return isNumeroCausaDenPensionRendered();
         }
     };
 
-    public Bit getBitNotasAnulFecUltCobPenRendered() {
-        return bitNotasAnulFecUltCobPenRendered;
+    public Bit getBitNumeroCausaDenPensionRendered() {
+        return bitNumeroCausaDenPensionRendered;
+    }
+
+    public boolean isOtraCausaDenPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_6;
+    }
+
+    private Bit bitOtraCausaDenPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isOtraCausaDenPensionRendered();
+        }
+    };
+
+    public Bit getBitOtraCausaDenPensionRendered() {
+        return bitOtraCausaDenPensionRendered;
+    }
+
+    public boolean isNumeroResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_6;
+    }
+
+    private Bit bitNumeroResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitNumeroResolucionDenPenRendered() {
+        return bitNumeroResolucionDenPenRendered;
+    }
+
+    public boolean isFechaResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_6;
+    }
+
+    private Bit bitFechaResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitFechaResolucionDenPenRendered() {
+        return bitFechaResolucionDenPenRendered;
+    }
+
+    public boolean isComentariosDenegacionPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_6;
+    }
+
+    private Bit bitComentariosDenegacionPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosDenegacionPensionRendered();
+        }
+    };
+
+    public Bit getBitComentariosDenegacionPensionRendered() {
+        return bitComentariosDenegacionPensionRendered;
+    }
+
+    public boolean isNumeroCausaRevPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_24;
+    }
+
+    private Bit bitNumeroCausaRevPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroCausaRevPensionRendered();
+        }
+    };
+
+    public Bit getBitNumeroCausaRevPensionRendered() {
+        return bitNumeroCausaRevPensionRendered;
+    }
+
+    public boolean isOtraCausaRevPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_14;
+    }
+
+    private Bit bitOtraCausaRevPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isOtraCausaRevPensionRendered();
+        }
+    };
+
+    public Bit getBitOtraCausaRevPensionRendered() {
+        return bitOtraCausaRevPensionRendered;
+    }
+
+    public boolean isComentariosRevocacionPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_7;
+    }
+
+    private Bit bitComentariosRevocacionPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosRevocacionPensionRendered();
+        }
+    };
+
+    public Bit getBitComentariosRevocacionPensionRendered() {
+        return bitComentariosRevocacionPensionRendered;
     }
 
     public boolean isNumeroResolucionOtorPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_8;
     }
 
     private Bit bitNumeroResolucionOtorPenRendered = new Bit() {
@@ -3183,7 +3261,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaResolucionOtorPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_8;
     }
 
     private Bit bitFechaResolucionOtorPenRendered = new Bit() {
@@ -3200,7 +3278,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosOtorgamientoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_8;
     }
 
     private Bit bitComentariosOtorgamientoPenRendered = new Bit() {
@@ -3215,9 +3293,213 @@ public class Persona4 extends AbstractPageBean
         return bitComentariosOtorgamientoPenRendered;
     }
 
+    public boolean isEsPersonaConCopiaCedulaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_9;
+    }
+
+    private Bit bitEsPersonaConCopiaCedulaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEsPersonaConCopiaCedulaRendered();
+        }
+    };
+
+    public Bit getBitEsPersonaConCopiaCedulaRendered() {
+        return bitEsPersonaConCopiaCedulaRendered;
+    }
+
+    public boolean isEsPersonaConDeclaracionJurRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_9;
+    }
+
+    private Bit bitEsPersonaConDeclaracionJurRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEsPersonaConDeclaracionJurRendered();
+        }
+    };
+
+    public Bit getBitEsPersonaConDeclaracionJurRendered() {
+        return bitEsPersonaConDeclaracionJurRendered;
+    }
+
+    public boolean isComentariosSolicitudRecoPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_10;
+    }
+
+    private Bit bitComentariosSolicitudRecoPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosSolicitudRecoPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosSolicitudRecoPenRendered() {
+        return bitComentariosSolicitudRecoPenRendered;
+    }
+
+    public boolean isComentariosAprRecoPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_11;
+    }
+
+    private Bit bitComentariosAprRecoPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosAprRecoPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosAprRecoPenRendered() {
+        return bitComentariosAprRecoPenRendered;
+    }
+
+    public boolean isNumeroCausaDenRecoPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_12;
+    }
+
+    private Bit bitNumeroCausaDenRecoPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroCausaDenRecoPenRendered();
+        }
+    };
+
+    public Bit getBitNumeroCausaDenRecoPenRendered() {
+        return bitNumeroCausaDenRecoPenRendered;
+    }
+
+    public boolean isOtraCausaDenRecoPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_12;
+    }
+
+    private Bit bitOtraCausaDenRecoPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isOtraCausaDenRecoPenRendered();
+        }
+    };
+
+    public Bit getBitOtraCausaDenRecoPenRendered() {
+        return bitOtraCausaDenRecoPenRendered;
+    }
+
+    public boolean isComentariosDenRecoPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_12;
+    }
+
+    private Bit bitComentariosDenRecoPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosDenRecoPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosDenRecoPenRendered() {
+        return bitComentariosDenRecoPenRendered;
+    }
+
+    public boolean isComentariosRegistroDenuPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_13;
+    }
+
+    private Bit bitComentariosRegistroDenuPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosRegistroDenuPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosRegistroDenuPenRendered() {
+        return bitComentariosRegistroDenuPenRendered;
+    }
+
+    public boolean isComentariosConfDenuPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_14;
+    }
+
+    private Bit bitComentariosConfDenuPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosConfDenuPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosConfDenuPenRendered() {
+        return bitComentariosConfDenuPenRendered;
+    }
+
+    public boolean isComentariosDesDenuPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_15;
+    }
+
+    private Bit bitComentariosDesDenuPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosDesDenuPenRendered();
+        }
+    };
+
+    public Bit getBitComentariosDesDenuPenRendered() {
+        return bitComentariosDesDenuPenRendered;
+    }
+
+    public boolean isFechaUltimoCobroPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_16;
+    }
+
+    private Bit bitFechaUltimoCobroPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaUltimoCobroPensionRendered();
+        }
+    };
+
+    public Bit getBitFechaUltimoCobroPensionRendered() {
+        return bitFechaUltimoCobroPensionRendered;
+    }
+
+    public boolean isNotasAnulFecUltCobPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_17;
+    }
+
+    private Bit bitNotasAnulFecUltCobPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNotasAnulFecUltCobPenRendered();
+        }
+    };
+
+    public Bit getBitNotasAnulFecUltCobPenRendered() {
+        return bitNotasAnulFecUltCobPenRendered;
+    }
+
     public boolean isIdDepartamentoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17 || f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdDepartamentoRendered = new Bit() {
@@ -3234,7 +3516,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdDistritoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17 || f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdDistritoRendered = new Bit() {
@@ -3251,7 +3533,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdBarrioRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17 || f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdBarrioRendered = new Bit() {
@@ -3268,7 +3550,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaSolicitudPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24;
+        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21;
     }
 
     private Bit bitFechaSolicitudPensionDesdeRendered = new Bit() {
@@ -3285,7 +3567,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaSolicitudPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24;
+        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21;
     }
 
     private Bit bitFechaSolicitudPensionHastaRendered = new Bit() {
@@ -3302,7 +3584,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaAprobacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18;
+        return f == FUNCION_ACCION_22;
     }
 
     private Bit bitFechaAprobacionPensionDesdeRendered = new Bit() {
@@ -3319,7 +3601,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaAprobacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18;
+        return f == FUNCION_ACCION_22;
     }
 
     private Bit bitFechaAprobacionPensionHastaRendered = new Bit() {
@@ -3336,7 +3618,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaDenegacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19;
+        return f == FUNCION_ACCION_23;
     }
 
     private Bit bitFechaDenegacionPensionDesdeRendered = new Bit() {
@@ -3353,7 +3635,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaDenegacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19;
+        return f == FUNCION_ACCION_23;
     }
 
     private Bit bitFechaDenegacionPensionHastaRendered = new Bit() {
@@ -3370,7 +3652,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaRevocacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_20;
+        return f == FUNCION_ACCION_24;
     }
 
     private Bit bitFechaRevocacionPensionDesdeRendered = new Bit() {
@@ -3387,7 +3669,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaRevocacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_20;
+        return f == FUNCION_ACCION_24;
     }
 
     private Bit bitFechaRevocacionPensionHastaRendered = new Bit() {
@@ -3400,40 +3682,6 @@ public class Persona4 extends AbstractPageBean
 
     public Bit getBitFechaRevocacionPensionHastaRendered() {
         return bitFechaRevocacionPensionHastaRendered;
-    }
-
-    public boolean isFechaHoraUltActJupeDesdeRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_22;
-    }
-
-    private Bit bitFechaHoraUltActJupeDesdeRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isFechaHoraUltActJupeDesdeRendered();
-        }
-    };
-
-    public Bit getBitFechaHoraUltActJupeDesdeRendered() {
-        return bitFechaHoraUltActJupeDesdeRendered;
-    }
-
-    public boolean isFechaHoraUltActJupeHastaRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_22;
-    }
-
-    private Bit bitFechaHoraUltActJupeHastaRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isFechaHoraUltActJupeHastaRendered();
-        }
-    };
-
-    public Bit getBitFechaHoraUltActJupeHastaRendered() {
-        return bitFechaHoraUltActJupeHastaRendered;
     }
 
     public boolean isFechaOtorgamientoPenDesdeRendered() {
@@ -3468,6 +3716,40 @@ public class Persona4 extends AbstractPageBean
 
     public Bit getBitFechaOtorgamientoPenHastaRendered() {
         return bitFechaOtorgamientoPenHastaRendered;
+    }
+
+    public boolean isFechaHoraUltActJupeDesdeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_26;
+    }
+
+    private Bit bitFechaHoraUltActJupeDesdeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaHoraUltActJupeDesdeRendered();
+        }
+    };
+
+    public Bit getBitFechaHoraUltActJupeDesdeRendered() {
+        return bitFechaHoraUltActJupeDesdeRendered;
+    }
+
+    public boolean isFechaHoraUltActJupeHastaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_26;
+    }
+
+    private Bit bitFechaHoraUltActJupeHastaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaHoraUltActJupeHastaRendered();
+        }
+    };
+
+    public Bit getBitFechaHoraUltActJupeHastaRendered() {
+        return bitFechaHoraUltActJupeHastaRendered;
     }
 
     // </editor-fold>
@@ -3515,6 +3797,66 @@ public class Persona4 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
+    private String textoCampoCertificadoVida1;
+
+    public String getTextoCampoCertificadoVida1() {
+        return this.textoCampoCertificadoVida1;
+    }
+
+    public void setTextoCampoCertificadoVida1(String valor) {
+        this.textoCampoCertificadoVida1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaCertificadoVida1;
+
+    public java.sql.Timestamp getValorCampoFechaCertificadoVida1() {
+        return this.valorCampoFechaCertificadoVida1;
+    }
+
+    public void setValorCampoFechaCertificadoVida1(java.sql.Timestamp valor) {
+        this.valorCampoFechaCertificadoVida1 = valor;
+    }
+
+    private String textoCampoComentariosAnulCerVida1;
+
+    public String getTextoCampoComentariosAnulCerVida1() {
+        return this.textoCampoComentariosAnulCerVida1;
+    }
+
+    public void setTextoCampoComentariosAnulCerVida1(String valor) {
+        this.textoCampoComentariosAnulCerVida1 = valor;
+    }
+
+    private String textoCampoCertificadoDefuncion1;
+
+    public String getTextoCampoCertificadoDefuncion1() {
+        return this.textoCampoCertificadoDefuncion1;
+    }
+
+    public void setTextoCampoCertificadoDefuncion1(String valor) {
+        this.textoCampoCertificadoDefuncion1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaCertificadoDefuncion1;
+
+    public java.sql.Timestamp getValorCampoFechaCertificadoDefuncion1() {
+        return this.valorCampoFechaCertificadoDefuncion1;
+    }
+
+    public void setValorCampoFechaCertificadoDefuncion1(java.sql.Timestamp valor) {
+        this.valorCampoFechaCertificadoDefuncion1 = valor;
+    }
+
+    private String textoCampoComentariosAnulCerDefuncion1;
+
+    public String getTextoCampoComentariosAnulCerDefuncion1() {
+        return this.textoCampoComentariosAnulCerDefuncion1;
+    }
+
+    public void setTextoCampoComentariosAnulCerDefuncion1(String valor) {
+        this.textoCampoComentariosAnulCerDefuncion1 = valor;
+    }
+
     private String textoCampoComentariosAprobacionPension1;
 
     public String getTextoCampoComentariosAprobacionPension1() {
@@ -3533,6 +3875,26 @@ public class Persona4 extends AbstractPageBean
 
     public void setTextoCampoOtraCausaDenPension1(String valor) {
         this.textoCampoOtraCausaDenPension1 = valor;
+    }
+
+    private String textoCampoNumeroResolucionDenPen1;
+
+    public String getTextoCampoNumeroResolucionDenPen1() {
+        return this.textoCampoNumeroResolucionDenPen1;
+    }
+
+    public void setTextoCampoNumeroResolucionDenPen1(String valor) {
+        this.textoCampoNumeroResolucionDenPen1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaResolucionDenPen1;
+
+    public java.sql.Timestamp getValorCampoFechaResolucionDenPen1() {
+        return this.valorCampoFechaResolucionDenPen1;
+    }
+
+    public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
+        this.valorCampoFechaResolucionDenPen1 = valor;
     }
 
     private String textoCampoComentariosDenegacionPension1;
@@ -3563,6 +3925,36 @@ public class Persona4 extends AbstractPageBean
 
     public void setTextoCampoComentariosRevocacionPension1(String valor) {
         this.textoCampoComentariosRevocacionPension1 = valor;
+    }
+
+    private String textoCampoNumeroResolucionOtorPen1;
+
+    public String getTextoCampoNumeroResolucionOtorPen1() {
+        return this.textoCampoNumeroResolucionOtorPen1;
+    }
+
+    public void setTextoCampoNumeroResolucionOtorPen1(String valor) {
+        this.textoCampoNumeroResolucionOtorPen1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaResolucionOtorPen1;
+
+    public java.sql.Timestamp getValorCampoFechaResolucionOtorPen1() {
+        return this.valorCampoFechaResolucionOtorPen1;
+    }
+
+    public void setValorCampoFechaResolucionOtorPen1(java.sql.Timestamp valor) {
+        this.valorCampoFechaResolucionOtorPen1 = valor;
+    }
+
+    private String textoCampoComentariosOtorgamientoPen1;
+
+    public String getTextoCampoComentariosOtorgamientoPen1() {
+        return this.textoCampoComentariosOtorgamientoPen1;
+    }
+
+    public void setTextoCampoComentariosOtorgamientoPen1(String valor) {
+        this.textoCampoComentariosOtorgamientoPen1 = valor;
     }
 
     private String textoCampoComentariosSolicitudRecoPen1;
@@ -3635,66 +4027,6 @@ public class Persona4 extends AbstractPageBean
         this.textoCampoComentariosDesDenuPen1 = valor;
     }
 
-    private String textoCampoCertificadoVida1;
-
-    public String getTextoCampoCertificadoVida1() {
-        return this.textoCampoCertificadoVida1;
-    }
-
-    public void setTextoCampoCertificadoVida1(String valor) {
-        this.textoCampoCertificadoVida1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaCertificadoVida1;
-
-    public java.sql.Timestamp getValorCampoFechaCertificadoVida1() {
-        return this.valorCampoFechaCertificadoVida1;
-    }
-
-    public void setValorCampoFechaCertificadoVida1(java.sql.Timestamp valor) {
-        this.valorCampoFechaCertificadoVida1 = valor;
-    }
-
-    private String textoCampoComentariosAnulCerVida1;
-
-    public String getTextoCampoComentariosAnulCerVida1() {
-        return this.textoCampoComentariosAnulCerVida1;
-    }
-
-    public void setTextoCampoComentariosAnulCerVida1(String valor) {
-        this.textoCampoComentariosAnulCerVida1 = valor;
-    }
-
-    private String textoCampoCertificadoDefuncion1;
-
-    public String getTextoCampoCertificadoDefuncion1() {
-        return this.textoCampoCertificadoDefuncion1;
-    }
-
-    public void setTextoCampoCertificadoDefuncion1(String valor) {
-        this.textoCampoCertificadoDefuncion1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaCertificadoDefuncion1;
-
-    public java.sql.Timestamp getValorCampoFechaCertificadoDefuncion1() {
-        return this.valorCampoFechaCertificadoDefuncion1;
-    }
-
-    public void setValorCampoFechaCertificadoDefuncion1(java.sql.Timestamp valor) {
-        this.valorCampoFechaCertificadoDefuncion1 = valor;
-    }
-
-    private String textoCampoComentariosAnulCerDefuncion1;
-
-    public String getTextoCampoComentariosAnulCerDefuncion1() {
-        return this.textoCampoComentariosAnulCerDefuncion1;
-    }
-
-    public void setTextoCampoComentariosAnulCerDefuncion1(String valor) {
-        this.textoCampoComentariosAnulCerDefuncion1 = valor;
-    }
-
     private java.sql.Timestamp valorCampoFechaUltimoCobroPension1;
 
     public java.sql.Timestamp getValorCampoFechaUltimoCobroPension1() {
@@ -3713,36 +4045,6 @@ public class Persona4 extends AbstractPageBean
 
     public void setTextoCampoNotasAnulFecUltCobPen1(String valor) {
         this.textoCampoNotasAnulFecUltCobPen1 = valor;
-    }
-
-    private String textoCampoNumeroResolucionOtorPen1;
-
-    public String getTextoCampoNumeroResolucionOtorPen1() {
-        return this.textoCampoNumeroResolucionOtorPen1;
-    }
-
-    public void setTextoCampoNumeroResolucionOtorPen1(String valor) {
-        this.textoCampoNumeroResolucionOtorPen1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaResolucionOtorPen1;
-
-    public java.sql.Timestamp getValorCampoFechaResolucionOtorPen1() {
-        return this.valorCampoFechaResolucionOtorPen1;
-    }
-
-    public void setValorCampoFechaResolucionOtorPen1(java.sql.Timestamp valor) {
-        this.valorCampoFechaResolucionOtorPen1 = valor;
-    }
-
-    private String textoCampoComentariosOtorgamientoPen1;
-
-    public String getTextoCampoComentariosOtorgamientoPen1() {
-        return this.textoCampoComentariosOtorgamientoPen1;
-    }
-
-    public void setTextoCampoComentariosOtorgamientoPen1(String valor) {
-        this.textoCampoComentariosOtorgamientoPen1 = valor;
     }
 
     private java.sql.Timestamp valorCampoFechaSolicitudPensionDesde1;
@@ -3825,26 +4127,6 @@ public class Persona4 extends AbstractPageBean
         this.valorCampoFechaRevocacionPensionHasta1 = valor;
     }
 
-    private java.sql.Timestamp valorCampoFechaHoraUltActJupeDesde1;
-
-    public java.sql.Timestamp getValorCampoFechaHoraUltActJupeDesde1() {
-        return this.valorCampoFechaHoraUltActJupeDesde1;
-    }
-
-    public void setValorCampoFechaHoraUltActJupeDesde1(java.sql.Timestamp valor) {
-        this.valorCampoFechaHoraUltActJupeDesde1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaHoraUltActJupeHasta1;
-
-    public java.sql.Timestamp getValorCampoFechaHoraUltActJupeHasta1() {
-        return this.valorCampoFechaHoraUltActJupeHasta1;
-    }
-
-    public void setValorCampoFechaHoraUltActJupeHasta1(java.sql.Timestamp valor) {
-        this.valorCampoFechaHoraUltActJupeHasta1 = valor;
-    }
-
     private java.sql.Timestamp valorCampoFechaOtorgamientoPenDesde1;
 
     public java.sql.Timestamp getValorCampoFechaOtorgamientoPenDesde1() {
@@ -3863,6 +4145,26 @@ public class Persona4 extends AbstractPageBean
 
     public void setValorCampoFechaOtorgamientoPenHasta1(java.sql.Timestamp valor) {
         this.valorCampoFechaOtorgamientoPenHasta1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaHoraUltActJupeDesde1;
+
+    public java.sql.Timestamp getValorCampoFechaHoraUltActJupeDesde1() {
+        return this.valorCampoFechaHoraUltActJupeDesde1;
+    }
+
+    public void setValorCampoFechaHoraUltActJupeDesde1(java.sql.Timestamp valor) {
+        this.valorCampoFechaHoraUltActJupeDesde1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaHoraUltActJupeHasta1;
+
+    public java.sql.Timestamp getValorCampoFechaHoraUltActJupeHasta1() {
+        return this.valorCampoFechaHoraUltActJupeHasta1;
+    }
+
+    public void setValorCampoFechaHoraUltActJupeHasta1(java.sql.Timestamp valor) {
+        this.valorCampoFechaHoraUltActJupeHasta1 = valor;
     }
 
     // </editor-fold>
@@ -4436,6 +4738,34 @@ public class Persona4 extends AbstractPageBean
         this.valorListaNumeroCausaRevPension1 = valor;
     }
 
+    public Object getOpcionesListaEsPersonaConCopiaCedula1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
+    private Integer valorListaEsPersonaConCopiaCedula1;
+
+    public Integer getValorListaEsPersonaConCopiaCedula1() {
+        return this.valorListaEsPersonaConCopiaCedula1;
+    }
+
+    public void setValorListaEsPersonaConCopiaCedula1(Integer valor) {
+        this.valorListaEsPersonaConCopiaCedula1 = valor;
+    }
+
+    public Object getOpcionesListaEsPersonaConDeclaracionJur1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
+    private Integer valorListaEsPersonaConDeclaracionJur1;
+
+    public Integer getValorListaEsPersonaConDeclaracionJur1() {
+        return this.valorListaEsPersonaConDeclaracionJur1;
+    }
+
+    public void setValorListaEsPersonaConDeclaracionJur1(Integer valor) {
+        this.valorListaEsPersonaConDeclaracionJur1 = valor;
+    }
+
     public Object getOpcionesListaNumeroCausaDenRecoPen1() {
         return JSF.getListaOpciones(EnumCausaDenRecoPen.values(), true, false);
     }
@@ -4460,127 +4790,40 @@ public class Persona4 extends AbstractPageBean
     public String botonProcesar1_action() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == 0 ? null
-                : f == FUNCION_ACCION_1 ? this.accion1(f) /* aprobarPensionPersona */
-                : f == FUNCION_ACCION_2 ? this.accion2(f) /* denegarPensionPersona */
-                : f == FUNCION_ACCION_3 ? this.accion3(f) /* revocarPensionPersona */
-                : f == FUNCION_ACCION_4 ? this.accion4(f) /* solicitarRecoPenPersona */
-                : f == FUNCION_ACCION_5 ? this.accion5(f) /* aprobarRecoPenPersona */
-                : f == FUNCION_ACCION_6 ? this.accion6(f) /* denegarRecoPenPersona */
-                : f == FUNCION_ACCION_7 ? this.accion7(f) /* registrarDenuPenPersona */
-                : f == FUNCION_ACCION_8 ? this.accion8(f) /* confirmarDenuPenPersona */
-                : f == FUNCION_ACCION_9 ? this.accion9(f) /* desmentirDenuPenPersona */
-                : f == FUNCION_ACCION_10 ? this.accion10(f) /* registrarCerVidaPersona */
-                : f == FUNCION_ACCION_11 ? this.accion11(f) /* anularCerVidaPersona */
-                : f == FUNCION_ACCION_12 ? this.accion12(f) /* registrarCerDefunPersona */
-                : f == FUNCION_ACCION_13 ? this.accion13(f) /* anularCerDefunPersona */
-                : f == FUNCION_ACCION_14 ? this.accion14(f) /* actFecUltCobPenPersona */
-                : f == FUNCION_ACCION_15 ? this.accion15(f) /* anulFecUltCobPenPersona */
-                : f == FUNCION_ACCION_16 ? this.accion16(f) /* otorgarPensionPersona */
-                : f == FUNCION_ACCION_17 ? this.accion17(f) /* emitirPersonaAcreditadaSinObjeciones */
-                : f == FUNCION_ACCION_18 ? this.accion18(f) /* emitirPersonaConPensionAprobada */
-                : f == FUNCION_ACCION_19 ? this.accion19(f) /* emitirPersonaConPensionDenegada */
-                : f == FUNCION_ACCION_20 ? this.accion20(f) /* emitirPersonaConPensionRevocada */
-                : f == FUNCION_ACCION_21 ? this.accion21(f) /* emitirCuadroResumenPensionPersona */
-                : f == FUNCION_ACCION_22 ? this.accion22(f) /* emitirUltimaActualizacionPersonaEnJupe */
-                : f == FUNCION_ACCION_23 ? this.accion23(f) /* emitirPersonaAcreditadaConObjeciones */
-                : f == FUNCION_ACCION_24 ? this.accion24(f) /* emitirPersonaConPensionSolicitada */
+                : f == FUNCION_ACCION_1 ? this.accion1(f) /* registrarCerVidaPersona */
+                : f == FUNCION_ACCION_2 ? this.accion2(f) /* anularCerVidaPersona */
+                : f == FUNCION_ACCION_3 ? this.accion3(f) /* registrarCerDefunPersona */
+                : f == FUNCION_ACCION_4 ? this.accion4(f) /* anularCerDefunPersona */
+                : f == FUNCION_ACCION_5 ? this.accion5(f) /* aprobarPensionPersona */
+                : f == FUNCION_ACCION_6 ? this.accion6(f) /* denegarPensionPersona */
+                : f == FUNCION_ACCION_7 ? this.accion7(f) /* revocarPensionPersona */
+                : f == FUNCION_ACCION_8 ? this.accion8(f) /* otorgarPensionPersona */
+                : f == FUNCION_ACCION_9 ? this.accion9(f) /* registrarEntregaDocPersona */
+                : f == FUNCION_ACCION_10 ? this.accion10(f) /* solicitarRecoPenPersona */
+                : f == FUNCION_ACCION_11 ? this.accion11(f) /* aprobarRecoPenPersona */
+                : f == FUNCION_ACCION_12 ? this.accion12(f) /* denegarRecoPenPersona */
+                : f == FUNCION_ACCION_13 ? this.accion13(f) /* registrarDenuPenPersona */
+                : f == FUNCION_ACCION_14 ? this.accion14(f) /* confirmarDenuPenPersona */
+                : f == FUNCION_ACCION_15 ? this.accion15(f) /* desmentirDenuPenPersona */
+                : f == FUNCION_ACCION_16 ? this.accion16(f) /* actFecUltCobPenPersona */
+                : f == FUNCION_ACCION_17 ? this.accion17(f) /* anulFecUltCobPenPersona */
+                : f == FUNCION_ACCION_18 ? this.accion18(f) /* emitirPersonaConPensionSolicitada */
+                : f == FUNCION_ACCION_19 ? this.accion19(f) /* emitirPersonaSinCedulaConPensionSolicitada */
+                : f == FUNCION_ACCION_20 ? this.accion20(f) /* emitirPersonaAcreditadaSinObjeciones */
+                : f == FUNCION_ACCION_21 ? this.accion21(f) /* emitirPersonaAcreditadaConObjeciones */
+                : f == FUNCION_ACCION_22 ? this.accion22(f) /* emitirPersonaConPensionAprobada */
+                : f == FUNCION_ACCION_23 ? this.accion23(f) /* emitirPersonaConPensionDenegada */
+                : f == FUNCION_ACCION_24 ? this.accion24(f) /* emitirPersonaConPensionRevocada */
                 : f == FUNCION_ACCION_25 ? this.accion25(f) /* emitirPersonaConPensionOtorgada */
+                : f == FUNCION_ACCION_26 ? this.accion26(f) /* emitirUltimaActualizacionPersonaEnJupe */
+                : f == FUNCION_ACCION_27 ? this.accion27(f) /* emitirCuadroResumenPensionPersona */
+                : f == FUNCION_ACCION_28 ? this.accion28(f) /* emitirCuadroResumenPensionPersonaSinDoc */
                 : null;
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para ejecutar funciones">
     private String accion1(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.aprobarPensionPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar pension persona"));
-        }
-        return null;
-    }
-
-    private String accion2(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.denegarPensionPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar pension persona"));
-        }
-        return null;
-    }
-
-    private String accion3(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.revocarPensionPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("revocar pension persona"));
-        }
-        return null;
-    }
-
-    private String accion4(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.solicitarRecoPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("solicitar reco pen persona"));
-        }
-        return null;
-    }
-
-    private String accion5(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.aprobarRecoPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar reco pen persona"));
-        }
-        return null;
-    }
-
-    private String accion6(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.denegarRecoPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar reco pen persona"));
-        }
-        return null;
-    }
-
-    private String accion7(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.registrarDenuPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar denu pen persona"));
-        }
-        return null;
-    }
-
-    private String accion8(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.confirmarDenuPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("confirmar denu pen persona"));
-        }
-        return null;
-    }
-
-    private String accion9(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.desmentirDenuPenPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desmentir denu pen persona"));
-        }
-        return null;
-    }
-
-    private String accion10(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.registrarCerVidaPersona();
@@ -4590,7 +4833,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion11(long f) {
+    private String accion2(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.anularCerVidaPersona();
@@ -4600,7 +4843,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion12(long f) {
+    private String accion3(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.registrarCerDefunPersona();
@@ -4610,7 +4853,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion13(long f) {
+    private String accion4(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.anularCerDefunPersona();
@@ -4620,27 +4863,37 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion14(long f) {
+    private String accion5(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
-            this.actFecUltCobPenPersona();
+            this.aprobarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("act fec ult cob pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar pension persona"));
         }
         return null;
     }
 
-    private String accion15(long f) {
+    private String accion6(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
-            this.anulFecUltCobPenPersona();
+            this.denegarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("anul fec ult cob pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar pension persona"));
         }
         return null;
     }
 
-    private String accion16(long f) {
+    private String accion7(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.revocarPensionPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("revocar pension persona"));
+        }
+        return null;
+    }
+
+    private String accion8(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.otorgarPensionPersona();
@@ -4650,7 +4903,117 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
+    private String accion9(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.registrarEntregaDocPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar entrega doc persona"));
+        }
+        return null;
+    }
+
+    private String accion10(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.solicitarRecoPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("solicitar reco pen persona"));
+        }
+        return null;
+    }
+
+    private String accion11(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.aprobarRecoPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar reco pen persona"));
+        }
+        return null;
+    }
+
+    private String accion12(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.denegarRecoPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar reco pen persona"));
+        }
+        return null;
+    }
+
+    private String accion13(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.registrarDenuPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar denu pen persona"));
+        }
+        return null;
+    }
+
+    private String accion14(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.confirmarDenuPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("confirmar denu pen persona"));
+        }
+        return null;
+    }
+
+    private String accion15(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.desmentirDenuPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desmentir denu pen persona"));
+        }
+        return null;
+    }
+
+    private String accion16(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.actFecUltCobPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("act fec ult cob pen persona"));
+        }
+        return null;
+    }
+
     private String accion17(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.anulFecUltCobPenPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("anul fec ult cob pen persona"));
+        }
+        return null;
+    }
+
+    private String accion18(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirPersonaConPensionSolicitada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension solicitada"));
+        }
+        return null;
+    }
+
+    private String accion19(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirPersonaSinCedulaConPensionSolicitada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona sin cedula con pension solicitada"));
+        }
+        return null;
+    }
+
+    private String accion20(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaSinObjeciones();
@@ -4660,57 +5023,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion18(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.emitirPersonaConPensionAprobada();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension aprobada"));
-        }
-        return null;
-    }
-
-    private String accion19(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.emitirPersonaConPensionDenegada();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension denegada"));
-        }
-        return null;
-    }
-
-    private String accion20(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.emitirPersonaConPensionRevocada();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension revocada"));
-        }
-        return null;
-    }
-
     private String accion21(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.emitirCuadroResumenPensionPersona();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir cuadro resumen pension persona"));
-        }
-        return null;
-    }
-
-    private String accion22(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.emitirUltimaActualizacionPersonaEnJupe();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir ultima actualizacion persona en jupe"));
-        }
-        return null;
-    }
-
-    private String accion23(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaConObjeciones();
@@ -4720,12 +5033,32 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
+    private String accion22(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirPersonaConPensionAprobada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension aprobada"));
+        }
+        return null;
+    }
+
+    private String accion23(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirPersonaConPensionDenegada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension denegada"));
+        }
+        return null;
+    }
+
     private String accion24(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
-            this.emitirPersonaConPensionSolicitada();
+            this.emitirPersonaConPensionRevocada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension solicitada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension revocada"));
         }
         return null;
     }
@@ -4736,6 +5069,36 @@ public class Persona4 extends AbstractPageBean
             this.emitirPersonaConPensionOtorgada();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension otorgada"));
+        }
+        return null;
+    }
+
+    private String accion26(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirUltimaActualizacionPersonaEnJupe();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir ultima actualizacion persona en jupe"));
+        }
+        return null;
+    }
+
+    private String accion27(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirCuadroResumenPensionPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir cuadro resumen pension persona"));
+        }
+        return null;
+    }
+
+    private String accion28(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirCuadroResumenPensionPersonaSinDoc();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir cuadro resumen pension persona sin doc"));
         }
         return null;
     }
@@ -4753,6 +5116,88 @@ public class Persona4 extends AbstractPageBean
 
     @EJB
     private ReporterBrokerLocal reporter;
+
+    private void registrarCerVidaPersona() { /* registrar cer vida persona */
+        this.registrarCerVidaPersona(synchronously);
+    }
+
+    private void registrarCerVidaPersona(boolean synchronously) { /* registrar cer vida persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String certificadoVida = this.getTextoCampoCertificadoVida1();
+            Date fechaCertificadoVida = this.getValorCampoFechaCertificadoVida1();
+            RegistrarCerVidaPersonaMessage message = new RegistrarCerVidaPersonaMessage(idPersona, certificadoVida, fechaCertificadoVida);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.registrarCerVidaPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void anularCerVidaPersona() { /* anular cer vida persona */
+        this.anularCerVidaPersona(synchronously);
+    }
+
+    private void anularCerVidaPersona(boolean synchronously) { /* anular cer vida persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String comentariosAnulCerVida = this.getTextoCampoComentariosAnulCerVida1();
+            AnularCerVidaPersonaMessage message = new AnularCerVidaPersonaMessage(idPersona, comentariosAnulCerVida);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.anularCerVidaPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void registrarCerDefunPersona() { /* registrar cer defun persona */
+        this.registrarCerDefunPersona(synchronously);
+    }
+
+    private void registrarCerDefunPersona(boolean synchronously) { /* registrar cer defun persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String certificadoDefuncion = this.getTextoCampoCertificadoDefuncion1();
+            Date fechaCertificadoDefuncion = this.getValorCampoFechaCertificadoDefuncion1();
+            RegistrarCerDefunPersonaMessage message = new RegistrarCerDefunPersonaMessage(idPersona, certificadoDefuncion, fechaCertificadoDefuncion);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.registrarCerDefunPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void anularCerDefunPersona() { /* anular cer defun persona */
+        this.anularCerDefunPersona(synchronously);
+    }
+
+    private void anularCerDefunPersona(boolean synchronously) { /* anular cer defun persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String comentariosAnulCerDefuncion = this.getTextoCampoComentariosAnulCerDefuncion1();
+            AnularCerDefunPersonaMessage message = new AnularCerDefunPersonaMessage(idPersona, comentariosAnulCerDefuncion);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.anularCerDefunPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
 
     private void aprobarPensionPersona() { /* aprobar pension persona */
         this.aprobarPensionPersona(synchronously);
@@ -4783,8 +5228,10 @@ public class Persona4 extends AbstractPageBean
             Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
             Integer numeroCausaDenPension = this.getValorListaNumeroCausaDenPension1();
             String otraCausaDenPension = this.getTextoCampoOtraCausaDenPension1();
+            String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
+            Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
             String comentariosDenegacionPension = this.getTextoCampoComentariosDenegacionPension1();
-            DenegarPensionPersonaMessage message = new DenegarPensionPersonaMessage(idPersona, numeroCausaDenPension, otraCausaDenPension, comentariosDenegacionPension);
+            DenegarPensionPersonaMessage message = new DenegarPensionPersonaMessage(idPersona, numeroCausaDenPension, otraCausaDenPension, numeroResolucionDenPen, fechaResolucionDenPen, comentariosDenegacionPension);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.personaBusinessProcess.denegarPensionPersona(message);
@@ -4810,6 +5257,51 @@ public class Persona4 extends AbstractPageBean
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.personaBusinessProcess.revocarPensionPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void otorgarPensionPersona() { /* otorgar pension persona */
+        this.otorgarPensionPersona(synchronously);
+    }
+
+    private void otorgarPensionPersona(boolean synchronously) { /* otorgar pension persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
+            Date fechaResolucionOtorPen = this.getValorCampoFechaResolucionOtorPen1();
+            String comentariosOtorgamientoPen = this.getTextoCampoComentariosOtorgamientoPen1();
+            OtorgarPensionPersonaMessage message = new OtorgarPensionPersonaMessage(idPersona, numeroResolucionOtorPen, fechaResolucionOtorPen, comentariosOtorgamientoPen);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.otorgarPensionPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void registrarEntregaDocPersona() { /* registrar entrega doc persona */
+        this.registrarEntregaDocPersona(synchronously);
+    }
+
+    private void registrarEntregaDocPersona(boolean synchronously) { /* registrar entrega doc persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String certificadoVida = this.getTextoCampoCertificadoVida1();
+            Date fechaCertificadoVida = this.getValorCampoFechaCertificadoVida1();
+            Integer esPersonaConCopiaCedula = this.getValorListaEsPersonaConCopiaCedula1();
+            Integer esPersonaConDeclaracionJur = this.getValorListaEsPersonaConDeclaracionJur1();
+            RegistrarEntregaDocPersonaMessage message = new RegistrarEntregaDocPersonaMessage(idPersona, certificadoVida, fechaCertificadoVida, esPersonaConCopiaCedula, esPersonaConDeclaracionJur);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.registrarEntregaDocPersona(message);
             } else {
                 this.requestReply(message);
             }
@@ -4942,88 +5434,6 @@ public class Persona4 extends AbstractPageBean
         }
     }
 
-    private void registrarCerVidaPersona() { /* registrar cer vida persona */
-        this.registrarCerVidaPersona(synchronously);
-    }
-
-    private void registrarCerVidaPersona(boolean synchronously) { /* registrar cer vida persona */
-        try {
-            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
-            String certificadoVida = this.getTextoCampoCertificadoVida1();
-            Date fechaCertificadoVida = this.getValorCampoFechaCertificadoVida1();
-            RegistrarCerVidaPersonaMessage message = new RegistrarCerVidaPersonaMessage(idPersona, certificadoVida, fechaCertificadoVida);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.personaBusinessProcess.registrarCerVidaPersona(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
-        }
-    }
-
-    private void anularCerVidaPersona() { /* anular cer vida persona */
-        this.anularCerVidaPersona(synchronously);
-    }
-
-    private void anularCerVidaPersona(boolean synchronously) { /* anular cer vida persona */
-        try {
-            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
-            String comentariosAnulCerVida = this.getTextoCampoComentariosAnulCerVida1();
-            AnularCerVidaPersonaMessage message = new AnularCerVidaPersonaMessage(idPersona, comentariosAnulCerVida);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.personaBusinessProcess.anularCerVidaPersona(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
-        }
-    }
-
-    private void registrarCerDefunPersona() { /* registrar cer defun persona */
-        this.registrarCerDefunPersona(synchronously);
-    }
-
-    private void registrarCerDefunPersona(boolean synchronously) { /* registrar cer defun persona */
-        try {
-            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
-            String certificadoDefuncion = this.getTextoCampoCertificadoDefuncion1();
-            Date fechaCertificadoDefuncion = this.getValorCampoFechaCertificadoDefuncion1();
-            RegistrarCerDefunPersonaMessage message = new RegistrarCerDefunPersonaMessage(idPersona, certificadoDefuncion, fechaCertificadoDefuncion);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.personaBusinessProcess.registrarCerDefunPersona(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
-        }
-    }
-
-    private void anularCerDefunPersona() { /* anular cer defun persona */
-        this.anularCerDefunPersona(synchronously);
-    }
-
-    private void anularCerDefunPersona(boolean synchronously) { /* anular cer defun persona */
-        try {
-            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
-            String comentariosAnulCerDefuncion = this.getTextoCampoComentariosAnulCerDefuncion1();
-            AnularCerDefunPersonaMessage message = new AnularCerDefunPersonaMessage(idPersona, comentariosAnulCerDefuncion);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.personaBusinessProcess.anularCerDefunPersona(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
-        }
-    }
-
     private void actFecUltCobPenPersona() { /* act fec ult cob pen persona */
         this.actFecUltCobPenPersona(synchronously);
     }
@@ -5064,25 +5474,99 @@ public class Persona4 extends AbstractPageBean
         }
     }
 
-    private void otorgarPensionPersona() { /* otorgar pension persona */
-        this.otorgarPensionPersona(synchronously);
+    private void emitirPersonaConPensionSolicitada() { /* emitir persona con pension solicitada */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
+        Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+        long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
     }
 
-    private void otorgarPensionPersona(boolean synchronously) { /* otorgar pension persona */
-        try {
-            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
-            String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
-            Date fechaResolucionOtorPen = this.getValorCampoFechaResolucionOtorPen1();
-            String comentariosOtorgamientoPen = this.getTextoCampoComentariosOtorgamientoPen1();
-            OtorgarPensionPersonaMessage message = new OtorgarPensionPersonaMessage(idPersona, numeroResolucionOtorPen, fechaResolucionOtorPen, comentariosOtorgamientoPen);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.personaBusinessProcess.otorgarPensionPersona(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
+    private void emitirPersonaSinCedulaConPensionSolicitada() { /* emitir persona sin cedula con pension solicitada */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
+        Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA;
+        long function = PersonaConstants.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
         }
     }
 
@@ -5094,6 +5578,54 @@ public class Persona4 extends AbstractPageBean
         Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirPersonaAcreditadaConObjeciones() { /* emitir persona acreditada con objeciones */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
+        Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
+        long function = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
@@ -5290,168 +5822,6 @@ public class Persona4 extends AbstractPageBean
         }
     }
 
-    private void emitirCuadroResumenPensionPersona() { /* emitir cuadro resumen pension persona */
-        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
-        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
-        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
-        String report = PersonaConstants.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
-        long function = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
-        Map parameters = new LinkedHashMap();
-        parameters.put("id_departamento", idDepartamento);
-        parameters.put("id_distrito", idDistrito);
-        parameters.put("id_barrio", idBarrio);
-//      ------------------------------------------------------------------------
-//      this.reporter.executeReport(report, function, parameters);
-//      ------------------------------------------------------------------------
-        String select = "select * from persona";
-        String search = "";
-        ArrayList args = new ArrayList();
-        if (idDepartamento != null) {
-            args.add(idDepartamento);
-            search += " and id_departamento=?";
-        }
-        if (idDistrito != null) {
-            args.add(idDistrito);
-            search += " and id_distrito=?";
-        }
-        if (idBarrio != null) {
-            args.add(idBarrio);
-            search += " and id_barrio=?";
-        }
-        if (args.size() > 0) {
-            select += " where (" + search.substring(5) + ")";
-            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
-        } else {
-            this.reporter.executeReport(report, function);
-        }
-    }
-
-    private void emitirUltimaActualizacionPersonaEnJupe() { /* emitir ultima actualizacion persona en jupe */
-        Date fechaHoraUltActJupeDesde = this.getValorCampoFechaHoraUltActJupeDesde1();
-        Date fechaHoraUltActJupeHasta = this.getValorCampoFechaHoraUltActJupeHasta1();
-        String report = PersonaConstants.INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
-        long function = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
-        Map parameters = new LinkedHashMap();
-        parameters.put("fecha_hora_ult_act_jupe_desde", fechaHoraUltActJupeDesde);
-        parameters.put("fecha_hora_ult_act_jupe_hasta", fechaHoraUltActJupeHasta);
-//      ------------------------------------------------------------------------
-//      this.reporter.executeReport(report, function, parameters);
-//      ------------------------------------------------------------------------
-        String select = "select * from persona";
-        String search = "";
-        ArrayList args = new ArrayList();
-        if (fechaHoraUltActJupeDesde != null) {
-            args.add(fechaHoraUltActJupeDesde);
-            search += " and fecha_hora_ult_act_jupe>=?";
-        }
-        if (fechaHoraUltActJupeHasta != null) {
-            args.add(fechaHoraUltActJupeHasta);
-            search += " and fecha_hora_ult_act_jupe<=?";
-        }
-        if (args.size() > 0) {
-            select += " where (" + search.substring(5) + ")";
-            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
-        } else {
-            this.reporter.executeReport(report, function);
-        }
-    }
-
-    private void emitirPersonaAcreditadaConObjeciones() { /* emitir persona acreditada con objeciones */
-        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
-        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
-        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
-        Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
-        Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
-        String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
-        long function = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
-        Map parameters = new LinkedHashMap();
-        parameters.put("id_departamento", idDepartamento);
-        parameters.put("id_distrito", idDistrito);
-        parameters.put("id_barrio", idBarrio);
-        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
-        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
-//      ------------------------------------------------------------------------
-//      this.reporter.executeReport(report, function, parameters);
-//      ------------------------------------------------------------------------
-        String select = "select * from persona";
-        String search = "";
-        ArrayList args = new ArrayList();
-        if (idDepartamento != null) {
-            args.add(idDepartamento);
-            search += " and id_departamento=?";
-        }
-        if (idDistrito != null) {
-            args.add(idDistrito);
-            search += " and id_distrito=?";
-        }
-        if (idBarrio != null) {
-            args.add(idBarrio);
-            search += " and id_barrio=?";
-        }
-        if (fechaSolicitudPensionDesde != null) {
-            args.add(fechaSolicitudPensionDesde);
-            search += " and fecha_solicitud_pension>=?";
-        }
-        if (fechaSolicitudPensionHasta != null) {
-            args.add(fechaSolicitudPensionHasta);
-            search += " and fecha_solicitud_pension<=?";
-        }
-        if (args.size() > 0) {
-            select += " where (" + search.substring(5) + ")";
-            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
-        } else {
-            this.reporter.executeReport(report, function);
-        }
-    }
-
-    private void emitirPersonaConPensionSolicitada() { /* emitir persona con pension solicitada */
-        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
-        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
-        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
-        Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
-        Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
-        String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
-        long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
-        Map parameters = new LinkedHashMap();
-        parameters.put("id_departamento", idDepartamento);
-        parameters.put("id_distrito", idDistrito);
-        parameters.put("id_barrio", idBarrio);
-        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
-        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
-//      ------------------------------------------------------------------------
-//      this.reporter.executeReport(report, function, parameters);
-//      ------------------------------------------------------------------------
-        String select = "select * from persona";
-        String search = "";
-        ArrayList args = new ArrayList();
-        if (idDepartamento != null) {
-            args.add(idDepartamento);
-            search += " and id_departamento=?";
-        }
-        if (idDistrito != null) {
-            args.add(idDistrito);
-            search += " and id_distrito=?";
-        }
-        if (idBarrio != null) {
-            args.add(idBarrio);
-            search += " and id_barrio=?";
-        }
-        if (fechaSolicitudPensionDesde != null) {
-            args.add(fechaSolicitudPensionDesde);
-            search += " and fecha_solicitud_pension>=?";
-        }
-        if (fechaSolicitudPensionHasta != null) {
-            args.add(fechaSolicitudPensionHasta);
-            search += " and fecha_solicitud_pension<=?";
-        }
-        if (args.size() > 0) {
-            select += " where (" + search.substring(5) + ")";
-            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
-        } else {
-            this.reporter.executeReport(report, function);
-        }
-    }
-
     private void emitirPersonaConPensionOtorgada() { /* emitir persona con pension otorgada */
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
@@ -5491,6 +5861,108 @@ public class Persona4 extends AbstractPageBean
         if (fechaOtorgamientoPenHasta != null) {
             args.add(fechaOtorgamientoPenHasta);
             search += " and fecha_otorgamiento_pen<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirUltimaActualizacionPersonaEnJupe() { /* emitir ultima actualizacion persona en jupe */
+        Date fechaHoraUltActJupeDesde = this.getValorCampoFechaHoraUltActJupeDesde1();
+        Date fechaHoraUltActJupeHasta = this.getValorCampoFechaHoraUltActJupeHasta1();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+        long function = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+        Map parameters = new LinkedHashMap();
+        parameters.put("fecha_hora_ult_act_jupe_desde", fechaHoraUltActJupeDesde);
+        parameters.put("fecha_hora_ult_act_jupe_hasta", fechaHoraUltActJupeHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (fechaHoraUltActJupeDesde != null) {
+            args.add(fechaHoraUltActJupeDesde);
+            search += " and fecha_hora_ult_act_jupe>=?";
+        }
+        if (fechaHoraUltActJupeHasta != null) {
+            args.add(fechaHoraUltActJupeHasta);
+            search += " and fecha_hora_ult_act_jupe<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirCuadroResumenPensionPersona() { /* emitir cuadro resumen pension persona */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+        long function = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirCuadroResumenPensionPersonaSinDoc() { /* emitir cuadro resumen pension persona sin doc */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC;
+        long function = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

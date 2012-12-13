@@ -57,6 +57,9 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         fichaPersonaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         fichaPersonaRowSet.setCommand("SELECT * FROM consulta_ficha_persona_1");
         fichaPersonaRowSet.setTableName("ficha_persona");
+        informeAuditoriaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        informeAuditoriaRowSet.setCommand("SELECT * FROM consulta_informe_auditoria_1");
+        informeAuditoriaRowSet.setTableName("informe_auditoria");
         personaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         personaRowSet.setCommand("SELECT * FROM consulta_persona_1");
         personaRowSet.setTableName("persona");
@@ -180,6 +183,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setFichaPersonaRowSet(CachedRowSetXImpl crsxi) {
         this.fichaPersonaRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl informeAuditoriaRowSet;
+
+    public CachedRowSetXImpl getInformeAuditoriaRowSet() {
+        if (informeAuditoriaRowSet == null) {
+            informeAuditoriaRowSet = new RecursoCachedRowSet();
+            try {
+                informeAuditoriaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                informeAuditoriaRowSet.setCommand("SELECT * FROM consulta_informe_auditoria_1");
+                informeAuditoriaRowSet.setTableName("informe_auditoria");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return informeAuditoriaRowSet;
+    }
+
+    public void setInformeAuditoriaRowSet(CachedRowSetXImpl crsxi) {
+        this.informeAuditoriaRowSet = crsxi;
     }
 
     private CachedRowSetXImpl personaRowSet;

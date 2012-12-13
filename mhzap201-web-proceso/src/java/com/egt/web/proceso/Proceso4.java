@@ -93,11 +93,12 @@ import com.egt.base.jms.messages.AbstractMessage;
 import com.egt.core.control.Auditor;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
-import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
+import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.process.ProcesoBusinessProcessLocal;
 import java.util.Date;
 import javax.jms.JMSException;
@@ -108,17 +109,20 @@ public class Proceso4 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     private void _init() throws Exception {
-        converterFechaSolicitudPensionDesde1.setPattern("dd/MM/yyyy");
-        converterFechaSolicitudPensionDesde1.setType("date");
-        converterFechaSolicitudPensionHasta1.setPattern("dd/MM/yyyy");
-        converterFechaSolicitudPensionHasta1.setType("date");
         converterFechaRegistroPotBenDesde1.setPattern("dd/MM/yyyy");
         converterFechaRegistroPotBenDesde1.setType("date");
         converterFechaRegistroPotBenHasta1.setPattern("dd/MM/yyyy");
         converterFechaRegistroPotBenHasta1.setType("date");
+        converterFechaSolicitudPensionDesde1.setPattern("dd/MM/yyyy");
+        converterFechaSolicitudPensionDesde1.setType("date");
+        converterFechaSolicitudPensionHasta1.setPattern("dd/MM/yyyy");
+        converterFechaSolicitudPensionHasta1.setType("date");
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
+        validatorNumeroResolucionDenPen1.setMaximum(2000);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
     }
 
     private Form form1 = new Form();
@@ -284,106 +288,6 @@ public class Proceso4 extends AbstractPageBean
         this.campoIdUbicacion1Boton2 = component;
     }
 
-    private Label labelFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaSolicitudPensionDesde1() {
-        return labelFechaSolicitudPensionDesde1;
-    }
-
-    public void setLabelFechaSolicitudPensionDesde1(Label l) {
-        this.labelFechaSolicitudPensionDesde1 = l;
-    }
-
-    private Calendar campoFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaSolicitudPensionDesde1() {
-        return campoFechaSolicitudPensionDesde1;
-    }
-
-    public void setCampoFechaSolicitudPensionDesde1(Calendar component) {
-        this.campoFechaSolicitudPensionDesde1 = component;
-    }
-
-    private HelpInline helpInlineFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaSolicitudPensionDesde1() {
-        return helpInlineFechaSolicitudPensionDesde1;
-    }
-
-    public void setHelpInlineFechaSolicitudPensionDesde1(HelpInline hi) {
-        this.helpInlineFechaSolicitudPensionDesde1 = hi;
-    }
-
-    private StaticText campoFechaSolicitudPensionDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaSolicitudPensionDesde1Texto1() {
-        return campoFechaSolicitudPensionDesde1Texto1;
-    }
-
-    public void setCampoFechaSolicitudPensionDesde1Texto1(StaticText component) {
-        this.campoFechaSolicitudPensionDesde1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaSolicitudPensionDesde1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaSolicitudPensionDesde1() {
-        return converterFechaSolicitudPensionDesde1;
-    }
-  
-    public void setConverterFechaSolicitudPensionDesde1(SqlTimestampConverter converter) {
-        this.converterFechaSolicitudPensionDesde1 = converter;
-    }
-  
-    private Label labelFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaSolicitudPensionHasta1() {
-        return labelFechaSolicitudPensionHasta1;
-    }
-
-    public void setLabelFechaSolicitudPensionHasta1(Label l) {
-        this.labelFechaSolicitudPensionHasta1 = l;
-    }
-
-    private Calendar campoFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaSolicitudPensionHasta1() {
-        return campoFechaSolicitudPensionHasta1;
-    }
-
-    public void setCampoFechaSolicitudPensionHasta1(Calendar component) {
-        this.campoFechaSolicitudPensionHasta1 = component;
-    }
-
-    private HelpInline helpInlineFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaSolicitudPensionHasta1() {
-        return helpInlineFechaSolicitudPensionHasta1;
-    }
-
-    public void setHelpInlineFechaSolicitudPensionHasta1(HelpInline hi) {
-        this.helpInlineFechaSolicitudPensionHasta1 = hi;
-    }
-
-    private StaticText campoFechaSolicitudPensionHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaSolicitudPensionHasta1Texto1() {
-        return campoFechaSolicitudPensionHasta1Texto1;
-    }
-
-    public void setCampoFechaSolicitudPensionHasta1Texto1(StaticText component) {
-        this.campoFechaSolicitudPensionHasta1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaSolicitudPensionHasta1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaSolicitudPensionHasta1() {
-        return converterFechaSolicitudPensionHasta1;
-    }
-  
-    public void setConverterFechaSolicitudPensionHasta1(SqlTimestampConverter converter) {
-        this.converterFechaSolicitudPensionHasta1 = converter;
-    }
-  
     private Label labelFechaRegistroPotBenDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaRegistroPotBenDesde1() {
@@ -484,6 +388,106 @@ public class Proceso4 extends AbstractPageBean
         this.converterFechaRegistroPotBenHasta1 = converter;
     }
   
+    private Label labelFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaSolicitudPensionDesde1() {
+        return labelFechaSolicitudPensionDesde1;
+    }
+
+    public void setLabelFechaSolicitudPensionDesde1(Label l) {
+        this.labelFechaSolicitudPensionDesde1 = l;
+    }
+
+    private Calendar campoFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaSolicitudPensionDesde1() {
+        return campoFechaSolicitudPensionDesde1;
+    }
+
+    public void setCampoFechaSolicitudPensionDesde1(Calendar component) {
+        this.campoFechaSolicitudPensionDesde1 = component;
+    }
+
+    private HelpInline helpInlineFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaSolicitudPensionDesde1() {
+        return helpInlineFechaSolicitudPensionDesde1;
+    }
+
+    public void setHelpInlineFechaSolicitudPensionDesde1(HelpInline hi) {
+        this.helpInlineFechaSolicitudPensionDesde1 = hi;
+    }
+
+    private StaticText campoFechaSolicitudPensionDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaSolicitudPensionDesde1Texto1() {
+        return campoFechaSolicitudPensionDesde1Texto1;
+    }
+
+    public void setCampoFechaSolicitudPensionDesde1Texto1(StaticText component) {
+        this.campoFechaSolicitudPensionDesde1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaSolicitudPensionDesde1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaSolicitudPensionDesde1() {
+        return converterFechaSolicitudPensionDesde1;
+    }
+  
+    public void setConverterFechaSolicitudPensionDesde1(SqlTimestampConverter converter) {
+        this.converterFechaSolicitudPensionDesde1 = converter;
+    }
+  
+    private Label labelFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaSolicitudPensionHasta1() {
+        return labelFechaSolicitudPensionHasta1;
+    }
+
+    public void setLabelFechaSolicitudPensionHasta1(Label l) {
+        this.labelFechaSolicitudPensionHasta1 = l;
+    }
+
+    private Calendar campoFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaSolicitudPensionHasta1() {
+        return campoFechaSolicitudPensionHasta1;
+    }
+
+    public void setCampoFechaSolicitudPensionHasta1(Calendar component) {
+        this.campoFechaSolicitudPensionHasta1 = component;
+    }
+
+    private HelpInline helpInlineFechaSolicitudPensionHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaSolicitudPensionHasta1() {
+        return helpInlineFechaSolicitudPensionHasta1;
+    }
+
+    public void setHelpInlineFechaSolicitudPensionHasta1(HelpInline hi) {
+        this.helpInlineFechaSolicitudPensionHasta1 = hi;
+    }
+
+    private StaticText campoFechaSolicitudPensionHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaSolicitudPensionHasta1Texto1() {
+        return campoFechaSolicitudPensionHasta1Texto1;
+    }
+
+    public void setCampoFechaSolicitudPensionHasta1Texto1(StaticText component) {
+        this.campoFechaSolicitudPensionHasta1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaSolicitudPensionHasta1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaSolicitudPensionHasta1() {
+        return converterFechaSolicitudPensionHasta1;
+    }
+  
+    public void setConverterFechaSolicitudPensionHasta1(SqlTimestampConverter converter) {
+        this.converterFechaSolicitudPensionHasta1 = converter;
+    }
+  
     private Label labelNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelNumeroResolucionOtorPen1() {
@@ -582,6 +586,106 @@ public class Proceso4 extends AbstractPageBean
   
     public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
         this.converterFechaResolucionOtorPen1 = converter;
+    }
+  
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionDenPen1() {
+        return helpInlineNumeroResolucionDenPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionDenPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private Calendar campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(Calendar component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionDenPen1() {
+        return helpInlineFechaResolucionDenPen1;
+    }
+
+    public void setHelpInlineFechaResolucionDenPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -747,26 +851,29 @@ public class Proceso4 extends AbstractPageBean
 /**/
     static long FUNCION_ACCION_1 = ProcesoConstants.FUNCION_PROCESO_IMPORTAR_ARCHIVOS_EXT;
 
-    static long FUNCION_ACCION_2 = ProcesoConstants.FUNCION_PROCESO_PREPARAR_PROX_PAGO_PEN;
+    static long FUNCION_ACCION_2 = ProcesoConstants.FUNCION_PROCESO_ACREDITAR_POT_BEN;
 
-    static long FUNCION_ACCION_3 = ProcesoConstants.FUNCION_PROCESO_ACREDITAR_POT_BEN;
+    static long FUNCION_ACCION_3 = ProcesoConstants.FUNCION_PROCESO_PREPARAR_PROX_PAGO_PEN;
 
-    static long FUNCION_ACCION_4 = ProcesoConstants.FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
+    static long FUNCION_ACCION_4 = ProcesoConstants.FUNCION_PROCESO_OTORGAR_PENSIONES_APR;
 
-    static long FUNCION_ACCION_5 = ProcesoConstants.FUNCION_PROCESO_VERIFICAR_ELE_PEN;
+    static long FUNCION_ACCION_5 = ProcesoConstants.FUNCION_PROCESO_DENEGAR_PENSIONES;
 
-    static long FUNCION_ACCION_6 = ProcesoConstants.FUNCION_PROCESO_OTORGAR_PENSIONES_APR;
+    static long FUNCION_ACCION_6 = ProcesoConstants.FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
+
+    static long FUNCION_ACCION_7 = ProcesoConstants.FUNCION_PROCESO_VERIFICAR_ELE_PEN;
 
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
             new Option(FUNCION_ACCION_1, Bundle.getString("proceso importar archivos ext")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("proceso preparar prox pago pen")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("proceso acreditar pot ben")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("proceso actualizar pen en jupe")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("proceso verificar ele pen")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("proceso otorgar pensiones apr"))
+            new Option(FUNCION_ACCION_2, Bundle.getString("proceso acreditar pot ben")),
+            new Option(FUNCION_ACCION_3, Bundle.getString("proceso preparar prox pago pen")),
+            new Option(FUNCION_ACCION_4, Bundle.getString("proceso otorgar pensiones apr")),
+            new Option(FUNCION_ACCION_5, Bundle.getString("proceso denegar pensiones")),
+            new Option(FUNCION_ACCION_6, Bundle.getString("proceso actualizar pen en jupe")),
+            new Option(FUNCION_ACCION_7, Bundle.getString("proceso verificar ele pen"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -774,7 +881,7 @@ public class Proceso4 extends AbstractPageBean
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
     public boolean isIdUbicacionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6;
+        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_7;
     }
 
     private Bit bitIdUbicacionRendered = new Bit() {
@@ -789,43 +896,9 @@ public class Proceso4 extends AbstractPageBean
         return bitIdUbicacionRendered;
     }
 
-    public boolean isFechaSolicitudPensionDesdeRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2;
-    }
-
-    private Bit bitFechaSolicitudPensionDesdeRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isFechaSolicitudPensionDesdeRendered();
-        }
-    };
-
-    public Bit getBitFechaSolicitudPensionDesdeRendered() {
-        return bitFechaSolicitudPensionDesdeRendered;
-    }
-
-    public boolean isFechaSolicitudPensionHastaRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2;
-    }
-
-    private Bit bitFechaSolicitudPensionHastaRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isFechaSolicitudPensionHastaRendered();
-        }
-    };
-
-    public Bit getBitFechaSolicitudPensionHastaRendered() {
-        return bitFechaSolicitudPensionHastaRendered;
-    }
-
     public boolean isFechaRegistroPotBenDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3;
+        return f == FUNCION_ACCION_2;
     }
 
     private Bit bitFechaRegistroPotBenDesdeRendered = new Bit() {
@@ -842,7 +915,7 @@ public class Proceso4 extends AbstractPageBean
 
     public boolean isFechaRegistroPotBenHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3;
+        return f == FUNCION_ACCION_2;
     }
 
     private Bit bitFechaRegistroPotBenHastaRendered = new Bit() {
@@ -857,9 +930,43 @@ public class Proceso4 extends AbstractPageBean
         return bitFechaRegistroPotBenHastaRendered;
     }
 
+    public boolean isFechaSolicitudPensionDesdeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitFechaSolicitudPensionDesdeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaSolicitudPensionDesdeRendered();
+        }
+    };
+
+    public Bit getBitFechaSolicitudPensionDesdeRendered() {
+        return bitFechaSolicitudPensionDesdeRendered;
+    }
+
+    public boolean isFechaSolicitudPensionHastaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitFechaSolicitudPensionHastaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaSolicitudPensionHastaRendered();
+        }
+    };
+
+    public Bit getBitFechaSolicitudPensionHastaRendered() {
+        return bitFechaSolicitudPensionHastaRendered;
+    }
+
     public boolean isNumeroResolucionOtorPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
+        return f == FUNCION_ACCION_4;
     }
 
     private Bit bitNumeroResolucionOtorPenRendered = new Bit() {
@@ -876,7 +983,7 @@ public class Proceso4 extends AbstractPageBean
 
     public boolean isFechaResolucionOtorPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
+        return f == FUNCION_ACCION_4;
     }
 
     private Bit bitFechaResolucionOtorPenRendered = new Bit() {
@@ -889,6 +996,40 @@ public class Proceso4 extends AbstractPageBean
 
     public Bit getBitFechaResolucionOtorPenRendered() {
         return bitFechaResolucionOtorPenRendered;
+    }
+
+    public boolean isNumeroResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_5;
+    }
+
+    private Bit bitNumeroResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitNumeroResolucionDenPenRendered() {
+        return bitNumeroResolucionDenPenRendered;
+    }
+
+    public boolean isFechaResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_5;
+    }
+
+    private Bit bitFechaResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitFechaResolucionDenPenRendered() {
+        return bitFechaResolucionDenPenRendered;
     }
 
     // </editor-fold>
@@ -935,26 +1076,6 @@ public class Proceso4 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
-    private java.sql.Timestamp valorCampoFechaSolicitudPensionDesde1;
-
-    public java.sql.Timestamp getValorCampoFechaSolicitudPensionDesde1() {
-        return this.valorCampoFechaSolicitudPensionDesde1;
-    }
-
-    public void setValorCampoFechaSolicitudPensionDesde1(java.sql.Timestamp valor) {
-        this.valorCampoFechaSolicitudPensionDesde1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaSolicitudPensionHasta1;
-
-    public java.sql.Timestamp getValorCampoFechaSolicitudPensionHasta1() {
-        return this.valorCampoFechaSolicitudPensionHasta1;
-    }
-
-    public void setValorCampoFechaSolicitudPensionHasta1(java.sql.Timestamp valor) {
-        this.valorCampoFechaSolicitudPensionHasta1 = valor;
-    }
-
     private java.sql.Timestamp valorCampoFechaRegistroPotBenDesde1;
 
     public java.sql.Timestamp getValorCampoFechaRegistroPotBenDesde1() {
@@ -975,6 +1096,26 @@ public class Proceso4 extends AbstractPageBean
         this.valorCampoFechaRegistroPotBenHasta1 = valor;
     }
 
+    private java.sql.Timestamp valorCampoFechaSolicitudPensionDesde1;
+
+    public java.sql.Timestamp getValorCampoFechaSolicitudPensionDesde1() {
+        return this.valorCampoFechaSolicitudPensionDesde1;
+    }
+
+    public void setValorCampoFechaSolicitudPensionDesde1(java.sql.Timestamp valor) {
+        this.valorCampoFechaSolicitudPensionDesde1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaSolicitudPensionHasta1;
+
+    public java.sql.Timestamp getValorCampoFechaSolicitudPensionHasta1() {
+        return this.valorCampoFechaSolicitudPensionHasta1;
+    }
+
+    public void setValorCampoFechaSolicitudPensionHasta1(java.sql.Timestamp valor) {
+        this.valorCampoFechaSolicitudPensionHasta1 = valor;
+    }
+
     private String textoCampoNumeroResolucionOtorPen1;
 
     public String getTextoCampoNumeroResolucionOtorPen1() {
@@ -993,6 +1134,26 @@ public class Proceso4 extends AbstractPageBean
 
     public void setValorCampoFechaResolucionOtorPen1(java.sql.Timestamp valor) {
         this.valorCampoFechaResolucionOtorPen1 = valor;
+    }
+
+    private String textoCampoNumeroResolucionDenPen1;
+
+    public String getTextoCampoNumeroResolucionDenPen1() {
+        return this.textoCampoNumeroResolucionDenPen1;
+    }
+
+    public void setTextoCampoNumeroResolucionDenPen1(String valor) {
+        this.textoCampoNumeroResolucionDenPen1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaResolucionDenPen1;
+
+    public java.sql.Timestamp getValorCampoFechaResolucionDenPen1() {
+        return this.valorCampoFechaResolucionDenPen1;
+    }
+
+    public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
+        this.valorCampoFechaResolucionDenPen1 = valor;
     }
 
     // </editor-fold>
@@ -1133,11 +1294,12 @@ public class Proceso4 extends AbstractPageBean
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == 0 ? null
                 : f == FUNCION_ACCION_1 ? this.accion1(f) /* procesoImportarArchivosExt */
-                : f == FUNCION_ACCION_2 ? this.accion2(f) /* procesoPrepararProxPagoPen */
-                : f == FUNCION_ACCION_3 ? this.accion3(f) /* procesoAcreditarPotBen */
-                : f == FUNCION_ACCION_4 ? this.accion4(f) /* procesoActualizarPenEnJupe */
-                : f == FUNCION_ACCION_5 ? this.accion5(f) /* procesoVerificarElePen */
-                : f == FUNCION_ACCION_6 ? this.accion6(f) /* procesoOtorgarPensionesApr */
+                : f == FUNCION_ACCION_2 ? this.accion2(f) /* procesoAcreditarPotBen */
+                : f == FUNCION_ACCION_3 ? this.accion3(f) /* procesoPrepararProxPagoPen */
+                : f == FUNCION_ACCION_4 ? this.accion4(f) /* procesoOtorgarPensionesApr */
+                : f == FUNCION_ACCION_5 ? this.accion5(f) /* procesoDenegarPensiones */
+                : f == FUNCION_ACCION_6 ? this.accion6(f) /* procesoActualizarPenEnJupe */
+                : f == FUNCION_ACCION_7 ? this.accion7(f) /* procesoVerificarElePen */
                 : null;
     }
     // </editor-fold>
@@ -1156,16 +1318,6 @@ public class Proceso4 extends AbstractPageBean
     private String accion2(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
-            this.procesoPrepararProxPagoPen();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso preparar prox pago pen"));
-        }
-        return null;
-    }
-
-    private String accion3(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
             this.procesoAcreditarPotBen();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso acreditar pot ben"));
@@ -1173,7 +1325,37 @@ public class Proceso4 extends AbstractPageBean
         return null;
     }
 
+    private String accion3(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.procesoPrepararProxPagoPen();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso preparar prox pago pen"));
+        }
+        return null;
+    }
+
     private String accion4(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.procesoOtorgarPensionesApr();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso otorgar pensiones apr"));
+        }
+        return null;
+    }
+
+    private String accion5(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.procesoDenegarPensiones();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso denegar pensiones"));
+        }
+        return null;
+    }
+
+    private String accion6(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.procesoActualizarPenEnJupe();
@@ -1183,22 +1365,12 @@ public class Proceso4 extends AbstractPageBean
         return null;
     }
 
-    private String accion5(long f) {
+    private String accion7(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.procesoVerificarElePen();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso verificar ele pen"));
-        }
-        return null;
-    }
-
-    private String accion6(long f) {
-        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
-        if (esFuncionAutorizada) {
-            this.procesoOtorgarPensionesApr();
-        } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso otorgar pensiones apr"));
         }
         return null;
     }
@@ -1232,6 +1404,27 @@ public class Proceso4 extends AbstractPageBean
         }
     }
 
+    private void procesoAcreditarPotBen() { /* proceso acreditar pot ben */
+        this.procesoAcreditarPotBen(synchronously);
+    }
+
+    private void procesoAcreditarPotBen(boolean synchronously) { /* proceso acreditar pot ben */
+        try {
+            Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
+            Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
+            Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
+            ProcesoAcreditarPotBenMessage message = new ProcesoAcreditarPotBenMessage(idUbicacion, fechaRegistroPotBenDesde, fechaRegistroPotBenHasta);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.procesoBusinessProcess.procesoAcreditarPotBen(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
     private void procesoPrepararProxPagoPen() { /* proceso preparar prox pago pen */
         this.procesoPrepararProxPagoPen(synchronously);
     }
@@ -1253,19 +1446,40 @@ public class Proceso4 extends AbstractPageBean
         }
     }
 
-    private void procesoAcreditarPotBen() { /* proceso acreditar pot ben */
-        this.procesoAcreditarPotBen(synchronously);
+    private void procesoOtorgarPensionesApr() { /* proceso otorgar pensiones apr */
+        this.procesoOtorgarPensionesApr(synchronously);
     }
 
-    private void procesoAcreditarPotBen(boolean synchronously) { /* proceso acreditar pot ben */
+    private void procesoOtorgarPensionesApr(boolean synchronously) { /* proceso otorgar pensiones apr */
         try {
             Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
-            Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
-            Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
-            ProcesoAcreditarPotBenMessage message = new ProcesoAcreditarPotBenMessage(idUbicacion, fechaRegistroPotBenDesde, fechaRegistroPotBenHasta);
+            String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
+            Date fechaResolucionOtorPen = this.getValorCampoFechaResolucionOtorPen1();
+            ProcesoOtorgarPensionesAprMessage message = new ProcesoOtorgarPensionesAprMessage(idUbicacion, numeroResolucionOtorPen, fechaResolucionOtorPen);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
-                this.procesoBusinessProcess.procesoAcreditarPotBen(message);
+                this.procesoBusinessProcess.procesoOtorgarPensionesApr(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void procesoDenegarPensiones() { /* proceso denegar pensiones */
+        this.procesoDenegarPensiones(synchronously);
+    }
+
+    private void procesoDenegarPensiones(boolean synchronously) { /* proceso denegar pensiones */
+        try {
+            Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
+            String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
+            Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
+            ProcesoDenegarPensionesMessage message = new ProcesoDenegarPensionesMessage(idUbicacion, numeroResolucionDenPen, fechaResolucionDenPen);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.procesoBusinessProcess.procesoDenegarPensiones(message);
             } else {
                 this.requestReply(message);
             }
@@ -1303,27 +1517,6 @@ public class Proceso4 extends AbstractPageBean
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoVerificarElePen(message);
-            } else {
-                this.requestReply(message);
-            }
-        } catch (Exception ex) {
-            this.getGestor().handle(ex);
-        }
-    }
-
-    private void procesoOtorgarPensionesApr() { /* proceso otorgar pensiones apr */
-        this.procesoOtorgarPensionesApr(synchronously);
-    }
-
-    private void procesoOtorgarPensionesApr(boolean synchronously) { /* proceso otorgar pensiones apr */
-        try {
-            Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
-            String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
-            Date fechaResolucionOtorPen = this.getValorCampoFechaResolucionOtorPen1();
-            ProcesoOtorgarPensionesAprMessage message = new ProcesoOtorgarPensionesAprMessage(idUbicacion, numeroResolucionOtorPen, fechaResolucionOtorPen);
-            TLC.getControlador().ponerUsuarioEnMensaje(message);
-            if (synchronously) {
-                this.procesoBusinessProcess.procesoOtorgarPensionesApr(message);
             } else {
                 this.requestReply(message);
             }

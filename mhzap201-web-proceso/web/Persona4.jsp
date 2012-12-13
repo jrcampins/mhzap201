@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -192,6 +192,192 @@
                                                     onClick="#{Persona4.scriptCampoIdPersona1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridCertificadoVida1" rendered="#{Persona4.bitCertificadoVidaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelCertificadoVida1}"
+                                                    id="labelCertificadoVida1"
+                                                    for="campoCertificadoVida1"
+                                                    text="certificado vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCertificadoVida2" rendered="#{Persona4.bitCertificadoVidaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCertificadoVida1"
+                                                    binding="#{Persona4.campoCertificadoVida1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Persona4.textoCampoCertificadoVida1}"
+                                                    toolTip="BundleParametros.certificado_vida"
+                                                    validatorExpression="#{Persona4.validatorCertificadoVida1.validate}"/>
+                                                <webuijsf:staticText id="campoCertificadoVida1Texto1"
+                                                    binding="#{Persona4.campoCertificadoVida1Texto1}"/>
+                                                <webuijsf:message id="messageCertificadoVida1"
+                                                    for="campoCertificadoVida1"/>
+                                                <webuijsf:helpInline id="helpInlineCertificadoVida1"
+                                                    binding="#{Persona4.helpInlineCertificadoVida1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.certificado_vida"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaCertificadoVida1" rendered="#{Persona4.bitFechaCertificadoVidaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaCertificadoVida1}"
+                                                    id="labelFechaCertificadoVida1"
+                                                    for="campoFechaCertificadoVida1"
+                                                    text="fecha certificado vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaCertificadoVida2" rendered="#{Persona4.bitFechaCertificadoVidaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaCertificadoVida1"
+                                                    binding="#{Persona4.campoFechaCertificadoVida1}"
+                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona4.gestor.defaultMinDate}"
+                                                     required="true"
+                                                    selectedDate="#{Persona4.valorCampoFechaCertificadoVida1}"
+                                                    toolTip="BundleParametros.fecha_certificado_vida"/>
+                                                <webuijsf:staticText id="campoFechaCertificadoVida1Texto1"
+                                                    binding="#{Persona4.campoFechaCertificadoVida1Texto1}"/>
+                                                <webuijsf:message id="messageFechaCertificadoVida1"
+                                                    for="campoFechaCertificadoVida1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaCertificadoVida1"
+                                                    binding="#{Persona4.helpInlineFechaCertificadoVida1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_certificado_vida"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosAnulCerVida1" rendered="#{Persona4.bitComentariosAnulCerVidaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelComentariosAnulCerVida1}"
+                                                    id="labelComentariosAnulCerVida1"
+                                                    for="campoComentariosAnulCerVida1"
+                                                    text="comentarios anul cer vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosAnulCerVida2" rendered="#{Persona4.bitComentariosAnulCerVidaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoComentariosAnulCerVida1"
+                                                    binding="#{Persona4.campoComentariosAnulCerVida1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Persona4.textoCampoComentariosAnulCerVida1}"
+                                                    toolTip="BundleParametros.comentarios_anul_cer_vida"
+                                                    validatorExpression="#{Persona4.validatorComentariosAnulCerVida1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosAnulCerVida1Texto1"
+                                                    binding="#{Persona4.campoComentariosAnulCerVida1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosAnulCerVida1"
+                                                    for="campoComentariosAnulCerVida1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerVida1"
+                                                    binding="#{Persona4.helpInlineComentariosAnulCerVida1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_anul_cer_vida"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCertificadoDefuncion1" rendered="#{Persona4.bitCertificadoDefuncionRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelCertificadoDefuncion1}"
+                                                    id="labelCertificadoDefuncion1"
+                                                    for="campoCertificadoDefuncion1"
+                                                    text="certificado defuncion"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCertificadoDefuncion2" rendered="#{Persona4.bitCertificadoDefuncionRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCertificadoDefuncion1"
+                                                    binding="#{Persona4.campoCertificadoDefuncion1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Persona4.textoCampoCertificadoDefuncion1}"
+                                                    toolTip="BundleParametros.certificado_defuncion"
+                                                    validatorExpression="#{Persona4.validatorCertificadoDefuncion1.validate}"/>
+                                                <webuijsf:staticText id="campoCertificadoDefuncion1Texto1"
+                                                    binding="#{Persona4.campoCertificadoDefuncion1Texto1}"/>
+                                                <webuijsf:message id="messageCertificadoDefuncion1"
+                                                    for="campoCertificadoDefuncion1"/>
+                                                <webuijsf:helpInline id="helpInlineCertificadoDefuncion1"
+                                                    binding="#{Persona4.helpInlineCertificadoDefuncion1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.certificado_defuncion"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaCertificadoDefuncion1" rendered="#{Persona4.bitFechaCertificadoDefuncionRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaCertificadoDefuncion1}"
+                                                    id="labelFechaCertificadoDefuncion1"
+                                                    for="campoFechaCertificadoDefuncion1"
+                                                    text="fecha certificado defuncion"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaCertificadoDefuncion2" rendered="#{Persona4.bitFechaCertificadoDefuncionRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaCertificadoDefuncion1"
+                                                    binding="#{Persona4.campoFechaCertificadoDefuncion1}"
+                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona4.gestor.defaultMinDate}"
+                                                     required="true"
+                                                    selectedDate="#{Persona4.valorCampoFechaCertificadoDefuncion1}"
+                                                    toolTip="BundleParametros.fecha_certificado_defuncion"/>
+                                                <webuijsf:staticText id="campoFechaCertificadoDefuncion1Texto1"
+                                                    binding="#{Persona4.campoFechaCertificadoDefuncion1Texto1}"/>
+                                                <webuijsf:message id="messageFechaCertificadoDefuncion1"
+                                                    for="campoFechaCertificadoDefuncion1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaCertificadoDefuncion1"
+                                                    binding="#{Persona4.helpInlineFechaCertificadoDefuncion1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_certificado_defuncion"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosAnulCerDefuncion1" rendered="#{Persona4.bitComentariosAnulCerDefuncionRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelComentariosAnulCerDefuncion1}"
+                                                    id="labelComentariosAnulCerDefuncion1"
+                                                    for="campoComentariosAnulCerDefuncion1"
+                                                    text="comentarios anul cer defuncion"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosAnulCerDefuncion2" rendered="#{Persona4.bitComentariosAnulCerDefuncionRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoComentariosAnulCerDefuncion1"
+                                                    binding="#{Persona4.campoComentariosAnulCerDefuncion1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Persona4.textoCampoComentariosAnulCerDefuncion1}"
+                                                    toolTip="BundleParametros.comentarios_anul_cer_defuncion"
+                                                    validatorExpression="#{Persona4.validatorComentariosAnulCerDefuncion1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosAnulCerDefuncion1Texto1"
+                                                    binding="#{Persona4.campoComentariosAnulCerDefuncion1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosAnulCerDefuncion1"
+                                                    for="campoComentariosAnulCerDefuncion1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerDefuncion1"
+                                                    binding="#{Persona4.helpInlineComentariosAnulCerDefuncion1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_anul_cer_defuncion"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridComentariosAprobacionPension1" rendered="#{Persona4.bitComentariosAprobacionPensionRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -280,6 +466,66 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.otra_causa_den_pension"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionDenPen1" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"
+                                                    text="numero resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionDenPen2" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Persona4.campoNumeroResolucionDenPen1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoNumeroResolucionDenPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen"
+                                                    validatorExpression="#{Persona4.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Persona4.campoNumeroResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1"
+                                                    binding="#{Persona4.helpInlineNumeroResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_den_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionDenPen1" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"
+                                                    text="fecha resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionDenPen2" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionDenPen1"
+                                                    binding="#{Persona4.campoFechaResolucionDenPen1}"
+                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona4.gestor.defaultMinDate}"
+                                                    selectedDate="#{Persona4.valorCampoFechaResolucionDenPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Persona4.campoFechaResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1"
+                                                    binding="#{Persona4.helpInlineFechaResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_den_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +646,158 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.comentarios_revocacion_pension"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionOtorPen1" rendered="#{Persona4.bitNumeroResolucionOtorPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelNumeroResolucionOtorPen1}"
+                                                    id="labelNumeroResolucionOtorPen1"
+                                                    for="campoNumeroResolucionOtorPen1"
+                                                    text="numero resolucion otor pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionOtorPen2" rendered="#{Persona4.bitNumeroResolucionOtorPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionOtorPen1"
+                                                    binding="#{Persona4.campoNumeroResolucionOtorPen1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoNumeroResolucionOtorPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_otor_pen"
+                                                    validatorExpression="#{Persona4.validatorNumeroResolucionOtorPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionOtorPen1Texto1"
+                                                    binding="#{Persona4.campoNumeroResolucionOtorPen1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroResolucionOtorPen1"
+                                                    for="campoNumeroResolucionOtorPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionOtorPen1"
+                                                    binding="#{Persona4.helpInlineNumeroResolucionOtorPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_otor_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionOtorPen1" rendered="#{Persona4.bitFechaResolucionOtorPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaResolucionOtorPen1}"
+                                                    id="labelFechaResolucionOtorPen1"
+                                                    for="campoFechaResolucionOtorPen1"
+                                                    text="fecha resolucion otor pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionOtorPen2" rendered="#{Persona4.bitFechaResolucionOtorPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionOtorPen1"
+                                                    binding="#{Persona4.campoFechaResolucionOtorPen1}"
+                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona4.gestor.defaultMinDate}"
+                                                    selectedDate="#{Persona4.valorCampoFechaResolucionOtorPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen"/>
+                                                <webuijsf:staticText id="campoFechaResolucionOtorPen1Texto1"
+                                                    binding="#{Persona4.campoFechaResolucionOtorPen1Texto1}"/>
+                                                <webuijsf:message id="messageFechaResolucionOtorPen1"
+                                                    for="campoFechaResolucionOtorPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionOtorPen1"
+                                                    binding="#{Persona4.helpInlineFechaResolucionOtorPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_otor_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosOtorgamientoPen1" rendered="#{Persona4.bitComentariosOtorgamientoPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelComentariosOtorgamientoPen1}"
+                                                    id="labelComentariosOtorgamientoPen1"
+                                                    for="campoComentariosOtorgamientoPen1"
+                                                    text="comentarios otorgamiento pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosOtorgamientoPen2" rendered="#{Persona4.bitComentariosOtorgamientoPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoComentariosOtorgamientoPen1"
+                                                    binding="#{Persona4.campoComentariosOtorgamientoPen1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoComentariosOtorgamientoPen1}"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen"
+                                                    validatorExpression="#{Persona4.validatorComentariosOtorgamientoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1Texto1"
+                                                    binding="#{Persona4.campoComentariosOtorgamientoPen1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosOtorgamientoPen1"
+                                                    for="campoComentariosOtorgamientoPen1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1"
+                                                    binding="#{Persona4.helpInlineComentariosOtorgamientoPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_otorgamiento_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPersonaConCopiaCedula1" rendered="#{Persona4.bitEsPersonaConCopiaCedulaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelEsPersonaConCopiaCedula1}"
+                                                    id="labelEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"
+                                                    text="con copia cedula"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConCopiaCedula2" rendered="#{Persona4.bitEsPersonaConCopiaCedulaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConCopiaCedula1"
+                                                    binding="#{Persona4.listaEsPersonaConCopiaCedula1}"
+                                                    converter="#{Persona4.converterEsPersonaConCopiaCedula1}"
+                                                    items="#{Persona4.opcionesListaEsPersonaConCopiaCedula1}"
+                                                     required="true"
+                                                    selected="#{Persona4.valorListaEsPersonaConCopiaCedula1}"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula"/>
+                                                <webuijsf:staticText id="listaEsPersonaConCopiaCedula1Texto1"
+                                                    binding="#{Persona4.listaEsPersonaConCopiaCedula1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConCopiaCedula1"
+                                                    binding="#{Persona4.helpInlineEsPersonaConCopiaCedula1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_copia_cedula"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPersonaConDeclaracionJur1" rendered="#{Persona4.bitEsPersonaConDeclaracionJurRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelEsPersonaConDeclaracionJur1}"
+                                                    id="labelEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"
+                                                    text="con declaracion jur"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConDeclaracionJur2" rendered="#{Persona4.bitEsPersonaConDeclaracionJurRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConDeclaracionJur1"
+                                                    binding="#{Persona4.listaEsPersonaConDeclaracionJur1}"
+                                                    converter="#{Persona4.converterEsPersonaConDeclaracionJur1}"
+                                                    items="#{Persona4.opcionesListaEsPersonaConDeclaracionJur1}"
+                                                     required="true"
+                                                    selected="#{Persona4.valorListaEsPersonaConDeclaracionJur1}"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur"/>
+                                                <webuijsf:staticText id="listaEsPersonaConDeclaracionJur1Texto1"
+                                                    binding="#{Persona4.listaEsPersonaConDeclaracionJur1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConDeclaracionJur1"
+                                                    binding="#{Persona4.helpInlineEsPersonaConDeclaracionJur1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_declaracion_jur"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -648,192 +1046,6 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridCertificadoVida1" rendered="#{Persona4.bitCertificadoVidaRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelCertificadoVida1}"
-                                                    id="labelCertificadoVida1"
-                                                    for="campoCertificadoVida1"
-                                                    text="certificado vida"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridCertificadoVida2" rendered="#{Persona4.bitCertificadoVidaRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoCertificadoVida1"
-                                                    binding="#{Persona4.campoCertificadoVida1}"
-                                                    columns="50"
-                                                     required="true"
-                                                    text="#{Persona4.textoCampoCertificadoVida1}"
-                                                    toolTip="BundleParametros.certificado_vida"
-                                                    validatorExpression="#{Persona4.validatorCertificadoVida1.validate}"/>
-                                                <webuijsf:staticText id="campoCertificadoVida1Texto1"
-                                                    binding="#{Persona4.campoCertificadoVida1Texto1}"/>
-                                                <webuijsf:message id="messageCertificadoVida1"
-                                                    for="campoCertificadoVida1"/>
-                                                <webuijsf:helpInline id="helpInlineCertificadoVida1"
-                                                    binding="#{Persona4.helpInlineCertificadoVida1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.certificado_vida"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaCertificadoVida1" rendered="#{Persona4.bitFechaCertificadoVidaRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaCertificadoVida1}"
-                                                    id="labelFechaCertificadoVida1"
-                                                    for="campoFechaCertificadoVida1"
-                                                    text="fecha certificado vida"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaCertificadoVida2" rendered="#{Persona4.bitFechaCertificadoVidaRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaCertificadoVida1"
-                                                    binding="#{Persona4.campoFechaCertificadoVida1}"
-                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona4.gestor.defaultMinDate}"
-                                                     required="true"
-                                                    selectedDate="#{Persona4.valorCampoFechaCertificadoVida1}"
-                                                    toolTip="BundleParametros.fecha_certificado_vida"/>
-                                                <webuijsf:staticText id="campoFechaCertificadoVida1Texto1"
-                                                    binding="#{Persona4.campoFechaCertificadoVida1Texto1}"/>
-                                                <webuijsf:message id="messageFechaCertificadoVida1"
-                                                    for="campoFechaCertificadoVida1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaCertificadoVida1"
-                                                    binding="#{Persona4.helpInlineFechaCertificadoVida1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_certificado_vida"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridComentariosAnulCerVida1" rendered="#{Persona4.bitComentariosAnulCerVidaRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelComentariosAnulCerVida1}"
-                                                    id="labelComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"
-                                                    text="comentarios anul cer vida"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerVida2" rendered="#{Persona4.bitComentariosAnulCerVidaRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoComentariosAnulCerVida1"
-                                                    binding="#{Persona4.campoComentariosAnulCerVida1}"
-                                                    columns="50"
-                                                     required="true"
-                                                    text="#{Persona4.textoCampoComentariosAnulCerVida1}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_vida"
-                                                    validatorExpression="#{Persona4.validatorComentariosAnulCerVida1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerVida1Texto1"
-                                                    binding="#{Persona4.campoComentariosAnulCerVida1Texto1}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerVida1"
-                                                    binding="#{Persona4.helpInlineComentariosAnulCerVida1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_vida"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridCertificadoDefuncion1" rendered="#{Persona4.bitCertificadoDefuncionRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelCertificadoDefuncion1}"
-                                                    id="labelCertificadoDefuncion1"
-                                                    for="campoCertificadoDefuncion1"
-                                                    text="certificado defuncion"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridCertificadoDefuncion2" rendered="#{Persona4.bitCertificadoDefuncionRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoCertificadoDefuncion1"
-                                                    binding="#{Persona4.campoCertificadoDefuncion1}"
-                                                    columns="50"
-                                                     required="true"
-                                                    text="#{Persona4.textoCampoCertificadoDefuncion1}"
-                                                    toolTip="BundleParametros.certificado_defuncion"
-                                                    validatorExpression="#{Persona4.validatorCertificadoDefuncion1.validate}"/>
-                                                <webuijsf:staticText id="campoCertificadoDefuncion1Texto1"
-                                                    binding="#{Persona4.campoCertificadoDefuncion1Texto1}"/>
-                                                <webuijsf:message id="messageCertificadoDefuncion1"
-                                                    for="campoCertificadoDefuncion1"/>
-                                                <webuijsf:helpInline id="helpInlineCertificadoDefuncion1"
-                                                    binding="#{Persona4.helpInlineCertificadoDefuncion1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.certificado_defuncion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaCertificadoDefuncion1" rendered="#{Persona4.bitFechaCertificadoDefuncionRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaCertificadoDefuncion1}"
-                                                    id="labelFechaCertificadoDefuncion1"
-                                                    for="campoFechaCertificadoDefuncion1"
-                                                    text="fecha certificado defuncion"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaCertificadoDefuncion2" rendered="#{Persona4.bitFechaCertificadoDefuncionRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaCertificadoDefuncion1"
-                                                    binding="#{Persona4.campoFechaCertificadoDefuncion1}"
-                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona4.gestor.defaultMinDate}"
-                                                     required="true"
-                                                    selectedDate="#{Persona4.valorCampoFechaCertificadoDefuncion1}"
-                                                    toolTip="BundleParametros.fecha_certificado_defuncion"/>
-                                                <webuijsf:staticText id="campoFechaCertificadoDefuncion1Texto1"
-                                                    binding="#{Persona4.campoFechaCertificadoDefuncion1Texto1}"/>
-                                                <webuijsf:message id="messageFechaCertificadoDefuncion1"
-                                                    for="campoFechaCertificadoDefuncion1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaCertificadoDefuncion1"
-                                                    binding="#{Persona4.helpInlineFechaCertificadoDefuncion1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_certificado_defuncion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridComentariosAnulCerDefuncion1" rendered="#{Persona4.bitComentariosAnulCerDefuncionRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelComentariosAnulCerDefuncion1}"
-                                                    id="labelComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"
-                                                    text="comentarios anul cer defuncion"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerDefuncion2" rendered="#{Persona4.bitComentariosAnulCerDefuncionRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoComentariosAnulCerDefuncion1"
-                                                    binding="#{Persona4.campoComentariosAnulCerDefuncion1}"
-                                                    columns="50"
-                                                     required="true"
-                                                    text="#{Persona4.textoCampoComentariosAnulCerDefuncion1}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_defuncion"
-                                                    validatorExpression="#{Persona4.validatorComentariosAnulCerDefuncion1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerDefuncion1Texto1"
-                                                    binding="#{Persona4.campoComentariosAnulCerDefuncion1Texto1}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerDefuncion1"
-                                                    binding="#{Persona4.helpInlineComentariosAnulCerDefuncion1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_defuncion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridFechaUltimoCobroPension1" rendered="#{Persona4.bitFechaUltimoCobroPensionRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -893,96 +1105,6 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.notas_anul_fec_ult_cob_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridNumeroResolucionOtorPen1" rendered="#{Persona4.bitNumeroResolucionOtorPenRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelNumeroResolucionOtorPen1}"
-                                                    id="labelNumeroResolucionOtorPen1"
-                                                    for="campoNumeroResolucionOtorPen1"
-                                                    text="numero resolucion otor pen"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroResolucionOtorPen2" rendered="#{Persona4.bitNumeroResolucionOtorPenRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoNumeroResolucionOtorPen1"
-                                                    binding="#{Persona4.campoNumeroResolucionOtorPen1}"
-                                                    columns="50"
-                                                    text="#{Persona4.textoCampoNumeroResolucionOtorPen1}"
-                                                    toolTip="BundleParametros.numero_resolucion_otor_pen"
-                                                    validatorExpression="#{Persona4.validatorNumeroResolucionOtorPen1.validate}"/>
-                                                <webuijsf:staticText id="campoNumeroResolucionOtorPen1Texto1"
-                                                    binding="#{Persona4.campoNumeroResolucionOtorPen1Texto1}"/>
-                                                <webuijsf:message id="messageNumeroResolucionOtorPen1"
-                                                    for="campoNumeroResolucionOtorPen1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroResolucionOtorPen1"
-                                                    binding="#{Persona4.helpInlineNumeroResolucionOtorPen1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_resolucion_otor_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaResolucionOtorPen1" rendered="#{Persona4.bitFechaResolucionOtorPenRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaResolucionOtorPen1}"
-                                                    id="labelFechaResolucionOtorPen1"
-                                                    for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resolucion otor pen"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaResolucionOtorPen2" rendered="#{Persona4.bitFechaResolucionOtorPenRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaResolucionOtorPen1"
-                                                    binding="#{Persona4.campoFechaResolucionOtorPen1}"
-                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona4.gestor.defaultMinDate}"
-                                                    selectedDate="#{Persona4.valorCampoFechaResolucionOtorPen1}"
-                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen"/>
-                                                <webuijsf:staticText id="campoFechaResolucionOtorPen1Texto1"
-                                                    binding="#{Persona4.campoFechaResolucionOtorPen1Texto1}"/>
-                                                <webuijsf:message id="messageFechaResolucionOtorPen1"
-                                                    for="campoFechaResolucionOtorPen1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaResolucionOtorPen1"
-                                                    binding="#{Persona4.helpInlineFechaResolucionOtorPen1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_resolucion_otor_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridComentariosOtorgamientoPen1" rendered="#{Persona4.bitComentariosOtorgamientoPenRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelComentariosOtorgamientoPen1}"
-                                                    id="labelComentariosOtorgamientoPen1"
-                                                    for="campoComentariosOtorgamientoPen1"
-                                                    text="comentarios otorgamiento pen"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosOtorgamientoPen2" rendered="#{Persona4.bitComentariosOtorgamientoPenRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoComentariosOtorgamientoPen1"
-                                                    binding="#{Persona4.campoComentariosOtorgamientoPen1}"
-                                                    columns="50"
-                                                    text="#{Persona4.textoCampoComentariosOtorgamientoPen1}"
-                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen"
-                                                    validatorExpression="#{Persona4.validatorComentariosOtorgamientoPen1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1Texto1"
-                                                    binding="#{Persona4.campoComentariosOtorgamientoPen1Texto1}"/>
-                                                <webuijsf:message id="messageComentariosOtorgamientoPen1"
-                                                    for="campoComentariosOtorgamientoPen1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1"
-                                                    binding="#{Persona4.helpInlineComentariosOtorgamientoPen1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_otorgamiento_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1403,64 +1525,6 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridFechaHoraUltActJupeDesde1" rendered="#{Persona4.bitFechaHoraUltActJupeDesdeRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaHoraUltActJupeDesde1}"
-                                                    id="labelFechaHoraUltActJupeDesde1"
-                                                    for="campoFechaHoraUltActJupeDesde1"
-                                                    text="fecha hora ult act jupe desde"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaHoraUltActJupeDesde2" rendered="#{Persona4.bitFechaHoraUltActJupeDesdeRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoFechaHoraUltActJupeDesde1"
-                                                    binding="#{Persona4.campoFechaHoraUltActJupeDesde1}"
-                                                    converter="#{Persona4.converterFechaHoraUltActJupeDesde1}"
-                                                    text="#{Persona4.valorCampoFechaHoraUltActJupeDesde1}"
-                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe_desde"/>
-                                                <webuijsf:staticText id="campoFechaHoraUltActJupeDesde1Texto1"
-                                                    binding="#{Persona4.campoFechaHoraUltActJupeDesde1Texto1}"/>
-                                                <webuijsf:message id="messageFechaHoraUltActJupeDesde1"
-                                                    for="campoFechaHoraUltActJupeDesde1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaHoraUltActJupeDesde1"
-                                                    binding="#{Persona4.helpInlineFechaHoraUltActJupeDesde1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_hora_ult_act_jupe_desde"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaHoraUltActJupeHasta1" rendered="#{Persona4.bitFechaHoraUltActJupeHastaRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaHoraUltActJupeHasta1}"
-                                                    id="labelFechaHoraUltActJupeHasta1"
-                                                    for="campoFechaHoraUltActJupeHasta1"
-                                                    text="fecha hora ult act jupe hasta"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaHoraUltActJupeHasta2" rendered="#{Persona4.bitFechaHoraUltActJupeHastaRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoFechaHoraUltActJupeHasta1"
-                                                    binding="#{Persona4.campoFechaHoraUltActJupeHasta1}"
-                                                    converter="#{Persona4.converterFechaHoraUltActJupeHasta1}"
-                                                    text="#{Persona4.valorCampoFechaHoraUltActJupeHasta1}"
-                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe_hasta"/>
-                                                <webuijsf:staticText id="campoFechaHoraUltActJupeHasta1Texto1"
-                                                    binding="#{Persona4.campoFechaHoraUltActJupeHasta1Texto1}"/>
-                                                <webuijsf:message id="messageFechaHoraUltActJupeHasta1"
-                                                    for="campoFechaHoraUltActJupeHasta1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaHoraUltActJupeHasta1"
-                                                    binding="#{Persona4.helpInlineFechaHoraUltActJupeHasta1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_hora_ult_act_jupe_hasta"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridFechaOtorgamientoPenDesde1" rendered="#{Persona4.bitFechaOtorgamientoPenDesdeRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -1518,6 +1582,64 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_otorgamiento_pen_hasta"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaHoraUltActJupeDesde1" rendered="#{Persona4.bitFechaHoraUltActJupeDesdeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaHoraUltActJupeDesde1}"
+                                                    id="labelFechaHoraUltActJupeDesde1"
+                                                    for="campoFechaHoraUltActJupeDesde1"
+                                                    text="fecha hora ult act jupe desde"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaHoraUltActJupeDesde2" rendered="#{Persona4.bitFechaHoraUltActJupeDesdeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoFechaHoraUltActJupeDesde1"
+                                                    binding="#{Persona4.campoFechaHoraUltActJupeDesde1}"
+                                                    converter="#{Persona4.converterFechaHoraUltActJupeDesde1}"
+                                                    text="#{Persona4.valorCampoFechaHoraUltActJupeDesde1}"
+                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe_desde"/>
+                                                <webuijsf:staticText id="campoFechaHoraUltActJupeDesde1Texto1"
+                                                    binding="#{Persona4.campoFechaHoraUltActJupeDesde1Texto1}"/>
+                                                <webuijsf:message id="messageFechaHoraUltActJupeDesde1"
+                                                    for="campoFechaHoraUltActJupeDesde1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaHoraUltActJupeDesde1"
+                                                    binding="#{Persona4.helpInlineFechaHoraUltActJupeDesde1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_hora_ult_act_jupe_desde"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaHoraUltActJupeHasta1" rendered="#{Persona4.bitFechaHoraUltActJupeHastaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaHoraUltActJupeHasta1}"
+                                                    id="labelFechaHoraUltActJupeHasta1"
+                                                    for="campoFechaHoraUltActJupeHasta1"
+                                                    text="fecha hora ult act jupe hasta"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaHoraUltActJupeHasta2" rendered="#{Persona4.bitFechaHoraUltActJupeHastaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoFechaHoraUltActJupeHasta1"
+                                                    binding="#{Persona4.campoFechaHoraUltActJupeHasta1}"
+                                                    converter="#{Persona4.converterFechaHoraUltActJupeHasta1}"
+                                                    text="#{Persona4.valorCampoFechaHoraUltActJupeHasta1}"
+                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe_hasta"/>
+                                                <webuijsf:staticText id="campoFechaHoraUltActJupeHasta1Texto1"
+                                                    binding="#{Persona4.campoFechaHoraUltActJupeHasta1Texto1}"/>
+                                                <webuijsf:message id="messageFechaHoraUltActJupeHasta1"
+                                                    for="campoFechaHoraUltActJupeHasta1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaHoraUltActJupeHasta1"
+                                                    binding="#{Persona4.helpInlineFechaHoraUltActJupeHasta1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_hora_ult_act_jupe_hasta"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
