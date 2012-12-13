@@ -82,6 +82,8 @@ public interface PaginaActualizacionPotencialBen extends PaginaActualizacion {
 
     TextField getCampoManzana1();
 
+    TextField getCampoCompania1();
+
     TextArea getCampoDireccion1();
 
     TextField getCampoNombreResponsableHogar1();
@@ -131,6 +133,8 @@ public interface PaginaActualizacionPotencialBen extends PaginaActualizacion {
     TextArea getCampoComentariosDenReclCen1();
 
     TextField getTextFieldCampoFechaRegistroPotBen1();
+
+    TextField getCampoIdFuncionarioRegPotBen1();
 
     DropDown getListaEsPotencialBenInactivo1();
 

@@ -4689,11 +4689,11 @@
                                         </webuijsf:tab>
                                         <webuijsf:tab
                                             id="tab11"
-                                            rendered="#{FichaHogar2.asistente.seccionEtcRendered}"
-                                            text="etc">
+                                            rendered="#{FichaHogar2.asistente.seccionOtrosRendered}"
+                                            text="otros">
                                         <h:panelGrid
                                             id="gridPanel136"
-                                            rendered="#{FichaHogar2.asistente.seccionEtcHidden}">
+                                            rendered="#{FichaHogar2.asistente.seccionOtrosHidden}">
                                             <webuijsf:staticText
                                                 id="hiddenStaticTextTab11"
                                                 text="#{FichaHogar2.gestor.i18n.textHiddenStaticTextTab}"/>
@@ -4701,7 +4701,7 @@
                                         <h:panelGrid
                                             columns="2"
                                             id="gridPanel137"
-                                            rendered="#{FichaHogar2.asistente.seccionEtcRendered}">
+                                            rendered="#{FichaHogar2.asistente.seccionOtrosRendered}">
                                             <h:panelGrid
                                                 id="gridIdProveedorDatExt1x1"
                                                 styleClass="pdq-grid-etiqueta-1">

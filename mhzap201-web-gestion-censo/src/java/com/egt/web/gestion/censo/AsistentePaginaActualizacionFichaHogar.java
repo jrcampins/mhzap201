@@ -2697,21 +2697,21 @@ public class AsistentePaginaActualizacionFichaHogar {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridIndiceCalidadVidaRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridEsFichaHogarInactivaRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isSeccionPortadaRendered() {
@@ -2794,12 +2794,12 @@ public class AsistentePaginaActualizacionFichaHogar {
         return !isSeccionRespondenteRendered();
     }
 
-    public boolean isSeccionEtcRendered() {
+    public boolean isSeccionOtrosRendered() {
         return true;
     }
 
-    public boolean isSeccionEtcHidden() {
-        return !isSeccionEtcRendered();
+    public boolean isSeccionOtrosHidden() {
+        return !isSeccionOtrosRendered();
     }
 
     // </editor-fold>

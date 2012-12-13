@@ -128,6 +128,7 @@ public class PotencialBen2 extends AbstractPageBean
         validatorEdad1.setMaximum(1000000000L);
         validatorNombreComunidadIndigena1.setMaximum(100);
         validatorManzana1.setMaximum(30);
+        validatorCompania1.setMaximum(100);
         validatorDireccion1.setMaximum(8160);
         validatorNombreResponsableHogar1.setMaximum(100);
         validatorNumeroTelefonoRespHogar1.setMaximum(50);
@@ -2976,6 +2977,97 @@ public class PotencialBen2 extends AbstractPageBean
         this.validatorManzana1 = validator;
     }
   
+    private Label labelCompania1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCompania1() {
+        return labelCompania1;
+    }
+
+    public void setLabelCompania1(Label l) {
+        this.labelCompania1 = l;
+    }
+
+    private Label labelCompania1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCompania1x1() {
+        return labelCompania1x1;
+    }
+
+    public void setLabelCompania1x1(Label l) {
+        this.labelCompania1x1 = l;
+    }
+
+    private TextField campoCompania1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoCompania1() {
+        return campoCompania1;
+    }
+
+    public void setCampoCompania1(TextField component) {
+        this.campoCompania1 = component;
+    }
+
+    private TextField campoCompania1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCompania1x1() {
+        return campoCompania1x1;
+    }
+
+    public void setCampoCompania1x1(TextField component) {
+        this.campoCompania1x1 = component;
+    }
+
+    private HelpInline helpInlineCompania1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCompania1() {
+        return helpInlineCompania1;
+    }
+
+    public void setHelpInlineCompania1(HelpInline hi) {
+        this.helpInlineCompania1 = hi;
+    }
+
+    private HelpInline helpInlineCompania1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCompania1x1() {
+        return helpInlineCompania1x1;
+    }
+
+    public void setHelpInlineCompania1x1(HelpInline hi) {
+        this.helpInlineCompania1x1 = hi;
+    }
+
+    private StaticText campoCompania1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCompania1Texto1() {
+        return campoCompania1Texto1;
+    }
+
+    public void setCampoCompania1Texto1(StaticText component) {
+        this.campoCompania1Texto1 = component;
+    }
+
+    private StaticText campoCompania1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCompania1x1Texto1() {
+        return campoCompania1x1Texto1;
+    }
+
+    public void setCampoCompania1x1Texto1(StaticText component) {
+        this.campoCompania1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorCompania1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCompania1() {
+        return validatorCompania1;
+    }
+  
+    public void setValidatorCompania1(LengthValidator validator) {
+        this.validatorCompania1 = validator;
+    }
+  
     private Label labelDireccion1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelDireccion1() {
@@ -5426,6 +5518,187 @@ public class PotencialBen2 extends AbstractPageBean
         this.converterFechaRegistroPotBen1 = converter;
     }
   
+    private Label labelIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFuncionarioRegPotBen1() {
+        return labelIdFuncionarioRegPotBen1;
+    }
+
+    public void setLabelIdFuncionarioRegPotBen1(Label l) {
+        this.labelIdFuncionarioRegPotBen1 = l;
+    }
+
+    private Label labelIdFuncionarioRegPotBen1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFuncionarioRegPotBen1x1() {
+        return labelIdFuncionarioRegPotBen1x1;
+    }
+
+    public void setLabelIdFuncionarioRegPotBen1x1(Label l) {
+        this.labelIdFuncionarioRegPotBen1x1 = l;
+    }
+
+    private TextField campoIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoIdFuncionarioRegPotBen1() {
+        return campoIdFuncionarioRegPotBen1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1(TextField component) {
+        this.campoIdFuncionarioRegPotBen1 = component;
+    }
+
+    private TextField campoIdFuncionarioRegPotBen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoIdFuncionarioRegPotBen1x1() {
+        return campoIdFuncionarioRegPotBen1x1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1(TextField component) {
+        this.campoIdFuncionarioRegPotBen1x1 = component;
+    }
+
+    private HelpInline helpInlineIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdFuncionarioRegPotBen1() {
+        return helpInlineIdFuncionarioRegPotBen1;
+    }
+
+    public void setHelpInlineIdFuncionarioRegPotBen1(HelpInline hi) {
+        this.helpInlineIdFuncionarioRegPotBen1 = hi;
+    }
+
+    private HelpInline helpInlineIdFuncionarioRegPotBen1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdFuncionarioRegPotBen1x1() {
+        return helpInlineIdFuncionarioRegPotBen1x1;
+    }
+
+    public void setHelpInlineIdFuncionarioRegPotBen1x1(HelpInline hi) {
+        this.helpInlineIdFuncionarioRegPotBen1x1 = hi;
+    }
+
+    private StaticText campoIdFuncionarioRegPotBen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdFuncionarioRegPotBen1Texto1() {
+        return campoIdFuncionarioRegPotBen1Texto1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1Texto1(StaticText component) {
+        this.campoIdFuncionarioRegPotBen1Texto1 = component;
+    }
+
+    private StaticText campoIdFuncionarioRegPotBen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdFuncionarioRegPotBen1x1Texto1() {
+        return campoIdFuncionarioRegPotBen1x1Texto1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1Texto1(StaticText component) {
+        this.campoIdFuncionarioRegPotBen1x1Texto1 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdFuncionarioRegPotBen1Boton1() {
+        return campoIdFuncionarioRegPotBen1Boton1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1Boton1(Button component) {
+        this.campoIdFuncionarioRegPotBen1Boton1 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1x1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdFuncionarioRegPotBen1x1Boton1() {
+        return campoIdFuncionarioRegPotBen1x1Boton1;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1Boton1(Button component) {
+        this.campoIdFuncionarioRegPotBen1x1Boton1 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFuncionarioRegPotBen1Boton3() {
+        return campoIdFuncionarioRegPotBen1Boton3;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1Boton3(Button component) {
+        this.campoIdFuncionarioRegPotBen1Boton3 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1x1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFuncionarioRegPotBen1x1Boton3() {
+        return campoIdFuncionarioRegPotBen1x1Boton3;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1Boton3(Button component) {
+        this.campoIdFuncionarioRegPotBen1x1Boton3 = component;
+    }
+
+    private Label labelIdFuncionarioRegPotBen2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFuncionarioRegPotBen2() {
+        return labelIdFuncionarioRegPotBen2;
+    }
+
+    public void setLabelIdFuncionarioRegPotBen2(Label l) {
+        this.labelIdFuncionarioRegPotBen2 = l;
+    }
+
+    private Label labelIdFuncionarioRegPotBen1x2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFuncionarioRegPotBen1x2() {
+        return labelIdFuncionarioRegPotBen1x2;
+    }
+
+    public void setLabelIdFuncionarioRegPotBen1x2(Label l) {
+        this.labelIdFuncionarioRegPotBen1x2 = l;
+    }
+
+    private StaticText campoIdFuncionarioRegPotBen1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdFuncionarioRegPotBen1Texto2() {
+        return campoIdFuncionarioRegPotBen1Texto2;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1Texto2(StaticText component) {
+        this.campoIdFuncionarioRegPotBen1Texto2 = component;
+    }
+
+    private StaticText campoIdFuncionarioRegPotBen1x1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdFuncionarioRegPotBen1x1Texto2() {
+        return campoIdFuncionarioRegPotBen1x1Texto2;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1Texto2(StaticText component) {
+        this.campoIdFuncionarioRegPotBen1x1Texto2 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFuncionarioRegPotBen1Boton2() {
+        return campoIdFuncionarioRegPotBen1Boton2;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1Boton2(Button component) {
+        this.campoIdFuncionarioRegPotBen1Boton2 = component;
+    }
+
+    private Button campoIdFuncionarioRegPotBen1x1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFuncionarioRegPotBen1x1Boton2() {
+        return campoIdFuncionarioRegPotBen1x1Boton2;
+    }
+
+    public void setCampoIdFuncionarioRegPotBen1x1Boton2(Button component) {
+        this.campoIdFuncionarioRegPotBen1x1Boton2 = component;
+    }
+
     private Label labelEsPotencialBenInactivo1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelEsPotencialBenInactivo1() {
@@ -6734,6 +7007,10 @@ public class PotencialBen2 extends AbstractPageBean
 
     public void campoIdFichaPersona1_validate(FacesContext context, UIComponent component, Object value) {
         this.getAsistente().campoIdFichaPersona1_validate(context, component, value);
+    }
+
+    public void campoIdFuncionarioRegPotBen1_validate(FacesContext context, UIComponent component, Object value) {
+        this.getAsistente().campoIdFuncionarioRegPotBen1_validate(context, component, value);
     }
 
     public void campoIdFuncionarioUltVisitaCen1_validate(FacesContext context, UIComponent component, Object value) {

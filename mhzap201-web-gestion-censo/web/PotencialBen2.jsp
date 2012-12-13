@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdFuncionarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -366,6 +366,66 @@
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_registro_pot_ben.potencial_ben"
                                                     type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFuncionarioRegPotBen1" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIdFuncionarioRegPotBen1}"
+                                                    id="labelIdFuncionarioRegPotBen1"
+                                                    for="campoIdFuncionarioRegPotBen1"
+                                                    text="funcionario reg pot ben"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFuncionarioRegPotBen2" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIdFuncionarioRegPotBen1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.asistente.textoCampoIdFuncionarioRegPotBen1}"
+                                                    toolTip="#{PotencialBen2.asistente.toolTipCampoIdFuncionarioRegPotBen1}"
+                                                    validatorExpression="#{PotencialBen2.campoIdFuncionarioRegPotBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdFuncionarioRegPotBen1Texto1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x15y3']}"/>
+                                                <webuijsf:button id="campoIdFuncionarioRegPotBen1Boton1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1Boton1}"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton1}"/>
+                                                <webuijsf:button id="campoIdFuncionarioRegPotBen1Boton3"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1Boton3}"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"
+                                                    rendered="#{PotencialBen2.asistente.campoIdFuncionarioRegPotBen1Boton3Rendered}"/>
+                                                <webuijsf:message id="messageIdFuncionarioRegPotBen1"
+                                                    for="campoIdFuncionarioRegPotBen1"/>
+                                                <webuijsf:helpInline id="helpInlineIdFuncionarioRegPotBen1"
+                                                    binding="#{PotencialBen2.helpInlineIdFuncionarioRegPotBen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.id_funcionario_reg_pot_ben.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFuncionarioRegPotBen3" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIdFuncionarioRegPotBen2}"
+                                                    id="labelIdFuncionarioRegPotBen2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="nombre funcionario reg pot ben"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFuncionarioRegPotBen4" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1Texto2}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x15y4']}"
+                                                    id="campoIdFuncionarioRegPotBen1Texto2"/>
+                                                <webuijsf:button
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1Boton2}"
+                                                    id="campoIdFuncionarioRegPotBen1Boton2"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 id="gridEsPotencialBenInactivo1" rendered="#{PotencialBen2.gestor.designing}"
@@ -1296,6 +1356,41 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.manzana.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCompania1"
+                                                rendered="#{PotencialBen2.asistente.gridCompaniaRendered}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelCompania1}"
+                                                    id="labelCompania1"
+                                                    for="campoCompania1"
+                                                    text="compania"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCompania2"
+                                                rendered="#{PotencialBen2.asistente.gridCompaniaRendered}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCompania1"
+                                                    binding="#{PotencialBen2.campoCompania1}"
+                                                    columns="50"
+                                                    maxLength="100"
+                                                    readOnly="#{PotencialBen2.gestor.filaNoProcesada}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['compania']}"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorCompania1.validate}"/>
+                                                <webuijsf:staticText id="campoCompania1Texto1"
+                                                    binding="#{PotencialBen2.campoCompania1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['compania']}"/>
+                                                <webuijsf:message id="messageCompania1"
+                                                    for="campoCompania1"/>
+                                                <webuijsf:helpInline id="helpInlineCompania1"
+                                                    binding="#{PotencialBen2.helpInlineCompania1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.compania.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2265,7 +2360,7 @@
                                                     validatorExpression="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFuncionarioUltVisitaCen1Texto1"
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1Texto1}"
-                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x15y3']}"/>
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x16y3']}"/>
                                                 <webuijsf:button id="campoIdFuncionarioUltVisitaCen1Boton1"
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1Boton1}"
                                                     onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioUltVisitaCen1Boton1}"/>
@@ -2297,7 +2392,7 @@
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:staticText
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1Texto2}"
-                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x15y4']}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x16y4']}"
                                                     id="campoIdFuncionarioUltVisitaCen1Texto2"/>
                                                 <webuijsf:button
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1Boton2}"
@@ -2391,6 +2486,68 @@
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_registro_pot_ben.potencial_ben"
                                                     type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFuncionarioRegPotBen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIdFuncionarioRegPotBen1x1}"
+                                                    id="labelIdFuncionarioRegPotBen1x1"
+                                                    for="campoIdFuncionarioRegPotBen1x1"
+                                                    text="funcionario reg pot ben"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFuncionarioRegPotBen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIdFuncionarioRegPotBen1x1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.asistente.textoCampoIdFuncionarioRegPotBen1}"
+                                                    toolTip="#{PotencialBen2.asistente.toolTipCampoIdFuncionarioRegPotBen1}"
+                                                    validatorExpression="#{PotencialBen2.campoIdFuncionarioRegPotBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdFuncionarioRegPotBen1x1Texto1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x15y3']}"/>
+                                                <webuijsf:button id="campoIdFuncionarioRegPotBen1x1Boton1"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1Boton1}"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton1}"/>
+                                                <webuijsf:button id="campoIdFuncionarioRegPotBen1x1Boton3"
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1Boton3}"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"
+                                                    rendered="#{PotencialBen2.asistente.campoIdFuncionarioRegPotBen1Boton3Rendered}"/>
+                                                <webuijsf:message id="messageIdFuncionarioRegPotBen1x1"
+                                                    for="campoIdFuncionarioRegPotBen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineIdFuncionarioRegPotBen1x1"
+                                                    binding="#{PotencialBen2.helpInlineIdFuncionarioRegPotBen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.id_funcionario_reg_pot_ben.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFuncionarioRegPotBen1x3"
+                                                rendered="#{PotencialBen2.asistente.campoIdFuncionarioRegPotBen1Boton2Rendered}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIdFuncionarioRegPotBen1x2}"
+                                                    id="labelIdFuncionarioRegPotBen1x2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="nombre funcionario reg pot ben"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFuncionarioRegPotBen1x4"
+                                                rendered="#{PotencialBen2.asistente.campoIdFuncionarioRegPotBen1Boton2Rendered}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1Texto2}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x15y4']}"
+                                                    id="campoIdFuncionarioRegPotBen1x1Texto2"/>
+                                                <webuijsf:button
+                                                    binding="#{PotencialBen2.campoIdFuncionarioRegPotBen1x1Boton2}"
+                                                    id="campoIdFuncionarioRegPotBen1x1Boton2"
+                                                    onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 id="gridEsPotencialBenInactivo1x1"
@@ -3353,6 +3510,39 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.manzana.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCompania1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelCompania1x1}"
+                                                    id="labelCompania1x1"
+                                                    for="campoCompania1x1"
+                                                    text="compania"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCompania1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCompania1x1"
+                                                    binding="#{PotencialBen2.campoCompania1x1}"
+                                                    columns="50"
+                                                    maxLength="100"
+                                                    readOnly="#{PotencialBen2.gestor.filaNoProcesada}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['compania']}"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorCompania1.validate}"/>
+                                                <webuijsf:staticText id="campoCompania1x1Texto1"
+                                                    binding="#{PotencialBen2.campoCompania1x1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['compania']}"/>
+                                                <webuijsf:message id="messageCompania1x1"
+                                                    for="campoCompania1x1"/>
+                                                <webuijsf:helpInline id="helpInlineCompania1x1"
+                                                    binding="#{PotencialBen2.helpInlineCompania1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.compania.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4410,7 +4600,7 @@
                                                     validatorExpression="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFuncionarioUltVisitaCen1x1Texto1"
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1x1Texto1}"
-                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x15y3']}"/>
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['codigo_funcionario_1x16y3']}"/>
                                                 <webuijsf:button id="campoIdFuncionarioUltVisitaCen1x1Boton1"
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1x1Boton1}"
                                                     onClick="#{PotencialBen2.asistente.scriptCampoIdFuncionarioUltVisitaCen1Boton1}"/>
@@ -4444,7 +4634,7 @@
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:staticText
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1x1Texto2}"
-                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x15y4']}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['nombre_funcionario_1x16y4']}"
                                                     id="campoIdFuncionarioUltVisitaCen1x1Texto2"/>
                                                 <webuijsf:button
                                                     binding="#{PotencialBen2.campoIdFuncionarioUltVisitaCen1x1Boton2}"

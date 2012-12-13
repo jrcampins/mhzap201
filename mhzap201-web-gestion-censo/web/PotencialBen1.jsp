@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdFuncionarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1063,6 +1063,33 @@
                                                     for="campoManzana1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{PotencialBen1.tableColumnCompania1}"
+                                                    headerText="compania"
+                                                    id="tableColumnCompania1" rendered="false"
+                                                    sort="compania">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextCompania1"
+                                                    text="#{currentRow.value['compania']}"
+                                                    rendered="#{PotencialBen1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen1.labelCompania1}"
+                                                    id="labelCompania1"
+                                                    for="campoCompania1"/>
+                                                <webuijsf:textField id="campoCompania1"
+                                                    binding="#{PotencialBen1.campoCompania1}"
+                                                    columns="50"
+                                                    maxLength="100"
+                                                    readOnly="#{PotencialBen1.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['compania']}"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
+                                                    validatorExpression="#{PotencialBen1.validatorCompania1.validate}"/>
+                                                <webuijsf:staticText id="campoCompania1Texto1"
+                                                    binding="#{PotencialBen1.campoCompania1Texto1}"
+                                                    text="#{currentRow.value['compania']}"/>
+                                                <webuijsf:message id="messageCompania1"
+                                                    for="campoCompania1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnDireccion1}"
                                                     headerText="direccion"
                                                     id="tableColumnDireccion1" rendered="false"
@@ -1794,6 +1821,71 @@
                                                     for="campoFechaRegistroPotBen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen1}"
+                                                    headerText="funcionario reg pot ben"
+                                                    id="tableColumnIdFuncionarioRegPotBen1" rendered="false"
+                                                    sort="codigo_funcionario_1x15y3">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFuncionarioRegPotBen1"
+                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"
+                                                    rendered="#{PotencialBen1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen1.labelIdFuncionarioRegPotBen1}"
+                                                    id="labelIdFuncionarioRegPotBen1"
+                                                    for="campoIdFuncionarioRegPotBen1"/>
+                                                <webuijsf:textField id="campoIdFuncionarioRegPotBen1"
+                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen1.asistente.textoCampoIdFuncionarioRegPotBen1}"
+                                                    toolTip="#{PotencialBen1.asistente.toolTipCampoIdFuncionarioRegPotBen1}"
+                                                    validatorExpression="#{PotencialBen1.campoIdFuncionarioRegPotBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdFuncionarioRegPotBen1Texto1"
+                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Texto1}"
+                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"/>
+                                                <webuijsf:message id="messageIdFuncionarioRegPotBen1"
+                                                    for="campoIdFuncionarioRegPotBen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    id="tableColumnIdFuncionarioRegPotBen3" rendered="false"
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFuncionarioRegPotBen3"
+                                                    text="#{currentRow.value['id_funcionario_reg_pot_ben']}"
+                                                    rendered="#{PotencialBen1.gestor.designing}"/>
+                                                <webuijsf:button
+                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Boton1}"
+                                                    id="campoIdFuncionarioRegPotBen1Boton1"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton1}"/>
+                                                <webuijsf:button
+                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Boton3}"
+                                                    id="campoIdFuncionarioRegPotBen1Boton3"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"
+                                                    rendered="#{PotencialBen1.asistente.campoIdFuncionarioRegPotBen1Boton3Rendered}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen2}"
+                                                    headerText="nombre funcionario reg pot ben"
+                                                    id="tableColumnIdFuncionarioRegPotBen2" rendered="false"
+                                                    sort="nombre_funcionario_1x15y4"
+                                                    styleClass="pdq-estilo-id-2">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFuncionarioRegPotBen2"
+                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
+                                                    rendered="#{PotencialBen1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen1.labelIdFuncionarioRegPotBen2}"
+                                                    id="labelIdFuncionarioRegPotBen2"
+                                                    text=""/>
+                                                <webuijsf:imageHyperlink
+                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Hiper1}"
+                                                    id="campoIdFuncionarioRegPotBen1Hiper1"
+                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"/>
+                                                <webuijsf:button
+                                                    id="campoIdFuncionarioRegPotBen1Boton2"
+                                                    rendered="false"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnEsPotencialBenInactivo1}"
                                                     headerText="inactivo"
                                                     id="tableColumnEsPotencialBenInactivo1"
@@ -1874,10 +1966,10 @@
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioUltVisitaCen1}"
                                                     headerText="funcionario ult visita cen"
                                                     id="tableColumnIdFuncionarioUltVisitaCen1" rendered="false"
-                                                    sort="codigo_funcionario_1x15y3">
+                                                    sort="codigo_funcionario_1x16y3">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdFuncionarioUltVisitaCen1"
-                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"
+                                                    text="#{currentRow.value['codigo_funcionario_1x16y3']}"
                                                     rendered="#{PotencialBen1.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{PotencialBen1.labelIdFuncionarioUltVisitaCen1}"
@@ -1891,7 +1983,7 @@
                                                     validatorExpression="#{PotencialBen1.campoIdFuncionarioUltVisitaCen1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFuncionarioUltVisitaCen1Texto1"
                                                     binding="#{PotencialBen1.campoIdFuncionarioUltVisitaCen1Texto1}"
-                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"/>
+                                                    text="#{currentRow.value['codigo_funcionario_1x16y3']}"/>
                                                 <webuijsf:message id="messageIdFuncionarioUltVisitaCen1"
                                                     for="campoIdFuncionarioUltVisitaCen1"/>
                                                 </webuijsf:tableColumn>
@@ -1916,11 +2008,11 @@
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioUltVisitaCen2}"
                                                     headerText="nombre funcionario ult visita cen"
                                                     id="tableColumnIdFuncionarioUltVisitaCen2" rendered="false"
-                                                    sort="nombre_funcionario_1x15y4"
+                                                    sort="nombre_funcionario_1x16y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdFuncionarioUltVisitaCen2"
-                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
+                                                    text="#{currentRow.value['nombre_funcionario_1x16y4']}"
                                                     rendered="#{PotencialBen1.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{PotencialBen1.labelIdFuncionarioUltVisitaCen2}"
@@ -1929,7 +2021,7 @@
                                                 <webuijsf:imageHyperlink
                                                     binding="#{PotencialBen1.campoIdFuncionarioUltVisitaCen1Hiper1}"
                                                     id="campoIdFuncionarioUltVisitaCen1Hiper1"
-                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
+                                                    text="#{currentRow.value['nombre_funcionario_1x16y4']}"
                                                     onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioUltVisitaCen1Boton2}"/>
                                                 <webuijsf:button
                                                     id="campoIdFuncionarioUltVisitaCen1Boton2"
