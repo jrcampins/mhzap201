@@ -82,15 +82,17 @@ public class AsistentePaginaActualizacionPersona {
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA, BundleWebui.getString("otorgar pension")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir con pension solicitada")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir sin cedula con pension solicitada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES, BundleWebui.getString("emitir acreditada sin objeciones")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir acreditada con objeciones")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA, BundleWebui.getString("emitir con pension aprobada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA, BundleWebui.getString("emitir con pension denegada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA, BundleWebui.getString("emitir con pension revocada")),
-            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir cuadro resumen pension")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir con pension otorgada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE, BundleWebui.getString("emitir ultima actualizacion en jupe")),
-            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir acreditada con objeciones")),
-            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir con pension solicitada")),
-            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir con pension otorgada"))
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir cuadro resumen pension")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC, BundleWebui.getString("emitir cuadro resumen pension sin doc"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -114,24 +116,28 @@ public class AsistentePaginaActualizacionPersona {
         if (!esFilaAutorizada) {
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA) {
             this.otorgarPensionPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA) {
+            this.emitirPersonaConPensionSolicitada(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA) {
+            this.emitirPersonaSinCedulaConPensionSolicitada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES) {
             this.emitirPersonaAcreditadaSinObjeciones(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES) {
+            this.emitirPersonaAcreditadaConObjeciones(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA) {
             this.emitirPersonaConPensionAprobada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA) {
             this.emitirPersonaConPensionDenegada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA) {
             this.emitirPersonaConPensionRevocada(rowKey);
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA) {
-            this.emitirCuadroResumenPensionPersona(rowKey);
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE) {
-            this.emitirUltimaActualizacionPersonaEnJupe(rowKey);
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES) {
-            this.emitirPersonaAcreditadaConObjeciones(rowKey);
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA) {
-            this.emitirPersonaConPensionSolicitada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA) {
             this.emitirPersonaConPensionOtorgada(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE) {
+            this.emitirUltimaActualizacionPersonaEnJupe(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA) {
+            this.emitirCuadroResumenPensionPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC) {
+            this.emitirCuadroResumenPensionPersonaSinDoc(rowKey);
         }
     }
 
@@ -152,6 +158,108 @@ public class AsistentePaginaActualizacionPersona {
         return true;
     }
 
+    private boolean emitirPersonaConPensionSolicitada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaConPensionSolicitada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaSolicitudPensionDesde = null;
+        Date fechaSolicitudPensionHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPersonaSinCedulaConPensionSolicitada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaSinCedulaConPensionSolicitada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaSolicitudPensionDesde = null;
+        Date fechaSolicitudPensionHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
     private boolean emitirPersonaAcreditadaSinObjeciones(RowKey rowKey) throws Exception {
         Bitacora.trace(this.getClass(), "emitirPersonaAcreditadaSinObjeciones", rowKey);
         bean.getGestor().setReadOnlyProcessing(true);
@@ -162,6 +270,57 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaSolicitudPensionHasta = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
+        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudPensionDesde != null) {
+            args.add(fechaSolicitudPensionDesde);
+            search += " and fecha_solicitud_pension>=?";
+        }
+        if (fechaSolicitudPensionHasta != null) {
+            args.add(fechaSolicitudPensionHasta);
+            search += " and fecha_solicitud_pension<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPersonaAcreditadaConObjeciones(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaAcreditadaConObjeciones", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaSolicitudPensionDesde = null;
+        Date fechaSolicitudPensionHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
@@ -368,18 +527,22 @@ public class AsistentePaginaActualizacionPersona {
         return true;
     }
 
-    private boolean emitirCuadroResumenPensionPersona(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "emitirCuadroResumenPensionPersona", rowKey);
+    private boolean emitirPersonaConPensionOtorgada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaConPensionOtorgada", rowKey);
         bean.getGestor().setReadOnlyProcessing(true);
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
-        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
-        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+        Date fechaOtorgamientoPenDesde = null;
+        Date fechaOtorgamientoPenHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
+        parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -397,6 +560,14 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (fechaOtorgamientoPenDesde != null) {
+            args.add(fechaOtorgamientoPenDesde);
+            search += " and fecha_otorgamiento_pen>=?";
+        }
+        if (fechaOtorgamientoPenHasta != null) {
+            args.add(fechaOtorgamientoPenHasta);
+            search += " and fecha_otorgamiento_pen<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -440,22 +611,18 @@ public class AsistentePaginaActualizacionPersona {
         return true;
     }
 
-    private boolean emitirPersonaAcreditadaConObjeciones(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "emitirPersonaAcreditadaConObjeciones", rowKey);
+    private boolean emitirCuadroResumenPensionPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirCuadroResumenPensionPersona", rowKey);
         bean.getGestor().setReadOnlyProcessing(true);
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
-        Date fechaSolicitudPensionDesde = null;
-        Date fechaSolicitudPensionHasta = null;
-        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
-        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
-        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -473,14 +640,6 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
-        }
-        if (fechaSolicitudPensionDesde != null) {
-            args.add(fechaSolicitudPensionDesde);
-            search += " and fecha_solicitud_pension>=?";
-        }
-        if (fechaSolicitudPensionHasta != null) {
-            args.add(fechaSolicitudPensionHasta);
-            search += " and fecha_solicitud_pension<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -491,22 +650,18 @@ public class AsistentePaginaActualizacionPersona {
         return true;
     }
 
-    private boolean emitirPersonaConPensionSolicitada(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "emitirPersonaConPensionSolicitada", rowKey);
+    private boolean emitirCuadroResumenPensionPersonaSinDoc(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirCuadroResumenPensionPersonaSinDoc", rowKey);
         bean.getGestor().setReadOnlyProcessing(true);
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
-        Date fechaSolicitudPensionDesde = null;
-        Date fechaSolicitudPensionHasta = null;
-        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
-        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
-        parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -524,65 +679,6 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
-        }
-        if (fechaSolicitudPensionDesde != null) {
-            args.add(fechaSolicitudPensionDesde);
-            search += " and fecha_solicitud_pension>=?";
-        }
-        if (fechaSolicitudPensionHasta != null) {
-            args.add(fechaSolicitudPensionHasta);
-            search += " and fecha_solicitud_pension<=?";
-        }
-        if (args.size() > 0) {
-            select += " where (" + search.substring(5) + ")";
-            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
-        } else {
-            this.getReporter().executeReport(report, function);
-        }
-        return true;
-    }
-
-    private boolean emitirPersonaConPensionOtorgada(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "emitirPersonaConPensionOtorgada", rowKey);
-        bean.getGestor().setReadOnlyProcessing(true);
-        Long idDepartamento = null;
-        Long idDistrito = null;
-        Long idBarrio = null;
-        Date fechaOtorgamientoPenDesde = null;
-        Date fechaOtorgamientoPenHasta = null;
-        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
-        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
-        Map parameters = new LinkedHashMap();
-        parameters.put("id_departamento", idDepartamento);
-        parameters.put("id_distrito", idDistrito);
-        parameters.put("id_barrio", idBarrio);
-        parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
-        parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
-//      ------------------------------------------------------------------------
-//      this.getReporter().executeReport(report, function, parameters);
-//      ------------------------------------------------------------------------
-        String select = "select * from persona";
-        String search = "";
-        ArrayList args = new ArrayList();
-        if (idDepartamento != null) {
-            args.add(idDepartamento);
-            search += " and id_departamento=?";
-        }
-        if (idDistrito != null) {
-            args.add(idDistrito);
-            search += " and id_distrito=?";
-        }
-        if (idBarrio != null) {
-            args.add(idBarrio);
-            search += " and id_barrio=?";
-        }
-        if (fechaOtorgamientoPenDesde != null) {
-            args.add(fechaOtorgamientoPenDesde);
-            search += " and fecha_otorgamiento_pen>=?";
-        }
-        if (fechaOtorgamientoPenHasta != null) {
-            args.add(fechaOtorgamientoPenHasta);
-            search += " and fecha_otorgamiento_pen<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -1228,6 +1324,14 @@ public class AsistentePaginaActualizacionPersona {
         return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
     }
 
+    public Object getOpcionesListaEsPersonaConCopiaCedula1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
+    public Object getOpcionesListaEsPersonaConDeclaracionJur1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
     public Object getOpcionesListaNumeroCondicionPension1() {
         return JSF.getListaOpciones(EnumCondicionPension.values(), true, false);
     }
@@ -1634,6 +1738,42 @@ public class AsistentePaginaActualizacionPersona {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getEsPersonaAcreditadaParaPen(rowKey);
+        return !BitUtils.valueOf(value);
+    }
+
+   public boolean isEsPersonaConCopiaCedula() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getEsPersonaConCopiaCedula(rowKey);
+        return BitUtils.valueOf(value);
+    }
+
+    public boolean isNoEsPersonaConCopiaCedula() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getEsPersonaConCopiaCedula(rowKey);
+        return !BitUtils.valueOf(value);
+    }
+
+   public boolean isEsPersonaConDeclaracionJur() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getEsPersonaConDeclaracionJur(rowKey);
+        return BitUtils.valueOf(value);
+    }
+
+    public boolean isNoEsPersonaConDeclaracionJur() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getEsPersonaConDeclaracionJur(rowKey);
         return !BitUtils.valueOf(value);
     }
 
@@ -2501,6 +2641,20 @@ public class AsistentePaginaActualizacionPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionPension1Rendered();
     }
 
+    public boolean isGridEsPersonaConCopiaCedulaRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension1Rendered();
+    }
+
+    public boolean isGridEsPersonaConDeclaracionJurRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension1Rendered();
+    }
+
     public boolean isGridMontoPensionRendered() {
         if (bean == null) {
             return true;
@@ -2565,6 +2719,20 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridFechaResolucionOtorPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
+    }
+
+    public boolean isGridNumeroResolucionDenPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
+    }
+
+    public boolean isGridFechaResolucionDenPenRendered() {
         if (bean == null) {
             return true;
         }
@@ -2743,49 +2911,49 @@ public class AsistentePaginaActualizacionPersona {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridFechaFichaPersonaRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridIndiceCalidadVidaRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridFechaUltimoCobroPensionRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridNotasAnulFecUltCobPenRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridNumeroTipoActJupeRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isGridFechaHoraUltActJupeRendered() {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isSeccionCedulaRendered() {
@@ -2868,12 +3036,12 @@ public class AsistentePaginaActualizacionPersona {
         return !isSeccionPension5Rendered();
     }
 
-    public boolean isSeccionEtcRendered() {
+    public boolean isSeccionOtrosRendered() {
         return true;
     }
 
-    public boolean isSeccionEtcHidden() {
-        return !isSeccionEtcRendered();
+    public boolean isSeccionOtrosHidden() {
+        return !isSeccionOtrosRendered();
     }
 
     // </editor-fold>

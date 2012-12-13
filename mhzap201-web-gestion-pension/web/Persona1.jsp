@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1504,6 +1504,56 @@
                                                     for="listaEsPersonaAcreditadaParaPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{Persona1.tableColumnEsPersonaConCopiaCedula1}"
+                                                    headerText="con copia cedula"
+                                                    id="tableColumnEsPersonaConCopiaCedula1" rendered="false"
+                                                    sort="es_persona_con_copia_cedula">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextEsPersonaConCopiaCedula1"
+                                                    text="#{currentRow.value['es_persona_con_copia_cedula']}"
+                                                    rendered="#{Persona1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona1.labelEsPersonaConCopiaCedula1}"
+                                                    id="labelEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"/>
+                                                <webuijsf:dropDown id="listaEsPersonaConCopiaCedula1"
+                                                    binding="#{Persona1.listaEsPersonaConCopiaCedula1}"
+                                                    converter="#{Persona1.converterEsPersonaConCopiaCedula1}"
+                                                    disabled="true"
+                                                    items="#{Persona1.asistente.opcionesListaEsPersonaConCopiaCedula1}"
+                                                    selected="#{currentRow.value['es_persona_con_copia_cedula']}"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConCopiaCedula1Texto1"
+                                                    binding="#{Persona1.listaEsPersonaConCopiaCedula1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona1.tableColumnEsPersonaConDeclaracionJur1}"
+                                                    headerText="con declaracion jur"
+                                                    id="tableColumnEsPersonaConDeclaracionJur1" rendered="false"
+                                                    sort="es_persona_con_declaracion_jur">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextEsPersonaConDeclaracionJur1"
+                                                    text="#{currentRow.value['es_persona_con_declaracion_jur']}"
+                                                    rendered="#{Persona1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona1.labelEsPersonaConDeclaracionJur1}"
+                                                    id="labelEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"/>
+                                                <webuijsf:dropDown id="listaEsPersonaConDeclaracionJur1"
+                                                    binding="#{Persona1.listaEsPersonaConDeclaracionJur1}"
+                                                    converter="#{Persona1.converterEsPersonaConDeclaracionJur1}"
+                                                    disabled="true"
+                                                    items="#{Persona1.asistente.opcionesListaEsPersonaConDeclaracionJur1}"
+                                                    selected="#{currentRow.value['es_persona_con_declaracion_jur']}"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConDeclaracionJur1Texto1"
+                                                    binding="#{Persona1.listaEsPersonaConDeclaracionJur1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnMontoPension1}"
                                                     headerText="monto pension"
                                                     id="tableColumnMontoPension1" rendered="false"
@@ -2613,6 +2663,59 @@
                                                     text="#{currentRow.value['fecha_resolucion_otor_pen']}"/>
                                                 <webuijsf:message id="messageFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona1.tableColumnNumeroResolucionDenPen1}"
+                                                    headerText="numero resolucion den pen"
+                                                    id="tableColumnNumeroResolucionDenPen1" rendered="false"
+                                                    sort="numero_resolucion_den_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNumeroResolucionDenPen1"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
+                                                    rendered="#{Persona1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona1.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Persona1.campoNumeroResolucionDenPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    validatorExpression="#{Persona1.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Persona1.campoNumeroResolucionDenPen1Texto1}"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona1.tableColumnFechaResolucionDenPen1}"
+                                                    headerText="fecha resolucion den pen"
+                                                    id="tableColumnFechaResolucionDenPen1" rendered="false"
+                                                    sort="fecha_resolucion_den_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaResolucionDenPen1"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
+                                                    rendered="#{Persona1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona1.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:textField id="campoFechaResolucionDenPen1"
+                                                    binding="#{Persona1.campoFechaResolucionDenPen1}"
+                                                    converter="#{Persona1.converterFechaResolucionDenPen1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Persona1.campoFechaResolucionDenPen1Texto1}"
+                                                    converter="#{Persona1.converterFechaResolucionDenPen1}"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

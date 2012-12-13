@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1811,6 +1811,68 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridEsPersonaConCopiaCedula1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelEsPersonaConCopiaCedula1}"
+                                                    id="labelEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"
+                                                    text="con copia cedula"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConCopiaCedula2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConCopiaCedula1"
+                                                    binding="#{Persona2.listaEsPersonaConCopiaCedula1}"
+                                                    converter="#{Persona2.converterEsPersonaConCopiaCedula1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaEsPersonaConCopiaCedula1}"
+                                                    selected="#{Persona2.personaDataProvider.value['es_persona_con_copia_cedula']}"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConCopiaCedula1Texto1"
+                                                    binding="#{Persona2.listaEsPersonaConCopiaCedula1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConCopiaCedula1"
+                                                    for="listaEsPersonaConCopiaCedula1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConCopiaCedula1"
+                                                    binding="#{Persona2.helpInlineEsPersonaConCopiaCedula1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_copia_cedula.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPersonaConDeclaracionJur1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelEsPersonaConDeclaracionJur1}"
+                                                    id="labelEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"
+                                                    text="con declaracion jur"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConDeclaracionJur2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConDeclaracionJur1"
+                                                    binding="#{Persona2.listaEsPersonaConDeclaracionJur1}"
+                                                    converter="#{Persona2.converterEsPersonaConDeclaracionJur1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaEsPersonaConDeclaracionJur1}"
+                                                    selected="#{Persona2.personaDataProvider.value['es_persona_con_declaracion_jur']}"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConDeclaracionJur1Texto1"
+                                                    binding="#{Persona2.listaEsPersonaConDeclaracionJur1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConDeclaracionJur1"
+                                                    for="listaEsPersonaConDeclaracionJur1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConDeclaracionJur1"
+                                                    binding="#{Persona2.helpInlineEsPersonaConDeclaracionJur1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_declaracion_jur.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridMontoPension1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -2134,6 +2196,72 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionDenPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"
+                                                    text="numero resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionDenPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Persona2.campoNumeroResolucionDenPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Persona2.campoNumeroResolucionDenPen1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1"
+                                                    binding="#{Persona2.helpInlineNumeroResolucionDenPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionDenPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"
+                                                    text="fecha resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionDenPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionDenPen1"
+                                                    binding="#{Persona2.campoFechaResolucionDenPen1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Persona2.campoFechaResolucionDenPen1Texto1}"
+                                                    converter="#{Persona2.converterFechaResolucionDenPen1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1"
+                                                    binding="#{Persona2.helpInlineFechaResolucionDenPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_den_pen.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4744,6 +4872,68 @@
                                                     text="BundleParametros.es_persona_acreditada_para_pen.persona"
                                                     type="field"/>
                                             </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPersonaConCopiaCedula1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelEsPersonaConCopiaCedula1x1}"
+                                                    id="labelEsPersonaConCopiaCedula1x1"
+                                                    for="listaEsPersonaConCopiaCedula1x1"
+                                                    text="con copia cedula"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConCopiaCedula1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConCopiaCedula1x1"
+                                                    binding="#{Persona2.listaEsPersonaConCopiaCedula1x1}"
+                                                    converter="#{Persona2.converterEsPersonaConCopiaCedula1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaEsPersonaConCopiaCedula1}"
+                                                    selected="#{Persona2.personaDataProvider.value['es_persona_con_copia_cedula']}"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConCopiaCedula1x1Texto1"
+                                                    binding="#{Persona2.listaEsPersonaConCopiaCedula1x1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConCopiaCedula1x1"
+                                                    for="listaEsPersonaConCopiaCedula1x1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConCopiaCedula1x1"
+                                                    binding="#{Persona2.helpInlineEsPersonaConCopiaCedula1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_copia_cedula.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPersonaConDeclaracionJur1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelEsPersonaConDeclaracionJur1x1}"
+                                                    id="labelEsPersonaConDeclaracionJur1x1"
+                                                    for="listaEsPersonaConDeclaracionJur1x1"
+                                                    text="con declaracion jur"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConDeclaracionJur1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConDeclaracionJur1x1"
+                                                    binding="#{Persona2.listaEsPersonaConDeclaracionJur1x1}"
+                                                    converter="#{Persona2.converterEsPersonaConDeclaracionJur1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaEsPersonaConDeclaracionJur1}"
+                                                    selected="#{Persona2.personaDataProvider.value['es_persona_con_declaracion_jur']}"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"/>
+                                                <webuijsf:staticText id="listaEsPersonaConDeclaracionJur1x1Texto1"
+                                                    binding="#{Persona2.listaEsPersonaConDeclaracionJur1x1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConDeclaracionJur1x1"
+                                                    for="listaEsPersonaConDeclaracionJur1x1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConDeclaracionJur1x1"
+                                                    binding="#{Persona2.helpInlineEsPersonaConDeclaracionJur1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_declaracion_jur.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
                                         </h:panelGrid>
                                         </webuijsf:tab>
                                         <webuijsf:tab
@@ -5085,6 +5275,72 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionDenPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroResolucionDenPen1x1}"
+                                                    id="labelNumeroResolucionDenPen1x1"
+                                                    for="campoNumeroResolucionDenPen1x1"
+                                                    text="numero resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionDenPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1x1"
+                                                    binding="#{Persona2.campoNumeroResolucionDenPen1x1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1x1Texto1"
+                                                    binding="#{Persona2.campoNumeroResolucionDenPen1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1x1"
+                                                    for="campoNumeroResolucionDenPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1x1"
+                                                    binding="#{Persona2.helpInlineNumeroResolucionDenPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionDenPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaResolucionDenPen1x1}"
+                                                    id="labelFechaResolucionDenPen1x1"
+                                                    for="campoFechaResolucionDenPen1x1"
+                                                    text="fecha resolucion den pen"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionDenPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionDenPen1x1"
+                                                    binding="#{Persona2.campoFechaResolucionDenPen1x1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1x1Texto1"
+                                                    binding="#{Persona2.campoFechaResolucionDenPen1x1Texto1}"
+                                                    converter="#{Persona2.converterFechaResolucionDenPen1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1x1"
+                                                    for="campoFechaResolucionDenPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1x1"
+                                                    binding="#{Persona2.helpInlineFechaResolucionDenPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_den_pen.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
@@ -5921,11 +6177,11 @@
                                         </webuijsf:tab>
                                         <webuijsf:tab
                                             id="tab11"
-                                            rendered="#{Persona2.asistente.seccionEtcRendered}"
-                                            text="etc">
+                                            rendered="#{Persona2.asistente.seccionOtrosRendered}"
+                                            text="otros">
                                         <h:panelGrid
                                             id="gridPanel136"
-                                            rendered="#{Persona2.asistente.seccionEtcHidden}">
+                                            rendered="#{Persona2.asistente.seccionOtrosHidden}">
                                             <webuijsf:staticText
                                                 id="hiddenStaticTextTab11"
                                                 text="#{Persona2.gestor.i18n.textHiddenStaticTextTab}"/>
@@ -5933,7 +6189,7 @@
                                         <h:panelGrid
                                             columns="2"
                                             id="gridPanel137"
-                                            rendered="#{Persona2.asistente.seccionEtcRendered}">
+                                            rendered="#{Persona2.asistente.seccionOtrosRendered}">
                                             <h:panelGrid
                                                 id="gridIdFichaPersona1x1"
                                                 styleClass="pdq-grid-etiqueta-1">

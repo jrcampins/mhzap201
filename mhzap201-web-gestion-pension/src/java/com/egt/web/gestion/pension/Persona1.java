@@ -187,6 +187,9 @@ public class Persona1 extends AbstractPageBean
         validatorNumeroResolucionOtorPen1.setMaximum(50);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
+        validatorNumeroResolucionDenPen1.setMaximum(50);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
         personaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -3729,6 +3732,148 @@ public class Persona1 extends AbstractPageBean
         this.converterEsPersonaAcreditadaParaPen1 = converter;
     }
   
+    private TableColumn tableColumnEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnEsPersonaConCopiaCedula1() {
+        return tableColumnEsPersonaConCopiaCedula1;
+    }
+
+    public void setTableColumnEsPersonaConCopiaCedula1(TableColumn component) {
+        this.tableColumnEsPersonaConCopiaCedula1 = component;
+    }
+
+    private Label labelEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPersonaConCopiaCedula1() {
+        return labelEsPersonaConCopiaCedula1;
+    }
+
+    public void setLabelEsPersonaConCopiaCedula1(Label l) {
+        this.labelEsPersonaConCopiaCedula1 = l;
+    }
+
+    private DropDown listaEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaEsPersonaConCopiaCedula1() {
+        return listaEsPersonaConCopiaCedula1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1(DropDown component) {
+        this.listaEsPersonaConCopiaCedula1 = component;
+    }
+
+    private DropDown listaEsPersonaConCopiaCedula1x1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPersonaConCopiaCedula1x1() {
+        return listaEsPersonaConCopiaCedula1x1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1x1(DropDown component) {
+        this.listaEsPersonaConCopiaCedula1x1 = component;
+    }
+
+    private StaticText listaEsPersonaConCopiaCedula1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConCopiaCedula1Texto1() {
+        return listaEsPersonaConCopiaCedula1Texto1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1Texto1(StaticText component) {
+        this.listaEsPersonaConCopiaCedula1Texto1 = component;
+    }
+
+    private StaticText listaEsPersonaConCopiaCedula1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConCopiaCedula1x1Texto1() {
+        return listaEsPersonaConCopiaCedula1x1Texto1;
+    }
+
+    public void setListaEsPersonaConCopiaCedula1x1Texto1(StaticText component) {
+        this.listaEsPersonaConCopiaCedula1x1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPersonaConCopiaCedula1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPersonaConCopiaCedula1() {
+        return converterEsPersonaConCopiaCedula1;
+    }
+  
+    public void setConverterEsPersonaConCopiaCedula1(IntegerConverter converter) {
+        this.converterEsPersonaConCopiaCedula1 = converter;
+    }
+  
+    private TableColumn tableColumnEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnEsPersonaConDeclaracionJur1() {
+        return tableColumnEsPersonaConDeclaracionJur1;
+    }
+
+    public void setTableColumnEsPersonaConDeclaracionJur1(TableColumn component) {
+        this.tableColumnEsPersonaConDeclaracionJur1 = component;
+    }
+
+    private Label labelEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPersonaConDeclaracionJur1() {
+        return labelEsPersonaConDeclaracionJur1;
+    }
+
+    public void setLabelEsPersonaConDeclaracionJur1(Label l) {
+        this.labelEsPersonaConDeclaracionJur1 = l;
+    }
+
+    private DropDown listaEsPersonaConDeclaracionJur1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaEsPersonaConDeclaracionJur1() {
+        return listaEsPersonaConDeclaracionJur1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1(DropDown component) {
+        this.listaEsPersonaConDeclaracionJur1 = component;
+    }
+
+    private DropDown listaEsPersonaConDeclaracionJur1x1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPersonaConDeclaracionJur1x1() {
+        return listaEsPersonaConDeclaracionJur1x1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1x1(DropDown component) {
+        this.listaEsPersonaConDeclaracionJur1x1 = component;
+    }
+
+    private StaticText listaEsPersonaConDeclaracionJur1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConDeclaracionJur1Texto1() {
+        return listaEsPersonaConDeclaracionJur1Texto1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1Texto1(StaticText component) {
+        this.listaEsPersonaConDeclaracionJur1Texto1 = component;
+    }
+
+    private StaticText listaEsPersonaConDeclaracionJur1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConDeclaracionJur1x1Texto1() {
+        return listaEsPersonaConDeclaracionJur1x1Texto1;
+    }
+
+    public void setListaEsPersonaConDeclaracionJur1x1Texto1(StaticText component) {
+        this.listaEsPersonaConDeclaracionJur1x1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPersonaConDeclaracionJur1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPersonaConDeclaracionJur1() {
+        return converterEsPersonaConDeclaracionJur1;
+    }
+  
+    public void setConverterEsPersonaConDeclaracionJur1(IntegerConverter converter) {
+        this.converterEsPersonaConDeclaracionJur1 = converter;
+    }
+  
     private TableColumn tableColumnMontoPension1 = new com.egt.core.jsf.component.ColumnaTabla();
 
     public TableColumn getTableColumnMontoPension1() {
@@ -6705,6 +6850,147 @@ public class Persona1 extends AbstractPageBean
         this.converterFechaResolucionOtorPen1 = converter;
     }
   
+    private TableColumn tableColumnNumeroResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnNumeroResolucionDenPen1() {
+        return tableColumnNumeroResolucionDenPen1;
+    }
+
+    public void setTableColumnNumeroResolucionDenPen1(TableColumn component) {
+        this.tableColumnNumeroResolucionDenPen1 = component;
+    }
+
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private TextField campoNumeroResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1x1() {
+        return campoNumeroResolucionDenPen1x1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1x1(TextField component) {
+        this.campoNumeroResolucionDenPen1x1 = component;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1x1Texto1() {
+        return campoNumeroResolucionDenPen1x1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1x1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private TableColumn tableColumnFechaResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaResolucionDenPen1() {
+        return tableColumnFechaResolucionDenPen1;
+    }
+
+    public void setTableColumnFechaResolucionDenPen1(TableColumn component) {
+        this.tableColumnFechaResolucionDenPen1 = component;
+    }
+
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private TextField campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(TextField component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private TextField campoFechaResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionDenPen1x1() {
+        return campoFechaResolucionDenPen1x1;
+    }
+
+    public void setCampoFechaResolucionDenPen1x1(TextField component) {
+        this.campoFechaResolucionDenPen1x1 = component;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private StaticText campoFechaResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1x1Texto1() {
+        return campoFechaResolucionDenPen1x1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1x1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
+    }
+  
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getEtiquetaTextoFilasPorPagina1() {
@@ -7220,6 +7506,11 @@ public class Persona1 extends AbstractPageBean
     @Override
     public TextField getTextFieldCampoFechaResolucionOtorPen1() {
         return this.getCampoFechaResolucionOtorPen1();
+    }
+
+    @Override
+    public TextField getTextFieldCampoFechaResolucionDenPen1() {
+        return this.getCampoFechaResolucionDenPen1();
     }
 
     // </editor-fold>
