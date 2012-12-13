@@ -575,8 +575,9 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
             copiarProyectoPlantillaAplicacionWeb(aplicacion);
             String root = ToolKitUtils.getWorkspaceDir();
             String project = aplicacion.getCodigoAplicacion();
-            String filedir = ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
+            String filedir;
             String filename;
+            ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
             ToolKitUtils utils = this.getToolKitUtils();
             utils.setPageMaps(aplicaciones);
             VelocityContext context = new VelocityContext();
@@ -589,8 +590,8 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
             write(context, "sdk-plantilla-faces-config-xml.vm", filename);
             filename = filedir + "glassfish-web.xml";
             write(context, "sdk-plantilla-glassfish-web-xml.vm", filename);
-            filename = filedir + "sun-web.xml";
-            write(context, "sdk-plantilla-sun-web-xml.vm", filename);
+//          filename = filedir + "sun-web.xml";
+//          write(context, "sdk-plantilla-sun-web-xml.vm", filename);
             filename = filedir + "web.xml";
             write(context, "sdk-plantilla-web-xml.vm", filename);
         }
@@ -730,8 +731,9 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         copiarProyectoPlantillaAplicacionWeb(aplicacion);
         String root = ToolKitUtils.getWorkspaceDir();
         String project = aplicacion.getCodigoAplicacion();
-        String filedir = ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
+        String filedir;
         String filename;
+        ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
         ToolKitUtils utils = this.getToolKitUtils();
         utils.setPageMaps(aplicaciones);
         VelocityContext context = new VelocityContext();
@@ -753,8 +755,8 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         write(context, "sdk-plantilla-faces-config-xml.vm", filename);
         filename = filedir + "glassfish-web.xml";
         write(context, "sdk-plantilla-glassfish-web-xml.vm", filename);
-        filename = filedir + "sun-web.xml";
-        write(context, "sdk-plantilla-sun-web-xml.vm", filename);
+//      filename = filedir + "sun-web.xml";
+//      write(context, "sdk-plantilla-sun-web-xml.vm", filename);
         filename = filedir + "web.xml";
         write(context, "sdk-plantilla-web-xml.vm", filename);
 //
