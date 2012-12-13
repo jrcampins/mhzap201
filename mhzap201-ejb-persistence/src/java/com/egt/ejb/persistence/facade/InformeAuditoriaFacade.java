@@ -11,7 +11,7 @@
 package com.egt.ejb.persistence.facade;
 
 import com.egt.base.persistence.enums.EnumTipoQuery;
-import com.egt.ejb.persistence.entity.Informe;
+import com.egt.ejb.persistence.entity.InformeAuditoria;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,20 +23,20 @@ import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 
 @Stateless
-public class InformeFacade implements InformeFacadeLocal {
+public class InformeAuditoriaFacade implements InformeAuditoriaFacadeLocal {
 
     @PersistenceContext
     private EntityManager em;
 
     @Override
-    public Informe find(Object id) {
+    public InformeAuditoria find(Object id) {
         return this.find(id, false);
     }
 
     @Override
-    public Informe find(Object id, boolean refresh) {
-        String query = "select o from Informe as o where o.idInforme = :id";
-        Informe o = null;
+    public InformeAuditoria find(Object id, boolean refresh) {
+        String query = "select o from InformeAuditoria as o where o.idInformeAuditoria = :id";
+        InformeAuditoria o = null;
         Query q;
         if (id != null) {
             try {
@@ -46,7 +46,7 @@ public class InformeFacade implements InformeFacadeLocal {
                     q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
                     q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
                 }
-                o = (Informe) q.getSingleResult();
+                o = (InformeAuditoria) q.getSingleResult();
             } catch (NoResultException nrex) {
                 o = null;
             }
@@ -55,14 +55,14 @@ public class InformeFacade implements InformeFacadeLocal {
     }
 
     @Override
-    public Informe findByCodigo(String codigo) {
+    public InformeAuditoria findByCodigo(String codigo) {
         return this.findByCodigo(codigo, false);
     }
 
     @Override
-    public Informe findByCodigo(String codigo, boolean refresh) {
-        String query = "select o from Informe as o where o.codigoInforme = :codigo";
-        Informe o = null;
+    public InformeAuditoria findByCodigo(String codigo, boolean refresh) {
+        String query = "select o from InformeAuditoria as o where o.codigoInformeAuditoria = :codigo";
+        InformeAuditoria o = null;
         Query q;
         if (codigo != null) {
             try {
@@ -72,7 +72,7 @@ public class InformeFacade implements InformeFacadeLocal {
                     q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
                     q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
                 }
-                o = (Informe) q.getSingleResult();
+                o = (InformeAuditoria) q.getSingleResult();
             } catch (NoResultException nrex) {
                 o = null;
             }
@@ -81,50 +81,50 @@ public class InformeFacade implements InformeFacadeLocal {
     }
 
     @Override
-    public List<Informe> findAll() {
+    public List<InformeAuditoria> findAll() {
         return this.findAll(false);
     }
 
     @Override
-    public List<Informe> findAll(boolean refresh) {
-        String query = "select object(o) from Informe as o";
+    public List<InformeAuditoria> findAll(boolean refresh) {
+        String query = "select object(o) from InformeAuditoria as o";
         return this.findByQuery(query, refresh);
     }
 
     @Override
-    public List<Informe> findByQuery(String query) {
+    public List<InformeAuditoria> findByQuery(String query) {
         return findByQuery(query, false);
     }
 
     @Override
-    public List<Informe> findByQuery(String query, boolean refresh) {
+    public List<InformeAuditoria> findByQuery(String query, boolean refresh) {
         return findByQuery(query, EnumTipoQuery.JPQL, refresh);
     }
 
     @Override
-    public List<Informe> findByQuery(String query, EnumTipoQuery tipo) {
+    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo) {
         return findByQuery(query, tipo, false);
     }
 
     @Override
-    public List<Informe> findByQuery(String query, EnumTipoQuery tipo, boolean refresh) {
+    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, boolean refresh) {
         return findByQuery(query, tipo, 0, refresh);
     }
 
     @Override
-    public List<Informe> findByQuery(String query, EnumTipoQuery tipo, int max) {
+    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, int max) {
         return findByQuery(query, tipo, max, false);
     }
 
     @Override
-    public List<Informe> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh) {
+    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh) {
         Query q;
         switch (tipo) {
             case NAMED:
                 q = em.createNamedQuery(query);
                 break;
             case NATIVE:
-                q = em.createNativeQuery(query, Informe.class);
+                q = em.createNativeQuery(query, InformeAuditoria.class);
                 break;
             default:
                 q = em.createQuery(query);
@@ -146,22 +146,22 @@ public class InformeFacade implements InformeFacadeLocal {
     }
 
     @Override
-    public void merge(Informe informe) {
-        em.merge(informe);
+    public void merge(InformeAuditoria informeAuditoria) {
+        em.merge(informeAuditoria);
     }
 
     @Override
-    public void persist(Informe informe) {
-        em.persist(informe);
+    public void persist(InformeAuditoria informeAuditoria) {
+        em.persist(informeAuditoria);
     }
 
     @Override
-    public void refresh(Informe informe) {
-        em.refresh(informe);
+    public void refresh(InformeAuditoria informeAuditoria) {
+        em.refresh(informeAuditoria);
     }
 
     @Override
-    public void remove(Informe informe) {
-        em.remove(em.merge(informe));
+    public void remove(InformeAuditoria informeAuditoria) {
+        em.remove(em.merge(informeAuditoria));
     }
 }

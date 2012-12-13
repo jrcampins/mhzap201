@@ -26,6 +26,12 @@ public interface ProcesoFacadeLocal extends ProcesoFacadeBase {
     Proceso find(Object id, boolean refresh);
 
     @Override
+    Proceso findByCodigo(String codigo);
+
+    @Override
+    Proceso findByCodigo(String codigo, boolean refresh);
+
+    @Override
     List<Proceso> findAll();
 
     @Override

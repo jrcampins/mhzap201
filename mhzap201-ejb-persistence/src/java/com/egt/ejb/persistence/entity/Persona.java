@@ -178,6 +178,14 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Column(name = "es_persona_acreditada_para_pen")
     private int esPersonaAcreditadaParaPen;
 
+    @Basic(optional = false)
+    @Column(name = "es_persona_con_copia_cedula")
+    private int esPersonaConCopiaCedula;
+
+    @Basic(optional = false)
+    @Column(name = "es_persona_con_declaracion_jur")
+    private int esPersonaConDeclaracionJur;
+
     @Column(name = "monto_pension")
     private BigDecimal montoPension;
 
@@ -294,6 +302,13 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Column(name = "fecha_resolucion_otor_pen")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaResolucionOtorPen;
+
+    @Column(name = "numero_resolucion_den_pen")
+    private String numeroResolucionDenPen;
+
+    @Column(name = "fecha_resolucion_den_pen")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaResolucionDenPen;
 
     @JoinColumn(name = "numero_sexo_persona", referencedColumnName = "numero_sexo_persona")
     @ManyToOne
@@ -729,6 +744,24 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
+    public int getEsPersonaConCopiaCedula() {
+        return this.esPersonaConCopiaCedula;
+    }
+
+    public void setEsPersonaConCopiaCedula(int esPersonaConCopiaCedula) {
+        this.esPersonaConCopiaCedula = esPersonaConCopiaCedula;
+    }
+
+    @Override
+    public int getEsPersonaConDeclaracionJur() {
+        return this.esPersonaConDeclaracionJur;
+    }
+
+    public void setEsPersonaConDeclaracionJur(int esPersonaConDeclaracionJur) {
+        this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
+    }
+
+    @Override
     public BigDecimal getMontoPension() {
         return this.montoPension;
     }
@@ -1032,6 +1065,24 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen) {
         this.fechaResolucionOtorPen = fechaResolucionOtorPen;
+    }
+
+    @Override
+    public String getNumeroResolucionDenPen() {
+        return this.numeroResolucionDenPen;
+    }
+
+    public void setNumeroResolucionDenPen(String numeroResolucionDenPen) {
+        this.numeroResolucionDenPen = numeroResolucionDenPen;
+    }
+
+    @Override
+    public Date getFechaResolucionDenPen() {
+        return this.fechaResolucionDenPen;
+    }
+
+    public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
+        this.fechaResolucionDenPen = fechaResolucionDenPen;
     }
 
     @Override

@@ -55,6 +55,32 @@ public class ProcesoFacade implements ProcesoFacadeLocal {
     }
 
     @Override
+    public Proceso findByCodigo(String codigo) {
+        return this.findByCodigo(codigo, false);
+    }
+
+    @Override
+    public Proceso findByCodigo(String codigo, boolean refresh) {
+        String query = "select o from Proceso as o where o.codigoProceso = :codigo";
+        Proceso o = null;
+        Query q;
+        if (codigo != null) {
+            try {
+                q = em.createQuery(query);
+                q = q.setParameter("codigo", codigo);
+                if (refresh) {
+                    q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
+                    q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
+                }
+                o = (Proceso) q.getSingleResult();
+            } catch (NoResultException nrex) {
+                o = null;
+            }
+        }
+        return o;
+    }
+
+    @Override
     public List<Proceso> findAll() {
         return this.findAll(false);
     }

@@ -26,6 +26,12 @@ public interface InformeFacadeLocal extends InformeFacadeBase {
     Informe find(Object id, boolean refresh);
 
     @Override
+    Informe findByCodigo(String codigo);
+
+    @Override
+    Informe findByCodigo(String codigo, boolean refresh);
+
+    @Override
     List<Informe> findAll();
 
     @Override

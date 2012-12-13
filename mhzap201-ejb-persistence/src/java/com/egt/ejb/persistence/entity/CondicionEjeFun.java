@@ -39,9 +39,6 @@ public class CondicionEjeFun implements CondicionEjeFunBase, Comparable, Seriali
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionEjeFunNumeroCondicionEjeFun")
     private Collection<GrupoProceso> grupoProcesoNumeroCondicionEjeFunCollection;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionEjeFunNumeroCondicionUltimaEje")
-    private Collection<Proceso> procesoNumeroCondicionUltimaEjeCollection;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionEjeFunNumeroCondicionEjeFun")
     private Collection<RastroInforme> rastroInformeNumeroCondicionEjeFunCollection;
 
@@ -76,15 +73,6 @@ public class CondicionEjeFun implements CondicionEjeFunBase, Comparable, Seriali
 
     public void setGrupoProcesoNumeroCondicionEjeFunCollection(Collection<GrupoProceso> collection) {
         this.grupoProcesoNumeroCondicionEjeFunCollection = collection;
-    }
-
-    @Override
-    public Collection<Proceso> getProcesoNumeroCondicionUltimaEjeCollection() {
-        return this.procesoNumeroCondicionUltimaEjeCollection;
-    }
-
-    public void setProcesoNumeroCondicionUltimaEjeCollection(Collection<Proceso> collection) {
-        this.procesoNumeroCondicionUltimaEjeCollection = collection;
     }
 
     @Override

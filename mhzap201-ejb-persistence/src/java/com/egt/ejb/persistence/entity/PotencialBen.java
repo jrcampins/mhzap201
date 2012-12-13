@@ -108,6 +108,9 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     @Column(name = "manzana")
     private String manzana;
 
+    @Column(name = "compania")
+    private String compania;
+
     @Column(name = "direccion")
     private String direccion;
 
@@ -262,6 +265,10 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     @JoinColumn(name = "numero_causa_den_recl_cen", referencedColumnName = "numero_causa_den_recl_cen")
     @ManyToOne
     private CausaDenReclCen causaDenReclCenNumeroCausaDenReclCen;
+
+    @JoinColumn(name = "id_funcionario_reg_pot_ben", referencedColumnName = "id_funcionario")
+    @ManyToOne
+    private Funcionario funcionarioIdFuncionarioRegPotBen;
 
     @JoinColumn(name = "id_funcionario_ult_visita_cen", referencedColumnName = "id_funcionario")
     @ManyToOne
@@ -454,6 +461,15 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     public void setManzana(String manzana) {
         this.manzana = manzana;
+    }
+
+    @Override
+    public String getCompania() {
+        return this.compania;
+    }
+
+    public void setCompania(String compania) {
+        this.compania = compania;
     }
 
     @Override
@@ -832,6 +848,15 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     public void setCausaDenReclCenNumeroCausaDenReclCen(CausaDenReclCen causaDenReclCen) {
         this.causaDenReclCenNumeroCausaDenReclCen = causaDenReclCen;
+    }
+
+    @Override
+    public Funcionario getFuncionarioIdFuncionarioRegPotBen() {
+        return this.funcionarioIdFuncionarioRegPotBen;
+    }
+
+    public void setFuncionarioIdFuncionarioRegPotBen(Funcionario funcionario) {
+        this.funcionarioIdFuncionarioRegPotBen = funcionario;
     }
 
     @Override

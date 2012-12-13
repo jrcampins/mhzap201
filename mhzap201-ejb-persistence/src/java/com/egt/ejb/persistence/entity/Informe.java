@@ -34,12 +34,12 @@ public class Informe implements InformeBase, Comparable, Serializable {
     private long versionInforme;
 
     @Basic(optional = false)
-    @Column(name = "codigo_proceso_informe")
-    private String codigoProcesoInforme;
+    @Column(name = "codigo_informe")
+    private String codigoInforme;
 
     @Basic(optional = false)
-    @Column(name = "nombre_proceso_informe")
-    private String nombreProcesoInforme;
+    @Column(name = "nombre_informe")
+    private String nombreInforme;
 
     public Informe() {
     }
@@ -63,21 +63,21 @@ public class Informe implements InformeBase, Comparable, Serializable {
     }
 
     @Override
-    public String getCodigoProcesoInforme() {
-        return this.codigoProcesoInforme;
+    public String getCodigoInforme() {
+        return this.codigoInforme;
     }
 
-    public void setCodigoProcesoInforme(String codigoProcesoInforme) {
-        this.codigoProcesoInforme = codigoProcesoInforme;
+    public void setCodigoInforme(String codigoInforme) {
+        this.codigoInforme = codigoInforme;
     }
 
     @Override
-    public String getNombreProcesoInforme() {
-        return this.nombreProcesoInforme;
+    public String getNombreInforme() {
+        return this.nombreInforme;
     }
 
-    public void setNombreProcesoInforme(String nombreProcesoInforme) {
-        this.nombreProcesoInforme = nombreProcesoInforme;
+    public void setNombreInforme(String nombreInforme) {
+        this.nombreInforme = nombreInforme;
     }
 
     @Override

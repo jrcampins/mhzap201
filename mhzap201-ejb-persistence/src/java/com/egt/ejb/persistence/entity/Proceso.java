@@ -12,16 +12,11 @@ package com.egt.ejb.persistence.entity;
 
 import com.egt.base.persistence.entity.ProcesoBase;
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "proceso")
@@ -39,20 +34,12 @@ public class Proceso implements ProcesoBase, Comparable, Serializable {
     private long versionProceso;
 
     @Basic(optional = false)
-    @Column(name = "codigo_proceso_proceso")
-    private String codigoProcesoProceso;
+    @Column(name = "codigo_proceso")
+    private String codigoProceso;
 
     @Basic(optional = false)
-    @Column(name = "nombre_proceso_proceso")
-    private String nombreProcesoProceso;
-
-    @Column(name = "fecha_hora_ultima_ejecucion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaHoraUltimaEjecucion;
-
-    @JoinColumn(name = "numero_condicion_ultima_eje", referencedColumnName = "numero_condicion_eje_fun")
-    @ManyToOne
-    private CondicionEjeFun condicionEjeFunNumeroCondicionUltimaEje;
+    @Column(name = "nombre_proceso")
+    private String nombreProceso;
 
     public Proceso() {
     }
@@ -76,39 +63,21 @@ public class Proceso implements ProcesoBase, Comparable, Serializable {
     }
 
     @Override
-    public String getCodigoProcesoProceso() {
-        return this.codigoProcesoProceso;
+    public String getCodigoProceso() {
+        return this.codigoProceso;
     }
 
-    public void setCodigoProcesoProceso(String codigoProcesoProceso) {
-        this.codigoProcesoProceso = codigoProcesoProceso;
-    }
-
-    @Override
-    public String getNombreProcesoProceso() {
-        return this.nombreProcesoProceso;
-    }
-
-    public void setNombreProcesoProceso(String nombreProcesoProceso) {
-        this.nombreProcesoProceso = nombreProcesoProceso;
+    public void setCodigoProceso(String codigoProceso) {
+        this.codigoProceso = codigoProceso;
     }
 
     @Override
-    public Date getFechaHoraUltimaEjecucion() {
-        return this.fechaHoraUltimaEjecucion;
+    public String getNombreProceso() {
+        return this.nombreProceso;
     }
 
-    public void setFechaHoraUltimaEjecucion(Date fechaHoraUltimaEjecucion) {
-        this.fechaHoraUltimaEjecucion = fechaHoraUltimaEjecucion;
-    }
-
-    @Override
-    public CondicionEjeFun getCondicionEjeFunNumeroCondicionUltimaEje() {
-        return this.condicionEjeFunNumeroCondicionUltimaEje;
-    }
-
-    public void setCondicionEjeFunNumeroCondicionUltimaEje(CondicionEjeFun condicionEjeFun) {
-        this.condicionEjeFunNumeroCondicionUltimaEje = condicionEjeFun;
+    public void setNombreProceso(String nombreProceso) {
+        this.nombreProceso = nombreProceso;
     }
 
     @Override
