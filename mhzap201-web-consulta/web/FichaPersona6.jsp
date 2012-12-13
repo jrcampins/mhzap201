@@ -5492,11 +5492,11 @@
                                         </webuijsf:tab>
                                         <webuijsf:tab
                                             id="tab9"
-                                            rendered="#{FichaPersona6.asistente.seccionEtcRendered}"
-                                            text="etc">
+                                            rendered="#{FichaPersona6.asistente.seccionOtrosRendered}"
+                                            text="otros">
                                         <h:panelGrid
                                             id="gridPanel132"
-                                            rendered="#{FichaPersona6.asistente.seccionEtcHidden}">
+                                            rendered="#{FichaPersona6.asistente.seccionOtrosHidden}">
                                             <webuijsf:staticText
                                                 id="hiddenStaticTextTab9"
                                                 text="#{FichaPersona6.gestor.i18n.textHiddenStaticTextTab}"/>
@@ -5504,7 +5504,7 @@
                                         <h:panelGrid
                                             columns="2"
                                             id="gridPanel133"
-                                            rendered="#{FichaPersona6.asistente.seccionEtcRendered}">
+                                            rendered="#{FichaPersona6.asistente.seccionOtrosRendered}">
                                             <h:panelGrid
                                                 id="gridIdPotencialBen1x1"
                                                 styleClass="pdq-grid-etiqueta-1">

@@ -3782,7 +3782,7 @@ public class AsistentePaginaActualizacionFichaPersona {
         if (bean == null) {
             return true;
         }
-        return bean.getGestor().isFilaProcesada() && isSeccionEtcRendered();
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
     public boolean isSeccionAntecedentes1Rendered() {
@@ -3849,12 +3849,12 @@ public class AsistentePaginaActualizacionFichaPersona {
         return !isSeccionIngresosRendered();
     }
 
-    public boolean isSeccionEtcRendered() {
+    public boolean isSeccionOtrosRendered() {
         return true;
     }
 
-    public boolean isSeccionEtcHidden() {
-        return !isSeccionEtcRendered();
+    public boolean isSeccionOtrosHidden() {
+        return !isSeccionOtrosRendered();
     }
 
     // </editor-fold>

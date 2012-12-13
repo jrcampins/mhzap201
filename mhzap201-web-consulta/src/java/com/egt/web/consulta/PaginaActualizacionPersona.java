@@ -113,6 +113,10 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     DropDown getListaEsPersonaAcreditadaParaPen1();
 
+    DropDown getListaEsPersonaConCopiaCedula1();
+
+    DropDown getListaEsPersonaConDeclaracionJur1();
+
     TextField getCampoMontoPension1();
 
     DropDown getListaNumeroCondicionPension1();
@@ -194,6 +198,10 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
     TextField getCampoNumeroResolucionOtorPen1();
 
     TextField getTextFieldCampoFechaResolucionOtorPen1();
+
+    TextField getCampoNumeroResolucionDenPen1();
+
+    TextField getTextFieldCampoFechaResolucionDenPen1();
 
     Button getBotonAplicar1();
 
