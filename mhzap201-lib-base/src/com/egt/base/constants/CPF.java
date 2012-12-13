@@ -162,6 +162,10 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_IDIOMA_HOGAR = 20301L; // Codigo Idioma Hogar
 
+    public static final Long CODIGO_INFORME = 20688L; // Codigo Informe
+
+    public static final Long CODIGO_INFORME_AUDITORIA = 20689L; // Codigo Informe Auditoria
+
     public static final Long CODIGO_MENSAJE = 1102L; // Codigo Mensaje
 
     public static final Long CODIGO_MOTIVO_INA_ESC = 20302L; // Codigo Motivo Inasistencia Escolar
@@ -294,9 +298,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_POTENCIAL_BEN = 20577L; // Codigo Potencial Beneficiario
 
-    public static final Long CODIGO_PROCESO_INFORME = 20250L; // Codigo Proceso Informe
-
-    public static final Long CODIGO_PROCESO_PROCESO = 20251L; // Codigo Proceso Proceso
+    public static final Long CODIGO_PROCESO = 20690L; // Codigo Proceso
 
     public static final Long CODIGO_PROPIEDAD_INTERFAZ = 1182L; // Codigo Propiedad Interfaz
 
@@ -308,7 +310,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_SEXO_PERSONA = 20058L; // Codigo Sexo Persona
 
-    public static final Long CODIGO_SIONO = 20306L; // Codigo Siono
+    public static final Long CODIGO_SIONO = 20306L; // Codigo Si/No
 
     public static final Long CODIGO_TIPO_ABA_AGUA = 20307L; // Codigo Tipo Abastecimiento Agua
 
@@ -442,6 +444,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long COMENTARIOS_VALIDACION_CENSO = 20633L; // Comentarios Validacion Censo
 
+    public static final Long COMPANIA = 20678L; // Compania
+
     public static final Long CONTROL_PAGINA_FUNCION = 1209L; // Control Pagina Funcion
 
     public static final Long CORREO_ELECTRONICO = 1982L; // Correo Electronico
@@ -564,6 +568,10 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ES_PERSONA_CON_CER_VIDA = 20580L; // Persona con Certificado Vida
 
+    public static final Long ES_PERSONA_CON_COPIA_CEDULA = 20679L; // Persona con Copia Cedula
+
+    public static final Long ES_PERSONA_CON_DECLARACION_JUR = 20680L; // Persona con Declaracion Jurada
+
     public static final Long ES_PERSONA_CON_DEUDA = 20223L; // Persona con Deuda
 
     public static final Long ES_PERSONA_CON_EMPLEO = 20118L; // Persona con Empleo
@@ -660,8 +668,6 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_HORA_ULTIMA_CARGA = 20283L; // Fecha Hora Ultima Carga
 
-    public static final Long FECHA_HORA_ULTIMA_EJECUCION = 20264L; // Fecha Hora Ultima Ejecucion
-
     public static final Long FECHA_HORA_ULTIMA_IMPORTACION = 20284L; // Fecha Hora Ultima Importacion
 
     public static final Long FECHA_NACIMIENTO = 20067L; // Fecha Nacimiento
@@ -682,6 +688,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_REGISTRO_POT_BEN_HASTA = 10012L; // Fecha Registro Potencial Beneficiario
 
+    public static final Long FECHA_RESOLUCION_DEN_PEN = 20681L; // Fecha Resolucion Denegacion Pension
+
     public static final Long FECHA_RESOLUCION_OTOR_PEN = 20672L; // Fecha Resolucion Otorgamiento Pension
 
     public static final Long FECHA_REVOCACION_PENSION = 20245L; // Fecha Revocacion Pension
@@ -697,6 +705,12 @@ public class CPF { // Clave Parametro Funcion
     public static final Long FECHA_SOLICITUD_PENSION_HASTA = 10002L; // Fecha Solicitud Pension
 
     public static final Long FECHA_SOLICITUD_RECO_PEN = 20247L; // Fecha Solicitud Reconsideracion Pension
+
+    public static final Long FECHA_TRANSACCION = 1990L; // Fecha Hora Transaccion
+
+    public static final Long FECHA_TRANSACCION_DESDE = 1991L; // Fecha Hora Transaccion
+
+    public static final Long FECHA_TRANSACCION_HASTA = 1992L; // Fecha Hora Transaccion
 
     public static final Long FECHA_ULTIMA_ACTUALIZACION = 20667L; // Fecha Ultima Actualizacion
 
@@ -816,6 +830,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_FUNCIONARIO_DIGITADOR = 20591L; // Funcionario Digitador
 
+    public static final Long ID_FUNCIONARIO_REG_POT_BEN = 20682L; // Funcionario Registro Potencial Beneficiario
+
     public static final Long ID_FUNCIONARIO_SUPERVISOR = 20592L; // Funcionario Supervisor
 
     public static final Long ID_FUNCIONARIO_ULT_VISITA_CEN = 20674L; // Funcionario Ultima Visita Censo
@@ -827,6 +843,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ID_GRUPO_PROCESO = 1333L; // Grupo Proceso
 
     public static final Long ID_INFORME = 20252L; // Informe
+
+    public static final Long ID_INFORME_AUDITORIA = 20685L; // Informe Auditoria
 
     public static final Long ID_LISTA_VALOR = 1334L; // Lista Valor
 
@@ -1010,6 +1028,10 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NOMBRE_GRUPO_PROCESO = 1424L; // Nombre Grupo Proceso
 
+    public static final Long NOMBRE_INFORME = 20691L; // Nombre Informe
+
+    public static final Long NOMBRE_INFORME_AUDITORIA = 20692L; // Nombre Informe Auditoria
+
     public static final Long NOMBRE_INTERFAZ = 1430L; // Nombre Interfaz
 
     public static final Long NOMBRE_JEFE_HOGAR = 20361L; // Nombre Jefe Hogar
@@ -1054,9 +1076,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NOMBRE_POTENCIAL_BEN = 20573L; // Nombre Potencial Beneficiario
 
-    public static final Long NOMBRE_PROCESO_INFORME = 20254L; // Nombre Proceso Informe
-
-    public static final Long NOMBRE_PROCESO_PROCESO = 20255L; // Nombre Proceso Proceso
+    public static final Long NOMBRE_PROCESO = 20693L; // Nombre Proceso
 
     public static final Long NOMBRE_PROVEEDOR_DAT_EXT = 20270L; // Nombre Proveedor Datos Externos
 
@@ -1144,8 +1164,6 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NUMERO_CONDICION_RECO_PEN = 20170L; // Condicion Reconsideracion Pension
 
-    public static final Long NUMERO_CONDICION_ULTIMA_EJE = 20265L; // Numero Condicion Ultima Ejecucion
-
     public static final Long NUMERO_ERROR = 1474L; // Numero Error
 
     public static final Long NUMERO_ESTADO_CIVIL = 20171L; // Estado Civil Persona
@@ -1191,6 +1209,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long NUMERO_PARAMETRO_GLOBAL = 20202L; // Parametro Global
 
     public static final Long NUMERO_RECURSO = 1945L; // Numero Recurso
+
+    public static final Long NUMERO_RESOLUCION_DEN_PEN = 20683L; // Numero Resolucion Denegacion Pension
 
     public static final Long NUMERO_RESOLUCION_OTOR_PEN = 20675L; // Numero Resolucion Otorgamiento Pension
 
@@ -1493,6 +1513,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VERSION_GRUPO_PROCESO = 1618L; // Version Grupo Proceso
 
     public static final Long VERSION_INFORME = 20256L; // Version Informe
+
+    public static final Long VERSION_INFORME_AUDITORIA = 20687L; // Version Informe Auditoria
 
     public static final Long VERSION_MENSAJE = 1565L; // Version Mensaje
 

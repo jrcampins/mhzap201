@@ -83,6 +83,10 @@ public interface FuncionarioBase {
 //
 //  public void setPotencialBenIdFuncionarioValidacionCenCollection(Collection<? extends PotencialBenBase> collection);
 
+    public Collection<? extends PotencialBenBase> getPotencialBenIdFuncionarioRegPotBenCollection();
+//
+//  public void setPotencialBenIdFuncionarioRegPotBenCollection(Collection<? extends PotencialBenBase> collection);
+
     public Collection<? extends PotencialBenBase> getPotencialBenIdFuncionarioUltVisitaCenCollection();
 //
 //  public void setPotencialBenIdFuncionarioUltVisitaCenCollection(Collection<? extends PotencialBenBase> collection);

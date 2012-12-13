@@ -20,6 +20,10 @@ public interface InformeFacadeBase {
 
     InformeBase find(Object id, boolean refresh);
 
+    InformeBase findByCodigo(String codigo);
+
+    InformeBase findByCodigo(String codigo, boolean refresh);
+
     List<? extends InformeBase> findAll();
 
     List<? extends InformeBase> findAll(boolean refresh);

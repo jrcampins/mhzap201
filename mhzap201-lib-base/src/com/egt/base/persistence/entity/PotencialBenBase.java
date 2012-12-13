@@ -100,6 +100,10 @@ public interface PotencialBenBase {
 //
 //  public void setManzana(String manzana);
 
+    public String getCompania();
+//
+//  public void setCompania(String compania);
+
     public String getDireccion();
 //
 //  public void setDireccion(String direccion);
@@ -267,6 +271,10 @@ public interface PotencialBenBase {
     public CausaDenReclCenBase getCausaDenReclCenNumeroCausaDenReclCen();
 //
 //  public void setCausaDenReclCenNumeroCausaDenReclCen(CausaDenReclCenBase causaDenReclCen);
+
+    public FuncionarioBase getFuncionarioIdFuncionarioRegPotBen();
+//
+//  public void setFuncionarioIdFuncionarioRegPotBen(FuncionarioBase funcionario);
 
     public FuncionarioBase getFuncionarioIdFuncionarioUltVisitaCen();
 //

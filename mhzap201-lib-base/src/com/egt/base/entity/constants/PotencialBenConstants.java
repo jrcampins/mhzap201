@@ -77,6 +77,8 @@ public class PotencialBenConstants {
 
     public static final String COLUMNA_MANZANA = "manzana";
 
+    public static final String COLUMNA_COMPANIA = "compania";
+
     public static final String COLUMNA_DIRECCION = "direccion";
 
     public static final String COLUMNA_NOMBRE_RESPONSABLE_HOGAR = "nombre_responsable_hogar";
@@ -136,6 +138,8 @@ public class PotencialBenConstants {
     public static final String COLUMNA_COMENTARIOS_DEN_RECL_CEN = "comentarios_den_recl_cen";
 
     public static final String COLUMNA_FECHA_REGISTRO_POT_BEN = "fecha_registro_pot_ben";
+
+    public static final String COLUMNA_ID_FUNCIONARIO_REG_POT_BEN = "id_funcionario_reg_pot_ben";
 
     public static final String COLUMNA_ES_POTENCIAL_BEN_INACTIVO = "es_potencial_ben_inactivo";
 

@@ -21,12 +21,12 @@ public interface InformeBase {
 //
 //  public void setVersionInforme(long versionInforme);
 
-    public String getCodigoProcesoInforme();
+    public String getCodigoInforme();
 //
-//  public void setCodigoProcesoInforme(String codigoProcesoInforme);
+//  public void setCodigoInforme(String codigoInforme);
 
-    public String getNombreProcesoInforme();
+    public String getNombreInforme();
 //
-//  public void setNombreProcesoInforme(String nombreProcesoInforme);
+//  public void setNombreInforme(String nombreInforme);
 
 }

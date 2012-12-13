@@ -176,6 +176,14 @@ public interface PersonaBase {
 //
 //  public void setEsPersonaAcreditadaParaPen(int esPersonaAcreditadaParaPen);
 
+    public int getEsPersonaConCopiaCedula();
+//
+//  public void setEsPersonaConCopiaCedula(int esPersonaConCopiaCedula);
+
+    public int getEsPersonaConDeclaracionJur();
+//
+//  public void setEsPersonaConDeclaracionJur(int esPersonaConDeclaracionJur);
+
     public BigDecimal getMontoPension();
 //
 //  public void setMontoPension(BigDecimal montoPension);
@@ -311,6 +319,14 @@ public interface PersonaBase {
     public Date getFechaResolucionOtorPen();
 //
 //  public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen);
+
+    public String getNumeroResolucionDenPen();
+//
+//  public void setNumeroResolucionDenPen(String numeroResolucionDenPen);
+
+    public Date getFechaResolucionDenPen();
+//
+//  public void setFechaResolucionDenPen(Date fechaResolucionDenPen);
 
     public SexoPersonaBase getSexoPersonaNumeroSexoPersona();
 //

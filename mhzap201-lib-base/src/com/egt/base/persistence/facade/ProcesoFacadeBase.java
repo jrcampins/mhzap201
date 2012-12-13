@@ -20,6 +20,10 @@ public interface ProcesoFacadeBase {
 
     ProcesoBase find(Object id, boolean refresh);
 
+    ProcesoBase findByCodigo(String codigo);
+
+    ProcesoBase findByCodigo(String codigo, boolean refresh);
+
     List<? extends ProcesoBase> findAll();
 
     List<? extends ProcesoBase> findAll(boolean refresh);

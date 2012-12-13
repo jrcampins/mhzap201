@@ -10,7 +10,6 @@
  */
 package com.egt.base.persistence.entity;
 
-import java.util.Date;
 
 public interface ProcesoBase {
 
@@ -22,20 +21,12 @@ public interface ProcesoBase {
 //
 //  public void setVersionProceso(long versionProceso);
 
-    public String getCodigoProcesoProceso();
+    public String getCodigoProceso();
 //
-//  public void setCodigoProcesoProceso(String codigoProcesoProceso);
+//  public void setCodigoProceso(String codigoProceso);
 
-    public String getNombreProcesoProceso();
+    public String getNombreProceso();
 //
-//  public void setNombreProcesoProceso(String nombreProcesoProceso);
-
-    public Date getFechaHoraUltimaEjecucion();
-//
-//  public void setFechaHoraUltimaEjecucion(Date fechaHoraUltimaEjecucion);
-
-    public CondicionEjeFunBase getCondicionEjeFunNumeroCondicionUltimaEje();
-//
-//  public void setCondicionEjeFunNumeroCondicionUltimaEje(CondicionEjeFunBase condicionEjeFun);
+//  public void setNombreProceso(String nombreProceso);
 
 }

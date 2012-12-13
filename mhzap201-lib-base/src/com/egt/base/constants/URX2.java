@@ -124,6 +124,8 @@ public class URX2 extends URX {
 
     public static final String COMANDO_PROCESO = "/mhzap201-web-proceso/faces/Proceso4.jsp";
 
+    public static final String COMANDO_INFORME_AUDITORIA = "/mhzap201-web-proceso/faces/InformeAuditoria4.jsp";
+
     public static final String COMANDO_PERSONA = "/mhzap201-web-proceso/faces/Persona4.jsp";
 
     public static final String COMANDO_UBICACION = "/mhzap201-web-proceso/faces/Ubicacion4.jsp";

@@ -26,10 +26,6 @@ public interface CondicionEjeFunBase {
 //
 //  public void setGrupoProcesoNumeroCondicionEjeFunCollection(Collection<? extends GrupoProcesoBase> collection);
 
-    public Collection<? extends ProcesoBase> getProcesoNumeroCondicionUltimaEjeCollection();
-//
-//  public void setProcesoNumeroCondicionUltimaEjeCollection(Collection<? extends ProcesoBase> collection);
-
     public Collection<? extends RastroInformeBase> getRastroInformeNumeroCondicionEjeFunCollection();
 //
 //  public void setRastroInformeNumeroCondicionEjeFunCollection(Collection<? extends RastroInformeBase> collection);
