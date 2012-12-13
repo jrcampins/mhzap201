@@ -21,3 +21,5 @@ function solicitar_reco_pen(persona_consultada number, comentarios varchar2) ret
 function denegar_reco_pen(persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return varchar2;
 function desmentir_denu_pen(persona_consultada number, comentarios varchar2) return varchar2;
 function otorgar_pension(persona_consultada number, numero_resolucion varchar2, fecha_resolucion timestamp, comentarios varchar2) return varchar2;
+function proc_denu_pen(persona_consultada number) return varchar2;
+function proc_reco_pen(persona_consultada number) return varchar2;
