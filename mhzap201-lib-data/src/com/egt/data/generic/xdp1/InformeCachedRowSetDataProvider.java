@@ -12,11 +12,13 @@ package com.egt.data.generic.xdp1;
 
 import com.egt.core.db.xdp.RecursoCachedRowSetDataProvider;
 import com.egt.core.db.xdp.RecursoVersionableDataProvider;
+import com.egt.core.db.xdp.RecursoCodificableDataProvider;
+import com.egt.core.db.xdp.RecursoNombrableDataProvider;
 import com.sun.data.provider.RowKey;
 import javax.sql.rowset.CachedRowSet;
 
 public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProvider
-        implements RecursoVersionableDataProvider {
+        implements RecursoVersionableDataProvider, RecursoCodificableDataProvider, RecursoNombrableDataProvider {
 
     public InformeCachedRowSetDataProvider() {
         super();
@@ -60,30 +62,30 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
 
     public static final String COLUMNA_ID_INFORME = "id_informe";
     public static final String COLUMNA_VERSION_INFORME = "version_informe";
-    public static final String COLUMNA_CODIGO_PROCESO_INFORME = "codigo_proceso_informe";
-    public static final String COLUMNA_NOMBRE_PROCESO_INFORME = "nombre_proceso_informe";
+    public static final String COLUMNA_CODIGO_INFORME = "codigo_informe";
+    public static final String COLUMNA_NOMBRE_INFORME = "nombre_informe";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_INFORME, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_VERSION_INFORME, Long.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_PROCESO_INFORME, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_PROCESO_INFORME, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_INFORME, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_INFORME, String.class);
     }
 
     protected void setColumnasInsertables() {
         this.setColumnasInsertables(false);
         this.setColumnasInsertables(COLUMNA_ID_INFORME, true);
         this.setColumnasInsertables(COLUMNA_VERSION_INFORME, true);
-        this.setColumnasInsertables(COLUMNA_CODIGO_PROCESO_INFORME, true);
-        this.setColumnasInsertables(COLUMNA_NOMBRE_PROCESO_INFORME, true);
+        this.setColumnasInsertables(COLUMNA_CODIGO_INFORME, true);
+        this.setColumnasInsertables(COLUMNA_NOMBRE_INFORME, true);
     }
 
     protected void setColumnasModificables() {
         this.setColumnasModificables(false);
         this.setColumnasModificables(COLUMNA_ID_INFORME, true);
         this.setColumnasModificables(COLUMNA_VERSION_INFORME, true);
-        this.setColumnasModificables(COLUMNA_CODIGO_PROCESO_INFORME, true);
-        this.setColumnasModificables(COLUMNA_NOMBRE_PROCESO_INFORME, true);
+        this.setColumnasModificables(COLUMNA_CODIGO_INFORME, true);
+        this.setColumnasModificables(COLUMNA_NOMBRE_INFORME, true);
     }
 
     public Long getIdInforme() {
@@ -112,37 +114,41 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_VERSION_INFORME, rowKey, valor);
     }
 
-    public String getCodigoProcesoInforme() {
-        return (String) super.getValue(COLUMNA_CODIGO_PROCESO_INFORME);
+    public String getCodigoInforme() {
+        return (String) super.getValue(COLUMNA_CODIGO_INFORME);
     }
-    public String getCodigoProcesoInforme(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_CODIGO_PROCESO_INFORME, rowKey);
+    public String getCodigoInforme(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_CODIGO_INFORME, rowKey);
     }
-    public void setCodigoProcesoInforme(String valor) {
-        super.setValue(COLUMNA_CODIGO_PROCESO_INFORME, valor);
+    public void setCodigoInforme(String valor) {
+        super.setValue(COLUMNA_CODIGO_INFORME, valor);
     }
-    public void setCodigoProcesoInforme(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_CODIGO_PROCESO_INFORME, rowKey, valor);
+    public void setCodigoInforme(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_CODIGO_INFORME, rowKey, valor);
     }
 
-    public String getNombreProcesoInforme() {
-        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO_INFORME);
+    public String getNombreInforme() {
+        return (String) super.getValue(COLUMNA_NOMBRE_INFORME);
     }
-    public String getNombreProcesoInforme(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO_INFORME, rowKey);
+    public String getNombreInforme(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NOMBRE_INFORME, rowKey);
     }
-    public void setNombreProcesoInforme(String valor) {
-        super.setValue(COLUMNA_NOMBRE_PROCESO_INFORME, valor);
+    public void setNombreInforme(String valor) {
+        super.setValue(COLUMNA_NOMBRE_INFORME, valor);
     }
-    public void setNombreProcesoInforme(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_NOMBRE_PROCESO_INFORME, rowKey, valor);
+    public void setNombreInforme(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NOMBRE_INFORME, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_informe";
     public static final String COLUMNA_VERSION_RECURSO = "version_informe";
+    public static final String COLUMNA_CODIGO_RECURSO = "codigo_informe";
+    public static final String COLUMNA_NOMBRE_RECURSO = "nombre_informe";
 
     public static final String ETIQUETA_IDENTIFICACION_RECURSO = "Identificacion";
     public static final String ETIQUETA_VERSION_RECURSO = "Version";
+    public static final String ETIQUETA_CODIGO_RECURSO = "Codigo";
+    public static final String ETIQUETA_NOMBRE_RECURSO = "Nombre";
 
     @Override
     public String getColumnaIdentificacionRecurso() {
@@ -152,6 +158,14 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public String getColumnaVersionRecurso() {
         return COLUMNA_VERSION_RECURSO;
     }
+    @Override
+    public String getColumnaCodigoRecurso() {
+        return COLUMNA_CODIGO_RECURSO;
+    }
+    @Override
+    public String getColumnaNombreRecurso() {
+        return COLUMNA_NOMBRE_RECURSO;
+    }
 
     @Override
     public String getEtiquetaIdentificacionRecurso() {
@@ -160,6 +174,14 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     @Override
     public String getEtiquetaVersionRecurso() {
         return ETIQUETA_VERSION_RECURSO;
+    }
+    @Override
+    public String getEtiquetaCodigoRecurso() {
+        return ETIQUETA_CODIGO_RECURSO;
+    }
+    @Override
+    public String getEtiquetaNombreRecurso() {
+        return ETIQUETA_NOMBRE_RECURSO;
     }
 
     @Override
@@ -194,5 +216,39 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     @Override
     public void setVersionRecurso(RowKey rowKey, Long versionRecurso) {
         this.setVersionInforme(rowKey, versionRecurso);
+    }
+
+    @Override
+    public String getCodigoRecurso() {
+        return this.getCodigoInforme();
+    }
+    @Override
+    public String getCodigoRecurso(RowKey rowKey) {
+        return this.getCodigoInforme(rowKey);
+    }
+    @Override
+    public void setCodigoRecurso(String codigoRecurso) {
+        this.setCodigoInforme(codigoRecurso);
+    }
+    @Override
+    public void setCodigoRecurso(RowKey rowKey, String codigoRecurso) {
+        this.setCodigoInforme(rowKey, codigoRecurso);
+    }
+
+    @Override
+    public String getNombreRecurso() {
+        return this.getNombreInforme();
+    }
+    @Override
+    public String getNombreRecurso(RowKey rowKey) {
+        return this.getNombreInforme(rowKey);
+    }
+    @Override
+    public void setNombreRecurso(String nombreRecurso) {
+        this.setNombreInforme(nombreRecurso);
+    }
+    @Override
+    public void setNombreRecurso(RowKey rowKey, String nombreRecurso) {
+        this.setNombreInforme(rowKey, nombreRecurso);
     }
 }

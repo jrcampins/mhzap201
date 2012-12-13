@@ -155,6 +155,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     protected static final long PARAMETRO_ID_BARRIO = 20333L;
     protected static final long PARAMETRO_ID_MANZANA = 20344L;
     protected static final long PARAMETRO_MANZANA = 20664L;
+    protected static final long PARAMETRO_COMPANIA = 20678L;
     protected static final long PARAMETRO_DIRECCION = 20326L;
     protected static final long PARAMETRO_NOMBRE_RESPONSABLE_HOGAR = 20586L;
     protected static final long PARAMETRO_NUMERO_TELEFONO_RESP_HOGAR = 20588L;
@@ -170,6 +171,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     protected static final long PARAMETRO_NUMERO_TELEFONO_REFERENTE = 20587L;
     protected static final long PARAMETRO_ID_FICHA_PERSONA = 20342L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN = 20653L;
+    protected static final long PARAMETRO_ID_FUNCIONARIO_REG_POT_BEN = 20682L;
     protected static final long PARAMETRO_REFERENCIA_DIRECCION = 20677L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_DESDE = 10011L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_HASTA = 10012L;
@@ -476,6 +478,13 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
                         TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_FICHA_PERSONA + ">");
                     }
                 }
+                if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN)) {
+                    ok = TLC.getControlador().esReferenciaAutorizada(this.getIdFuncionarioRegPotBen(rowKey), FUNCION_REFERENCIA_CONSULTAR_FUNCIONARIO, STRINGS_REFERENCIA_CONSULTAR_FUNCIONARIO);
+                    es &= ok;
+                    if (!ok) {
+                        TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_FUNCIONARIO_REG_POT_BEN + ">");
+                    }
+                }
                 if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN)) {
                     ok = TLC.getControlador().esReferenciaAutorizada(this.getIdFuncionarioUltVisitaCen(rowKey), FUNCION_REFERENCIA_CONSULTAR_FUNCIONARIO, STRINGS_REFERENCIA_CONSULTAR_FUNCIONARIO);
                     es &= ok;
@@ -553,6 +562,13 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
                         TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_FICHA_PERSONA + ">");
                     }
                 }
+                if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN)) {
+                    ok = TLC.getControlador().esReferenciaAutorizada(this.getIdFuncionarioRegPotBen(rowKey), FUNCION_REFERENCIA_CONSULTAR_FUNCIONARIO, STRINGS_REFERENCIA_CONSULTAR_FUNCIONARIO);
+                    es &= ok;
+                    if (!ok) {
+                        TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_FUNCIONARIO_REG_POT_BEN + ">");
+                    }
+                }
                 if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN)) {
                     ok = TLC.getControlador().esReferenciaAutorizada(this.getIdFuncionarioUltVisitaCen(rowKey), FUNCION_REFERENCIA_CONSULTAR_FUNCIONARIO, STRINGS_REFERENCIA_CONSULTAR_FUNCIONARIO);
                     es &= ok;
@@ -616,6 +632,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_ID_BARRIO, this.getIdBarrio(rowKey));
         rastro.addParametro(PARAMETRO_ID_MANZANA, this.getIdManzana(rowKey));
         rastro.addParametro(PARAMETRO_MANZANA, this.getManzana(rowKey));
+        rastro.addParametro(PARAMETRO_COMPANIA, this.getCompania(rowKey));
         rastro.addParametro(PARAMETRO_DIRECCION, this.getDireccion(rowKey));
         rastro.addParametro(PARAMETRO_NOMBRE_RESPONSABLE_HOGAR, this.getNombreResponsableHogar(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_RESP_HOGAR, this.getNumeroTelefonoRespHogar(rowKey));
@@ -646,6 +663,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_OTRA_CAUSA_DEN_RECL_CEN, this.getOtraCausaDenReclCen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_DEN_RECL_CEN, this.getComentariosDenReclCen(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_REGISTRO_POT_BEN, this.getFechaRegistroPotBen(rowKey));
+        rastro.addParametro(PARAMETRO_ID_FUNCIONARIO_REG_POT_BEN, this.getIdFuncionarioRegPotBen(rowKey));
         rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_INACTIVO, this.getEsPotencialBenInactivo(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_ULTIMA_VISITA_CENSO, this.getFechaUltimaVisitaCenso(rowKey));
         rastro.addParametro(PARAMETRO_OBSERVACIONES_ULT_VISITA_CEN, this.getObservacionesUltVisitaCen(rowKey));
@@ -685,6 +703,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_ID_BARRIO, this.getIdBarrio(rowKey));
         rastro.addParametro(PARAMETRO_ID_MANZANA, this.getIdManzana(rowKey));
         rastro.addParametro(PARAMETRO_MANZANA, this.getManzana(rowKey));
+        rastro.addParametro(PARAMETRO_COMPANIA, this.getCompania(rowKey));
         rastro.addParametro(PARAMETRO_DIRECCION, this.getDireccion(rowKey));
         rastro.addParametro(PARAMETRO_NOMBRE_RESPONSABLE_HOGAR, this.getNombreResponsableHogar(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_RESP_HOGAR, this.getNumeroTelefonoRespHogar(rowKey));
@@ -715,6 +734,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_OTRA_CAUSA_DEN_RECL_CEN, this.getOtraCausaDenReclCen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_DEN_RECL_CEN, this.getComentariosDenReclCen(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_REGISTRO_POT_BEN, this.getFechaRegistroPotBen(rowKey));
+        rastro.addParametro(PARAMETRO_ID_FUNCIONARIO_REG_POT_BEN, this.getIdFuncionarioRegPotBen(rowKey));
         rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_INACTIVO, this.getEsPotencialBenInactivo(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_ULTIMA_VISITA_CENSO, this.getFechaUltimaVisitaCenso(rowKey));
         rastro.addParametro(PARAMETRO_OBSERVACIONES_ULT_VISITA_CEN, this.getObservacionesUltVisitaCen(rowKey));
@@ -755,6 +775,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         this.setEsPersonaConCerVida(rowKey, 0);
         this.setEsPersonaConCartaRenuncia(rowKey, 0);
         this.setFechaRegistroPotBen(rowKey, currentDate);
+        this.setIdFuncionarioRegPotBen(rowKey, TLC.getControlador().getUsuario().getIdUsuario());
         this.setEsPotencialBenInactivo(rowKey, 0);
     }
 }

@@ -12,12 +12,13 @@ package com.egt.data.generic.xdp1;
 
 import com.egt.core.db.xdp.RecursoCachedRowSetDataProvider;
 import com.egt.core.db.xdp.RecursoVersionableDataProvider;
+import com.egt.core.db.xdp.RecursoCodificableDataProvider;
+import com.egt.core.db.xdp.RecursoNombrableDataProvider;
 import com.sun.data.provider.RowKey;
-import java.sql.Timestamp;
 import javax.sql.rowset.CachedRowSet;
 
 public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProvider
-        implements RecursoVersionableDataProvider {
+        implements RecursoVersionableDataProvider, RecursoCodificableDataProvider, RecursoNombrableDataProvider {
 
     public ProcesoCachedRowSetDataProvider() {
         super();
@@ -61,38 +62,30 @@ public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
 
     public static final String COLUMNA_ID_PROCESO = "id_proceso";
     public static final String COLUMNA_VERSION_PROCESO = "version_proceso";
-    public static final String COLUMNA_CODIGO_PROCESO_PROCESO = "codigo_proceso_proceso";
-    public static final String COLUMNA_NOMBRE_PROCESO_PROCESO = "nombre_proceso_proceso";
-    public static final String COLUMNA_FECHA_HORA_ULTIMA_EJECUCION = "fecha_hora_ultima_ejecucion";
-    public static final String COLUMNA_NUMERO_CONDICION_ULTIMA_EJE = "numero_condicion_ultima_eje";
+    public static final String COLUMNA_CODIGO_PROCESO = "codigo_proceso";
+    public static final String COLUMNA_NOMBRE_PROCESO = "nombre_proceso";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_PROCESO, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_VERSION_PROCESO, Long.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_PROCESO_PROCESO, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_PROCESO_PROCESO, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, Timestamp.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, Integer.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_PROCESO, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_PROCESO, String.class);
     }
 
     protected void setColumnasInsertables() {
         this.setColumnasInsertables(false);
         this.setColumnasInsertables(COLUMNA_ID_PROCESO, true);
         this.setColumnasInsertables(COLUMNA_VERSION_PROCESO, true);
-        this.setColumnasInsertables(COLUMNA_CODIGO_PROCESO_PROCESO, true);
-        this.setColumnasInsertables(COLUMNA_NOMBRE_PROCESO_PROCESO, true);
-        this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, true);
-        this.setColumnasInsertables(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, true);
+        this.setColumnasInsertables(COLUMNA_CODIGO_PROCESO, true);
+        this.setColumnasInsertables(COLUMNA_NOMBRE_PROCESO, true);
     }
 
     protected void setColumnasModificables() {
         this.setColumnasModificables(false);
         this.setColumnasModificables(COLUMNA_ID_PROCESO, true);
         this.setColumnasModificables(COLUMNA_VERSION_PROCESO, true);
-        this.setColumnasModificables(COLUMNA_CODIGO_PROCESO_PROCESO, true);
-        this.setColumnasModificables(COLUMNA_NOMBRE_PROCESO_PROCESO, true);
-        this.setColumnasModificables(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, true);
-        this.setColumnasModificables(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, true);
+        this.setColumnasModificables(COLUMNA_CODIGO_PROCESO, true);
+        this.setColumnasModificables(COLUMNA_NOMBRE_PROCESO, true);
     }
 
     public Long getIdProceso() {
@@ -121,63 +114,41 @@ public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_VERSION_PROCESO, rowKey, valor);
     }
 
-    public String getCodigoProcesoProceso() {
-        return (String) super.getValue(COLUMNA_CODIGO_PROCESO_PROCESO);
+    public String getCodigoProceso() {
+        return (String) super.getValue(COLUMNA_CODIGO_PROCESO);
     }
-    public String getCodigoProcesoProceso(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_CODIGO_PROCESO_PROCESO, rowKey);
+    public String getCodigoProceso(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_CODIGO_PROCESO, rowKey);
     }
-    public void setCodigoProcesoProceso(String valor) {
-        super.setValue(COLUMNA_CODIGO_PROCESO_PROCESO, valor);
+    public void setCodigoProceso(String valor) {
+        super.setValue(COLUMNA_CODIGO_PROCESO, valor);
     }
-    public void setCodigoProcesoProceso(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_CODIGO_PROCESO_PROCESO, rowKey, valor);
-    }
-
-    public String getNombreProcesoProceso() {
-        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO_PROCESO);
-    }
-    public String getNombreProcesoProceso(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO_PROCESO, rowKey);
-    }
-    public void setNombreProcesoProceso(String valor) {
-        super.setValue(COLUMNA_NOMBRE_PROCESO_PROCESO, valor);
-    }
-    public void setNombreProcesoProceso(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_NOMBRE_PROCESO_PROCESO, rowKey, valor);
+    public void setCodigoProceso(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_CODIGO_PROCESO, rowKey, valor);
     }
 
-    public Timestamp getFechaHoraUltimaEjecucion() {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION);
+    public String getNombreProceso() {
+        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO);
     }
-    public Timestamp getFechaHoraUltimaEjecucion(RowKey rowKey) {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, rowKey);
+    public String getNombreProceso(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NOMBRE_PROCESO, rowKey);
     }
-    public void setFechaHoraUltimaEjecucion(Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, valor);
+    public void setNombreProceso(String valor) {
+        super.setValue(COLUMNA_NOMBRE_PROCESO, valor);
     }
-    public void setFechaHoraUltimaEjecucion(RowKey rowKey, Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_HORA_ULTIMA_EJECUCION, rowKey, valor);
-    }
-
-    public Integer getNumeroCondicionUltimaEje() {
-        return (Integer) super.getValue(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE);
-    }
-    public Integer getNumeroCondicionUltimaEje(RowKey rowKey) {
-        return (Integer) super.getValue(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, rowKey);
-    }
-    public void setNumeroCondicionUltimaEje(Integer valor) {
-        super.setValue(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, valor);
-    }
-    public void setNumeroCondicionUltimaEje(RowKey rowKey, Integer valor) {
-        super.setValue(COLUMNA_NUMERO_CONDICION_ULTIMA_EJE, rowKey, valor);
+    public void setNombreProceso(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NOMBRE_PROCESO, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_proceso";
     public static final String COLUMNA_VERSION_RECURSO = "version_proceso";
+    public static final String COLUMNA_CODIGO_RECURSO = "codigo_proceso";
+    public static final String COLUMNA_NOMBRE_RECURSO = "nombre_proceso";
 
     public static final String ETIQUETA_IDENTIFICACION_RECURSO = "Identificacion";
     public static final String ETIQUETA_VERSION_RECURSO = "Version";
+    public static final String ETIQUETA_CODIGO_RECURSO = "Codigo";
+    public static final String ETIQUETA_NOMBRE_RECURSO = "Nombre";
 
     @Override
     public String getColumnaIdentificacionRecurso() {
@@ -187,6 +158,14 @@ public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public String getColumnaVersionRecurso() {
         return COLUMNA_VERSION_RECURSO;
     }
+    @Override
+    public String getColumnaCodigoRecurso() {
+        return COLUMNA_CODIGO_RECURSO;
+    }
+    @Override
+    public String getColumnaNombreRecurso() {
+        return COLUMNA_NOMBRE_RECURSO;
+    }
 
     @Override
     public String getEtiquetaIdentificacionRecurso() {
@@ -195,6 +174,14 @@ public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     @Override
     public String getEtiquetaVersionRecurso() {
         return ETIQUETA_VERSION_RECURSO;
+    }
+    @Override
+    public String getEtiquetaCodigoRecurso() {
+        return ETIQUETA_CODIGO_RECURSO;
+    }
+    @Override
+    public String getEtiquetaNombreRecurso() {
+        return ETIQUETA_NOMBRE_RECURSO;
     }
 
     @Override
@@ -229,5 +216,39 @@ public class ProcesoCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     @Override
     public void setVersionRecurso(RowKey rowKey, Long versionRecurso) {
         this.setVersionProceso(rowKey, versionRecurso);
+    }
+
+    @Override
+    public String getCodigoRecurso() {
+        return this.getCodigoProceso();
+    }
+    @Override
+    public String getCodigoRecurso(RowKey rowKey) {
+        return this.getCodigoProceso(rowKey);
+    }
+    @Override
+    public void setCodigoRecurso(String codigoRecurso) {
+        this.setCodigoProceso(codigoRecurso);
+    }
+    @Override
+    public void setCodigoRecurso(RowKey rowKey, String codigoRecurso) {
+        this.setCodigoProceso(rowKey, codigoRecurso);
+    }
+
+    @Override
+    public String getNombreRecurso() {
+        return this.getNombreProceso();
+    }
+    @Override
+    public String getNombreRecurso(RowKey rowKey) {
+        return this.getNombreProceso(rowKey);
+    }
+    @Override
+    public void setNombreRecurso(String nombreRecurso) {
+        this.setNombreProceso(nombreRecurso);
+    }
+    @Override
+    public void setNombreRecurso(RowKey rowKey, String nombreRecurso) {
+        this.setNombreProceso(rowKey, nombreRecurso);
     }
 }

@@ -71,8 +71,8 @@ public class InformeCachedRowSetDataProvider2 extends InformeCachedRowSetDataPro
 
     protected static final long PARAMETRO_ID_INFORME = 20252L;
     protected static final long PARAMETRO_VERSION_INFORME = 20256L;
-    protected static final long PARAMETRO_CODIGO_PROCESO_INFORME = 20250L;
-    protected static final long PARAMETRO_NOMBRE_PROCESO_INFORME = 20254L;
+    protected static final long PARAMETRO_CODIGO_INFORME = 20688L;
+    protected static final long PARAMETRO_NOMBRE_INFORME = 20691L;
 
     @Override
     public long getFuncionConsultarRecurso() {
