@@ -1,175 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application version="5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
-  <display-name>mhzap201</display-name>
-  <module>
-    <ejb>mhzap201-ejb-business.jar</ejb>
-  </module>
-  <module>
-    <ejb>mhzap201-ejb-core.jar</ejb>
-  </module>
-  <module>
-    <ejb>mhzap201-ejb-persistence.jar</ejb>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web.war</web-uri>
-      <context-root>/mhzap201-web</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-filtro.war</web-uri>
-      <context-root>/mhzap201-web-filtro</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-rastro.war</web-uri>
-      <context-root>/mhzap201-web-rastro</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-recurso.war</web-uri>
-      <context-root>/mhzap201-web-recurso</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-recurso-filtro.war</web-uri>
-      <context-root>/mhzap201-web-recurso-filtro</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-usuario.war</web-uri>
-      <context-root>/mhzap201-web-usuario</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-conjunto-segmento.war</web-uri>
-      <context-root>/mhzap201-web-conjunto-segmento</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-rol.war</web-uri>
-      <context-root>/mhzap201-web-rol</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-configuracion-fija.war</web-uri>
-      <context-root>/mhzap201-web-configuracion-fija</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-configuracion-manual.war</web-uri>
-      <context-root>/mhzap201-web-configuracion-manual</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-gestion-pension.war</web-uri>
-      <context-root>/mhzap201-web-gestion-pension</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-gestion-censo.war</web-uri>
-      <context-root>/mhzap201-web-gestion-censo</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-proceso.war</web-uri>
-      <context-root>/mhzap201-web-proceso</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-consulta.war</web-uri>
-      <context-root>/mhzap201-web-consulta</context-root>
-    </web>
-  </module>
-  <module>
-    <web>
-      <web-uri>mhzap201-web-configuracion-basica.war</web-uri>
-      <context-root>/mhzap201-web-configuracion-basica</context-root>
-    </web>
-  </module>
-  <security-role>
+    <display-name>mhzap201</display-name>
+    <module>
+        <ejb>mhzap201-ejb-business.jar</ejb>
+    </module>
+    <module>
+        <ejb>mhzap201-ejb-core.jar</ejb>
+    </module>
+    <module>
+        <ejb>mhzap201-ejb-persistence.jar</ejb>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web.war</web-uri>
+            <context-root>/mhzap201-web</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-filtro.war</web-uri>
+            <context-root>/mhzap201-web-filtro</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-rastro.war</web-uri>
+            <context-root>/mhzap201-web-rastro</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-recurso.war</web-uri>
+            <context-root>/mhzap201-web-recurso</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-recurso-filtro.war</web-uri>
+            <context-root>/mhzap201-web-recurso-filtro</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-usuario.war</web-uri>
+            <context-root>/mhzap201-web-usuario</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-conjunto-segmento.war</web-uri>
+            <context-root>/mhzap201-web-conjunto-segmento</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-rol.war</web-uri>
+            <context-root>/mhzap201-web-rol</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-configuracion-fija.war</web-uri>
+            <context-root>/mhzap201-web-configuracion-fija</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-configuracion-manual.war</web-uri>
+            <context-root>/mhzap201-web-configuracion-manual</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-gestion-pension.war</web-uri>
+            <context-root>/mhzap201-web-gestion-pension</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-gestion-censo.war</web-uri>
+            <context-root>/mhzap201-web-gestion-censo</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-proceso.war</web-uri>
+            <context-root>/mhzap201-web-proceso</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-consulta.war</web-uri>
+            <context-root>/mhzap201-web-consulta</context-root>
+        </web>
+    </module>
+    <module>
+        <web>
+            <web-uri>mhzap201-web-configuracion-basica.war</web-uri>
+            <context-root>/mhzap201-web-configuracion-basica</context-root>
+        </web>
+    </module>
+    <security-role>
         <description>S&#250;per Gestor</description>
-    <role-name>SuperGestor</role-name>
-  </security-role>
-  <security-role>
+        <role-name>SuperGestor</role-name>
+    </security-role>
+    <security-role>
         <description>S&#250;per Lector</description>
-    <role-name>SuperLector</role-name>
-  </security-role>
-  <security-role>
-    <description>Operador</description>
-    <role-name>Operador</role-name>
-  </security-role>
-  <security-role>
-    <description>Registrador de Control de Acceso</description>
-    <role-name>RegistradorControlAcceso</role-name>
-  </security-role>
-  <security-role>
-    <description>Procesador de Control de Acceso</description>
-    <role-name>ProcesadorControlAcceso</role-name>
-  </security-role>
-  <security-role>
-    <description>Lector de Control de Acceso</description>
-    <role-name>LectorControlAcceso</role-name>
-  </security-role>
-  <security-role>
-    <description>Configurador de Control de Acceso</description>
-    <role-name>ConfiguradorControlAcceso</role-name>
-  </security-role>
-  <security-role>
-    <description>Gestor de Control de Acceso</description>
-    <role-name>GestorControlAcceso</role-name>
-  </security-role>
-  <security-role>
-    <description>Registrador de Recursos de Pensiones</description>
-    <role-name>RegistradorRecursosPensiones</role-name>
-  </security-role>
-  <security-role>
-    <description>Procesador de Recursos de Pensiones</description>
-    <role-name>ProcesadorRecursosPensiones</role-name>
-  </security-role>
-  <security-role>
-    <description>Lector de Recursos de Pensiones</description>
-    <role-name>LectorRecursosPensiones</role-name>
-  </security-role>
-  <security-role>
-    <description>Configurador de Recursos de Pensiones</description>
-    <role-name>ConfiguradorRecursosPensiones</role-name>
-  </security-role>
-  <security-role>
-    <description>Gestor de Recursos de Pensiones</description>
-    <role-name>GestorRecursosPensiones</role-name>
-  </security-role>
-  <security-role>
-    <description>Registrador de Recursos de Censos</description>
-    <role-name>RegistradorRecursosCensos</role-name>
-  </security-role>
-  <security-role>
-    <description>Procesador de Recursos de Censos</description>
-    <role-name>ProcesadorRecursosCensos</role-name>
-  </security-role>
-  <security-role>
-    <description>Lector de Recursos de Censos</description>
-    <role-name>LectorRecursosCensos</role-name>
-  </security-role>
-  <security-role>
-    <description>Configurador de Recursos de Censos</description>
-    <role-name>ConfiguradorRecursosCensos</role-name>
-  </security-role>
-  <security-role>
-    <description>Gestor de Recursos de Censos</description>
-    <role-name>GestorRecursosCensos</role-name>
-  </security-role>
+        <role-name>SuperLector</role-name>
+    </security-role>
+    <security-role>
+        <description>Operador</description>
+        <role-name>Operador</role-name>
+    </security-role>
+    <security-role>
+        <description>Registrador de Control de Acceso</description>
+        <role-name>RegistradorControlAcceso</role-name>
+    </security-role>
+    <security-role>
+        <description>Procesador de Control de Acceso</description>
+        <role-name>ProcesadorControlAcceso</role-name>
+    </security-role>
+    <security-role>
+        <description>Lector de Control de Acceso</description>
+        <role-name>LectorControlAcceso</role-name>
+    </security-role>
+    <security-role>
+        <description>Configurador de Control de Acceso</description>
+        <role-name>ConfiguradorControlAcceso</role-name>
+    </security-role>
+    <security-role>
+        <description>Gestor de Control de Acceso</description>
+        <role-name>GestorControlAcceso</role-name>
+    </security-role>
+    <security-role>
+        <description>Registrador de Recursos de Pensiones</description>
+        <role-name>RegistradorRecursosPensiones</role-name>
+    </security-role>
+    <security-role>
+        <description>Procesador de Recursos de Pensiones</description>
+        <role-name>ProcesadorRecursosPensiones</role-name>
+    </security-role>
+    <security-role>
+        <description>Lector de Recursos de Pensiones</description>
+        <role-name>LectorRecursosPensiones</role-name>
+    </security-role>
+    <security-role>
+        <description>Configurador de Recursos de Pensiones</description>
+        <role-name>ConfiguradorRecursosPensiones</role-name>
+    </security-role>
+    <security-role>
+        <description>Gestor de Recursos de Pensiones</description>
+        <role-name>GestorRecursosPensiones</role-name>
+    </security-role>
+    <security-role>
+        <description>Registrador de Recursos de Censos</description>
+        <role-name>RegistradorRecursosCensos</role-name>
+    </security-role>
+    <security-role>
+        <description>Procesador de Recursos de Censos</description>
+        <role-name>ProcesadorRecursosCensos</role-name>
+    </security-role>
+    <security-role>
+        <description>Lector de Recursos de Censos</description>
+        <role-name>LectorRecursosCensos</role-name>
+    </security-role>
+    <security-role>
+        <description>Configurador de Recursos de Censos</description>
+        <role-name>ConfiguradorRecursosCensos</role-name>
+    </security-role>
+    <security-role>
+        <description>Gestor de Recursos de Censos</description>
+        <role-name>GestorRecursosCensos</role-name>
+    </security-role>
 </application>
