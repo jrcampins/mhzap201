@@ -30,7 +30,7 @@ public class RegistrarCerDefunPersonaMessage extends BusinessProcessMessage impl
 
     public RegistrarCerDefunPersonaMessage(Long idPersona, String certificadoDefuncion, Date fechaCertificadoDefuncion) {
         this.init();
-        this.funcion = 201000162L;
+        this.funcion = 201000153L;
         this.idPersona = idPersona;
         this.certificadoDefuncion = certificadoDefuncion;
         this.fechaCertificadoDefuncion = fechaCertificadoDefuncion;

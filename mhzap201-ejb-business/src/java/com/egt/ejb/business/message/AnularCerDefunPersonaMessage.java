@@ -25,7 +25,7 @@ public class AnularCerDefunPersonaMessage extends BusinessProcessMessage impleme
 
     public AnularCerDefunPersonaMessage(Long idPersona, String comentariosAnulCerDefuncion) {
         this.init();
-        this.funcion = 201000163L;
+        this.funcion = 201000154L;
         this.idPersona = idPersona;
         this.comentariosAnulCerDefuncion = comentariosAnulCerDefuncion;
     }

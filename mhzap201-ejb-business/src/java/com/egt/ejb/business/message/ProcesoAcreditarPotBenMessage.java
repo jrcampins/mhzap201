@@ -30,7 +30,7 @@ public class ProcesoAcreditarPotBenMessage extends BusinessProcessMessage implem
 
     public ProcesoAcreditarPotBenMessage(Long idUbicacion, Date fechaRegistroPotBenDesde, Date fechaRegistroPotBenHasta) {
         this.init();
-        this.funcion = 200200153L;
+        this.funcion = 200200152L;
         this.idUbicacion = idUbicacion;
         this.fechaRegistroPotBenDesde = fechaRegistroPotBenDesde;
         this.fechaRegistroPotBenHasta = fechaRegistroPotBenHasta;

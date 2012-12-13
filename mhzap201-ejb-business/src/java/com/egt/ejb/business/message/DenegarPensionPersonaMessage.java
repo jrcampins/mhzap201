@@ -22,6 +22,10 @@ public class DenegarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public static final long PARAMETRO_OTRA_CAUSA_DEN_PENSION = 20226L;
 
+    public static final long PARAMETRO_NUMERO_RESOLUCION_DEN_PEN = 20683L;
+
+    public static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN = 20681L;
+
     public static final long PARAMETRO_COMENTARIOS_DENEGACION_PENSION = 20231L;
 
     protected Long idPersona;
@@ -30,14 +34,20 @@ public class DenegarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     protected String otraCausaDenPension;
 
+    protected String numeroResolucionDenPen;
+
+    protected Date fechaResolucionDenPen;
+
     protected String comentariosDenegacionPension;
 
-    public DenegarPensionPersonaMessage(Long idPersona, Integer numeroCausaDenPension, String otraCausaDenPension, String comentariosDenegacionPension) {
+    public DenegarPensionPersonaMessage(Long idPersona, Integer numeroCausaDenPension, String otraCausaDenPension, String numeroResolucionDenPen, Date fechaResolucionDenPen, String comentariosDenegacionPension) {
         this.init();
-        this.funcion = 201000152L;
+        this.funcion = 201000156L;
         this.idPersona = idPersona;
         this.numeroCausaDenPension = numeroCausaDenPension;
         this.otraCausaDenPension = otraCausaDenPension;
+        this.numeroResolucionDenPen = numeroResolucionDenPen;
+        this.fechaResolucionDenPen = fechaResolucionDenPen;
         this.comentariosDenegacionPension = comentariosDenegacionPension;
     }
 
@@ -63,6 +73,22 @@ public class DenegarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public void setOtraCausaDenPension(String otraCausaDenPension) {
         this.otraCausaDenPension = otraCausaDenPension;
+    }
+
+    public String getNumeroResolucionDenPen() {
+        return numeroResolucionDenPen;
+    }
+
+    public void setNumeroResolucionDenPen(String numeroResolucionDenPen) {
+        this.numeroResolucionDenPen = numeroResolucionDenPen;
+    }
+
+    public Date getFechaResolucionDenPen() {
+        return fechaResolucionDenPen;
+    }
+
+    public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
+        this.fechaResolucionDenPen = fechaResolucionDenPen;
     }
 
     public String getComentariosDenegacionPension() {

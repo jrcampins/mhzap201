@@ -26,7 +26,7 @@ public class SolicitarRecoPenPersonaMessage extends BusinessProcessMessage imple
 
     public SolicitarRecoPenPersonaMessage(Long idPersona, String comentariosSolicitudRecoPen) {
         this.init();
-        this.funcion = 201000154L;
+        this.funcion = 201000160L;
         this.idPersona = idPersona;
         this.comentariosSolicitudRecoPen = comentariosSolicitudRecoPen;
     }

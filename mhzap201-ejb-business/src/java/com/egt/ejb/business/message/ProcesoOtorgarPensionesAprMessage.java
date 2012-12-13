@@ -30,7 +30,7 @@ public class ProcesoOtorgarPensionesAprMessage extends BusinessProcessMessage im
 
     public ProcesoOtorgarPensionesAprMessage(Long idUbicacion, String numeroResolucionOtorPen, Date fechaResolucionOtorPen) {
         this.init();
-        this.funcion = 200200156L;
+        this.funcion = 200200154L;
         this.idUbicacion = idUbicacion;
         this.numeroResolucionOtorPen = numeroResolucionOtorPen;
         this.fechaResolucionOtorPen = fechaResolucionOtorPen;

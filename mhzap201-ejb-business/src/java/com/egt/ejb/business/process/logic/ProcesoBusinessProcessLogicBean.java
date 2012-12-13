@@ -16,14 +16,14 @@ import com.egt.commons.util.IntUtils;
 import com.egt.commons.util.TimeUtils;
 import com.egt.core.util.STP;
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
-import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
+import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.persistence.entity.Proceso;
 import com.egt.ejb.persistence.facade.ProcesoFacadeLocal;
-import com.egt.ejb.persistence.facade.CondicionEjeFunFacadeLocal;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.ejb.EJB;
@@ -36,15 +36,25 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     // <editor-fold defaultstate="collapsed" desc="@EJB">
     @EJB
     private ProcesoFacadeLocal facade;
-
-    @EJB
-    private CondicionEjeFunFacadeLocal condicionEjeFunFacade;
     // </editor-fold>
 
     @Override
     public void procesoImportarArchivosExt(ProcesoImportarArchivosExtMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoImportarArchivosExtMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoAcreditarPotBenMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());
@@ -68,9 +78,22 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     }
 
     @Override
-    public void procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message, Proceso proceso) throws Exception {
+    public void procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message, Proceso proceso) throws Exception {
         if (message == null) {
-            throw new EJBException(ProcesoAcreditarPotBenMessage.class.getSimpleName());
+            throw new EJBException(ProcesoOtorgarPensionesAprMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoDenegarPensiones(ProcesoDenegarPensionesMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoDenegarPensionesMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());
@@ -97,19 +120,6 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     public void procesoVerificarElePen(ProcesoVerificarElePenMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoVerificarElePenMessage.class.getSimpleName());
-        }
-        if (proceso == null) {
-            throw new EJBException(Proceso.class.getSimpleName());
-        }
-        //
-        // TODO: codificar la logica del proceso de negocio
-        //
-    }
-
-    @Override
-    public void procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message, Proceso proceso) throws Exception {
-        if (message == null) {
-            throw new EJBException(ProcesoOtorgarPensionesAprMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());

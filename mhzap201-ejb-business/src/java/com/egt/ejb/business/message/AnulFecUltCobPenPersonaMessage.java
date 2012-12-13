@@ -25,7 +25,7 @@ public class AnulFecUltCobPenPersonaMessage extends BusinessProcessMessage imple
 
     public AnulFecUltCobPenPersonaMessage(Long idPersona, String notasAnulFecUltCobPen) {
         this.init();
-        this.funcion = 201000165L;
+        this.funcion = 201000167L;
         this.idPersona = idPersona;
         this.notasAnulFecUltCobPen = notasAnulFecUltCobPen;
     }

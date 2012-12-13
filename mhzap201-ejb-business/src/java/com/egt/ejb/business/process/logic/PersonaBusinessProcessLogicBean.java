@@ -15,22 +15,23 @@ import com.egt.commons.util.BitUtils;
 import com.egt.commons.util.IntUtils;
 import com.egt.commons.util.TimeUtils;
 import com.egt.core.util.STP;
+import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
+import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
+import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
+import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
+import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
-import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
-import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
-import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.persistence.entity.Persona;
 import com.egt.ejb.persistence.facade.PersonaFacadeLocal;
 import com.egt.ejb.persistence.facade.SexoPersonaFacadeLocal;
@@ -100,6 +101,70 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     // </editor-fold>
 
     @Override
+    public void registrarCerVidaPersona(RegistrarCerVidaPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(RegistrarCerVidaPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setCertificadoVida(message.getCertificadoVida());
+        persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
+        persona.setComentariosAnulCerVida(null);
+        persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
+    }
+
+    @Override
+    public void anularCerVidaPersona(AnularCerVidaPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AnularCerVidaPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setComentariosAnulCerVida(message.getComentariosAnulCerVida());
+        persona.setEsCertificadoVidaAnulado(IntUtils.TRUE);
+    }
+
+    @Override
+    public void registrarCerDefunPersona(RegistrarCerDefunPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(RegistrarCerDefunPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setCertificadoDefuncion(message.getCertificadoDefuncion());
+        persona.setFechaCertificadoDefuncion(message.getFechaCertificadoDefuncion());
+        persona.setComentariosAnulCerDefuncion(null);
+        persona.setEsCerDefuncionAnulado(IntUtils.FALSE);
+    }
+
+    @Override
+    public void anularCerDefunPersona(AnularCerDefunPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AnularCerDefunPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setComentariosAnulCerDefuncion(message.getComentariosAnulCerDefuncion());
+        persona.setEsCerDefuncionAnulado(IntUtils.TRUE);
+    }
+
+    @Override
     public void aprobarPensionPersona(AprobarPensionPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
             throw new EJBException(AprobarPensionPersonaMessage.class.getSimpleName());
@@ -128,6 +193,8 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         persona.setCausaDenPensionNumeroCausaDenPension(this.causaDenPensionFacade.find(message.getNumeroCausaDenPension()));
         persona.setOtraCausaDenPension(message.getOtraCausaDenPension());
+        persona.setNumeroResolucionDenPen(message.getNumeroResolucionDenPen());
+        persona.setFechaResolucionDenPen(message.getFechaResolucionDenPen());
         persona.setComentariosDenegacionPension(message.getComentariosDenegacionPension());
         persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.DENEGADA.intValue()));
         persona.setFechaDenegacionPension((Date) TimeUtils.currentDate());
@@ -149,6 +216,41 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setComentariosRevocacionPension(message.getComentariosRevocacionPension());
         persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.REVOCADA.intValue()));
         persona.setFechaRevocacionPension((Date) TimeUtils.currentDate());
+    }
+
+    @Override
+    public void otorgarPensionPersona(OtorgarPensionPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(OtorgarPensionPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setNumeroResolucionOtorPen(message.getNumeroResolucionOtorPen());
+        persona.setFechaResolucionOtorPen(message.getFechaResolucionOtorPen());
+        persona.setComentariosOtorgamientoPen(message.getComentariosOtorgamientoPen());
+    }
+
+    @Override
+    public void registrarEntregaDocPersona(RegistrarEntregaDocPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(RegistrarEntregaDocPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setCertificadoVida(message.getCertificadoVida());
+        persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
+        persona.setComentariosAnulCerVida(null);
+        persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
+        persona.setEsPersonaConCopiaCedula(message.getEsPersonaConCopiaCedula() == null ? IntUtils.FALSE : message.getEsPersonaConCopiaCedula());
+        persona.setEsPersonaConDeclaracionJur(message.getEsPersonaConDeclaracionJur() == null ? IntUtils.FALSE : message.getEsPersonaConDeclaracionJur());
     }
 
     @Override
@@ -258,70 +360,6 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     }
 
     @Override
-    public void registrarCerVidaPersona(RegistrarCerVidaPersonaMessage message, Persona persona) throws Exception {
-        if (message == null) {
-            throw new EJBException(RegistrarCerVidaPersonaMessage.class.getSimpleName());
-        }
-        if (persona == null) {
-            throw new EJBException(Persona.class.getSimpleName());
-        }
-        //
-        // TODO: comprobar la logica del proceso de negocio
-        //
-        persona.setCertificadoVida(message.getCertificadoVida());
-        persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
-        persona.setComentariosAnulCerVida(null);
-        persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
-    }
-
-    @Override
-    public void anularCerVidaPersona(AnularCerVidaPersonaMessage message, Persona persona) throws Exception {
-        if (message == null) {
-            throw new EJBException(AnularCerVidaPersonaMessage.class.getSimpleName());
-        }
-        if (persona == null) {
-            throw new EJBException(Persona.class.getSimpleName());
-        }
-        //
-        // TODO: comprobar la logica del proceso de negocio
-        //
-        persona.setComentariosAnulCerVida(message.getComentariosAnulCerVida());
-        persona.setEsCertificadoVidaAnulado(IntUtils.TRUE);
-    }
-
-    @Override
-    public void registrarCerDefunPersona(RegistrarCerDefunPersonaMessage message, Persona persona) throws Exception {
-        if (message == null) {
-            throw new EJBException(RegistrarCerDefunPersonaMessage.class.getSimpleName());
-        }
-        if (persona == null) {
-            throw new EJBException(Persona.class.getSimpleName());
-        }
-        //
-        // TODO: comprobar la logica del proceso de negocio
-        //
-        persona.setCertificadoDefuncion(message.getCertificadoDefuncion());
-        persona.setFechaCertificadoDefuncion(message.getFechaCertificadoDefuncion());
-        persona.setComentariosAnulCerDefuncion(null);
-        persona.setEsCerDefuncionAnulado(IntUtils.FALSE);
-    }
-
-    @Override
-    public void anularCerDefunPersona(AnularCerDefunPersonaMessage message, Persona persona) throws Exception {
-        if (message == null) {
-            throw new EJBException(AnularCerDefunPersonaMessage.class.getSimpleName());
-        }
-        if (persona == null) {
-            throw new EJBException(Persona.class.getSimpleName());
-        }
-        //
-        // TODO: comprobar la logica del proceso de negocio
-        //
-        persona.setComentariosAnulCerDefuncion(message.getComentariosAnulCerDefuncion());
-        persona.setEsCerDefuncionAnulado(IntUtils.TRUE);
-    }
-
-    @Override
     public void actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
             throw new EJBException(ActFecUltCobPenPersonaMessage.class.getSimpleName());
@@ -347,21 +385,5 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         // TODO: comprobar la logica del proceso de negocio
         //
         persona.setNotasAnulFecUltCobPen(message.getNotasAnulFecUltCobPen());
-    }
-
-    @Override
-    public void otorgarPensionPersona(OtorgarPensionPersonaMessage message, Persona persona) throws Exception {
-        if (message == null) {
-            throw new EJBException(OtorgarPensionPersonaMessage.class.getSimpleName());
-        }
-        if (persona == null) {
-            throw new EJBException(Persona.class.getSimpleName());
-        }
-        //
-        // TODO: comprobar la logica del proceso de negocio
-        //
-        persona.setNumeroResolucionOtorPen(message.getNumeroResolucionOtorPen());
-        persona.setFechaResolucionOtorPen(message.getFechaResolucionOtorPen());
-        persona.setComentariosOtorgamientoPen(message.getComentariosOtorgamientoPen());
     }
 }

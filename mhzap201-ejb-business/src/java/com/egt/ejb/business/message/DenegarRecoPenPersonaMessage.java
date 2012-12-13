@@ -34,7 +34,7 @@ public class DenegarRecoPenPersonaMessage extends BusinessProcessMessage impleme
 
     public DenegarRecoPenPersonaMessage(Long idPersona, Integer numeroCausaDenRecoPen, String otraCausaDenRecoPen, String comentariosDenRecoPen) {
         this.init();
-        this.funcion = 201000156L;
+        this.funcion = 201000162L;
         this.idPersona = idPersona;
         this.numeroCausaDenRecoPen = numeroCausaDenRecoPen;
         this.otraCausaDenRecoPen = otraCausaDenRecoPen;

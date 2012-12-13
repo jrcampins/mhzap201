@@ -26,7 +26,7 @@ public class AprobarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public AprobarPensionPersonaMessage(Long idPersona, String comentariosAprobacionPension) {
         this.init();
-        this.funcion = 201000151L;
+        this.funcion = 201000155L;
         this.idPersona = idPersona;
         this.comentariosAprobacionPension = comentariosAprobacionPension;
     }

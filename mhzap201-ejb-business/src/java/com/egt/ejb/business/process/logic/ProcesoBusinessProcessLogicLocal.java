@@ -11,11 +11,12 @@
 package com.egt.ejb.business.process.logic;
 
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
-import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
+import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.persistence.entity.Proceso;
 import javax.ejb.Local;
 
@@ -24,13 +25,15 @@ public interface ProcesoBusinessProcessLogicLocal {
 
     public void procesoImportarArchivosExt(ProcesoImportarArchivosExtMessage message, Proceso proceso) throws Exception;
 
+    public void procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message, Proceso proceso) throws Exception;
+
     public void procesoPrepararProxPagoPen(ProcesoPrepararProxPagoPenMessage message, Proceso proceso) throws Exception;
 
-    public void procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message, Proceso proceso) throws Exception;
+    public void procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message, Proceso proceso) throws Exception;
+
+    public void procesoDenegarPensiones(ProcesoDenegarPensionesMessage message, Proceso proceso) throws Exception;
 
     public void procesoActualizarPenEnJupe(ProcesoActualizarPenEnJupeMessage message, Proceso proceso) throws Exception;
 
     public void procesoVerificarElePen(ProcesoVerificarElePenMessage message, Proceso proceso) throws Exception;
-
-    public void procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message, Proceso proceso) throws Exception;
 }

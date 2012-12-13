@@ -30,7 +30,7 @@ public class ProcesoPrepararProxPagoPenMessage extends BusinessProcessMessage im
 
     public ProcesoPrepararProxPagoPenMessage(Long idUbicacion, Date fechaSolicitudPensionDesde, Date fechaSolicitudPensionHasta) {
         this.init();
-        this.funcion = 200200152L;
+        this.funcion = 200200153L;
         this.idUbicacion = idUbicacion;
         this.fechaSolicitudPensionDesde = fechaSolicitudPensionDesde;
         this.fechaSolicitudPensionHasta = fechaSolicitudPensionHasta;

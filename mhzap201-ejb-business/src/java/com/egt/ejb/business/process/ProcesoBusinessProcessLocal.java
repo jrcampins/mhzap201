@@ -11,11 +11,12 @@
 package com.egt.ejb.business.process;
 
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
-import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
+import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import javax.ejb.Local;
 
 @Local
@@ -23,13 +24,15 @@ public interface ProcesoBusinessProcessLocal {
 
     public ProcesoImportarArchivosExtMessage procesoImportarArchivosExt(ProcesoImportarArchivosExtMessage message);
 
+    public ProcesoAcreditarPotBenMessage procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message);
+
     public ProcesoPrepararProxPagoPenMessage procesoPrepararProxPagoPen(ProcesoPrepararProxPagoPenMessage message);
 
-    public ProcesoAcreditarPotBenMessage procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message);
+    public ProcesoOtorgarPensionesAprMessage procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message);
+
+    public ProcesoDenegarPensionesMessage procesoDenegarPensiones(ProcesoDenegarPensionesMessage message);
 
     public ProcesoActualizarPenEnJupeMessage procesoActualizarPenEnJupe(ProcesoActualizarPenEnJupeMessage message);
 
     public ProcesoVerificarElePenMessage procesoVerificarElePen(ProcesoVerificarElePenMessage message);
-
-    public ProcesoOtorgarPensionesAprMessage procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message);
 }

@@ -25,7 +25,7 @@ public class AnularCerVidaPersonaMessage extends BusinessProcessMessage implemen
 
     public AnularCerVidaPersonaMessage(Long idPersona, String comentariosAnulCerVida) {
         this.init();
-        this.funcion = 201000161L;
+        this.funcion = 201000152L;
         this.idPersona = idPersona;
         this.comentariosAnulCerVida = comentariosAnulCerVida;
     }

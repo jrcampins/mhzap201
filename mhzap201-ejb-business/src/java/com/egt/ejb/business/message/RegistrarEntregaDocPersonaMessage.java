@@ -14,7 +14,7 @@ import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
 import java.util.Date;
 
-public class RegistrarCerVidaPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage implements Serializable {
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
@@ -22,18 +22,28 @@ public class RegistrarCerVidaPersonaMessage extends BusinessProcessMessage imple
 
     public static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
 
+    public static final long PARAMETRO_ES_PERSONA_CON_COPIA_CEDULA = 20679L;
+
+    public static final long PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR = 20680L;
+
     protected Long idPersona;
 
     protected String certificadoVida;
 
     protected Date fechaCertificadoVida;
 
-    public RegistrarCerVidaPersonaMessage(Long idPersona, String certificadoVida, Date fechaCertificadoVida) {
+    protected Integer esPersonaConCopiaCedula;
+
+    protected Integer esPersonaConDeclaracionJur;
+
+    public RegistrarEntregaDocPersonaMessage(Long idPersona, String certificadoVida, Date fechaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur) {
         this.init();
-        this.funcion = 201000151L;
+        this.funcion = 201000159L;
         this.idPersona = idPersona;
         this.certificadoVida = certificadoVida;
         this.fechaCertificadoVida = fechaCertificadoVida;
+        this.esPersonaConCopiaCedula = esPersonaConCopiaCedula;
+        this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
     }
 
     public Long getIdPersona() {
@@ -58,5 +68,21 @@ public class RegistrarCerVidaPersonaMessage extends BusinessProcessMessage imple
 
     public void setFechaCertificadoVida(Date fechaCertificadoVida) {
         this.fechaCertificadoVida = fechaCertificadoVida;
+    }
+
+    public Integer getEsPersonaConCopiaCedula() {
+        return esPersonaConCopiaCedula;
+    }
+
+    public void setEsPersonaConCopiaCedula(Integer esPersonaConCopiaCedula) {
+        this.esPersonaConCopiaCedula = esPersonaConCopiaCedula;
+    }
+
+    public Integer getEsPersonaConDeclaracionJur() {
+        return esPersonaConDeclaracionJur;
+    }
+
+    public void setEsPersonaConDeclaracionJur(Integer esPersonaConDeclaracionJur) {
+        this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
     }
 }
