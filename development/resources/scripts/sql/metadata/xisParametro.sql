@@ -37,8 +37,8 @@ BEGIN
 		PRINT CAST(@parmid AS VARCHAR) + ' ' + CAST(@parmtype AS VARCHAR) + ' ' + @parmcode + ' ' + @parmname
 		IF (@rehearsal = 0)
 			INSERT
-			INTO parametro (id_parametro, codigo_parametro, nombre_parametro, numero_tipo_dato_par)
-			VALUES (@parmid, @parmcode, @parmname, @parmtype)
+			INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, numero_tipo_dato_par, alias_parametro)
+			VALUES (@parmid, 1, @parmcode, @parmname, @parmtype, @parmcode)
 		END
 	FETCH NEXT FROM cursor1 INTO @parmcode, @parmname, @parmtype
 END
