@@ -9,7 +9,7 @@ BEGIN
 DECLARE @rehearsal integer
 SELECT 	@rehearsal = id_dual FROM dual 
 DECLARE	funcion_cursor CURSOR FOR
-select	tabid, tabname, firstname, middlename, lastname, id_dominio, numero_tipo_funcion, es_segmentada
+select	tabid, tabname, firstname, middlename, lastname, label, id_dominio, numero_tipo_funcion, es_segmentada
 from	xdb10102 -- xdbProcessTables2
 order by firstname, tabid
 OPEN funcion_cursor
@@ -18,7 +18,9 @@ DECLARE @tabname varchar(128)
 DECLARE @firstname varchar(128)
 DECLARE @middlename varchar(128)
 DECLARE @lastname varchar(128)
+DECLARE @label varchar(128)
 DECLARE @codigo varchar(100)
+DECLARE @nombre varchar(100)
 DECLARE @dominio bigint
 DECLARE @tipo int
 DECLARE @segmentada int
@@ -49,7 +51,7 @@ set	refname = (select max(SFK.refname) from xdbScriptForeignKeys SFK where SFK.c
 from	xdb102, xdbScriptForeignKeys SFK
 where	xdb102.refname is null and (SFK.colname = xdb102.colname)
 --
-FETCH NEXT FROM funcion_cursor INTO @tabid, @tabname, @firstname, @middlename, @lastname, @dominio, @tipo, @segmentada
+FETCH NEXT FROM funcion_cursor INTO @tabid, @tabname, @firstname, @middlename, @lastname, @label, @dominio, @tipo, @segmentada
 WHILE (@@FETCH_STATUS <> -1)
 	BEGIN
 	IF (@@FETCH_STATUS <> -2)
@@ -63,6 +65,7 @@ WHILE (@@FETCH_STATUS <> -1)
 		SET @id = @id + 1
 		SET @pp = @dominio
 		SET @codigo = @lastname
+		SET @nombre = @label
 		SET @xs = NULL
 		SELECT @xs = id_funcion FROM funcion WHERE codigo_funcion=@codigo -- AND id_dominio=@dominio
 --		PRINT ''
@@ -74,8 +77,8 @@ WHILE (@@FETCH_STATUS <> -1)
 				BEGIN
 				IF @tipo <> 13 SET @segmentada = 0
 				INSERT 
-				INTO	funcion (id_funcion, codigo_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, es_segmentada)
-				VALUES (@id, @codigo, @tipo, 1, @dominio, @segmentada)
+				INTO	funcion (id_funcion, codigo_funcion, nombre_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, es_segmentada)
+				VALUES (@id, @codigo, @nombre, @tipo, 1, @dominio, @segmentada)
 				/**/
 				INSERT
 				INTO	funcion_parametro
@@ -105,7 +108,7 @@ WHILE (@@FETCH_STATUS <> -1)
 				END
 			END
 		END
-	FETCH NEXT FROM funcion_cursor INTO @tabid, @tabname, @firstname, @middlename, @lastname, @dominio, @tipo, @segmentada
+	FETCH NEXT FROM funcion_cursor INTO @tabid, @tabname, @firstname, @middlename, @lastname, @label, @dominio, @tipo, @segmentada
 	END
 /**/
 CLOSE funcion_cursor
