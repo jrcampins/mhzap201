@@ -576,8 +576,17 @@ CREATE TABLE informe
 	(
 	id_informe NUMBER(19) NOT NULL,
 	version_informe NUMBER(19) NOT NULL,
-	codigo_proceso_informe VARCHAR2(60) NOT NULL,
-	nombre_proceso_informe VARCHAR2(200) NOT NULL
+	codigo_informe VARCHAR2(60) NOT NULL,
+	nombre_informe VARCHAR2(200) NOT NULL
+	);
+	
+CREATE TABLE informe_auditoria
+	(
+	id_informe_auditoria NUMBER(19) NOT NULL,
+	version_informe_auditoria NUMBER(19) NOT NULL,
+	codigo_informe_auditoria VARCHAR2(60) NOT NULL,
+	nombre_informe_auditoria VARCHAR2(200) NOT NULL,
+	fecha_transaccion DATE
 	);
 	
 CREATE TABLE mensaje
@@ -876,6 +885,8 @@ CREATE TABLE persona
 	es_persona_con_carta_renuncia NUMBER(10) NOT NULL,
 	es_persona_elegible_para_pen NUMBER(10) NOT NULL,
 	es_persona_acreditada_para_pen NUMBER(10) NOT NULL,
+	es_persona_con_copia_cedula NUMBER(10) NOT NULL,
+	es_persona_con_declaracion_jur NUMBER(10) NOT NULL,
 	monto_pension NUMBER(16,2),
 	numero_condicion_pension NUMBER(10),
 	lugar_solicitud_pension VARCHAR2(200),
@@ -917,7 +928,9 @@ CREATE TABLE persona
 	numero_tipo_act_jupe NUMBER(10),
 	fecha_hora_ult_act_jupe DATE,
 	numero_resolucion_otor_pen VARCHAR2(100),
-	fecha_resolucion_otor_pen DATE
+	fecha_resolucion_otor_pen DATE,
+	numero_resolucion_den_pen VARCHAR2(100),
+	fecha_resolucion_den_pen DATE
 	);
 	
 CREATE TABLE potencial_ben
@@ -950,6 +963,7 @@ CREATE TABLE potencial_ben
 	id_barrio NUMBER(19),
 	id_manzana NUMBER(19),
 	manzana VARCHAR2(60),
+	compania VARCHAR2(200),
 	direccion VARCHAR2(4000),
 	nombre_responsable_hogar VARCHAR2(200),
 	numero_telefono_resp_hogar VARCHAR2(100),
@@ -980,6 +994,7 @@ CREATE TABLE potencial_ben
 	otra_causa_den_recl_cen VARCHAR2(200),
 	comentarios_den_recl_cen VARCHAR2(4000),
 	fecha_registro_pot_ben DATE,
+	id_funcionario_reg_pot_ben NUMBER(19),
 	es_potencial_ben_inactivo NUMBER(10) NOT NULL,
 	fecha_ultima_visita_censo DATE,
 	observaciones_ult_visita_cen VARCHAR2(4000),
@@ -991,10 +1006,8 @@ CREATE TABLE proceso
 	(
 	id_proceso NUMBER(19) NOT NULL,
 	version_proceso NUMBER(19) NOT NULL,
-	codigo_proceso_proceso VARCHAR2(60) NOT NULL,
-	nombre_proceso_proceso VARCHAR2(200) NOT NULL,
-	fecha_hora_ultima_ejecucion DATE,
-	numero_condicion_ultima_eje NUMBER(10)
+	codigo_proceso VARCHAR2(60) NOT NULL,
+	nombre_proceso VARCHAR2(200) NOT NULL
 	);
 	
 CREATE TABLE proveedor_dat_ext

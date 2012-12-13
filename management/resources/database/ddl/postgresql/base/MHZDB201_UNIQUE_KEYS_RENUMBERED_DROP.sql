@@ -37,6 +37,7 @@ ALTER TABLE grupo_aplicacion DROP CONSTRAINT UQ_grupo_aplicacion_0001_ZYX;
 ALTER TABLE grupo_proceso DROP CONSTRAINT UQ_grupo_proceso_0001_ZYX;
 ALTER TABLE idioma_hogar DROP CONSTRAINT UQ_idioma_hogar_0001_ZYX;
 ALTER TABLE informe DROP CONSTRAINT UQ_informe_0001_ZYX;
+ALTER TABLE informe_auditoria DROP CONSTRAINT UQ_informe_auditoria_0001_ZYX;
 ALTER TABLE mensaje DROP CONSTRAINT UQ_mensaje_0001_ZYX;
 ALTER TABLE motivo_ina_esc DROP CONSTRAINT UQ_motivo_ina_esc_0001_ZYX;
 ALTER TABLE motivo_no_atencion DROP CONSTRAINT UQ_motivo_no_atencion_0001_ZYX;

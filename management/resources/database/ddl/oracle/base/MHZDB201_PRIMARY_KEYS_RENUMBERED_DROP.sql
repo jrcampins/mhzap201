@@ -41,6 +41,7 @@ ALTER TABLE grupo_aplicacion DROP (CONSTRAINT PK_grupo_aplicacion_ZYX);
 ALTER TABLE grupo_proceso DROP (CONSTRAINT PK_grupo_proceso_ZYX);
 ALTER TABLE idioma_hogar DROP (CONSTRAINT PK_idioma_hogar_ZYX);
 ALTER TABLE informe DROP (CONSTRAINT PK_informe_ZYX);
+ALTER TABLE informe_auditoria DROP (CONSTRAINT PK_informe_auditoria_ZYX);
 ALTER TABLE mensaje DROP (CONSTRAINT PK_mensaje_ZYX);
 ALTER TABLE motivo_ina_esc DROP (CONSTRAINT PK_motivo_ina_esc_ZYX);
 ALTER TABLE motivo_no_atencion DROP (CONSTRAINT PK_motivo_no_atencion_ZYX);

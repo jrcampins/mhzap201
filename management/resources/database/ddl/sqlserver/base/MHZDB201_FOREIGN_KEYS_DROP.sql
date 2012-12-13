@@ -368,7 +368,7 @@ ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0014_ZYX
 GO
 ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0015_ZYX
 GO
-ALTER TABLE proceso DROP CONSTRAINT FK_proceso_0001_ZYX
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0016_ZYX
 GO
 ALTER TABLE rastro_funcion DROP CONSTRAINT FK_rastro_funcion_0001_ZYX
 GO

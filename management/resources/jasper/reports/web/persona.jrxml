@@ -158,6 +158,8 @@
     <field name="es_persona_con_carta_renuncia" class="java.lang.Integer"/>
     <field name="es_persona_elegible_para_pen" class="java.lang.Integer"/>
     <field name="es_persona_acreditada_para_pen" class="java.lang.Integer"/>
+    <field name="es_persona_con_copia_cedula" class="java.lang.Integer"/>
+    <field name="es_persona_con_declaracion_jur" class="java.lang.Integer"/>
     <field name="monto_pension" class="java.math.BigDecimal"/>
     <field name="numero_condicion_pension" class="java.lang.Integer"/>
     <field name="codigo_condicion_pension_1x9y2" class="java.lang.String"/>
@@ -283,6 +285,8 @@
     <field name="fecha_hora_ult_act_jupe" class="java.util.Date"/>
     <field name="numero_resolucion_otor_pen" class="java.lang.String"/>
     <field name="fecha_resolucion_otor_pen" class="java.util.Date"/>
+    <field name="numero_resolucion_den_pen" class="java.lang.String"/>
+    <field name="fecha_resolucion_den_pen" class="java.util.Date"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

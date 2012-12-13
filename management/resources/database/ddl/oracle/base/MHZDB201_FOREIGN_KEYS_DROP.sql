@@ -183,7 +183,7 @@ ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_0012_ZYX);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_0013_ZYX);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_0014_ZYX);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_0015_ZYX);
-ALTER TABLE proceso DROP (CONSTRAINT FK_proceso_0001_ZYX);
+ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_0016_ZYX);
 ALTER TABLE rastro_funcion DROP (CONSTRAINT FK_rastro_funcion_0001_ZYX);
 ALTER TABLE rastro_funcion_par DROP (CONSTRAINT FK_rastro_funcion_par_0001_ZYX);
 ALTER TABLE rastro_funcion_par DROP (CONSTRAINT FK_rastro_funcion_par_0002_ZYX);

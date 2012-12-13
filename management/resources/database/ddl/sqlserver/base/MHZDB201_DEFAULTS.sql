@@ -136,6 +136,8 @@ ALTER TABLE grupo_proceso ADD CONSTRAINT DF_grupo_proceso_0001_ZYX DEFAULT (0) F
 GO
 ALTER TABLE informe ADD CONSTRAINT DF_informe_0001_ZYX DEFAULT (0) FOR version_informe
 GO
+ALTER TABLE informe_auditoria ADD CONSTRAINT DF_informe_auditoria_0001_ZYX DEFAULT (0) FOR version_informe_auditoria
+GO
 ALTER TABLE mensaje ADD CONSTRAINT DF_mensaje_0001_ZYX DEFAULT (0) FOR version_mensaje
 GO
 ALTER TABLE nivel_opcion_menu ADD CONSTRAINT DF_nivel_opcion_menu_0001_ZYX DEFAULT (2) FOR digitos_nivel_opcion_menu
@@ -208,6 +210,10 @@ ALTER TABLE persona ADD CONSTRAINT DF_persona_0014_ZYX DEFAULT (0) FOR es_person
 GO
 ALTER TABLE persona ADD CONSTRAINT DF_persona_0015_ZYX DEFAULT (0) FOR es_persona_acreditada_para_pen
 GO
+ALTER TABLE persona ADD CONSTRAINT DF_persona_0016_ZYX DEFAULT (0) FOR es_persona_con_copia_cedula
+GO
+ALTER TABLE persona ADD CONSTRAINT DF_persona_0017_ZYX DEFAULT (0) FOR es_persona_con_declaracion_jur
+GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0001_ZYX DEFAULT (0) FOR version_potencial_ben
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0002_ZYX DEFAULT (1) FOR es_paraguayo_natural
@@ -232,11 +238,11 @@ ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0011_ZYX DEFAULT (0) F
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0012_ZYX DEFAULT (getdate()) FOR fecha_registro_pot_ben
 GO
-ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0013_ZYX DEFAULT (0) FOR es_potencial_ben_inactivo
+ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0013_ZYX DEFAULT (user_id()) FOR id_funcionario_reg_pot_ben
+GO
+ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0014_ZYX DEFAULT (0) FOR es_potencial_ben_inactivo
 GO
 ALTER TABLE proceso ADD CONSTRAINT DF_proceso_0001_ZYX DEFAULT (0) FOR version_proceso
-GO
-ALTER TABLE proceso ADD CONSTRAINT DF_proceso_0002_ZYX DEFAULT (11) FOR numero_condicion_ultima_eje
 GO
 ALTER TABLE proveedor_dat_ext ADD CONSTRAINT DF_proveedor_dat_ext_0001_ZYX DEFAULT (0) FOR version_proveedor_dat_ext
 GO

@@ -159,6 +159,8 @@ VALUES (108200302, 0, 'FiltroFuncionPar2', 'Registro de Criterios de Búsqueda', 
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (200200004, 10, 'Proceso4', 'Ejecución de Procesos de Procesos Globales', 'Ejecución de Procesos de Procesos Globales', '/faces/Proceso4.jsp', 51000, 0, 4, 2002001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (200300004, 10, 'InformeAuditoria4', 'Ejecución de Procesos de Informes de Auditoria', 'Ejecución de Procesos de Informes de Auditoria', '/faces/InformeAuditoria4.jsp', 51000, 0, 4, 2003001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (201000001, 1, 'Persona1', 'Registro de Personas', 'Registro de Personas', '/faces/Persona1.jsp', 42110, 0, 1, 2010001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (201000002, 1, 'Persona2', 'Registro de Personas', 'Registro de Personas', '/faces/Persona2.jsp', 42110, 0, 2, 2010001, NULL, NULL);

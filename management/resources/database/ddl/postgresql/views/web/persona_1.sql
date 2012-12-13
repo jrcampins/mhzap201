@@ -89,6 +89,8 @@ SELECT
 	persona.es_persona_con_carta_renuncia AS es_persona_con_carta_renuncia,
 	persona.es_persona_elegible_para_pen AS es_persona_elegible_para_pen,
 	persona.es_persona_acreditada_para_pen AS es_persona_acreditada_para_pen,
+	persona.es_persona_con_copia_cedula AS es_persona_con_copia_cedula,
+	persona.es_persona_con_declaracion_jur AS es_persona_con_declaracion_jur,
 	persona.monto_pension AS monto_pension,
 	persona.numero_condicion_pension AS numero_condicion_pension,
 		condicion_pension_1x9.codigo_condicion_pension AS codigo_condicion_pension_1x9y2,
@@ -213,7 +215,9 @@ SELECT
 		tipo_act_jupe_1x16.codigo_tipo_act_jupe AS codigo_tipo_act_jupe_1x16y2,
 	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe,
 	persona.numero_resolucion_otor_pen AS numero_resolucion_otor_pen,
-	persona.fecha_resolucion_otor_pen AS fecha_resolucion_otor_pen
+	persona.fecha_resolucion_otor_pen AS fecha_resolucion_otor_pen,
+	persona.numero_resolucion_den_pen AS numero_resolucion_den_pen,
+	persona.fecha_resolucion_den_pen AS fecha_resolucion_den_pen
 FROM
 	persona persona
 	LEFT OUTER JOIN sexo_persona sexo_persona_1x1 ON sexo_persona_1x1.numero_sexo_persona = persona.numero_sexo_persona

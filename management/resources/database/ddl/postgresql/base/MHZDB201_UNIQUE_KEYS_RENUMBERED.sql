@@ -36,7 +36,8 @@ ALTER TABLE funcionario ADD CONSTRAINT UQ_funcionario_0001_ZYX UNIQUE (codigo_fu
 ALTER TABLE grupo_aplicacion ADD CONSTRAINT UQ_grupo_aplicacion_0001_ZYX UNIQUE (codigo_grupo_aplicacion);
 ALTER TABLE grupo_proceso ADD CONSTRAINT UQ_grupo_proceso_0001_ZYX UNIQUE (codigo_grupo_proceso);
 ALTER TABLE idioma_hogar ADD CONSTRAINT UQ_idioma_hogar_0001_ZYX UNIQUE (codigo_idioma_hogar);
-ALTER TABLE informe ADD CONSTRAINT UQ_informe_0001_ZYX UNIQUE (codigo_proceso_informe);
+ALTER TABLE informe ADD CONSTRAINT UQ_informe_0001_ZYX UNIQUE (codigo_informe);
+ALTER TABLE informe_auditoria ADD CONSTRAINT UQ_informe_auditoria_0001_ZYX UNIQUE (codigo_informe_auditoria);
 ALTER TABLE mensaje ADD CONSTRAINT UQ_mensaje_0001_ZYX UNIQUE (codigo_mensaje);
 ALTER TABLE motivo_ina_esc ADD CONSTRAINT UQ_motivo_ina_esc_0001_ZYX UNIQUE (codigo_motivo_ina_esc);
 ALTER TABLE motivo_no_atencion ADD CONSTRAINT UQ_motivo_no_atencion_0001_ZYX UNIQUE (codigo_motivo_no_atencion);
@@ -64,7 +65,7 @@ ALTER TABLE persona ADD CONSTRAINT UQ_persona_0002_ZYX UNIQUE (codigo_persona);
 ALTER TABLE potencial_ben ADD CONSTRAINT UQ_potencial_ben_0001_ZYX UNIQUE (codigo_potencial_ben);
 ALTER TABLE potencial_ben ADD CONSTRAINT UQ_potencial_ben_0002_ZYX UNIQUE (numero_cedula, letra_cedula);
 ALTER TABLE potencial_ben ADD CONSTRAINT UQ_potencial_ben_0003_ZYX UNIQUE (id_persona);
-ALTER TABLE proceso ADD CONSTRAINT UQ_proceso_0001_ZYX UNIQUE (codigo_proceso_proceso);
+ALTER TABLE proceso ADD CONSTRAINT UQ_proceso_0001_ZYX UNIQUE (codigo_proceso);
 ALTER TABLE proveedor_dat_ext ADD CONSTRAINT UQ_proveedor_dat_ext_0001_ZYX UNIQUE (codigo_proveedor_dat_ext);
 ALTER TABLE rol ADD CONSTRAINT UQ_rol_0001_ZYX UNIQUE (codigo_rol);
 ALTER TABLE rol_aplicacion ADD CONSTRAINT UQ_rol_aplicacion_0001_ZYX UNIQUE (id_rol, id_aplicacion);

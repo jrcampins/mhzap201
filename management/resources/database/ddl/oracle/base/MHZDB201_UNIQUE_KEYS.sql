@@ -74,8 +74,10 @@ CREATE UNIQUE INDEX UQ_grupo_proceso_0001_ZYX ON grupo_proceso (codigo_grupo_pro
 ALTER TABLE grupo_proceso ADD (CONSTRAINT UQ_grupo_proceso_0001_ZYX UNIQUE (codigo_grupo_proceso));
 CREATE UNIQUE INDEX UQ_idioma_hogar_0001_ZYX ON idioma_hogar (codigo_idioma_hogar);
 ALTER TABLE idioma_hogar ADD (CONSTRAINT UQ_idioma_hogar_0001_ZYX UNIQUE (codigo_idioma_hogar));
-CREATE UNIQUE INDEX UQ_informe_0001_ZYX ON informe (codigo_proceso_informe);
-ALTER TABLE informe ADD (CONSTRAINT UQ_informe_0001_ZYX UNIQUE (codigo_proceso_informe));
+CREATE UNIQUE INDEX UQ_informe_0001_ZYX ON informe (codigo_informe);
+ALTER TABLE informe ADD (CONSTRAINT UQ_informe_0001_ZYX UNIQUE (codigo_informe));
+CREATE UNIQUE INDEX UQ_informe_auditoria_0001_ZYX ON informe_auditoria (codigo_informe_auditoria);
+ALTER TABLE informe_auditoria ADD (CONSTRAINT UQ_informe_auditoria_0001_ZYX UNIQUE (codigo_informe_auditoria));
 CREATE UNIQUE INDEX UQ_mensaje_0001_ZYX ON mensaje (codigo_mensaje);
 ALTER TABLE mensaje ADD (CONSTRAINT UQ_mensaje_0001_ZYX UNIQUE (codigo_mensaje));
 CREATE UNIQUE INDEX UQ_motivo_ina_esc_0001_ZYX ON motivo_ina_esc (codigo_motivo_ina_esc);
@@ -130,8 +132,8 @@ CREATE UNIQUE INDEX UQ_potencial_ben_0002_ZYX ON potencial_ben (numero_cedula, l
 ALTER TABLE potencial_ben ADD (CONSTRAINT UQ_potencial_ben_0002_ZYX UNIQUE (numero_cedula, letra_cedula));
 CREATE UNIQUE INDEX UQ_potencial_ben_0003_ZYX ON potencial_ben (id_persona);
 ALTER TABLE potencial_ben ADD (CONSTRAINT UQ_potencial_ben_0003_ZYX UNIQUE (id_persona));
-CREATE UNIQUE INDEX UQ_proceso_0001_ZYX ON proceso (codigo_proceso_proceso);
-ALTER TABLE proceso ADD (CONSTRAINT UQ_proceso_0001_ZYX UNIQUE (codigo_proceso_proceso));
+CREATE UNIQUE INDEX UQ_proceso_0001_ZYX ON proceso (codigo_proceso);
+ALTER TABLE proceso ADD (CONSTRAINT UQ_proceso_0001_ZYX UNIQUE (codigo_proceso));
 CREATE UNIQUE INDEX UQ_proveedor_dat_ext_0001_ZYX ON proveedor_dat_ext (codigo_proveedor_dat_ext);
 ALTER TABLE proveedor_dat_ext ADD (CONSTRAINT UQ_proveedor_dat_ext_0001_ZYX UNIQUE (codigo_proveedor_dat_ext));
 CREATE UNIQUE INDEX UQ_rol_0001_ZYX ON rol (codigo_rol);

@@ -41,6 +41,7 @@ ALTER TABLE grupo_aplicacion ADD CONSTRAINT PK_grupo_aplicacion_ZYX PRIMARY KEY 
 ALTER TABLE grupo_proceso ADD CONSTRAINT PK_grupo_proceso_ZYX PRIMARY KEY (id_grupo_proceso);
 ALTER TABLE idioma_hogar ADD CONSTRAINT PK_idioma_hogar_ZYX PRIMARY KEY (numero_idioma_hogar);
 ALTER TABLE informe ADD CONSTRAINT PK_informe_ZYX PRIMARY KEY (id_informe);
+ALTER TABLE informe_auditoria ADD CONSTRAINT PK_informe_auditoria_ZYX PRIMARY KEY (id_informe_auditoria);
 ALTER TABLE mensaje ADD CONSTRAINT PK_mensaje_ZYX PRIMARY KEY (id_mensaje);
 ALTER TABLE motivo_ina_esc ADD CONSTRAINT PK_motivo_ina_esc_ZYX PRIMARY KEY (numero_motivo_ina_esc);
 ALTER TABLE motivo_no_atencion ADD CONSTRAINT PK_motivo_no_atencion_ZYX PRIMARY KEY (numero_motivo_no_atencion);

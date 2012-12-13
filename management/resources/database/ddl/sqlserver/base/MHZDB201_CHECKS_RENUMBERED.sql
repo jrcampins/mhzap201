@@ -276,6 +276,10 @@ ALTER TABLE persona ADD CONSTRAINT CC_persona_0017_ZYX CHECK ([es_persona_elegib
 GO
 ALTER TABLE persona ADD CONSTRAINT CC_persona_0018_ZYX CHECK ([es_persona_acreditada_para_pen] >= 0 and [es_persona_acreditada_para_pen] <= 1)
 GO
+ALTER TABLE persona ADD CONSTRAINT CC_persona_0019_ZYX CHECK ([es_persona_con_copia_cedula] >= 0 and [es_persona_con_copia_cedula] <= 1)
+GO
+ALTER TABLE persona ADD CONSTRAINT CC_persona_0020_ZYX CHECK ([es_persona_con_declaracion_jur] >= 0 and [es_persona_con_declaracion_jur] <= 1)
+GO
 ALTER TABLE potencial_ben ADD CONSTRAINT CC_potencial_ben_0001_ZYX CHECK ([numero_cedula] is null or [numero_cedula] >= 1)
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT CC_potencial_ben_0002_ZYX CHECK ([numero_cedula] is null or [numero_cedula] <= 1000000000)

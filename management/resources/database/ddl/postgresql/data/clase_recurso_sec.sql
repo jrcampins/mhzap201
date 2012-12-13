@@ -19,7 +19,7 @@ VALUES (201000800, 0, 20100, 'pension 4', NULL, 800, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (201000900, 0, 20100, 'pension 5', NULL, 900, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
-VALUES (201000999, 0, 20100, 'etc', NULL, 999, 1);
+VALUES (201000999, 0, 20100, 'otros', NULL, 999, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (320100100, 0, 32010, 'portada', NULL, 100, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
@@ -41,7 +41,7 @@ VALUES (320100900, 0, 32010, 'jefe', NULL, 900, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (320100910, 0, 32010, 'respondente', NULL, 910, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
-VALUES (320100999, 0, 32010, 'etc', NULL, 999, 1);
+VALUES (320100999, 0, 32010, 'otros', NULL, 999, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (320200100, 0, 32020, 'antecedentes 1', NULL, 100, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
@@ -59,7 +59,7 @@ VALUES (320200600, 0, 32020, 'empleo', NULL, 600, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (320200700, 0, 32020, 'ingresos', NULL, 700, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
-VALUES (320200800, 0, 32020, 'etc', NULL, 800, 1);
+VALUES (320200999, 0, 32020, 'otros', NULL, 999, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)
 VALUES (320400100, 0, 32040, 'general', NULL, 100, 1);
 INSERT INTO clase_recurso_sec (id_clase_recurso_sec, version_clase_recurso_sec, id_clase_recurso, etiqueta_clase_recurso_sec, descripcion_clase_recurso_sec, orden_presentacion, es_pestana_detalle)

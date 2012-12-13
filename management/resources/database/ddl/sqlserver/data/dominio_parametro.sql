@@ -333,9 +333,25 @@ VALUES (200100101, 0, 2001001, 20252, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (200100102, 0, 2001001, 20256, 2, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200100103, 0, 2001001, 20688, 3, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200100104, 0, 2001001, 20691, 4, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (200200101, 0, 2002001, 20253, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (200200102, 0, 2002001, 20257, 2, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200200103, 0, 2002001, 20690, 3, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200200104, 0, 2002001, 20693, 4, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200300101, 0, 2003001, 20685, 1, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200300102, 0, 2003001, 20687, 2, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200300103, 0, 2003001, 20689, 3, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (200300104, 0, 2003001, 20692, 4, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (201000101, 0, 2010001, 20002, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)

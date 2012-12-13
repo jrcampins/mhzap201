@@ -576,8 +576,17 @@ CREATE TABLE informe
 	(
 	id_informe bigint NOT NULL,
 	version_informe bigint NOT NULL,
-	codigo_proceso_informe varchar(30) NOT NULL,
-	nombre_proceso_informe varchar(100) NOT NULL
+	codigo_informe varchar(30) NOT NULL,
+	nombre_informe varchar(100) NOT NULL
+	);
+	
+CREATE TABLE informe_auditoria
+	(
+	id_informe_auditoria bigint NOT NULL,
+	version_informe_auditoria bigint NOT NULL,
+	codigo_informe_auditoria varchar(30) NOT NULL,
+	nombre_informe_auditoria varchar(100) NOT NULL,
+	fecha_transaccion timestamp with time zone
 	);
 	
 CREATE TABLE mensaje
@@ -876,6 +885,8 @@ CREATE TABLE persona
 	es_persona_con_carta_renuncia int NOT NULL,
 	es_persona_elegible_para_pen int NOT NULL,
 	es_persona_acreditada_para_pen int NOT NULL,
+	es_persona_con_copia_cedula int NOT NULL,
+	es_persona_con_declaracion_jur int NOT NULL,
 	monto_pension decimal(16,2),
 	numero_condicion_pension int,
 	lugar_solicitud_pension varchar(100),
@@ -917,7 +928,9 @@ CREATE TABLE persona
 	numero_tipo_act_jupe int,
 	fecha_hora_ult_act_jupe timestamp with time zone,
 	numero_resolucion_otor_pen varchar(50),
-	fecha_resolucion_otor_pen timestamp with time zone
+	fecha_resolucion_otor_pen timestamp with time zone,
+	numero_resolucion_den_pen varchar(50),
+	fecha_resolucion_den_pen timestamp with time zone
 	);
 	
 CREATE TABLE potencial_ben
@@ -950,6 +963,7 @@ CREATE TABLE potencial_ben
 	id_barrio bigint,
 	id_manzana bigint,
 	manzana varchar(30),
+	compania varchar(100),
 	direccion varchar,
 	nombre_responsable_hogar varchar(100),
 	numero_telefono_resp_hogar varchar(50),
@@ -980,6 +994,7 @@ CREATE TABLE potencial_ben
 	otra_causa_den_recl_cen varchar(100),
 	comentarios_den_recl_cen varchar,
 	fecha_registro_pot_ben timestamp with time zone,
+	id_funcionario_reg_pot_ben bigint,
 	es_potencial_ben_inactivo int NOT NULL,
 	fecha_ultima_visita_censo timestamp with time zone,
 	observaciones_ult_visita_cen varchar,
@@ -991,10 +1006,8 @@ CREATE TABLE proceso
 	(
 	id_proceso bigint NOT NULL,
 	version_proceso bigint NOT NULL,
-	codigo_proceso_proceso varchar(30) NOT NULL,
-	nombre_proceso_proceso varchar(100) NOT NULL,
-	fecha_hora_ultima_ejecucion timestamp with time zone,
-	numero_condicion_ultima_eje int
+	codigo_proceso varchar(30) NOT NULL,
+	nombre_proceso varchar(100) NOT NULL
 	);
 	
 CREATE TABLE proveedor_dat_ext

@@ -84,6 +84,8 @@ ALTER TABLE idioma_hogar DROP CONSTRAINT PK_idioma_hogar_ZYX
 GO
 ALTER TABLE informe DROP CONSTRAINT PK_informe_ZYX
 GO
+ALTER TABLE informe_auditoria DROP CONSTRAINT PK_informe_auditoria_ZYX
+GO
 ALTER TABLE mensaje DROP CONSTRAINT PK_mensaje_ZYX
 GO
 ALTER TABLE motivo_ina_esc DROP CONSTRAINT PK_motivo_ina_esc_ZYX

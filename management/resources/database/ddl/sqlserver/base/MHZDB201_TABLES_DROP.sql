@@ -84,6 +84,8 @@ DROP TABLE idioma_hogar
 GO
 DROP TABLE informe
 GO
+DROP TABLE informe_auditoria
+GO
 DROP TABLE mensaje
 GO
 DROP TABLE motivo_ina_esc

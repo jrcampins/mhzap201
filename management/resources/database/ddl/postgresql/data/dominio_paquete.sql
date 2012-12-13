@@ -131,6 +131,8 @@ VALUES (200100102, 0, 2001001, 2);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (200200102, 0, 2002001, 2);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
+VALUES (200300102, 0, 2003001, 2);
+INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (201000102, 0, 2010001, 2);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (201100102, 0, 2011001, 2);

@@ -368,7 +368,7 @@ ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0014_ZYX FOREIGN KEY (
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0015_ZYX FOREIGN KEY (id_funcionario_ult_visita_cen) REFERENCES funcionario (id_funcionario) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
-ALTER TABLE proceso ADD CONSTRAINT FK_proceso_0001_ZYX FOREIGN KEY (numero_condicion_ultima_eje) REFERENCES condicion_eje_fun (numero_condicion_eje_fun) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0016_ZYX FOREIGN KEY (id_funcionario_reg_pot_ben) REFERENCES funcionario (id_funcionario) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
 ALTER TABLE rastro_funcion ADD CONSTRAINT FK_rastro_funcion_0001_ZYX FOREIGN KEY (id_funcion) REFERENCES funcion (id_funcion) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO

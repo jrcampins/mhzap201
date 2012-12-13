@@ -41,6 +41,7 @@ DROP TABLE grupo_aplicacion CASCADE;
 DROP TABLE grupo_proceso CASCADE;
 DROP TABLE idioma_hogar CASCADE;
 DROP TABLE informe CASCADE;
+DROP TABLE informe_auditoria CASCADE;
 DROP TABLE mensaje CASCADE;
 DROP TABLE motivo_ina_esc CASCADE;
 DROP TABLE motivo_no_atencion CASCADE;

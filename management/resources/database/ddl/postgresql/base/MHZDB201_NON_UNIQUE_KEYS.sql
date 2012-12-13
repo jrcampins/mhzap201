@@ -97,7 +97,10 @@ CREATE INDEX IX_grupo_aplicacion_nombre_grupo_aplicacion ON grupo_aplicacion (no
 CREATE INDEX IX_grupo_aplicacion_version_grupo_aplicacion ON grupo_aplicacion (version_grupo_aplicacion);
 CREATE INDEX IX_grupo_proceso_nombre_grupo_proceso ON grupo_proceso (nombre_grupo_proceso);
 CREATE INDEX IX_grupo_proceso_version_grupo_proceso ON grupo_proceso (version_grupo_proceso);
+CREATE INDEX IX_informe_nombre_informe ON informe (nombre_informe);
 CREATE INDEX IX_informe_version_informe ON informe (version_informe);
+CREATE INDEX IX_informe_auditoria_nombre_informe_auditoria ON informe_auditoria (nombre_informe_auditoria);
+CREATE INDEX IX_informe_auditoria_version_informe_auditoria ON informe_auditoria (version_informe_auditoria);
 CREATE INDEX IX_mensaje_version_mensaje ON mensaje (version_mensaje);
 CREATE INDEX IX_objecion_ele_pen_id_persona ON objecion_ele_pen (id_persona);
 CREATE INDEX IX_objecion_ele_pen_id_proveedor_dat_ext ON objecion_ele_pen (id_proveedor_dat_ext);
@@ -136,12 +139,14 @@ CREATE INDEX IX_potencial_ben_id_departamento ON potencial_ben (id_departamento)
 CREATE INDEX IX_potencial_ben_id_distrito ON potencial_ben (id_distrito);
 CREATE INDEX IX_potencial_ben_id_etnia_indigena ON potencial_ben (id_etnia_indigena);
 CREATE INDEX IX_potencial_ben_id_ficha_persona ON potencial_ben (id_ficha_persona);
+CREATE INDEX IX_potencial_ben_id_funcionario_reg_pot_ben ON potencial_ben (id_funcionario_reg_pot_ben);
 CREATE INDEX IX_potencial_ben_id_funcionario_ult_visita_cen ON potencial_ben (id_funcionario_ult_visita_cen);
 CREATE INDEX IX_potencial_ben_id_funcionario_validacion_cen ON potencial_ben (id_funcionario_validacion_cen);
 CREATE INDEX IX_potencial_ben_id_manzana ON potencial_ben (id_manzana);
 CREATE INDEX IX_potencial_ben_id_persona ON potencial_ben (id_persona);
 CREATE INDEX IX_potencial_ben_nombre_potencial_ben ON potencial_ben (nombre_potencial_ben);
 CREATE INDEX IX_potencial_ben_version_potencial_ben ON potencial_ben (version_potencial_ben);
+CREATE INDEX IX_proceso_nombre_proceso ON proceso (nombre_proceso);
 CREATE INDEX IX_proceso_version_proceso ON proceso (version_proceso);
 CREATE INDEX IX_proveedor_dat_ext_nombre_proveedor_dat_ext ON proveedor_dat_ext (nombre_proveedor_dat_ext);
 CREATE INDEX IX_proveedor_dat_ext_version_proveedor_dat_ext ON proveedor_dat_ext (version_proveedor_dat_ext);

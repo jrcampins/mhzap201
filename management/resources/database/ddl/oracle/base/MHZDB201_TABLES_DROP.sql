@@ -41,6 +41,7 @@ exec xsp.dropone('TABLE','grupo_aplicacion');
 exec xsp.dropone('TABLE','grupo_proceso');
 exec xsp.dropone('TABLE','idioma_hogar');
 exec xsp.dropone('TABLE','informe');
+exec xsp.dropone('TABLE','informe_auditoria');
 exec xsp.dropone('TABLE','mensaje');
 exec xsp.dropone('TABLE','motivo_ina_esc');
 exec xsp.dropone('TABLE','motivo_no_atencion');

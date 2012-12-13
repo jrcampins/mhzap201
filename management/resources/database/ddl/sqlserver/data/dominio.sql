@@ -133,6 +133,8 @@ VALUES (2001001, 0, 'informe', 'Informes Globales', NULL, NULL, 1, 20010, 200100
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (2002001, 0, 'proceso', 'Procesos Globales', NULL, NULL, 1, 20020, 200200101, NULL, 2);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (2003001, 0, 'informe_auditoria', 'Informes de Auditoria', NULL, NULL, 1, 20030, 200300101, NULL, 2);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (2010001, 0, 'persona', 'Personas', NULL, NULL, 1, 20100, 201000101, NULL, 2);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (2011001, 0, 'estado_civil', 'Estados Civiles de Persona', NULL, NULL, 1, 20110, 201100101, NULL, 2);
