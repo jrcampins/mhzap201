@@ -22,11 +22,11 @@ set /p clean_and_build="build despues del clean ? (E=%project%, S=%project%-sdk,
 if not defined clean_and_build goto get-clean-and-build
 
 :check-clean-and-build
-if /i "%clean_and_build%" EQU "E" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "E" goto get-build-and-deploy
 if /i "%clean_and_build%" EQU "S" goto get-build-and-deploy
 if /i "%clean_and_build%" EQU "J" goto got-build-and-deploy
 if /i "%clean_and_build%" EQU "W" goto got-build-and-deploy
-if /i "%clean_and_build%" EQU "T" goto got-build-and-deploy
+if /i "%clean_and_build%" EQU "T" goto get-build-and-deploy
 if /i "%clean_and_build%" EQU "N" goto got-build-and-deploy
 if /i "%clean_and_build%" EQU "X" goto:eof
 goto get-clean-and-build

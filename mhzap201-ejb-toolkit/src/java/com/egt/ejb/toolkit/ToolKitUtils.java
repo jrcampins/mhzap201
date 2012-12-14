@@ -33,6 +33,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 
@@ -498,6 +499,33 @@ public class ToolKitUtils {
                 : l < 30000
                 ? Bundle.getString("copyright.generic")
                 : Bundle.getString("copyright.cliente");
+    }
+
+    public static String xmltranslabel(String label) {
+        return getStringXml(translabel(label));
+    }
+
+    public static String translabel(String label) {
+        if (StringUtils.isBlank(label)) {
+            return "";
+        }
+        String key;
+        Set<String> keySet = BundlePalabras.getKeySet();
+        String[] tokens = StringUtils.split(StringUtils.trimToEmpty(label));
+        for (int i = 0; i < tokens.length; i++) {
+            key = tokens[i].toLowerCase();
+            if (keySet.contains(key)) {
+                tokens[i] = BundlePalabras.getString(key);
+            }
+            tokens[i] = StringUtils.trimToEmpty(tokens[i]);
+            // acentuar la última sílaba
+            if (tokens[i].length() > 3 && tokens[i].endsWith("on")) {
+                tokens[i] = tokens[i].substring(0, tokens[i].length() - 2) + "ón";
+            }
+        }
+        key = StringUtils.join(StringUtils.split(StringUtils.join(tokens, ' ')), ' ');
+        String string = BundleEtiquetas.getString(key);
+        return string.trim();
     }
 
     private ToolKitBeanLocator locator;
