@@ -352,7 +352,8 @@ public class ${pagecode} extends AbstractPageBean
 #end
 ##          new Option(L${obj1.funcionIdFuncion.idFuncion}, Bundle.getString("$token"))$comma
 ##          new Option(${fooclass1}.FUNCION_$obj1.funcionIdFuncion.codigoFuncion.toUpperCase(), Bundle.getString("$token"))$comma
-            new Option(FUNCION_ACCION_${velocityCount}, Bundle.getString("$token"))$comma
+##          new Option(FUNCION_ACCION_${velocityCount}, Bundle.getString("$token"))$comma
+            new Option(FUNCION_ACCION_${velocityCount}, BundleWebui.getString("$obj1.funcionIdFuncion.codigoFuncion"))$comma
 #end##foreach
 #end
         };

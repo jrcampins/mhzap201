@@ -596,30 +596,22 @@ $x      this.find${entname1}();
             boolean $expresion2 = TLC.getControlador().esSegmentoAutorizado(s, f);
 #end
 #if($expresion1 == '' && $expresion2 == '')##no es personalizada ni segmentada
-##          // TODO: ejecutar funcion
             this.$accion();
-##          TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
 #elseif($expresion2 == '')##no es segmentada pero es personalizada
             if ($expresion1) {
-##              // TODO: ejecutar funcion
                 this.$accion();
-##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
             } else {
                 TLC.getBitacora().error(CBM2.USUARIO_NO_PROPIETARIO, "<" + cpr + ">");
             }
 #elseif($expresion1 == '')##no es personalizada pero es segmentada
             if ($expresion2) {
-##              // TODO: ejecutar funcion
                 this.$accion();
-##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
             } else {
                 TLC.getBitacora().error(CBM2.SEGMENTO_NO_AUTORIZADO, "<" + csr + ">");
             }
 #else##es personalizada y segmentada
             if ($expresion1 && $expresion2) {
-##              // TODO: ejecutar funcion
                 this.$accion();
-##              TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
             } else {
                 if (!$expresion1) {
                     TLC.getBitacora().error(CBM2.USUARIO_NO_PROPIETARIO, "<" + cpr + ">");
@@ -630,12 +622,11 @@ $x      this.find${entname1}();
             }
 #end
 #else##entity==''
-##          // TODO: ejecutar funcion
             this.$accion();
-##          TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, Bundle.getString("$token"));
 #end
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("$token"));
+##          TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("$token"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "$obj1.funcionIdFuncion.codigoFuncion");
         }
         return null;
     }

@@ -207,7 +207,8 @@ public class ${classname} {
 #else
 #set($comma = ',')
 #end
-        $x  new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase(), BundleWebui.getString("$token"))$comma
+##      $x  new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase(), BundleWebui.getString("$token"))$comma
+        $x  new Option(${domain1}CachedRowSetDataProvider${domaincrsdp}.FUNCION_$funcion.codigoFuncion.toUpperCase(), BundleWebui.getString("$funcion.codigoFuncion"))$comma
 #end##executable
 #end##foreach
 #end##faa>0
