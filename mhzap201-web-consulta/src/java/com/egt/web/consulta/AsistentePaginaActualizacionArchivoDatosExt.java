@@ -75,7 +75,7 @@ public class AsistentePaginaActualizacionArchivoDatosExt {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
-        //  new Option(ArchivoDatosExtCachedRowSetDataProvider2.FUNCION_IMPORTAR_ARCHIVO_DATOS_EXT, BundleWebui.getString("importar"))
+        //  new Option(ArchivoDatosExtCachedRowSetDataProvider2.FUNCION_IMPORTAR_ARCHIVO_DATOS_EXT, BundleWebui.getString("importar_archivo_datos_ext"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

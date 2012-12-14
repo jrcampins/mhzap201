@@ -81,18 +81,18 @@ public class AsistentePaginaActualizacionPersona {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA, BundleWebui.getString("otorgar pension")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir con pension solicitada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir sin cedula con pension solicitada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES, BundleWebui.getString("emitir acreditada sin objeciones")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir acreditada con objeciones")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA, BundleWebui.getString("emitir con pension aprobada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA, BundleWebui.getString("emitir con pension denegada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA, BundleWebui.getString("emitir con pension revocada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir con pension otorgada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE, BundleWebui.getString("emitir ultima actualizacion en jupe")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir cuadro resumen pension")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC, BundleWebui.getString("emitir cuadro resumen pension sin doc"))
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA, BundleWebui.getString("otorgar_pension_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir_persona_sin_cedula_con_pension_solicitada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA, BundleWebui.getString("emitir_persona_con_pension_aprobada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA, BundleWebui.getString("emitir_persona_con_pension_denegada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA, BundleWebui.getString("emitir_persona_con_pension_revocada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir_cuadro_resumen_pension_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC, BundleWebui.getString("emitir_cuadro_resumen_pension_persona_sin_doc"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

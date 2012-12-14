@@ -93,7 +93,7 @@ public class AsistentePaginaActualizacionFichaPersona {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
-        //  new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA, BundleWebui.getString("desvincular"))
+        //  new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA, BundleWebui.getString("desvincular_ficha_persona"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

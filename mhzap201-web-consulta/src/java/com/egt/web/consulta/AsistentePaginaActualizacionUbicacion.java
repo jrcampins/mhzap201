@@ -69,7 +69,7 @@ public class AsistentePaginaActualizacionUbicacion {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
-        //  new Option(UbicacionCachedRowSetDataProvider2.FUNCION_RECONSTRUIR_UBICACION, BundleWebui.getString("reconstruir"))
+        //  new Option(UbicacionCachedRowSetDataProvider2.FUNCION_RECONSTRUIR_UBICACION, BundleWebui.getString("reconstruir_ubicacion"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

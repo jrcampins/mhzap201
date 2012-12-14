@@ -686,10 +686,10 @@ public class Rol4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("copiar")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("modificar conjunto")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("propagar filtros")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("propagar favoritos"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("copiar_rol")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("modificar_conjunto_rol")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("propagar_filtros_rol")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("propagar_favoritos_rol"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -1145,7 +1145,7 @@ public class Rol4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.copiarRol();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("copiar rol"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "copiar_rol");
         }
         return null;
     }
@@ -1155,7 +1155,7 @@ public class Rol4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.modificarConjuntoRol();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("modificar conjunto rol"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "modificar_conjunto_rol");
         }
         return null;
     }
@@ -1165,7 +1165,7 @@ public class Rol4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.propagarFiltrosRol();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("propagar filtros rol"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "propagar_filtros_rol");
         }
         return null;
     }
@@ -1175,7 +1175,7 @@ public class Rol4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.propagarFavoritosRol();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("propagar favoritos rol"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "propagar_favoritos_rol");
         }
         return null;
     }

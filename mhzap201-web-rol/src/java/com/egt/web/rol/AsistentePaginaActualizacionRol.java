@@ -67,8 +67,8 @@ public class AsistentePaginaActualizacionRol {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
-            new Option(RolCachedRowSetDataProvider2.FUNCION_PROPAGAR_FILTROS_ROL, BundleWebui.getString("propagar filtros")),
-            new Option(RolCachedRowSetDataProvider2.FUNCION_PROPAGAR_FAVORITOS_ROL, BundleWebui.getString("propagar favoritos"))
+            new Option(RolCachedRowSetDataProvider2.FUNCION_PROPAGAR_FILTROS_ROL, BundleWebui.getString("propagar_filtros_rol")),
+            new Option(RolCachedRowSetDataProvider2.FUNCION_PROPAGAR_FAVORITOS_ROL, BundleWebui.getString("propagar_favoritos_rol"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

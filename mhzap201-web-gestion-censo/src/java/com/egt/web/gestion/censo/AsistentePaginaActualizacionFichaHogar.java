@@ -89,9 +89,9 @@ public class AsistentePaginaActualizacionFichaHogar {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
-            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_DESACTIVAR_FICHA_HOGAR, BundleWebui.getString("desactivar")),
-            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_REACTIVAR_FICHA_HOGAR, BundleWebui.getString("reactivar")),
-            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_CALCULAR_ICV_FICHA_HOGAR, BundleWebui.getString("calcular icv"))
+            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_DESACTIVAR_FICHA_HOGAR, BundleWebui.getString("desactivar_ficha_hogar")),
+            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_REACTIVAR_FICHA_HOGAR, BundleWebui.getString("reactivar_ficha_hogar")),
+            new Option(FichaHogarCachedRowSetDataProvider2.FUNCION_CALCULAR_ICV_FICHA_HOGAR, BundleWebui.getString("calcular_icv_ficha_hogar"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }

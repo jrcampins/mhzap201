@@ -86,15 +86,15 @@ public class AsistentePaginaActualizacionPotencialBen {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_DESACTIVAR_POTENCIAL_BEN, BundleWebui.getString("desactivar")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_REACTIVAR_POTENCIAL_BEN, BundleWebui.getString("reactivar")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_ACREDITAR_POTENCIAL_BEN, BundleWebui.getString("acreditar")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_CONSTANCIA_REGISTRO_POTENCIAL_BEN, BundleWebui.getString("emitir constancia registro")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_CENSAR, BundleWebui.getString("emitir por censar")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_VALIDAR, BundleWebui.getString("emitir por validar")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_RESULTADO_VALIDACION, BundleWebui.getString("emitir por resultado validacion")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV, BundleWebui.getString("emitir por icv")),
-            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO, BundleWebui.getString("emitir acreditado"))
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_DESACTIVAR_POTENCIAL_BEN, BundleWebui.getString("desactivar_potencial_ben")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_REACTIVAR_POTENCIAL_BEN, BundleWebui.getString("reactivar_potencial_ben")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_ACREDITAR_POTENCIAL_BEN, BundleWebui.getString("acreditar_potencial_ben")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_CONSTANCIA_REGISTRO_POTENCIAL_BEN, BundleWebui.getString("emitir_constancia_registro_potencial_ben")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_CENSAR, BundleWebui.getString("emitir_potencial_ben_por_censar")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_VALIDAR, BundleWebui.getString("emitir_potencial_ben_por_validar")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_RESULTADO_VALIDACION, BundleWebui.getString("emitir_potencial_ben_por_resultado_validacion")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV, BundleWebui.getString("emitir_potencial_ben_por_icv")),
+            new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO, BundleWebui.getString("emitir_potencial_ben_acreditado"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
