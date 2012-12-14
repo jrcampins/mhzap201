@@ -363,11 +363,11 @@ VALUES (1517, 0, 'significado_parametro', 'Significado Parámetro', 'significado 
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1519, 0, 'significado_segmento', 'Significado Segmento', 'significado del segmento', NULL, 1, 'significado_segmento');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (1525, 0, 'url_aplicacion', 'U.R.L. Aplicación', 'U.R.L. aplicación', NULL, 1, 'url_aplicacion');
+VALUES (1525, 0, 'url_aplicacion', 'URL Aplicación', 'U.R.L. aplicación', NULL, 1, 'url_aplicacion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (1526, 0, 'url_opcion_menu', 'U.R.L. Opción Menú', 'U.R.L. opción de menú', NULL, 1, 'url_opcion_menu');
+VALUES (1526, 0, 'url_opcion_menu', 'URL Opción Menú', 'U.R.L. opción de menú', NULL, 1, 'url_opcion_menu');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (1527, 0, 'url_pagina', 'U.R.L. Página', 'U.R.L. página', NULL, 1, 'url_pagina');
+VALUES (1527, 0, 'url_pagina', 'URL Página', 'U.R.L. página', NULL, 1, 'url_pagina');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1529, 0, 'valor', 'Valor', 'valor', NULL, 1, 'valor');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -449,7 +449,7 @@ VALUES (1701, 0, 'subprocesos', 'Subprocesos', 'subprocesos', NULL, 4, 'subproce
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1702, 0, 'subprocesos_cancelados', 'Subprocesos Cancelados', 'subprocesos cancelados', NULL, 4, 'subprocesos_cancelados');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (1703, 0, 'subprocesos_con_errores', 'Subprocesos cón Errores', 'subprocesos con errores', NULL, 4, 'subprocesos_con_errores');
+VALUES (1703, 0, 'subprocesos_con_errores', 'Subprocesos con Errores', 'subprocesos con errores', NULL, 4, 'subprocesos_con_errores');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1704, 0, 'subprocesos_en_progreso', 'Subprocesos en Progreso', 'subprocesos en progreso', NULL, 4, 'subprocesos_en_progreso');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -467,7 +467,7 @@ VALUES (1831, 0, 'es_clase_recurso_independiente', 'Clase Recurso Independiente'
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1832, 0, 'id_clase_recurso_maestro', 'Clase Recurso Maestro', 'clase de recurso maestro', NULL, 5, 'id_clase_recurso_maestro');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (1880, 0, 'es_clase_recurso_con_arbol', 'Clase Recurso cón Arbol', 'clase de recurso con arbol', NULL, 4, 'es_clase_recurso_con_arbol');
+VALUES (1880, 0, 'es_clase_recurso_con_arbol', 'Clase Recurso con Arbol', 'clase de recurso con arbol', NULL, 4, 'es_clase_recurso_con_arbol');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1881, 0, 'es_clase_recurso_sin_detalle', 'Clase Recurso sin Detalle', 'clase de recurso sin detalle', NULL, 4, 'es_clase_recurso_sin_detalle');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -749,9 +749,9 @@ VALUES (20111, 0, 'certificado_defuncion', 'Certificado Defunción', 'certificado
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20112, 0, 'certificado_vida', 'Certificado Vida', 'certificado vida', NULL, 1, 'certificado_vida');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20118, 0, 'es_persona_con_empleo', 'Persona cón Empleo', 'persona con empleo', 'Actualmente tiene empleo', 4, 'es_persona_con_empleo');
+VALUES (20118, 0, 'es_persona_con_empleo', 'Persona con Empleo', 'persona con empleo', 'Actualmente tiene empleo', 4, 'es_persona_con_empleo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20119, 0, 'es_persona_con_jubilacion', 'Persona cón Jubilación', 'persona con jubilación', 'Actualmente tiene jubilación', 4, 'es_persona_con_jubilacion');
+VALUES (20119, 0, 'es_persona_con_jubilacion', 'Persona con Jubilación', 'persona con jubilación', 'Actualmente tiene jubilación', 4, 'es_persona_con_jubilacion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20121, 0, 'fecha_certificado_defuncion', 'Fecha Certificado Defunción', 'fecha certificado defunción', NULL, 3, 'fecha_certificado_defuncion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -769,9 +769,9 @@ VALUES (20138, 0, 'codigo_etnia_indigena', 'Código Etnia Indigena', 'código etni
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20143, 0, 'descripcion_etnia_indigena', 'Descripción Etnia Indigena', 'descripción etnia indigena', NULL, 1, 'descripcion_etnia_indigena');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20147, 0, 'es_persona_acreditada_para_pen', 'Persona Acreditada Para Pensión', 'persona acreditada para pensión', NULL, 4, 'es_persona_acreditada_para_pension');
+VALUES (20147, 0, 'es_persona_acreditada_para_pen', 'Persona Acreditada para Pensión', 'persona acreditada para pensión', NULL, 4, 'es_persona_acreditada_para_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20149, 0, 'es_persona_elegible_para_pen', 'Persona Elegible Para Pensión', 'persona elegible para pensión', NULL, 4, 'es_persona_elegible_para_pension');
+VALUES (20149, 0, 'es_persona_elegible_para_pen', 'Persona Elegible para Pensión', 'persona elegible para pensión', NULL, 4, 'es_persona_elegible_para_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20159, 0, 'id_etnia_indigena', 'Etnia Indigena', 'etnia indigena', NULL, 5, 'id_etnia_indigena');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -805,11 +805,11 @@ VALUES (20219, 0, 'indice_calidad_vida', 'Indice Calidad Vida', 'indice calidad 
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20222, 0, 'codigo_causa_den_pension', 'Código Causa Denegación Pensión', 'código causa denegación pensión', NULL, 1, 'codigo_causa_denegacion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20223, 0, 'es_persona_con_deuda', 'Persona cón Deuda', 'persona con deuda', 'Actualmente tiene deudas con el Estado', 4, 'es_persona_con_deuda');
+VALUES (20223, 0, 'es_persona_con_deuda', 'Persona con Deuda', 'persona con deuda', 'Actualmente tiene deudas con el Estado', 4, 'es_persona_con_deuda');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20224, 0, 'numero_causa_den_pension', 'Causa Denegación Pensión', 'causa denegación pensión', NULL, 4, 'numero_causa_denegacion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20225, 0, 'es_persona_con_pena_judicial', 'Persona cón Pena Judicial', 'persona con pena judicial', 'Actualmente tiene pena judicial pendiente', 4, 'es_persona_con_pena_judicial');
+VALUES (20225, 0, 'es_persona_con_pena_judicial', 'Persona con Pena Judicial', 'persona con pena judicial', 'Actualmente tiene pena judicial pendiente', 4, 'es_persona_con_pena_judicial');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20226, 0, 'otra_causa_den_pension', 'Otra Causa Denegación Pensión', 'otra causa denegación pensión', 'Especificar si la respuesta anterior es 99 "Otra causa"', 1, 'otra_causa_denegacion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -855,7 +855,7 @@ VALUES (20246, 0, 'fecha_solicitud_pension', 'Fecha Solicitud Pensión', 'fecha s
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20247, 0, 'fecha_solicitud_reco_pen', 'Fecha Solicitud Reconsideración Pensión', 'fecha solicitud reconsideración pensión', NULL, 3, 'fecha_solicitud_reconsideracion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20248, 0, 'numero_causa_den_reco_pen', 'Causa Denegación Reconsideración Pensión', 'número causa denegación reconsideración pensión', NULL, 4, 'numero_causa_denegacion_reconsideracion_pension');
+VALUES (20248, 0, 'numero_causa_den_reco_pen', 'Causa Denegación Reconsideración Pensión', 'causa denegación reconsideración pensión', NULL, 4, 'numero_causa_denegacion_reconsideracion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20249, 0, 'otra_causa_den_reco_pen', 'Otra Causa Denegación Reconsideración Pensión', 'otra causa denegación reconsideración pensión', 'Especificar si la respuesta anterior es 99 "Otra causa"', 1, 'otra_causa_denegacion_reconsideracion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -933,7 +933,7 @@ VALUES (20304, 0, 'codigo_motivo_no_trabajo', 'Código Motivo No Trabajo', 'códig
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20305, 0, 'codigo_nivel_educativo', 'Código Nivel Educativo', 'código nivel educativo', NULL, 1, 'codigo_nivel_educativo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20306, 0, 'codigo_siono', 'Código Si/No', 'código siono', NULL, 1, 'codigo_siono');
+VALUES (20306, 0, 'codigo_siono', 'Código Sí o No', 'código sí/no', NULL, 1, 'codigo_siono');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20307, 0, 'codigo_tipo_aba_agua', 'Código Tipo Abastecimiento Agua', 'código tipo abastecimiento agua', NULL, 1, 'codigo_tipo_abastecimiento_agua');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -969,15 +969,15 @@ VALUES (20325, 0, 'descripcion_ocupacion_prin', 'Descripción Ocupación Principal
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20326, 0, 'direccion', 'Dirección', 'dirección', NULL, 1, 'direccion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20327, 0, 'distancia_este_utm', 'Distancia Este Utm', 'distancia este utm', 'Coordenada X: distancia horizontal al Este (Easting) de la ubicación de la vivienda (según GPS)', 4, 'distancia_este_utm');
+VALUES (20327, 0, 'distancia_este_utm', 'Distancia Este UTM', 'distancia este utm', 'Coordenada X: distancia horizontal al Este (Easting) de la ubicación de la vivienda (según GPS)', 4, 'distancia_este_utm');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20328, 0, 'distancia_norte_utm', 'Distancia Norte Utm', 'distancia norte utm', 'Coordenada Y: distancia vertical al Norte (Northing) de la ubicación de la vivienda (según GPS)', 4, 'distancia_norte_utm');
+VALUES (20328, 0, 'distancia_norte_utm', 'Distancia Norte UTM', 'distancia norte utm', 'Coordenada Y: distancia vertical al Norte (Northing) de la ubicación de la vivienda (según GPS)', 4, 'distancia_norte_utm');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20330, 0, 'fecha_entrevista', 'Fecha Entrevista', 'fecha entrevista', NULL, 3, 'fecha_entrevista');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20331, 0, 'franja_utm', 'Franja Utm', 'franja utm', 'Banda ó Franja (C-X, sin I ni O) de la ubicación de la vivienda (según GPS)', 1, 'franja_utm');
+VALUES (20331, 0, 'franja_utm', 'Franja UTM', 'franja utm', 'Banda ó Franja (C-X, sin I ni O) de la ubicación de la vivienda (según GPS)', 1, 'franja_utm');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20332, 0, 'huso_utm', 'Huso Utm', 'huso utm', 'Número de Zona ó Huso (1-60) de la ubicación de la vivienda (según GPS)', 4, 'huso_utm');
+VALUES (20332, 0, 'huso_utm', 'Huso UTM', 'huso utm', 'Número de Zona ó Huso (1-60) de la ubicación de la vivienda (según GPS)', 4, 'huso_utm');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20333, 0, 'id_barrio', 'Barrio', 'barrio', NULL, 5, 'id_barrio');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1059,17 +1059,17 @@ VALUES (20386, 0, 'numero_siono_corriente_elec', 'Corriente Electrica', 'corrien
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20387, 0, 'numero_siono_curso_no_formal', 'Curso No Formal', 'curso no formal', 'Realizó algún curso no formal para poder trabajar, ejercer algún oficio o mejorar su nivel cultural', 4, 'numero_siono_curso_no_formal');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20388, 0, 'numero_siono_dif_para_banarse', 'Dificultad Para Banarse', 'dificultad para banarse', 'Tiene dificultad para bañarse, incluyendo entrar y salid de la bañadera', 4, 'numero_siono_dificultad_para_banarse');
+VALUES (20388, 0, 'numero_siono_dif_para_banarse', 'Dificultad para Bañarse', 'dificultad para bañarse', 'Tiene dificultad para bañarse, incluyendo entrar y salid de la bañadera', 4, 'numero_siono_dificultad_para_banarse');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20389, 0, 'numero_siono_dif_para_caminar', 'Dificultad Para Caminar', 'dificultad para caminar', 'Tiene dificultad para cruzar una pieza/habitación caminando', 4, 'numero_siono_dificultad_para_caminar');
+VALUES (20389, 0, 'numero_siono_dif_para_caminar', 'Dificultad para Caminar', 'dificultad para caminar', 'Tiene dificultad para cruzar una pieza/habitación caminando', 4, 'numero_siono_dificultad_para_caminar');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20390, 0, 'numero_siono_dif_para_comer', 'Dificultad Para Comer', 'dificultad para comer', 'Tiene dificultad para comer, incluyendo cortar la comida, llenar los vasos, etc.', 4, 'numero_siono_dificultad_para_comer');
+VALUES (20390, 0, 'numero_siono_dif_para_comer', 'Dificultad para Comer', 'dificultad para comer', 'Tiene dificultad para comer, incluyendo cortar la comida, llenar los vasos, etc.', 4, 'numero_siono_dificultad_para_comer');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20391, 0, 'numero_siono_dif_para_el_bano', 'Dificultad Para El Baño', 'dificultad para el bano', 'Tiene dificultad para usar el servicio sanitario, incluyendo sentarse o levantarse del excusado o inodoro', 4, 'numero_siono_dificultad_para_el_bano');
+VALUES (20391, 0, 'numero_siono_dif_para_el_bano', 'Dificultad para el Baño', 'dificultad para el baño', 'Tiene dificultad para usar el servicio sanitario, incluyendo sentarse o levantarse del excusado o inodoro', 4, 'numero_siono_dificultad_para_el_bano');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20392, 0, 'numero_siono_dif_para_la_cama', 'Dificultad Para La Cama', 'dificultad para la cama', 'Tiene dificultad para acostarse o pararse de la cama', 4, 'numero_siono_dificultad_para_la_cama');
+VALUES (20392, 0, 'numero_siono_dif_para_la_cama', 'Dificultad para la Cama', 'dificultad para la cama', 'Tiene dificultad para acostarse o pararse de la cama', 4, 'numero_siono_dificultad_para_la_cama');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20393, 0, 'numero_siono_dif_para_vestirse', 'Dificultad Para Vestirse', 'dificultad para vestirse', 'Tiene dificultad para vestirse, incluyendo ponerse los zapatos y las medias', 4, 'numero_siono_dificultad_para_vestirse');
+VALUES (20393, 0, 'numero_siono_dif_para_vestirse', 'Dificultad para Vestirse', 'dificultad para vestirse', 'Tiene dificultad para vestirse, incluyendo ponerse los zapatos y las medias', 4, 'numero_siono_dificultad_para_vestirse');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20394, 0, 'numero_siono_disp_aire_acon', 'Disponibilidad Aire Acondicionado', 'disponibilidad aire acondicionado', 'Dispone de aire acondicionado en el hogar', 4, 'numero_siono_disponibilidad_aire_acondicionado');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1089,7 +1089,7 @@ VALUES (20401, 0, 'numero_siono_matriculacion_esc', 'Matriculación Escolar', 'ma
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20402, 0, 'numero_siono_miembro_hogar', 'Miembro Hogar', 'miembro hogar', 'Es miembro del hogar', 4, 'numero_siono_miembro_hogar');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20403, 0, 'numero_tipo_pieza_bano', 'Pieza Baño', 'pieza bano', 'Tipo de pieza para bañarse', 4, 'numero_tipo_pieza_bano');
+VALUES (20403, 0, 'numero_tipo_pieza_bano', 'Pieza Baño', 'pieza baño', 'Tipo de pieza para bañarse', 4, 'numero_tipo_pieza_bano');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20404, 0, 'numero_siono_pieza_cocina', 'Pieza Cocina', 'pieza cocina', 'Tiene pieza para cocinar', 4, 'numero_siono_pieza_cocina');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1323,7 +1323,7 @@ VALUES (20552, 0, 'nombre_ficha_persona', 'Nombre Ficha Persona', 'nombre ficha 
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20554, 0, 'nombre_comunidad_indigena', 'Nombre Comunidad Indigena', 'nombre comunidad indigena', NULL, 1, 'nombre_comunidad_indigena');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20557, 0, 'es_persona_con_pension', 'Persona cón Pensión', 'persona con pensión', 'Actualmente tiene pensión', 4, 'es_persona_con_pension');
+VALUES (20557, 0, 'es_persona_con_pension', 'Persona con Pensión', 'persona con pensión', 'Actualmente tiene pensión', 4, 'es_persona_con_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20558, 0, 'fecha_expedicion_cedula', 'Fecha Expedición Cedula', 'fecha expedición cedula', NULL, 3, 'fecha_expedicion_cedula');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1343,11 +1343,11 @@ VALUES (20577, 0, 'codigo_potencial_ben', 'Código Potencial Beneficiario', 'códi
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20578, 0, 'edad', 'Edad', 'edad', NULL, 4, 'edad');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20579, 0, 'es_persona_con_carta_renuncia', 'Persona cón Carta Renuncia', 'persona con carta renuncia', 'Está dispuesto a firmar la Carta de Renuncia a otras pensiones y/o subsidios', 4, 'es_persona_con_carta_renuncia');
+VALUES (20579, 0, 'es_persona_con_carta_renuncia', 'Persona con Carta Renuncia', 'persona con carta renuncia', 'Está dispuesto a firmar la Carta de Renuncia a otras pensiones y/o subsidios', 4, 'es_persona_con_carta_renuncia');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20580, 0, 'es_persona_con_cer_vida', 'Persona cón Certificado Vida', 'persona con certificado vida', 'Presentó Certificado de Vida y Residencia', 4, 'es_persona_con_certificado_vida');
+VALUES (20580, 0, 'es_persona_con_cer_vida', 'Persona con Certificado Vida', 'persona con certificado vida', 'Presentó Certificado de Vida y Residencia', 4, 'es_persona_con_certificado_vida');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20581, 0, 'es_persona_con_subsidio', 'Persona cón Subsidio', 'persona con subsidio', 'Actualmente tiene algún subsidio del Estado', 4, 'es_persona_con_subsidio');
+VALUES (20581, 0, 'es_persona_con_subsidio', 'Persona con Subsidio', 'persona con subsidio', 'Actualmente tiene algún subsidio del Estado', 4, 'es_persona_con_subsidio');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20585, 0, 'nombre_referente', 'Nombre Referente', 'nombre referente', NULL, 1, 'nombre_referente');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1409,7 +1409,7 @@ VALUES (20615, 0, 'otra_clase_impedimento', 'Otra Clase Impedimento', 'otra clas
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20616, 0, 'otro_motivo_ina_esc', 'Otro Motivo Inasistencia Escolar', 'otro motivo inasistencia escolar', 'Motivo por el que no asiste o dejó de asistir a la escuela, colegio o institucion de enseñanza regular (especificar si la respuesta anterior es 25 "Otros")', 1, 'otro_motivo_inasistencia_escolar');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20617, 0, 'es_enumerador_con_numero', 'Enumerador cón Número', 'enumerador con número', NULL, 4, 'es_enumerador_con_numero');
+VALUES (20617, 0, 'es_enumerador_con_numero', 'Enumerador con Número', 'enumerador con número', NULL, 4, 'es_enumerador_con_numero');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20619, 0, 'es_indigena', 'Indigena', 'indigena', NULL, 4, 'es_indigena');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1429,9 +1429,9 @@ VALUES (20626, 0, 'codigo_condicion_censo', 'Código Condición Censo', 'código co
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20627, 0, 'codigo_condicion_recl_cen', 'Código Condición Reclamo Censo', 'código condición reclamo censo', NULL, 1, 'codigo_condicion_reclamo_censo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20628, 0, 'codigo_tipo_act_jupe', 'Código Tipo Actualización Jupe', 'código tipo actualización jupe', NULL, 1, 'codigo_tipo_actualizacion_jupe');
+VALUES (20628, 0, 'codigo_tipo_act_jupe', 'Código Tipo Actualización JUPE', 'código tipo actualización jupe', NULL, 1, 'codigo_tipo_actualizacion_jupe');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20629, 0, 'codigo_tipo_pieza_bano', 'Código Tipo Pieza Baño', 'código tipo pieza bano', NULL, 1, 'codigo_tipo_pieza_bano');
+VALUES (20629, 0, 'codigo_tipo_pieza_bano', 'Código Tipo Pieza Baño', 'código tipo pieza baño', NULL, 1, 'codigo_tipo_pieza_bano');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20630, 0, 'comentarios_apr_recl_cen', 'Comentarios Aprobación Reclamo Censo', 'comentarios aprobación reclamo censo', NULL, 1, 'comentarios_aprobacion_reclamo_censo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1463,7 +1463,7 @@ VALUES (20643, 0, 'numero_condicion_censo', 'Condición Censo', 'condición censo'
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20644, 0, 'numero_condicion_recl_cen', 'Condición Reclamo Censo', 'condición reclamo censo', NULL, 4, 'numero_condicion_reclamo_censo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20645, 0, 'numero_tipo_act_jupe', 'Tipo Actualización Jupe', 'tipo actualización jupe', NULL, 4, 'numero_tipo_actualizacion_jupe');
+VALUES (20645, 0, 'numero_tipo_act_jupe', 'Tipo Actualización JUPE', 'tipo actualización jupe', NULL, 4, 'numero_tipo_actualizacion_jupe');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20646, 0, 'otra_causa_den_recl_cen', 'Otra Causa Denegación Reclamo Censo', 'otra causa denegación reclamo censo', 'Especificar si la respuesta anterior es 99 "Otra causa"', 1, 'otra_causa_denegacion_reclamo_censo');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1529,9 +1529,9 @@ VALUES (20677, 0, 'referencia_direccion', 'Referencia Dirección', 'referencia di
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20678, 0, 'compania', 'Compañía', 'compañía', NULL, 1, 'compania');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20679, 0, 'es_persona_con_copia_cedula', 'Persona cón Copia Cédula', 'persona con copia de cédula', 'Presentó Copia de la Cédula', 4, 'es_persona_con_copia_cedula');
+VALUES (20679, 0, 'es_persona_con_copia_cedula', 'Persona con Copia Cédula', 'persona con copia de cédula', 'Presentó Copia de la Cédula', 4, 'es_persona_con_copia_cedula');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20680, 0, 'es_persona_con_declaracion_jur', 'Persona cón Declaración Jurada', 'persona con declaración jurada', 'Presentó Declaración Jurada', 4, 'es_persona_con_declaracion_jur');
+VALUES (20680, 0, 'es_persona_con_declaracion_jur', 'Persona con Declaración Jurada', 'persona con declaración jurada', 'Presentó Declaración Jurada', 4, 'es_persona_con_declaracion_jur');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20681, 0, 'fecha_resolucion_den_pen', 'Fecha Resolución Denegación Pensión', 'fecha resolución denegación pensión', NULL, 3, 'fecha_resolucion_den_pen');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)

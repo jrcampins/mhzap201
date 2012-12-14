@@ -887,13 +887,13 @@ VALUES (321900103, 0, 'modificar_motivo_no_trabajo', 'Modificar Motivo No Trabaj
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (321900104, 0, 'eliminar_motivo_no_trabajo', 'Eliminar Motivo No Trabajo', NULL, 33, 1, 3219001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (322000101, 0, 'consultar_siono', 'Consultar Si/No', NULL, 21, 0, 3220001, NULL, 'numero_siono', 1, 0, 0, 0, NULL);
+VALUES (322000101, 0, 'consultar_siono', 'Consultar Sí o No', NULL, 21, 0, 3220001, NULL, 'numero_siono', 1, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (322000102, 0, 'crear_siono', 'Crear Si/No', NULL, 31, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (322000102, 0, 'crear_siono', 'Crear Sí o No', NULL, 31, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (322000103, 0, 'modificar_siono', 'Modificar Si/No', NULL, 32, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (322000103, 0, 'modificar_siono', 'Modificar Sí o No', NULL, 32, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (322000104, 0, 'eliminar_siono', 'Eliminar Si/No', NULL, 33, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (322000104, 0, 'eliminar_siono', 'Eliminar Sí o No', NULL, 33, 1, 3220001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (322100101, 0, 'consultar_tipo_aba_agua', 'Consultar Tipo Abastecimiento Agua', NULL, 21, 0, 3221001, NULL, 'numero_tipo_aba_agua', 1, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
