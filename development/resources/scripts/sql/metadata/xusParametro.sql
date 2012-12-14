@@ -56,7 +56,7 @@ set		nombre_parametro = dbo.xfnNombrePropio('_' + nombre_parametro)
 SET @selectst = "
 select	codigo_parametro, nombre_parametro, dbo.xfnNombrePropio('_' + nombre_parametro)
 from	parametro
-where	nombre_parametro <> dbo.xfnNombrePropio('_' + nombre_parametro)
+where	nombre_parametro IS NOT NULL -- <> dbo.xfnNombrePropio('_' + nombre_parametro)
 order by 1
 "
 EXECUTE xus @updatest, @selectst, 'where'

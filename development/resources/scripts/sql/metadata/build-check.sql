@@ -1,6 +1,10 @@
 USE MHZMD201
 GO
 
+/*
+select * from parametro where nombre_parametro like'%[ ]___[ ]%' or nombre_parametro like'___[ ]%' or nombre_parametro like'%[ ]___' order by nombre_parametro
+*/
+
 select 'ADD'  as [action], tabname
 from xdbScriptTables
 where colid=1 and tabname not in (select codigo_clase_recurso from clase_recurso) and tabname<>'dual' and tabname not like 'xdb%'
