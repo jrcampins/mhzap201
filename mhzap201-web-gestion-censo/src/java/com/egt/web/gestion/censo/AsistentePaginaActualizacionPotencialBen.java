@@ -28,6 +28,7 @@ import com.egt.data.specific.xdp2.EtniaIndigenaCachedRowSetDataProvider2;
 import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FuncionarioCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FichaPersonaCachedRowSetDataProvider2;
+import com.egt.data.general.xdp3.UsuarioCachedRowSetDataProvider3;
 import com.egt.base.constants.URX2;
 import com.egt.base.enums.EnumOperadorCom;
 import com.egt.base.enums.EnumTipoDatoPar;
@@ -1303,23 +1304,23 @@ public class AsistentePaginaActualizacionPotencialBen {
 
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idFuncionarioRegPotBen">
-    private GestorBusquedaReferencia gestorBusquedaIdFuncionarioRegPotBen = null;
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idUsuarioRegPotBen">
+    private GestorBusquedaReferencia gestorBusquedaIdUsuarioRegPotBen = null;
 
-    private boolean funcionSelectEjecutableIdFuncionarioRegPotBen = true;
+    private boolean funcionSelectEjecutableIdUsuarioRegPotBen = true;
 
-    protected GestorBusquedaReferencia getGestorBusquedaIdFuncionarioRegPotBen() {
-        if (this.gestorBusquedaIdFuncionarioRegPotBen == null) {
-            this.gestorBusquedaIdFuncionarioRegPotBen = new GestorBusquedaReferencia(
+    protected GestorBusquedaReferencia getGestorBusquedaIdUsuarioRegPotBen() {
+        if (this.gestorBusquedaIdUsuarioRegPotBen == null) {
+            this.gestorBusquedaIdUsuarioRegPotBen = new GestorBusquedaReferencia(
                     bean.getPotencialBenDataProvider(),
-                    bean.getFuncionarioReferenceDataProvider(),
-                    PotencialBenCachedRowSetDataProvider2.COLUMNA_ID_FUNCIONARIO_REG_POT_BEN,
-                    this.funcionSelectEjecutableIdFuncionarioRegPotBen);
+                    bean.getUsuarioReferenceDataProvider(),
+                    PotencialBenCachedRowSetDataProvider2.COLUMNA_ID_USUARIO_REG_POT_BEN,
+                    this.funcionSelectEjecutableIdUsuarioRegPotBen);
         }
-        return this.gestorBusquedaIdFuncionarioRegPotBen;
+        return this.gestorBusquedaIdUsuarioRegPotBen;
     }
 
-    protected FiltroBusqueda getFiltroBusquedaIdFuncionarioRegPotBen() {
+    protected FiltroBusqueda getFiltroBusquedaIdUsuarioRegPotBen() {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         FiltroBusqueda filtro = new FiltroBusqueda();
         /*
@@ -1331,82 +1332,81 @@ public class AsistentePaginaActualizacionPotencialBen {
         return filtro;
     }
 
-    public void campoIdFuncionarioRegPotBen1_validate(FacesContext context, UIComponent component, Object value) {
+    public void campoIdUsuarioRegPotBen1_validate(FacesContext context, UIComponent component, Object value) {
         if (bean == null) {
             return;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        this.getGestorBusquedaIdFuncionarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdFuncionarioRegPotBen());
-        this.getGestorBusquedaIdFuncionarioRegPotBen().validarCodigoRecursoReferenciado(context, component, value, rowKey, false);
+        this.getGestorBusquedaIdUsuarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdUsuarioRegPotBen());
+        this.getGestorBusquedaIdUsuarioRegPotBen().validarCodigoRecursoReferenciado(context, component, value, rowKey, false);
     }
 
-    public String getTextoCampoIdFuncionarioRegPotBen1() {
+    public String getTextoCampoIdUsuarioRegPotBen1() {
         if (bean == null) {
             return "abc";
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getPotencialBenDataProvider().getIdFuncionarioRegPotBen(rowKey));
+            return STP.getString(bean.getPotencialBenDataProvider().getIdUsuarioRegPotBen(rowKey));
         }
-        this.getGestorBusquedaIdFuncionarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdFuncionarioRegPotBen());
-        return this.getGestorBusquedaIdFuncionarioRegPotBen().getCodigoRecursoReferenciado(rowKey);
+        this.getGestorBusquedaIdUsuarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdUsuarioRegPotBen());
+        return this.getGestorBusquedaIdUsuarioRegPotBen().getCodigoRecursoReferenciado(rowKey);
     }
 
-    public void setTextoCampoIdFuncionarioRegPotBen1(String value) {
+    public void setTextoCampoIdUsuarioRegPotBen1(String value) {
         if (bean == null) {
             return;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        this.getGestorBusquedaIdFuncionarioRegPotBen().setCodigoRecursoReferenciado(rowKey, value);
+        this.getGestorBusquedaIdUsuarioRegPotBen().setCodigoRecursoReferenciado(rowKey, value);
     }
 
-    public String getToolTipCampoIdFuncionarioRegPotBen1() {
+    public String getToolTipCampoIdUsuarioRegPotBen1() {
         if (bean == null) {
             return "abc";
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getPotencialBenDataProvider().getIdFuncionarioRegPotBen(rowKey));
+            return STP.getString(bean.getPotencialBenDataProvider().getIdUsuarioRegPotBen(rowKey));
         }
-        this.getGestorBusquedaIdFuncionarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdFuncionarioRegPotBen());
-        return this.getGestorBusquedaIdFuncionarioRegPotBen().getNombreRecursoReferenciado(rowKey);
+        this.getGestorBusquedaIdUsuarioRegPotBen().setFiltroBusqueda(this.getFiltroBusquedaIdUsuarioRegPotBen());
+        return this.getGestorBusquedaIdUsuarioRegPotBen().getNombreRecursoReferenciado(rowKey);
     }
 
-    public String getScriptCampoIdFuncionarioRegPotBen1Boton1() {
+    public String getScriptCampoIdUsuarioRegPotBen1Boton1() {
         if (bean == null) {
             return null;
         }
-        long funcion = FuncionarioCachedRowSetDataProvider2.FUNCION_CONSULTAR_FUNCIONARIO;
-        String campo = bean.getCampoIdFuncionarioRegPotBen1().getClientId(bean.getFacesContext());
+        long funcion = UsuarioCachedRowSetDataProvider3.FUNCION_CONSULTAR_USUARIO;
+        String campo = bean.getCampoIdUsuarioRegPotBen1().getClientId(bean.getFacesContext());
         String boton = bean.getBotonAplicar1().getClientId(bean.getFacesContext());
-        String urx = URX2.CONSULTA_TABLA_FUNCIONARIO;
-        return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, this.getFiltroBusquedaIdFuncionarioRegPotBen());
+        return bean.getGestor().getScriptAbrirVentanaBuscarCodigo(funcion, campo, boton, this.getFiltroBusquedaIdUsuarioRegPotBen());
     }
 
-    public String getScriptCampoIdFuncionarioRegPotBen1Boton2() {
+    public String getScriptCampoIdUsuarioRegPotBen1Boton2() {
         if (bean == null) {
             return null;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        String urx = URX2.CONSULTA_DETALLE_FUNCIONARIO;
-        Long id = bean.getPotencialBenDataProvider().getIdFuncionarioRegPotBen(rowKey);
+        String urx = URX2.DETALLE_USUARIO;
+        Long id = bean.getPotencialBenDataProvider().getIdUsuarioRegPotBen(rowKey);
         return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
     }
 
-    public boolean isCampoIdFuncionarioRegPotBen1Boton2Rendered() {
-        return bean == null ? true : bean.getFuncionarioReferenceDataProvider().isRecursoNombrable();
+    public boolean isCampoIdUsuarioRegPotBen1Boton2Rendered() {
+        return bean == null ? true : bean.getUsuarioReferenceDataProvider().isRecursoNombrable();
     }
 
-    public boolean isCampoIdFuncionarioRegPotBen1Boton3Rendered() {
-        return bean == null ? true : !this.isCampoIdFuncionarioRegPotBen1Boton2Rendered();
+    public boolean isCampoIdUsuarioRegPotBen1Boton3Rendered() {
+        return bean == null ? true : !this.isCampoIdUsuarioRegPotBen1Boton2Rendered();
     }
 
-    public boolean isCampoIdFuncionarioRegPotBen1Panel2Rendered() {
-        return isCampoIdFuncionarioRegPotBen1Boton2Rendered() && isGridIdFuncionarioRegPotBenRendered();
+    public boolean isCampoIdUsuarioRegPotBen1Panel2Rendered() {
+        return isCampoIdUsuarioRegPotBen1Boton2Rendered() && isGridIdUsuarioRegPotBenRendered();
     }
 
-    public boolean isTableColumnIdFuncionarioRegPotBen3Rendered() {
-        return bean == null ? true : bean.getGestor().isFuncionCheckChangesHabilitada() || this.isCampoIdFuncionarioRegPotBen1Boton3Rendered();
+    public boolean isTableColumnIdUsuarioRegPotBen3Rendered() {
+        return bean == null ? true : bean.getGestor().isFuncionCheckChangesHabilitada() || this.isCampoIdUsuarioRegPotBen1Boton3Rendered();
     }
 
     // </editor-fold>
@@ -1966,7 +1966,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         return bean.getGestor().isFilaProcesada() && isSeccionGeneralRendered();
     }
 
-    public boolean isGridIdFuncionarioRegPotBenRendered() {
+    public boolean isGridIdUsuarioRegPotBenRendered() {
         if (bean == null) {
             return true;
         }

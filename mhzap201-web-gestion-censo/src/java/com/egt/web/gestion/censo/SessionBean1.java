@@ -81,6 +81,9 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         fichaPersonaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         fichaPersonaReferenceRowSet.setCommand("SELECT * FROM consulta_ficha_persona_1");
         fichaPersonaReferenceRowSet.setTableName("ficha_persona");
+        usuarioReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        usuarioReferenceRowSet.setCommand("SELECT * FROM consulta_usuario_1");
+        usuarioReferenceRowSet.setTableName("usuario");
     }
 
     private CachedRowSetXImpl filtroRowSet;
@@ -333,6 +336,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setFichaPersonaReferenceRowSet(CachedRowSetXImpl crsxi) {
         this.fichaPersonaReferenceRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl usuarioReferenceRowSet;
+
+    public CachedRowSetXImpl getUsuarioReferenceRowSet() {
+        if (usuarioReferenceRowSet == null) {
+            usuarioReferenceRowSet = new RecursoCachedRowSet();
+            try {
+                usuarioReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                usuarioReferenceRowSet.setCommand("SELECT * FROM consulta_usuario_1");
+                usuarioReferenceRowSet.setTableName("usuario");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return usuarioReferenceRowSet;
+    }
+
+    public void setUsuarioReferenceRowSet(CachedRowSetXImpl crsxi) {
+        this.usuarioReferenceRowSet = crsxi;
     }
     // </editor-fold>
 /**/

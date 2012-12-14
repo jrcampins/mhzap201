@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdFuncionarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1821,68 +1821,68 @@
                                                     for="campoFechaRegistroPotBen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen1}"
-                                                    headerText="funcionario registro"
-                                                    id="tableColumnIdFuncionarioRegPotBen1" rendered="false"
-                                                    sort="codigo_funcionario_1x15y3">
+                                                    binding="#{PotencialBen1.tableColumnIdUsuarioRegPotBen1}"
+                                                    headerText="usuario registro"
+                                                    id="tableColumnIdUsuarioRegPotBen1" rendered="false"
+                                                    sort="codigo_usuario_1x15y3">
                                                 <webuijsf:staticText
-                                                    id="hiddenStaticTextIdFuncionarioRegPotBen1"
-                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"
+                                                    id="hiddenStaticTextIdUsuarioRegPotBen1"
+                                                    text="#{currentRow.value['codigo_usuario_1x15y3']}"
                                                     rendered="#{PotencialBen1.gestor.designing}"/>
                                                 <webuijsf:label
-                                                    binding="#{PotencialBen1.labelIdFuncionarioRegPotBen1}"
-                                                    id="labelIdFuncionarioRegPotBen1"
-                                                    for="campoIdFuncionarioRegPotBen1"/>
-                                                <webuijsf:textField id="campoIdFuncionarioRegPotBen1"
-                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1}"
+                                                    binding="#{PotencialBen1.labelIdUsuarioRegPotBen1}"
+                                                    id="labelIdUsuarioRegPotBen1"
+                                                    for="campoIdUsuarioRegPotBen1"/>
+                                                <webuijsf:textField id="campoIdUsuarioRegPotBen1"
+                                                    binding="#{PotencialBen1.campoIdUsuarioRegPotBen1}"
                                                     readOnly="true"
-                                                    text="#{PotencialBen1.asistente.textoCampoIdFuncionarioRegPotBen1}"
-                                                    toolTip="#{PotencialBen1.asistente.toolTipCampoIdFuncionarioRegPotBen1}"
-                                                    validatorExpression="#{PotencialBen1.campoIdFuncionarioRegPotBen1_validate}"/>
-                                                <webuijsf:staticText id="campoIdFuncionarioRegPotBen1Texto1"
-                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Texto1}"
-                                                    text="#{currentRow.value['codigo_funcionario_1x15y3']}"/>
-                                                <webuijsf:message id="messageIdFuncionarioRegPotBen1"
-                                                    for="campoIdFuncionarioRegPotBen1"/>
+                                                    text="#{PotencialBen1.asistente.textoCampoIdUsuarioRegPotBen1}"
+                                                    toolTip="#{PotencialBen1.asistente.toolTipCampoIdUsuarioRegPotBen1}"
+                                                    validatorExpression="#{PotencialBen1.campoIdUsuarioRegPotBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdUsuarioRegPotBen1Texto1"
+                                                    binding="#{PotencialBen1.campoIdUsuarioRegPotBen1Texto1}"
+                                                    text="#{currentRow.value['codigo_usuario_1x15y3']}"/>
+                                                <webuijsf:message id="messageIdUsuarioRegPotBen1"
+                                                    for="campoIdUsuarioRegPotBen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    id="tableColumnIdFuncionarioRegPotBen3" rendered="false"
+                                                    id="tableColumnIdUsuarioRegPotBen3" rendered="false"
                                                     align="center">
                                                 <webuijsf:staticText
-                                                    id="hiddenStaticTextIdFuncionarioRegPotBen3"
-                                                    text="#{currentRow.value['id_funcionario_reg_pot_ben']}"
+                                                    id="hiddenStaticTextIdUsuarioRegPotBen3"
+                                                    text="#{currentRow.value['id_usuario_reg_pot_ben']}"
                                                     rendered="#{PotencialBen1.gestor.designing}"/>
                                                 <webuijsf:button
-                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Boton1}"
-                                                    id="campoIdFuncionarioRegPotBen1Boton1"
-                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton1}"/>
+                                                    binding="#{PotencialBen1.campoIdUsuarioRegPotBen1Boton1}"
+                                                    id="campoIdUsuarioRegPotBen1Boton1"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdUsuarioRegPotBen1Boton1}"/>
                                                 <webuijsf:button
-                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Boton3}"
-                                                    id="campoIdFuncionarioRegPotBen1Boton3"
-                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"
-                                                    rendered="#{PotencialBen1.asistente.campoIdFuncionarioRegPotBen1Boton3Rendered}"/>
+                                                    binding="#{PotencialBen1.campoIdUsuarioRegPotBen1Boton3}"
+                                                    id="campoIdUsuarioRegPotBen1Boton3"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdUsuarioRegPotBen1Boton2}"
+                                                    rendered="#{PotencialBen1.asistente.campoIdUsuarioRegPotBen1Boton3Rendered}"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
-                                                    binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen2}"
-                                                    headerText="nombre funcionario registro"
-                                                    id="tableColumnIdFuncionarioRegPotBen2" rendered="false"
-                                                    sort="nombre_funcionario_1x15y4"
+                                                    binding="#{PotencialBen1.tableColumnIdUsuarioRegPotBen2}"
+                                                    headerText="nombre usuario registro"
+                                                    id="tableColumnIdUsuarioRegPotBen2" rendered="false"
+                                                    sort="nombre_usuario_1x15y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
-                                                    id="hiddenStaticTextIdFuncionarioRegPotBen2"
-                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
+                                                    id="hiddenStaticTextIdUsuarioRegPotBen2"
+                                                    text="#{currentRow.value['nombre_usuario_1x15y4']}"
                                                     rendered="#{PotencialBen1.gestor.designing}"/>
                                                 <webuijsf:label
-                                                    binding="#{PotencialBen1.labelIdFuncionarioRegPotBen2}"
-                                                    id="labelIdFuncionarioRegPotBen2"
+                                                    binding="#{PotencialBen1.labelIdUsuarioRegPotBen2}"
+                                                    id="labelIdUsuarioRegPotBen2"
                                                     text=""/>
                                                 <webuijsf:imageHyperlink
-                                                    binding="#{PotencialBen1.campoIdFuncionarioRegPotBen1Hiper1}"
-                                                    id="campoIdFuncionarioRegPotBen1Hiper1"
-                                                    text="#{currentRow.value['nombre_funcionario_1x15y4']}"
-                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdFuncionarioRegPotBen1Boton2}"/>
+                                                    binding="#{PotencialBen1.campoIdUsuarioRegPotBen1Hiper1}"
+                                                    id="campoIdUsuarioRegPotBen1Hiper1"
+                                                    text="#{currentRow.value['nombre_usuario_1x15y4']}"
+                                                    onClick="#{PotencialBen1.asistente.scriptCampoIdUsuarioRegPotBen1Boton2}"/>
                                                 <webuijsf:button
-                                                    id="campoIdFuncionarioRegPotBen1Boton2"
+                                                    id="campoIdUsuarioRegPotBen1Boton2"
                                                     rendered="false"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
