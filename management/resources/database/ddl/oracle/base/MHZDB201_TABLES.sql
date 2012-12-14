@@ -994,7 +994,7 @@ CREATE TABLE potencial_ben
 	otra_causa_den_recl_cen VARCHAR2(200),
 	comentarios_den_recl_cen VARCHAR2(4000),
 	fecha_registro_pot_ben DATE,
-	id_funcionario_reg_pot_ben NUMBER(19),
+	id_usuario_reg_pot_ben NUMBER(19),
 	es_potencial_ben_inactivo NUMBER(10) NOT NULL,
 	fecha_ultima_visita_censo DATE,
 	observaciones_ult_visita_cen VARCHAR2(4000),

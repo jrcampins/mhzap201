@@ -238,7 +238,7 @@ ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0011_ZYX DEFAULT (0) F
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0012_ZYX DEFAULT (getdate()) FOR fecha_registro_pot_ben
 GO
-ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0013_ZYX DEFAULT (user_id()) FOR id_funcionario_reg_pot_ben
+ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0013_ZYX DEFAULT (user_id()) FOR id_usuario_reg_pot_ben
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_0014_ZYX DEFAULT (0) FOR es_potencial_ben_inactivo
 GO

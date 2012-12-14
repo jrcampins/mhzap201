@@ -1535,8 +1535,6 @@ VALUES (20680, 0, 'es_persona_con_declaracion_jur', 'Persona con Declaración Jur
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20681, 0, 'fecha_resolucion_den_pen', 'Fecha Resolución Denegación Pensión', 'fecha resolución denegación pensión', NULL, 3, 'fecha_resolucion_den_pen');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20682, 0, 'id_funcionario_reg_pot_ben', 'Funcionario Registro Potencial Beneficiario', 'funcionario registro potencial beneficiario', NULL, 5, 'id_funcionario_reg_pot_ben');
-INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20683, 0, 'numero_resolucion_den_pen', 'Número Resolución Denegación Pensión', 'número resolución denegación pensión', NULL, 1, 'numero_resolucion_den_pen');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20685, 0, 'id_informe_auditoria', 'Informe Auditoria', 'informe auditoria', NULL, 5, 'id_informe_auditoria');
@@ -1554,4 +1552,6 @@ INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre
 VALUES (20692, 0, 'nombre_informe_auditoria', 'Nombre Informe Auditoria', 'nombre informe auditoria', NULL, 1, 'nombre_informe_auditoria');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20693, 0, 'nombre_proceso', 'Nombre Proceso', 'nombre proceso', NULL, 1, 'nombre_proceso');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20694, 1, 'id_usuario_reg_pot_ben', 'Usuario Registro Potencial Beneficiario', 'usuario registro potencial beneficiario', NULL, 5, 'id_usuario_reg_pot_ben');
 GO

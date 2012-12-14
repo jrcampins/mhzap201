@@ -118,7 +118,7 @@ ALTER TABLE potencial_ben MODIFY (es_persona_con_pena_judicial DEFAULT NULL);
 ALTER TABLE potencial_ben MODIFY (es_persona_con_cer_vida DEFAULT NULL);
 ALTER TABLE potencial_ben MODIFY (es_persona_con_carta_renuncia DEFAULT NULL);
 ALTER TABLE potencial_ben MODIFY (fecha_registro_pot_ben DEFAULT NULL);
-ALTER TABLE potencial_ben MODIFY (id_funcionario_reg_pot_ben DEFAULT NULL);
+ALTER TABLE potencial_ben MODIFY (id_usuario_reg_pot_ben DEFAULT NULL);
 ALTER TABLE potencial_ben MODIFY (es_potencial_ben_inactivo DEFAULT NULL);
 ALTER TABLE proceso MODIFY (version_proceso DEFAULT NULL);
 ALTER TABLE proveedor_dat_ext MODIFY (version_proveedor_dat_ext DEFAULT NULL);

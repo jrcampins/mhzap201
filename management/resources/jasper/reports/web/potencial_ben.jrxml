@@ -349,16 +349,16 @@
     <field name="otra_causa_den_recl_cen" class="java.lang.String"/>
     <field name="comentarios_den_recl_cen" class="java.lang.String"/>
     <field name="fecha_registro_pot_ben" class="java.util.Date"/>
-    <field name="id_funcionario_reg_pot_ben" class="java.lang.Long"/>
-    <field name="codigo_funcionario_1x15y3" class="java.lang.String"/>
-    <field name="nombre_funcionario_1x15y4" class="java.lang.String"/>
-    <field name="numero_cedula_1x15y5" class="java.lang.Integer"/>
-    <field name="letra_cedula_1x15y6" class="java.lang.String"/>
-    <field name="primer_nombre_1x15y7" class="java.lang.String"/>
-    <field name="segundo_nombre_1x15y8" class="java.lang.String"/>
-    <field name="primer_apellido_1x15y9" class="java.lang.String"/>
-    <field name="segundo_apellido_1x15y10" class="java.lang.String"/>
-    <field name="apellido_casada_1x15y11" class="java.lang.String"/>
+    <field name="id_usuario_reg_pot_ben" class="java.lang.Long"/>
+    <field name="codigo_usuario_1x15y3" class="java.lang.String"/>
+    <field name="nombre_usuario_1x15y4" class="java.lang.String"/>
+    <field name="password_usuario_1x15y5" class="java.lang.String"/>
+    <field name="correo_electronico_1x15y6" class="java.lang.String"/>
+    <field name="id_usuario_supervisor_1x15y7" class="java.lang.Long"/>
+    <field name="es_super_usuario_1x15y8" class="java.lang.Integer"/>
+    <field name="es_usuario_especial_1x15y9" class="java.lang.Integer"/>
+    <field name="es_usuario_inactivo_1x15y10" class="java.lang.Integer"/>
+    <field name="es_usuario_modificado_1x15y11" class="java.lang.Integer"/>
     <field name="es_potencial_ben_inactivo" class="java.lang.Integer"/>
     <field name="fecha_ultima_visita_censo" class="java.util.Date"/>
     <field name="observaciones_ult_visita_cen" class="java.lang.String"/>

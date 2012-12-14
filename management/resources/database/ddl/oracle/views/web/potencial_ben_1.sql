@@ -280,16 +280,16 @@ SELECT
 	potencial_ben.otra_causa_den_recl_cen AS otra_causa_den_recl_cen,
 	potencial_ben.comentarios_den_recl_cen AS comentarios_den_recl_cen,
 	potencial_ben.fecha_registro_pot_ben AS fecha_registro_pot_ben,
-	potencial_ben.id_funcionario_reg_pot_ben AS id_funcionario_reg_pot_ben,
-		funcionario_1x15.codigo_funcionario AS codigo_funcionario_1x15y3,
-		funcionario_1x15.nombre_funcionario AS nombre_funcionario_1x15y4,
-		funcionario_1x15.numero_cedula AS numero_cedula_1x15y5,
-		funcionario_1x15.letra_cedula AS letra_cedula_1x15y6,
-		funcionario_1x15.primer_nombre AS primer_nombre_1x15y7,
-		funcionario_1x15.segundo_nombre AS segundo_nombre_1x15y8,
-		funcionario_1x15.primer_apellido AS primer_apellido_1x15y9,
-		funcionario_1x15.segundo_apellido AS segundo_apellido_1x15y10,
-		funcionario_1x15.apellido_casada AS apellido_casada_1x15y11,
+	potencial_ben.id_usuario_reg_pot_ben AS id_usuario_reg_pot_ben,
+		usuario_1x15.codigo_usuario AS codigo_usuario_1x15y3,
+		usuario_1x15.nombre_usuario AS nombre_usuario_1x15y4,
+		usuario_1x15.password_usuario AS password_usuario_1x15y5,
+		usuario_1x15.correo_electronico AS correo_electronico_1x15y6,
+		usuario_1x15.id_usuario_supervisor AS id_usuario_supervisor_1x15y7,
+		usuario_1x15.es_super_usuario AS es_super_usuario_1x15y8,
+		usuario_1x15.es_usuario_especial AS es_usuario_especial_1x15y9,
+		usuario_1x15.es_usuario_inactivo AS es_usuario_inactivo_1x15y10,
+		usuario_1x15.es_usuario_modificado AS es_usuario_modificado_1x15y11,
 	potencial_ben.es_potencial_ben_inactivo AS es_potencial_ben_inactivo,
 	potencial_ben.fecha_ultima_visita_censo AS fecha_ultima_visita_censo,
 	potencial_ben.observaciones_ult_visita_cen AS observaciones_ult_visita_cen,
@@ -320,6 +320,6 @@ FROM
 	LEFT OUTER JOIN ficha_persona ficha_persona_1x12 ON ficha_persona_1x12.id_ficha_persona = potencial_ben.id_ficha_persona
 	LEFT OUTER JOIN condicion_recl_cen condicion_recl_cen_1x13 ON condicion_recl_cen_1x13.numero_condicion_recl_cen = potencial_ben.numero_condicion_recl_cen
 	LEFT OUTER JOIN causa_den_recl_cen causa_den_recl_cen_1x14 ON causa_den_recl_cen_1x14.numero_causa_den_recl_cen = potencial_ben.numero_causa_den_recl_cen
-	LEFT OUTER JOIN funcionario funcionario_1x15 ON funcionario_1x15.id_funcionario = potencial_ben.id_funcionario_reg_pot_ben
+	LEFT OUTER JOIN usuario usuario_1x15 ON usuario_1x15.id_usuario = potencial_ben.id_usuario_reg_pot_ben
 	LEFT OUTER JOIN funcionario funcionario_1x16 ON funcionario_1x16.id_funcionario = potencial_ben.id_funcionario_ult_visita_cen;
 

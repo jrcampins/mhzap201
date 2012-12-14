@@ -183,7 +183,7 @@ ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0012_ZYX FOREIGN KEY (
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0013_ZYX FOREIGN KEY (id_funcionario_validacion_cen) REFERENCES funcionario (id_funcionario) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0014_ZYX FOREIGN KEY (numero_causa_inv_censo) REFERENCES causa_inv_censo (numero_causa_inv_censo) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0015_ZYX FOREIGN KEY (id_funcionario_ult_visita_cen) REFERENCES funcionario (id_funcionario) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0016_ZYX FOREIGN KEY (id_funcionario_reg_pot_ben) REFERENCES funcionario (id_funcionario) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_0016_ZYX FOREIGN KEY (id_usuario_reg_pot_ben) REFERENCES usuario (id_usuario) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE rastro_funcion ADD CONSTRAINT FK_rastro_funcion_0001_ZYX FOREIGN KEY (id_funcion) REFERENCES funcion (id_funcion) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE rastro_funcion_par ADD CONSTRAINT FK_rastro_funcion_par_0001_ZYX FOREIGN KEY (id_parametro) REFERENCES parametro (id_parametro) ON DELETE NO ACTION ON UPDATE CASCADE;
 ALTER TABLE rastro_funcion_par ADD CONSTRAINT FK_rastro_funcion_par_0002_ZYX FOREIGN KEY (id_rastro_funcion) REFERENCES rastro_funcion (id_rastro_funcion) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -253,7 +253,7 @@ SELECT
 		potencial_ben_1x34.otra_causa_den_recl_cen AS otra_causa_den_recl_ce_1x34y57,
 		potencial_ben_1x34.comentarios_den_recl_cen AS comentarios_den_recl_c_1x34y58,
 		potencial_ben_1x34.fecha_registro_pot_ben AS fecha_registro_pot_ben_1x34y59,
-		potencial_ben_1x34.id_funcionario_reg_pot_ben AS id_funcionario_reg_pot_1x34y60,
+		potencial_ben_1x34.id_usuario_reg_pot_ben AS id_usuario_reg_pot_ben_1x34y60,
 		potencial_ben_1x34.es_potencial_ben_inactivo AS es_potencial_ben_inact_1x34y61,
 		potencial_ben_1x34.fecha_ultima_visita_censo AS fecha_ultima_visita_ce_1x34y62,
 		potencial_ben_1x34.observaciones_ult_visita_cen AS observaciones_ult_visi_1x34y63,

@@ -1199,7 +1199,7 @@ VALUES (598, 0, 'fk_potencial_ben_0015_zyx', '*no existe un recurso de la clase 
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (599, 0, 'fk_potencial_ben_0015_zyx_1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (600, 0, 'fk_potencial_ben_0016_zyx', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario reg pot ben"; no es posible {0} el recurso {1}', NULL);
+VALUES (600, 0, 'fk_potencial_ben_0016_zyx', '*no existe un recurso de la clase "usuario" identificado con el valor especificado para "usuario reg pot ben"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (601, 0, 'fk_potencial_ben_0016_zyx_1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)

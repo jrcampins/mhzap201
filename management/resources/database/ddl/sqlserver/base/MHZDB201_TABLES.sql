@@ -1122,7 +1122,7 @@ CREATE TABLE potencial_ben
 	otra_causa_den_recl_cen varchar(100),
 	comentarios_den_recl_cen varchar(256),
 	fecha_registro_pot_ben smalldatetime,
-	id_funcionario_reg_pot_ben bigint,
+	id_usuario_reg_pot_ben bigint,
 	es_potencial_ben_inactivo int NOT NULL,
 	fecha_ultima_visita_censo smalldatetime,
 	observaciones_ult_visita_cen varchar(256),

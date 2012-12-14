@@ -315,7 +315,7 @@
     <field name="otra_causa_den_recl_ce_1x34y57" class="java.lang.String"/>
     <field name="comentarios_den_recl_c_1x34y58" class="java.lang.String"/>
     <field name="fecha_registro_pot_ben_1x34y59" class="java.util.Date"/>
-    <field name="id_funcionario_reg_pot_1x34y60" class="java.lang.Long"/>
+    <field name="id_usuario_reg_pot_ben_1x34y60" class="java.lang.Long"/>
     <field name="es_potencial_ben_inact_1x34y61" class="java.lang.Integer"/>
     <field name="fecha_ultima_visita_ce_1x34y62" class="java.util.Date"/>
     <field name="observaciones_ult_visi_1x34y63" class="java.lang.String"/>
