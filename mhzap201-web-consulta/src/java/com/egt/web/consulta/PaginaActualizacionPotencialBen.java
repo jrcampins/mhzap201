@@ -21,6 +21,7 @@ import com.egt.data.specific.xdp2.EtniaIndigenaCachedRowSetDataProvider2;
 import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FuncionarioCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FichaPersonaCachedRowSetDataProvider2;
+import com.egt.data.general.xdp3.UsuarioCachedRowSetDataProvider3;
 import com.egt.core.aplicacion.web.PaginaActualizacion;
 import com.sun.webui.jsf.component.Button;
 import com.sun.webui.jsf.component.DropDown;
@@ -134,7 +135,7 @@ public interface PaginaActualizacionPotencialBen extends PaginaActualizacion {
 
     TextField getTextFieldCampoFechaRegistroPotBen1();
 
-    TextField getCampoIdFuncionarioRegPotBen1();
+    TextField getCampoIdUsuarioRegPotBen1();
 
     DropDown getListaEsPotencialBenInactivo1();
 
@@ -159,6 +160,8 @@ public interface PaginaActualizacionPotencialBen extends PaginaActualizacion {
     FuncionarioCachedRowSetDataProvider2 getFuncionarioReferenceDataProvider();
 
     FichaPersonaCachedRowSetDataProvider2 getFichaPersonaReferenceDataProvider();
+
+    UsuarioCachedRowSetDataProvider3 getUsuarioReferenceDataProvider();
 
     Object getPotencialBenBusinessProcess();
 

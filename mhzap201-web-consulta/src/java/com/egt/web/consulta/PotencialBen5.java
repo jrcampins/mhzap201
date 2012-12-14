@@ -21,6 +21,7 @@ import com.egt.data.specific.xdp2.EtniaIndigenaCachedRowSetDataProvider2;
 import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FuncionarioCachedRowSetDataProvider2;
 import com.egt.data.specific.xdp2.FichaPersonaCachedRowSetDataProvider2;
+import com.egt.data.general.xdp3.UsuarioCachedRowSetDataProvider3;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.URX2;
 import com.egt.base.util.BundleWebui;
@@ -162,6 +163,7 @@ public class PotencialBen5 extends AbstractPageBean
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
         funcionarioReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.funcionarioReferenceRowSet}"));
         fichaPersonaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.fichaPersonaReferenceRowSet}"));
+        usuarioReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.usuarioReferenceRowSet}"));
     }
 
     private Form form1 = new Form();
@@ -4384,135 +4386,135 @@ public class PotencialBen5 extends AbstractPageBean
         this.converterFechaRegistroPotBen1 = converter;
     }
   
-    private TableColumn tableColumnIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.ColumnaTabla();
+    private TableColumn tableColumnIdUsuarioRegPotBen1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnIdFuncionarioRegPotBen1() {
-        return tableColumnIdFuncionarioRegPotBen1;
+    public TableColumn getTableColumnIdUsuarioRegPotBen1() {
+        return tableColumnIdUsuarioRegPotBen1;
     }
 
-    public void setTableColumnIdFuncionarioRegPotBen1(TableColumn component) {
-        this.tableColumnIdFuncionarioRegPotBen1 = component;
+    public void setTableColumnIdUsuarioRegPotBen1(TableColumn component) {
+        this.tableColumnIdUsuarioRegPotBen1 = component;
     }
 
-    private Label labelIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelIdUsuarioRegPotBen1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelIdFuncionarioRegPotBen1() {
-        return labelIdFuncionarioRegPotBen1;
+    public Label getLabelIdUsuarioRegPotBen1() {
+        return labelIdUsuarioRegPotBen1;
     }
 
-    public void setLabelIdFuncionarioRegPotBen1(Label l) {
-        this.labelIdFuncionarioRegPotBen1 = l;
+    public void setLabelIdUsuarioRegPotBen1(Label l) {
+        this.labelIdUsuarioRegPotBen1 = l;
     }
 
-    private TextField campoIdFuncionarioRegPotBen1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoIdUsuarioRegPotBen1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextField getCampoIdFuncionarioRegPotBen1() {
-        return campoIdFuncionarioRegPotBen1;
+    public TextField getCampoIdUsuarioRegPotBen1() {
+        return campoIdUsuarioRegPotBen1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1(TextField component) {
-        this.campoIdFuncionarioRegPotBen1 = component;
+    public void setCampoIdUsuarioRegPotBen1(TextField component) {
+        this.campoIdUsuarioRegPotBen1 = component;
     }
 
-    private TextField campoIdFuncionarioRegPotBen1x1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoIdUsuarioRegPotBen1x1 = new com.egt.core.jsf.component.CampoTexto();
 
-    public TextField getCampoIdFuncionarioRegPotBen1x1() {
-        return campoIdFuncionarioRegPotBen1x1;
+    public TextField getCampoIdUsuarioRegPotBen1x1() {
+        return campoIdUsuarioRegPotBen1x1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1x1(TextField component) {
-        this.campoIdFuncionarioRegPotBen1x1 = component;
+    public void setCampoIdUsuarioRegPotBen1x1(TextField component) {
+        this.campoIdUsuarioRegPotBen1x1 = component;
     }
 
-    private StaticText campoIdFuncionarioRegPotBen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoIdUsuarioRegPotBen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoIdFuncionarioRegPotBen1Texto1() {
-        return campoIdFuncionarioRegPotBen1Texto1;
+    public StaticText getCampoIdUsuarioRegPotBen1Texto1() {
+        return campoIdUsuarioRegPotBen1Texto1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1Texto1(StaticText component) {
-        this.campoIdFuncionarioRegPotBen1Texto1 = component;
+    public void setCampoIdUsuarioRegPotBen1Texto1(StaticText component) {
+        this.campoIdUsuarioRegPotBen1Texto1 = component;
     }
 
-    private StaticText campoIdFuncionarioRegPotBen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoIdUsuarioRegPotBen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoIdFuncionarioRegPotBen1x1Texto1() {
-        return campoIdFuncionarioRegPotBen1x1Texto1;
+    public StaticText getCampoIdUsuarioRegPotBen1x1Texto1() {
+        return campoIdUsuarioRegPotBen1x1Texto1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1x1Texto1(StaticText component) {
-        this.campoIdFuncionarioRegPotBen1x1Texto1 = component;
+    public void setCampoIdUsuarioRegPotBen1x1Texto1(StaticText component) {
+        this.campoIdUsuarioRegPotBen1x1Texto1 = component;
     }
 
-    private Button campoIdFuncionarioRegPotBen1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+    private Button campoIdUsuarioRegPotBen1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
 
-    public Button getCampoIdFuncionarioRegPotBen1Boton1() {
-        return campoIdFuncionarioRegPotBen1Boton1;
+    public Button getCampoIdUsuarioRegPotBen1Boton1() {
+        return campoIdUsuarioRegPotBen1Boton1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1Boton1(Button component) {
-        this.campoIdFuncionarioRegPotBen1Boton1 = component;
+    public void setCampoIdUsuarioRegPotBen1Boton1(Button component) {
+        this.campoIdUsuarioRegPotBen1Boton1 = component;
     }
 
-    private Button campoIdFuncionarioRegPotBen1x1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+    private Button campoIdUsuarioRegPotBen1x1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
 
-    public Button getCampoIdFuncionarioRegPotBen1x1Boton1() {
-        return campoIdFuncionarioRegPotBen1x1Boton1;
+    public Button getCampoIdUsuarioRegPotBen1x1Boton1() {
+        return campoIdUsuarioRegPotBen1x1Boton1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1x1Boton1(Button component) {
-        this.campoIdFuncionarioRegPotBen1x1Boton1 = component;
+    public void setCampoIdUsuarioRegPotBen1x1Boton1(Button component) {
+        this.campoIdUsuarioRegPotBen1x1Boton1 = component;
     }
 
-    private Button campoIdFuncionarioRegPotBen1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+    private Button campoIdUsuarioRegPotBen1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
 
-    public Button getCampoIdFuncionarioRegPotBen1Boton3() {
-        return campoIdFuncionarioRegPotBen1Boton3;
+    public Button getCampoIdUsuarioRegPotBen1Boton3() {
+        return campoIdUsuarioRegPotBen1Boton3;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1Boton3(Button component) {
-        this.campoIdFuncionarioRegPotBen1Boton3 = component;
+    public void setCampoIdUsuarioRegPotBen1Boton3(Button component) {
+        this.campoIdUsuarioRegPotBen1Boton3 = component;
     }
 
-    private Button campoIdFuncionarioRegPotBen1x1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+    private Button campoIdUsuarioRegPotBen1x1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
 
-    public Button getCampoIdFuncionarioRegPotBen1x1Boton3() {
-        return campoIdFuncionarioRegPotBen1x1Boton3;
+    public Button getCampoIdUsuarioRegPotBen1x1Boton3() {
+        return campoIdUsuarioRegPotBen1x1Boton3;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1x1Boton3(Button component) {
-        this.campoIdFuncionarioRegPotBen1x1Boton3 = component;
+    public void setCampoIdUsuarioRegPotBen1x1Boton3(Button component) {
+        this.campoIdUsuarioRegPotBen1x1Boton3 = component;
     }
 
-    private TableColumn tableColumnIdFuncionarioRegPotBen2 = new com.egt.core.jsf.component.ColumnaTabla();
+    private TableColumn tableColumnIdUsuarioRegPotBen2 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnIdFuncionarioRegPotBen2() {
-        return tableColumnIdFuncionarioRegPotBen2;
+    public TableColumn getTableColumnIdUsuarioRegPotBen2() {
+        return tableColumnIdUsuarioRegPotBen2;
     }
 
-    public void setTableColumnIdFuncionarioRegPotBen2(TableColumn component) {
-        this.tableColumnIdFuncionarioRegPotBen2 = component;
+    public void setTableColumnIdUsuarioRegPotBen2(TableColumn component) {
+        this.tableColumnIdUsuarioRegPotBen2 = component;
     }
 
-    private Label labelIdFuncionarioRegPotBen2 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelIdUsuarioRegPotBen2 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelIdFuncionarioRegPotBen2() {
-        return labelIdFuncionarioRegPotBen2;
+    public Label getLabelIdUsuarioRegPotBen2() {
+        return labelIdUsuarioRegPotBen2;
     }
 
-    public void setLabelIdFuncionarioRegPotBen2(Label l) {
-        this.labelIdFuncionarioRegPotBen2 = l;
+    public void setLabelIdUsuarioRegPotBen2(Label l) {
+        this.labelIdUsuarioRegPotBen2 = l;
     }
 
-    private ImageHyperlink campoIdFuncionarioRegPotBen1Hiper1 = new com.egt.core.jsf.component.HipervinculoVerDetalle();
+    private ImageHyperlink campoIdUsuarioRegPotBen1Hiper1 = new com.egt.core.jsf.component.HipervinculoVerDetalle();
 
-    public ImageHyperlink getCampoIdFuncionarioRegPotBen1Hiper1() {
-        return campoIdFuncionarioRegPotBen1Hiper1;
+    public ImageHyperlink getCampoIdUsuarioRegPotBen1Hiper1() {
+        return campoIdUsuarioRegPotBen1Hiper1;
     }
 
-    public void setCampoIdFuncionarioRegPotBen1Hiper1(ImageHyperlink component) {
-        this.campoIdFuncionarioRegPotBen1Hiper1 = component;
+    public void setCampoIdUsuarioRegPotBen1Hiper1(ImageHyperlink component) {
+        this.campoIdUsuarioRegPotBen1Hiper1 = component;
     }
 
     private TableColumn tableColumnEsPotencialBenInactivo1 = new com.egt.core.jsf.component.ColumnaTabla();
@@ -5209,6 +5211,17 @@ public class PotencialBen5 extends AbstractPageBean
         this.fichaPersonaReferenceDataProvider = crsdp;
     }
 
+    private UsuarioCachedRowSetDataProvider3 usuarioReferenceDataProvider = new UsuarioCachedRowSetDataProvider3();
+
+    @Override
+    public UsuarioCachedRowSetDataProvider3 getUsuarioReferenceDataProvider() {
+        return usuarioReferenceDataProvider;
+    }
+
+    public void setUsuarioReferenceDataProvider(UsuarioCachedRowSetDataProvider3 crsdp) {
+        this.usuarioReferenceDataProvider = crsdp;
+    }
+
     // </editor-fold>
 /**/
     public PotencialBen5() {
@@ -5255,6 +5268,7 @@ public class PotencialBen5 extends AbstractPageBean
         ubicacionReferenceDataProvider.close();
         funcionarioReferenceDataProvider.close();
         fichaPersonaReferenceDataProvider.close();
+        usuarioReferenceDataProvider.close();
     }
     // </editor-fold>
 
@@ -5701,8 +5715,8 @@ public class PotencialBen5 extends AbstractPageBean
         this.getAsistente().campoIdFichaPersona1_validate(context, component, value);
     }
 
-    public void campoIdFuncionarioRegPotBen1_validate(FacesContext context, UIComponent component, Object value) {
-        this.getAsistente().campoIdFuncionarioRegPotBen1_validate(context, component, value);
+    public void campoIdUsuarioRegPotBen1_validate(FacesContext context, UIComponent component, Object value) {
+        this.getAsistente().campoIdUsuarioRegPotBen1_validate(context, component, value);
     }
 
     public void campoIdFuncionarioUltVisitaCen1_validate(FacesContext context, UIComponent component, Object value) {
