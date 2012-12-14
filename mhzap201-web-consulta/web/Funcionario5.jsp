@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario5.tableColumnIdFuncionario1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncionario1" rendered="false"
                                                     sort="id_funcionario">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario5.tableColumnCodigoFuncionario1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoFuncionario1"
                                                     sort="codigo_funcionario">
                                                 <webuijsf:staticText
@@ -263,7 +263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario5.tableColumnNumeroCedula1}"
-                                                    headerText="numero cedula"
+                                                    headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
                                                 <webuijsf:staticText
@@ -289,7 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario5.tableColumnLetraCedula1}"
-                                                    headerText="letra cedula"
+                                                    headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
                                                 <webuijsf:staticText

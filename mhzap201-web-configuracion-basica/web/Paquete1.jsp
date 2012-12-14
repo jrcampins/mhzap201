@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Paquete1.tableColumnIdPaquete1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdPaquete1"
                                                     sort="id_paquete">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Paquete1.tableColumnCodigoPaquete1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoPaquete1"
                                                     sort="codigo_paquete">
                                                 <webuijsf:staticText

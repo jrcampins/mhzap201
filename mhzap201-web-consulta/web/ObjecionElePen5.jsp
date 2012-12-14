@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnIdObjecionElePen1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdObjecionElePen1" rendered="false"
                                                     sort="id_objecion_ele_pen">
                                                 <webuijsf:staticText
@@ -343,7 +343,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNumeroTipoObjElePen1}"
-                                                    headerText="tipo objeción elegibilidad pensión"
+                                                    headerText="tipo"
                                                     id="tableColumnNumeroTipoObjElePen1"
                                                     sort="codigo_tipo_obj_ele_pen_1x3y2">
                                                 <webuijsf:staticText
@@ -394,7 +394,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnFechaUltimaActualizacion1}"
-                                                    headerText="fecha ultima actualizacion"
+                                                    headerText="fecha ultima actualizaci&#243;n"
                                                     id="tableColumnFechaUltimaActualizacion1" rendered="false"
                                                     sort="fecha_ultima_actualizacion">
                                                 <webuijsf:staticText
@@ -420,7 +420,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNombreArchivoUltimaAct1}"
-                                                    headerText="nombre archivo ultima actualización"
+                                                    headerText="nombre archivo ultima actualizaci&#243;n"
                                                     id="tableColumnNombreArchivoUltimaAct1" rendered="false"
                                                     sort="nombre_archivo_ultima_act">
                                                 <webuijsf:staticText

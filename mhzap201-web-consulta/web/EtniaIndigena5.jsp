@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnIdEtniaIndigena1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdEtniaIndigena1" rendered="false"
                                                     sort="id_etnia_indigena">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnCodigoEtniaIndigena1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoEtniaIndigena1"
                                                     sort="codigo_etnia_indigena">
                                                 <webuijsf:staticText
@@ -263,7 +263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnDescripcionEtniaIndigena1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionEtniaIndigena1" rendered="false"
                                                     sort="descripcion_etnia_indigena">
                                                 <webuijsf:staticText

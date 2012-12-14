@@ -204,7 +204,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoPar1}"
                                                     id="labelIdClaseRecursoPar1"
                                                     for="campoIdClaseRecursoPar1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -330,7 +330,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelNumeroTipoComparacion1}"
                                                     id="labelNumeroTipoComparacion1"
                                                     for="listaNumeroTipoComparacion1"
-                                                    text="tipo comparacion"/>
+                                                    text="tipo comparaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -362,7 +362,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdFuncionReferencia1}"
                                                     id="labelIdFuncionReferencia1"
                                                     for="campoIdFuncionReferencia1"
-                                                    text="funcion referencia"/>
+                                                    text="funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -401,7 +401,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdFuncionReferencia2}"
                                                     id="labelIdFuncionReferencia2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcion referencia"/>
+                                                    text="nombre funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -456,7 +456,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdListaValor1}"
                                                     id="labelIdListaValor1"
                                                     for="campoIdListaValor1"
-                                                    text="id lista valor"/>
+                                                    text="identificaci&#243;n lista valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -488,7 +488,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseObjetoValor1}"
                                                     id="labelIdClaseObjetoValor1"
                                                     for="campoIdClaseObjetoValor1"
-                                                    text="id clase objeto valor"/>
+                                                    text="identificaci&#243;n clase objeto valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -648,7 +648,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelValorOmision1}"
                                                     id="labelValorOmision1"
                                                     for="campoValorOmision1"
-                                                    text="valor omision"/>
+                                                    text="valor omisi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -929,7 +929,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
-                                                    text="orden presentacion"/>
+                                                    text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1084,7 +1084,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdFuncionReferenciaAlt1}"
                                                     id="labelIdFuncionReferenciaAlt1"
                                                     for="campoIdFuncionReferenciaAlt1"
-                                                    text="id funcion referencia alt"/>
+                                                    text="identificaci&#243;n funci&#243;n referencia alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1116,7 +1116,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdListaValorAlternativa1}"
                                                     id="labelIdListaValorAlternativa1"
                                                     for="campoIdListaValorAlternativa1"
-                                                    text="id lista valor alternativa"/>
+                                                    text="identificaci&#243;n lista valor alternativa"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1148,7 +1148,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseObjetoValorAlt1}"
                                                     id="labelIdClaseObjetoValorAlt1"
                                                     for="campoIdClaseObjetoValorAlt1"
-                                                    text="id clase objeto valor alt"/>
+                                                    text="identificaci&#243;n clase objeto valor alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1180,7 +1180,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoValorAlt1}"
                                                     id="labelIdClaseRecursoValorAlt1"
                                                     for="campoIdClaseRecursoValorAlt1"
-                                                    text="id clase recurso valor alt"/>
+                                                    text="identificaci&#243;n clase recurso valor alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1212,7 +1212,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelOrdenPaginaSeleccion1}"
                                                     id="labelOrdenPaginaSeleccion1"
                                                     for="campoOrdenPaginaSeleccion1"
-                                                    text="orden pagina seleccion"/>
+                                                    text="orden p&#225;gina selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

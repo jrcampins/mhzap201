@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnIdFichaHogar1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdFichaHogar1" rendered="false"
                                                     sort="id_ficha_hogar">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnCodigoFichaHogar1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoFichaHogar1"
                                                     sort="codigo_ficha_hogar">
                                                 <webuijsf:staticText
@@ -653,7 +653,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroFormulario1}"
-                                                    headerText="numero formulario"
+                                                    headerText="n&#250;mero formulario"
                                                     id="tableColumnNumeroFormulario1"
                                                     sort="numero_formulario">
                                                 <webuijsf:staticText
@@ -679,7 +679,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroVivienda1}"
-                                                    headerText="numero vivienda"
+                                                    headerText="n&#250;mero vivienda"
                                                     id="tableColumnNumeroVivienda1"
                                                     sort="numero_vivienda">
                                                 <webuijsf:staticText
@@ -705,7 +705,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroHogar1}"
-                                                    headerText="numero hogar"
+                                                    headerText="n&#250;mero hogar"
                                                     id="tableColumnNumeroHogar1"
                                                     sort="numero_hogar">
                                                 <webuijsf:staticText
@@ -979,7 +979,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnDireccion1}"
-                                                    headerText="direccion"
+                                                    headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
                                                 <webuijsf:staticText
@@ -1161,7 +1161,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroTipoOcupacionViv1}"
-                                                    headerText="tipo ocupacion vivienda"
+                                                    headerText="tipo ocupaci&#243;n vivienda"
                                                     id="tableColumnNumeroTipoOcupacionViv1" rendered="false"
                                                     sort="codigo_tipo_ocupacion_v_1x13y2">
                                                 <webuijsf:staticText
@@ -1187,7 +1187,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnOtroTipoOcupacionViv1}"
-                                                    headerText="otro tipo ocupacion vivienda"
+                                                    headerText="otro tipo ocupaci&#243;n vivienda"
                                                     id="tableColumnOtroTipoOcupacionViv1" rendered="false"
                                                     sort="otro_tipo_ocupacion_viv">
                                                 <webuijsf:staticText
@@ -1318,7 +1318,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroTipoPiezaBano1}"
-                                                    headerText="tipo pieza baño"
+                                                    headerText="tipo pieza ba&#241;o"
                                                     id="tableColumnNumeroTipoPiezaBano1" rendered="false"
                                                     sort="codigo_tipo_pieza_bano_1x16y2">
                                                 <webuijsf:staticText
@@ -1422,7 +1422,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroSionoCorrienteElec1}"
-                                                    headerText="corriente electrico"
+                                                    headerText="corriente el&#233;ctrica"
                                                     id="tableColumnNumeroSionoCorrienteElec1" rendered="false"
                                                     sort="codigo_siono_1x20y2">
                                                 <webuijsf:staticText
@@ -1474,7 +1474,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroSionoTelefonoCelular1}"
-                                                    headerText="telefono celular"
+                                                    headerText="tel&#233;fono celular"
                                                     id="tableColumnNumeroSionoTelefonoCelular1" rendered="false"
                                                     sort="codigo_siono_1x22y2">
                                                 <webuijsf:staticText
@@ -1500,7 +1500,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroTelefonoCelular1}"
-                                                    headerText="numero telefono celular"
+                                                    headerText="n&#250;mero tel&#233;fono celular"
                                                     id="tableColumnNumeroTelefonoCelular1" rendered="false"
                                                     sort="numero_telefono_celular">
                                                 <webuijsf:staticText
@@ -1527,7 +1527,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroSionoTlfLineaBaja1}"
-                                                    headerText="teléfono linea baja"
+                                                    headerText="tel&#233;fono linea baja"
                                                     id="tableColumnNumeroSionoTlfLineaBaja1" rendered="false"
                                                     sort="codigo_siono_1x23y2">
                                                 <webuijsf:staticText
@@ -1553,7 +1553,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroTelefonoLineaBaja1}"
-                                                    headerText="numero telefono linea baja"
+                                                    headerText="n&#250;mero tel&#233;fono linea baja"
                                                     id="tableColumnNumeroTelefonoLineaBaja1" rendered="false"
                                                     sort="numero_telefono_linea_baja">
                                                 <webuijsf:staticText
@@ -1658,7 +1658,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroSionoDispAireAcon1}"
-                                                    headerText="disponibilidad aire acon"
+                                                    headerText="disponibilidad aire acondicionado"
                                                     id="tableColumnNumeroSionoDispAireAcon1" rendered="false"
                                                     sort="codigo_siono_1x27y2">
                                                 <webuijsf:staticText
@@ -1710,7 +1710,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroSionoDispCamion1}"
-                                                    headerText="disponibilidad camion"
+                                                    headerText="disponibilidad cami&#243;n"
                                                     id="tableColumnNumeroSionoDispCamion1" rendered="false"
                                                     sort="codigo_siono_1x29y2">
                                                 <webuijsf:staticText
@@ -1789,7 +1789,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroCedulaJefeHogar1}"
-                                                    headerText="numero cedula jefe hogar"
+                                                    headerText="n&#250;mero c&#233;dula jefe hogar"
                                                     id="tableColumnNumeroCedulaJefeHogar1" rendered="false"
                                                     sort="numero_cedula_jefe_hogar">
                                                 <webuijsf:staticText
@@ -1815,7 +1815,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnLetraCedulaJefeHogar1}"
-                                                    headerText="letra cedula jefe hogar"
+                                                    headerText="letra c&#233;dula jefe hogar"
                                                     id="tableColumnLetraCedulaJefeHogar1" rendered="false"
                                                     sort="letra_cedula_jefe_hogar">
                                                 <webuijsf:staticText
@@ -1842,7 +1842,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroOrdenIdenJefeHogar1}"
-                                                    headerText="numero orden identificación jefe hogar"
+                                                    headerText="n&#250;mero orden identificaci&#243;n jefe hogar"
                                                     id="tableColumnNumeroOrdenIdenJefeHogar1" rendered="false"
                                                     sort="numero_orden_iden_jefe_hogar">
                                                 <webuijsf:staticText
@@ -1895,7 +1895,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroCedulaRespondente1}"
-                                                    headerText="numero cedula respondente"
+                                                    headerText="n&#250;mero c&#233;dula respondente"
                                                     id="tableColumnNumeroCedulaRespondente1" rendered="false"
                                                     sort="numero_cedula_respondente">
                                                 <webuijsf:staticText
@@ -1921,7 +1921,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnLetraCedulaRespondente1}"
-                                                    headerText="letra cedula respondente"
+                                                    headerText="letra c&#233;dula respondente"
                                                     id="tableColumnLetraCedulaRespondente1" rendered="false"
                                                     sort="letra_cedula_respondente">
                                                 <webuijsf:staticText
@@ -1948,7 +1948,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar1.tableColumnNumeroOrdenIdenRespondente1}"
-                                                    headerText="numero orden identificación respondente"
+                                                    headerText="n&#250;mero orden identificaci&#243;n respondente"
                                                     id="tableColumnNumeroOrdenIdenRespondente1" rendered="false"
                                                     sort="numero_orden_iden_respondente">
                                                 <webuijsf:staticText

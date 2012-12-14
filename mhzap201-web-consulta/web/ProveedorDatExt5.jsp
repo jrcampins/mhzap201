@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ProveedorDatExt5.tableColumnIdProveedorDatExt1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdProveedorDatExt1" rendered="false"
                                                     sort="id_proveedor_dat_ext">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ProveedorDatExt5.tableColumnCodigoProveedorDatExt1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext">
                                                 <webuijsf:staticText

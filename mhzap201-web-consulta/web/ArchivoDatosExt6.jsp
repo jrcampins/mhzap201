@@ -208,7 +208,7 @@
                                                     binding="#{ArchivoDatosExt6.labelIdArchivoDatosExt1}"
                                                     id="labelIdArchivoDatosExt1"
                                                     for="campoIdArchivoDatosExt1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -240,7 +240,7 @@
                                                     binding="#{ArchivoDatosExt6.labelCodigoArchivoDatosExt1}"
                                                     id="labelCodigoArchivoDatosExt1"
                                                     for="campoCodigoArchivoDatosExt1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -531,7 +531,7 @@
                                                     binding="#{ArchivoDatosExt6.labelFechaHoraUltimaImportacion1}"
                                                     id="labelFechaHoraUltimaImportacion1"
                                                     for="campoFechaHoraUltimaImportacion1"
-                                                    text="fecha hora ultima importacion"/>
+                                                    text="fecha hora ultima importaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -563,7 +563,7 @@
                                                     binding="#{ArchivoDatosExt6.labelIdUsuarioUltimaImportacion1}"
                                                     id="labelIdUsuarioUltimaImportacion1"
                                                     for="campoIdUsuarioUltimaImportacion1"
-                                                    text="usuario ultima importacion"/>
+                                                    text="usuario ultima importaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -602,7 +602,7 @@
                                                     binding="#{ArchivoDatosExt6.labelIdUsuarioUltimaImportacion2}"
                                                     id="labelIdUsuarioUltimaImportacion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre usuario ultima importacion"/>
+                                                    text="nombre usuario ultima importaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

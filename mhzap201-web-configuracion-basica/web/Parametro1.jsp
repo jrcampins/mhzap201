@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnIdParametro1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdParametro1"
                                                     sort="id_parametro">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnCodigoParametro1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoParametro1"
                                                     sort="codigo_parametro">
                                                 <webuijsf:staticText
@@ -286,7 +286,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnDescripcionParametro1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionParametro1" rendered="false"
                                                     sort="descripcion_parametro">
                                                 <webuijsf:staticText

@@ -204,7 +204,7 @@
                                                     binding="#{Aplicacion2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Aplicacion2.labelCodigoAplicacion1}"
                                                     id="labelCodigoAplicacion1"
                                                     for="campoCodigoAplicacion1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Aplicacion2.labelDescripcionAplicacion1}"
                                                     id="labelDescripcionAplicacion1"
                                                     for="campoDescripcionAplicacion1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -432,7 +432,7 @@
                                                     binding="#{Aplicacion2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
-                                                    text="publica"/>
+                                                    text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

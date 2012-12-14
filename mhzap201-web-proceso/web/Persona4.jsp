@@ -260,7 +260,7 @@
                                                     binding="#{Persona4.labelComentariosAnulCerVida1}"
                                                     id="labelComentariosAnulCerVida1"
                                                     for="campoComentariosAnulCerVida1"
-                                                    text="comentarios anulación certificado vida"/>
+                                                    text="comentarios anulaci&#243;n certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -291,7 +291,7 @@
                                                     binding="#{Persona4.labelCertificadoDefuncion1}"
                                                     id="labelCertificadoDefuncion1"
                                                     for="campoCertificadoDefuncion1"
-                                                    text="certificado defuncion"/>
+                                                    text="certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -322,7 +322,7 @@
                                                     binding="#{Persona4.labelFechaCertificadoDefuncion1}"
                                                     id="labelFechaCertificadoDefuncion1"
                                                     for="campoFechaCertificadoDefuncion1"
-                                                    text="fecha certificado defuncion"/>
+                                                    text="fecha certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -353,7 +353,7 @@
                                                     binding="#{Persona4.labelComentariosAnulCerDefuncion1}"
                                                     id="labelComentariosAnulCerDefuncion1"
                                                     for="campoComentariosAnulCerDefuncion1"
-                                                    text="comentarios anulación certificado defuncion"/>
+                                                    text="comentarios anulaci&#243;n certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -384,7 +384,7 @@
                                                     binding="#{Persona4.labelComentariosAprobacionPension1}"
                                                     id="labelComentariosAprobacionPension1"
                                                     for="campoComentariosAprobacionPension1"
-                                                    text="comentarios aprobacion pension"/>
+                                                    text="comentarios aprobaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -415,7 +415,7 @@
                                                     binding="#{Persona4.labelNumeroCausaDenPension1}"
                                                     id="labelNumeroCausaDenPension1"
                                                     for="listaNumeroCausaDenPension1"
-                                                    text="causa denegación pension"/>
+                                                    text="causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -445,7 +445,7 @@
                                                     binding="#{Persona4.labelOtraCausaDenPension1}"
                                                     id="labelOtraCausaDenPension1"
                                                     for="campoOtraCausaDenPension1"
-                                                    text="otra causa denegación pension"/>
+                                                    text="otra causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -475,7 +475,7 @@
                                                     binding="#{Persona4.labelNumeroResolucionDenPen1}"
                                                     id="labelNumeroResolucionDenPen1"
                                                     for="campoNumeroResolucionDenPen1"
-                                                    text="numero resolucion denegación pensión"/>
+                                                    text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -505,7 +505,7 @@
                                                     binding="#{Persona4.labelFechaResolucionDenPen1}"
                                                     id="labelFechaResolucionDenPen1"
                                                     for="campoFechaResolucionDenPen1"
-                                                    text="fecha resolucion denegación pensión"/>
+                                                    text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -535,7 +535,7 @@
                                                     binding="#{Persona4.labelComentariosDenegacionPension1}"
                                                     id="labelComentariosDenegacionPension1"
                                                     for="campoComentariosDenegacionPension1"
-                                                    text="comentarios denegacion pension"/>
+                                                    text="comentarios denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -565,7 +565,7 @@
                                                     binding="#{Persona4.labelNumeroCausaRevPension1}"
                                                     id="labelNumeroCausaRevPension1"
                                                     for="listaNumeroCausaRevPension1"
-                                                    text="causa revocación pension"/>
+                                                    text="causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -595,7 +595,7 @@
                                                     binding="#{Persona4.labelOtraCausaRevPension1}"
                                                     id="labelOtraCausaRevPension1"
                                                     for="campoOtraCausaRevPension1"
-                                                    text="otra causa revocación pension"/>
+                                                    text="otra causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -625,7 +625,7 @@
                                                     binding="#{Persona4.labelComentariosRevocacionPension1}"
                                                     id="labelComentariosRevocacionPension1"
                                                     for="campoComentariosRevocacionPension1"
-                                                    text="comentarios revocacion pension"/>
+                                                    text="comentarios revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -655,7 +655,7 @@
                                                     binding="#{Persona4.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
-                                                    text="numero resolucion otor pensión"/>
+                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -685,7 +685,7 @@
                                                     binding="#{Persona4.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resolucion otor pensión"/>
+                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -715,7 +715,7 @@
                                                     binding="#{Persona4.labelComentariosOtorgamientoPen1}"
                                                     id="labelComentariosOtorgamientoPen1"
                                                     for="campoComentariosOtorgamientoPen1"
-                                                    text="comentarios otorgamiento pensión"/>
+                                                    text="comentarios otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -745,7 +745,7 @@
                                                     binding="#{Persona4.labelEsPersonaConCopiaCedula1}"
                                                     id="labelEsPersonaConCopiaCedula1"
                                                     for="listaEsPersonaConCopiaCedula1"
-                                                    text="con copia cedula"/>
+                                                    text="con copia c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -776,7 +776,7 @@
                                                     binding="#{Persona4.labelEsPersonaConDeclaracionJur1}"
                                                     id="labelEsPersonaConDeclaracionJur1"
                                                     for="listaEsPersonaConDeclaracionJur1"
-                                                    text="con declaracion jurada"/>
+                                                    text="con declaraci&#243;n jurada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -807,7 +807,7 @@
                                                     binding="#{Persona4.labelComentariosSolicitudRecoPen1}"
                                                     id="labelComentariosSolicitudRecoPen1"
                                                     for="campoComentariosSolicitudRecoPen1"
-                                                    text="comentarios solicitud reconsideración pensión"/>
+                                                    text="comentarios solicitud reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -838,7 +838,7 @@
                                                     binding="#{Persona4.labelComentariosAprRecoPen1}"
                                                     id="labelComentariosAprRecoPen1"
                                                     for="campoComentariosAprRecoPen1"
-                                                    text="comentarios aprobación reconsideración pensión"/>
+                                                    text="comentarios aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -869,7 +869,7 @@
                                                     binding="#{Persona4.labelNumeroCausaDenRecoPen1}"
                                                     id="labelNumeroCausaDenRecoPen1"
                                                     for="listaNumeroCausaDenRecoPen1"
-                                                    text="causa denegación reconsideración pensión"/>
+                                                    text="causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -900,7 +900,7 @@
                                                     binding="#{Persona4.labelOtraCausaDenRecoPen1}"
                                                     id="labelOtraCausaDenRecoPen1"
                                                     for="campoOtraCausaDenRecoPen1"
-                                                    text="otra causa denegación reconsideración pensión"/>
+                                                    text="otra causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -930,7 +930,7 @@
                                                     binding="#{Persona4.labelComentariosDenRecoPen1}"
                                                     id="labelComentariosDenRecoPen1"
                                                     for="campoComentariosDenRecoPen1"
-                                                    text="comentarios denegación reconsideración pensión"/>
+                                                    text="comentarios denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -960,7 +960,7 @@
                                                     binding="#{Persona4.labelComentariosRegistroDenuPen1}"
                                                     id="labelComentariosRegistroDenuPen1"
                                                     for="campoComentariosRegistroDenuPen1"
-                                                    text="comentarios registro denuncia pensión"/>
+                                                    text="comentarios registro denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -991,7 +991,7 @@
                                                     binding="#{Persona4.labelComentariosConfDenuPen1}"
                                                     id="labelComentariosConfDenuPen1"
                                                     for="campoComentariosConfDenuPen1"
-                                                    text="comentarios conf denuncia pensión"/>
+                                                    text="comentarios conf denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1021,7 +1021,7 @@
                                                     binding="#{Persona4.labelComentariosDesDenuPen1}"
                                                     id="labelComentariosDesDenuPen1"
                                                     for="campoComentariosDesDenuPen1"
-                                                    text="comentarios desmentido denuncia pensión"/>
+                                                    text="comentarios desmentido denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1052,7 +1052,7 @@
                                                     binding="#{Persona4.labelFechaUltimoCobroPension1}"
                                                     id="labelFechaUltimoCobroPension1"
                                                     for="campoFechaUltimoCobroPension1"
-                                                    text="fecha ultimo cobro pension"/>
+                                                    text="fecha ultimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1083,7 +1083,7 @@
                                                     binding="#{Persona4.labelNotasAnulFecUltCobPen1}"
                                                     id="labelNotasAnulFecUltCobPen1"
                                                     for="campoNotasAnulFecUltCobPen1"
-                                                    text="notas anulación fecha última cob pensión"/>
+                                                    text="notas anulaci&#243;n fecha &#250;ltima cob pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1291,7 +1291,7 @@
                                                     binding="#{Persona4.labelFechaSolicitudPensionDesde1}"
                                                     id="labelFechaSolicitudPensionDesde1"
                                                     for="campoFechaSolicitudPensionDesde1"
-                                                    text="fecha solicitud pension desde"/>
+                                                    text="fecha solicitud pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1321,7 +1321,7 @@
                                                     binding="#{Persona4.labelFechaSolicitudPensionHasta1}"
                                                     id="labelFechaSolicitudPensionHasta1"
                                                     for="campoFechaSolicitudPensionHasta1"
-                                                    text="fecha solicitud pension hasta"/>
+                                                    text="fecha solicitud pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1351,7 +1351,7 @@
                                                     binding="#{Persona4.labelFechaAprobacionPensionDesde1}"
                                                     id="labelFechaAprobacionPensionDesde1"
                                                     for="campoFechaAprobacionPensionDesde1"
-                                                    text="fecha aprobacion pension desde"/>
+                                                    text="fecha aprobaci&#243;n pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1381,7 +1381,7 @@
                                                     binding="#{Persona4.labelFechaAprobacionPensionHasta1}"
                                                     id="labelFechaAprobacionPensionHasta1"
                                                     for="campoFechaAprobacionPensionHasta1"
-                                                    text="fecha aprobacion pension hasta"/>
+                                                    text="fecha aprobaci&#243;n pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1411,7 +1411,7 @@
                                                     binding="#{Persona4.labelFechaDenegacionPensionDesde1}"
                                                     id="labelFechaDenegacionPensionDesde1"
                                                     for="campoFechaDenegacionPensionDesde1"
-                                                    text="fecha denegacion pension desde"/>
+                                                    text="fecha denegaci&#243;n pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1441,7 +1441,7 @@
                                                     binding="#{Persona4.labelFechaDenegacionPensionHasta1}"
                                                     id="labelFechaDenegacionPensionHasta1"
                                                     for="campoFechaDenegacionPensionHasta1"
-                                                    text="fecha denegacion pension hasta"/>
+                                                    text="fecha denegaci&#243;n pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1471,7 +1471,7 @@
                                                     binding="#{Persona4.labelFechaRevocacionPensionDesde1}"
                                                     id="labelFechaRevocacionPensionDesde1"
                                                     for="campoFechaRevocacionPensionDesde1"
-                                                    text="fecha revocacion pension desde"/>
+                                                    text="fecha revocaci&#243;n pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1501,7 +1501,7 @@
                                                     binding="#{Persona4.labelFechaRevocacionPensionHasta1}"
                                                     id="labelFechaRevocacionPensionHasta1"
                                                     for="campoFechaRevocacionPensionHasta1"
-                                                    text="fecha revocacion pension hasta"/>
+                                                    text="fecha revocaci&#243;n pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1531,7 +1531,7 @@
                                                     binding="#{Persona4.labelFechaOtorgamientoPenDesde1}"
                                                     id="labelFechaOtorgamientoPenDesde1"
                                                     for="campoFechaOtorgamientoPenDesde1"
-                                                    text="fecha otorgamiento pensión desde"/>
+                                                    text="fecha otorgamiento pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1561,7 +1561,7 @@
                                                     binding="#{Persona4.labelFechaOtorgamientoPenHasta1}"
                                                     id="labelFechaOtorgamientoPenHasta1"
                                                     for="campoFechaOtorgamientoPenHasta1"
-                                                    text="fecha otorgamiento pensión hasta"/>
+                                                    text="fecha otorgamiento pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1591,7 +1591,7 @@
                                                     binding="#{Persona4.labelFechaHoraUltActJupeDesde1}"
                                                     id="labelFechaHoraUltActJupeDesde1"
                                                     for="campoFechaHoraUltActJupeDesde1"
-                                                    text="fecha hora última actualización jupe desde"/>
+                                                    text="fecha hora &#250;ltima actualizaci&#243;n jupe desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1620,7 +1620,7 @@
                                                     binding="#{Persona4.labelFechaHoraUltActJupeHasta1}"
                                                     id="labelFechaHoraUltActJupeHasta1"
                                                     for="campoFechaHoraUltActJupeHasta1"
-                                                    text="fecha hora última actualización jupe hasta"/>
+                                                    text="fecha hora &#250;ltima actualizaci&#243;n jupe hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

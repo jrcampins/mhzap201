@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdArchivoDatosExt1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdArchivoDatosExt1" rendered="false"
                                                     sort="id_archivo_datos_ext">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnCodigoArchivoDatosExt1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoArchivoDatosExt1"
                                                     sort="codigo_archivo_datos_ext">
                                                 <webuijsf:staticText
@@ -488,7 +488,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnFechaHoraUltimaImportacion1}"
-                                                    headerText="fecha hora ultima importacion"
+                                                    headerText="fecha hora ultima importaci&#243;n"
                                                     id="tableColumnFechaHoraUltimaImportacion1" rendered="false"
                                                     sort="fecha_hora_ultima_importacion">
                                                 <webuijsf:staticText
@@ -514,7 +514,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdUsuarioUltimaImportacion1}"
-                                                    headerText="usuario ultima importacion"
+                                                    headerText="usuario ultima importaci&#243;n"
                                                     id="tableColumnIdUsuarioUltimaImportacion1" rendered="false"
                                                     sort="codigo_usuario_1x4y3">
                                                 <webuijsf:staticText
@@ -556,7 +556,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ArchivoDatosExt5.tableColumnIdUsuarioUltimaImportacion2}"
-                                                    headerText="nombre usuario ultima importacion"
+                                                    headerText="nombre usuario ultima importaci&#243;n"
                                                     id="tableColumnIdUsuarioUltimaImportacion2" rendered="false"
                                                     sort="nombre_usuario_1x4y4"
                                                     styleClass="pdq-estilo-id-2">

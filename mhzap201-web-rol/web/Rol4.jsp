@@ -198,7 +198,7 @@
                                                     binding="#{Rol4.labelCodigoRol1}"
                                                     id="labelCodigoRol1"
                                                     for="campoCodigoRol1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

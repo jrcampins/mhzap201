@@ -204,7 +204,7 @@
                                                     binding="#{OpcionMenu2.labelIdOpcionMenu1}"
                                                     id="labelIdOpcionMenu1"
                                                     for="campoIdOpcionMenu1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{OpcionMenu2.labelCodigoOpcionMenu1}"
                                                     id="labelCodigoOpcionMenu1"
                                                     for="campoCodigoOpcionMenu1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{OpcionMenu2.labelDescripcionOpcionMenu1}"
                                                     id="labelDescripcionOpcionMenu1"
                                                     for="campoDescripcionOpcionMenu1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -366,7 +366,7 @@
                                                     binding="#{OpcionMenu2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
-                                                    text="aplicacion"/>
+                                                    text="aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -405,7 +405,7 @@
                                                     binding="#{OpcionMenu2.labelIdAplicacion2}"
                                                     id="labelIdAplicacion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre aplicacion"/>
+                                                    text="nombre aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -428,7 +428,7 @@
                                                     binding="#{OpcionMenu2.labelIdPagina1}"
                                                     id="labelIdPagina1"
                                                     for="campoIdPagina1"
-                                                    text="pagina"/>
+                                                    text="p&#225;gina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -467,7 +467,7 @@
                                                     binding="#{OpcionMenu2.labelIdPagina2}"
                                                     id="labelIdPagina2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre pagina"/>
+                                                    text="nombre p&#225;gina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -490,7 +490,7 @@
                                                     binding="#{OpcionMenu2.labelIdOpcionMenuSuperior1}"
                                                     id="labelIdOpcionMenuSuperior1"
                                                     for="campoIdOpcionMenuSuperior1"
-                                                    text="opcion menu superior"/>
+                                                    text="opci&#243;n men&#250; superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -529,7 +529,7 @@
                                                     binding="#{OpcionMenu2.labelIdOpcionMenuSuperior2}"
                                                     id="labelIdOpcionMenuSuperior2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre opcion menu superior"/>
+                                                    text="nombre opci&#243;n men&#250; superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdClaseRecurso1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdClaseRecurso1"
                                                     sort="id_clase_recurso">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnCodigoClaseRecurso1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoClaseRecurso1"
                                                     sort="codigo_clase_recurso">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnDescripcionClaseRecurso1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionClaseRecurso1" rendered="false"
                                                     sort="descripcion_clase_recurso">
                                                 <webuijsf:staticText
@@ -412,7 +412,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdFuncionSeleccion1}"
-                                                    headerText="funcion seleccion"
+                                                    headerText="funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion1" rendered="false"
                                                     sort="codigo_funcion_1x3y3">
                                                 <webuijsf:staticText
@@ -454,7 +454,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ClaseRecurso1.tableColumnIdFuncionSeleccion2}"
-                                                    headerText="nombre funcion seleccion"
+                                                    headerText="nombre funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion2" rendered="false"
                                                     sort="nombre_funcion_1x3y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -477,7 +477,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaSeleccion1}"
-                                                    headerText="pagina seleccion"
+                                                    headerText="p&#225;gina selecci&#243;n"
                                                     id="tableColumnIdPaginaSeleccion1" rendered="false"
                                                     sort="codigo_pagina_1x4y3">
                                                 <webuijsf:staticText
@@ -519,7 +519,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaSeleccion2}"
-                                                    headerText="nombre pagina seleccion"
+                                                    headerText="nombre p&#225;gina selecci&#243;n"
                                                     id="tableColumnIdPaginaSeleccion2" rendered="false"
                                                     sort="nombre_pagina_1x4y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -542,7 +542,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaDetalle1}"
-                                                    headerText="pagina detalle"
+                                                    headerText="p&#225;gina detalle"
                                                     id="tableColumnIdPaginaDetalle1" rendered="false"
                                                     sort="codigo_pagina_1x5y3">
                                                 <webuijsf:staticText
@@ -584,7 +584,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaDetalle2}"
-                                                    headerText="nombre pagina detalle"
+                                                    headerText="nombre p&#225;gina detalle"
                                                     id="tableColumnIdPaginaDetalle2" rendered="false"
                                                     sort="nombre_pagina_1x5y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -802,7 +802,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdGrupoAplicacion1}"
-                                                    headerText="grupo aplicacion"
+                                                    headerText="grupo aplicaci&#243;n"
                                                     id="tableColumnIdGrupoAplicacion1" rendered="false"
                                                     sort="codigo_grupo_aplicacion_1x9y3">
                                                 <webuijsf:staticText
@@ -844,7 +844,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ClaseRecurso1.tableColumnIdGrupoAplicacion2}"
-                                                    headerText="nombre grupo aplicacion"
+                                                    headerText="nombre grupo aplicaci&#243;n"
                                                     id="tableColumnIdGrupoAplicacion2" rendered="false"
                                                     sort="nombre_grupo_aplicacion_1x9y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -867,7 +867,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdAplicacionWeb1}"
-                                                    headerText="id aplicacion web"
+                                                    headerText="identificaci&#243;n aplicaci&#243;n web"
                                                     id="tableColumnIdAplicacionWeb1" rendered="false"
                                                     sort="id_aplicacion_web">
                                                 <webuijsf:staticText
@@ -945,7 +945,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnOrdenPresentacion1}"
-                                                    headerText="orden presentacion"
+                                                    headerText="orden presentaci&#243;n"
                                                     id="tableColumnOrdenPresentacion1" rendered="false"
                                                     sort="orden_presentacion">
                                                 <webuijsf:staticText
@@ -1098,7 +1098,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsEnumeradorConNumero1}"
-                                                    headerText="enumerador con numero"
+                                                    headerText="enumerador con n&#250;mero"
                                                     id="tableColumnEsEnumeradorConNumero1" rendered="false"
                                                     sort="es_enumerador_con_numero">
                                                 <webuijsf:staticText

@@ -208,7 +208,7 @@
                                                     binding="#{VisitaCenso6.labelIdVisitaCenso1}"
                                                     id="labelIdVisitaCenso1"
                                                     for="campoIdVisitaCenso1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

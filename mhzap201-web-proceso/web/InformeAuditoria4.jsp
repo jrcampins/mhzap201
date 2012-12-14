@@ -138,7 +138,7 @@
                                                     binding="#{InformeAuditoria4.labelFechaTransaccionDesde1}"
                                                     id="labelFechaTransaccionDesde1"
                                                     for="campoFechaTransaccionDesde1"
-                                                    text="fecha transaccion desde"/>
+                                                    text="fecha transacci&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -168,7 +168,7 @@
                                                     binding="#{InformeAuditoria4.labelFechaTransaccionHasta1}"
                                                     id="labelFechaTransaccionHasta1"
                                                     for="campoFechaTransaccionHasta1"
-                                                    text="fecha transaccion hasta"/>
+                                                    text="fecha transacci&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

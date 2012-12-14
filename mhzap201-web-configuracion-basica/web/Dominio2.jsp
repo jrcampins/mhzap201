@@ -204,7 +204,7 @@
                                                     binding="#{Dominio2.labelIdDominio1}"
                                                     id="labelIdDominio1"
                                                     for="campoIdDominio1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Dominio2.labelCodigoDominio1}"
                                                     id="labelCodigoDominio1"
                                                     for="campoCodigoDominio1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Dominio2.labelDescripcionDominio1}"
                                                     id="labelDescripcionDominio1"
                                                     for="campoDescripcionDominio1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -461,7 +461,7 @@
                                                     binding="#{Dominio2.labelIdFuncionSeleccion1}"
                                                     id="labelIdFuncionSeleccion1"
                                                     for="campoIdFuncionSeleccion1"
-                                                    text="funcion seleccion"/>
+                                                    text="funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -500,7 +500,7 @@
                                                     binding="#{Dominio2.labelIdFuncionSeleccion2}"
                                                     id="labelIdFuncionSeleccion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcion seleccion"/>
+                                                    text="nombre funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

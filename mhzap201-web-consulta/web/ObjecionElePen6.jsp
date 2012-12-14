@@ -208,7 +208,7 @@
                                                     binding="#{ObjecionElePen6.labelIdObjecionElePen1}"
                                                     id="labelIdObjecionElePen1"
                                                     for="campoIdObjecionElePen1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -364,7 +364,7 @@
                                                     binding="#{ObjecionElePen6.labelNumeroTipoObjElePen1}"
                                                     id="labelNumeroTipoObjElePen1"
                                                     for="listaNumeroTipoObjElePen1"
-                                                    text="tipo objeción elegibilidad pensión"/>
+                                                    text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -427,7 +427,7 @@
                                                     binding="#{ObjecionElePen6.labelFechaUltimaActualizacion1}"
                                                     id="labelFechaUltimaActualizacion1"
                                                     for="campoFechaUltimaActualizacion1"
-                                                    text="fecha ultima actualizacion"/>
+                                                    text="fecha ultima actualizaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -460,7 +460,7 @@
                                                     binding="#{ObjecionElePen6.labelNombreArchivoUltimaAct1}"
                                                     id="labelNombreArchivoUltimaAct1"
                                                     for="campoNombreArchivoUltimaAct1"
-                                                    text="nombre archivo ultima actualización"/>
+                                                    text="nombre archivo ultima actualizaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

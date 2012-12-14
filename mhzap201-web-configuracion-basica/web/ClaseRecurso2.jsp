@@ -204,7 +204,7 @@
                                                     binding="#{ClaseRecurso2.labelIdClaseRecurso1}"
                                                     id="labelIdClaseRecurso1"
                                                     for="campoIdClaseRecurso1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{ClaseRecurso2.labelCodigoClaseRecurso1}"
                                                     id="labelCodigoClaseRecurso1"
                                                     for="campoCodigoClaseRecurso1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{ClaseRecurso2.labelDescripcionClaseRecurso1}"
                                                     id="labelDescripcionClaseRecurso1"
                                                     for="campoDescripcionClaseRecurso1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -491,7 +491,7 @@
                                                     binding="#{ClaseRecurso2.labelIdFuncionSeleccion1}"
                                                     id="labelIdFuncionSeleccion1"
                                                     for="campoIdFuncionSeleccion1"
-                                                    text="funcion seleccion"/>
+                                                    text="funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -530,7 +530,7 @@
                                                     binding="#{ClaseRecurso2.labelIdFuncionSeleccion2}"
                                                     id="labelIdFuncionSeleccion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcion seleccion"/>
+                                                    text="nombre funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -553,7 +553,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaSeleccion1}"
                                                     id="labelIdPaginaSeleccion1"
                                                     for="campoIdPaginaSeleccion1"
-                                                    text="pagina seleccion"/>
+                                                    text="p&#225;gina selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -592,7 +592,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaSeleccion2}"
                                                     id="labelIdPaginaSeleccion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre pagina seleccion"/>
+                                                    text="nombre p&#225;gina selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -615,7 +615,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaDetalle1}"
                                                     id="labelIdPaginaDetalle1"
                                                     for="campoIdPaginaDetalle1"
-                                                    text="pagina detalle"/>
+                                                    text="p&#225;gina detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -654,7 +654,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaDetalle2}"
                                                     id="labelIdPaginaDetalle2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre pagina detalle"/>
+                                                    text="nombre p&#225;gina detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -863,7 +863,7 @@
                                                     binding="#{ClaseRecurso2.labelIdGrupoAplicacion1}"
                                                     id="labelIdGrupoAplicacion1"
                                                     for="campoIdGrupoAplicacion1"
-                                                    text="grupo aplicacion"/>
+                                                    text="grupo aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -902,7 +902,7 @@
                                                     binding="#{ClaseRecurso2.labelIdGrupoAplicacion2}"
                                                     id="labelIdGrupoAplicacion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre grupo aplicacion"/>
+                                                    text="nombre grupo aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -925,7 +925,7 @@
                                                     binding="#{ClaseRecurso2.labelIdAplicacionWeb1}"
                                                     id="labelIdAplicacionWeb1"
                                                     for="campoIdAplicacionWeb1"
-                                                    text="id aplicacion web"/>
+                                                    text="identificaci&#243;n aplicaci&#243;n web"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1021,7 +1021,7 @@
                                                     binding="#{ClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
-                                                    text="orden presentacion"/>
+                                                    text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1210,7 +1210,7 @@
                                                     binding="#{ClaseRecurso2.labelEsEnumeradorConNumero1}"
                                                     id="labelEsEnumeradorConNumero1"
                                                     for="listaEsEnumeradorConNumero1"
-                                                    text="enumerador con numero"/>
+                                                    text="enumerador con n&#250;mero"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

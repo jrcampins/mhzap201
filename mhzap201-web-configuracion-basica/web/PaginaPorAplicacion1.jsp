@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnIdPagina1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdPagina1"
                                                     sort="id_pagina">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnCodigoPagina1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoPagina1"
                                                     sort="codigo_pagina">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnDescripcionPagina1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionPagina1" rendered="false"
                                                     sort="descripcion_pagina">
                                                 <webuijsf:staticText
@@ -311,7 +311,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnEsPublica1}"
-                                                    headerText="publica"
+                                                    headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">
                                                 <webuijsf:staticText

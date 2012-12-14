@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdOpcionMenu1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdOpcionMenu1"
                                                     sort="id_opcion_menu">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnCodigoOpcionMenu1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoOpcionMenu1"
                                                     sort="codigo_opcion_menu">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnDescripcionOpcionMenu1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionOpcionMenu1" rendered="false"
                                                     sort="descripcion_opcion_menu">
                                                 <webuijsf:staticText
@@ -311,7 +311,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdAplicacion1}"
-                                                    headerText="aplicacion"
+                                                    headerText="aplicaci&#243;n"
                                                     id="tableColumnIdAplicacion1" rendered="false"
                                                     sort="codigo_aplicacion_1x1y3">
                                                 <webuijsf:staticText
@@ -353,7 +353,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{OpcionMenu1.tableColumnIdAplicacion2}"
-                                                    headerText="nombre aplicacion"
+                                                    headerText="nombre aplicaci&#243;n"
                                                     id="tableColumnIdAplicacion2" rendered="false"
                                                     sort="nombre_aplicacion_1x1y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -376,7 +376,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdPagina1}"
-                                                    headerText="pagina"
+                                                    headerText="p&#225;gina"
                                                     id="tableColumnIdPagina1" rendered="false"
                                                     sort="codigo_pagina_1x2y3">
                                                 <webuijsf:staticText
@@ -418,7 +418,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{OpcionMenu1.tableColumnIdPagina2}"
-                                                    headerText="nombre pagina"
+                                                    headerText="nombre p&#225;gina"
                                                     id="tableColumnIdPagina2" rendered="false"
                                                     sort="nombre_pagina_1x2y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -441,7 +441,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdOpcionMenuSuperior1}"
-                                                    headerText="opcion menu superior"
+                                                    headerText="opci&#243;n men&#250; superior"
                                                     id="tableColumnIdOpcionMenuSuperior1"
                                                     sort="codigo_opcion_menu_1x3y3">
                                                 <webuijsf:staticText
@@ -484,7 +484,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{OpcionMenu1.tableColumnIdOpcionMenuSuperior2}"
-                                                    headerText="nombre opcion menu superior"
+                                                    headerText="nombre opci&#243;n men&#250; superior"
                                                     id="tableColumnIdOpcionMenuSuperior2"
                                                     rendered="#{OpcionMenu1.asistente.campoIdOpcionMenuSuperior1Boton2Rendered}"
                                                     sort="nombre_opcion_menu_1x3y4"

@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdFuncionParametro1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncionParametro1"
                                                     sort="id_funcion_parametro">
                                                 <webuijsf:staticText
@@ -298,7 +298,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnNumeroTipoComparacion1}"
-                                                    headerText="tipo comparacion"
+                                                    headerText="tipo comparaci&#243;n"
                                                     id="tableColumnNumeroTipoComparacion1" rendered="false"
                                                     sort="codigo_tipo_comparacion_1x4y2">
                                                 <webuijsf:staticText
@@ -324,7 +324,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdFuncionReferencia1}"
-                                                    headerText="funcion referencia"
+                                                    headerText="funci&#243;n referencia"
                                                     id="tableColumnIdFuncionReferencia1" rendered="false"
                                                     sort="codigo_funcion_1x5y3">
                                                 <webuijsf:staticText
@@ -366,7 +366,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdFuncionReferencia2}"
-                                                    headerText="nombre funcion referencia"
+                                                    headerText="nombre funci&#243;n referencia"
                                                     id="tableColumnIdFuncionReferencia2" rendered="false"
                                                     sort="nombre_funcion_1x5y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -415,7 +415,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdListaValor1}"
-                                                    headerText="id lista valor"
+                                                    headerText="identificaci&#243;n lista valor"
                                                     id="tableColumnIdListaValor1" rendered="false"
                                                     sort="id_lista_valor">
                                                 <webuijsf:staticText
@@ -441,7 +441,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdClaseObjetoValor1}"
-                                                    headerText="id clase objeto valor"
+                                                    headerText="identificaci&#243;n clase objeto valor"
                                                     id="tableColumnIdClaseObjetoValor1" rendered="false"
                                                     sort="id_clase_objeto_valor">
                                                 <webuijsf:staticText
@@ -586,7 +586,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnValorOmision1}"
-                                                    headerText="valor omision"
+                                                    headerText="valor omisi&#243;n"
                                                     id="tableColumnValorOmision1" rendered="false"
                                                     sort="valor_omision">
                                                 <webuijsf:staticText

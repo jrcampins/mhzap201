@@ -138,7 +138,7 @@
                                                     binding="#{Proceso4.labelIdUbicacion1}"
                                                     id="labelIdUbicacion1"
                                                     for="campoIdUbicacion1"
-                                                    text="ubicacion"/>
+                                                    text="ubicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -175,7 +175,7 @@
                                                     binding="#{Proceso4.labelIdUbicacion2}"
                                                     id="labelIdUbicacion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre ubicacion"/>
+                                                    text="nombre ubicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -257,7 +257,7 @@
                                                     binding="#{Proceso4.labelFechaSolicitudPensionDesde1}"
                                                     id="labelFechaSolicitudPensionDesde1"
                                                     for="campoFechaSolicitudPensionDesde1"
-                                                    text="fecha solicitud pension desde"/>
+                                                    text="fecha solicitud pensi&#243;n desde"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -287,7 +287,7 @@
                                                     binding="#{Proceso4.labelFechaSolicitudPensionHasta1}"
                                                     id="labelFechaSolicitudPensionHasta1"
                                                     for="campoFechaSolicitudPensionHasta1"
-                                                    text="fecha solicitud pension hasta"/>
+                                                    text="fecha solicitud pensi&#243;n hasta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -317,7 +317,7 @@
                                                     binding="#{Proceso4.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
-                                                    text="numero resolucion otor pensión"/>
+                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -348,7 +348,7 @@
                                                     binding="#{Proceso4.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resolucion otor pensión"/>
+                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -379,7 +379,7 @@
                                                     binding="#{Proceso4.labelNumeroResolucionDenPen1}"
                                                     id="labelNumeroResolucionDenPen1"
                                                     for="campoNumeroResolucionDenPen1"
-                                                    text="numero resolucion denegación pensión"/>
+                                                    text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -410,7 +410,7 @@
                                                     binding="#{Proceso4.labelFechaResolucionDenPen1}"
                                                     id="labelFechaResolucionDenPen1"
                                                     for="campoFechaResolucionDenPen1"
-                                                    text="fecha resolucion denegación pensión"/>
+                                                    text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

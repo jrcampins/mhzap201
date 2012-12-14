@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdDominio1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdDominio1"
                                                     sort="id_dominio">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnCodigoDominio1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoDominio1"
                                                     sort="codigo_dominio">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnDescripcionDominio1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionDominio1" rendered="false"
                                                     sort="descripcion_dominio">
                                                 <webuijsf:staticText
@@ -405,7 +405,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdFuncionSeleccion1}"
-                                                    headerText="funcion seleccion"
+                                                    headerText="funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion1" rendered="false"
                                                     sort="codigo_funcion_1x3y3">
                                                 <webuijsf:staticText
@@ -447,7 +447,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{Dominio1.tableColumnIdFuncionSeleccion2}"
-                                                    headerText="nombre funcion seleccion"
+                                                    headerText="nombre funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion2" rendered="false"
                                                     sort="nombre_funcion_1x3y4"
                                                     styleClass="pdq-estilo-id-2">

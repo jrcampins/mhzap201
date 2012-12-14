@@ -204,7 +204,7 @@
                                                     binding="#{Pagina2.labelIdPagina1}"
                                                     id="labelIdPagina1"
                                                     for="campoIdPagina1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Pagina2.labelCodigoPagina1}"
                                                     id="labelCodigoPagina1"
                                                     for="campoCodigoPagina1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Pagina2.labelDescripcionPagina1}"
                                                     id="labelDescripcionPagina1"
                                                     for="campoDescripcionPagina1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -366,7 +366,7 @@
                                                     binding="#{Pagina2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
-                                                    text="aplicacion"/>
+                                                    text="aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -405,7 +405,7 @@
                                                     binding="#{Pagina2.labelIdAplicacion2}"
                                                     id="labelIdAplicacion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre aplicacion"/>
+                                                    text="nombre aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -428,7 +428,7 @@
                                                     binding="#{Pagina2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
-                                                    text="publica"/>
+                                                    text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

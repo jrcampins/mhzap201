@@ -204,7 +204,7 @@
                                                     binding="#{GrupoAplicacion2.labelIdGrupoAplicacion1}"
                                                     id="labelIdGrupoAplicacion1"
                                                     for="campoIdGrupoAplicacion1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{GrupoAplicacion2.labelCodigoGrupoAplicacion1}"
                                                     id="labelCodigoGrupoAplicacion1"
                                                     for="campoCodigoGrupoAplicacion1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{GrupoAplicacion2.labelDescripcionGrupoAplicacion1}"
                                                     id="labelDescripcionGrupoAplicacion1"
                                                     for="campoDescripcionGrupoAplicacion1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

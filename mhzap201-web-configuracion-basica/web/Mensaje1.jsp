@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnIdMensaje1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdMensaje1"
                                                     sort="id_mensaje">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnCodigoMensaje1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoMensaje1"
                                                     sort="codigo_mensaje">
                                                 <webuijsf:staticText
@@ -232,7 +232,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnPatronMensaje1}"
-                                                    headerText="patron"
+                                                    headerText="patr&#243;n"
                                                     id="tableColumnPatronMensaje1"
                                                     sort="patron_mensaje">
                                                 <webuijsf:staticText
@@ -258,7 +258,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnDescripcionMensaje1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionMensaje1" rendered="false"
                                                     sort="descripcion_mensaje">
                                                 <webuijsf:staticText

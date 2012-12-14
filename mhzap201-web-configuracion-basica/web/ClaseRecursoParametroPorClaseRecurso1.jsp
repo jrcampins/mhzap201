@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdClaseRecursoPar1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdClaseRecursoPar1"
                                                     sort="id_clase_recurso_par">
                                                 <webuijsf:staticText
@@ -298,7 +298,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnNumeroTipoComparacion1}"
-                                                    headerText="tipo comparacion"
+                                                    headerText="tipo comparaci&#243;n"
                                                     id="tableColumnNumeroTipoComparacion1" rendered="false"
                                                     sort="codigo_tipo_comparacion_1x4y2">
                                                 <webuijsf:staticText
@@ -324,7 +324,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdFuncionReferencia1}"
-                                                    headerText="funcion referencia"
+                                                    headerText="funci&#243;n referencia"
                                                     id="tableColumnIdFuncionReferencia1" rendered="false"
                                                     sort="codigo_funcion_1x5y3">
                                                 <webuijsf:staticText
@@ -366,7 +366,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdFuncionReferencia2}"
-                                                    headerText="nombre funcion referencia"
+                                                    headerText="nombre funci&#243;n referencia"
                                                     id="tableColumnIdFuncionReferencia2" rendered="false"
                                                     sort="nombre_funcion_1x5y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -415,7 +415,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdListaValor1}"
-                                                    headerText="id lista valor"
+                                                    headerText="identificaci&#243;n lista valor"
                                                     id="tableColumnIdListaValor1" rendered="false"
                                                     sort="id_lista_valor">
                                                 <webuijsf:staticText
@@ -441,7 +441,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdClaseObjetoValor1}"
-                                                    headerText="id clase objeto valor"
+                                                    headerText="identificaci&#243;n clase objeto valor"
                                                     id="tableColumnIdClaseObjetoValor1" rendered="false"
                                                     sort="id_clase_objeto_valor">
                                                 <webuijsf:staticText
@@ -586,7 +586,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnValorOmision1}"
-                                                    headerText="valor omision"
+                                                    headerText="valor omisi&#243;n"
                                                     id="tableColumnValorOmision1" rendered="false"
                                                     sort="valor_omision">
                                                 <webuijsf:staticText
@@ -813,7 +813,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnOrdenPresentacion1}"
-                                                    headerText="orden presentacion"
+                                                    headerText="orden presentaci&#243;n"
                                                     id="tableColumnOrdenPresentacion1" rendered="false"
                                                     sort="orden_presentacion">
                                                 <webuijsf:staticText
@@ -952,7 +952,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdFuncionReferenciaAlt1}"
-                                                    headerText="id funcion referencia alt"
+                                                    headerText="identificaci&#243;n funci&#243;n referencia alt"
                                                     id="tableColumnIdFuncionReferenciaAlt1" rendered="false"
                                                     sort="id_funcion_referencia_alt">
                                                 <webuijsf:staticText
@@ -978,7 +978,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdListaValorAlternativa1}"
-                                                    headerText="id lista valor alternativa"
+                                                    headerText="identificaci&#243;n lista valor alternativa"
                                                     id="tableColumnIdListaValorAlternativa1" rendered="false"
                                                     sort="id_lista_valor_alternativa">
                                                 <webuijsf:staticText
@@ -1004,7 +1004,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdClaseObjetoValorAlt1}"
-                                                    headerText="id clase objeto valor alt"
+                                                    headerText="identificaci&#243;n clase objeto valor alt"
                                                     id="tableColumnIdClaseObjetoValorAlt1" rendered="false"
                                                     sort="id_clase_objeto_valor_alt">
                                                 <webuijsf:staticText
@@ -1030,7 +1030,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnIdClaseRecursoValorAlt1}"
-                                                    headerText="id clase recurso valor alt"
+                                                    headerText="identificaci&#243;n clase recurso valor alt"
                                                     id="tableColumnIdClaseRecursoValorAlt1" rendered="false"
                                                     sort="id_clase_recurso_valor_alt">
                                                 <webuijsf:staticText
@@ -1056,7 +1056,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso1.tableColumnOrdenPaginaSeleccion1}"
-                                                    headerText="orden pagina seleccion"
+                                                    headerText="orden p&#225;gina selecci&#243;n"
                                                     id="tableColumnOrdenPaginaSeleccion1" rendered="false"
                                                     sort="orden_pagina_seleccion">
                                                 <webuijsf:staticText

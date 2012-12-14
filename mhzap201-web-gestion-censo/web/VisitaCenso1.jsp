@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnIdVisitaCenso1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdVisitaCenso1" rendered="false"
                                                     sort="id_visita_censo">
                                                 <webuijsf:staticText

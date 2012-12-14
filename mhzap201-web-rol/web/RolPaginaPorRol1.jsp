@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolPaginaPorRol1.tableColumnIdRolPagina1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolPagina1" rendered="false"
                                                     sort="id_rol_pagina">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolPaginaPorRol1.tableColumnIdPagina1}"
-                                                    headerText="pagina"
+                                                    headerText="p&#225;gina"
                                                     id="tableColumnIdPagina1"
                                                     sort="codigo_pagina_1x2y3">
                                                 <webuijsf:staticText
@@ -248,7 +248,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{RolPaginaPorRol1.tableColumnIdPagina2}"
-                                                    headerText="nombre pagina"
+                                                    headerText="nombre p&#225;gina"
                                                     id="tableColumnIdPagina2"
                                                     rendered="#{RolPaginaPorRol1.asistente.campoIdPagina1Boton2Rendered}"
                                                     sort="nombre_pagina_1x2y4"

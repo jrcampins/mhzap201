@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdPotencialBen1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="id_potencial_ben">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnCodigoPotencialBen1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoPotencialBen1"
                                                     sort="codigo_potencial_ben">
                                                 <webuijsf:staticText
@@ -355,7 +355,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCedula1}"
-                                                    headerText="numero cedula"
+                                                    headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
                                                 <webuijsf:staticText
@@ -381,7 +381,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnLetraCedula1}"
-                                                    headerText="letra cedula"
+                                                    headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
                                                 <webuijsf:staticText
@@ -408,7 +408,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaExpedicionCedula1}"
-                                                    headerText="fecha expedicion cedula"
+                                                    headerText="fecha expedici&#243;n c&#233;dula"
                                                     id="tableColumnFechaExpedicionCedula1" rendered="false"
                                                     sort="fecha_expedicion_cedula">
                                                 <webuijsf:staticText
@@ -434,7 +434,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaVencimientoCedula1}"
-                                                    headerText="fecha vencimiento cedula"
+                                                    headerText="fecha vencimiento c&#233;dula"
                                                     id="tableColumnFechaVencimientoCedula1" rendered="false"
                                                     sort="fecha_vencimiento_cedula">
                                                 <webuijsf:staticText
@@ -1091,7 +1091,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnDireccion1}"
-                                                    headerText="direccion"
+                                                    headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
                                                 <webuijsf:staticText
@@ -1144,7 +1144,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTelefonoRespHogar1}"
-                                                    headerText="numero telefono responsable hogar"
+                                                    headerText="n&#250;mero tel&#233;fono responsable hogar"
                                                     id="tableColumnNumeroTelefonoRespHogar1" rendered="false"
                                                     sort="numero_telefono_resp_hogar">
                                                 <webuijsf:staticText
@@ -1171,7 +1171,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPersonaConJubilacion1}"
-                                                    headerText="persona con jubilacion"
+                                                    headerText="persona con jubilaci&#243;n"
                                                     id="tableColumnEsPersonaConJubilacion1" rendered="false"
                                                     sort="es_persona_con_jubilacion">
                                                 <webuijsf:staticText
@@ -1196,7 +1196,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPersonaConPension1}"
-                                                    headerText="persona con pension"
+                                                    headerText="persona con pensi&#243;n"
                                                     id="tableColumnEsPersonaConPension1" rendered="false"
                                                     sort="es_persona_con_pension">
                                                 <webuijsf:staticText
@@ -1273,7 +1273,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTelefonoReferente1}"
-                                                    headerText="numero telefono referente"
+                                                    headerText="n&#250;mero tel&#233;fono referente"
                                                     id="tableColumnNumeroTelefonoReferente1" rendered="false"
                                                     sort="numero_telefono_referente">
                                                 <webuijsf:staticText
@@ -1300,7 +1300,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCondicionCenso1}"
-                                                    headerText="condicion censo"
+                                                    headerText="condici&#243;n censo"
                                                     id="tableColumnNumeroCondicionCenso1" rendered="false"
                                                     sort="codigo_condicion_censo_1x9y2">
                                                 <webuijsf:staticText
@@ -1326,7 +1326,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaValidacionCenso1}"
-                                                    headerText="fecha validacion censo"
+                                                    headerText="fecha validaci&#243;n censo"
                                                     id="tableColumnFechaValidacionCenso1" rendered="false"
                                                     sort="fecha_validacion_censo">
                                                 <webuijsf:staticText
@@ -1352,7 +1352,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioValidacionCen1}"
-                                                    headerText="funcionario validacion censo"
+                                                    headerText="funcionario validaci&#243;n censo"
                                                     id="tableColumnIdFuncionarioValidacionCen1" rendered="false"
                                                     sort="codigo_funcionario_1x10y3">
                                                 <webuijsf:staticText
@@ -1394,7 +1394,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioValidacionCen2}"
-                                                    headerText="nombre funcionario validacion censo"
+                                                    headerText="nombre funcionario validaci&#243;n censo"
                                                     id="tableColumnIdFuncionarioValidacionCen2" rendered="false"
                                                     sort="nombre_funcionario_1x10y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -1417,7 +1417,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCausaInvCenso1}"
-                                                    headerText="causa invalidación censo"
+                                                    headerText="causa invalidaci&#243;n censo"
                                                     id="tableColumnNumeroCausaInvCenso1" rendered="false"
                                                     sort="codigo_causa_inv_censo_1x11y2">
                                                 <webuijsf:staticText
@@ -1443,7 +1443,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnOtraCausaInvCenso1}"
-                                                    headerText="otra causa invalidación censo"
+                                                    headerText="otra causa invalidaci&#243;n censo"
                                                     id="tableColumnOtraCausaInvCenso1" rendered="false"
                                                     sort="otra_causa_inv_censo">
                                                 <webuijsf:staticText
@@ -1470,7 +1470,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosValidacionCenso1}"
-                                                    headerText="comentarios validacion censo"
+                                                    headerText="comentarios validaci&#243;n censo"
                                                     id="tableColumnComentariosValidacionCenso1" rendered="false"
                                                     sort="comentarios_validacion_censo">
                                                 <webuijsf:staticText
@@ -1561,7 +1561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCondicionReclCen1}"
-                                                    headerText="condicion reclamo censo"
+                                                    headerText="condici&#243;n reclamo censo"
                                                     id="tableColumnNumeroCondicionReclCen1" rendered="false"
                                                     sort="codigo_condicion_recl_c_1x13y2">
                                                 <webuijsf:staticText
@@ -1639,7 +1639,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaAprobacionReclamoCenso1}"
-                                                    headerText="fecha aprobacion reclamo censo"
+                                                    headerText="fecha aprobaci&#243;n reclamo censo"
                                                     id="tableColumnFechaAprobacionReclamoCenso1" rendered="false"
                                                     sort="fecha_aprobacion_reclamo_censo">
                                                 <webuijsf:staticText
@@ -1665,7 +1665,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosAprReclCen1}"
-                                                    headerText="comentarios aprobación reclamo censo"
+                                                    headerText="comentarios aprobaci&#243;n reclamo censo"
                                                     id="tableColumnComentariosAprReclCen1" rendered="false"
                                                     sort="comentarios_apr_recl_cen">
                                                 <webuijsf:staticText
@@ -1691,7 +1691,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaDenegacionReclamoCenso1}"
-                                                    headerText="fecha denegacion reclamo censo"
+                                                    headerText="fecha denegaci&#243;n reclamo censo"
                                                     id="tableColumnFechaDenegacionReclamoCenso1" rendered="false"
                                                     sort="fecha_denegacion_reclamo_censo">
                                                 <webuijsf:staticText
@@ -1717,7 +1717,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCausaDenReclCen1}"
-                                                    headerText="causa denegación reclamo censo"
+                                                    headerText="causa denegaci&#243;n reclamo censo"
                                                     id="tableColumnNumeroCausaDenReclCen1" rendered="false"
                                                     sort="codigo_causa_den_recl_c_1x14y2">
                                                 <webuijsf:staticText
@@ -1743,7 +1743,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnOtraCausaDenReclCen1}"
-                                                    headerText="otra causa denegación reclamo censo"
+                                                    headerText="otra causa denegaci&#243;n reclamo censo"
                                                     id="tableColumnOtraCausaDenReclCen1" rendered="false"
                                                     sort="otra_causa_den_recl_cen">
                                                 <webuijsf:staticText
@@ -1770,7 +1770,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosDenReclCen1}"
-                                                    headerText="comentarios denegación reclamo censo"
+                                                    headerText="comentarios denegaci&#243;n reclamo censo"
                                                     id="tableColumnComentariosDenReclCen1" rendered="false"
                                                     sort="comentarios_den_recl_cen">
                                                 <webuijsf:staticText
@@ -1938,7 +1938,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnObservacionesUltVisitaCen1}"
-                                                    headerText="observaciones última visita censo"
+                                                    headerText="observaciones &#250;ltima visita censo"
                                                     id="tableColumnObservacionesUltVisitaCen1" rendered="false"
                                                     sort="observaciones_ult_visita_cen">
                                                 <webuijsf:staticText
@@ -1964,7 +1964,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioUltVisitaCen1}"
-                                                    headerText="funcionario última visita censo"
+                                                    headerText="funcionario &#250;ltima visita censo"
                                                     id="tableColumnIdFuncionarioUltVisitaCen1" rendered="false"
                                                     sort="codigo_funcionario_1x16y3">
                                                 <webuijsf:staticText
@@ -2006,7 +2006,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioUltVisitaCen2}"
-                                                    headerText="nombre funcionario última visita censo"
+                                                    headerText="nombre funcionario &#250;ltima visita censo"
                                                     id="tableColumnIdFuncionarioUltVisitaCen2" rendered="false"
                                                     sort="nombre_funcionario_1x16y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -2029,7 +2029,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnReferenciaDireccion1}"
-                                                    headerText="referencia direccion"
+                                                    headerText="referencia direcci&#243;n"
                                                     id="tableColumnReferenciaDireccion1" rendered="false"
                                                     sort="referencia_direccion">
                                                 <webuijsf:staticText

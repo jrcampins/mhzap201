@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoFuncionPorFuncion1.tableColumnIdFiltroClaRecFun1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdFiltroClaRecFun1"
                                                     sort="id_filtro_cla_rec_fun">
                                                 <webuijsf:staticText

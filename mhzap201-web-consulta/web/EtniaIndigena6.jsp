@@ -208,7 +208,7 @@
                                                     binding="#{EtniaIndigena6.labelIdEtniaIndigena1}"
                                                     id="labelIdEtniaIndigena1"
                                                     for="campoIdEtniaIndigena1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -240,7 +240,7 @@
                                                     binding="#{EtniaIndigena6.labelCodigoEtniaIndigena1}"
                                                     id="labelCodigoEtniaIndigena1"
                                                     for="campoCodigoEtniaIndigena1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -306,7 +306,7 @@
                                                     binding="#{EtniaIndigena6.labelDescripcionEtniaIndigena1}"
                                                     id="labelDescripcionEtniaIndigena1"
                                                     for="campoDescripcionEtniaIndigena1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

@@ -208,7 +208,7 @@
                                                     binding="#{Funcionario6.labelIdFuncionario1}"
                                                     id="labelIdFuncionario1"
                                                     for="campoIdFuncionario1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -240,7 +240,7 @@
                                                     binding="#{Funcionario6.labelCodigoFuncionario1}"
                                                     id="labelCodigoFuncionario1"
                                                     for="campoCodigoFuncionario1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -306,7 +306,7 @@
                                                     binding="#{Funcionario6.labelNumeroCedula1}"
                                                     id="labelNumeroCedula1"
                                                     for="campoNumeroCedula1"
-                                                    text="numero cedula"/>
+                                                    text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -338,7 +338,7 @@
                                                     binding="#{Funcionario6.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
-                                                    text="letra cedula"/>
+                                                    text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

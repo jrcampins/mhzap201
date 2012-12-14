@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioPaquetePorDominio1.tableColumnIdDominioPaquete1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdDominioPaquete1"
                                                     sort="id_dominio_paquete">
                                                 <webuijsf:staticText

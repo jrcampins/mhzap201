@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnIdFuncion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="id_funcion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnCodigoFuncion1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoFuncion1"
                                                     sort="codigo_funcion">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnDescripcionFuncion1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionFuncion1" rendered="false"
                                                     sort="descripcion_funcion">
                                                 <webuijsf:staticText
@@ -311,7 +311,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnNumeroTipoRastroFun1}"
-                                                    headerText="tipo rastro función"
+                                                    headerText="tipo rastro"
                                                     id="tableColumnNumeroTipoRastroFun1" rendered="false"
                                                     sort="codigo_tipo_rastro_fun_1x2y2">
                                                 <webuijsf:staticText
@@ -389,7 +389,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsPublica1}"
-                                                    headerText="publica"
+                                                    headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">
                                                 <webuijsf:staticText
@@ -414,7 +414,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsProgramatica1}"
-                                                    headerText="programatica"
+                                                    headerText="program&#225;tica"
                                                     id="tableColumnEsProgramatica1" rendered="false"
                                                     sort="es_programatica">
                                                 <webuijsf:staticText

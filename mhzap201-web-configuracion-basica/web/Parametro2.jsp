@@ -204,7 +204,7 @@
                                                     binding="#{Parametro2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Parametro2.labelCodigoParametro1}"
                                                     id="labelCodigoParametro1"
                                                     for="campoCodigoParametro1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -335,7 +335,7 @@
                                                     binding="#{Parametro2.labelDescripcionParametro1}"
                                                     id="labelDescripcionParametro1"
                                                     for="campoDescripcionParametro1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

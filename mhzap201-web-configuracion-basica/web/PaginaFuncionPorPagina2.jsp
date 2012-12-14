@@ -182,7 +182,7 @@
                                                 <webuijsf:label
                                                     binding="#{PaginaFuncionPorPagina2.labelIdPagina1}"
                                                     id="labelIdPagina1"
-                                                    text="pagina"/>
+                                                    text="p&#225;gina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -204,7 +204,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelIdPaginaFuncion1}"
                                                     id="labelIdPaginaFuncion1"
                                                     for="campoIdPaginaFuncion1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelIdFuncion1}"
                                                     id="labelIdFuncion1"
                                                     for="campoIdFuncion1"
-                                                    text="funcion"/>
+                                                    text="funci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -275,7 +275,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelIdFuncion2}"
                                                     id="labelIdFuncion2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcion"/>
+                                                    text="nombre funci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -298,7 +298,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelEsFuncionInicial1}"
                                                     id="labelEsFuncionInicial1"
                                                     for="listaEsFuncionInicial1"
-                                                    text="funcion inicial"/>
+                                                    text="funci&#243;n inicial"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

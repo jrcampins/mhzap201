@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnIdUbicacion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdUbicacion1" rendered="false"
                                                     sort="id_ubicacion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnCodigoUbicacion1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoUbicacion1"
                                                     sort="codigo_ubicacion">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnIdUbicacionSuperior1}"
-                                                    headerText="ubicacion superior"
+                                                    headerText="ubicaci&#243;n superior"
                                                     id="tableColumnIdUbicacionSuperior1" rendered="false"
                                                     sort="codigo_ubicacion_1x1y3">
                                                 <webuijsf:staticText
@@ -301,7 +301,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{Ubicacion5.tableColumnIdUbicacionSuperior2}"
-                                                    headerText="nombre ubicacion superior"
+                                                    headerText="nombre ubicaci&#243;n superior"
                                                     id="tableColumnIdUbicacionSuperior2" rendered="false"
                                                     sort="nombre_ubicacion_1x1y4"
                                                     styleClass="pdq-estilo-id-2">

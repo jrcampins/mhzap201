@@ -208,7 +208,7 @@
                                                     binding="#{ProveedorDatExt2.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -240,7 +240,7 @@
                                                     binding="#{ProveedorDatExt2.labelCodigoProveedorDatExt1}"
                                                     id="labelCodigoProveedorDatExt1"
                                                     for="campoCodigoProveedorDatExt1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

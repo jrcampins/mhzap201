@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnIdPaginaFuncion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdPaginaFuncion1"
                                                     sort="id_pagina_funcion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnIdFuncion1}"
-                                                    headerText="funcion"
+                                                    headerText="funci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="codigo_funcion_1x2y3">
                                                 <webuijsf:staticText
@@ -248,7 +248,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnIdFuncion2}"
-                                                    headerText="nombre funcion"
+                                                    headerText="nombre funci&#243;n"
                                                     id="tableColumnIdFuncion2"
                                                     rendered="#{PaginaFuncionPorPagina1.asistente.campoIdFuncion1Boton2Rendered}"
                                                     sort="nombre_funcion_1x2y4"
@@ -272,7 +272,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnEsFuncionInicial1}"
-                                                    headerText="funcion inicial"
+                                                    headerText="funci&#243;n inicial"
                                                     id="tableColumnEsFuncionInicial1" rendered="false"
                                                     sort="es_funcion_inicial">
                                                 <webuijsf:staticText

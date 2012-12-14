@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolUsuarioPorRol1.tableColumnIdRolUsuario1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolUsuario1" rendered="false"
                                                     sort="id_rol_usuario">
                                                 <webuijsf:staticText

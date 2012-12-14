@@ -204,7 +204,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelIdClaseRecursoSec1}"
                                                     id="labelIdClaseRecursoSec1"
                                                     for="campoIdClaseRecursoSec1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -269,7 +269,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelDescripcionClaseRecursoSec1}"
                                                     id="labelDescripcionClaseRecursoSec1"
                                                     for="campoDescripcionClaseRecursoSec1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -301,7 +301,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
-                                                    text="orden presentacion"/>
+                                                    text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

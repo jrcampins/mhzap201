@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{GrupoAplicacion1.tableColumnIdGrupoAplicacion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdGrupoAplicacion1"
                                                     sort="id_grupo_aplicacion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{GrupoAplicacion1.tableColumnCodigoGrupoAplicacion1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoGrupoAplicacion1"
                                                     sort="codigo_grupo_aplicacion">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{GrupoAplicacion1.tableColumnDescripcionGrupoAplicacion1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionGrupoAplicacion1" rendered="false"
                                                     sort="descripcion_grupo_aplicacion">
                                                 <webuijsf:staticText

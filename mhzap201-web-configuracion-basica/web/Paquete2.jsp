@@ -204,7 +204,7 @@
                                                     binding="#{Paquete2.labelIdPaquete1}"
                                                     id="labelIdPaquete1"
                                                     for="campoIdPaquete1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Paquete2.labelCodigoPaquete1}"
                                                     id="labelCodigoPaquete1"
                                                     for="campoCodigoPaquete1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

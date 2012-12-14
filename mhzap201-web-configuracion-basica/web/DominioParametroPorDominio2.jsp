@@ -204,7 +204,7 @@
                                                     binding="#{DominioParametroPorDominio2.labelIdDominioParametro1}"
                                                     id="labelIdDominioParametro1"
                                                     for="campoIdDominioParametro1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

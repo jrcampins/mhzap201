@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Pagina1.tableColumnIdPagina1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdPagina1"
                                                     sort="id_pagina">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Pagina1.tableColumnCodigoPagina1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoPagina1"
                                                     sort="codigo_pagina">
                                                 <webuijsf:staticText
@@ -259,7 +259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Pagina1.tableColumnDescripcionPagina1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionPagina1" rendered="false"
                                                     sort="descripcion_pagina">
                                                 <webuijsf:staticText
@@ -311,7 +311,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Pagina1.tableColumnIdAplicacion1}"
-                                                    headerText="aplicacion"
+                                                    headerText="aplicaci&#243;n"
                                                     id="tableColumnIdAplicacion1"
                                                     sort="codigo_aplicacion_1x1y3">
                                                 <webuijsf:staticText
@@ -354,7 +354,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{Pagina1.tableColumnIdAplicacion2}"
-                                                    headerText="nombre aplicacion"
+                                                    headerText="nombre aplicaci&#243;n"
                                                     id="tableColumnIdAplicacion2"
                                                     rendered="#{Pagina1.asistente.campoIdAplicacion1Boton2Rendered}"
                                                     sort="nombre_aplicacion_1x1y4"
@@ -378,7 +378,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Pagina1.tableColumnEsPublica1}"
-                                                    headerText="publica"
+                                                    headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">
                                                 <webuijsf:staticText

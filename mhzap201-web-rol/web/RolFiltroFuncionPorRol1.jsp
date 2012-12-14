@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFiltroFuncionPorRol1.tableColumnIdRolFiltroFuncion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolFiltroFuncion1" rendered="false"
                                                     sort="id_rol_filtro_funcion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFiltroFuncionPorRol1.tableColumnIdFiltroFuncion1}"
-                                                    headerText="filtro funcion"
+                                                    headerText="filtro funci&#243;n"
                                                     id="tableColumnIdFiltroFuncion1"
                                                     sort="codigo_filtro_funcion_1x2y3">
                                                 <webuijsf:staticText
@@ -248,7 +248,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{RolFiltroFuncionPorRol1.tableColumnIdFiltroFuncion2}"
-                                                    headerText="nombre filtro funcion"
+                                                    headerText="nombre filtro funci&#243;n"
                                                     id="tableColumnIdFiltroFuncion2"
                                                     rendered="#{RolFiltroFuncionPorRol1.asistente.campoIdFiltroFuncion1Boton2Rendered}"
                                                     sort="nombre_filtro_funcion_1x2y4"

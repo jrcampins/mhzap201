@@ -183,7 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnNumeroParametroGlobal1}"
-                                                    headerText="numero"
+                                                    headerText="n&#250;mero"
                                                     id="tableColumnNumeroParametroGlobal1"
                                                     sort="numero_parametro_global">
                                                 <webuijsf:staticText
@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnCodigoParametroGlobal1}"
-                                                    headerText="codigo"
+                                                    headerText="c&#243;digo"
                                                     id="tableColumnCodigoParametroGlobal1"
                                                     sort="codigo_parametro_global">
                                                 <webuijsf:staticText
@@ -263,7 +263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnPorcentajePensionAlimentaria1}"
-                                                    headerText="porcentaje pension alimentaria"
+                                                    headerText="porcentaje pensi&#243;n alimentaria"
                                                     id="tableColumnPorcentajePensionAlimentaria1"
                                                     sort="porcentaje_pension_alimentaria">
                                                 <webuijsf:staticText
@@ -341,7 +341,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlCobroPensionActiv1}"
-                                                    headerText="control cobro pension activo"
+                                                    headerText="control cobro pensi&#243;n activo"
                                                     id="tableColumnEsControlCobroPensionActiv1"
                                                     sort="es_control_cobro_pension_activ">
                                                 <webuijsf:staticText
@@ -366,7 +366,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnMesesUltimoCobroPension1}"
-                                                    headerText="meses ultimo cobro pension"
+                                                    headerText="meses ultimo cobro pensi&#243;n"
                                                     id="tableColumnMesesUltimoCobroPension1"
                                                     sort="meses_ultimo_cobro_pension">
                                                 <webuijsf:staticText
@@ -392,7 +392,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlReprocesoPenActiv1}"
-                                                    headerText="control reproceso pensión activo"
+                                                    headerText="control reproceso pensi&#243;n activo"
                                                     id="tableColumnEsControlReprocesoPenActiv1"
                                                     sort="es_control_reproceso_pen_activ">
                                                 <webuijsf:staticText

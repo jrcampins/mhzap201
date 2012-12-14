@@ -204,7 +204,7 @@
                                                     binding="#{Ubicacion2.labelIdUbicacion1}"
                                                     id="labelIdUbicacion1"
                                                     for="campoIdUbicacion1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Ubicacion2.labelCodigoUbicacion1}"
                                                     id="labelCodigoUbicacion1"
                                                     for="campoCodigoUbicacion1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Ubicacion2.labelIdUbicacionSuperior1}"
                                                     id="labelIdUbicacionSuperior1"
                                                     for="campoIdUbicacionSuperior1"
-                                                    text="ubicacion superior"/>
+                                                    text="ubicaci&#243;n superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -341,7 +341,7 @@
                                                     binding="#{Ubicacion2.labelIdUbicacionSuperior2}"
                                                     id="labelIdUbicacionSuperior2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre ubicacion superior"/>
+                                                    text="nombre ubicaci&#243;n superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

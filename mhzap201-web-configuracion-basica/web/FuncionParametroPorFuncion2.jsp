@@ -182,7 +182,7 @@
                                                 <webuijsf:label
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncion1}"
                                                     id="labelIdFuncion1"
-                                                    text="funcion"/>
+                                                    text="funci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -204,7 +204,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncionParametro1}"
                                                     id="labelIdFuncionParametro1"
                                                     for="campoIdFuncionParametro1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -330,7 +330,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelNumeroTipoComparacion1}"
                                                     id="labelNumeroTipoComparacion1"
                                                     for="listaNumeroTipoComparacion1"
-                                                    text="tipo comparacion"/>
+                                                    text="tipo comparaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -362,7 +362,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncionReferencia1}"
                                                     id="labelIdFuncionReferencia1"
                                                     for="campoIdFuncionReferencia1"
-                                                    text="funcion referencia"/>
+                                                    text="funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -401,7 +401,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncionReferencia2}"
                                                     id="labelIdFuncionReferencia2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcion referencia"/>
+                                                    text="nombre funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -456,7 +456,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdListaValor1}"
                                                     id="labelIdListaValor1"
                                                     for="campoIdListaValor1"
-                                                    text="id lista valor"/>
+                                                    text="identificaci&#243;n lista valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -488,7 +488,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdClaseObjetoValor1}"
                                                     id="labelIdClaseObjetoValor1"
                                                     for="campoIdClaseObjetoValor1"
-                                                    text="id clase objeto valor"/>
+                                                    text="identificaci&#243;n clase objeto valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -648,7 +648,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelValorOmision1}"
                                                     id="labelValorOmision1"
                                                     for="campoValorOmision1"
-                                                    text="valor omision"/>
+                                                    text="valor omisi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

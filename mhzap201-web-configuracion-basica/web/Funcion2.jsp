@@ -204,7 +204,7 @@
                                                     binding="#{Funcion2.labelIdFuncion1}"
                                                     id="labelIdFuncion1"
                                                     for="campoIdFuncion1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Funcion2.labelCodigoFuncion1}"
                                                     id="labelCodigoFuncion1"
                                                     for="campoCodigoFuncion1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Funcion2.labelDescripcionFuncion1}"
                                                     id="labelDescripcionFuncion1"
                                                     for="campoDescripcionFuncion1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -366,7 +366,7 @@
                                                     binding="#{Funcion2.labelNumeroTipoRastroFun1}"
                                                     id="labelNumeroTipoRastroFun1"
                                                     for="listaNumeroTipoRastroFun1"
-                                                    text="tipo rastro función"/>
+                                                    text="tipo rastro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -524,7 +524,7 @@
                                                     binding="#{Funcion2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
-                                                    text="publica"/>
+                                                    text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -555,7 +555,7 @@
                                                     binding="#{Funcion2.labelEsProgramatica1}"
                                                     id="labelEsProgramatica1"
                                                     for="listaEsProgramatica1"
-                                                    text="programatica"/>
+                                                    text="program&#225;tica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

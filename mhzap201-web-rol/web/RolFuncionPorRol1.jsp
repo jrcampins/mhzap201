@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFuncionPorRol1.tableColumnIdRolFuncion1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolFuncion1" rendered="false"
                                                     sort="id_rol_funcion">
                                                 <webuijsf:staticText
@@ -205,7 +205,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFuncionPorRol1.tableColumnIdFuncion1}"
-                                                    headerText="funcion"
+                                                    headerText="funci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="codigo_funcion_1x2y3">
                                                 <webuijsf:staticText
@@ -248,7 +248,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{RolFuncionPorRol1.tableColumnIdFuncion2}"
-                                                    headerText="nombre funcion"
+                                                    headerText="nombre funci&#243;n"
                                                     id="tableColumnIdFuncion2"
                                                     rendered="#{RolFuncionPorRol1.asistente.campoIdFuncion1Boton2Rendered}"
                                                     sort="nombre_funcion_1x2y4"

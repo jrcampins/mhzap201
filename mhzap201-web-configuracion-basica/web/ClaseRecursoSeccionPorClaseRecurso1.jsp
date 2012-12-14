@@ -179,7 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnIdClaseRecursoSec1}"
-                                                    headerText="id"
+                                                    headerText="identificaci&#243;n"
                                                     id="tableColumnIdClaseRecursoSec1"
                                                     sort="id_clase_recurso_sec">
                                                 <webuijsf:staticText
@@ -232,7 +232,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnDescripcionClaseRecursoSec1}"
-                                                    headerText="descripcion"
+                                                    headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionClaseRecursoSec1" rendered="false"
                                                     sort="descripcion_clase_recurso_sec">
                                                 <webuijsf:staticText
@@ -258,7 +258,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnOrdenPresentacion1}"
-                                                    headerText="orden presentacion"
+                                                    headerText="orden presentaci&#243;n"
                                                     id="tableColumnOrdenPresentacion1" rendered="false"
                                                     sort="orden_presentacion">
                                                 <webuijsf:staticText

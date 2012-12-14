@@ -204,7 +204,7 @@
                                                     binding="#{Mensaje2.labelIdMensaje1}"
                                                     id="labelIdMensaje1"
                                                     for="campoIdMensaje1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Mensaje2.labelCodigoMensaje1}"
                                                     id="labelCodigoMensaje1"
                                                     for="campoCodigoMensaje1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -269,7 +269,7 @@
                                                     binding="#{Mensaje2.labelPatronMensaje1}"
                                                     id="labelPatronMensaje1"
                                                     for="campoPatronMensaje1"
-                                                    text="patron"/>
+                                                    text="patr&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -301,7 +301,7 @@
                                                     binding="#{Mensaje2.labelDescripcionMensaje1}"
                                                     id="labelDescripcionMensaje1"
                                                     for="campoDescripcionMensaje1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

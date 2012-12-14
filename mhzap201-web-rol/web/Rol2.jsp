@@ -204,7 +204,7 @@
                                                     binding="#{Rol2.labelIdRol1}"
                                                     id="labelIdRol1"
                                                     for="campoIdRol1"
-                                                    text="id"/>
+                                                    text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -236,7 +236,7 @@
                                                     binding="#{Rol2.labelCodigoRol1}"
                                                     id="labelCodigoRol1"
                                                     for="campoCodigoRol1"
-                                                    text="codigo"/>
+                                                    text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -302,7 +302,7 @@
                                                     binding="#{Rol2.labelDescripcionRol1}"
                                                     id="labelDescripcionRol1"
                                                     for="campoDescripcionRol1"
-                                                    text="descripcion"/>
+                                                    text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
