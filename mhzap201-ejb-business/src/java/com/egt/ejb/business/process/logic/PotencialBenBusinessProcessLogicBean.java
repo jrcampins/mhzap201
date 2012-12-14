@@ -43,6 +43,7 @@ import com.egt.ejb.persistence.facade.CausaInvCensoFacadeLocal;
 import com.egt.ejb.persistence.facade.FichaPersonaFacadeLocal;
 import com.egt.ejb.persistence.facade.CondicionReclCenFacadeLocal;
 import com.egt.ejb.persistence.facade.CausaDenReclCenFacadeLocal;
+import com.egt.ejb.persistence.facade.UsuarioFacadeLocal;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.ejb.EJB;
@@ -88,6 +89,9 @@ public class PotencialBenBusinessProcessLogicBean implements PotencialBenBusines
 
     @EJB
     private CausaDenReclCenFacadeLocal causaDenReclCenFacade;
+
+    @EJB
+    private UsuarioFacadeLocal usuarioFacade;
     // </editor-fold>
 
     @Override
