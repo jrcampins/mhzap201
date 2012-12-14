@@ -296,7 +296,7 @@ public class JSF {
     }
 
     public static String getWebuiString(UIComponent uic, String key) {
-        //Bitacora.trace(JSF.class, "getWebuiString-1--", uic, key);
+//      Bitacora.trace(JSF.class, "getWebuiString-1", uic, key);
         FacesContext fc = FacesContext.getCurrentInstance();
         UIViewRoot uivr = fc.getViewRoot();
         ResourceBundle rb = fc.getApplication().getResourceBundle(fc, "bundle");
@@ -306,12 +306,12 @@ public class JSF {
         String k = x + y + z;
         if (StringUtils.isNotBlank(k)) {
             String v = getWebuiString(rb, k);
-            //Bitacora.trace(JSF.class, "getWebuiString-1-1", k, v);
+            // <editor-fold defaultstate="collapsed">
 //          if (v == null) {
 //              k = y + z;
 //              v = getWebuiString(rb, k);
-//              //Bitacora.trace(JSF.class, "getWebuiString-1-2", k, v);
 //          }
+            // </editor-fold>
             return v;
         }
         return null;
@@ -326,11 +326,11 @@ public class JSF {
     }
 
     public static String getWebuiString(String key, String altkey, String styles) {
-        //Bitacora.trace(JSF.class, "getWebuiString-2--", key, altkey, styles);
+//      Bitacora.trace(JSF.class, "getWebuiString-2", key, altkey, styles);
         String k = StringUtils.trimToEmpty(key);
         if (StringUtils.isNotBlank(k)) {
             String v = getWebuiString(BundleWebui.getResourceBundle(), k);
-//          //Bitacora.trace(JSF.class, "getWebuiString-2-1", k, v);
+            // <editor-fold defaultstate="collapsed">
 //          if (v == null) {
 //              String ak = StringUtils.trimToEmpty(altkey);
 //              int l = ak.length() - 1;
@@ -348,15 +348,16 @@ public class JSF {
 //                      }
 //                  }
 ////----------------v = getWebuiString(BundleParametros.getResourceBundle(), ak);
-//                  //Bitacora.trace(JSF.class, "getWebuiString-2-2", ak, v);
 //              }
 //          }
+            // </editor-fold>
             return fix(v);
         }
         return null;
     }
 
     private static String getWebuiString(ResourceBundle resourceBundle, String key) {
+//      Bitacora.trace(JSF.class, "getWebuiString-3", key);
         try {
             return resourceBundle.getString(key);
         } catch (MissingResourceException e) {
@@ -406,7 +407,7 @@ public class JSF {
     public static String getFirstClientIdWithMessages() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         Iterator<String> messageClientIds = facesContext.getClientIdsWithMessages();
-        String clientId = null;
+        String clientId;
         while (messageClientIds.hasNext()) {
             clientId = messageClientIds.next();
             if (clientId != null) {
@@ -420,14 +421,14 @@ public class JSF {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         UIViewRoot uivr = facesContext.getViewRoot();
         Iterator<String> messageClientIds = facesContext.getClientIdsWithMessages();
-        String clientId = null;
-        UIComponent uic = null;
-        Iterator<FacesMessage> messages = null;
-        FacesMessage message = null;
-        String detail = null;
-        String summary = null;
-        String detalle = null;
-        String resumen = null;
+        String clientId;
+        UIComponent uic;
+        Iterator<FacesMessage> messages;
+        FacesMessage message;
+        String detail;
+        String summary;
+        String detalle;
+        String resumen;
         while (messageClientIds.hasNext()) {
             clientId = messageClientIds.next();
             if (clientId != null) {
@@ -605,7 +606,7 @@ public class JSF {
 //      String rpi = facesContext.getExternalContext().getRequestPathInfo();
         String url = URX2.WEB + URX2.AYUDA;
         String rpl = null;
-        String htm = null;
+        String htm;
         if (StringUtils.isBlank(pagina)) {
 //          if (rpi != null) {
 //              int j = rpi.lastIndexOf(JS.JSP_SUFFIX);
@@ -1028,8 +1029,8 @@ public class JSF {
         if (value != null && items != null) {
             if (items instanceof List) {
                 Iterator iterator = ((List) items).iterator();
-                Object optionObject = null;
-                Object valueOption = null;
+                Object optionObject;
+                Object valueOption;
                 while (iterator.hasNext() && option == null) {
                     optionObject = iterator.next();
                     if (optionObject != null && optionObject instanceof Option) {
@@ -1042,7 +1043,7 @@ public class JSF {
             } else {
                 if (items instanceof Option[]) {
                     Option[] options = ((Option[]) items);
-                    Object valueOption = null;
+                    Object valueOption;
                     for (int i = 0; i < options.length && option == null; i++) {
                         valueOption = options[i].getValue();
                         if (valueOption != null && value.equals(valueOption)) {
@@ -1065,9 +1066,9 @@ public class JSF {
     }
 
     private static ArrayList getListaOpciones(RecursoCachedRowSetDataProvider dp, boolean anulable, String colname, EnumColumnaEtiqueta coltype, boolean ordenado) {
-        Object value = null;
-        String label = null;
-        String description = null;
+        Object value;
+        String label;
+        String description;
         ListOptions list = new ListOptions(anulable, ordenado);
         if (dp.isRecursoIdentificable() || dp.isRecursoEnumerable()) {
             if (dp.cursorFirst()) {
@@ -1109,9 +1110,9 @@ public class JSF {
     }
 
     public static ArrayList getListaOpciones(Collection c, RecursoWrapper rw, boolean anulable, EnumColumnaEtiqueta coltype, boolean ordenado) {
-        Object value = null;
-        String label = null;
-        String description = null;
+        Object value;
+        String label;
+        String description;
         ListOptions list = new ListOptions(anulable, ordenado);
         for (Object recurso : c) {
             rw.setRecurso(recurso);
@@ -1252,9 +1253,9 @@ public class JSF {
         String clave = dp.getRecursoJerarquizableDataProvider().getColumnaRecursoSuperior();
         Long id = dp.getRecursoJerarquizableDataProvider().getIdentificacionRecurso(rowKey);
         String tnid = getTreeNodeId(dp, rowKey);
-        String text = null;
+        String text;
         String toolTip = getTreeNodeText(dp, rowKey, EnumColumnaEtiqueta.AMBAS_COLUMNAS);
-        String urlx = null;
+        String urlx;
         String target = null;
         if (StringUtils.isBlank(colname)) {
             text = getTreeNodeText(dp, rowKey, coltype);
@@ -1335,7 +1336,7 @@ public class JSF {
         // dando como resultado una copia incompleta (uno si y uno no); por eso se necesita esta funcion.
         List sourceChildren = source.getChildren();
         List targetChildren = target.getChildren();
-        Object child = null;
+        Object child;
         Object[] sourceChildrenArray = sourceChildren.toArray();
         for (int i = 0; i < sourceChildrenArray.length; i++) {
             child = sourceChildrenArray[i];
@@ -1373,19 +1374,21 @@ public class JSF {
         /*
          * expand node
          */
-        String cookie1 = treeKey + "-expand";
         /*
          * glassfish-3.1: El nombre de Cookie form1:tree1-expand es una palabra reservada
          */
-        cookie1 = "form1-tree1-expand";
+//      String cookie1 = treeKey + "-expand";
+        String cookie1 = "form1-tree1-expand";
+//
         /*
          * highlight node
          */
-        String cookie2 = treeKey + "-hi";
         /*
          * glassfish-3.1: El nombre de Cookie form1:tree1-hi es una palabra reservada
          */
-        cookie2 = "form1-tree1-hi";
+//      String cookie2 = treeKey + "-hi";
+        String cookie2 = "form1-tree1-hi";
+//
         TreeNode nodo = getNodo(tree, id);
         if (nodo == null) {
             deleteCookie(cookie1);
@@ -1402,9 +1405,9 @@ public class JSF {
             return null;
         }
         String nodeId = id.substring(id.lastIndexOf(":") + 1);
-        Object child = null;
-        TreeNode child1 = null;
-        TreeNode child2 = null;
+        Object child;
+        TreeNode child1;
+        TreeNode child2;
         List children = parent.getChildren();
         Iterator iterator = children.iterator();
         while (iterator.hasNext()) {
@@ -1549,7 +1552,7 @@ public class JSF {
         if (StringUtils.isBlank(url)) {
             return null;
         }
-        Hyperlink child = null;
+        Hyperlink child;
         List children = parent.getChildren();
         Iterator iterator = children.iterator();
         while (iterator.hasNext()) {
@@ -1580,7 +1583,7 @@ public class JSF {
         boolean up2url = !StringUtils.isBlank(url);
         List sourceChildren = source.getChildren();
         List targetChildren = target.getChildren();
-        Hyperlink child = null;
+        Hyperlink child;
         Object[] sourceChildrenArray = sourceChildren.toArray();
         targetChildren.clear();
         for (int i = 0; i < sourceChildrenArray.length; i++) {

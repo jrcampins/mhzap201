@@ -44,7 +44,9 @@ public class CampoTexto extends TextField {
         return sidekick;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isRendered() {
         return this.getSibling() == null
@@ -52,17 +54,20 @@ public class CampoTexto extends TextField {
                 : super.isRendered() && !super.isReadOnly();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getToolTip() {
         String superstr = super.getToolTip();
         if (StringUtils.isNotBlank(superstr) && getValueExpression("toolTip") == null) {
-            int i = superstr.indexOf('.');
-            if (i < 0) {
-            } else if (superstr.startsWith("BundleParametros.")) {
+            if (superstr.startsWith("BundleParametros.")) {
+                int i = superstr.indexOf('.');
                 String key = superstr.substring(i + 1);
                 return BundleParametros.getToolTip(key);
             }
         }
         return superstr;
     }
+
 }

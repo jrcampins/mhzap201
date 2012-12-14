@@ -21,6 +21,9 @@ public class AyudaEnLinea extends HelpInline {
         super();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object getText() {
         Object object = super.getText();
@@ -45,4 +48,5 @@ public class AyudaEnLinea extends HelpInline {
         }
         return object;
     }
+
 }

@@ -34,7 +34,9 @@ public class Calendario extends Calendar {
         return sibling;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isRendered() {
         return this.getSibling() == null
@@ -42,7 +44,9 @@ public class Calendario extends Calendar {
                 : super.isRendered() && !super.isReadOnly();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setValue(Object arg0) {
         Date arg1 = this.obj2Date(arg0);
@@ -62,17 +66,20 @@ public class Calendario extends Calendar {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getToolTip() {
         String superstr = super.getToolTip();
         if (StringUtils.isNotBlank(superstr) && getValueExpression("toolTip") == null) {
-            int i = superstr.indexOf('.');
-            if (i < 0) {
-            } else if (superstr.startsWith("BundleParametros.")) {
+            if (superstr.startsWith("BundleParametros.")) {
+                int i = superstr.indexOf('.');
                 String key = superstr.substring(i + 1);
                 return BundleParametros.getToolTip(key);
             }
         }
         return superstr;
     }
+
 }
