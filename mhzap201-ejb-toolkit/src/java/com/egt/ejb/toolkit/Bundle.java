@@ -27,7 +27,8 @@ public class Bundle {
         }
     }
 
-    public static Enumeration getKeys() {
+    public static Enumeration<String> getKeys() {
         return resourceBundle.getKeys();
     }
+
 }
