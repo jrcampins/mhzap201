@@ -110,8 +110,6 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_FUNCIONARIO_DIGITADOR = "id_funcionario_digitador"; // Funcionario Digitador
 
-    public static final String ID_FUNCIONARIO_REG_POT_BEN = "id_funcionario_reg_pot_ben"; // Funcionario Registro Potencial Beneficiario
-
     public static final String ID_FUNCIONARIO_SUPERVISOR = "id_funcionario_supervisor"; // Funcionario Supervisor
 
     public static final String ID_FUNCIONARIO_ULT_VISITA_CEN = "id_funcionario_ult_visita_cen"; // Funcionario Ultima Visita Censo
@@ -209,6 +207,8 @@ public class CPP { // Clave Parametro Peticion
     public static final String ID_UBICACION_SUPERIOR = "id_ubicacion_superior"; // Ubicacion Superior
 
     public static final String ID_USUARIO = "id_usuario"; // Usuario
+
+    public static final String ID_USUARIO_REG_POT_BEN = "id_usuario_reg_pot_ben"; // Usuario Registro Potencial Beneficiario
 
     public static final String ID_USUARIO_SUPERVISOR = "id_usuario_supervisor"; // Usuario Supervisor
 

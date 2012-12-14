@@ -74,6 +74,10 @@ public interface UsuarioBase {
 //
 //  public void setPaginaUsuarioIdUsuarioCollection(Collection<? extends PaginaUsuarioBase> collection);
 
+    public Collection<? extends PotencialBenBase> getPotencialBenIdUsuarioRegPotBenCollection();
+//
+//  public void setPotencialBenIdUsuarioRegPotBenCollection(Collection<? extends PotencialBenBase> collection);
+
     public Collection<? extends RolUsuarioBase> getRolUsuarioIdUsuarioCollection();
 //
 //  public void setRolUsuarioIdUsuarioCollection(Collection<? extends RolUsuarioBase> collection);

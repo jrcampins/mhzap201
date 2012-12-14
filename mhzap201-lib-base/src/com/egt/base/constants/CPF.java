@@ -830,8 +830,6 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_FUNCIONARIO_DIGITADOR = 20591L; // Funcionario Digitador
 
-    public static final Long ID_FUNCIONARIO_REG_POT_BEN = 20682L; // Funcionario Registro Potencial Beneficiario
-
     public static final Long ID_FUNCIONARIO_SUPERVISOR = 20592L; // Funcionario Supervisor
 
     public static final Long ID_FUNCIONARIO_ULT_VISITA_CEN = 20674L; // Funcionario Ultima Visita Censo
@@ -929,6 +927,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ID_UBICACION_SUPERIOR = 20514L; // Ubicacion Superior
 
     public static final Long ID_USUARIO = 1379L; // Usuario
+
+    public static final Long ID_USUARIO_REG_POT_BEN = 20694L; // Usuario Registro Potencial Beneficiario
 
     public static final Long ID_USUARIO_SUPERVISOR = 1985L; // Usuario Supervisor
 

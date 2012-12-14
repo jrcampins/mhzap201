@@ -139,7 +139,7 @@ public class PotencialBenConstants {
 
     public static final String COLUMNA_FECHA_REGISTRO_POT_BEN = "fecha_registro_pot_ben";
 
-    public static final String COLUMNA_ID_FUNCIONARIO_REG_POT_BEN = "id_funcionario_reg_pot_ben";
+    public static final String COLUMNA_ID_USUARIO_REG_POT_BEN = "id_usuario_reg_pot_ben";
 
     public static final String COLUMNA_ES_POTENCIAL_BEN_INACTIVO = "es_potencial_ben_inactivo";
 
@@ -224,6 +224,8 @@ public class PotencialBenConstants {
     public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_RECL_CEN = 324200101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_CAUSA_DEN_RECL_CEN = 311650101L;
+
+    public static final long FUNCION_REFERENCIA_CONSULTAR_USUARIO = 106100101L;
 
     public static final String PROCESO_FUNCION_DESACTIVAR_POTENCIAL_BEN = "potencial_ben_desactivar";
 

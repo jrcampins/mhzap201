@@ -272,9 +272,9 @@ public interface PotencialBenBase {
 //
 //  public void setCausaDenReclCenNumeroCausaDenReclCen(CausaDenReclCenBase causaDenReclCen);
 
-    public FuncionarioBase getFuncionarioIdFuncionarioRegPotBen();
+    public UsuarioBase getUsuarioIdUsuarioRegPotBen();
 //
-//  public void setFuncionarioIdFuncionarioRegPotBen(FuncionarioBase funcionario);
+//  public void setUsuarioIdUsuarioRegPotBen(UsuarioBase usuario);
 
     public FuncionarioBase getFuncionarioIdFuncionarioUltVisitaCen();
 //
