@@ -532,8 +532,8 @@ public class FichaPersona4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("vincular")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("desvincular"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("vincular_ficha_persona")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("desvincular_ficha_persona"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -908,7 +908,7 @@ public class FichaPersona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.vincularFichaPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("vincular ficha persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "vincular_ficha_persona");
         }
         return null;
     }
@@ -918,7 +918,7 @@ public class FichaPersona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.desvincularFichaPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desvincular ficha persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "desvincular_ficha_persona");
         }
         return null;
     }

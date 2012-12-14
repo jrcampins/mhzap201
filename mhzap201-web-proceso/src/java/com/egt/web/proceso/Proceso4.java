@@ -867,13 +867,13 @@ public class Proceso4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("proceso importar archivos ext")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("proceso acreditar pot ben")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("proceso preparar prox pago pen")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("proceso otorgar pensiones apr")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("proceso denegar pensiones")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("proceso actualizar pen en jupe")),
-            new Option(FUNCION_ACCION_7, Bundle.getString("proceso verificar ele pen"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("proceso_importar_archivos_ext")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("proceso_acreditar_pot_ben")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("proceso_preparar_prox_pago_pen")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("proceso_otorgar_pensiones_apr")),
+            new Option(FUNCION_ACCION_5, BundleWebui.getString("proceso_denegar_pensiones")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("proceso_actualizar_pen_en_jupe")),
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("proceso_verificar_ele_pen"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -1310,7 +1310,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoImportarArchivosExt();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso importar archivos ext"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_importar_archivos_ext");
         }
         return null;
     }
@@ -1320,7 +1320,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoAcreditarPotBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso acreditar pot ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_acreditar_pot_ben");
         }
         return null;
     }
@@ -1330,7 +1330,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoPrepararProxPagoPen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso preparar prox pago pen"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_preparar_prox_pago_pen");
         }
         return null;
     }
@@ -1340,7 +1340,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoOtorgarPensionesApr();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso otorgar pensiones apr"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_otorgar_pensiones_apr");
         }
         return null;
     }
@@ -1350,7 +1350,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoDenegarPensiones();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso denegar pensiones"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_denegar_pensiones");
         }
         return null;
     }
@@ -1360,7 +1360,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoActualizarPenEnJupe();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso actualizar pen en jupe"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_actualizar_pen_en_jupe");
         }
         return null;
     }
@@ -1370,7 +1370,7 @@ public class Proceso4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.procesoVerificarElePen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("proceso verificar ele pen"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_verificar_ele_pen");
         }
         return null;
     }

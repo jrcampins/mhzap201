@@ -480,23 +480,23 @@ public class InformeAuditoria4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("emitir importar deudores")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("emitir importar empleados")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("emitir importar fallecidos")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("emitir importar ficha hogar")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("emitir importar ficha persona")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("emitir importar identificaciones")),
-            new Option(FUNCION_ACCION_7, Bundle.getString("emitir importar jubilados")),
-            new Option(FUNCION_ACCION_8, Bundle.getString("emitir importar pensionados")),
-            new Option(FUNCION_ACCION_9, Bundle.getString("emitir importar potenciales beneficiarios")),
-            new Option(FUNCION_ACCION_10, Bundle.getString("emitir importar subsidios")),
-            new Option(FUNCION_ACCION_11, Bundle.getString("emitir importar archivos externos")),
-            new Option(FUNCION_ACCION_12, Bundle.getString("emitir acreditar potenciales beneficiarios")),
-            new Option(FUNCION_ACCION_13, Bundle.getString("emitir aprobar denegar pension")),
-            new Option(FUNCION_ACCION_14, Bundle.getString("emitir registrar resolucion aprobatoria")),
-            new Option(FUNCION_ACCION_15, Bundle.getString("emitir registrar resolucion denegatoria")),
-            new Option(FUNCION_ACCION_16, Bundle.getString("emitir incorporar pensionados al jupe")),
-            new Option(FUNCION_ACCION_17, Bundle.getString("emitir verificar elegibilidad para pension"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("emitir_informe_auditoria_importar_deudores")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("emitir_informe_auditoria_importar_empleados")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("emitir_informe_auditoria_importar_fallecidos")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("emitir_informe_auditoria_importar_ficha_hogar")),
+            new Option(FUNCION_ACCION_5, BundleWebui.getString("emitir_informe_auditoria_importar_ficha_persona")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("emitir_informe_auditoria_importar_identificaciones")),
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("emitir_informe_auditoria_importar_jubilados")),
+            new Option(FUNCION_ACCION_8, BundleWebui.getString("emitir_informe_auditoria_importar_pensionados")),
+            new Option(FUNCION_ACCION_9, BundleWebui.getString("emitir_informe_auditoria_importar_potenciales_beneficiarios")),
+            new Option(FUNCION_ACCION_10, BundleWebui.getString("emitir_informe_auditoria_importar_subsidios")),
+            new Option(FUNCION_ACCION_11, BundleWebui.getString("emitir_informe_auditoria_importar_archivos_externos")),
+            new Option(FUNCION_ACCION_12, BundleWebui.getString("emitir_informe_auditoria_acreditar_potenciales_beneficiarios")),
+            new Option(FUNCION_ACCION_13, BundleWebui.getString("emitir_informe_auditoria_aprobar_denegar_pension")),
+            new Option(FUNCION_ACCION_14, BundleWebui.getString("emitir_informe_auditoria_registrar_resolucion_aprobatoria")),
+            new Option(FUNCION_ACCION_15, BundleWebui.getString("emitir_informe_auditoria_registrar_resolucion_denegatoria")),
+            new Option(FUNCION_ACCION_16, BundleWebui.getString("emitir_informe_auditoria_incorporar_pensionados_al_jupe")),
+            new Option(FUNCION_ACCION_17, BundleWebui.getString("emitir_informe_auditoria_verificar_elegibilidad_para_pension"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -637,7 +637,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarDeudores();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar deudores"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_deudores");
         }
         return null;
     }
@@ -647,7 +647,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarEmpleados();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar empleados"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_empleados");
         }
         return null;
     }
@@ -657,7 +657,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarFallecidos();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar fallecidos"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_fallecidos");
         }
         return null;
     }
@@ -667,7 +667,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarFichaHogar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar ficha hogar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_ficha_hogar");
         }
         return null;
     }
@@ -677,7 +677,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarFichaPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar ficha persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_ficha_persona");
         }
         return null;
     }
@@ -687,7 +687,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarIdentificaciones();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar identificaciones"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_identificaciones");
         }
         return null;
     }
@@ -697,7 +697,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarJubilados();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar jubilados"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_jubilados");
         }
         return null;
     }
@@ -707,7 +707,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarPensionados();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar pensionados"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_pensionados");
         }
         return null;
     }
@@ -717,7 +717,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarPotencialesBeneficiarios();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar potenciales beneficiarios"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_potenciales_beneficiarios");
         }
         return null;
     }
@@ -727,7 +727,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarSubsidios();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar subsidios"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_subsidios");
         }
         return null;
     }
@@ -737,7 +737,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaImportarArchivosExternos();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria importar archivos externos"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_importar_archivos_externos");
         }
         return null;
     }
@@ -747,7 +747,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaAcreditarPotencialesBeneficiarios();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria acreditar potenciales beneficiarios"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_acreditar_potenciales_beneficiarios");
         }
         return null;
     }
@@ -757,7 +757,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaAprobarDenegarPension();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria aprobar denegar pension"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_aprobar_denegar_pension");
         }
         return null;
     }
@@ -767,7 +767,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaRegistrarResolucionAprobatoria();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria registrar resolucion aprobatoria"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_registrar_resolucion_aprobatoria");
         }
         return null;
     }
@@ -777,7 +777,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaRegistrarResolucionDenegatoria();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria registrar resolucion denegatoria"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_registrar_resolucion_denegatoria");
         }
         return null;
     }
@@ -787,7 +787,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaIncorporarPensionadosAlJupe();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria incorporar pensionados al jupe"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_incorporar_pensionados_al_jupe");
         }
         return null;
     }
@@ -797,7 +797,7 @@ public class InformeAuditoria4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirInformeAuditoriaVerificarElegibilidadParaPension();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir informe auditoria verificar elegibilidad para pension"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_informe_auditoria_verificar_elegibilidad_para_pension");
         }
         return null;
     }

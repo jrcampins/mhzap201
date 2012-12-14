@@ -341,7 +341,7 @@ public class Ubicacion4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("reconstruir"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("reconstruir_ubicacion"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -409,7 +409,7 @@ public class Ubicacion4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.reconstruirUbicacion();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("reconstruir ubicacion"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "reconstruir_ubicacion");
         }
         return null;
     }

@@ -2937,34 +2937,34 @@ public class Persona4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("registrar cer vida")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("anular cer vida")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("registrar cer defun")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("anular cer defun")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("aprobar pension")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("denegar pension")),
-            new Option(FUNCION_ACCION_7, Bundle.getString("revocar pension")),
-            new Option(FUNCION_ACCION_8, Bundle.getString("otorgar pension")),
-            new Option(FUNCION_ACCION_9, Bundle.getString("registrar entrega doc")),
-            new Option(FUNCION_ACCION_10, Bundle.getString("solicitar reco pen")),
-            new Option(FUNCION_ACCION_11, Bundle.getString("aprobar reco pen")),
-            new Option(FUNCION_ACCION_12, Bundle.getString("denegar reco pen")),
-            new Option(FUNCION_ACCION_13, Bundle.getString("registrar denu pen")),
-            new Option(FUNCION_ACCION_14, Bundle.getString("confirmar denu pen")),
-            new Option(FUNCION_ACCION_15, Bundle.getString("desmentir denu pen")),
-            new Option(FUNCION_ACCION_16, Bundle.getString("act fec ult cob pen")),
-            new Option(FUNCION_ACCION_17, Bundle.getString("anul fec ult cob pen")),
-            new Option(FUNCION_ACCION_18, Bundle.getString("emitir con pension solicitada")),
-            new Option(FUNCION_ACCION_19, Bundle.getString("emitir sin cedula con pension solicitada")),
-            new Option(FUNCION_ACCION_20, Bundle.getString("emitir acreditada sin objeciones")),
-            new Option(FUNCION_ACCION_21, Bundle.getString("emitir acreditada con objeciones")),
-            new Option(FUNCION_ACCION_22, Bundle.getString("emitir con pension aprobada")),
-            new Option(FUNCION_ACCION_23, Bundle.getString("emitir con pension denegada")),
-            new Option(FUNCION_ACCION_24, Bundle.getString("emitir con pension revocada")),
-            new Option(FUNCION_ACCION_25, Bundle.getString("emitir con pension otorgada")),
-            new Option(FUNCION_ACCION_26, Bundle.getString("emitir ultima actualizacion en jupe")),
-            new Option(FUNCION_ACCION_27, Bundle.getString("emitir cuadro resumen pension")),
-            new Option(FUNCION_ACCION_28, Bundle.getString("emitir cuadro resumen pension sin doc"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("registrar_cer_vida_persona")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("anular_cer_vida_persona")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("registrar_cer_defun_persona")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("anular_cer_defun_persona")),
+            new Option(FUNCION_ACCION_5, BundleWebui.getString("aprobar_pension_persona")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("denegar_pension_persona")),
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("revocar_pension_persona")),
+            new Option(FUNCION_ACCION_8, BundleWebui.getString("otorgar_pension_persona")),
+            new Option(FUNCION_ACCION_9, BundleWebui.getString("registrar_entrega_doc_persona")),
+            new Option(FUNCION_ACCION_10, BundleWebui.getString("solicitar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_11, BundleWebui.getString("aprobar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_12, BundleWebui.getString("denegar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_13, BundleWebui.getString("registrar_denu_pen_persona")),
+            new Option(FUNCION_ACCION_14, BundleWebui.getString("confirmar_denu_pen_persona")),
+            new Option(FUNCION_ACCION_15, BundleWebui.getString("desmentir_denu_pen_persona")),
+            new Option(FUNCION_ACCION_16, BundleWebui.getString("act_fec_ult_cob_pen_persona")),
+            new Option(FUNCION_ACCION_17, BundleWebui.getString("anul_fec_ult_cob_pen_persona")),
+            new Option(FUNCION_ACCION_18, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
+            new Option(FUNCION_ACCION_19, BundleWebui.getString("emitir_persona_sin_cedula_con_pension_solicitada")),
+            new Option(FUNCION_ACCION_20, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
+            new Option(FUNCION_ACCION_21, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
+            new Option(FUNCION_ACCION_22, BundleWebui.getString("emitir_persona_con_pension_aprobada")),
+            new Option(FUNCION_ACCION_23, BundleWebui.getString("emitir_persona_con_pension_denegada")),
+            new Option(FUNCION_ACCION_24, BundleWebui.getString("emitir_persona_con_pension_revocada")),
+            new Option(FUNCION_ACCION_25, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
+            new Option(FUNCION_ACCION_26, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
+            new Option(FUNCION_ACCION_27, BundleWebui.getString("emitir_cuadro_resumen_pension_persona")),
+            new Option(FUNCION_ACCION_28, BundleWebui.getString("emitir_cuadro_resumen_pension_persona_sin_doc"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -4828,7 +4828,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.registrarCerVidaPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar cer vida persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "registrar_cer_vida_persona");
         }
         return null;
     }
@@ -4838,7 +4838,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.anularCerVidaPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("anular cer vida persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "anular_cer_vida_persona");
         }
         return null;
     }
@@ -4848,7 +4848,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.registrarCerDefunPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar cer defun persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "registrar_cer_defun_persona");
         }
         return null;
     }
@@ -4858,7 +4858,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.anularCerDefunPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("anular cer defun persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "anular_cer_defun_persona");
         }
         return null;
     }
@@ -4868,7 +4868,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.aprobarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar pension persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "aprobar_pension_persona");
         }
         return null;
     }
@@ -4878,7 +4878,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.denegarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar pension persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "denegar_pension_persona");
         }
         return null;
     }
@@ -4888,7 +4888,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.revocarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("revocar pension persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "revocar_pension_persona");
         }
         return null;
     }
@@ -4898,7 +4898,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.otorgarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("otorgar pension persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "otorgar_pension_persona");
         }
         return null;
     }
@@ -4908,7 +4908,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.registrarEntregaDocPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar entrega doc persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "registrar_entrega_doc_persona");
         }
         return null;
     }
@@ -4918,7 +4918,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.solicitarRecoPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("solicitar reco pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "solicitar_reco_pen_persona");
         }
         return null;
     }
@@ -4928,7 +4928,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.aprobarRecoPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar reco pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "aprobar_reco_pen_persona");
         }
         return null;
     }
@@ -4938,7 +4938,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.denegarRecoPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar reco pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "denegar_reco_pen_persona");
         }
         return null;
     }
@@ -4948,7 +4948,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.registrarDenuPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("registrar denu pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "registrar_denu_pen_persona");
         }
         return null;
     }
@@ -4958,7 +4958,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.confirmarDenuPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("confirmar denu pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "confirmar_denu_pen_persona");
         }
         return null;
     }
@@ -4968,7 +4968,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.desmentirDenuPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desmentir denu pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "desmentir_denu_pen_persona");
         }
         return null;
     }
@@ -4978,7 +4978,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.actFecUltCobPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("act fec ult cob pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "act_fec_ult_cob_pen_persona");
         }
         return null;
     }
@@ -4988,7 +4988,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.anulFecUltCobPenPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("anul fec ult cob pen persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "anul_fec_ult_cob_pen_persona");
         }
         return null;
     }
@@ -4998,7 +4998,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionSolicitada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension solicitada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_con_pension_solicitada");
         }
         return null;
     }
@@ -5008,7 +5008,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaSinCedulaConPensionSolicitada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona sin cedula con pension solicitada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_sin_cedula_con_pension_solicitada");
         }
         return null;
     }
@@ -5018,7 +5018,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaSinObjeciones();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona acreditada sin objeciones"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_acreditada_sin_objeciones");
         }
         return null;
     }
@@ -5028,7 +5028,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaConObjeciones();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona acreditada con objeciones"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_acreditada_con_objeciones");
         }
         return null;
     }
@@ -5038,7 +5038,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionAprobada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension aprobada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_con_pension_aprobada");
         }
         return null;
     }
@@ -5048,7 +5048,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionDenegada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension denegada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_con_pension_denegada");
         }
         return null;
     }
@@ -5058,7 +5058,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionRevocada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension revocada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_con_pension_revocada");
         }
         return null;
     }
@@ -5068,7 +5068,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionOtorgada();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir persona con pension otorgada"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_persona_con_pension_otorgada");
         }
         return null;
     }
@@ -5078,7 +5078,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirUltimaActualizacionPersonaEnJupe();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir ultima actualizacion persona en jupe"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_ultima_actualizacion_persona_en_jupe");
         }
         return null;
     }
@@ -5088,7 +5088,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirCuadroResumenPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir cuadro resumen pension persona"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_cuadro_resumen_pension_persona");
         }
         return null;
     }
@@ -5098,7 +5098,7 @@ public class Persona4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirCuadroResumenPensionPersonaSinDoc();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir cuadro resumen pension persona sin doc"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_cuadro_resumen_pension_persona_sin_doc");
         }
         return null;
     }

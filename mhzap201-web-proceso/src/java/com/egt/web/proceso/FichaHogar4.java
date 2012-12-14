@@ -443,9 +443,9 @@ public class FichaHogar4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("desactivar")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("reactivar")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("calcular icv"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("desactivar_ficha_hogar")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("reactivar_ficha_hogar")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("calcular_icv_ficha_hogar"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -673,7 +673,7 @@ public class FichaHogar4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.desactivarFichaHogar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desactivar ficha hogar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "desactivar_ficha_hogar");
         }
         return null;
     }
@@ -683,7 +683,7 @@ public class FichaHogar4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.reactivarFichaHogar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("reactivar ficha hogar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "reactivar_ficha_hogar");
         }
         return null;
     }
@@ -693,7 +693,7 @@ public class FichaHogar4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.calcularIcvFichaHogar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("calcular icv ficha hogar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "calcular_icv_ficha_hogar");
         }
         return null;
     }

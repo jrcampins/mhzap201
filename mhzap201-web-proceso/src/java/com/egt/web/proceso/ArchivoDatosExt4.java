@@ -501,8 +501,8 @@ public class ArchivoDatosExt4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("cargar")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("importar"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("cargar_archivo_datos_ext")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("importar_archivo_datos_ext"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -751,7 +751,7 @@ public class ArchivoDatosExt4 extends AbstractPageBean
                 TLC.getBitacora().error(CBM2.SEGMENTO_NO_AUTORIZADO, "<" + csr + ">");
             }
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("cargar archivo datos ext"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "cargar_archivo_datos_ext");
         }
         return null;
     }
@@ -768,7 +768,7 @@ public class ArchivoDatosExt4 extends AbstractPageBean
                 TLC.getBitacora().error(CBM2.SEGMENTO_NO_AUTORIZADO, "<" + csr + ">");
             }
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("importar archivo datos ext"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "importar_archivo_datos_ext");
         }
         return null;
     }

@@ -1981,22 +1981,22 @@ public class PotencialBen4 extends AbstractPageBean
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
-            new Option(FUNCION_ACCION_1, Bundle.getString("desactivar")),
-            new Option(FUNCION_ACCION_2, Bundle.getString("reactivar")),
-            new Option(FUNCION_ACCION_3, Bundle.getString("vincular")),
-            new Option(FUNCION_ACCION_4, Bundle.getString("validar censo")),
-            new Option(FUNCION_ACCION_5, Bundle.getString("invalidar censo")),
-            new Option(FUNCION_ACCION_6, Bundle.getString("reg recl cen")),
-            new Option(FUNCION_ACCION_7, Bundle.getString("aprobar recl cen")),
-            new Option(FUNCION_ACCION_8, Bundle.getString("denegar recl cen")),
-            new Option(FUNCION_ACCION_9, Bundle.getString("acreditar")),
-            new Option(FUNCION_ACCION_10, Bundle.getString("reg ult vis cen")),
-            new Option(FUNCION_ACCION_11, Bundle.getString("emitir constancia registro")),
-            new Option(FUNCION_ACCION_12, Bundle.getString("emitir por censar")),
-            new Option(FUNCION_ACCION_13, Bundle.getString("emitir por validar")),
-            new Option(FUNCION_ACCION_14, Bundle.getString("emitir por resultado validacion")),
-            new Option(FUNCION_ACCION_15, Bundle.getString("emitir por icv")),
-            new Option(FUNCION_ACCION_16, Bundle.getString("emitir acreditado"))
+            new Option(FUNCION_ACCION_1, BundleWebui.getString("desactivar_potencial_ben")),
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("reactivar_potencial_ben")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("vincular_potencial_ben")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("validar_censo_potencial_ben")),
+            new Option(FUNCION_ACCION_5, BundleWebui.getString("invalidar_censo_potencial_ben")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("reg_recl_cen_potencial_ben")),
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("aprobar_recl_cen_potencial_ben")),
+            new Option(FUNCION_ACCION_8, BundleWebui.getString("denegar_recl_cen_potencial_ben")),
+            new Option(FUNCION_ACCION_9, BundleWebui.getString("acreditar_potencial_ben")),
+            new Option(FUNCION_ACCION_10, BundleWebui.getString("reg_ult_vis_cen_potencial_ben")),
+            new Option(FUNCION_ACCION_11, BundleWebui.getString("emitir_constancia_registro_potencial_ben")),
+            new Option(FUNCION_ACCION_12, BundleWebui.getString("emitir_potencial_ben_por_censar")),
+            new Option(FUNCION_ACCION_13, BundleWebui.getString("emitir_potencial_ben_por_validar")),
+            new Option(FUNCION_ACCION_14, BundleWebui.getString("emitir_potencial_ben_por_resultado_validacion")),
+            new Option(FUNCION_ACCION_15, BundleWebui.getString("emitir_potencial_ben_por_icv")),
+            new Option(FUNCION_ACCION_16, BundleWebui.getString("emitir_potencial_ben_acreditado"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -3643,7 +3643,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.desactivarPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("desactivar potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "desactivar_potencial_ben");
         }
         return null;
     }
@@ -3653,7 +3653,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.reactivarPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("reactivar potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "reactivar_potencial_ben");
         }
         return null;
     }
@@ -3663,7 +3663,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.vincularPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("vincular potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "vincular_potencial_ben");
         }
         return null;
     }
@@ -3673,7 +3673,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.validarCensoPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("validar censo potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "validar_censo_potencial_ben");
         }
         return null;
     }
@@ -3683,7 +3683,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.invalidarCensoPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("invalidar censo potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "invalidar_censo_potencial_ben");
         }
         return null;
     }
@@ -3693,7 +3693,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.regReclCenPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("reg recl cen potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "reg_recl_cen_potencial_ben");
         }
         return null;
     }
@@ -3703,7 +3703,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.aprobarReclCenPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("aprobar recl cen potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "aprobar_recl_cen_potencial_ben");
         }
         return null;
     }
@@ -3713,7 +3713,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.denegarReclCenPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("denegar recl cen potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "denegar_recl_cen_potencial_ben");
         }
         return null;
     }
@@ -3723,7 +3723,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.acreditarPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("acreditar potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "acreditar_potencial_ben");
         }
         return null;
     }
@@ -3733,7 +3733,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.regUltVisCenPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("reg ult vis cen potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "reg_ult_vis_cen_potencial_ben");
         }
         return null;
     }
@@ -3743,7 +3743,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirConstanciaRegistroPotencialBen();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir constancia registro potencial ben"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_constancia_registro_potencial_ben");
         }
         return null;
     }
@@ -3753,7 +3753,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPotencialBenPorCensar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir potencial ben por censar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_por_censar");
         }
         return null;
     }
@@ -3763,7 +3763,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPotencialBenPorValidar();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir potencial ben por validar"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_por_validar");
         }
         return null;
     }
@@ -3773,7 +3773,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPotencialBenPorResultadoValidacion();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir potencial ben por resultado validacion"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_por_resultado_validacion");
         }
         return null;
     }
@@ -3783,7 +3783,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPotencialBenPorIcv();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir potencial ben por icv"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_por_icv");
         }
         return null;
     }
@@ -3793,7 +3793,7 @@ public class PotencialBen4 extends AbstractPageBean
         if (esFuncionAutorizada) {
             this.emitirPotencialBenAcreditado();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, Bundle.getString("emitir potencial ben acreditado"));
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_acreditado");
         }
         return null;
     }
