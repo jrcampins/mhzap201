@@ -2313,7 +2313,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosConfDenuPen1}"
-                                                    headerText="comentarios conf denuncia pensi&#243;n"
+                                                    headerText="comentarios confirmaci&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnComentariosConfDenuPen1" rendered="false"
                                                     sort="comentarios_conf_denu_pen">
                                                 <webuijsf:staticText
@@ -2535,7 +2535,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNotasAnulFecUltCobPen1}"
-                                                    headerText="notas anulaci&#243;n fecha &#250;ltima cob pensi&#243;n"
+                                                    headerText="notas anulaci&#243;n fecha &#250;ltimo cobro pensi&#243;n"
                                                     id="tableColumnNotasAnulFecUltCobPen1" rendered="false"
                                                     sort="notas_anul_fec_ult_cob_pen">
                                                 <webuijsf:staticText

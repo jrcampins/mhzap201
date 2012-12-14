@@ -991,7 +991,7 @@
                                                     binding="#{Persona4.labelComentariosConfDenuPen1}"
                                                     id="labelComentariosConfDenuPen1"
                                                     for="campoComentariosConfDenuPen1"
-                                                    text="comentarios conf denuncia pensi&#243;n"/>
+                                                    text="comentarios confirmaci&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1083,7 +1083,7 @@
                                                     binding="#{Persona4.labelNotasAnulFecUltCobPen1}"
                                                     id="labelNotasAnulFecUltCobPen1"
                                                     for="campoNotasAnulFecUltCobPen1"
-                                                    text="notas anulaci&#243;n fecha &#250;ltima cob pensi&#243;n"/>
+                                                    text="notas anulaci&#243;n fecha &#250;ltimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
