@@ -121,7 +121,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
     public static final String COLUMNA_OTRA_CAUSA_DEN_RECL_CEN = "otra_causa_den_recl_cen";
     public static final String COLUMNA_COMENTARIOS_DEN_RECL_CEN = "comentarios_den_recl_cen";
     public static final String COLUMNA_FECHA_REGISTRO_POT_BEN = "fecha_registro_pot_ben";
-    public static final String COLUMNA_ID_FUNCIONARIO_REG_POT_BEN = "id_funcionario_reg_pot_ben";
+    public static final String COLUMNA_ID_USUARIO_REG_POT_BEN = "id_usuario_reg_pot_ben";
     public static final String COLUMNA_ES_POTENCIAL_BEN_INACTIVO = "es_potencial_ben_inactivo";
     public static final String COLUMNA_FECHA_ULTIMA_VISITA_CENSO = "fecha_ultima_visita_censo";
     public static final String COLUMNA_OBSERVACIONES_ULT_VISITA_CEN = "observaciones_ult_visita_cen";
@@ -188,7 +188,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OTRA_CAUSA_DEN_RECL_CEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_DEN_RECL_CEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_REGISTRO_POT_BEN, Timestamp.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, Long.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_USUARIO_REG_POT_BEN, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_POTENCIAL_BEN_INACTIVO, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_ULTIMA_VISITA_CENSO, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, String.class);
@@ -257,7 +257,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasInsertables(COLUMNA_OTRA_CAUSA_DEN_RECL_CEN, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_DEN_RECL_CEN, true);
         this.setColumnasInsertables(COLUMNA_FECHA_REGISTRO_POT_BEN, true);
-        this.setColumnasInsertables(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, true);
+        this.setColumnasInsertables(COLUMNA_ID_USUARIO_REG_POT_BEN, true);
         this.setColumnasInsertables(COLUMNA_ES_POTENCIAL_BEN_INACTIVO, true);
         this.setColumnasInsertables(COLUMNA_FECHA_ULTIMA_VISITA_CENSO, true);
         this.setColumnasInsertables(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, true);
@@ -326,7 +326,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasModificables(COLUMNA_OTRA_CAUSA_DEN_RECL_CEN, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_DEN_RECL_CEN, true);
         this.setColumnasModificables(COLUMNA_FECHA_REGISTRO_POT_BEN, true);
-        this.setColumnasModificables(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, true);
+        this.setColumnasModificables(COLUMNA_ID_USUARIO_REG_POT_BEN, true);
         this.setColumnasModificables(COLUMNA_ES_POTENCIAL_BEN_INACTIVO, true);
         this.setColumnasModificables(COLUMNA_FECHA_ULTIMA_VISITA_CENSO, true);
         this.setColumnasModificables(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, true);
@@ -1101,17 +1101,17 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         super.setValue(COLUMNA_FECHA_REGISTRO_POT_BEN, rowKey, valor);
     }
 
-    public Long getIdFuncionarioRegPotBen() {
-        return (Long) super.getValue(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN);
+    public Long getIdUsuarioRegPotBen() {
+        return (Long) super.getValue(COLUMNA_ID_USUARIO_REG_POT_BEN);
     }
-    public Long getIdFuncionarioRegPotBen(RowKey rowKey) {
-        return (Long) super.getValue(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, rowKey);
+    public Long getIdUsuarioRegPotBen(RowKey rowKey) {
+        return (Long) super.getValue(COLUMNA_ID_USUARIO_REG_POT_BEN, rowKey);
     }
-    public void setIdFuncionarioRegPotBen(Long valor) {
-        super.setValue(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, valor);
+    public void setIdUsuarioRegPotBen(Long valor) {
+        super.setValue(COLUMNA_ID_USUARIO_REG_POT_BEN, valor);
     }
-    public void setIdFuncionarioRegPotBen(RowKey rowKey, Long valor) {
-        super.setValue(COLUMNA_ID_FUNCIONARIO_REG_POT_BEN, rowKey, valor);
+    public void setIdUsuarioRegPotBen(RowKey rowKey, Long valor) {
+        super.setValue(COLUMNA_ID_USUARIO_REG_POT_BEN, rowKey, valor);
     }
 
     public Integer getEsPotencialBenInactivo() {
