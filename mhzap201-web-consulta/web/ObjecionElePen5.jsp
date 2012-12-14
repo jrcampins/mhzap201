@@ -276,7 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnIdProveedorDatExt1}"
-                                                    headerText="proveedor dat ext"
+                                                    headerText="proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext_1x2y3">
                                                 <webuijsf:staticText
@@ -319,7 +319,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ObjecionElePen5.tableColumnIdProveedorDatExt2}"
-                                                    headerText="nombre proveedor dat ext"
+                                                    headerText="nombre proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt2"
                                                     rendered="#{ObjecionElePen5.asistente.campoIdProveedorDatExt1Boton2Rendered}"
                                                     sort="nombre_proveedor_dat_ext_1x2y4"
@@ -343,7 +343,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNumeroTipoObjElePen1}"
-                                                    headerText="tipo obj ele pen"
+                                                    headerText="tipo objeción elegibilidad pensión"
                                                     id="tableColumnNumeroTipoObjElePen1"
                                                     sort="codigo_tipo_obj_ele_pen_1x3y2">
                                                 <webuijsf:staticText
@@ -420,7 +420,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNombreArchivoUltimaAct1}"
-                                                    headerText="nombre archivo ultima act"
+                                                    headerText="nombre archivo ultima actualización"
                                                     id="tableColumnNombreArchivoUltimaAct1" rendered="false"
                                                     sort="nombre_archivo_ultima_act">
                                                 <webuijsf:staticText

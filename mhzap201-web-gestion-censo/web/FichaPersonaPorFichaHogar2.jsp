@@ -754,7 +754,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenConyuge1}"
                                                     id="labelNumeroOrdenIdenConyuge1"
                                                     for="campoNumeroOrdenIdenConyuge1"
-                                                    text="numero orden iden conyuge"/>
+                                                    text="numero orden identificación conyuge"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -788,7 +788,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenPadre1}"
                                                     id="labelNumeroOrdenIdenPadre1"
                                                     for="campoNumeroOrdenIdenPadre1"
-                                                    text="numero orden iden padre"/>
+                                                    text="numero orden identificación padre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -822,7 +822,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenMadre1}"
                                                     id="labelNumeroOrdenIdenMadre1"
                                                     for="campoNumeroOrdenIdenMadre1"
-                                                    text="numero orden iden madre"/>
+                                                    text="numero orden identificación madre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -925,7 +925,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoExcepcionCed1}"
                                                     id="labelNumeroTipoExcepcionCed1"
                                                     for="listaNumeroTipoExcepcionCed1"
-                                                    text="tipo excepcion ced"/>
+                                                    text="tipo excepcion cédula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1122,7 +1122,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoAreaLugarNac1}"
                                                     id="labelNumeroTipoAreaLugarNac1"
                                                     for="listaNumeroTipoAreaLugarNac1"
-                                                    text="tipo area lugar nac"/>
+                                                    text="tipo area lugar nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1225,7 +1225,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoAsistenciaEsc1}"
                                                     id="labelNumeroSionoAsistenciaEsc1"
                                                     for="listaNumeroSionoAsistenciaEsc1"
-                                                    text="asistencia esc"/>
+                                                    text="asistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1259,7 +1259,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroMotivoInaEsc1}"
                                                     id="labelNumeroMotivoInaEsc1"
                                                     for="listaNumeroMotivoInaEsc1"
-                                                    text="motivo ina esc"/>
+                                                    text="motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1293,7 +1293,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtroMotivoInaEsc1}"
                                                     id="labelOtroMotivoInaEsc1"
                                                     for="campoOtroMotivoInaEsc1"
-                                                    text="otro motivo ina esc"/>
+                                                    text="otro motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1328,7 +1328,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoMatriculacionEsc1}"
                                                     id="labelNumeroSionoMatriculacionEsc1"
                                                     for="listaNumeroSionoMatriculacionEsc1"
-                                                    text="matriculacion esc"/>
+                                                    text="matriculacion escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1396,7 +1396,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroNivelEduUltCurAprob1}"
                                                     id="labelNumeroNivelEduUltCurAprob1"
                                                     for="listaNumeroNivelEduUltCurAprob1"
-                                                    text="nivel edu ult cur aprob"/>
+                                                    text="nivel educativo última curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1532,7 +1532,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroClaseEnfAcc1}"
                                                     id="labelNumeroClaseEnfAcc1"
                                                     for="listaNumeroClaseEnfAcc1"
-                                                    text="clase enf acc"/>
+                                                    text="clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1566,7 +1566,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtraClaseEnfAcc1}"
                                                     id="labelOtraClaseEnfAcc1"
                                                     for="campoOtraClaseEnfAcc1"
-                                                    text="otra clase enf acc"/>
+                                                    text="otra clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1601,7 +1601,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroClaseEnfCronica1}"
                                                     id="labelNumeroClaseEnfCronica1"
                                                     for="listaNumeroClaseEnfCronica1"
-                                                    text="clase enf cronica"/>
+                                                    text="clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1635,7 +1635,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtraClaseEnfCronica1}"
                                                     id="labelOtraClaseEnfCronica1"
                                                     for="campoOtraClaseEnfCronica1"
-                                                    text="otra clase enf cronica"/>
+                                                    text="otra clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1945,7 +1945,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaCaminar1}"
                                                     id="labelNumeroSionoDifParaCaminar1"
                                                     for="listaNumeroSionoDifParaCaminar1"
-                                                    text="dif para caminar"/>
+                                                    text="dificultad para caminar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1979,7 +1979,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaVestirse1}"
                                                     id="labelNumeroSionoDifParaVestirse1"
                                                     for="listaNumeroSionoDifParaVestirse1"
-                                                    text="dif para vestirse"/>
+                                                    text="dificultad para vestirse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2013,7 +2013,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaBanarse1}"
                                                     id="labelNumeroSionoDifParaBanarse1"
                                                     for="listaNumeroSionoDifParaBanarse1"
-                                                    text="dif para banarse"/>
+                                                    text="dificultad para banarse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2047,7 +2047,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaComer1}"
                                                     id="labelNumeroSionoDifParaComer1"
                                                     for="listaNumeroSionoDifParaComer1"
-                                                    text="dif para comer"/>
+                                                    text="dificultad para comer"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2081,7 +2081,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaLaCama1}"
                                                     id="labelNumeroSionoDifParaLaCama1"
                                                     for="listaNumeroSionoDifParaLaCama1"
-                                                    text="dif para la cama"/>
+                                                    text="dificultad para la cama"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2115,7 +2115,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaElBano1}"
                                                     id="labelNumeroSionoDifParaElBano1"
                                                     for="listaNumeroSionoDifParaElBano1"
-                                                    text="dif para el bano"/>
+                                                    text="dificultad para el baño"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2252,7 +2252,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelDescripcionOcupacionPrin1}"
                                                     id="labelDescripcionOcupacionPrin1"
                                                     for="campoDescripcionOcupacionPrin1"
-                                                    text="descripcion ocupacion prin"/>
+                                                    text="descripcion ocupacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2287,7 +2287,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelDescripcionDedicacionPrin1}"
                                                     id="labelDescripcionDedicacionPrin1"
                                                     for="campoDescripcionDedicacionPrin1"
-                                                    text="descripcion dedicacion prin"/>
+                                                    text="descripcion dedicacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2322,7 +2322,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoRelacionLab1}"
                                                     id="labelNumeroTipoRelacionLab1"
                                                     for="listaNumeroTipoRelacionLab1"
-                                                    text="tipo relacion lab"/>
+                                                    text="tipo relacion laboral"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2356,7 +2356,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOcupacionPrin1}"
                                                     id="labelMontoIngresoOcupacionPrin1"
                                                     for="campoMontoIngresoOcupacionPrin1"
-                                                    text="monto ingreso ocupacion prin"/>
+                                                    text="monto ingreso ocupacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2391,7 +2391,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOcupacionSecun1}"
                                                     id="labelMontoIngresoOcupacionSecun1"
                                                     for="campoMontoIngresoOcupacionSecun1"
-                                                    text="monto ingreso ocupacion secun"/>
+                                                    text="monto ingreso ocupacion secundaria"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2426,7 +2426,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOtrasOcup1}"
                                                     id="labelMontoIngresoOtrasOcup1"
                                                     for="campoMontoIngresoOtrasOcup1"
-                                                    text="monto ingreso otras ocup"/>
+                                                    text="monto ingreso otras ocupaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2531,7 +2531,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoAyudaFamPais1}"
                                                     id="labelMontoIngresoAyudaFamPais1"
                                                     for="campoMontoIngresoAyudaFamPais1"
-                                                    text="monto ingreso ayuda fam pais"/>
+                                                    text="monto ingreso ayuda familiar pais"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2566,7 +2566,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoAyudaFamExter1}"
                                                     id="labelMontoIngresoAyudaFamExter1"
                                                     for="campoMontoIngresoAyudaFamExter1"
-                                                    text="monto ingreso ayuda fam exter"/>
+                                                    text="monto ingreso ayuda familiar exterior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2808,7 +2808,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
-                                                    text="potencial ben"/>
+                                                    text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2846,7 +2846,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelIdPotencialBen2}"
                                                     id="labelIdPotencialBen2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre potencial ben"/>
+                                                    text="nombre potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3328,7 +3328,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenConyuge1x1}"
                                                     id="labelNumeroOrdenIdenConyuge1x1"
                                                     for="campoNumeroOrdenIdenConyuge1x1"
-                                                    text="numero orden iden conyuge"/>
+                                                    text="numero orden identificación conyuge"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3360,7 +3360,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenPadre1x1}"
                                                     id="labelNumeroOrdenIdenPadre1x1"
                                                     for="campoNumeroOrdenIdenPadre1x1"
-                                                    text="numero orden iden padre"/>
+                                                    text="numero orden identificación padre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3392,7 +3392,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroOrdenIdenMadre1x1}"
                                                     id="labelNumeroOrdenIdenMadre1x1"
                                                     for="campoNumeroOrdenIdenMadre1x1"
-                                                    text="numero orden iden madre"/>
+                                                    text="numero orden identificación madre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3489,7 +3489,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoExcepcionCed1x1}"
                                                     id="labelNumeroTipoExcepcionCed1x1"
                                                     for="listaNumeroTipoExcepcionCed1x1"
-                                                    text="tipo excepcion ced"/>
+                                                    text="tipo excepcion cédula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3695,7 +3695,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoAreaLugarNac1x1}"
                                                     id="labelNumeroTipoAreaLugarNac1x1"
                                                     for="listaNumeroTipoAreaLugarNac1x1"
-                                                    text="tipo area lugar nac"/>
+                                                    text="tipo area lugar nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3809,7 +3809,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoAsistenciaEsc1x1}"
                                                     id="labelNumeroSionoAsistenciaEsc1x1"
                                                     for="listaNumeroSionoAsistenciaEsc1x1"
-                                                    text="asistencia esc"/>
+                                                    text="asistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3841,7 +3841,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroMotivoInaEsc1x1}"
                                                     id="labelNumeroMotivoInaEsc1x1"
                                                     for="listaNumeroMotivoInaEsc1x1"
-                                                    text="motivo ina esc"/>
+                                                    text="motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3873,7 +3873,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtroMotivoInaEsc1x1}"
                                                     id="labelOtroMotivoInaEsc1x1"
                                                     for="campoOtroMotivoInaEsc1x1"
-                                                    text="otro motivo ina esc"/>
+                                                    text="otro motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3906,7 +3906,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoMatriculacionEsc1x1}"
                                                     id="labelNumeroSionoMatriculacionEsc1x1"
                                                     for="listaNumeroSionoMatriculacionEsc1x1"
-                                                    text="matriculacion esc"/>
+                                                    text="matriculacion escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3970,7 +3970,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroNivelEduUltCurAprob1x1}"
                                                     id="labelNumeroNivelEduUltCurAprob1x1"
                                                     for="listaNumeroNivelEduUltCurAprob1x1"
-                                                    text="nivel edu ult cur aprob"/>
+                                                    text="nivel educativo última curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4115,7 +4115,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroClaseEnfAcc1x1}"
                                                     id="labelNumeroClaseEnfAcc1x1"
                                                     for="listaNumeroClaseEnfAcc1x1"
-                                                    text="clase enf acc"/>
+                                                    text="clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4147,7 +4147,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtraClaseEnfAcc1x1}"
                                                     id="labelOtraClaseEnfAcc1x1"
                                                     for="campoOtraClaseEnfAcc1x1"
-                                                    text="otra clase enf acc"/>
+                                                    text="otra clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4180,7 +4180,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroClaseEnfCronica1x1}"
                                                     id="labelNumeroClaseEnfCronica1x1"
                                                     for="listaNumeroClaseEnfCronica1x1"
-                                                    text="clase enf cronica"/>
+                                                    text="clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4212,7 +4212,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelOtraClaseEnfCronica1x1}"
                                                     id="labelOtraClaseEnfCronica1x1"
                                                     for="campoOtraClaseEnfCronica1x1"
-                                                    text="otra clase enf cronica"/>
+                                                    text="otra clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4521,7 +4521,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaCaminar1x1}"
                                                     id="labelNumeroSionoDifParaCaminar1x1"
                                                     for="listaNumeroSionoDifParaCaminar1x1"
-                                                    text="dif para caminar"/>
+                                                    text="dificultad para caminar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4553,7 +4553,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaVestirse1x1}"
                                                     id="labelNumeroSionoDifParaVestirse1x1"
                                                     for="listaNumeroSionoDifParaVestirse1x1"
-                                                    text="dif para vestirse"/>
+                                                    text="dificultad para vestirse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4585,7 +4585,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaBanarse1x1}"
                                                     id="labelNumeroSionoDifParaBanarse1x1"
                                                     for="listaNumeroSionoDifParaBanarse1x1"
-                                                    text="dif para banarse"/>
+                                                    text="dificultad para banarse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4617,7 +4617,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaComer1x1}"
                                                     id="labelNumeroSionoDifParaComer1x1"
                                                     for="listaNumeroSionoDifParaComer1x1"
-                                                    text="dif para comer"/>
+                                                    text="dificultad para comer"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4649,7 +4649,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaLaCama1x1}"
                                                     id="labelNumeroSionoDifParaLaCama1x1"
                                                     for="listaNumeroSionoDifParaLaCama1x1"
-                                                    text="dif para la cama"/>
+                                                    text="dificultad para la cama"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4681,7 +4681,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroSionoDifParaElBano1x1}"
                                                     id="labelNumeroSionoDifParaElBano1x1"
                                                     for="listaNumeroSionoDifParaElBano1x1"
-                                                    text="dif para el bano"/>
+                                                    text="dificultad para el baño"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4827,7 +4827,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelDescripcionOcupacionPrin1x1}"
                                                     id="labelDescripcionOcupacionPrin1x1"
                                                     for="campoDescripcionOcupacionPrin1x1"
-                                                    text="descripcion ocupacion prin"/>
+                                                    text="descripcion ocupacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4860,7 +4860,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelDescripcionDedicacionPrin1x1}"
                                                     id="labelDescripcionDedicacionPrin1x1"
                                                     for="campoDescripcionDedicacionPrin1x1"
-                                                    text="descripcion dedicacion prin"/>
+                                                    text="descripcion dedicacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4893,7 +4893,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelNumeroTipoRelacionLab1x1}"
                                                     id="labelNumeroTipoRelacionLab1x1"
                                                     for="listaNumeroTipoRelacionLab1x1"
-                                                    text="tipo relacion lab"/>
+                                                    text="tipo relacion laboral"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4942,7 +4942,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOcupacionPrin1x1}"
                                                     id="labelMontoIngresoOcupacionPrin1x1"
                                                     for="campoMontoIngresoOcupacionPrin1x1"
-                                                    text="monto ingreso ocupacion prin"/>
+                                                    text="monto ingreso ocupacion principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4975,7 +4975,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOcupacionSecun1x1}"
                                                     id="labelMontoIngresoOcupacionSecun1x1"
                                                     for="campoMontoIngresoOcupacionSecun1x1"
-                                                    text="monto ingreso ocupacion secun"/>
+                                                    text="monto ingreso ocupacion secundaria"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5008,7 +5008,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoOtrasOcup1x1}"
                                                     id="labelMontoIngresoOtrasOcup1x1"
                                                     for="campoMontoIngresoOtrasOcup1x1"
-                                                    text="monto ingreso otras ocup"/>
+                                                    text="monto ingreso otras ocupaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5107,7 +5107,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoAyudaFamPais1x1}"
                                                     id="labelMontoIngresoAyudaFamPais1x1"
                                                     for="campoMontoIngresoAyudaFamPais1x1"
-                                                    text="monto ingreso ayuda fam pais"/>
+                                                    text="monto ingreso ayuda familiar pais"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5140,7 +5140,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelMontoIngresoAyudaFamExter1x1}"
                                                     id="labelMontoIngresoAyudaFamExter1x1"
                                                     for="campoMontoIngresoAyudaFamExter1x1"
-                                                    text="monto ingreso ayuda fam exter"/>
+                                                    text="monto ingreso ayuda familiar exterior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5388,7 +5388,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelIdPotencialBen1x1}"
                                                     id="labelIdPotencialBen1x1"
                                                     for="campoIdPotencialBen1x1"
-                                                    text="potencial ben"/>
+                                                    text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5427,7 +5427,7 @@
                                                     binding="#{FichaPersonaPorFichaHogar2.labelIdPotencialBen1x2}"
                                                     id="labelIdPotencialBen1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre potencial ben"/>
+                                                    text="nombre potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

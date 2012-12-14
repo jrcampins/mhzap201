@@ -279,7 +279,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt1.tableColumnIdProveedorDatExt1}"
-                                                    headerText="proveedor dat ext"
+                                                    headerText="proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext_1x1y3">
                                                 <webuijsf:staticText
@@ -322,7 +322,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{ArchivoDatosExt1.tableColumnIdProveedorDatExt2}"
-                                                    headerText="nombre proveedor dat ext"
+                                                    headerText="nombre proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt2"
                                                     rendered="#{ArchivoDatosExt1.asistente.campoIdProveedorDatExt1Boton2Rendered}"
                                                     sort="nombre_proveedor_dat_ext_1x1y4"
@@ -346,7 +346,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt1.tableColumnNumeroTipoArcDatExt1}"
-                                                    headerText="tipo arc dat ext"
+                                                    headerText="tipo"
                                                     id="tableColumnNumeroTipoArcDatExt1"
                                                     sort="codigo_tipo_arc_dat_ext_1x2y2">
                                                 <webuijsf:staticText

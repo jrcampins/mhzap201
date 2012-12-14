@@ -606,7 +606,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroOrdenIdenConyuge1}"
-                                                    headerText="numero orden iden conyuge"
+                                                    headerText="numero orden identificación conyuge"
                                                     id="tableColumnNumeroOrdenIdenConyuge1" rendered="false"
                                                     sort="numero_orden_iden_conyuge">
                                                 <webuijsf:staticText
@@ -632,7 +632,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroOrdenIdenPadre1}"
-                                                    headerText="numero orden iden padre"
+                                                    headerText="numero orden identificación padre"
                                                     id="tableColumnNumeroOrdenIdenPadre1" rendered="false"
                                                     sort="numero_orden_iden_padre">
                                                 <webuijsf:staticText
@@ -658,7 +658,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroOrdenIdenMadre1}"
-                                                    headerText="numero orden iden madre"
+                                                    headerText="numero orden identificación madre"
                                                     id="tableColumnNumeroOrdenIdenMadre1" rendered="false"
                                                     sort="numero_orden_iden_madre">
                                                 <webuijsf:staticText
@@ -737,7 +737,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroTipoExcepcionCed1}"
-                                                    headerText="tipo excepcion ced"
+                                                    headerText="tipo excepcion cédula"
                                                     id="tableColumnNumeroTipoExcepcionCed1" rendered="false"
                                                     sort="codigo_tipo_excepcion_ce_1x6y2">
                                                 <webuijsf:staticText
@@ -919,7 +919,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroTipoAreaLugarNac1}"
-                                                    headerText="tipo area lugar nac"
+                                                    headerText="tipo area lugar nacimiento"
                                                     id="tableColumnNumeroTipoAreaLugarNac1" rendered="false"
                                                     sort="codigo_tipo_area_1x9y2">
                                                 <webuijsf:staticText
@@ -998,7 +998,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoAsistenciaEsc1}"
-                                                    headerText="asistencia esc"
+                                                    headerText="asistencia escolar"
                                                     id="tableColumnNumeroSionoAsistenciaEsc1" rendered="false"
                                                     sort="codigo_siono_1x11y2">
                                                 <webuijsf:staticText
@@ -1024,7 +1024,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroMotivoInaEsc1}"
-                                                    headerText="motivo ina esc"
+                                                    headerText="motivo inasistencia escolar"
                                                     id="tableColumnNumeroMotivoInaEsc1" rendered="false"
                                                     sort="codigo_motivo_ina_esc_1x12y2">
                                                 <webuijsf:staticText
@@ -1050,7 +1050,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnOtroMotivoInaEsc1}"
-                                                    headerText="otro motivo ina esc"
+                                                    headerText="otro motivo inasistencia escolar"
                                                     id="tableColumnOtroMotivoInaEsc1" rendered="false"
                                                     sort="otro_motivo_ina_esc">
                                                 <webuijsf:staticText
@@ -1077,7 +1077,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoMatriculacionEsc1}"
-                                                    headerText="matriculacion esc"
+                                                    headerText="matriculacion escolar"
                                                     id="tableColumnNumeroSionoMatriculacionEsc1" rendered="false"
                                                     sort="codigo_siono_1x13y2">
                                                 <webuijsf:staticText
@@ -1129,7 +1129,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroNivelEduUltCurAprob1}"
-                                                    headerText="nivel edu ult cur aprob"
+                                                    headerText="nivel educativo última curso aprobado"
                                                     id="tableColumnNumeroNivelEduUltCurAprob1" rendered="false"
                                                     sort="codigo_nivel_educativo_1x14y2">
                                                 <webuijsf:staticText
@@ -1233,7 +1233,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroClaseEnfAcc1}"
-                                                    headerText="clase enf acc"
+                                                    headerText="clase enfermedad accidente"
                                                     id="tableColumnNumeroClaseEnfAcc1" rendered="false"
                                                     sort="codigo_clase_enf_acc_1x18y2">
                                                 <webuijsf:staticText
@@ -1259,7 +1259,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnOtraClaseEnfAcc1}"
-                                                    headerText="otra clase enf acc"
+                                                    headerText="otra clase enfermedad accidente"
                                                     id="tableColumnOtraClaseEnfAcc1" rendered="false"
                                                     sort="otra_clase_enf_acc">
                                                 <webuijsf:staticText
@@ -1286,7 +1286,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroClaseEnfCronica1}"
-                                                    headerText="clase enf cronica"
+                                                    headerText="clase enfermedad cronica"
                                                     id="tableColumnNumeroClaseEnfCronica1" rendered="false"
                                                     sort="codigo_clase_enf_cronic_1x19y2">
                                                 <webuijsf:staticText
@@ -1312,7 +1312,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnOtraClaseEnfCronica1}"
-                                                    headerText="otra clase enf cronica"
+                                                    headerText="otra clase enfermedad cronica"
                                                     id="tableColumnOtraClaseEnfCronica1" rendered="false"
                                                     sort="otra_clase_enf_cronica">
                                                 <webuijsf:staticText
@@ -1550,7 +1550,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaCaminar1}"
-                                                    headerText="dif para caminar"
+                                                    headerText="dificultad para caminar"
                                                     id="tableColumnNumeroSionoDifParaCaminar1" rendered="false"
                                                     sort="codigo_siono_1x25y2">
                                                 <webuijsf:staticText
@@ -1576,7 +1576,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaVestirse1}"
-                                                    headerText="dif para vestirse"
+                                                    headerText="dificultad para vestirse"
                                                     id="tableColumnNumeroSionoDifParaVestirse1" rendered="false"
                                                     sort="codigo_siono_1x26y2">
                                                 <webuijsf:staticText
@@ -1602,7 +1602,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaBanarse1}"
-                                                    headerText="dif para banarse"
+                                                    headerText="dificultad para banarse"
                                                     id="tableColumnNumeroSionoDifParaBanarse1" rendered="false"
                                                     sort="codigo_siono_1x27y2">
                                                 <webuijsf:staticText
@@ -1628,7 +1628,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaComer1}"
-                                                    headerText="dif para comer"
+                                                    headerText="dificultad para comer"
                                                     id="tableColumnNumeroSionoDifParaComer1" rendered="false"
                                                     sort="codigo_siono_1x28y2">
                                                 <webuijsf:staticText
@@ -1654,7 +1654,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaLaCama1}"
-                                                    headerText="dif para la cama"
+                                                    headerText="dificultad para la cama"
                                                     id="tableColumnNumeroSionoDifParaLaCama1" rendered="false"
                                                     sort="codigo_siono_1x29y2">
                                                 <webuijsf:staticText
@@ -1680,7 +1680,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroSionoDifParaElBano1}"
-                                                    headerText="dif para el bano"
+                                                    headerText="dificultad para el baño"
                                                     id="tableColumnNumeroSionoDifParaElBano1" rendered="false"
                                                     sort="codigo_siono_1x30y2">
                                                 <webuijsf:staticText
@@ -1785,7 +1785,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnDescripcionOcupacionPrin1}"
-                                                    headerText="descripcion ocupacion prin"
+                                                    headerText="descripcion ocupacion principal"
                                                     id="tableColumnDescripcionOcupacionPrin1" rendered="false"
                                                     sort="descripcion_ocupacion_prin">
                                                 <webuijsf:staticText
@@ -1812,7 +1812,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnDescripcionDedicacionPrin1}"
-                                                    headerText="descripcion dedicacion prin"
+                                                    headerText="descripcion dedicacion principal"
                                                     id="tableColumnDescripcionDedicacionPrin1" rendered="false"
                                                     sort="descripcion_dedicacion_prin">
                                                 <webuijsf:staticText
@@ -1839,7 +1839,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnNumeroTipoRelacionLab1}"
-                                                    headerText="tipo relacion lab"
+                                                    headerText="tipo relacion laboral"
                                                     id="tableColumnNumeroTipoRelacionLab1" rendered="false"
                                                     sort="codigo_tipo_relacion_la_1x33y2">
                                                 <webuijsf:staticText
@@ -1865,7 +1865,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnMontoIngresoOcupacionPrin1}"
-                                                    headerText="monto ingreso ocupacion prin"
+                                                    headerText="monto ingreso ocupacion principal"
                                                     id="tableColumnMontoIngresoOcupacionPrin1" rendered="false"
                                                     sort="monto_ingreso_ocupacion_prin">
                                                 <webuijsf:staticText
@@ -1892,7 +1892,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnMontoIngresoOcupacionSecun1}"
-                                                    headerText="monto ingreso ocupacion secun"
+                                                    headerText="monto ingreso ocupacion secundaria"
                                                     id="tableColumnMontoIngresoOcupacionSecun1" rendered="false"
                                                     sort="monto_ingreso_ocupacion_secun">
                                                 <webuijsf:staticText
@@ -1919,7 +1919,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnMontoIngresoOtrasOcup1}"
-                                                    headerText="monto ingreso otras ocup"
+                                                    headerText="monto ingreso otras ocupaciones"
                                                     id="tableColumnMontoIngresoOtrasOcup1" rendered="false"
                                                     sort="monto_ingreso_otras_ocup">
                                                 <webuijsf:staticText
@@ -2000,7 +2000,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnMontoIngresoAyudaFamPais1}"
-                                                    headerText="monto ingreso ayuda fam pais"
+                                                    headerText="monto ingreso ayuda familiar pais"
                                                     id="tableColumnMontoIngresoAyudaFamPais1" rendered="false"
                                                     sort="monto_ingreso_ayuda_fam_pais">
                                                 <webuijsf:staticText
@@ -2027,7 +2027,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnMontoIngresoAyudaFamExter1}"
-                                                    headerText="monto ingreso ayuda fam exter"
+                                                    headerText="monto ingreso ayuda familiar exterior"
                                                     id="tableColumnMontoIngresoAyudaFamExter1" rendered="false"
                                                     sort="monto_ingreso_ayuda_fam_exter">
                                                 <webuijsf:staticText
@@ -2216,7 +2216,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnIdPotencialBen1}"
-                                                    headerText="potencial ben"
+                                                    headerText="potencial beneficiario"
                                                     id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="codigo_potencial_ben_1x34y3">
                                                 <webuijsf:staticText
@@ -2258,7 +2258,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{FichaPersonaPorFichaHogar1.tableColumnIdPotencialBen2}"
-                                                    headerText="nombre potencial ben"
+                                                    headerText="nombre potencial beneficiario"
                                                     id="tableColumnIdPotencialBen2" rendered="false"
                                                     sort="nombre_potencial_ben_1x34y4"
                                                     styleClass="pdq-estilo-id-2">

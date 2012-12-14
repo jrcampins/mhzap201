@@ -311,7 +311,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnNumeroTipoRastroFun1}"
-                                                    headerText="tipo rastro fun"
+                                                    headerText="tipo rastro función"
                                                     id="tableColumnNumeroTipoRastroFun1" rendered="false"
                                                     sort="codigo_tipo_rastro_fun_1x2y2">
                                                 <webuijsf:staticText

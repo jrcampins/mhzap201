@@ -240,7 +240,7 @@
                                                     binding="#{VisitaCenso2.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
-                                                    text="potencial ben"/>
+                                                    text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -279,7 +279,7 @@
                                                     binding="#{VisitaCenso2.labelIdPotencialBen2}"
                                                     id="labelIdPotencialBen2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre potencial ben"/>
+                                                    text="nombre potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

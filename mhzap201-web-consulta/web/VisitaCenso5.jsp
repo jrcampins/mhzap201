@@ -209,7 +209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso5.tableColumnIdPotencialBen1}"
-                                                    headerText="potencial ben"
+                                                    headerText="potencial beneficiario"
                                                     id="tableColumnIdPotencialBen1"
                                                     sort="codigo_potencial_ben_1x1y3">
                                                 <webuijsf:staticText
@@ -252,7 +252,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{VisitaCenso5.tableColumnIdPotencialBen2}"
-                                                    headerText="nombre potencial ben"
+                                                    headerText="nombre potencial beneficiario"
                                                     id="tableColumnIdPotencialBen2"
                                                     rendered="#{VisitaCenso5.asistente.campoIdPotencialBen1Boton2Rendered}"
                                                     sort="nombre_potencial_ben_1x1y4"

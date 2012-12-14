@@ -310,11 +310,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_SEXO_PERSONA = 20058L; // Codigo Sexo Persona
 
-    public static final Long CODIGO_SIONO = 20306L; // Codigo Si/No
+    public static final Long CODIGO_SIONO = 20306L; // Codigo Si o No
 
     public static final Long CODIGO_TIPO_ABA_AGUA = 20307L; // Codigo Tipo Abastecimiento Agua
 
-    public static final Long CODIGO_TIPO_ACT_JUPE = 20628L; // Codigo Tipo Actualizacion Jupe
+    public static final Long CODIGO_TIPO_ACT_JUPE = 20628L; // Codigo Tipo Actualizacion JUPE
 
     public static final Long CODIGO_TIPO_ARC_DAT_EXT = 20267L; // Codigo Tipo Archivo Datos Externos
 
@@ -494,9 +494,9 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long DIRECCION = 20326L; // Direccion
 
-    public static final Long DISTANCIA_ESTE_UTM = 20327L; // Distancia Este Utm
+    public static final Long DISTANCIA_ESTE_UTM = 20327L; // Distancia Este UTM
 
-    public static final Long DISTANCIA_NORTE_UTM = 20328L; // Distancia Norte Utm
+    public static final Long DISTANCIA_NORTE_UTM = 20328L; // Distancia Norte UTM
 
     public static final Long EDAD = 20578L; // Edad
 
@@ -562,7 +562,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ES_PARAMETRO_SUBMIT = 1972L; // Parametro Submit
 
-    public static final Long ES_PERSONA_ACREDITADA_PARA_PEN = 20147L; // Persona Acreditada Para Pension
+    public static final Long ES_PERSONA_ACREDITADA_PARA_PEN = 20147L; // Persona Acreditada para Pension
 
     public static final Long ES_PERSONA_CON_CARTA_RENUNCIA = 20579L; // Persona con Carta Renuncia
 
@@ -584,7 +584,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ES_PERSONA_CON_SUBSIDIO = 20581L; // Persona con Subsidio
 
-    public static final Long ES_PERSONA_ELEGIBLE_PARA_PEN = 20149L; // Persona Elegible Para Pension
+    public static final Long ES_PERSONA_ELEGIBLE_PARA_PEN = 20149L; // Persona Elegible para Pension
 
     public static final Long ES_PERSONALIZADA = 1269L; // Personalizada
 
@@ -728,9 +728,9 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_VISITA = 20639L; // Fecha Visita
 
-    public static final Long FRANJA_UTM = 20331L; // Franja Utm
+    public static final Long FRANJA_UTM = 20331L; // Franja UTM
 
-    public static final Long HUSO_UTM = 20332L; // Huso Utm
+    public static final Long HUSO_UTM = 20332L; // Huso UTM
 
     public static final Long ID_APLICACION = 1295L; // Aplicacion
 
@@ -1228,17 +1228,17 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NUMERO_SIONO_CURSO_NO_FORMAL = 20387L; // Curso No Formal
 
-    public static final Long NUMERO_SIONO_DIF_PARA_BANARSE = 20388L; // Dificultad Para Banarse
+    public static final Long NUMERO_SIONO_DIF_PARA_BANARSE = 20388L; // Dificultad para Banarse
 
-    public static final Long NUMERO_SIONO_DIF_PARA_CAMINAR = 20389L; // Dificultad Para Caminar
+    public static final Long NUMERO_SIONO_DIF_PARA_CAMINAR = 20389L; // Dificultad para Caminar
 
-    public static final Long NUMERO_SIONO_DIF_PARA_COMER = 20390L; // Dificultad Para Comer
+    public static final Long NUMERO_SIONO_DIF_PARA_COMER = 20390L; // Dificultad para Comer
 
-    public static final Long NUMERO_SIONO_DIF_PARA_EL_BANO = 20391L; // Dificultad Para El Bano
+    public static final Long NUMERO_SIONO_DIF_PARA_EL_BANO = 20391L; // Dificultad para el Bano
 
-    public static final Long NUMERO_SIONO_DIF_PARA_LA_CAMA = 20392L; // Dificultad Para La Cama
+    public static final Long NUMERO_SIONO_DIF_PARA_LA_CAMA = 20392L; // Dificultad para la Cama
 
-    public static final Long NUMERO_SIONO_DIF_PARA_VESTIRSE = 20393L; // Dificultad Para Vestirse
+    public static final Long NUMERO_SIONO_DIF_PARA_VESTIRSE = 20393L; // Dificultad para Vestirse
 
     public static final Long NUMERO_SIONO_DISP_AIRE_ACON = 20394L; // Disponibilidad Aire Acondicionado
 
@@ -1276,7 +1276,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NUMERO_TIPO_ABA_AGUA = 20411L; // Tipo Abastecimiento Agua
 
-    public static final Long NUMERO_TIPO_ACT_JUPE = 20645L; // Tipo Actualizacion Jupe
+    public static final Long NUMERO_TIPO_ACT_JUPE = 20645L; // Tipo Actualizacion JUPE
 
     public static final Long NUMERO_TIPO_ARC_DAT_EXT = 20271L; // Tipo Archivo Datos Externos
 
@@ -1442,11 +1442,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ULTIMO_CURSO_APROBADO = 20611L; // Ultimo Curso Aprobado
 
-    public static final Long URL_APLICACION = 1525L; // U.R.L. Aplicacion
+    public static final Long URL_APLICACION = 1525L; // URL Aplicacion
 
-    public static final Long URL_OPCION_MENU = 1526L; // U.R.L. Opcion Menu
+    public static final Long URL_OPCION_MENU = 1526L; // URL Opcion Menu
 
-    public static final Long URL_PAGINA = 1527L; // U.R.L. Pagina
+    public static final Long URL_PAGINA = 1527L; // URL Pagina
 
     public static final Long VALOR = 1529L; // Valor
 

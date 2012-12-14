@@ -302,7 +302,7 @@
                                                     binding="#{ObjecionElePen6.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
-                                                    text="proveedor dat ext"/>
+                                                    text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -341,7 +341,7 @@
                                                     binding="#{ObjecionElePen6.labelIdProveedorDatExt2}"
                                                     id="labelIdProveedorDatExt2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre proveedor dat ext"/>
+                                                    text="nombre proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -364,7 +364,7 @@
                                                     binding="#{ObjecionElePen6.labelNumeroTipoObjElePen1}"
                                                     id="labelNumeroTipoObjElePen1"
                                                     for="listaNumeroTipoObjElePen1"
-                                                    text="tipo obj ele pen"/>
+                                                    text="tipo objeción elegibilidad pensión"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -460,7 +460,7 @@
                                                     binding="#{ObjecionElePen6.labelNombreArchivoUltimaAct1}"
                                                     id="labelNombreArchivoUltimaAct1"
                                                     for="campoNombreArchivoUltimaAct1"
-                                                    text="nombre archivo ultima act"/>
+                                                    text="nombre archivo ultima actualización"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

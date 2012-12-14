@@ -775,7 +775,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         this.setEsPersonaConCerVida(rowKey, 0);
         this.setEsPersonaConCartaRenuncia(rowKey, 0);
         this.setFechaRegistroPotBen(rowKey, currentDate);
-        this.setIdFuncionarioRegPotBen(rowKey, TLC.getControlador().getUsuario().getIdUsuario());
+//      this.setIdFuncionarioRegPotBen(rowKey, TLC.getControlador().getUsuario().getIdUsuario());
         this.setEsPotencialBenInactivo(rowKey, 0);
     }
 }

@@ -366,7 +366,7 @@
                                                     binding="#{Funcion2.labelNumeroTipoRastroFun1}"
                                                     id="labelNumeroTipoRastroFun1"
                                                     for="listaNumeroTipoRastroFun1"
-                                                    text="tipo rastro fun"/>
+                                                    text="tipo rastro función"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

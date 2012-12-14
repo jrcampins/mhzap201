@@ -312,7 +312,7 @@
                                                     binding="#{ArchivoDatosExt6.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
-                                                    text="proveedor dat ext"/>
+                                                    text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -351,7 +351,7 @@
                                                     binding="#{ArchivoDatosExt6.labelIdProveedorDatExt2}"
                                                     id="labelIdProveedorDatExt2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre proveedor dat ext"/>
+                                                    text="nombre proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -374,7 +374,7 @@
                                                     binding="#{ArchivoDatosExt6.labelNumeroTipoArcDatExt1}"
                                                     id="labelNumeroTipoArcDatExt1"
                                                     for="listaNumeroTipoArcDatExt1"
-                                                    text="tipo arc dat ext"/>
+                                                    text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

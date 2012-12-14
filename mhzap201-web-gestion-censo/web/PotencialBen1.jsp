@@ -263,7 +263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnNumeroTipoRegPotBen1}"
-                                                    headerText="tipo reg pot ben"
+                                                    headerText="tipo registro"
                                                     id="tableColumnNumeroTipoRegPotBen1"
                                                     sort="codigo_tipo_reg_pot_ben_1x1y2">
                                                 <webuijsf:staticText
@@ -1144,7 +1144,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnNumeroTelefonoRespHogar1}"
-                                                    headerText="numero telefono resp hogar"
+                                                    headerText="numero telefono responsable hogar"
                                                     id="tableColumnNumeroTelefonoRespHogar1" rendered="false"
                                                     sort="numero_telefono_resp_hogar">
                                                 <webuijsf:staticText
@@ -1352,7 +1352,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioValidacionCen1}"
-                                                    headerText="funcionario validacion cen"
+                                                    headerText="funcionario validacion censo"
                                                     id="tableColumnIdFuncionarioValidacionCen1" rendered="false"
                                                     sort="codigo_funcionario_1x10y3">
                                                 <webuijsf:staticText
@@ -1394,7 +1394,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioValidacionCen2}"
-                                                    headerText="nombre funcionario validacion cen"
+                                                    headerText="nombre funcionario validacion censo"
                                                     id="tableColumnIdFuncionarioValidacionCen2" rendered="false"
                                                     sort="nombre_funcionario_1x10y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -1417,7 +1417,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnNumeroCausaInvCenso1}"
-                                                    headerText="causa inv censo"
+                                                    headerText="causa invalidación censo"
                                                     id="tableColumnNumeroCausaInvCenso1" rendered="false"
                                                     sort="codigo_causa_inv_censo_1x11y2">
                                                 <webuijsf:staticText
@@ -1443,7 +1443,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnOtraCausaInvCenso1}"
-                                                    headerText="otra causa inv censo"
+                                                    headerText="otra causa invalidación censo"
                                                     id="tableColumnOtraCausaInvCenso1" rendered="false"
                                                     sort="otra_causa_inv_censo">
                                                 <webuijsf:staticText
@@ -1561,7 +1561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnNumeroCondicionReclCen1}"
-                                                    headerText="condicion recl cen"
+                                                    headerText="condicion reclamo censo"
                                                     id="tableColumnNumeroCondicionReclCen1" rendered="false"
                                                     sort="codigo_condicion_recl_c_1x13y2">
                                                 <webuijsf:staticText
@@ -1665,7 +1665,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnComentariosAprReclCen1}"
-                                                    headerText="comentarios apr recl cen"
+                                                    headerText="comentarios aprobación reclamo censo"
                                                     id="tableColumnComentariosAprReclCen1" rendered="false"
                                                     sort="comentarios_apr_recl_cen">
                                                 <webuijsf:staticText
@@ -1717,7 +1717,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnNumeroCausaDenReclCen1}"
-                                                    headerText="causa den recl cen"
+                                                    headerText="causa denegación reclamo censo"
                                                     id="tableColumnNumeroCausaDenReclCen1" rendered="false"
                                                     sort="codigo_causa_den_recl_c_1x14y2">
                                                 <webuijsf:staticText
@@ -1743,7 +1743,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnOtraCausaDenReclCen1}"
-                                                    headerText="otra causa den recl cen"
+                                                    headerText="otra causa denegación reclamo censo"
                                                     id="tableColumnOtraCausaDenReclCen1" rendered="false"
                                                     sort="otra_causa_den_recl_cen">
                                                 <webuijsf:staticText
@@ -1770,7 +1770,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnComentariosDenReclCen1}"
-                                                    headerText="comentarios den recl cen"
+                                                    headerText="comentarios denegación reclamo censo"
                                                     id="tableColumnComentariosDenReclCen1" rendered="false"
                                                     sort="comentarios_den_recl_cen">
                                                 <webuijsf:staticText
@@ -1796,7 +1796,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnFechaRegistroPotBen1}"
-                                                    headerText="fecha registro pot ben"
+                                                    headerText="fecha registro"
                                                     id="tableColumnFechaRegistroPotBen1" rendered="false"
                                                     sort="fecha_registro_pot_ben">
                                                 <webuijsf:staticText
@@ -1822,7 +1822,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen1}"
-                                                    headerText="funcionario reg pot ben"
+                                                    headerText="funcionario registro"
                                                     id="tableColumnIdFuncionarioRegPotBen1" rendered="false"
                                                     sort="codigo_funcionario_1x15y3">
                                                 <webuijsf:staticText
@@ -1864,7 +1864,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioRegPotBen2}"
-                                                    headerText="nombre funcionario reg pot ben"
+                                                    headerText="nombre funcionario registro"
                                                     id="tableColumnIdFuncionarioRegPotBen2" rendered="false"
                                                     sort="nombre_funcionario_1x15y4"
                                                     styleClass="pdq-estilo-id-2">
@@ -1938,7 +1938,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnObservacionesUltVisitaCen1}"
-                                                    headerText="observaciones ult visita cen"
+                                                    headerText="observaciones última visita censo"
                                                     id="tableColumnObservacionesUltVisitaCen1" rendered="false"
                                                     sort="observaciones_ult_visita_cen">
                                                 <webuijsf:staticText
@@ -1964,7 +1964,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioUltVisitaCen1}"
-                                                    headerText="funcionario ult visita cen"
+                                                    headerText="funcionario última visita censo"
                                                     id="tableColumnIdFuncionarioUltVisitaCen1" rendered="false"
                                                     sort="codigo_funcionario_1x16y3">
                                                 <webuijsf:staticText
@@ -2006,7 +2006,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn 
                                                     binding="#{PotencialBen1.tableColumnIdFuncionarioUltVisitaCen2}"
-                                                    headerText="nombre funcionario ult visita cen"
+                                                    headerText="nombre funcionario última visita censo"
                                                     id="tableColumnIdFuncionarioUltVisitaCen2" rendered="false"
                                                     sort="nombre_funcionario_1x16y4"
                                                     styleClass="pdq-estilo-id-2">

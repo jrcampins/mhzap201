@@ -1125,7 +1125,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosAnulCerVida1}"
-                                                    headerText="comentarios anul cer vida"
+                                                    headerText="comentarios anulación certificado vida"
                                                     id="tableColumnComentariosAnulCerVida1" rendered="false"
                                                     sort="comentarios_anul_cer_vida">
                                                 <webuijsf:staticText
@@ -1204,7 +1204,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnEsCerDefuncionAnulado1}"
-                                                    headerText="cer defuncion anulado"
+                                                    headerText="certificado defuncion anulado"
                                                     id="tableColumnEsCerDefuncionAnulado1" rendered="false"
                                                     sort="es_cer_defuncion_anulado">
                                                 <webuijsf:staticText
@@ -1229,7 +1229,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosAnulCerDefuncion1}"
-                                                    headerText="comentarios anul cer defuncion"
+                                                    headerText="comentarios anulación certificado defuncion"
                                                     id="tableColumnComentariosAnulCerDefuncion1" rendered="false"
                                                     sort="comentarios_anul_cer_defuncion">
                                                 <webuijsf:staticText
@@ -1405,7 +1405,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnEsPersonaConCerVida1}"
-                                                    headerText="con cer vida"
+                                                    headerText="con certificado vida"
                                                     id="tableColumnEsPersonaConCerVida1" rendered="false"
                                                     sort="es_persona_con_cer_vida">
                                                 <webuijsf:staticText
@@ -1455,7 +1455,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnEsPersonaElegibleParaPen1}"
-                                                    headerText="elegible para pen"
+                                                    headerText="elegible para pensión"
                                                     id="tableColumnEsPersonaElegibleParaPen1" rendered="false"
                                                     sort="es_persona_elegible_para_pen">
                                                 <webuijsf:staticText
@@ -1480,7 +1480,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnEsPersonaAcreditadaParaPen1}"
-                                                    headerText="acreditada para pen"
+                                                    headerText="acreditada para pensión"
                                                     id="tableColumnEsPersonaAcreditadaParaPen1" rendered="false"
                                                     sort="es_persona_acreditada_para_pen">
                                                 <webuijsf:staticText
@@ -1530,7 +1530,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnEsPersonaConDeclaracionJur1}"
-                                                    headerText="con declaracion jur"
+                                                    headerText="con declaracion jurada"
                                                     id="tableColumnEsPersonaConDeclaracionJur1" rendered="false"
                                                     sort="es_persona_con_declaracion_jur">
                                                 <webuijsf:staticText
@@ -1712,7 +1712,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaOtorgamientoPen1}"
-                                                    headerText="fecha otorgamiento pen"
+                                                    headerText="fecha otorgamiento pensión"
                                                     id="tableColumnFechaOtorgamientoPen1" rendered="false"
                                                     sort="fecha_otorgamiento_pen">
                                                 <webuijsf:staticText
@@ -1738,7 +1738,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosOtorgamientoPen1}"
-                                                    headerText="comentarios otorgamiento pen"
+                                                    headerText="comentarios otorgamiento pensión"
                                                     id="tableColumnComentariosOtorgamientoPen1" rendered="false"
                                                     sort="comentarios_otorgamiento_pen">
                                                 <webuijsf:staticText
@@ -1790,7 +1790,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroCausaDenPension1}"
-                                                    headerText="causa den pension"
+                                                    headerText="causa denegación pension"
                                                     id="tableColumnNumeroCausaDenPension1" rendered="false"
                                                     sort="codigo_causa_den_pensio_1x10y2">
                                                 <webuijsf:staticText
@@ -1816,7 +1816,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnOtraCausaDenPension1}"
-                                                    headerText="otra causa den pension"
+                                                    headerText="otra causa denegación pension"
                                                     id="tableColumnOtraCausaDenPension1" rendered="false"
                                                     sort="otra_causa_den_pension">
                                                 <webuijsf:staticText
@@ -1895,7 +1895,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroCausaRevPension1}"
-                                                    headerText="causa rev pension"
+                                                    headerText="causa revocación pension"
                                                     id="tableColumnNumeroCausaRevPension1" rendered="false"
                                                     sort="codigo_causa_rev_pensio_1x11y2">
                                                 <webuijsf:staticText
@@ -1921,7 +1921,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnOtraCausaRevPension1}"
-                                                    headerText="otra causa rev pension"
+                                                    headerText="otra causa revocación pension"
                                                     id="tableColumnOtraCausaRevPension1" rendered="false"
                                                     sort="otra_causa_rev_pension">
                                                 <webuijsf:staticText
@@ -1974,7 +1974,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroCondicionRecoPen1}"
-                                                    headerText="condicion reco pen"
+                                                    headerText="condicion reconsideración pensión"
                                                     id="tableColumnNumeroCondicionRecoPen1" rendered="false"
                                                     sort="codigo_condicion_reco_p_1x12y2">
                                                 <webuijsf:staticText
@@ -2000,7 +2000,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaSolicitudRecoPen1}"
-                                                    headerText="fecha solicitud reco pen"
+                                                    headerText="fecha solicitud reconsideración pensión"
                                                     id="tableColumnFechaSolicitudRecoPen1" rendered="false"
                                                     sort="fecha_solicitud_reco_pen">
                                                 <webuijsf:staticText
@@ -2026,7 +2026,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosSolicitudRecoPen1}"
-                                                    headerText="comentarios solicitud reco pen"
+                                                    headerText="comentarios solicitud reconsideración pensión"
                                                     id="tableColumnComentariosSolicitudRecoPen1" rendered="false"
                                                     sort="comentarios_solicitud_reco_pen">
                                                 <webuijsf:staticText
@@ -2052,7 +2052,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaAprobacionRecoPen1}"
-                                                    headerText="fecha aprobacion reco pen"
+                                                    headerText="fecha aprobacion reconsideración pensión"
                                                     id="tableColumnFechaAprobacionRecoPen1" rendered="false"
                                                     sort="fecha_aprobacion_reco_pen">
                                                 <webuijsf:staticText
@@ -2078,7 +2078,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosAprRecoPen1}"
-                                                    headerText="comentarios apr reco pen"
+                                                    headerText="comentarios aprobación reconsideración pensión"
                                                     id="tableColumnComentariosAprRecoPen1" rendered="false"
                                                     sort="comentarios_apr_reco_pen">
                                                 <webuijsf:staticText
@@ -2104,7 +2104,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaDenegacionRecoPen1}"
-                                                    headerText="fecha denegacion reco pen"
+                                                    headerText="fecha denegacion reconsideración pensión"
                                                     id="tableColumnFechaDenegacionRecoPen1" rendered="false"
                                                     sort="fecha_denegacion_reco_pen">
                                                 <webuijsf:staticText
@@ -2130,7 +2130,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroCausaDenRecoPen1}"
-                                                    headerText="causa den reco pen"
+                                                    headerText="causa denegación reconsideración pensión"
                                                     id="tableColumnNumeroCausaDenRecoPen1" rendered="false"
                                                     sort="codigo_causa_den_reco_p_1x13y2">
                                                 <webuijsf:staticText
@@ -2156,7 +2156,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnOtraCausaDenRecoPen1}"
-                                                    headerText="otra causa den reco pen"
+                                                    headerText="otra causa denegación reconsideración pensión"
                                                     id="tableColumnOtraCausaDenRecoPen1" rendered="false"
                                                     sort="otra_causa_den_reco_pen">
                                                 <webuijsf:staticText
@@ -2183,7 +2183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosDenRecoPen1}"
-                                                    headerText="comentarios den reco pen"
+                                                    headerText="comentarios denegación reconsideración pensión"
                                                     id="tableColumnComentariosDenRecoPen1" rendered="false"
                                                     sort="comentarios_den_reco_pen">
                                                 <webuijsf:staticText
@@ -2209,7 +2209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroCondicionDenuPen1}"
-                                                    headerText="condicion denu pen"
+                                                    headerText="condicion denuncia pensión"
                                                     id="tableColumnNumeroCondicionDenuPen1" rendered="false"
                                                     sort="codigo_condicion_denu_p_1x14y2">
                                                 <webuijsf:staticText
@@ -2235,7 +2235,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaRegistroDenunciaPen1}"
-                                                    headerText="fecha registro denuncia pen"
+                                                    headerText="fecha registro denuncia pensión"
                                                     id="tableColumnFechaRegistroDenunciaPen1" rendered="false"
                                                     sort="fecha_registro_denuncia_pen">
                                                 <webuijsf:staticText
@@ -2261,7 +2261,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosRegistroDenuPen1}"
-                                                    headerText="comentarios registro denu pen"
+                                                    headerText="comentarios registro denuncia pensión"
                                                     id="tableColumnComentariosRegistroDenuPen1" rendered="false"
                                                     sort="comentarios_registro_denu_pen">
                                                 <webuijsf:staticText
@@ -2287,7 +2287,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaConfirmacionDenuPen1}"
-                                                    headerText="fecha confirmacion denu pen"
+                                                    headerText="fecha confirmacion denuncia pensión"
                                                     id="tableColumnFechaConfirmacionDenuPen1" rendered="false"
                                                     sort="fecha_confirmacion_denu_pen">
                                                 <webuijsf:staticText
@@ -2313,7 +2313,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosConfDenuPen1}"
-                                                    headerText="comentarios conf denu pen"
+                                                    headerText="comentarios conf denuncia pensión"
                                                     id="tableColumnComentariosConfDenuPen1" rendered="false"
                                                     sort="comentarios_conf_denu_pen">
                                                 <webuijsf:staticText
@@ -2339,7 +2339,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaDesmentidoDenunciaPen1}"
-                                                    headerText="fecha desmentido denuncia pen"
+                                                    headerText="fecha desmentido denuncia pensión"
                                                     id="tableColumnFechaDesmentidoDenunciaPen1" rendered="false"
                                                     sort="fecha_desmentido_denuncia_pen">
                                                 <webuijsf:staticText
@@ -2365,7 +2365,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnComentariosDesDenuPen1}"
-                                                    headerText="comentarios des denu pen"
+                                                    headerText="comentarios desmentido denuncia pensión"
                                                     id="tableColumnComentariosDesDenuPen1" rendered="false"
                                                     sort="comentarios_des_denu_pen">
                                                 <webuijsf:staticText
@@ -2535,7 +2535,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNotasAnulFecUltCobPen1}"
-                                                    headerText="notas anul fec ult cob pen"
+                                                    headerText="notas anulación fecha última cob pensión"
                                                     id="tableColumnNotasAnulFecUltCobPen1" rendered="false"
                                                     sort="notas_anul_fec_ult_cob_pen">
                                                 <webuijsf:staticText
@@ -2561,7 +2561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroTipoActJupe1}"
-                                                    headerText="tipo act jupe"
+                                                    headerText="tipo actualización jupe"
                                                     id="tableColumnNumeroTipoActJupe1" rendered="false"
                                                     sort="codigo_tipo_act_jupe_1x16y2">
                                                 <webuijsf:staticText
@@ -2587,7 +2587,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaHoraUltActJupe1}"
-                                                    headerText="fecha hora ult act jupe"
+                                                    headerText="fecha hora última actualización jupe"
                                                     id="tableColumnFechaHoraUltActJupe1" rendered="false"
                                                     sort="fecha_hora_ult_act_jupe">
                                                 <webuijsf:staticText
@@ -2613,7 +2613,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroResolucionOtorPen1}"
-                                                    headerText="numero resolucion otor pen"
+                                                    headerText="numero resolucion otor pensión"
                                                     id="tableColumnNumeroResolucionOtorPen1" rendered="false"
                                                     sort="numero_resolucion_otor_pen">
                                                 <webuijsf:staticText
@@ -2640,7 +2640,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaResolucionOtorPen1}"
-                                                    headerText="fecha resolucion otor pen"
+                                                    headerText="fecha resolucion otor pensión"
                                                     id="tableColumnFechaResolucionOtorPen1" rendered="false"
                                                     sort="fecha_resolucion_otor_pen">
                                                 <webuijsf:staticText
@@ -2666,7 +2666,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnNumeroResolucionDenPen1}"
-                                                    headerText="numero resolucion den pen"
+                                                    headerText="numero resolucion denegación pensión"
                                                     id="tableColumnNumeroResolucionDenPen1" rendered="false"
                                                     sort="numero_resolucion_den_pen">
                                                 <webuijsf:staticText
@@ -2693,7 +2693,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona1.tableColumnFechaResolucionDenPen1}"
-                                                    headerText="fecha resolucion den pen"
+                                                    headerText="fecha resolucion denegación pensión"
                                                     id="tableColumnFechaResolucionDenPen1" rendered="false"
                                                     sort="fecha_resolucion_den_pen">
                                                 <webuijsf:staticText

@@ -13,6 +13,7 @@ import com.egt.base.entity.constants.AplicacionConstants;
 import com.egt.base.entity.constants.OpcionMenuConstants;
 import com.egt.base.enums.EnumTipoPagina;
 import com.egt.base.jms.messages.AbstractMessage;
+import com.egt.base.persistence.enums.EnumTipoQuery;
 import com.egt.commons.util.ThrowableUtils;
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.aplicacion.TLC;
@@ -23,7 +24,6 @@ import com.egt.ejb.core.sqlagent.SqlAgentBrokerLocal;
 import com.egt.ejb.persistence.entity.*;
 import com.egt.ejb.persistence.entity.catalog.SystemRoutine;
 import com.egt.ejb.persistence.entity.catalog.SystemTable;
-import com.egt.base.persistence.enums.EnumTipoQuery;
 import com.egt.ejb.persistence.facade.*;
 import com.egt.ejb.persistence.facade.catalog.SystemRoutineFacadeLocal;
 import com.egt.ejb.persistence.facade.catalog.SystemTableFacadeLocal;
@@ -624,7 +624,7 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         Bitacora.trace(this.getClass(), metodo, root);
         try {
             List<AbstractMessage> messages = new ArrayList();
-            ToolKitMessage message = null;
+            ToolKitMessage message;
             for (Aplicacion aplicacion : aplicaciones) {
                 message = new ToolKitMessage(EnumToolKitMessageType.GENERAR_APLICACION, AplicacionConstants.FUNCION_GENERAR_APLICACION);
                 message.setRecurso(aplicacion.getIdAplicacion());
@@ -818,8 +818,9 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         Parametro joinpar = pagina.getParametroIdParametro();
         String root = ToolKitUtils.getWorkspaceDir();
         String project = pagina.getAplicacionIdAplicacion().getCodigoAplicacion();
-        String filedir = ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
+        String filedir;
         String filename;
+        ToolKitUtils.makeNetBeansWebProjectDirectoryTree(root, project);
         String tempname = this.getPlantillaPagina(tipo);
         ToolKitBeanLocator locator = this.getToolKitBeanLocator();
         ToolKitUtils utils = this.getToolKitUtils(locator);
@@ -1008,21 +1009,22 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
 //          Bitacora.trace(this.getClass(), "copyfile-source", sourceFile.getAbsolutePath(), sourceFile.getName());
 //          Bitacora.trace(this.getClass(), "copyfile-target", targetFile.getAbsolutePath(), targetFile.getName());
             try {
-                FileInputStream fis = new FileInputStream(sourceFile);
-                InputStreamReader isr = new InputStreamReader(fis);
-                BufferedReader br = new BufferedReader(isr);
-                FileOutputStream fos = new FileOutputStream(targetFile);
-                OutputStreamWriter osw = new OutputStreamWriter(fos);
-                BufferedWriter bw = new BufferedWriter(osw);
-                int escapeRule = getEscapeRule(sourceFile.getName());
-                String line;
-                while ((line = br.readLine()) != null) {
-                    line = replaceStrings(line, replacements, escapeRule);
-                    bw.write(line);
-                    bw.newLine();
-                    bw.flush();
+                FileOutputStream fos;
+                try (FileInputStream fis = new FileInputStream(sourceFile)) {
+                    InputStreamReader isr = new InputStreamReader(fis);
+                    BufferedReader br = new BufferedReader(isr);
+                    fos = new FileOutputStream(targetFile);
+                    OutputStreamWriter osw = new OutputStreamWriter(fos);
+                    BufferedWriter bw = new BufferedWriter(osw);
+                    int escapeRule = getEscapeRule(sourceFile.getName());
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        line = replaceStrings(line, replacements, escapeRule);
+                        bw.write(line);
+                        bw.newLine();
+                        bw.flush();
+                    }
                 }
-                fis.close();
                 fos.close();
             } catch (FileNotFoundException ex) {
 //              System.out.println(ThrowableUtils.getString(ex));

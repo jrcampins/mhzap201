@@ -142,7 +142,7 @@
                                                     binding="#{ArchivoDatosExt4.labelIdArchivoDatosExt1}"
                                                     id="labelIdArchivoDatosExt1"
                                                     for="campoIdArchivoDatosExt1"
-                                                    text="archivo datos ext"/>
+                                                    text="archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

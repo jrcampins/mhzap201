@@ -290,7 +290,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlCerVidaActivo1}"
-                                                    headerText="control cer vida activo"
+                                                    headerText="control certificado vida activo"
                                                     id="tableColumnEsControlCerVidaActivo1"
                                                     sort="es_control_cer_vida_activo">
                                                 <webuijsf:staticText
@@ -341,7 +341,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlCobroPensionActiv1}"
-                                                    headerText="control cobro pension activ"
+                                                    headerText="control cobro pension activo"
                                                     id="tableColumnEsControlCobroPensionActiv1"
                                                     sort="es_control_cobro_pension_activ">
                                                 <webuijsf:staticText
@@ -392,7 +392,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlReprocesoPenActiv1}"
-                                                    headerText="control reproceso pen activ"
+                                                    headerText="control reproceso pensión activo"
                                                     id="tableColumnEsControlReprocesoPenActiv1"
                                                     sort="es_control_reproceso_pen_activ">
                                                 <webuijsf:staticText

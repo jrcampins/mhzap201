@@ -402,7 +402,7 @@
                                                     binding="#{FichaHogar2.labelIdFuncionarioCriticoDeco1}"
                                                     id="labelIdFuncionarioCriticoDeco1"
                                                     for="campoIdFuncionarioCriticoDeco1"
-                                                    text="funcionario critico deco"/>
+                                                    text="funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -442,7 +442,7 @@
                                                     binding="#{FichaHogar2.labelIdFuncionarioCriticoDeco2}"
                                                     id="labelIdFuncionarioCriticoDeco2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario critico deco"/>
+                                                    text="nombre funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1235,7 +1235,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatParedes1}"
                                                     id="labelNumeroTipoMatParedes1"
                                                     for="listaNumeroTipoMatParedes1"
-                                                    text="tipo mat paredes"/>
+                                                    text="tipo material paredes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1269,7 +1269,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatPiso1}"
                                                     id="labelNumeroTipoMatPiso1"
                                                     for="listaNumeroTipoMatPiso1"
-                                                    text="tipo mat piso"/>
+                                                    text="tipo material piso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1303,7 +1303,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatTecho1}"
                                                     id="labelNumeroTipoMatTecho1"
                                                     for="listaNumeroTipoMatTecho1"
-                                                    text="tipo mat techo"/>
+                                                    text="tipo material techo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1337,7 +1337,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoOcupacionViv1}"
                                                     id="labelNumeroTipoOcupacionViv1"
                                                     for="listaNumeroTipoOcupacionViv1"
-                                                    text="tipo ocupacion viv"/>
+                                                    text="tipo ocupacion vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1371,7 +1371,7 @@
                                                     binding="#{FichaHogar2.labelOtroTipoOcupacionViv1}"
                                                     id="labelOtroTipoOcupacionViv1"
                                                     for="campoOtroTipoOcupacionViv1"
-                                                    text="otro tipo ocupacion viv"/>
+                                                    text="otro tipo ocupacion vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1542,7 +1542,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoPiezaBano1}"
                                                     id="labelNumeroTipoPiezaBano1"
                                                     for="listaNumeroTipoPiezaBano1"
-                                                    text="tipo pieza bano"/>
+                                                    text="tipo pieza baño"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1576,7 +1576,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoServicioSan1}"
                                                     id="labelNumeroTipoServicioSan1"
                                                     for="listaNumeroTipoServicioSan1"
-                                                    text="tipo servicio san"/>
+                                                    text="tipo servicio sanitario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1644,7 +1644,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoAbaAgua1}"
                                                     id="labelNumeroTipoAbaAgua1"
                                                     for="listaNumeroTipoAbaAgua1"
-                                                    text="tipo aba agua"/>
+                                                    text="tipo abastecimiento agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1678,7 +1678,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoCorrienteElec1}"
                                                     id="labelNumeroSionoCorrienteElec1"
                                                     for="listaNumeroSionoCorrienteElec1"
-                                                    text="corriente elec"/>
+                                                    text="corriente electrico"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1712,7 +1712,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoDesechoBas1}"
                                                     id="labelNumeroTipoDesechoBas1"
                                                     for="listaNumeroTipoDesechoBas1"
-                                                    text="tipo desecho bas"/>
+                                                    text="tipo desecho basura"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1815,7 +1815,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoTlfLineaBaja1}"
                                                     id="labelNumeroSionoTlfLineaBaja1"
                                                     for="listaNumeroSionoTlfLineaBaja1"
-                                                    text="tlf linea baja"/>
+                                                    text="teléfono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1884,7 +1884,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispHeladera1}"
                                                     id="labelNumeroSionoDispHeladera1"
                                                     for="listaNumeroSionoDispHeladera1"
-                                                    text="disp heladera"/>
+                                                    text="disponibilidad heladera"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1918,7 +1918,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispLavarropas1}"
                                                     id="labelNumeroSionoDispLavarropas1"
                                                     for="listaNumeroSionoDispLavarropas1"
-                                                    text="disp lavarropas"/>
+                                                    text="disponibilidad lavarropas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1952,7 +1952,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispTermo1}"
                                                     id="labelNumeroSionoDispTermo1"
                                                     for="listaNumeroSionoDispTermo1"
-                                                    text="disp termo"/>
+                                                    text="disponibilidad termo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1986,7 +1986,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispAireAcon1}"
                                                     id="labelNumeroSionoDispAireAcon1"
                                                     for="listaNumeroSionoDispAireAcon1"
-                                                    text="disp aire acon"/>
+                                                    text="disponibilidad aire acon"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2020,7 +2020,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispAutomovil1}"
                                                     id="labelNumeroSionoDispAutomovil1"
                                                     for="listaNumeroSionoDispAutomovil1"
-                                                    text="disp automovil"/>
+                                                    text="disponibilidad automovil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2054,7 +2054,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispCamion1}"
                                                     id="labelNumeroSionoDispCamion1"
                                                     for="listaNumeroSionoDispCamion1"
-                                                    text="disp camion"/>
+                                                    text="disponibilidad camion"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2088,7 +2088,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispMotocicleta1}"
                                                     id="labelNumeroSionoDispMotocicleta1"
                                                     for="listaNumeroSionoDispMotocicleta1"
-                                                    text="disp motocicleta"/>
+                                                    text="disponibilidad motocicleta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2219,7 +2219,7 @@
                                                     binding="#{FichaHogar2.labelNumeroOrdenIdenJefeHogar1}"
                                                     id="labelNumeroOrdenIdenJefeHogar1"
                                                     for="campoNumeroOrdenIdenJefeHogar1"
-                                                    text="numero orden iden jefe hogar"/>
+                                                    text="numero orden identificación jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2349,7 +2349,7 @@
                                                     binding="#{FichaHogar2.labelNumeroOrdenIdenRespondente1}"
                                                     id="labelNumeroOrdenIdenRespondente1"
                                                     for="campoNumeroOrdenIdenRespondente1"
-                                                    text="numero orden iden respondente"/>
+                                                    text="numero orden identificación respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2381,7 +2381,7 @@
                                                     binding="#{FichaHogar2.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
-                                                    text="proveedor dat ext"/>
+                                                    text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2419,7 +2419,7 @@
                                                     binding="#{FichaHogar2.labelIdProveedorDatExt2}"
                                                     id="labelIdProveedorDatExt2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre proveedor dat ext"/>
+                                                    text="nombre proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2651,7 +2651,7 @@
                                                     binding="#{FichaHogar2.labelIdFuncionarioCriticoDeco1x1}"
                                                     id="labelIdFuncionarioCriticoDeco1x1"
                                                     for="campoIdFuncionarioCriticoDeco1x1"
-                                                    text="funcionario critico deco"/>
+                                                    text="funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2690,7 +2690,7 @@
                                                     binding="#{FichaHogar2.labelIdFuncionarioCriticoDeco1x2}"
                                                     id="labelIdFuncionarioCriticoDeco1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario critico deco"/>
+                                                    text="nombre funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3512,7 +3512,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatParedes1x1}"
                                                     id="labelNumeroTipoMatParedes1x1"
                                                     for="listaNumeroTipoMatParedes1x1"
-                                                    text="tipo mat paredes"/>
+                                                    text="tipo material paredes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3544,7 +3544,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatPiso1x1}"
                                                     id="labelNumeroTipoMatPiso1x1"
                                                     for="listaNumeroTipoMatPiso1x1"
-                                                    text="tipo mat piso"/>
+                                                    text="tipo material piso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3576,7 +3576,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoMatTecho1x1}"
                                                     id="labelNumeroTipoMatTecho1x1"
                                                     for="listaNumeroTipoMatTecho1x1"
-                                                    text="tipo mat techo"/>
+                                                    text="tipo material techo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3608,7 +3608,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoOcupacionViv1x1}"
                                                     id="labelNumeroTipoOcupacionViv1x1"
                                                     for="listaNumeroTipoOcupacionViv1x1"
-                                                    text="tipo ocupacion viv"/>
+                                                    text="tipo ocupacion vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3640,7 +3640,7 @@
                                                     binding="#{FichaHogar2.labelOtroTipoOcupacionViv1x1}"
                                                     id="labelOtroTipoOcupacionViv1x1"
                                                     for="campoOtroTipoOcupacionViv1x1"
-                                                    text="otro tipo ocupacion viv"/>
+                                                    text="otro tipo ocupacion vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3818,7 +3818,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoPiezaBano1x1}"
                                                     id="labelNumeroTipoPiezaBano1x1"
                                                     for="listaNumeroTipoPiezaBano1x1"
-                                                    text="tipo pieza bano"/>
+                                                    text="tipo pieza baño"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3850,7 +3850,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoServicioSan1x1}"
                                                     id="labelNumeroTipoServicioSan1x1"
                                                     for="listaNumeroTipoServicioSan1x1"
-                                                    text="tipo servicio san"/>
+                                                    text="tipo servicio sanitario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3914,7 +3914,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoAbaAgua1x1}"
                                                     id="labelNumeroTipoAbaAgua1x1"
                                                     for="listaNumeroTipoAbaAgua1x1"
-                                                    text="tipo aba agua"/>
+                                                    text="tipo abastecimiento agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3946,7 +3946,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoCorrienteElec1x1}"
                                                     id="labelNumeroSionoCorrienteElec1x1"
                                                     for="listaNumeroSionoCorrienteElec1x1"
-                                                    text="corriente elec"/>
+                                                    text="corriente electrico"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3978,7 +3978,7 @@
                                                     binding="#{FichaHogar2.labelNumeroTipoDesechoBas1x1}"
                                                     id="labelNumeroTipoDesechoBas1x1"
                                                     for="listaNumeroTipoDesechoBas1x1"
-                                                    text="tipo desecho bas"/>
+                                                    text="tipo desecho basura"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4092,7 +4092,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoTlfLineaBaja1x1}"
                                                     id="labelNumeroSionoTlfLineaBaja1x1"
                                                     for="listaNumeroSionoTlfLineaBaja1x1"
-                                                    text="tlf linea baja"/>
+                                                    text="teléfono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4174,7 +4174,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispHeladera1x1}"
                                                     id="labelNumeroSionoDispHeladera1x1"
                                                     for="listaNumeroSionoDispHeladera1x1"
-                                                    text="disp heladera"/>
+                                                    text="disponibilidad heladera"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4206,7 +4206,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispLavarropas1x1}"
                                                     id="labelNumeroSionoDispLavarropas1x1"
                                                     for="listaNumeroSionoDispLavarropas1x1"
-                                                    text="disp lavarropas"/>
+                                                    text="disponibilidad lavarropas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4238,7 +4238,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispTermo1x1}"
                                                     id="labelNumeroSionoDispTermo1x1"
                                                     for="listaNumeroSionoDispTermo1x1"
-                                                    text="disp termo"/>
+                                                    text="disponibilidad termo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4270,7 +4270,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispAireAcon1x1}"
                                                     id="labelNumeroSionoDispAireAcon1x1"
                                                     for="listaNumeroSionoDispAireAcon1x1"
-                                                    text="disp aire acon"/>
+                                                    text="disponibilidad aire acon"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4302,7 +4302,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispAutomovil1x1}"
                                                     id="labelNumeroSionoDispAutomovil1x1"
                                                     for="listaNumeroSionoDispAutomovil1x1"
-                                                    text="disp automovil"/>
+                                                    text="disponibilidad automovil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4334,7 +4334,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispCamion1x1}"
                                                     id="labelNumeroSionoDispCamion1x1"
                                                     for="listaNumeroSionoDispCamion1x1"
-                                                    text="disp camion"/>
+                                                    text="disponibilidad camion"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4366,7 +4366,7 @@
                                                     binding="#{FichaHogar2.labelNumeroSionoDispMotocicleta1x1}"
                                                     id="labelNumeroSionoDispMotocicleta1x1"
                                                     for="listaNumeroSionoDispMotocicleta1x1"
-                                                    text="disp motocicleta"/>
+                                                    text="disponibilidad motocicleta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4513,7 +4513,7 @@
                                                     binding="#{FichaHogar2.labelNumeroOrdenIdenJefeHogar1x1}"
                                                     id="labelNumeroOrdenIdenJefeHogar1x1"
                                                     for="campoNumeroOrdenIdenJefeHogar1x1"
-                                                    text="numero orden iden jefe hogar"/>
+                                                    text="numero orden identificación jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4660,7 +4660,7 @@
                                                     binding="#{FichaHogar2.labelNumeroOrdenIdenRespondente1x1}"
                                                     id="labelNumeroOrdenIdenRespondente1x1"
                                                     for="campoNumeroOrdenIdenRespondente1x1"
-                                                    text="numero orden iden respondente"/>
+                                                    text="numero orden identificación respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4709,7 +4709,7 @@
                                                     binding="#{FichaHogar2.labelIdProveedorDatExt1x1}"
                                                     id="labelIdProveedorDatExt1x1"
                                                     for="campoIdProveedorDatExt1x1"
-                                                    text="proveedor dat ext"/>
+                                                    text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4748,7 +4748,7 @@
                                                     binding="#{FichaHogar2.labelIdProveedorDatExt1x2}"
                                                     id="labelIdProveedorDatExt1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre proveedor dat ext"/>
+                                                    text="nombre proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

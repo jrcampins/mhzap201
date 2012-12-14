@@ -307,7 +307,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoRegPotBen1}"
                                                     id="labelNumeroTipoRegPotBen1"
                                                     for="listaNumeroTipoRegPotBen1"
-                                                    text="tipo reg pot ben"/>
+                                                    text="tipo registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -341,7 +341,7 @@
                                                     binding="#{PotencialBen6.labelFechaRegistroPotBen1}"
                                                     id="labelFechaRegistroPotBen1"
                                                     for="campoFechaRegistroPotBen1"
-                                                    text="fecha registro pot ben"/>
+                                                    text="fecha registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -374,7 +374,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioRegPotBen1}"
                                                     id="labelIdFuncionarioRegPotBen1"
                                                     for="campoIdFuncionarioRegPotBen1"
-                                                    text="funcionario reg pot ben"/>
+                                                    text="funcionario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -412,7 +412,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioRegPotBen2}"
                                                     id="labelIdFuncionarioRegPotBen2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario reg pot ben"/>
+                                                    text="nombre funcionario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1603,7 +1603,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoRespHogar1}"
                                                     id="labelNumeroTelefonoRespHogar1"
                                                     for="campoNumeroTelefonoRespHogar1"
-                                                    text="numero telefono resp hogar"/>
+                                                    text="numero telefono responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1772,7 +1772,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen1}"
                                                     id="labelIdFuncionarioValidacionCen1"
                                                     for="campoIdFuncionarioValidacionCen1"
-                                                    text="funcionario validacion cen"/>
+                                                    text="funcionario validacion censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1810,7 +1810,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen2}"
                                                     id="labelIdFuncionarioValidacionCen2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario validacion cen"/>
+                                                    text="nombre funcionario validacion censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1832,7 +1832,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaInvCenso1}"
                                                     id="labelNumeroCausaInvCenso1"
                                                     for="listaNumeroCausaInvCenso1"
-                                                    text="causa inv censo"/>
+                                                    text="causa invalidación censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1864,7 +1864,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaInvCenso1}"
                                                     id="labelOtraCausaInvCenso1"
                                                     for="campoOtraCausaInvCenso1"
-                                                    text="otra causa inv censo"/>
+                                                    text="otra causa invalidación censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -1989,7 +1989,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionReclCen1}"
                                                     id="labelNumeroCondicionReclCen1"
                                                     for="listaNumeroCondicionReclCen1"
-                                                    text="condicion recl cen"/>
+                                                    text="condicion reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2119,7 +2119,7 @@
                                                     binding="#{PotencialBen6.labelComentariosAprReclCen1}"
                                                     id="labelComentariosAprReclCen1"
                                                     for="campoComentariosAprReclCen1"
-                                                    text="comentarios apr recl cen"/>
+                                                    text="comentarios aprobación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2184,7 +2184,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaDenReclCen1}"
                                                     id="labelNumeroCausaDenReclCen1"
                                                     for="listaNumeroCausaDenReclCen1"
-                                                    text="causa den recl cen"/>
+                                                    text="causa denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2216,7 +2216,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaDenReclCen1}"
                                                     id="labelOtraCausaDenReclCen1"
                                                     for="campoOtraCausaDenReclCen1"
-                                                    text="otra causa den recl cen"/>
+                                                    text="otra causa denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2249,7 +2249,7 @@
                                                     binding="#{PotencialBen6.labelComentariosDenReclCen1}"
                                                     id="labelComentariosDenReclCen1"
                                                     for="campoComentariosDenReclCen1"
-                                                    text="comentarios den recl cen"/>
+                                                    text="comentarios denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2314,7 +2314,7 @@
                                                     binding="#{PotencialBen6.labelObservacionesUltVisitaCen1}"
                                                     id="labelObservacionesUltVisitaCen1"
                                                     for="campoObservacionesUltVisitaCen1"
-                                                    text="observaciones ult visita cen"/>
+                                                    text="observaciones última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2346,7 +2346,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen1}"
                                                     id="labelIdFuncionarioUltVisitaCen1"
                                                     for="campoIdFuncionarioUltVisitaCen1"
-                                                    text="funcionario ult visita cen"/>
+                                                    text="funcionario última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2384,7 +2384,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen2}"
                                                     id="labelIdFuncionarioUltVisitaCen2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario ult visita cen"/>
+                                                    text="nombre funcionario última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2428,7 +2428,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoRegPotBen1x1}"
                                                     id="labelNumeroTipoRegPotBen1x1"
                                                     for="listaNumeroTipoRegPotBen1x1"
-                                                    text="tipo reg pot ben"/>
+                                                    text="tipo registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2461,7 +2461,7 @@
                                                     binding="#{PotencialBen6.labelFechaRegistroPotBen1x1}"
                                                     id="labelFechaRegistroPotBen1x1"
                                                     for="campoFechaRegistroPotBen1x1"
-                                                    text="fecha registro pot ben"/>
+                                                    text="fecha registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2494,7 +2494,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioRegPotBen1x1}"
                                                     id="labelIdFuncionarioRegPotBen1x1"
                                                     for="campoIdFuncionarioRegPotBen1x1"
-                                                    text="funcionario reg pot ben"/>
+                                                    text="funcionario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2533,7 +2533,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioRegPotBen1x2}"
                                                     id="labelIdFuncionarioRegPotBen1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario reg pot ben"/>
+                                                    text="nombre funcionario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3776,7 +3776,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoRespHogar1x1}"
                                                     id="labelNumeroTelefonoRespHogar1x1"
                                                     for="campoNumeroTelefonoRespHogar1x1"
-                                                    text="numero telefono resp hogar"/>
+                                                    text="numero telefono responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3974,7 +3974,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen1x1}"
                                                     id="labelIdFuncionarioValidacionCen1x1"
                                                     for="campoIdFuncionarioValidacionCen1x1"
-                                                    text="funcionario validacion cen"/>
+                                                    text="funcionario validacion censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4013,7 +4013,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen1x2}"
                                                     id="labelIdFuncionarioValidacionCen1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario validacion cen"/>
+                                                    text="nombre funcionario validacion censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4036,7 +4036,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaInvCenso1x1}"
                                                     id="labelNumeroCausaInvCenso1x1"
                                                     for="listaNumeroCausaInvCenso1x1"
-                                                    text="causa inv censo"/>
+                                                    text="causa invalidación censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4068,7 +4068,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaInvCenso1x1}"
                                                     id="labelOtraCausaInvCenso1x1"
                                                     for="campoOtraCausaInvCenso1x1"
-                                                    text="otra causa inv censo"/>
+                                                    text="otra causa invalidación censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4212,7 +4212,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionReclCen1x1}"
                                                     id="labelNumeroCondicionReclCen1x1"
                                                     for="listaNumeroCondicionReclCen1x1"
-                                                    text="condicion recl cen"/>
+                                                    text="condicion reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4342,7 +4342,7 @@
                                                     binding="#{PotencialBen6.labelComentariosAprReclCen1x1}"
                                                     id="labelComentariosAprReclCen1x1"
                                                     for="campoComentariosAprReclCen1x1"
-                                                    text="comentarios apr recl cen"/>
+                                                    text="comentarios aprobación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4407,7 +4407,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaDenReclCen1x1}"
                                                     id="labelNumeroCausaDenReclCen1x1"
                                                     for="listaNumeroCausaDenReclCen1x1"
-                                                    text="causa den recl cen"/>
+                                                    text="causa denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4439,7 +4439,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaDenReclCen1x1}"
                                                     id="labelOtraCausaDenReclCen1x1"
                                                     for="campoOtraCausaDenReclCen1x1"
-                                                    text="otra causa den recl cen"/>
+                                                    text="otra causa denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4472,7 +4472,7 @@
                                                     binding="#{PotencialBen6.labelComentariosDenReclCen1x1}"
                                                     id="labelComentariosDenReclCen1x1"
                                                     for="campoComentariosDenReclCen1x1"
-                                                    text="comentarios den recl cen"/>
+                                                    text="comentarios denegación reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4554,7 +4554,7 @@
                                                     binding="#{PotencialBen6.labelObservacionesUltVisitaCen1x1}"
                                                     id="labelObservacionesUltVisitaCen1x1"
                                                     for="campoObservacionesUltVisitaCen1x1"
-                                                    text="observaciones ult visita cen"/>
+                                                    text="observaciones última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4586,7 +4586,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen1x1}"
                                                     id="labelIdFuncionarioUltVisitaCen1x1"
                                                     for="campoIdFuncionarioUltVisitaCen1x1"
-                                                    text="funcionario ult visita cen"/>
+                                                    text="funcionario última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4625,7 +4625,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen1x2}"
                                                     id="labelIdFuncionarioUltVisitaCen1x2"
                                                     styleClass="pdq-estilo-id-2"
-                                                    text="nombre funcionario ult visita cen"/>
+                                                    text="nombre funcionario última visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
