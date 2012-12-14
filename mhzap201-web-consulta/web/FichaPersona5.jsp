@@ -1194,7 +1194,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroNivelEduUltCurAprob1}"
-                                                    headerText="nivel educativo &#250;ltima curso aprobado"
+                                                    headerText="nivel educativo &#250;ltimo curso aprobado"
                                                     id="tableColumnNumeroNivelEduUltCurAprob1" rendered="false"
                                                     sort="codigo_nivel_educativo_1x14y2">
                                                 <webuijsf:staticText

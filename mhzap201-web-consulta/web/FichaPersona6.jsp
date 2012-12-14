@@ -1459,7 +1459,7 @@
                                                     binding="#{FichaPersona6.labelNumeroNivelEduUltCurAprob1}"
                                                     id="labelNumeroNivelEduUltCurAprob1"
                                                     for="listaNumeroNivelEduUltCurAprob1"
-                                                    text="nivel educativo &#250;ltima curso aprobado"/>
+                                                    text="nivel educativo &#250;ltimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -4094,7 +4094,7 @@
                                                     binding="#{FichaPersona6.labelNumeroNivelEduUltCurAprob1x1}"
                                                     id="labelNumeroNivelEduUltCurAprob1x1"
                                                     for="listaNumeroNivelEduUltCurAprob1x1"
-                                                    text="nivel educativo &#250;ltima curso aprobado"/>
+                                                    text="nivel educativo &#250;ltimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
