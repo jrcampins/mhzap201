@@ -85,9 +85,6 @@ public class Funcionario implements FuncionarioBase, Comparable, Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "funcionarioIdFuncionarioValidacionCen")
     private Collection<PotencialBen> potencialBenIdFuncionarioValidacionCenCollection;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "funcionarioIdFuncionarioRegPotBen")
-    private Collection<PotencialBen> potencialBenIdFuncionarioRegPotBenCollection;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "funcionarioIdFuncionarioUltVisitaCen")
     private Collection<PotencialBen> potencialBenIdFuncionarioUltVisitaCenCollection;
 
@@ -239,15 +236,6 @@ public class Funcionario implements FuncionarioBase, Comparable, Serializable {
 
     public void setPotencialBenIdFuncionarioValidacionCenCollection(Collection<PotencialBen> collection) {
         this.potencialBenIdFuncionarioValidacionCenCollection = collection;
-    }
-
-    @Override
-    public Collection<PotencialBen> getPotencialBenIdFuncionarioRegPotBenCollection() {
-        return this.potencialBenIdFuncionarioRegPotBenCollection;
-    }
-
-    public void setPotencialBenIdFuncionarioRegPotBenCollection(Collection<PotencialBen> collection) {
-        this.potencialBenIdFuncionarioRegPotBenCollection = collection;
     }
 
     @Override

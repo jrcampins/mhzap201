@@ -83,6 +83,9 @@ public class Usuario implements UsuarioBase, Comparable, Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "usuarioIdUsuario")
     private Collection<PaginaUsuario> paginaUsuarioIdUsuarioCollection;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "usuarioIdUsuarioRegPotBen")
+    private Collection<PotencialBen> potencialBenIdUsuarioRegPotBenCollection;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "usuarioIdUsuario")
     private Collection<RolUsuario> rolUsuarioIdUsuarioCollection;
 
@@ -225,6 +228,15 @@ public class Usuario implements UsuarioBase, Comparable, Serializable {
 
     public void setPaginaUsuarioIdUsuarioCollection(Collection<PaginaUsuario> collection) {
         this.paginaUsuarioIdUsuarioCollection = collection;
+    }
+
+    @Override
+    public Collection<PotencialBen> getPotencialBenIdUsuarioRegPotBenCollection() {
+        return this.potencialBenIdUsuarioRegPotBenCollection;
+    }
+
+    public void setPotencialBenIdUsuarioRegPotBenCollection(Collection<PotencialBen> collection) {
+        this.potencialBenIdUsuarioRegPotBenCollection = collection;
     }
 
     @Override

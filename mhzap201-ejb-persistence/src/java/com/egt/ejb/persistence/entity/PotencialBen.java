@@ -266,9 +266,9 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     @ManyToOne
     private CausaDenReclCen causaDenReclCenNumeroCausaDenReclCen;
 
-    @JoinColumn(name = "id_funcionario_reg_pot_ben", referencedColumnName = "id_funcionario")
+    @JoinColumn(name = "id_usuario_reg_pot_ben", referencedColumnName = "id_usuario")
     @ManyToOne
-    private Funcionario funcionarioIdFuncionarioRegPotBen;
+    private Usuario usuarioIdUsuarioRegPotBen;
 
     @JoinColumn(name = "id_funcionario_ult_visita_cen", referencedColumnName = "id_funcionario")
     @ManyToOne
@@ -851,12 +851,12 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     }
 
     @Override
-    public Funcionario getFuncionarioIdFuncionarioRegPotBen() {
-        return this.funcionarioIdFuncionarioRegPotBen;
+    public Usuario getUsuarioIdUsuarioRegPotBen() {
+        return this.usuarioIdUsuarioRegPotBen;
     }
 
-    public void setFuncionarioIdFuncionarioRegPotBen(Funcionario funcionario) {
-        this.funcionarioIdFuncionarioRegPotBen = funcionario;
+    public void setUsuarioIdUsuarioRegPotBen(Usuario usuario) {
+        this.usuarioIdUsuarioRegPotBen = usuario;
     }
 
     @Override
