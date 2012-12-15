@@ -1,6 +1,5 @@
 \mhzap201-web\
 \mhzap201-web-conjunto-segmento\
-\mhzap201-web-consulta\src\java\com\egt\web\consulta\ArchivoAdjunto6.java
 \mhzap201-web-filtro\
 \mhzap201-web-rastro\
 \mhzap201-web-recurso\

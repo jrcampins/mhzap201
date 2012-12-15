@@ -3,7 +3,7 @@ cd /d "%~dp0"
 call variables
 
 set   applid=management
-set   source=%~d0\workspace\%applid%
+set   source=%~d0\%lower_case_project%\ws-glassfish\%applid%
 set   target=%project_source_dir%\%applid%
 
 set   applid
