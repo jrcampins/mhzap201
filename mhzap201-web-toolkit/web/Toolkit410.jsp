@@ -55,6 +55,22 @@
                                                     <webuijsf:staticText binding="#{Toolkit410.textoTitulo1}" id="textoTitulo1" styleClass="pdq-text-titulo-1"/>
                                                 </h:panelGrid>
                                             </h:panelGrid>
+                                            <h:panelGrid id="gridPanelTitulo1101" styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label id="labelTitulo11" text="target"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid id="gridPanelTitulo1102" styleClass="pdq-grid-detalle-mensajes">
+                                                <h:panelGrid id="gridPanelTitulo110201" styleClass="pdq-grid-detalle-mensajes-2">
+                                                    <webuijsf:staticText id="textoTitulo11" styleClass="pdq-text-titulo-1" text="#{Toolkit410.targetApplicationServer}"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+                                            <h:panelGrid id="gridPanelTitulo1201" styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label id="labelTitulo12" text="workspace"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid id="gridPanelTitulo1202" styleClass="pdq-grid-detalle-mensajes">
+                                                <h:panelGrid id="gridPanelTitulo120201" styleClass="pdq-grid-detalle-mensajes-2">
+                                                    <webuijsf:staticText id="textoTitulo12" styleClass="pdq-text-titulo-1" text="#{Toolkit410.workspaceDir}"/>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
                                             <h:panelGrid binding="#{Toolkit410.gridPanel109}" id="gridPanel109" styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label binding="#{Toolkit410.etiquetaListaFuncionAccion1}" for="listaFuncionAccion1"
                                                     id="etiquetaListaFuncionAccion1" text="#{Toolkit410.gestor.i18n.textoEtiquetaListaFuncionAccion}"/>

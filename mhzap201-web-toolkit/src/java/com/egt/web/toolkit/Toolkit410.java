@@ -10,10 +10,6 @@
  */
 package com.egt.web.toolkit;
 
-import com.egt.ejb.persistence.entity.Aplicacion;
-import com.egt.ejb.persistence.entity.Pagina;
-import com.egt.ejb.persistence.facade.AplicacionFacadeLocal;
-import com.egt.ejb.persistence.facade.PaginaFacadeLocal;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.FGS;
 import com.egt.base.constants.URX2;
@@ -32,8 +28,13 @@ import com.egt.core.aplicacion.web.GestorPaginaBasica;
 import com.egt.core.aplicacion.web.PaginaBasica;
 import com.egt.core.util.JS;
 import com.egt.core.util.STP;
+import com.egt.ejb.persistence.entity.Aplicacion;
+import com.egt.ejb.persistence.entity.Pagina;
+import com.egt.ejb.persistence.facade.AplicacionFacadeLocal;
+import com.egt.ejb.persistence.facade.PaginaFacadeLocal;
 import com.egt.ejb.toolkit.ToolKitBrokerLocal;
 import com.egt.ejb.toolkit.ToolKitSessionLocal;
+import com.egt.ejb.toolkit.ToolKitUtils;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
 import com.sun.webui.jsf.component.Anchor;
 import com.sun.webui.jsf.component.Body;
@@ -933,6 +934,7 @@ public class Toolkit410 extends AbstractPageBean
         public boolean isOn() {
             return isIdAplicacionRendered();
         }
+
     };
 
     public Bit getBitIdAplicacionRendered() {
@@ -951,6 +953,7 @@ public class Toolkit410 extends AbstractPageBean
         public boolean isOn() {
             return isIdPaginaRendered();
         }
+
     };
 
     public Bit getBitIdPaginaRendered() {
@@ -976,7 +979,6 @@ public class Toolkit410 extends AbstractPageBean
     }
 
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="Facades">
     @EJB
     private AplicacionFacadeLocal aplicacionFacade;
@@ -985,7 +987,6 @@ public class Toolkit410 extends AbstractPageBean
     private PaginaFacadeLocal paginaFacade;
 
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="metodos y propiedades estandar">
     protected void preiniciar() {
         /*
@@ -1020,7 +1021,6 @@ public class Toolkit410 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idAplicacion">
     private Aplicacion aplicacionIdAplicacion;
 
@@ -1087,7 +1087,6 @@ public class Toolkit410 extends AbstractPageBean
     }
 
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idPagina">
     private Pagina paginaIdPagina;
 
@@ -1154,10 +1153,8 @@ public class Toolkit410 extends AbstractPageBean
     }
 
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
     // </editor-fold>
-
     // <editor-fold defaultstate="collapsed" desc="botones de accion de la plantilla #4">
     public String botonAplicar1_action() {
         this.getGestor().track("botonAplicar1_action", this.getGestor().getValorListaFuncionAccion1());
@@ -1347,4 +1344,13 @@ public class Toolkit410 extends AbstractPageBean
     public String getScriptGenerar() {
         return JS.getConfirmDialogJavaScript(Bundle.getString("Toolkit410_ETIQUETA_MIGAS_PAN"), false);
     }
+
+    public String getTargetApplicationServer() {
+        return ToolKitUtils.getenv("TARGET_APPLICATION_SERVER");
+    }
+
+    public String getWorkspaceDir() {
+        return ToolKitUtils.getenv("WORKSPACE");
+    }
+
 }

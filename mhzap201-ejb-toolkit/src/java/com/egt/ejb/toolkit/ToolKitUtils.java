@@ -127,6 +127,7 @@ public class ToolKitUtils {
         String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + "WORKSPACE";
         String sep = System.getProperties().getProperty("file.separator");
         String dir = System.getenv(var);
+        mkdirs(dir);
         return dir + sep;
     }
 

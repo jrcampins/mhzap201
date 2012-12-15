@@ -7,8 +7,9 @@ if not defined variables goto:eof
 
 if not defined f0 set f0="%~f0"
 
-set workspace=%~d0\workspace
-call:erase "%workspace%"
+call:erase "%~d0\workspace"
+call:erase "%~d0\%lower_case_project%\ws-glassfish"
+call:erase "%~d0\%lower_case_project%\ws-jboss"
 if %f0% == "%~f0" pause
 goto:eof
 
