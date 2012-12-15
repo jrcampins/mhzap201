@@ -7,13 +7,14 @@ set variables=
 call variables
 if not defined variables goto:eof
 
-rem %UPPER_CASE_PROJECT%_HOME_DIR=%project_source_dir%\management
+set target=jboss
+set %UPPER_CASE_PROJECT%_HOME_DIR=%project_source_dir%\management
 set %UPPER_CASE_PROJECT%_JNDI_EJB_PERSISTENCE_PATTERN=java:global/%lower_case_project%-sdk/%lower_case_project%-ejb-persistence/{0}
-set %UPPER_CASE_PROJECT%_TARGET_APPLICATION_SERVER=jboss
 set %UPPER_CASE_PROJECT%_VELOCITY_PROPERTIES_FILE=%project_source_dir%\management\resources\velocity\sdk-velocity.properties
 set %UPPER_CASE_PROJECT%_WEB_TEMPLATE_PROJECT_NAME=%lower_case_project%-web-template
 set %UPPER_CASE_PROJECT%_WEB_TEMPLATE_PROJECT_ROOT=%project_source_dir%
-set %UPPER_CASE_PROJECT%_WORKSPACE=%~d0\workspace
+set %UPPER_CASE_PROJECT%_WORKSPACE=%~d0\%lower_case_project%\ws-%target%
+set %UPPER_CASE_PROJECT%_TARGET_APPLICATION_SERVER=%target%
 set %UPPER_CASE_PROJECT%
 echo.
 
