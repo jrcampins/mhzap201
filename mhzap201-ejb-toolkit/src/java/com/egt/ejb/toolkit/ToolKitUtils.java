@@ -106,6 +106,11 @@ public class ToolKitUtils {
         return dir;
     }
 
+    public static String getenv(String name) {
+        String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + name;
+        return StringUtils.trimToEmpty(System.getenv(var));
+    }
+
     public static String getWebTmpPrj() {
         String var = EAB.ENTERPRISE_APPLICATION_CODE.toUpperCase() + "_" + "WEB_TEMPLATE_PROJECT_NAME";
         return System.getenv(var);

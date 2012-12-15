@@ -745,6 +745,14 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         filename = filedir + "Bundle.properties";
         write(context, "sdk-plantilla-bundle-properties.vm", filename);
 //
+//      filedir = ToolKitUtils.getWebSrcDir(root, project);
+//      filename = filedir + "ApplicationBean1.java";
+//      write(context, "sdk-plantilla-application-bean-1-java.vm", filename);
+//
+//      filedir = ToolKitUtils.getWebSrcDir(root, project);
+//      filename = filedir + "RequestBean1.java";
+//      write(context, "sdk-plantilla-request-bean-1-java.vm", filename);
+//
         filedir = ToolKitUtils.getWebSrcDir(root, project);
         filename = filedir + "SessionBean1.java";
         write(context, "sdk-plantilla-session-bean-1-java.vm", filename);
@@ -932,6 +940,13 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
         if (aplicacion.getGrupoAplicacionIdGrupoAplicacion() != null) {
             String equis = aplicacion.getGrupoAplicacionIdGrupoAplicacion().getCodigoGrupoAplicacion();
             replacements.put(RECURSO_X, equis);
+        }
+        String targetApplicationServer = ToolKitUtils.getenv("TARGET_APPLICATION_SERVER");
+        if (targetApplicationServer.equalsIgnoreCase("jboss")) {
+            replacements.put("//@PostConstruct", "@PostConstruct");
+            replacements.put("//@PreDestroy", "@PreDestroy");
+            replacements.put("//@PostActivate", "@PostActivate");
+            replacements.put("//@PrePassivate", "@PrePassivate");
         }
         copydirs(source, target, source, target, replacements);
     }

@@ -1,6 +1,7 @@
 ## =============================================================================
 #macro(writeJavaCode201 $foo)
 ## =============================================================================
+#set($targetApplicationServer = $utils.getenv('TARGET_APPLICATION_SERVER'))
 #set($xrefMap = $utils.newMap())
 ## -----------------------------------------------------------------------------
 #foreach($columna in $includedColumns)
@@ -61,8 +62,10 @@ import com.egt.core.util.Utils;
 import com.sun.rave.faces.converter.SqlTimestampConverter;
 import com.sun.data.provider.RowKey;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+##if($targetApplicationServer.equalsIgnoreCase('jboss'))
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+##end
 import com.sun.webui.jsf.component.Anchor;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Breadcrumbs;
@@ -417,6 +420,7 @@ import javax.faces.validator.ValidatorException;
 ## =============================================================================
 #macro(writeJavaCode211 $foo)
 ## =============================================================================
+#set($targetApplicationServer = $utils.getenv('TARGET_APPLICATION_SERVER'))
 #set($xrefMap = $utils.newMap())
 ## -----------------------------------------------------------------------------
 #foreach($parametro in $inparams)
@@ -511,8 +515,10 @@ import com.egt.core.util.Utils;
 import com.sun.rave.faces.converter.SqlTimestampConverter;
 import com.sun.data.provider.RowKey;
 import com.sun.rave.web.ui.appbase.AbstractPageBean;
+##if($targetApplicationServer.equalsIgnoreCase('jboss'))
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+##end
 import com.sun.webui.jsf.component.Anchor;
 import com.sun.webui.jsf.component.Body;
 import com.sun.webui.jsf.component.Breadcrumbs;

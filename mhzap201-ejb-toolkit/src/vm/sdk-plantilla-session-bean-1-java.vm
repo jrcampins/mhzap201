@@ -1,3 +1,4 @@
+#set($targetApplicationServer = $utils.getenv('TARGET_APPLICATION_SERVER'))
 #setPropiedadesAplicacion($aplicacion)
 #set($map1 = $utils.newMap())
 #set($map2 = $utils.newMap())
@@ -38,10 +39,12 @@ import com.egt.core.aplicacion.web.ContextoSesion;
 import com.egt.core.aplicacion.web.ContextoSesionBasico;
 import com.egt.core.db.xdp.RecursoCachedRowSet;
 import com.sun.rave.web.ui.appbase.AbstractSessionBean;
+##if($targetApplicationServer.equalsIgnoreCase('jboss'))
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
+##end
 import com.sun.sql.rowset.CachedRowSetXImpl;
 import javax.faces.FacesException;
 import javax.faces.context.FacesContext;
@@ -187,7 +190,11 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * user session.</p>
      */
     @Override
+#if($targetApplicationServer.equalsIgnoreCase('jboss'))
+    @PostConstruct
+#else
     //@PostConstruct
+#end
     public void init() {
         // Perform initializations inherited from our superclass
         super.init();
@@ -222,7 +229,11 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * or resources that can not be serialized with the session itself.</p>
      */
     @Override
+#if($targetApplicationServer.equalsIgnoreCase('jboss'))
+    @PrePassivate
+#else
     //@PrePassivate
+#end
     public void passivate() {
         this.desactivar();
     }
@@ -236,7 +247,11 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * session itself.</p>
      */
     @Override
+#if($targetApplicationServer.equalsIgnoreCase('jboss'))
+    @PostActivate
+#else
     //@PostActivate
+#end
     public void activate() {
         this.activar();
     }
@@ -251,7 +266,11 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
      * at any later time during the lifetime of the application.</p>
      */
     @Override
+#if($targetApplicationServer.equalsIgnoreCase('jboss'))
+    @PreDestroy
+#else
     //@PreDestroy
+#end
     public void destroy() {
         this.destruir();
     }
