@@ -7,11 +7,11 @@
 --@param comentarios: Comentarios de la denegacion
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function persona_denegar_pension(rastro number, persona_consultada number, numero_causa integer, otra_causa varchar2, comentarios varchar2) return integer is
+create or replace function persona_denegar_pension(rastro number, persona_consultada number, numero_causa integer, otra_causa varchar2, numero_res varchar2, fecha_res timestamp, comentarios varchar2) return integer is
     mensaje varchar2(200);
     retcode number;
 begin
-    mensaje:=sp$persona.denegar_pension(persona_consultada, numero_causa, otra_causa, comentarios);
+    mensaje:=sp$persona.denegar_pension(persona_consultada, numero_causa, otra_causa, numero_res, fecha_res, comentarios);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;
