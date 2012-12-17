@@ -140,7 +140,7 @@ begin
                        otra_causa_denegacion:=null;
                     end if;
                     --Se deniega la pensión
-                    mensaje:=sp$persona.denegar_pension(table_log(i).id_persona,causa_denegacion,otra_causa_denegacion,'Pensión Denegada Automáticamente');
+                    mensaje:=sp$persona.denegar_pension(table_log(i).id_persona,causa_denegacion,otra_causa_denegacion, null, null,'Pensión Denegada Automáticamente');
                 end if;
             --Procesamos las reconsideraciones solicitadas
             elsif table_log(i).numero_condicion_reco_pen=1 then
