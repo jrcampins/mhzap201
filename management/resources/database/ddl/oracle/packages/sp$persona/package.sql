@@ -6,7 +6,7 @@ function act_persona_elegible(persona_consultada number) return number;
 function consultar_req_pers(persona_consultada number) return number;
 function registrar_cer_defun(persona_consultada number, certificado varchar2, fecha_certificado timestamp) return varchar2;
 function anular_cer_defun(persona_consultada number, comentarios varchar2) return varchar2;
-function denegar_pension(persona_consultada number, numero_causa integer, otra_causa varchar2, comentarios varchar2) return varchar2;
+function denegar_pension(persona_consultada number, numero_causa integer, otra_causa varchar2, numero_res varchar2, fecha_res varchar2, comentarios varchar2) return varchar2;
 function anular_cer_vida(persona_consultada number, comentarios varchar2) return varchar2;
 function aprobar_reco_pen(persona_consultada number, comentarios varchar2) return varchar2;
 function aprobar_pension(persona_consultada number, comentarios varchar2) return varchar2;
@@ -23,3 +23,4 @@ function desmentir_denu_pen(persona_consultada number, comentarios varchar2) ret
 function otorgar_pension(persona_consultada number, numero_resolucion varchar2, fecha_resolucion timestamp, comentarios varchar2) return varchar2;
 function proc_denu_pen(persona_consultada number) return varchar2;
 function proc_reco_pen(persona_consultada number) return varchar2;
+function registrar_entrega_doc(persona_consultada number, cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number) return varchar2;

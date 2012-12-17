@@ -42,7 +42,7 @@ begin
     --Pension solicitada: Se deniega por fallecimiento
     --
     elsif row_persona.numero_condicion_pension =1 then
-        mensaje_int:=sp$persona.denegar_pension(persona_consultada, 12, null,'Certificado de Defuncion Registrado');
+        mensaje_int:=sp$persona.denegar_pension(persona_consultada, 12, null,null,null,'Certificado de Defuncion Registrado');
         update persona 
         set fecha_certificado_defuncion = fecha_certificado,
             certificado_defuncion = certificado,

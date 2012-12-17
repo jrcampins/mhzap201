@@ -6,7 +6,7 @@
 --@param comentarios: Comentarios de la solicitud
 --@return: mensaje indicando la condición de ejecución del proceso
 --
-function denegar_pension(persona_consultada number, numero_causa integer, otra_causa varchar2, comentarios varchar2) return varchar2 is
+function denegar_pension(persona_consultada number, numero_causa integer, otra_causa varchar2, numero_res varchar2, fecha_res varchar2, comentarios varchar2) return varchar2 is
     mensaje_denegacion_pension varchar2(200):='';
     mensaje varchar2 (200):='';
     row_persona persona%rowtype;
@@ -48,6 +48,8 @@ begin
             fecha_denegacion_pension = CURRENT_TIMESTAMP,
             numero_causa_den_pension=numero_causa,
             comentarios_denegacion_pension=comentarios,
+            numero_resolucion_den_pen=numero_res,
+            fecha_resolucion_den_pen=fecha_res,
             otra_causa_den_pension = otra_causa
         where  id_persona = persona_consultada;
         mensaje:='Pensión Denegada: '||mensaje_denegacion_pension;
