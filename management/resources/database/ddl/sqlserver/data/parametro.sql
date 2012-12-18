@@ -1567,7 +1567,7 @@ VALUES (20699, 1, 'codigo_archivo', 'Código Archivo', 'código archivo', NULL, 1,
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20700, 1, 'codigo_ubicacion_superior', 'Código Ubicación Superior', 'código ubicación superior', NULL, 1, 'codigo_ubicacion_superior');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20701, 1, 'COORDX', 'Coordx', 'coordx', NULL, 1, 'COORDX');
+VALUES (20701, 1, 'coordx', 'Coordx', 'coordx', NULL, 1, 'COORDX');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20702, 1, 'defuncion', 'Defunción', 'defunción', NULL, 1, 'defuncion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1587,9 +1587,9 @@ VALUES (20709, 1, 'fecha_hora_transaccion', 'Fecha Hora Transacción', 'fecha hor
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20710, 1, 'ficha_activa', 'Ficha Activa', 'ficha activa', NULL, 1, 'ficha_activa');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20711, 1, 'GPS', 'GPS', 'gps', NULL, 1, 'GPS');
+VALUES (20711, 1, 'gps', 'GPS', 'gps', NULL, 1, 'GPS');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20712, 1, 'ICV', 'ICV', 'icv', NULL, 1, 'ICV');
+VALUES (20712, 1, 'icv', 'ICV', 'icv', NULL, 1, 'ICV');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20713, 1, 'id_log_imp_deu', 'Log Imp Deu', 'log imp deu', NULL, 5, 'id_log_imp_deu');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1637,203 +1637,203 @@ VALUES (20734, 1, 'nombres', 'Nombres', 'nombres', NULL, 1, 'nombres');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20735, 1, 'nombres_apellidos', 'Nombres Apellidos', 'nombres apellidos', NULL, 1, 'nombres_apellidos');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20736, 1, 'Nro_celular', 'Nro Celular', 'nro celular', NULL, 1, 'Nro_celular');
+VALUES (20736, 1, 'nro_celular', 'Nro Celular', 'nro celular', NULL, 1, 'Nro_celular');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20737, 1, 'Nro_linea_baja', 'Nro Linea Baja', 'nro linea baja', NULL, 1, 'Nro_linea_baja');
+VALUES (20737, 1, 'nro_linea_baja', 'Nro Linea Baja', 'nro linea baja', NULL, 1, 'Nro_linea_baja');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20738, 1, 'observacion', 'Observación', 'observación', NULL, 1, 'observacion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20739, 1, 'ORDEN', 'Orden', 'orden', NULL, 1, 'ORDEN');
+VALUES (20739, 1, 'orden', 'Orden', 'orden', NULL, 1, 'ORDEN');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20740, 1, 'P01A', 'P01a', 'p01a', NULL, 1, 'P01A');
+VALUES (20740, 1, 'p01a', 'P01a', 'p01a', NULL, 1, 'P01A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20741, 1, 'P01B', 'P01b', 'p01b', NULL, 1, 'P01B');
+VALUES (20741, 1, 'p01b', 'P01b', 'p01b', NULL, 1, 'P01B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20742, 1, 'P01C', 'P01c', 'p01c', NULL, 1, 'P01C');
+VALUES (20742, 1, 'p01c', 'P01c', 'p01c', NULL, 1, 'P01C');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20743, 1, 'P01D', 'P01d', 'p01d', NULL, 1, 'P01D');
+VALUES (20743, 1, 'p01d', 'P01d', 'p01d', NULL, 1, 'P01D');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20744, 1, 'P02', 'P02', 'p02', NULL, 1, 'P02');
+VALUES (20744, 1, 'p02', 'P02', 'p02', NULL, 1, 'P02');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20745, 1, 'P03', 'P03', 'p03', NULL, 1, 'P03');
+VALUES (20745, 1, 'p03', 'P03', 'p03', NULL, 1, 'P03');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20746, 1, 'P04', 'P04', 'p04', NULL, 1, 'P04');
+VALUES (20746, 1, 'p04', 'P04', 'p04', NULL, 1, 'P04');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20747, 1, 'P05', 'P05', 'p05', NULL, 1, 'P05');
+VALUES (20747, 1, 'p05', 'P05', 'p05', NULL, 1, 'P05');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20748, 1, 'P06', 'P06', 'p06', NULL, 1, 'P06');
+VALUES (20748, 1, 'p06', 'P06', 'p06', NULL, 1, 'P06');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20749, 1, 'P07', 'P07', 'p07', NULL, 1, 'P07');
+VALUES (20749, 1, 'p07', 'P07', 'p07', NULL, 1, 'P07');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20750, 1, 'P08', 'P08', 'p08', NULL, 1, 'P08');
+VALUES (20750, 1, 'p08', 'P08', 'p08', NULL, 1, 'P08');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20751, 1, 'P09', 'P09', 'p09', NULL, 1, 'P09');
+VALUES (20751, 1, 'p09', 'P09', 'p09', NULL, 1, 'P09');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20752, 1, 'P104', 'P104', 'p104', NULL, 1, 'P104');
+VALUES (20752, 1, 'p104', 'P104', 'p104', NULL, 1, 'P104');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20753, 1, 'P14', 'P14', 'p14', NULL, 1, 'P14');
+VALUES (20753, 1, 'p14', 'P14', 'p14', NULL, 1, 'P14');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20754, 1, 'P15', 'P15', 'p15', NULL, 1, 'P15');
+VALUES (20754, 1, 'p15', 'P15', 'p15', NULL, 1, 'P15');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20755, 1, 'P16', 'P16', 'p16', NULL, 1, 'P16');
+VALUES (20755, 1, 'p16', 'P16', 'p16', NULL, 1, 'P16');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20756, 1, 'P17', 'P17', 'p17', NULL, 1, 'P17');
+VALUES (20756, 1, 'p17', 'P17', 'p17', NULL, 1, 'P17');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20757, 1, 'P18', 'P18', 'p18', NULL, 1, 'P18');
+VALUES (20757, 1, 'p18', 'P18', 'p18', NULL, 1, 'P18');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20758, 1, 'P19', 'P19', 'p19', NULL, 1, 'P19');
+VALUES (20758, 1, 'p19', 'P19', 'p19', NULL, 1, 'P19');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20759, 1, 'P20A', 'P20a', 'p20a', NULL, 1, 'P20A');
+VALUES (20759, 1, 'p20a', 'P20a', 'p20a', NULL, 1, 'P20A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20760, 1, 'P20D', 'P20d', 'p20d', NULL, 1, 'P20D');
+VALUES (20760, 1, 'p20d', 'P20d', 'p20d', NULL, 1, 'P20D');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20761, 1, 'P20M', 'P20m', 'p20m', NULL, 1, 'P20M');
+VALUES (20761, 1, 'p20m', 'P20m', 'p20m', NULL, 1, 'P20M');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20762, 1, 'P24', 'P24', 'p24', NULL, 1, 'P24');
+VALUES (20762, 1, 'p24', 'P24', 'p24', NULL, 1, 'P24');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20763, 1, 'P25', 'P25', 'p25', NULL, 1, 'P25');
+VALUES (20763, 1, 'p25', 'P25', 'p25', NULL, 1, 'P25');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20764, 1, 'P26', 'P26', 'p26', NULL, 1, 'P26');
+VALUES (20764, 1, 'p26', 'P26', 'p26', NULL, 1, 'P26');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20765, 1, 'P27', 'P27', 'p27', NULL, 1, 'P27');
+VALUES (20765, 1, 'p27', 'P27', 'p27', NULL, 1, 'P27');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20766, 1, 'P27E', 'P27e', 'p27e', NULL, 1, 'P27E');
+VALUES (20766, 1, 'p27e', 'P27e', 'p27e', NULL, 1, 'P27E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20767, 1, 'P28A', 'P28a', 'p28a', NULL, 1, 'P28A');
+VALUES (20767, 1, 'p28a', 'P28a', 'p28a', NULL, 1, 'P28A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20768, 1, 'P28B', 'P28b', 'p28b', NULL, 1, 'P28B');
+VALUES (20768, 1, 'p28b', 'P28b', 'p28b', NULL, 1, 'P28B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20769, 1, 'P29', 'P29', 'p29', NULL, 1, 'P29');
+VALUES (20769, 1, 'p29', 'P29', 'p29', NULL, 1, 'P29');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20770, 1, 'P30', 'P30', 'p30', NULL, 1, 'P30');
+VALUES (20770, 1, 'p30', 'P30', 'p30', NULL, 1, 'P30');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20771, 1, 'P31', 'P31', 'p31', NULL, 1, 'P31');
+VALUES (20771, 1, 'p31', 'P31', 'p31', NULL, 1, 'P31');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20772, 1, 'P32', 'P32', 'p32', NULL, 1, 'P32');
+VALUES (20772, 1, 'p32', 'P32', 'p32', NULL, 1, 'P32');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20773, 1, 'P33', 'P33', 'p33', NULL, 1, 'P33');
+VALUES (20773, 1, 'p33', 'P33', 'p33', NULL, 1, 'P33');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20774, 1, 'P34', 'P34', 'p34', NULL, 1, 'P34');
+VALUES (20774, 1, 'p34', 'P34', 'p34', NULL, 1, 'P34');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20775, 1, 'P35', 'P35', 'p35', NULL, 1, 'P35');
+VALUES (20775, 1, 'p35', 'P35', 'p35', NULL, 1, 'P35');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20776, 1, 'P36', 'P36', 'p36', NULL, 1, 'P36');
+VALUES (20776, 1, 'p36', 'P36', 'p36', NULL, 1, 'P36');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20777, 1, 'P37', 'P37', 'p37', NULL, 1, 'P37');
+VALUES (20777, 1, 'p37', 'P37', 'p37', NULL, 1, 'P37');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20778, 1, 'P38', 'P38', 'p38', NULL, 1, 'P38');
+VALUES (20778, 1, 'p38', 'P38', 'p38', NULL, 1, 'P38');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20779, 1, 'P391', 'P391', 'p391', NULL, 1, 'P391');
+VALUES (20779, 1, 'p391', 'P391', 'p391', NULL, 1, 'P391');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20780, 1, 'P392', 'P392', 'p392', NULL, 1, 'P392');
+VALUES (20780, 1, 'p392', 'P392', 'p392', NULL, 1, 'P392');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20781, 1, 'P393', 'P393', 'p393', NULL, 1, 'P393');
+VALUES (20781, 1, 'p393', 'P393', 'p393', NULL, 1, 'P393');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20782, 1, 'P394', 'P394', 'p394', NULL, 1, 'P394');
+VALUES (20782, 1, 'p394', 'P394', 'p394', NULL, 1, 'P394');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20783, 1, 'P395', 'P395', 'p395', NULL, 1, 'P395');
+VALUES (20783, 1, 'p395', 'P395', 'p395', NULL, 1, 'P395');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20784, 1, 'P396', 'P396', 'p396', NULL, 1, 'P396');
+VALUES (20784, 1, 'p396', 'P396', 'p396', NULL, 1, 'P396');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20785, 1, 'P397', 'P397', 'p397', NULL, 1, 'P397');
+VALUES (20785, 1, 'p397', 'P397', 'p397', NULL, 1, 'P397');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20786, 1, 'P42CI', 'P42ci', 'p42ci', NULL, 1, 'P42CI');
+VALUES (20786, 1, 'p42ci', 'P42ci', 'p42ci', NULL, 1, 'P42CI');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20787, 1, 'P42N', 'P42n', 'p42n', NULL, 1, 'P42N');
+VALUES (20787, 1, 'p42n', 'P42n', 'p42n', NULL, 1, 'P42N');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20788, 1, 'P43', 'P43', 'p43', NULL, 1, 'P43');
+VALUES (20788, 1, 'p43', 'P43', 'p43', NULL, 1, 'P43');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20789, 1, 'P44A', 'P44a', 'p44a', NULL, 1, 'P44A');
+VALUES (20789, 1, 'p44a', 'P44a', 'p44a', NULL, 1, 'P44A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20790, 1, 'P44B', 'P44b', 'p44b', NULL, 1, 'P44B');
+VALUES (20790, 1, 'p44b', 'P44b', 'p44b', NULL, 1, 'P44B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20791, 1, 'P45A', 'P45a', 'p45a', NULL, 1, 'P45A');
+VALUES (20791, 1, 'p45a', 'P45a', 'p45a', NULL, 1, 'P45A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20792, 1, 'P45B', 'P45b', 'p45b', NULL, 1, 'P45B');
+VALUES (20792, 1, 'p45b', 'P45b', 'p45b', NULL, 1, 'P45B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20793, 1, 'P46', 'P46', 'p46', NULL, 1, 'P46');
+VALUES (20793, 1, 'p46', 'P46', 'p46', NULL, 1, 'P46');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20794, 1, 'P47', 'P47', 'p47', NULL, 1, 'P47');
+VALUES (20794, 1, 'p47', 'P47', 'p47', NULL, 1, 'P47');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20795, 1, 'P48', 'P48', 'p48', NULL, 1, 'P48');
+VALUES (20795, 1, 'p48', 'P48', 'p48', NULL, 1, 'P48');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20796, 1, 'P49', 'P49', 'p49', NULL, 1, 'P49');
+VALUES (20796, 1, 'p49', 'P49', 'p49', NULL, 1, 'P49');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20797, 1, 'P50A', 'P50a', 'p50a', NULL, 1, 'P50A');
+VALUES (20797, 1, 'p50a', 'P50a', 'p50a', NULL, 1, 'P50A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20798, 1, 'P50B', 'P50b', 'p50b', NULL, 1, 'P50B');
+VALUES (20798, 1, 'p50b', 'P50b', 'p50b', NULL, 1, 'P50B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20799, 1, 'P50C', 'P50c', 'p50c', NULL, 1, 'P50C');
+VALUES (20799, 1, 'p50c', 'P50c', 'p50c', NULL, 1, 'P50C');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20800, 1, 'P51', 'P51', 'p51', NULL, 1, 'P51');
+VALUES (20800, 1, 'p51', 'P51', 'p51', NULL, 1, 'P51');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20801, 1, 'P52A', 'P52a', 'p52a', NULL, 1, 'P52A');
+VALUES (20801, 1, 'p52a', 'P52a', 'p52a', NULL, 1, 'P52A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20802, 1, 'P52D', 'P52d', 'p52d', NULL, 1, 'P52D');
+VALUES (20802, 1, 'p52d', 'P52d', 'p52d', NULL, 1, 'P52D');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20803, 1, 'P52M', 'P52m', 'p52m', NULL, 1, 'P52M');
+VALUES (20803, 1, 'p52m', 'P52m', 'p52m', NULL, 1, 'P52M');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20804, 1, 'P53A', 'P53a', 'p53a', NULL, 1, 'P53A');
+VALUES (20804, 1, 'p53a', 'P53a', 'p53a', NULL, 1, 'P53A');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20805, 1, 'P53B', 'P53b', 'p53b', NULL, 1, 'P53B');
+VALUES (20805, 1, 'p53b', 'P53b', 'p53b', NULL, 1, 'P53B');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20806, 1, 'P53C', 'P53c', 'p53c', NULL, 1, 'P53C');
+VALUES (20806, 1, 'p53c', 'P53c', 'p53c', NULL, 1, 'P53C');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20807, 1, 'P53Z', 'P53z', 'p53z', NULL, 1, 'P53Z');
+VALUES (20807, 1, 'p53z', 'P53z', 'p53z', NULL, 1, 'P53Z');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20808, 1, 'P54', 'P54', 'p54', NULL, 1, 'P54');
+VALUES (20808, 1, 'p54', 'P54', 'p54', NULL, 1, 'P54');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20809, 1, 'P54E', 'P54e', 'p54e', NULL, 1, 'P54E');
+VALUES (20809, 1, 'p54e', 'P54e', 'p54e', NULL, 1, 'P54E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20810, 1, 'P56', 'P56', 'p56', NULL, 1, 'P56');
+VALUES (20810, 1, 'p56', 'P56', 'p56', NULL, 1, 'P56');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20811, 1, 'P58', 'P58', 'p58', NULL, 1, 'P58');
+VALUES (20811, 1, 'p58', 'P58', 'p58', NULL, 1, 'P58');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20812, 1, 'P58E', 'P58e', 'p58e', NULL, 1, 'P58E');
+VALUES (20812, 1, 'p58e', 'P58e', 'p58e', NULL, 1, 'P58E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20813, 1, 'P59', 'P59', 'p59', NULL, 1, 'P59');
+VALUES (20813, 1, 'p59', 'P59', 'p59', NULL, 1, 'P59');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20814, 1, 'P60', 'P60', 'p60', NULL, 1, 'P60');
+VALUES (20814, 1, 'p60', 'P60', 'p60', NULL, 1, 'P60');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20815, 1, 'P61', 'P61', 'p61', NULL, 1, 'P61');
+VALUES (20815, 1, 'p61', 'P61', 'p61', NULL, 1, 'P61');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20816, 1, 'P62', 'P62', 'p62', NULL, 1, 'P62');
+VALUES (20816, 1, 'p62', 'P62', 'p62', NULL, 1, 'P62');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20817, 1, 'P63', 'P63', 'p63', NULL, 1, 'P63');
+VALUES (20817, 1, 'p63', 'P63', 'p63', NULL, 1, 'P63');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20818, 1, 'P64', 'P64', 'p64', NULL, 1, 'P64');
+VALUES (20818, 1, 'p64', 'P64', 'p64', NULL, 1, 'P64');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20819, 1, 'P65', 'P65', 'p65', NULL, 1, 'P65');
+VALUES (20819, 1, 'p65', 'P65', 'p65', NULL, 1, 'P65');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20820, 1, 'P65E', 'P65e', 'p65e', NULL, 1, 'P65E');
+VALUES (20820, 1, 'p65e', 'P65e', 'p65e', NULL, 1, 'P65E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20821, 1, 'P66', 'P66', 'p66', NULL, 1, 'P66');
+VALUES (20821, 1, 'p66', 'P66', 'p66', NULL, 1, 'P66');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20822, 1, 'P66E', 'P66e', 'p66e', NULL, 1, 'P66E');
+VALUES (20822, 1, 'p66e', 'P66e', 'p66e', NULL, 1, 'P66E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20823, 1, 'P67', 'P67', 'p67', NULL, 1, 'P67');
+VALUES (20823, 1, 'p67', 'P67', 'p67', NULL, 1, 'P67');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20824, 1, 'P68', 'P68', 'p68', NULL, 1, 'P68');
+VALUES (20824, 1, 'p68', 'P68', 'p68', NULL, 1, 'P68');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20825, 1, 'P68E', 'P68e', 'p68e', NULL, 1, 'P68E');
+VALUES (20825, 1, 'p68e', 'P68e', 'p68e', NULL, 1, 'P68E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20826, 1, 'P73', 'P73', 'p73', NULL, 1, 'P73');
+VALUES (20826, 1, 'p73', 'P73', 'p73', NULL, 1, 'P73');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20827, 1, 'P74', 'P74', 'p74', NULL, 1, 'P74');
+VALUES (20827, 1, 'p74', 'P74', 'p74', NULL, 1, 'P74');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20828, 1, 'P86', 'P86', 'p86', NULL, 1, 'P86');
+VALUES (20828, 1, 'p86', 'P86', 'p86', NULL, 1, 'P86');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20829, 1, 'P87', 'P87', 'p87', NULL, 1, 'P87');
+VALUES (20829, 1, 'p87', 'P87', 'p87', NULL, 1, 'P87');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20830, 1, 'P87E', 'P87e', 'p87e', NULL, 1, 'P87E');
+VALUES (20830, 1, 'p87e', 'P87e', 'p87e', NULL, 1, 'P87E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20831, 1, 'P88', 'P88', 'p88', NULL, 1, 'P88');
+VALUES (20831, 1, 'p88', 'P88', 'p88', NULL, 1, 'P88');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20832, 1, 'P88E', 'P88e', 'p88e', NULL, 1, 'P88E');
+VALUES (20832, 1, 'p88e', 'P88e', 'p88e', NULL, 1, 'P88E');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20833, 1, 'P91', 'P91', 'p91', NULL, 1, 'P91');
+VALUES (20833, 1, 'p91', 'P91', 'p91', NULL, 1, 'P91');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20834, 1, 'P92', 'P92', 'p92', NULL, 1, 'P92');
+VALUES (20834, 1, 'p92', 'P92', 'p92', NULL, 1, 'P92');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20835, 1, 'referencia', 'Referencia', 'referencia', NULL, 1, 'referencia');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
@@ -1853,59 +1853,59 @@ VALUES (20842, 1, 'tipo_ubicacion', 'Tipo Ubicación', 'tipo ubicación', NULL, 1,
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20843, 1, 'ubicacion', 'Ubicación', 'ubicación', NULL, 1, 'ubicacion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20844, 1, 'UTM', 'UTM', 'utm', NULL, 1, 'UTM');
+VALUES (20844, 1, 'utm', 'UTM', 'utm', NULL, 1, 'UTM');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20845, 1, 'VAR00001', 'Var00001', 'var00001', NULL, 1, 'VAR00001');
+VALUES (20845, 1, 'var00001', 'Var00001', 'var00001', NULL, 1, 'VAR00001');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20846, 1, 'VAR00002', 'Var00002', 'var00002', NULL, 1, 'VAR00002');
+VALUES (20846, 1, 'var00002', 'Var00002', 'var00002', NULL, 1, 'VAR00002');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20847, 1, 'VAR00003', 'Var00003', 'var00003', NULL, 1, 'VAR00003');
+VALUES (20847, 1, 'var00003', 'Var00003', 'var00003', NULL, 1, 'VAR00003');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20848, 1, 'VAR00004', 'Var00004', 'var00004', NULL, 1, 'VAR00004');
+VALUES (20848, 1, 'var00004', 'Var00004', 'var00004', NULL, 1, 'VAR00004');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20849, 1, 'VAR00006', 'Var00006', 'var00006', NULL, 1, 'VAR00006');
+VALUES (20849, 1, 'var00006', 'Var00006', 'var00006', NULL, 1, 'VAR00006');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20850, 1, 'VAR00007', 'Var00007', 'var00007', NULL, 1, 'VAR00007');
+VALUES (20850, 1, 'var00007', 'Var00007', 'var00007', NULL, 1, 'VAR00007');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20851, 1, 'VAR00008', 'Var00008', 'var00008', NULL, 1, 'VAR00008');
+VALUES (20851, 1, 'var00008', 'Var00008', 'var00008', NULL, 1, 'VAR00008');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20852, 1, 'VAR00009', 'Var00009', 'var00009', NULL, 1, 'VAR00009');
+VALUES (20852, 1, 'var00009', 'Var00009', 'var00009', NULL, 1, 'VAR00009');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20853, 1, 'VAR00010', 'Var00010', 'var00010', NULL, 1, 'VAR00010');
+VALUES (20853, 1, 'var00010', 'Var00010', 'var00010', NULL, 1, 'VAR00010');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20854, 1, 'VAR00011', 'Var00011', 'var00011', NULL, 1, 'VAR00011');
+VALUES (20854, 1, 'var00011', 'Var00011', 'var00011', NULL, 1, 'VAR00011');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20855, 1, 'VAR00012', 'Var00012', 'var00012', NULL, 1, 'VAR00012');
+VALUES (20855, 1, 'var00012', 'Var00012', 'var00012', NULL, 1, 'VAR00012');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20856, 1, 'VAR00013', 'Var00013', 'var00013', NULL, 1, 'VAR00013');
+VALUES (20856, 1, 'var00013', 'Var00013', 'var00013', NULL, 1, 'VAR00013');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20857, 1, 'VAR00017', 'Var00017', 'var00017', NULL, 1, 'VAR00017');
+VALUES (20857, 1, 'var00017', 'Var00017', 'var00017', NULL, 1, 'VAR00017');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20858, 1, 'VAR00018', 'Var00018', 'var00018', NULL, 1, 'VAR00018');
+VALUES (20858, 1, 'var00018', 'Var00018', 'var00018', NULL, 1, 'VAR00018');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20859, 1, 'VAR00019', 'Var00019', 'var00019', NULL, 1, 'VAR00019');
+VALUES (20859, 1, 'var00019', 'Var00019', 'var00019', NULL, 1, 'VAR00019');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20860, 1, 'VAR00020', 'Var00020', 'var00020', NULL, 1, 'VAR00020');
+VALUES (20860, 1, 'var00020', 'Var00020', 'var00020', NULL, 1, 'VAR00020');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20861, 1, 'VAR00021', 'Var00021', 'var00021', NULL, 1, 'VAR00021');
+VALUES (20861, 1, 'var00021', 'Var00021', 'var00021', NULL, 1, 'VAR00021');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20862, 1, 'VAR00022', 'Var00022', 'var00022', NULL, 1, 'VAR00022');
+VALUES (20862, 1, 'var00022', 'Var00022', 'var00022', NULL, 1, 'VAR00022');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20863, 1, 'VAR00023', 'Var00023', 'var00023', NULL, 1, 'VAR00023');
+VALUES (20863, 1, 'var00023', 'Var00023', 'var00023', NULL, 1, 'VAR00023');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20864, 1, 'VAR00024', 'Var00024', 'var00024', NULL, 1, 'VAR00024');
+VALUES (20864, 1, 'var00024', 'Var00024', 'var00024', NULL, 1, 'VAR00024');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20865, 1, 'VAR00025', 'Var00025', 'var00025', NULL, 1, 'VAR00025');
+VALUES (20865, 1, 'var00025', 'Var00025', 'var00025', NULL, 1, 'VAR00025');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20866, 1, 'VAR00026', 'Var00026', 'var00026', NULL, 1, 'VAR00026');
+VALUES (20866, 1, 'var00026', 'Var00026', 'var00026', NULL, 1, 'VAR00026');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20867, 1, 'VAR00027', 'Var00027', 'var00027', NULL, 1, 'VAR00027');
+VALUES (20867, 1, 'var00027', 'Var00027', 'var00027', NULL, 1, 'VAR00027');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20868, 1, 'VAR00028', 'Var00028', 'var00028', NULL, 1, 'VAR00028');
+VALUES (20868, 1, 'var00028', 'Var00028', 'var00028', NULL, 1, 'VAR00028');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20869, 1, 'VAR00030', 'Var00030', 'var00030', NULL, 1, 'VAR00030');
+VALUES (20869, 1, 'var00030', 'Var00030', 'var00030', NULL, 1, 'VAR00030');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
-VALUES (20870, 1, 'VAR00031', 'Var00031', 'var00031', NULL, 1, 'VAR00031');
+VALUES (20870, 1, 'var00031', 'Var00031', 'var00031', NULL, 1, 'VAR00031');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20871, 1, 'version_log_imp_deu', 'Versión Log Imp Deu', 'versión log imp deu', NULL, 5, 'version_log_imp_deu');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
