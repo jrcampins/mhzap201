@@ -42,6 +42,15 @@ public class CondicionPension implements CondicionPensionBase, Comparable, Seria
     private String codigoCondicionPension;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
+    private Collection<LogProOtoPenApr> logProOtoPenAprNumeroCondicionPensionCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
+    private Collection<LogProPreProPag> logProPreProPagNumeroCondicionPensionCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
+    private Collection<LogProVerElePen> logProVerElePenNumeroCondicionPensionCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
     private Collection<Persona> personaNumeroCondicionPensionCollection;
 
     public CondicionPension() {
@@ -63,6 +72,33 @@ public class CondicionPension implements CondicionPensionBase, Comparable, Seria
 
     public void setCodigoCondicionPension(String codigoCondicionPension) {
         this.codigoCondicionPension = codigoCondicionPension;
+    }
+
+    @Override
+    public Collection<LogProOtoPenApr> getLogProOtoPenAprNumeroCondicionPensionCollection() {
+        return this.logProOtoPenAprNumeroCondicionPensionCollection;
+    }
+
+    public void setLogProOtoPenAprNumeroCondicionPensionCollection(Collection<LogProOtoPenApr> collection) {
+        this.logProOtoPenAprNumeroCondicionPensionCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagNumeroCondicionPensionCollection() {
+        return this.logProPreProPagNumeroCondicionPensionCollection;
+    }
+
+    public void setLogProPreProPagNumeroCondicionPensionCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagNumeroCondicionPensionCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenNumeroCondicionPensionCollection() {
+        return this.logProVerElePenNumeroCondicionPensionCollection;
+    }
+
+    public void setLogProVerElePenNumeroCondicionPensionCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenNumeroCondicionPensionCollection = collection;
     }
 
     @Override

@@ -42,6 +42,12 @@ public class CondicionDenuPen implements CondicionDenuPenBase, Comparable, Seria
     private String codigoCondicionDenuPen;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionDenuPenNumeroCondicionDenuPen")
+    private Collection<LogProPreProPag> logProPreProPagNumeroCondicionDenuPenCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionDenuPenNumeroCondicionDenuPen")
+    private Collection<LogProVerElePen> logProVerElePenNumeroCondicionDenuPenCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionDenuPenNumeroCondicionDenuPen")
     private Collection<Persona> personaNumeroCondicionDenuPenCollection;
 
     public CondicionDenuPen() {
@@ -63,6 +69,24 @@ public class CondicionDenuPen implements CondicionDenuPenBase, Comparable, Seria
 
     public void setCodigoCondicionDenuPen(String codigoCondicionDenuPen) {
         this.codigoCondicionDenuPen = codigoCondicionDenuPen;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagNumeroCondicionDenuPenCollection() {
+        return this.logProPreProPagNumeroCondicionDenuPenCollection;
+    }
+
+    public void setLogProPreProPagNumeroCondicionDenuPenCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagNumeroCondicionDenuPenCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenNumeroCondicionDenuPenCollection() {
+        return this.logProVerElePenNumeroCondicionDenuPenCollection;
+    }
+
+    public void setLogProVerElePenNumeroCondicionDenuPenCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenNumeroCondicionDenuPenCollection = collection;
     }
 
     @Override

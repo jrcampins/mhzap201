@@ -375,6 +375,18 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     private TipoActJupe tipoActJupeNumeroTipoActJupe;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProOtoPenApr> logProOtoPenAprIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProPreProPag> logProPreProPagIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProVerElePen> logProVerElePenIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
     private Collection<ObjecionElePen> objecionElePenIdPersonaCollection;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
@@ -1227,6 +1239,42 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setTipoActJupeNumeroTipoActJupe(TipoActJupe tipoActJupe) {
         this.tipoActJupeNumeroTipoActJupe = tipoActJupe;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdPersonaCollection() {
+        return this.logProAcrPotBenIdPersonaCollection;
+    }
+
+    public void setLogProAcrPotBenIdPersonaCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProOtoPenApr> getLogProOtoPenAprIdPersonaCollection() {
+        return this.logProOtoPenAprIdPersonaCollection;
+    }
+
+    public void setLogProOtoPenAprIdPersonaCollection(Collection<LogProOtoPenApr> collection) {
+        this.logProOtoPenAprIdPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagIdPersonaCollection() {
+        return this.logProPreProPagIdPersonaCollection;
+    }
+
+    public void setLogProPreProPagIdPersonaCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagIdPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenIdPersonaCollection() {
+        return this.logProVerElePenIdPersonaCollection;
+    }
+
+    public void setLogProVerElePenIdPersonaCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenIdPersonaCollection = collection;
     }
 
     @Override

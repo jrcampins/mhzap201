@@ -17,13 +17,16 @@ package com.egt.ejb.persistence.entity;
 
 import com.egt.base.persistence.entity.ArchivoDatosExtBase;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -87,6 +90,9 @@ public class ArchivoDatosExt implements ArchivoDatosExtBase, Comparable, Seriali
     @JoinColumn(name = "id_usuario_ultima_importacion", referencedColumnName = "id_usuario")
     @ManyToOne
     private Usuario usuarioIdUsuarioUltimaImportacion;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "archivoDatosExtIdArchivoDatosExt")
+    private Collection<LogProImpArcExt> logProImpArcExtIdArchivoDatosExtCollection;
 
     public ArchivoDatosExt() {
     }
@@ -215,6 +221,15 @@ public class ArchivoDatosExt implements ArchivoDatosExtBase, Comparable, Seriali
 
     public void setUsuarioIdUsuarioUltimaImportacion(Usuario usuario) {
         this.usuarioIdUsuarioUltimaImportacion = usuario;
+    }
+
+    @Override
+    public Collection<LogProImpArcExt> getLogProImpArcExtIdArchivoDatosExtCollection() {
+        return this.logProImpArcExtIdArchivoDatosExtCollection;
+    }
+
+    public void setLogProImpArcExtIdArchivoDatosExtCollection(Collection<LogProImpArcExt> collection) {
+        this.logProImpArcExtIdArchivoDatosExtCollection = collection;
     }
 
     @Override

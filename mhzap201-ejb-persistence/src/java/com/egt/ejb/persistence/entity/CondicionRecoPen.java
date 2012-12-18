@@ -42,6 +42,12 @@ public class CondicionRecoPen implements CondicionRecoPenBase, Comparable, Seria
     private String codigoCondicionRecoPen;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionRecoPenNumeroCondicionRecoPen")
+    private Collection<LogProPreProPag> logProPreProPagNumeroCondicionRecoPenCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionRecoPenNumeroCondicionRecoPen")
+    private Collection<LogProVerElePen> logProVerElePenNumeroCondicionRecoPenCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionRecoPenNumeroCondicionRecoPen")
     private Collection<Persona> personaNumeroCondicionRecoPenCollection;
 
     public CondicionRecoPen() {
@@ -63,6 +69,24 @@ public class CondicionRecoPen implements CondicionRecoPenBase, Comparable, Seria
 
     public void setCodigoCondicionRecoPen(String codigoCondicionRecoPen) {
         this.codigoCondicionRecoPen = codigoCondicionRecoPen;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagNumeroCondicionRecoPenCollection() {
+        return this.logProPreProPagNumeroCondicionRecoPenCollection;
+    }
+
+    public void setLogProPreProPagNumeroCondicionRecoPenCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagNumeroCondicionRecoPenCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenNumeroCondicionRecoPenCollection() {
+        return this.logProVerElePenNumeroCondicionRecoPenCollection;
+    }
+
+    public void setLogProVerElePenNumeroCondicionRecoPenCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenNumeroCondicionRecoPenCollection = collection;
     }
 
     @Override

@@ -278,6 +278,9 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     private Collection<FichaPersona> fichaPersonaIdPotencialBenCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "potencialBenIdPotencialBen")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdPotencialBenCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "potencialBenIdPotencialBen")
     private Collection<VisitaCenso> visitaCensoIdPotencialBenCollection;
 
     public PotencialBen() {
@@ -875,6 +878,15 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     public void setFichaPersonaIdPotencialBenCollection(Collection<FichaPersona> collection) {
         this.fichaPersonaIdPotencialBenCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdPotencialBenCollection() {
+        return this.logProAcrPotBenIdPotencialBenCollection;
+    }
+
+    public void setLogProAcrPotBenIdPotencialBenCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdPotencialBenCollection = collection;
     }
 
     @Override

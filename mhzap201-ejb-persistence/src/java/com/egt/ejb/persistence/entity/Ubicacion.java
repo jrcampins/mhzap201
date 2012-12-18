@@ -87,6 +87,42 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
     private Collection<FichaPersona> fichaPersonaIdDistritoNacimientoCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProOtoPenApr> logProOtoPenAprIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProOtoPenApr> logProOtoPenAprIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProOtoPenApr> logProOtoPenAprIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProPreProPag> logProPreProPagIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProPreProPag> logProPreProPagIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProPreProPag> logProPreProPagIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProVerElePen> logProVerElePenIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProVerElePen> logProVerElePenIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProVerElePen> logProVerElePenIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
     private Collection<Persona> personaIdDepartamentoCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
@@ -258,6 +294,114 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
 
     public void setFichaPersonaIdDistritoNacimientoCollection(Collection<FichaPersona> collection) {
         this.fichaPersonaIdDistritoNacimientoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdDepartamentoCollection() {
+        return this.logProAcrPotBenIdDepartamentoCollection;
+    }
+
+    public void setLogProAcrPotBenIdDepartamentoCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdDistritoCollection() {
+        return this.logProAcrPotBenIdDistritoCollection;
+    }
+
+    public void setLogProAcrPotBenIdDistritoCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdBarrioCollection() {
+        return this.logProAcrPotBenIdBarrioCollection;
+    }
+
+    public void setLogProAcrPotBenIdBarrioCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdBarrioCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProOtoPenApr> getLogProOtoPenAprIdDepartamentoCollection() {
+        return this.logProOtoPenAprIdDepartamentoCollection;
+    }
+
+    public void setLogProOtoPenAprIdDepartamentoCollection(Collection<LogProOtoPenApr> collection) {
+        this.logProOtoPenAprIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProOtoPenApr> getLogProOtoPenAprIdDistritoCollection() {
+        return this.logProOtoPenAprIdDistritoCollection;
+    }
+
+    public void setLogProOtoPenAprIdDistritoCollection(Collection<LogProOtoPenApr> collection) {
+        this.logProOtoPenAprIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProOtoPenApr> getLogProOtoPenAprIdBarrioCollection() {
+        return this.logProOtoPenAprIdBarrioCollection;
+    }
+
+    public void setLogProOtoPenAprIdBarrioCollection(Collection<LogProOtoPenApr> collection) {
+        this.logProOtoPenAprIdBarrioCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagIdDepartamentoCollection() {
+        return this.logProPreProPagIdDepartamentoCollection;
+    }
+
+    public void setLogProPreProPagIdDepartamentoCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagIdDistritoCollection() {
+        return this.logProPreProPagIdDistritoCollection;
+    }
+
+    public void setLogProPreProPagIdDistritoCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProPreProPag> getLogProPreProPagIdBarrioCollection() {
+        return this.logProPreProPagIdBarrioCollection;
+    }
+
+    public void setLogProPreProPagIdBarrioCollection(Collection<LogProPreProPag> collection) {
+        this.logProPreProPagIdBarrioCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenIdDepartamentoCollection() {
+        return this.logProVerElePenIdDepartamentoCollection;
+    }
+
+    public void setLogProVerElePenIdDepartamentoCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenIdDistritoCollection() {
+        return this.logProVerElePenIdDistritoCollection;
+    }
+
+    public void setLogProVerElePenIdDistritoCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProVerElePen> getLogProVerElePenIdBarrioCollection() {
+        return this.logProVerElePenIdBarrioCollection;
+    }
+
+    public void setLogProVerElePenIdBarrioCollection(Collection<LogProVerElePen> collection) {
+        this.logProVerElePenIdBarrioCollection = collection;
     }
 
     @Override

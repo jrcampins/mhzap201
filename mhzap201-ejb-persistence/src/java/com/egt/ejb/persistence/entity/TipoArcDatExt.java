@@ -44,6 +44,9 @@ public class TipoArcDatExt implements TipoArcDatExtBase, Comparable, Serializabl
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "tipoArcDatExtNumeroTipoArcDatExt")
     private Collection<ArchivoDatosExt> archivoDatosExtNumeroTipoArcDatExtCollection;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "tipoArcDatExtNumeroTipoArcDatExt")
+    private Collection<LogProImpArcExt> logProImpArcExtNumeroTipoArcDatExtCollection;
+
     public TipoArcDatExt() {
     }
 
@@ -72,6 +75,15 @@ public class TipoArcDatExt implements TipoArcDatExtBase, Comparable, Serializabl
 
     public void setArchivoDatosExtNumeroTipoArcDatExtCollection(Collection<ArchivoDatosExt> collection) {
         this.archivoDatosExtNumeroTipoArcDatExtCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProImpArcExt> getLogProImpArcExtNumeroTipoArcDatExtCollection() {
+        return this.logProImpArcExtNumeroTipoArcDatExtCollection;
+    }
+
+    public void setLogProImpArcExtNumeroTipoArcDatExtCollection(Collection<LogProImpArcExt> collection) {
+        this.logProImpArcExtNumeroTipoArcDatExtCollection = collection;
     }
 
     @Override

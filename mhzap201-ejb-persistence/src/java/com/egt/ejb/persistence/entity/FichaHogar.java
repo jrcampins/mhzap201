@@ -271,6 +271,9 @@ public class FichaHogar implements FichaHogarBase, Comparable, Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaHogarIdFichaHogar")
     private Collection<FichaPersona> fichaPersonaIdFichaHogarCollection;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaHogarIdFichaHogar")
+    private Collection<LogProAcrPotBen> logProAcrPotBenIdFichaHogarCollection;
+
     public FichaHogar() {
     }
 
@@ -848,6 +851,15 @@ public class FichaHogar implements FichaHogarBase, Comparable, Serializable {
 
     public void setFichaPersonaIdFichaHogarCollection(Collection<FichaPersona> collection) {
         this.fichaPersonaIdFichaHogarCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProAcrPotBen> getLogProAcrPotBenIdFichaHogarCollection() {
+        return this.logProAcrPotBenIdFichaHogarCollection;
+    }
+
+    public void setLogProAcrPotBenIdFichaHogarCollection(Collection<LogProAcrPotBen> collection) {
+        this.logProAcrPotBenIdFichaHogarCollection = collection;
     }
 
     @Override
