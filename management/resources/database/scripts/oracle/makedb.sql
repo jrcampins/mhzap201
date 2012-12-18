@@ -69,6 +69,13 @@ set echo on
 @&script
 
 set echo off
+define suffix = 700
+define script = &tokens&suffix
+prompt RUN> &script
+set echo on
+@&script
+
+set echo off
 exec xsp.compile('function');
 exec xsp.compile('package');
 exec xsp.compile('procedure');

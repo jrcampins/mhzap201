@@ -3,12 +3,12 @@
 --auditar la importación
 create  table log_imp_pen (
     id_log_imp_pen number,
-    cedula varchar2 (15),
-    primer_nombre varchar2 (300),
-    segundo_nombre varchar2 (50),
-    primer_apellido varchar2 (300),
-    segundo_apellido varchar2 (50),
-    apellido_casada varchar2(50),
+    cedula varchar2(255),
+    primer_nombre varchar2(255),
+    segundo_nombre varchar2(255),
+    primer_apellido varchar2(255),
+    segundo_apellido varchar2(255),
+    apellido_casada varchar2(255),
     importado number,
     observacion varchar2(2000),
     fecha_transaccion timestamp with time zone,
