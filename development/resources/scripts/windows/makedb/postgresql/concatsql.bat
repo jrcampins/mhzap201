@@ -28,6 +28,8 @@ set datos
 set funciones
 set vistas
 set jasper
+set WEBATTCHDIR=
+set WEBSPOOLDIR=
 set web
 echo.
 if /i "%todos%" == "n" (

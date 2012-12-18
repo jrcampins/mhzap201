@@ -28,6 +28,8 @@ set datos
 set funciones
 set vistas
 set jasper
+set WEBATTCHDIR=
+set WEBSPOOLDIR=
 set web
 echo.
 if /i "%todos%" == "n" (
@@ -40,6 +42,7 @@ call "%~dp0concatsql-300"
 call "%~dp0concatsql-400"
 call "%~dp0concatsql-500"
 call "%~dp0concatsql-600"
+call "%~dp0concatsql-700"
 call:pack-custom-packages
 dir %SQLHOMEDIR%\*.sql /s
 call "%~dp0..\eoj" "%~f0"
