@@ -76,6 +76,7 @@ begin
             id_reg:=utils.bigintid();
             insert into log_pro_ver_ele_pen values (
                     id_reg,
+                    0, -- version
                     vista_ele(i).id_persona,
                     vista_ele(i).nombre_persona,
                     vista_ele(i).codigo_persona,
@@ -113,6 +114,7 @@ begin
             id_reg:=utils.bigintid();
             insert into log_pro_ver_ele_pen values (
                     id_reg,
+                    0, -- version
                     vista_ele(i).id_persona,
                     vista_ele(i).nombre_persona,
                     vista_ele(i).codigo_persona,

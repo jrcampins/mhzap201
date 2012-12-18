@@ -86,6 +86,38 @@ DROP TABLE informe
 GO
 DROP TABLE informe_auditoria
 GO
+DROP TABLE log_imp_deu
+GO
+DROP TABLE log_imp_emp
+GO
+DROP TABLE log_imp_fal
+GO
+DROP TABLE log_imp_hog
+GO
+DROP TABLE log_imp_ids
+GO
+DROP TABLE log_imp_jub
+GO
+DROP TABLE log_imp_pen
+GO
+DROP TABLE log_imp_per
+GO
+DROP TABLE log_imp_pot
+GO
+DROP TABLE log_imp_sub
+GO
+DROP TABLE log_imp_ubi
+GO
+DROP TABLE log_pro_acr_pot_ben
+GO
+DROP TABLE log_pro_imp_arc_ext
+GO
+DROP TABLE log_pro_oto_pen_apr
+GO
+DROP TABLE log_pro_pre_pro_pag
+GO
+DROP TABLE log_pro_ver_ele_pen
+GO
 DROP TABLE mensaje
 GO
 DROP TABLE motivo_ina_esc

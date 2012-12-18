@@ -18,7 +18,7 @@ begin
     delete from log_imp_ubi;
     insert into log_imp_ubi
         (
-        id_reg ,
+        id_log_imp_ubi ,
         codigo ,
         ubicacion,
         tipo_ubicacion ,
@@ -38,23 +38,23 @@ begin
     loop
         begin
             --Reiniciar los valores de la nueva ubicacion para cada registro a importar
-            new_ubicacion.id_ubicacion:=current_ubicacion.id_reg; -- ya se inicializo con bigintid()
+            new_ubicacion.id_ubicacion:=current_ubicacion.id_log_imp_ubi; -- ya se inicializo con bigintid()
             new_ubicacion.version_ubicacion:=0;
             new_ubicacion.id_ubicacion_superior:=null;
             --Obtener valores
             new_ubicacion.codigo_ubicacion:=current_ubicacion.codigo;
             new_ubicacion.nombre_ubicacion:=current_ubicacion.ubicacion;
-            --Se inserta el registro importado en la tabla persona
+            --Se inserta el registro es_importado en la tabla persona
             insert into ubicacion values new_ubicacion; 
             --Se registra la inserción en la tabla intermedia
-            update log_imp_ubi set importado=1 where id_reg=current_ubicacion.id_reg;
+            update log_imp_ubi set es_importado=1 where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
             --Se incrementa el numero de insertados
             retorno:=retorno+1;
             --Si no se pudo insertar el registro se marca el motivo
             exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_ubi set observacion=mensaje where id_reg=current_ubicacion.id_reg;
+                    update log_imp_ubi set observacion=mensaje where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
         end;
     end loop;
     --Distritos
@@ -62,7 +62,7 @@ begin
     loop
         begin
             --Reiniciar los valores de la nueva ubicacion para cada registro a importar
-            new_ubicacion.id_ubicacion:=current_ubicacion.id_reg; -- ya se inicializo con bigintid()
+            new_ubicacion.id_ubicacion:=current_ubicacion.id_log_imp_ubi; -- ya se inicializo con bigintid()
             new_ubicacion.version_ubicacion:=0;
             new_ubicacion.id_ubicacion_superior:=null;
             --Obtener valores
@@ -84,17 +84,17 @@ begin
                 end;
                 new_ubicacion.id_ubicacion_superior:=id_ubicacion_superior;
             end if;
-            --Se inserta el registro importado en la tabla persona
+            --Se inserta el registro es_importado en la tabla persona
             insert into ubicacion values new_ubicacion; 
             --Se registra la inserción en la tabla intermedia
-            update log_imp_ubi set importado=1 where id_reg=current_ubicacion.id_reg;
+            update log_imp_ubi set es_importado=1 where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
             --Se incrementa el numero de insertados
             retorno:=retorno+1;
             --Si no se pudo insertar el registro se marca el motivo
             exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_ubi set observacion=mensaje where id_reg=current_ubicacion.id_reg;
+                    update log_imp_ubi set observacion=mensaje where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
         end;
     end loop;
     --Barrios
@@ -102,7 +102,7 @@ begin
     loop
         begin
             --Reiniciar los valores de la nueva ubicacion para cada registro a importar
-            new_ubicacion.id_ubicacion:=current_ubicacion.id_reg; -- ya se inicializo con bigintid()
+            new_ubicacion.id_ubicacion:=current_ubicacion.id_log_imp_ubi; -- ya se inicializo con bigintid()
             new_ubicacion.version_ubicacion:=0;
             new_ubicacion.id_ubicacion_superior:=null;
             --Obtener valores
@@ -125,17 +125,17 @@ begin
                 end;
                 new_ubicacion.id_ubicacion_superior:=id_ubicacion_superior;
             end if;
-            --Se inserta el registro importado en la tabla persona
+            --Se inserta el registro es_importado en la tabla persona
             insert into ubicacion values new_ubicacion; 
             --Se registra la inserción en la tabla intermedia
-            update log_imp_ubi set importado=1 where id_reg=current_ubicacion.id_reg;
+            update log_imp_ubi set es_importado=1 where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
             --Se incrementa el numero de insertados
             retorno:=retorno+1;
             --Si no se pudo insertar el registro se marca el motivo
             exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_ubi set observacion=mensaje where id_reg=current_ubicacion.id_reg;
+                    update log_imp_ubi set observacion=mensaje where id_log_imp_ubi=current_ubicacion.id_log_imp_ubi;
         end;
     end loop;
 end;

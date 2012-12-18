@@ -1,1 +1,1 @@
-DROP INDEX dominio_parametro.IX_dominio_parametro_0001_ZYX;
+DROP INDEX dominio_parametro.IX_dominio_parametro_0001_ZY;

@@ -246,4 +246,36 @@ INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio
 VALUES (3245001, 0, 'objecion_ele_pen', 'Objeciones de Elegibilidad de Pensión', NULL, NULL, 1, 32450, 324500101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3246001, 0, 'tipo_obj_ele_pen', 'Tipos de Objeción de Elegibilidad de Pensión', NULL, NULL, 1, 32460, 324600101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3301001, 0, 'log_imp_deu', 'Rastros de Importación de Deudores', NULL, NULL, 1, 33010, 330100101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3302001, 0, 'log_imp_emp', 'Rastros de Importación de Empleados', NULL, NULL, 1, 33020, 330200101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3303001, 0, 'log_imp_fal', 'Rastros de Importación de Fallecidos', NULL, NULL, 1, 33030, 330300101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3304001, 0, 'log_imp_ids', 'Rastros de Importación de Identificaciones', NULL, NULL, 1, 33040, 330400101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3305001, 0, 'log_imp_jub', 'Rastros de Importación de Jubilados y Pensionados', NULL, NULL, 1, 33050, 330500101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3306001, 0, 'log_imp_pen', 'Rastros de Importación de Penas Judiciales', NULL, NULL, 1, 33060, 330600101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3307001, 0, 'log_imp_pot', 'Rastros de Importación de Potenciales Beneficiarios', NULL, NULL, 1, 33070, 330700101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3308001, 0, 'log_imp_sub', 'Rastros de Importación de Subsidios', NULL, NULL, 1, 33080, 330800101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3311001, 0, 'log_imp_hog', 'Rastros de Importación de Fichas Hogar', NULL, NULL, 1, 33110, 331100101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3312001, 0, 'log_imp_per', 'Rastros de Importación de Fichas Persona', NULL, NULL, 1, 33120, 331200101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3313001, 0, 'log_imp_ubi', 'Rastros de Importación de Ubicaciones', NULL, NULL, 1, 33130, 331300101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3321001, 0, 'log_pro_acr_pot_ben', 'Rastros de Acreditación de Potenciales Beneficiarios', NULL, NULL, 1, 33210, 332100101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3322001, 0, 'log_pro_oto_pen_apr', 'Rastros de Otorgamiento de Pensiones', NULL, NULL, 1, 33220, 332200101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3323001, 0, 'log_pro_pre_pro_pag', 'Rastros de Preparación de Pagos', NULL, NULL, 1, 33230, 332300101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3324001, 0, 'log_pro_ver_ele_pen', 'Rastros de Verificación de Elegibles', NULL, NULL, 1, 33240, 332400101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3325001, 0, 'log_pro_imp_arc_ext', 'Rastros de Importación de Archivos Externos', NULL, NULL, 1, 33250, 332500101, NULL, 3);
 GO

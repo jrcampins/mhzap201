@@ -589,6 +589,431 @@ CREATE TABLE informe_auditoria
 	fecha_transaccion DATE
 	);
 	
+CREATE TABLE log_imp_deu
+	(
+	id_log_imp_deu NUMBER(19) NOT NULL,
+	version_log_imp_deu NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_emp
+	(
+	id_log_imp_emp NUMBER(19) NOT NULL,
+	version_log_imp_emp NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_fal
+	(
+	id_log_imp_fal NUMBER(19) NOT NULL,
+	version_log_imp_fal NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	defuncion VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_hog
+	(
+	id_log_imp_hog NUMBER(19) NOT NULL,
+	version_log_imp_hog NUMBER(19) NOT NULL,
+	P20D VARCHAR2(510),
+	P20M VARCHAR2(510),
+	P20A VARCHAR2(510),
+	P17 VARCHAR2(510),
+	P18 VARCHAR2(510),
+	VAR00001 VARCHAR2(510),
+	P19 VARCHAR2(510),
+	observaciones VARCHAR2(510),
+	UTM VARCHAR2(510),
+	GPS VARCHAR2(510),
+	ORDEN VARCHAR2(510),
+	COORDX VARCHAR2(510),
+	P01A VARCHAR2(510),
+	P01B VARCHAR2(510),
+	P01C VARCHAR2(510),
+	P01D VARCHAR2(510),
+	P02 VARCHAR2(510),
+	P03 VARCHAR2(510),
+	P04 VARCHAR2(510),
+	P05 VARCHAR2(510),
+	P06 VARCHAR2(510),
+	P08 VARCHAR2(510),
+	P07 VARCHAR2(510),
+	P09 VARCHAR2(510),
+	P14 VARCHAR2(510),
+	P15 VARCHAR2(510),
+	P16 VARCHAR2(510),
+	P24 VARCHAR2(510),
+	P25 VARCHAR2(510),
+	P26 VARCHAR2(510),
+	P27 VARCHAR2(510),
+	P27E VARCHAR2(510),
+	P28A VARCHAR2(510),
+	P28B VARCHAR2(510),
+	P29 VARCHAR2(510),
+	P30 VARCHAR2(510),
+	P31 VARCHAR2(510),
+	P32 VARCHAR2(510),
+	P33 VARCHAR2(510),
+	P34 VARCHAR2(510),
+	P35 VARCHAR2(510),
+	P36 VARCHAR2(510),
+	P37 VARCHAR2(510),
+	Nro_celular VARCHAR2(510),
+	P38 VARCHAR2(510),
+	Nro_linea_baja VARCHAR2(510),
+	P391 VARCHAR2(510),
+	P392 VARCHAR2(510),
+	P393 VARCHAR2(510),
+	P394 VARCHAR2(510),
+	P395 VARCHAR2(510),
+	P396 VARCHAR2(510),
+	P397 VARCHAR2(510),
+	P42N VARCHAR2(510),
+	P42CI VARCHAR2(510),
+	letra_ci VARCHAR2(510),
+	P43 VARCHAR2(510),
+	VAR00002 VARCHAR2(510),
+	VAR00003 VARCHAR2(510),
+	VAR00004 VARCHAR2(510),
+	P104 VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_ids
+	(
+	id_log_imp_ids NUMBER(19) NOT NULL,
+	version_log_imp_ids NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	letra_cedula VARCHAR2(510),
+	apellidos VARCHAR2(510),
+	nombres VARCHAR2(510),
+	nacimiento VARCHAR2(510),
+	sexo VARCHAR2(510),
+	nacionalidad VARCHAR2(510),
+	estado_civil VARCHAR2(510),
+	lugar_nacimiento VARCHAR2(510),
+	indigena VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_jub
+	(
+	id_log_imp_jub NUMBER(19) NOT NULL,
+	version_log_imp_jub NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	tipo_registro VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_pen
+	(
+	id_log_imp_pen NUMBER(19) NOT NULL,
+	version_log_imp_pen NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_per
+	(
+	id_log_imp_per NUMBER(19) NOT NULL,
+	version_log_imp_per NUMBER(19) NOT NULL,
+	P01A VARCHAR2(510),
+	P01B VARCHAR2(510),
+	P01C VARCHAR2(510),
+	P01D VARCHAR2(510),
+	P02 VARCHAR2(510),
+	P03 VARCHAR2(510),
+	P104 VARCHAR2(510),
+	P43 VARCHAR2(510),
+	P45A VARCHAR2(510),
+	P45B VARCHAR2(510),
+	P44A VARCHAR2(510),
+	P44B VARCHAR2(510),
+	VAR00001 VARCHAR2(510),
+	VAR00002 VARCHAR2(510),
+	P46 VARCHAR2(510),
+	P47 VARCHAR2(510),
+	VAR00030 VARCHAR2(510),
+	P48 VARCHAR2(510),
+	P49 VARCHAR2(510),
+	P50A VARCHAR2(510),
+	P50B VARCHAR2(510),
+	P50C VARCHAR2(510),
+	P51 VARCHAR2(510),
+	VAR00003 VARCHAR2(510),
+	VAR00004 VARCHAR2(510),
+	P52D VARCHAR2(510),
+	P52M VARCHAR2(510),
+	P52A VARCHAR2(510),
+	P53A VARCHAR2(510),
+	P53B VARCHAR2(510),
+	P53C VARCHAR2(510),
+	P53Z VARCHAR2(510),
+	P54 VARCHAR2(510),
+	P54E VARCHAR2(510),
+	P56 VARCHAR2(510),
+	P58 VARCHAR2(510),
+	P58E VARCHAR2(510),
+	P59 VARCHAR2(510),
+	P60 VARCHAR2(510),
+	P61 VARCHAR2(510),
+	P62 VARCHAR2(510),
+	P63 VARCHAR2(510),
+	P64 VARCHAR2(510),
+	P65 VARCHAR2(510),
+	P65E VARCHAR2(510),
+	P66 VARCHAR2(510),
+	P66E VARCHAR2(510),
+	P67 VARCHAR2(510),
+	P68 VARCHAR2(510),
+	P68E VARCHAR2(510),
+	P73 VARCHAR2(510),
+	P74 VARCHAR2(510),
+	VAR00006 VARCHAR2(510),
+	VAR00007 VARCHAR2(510),
+	VAR00008 VARCHAR2(510),
+	VAR00009 VARCHAR2(510),
+	VAR00010 VARCHAR2(510),
+	VAR00011 VARCHAR2(510),
+	VAR00031 VARCHAR2(510),
+	VAR00012 VARCHAR2(510),
+	VAR00013 VARCHAR2(510),
+	P86 VARCHAR2(510),
+	P87 VARCHAR2(510),
+	P87E VARCHAR2(510),
+	P88 VARCHAR2(510),
+	P88E VARCHAR2(510),
+	P91 VARCHAR2(510),
+	VAR00017 VARCHAR2(510),
+	VAR00018 VARCHAR2(510),
+	VAR00019 VARCHAR2(510),
+	VAR00020 VARCHAR2(510),
+	VAR00021 VARCHAR2(510),
+	VAR00022 VARCHAR2(510),
+	VAR00023 VARCHAR2(510),
+	VAR00024 VARCHAR2(510),
+	VAR00025 VARCHAR2(510),
+	VAR00026 VARCHAR2(510),
+	VAR00027 VARCHAR2(510),
+	VAR00028 VARCHAR2(510),
+	P92 VARCHAR2(510),
+	ICV VARCHAR2(510),
+	ficha_activa VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_pot
+	(
+	id_log_imp_pot NUMBER(19) NOT NULL,
+	version_log_imp_pot NUMBER(19) NOT NULL,
+	departamento VARCHAR2(510),
+	distrito VARCHAR2(510),
+	nombres_apellidos VARCHAR2(510),
+	apodo VARCHAR2(510),
+	edad_a_la_fecha VARCHAR2(510),
+	nacimiento VARCHAR2(510),
+	cedula VARCHAR2(510),
+	telefono VARCHAR2(510),
+	direccion VARCHAR2(510),
+	referencia VARCHAR2(510),
+	barrio VARCHAR2(510),
+	nombre_referente VARCHAR2(510),
+	telefono_referente VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_sub
+	(
+	id_log_imp_sub NUMBER(19) NOT NULL,
+	version_log_imp_sub NUMBER(19) NOT NULL,
+	cedula VARCHAR2(510),
+	primer_nombre VARCHAR2(510),
+	segundo_nombre VARCHAR2(510),
+	primer_apellido VARCHAR2(510),
+	segundo_apellido VARCHAR2(510),
+	apellido_casada VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_imp_ubi
+	(
+	id_log_imp_ubi NUMBER(19) NOT NULL,
+	version_log_imp_ubi NUMBER(19) NOT NULL,
+	codigo VARCHAR2(510),
+	ubicacion VARCHAR2(510),
+	tipo_ubicacion VARCHAR2(510),
+	tipo_area VARCHAR2(510),
+	codigo_ubicacion_superior VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
+	);
+	
+CREATE TABLE log_pro_acr_pot_ben
+	(
+	id_log_pro_acr_pot_ben NUMBER(19) NOT NULL,
+	version_log_pro_acr_pot_ben NUMBER(19) NOT NULL,
+	id_potencial_ben NUMBER(19),
+	nombre_potencial_ben VARCHAR2(510),
+	codigo_potencial_ben VARCHAR2(510),
+	fecha_registro_pot_ben DATE,
+	id_persona NUMBER(19),
+	nombre_persona VARCHAR2(510),
+	codigo_persona VARCHAR2(510),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	id_ficha_persona NUMBER(19),
+	codigo_ficha_persona VARCHAR2(510),
+	nombre_ficha_persona VARCHAR2(510),
+	id_ficha_hogar NUMBER(19),
+	codigo_ficha_hogar VARCHAR2(510),
+	indice_calidad_vida NUMBER(7,4),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
+CREATE TABLE log_pro_imp_arc_ext
+	(
+	id_log_pro_imp_arc_ext NUMBER(19) NOT NULL,
+	version_log_pro_imp_arc_ext NUMBER(19) NOT NULL,
+	id_archivo_datos_ext NUMBER(19),
+	codigo_tipo_arc_dat_ext VARCHAR2(510),
+	numero_tipo_arc_dat_ext NUMBER(10),
+	nombre_proveedor_dat_ext VARCHAR2(510),
+	codigo_proveedor_dat_ext VARCHAR2(510),
+	codigo_archivo_datos_ext VARCHAR2(510),
+	ruta_archivo_datos_ext VARCHAR2(510),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
+CREATE TABLE log_pro_oto_pen_apr
+	(
+	id_log_pro_oto_pen_apr NUMBER(19) NOT NULL,
+	version_log_pro_oto_pen_apr NUMBER(19) NOT NULL,
+	id_persona NUMBER(19),
+	codigo_persona VARCHAR2(510),
+	nombre_persona VARCHAR2(510),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	numero_condicion_pension NUMBER(10),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
+CREATE TABLE log_pro_pre_pro_pag
+	(
+	id_log_pro_pre_pro_pag NUMBER(19) NOT NULL,
+	version_log_pro_pre_pro_pag NUMBER(19) NOT NULL,
+	id_persona NUMBER(19),
+	codigo_persona VARCHAR2(510),
+	nombre_persona VARCHAR2(510),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	numero_condicion_pension NUMBER(10),
+	fecha_solicitud_pension DATE,
+	numero_condicion_denu_pen NUMBER(10),
+	numero_condicion_reco_pen NUMBER(10),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
+CREATE TABLE log_pro_ver_ele_pen
+	(
+	id_log_pro_ver_ele_pen NUMBER(19) NOT NULL,
+	version_log_pro_ver_ele_pen NUMBER(19) NOT NULL,
+	id_persona NUMBER(19),
+	codigo_persona VARCHAR2(510),
+	nombre_persona VARCHAR2(510),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	indice_calidad_vida NUMBER(7,4),
+	numero_condicion_pension NUMBER(10),
+	numero_condicion_denu_pen NUMBER(10),
+	numero_condicion_reco_pen NUMBER(10),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
 CREATE TABLE mensaje
 	(
 	id_mensaje NUMBER(19) NOT NULL,

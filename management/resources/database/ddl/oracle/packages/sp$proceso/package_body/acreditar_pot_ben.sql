@@ -72,6 +72,7 @@ begin
       insert into log_pro_acr_pot_ben values (
           id_reg,
           vista_ben(i).id_potencial_ben,
+          0, -- version
           vista_ben(i).nombre_potencial_ben, 
           vista_ben(i).codigo_potencial_ben, 
           vista_ben(i).fecha_registro_pot_ben,

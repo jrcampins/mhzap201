@@ -64,6 +64,7 @@ begin
             id_reg:=utils.bigintid();
             insert into log_pro_oto_pen_apr values (
                         id_reg,
+                        0, -- version
                         vista_pen_oto(i).id_persona, 
                         vista_pen_oto(i).codigo_persona, 
                         vista_pen_oto(i).nombre_persona, 

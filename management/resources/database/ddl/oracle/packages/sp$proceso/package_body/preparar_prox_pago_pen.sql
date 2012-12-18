@@ -72,6 +72,7 @@ begin
             id_reg:=utils.bigintid();
             insert into log_pro_pre_pro_pag values (
                     id_reg,
+                    0, -- version
                     vista_prox_pag(i).id_persona,
                     vista_prox_pag(i).codigo_persona,
                     vista_prox_pag(i).nombre_persona,
@@ -99,6 +100,7 @@ begin
             id_reg:=utils.bigintid();
             insert into log_pro_pre_pro_pag values (
                     id_reg,
+                    0, -- version
                     vista_prox_pag(i).id_persona,
                     vista_prox_pag(i).codigo_persona,
                     vista_prox_pag(i).nombre_persona,

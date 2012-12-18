@@ -589,6 +589,431 @@ CREATE TABLE informe_auditoria
 	fecha_transaccion timestamp with time zone
 	);
 	
+CREATE TABLE log_imp_deu
+	(
+	id_log_imp_deu bigint NOT NULL,
+	version_log_imp_deu bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_emp
+	(
+	id_log_imp_emp bigint NOT NULL,
+	version_log_imp_emp bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_fal
+	(
+	id_log_imp_fal bigint NOT NULL,
+	version_log_imp_fal bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	defuncion varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_hog
+	(
+	id_log_imp_hog bigint NOT NULL,
+	version_log_imp_hog bigint NOT NULL,
+	P20D varchar(255),
+	P20M varchar(255),
+	P20A varchar(255),
+	P17 varchar(255),
+	P18 varchar(255),
+	VAR00001 varchar(255),
+	P19 varchar(255),
+	observaciones varchar(255),
+	UTM varchar(255),
+	GPS varchar(255),
+	ORDEN varchar(255),
+	COORDX varchar(255),
+	P01A varchar(255),
+	P01B varchar(255),
+	P01C varchar(255),
+	P01D varchar(255),
+	P02 varchar(255),
+	P03 varchar(255),
+	P04 varchar(255),
+	P05 varchar(255),
+	P06 varchar(255),
+	P08 varchar(255),
+	P07 varchar(255),
+	P09 varchar(255),
+	P14 varchar(255),
+	P15 varchar(255),
+	P16 varchar(255),
+	P24 varchar(255),
+	P25 varchar(255),
+	P26 varchar(255),
+	P27 varchar(255),
+	P27E varchar(255),
+	P28A varchar(255),
+	P28B varchar(255),
+	P29 varchar(255),
+	P30 varchar(255),
+	P31 varchar(255),
+	P32 varchar(255),
+	P33 varchar(255),
+	P34 varchar(255),
+	P35 varchar(255),
+	P36 varchar(255),
+	P37 varchar(255),
+	Nro_celular varchar(255),
+	P38 varchar(255),
+	Nro_linea_baja varchar(255),
+	P391 varchar(255),
+	P392 varchar(255),
+	P393 varchar(255),
+	P394 varchar(255),
+	P395 varchar(255),
+	P396 varchar(255),
+	P397 varchar(255),
+	P42N varchar(255),
+	P42CI varchar(255),
+	letra_ci varchar(255),
+	P43 varchar(255),
+	VAR00002 varchar(255),
+	VAR00003 varchar(255),
+	VAR00004 varchar(255),
+	P104 varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_ids
+	(
+	id_log_imp_ids bigint NOT NULL,
+	version_log_imp_ids bigint NOT NULL,
+	cedula varchar(255),
+	letra_cedula varchar(255),
+	apellidos varchar(255),
+	nombres varchar(255),
+	nacimiento varchar(255),
+	sexo varchar(255),
+	nacionalidad varchar(255),
+	estado_civil varchar(255),
+	lugar_nacimiento varchar(255),
+	indigena varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_jub
+	(
+	id_log_imp_jub bigint NOT NULL,
+	version_log_imp_jub bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	tipo_registro varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_pen
+	(
+	id_log_imp_pen bigint NOT NULL,
+	version_log_imp_pen bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_per
+	(
+	id_log_imp_per bigint NOT NULL,
+	version_log_imp_per bigint NOT NULL,
+	P01A varchar(255),
+	P01B varchar(255),
+	P01C varchar(255),
+	P01D varchar(255),
+	P02 varchar(255),
+	P03 varchar(255),
+	P104 varchar(255),
+	P43 varchar(255),
+	P45A varchar(255),
+	P45B varchar(255),
+	P44A varchar(255),
+	P44B varchar(255),
+	VAR00001 varchar(255),
+	VAR00002 varchar(255),
+	P46 varchar(255),
+	P47 varchar(255),
+	VAR00030 varchar(255),
+	P48 varchar(255),
+	P49 varchar(255),
+	P50A varchar(255),
+	P50B varchar(255),
+	P50C varchar(255),
+	P51 varchar(255),
+	VAR00003 varchar(255),
+	VAR00004 varchar(255),
+	P52D varchar(255),
+	P52M varchar(255),
+	P52A varchar(255),
+	P53A varchar(255),
+	P53B varchar(255),
+	P53C varchar(255),
+	P53Z varchar(255),
+	P54 varchar(255),
+	P54E varchar(255),
+	P56 varchar(255),
+	P58 varchar(255),
+	P58E varchar(255),
+	P59 varchar(255),
+	P60 varchar(255),
+	P61 varchar(255),
+	P62 varchar(255),
+	P63 varchar(255),
+	P64 varchar(255),
+	P65 varchar(255),
+	P65E varchar(255),
+	P66 varchar(255),
+	P66E varchar(255),
+	P67 varchar(255),
+	P68 varchar(255),
+	P68E varchar(255),
+	P73 varchar(255),
+	P74 varchar(255),
+	VAR00006 varchar(255),
+	VAR00007 varchar(255),
+	VAR00008 varchar(255),
+	VAR00009 varchar(255),
+	VAR00010 varchar(255),
+	VAR00011 varchar(255),
+	VAR00031 varchar(255),
+	VAR00012 varchar(255),
+	VAR00013 varchar(255),
+	P86 varchar(255),
+	P87 varchar(255),
+	P87E varchar(255),
+	P88 varchar(255),
+	P88E varchar(255),
+	P91 varchar(255),
+	VAR00017 varchar(255),
+	VAR00018 varchar(255),
+	VAR00019 varchar(255),
+	VAR00020 varchar(255),
+	VAR00021 varchar(255),
+	VAR00022 varchar(255),
+	VAR00023 varchar(255),
+	VAR00024 varchar(255),
+	VAR00025 varchar(255),
+	VAR00026 varchar(255),
+	VAR00027 varchar(255),
+	VAR00028 varchar(255),
+	P92 varchar(255),
+	ICV varchar(255),
+	ficha_activa varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_pot
+	(
+	id_log_imp_pot bigint NOT NULL,
+	version_log_imp_pot bigint NOT NULL,
+	departamento varchar(255),
+	distrito varchar(255),
+	nombres_apellidos varchar(255),
+	apodo varchar(255),
+	edad_a_la_fecha varchar(255),
+	nacimiento varchar(255),
+	cedula varchar(255),
+	telefono varchar(255),
+	direccion varchar(255),
+	referencia varchar(255),
+	barrio varchar(255),
+	nombre_referente varchar(255),
+	telefono_referente varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_sub
+	(
+	id_log_imp_sub bigint NOT NULL,
+	version_log_imp_sub bigint NOT NULL,
+	cedula varchar(255),
+	primer_nombre varchar(255),
+	segundo_nombre varchar(255),
+	primer_apellido varchar(255),
+	segundo_apellido varchar(255),
+	apellido_casada varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_imp_ubi
+	(
+	id_log_imp_ubi bigint NOT NULL,
+	version_log_imp_ubi bigint NOT NULL,
+	codigo varchar(255),
+	ubicacion varchar(255),
+	tipo_ubicacion varchar(255),
+	tipo_area varchar(255),
+	codigo_ubicacion_superior varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
+	);
+	
+CREATE TABLE log_pro_acr_pot_ben
+	(
+	id_log_pro_acr_pot_ben bigint NOT NULL,
+	version_log_pro_acr_pot_ben bigint NOT NULL,
+	id_potencial_ben bigint,
+	nombre_potencial_ben varchar(255),
+	codigo_potencial_ben varchar(255),
+	fecha_registro_pot_ben timestamp with time zone,
+	id_persona bigint,
+	nombre_persona varchar(255),
+	codigo_persona varchar(255),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	id_ficha_persona bigint,
+	codigo_ficha_persona varchar(255),
+	nombre_ficha_persona varchar(255),
+	id_ficha_hogar bigint,
+	codigo_ficha_hogar varchar(255),
+	indice_calidad_vida decimal(7,4),
+	es_procesado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
+CREATE TABLE log_pro_imp_arc_ext
+	(
+	id_log_pro_imp_arc_ext bigint NOT NULL,
+	version_log_pro_imp_arc_ext bigint NOT NULL,
+	id_archivo_datos_ext bigint,
+	codigo_tipo_arc_dat_ext varchar(255),
+	numero_tipo_arc_dat_ext int,
+	nombre_proveedor_dat_ext varchar(255),
+	codigo_proveedor_dat_ext varchar(255),
+	codigo_archivo_datos_ext varchar(255),
+	ruta_archivo_datos_ext varchar(255),
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
+CREATE TABLE log_pro_oto_pen_apr
+	(
+	id_log_pro_oto_pen_apr bigint NOT NULL,
+	version_log_pro_oto_pen_apr bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(255),
+	nombre_persona varchar(255),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	numero_condicion_pension int,
+	es_procesado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
+CREATE TABLE log_pro_pre_pro_pag
+	(
+	id_log_pro_pre_pro_pag bigint NOT NULL,
+	version_log_pro_pre_pro_pag bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(255),
+	nombre_persona varchar(255),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	numero_condicion_pension int,
+	fecha_solicitud_pension timestamp with time zone,
+	numero_condicion_denu_pen int,
+	numero_condicion_reco_pen int,
+	es_procesado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
+CREATE TABLE log_pro_ver_ele_pen
+	(
+	id_log_pro_ver_ele_pen bigint NOT NULL,
+	version_log_pro_ver_ele_pen bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(255),
+	nombre_persona varchar(255),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	indice_calidad_vida decimal(7,4),
+	numero_condicion_pension int,
+	numero_condicion_denu_pen int,
+	numero_condicion_reco_pen int,
+	es_procesado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
 CREATE TABLE mensaje
 	(
 	id_mensaje bigint NOT NULL,
