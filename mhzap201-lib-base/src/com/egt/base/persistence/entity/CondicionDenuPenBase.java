@@ -27,6 +27,14 @@ public interface CondicionDenuPenBase {
 //
 //  public void setCodigoCondicionDenuPen(String codigoCondicionDenuPen);
 
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagNumeroCondicionDenuPenCollection();
+//
+//  public void setLogProPreProPagNumeroCondicionDenuPenCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenNumeroCondicionDenuPenCollection();
+//
+//  public void setLogProVerElePenNumeroCondicionDenuPenCollection(Collection<? extends LogProVerElePenBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaNumeroCondicionDenuPenCollection();
 //
 //  public void setPersonaNumeroCondicionDenuPenCollection(Collection<? extends PersonaBase> collection);

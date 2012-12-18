@@ -27,6 +27,18 @@ public interface CondicionPensionBase {
 //
 //  public void setCodigoCondicionPension(String codigoCondicionPension);
 
+    public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprNumeroCondicionPensionCollection();
+//
+//  public void setLogProOtoPenAprNumeroCondicionPensionCollection(Collection<? extends LogProOtoPenAprBase> collection);
+
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagNumeroCondicionPensionCollection();
+//
+//  public void setLogProPreProPagNumeroCondicionPensionCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenNumeroCondicionPensionCollection();
+//
+//  public void setLogProVerElePenNumeroCondicionPensionCollection(Collection<? extends LogProVerElePenBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaNumeroCondicionPensionCollection();
 //
 //  public void setPersonaNumeroCondicionPensionCollection(Collection<? extends PersonaBase> collection);

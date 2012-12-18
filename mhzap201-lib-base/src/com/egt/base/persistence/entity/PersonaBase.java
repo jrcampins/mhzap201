@@ -392,6 +392,22 @@ public interface PersonaBase {
 //
 //  public void setTipoActJupeNumeroTipoActJupe(TipoActJupeBase tipoActJupe);
 
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdPersonaCollection();
+//
+//  public void setLogProAcrPotBenIdPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
+    public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdPersonaCollection();
+//
+//  public void setLogProOtoPenAprIdPersonaCollection(Collection<? extends LogProOtoPenAprBase> collection);
+
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagIdPersonaCollection();
+//
+//  public void setLogProPreProPagIdPersonaCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenIdPersonaCollection();
+//
+//  public void setLogProVerElePenIdPersonaCollection(Collection<? extends LogProVerElePenBase> collection);
+
     public Collection<? extends ObjecionElePenBase> getObjecionElePenIdPersonaCollection();
 //
 //  public void setObjecionElePenIdPersonaCollection(Collection<? extends ObjecionElePenBase> collection);

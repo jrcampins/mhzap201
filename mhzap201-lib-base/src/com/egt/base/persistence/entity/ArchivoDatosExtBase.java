@@ -15,6 +15,7 @@
  */
 package com.egt.base.persistence.entity;
 
+import java.util.Collection;
 import java.util.Date;
 
 public interface ArchivoDatosExtBase {
@@ -74,5 +75,9 @@ public interface ArchivoDatosExtBase {
     public UsuarioBase getUsuarioIdUsuarioUltimaImportacion();
 //
 //  public void setUsuarioIdUsuarioUltimaImportacion(UsuarioBase usuario);
+
+    public Collection<? extends LogProImpArcExtBase> getLogProImpArcExtIdArchivoDatosExtCollection();
+//
+//  public void setLogProImpArcExtIdArchivoDatosExtCollection(Collection<? extends LogProImpArcExtBase> collection);
 
 }

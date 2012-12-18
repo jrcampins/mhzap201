@@ -78,6 +78,54 @@ public interface UbicacionBase {
 //
 //  public void setFichaPersonaIdDistritoNacimientoCollection(Collection<? extends FichaPersonaBase> collection);
 
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdDepartamentoCollection();
+//
+//  public void setLogProAcrPotBenIdDepartamentoCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdDistritoCollection();
+//
+//  public void setLogProAcrPotBenIdDistritoCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdBarrioCollection();
+//
+//  public void setLogProAcrPotBenIdBarrioCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
+    public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdDepartamentoCollection();
+//
+//  public void setLogProOtoPenAprIdDepartamentoCollection(Collection<? extends LogProOtoPenAprBase> collection);
+
+    public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdDistritoCollection();
+//
+//  public void setLogProOtoPenAprIdDistritoCollection(Collection<? extends LogProOtoPenAprBase> collection);
+
+    public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdBarrioCollection();
+//
+//  public void setLogProOtoPenAprIdBarrioCollection(Collection<? extends LogProOtoPenAprBase> collection);
+
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagIdDepartamentoCollection();
+//
+//  public void setLogProPreProPagIdDepartamentoCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagIdDistritoCollection();
+//
+//  public void setLogProPreProPagIdDistritoCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagIdBarrioCollection();
+//
+//  public void setLogProPreProPagIdBarrioCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenIdDepartamentoCollection();
+//
+//  public void setLogProVerElePenIdDepartamentoCollection(Collection<? extends LogProVerElePenBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenIdDistritoCollection();
+//
+//  public void setLogProVerElePenIdDistritoCollection(Collection<? extends LogProVerElePenBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenIdBarrioCollection();
+//
+//  public void setLogProVerElePenIdBarrioCollection(Collection<? extends LogProVerElePenBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaIdDepartamentoCollection();
 //
 //  public void setPersonaIdDepartamentoCollection(Collection<? extends PersonaBase> collection);

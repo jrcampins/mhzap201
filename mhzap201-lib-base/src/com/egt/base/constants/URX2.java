@@ -160,6 +160,38 @@ public class URX2 extends URX {
 
     public static final String CONSULTA_TABLA_OBJECION_ELE_PEN = "/mhzap201-web-consulta/faces/ObjecionElePen5.jsp";
 
+    public static final String CONSULTA_TABLA_LOG_IMP_DEU = "/mhzap201-web-consulta/faces/LogImpDeu5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_EMP = "/mhzap201-web-consulta/faces/LogImpEmp5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_FAL = "/mhzap201-web-consulta/faces/LogImpFal5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_IDS = "/mhzap201-web-consulta/faces/LogImpIds5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_JUB = "/mhzap201-web-consulta/faces/LogImpJub5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_PEN = "/mhzap201-web-consulta/faces/LogImpPen5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_POT = "/mhzap201-web-consulta/faces/LogImpPot5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_SUB = "/mhzap201-web-consulta/faces/LogImpSub5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_HOG = "/mhzap201-web-consulta/faces/LogImpHog5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_UBI = "/mhzap201-web-consulta/faces/LogImpUbi5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_ACR_POT_BEN = "/mhzap201-web-consulta/faces/LogProAcrPotBen5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_OTO_PEN_APR = "/mhzap201-web-consulta/faces/LogProOtoPenApr5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_PRE_PRO_PAG = "/mhzap201-web-consulta/faces/LogProPreProPag5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_VER_ELE_PEN = "/mhzap201-web-consulta/faces/LogProVerElePen5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_IMP_ARC_EXT = "/mhzap201-web-consulta/faces/LogProImpArcExt5.jsp";
+
     public static final String CONSULTA_DETALLE_PERSONA = "/mhzap201-web-consulta/faces/Persona6.jsp";
 
     public static final String CONSULTA_DETALLE_UBICACION = "/mhzap201-web-consulta/faces/Ubicacion6.jsp";
@@ -181,6 +213,38 @@ public class URX2 extends URX {
     public static final String CONSULTA_DETALLE_VISITA_CENSO = "/mhzap201-web-consulta/faces/VisitaCenso6.jsp";
 
     public static final String CONSULTA_DETALLE_OBJECION_ELE_PEN = "/mhzap201-web-consulta/faces/ObjecionElePen6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_DEU = "/mhzap201-web-consulta/faces/LogImpDeu6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_EMP = "/mhzap201-web-consulta/faces/LogImpEmp6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_FAL = "/mhzap201-web-consulta/faces/LogImpFal6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_IDS = "/mhzap201-web-consulta/faces/LogImpIds6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_JUB = "/mhzap201-web-consulta/faces/LogImpJub6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_PEN = "/mhzap201-web-consulta/faces/LogImpPen6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_POT = "/mhzap201-web-consulta/faces/LogImpPot6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_SUB = "/mhzap201-web-consulta/faces/LogImpSub6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_HOG = "/mhzap201-web-consulta/faces/LogImpHog6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_UBI = "/mhzap201-web-consulta/faces/LogImpUbi6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_ACR_POT_BEN = "/mhzap201-web-consulta/faces/LogProAcrPotBen6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_OTO_PEN_APR = "/mhzap201-web-consulta/faces/LogProOtoPenApr6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_PRE_PRO_PAG = "/mhzap201-web-consulta/faces/LogProPreProPag6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_VER_ELE_PEN = "/mhzap201-web-consulta/faces/LogProVerElePen6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_IMP_ARC_EXT = "/mhzap201-web-consulta/faces/LogProImpArcExt6.jsp";
 
     public static final String CONSULTA_ARBOL_UBICACION = "/mhzap201-web-consulta/faces/Ubicacion7.jsp";
 }

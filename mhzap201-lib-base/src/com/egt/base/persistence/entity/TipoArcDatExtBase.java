@@ -31,4 +31,8 @@ public interface TipoArcDatExtBase {
 //
 //  public void setArchivoDatosExtNumeroTipoArcDatExtCollection(Collection<? extends ArchivoDatosExtBase> collection);
 
+    public Collection<? extends LogProImpArcExtBase> getLogProImpArcExtNumeroTipoArcDatExtCollection();
+//
+//  public void setLogProImpArcExtNumeroTipoArcDatExtCollection(Collection<? extends LogProImpArcExtBase> collection);
+
 }

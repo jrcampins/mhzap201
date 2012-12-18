@@ -18,13 +18,19 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long APELLIDO_CASADA = 20006L; // Apellido Casada
 
+    public static final Long APELLIDOS = 20695L; // Apellidos
+
     public static final Long APODO = 20576L; // Apodo
+
+    public static final Long BARRIO = 20696L; // Barrio
 
     public static final Long BYTES_ARCHIVO_DATOS_EXT = 20274L; // Bytes Archivo Datos Externos
 
     public static final Long CANTIDAD_DORMITORIOS = 20294L; // Cantidad Dormitorios
 
     public static final Long CANTIDAD_PIEZAS = 20295L; // Cantidad Piezas
+
+    public static final Long CEDULA = 20697L; // Cedula
 
     public static final Long CERTIFICADO_DEFUNCION = 20111L; // Certificado Defuncion
 
@@ -100,7 +106,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CLAVE_UBICACION_15 = 20479L; // Clave Ubicacion 15
 
+    public static final Long CODIGO = 20698L; // Codigo
+
     public static final Long CODIGO_APLICACION = 1052L; // Codigo Aplicacion
+
+    public static final Long CODIGO_ARCHIVO = 20699L; // Codigo Archivo
 
     public static final Long CODIGO_ARCHIVO_DATOS_EXT = 20275L; // Codigo Archivo Datos Externos
 
@@ -408,6 +418,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_UBICACION_15 = 20511L; // Codigo Ubicacion 15
 
+    public static final Long CODIGO_UBICACION_SUPERIOR = 20700L; // Codigo Ubicacion Superior
+
     public static final Long CODIGO_USUARIO = 1207L; // Codigo Usuario
 
     public static final Long COMENTARIOS_ANUL_CER_DEFUNCION = 20258L; // Comentarios Anulacion Certificado Defuncion
@@ -448,7 +460,13 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CONTROL_PAGINA_FUNCION = 1209L; // Control Pagina Funcion
 
+    public static final Long COORDX = 20701L; // Coordx
+
     public static final Long CORREO_ELECTRONICO = 1982L; // Correo Electronico
+
+    public static final Long DEFUNCION = 20702L; // Defuncion
+
+    public static final Long DEPARTAMENTO = 20703L; // Departamento
 
     public static final Long DESCRIPCION_APLICACION = 1212L; // Descripcion Aplicacion
 
@@ -498,7 +516,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long DISTANCIA_NORTE_UTM = 20328L; // Distancia Norte UTM
 
+    public static final Long DISTRITO = 20704L; // Distrito
+
     public static final Long EDAD = 20578L; // Edad
+
+    public static final Long EDAD_A_LA_FECHA = 20705L; // Edad A la Fecha
 
     public static final Long ES_ARCHIVO_DATOS_EXT_IMPORTADO = 20282L; // Archivo Datos Externos Importado
 
@@ -535,6 +557,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ES_FICHA_PERSONA_INACTIVA = 20600L; // Ficha Persona Inactiva
 
     public static final Long ES_FUNCION_INICIAL = 1253L; // Funcion Inicial
+
+    public static final Long ES_IMPORTADO = 20706L; // Importado
 
     public static final Long ES_INDIGENA = 20619L; // Indigena
 
@@ -592,6 +616,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ES_POTENCIAL_BEN_INACTIVO = 20601L; // Potencial Beneficiario Inactivo
 
+    public static final Long ES_PROCESADO = 20707L; // Procesado
+
     public static final Long ES_PROGRAMATICA = 1270L; // Programatica
 
     public static final Long ES_PUBLICA = 1274L; // Publica
@@ -613,6 +639,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ES_USUARIO_INACTIVO = 1284L; // Usuario Inactivo
 
     public static final Long ES_USUARIO_MODIFICADO = 1283L; // Usuario Modificado
+
+    public static final Long ESTADO_CIVIL = 20708L; // Estado Civil
 
     public static final Long ETIQUETA_CLASE_RECURSO_SEC = 1956L; // Etiqueta Clase Recurso Seccion
 
@@ -659,6 +687,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long FECHA_HORA_FIN_EJECUCION = 1290L; // Fecha Hora Fin Ejecucion
 
     public static final Long FECHA_HORA_INICIO_EJECUCION = 1291L; // Fecha Hora Inicio Ejecucion
+
+    public static final Long FECHA_HORA_TRANSACCION = 20709L; // Fecha Hora Transaccion
 
     public static final Long FECHA_HORA_ULT_ACT_JUPE = 20654L; // Fecha Hora Ultima Actualizacion JUPE
 
@@ -728,9 +758,15 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_VISITA = 20639L; // Fecha Visita
 
+    public static final Long FICHA_ACTIVA = 20710L; // Ficha Activa
+
     public static final Long FRANJA_UTM = 20331L; // Franja UTM
 
+    public static final Long GPS = 20711L; // GPS
+
     public static final Long HUSO_UTM = 20332L; // Huso UTM
+
+    public static final Long ICV = 20712L; // ICV
 
     public static final Long ID_APLICACION = 1295L; // Aplicacion
 
@@ -848,6 +884,38 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_LISTA_VALOR_ALTERNATIVA = 1964L; // Lista Valor Alternativa
 
+    public static final Long ID_LOG_IMP_DEU = 20713L; // Log Imp Deu
+
+    public static final Long ID_LOG_IMP_EMP = 20714L; // Log Imp Emp
+
+    public static final Long ID_LOG_IMP_FAL = 20715L; // Log Imp Fal
+
+    public static final Long ID_LOG_IMP_HOG = 20716L; // Log Imp Hog
+
+    public static final Long ID_LOG_IMP_IDS = 20717L; // Log Imp Ids
+
+    public static final Long ID_LOG_IMP_JUB = 20718L; // Log Imp Jub
+
+    public static final Long ID_LOG_IMP_PEN = 20719L; // Log Imp Pension
+
+    public static final Long ID_LOG_IMP_PER = 20720L; // Log Imp Per
+
+    public static final Long ID_LOG_IMP_POT = 20721L; // Log Imp Potencial
+
+    public static final Long ID_LOG_IMP_SUB = 20722L; // Log Imp Sub
+
+    public static final Long ID_LOG_IMP_UBI = 20723L; // Log Imp Ubi
+
+    public static final Long ID_LOG_PRO_ACR_POT_BEN = 20724L; // Log Pro Acr Potencial Beneficiario
+
+    public static final Long ID_LOG_PRO_IMP_ARC_EXT = 20725L; // Log Pro Imp Archivo Externos
+
+    public static final Long ID_LOG_PRO_OTO_PEN_APR = 20726L; // Log Pro Oto Pension Aprobacion
+
+    public static final Long ID_LOG_PRO_PRE_PRO_PAG = 20727L; // Log Pro Pre Pro Pag
+
+    public static final Long ID_LOG_PRO_VER_ELE_PEN = 20728L; // Log Pro Ver Elegibilidad Pension
+
     public static final Long ID_MANZANA = 20344L; // Manzana
 
     public static final Long ID_MENSAJE = 1335L; // Mensaje
@@ -946,11 +1014,15 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long INDICE_CALIDAD_VIDA_HASTA = 10016L; // Indice Calidad Vida
 
+    public static final Long INDIGENA = 20729L; // Indigena
+
     public static final Long LETRA_CEDULA = 20602L; // Letra Cedula
 
     public static final Long LETRA_CEDULA_JEFE_HOGAR = 20347L; // Letra Cedula Jefe Hogar
 
     public static final Long LETRA_CEDULA_RESPONDENTE = 20446L; // Letra Cedula Respondente
+
+    public static final Long LETRA_CI = 20730L; // Letra Ci
 
     public static final Long LETRA_USUARIO = 1385L; // Letra Usuario
 
@@ -961,6 +1033,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long LIMITE_INDICE_CALIDAD_VIDA = 20658L; // Limite Indice Calidad Vida
 
     public static final Long LIMITE_PENSIONES = 20659L; // Limite Pensiones
+
+    public static final Long LUGAR_NACIMIENTO = 20731L; // Lugar Nacimiento
 
     public static final Long LUGAR_SOLICITUD_PENSION = 20289L; // Lugar Solicitud Pension
 
@@ -997,6 +1071,10 @@ public class CPF { // Clave Parametro Funcion
     public static final Long MONTO_PENSION = 20197L; // Monto Pension
 
     public static final Long MONTO_SALARIO_MINIMO = 20198L; // Monto Salario Minimo
+
+    public static final Long NACIMIENTO = 20732L; // Nacimiento
+
+    public static final Long NACIONALIDAD = 20733L; // Nacionalidad
 
     public static final Long NOMBRE_APLICACION = 1388L; // Nombre Aplicacion
 
@@ -1126,7 +1204,15 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NOMBRE_USUARIO = 1471L; // Nombre Usuario
 
+    public static final Long NOMBRES = 20734L; // Nombres
+
+    public static final Long NOMBRES_APELLIDOS = 20735L; // Nombres Apellidos
+
     public static final Long NOTAS_ANUL_FEC_ULT_COB_PEN = 20655L; // Comentarios Anulacion Fecha Ultimo Cobro Pension
+
+    public static final Long NRO_CELULAR = 20736L; // Nro Celular
+
+    public static final Long NRO_LINEA_BAJA = 20737L; // Nro Linea Baja
 
     public static final Long NUMERO_CAUSA_DEN_PENSION = 20224L; // Causa Denegacion Pension
 
@@ -1348,9 +1434,13 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long OBJETO_ARCHIVO_DATOS_EXT = 20280L; // Objeto Archivo Datos Externos
 
+    public static final Long OBSERVACION = 20738L; // Observacion
+
     public static final Long OBSERVACIONES = 20433L; // Observaciones
 
     public static final Long OBSERVACIONES_ULT_VISITA_CEN = 20676L; // Observaciones Ultima Visita Censo
+
+    public static final Long ORDEN = 20739L; // Orden
 
     public static final Long ORDEN_PAGINA_SELECCION = 20661L; // Orden Pagina Seleccion
 
@@ -1384,6 +1474,196 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long OTRO_TIPO_OCUPACION_VIV = 20437L; // Otro Tipo Ocupacion Vivienda
 
+    public static final Long P01A = 20740L; // P01a
+
+    public static final Long P01B = 20741L; // P01b
+
+    public static final Long P01C = 20742L; // P01c
+
+    public static final Long P01D = 20743L; // P01d
+
+    public static final Long P02 = 20744L; // P02
+
+    public static final Long P03 = 20745L; // P03
+
+    public static final Long P04 = 20746L; // P04
+
+    public static final Long P05 = 20747L; // P05
+
+    public static final Long P06 = 20748L; // P06
+
+    public static final Long P07 = 20749L; // P07
+
+    public static final Long P08 = 20750L; // P08
+
+    public static final Long P09 = 20751L; // P09
+
+    public static final Long P104 = 20752L; // P104
+
+    public static final Long P14 = 20753L; // P14
+
+    public static final Long P15 = 20754L; // P15
+
+    public static final Long P16 = 20755L; // P16
+
+    public static final Long P17 = 20756L; // P17
+
+    public static final Long P18 = 20757L; // P18
+
+    public static final Long P19 = 20758L; // P19
+
+    public static final Long P20A = 20759L; // P20a
+
+    public static final Long P20D = 20760L; // P20d
+
+    public static final Long P20M = 20761L; // P20m
+
+    public static final Long P24 = 20762L; // P24
+
+    public static final Long P25 = 20763L; // P25
+
+    public static final Long P26 = 20764L; // P26
+
+    public static final Long P27 = 20765L; // P27
+
+    public static final Long P27E = 20766L; // P27e
+
+    public static final Long P28A = 20767L; // P28a
+
+    public static final Long P28B = 20768L; // P28b
+
+    public static final Long P29 = 20769L; // P29
+
+    public static final Long P30 = 20770L; // P30
+
+    public static final Long P31 = 20771L; // P31
+
+    public static final Long P32 = 20772L; // P32
+
+    public static final Long P33 = 20773L; // P33
+
+    public static final Long P34 = 20774L; // P34
+
+    public static final Long P35 = 20775L; // P35
+
+    public static final Long P36 = 20776L; // P36
+
+    public static final Long P37 = 20777L; // P37
+
+    public static final Long P38 = 20778L; // P38
+
+    public static final Long P391 = 20779L; // P391
+
+    public static final Long P392 = 20780L; // P392
+
+    public static final Long P393 = 20781L; // P393
+
+    public static final Long P394 = 20782L; // P394
+
+    public static final Long P395 = 20783L; // P395
+
+    public static final Long P396 = 20784L; // P396
+
+    public static final Long P397 = 20785L; // P397
+
+    public static final Long P42CI = 20786L; // P42ci
+
+    public static final Long P42N = 20787L; // P42n
+
+    public static final Long P43 = 20788L; // P43
+
+    public static final Long P44A = 20789L; // P44a
+
+    public static final Long P44B = 20790L; // P44b
+
+    public static final Long P45A = 20791L; // P45a
+
+    public static final Long P45B = 20792L; // P45b
+
+    public static final Long P46 = 20793L; // P46
+
+    public static final Long P47 = 20794L; // P47
+
+    public static final Long P48 = 20795L; // P48
+
+    public static final Long P49 = 20796L; // P49
+
+    public static final Long P50A = 20797L; // P50a
+
+    public static final Long P50B = 20798L; // P50b
+
+    public static final Long P50C = 20799L; // P50c
+
+    public static final Long P51 = 20800L; // P51
+
+    public static final Long P52A = 20801L; // P52a
+
+    public static final Long P52D = 20802L; // P52d
+
+    public static final Long P52M = 20803L; // P52m
+
+    public static final Long P53A = 20804L; // P53a
+
+    public static final Long P53B = 20805L; // P53b
+
+    public static final Long P53C = 20806L; // P53c
+
+    public static final Long P53Z = 20807L; // P53z
+
+    public static final Long P54 = 20808L; // P54
+
+    public static final Long P54E = 20809L; // P54e
+
+    public static final Long P56 = 20810L; // P56
+
+    public static final Long P58 = 20811L; // P58
+
+    public static final Long P58E = 20812L; // P58e
+
+    public static final Long P59 = 20813L; // P59
+
+    public static final Long P60 = 20814L; // P60
+
+    public static final Long P61 = 20815L; // P61
+
+    public static final Long P62 = 20816L; // P62
+
+    public static final Long P63 = 20817L; // P63
+
+    public static final Long P64 = 20818L; // P64
+
+    public static final Long P65 = 20819L; // P65
+
+    public static final Long P65E = 20820L; // P65e
+
+    public static final Long P66 = 20821L; // P66
+
+    public static final Long P66E = 20822L; // P66e
+
+    public static final Long P67 = 20823L; // P67
+
+    public static final Long P68 = 20824L; // P68
+
+    public static final Long P68E = 20825L; // P68e
+
+    public static final Long P73 = 20826L; // P73
+
+    public static final Long P74 = 20827L; // P74
+
+    public static final Long P86 = 20828L; // P86
+
+    public static final Long P87 = 20829L; // P87
+
+    public static final Long P87E = 20830L; // P87e
+
+    public static final Long P88 = 20831L; // P88
+
+    public static final Long P88E = 20832L; // P88e
+
+    public static final Long P91 = 20833L; // P91
+
+    public static final Long P92 = 20834L; // P92
+
     public static final Long PASSWORD_USUARIO = 1505L; // Contrasena Usuario
 
     public static final Long PATRON_MENSAJE = 1506L; // Patron Mensaje
@@ -1400,7 +1680,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long PUERTO_APLICACION = 1512L; // Puerto Aplicacion
 
+    public static final Long REFERENCIA = 20835L; // Referencia
+
     public static final Long REFERENCIA_DIRECCION = 20677L; // Referencia Direccion
+
+    public static final Long RUTA_ARCHIVO_DATOS_EXT = 20836L; // Ruta Archivo Datos Externos
 
     public static final Long SECUENCIA_OPCION_MENU = 1513L; // Secuencia Opcion Menu
 
@@ -1411,6 +1695,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long SEGUNDO_NOMBRE = 20107L; // Segundo Nombre
 
     public static final Long SERVIDOR_APLICACION = 1514L; // Servidor Aplicacion
+
+    public static final Long SEXO = 20837L; // Sexo
 
     public static final Long SIGNIFICADO_OPCION_SISTEMA = 1516L; // Significado Opcion Sistema
 
@@ -1430,6 +1716,16 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long SUBPROCESOS_SIN_ERRORES = 1706L; // Subprocesos sin Errores
 
+    public static final Long TELEFONO = 20838L; // Telefono
+
+    public static final Long TELEFONO_REFERENTE = 20839L; // Telefono Referente
+
+    public static final Long TIPO_AREA = 20840L; // Tipo Area
+
+    public static final Long TIPO_REGISTRO = 20841L; // Tipo Registro
+
+    public static final Long TIPO_UBICACION = 20842L; // Tipo Ubicacion
+
     public static final Long TOTAL_HOMBRES = 20438L; // Total Hombres
 
     public static final Long TOTAL_INGRESO_MENSUAL = 20439L; // Total Ingreso Mensual
@@ -1437,6 +1733,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long TOTAL_MUJERES = 20440L; // Total Mujeres
 
     public static final Long TOTAL_PERSONAS = 20441L; // Total Personas
+
+    public static final Long UBICACION = 20843L; // Ubicacion
 
     public static final Long ULTIMO_CURSO = 20595L; // Ultimo Curso
 
@@ -1447,6 +1745,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long URL_OPCION_MENU = 1526L; // URL Opcion Menu
 
     public static final Long URL_PAGINA = 1527L; // URL Pagina
+
+    public static final Long UTM = 20844L; // UTM
 
     public static final Long VALOR = 1529L; // Valor
 
@@ -1461,6 +1761,58 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VALOR_PARAMETRO = 1535L; // Valor Parametro
 
     public static final Long VALOR_SEGMENTO = 1537L; // Valor Segmento
+
+    public static final Long VAR00001 = 20845L; // Var00001
+
+    public static final Long VAR00002 = 20846L; // Var00002
+
+    public static final Long VAR00003 = 20847L; // Var00003
+
+    public static final Long VAR00004 = 20848L; // Var00004
+
+    public static final Long VAR00006 = 20849L; // Var00006
+
+    public static final Long VAR00007 = 20850L; // Var00007
+
+    public static final Long VAR00008 = 20851L; // Var00008
+
+    public static final Long VAR00009 = 20852L; // Var00009
+
+    public static final Long VAR00010 = 20853L; // Var00010
+
+    public static final Long VAR00011 = 20854L; // Var00011
+
+    public static final Long VAR00012 = 20855L; // Var00012
+
+    public static final Long VAR00013 = 20856L; // Var00013
+
+    public static final Long VAR00017 = 20857L; // Var00017
+
+    public static final Long VAR00018 = 20858L; // Var00018
+
+    public static final Long VAR00019 = 20859L; // Var00019
+
+    public static final Long VAR00020 = 20860L; // Var00020
+
+    public static final Long VAR00021 = 20861L; // Var00021
+
+    public static final Long VAR00022 = 20862L; // Var00022
+
+    public static final Long VAR00023 = 20863L; // Var00023
+
+    public static final Long VAR00024 = 20864L; // Var00024
+
+    public static final Long VAR00025 = 20865L; // Var00025
+
+    public static final Long VAR00026 = 20866L; // Var00026
+
+    public static final Long VAR00027 = 20867L; // Var00027
+
+    public static final Long VAR00028 = 20868L; // Var00028
+
+    public static final Long VAR00030 = 20869L; // Var00030
+
+    public static final Long VAR00031 = 20870L; // Var00031
 
     public static final Long VERSION_APLICACION = 1538L; // Version Aplicacion
 
@@ -1515,6 +1867,38 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VERSION_INFORME = 20256L; // Version Informe
 
     public static final Long VERSION_INFORME_AUDITORIA = 20687L; // Version Informe Auditoria
+
+    public static final Long VERSION_LOG_IMP_DEU = 20871L; // Version Log Imp Deu
+
+    public static final Long VERSION_LOG_IMP_EMP = 20872L; // Version Log Imp Emp
+
+    public static final Long VERSION_LOG_IMP_FAL = 20873L; // Version Log Imp Fal
+
+    public static final Long VERSION_LOG_IMP_HOG = 20874L; // Version Log Imp Hog
+
+    public static final Long VERSION_LOG_IMP_IDS = 20875L; // Version Log Imp Ids
+
+    public static final Long VERSION_LOG_IMP_JUB = 20876L; // Version Log Imp Jub
+
+    public static final Long VERSION_LOG_IMP_PEN = 20877L; // Version Log Imp Pension
+
+    public static final Long VERSION_LOG_IMP_PER = 20878L; // Version Log Imp Per
+
+    public static final Long VERSION_LOG_IMP_POT = 20879L; // Version Log Imp Potencial
+
+    public static final Long VERSION_LOG_IMP_SUB = 20880L; // Version Log Imp Sub
+
+    public static final Long VERSION_LOG_IMP_UBI = 20881L; // Version Log Imp Ubi
+
+    public static final Long VERSION_LOG_PRO_ACR_POT_BEN = 20882L; // Version Log Pro Acr Potencial Beneficiario
+
+    public static final Long VERSION_LOG_PRO_IMP_ARC_EXT = 20883L; // Version Log Pro Imp Archivo Externos
+
+    public static final Long VERSION_LOG_PRO_OTO_PEN_APR = 20884L; // Version Log Pro Oto Pension Aprobacion
+
+    public static final Long VERSION_LOG_PRO_PRE_PRO_PAG = 20885L; // Version Log Pro Pre Pro Pag
+
+    public static final Long VERSION_LOG_PRO_VER_ELE_PEN = 20886L; // Version Log Pro Ver Elegibilidad Pension
 
     public static final Long VERSION_MENSAJE = 1565L; // Version Mensaje
 

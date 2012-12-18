@@ -128,6 +128,38 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_LISTA_VALOR_ALTERNATIVA = "id_lista_valor_alternativa"; // Lista Valor Alternativa
 
+    public static final String ID_LOG_IMP_DEU = "id_log_imp_deu"; // Log Imp Deu
+
+    public static final String ID_LOG_IMP_EMP = "id_log_imp_emp"; // Log Imp Emp
+
+    public static final String ID_LOG_IMP_FAL = "id_log_imp_fal"; // Log Imp Fal
+
+    public static final String ID_LOG_IMP_HOG = "id_log_imp_hog"; // Log Imp Hog
+
+    public static final String ID_LOG_IMP_IDS = "id_log_imp_ids"; // Log Imp Ids
+
+    public static final String ID_LOG_IMP_JUB = "id_log_imp_jub"; // Log Imp Jub
+
+    public static final String ID_LOG_IMP_PEN = "id_log_imp_pen"; // Log Imp Pension
+
+    public static final String ID_LOG_IMP_PER = "id_log_imp_per"; // Log Imp Per
+
+    public static final String ID_LOG_IMP_POT = "id_log_imp_pot"; // Log Imp Potencial
+
+    public static final String ID_LOG_IMP_SUB = "id_log_imp_sub"; // Log Imp Sub
+
+    public static final String ID_LOG_IMP_UBI = "id_log_imp_ubi"; // Log Imp Ubi
+
+    public static final String ID_LOG_PRO_ACR_POT_BEN = "id_log_pro_acr_pot_ben"; // Log Pro Acr Potencial Beneficiario
+
+    public static final String ID_LOG_PRO_IMP_ARC_EXT = "id_log_pro_imp_arc_ext"; // Log Pro Imp Archivo Externos
+
+    public static final String ID_LOG_PRO_OTO_PEN_APR = "id_log_pro_oto_pen_apr"; // Log Pro Oto Pension Aprobacion
+
+    public static final String ID_LOG_PRO_PRE_PRO_PAG = "id_log_pro_pre_pro_pag"; // Log Pro Pre Pro Pag
+
+    public static final String ID_LOG_PRO_VER_ELE_PEN = "id_log_pro_ver_ele_pen"; // Log Pro Ver Elegibilidad Pension
+
     public static final String ID_MANZANA = "id_manzana"; // Manzana
 
     public static final String ID_MENSAJE = "id_mensaje"; // Mensaje

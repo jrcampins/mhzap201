@@ -27,6 +27,14 @@ public interface CondicionRecoPenBase {
 //
 //  public void setCodigoCondicionRecoPen(String codigoCondicionRecoPen);
 
+    public Collection<? extends LogProPreProPagBase> getLogProPreProPagNumeroCondicionRecoPenCollection();
+//
+//  public void setLogProPreProPagNumeroCondicionRecoPenCollection(Collection<? extends LogProPreProPagBase> collection);
+
+    public Collection<? extends LogProVerElePenBase> getLogProVerElePenNumeroCondicionRecoPenCollection();
+//
+//  public void setLogProVerElePenNumeroCondicionRecoPenCollection(Collection<? extends LogProVerElePenBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaNumeroCondicionRecoPenCollection();
 //
 //  public void setPersonaNumeroCondicionRecoPenCollection(Collection<? extends PersonaBase> collection);

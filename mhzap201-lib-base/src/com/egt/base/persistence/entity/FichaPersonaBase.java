@@ -333,6 +333,10 @@ public interface FichaPersonaBase {
 //
 //  public void setPotencialBenIdPotencialBen(PotencialBenBase potencialBen);
 
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdFichaPersonaCollection();
+//
+//  public void setLogProAcrPotBenIdFichaPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaIdFichaPersonaCollection();
 //
 //  public void setPersonaIdFichaPersonaCollection(Collection<? extends PersonaBase> collection);

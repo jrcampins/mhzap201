@@ -277,4 +277,8 @@ public interface FichaHogarBase {
 //
 //  public void setFichaPersonaIdFichaHogarCollection(Collection<? extends FichaPersonaBase> collection);
 
+    public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdFichaHogarCollection();
+//
+//  public void setLogProAcrPotBenIdFichaHogarCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
 }
