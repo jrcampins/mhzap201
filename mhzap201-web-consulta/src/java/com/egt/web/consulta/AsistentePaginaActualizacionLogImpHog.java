@@ -167,11 +167,247 @@ public class AsistentePaginaActualizacionLogImpHog {
         return true;
     }
 
+    public boolean isGridP20dRendered() {
+        return true;
+    }
+
+    public boolean isGridP20mRendered() {
+        return true;
+    }
+
+    public boolean isGridP20aRendered() {
+        return true;
+    }
+
+    public boolean isGridP17Rendered() {
+        return true;
+    }
+
+    public boolean isGridP18Rendered() {
+        return true;
+    }
+
+    public boolean isGridVar00001Rendered() {
+        return true;
+    }
+
+    public boolean isGridP19Rendered() {
+        return true;
+    }
+
     public boolean isGridObservacionesRendered() {
         return true;
     }
 
+    public boolean isGridUtmRendered() {
+        return true;
+    }
+
+    public boolean isGridGpsRendered() {
+        return true;
+    }
+
+    public boolean isGridOrdenRendered() {
+        return true;
+    }
+
+    public boolean isGridCoordxRendered() {
+        return true;
+    }
+
+    public boolean isGridP01aRendered() {
+        return true;
+    }
+
+    public boolean isGridP01bRendered() {
+        return true;
+    }
+
+    public boolean isGridP01cRendered() {
+        return true;
+    }
+
+    public boolean isGridP01dRendered() {
+        return true;
+    }
+
+    public boolean isGridP02Rendered() {
+        return true;
+    }
+
+    public boolean isGridP03Rendered() {
+        return true;
+    }
+
+    public boolean isGridP04Rendered() {
+        return true;
+    }
+
+    public boolean isGridP05Rendered() {
+        return true;
+    }
+
+    public boolean isGridP06Rendered() {
+        return true;
+    }
+
+    public boolean isGridP08Rendered() {
+        return true;
+    }
+
+    public boolean isGridP07Rendered() {
+        return true;
+    }
+
+    public boolean isGridP09Rendered() {
+        return true;
+    }
+
+    public boolean isGridP14Rendered() {
+        return true;
+    }
+
+    public boolean isGridP15Rendered() {
+        return true;
+    }
+
+    public boolean isGridP16Rendered() {
+        return true;
+    }
+
+    public boolean isGridP24Rendered() {
+        return true;
+    }
+
+    public boolean isGridP25Rendered() {
+        return true;
+    }
+
+    public boolean isGridP26Rendered() {
+        return true;
+    }
+
+    public boolean isGridP27Rendered() {
+        return true;
+    }
+
+    public boolean isGridP27eRendered() {
+        return true;
+    }
+
+    public boolean isGridP28aRendered() {
+        return true;
+    }
+
+    public boolean isGridP28bRendered() {
+        return true;
+    }
+
+    public boolean isGridP29Rendered() {
+        return true;
+    }
+
+    public boolean isGridP30Rendered() {
+        return true;
+    }
+
+    public boolean isGridP31Rendered() {
+        return true;
+    }
+
+    public boolean isGridP32Rendered() {
+        return true;
+    }
+
+    public boolean isGridP33Rendered() {
+        return true;
+    }
+
+    public boolean isGridP34Rendered() {
+        return true;
+    }
+
+    public boolean isGridP35Rendered() {
+        return true;
+    }
+
+    public boolean isGridP36Rendered() {
+        return true;
+    }
+
+    public boolean isGridP37Rendered() {
+        return true;
+    }
+
+    public boolean isGridNroCelularRendered() {
+        return true;
+    }
+
+    public boolean isGridP38Rendered() {
+        return true;
+    }
+
+    public boolean isGridNroLineaBajaRendered() {
+        return true;
+    }
+
+    public boolean isGridP391Rendered() {
+        return true;
+    }
+
+    public boolean isGridP392Rendered() {
+        return true;
+    }
+
+    public boolean isGridP393Rendered() {
+        return true;
+    }
+
+    public boolean isGridP394Rendered() {
+        return true;
+    }
+
+    public boolean isGridP395Rendered() {
+        return true;
+    }
+
+    public boolean isGridP396Rendered() {
+        return true;
+    }
+
+    public boolean isGridP397Rendered() {
+        return true;
+    }
+
+    public boolean isGridP42nRendered() {
+        return true;
+    }
+
+    public boolean isGridP42ciRendered() {
+        return true;
+    }
+
     public boolean isGridLetraCiRendered() {
+        return true;
+    }
+
+    public boolean isGridP43Rendered() {
+        return true;
+    }
+
+    public boolean isGridVar00002Rendered() {
+        return true;
+    }
+
+    public boolean isGridVar00003Rendered() {
+        return true;
+    }
+
+    public boolean isGridVar00004Rendered() {
+        return true;
+    }
+
+    public boolean isGridP104Rendered() {
         return true;
     }
 

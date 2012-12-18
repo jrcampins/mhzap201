@@ -74,8 +74,67 @@
 
     <field name="id_log_imp_hog" class="java.lang.Long"/>
     <field name="version_log_imp_hog" class="java.lang.Long"/>
+    <field name="p20d" class="java.lang.String"/>
+    <field name="p20m" class="java.lang.String"/>
+    <field name="p20a" class="java.lang.String"/>
+    <field name="p17" class="java.lang.String"/>
+    <field name="p18" class="java.lang.String"/>
+    <field name="var00001" class="java.lang.String"/>
+    <field name="p19" class="java.lang.String"/>
     <field name="observaciones" class="java.lang.String"/>
+    <field name="utm" class="java.lang.String"/>
+    <field name="gps" class="java.lang.String"/>
+    <field name="orden" class="java.lang.String"/>
+    <field name="coordx" class="java.lang.String"/>
+    <field name="p01a" class="java.lang.String"/>
+    <field name="p01b" class="java.lang.String"/>
+    <field name="p01c" class="java.lang.String"/>
+    <field name="p01d" class="java.lang.String"/>
+    <field name="p02" class="java.lang.String"/>
+    <field name="p03" class="java.lang.String"/>
+    <field name="p04" class="java.lang.String"/>
+    <field name="p05" class="java.lang.String"/>
+    <field name="p06" class="java.lang.String"/>
+    <field name="p08" class="java.lang.String"/>
+    <field name="p07" class="java.lang.String"/>
+    <field name="p09" class="java.lang.String"/>
+    <field name="p14" class="java.lang.String"/>
+    <field name="p15" class="java.lang.String"/>
+    <field name="p16" class="java.lang.String"/>
+    <field name="p24" class="java.lang.String"/>
+    <field name="p25" class="java.lang.String"/>
+    <field name="p26" class="java.lang.String"/>
+    <field name="p27" class="java.lang.String"/>
+    <field name="p27e" class="java.lang.String"/>
+    <field name="p28a" class="java.lang.String"/>
+    <field name="p28b" class="java.lang.String"/>
+    <field name="p29" class="java.lang.String"/>
+    <field name="p30" class="java.lang.String"/>
+    <field name="p31" class="java.lang.String"/>
+    <field name="p32" class="java.lang.String"/>
+    <field name="p33" class="java.lang.String"/>
+    <field name="p34" class="java.lang.String"/>
+    <field name="p35" class="java.lang.String"/>
+    <field name="p36" class="java.lang.String"/>
+    <field name="p37" class="java.lang.String"/>
+    <field name="nro_celular" class="java.lang.String"/>
+    <field name="p38" class="java.lang.String"/>
+    <field name="nro_linea_baja" class="java.lang.String"/>
+    <field name="p391" class="java.lang.String"/>
+    <field name="p392" class="java.lang.String"/>
+    <field name="p393" class="java.lang.String"/>
+    <field name="p394" class="java.lang.String"/>
+    <field name="p395" class="java.lang.String"/>
+    <field name="p396" class="java.lang.String"/>
+    <field name="p397" class="java.lang.String"/>
+    <field name="p42n" class="java.lang.String"/>
+    <field name="p42ci" class="java.lang.String"/>
     <field name="letra_ci" class="java.lang.String"/>
+    <field name="p43" class="java.lang.String"/>
+    <field name="var00002" class="java.lang.String"/>
+    <field name="var00003" class="java.lang.String"/>
+    <field name="var00004" class="java.lang.String"/>
+    <field name="p104" class="java.lang.String"/>
     <field name="es_importado" class="java.lang.Integer"/>
     <field name="observacion" class="java.lang.String"/>
     <field name="fecha_hora_transaccion" class="java.util.Date"/>
@@ -389,29 +448,40 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="398"
+                    width="256"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[observaciones]]></text>
+                <text><![CDATA[p20d]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="398"
+                    x="256"
                     y="0"
                     width="256"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[letra ci]]></text>
+                <text><![CDATA[p20m]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="654"
+                    x="512"
                     y="0"
-                    width="99"
+                    width="256"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p20a]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="768"
+                    y="0"
+                    width="68"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -420,9 +490,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="753"
+                    x="836"
                     y="0"
-                    width="207"
+                    width="124"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -510,11 +580,11 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="398"
+                    width="256"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{observaciones}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p20d}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -526,13 +596,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="398"
+                    x="256"
                     y="0"
                     width="256"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{letra_ci}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p20m}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -544,9 +614,27 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="654"
+                    x="512"
                     y="0"
-                    width="99"
+                    width="256"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p20a}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="768"
+                    y="0"
+                    width="68"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -562,9 +650,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="753"
+                    x="836"
                     y="0"
-                    width="207"
+                    width="124"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>

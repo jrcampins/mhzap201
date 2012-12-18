@@ -74,6 +74,87 @@
 
     <field name="id_log_imp_per" class="java.lang.Long"/>
     <field name="version_log_imp_per" class="java.lang.Long"/>
+    <field name="p01a" class="java.lang.String"/>
+    <field name="p01b" class="java.lang.String"/>
+    <field name="p01c" class="java.lang.String"/>
+    <field name="p01d" class="java.lang.String"/>
+    <field name="p02" class="java.lang.String"/>
+    <field name="p03" class="java.lang.String"/>
+    <field name="p104" class="java.lang.String"/>
+    <field name="p43" class="java.lang.String"/>
+    <field name="p45a" class="java.lang.String"/>
+    <field name="p45b" class="java.lang.String"/>
+    <field name="p44a" class="java.lang.String"/>
+    <field name="p44b" class="java.lang.String"/>
+    <field name="var00001" class="java.lang.String"/>
+    <field name="var00002" class="java.lang.String"/>
+    <field name="p46" class="java.lang.String"/>
+    <field name="p47" class="java.lang.String"/>
+    <field name="var00030" class="java.lang.String"/>
+    <field name="p48" class="java.lang.String"/>
+    <field name="p49" class="java.lang.String"/>
+    <field name="p50a" class="java.lang.String"/>
+    <field name="p50b" class="java.lang.String"/>
+    <field name="p50c" class="java.lang.String"/>
+    <field name="p51" class="java.lang.String"/>
+    <field name="var00003" class="java.lang.String"/>
+    <field name="var00004" class="java.lang.String"/>
+    <field name="p52d" class="java.lang.String"/>
+    <field name="p52m" class="java.lang.String"/>
+    <field name="p52a" class="java.lang.String"/>
+    <field name="p53a" class="java.lang.String"/>
+    <field name="p53b" class="java.lang.String"/>
+    <field name="p53c" class="java.lang.String"/>
+    <field name="p53z" class="java.lang.String"/>
+    <field name="p54" class="java.lang.String"/>
+    <field name="p54e" class="java.lang.String"/>
+    <field name="p56" class="java.lang.String"/>
+    <field name="p58" class="java.lang.String"/>
+    <field name="p58e" class="java.lang.String"/>
+    <field name="p59" class="java.lang.String"/>
+    <field name="p60" class="java.lang.String"/>
+    <field name="p61" class="java.lang.String"/>
+    <field name="p62" class="java.lang.String"/>
+    <field name="p63" class="java.lang.String"/>
+    <field name="p64" class="java.lang.String"/>
+    <field name="p65" class="java.lang.String"/>
+    <field name="p65e" class="java.lang.String"/>
+    <field name="p66" class="java.lang.String"/>
+    <field name="p66e" class="java.lang.String"/>
+    <field name="p67" class="java.lang.String"/>
+    <field name="p68" class="java.lang.String"/>
+    <field name="p68e" class="java.lang.String"/>
+    <field name="p73" class="java.lang.String"/>
+    <field name="p74" class="java.lang.String"/>
+    <field name="var00006" class="java.lang.String"/>
+    <field name="var00007" class="java.lang.String"/>
+    <field name="var00008" class="java.lang.String"/>
+    <field name="var00009" class="java.lang.String"/>
+    <field name="var00010" class="java.lang.String"/>
+    <field name="var00011" class="java.lang.String"/>
+    <field name="var00031" class="java.lang.String"/>
+    <field name="var00012" class="java.lang.String"/>
+    <field name="var00013" class="java.lang.String"/>
+    <field name="p86" class="java.lang.String"/>
+    <field name="p87" class="java.lang.String"/>
+    <field name="p87e" class="java.lang.String"/>
+    <field name="p88" class="java.lang.String"/>
+    <field name="p88e" class="java.lang.String"/>
+    <field name="p91" class="java.lang.String"/>
+    <field name="var00017" class="java.lang.String"/>
+    <field name="var00018" class="java.lang.String"/>
+    <field name="var00019" class="java.lang.String"/>
+    <field name="var00020" class="java.lang.String"/>
+    <field name="var00021" class="java.lang.String"/>
+    <field name="var00022" class="java.lang.String"/>
+    <field name="var00023" class="java.lang.String"/>
+    <field name="var00024" class="java.lang.String"/>
+    <field name="var00025" class="java.lang.String"/>
+    <field name="var00026" class="java.lang.String"/>
+    <field name="var00027" class="java.lang.String"/>
+    <field name="var00028" class="java.lang.String"/>
+    <field name="p92" class="java.lang.String"/>
+    <field name="icv" class="java.lang.String"/>
     <field name="ficha_activa" class="java.lang.String"/>
     <field name="es_importado" class="java.lang.Integer"/>
     <field name="observacion" class="java.lang.String"/>
@@ -388,18 +469,40 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="716"
+                    width="256"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[ficha activa]]></text>
+                <text><![CDATA[p01a]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="716"
+                    x="256"
                     y="0"
-                    width="179"
+                    width="256"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p01b]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="512"
+                    y="0"
+                    width="256"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p01c]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="768"
+                    y="0"
+                    width="68"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -408,9 +511,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="895"
+                    x="836"
                     y="0"
-                    width="65"
+                    width="124"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -498,11 +601,11 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="716"
+                    width="256"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{ficha_activa}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01a}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -514,9 +617,45 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="716"
+                    x="256"
                     y="0"
-                    width="179"
+                    width="256"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01b}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="512"
+                    y="0"
+                    width="256"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01c}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="768"
+                    y="0"
+                    width="68"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -532,9 +671,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="895"
+                    x="836"
                     y="0"
-                    width="65"
+                    width="124"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
