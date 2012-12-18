@@ -16,7 +16,7 @@ import org.apache.commons.lang.StringUtils;
 
 public class DBUtils {
 
-    private static final String SUFIJO = "_zyx"; // _egt_com_ve
+    private static final String SUFIJO = "_zy"; // _egt_com_ve
 
     /**
      * Busca el nombre del constraint en el mensaje que envia el RDBMS cuando se produce un conflicto
