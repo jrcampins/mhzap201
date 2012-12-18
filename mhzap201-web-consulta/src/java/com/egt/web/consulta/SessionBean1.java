@@ -75,6 +75,54 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         proveedorDatExtRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         proveedorDatExtRowSet.setCommand("SELECT * FROM consulta_proveedor_dat_ext_1");
         proveedorDatExtRowSet.setTableName("proveedor_dat_ext");
+        logProAcrPotBenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProAcrPotBenRowSet.setCommand("SELECT * FROM consulta_log_pro_acr_pot_ben_1");
+        logProAcrPotBenRowSet.setTableName("log_pro_acr_pot_ben");
+        logProImpArcExtRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProImpArcExtRowSet.setCommand("SELECT * FROM consulta_log_pro_imp_arc_ext_1");
+        logProImpArcExtRowSet.setTableName("log_pro_imp_arc_ext");
+        logImpDeuRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpDeuRowSet.setCommand("SELECT * FROM consulta_log_imp_deu_1");
+        logImpDeuRowSet.setTableName("log_imp_deu");
+        logImpEmpRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpEmpRowSet.setCommand("SELECT * FROM consulta_log_imp_emp_1");
+        logImpEmpRowSet.setTableName("log_imp_emp");
+        logImpFalRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpFalRowSet.setCommand("SELECT * FROM consulta_log_imp_fal_1");
+        logImpFalRowSet.setTableName("log_imp_fal");
+        logImpHogRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpHogRowSet.setCommand("SELECT * FROM consulta_log_imp_hog_1");
+        logImpHogRowSet.setTableName("log_imp_hog");
+        logImpPerRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpPerRowSet.setCommand("SELECT * FROM consulta_log_imp_per_1");
+        logImpPerRowSet.setTableName("log_imp_per");
+        logImpIdsRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpIdsRowSet.setCommand("SELECT * FROM consulta_log_imp_ids_1");
+        logImpIdsRowSet.setTableName("log_imp_ids");
+        logImpJubRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpJubRowSet.setCommand("SELECT * FROM consulta_log_imp_jub_1");
+        logImpJubRowSet.setTableName("log_imp_jub");
+        logImpPenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpPenRowSet.setCommand("SELECT * FROM consulta_log_imp_pen_1");
+        logImpPenRowSet.setTableName("log_imp_pen");
+        logImpPotRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpPotRowSet.setCommand("SELECT * FROM consulta_log_imp_pot_1");
+        logImpPotRowSet.setTableName("log_imp_pot");
+        logImpSubRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpSubRowSet.setCommand("SELECT * FROM consulta_log_imp_sub_1");
+        logImpSubRowSet.setTableName("log_imp_sub");
+        logImpUbiRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpUbiRowSet.setCommand("SELECT * FROM consulta_log_imp_ubi_1");
+        logImpUbiRowSet.setTableName("log_imp_ubi");
+        logProOtoPenAprRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProOtoPenAprRowSet.setCommand("SELECT * FROM consulta_log_pro_oto_pen_apr_1");
+        logProOtoPenAprRowSet.setTableName("log_pro_oto_pen_apr");
+        logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
+        logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
+        logProVerElePenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProVerElePenRowSet.setCommand("SELECT * FROM consulta_log_pro_ver_ele_pen_1");
+        logProVerElePenRowSet.setTableName("log_pro_ver_ele_pen");
         ubicacionRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         ubicacionRowSet.setCommand("SELECT * FROM consulta_ubicacion_1");
         ubicacionRowSet.setTableName("ubicacion");
@@ -108,6 +156,9 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         fichaPersonaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         fichaPersonaReferenceRowSet.setCommand("SELECT * FROM consulta_ficha_persona_1");
         fichaPersonaReferenceRowSet.setTableName("ficha_persona");
+        archivoDatosExtReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        archivoDatosExtReferenceRowSet.setCommand("SELECT * FROM consulta_archivo_datos_ext_1");
+        archivoDatosExtReferenceRowSet.setTableName("archivo_datos_ext");
     }
 
     private CachedRowSetXImpl filtroRowSet;
@@ -318,6 +369,342 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setProveedorDatExtRowSet(CachedRowSetXImpl crsxi) {
         this.proveedorDatExtRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProAcrPotBenRowSet;
+
+    public CachedRowSetXImpl getLogProAcrPotBenRowSet() {
+        if (logProAcrPotBenRowSet == null) {
+            logProAcrPotBenRowSet = new RecursoCachedRowSet();
+            try {
+                logProAcrPotBenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProAcrPotBenRowSet.setCommand("SELECT * FROM consulta_log_pro_acr_pot_ben_1");
+                logProAcrPotBenRowSet.setTableName("log_pro_acr_pot_ben");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProAcrPotBenRowSet;
+    }
+
+    public void setLogProAcrPotBenRowSet(CachedRowSetXImpl crsxi) {
+        this.logProAcrPotBenRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProImpArcExtRowSet;
+
+    public CachedRowSetXImpl getLogProImpArcExtRowSet() {
+        if (logProImpArcExtRowSet == null) {
+            logProImpArcExtRowSet = new RecursoCachedRowSet();
+            try {
+                logProImpArcExtRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProImpArcExtRowSet.setCommand("SELECT * FROM consulta_log_pro_imp_arc_ext_1");
+                logProImpArcExtRowSet.setTableName("log_pro_imp_arc_ext");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProImpArcExtRowSet;
+    }
+
+    public void setLogProImpArcExtRowSet(CachedRowSetXImpl crsxi) {
+        this.logProImpArcExtRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpDeuRowSet;
+
+    public CachedRowSetXImpl getLogImpDeuRowSet() {
+        if (logImpDeuRowSet == null) {
+            logImpDeuRowSet = new RecursoCachedRowSet();
+            try {
+                logImpDeuRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpDeuRowSet.setCommand("SELECT * FROM consulta_log_imp_deu_1");
+                logImpDeuRowSet.setTableName("log_imp_deu");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpDeuRowSet;
+    }
+
+    public void setLogImpDeuRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpDeuRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpEmpRowSet;
+
+    public CachedRowSetXImpl getLogImpEmpRowSet() {
+        if (logImpEmpRowSet == null) {
+            logImpEmpRowSet = new RecursoCachedRowSet();
+            try {
+                logImpEmpRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpEmpRowSet.setCommand("SELECT * FROM consulta_log_imp_emp_1");
+                logImpEmpRowSet.setTableName("log_imp_emp");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpEmpRowSet;
+    }
+
+    public void setLogImpEmpRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpEmpRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpFalRowSet;
+
+    public CachedRowSetXImpl getLogImpFalRowSet() {
+        if (logImpFalRowSet == null) {
+            logImpFalRowSet = new RecursoCachedRowSet();
+            try {
+                logImpFalRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpFalRowSet.setCommand("SELECT * FROM consulta_log_imp_fal_1");
+                logImpFalRowSet.setTableName("log_imp_fal");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpFalRowSet;
+    }
+
+    public void setLogImpFalRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpFalRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpHogRowSet;
+
+    public CachedRowSetXImpl getLogImpHogRowSet() {
+        if (logImpHogRowSet == null) {
+            logImpHogRowSet = new RecursoCachedRowSet();
+            try {
+                logImpHogRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpHogRowSet.setCommand("SELECT * FROM consulta_log_imp_hog_1");
+                logImpHogRowSet.setTableName("log_imp_hog");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpHogRowSet;
+    }
+
+    public void setLogImpHogRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpHogRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpPerRowSet;
+
+    public CachedRowSetXImpl getLogImpPerRowSet() {
+        if (logImpPerRowSet == null) {
+            logImpPerRowSet = new RecursoCachedRowSet();
+            try {
+                logImpPerRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpPerRowSet.setCommand("SELECT * FROM consulta_log_imp_per_1");
+                logImpPerRowSet.setTableName("log_imp_per");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpPerRowSet;
+    }
+
+    public void setLogImpPerRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpPerRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpIdsRowSet;
+
+    public CachedRowSetXImpl getLogImpIdsRowSet() {
+        if (logImpIdsRowSet == null) {
+            logImpIdsRowSet = new RecursoCachedRowSet();
+            try {
+                logImpIdsRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpIdsRowSet.setCommand("SELECT * FROM consulta_log_imp_ids_1");
+                logImpIdsRowSet.setTableName("log_imp_ids");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpIdsRowSet;
+    }
+
+    public void setLogImpIdsRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpIdsRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpJubRowSet;
+
+    public CachedRowSetXImpl getLogImpJubRowSet() {
+        if (logImpJubRowSet == null) {
+            logImpJubRowSet = new RecursoCachedRowSet();
+            try {
+                logImpJubRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpJubRowSet.setCommand("SELECT * FROM consulta_log_imp_jub_1");
+                logImpJubRowSet.setTableName("log_imp_jub");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpJubRowSet;
+    }
+
+    public void setLogImpJubRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpJubRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpPenRowSet;
+
+    public CachedRowSetXImpl getLogImpPenRowSet() {
+        if (logImpPenRowSet == null) {
+            logImpPenRowSet = new RecursoCachedRowSet();
+            try {
+                logImpPenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpPenRowSet.setCommand("SELECT * FROM consulta_log_imp_pen_1");
+                logImpPenRowSet.setTableName("log_imp_pen");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpPenRowSet;
+    }
+
+    public void setLogImpPenRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpPenRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpPotRowSet;
+
+    public CachedRowSetXImpl getLogImpPotRowSet() {
+        if (logImpPotRowSet == null) {
+            logImpPotRowSet = new RecursoCachedRowSet();
+            try {
+                logImpPotRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpPotRowSet.setCommand("SELECT * FROM consulta_log_imp_pot_1");
+                logImpPotRowSet.setTableName("log_imp_pot");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpPotRowSet;
+    }
+
+    public void setLogImpPotRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpPotRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpSubRowSet;
+
+    public CachedRowSetXImpl getLogImpSubRowSet() {
+        if (logImpSubRowSet == null) {
+            logImpSubRowSet = new RecursoCachedRowSet();
+            try {
+                logImpSubRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpSubRowSet.setCommand("SELECT * FROM consulta_log_imp_sub_1");
+                logImpSubRowSet.setTableName("log_imp_sub");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpSubRowSet;
+    }
+
+    public void setLogImpSubRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpSubRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpUbiRowSet;
+
+    public CachedRowSetXImpl getLogImpUbiRowSet() {
+        if (logImpUbiRowSet == null) {
+            logImpUbiRowSet = new RecursoCachedRowSet();
+            try {
+                logImpUbiRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpUbiRowSet.setCommand("SELECT * FROM consulta_log_imp_ubi_1");
+                logImpUbiRowSet.setTableName("log_imp_ubi");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpUbiRowSet;
+    }
+
+    public void setLogImpUbiRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpUbiRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProOtoPenAprRowSet;
+
+    public CachedRowSetXImpl getLogProOtoPenAprRowSet() {
+        if (logProOtoPenAprRowSet == null) {
+            logProOtoPenAprRowSet = new RecursoCachedRowSet();
+            try {
+                logProOtoPenAprRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProOtoPenAprRowSet.setCommand("SELECT * FROM consulta_log_pro_oto_pen_apr_1");
+                logProOtoPenAprRowSet.setTableName("log_pro_oto_pen_apr");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProOtoPenAprRowSet;
+    }
+
+    public void setLogProOtoPenAprRowSet(CachedRowSetXImpl crsxi) {
+        this.logProOtoPenAprRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProPreProPagRowSet;
+
+    public CachedRowSetXImpl getLogProPreProPagRowSet() {
+        if (logProPreProPagRowSet == null) {
+            logProPreProPagRowSet = new RecursoCachedRowSet();
+            try {
+                logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
+                logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProPreProPagRowSet;
+    }
+
+    public void setLogProPreProPagRowSet(CachedRowSetXImpl crsxi) {
+        this.logProPreProPagRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProVerElePenRowSet;
+
+    public CachedRowSetXImpl getLogProVerElePenRowSet() {
+        if (logProVerElePenRowSet == null) {
+            logProVerElePenRowSet = new RecursoCachedRowSet();
+            try {
+                logProVerElePenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProVerElePenRowSet.setCommand("SELECT * FROM consulta_log_pro_ver_ele_pen_1");
+                logProVerElePenRowSet.setTableName("log_pro_ver_ele_pen");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProVerElePenRowSet;
+    }
+
+    public void setLogProVerElePenRowSet(CachedRowSetXImpl crsxi) {
+        this.logProVerElePenRowSet = crsxi;
     }
 
     private CachedRowSetXImpl ubicacionRowSet;
@@ -549,6 +936,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setFichaPersonaReferenceRowSet(CachedRowSetXImpl crsxi) {
         this.fichaPersonaReferenceRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl archivoDatosExtReferenceRowSet;
+
+    public CachedRowSetXImpl getArchivoDatosExtReferenceRowSet() {
+        if (archivoDatosExtReferenceRowSet == null) {
+            archivoDatosExtReferenceRowSet = new RecursoCachedRowSet();
+            try {
+                archivoDatosExtReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                archivoDatosExtReferenceRowSet.setCommand("SELECT * FROM consulta_archivo_datos_ext_1");
+                archivoDatosExtReferenceRowSet.setTableName("archivo_datos_ext");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return archivoDatosExtReferenceRowSet;
+    }
+
+    public void setArchivoDatosExtReferenceRowSet(CachedRowSetXImpl crsxi) {
+        this.archivoDatosExtReferenceRowSet = crsxi;
     }
     // </editor-fold>
 /**/
