@@ -99,10 +99,10 @@ public class LogProImpArcExt6 extends AbstractPageBean
     private void _init() throws Exception {
         validatorIdLogProImpArcExt1.setMinimum(0L);
         validatorIdLogProImpArcExt1.setMaximum(1000000000000000000L);
-        validatorCodigoTipoArcDatExt1.setMaximum(255);
-        validatorNombreProveedorDatExt1.setMaximum(255);
-        validatorCodigoProveedorDatExt1.setMaximum(255);
-        validatorCodigoArchivoDatosExt1.setMaximum(255);
+        validatorCodigoTipoArcDatExt1.setMaximum(30);
+        validatorNombreProveedorDatExt1.setMaximum(100);
+        validatorCodigoProveedorDatExt1.setMaximum(30);
+        validatorCodigoArchivoDatosExt1.setMaximum(100);
         validatorRutaArchivoDatosExt1.setMaximum(255);
         validatorObservacion1.setMaximum(8160);
         converterFechaHoraTransaccion1.setPattern("dd/MM/yyyy hh:mm aa");
@@ -365,14 +365,14 @@ public class LogProImpArcExt6 extends AbstractPageBean
         this.labelCodigoTipoArcDatExt1 = l;
     }
 
-    private TextArea campoCodigoTipoArcDatExt1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoTipoArcDatExt1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoTipoArcDatExt1() {
+    public TextField getCampoCodigoTipoArcDatExt1() {
         return campoCodigoTipoArcDatExt1;
     }
 
-    public void setCampoCodigoTipoArcDatExt1(TextArea component) {
+    public void setCampoCodigoTipoArcDatExt1(TextField component) {
         this.campoCodigoTipoArcDatExt1 = component;
     }
 
@@ -467,14 +467,14 @@ public class LogProImpArcExt6 extends AbstractPageBean
         this.labelNombreProveedorDatExt1 = l;
     }
 
-    private TextArea campoNombreProveedorDatExt1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombreProveedorDatExt1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombreProveedorDatExt1() {
+    public TextField getCampoNombreProveedorDatExt1() {
         return campoNombreProveedorDatExt1;
     }
 
-    public void setCampoNombreProveedorDatExt1(TextArea component) {
+    public void setCampoNombreProveedorDatExt1(TextField component) {
         this.campoNombreProveedorDatExt1 = component;
     }
 
@@ -518,14 +518,14 @@ public class LogProImpArcExt6 extends AbstractPageBean
         this.labelCodigoProveedorDatExt1 = l;
     }
 
-    private TextArea campoCodigoProveedorDatExt1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoProveedorDatExt1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoProveedorDatExt1() {
+    public TextField getCampoCodigoProveedorDatExt1() {
         return campoCodigoProveedorDatExt1;
     }
 
-    public void setCampoCodigoProveedorDatExt1(TextArea component) {
+    public void setCampoCodigoProveedorDatExt1(TextField component) {
         this.campoCodigoProveedorDatExt1 = component;
     }
 
@@ -569,14 +569,14 @@ public class LogProImpArcExt6 extends AbstractPageBean
         this.labelCodigoArchivoDatosExt1 = l;
     }
 
-    private TextArea campoCodigoArchivoDatosExt1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoArchivoDatosExt1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoArchivoDatosExt1() {
+    public TextField getCampoCodigoArchivoDatosExt1() {
         return campoCodigoArchivoDatosExt1;
     }
 
-    public void setCampoCodigoArchivoDatosExt1(TextArea component) {
+    public void setCampoCodigoArchivoDatosExt1(TextField component) {
         this.campoCodigoArchivoDatosExt1 = component;
     }
 

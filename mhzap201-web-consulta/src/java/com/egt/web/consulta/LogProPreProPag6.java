@@ -100,8 +100,8 @@ public class LogProPreProPag6 extends AbstractPageBean
     private void _init() throws Exception {
         validatorIdLogProPreProPag1.setMinimum(0L);
         validatorIdLogProPreProPag1.setMaximum(1000000000000000000L);
-        validatorCodigoPersona1.setMaximum(255);
-        validatorNombrePersona1.setMaximum(255);
+        validatorCodigoPersona1.setMaximum(30);
+        validatorNombrePersona1.setMaximum(100);
         converterFechaSolicitudPension1.setPattern("dd/MM/yyyy");
         converterFechaSolicitudPension1.setType("date");
         validatorObservacion1.setMaximum(8160);
@@ -366,14 +366,14 @@ public class LogProPreProPag6 extends AbstractPageBean
         this.labelCodigoPersona1 = l;
     }
 
-    private TextArea campoCodigoPersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoPersona1() {
+    public TextField getCampoCodigoPersona1() {
         return campoCodigoPersona1;
     }
 
-    public void setCampoCodigoPersona1(TextArea component) {
+    public void setCampoCodigoPersona1(TextField component) {
         this.campoCodigoPersona1 = component;
     }
 
@@ -417,14 +417,14 @@ public class LogProPreProPag6 extends AbstractPageBean
         this.labelNombrePersona1 = l;
     }
 
-    private TextArea campoNombrePersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombrePersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombrePersona1() {
+    public TextField getCampoNombrePersona1() {
         return campoNombrePersona1;
     }
 
-    public void setCampoNombrePersona1(TextArea component) {
+    public void setCampoNombrePersona1(TextField component) {
         this.campoNombrePersona1 = component;
     }
 

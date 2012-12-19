@@ -728,7 +728,7 @@
                     style="ch-text1"
                     x="128"
                     y="0"
-                    width="256"
+                    width="192"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -737,9 +737,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="384"
+                    x="320"
                     y="0"
-                    width="256"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -748,7 +748,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="640"
+                    x="448"
                     y="0"
                     width="64"
                     height="20"
@@ -759,7 +759,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="704"
+                    x="512"
                     y="0"
                     width="128"
                     height="20"
@@ -770,13 +770,24 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
+                    x="640"
+                    y="0"
+                    width="192"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[nombre persona]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
                     x="832"
                     y="0"
                     width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[ubicacion]]></text>
+                <text><![CDATA[codigo persona]]></text>
             </staticText>
             </frame>
         </band>
@@ -878,7 +889,7 @@
                     stretchType="RelativeToBandHeight"
                     x="128"
                     y="0"
-                    width="256"
+                    width="192"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -894,9 +905,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="384"
+                    x="320"
                     y="0"
-                    width="256"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -912,7 +923,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="640"
+                    x="448"
                     y="0"
                     width="64"
                     height="16"
@@ -930,7 +941,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="704"
+                    x="512"
                     y="0"
                     width="128"
                     height="16"
@@ -948,13 +959,31 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
+                    x="640"
+                    y="0"
+                    width="192"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
                     x="832"
                     y="0"
                     width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x3y3}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_persona}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

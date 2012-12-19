@@ -31,9 +31,9 @@ public interface PaginaActualizacionLogProVerElePen extends PaginaActualizacion 
 
     TextField getCampoIdPersona1();
 
-    TextArea getCampoCodigoPersona1();
+    TextField getCampoCodigoPersona1();
 
-    TextArea getCampoNombrePersona1();
+    TextField getCampoNombrePersona1();
 
     TextField getCampoIdDepartamento1();
 

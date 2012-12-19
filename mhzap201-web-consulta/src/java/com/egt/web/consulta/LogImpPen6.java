@@ -98,12 +98,12 @@ public class LogImpPen6 extends AbstractPageBean
     private void _init() throws Exception {
         validatorIdLogImpPen1.setMinimum(0L);
         validatorIdLogImpPen1.setMaximum(1000000000000000000L);
-        validatorCedula1.setMaximum(255);
-        validatorPrimerNombre1.setMaximum(255);
-        validatorSegundoNombre1.setMaximum(255);
-        validatorPrimerApellido1.setMaximum(255);
-        validatorSegundoApellido1.setMaximum(255);
-        validatorApellidoCasada1.setMaximum(255);
+        validatorCedula1.setMaximum(8160);
+        validatorPrimerNombre1.setMaximum(8160);
+        validatorSegundoNombre1.setMaximum(8160);
+        validatorPrimerApellido1.setMaximum(8160);
+        validatorSegundoApellido1.setMaximum(8160);
+        validatorApellidoCasada1.setMaximum(8160);
         validatorObservacion1.setMaximum(8160);
         converterFechaHoraTransaccion1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraTransaccion1.setType("both");

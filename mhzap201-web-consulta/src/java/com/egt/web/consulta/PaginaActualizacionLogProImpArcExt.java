@@ -30,15 +30,15 @@ public interface PaginaActualizacionLogProImpArcExt extends PaginaActualizacion 
 
     TextField getCampoIdArchivoDatosExt1();
 
-    TextArea getCampoCodigoTipoArcDatExt1();
+    TextField getCampoCodigoTipoArcDatExt1();
 
     DropDown getListaNumeroTipoArcDatExt1();
 
-    TextArea getCampoNombreProveedorDatExt1();
+    TextField getCampoNombreProveedorDatExt1();
 
-    TextArea getCampoCodigoProveedorDatExt1();
+    TextField getCampoCodigoProveedorDatExt1();
 
-    TextArea getCampoCodigoArchivoDatosExt1();
+    TextField getCampoCodigoArchivoDatosExt1();
 
     TextArea getCampoRutaArchivoDatosExt1();
 

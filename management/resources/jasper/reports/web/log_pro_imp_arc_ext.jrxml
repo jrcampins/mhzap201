@@ -416,7 +416,7 @@
                     style="ch-text1"
                     x="192"
                     y="0"
-                    width="256"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -425,7 +425,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="448"
+                    x="320"
                     y="0"
                     width="128"
                     height="20"
@@ -436,9 +436,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="576"
+                    x="448"
                     y="0"
-                    width="256"
+                    width="192"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -447,24 +447,24 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="832"
+                    x="640"
                     y="0"
-                    width="64"
+                    width="128"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[importado]]></text>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[codigo proveedor dat ext]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="896"
+                    x="768"
                     y="0"
-                    width="64"
+                    width="192"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha hora transaccion]]></text>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[codigo archivo datos ext]]></text>
             </staticText>
             </frame>
         </band>
@@ -566,7 +566,7 @@
                     stretchType="RelativeToBandHeight"
                     x="192"
                     y="0"
-                    width="256"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -582,7 +582,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="448"
+                    x="320"
                     y="0"
                     width="128"
                     height="16"
@@ -600,9 +600,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="576"
+                    x="448"
                     y="0"
-                    width="256"
+                    width="192"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -618,16 +618,16 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="832"
+                    x="640"
                     y="0"
-                    width="64"
+                    width="128"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_importado}).getLabel()]]></textFieldExpression>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_proveedor_dat_ext}]]></textFieldExpression>
             </textField>
             <textField
-                pattern="dd/MM/yyyy hh:mm aa"
+                pattern=""
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -636,13 +636,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="896"
+                    x="768"
                     y="0"
-                    width="64"
+                    width="192"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_hora_transaccion}]]></textFieldExpression>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_archivo_datos_ext}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

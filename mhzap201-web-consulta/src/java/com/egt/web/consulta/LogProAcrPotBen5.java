@@ -105,15 +105,15 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         textoFilasPorPagina1Validator1.setMaximum(50L);
         validatorIdLogProAcrPotBen1.setMinimum(0L);
         validatorIdLogProAcrPotBen1.setMaximum(1000000000000000000L);
-        validatorNombrePotencialBen1.setMaximum(255);
-        validatorCodigoPotencialBen1.setMaximum(255);
+        validatorNombrePotencialBen1.setMaximum(100);
+        validatorCodigoPotencialBen1.setMaximum(30);
         converterFechaRegistroPotBen1.setPattern("dd/MM/yyyy");
         converterFechaRegistroPotBen1.setType("date");
-        validatorNombrePersona1.setMaximum(255);
-        validatorCodigoPersona1.setMaximum(255);
-        validatorCodigoFichaPersona1.setMaximum(255);
-        validatorNombreFichaPersona1.setMaximum(255);
-        validatorCodigoFichaHogar1.setMaximum(255);
+        validatorNombrePersona1.setMaximum(100);
+        validatorCodigoPersona1.setMaximum(30);
+        validatorCodigoFichaPersona1.setMaximum(30);
+        validatorNombreFichaPersona1.setMaximum(100);
+        validatorCodigoFichaHogar1.setMaximum(30);
         converterIndiceCalidadVida1.setMinIntegerDigits(1);
         converterIndiceCalidadVida1.setMaxIntegerDigits(40);
         converterIndiceCalidadVida1.setMaxFractionDigits(3);
@@ -448,14 +448,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelNombrePotencialBen1 = l;
     }
 
-    private TextArea campoNombrePotencialBen1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombrePotencialBen1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombrePotencialBen1() {
+    public TextField getCampoNombrePotencialBen1() {
         return campoNombrePotencialBen1;
     }
 
-    public void setCampoNombrePotencialBen1(TextArea component) {
+    public void setCampoNombrePotencialBen1(TextField component) {
         this.campoNombrePotencialBen1 = component;
     }
 
@@ -499,14 +499,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelCodigoPotencialBen1 = l;
     }
 
-    private TextArea campoCodigoPotencialBen1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoPotencialBen1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoPotencialBen1() {
+    public TextField getCampoCodigoPotencialBen1() {
         return campoCodigoPotencialBen1;
     }
 
-    public void setCampoCodigoPotencialBen1(TextArea component) {
+    public void setCampoCodigoPotencialBen1(TextField component) {
         this.campoCodigoPotencialBen1 = component;
     }
 
@@ -691,14 +691,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelNombrePersona1 = l;
     }
 
-    private TextArea campoNombrePersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombrePersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombrePersona1() {
+    public TextField getCampoNombrePersona1() {
         return campoNombrePersona1;
     }
 
-    public void setCampoNombrePersona1(TextArea component) {
+    public void setCampoNombrePersona1(TextField component) {
         this.campoNombrePersona1 = component;
     }
 
@@ -742,14 +742,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelCodigoPersona1 = l;
     }
 
-    private TextArea campoCodigoPersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoPersona1() {
+    public TextField getCampoCodigoPersona1() {
         return campoCodigoPersona1;
     }
 
-    public void setCampoCodigoPersona1(TextArea component) {
+    public void setCampoCodigoPersona1(TextField component) {
         this.campoCodigoPersona1 = component;
     }
 
@@ -1157,14 +1157,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelCodigoFichaPersona1 = l;
     }
 
-    private TextArea campoCodigoFichaPersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoFichaPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoFichaPersona1() {
+    public TextField getCampoCodigoFichaPersona1() {
         return campoCodigoFichaPersona1;
     }
 
-    public void setCampoCodigoFichaPersona1(TextArea component) {
+    public void setCampoCodigoFichaPersona1(TextField component) {
         this.campoCodigoFichaPersona1 = component;
     }
 
@@ -1208,14 +1208,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelNombreFichaPersona1 = l;
     }
 
-    private TextArea campoNombreFichaPersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombreFichaPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombreFichaPersona1() {
+    public TextField getCampoNombreFichaPersona1() {
         return campoNombreFichaPersona1;
     }
 
-    public void setCampoNombreFichaPersona1(TextArea component) {
+    public void setCampoNombreFichaPersona1(TextField component) {
         this.campoNombreFichaPersona1 = component;
     }
 
@@ -1350,14 +1350,14 @@ public class LogProAcrPotBen5 extends AbstractPageBean
         this.labelCodigoFichaHogar1 = l;
     }
 
-    private TextArea campoCodigoFichaHogar1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoFichaHogar1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoFichaHogar1() {
+    public TextField getCampoCodigoFichaHogar1() {
         return campoCodigoFichaHogar1;
     }
 
-    public void setCampoCodigoFichaHogar1(TextArea component) {
+    public void setCampoCodigoFichaHogar1(TextField component) {
         this.campoCodigoFichaHogar1 = component;
     }
 

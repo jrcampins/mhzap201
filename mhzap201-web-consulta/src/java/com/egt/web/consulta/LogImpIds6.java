@@ -98,16 +98,16 @@ public class LogImpIds6 extends AbstractPageBean
     private void _init() throws Exception {
         validatorIdLogImpIds1.setMinimum(0L);
         validatorIdLogImpIds1.setMaximum(1000000000000000000L);
-        validatorCedula1.setMaximum(255);
-        validatorLetraCedula1.setMaximum(255);
-        validatorApellidos1.setMaximum(255);
-        validatorNombres1.setMaximum(255);
-        validatorNacimiento1.setMaximum(255);
-        validatorSexo1.setMaximum(255);
-        validatorNacionalidad1.setMaximum(255);
-        validatorEstadoCivil1.setMaximum(255);
-        validatorLugarNacimiento1.setMaximum(255);
-        validatorIndigena1.setMaximum(255);
+        validatorCedula1.setMaximum(8160);
+        validatorLetraCedula1.setMaximum(8160);
+        validatorApellidos1.setMaximum(8160);
+        validatorNombres1.setMaximum(8160);
+        validatorNacimiento1.setMaximum(8160);
+        validatorSexo1.setMaximum(8160);
+        validatorNacionalidad1.setMaximum(8160);
+        validatorEstadoCivil1.setMaximum(8160);
+        validatorLugarNacimiento1.setMaximum(8160);
+        validatorIndigena1.setMaximum(8160);
         validatorObservacion1.setMaximum(8160);
         converterFechaHoraTransaccion1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraTransaccion1.setType("both");

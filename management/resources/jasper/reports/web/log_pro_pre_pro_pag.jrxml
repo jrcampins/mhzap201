@@ -525,7 +525,7 @@
                     style="ch-text1"
                     x="128"
                     y="0"
-                    width="256"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -534,9 +534,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="384"
+                    x="256"
                     y="0"
-                    width="256"
+                    width="192"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -545,7 +545,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="640"
+                    x="448"
                     y="0"
                     width="128"
                     height="20"
@@ -556,7 +556,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="768"
+                    x="576"
                     y="0"
                     width="128"
                     height="20"
@@ -567,13 +567,24 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="896"
+                    x="704"
                     y="0"
-                    width="64"
+                    width="128"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha solicitud pension]]></text>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[ubicacion]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="832"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[condicion pension]]></text>
             </staticText>
             </frame>
         </band>
@@ -675,7 +686,7 @@
                     stretchType="RelativeToBandHeight"
                     x="128"
                     y="0"
-                    width="256"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -691,9 +702,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="384"
+                    x="256"
                     y="0"
-                    width="256"
+                    width="192"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -709,7 +720,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="640"
+                    x="448"
                     y="0"
                     width="128"
                     height="16"
@@ -727,7 +738,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="768"
+                    x="576"
                     y="0"
                     width="128"
                     height="16"
@@ -736,7 +747,7 @@
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x3y3}]]></textFieldExpression>
             </textField>
             <textField
-                pattern="dd/MM/yyyy"
+                pattern=""
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -745,13 +756,31 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="896"
+                    x="704"
                     y="0"
-                    width="64"
+                    width="128"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_solicitud_pension}]]></textFieldExpression>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x4y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="832"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_condicion_pension_1x5y2}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

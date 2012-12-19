@@ -34,17 +34,17 @@ public interface PaginaActualizacionLogProAcrPotBen extends PaginaActualizacion 
 
     TextField getCampoIdPotencialBen1();
 
-    TextArea getCampoNombrePotencialBen1();
+    TextField getCampoNombrePotencialBen1();
 
-    TextArea getCampoCodigoPotencialBen1();
+    TextField getCampoCodigoPotencialBen1();
 
     TextField getTextFieldCampoFechaRegistroPotBen1();
 
     TextField getCampoIdPersona1();
 
-    TextArea getCampoNombrePersona1();
+    TextField getCampoNombrePersona1();
 
-    TextArea getCampoCodigoPersona1();
+    TextField getCampoCodigoPersona1();
 
     TextField getCampoIdDepartamento1();
 
@@ -54,13 +54,13 @@ public interface PaginaActualizacionLogProAcrPotBen extends PaginaActualizacion 
 
     TextField getCampoIdFichaPersona1();
 
-    TextArea getCampoCodigoFichaPersona1();
+    TextField getCampoCodigoFichaPersona1();
 
-    TextArea getCampoNombreFichaPersona1();
+    TextField getCampoNombreFichaPersona1();
 
     TextField getCampoIdFichaHogar1();
 
-    TextArea getCampoCodigoFichaHogar1();
+    TextField getCampoCodigoFichaHogar1();
 
     TextField getCampoIndiceCalidadVida1();
 

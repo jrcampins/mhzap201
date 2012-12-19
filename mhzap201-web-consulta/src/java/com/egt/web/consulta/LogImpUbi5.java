@@ -100,11 +100,11 @@ public class LogImpUbi5 extends AbstractPageBean
         textoFilasPorPagina1Validator1.setMaximum(50L);
         validatorIdLogImpUbi1.setMinimum(0L);
         validatorIdLogImpUbi1.setMaximum(1000000000000000000L);
-        validatorCodigo1.setMaximum(255);
-        validatorUbicacion1.setMaximum(255);
-        validatorTipoUbicacion1.setMaximum(255);
-        validatorTipoArea1.setMaximum(255);
-        validatorCodigoUbicacionSuperior1.setMaximum(255);
+        validatorCodigo1.setMaximum(8160);
+        validatorUbicacion1.setMaximum(8160);
+        validatorTipoUbicacion1.setMaximum(8160);
+        validatorTipoArea1.setMaximum(8160);
+        validatorCodigoUbicacionSuperior1.setMaximum(8160);
         validatorObservacion1.setMaximum(8160);
         converterFechaHoraTransaccion1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraTransaccion1.setType("both");

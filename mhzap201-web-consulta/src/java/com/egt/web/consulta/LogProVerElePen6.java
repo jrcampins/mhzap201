@@ -100,8 +100,8 @@ public class LogProVerElePen6 extends AbstractPageBean
     private void _init() throws Exception {
         validatorIdLogProVerElePen1.setMinimum(0L);
         validatorIdLogProVerElePen1.setMaximum(1000000000000000000L);
-        validatorCodigoPersona1.setMaximum(255);
-        validatorNombrePersona1.setMaximum(255);
+        validatorCodigoPersona1.setMaximum(30);
+        validatorNombrePersona1.setMaximum(100);
         converterIndiceCalidadVida1.setMinIntegerDigits(1);
         converterIndiceCalidadVida1.setMaxIntegerDigits(40);
         converterIndiceCalidadVida1.setMaxFractionDigits(3);
@@ -369,14 +369,14 @@ public class LogProVerElePen6 extends AbstractPageBean
         this.labelCodigoPersona1 = l;
     }
 
-    private TextArea campoCodigoPersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoCodigoPersona1() {
+    public TextField getCampoCodigoPersona1() {
         return campoCodigoPersona1;
     }
 
-    public void setCampoCodigoPersona1(TextArea component) {
+    public void setCampoCodigoPersona1(TextField component) {
         this.campoCodigoPersona1 = component;
     }
 
@@ -420,14 +420,14 @@ public class LogProVerElePen6 extends AbstractPageBean
         this.labelNombrePersona1 = l;
     }
 
-    private TextArea campoNombrePersona1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombrePersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombrePersona1() {
+    public TextField getCampoNombrePersona1() {
         return campoNombrePersona1;
     }
 
-    public void setCampoNombrePersona1(TextArea component) {
+    public void setCampoNombrePersona1(TextField component) {
         this.campoNombrePersona1 = component;
     }
 
