@@ -20,6 +20,8 @@ log_imp_pot.numero_cedula		-> cedula
 log_imp_pot.numero_telefono		-> telefono
 log_imp_pot.numero_telefono_referente	-> telefono_referente
 
+log_imp_ubi.id_reg                      -> id_log_imp_ubi
+
 log_pro_imp_arc_ext.codigo_proveedor_dat_ext integer -> varchar
 
 */
