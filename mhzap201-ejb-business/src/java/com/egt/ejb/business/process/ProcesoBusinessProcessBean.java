@@ -23,7 +23,6 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
-import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import com.egt.ejb.business.process.logic.ProcesoBusinessProcessLogicLocal;
@@ -237,55 +236,6 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_NUMERO_RESOLUCION_OTOR_PEN, STP.getString(message.getNumeroResolucionOtorPen()));
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_FECHA_RESOLUCION_OTOR_PEN, STP.getString(message.getFechaResolucionOtorPen()));
-        return Auditor.grabarRastroFuncion(rastro);
-    }
-
-    @Override
-    public ProcesoDenegarPensionesMessage procesoDenegarPensiones(ProcesoDenegarPensionesMessage message) {
-        Object idProceso = null;
-        Proceso proceso = null;
-        try {
-//          idProceso = message.getIdProceso();
-//          proceso = facade.find(idProceso, true);
-//          if (proceso == null) {
-//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
-//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idProceso));
-//          } else {
-                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
-                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
-                this.procesoDenegarPensiones(message, proceso);
-                this.grabarRastroFuncion(message, proceso);
-//          }
-        } catch (Exception ex) {
-            Auditor.grabarRastroProceso(message, ex);
-            TLC.getBitacora().fatal(message.getMensaje());
-            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
-        }
-        return message;
-    }
-
-    protected void procesoDenegarPensiones(ProcesoDenegarPensionesMessage message, Proceso proceso) throws Exception {
-        String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_DENEGAR_PENSIONES;
-        if (sqlAgent.isStoredProcedure(sql)) {
-            int index = 0;
-            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
-            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
-            args[index++] = message.getIdUbicacion();
-            args[index++] = message.getNumeroResolucionDenPen();
-            args[index++] = message.getFechaResolucionDenPen();
-            sqlAgent.executeProcedure(sql, args);
-            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
-        } else {
-//          logician.procesoDenegarPensiones(message, proceso);
-//          facade.flush();
-        }
-    }
-
-    protected Long grabarRastroFuncion(ProcesoDenegarPensionesMessage message, Proceso proceso) {
-        RastroFuncion rastro = this.getRastroFuncion(message, proceso);
-        rastro.addParametro(ProcesoDenegarPensionesMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
-        rastro.addParametro(ProcesoDenegarPensionesMessage.PARAMETRO_NUMERO_RESOLUCION_DEN_PEN, STP.getString(message.getNumeroResolucionDenPen()));
-        rastro.addParametro(ProcesoDenegarPensionesMessage.PARAMETRO_FECHA_RESOLUCION_DEN_PEN, STP.getString(message.getFechaResolucionDenPen()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

@@ -256,25 +256,21 @@ public class PersonaConstants {
 
     public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = 201000168L;
 
-    public static final long FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA = 201000169L;
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000169L;
 
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000170L;
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000170L;
 
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000171L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000171L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000172L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000172L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000173L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000173L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000174L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000174L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000175L;
+    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000175L;
 
-    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000176L;
-
-    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000177L;
-
-    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC = 201000178L;
+    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000176L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_SEXO_PERSONA = 201200101L;
 
@@ -340,8 +336,6 @@ public class PersonaConstants {
 
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = "persona_con_pension_solicitada";
 
-    public static final String INFORME_FUNCION_EMITIR_PERSONA_SIN_CEDULA_CON_PENSION_SOLICITADA = "persona_sin_cedula_con_pension_solicitada";
-
     public static final String INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = "persona_acreditada_sin_objeciones";
 
     public static final String INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = "persona_acreditada_con_objeciones";
@@ -357,6 +351,4 @@ public class PersonaConstants {
     public static final String INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = "persona_ultima_actualizacion_en_jupe";
 
     public static final String INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = "persona_cuadro_resumen_pension";
-
-    public static final String INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA_SIN_DOC = "persona_cuadro_resumen_pension_sin_doc";
 }

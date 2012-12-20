@@ -26,8 +26,7 @@ public enum EnumTipoArcDatExt implements ListOption {
     FALLECIDOS(301, "tipo_arc_dat_ext_fallecidos"),
     PRESUNTOS_FALLECIDOS(302, "tipo_arc_dat_ext_presuntos_fallecidos"),
     FICHA_HOGAR(401, "tipo_arc_dat_ext_ficha_hogar"),
-    FICHA_PERSONA(402, "tipo_arc_dat_ext_ficha_persona"),
-    CENSOS_VALIDADOS(501, "tipo_arc_dat_ext_censos_validados");
+    FICHA_PERSONA(402, "tipo_arc_dat_ext_ficha_persona");
 
     public static EnumTipoArcDatExt valueOf(int i) {
         switch (i) {
@@ -53,8 +52,6 @@ public enum EnumTipoArcDatExt implements ListOption {
                 return FICHA_HOGAR;
             case 402:
                 return FICHA_PERSONA;
-            case 501:
-                return CENSOS_VALIDADOS;
             default:
                 return null;
         }

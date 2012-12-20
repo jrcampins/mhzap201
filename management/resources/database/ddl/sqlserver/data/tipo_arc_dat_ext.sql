@@ -22,6 +22,4 @@ INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
 VALUES (401, 'Ficha Hogar');
 INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
 VALUES (402, 'Ficha Persona');
-INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
-VALUES (501, 'Censos Validados');
 GO

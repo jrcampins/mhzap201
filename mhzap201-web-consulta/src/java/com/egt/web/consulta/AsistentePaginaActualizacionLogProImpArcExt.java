@@ -332,15 +332,6 @@ public class AsistentePaginaActualizacionLogProImpArcExt {
         return value != null && value.equals(EnumTipoArcDatExt.FICHA_PERSONA.intValue());
     }
 
-    public boolean isNumeroTipoArcDatExtCensosValidados() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProImpArcExtDataProvider().getNumeroTipoArcDatExt(rowKey);
-        return value != null && value.equals(EnumTipoArcDatExt.CENSOS_VALIDADOS.intValue());
-    }
-
    public boolean isEsImportado() {
         if (bean == null) {
             return true;

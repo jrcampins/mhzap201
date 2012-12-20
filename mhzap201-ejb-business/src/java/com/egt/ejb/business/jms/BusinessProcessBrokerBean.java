@@ -31,7 +31,6 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
-import com.egt.ejb.business.message.ProcesoDenegarPensionesMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
@@ -167,8 +166,6 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = proceso.procesoPrepararProxPagoPen((ProcesoPrepararProxPagoPenMessage) message);
                 } else if (message instanceof ProcesoOtorgarPensionesAprMessage) {
                     message = proceso.procesoOtorgarPensionesApr((ProcesoOtorgarPensionesAprMessage) message);
-                } else if (message instanceof ProcesoDenegarPensionesMessage) {
-                    message = proceso.procesoDenegarPensiones((ProcesoDenegarPensionesMessage) message);
                 } else if (message instanceof ProcesoActualizarPenEnJupeMessage) {
                     message = proceso.procesoActualizarPenEnJupe((ProcesoActualizarPenEnJupeMessage) message);
                 } else if (message instanceof ProcesoVerificarElePenMessage) {
