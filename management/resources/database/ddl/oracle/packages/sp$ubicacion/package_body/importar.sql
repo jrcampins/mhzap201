@@ -14,7 +14,7 @@ begin
         raise_application_error(err_number, msg_string, true);
     end if;
     --creamos y llenamos la tabla externa csv_log_imp_ubi
-    sp$archivo_datos_ext.create_csv_log_imp_ubi(nombre_archivo, 'WE8ISO8859P1', '1', ';', '"');
+    sp$100.create_csv_log_imp_ubi(nombre_archivo, 'WE8ISO8859P1', '1', ';', '"');
     delete from log_imp_ubi;
     insert into log_imp_ubi
         (
