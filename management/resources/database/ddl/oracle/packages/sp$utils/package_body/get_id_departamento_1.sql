@@ -1,4 +1,4 @@
-function get_id_departamento(departamento varchar2) return number is
+function get_id_departamento_sw(departamento varchar2) return number is
 
     id_departamento_retornar number:= 0;
 begin
@@ -7,7 +7,7 @@ begin
             select id_ubicacion into id_departamento_retornar from ubicacion where id_ubicacion_superior is null and nombre_ubicacion like departamento ;
         exception
             when no_data_found then
-                raise_application_error(-20001, 'Departamento '||departamento||' no encontrado ');  
+                null;
         end;
         if not sql%found then
             id_departamento_retornar:=0;

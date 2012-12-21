@@ -7,7 +7,7 @@ begin
             select id_ubicacion into id_ubicacion_retornar from ubicacion where nombre_ubicacion like str;
         exception
             when no_data_found then
-                raise_application_error(-20001, 'Ubicación no encontrada');  
+                raise_application_error(-20001, 'Ubicación '''||str||''' no encontrada');  
         end;
         if not sql%found then
             id_ubicacion_retornar:=0;

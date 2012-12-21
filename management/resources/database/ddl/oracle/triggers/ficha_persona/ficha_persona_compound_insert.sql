@@ -14,7 +14,7 @@ compound trigger
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 before each row is
 begin
-    dbms_output.put_line('Insertando '||:new.id_ficha_persona);
+    --dbms_output.put_line('Insertando '||:new.id_ficha_persona);
 /**/
     xnew.id_ficha_persona := :new.id_ficha_persona;                            
     xnew.version_ficha_persona := :new.version_ficha_persona;                  
@@ -104,18 +104,18 @@ begin
     indice         := indice + 1;
     ids(indice)     := :new.id_ficha_persona;
     codigos(indice) := :new.codigo_ficha_persona;
-    dbms_output.put_line(indice||', '||ids(indice)||', '||codigos(indice));
+    --dbms_output.put_line(indice||', '||ids(indice)||', '||codigos(indice));
 end after each row;
 
 after statement is
 begin
     indice := 0;
     msg_string := '';
-    dbms_output.put_line('after  statement (count='||ids.count||') ');
+    --dbms_output.put_line('after  statement (count='||ids.count||') ');
     for i in 1..ids.count
     loop
         indice := i;
-        dbms_output.put_line('after  row '||i||', '||ids(i)||', '||codigos(i));
+        --dbms_output.put_line('after  row '||i||', '||ids(i)||', '||codigos(i));
         /**/
         begin
             select *

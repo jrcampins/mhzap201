@@ -49,4 +49,5 @@ begin
             return row_persona.id_persona;
         end if;
     end if;
+    return null;
 end;

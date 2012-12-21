@@ -167,18 +167,18 @@ begin
     indice         := indice + 1;
     id(indice)     := :new.id_potencial_ben;
     codigo(indice) := :new.codigo_potencial_ben;
-    dbms_output.put_line(indice||', '||id(indice)||', '||codigo(indice));
+    --dbms_output.put_line(indice||', '||id(indice)||', '||codigo(indice));
 end after each row;
 
 after statement is
 begin
     indice := 0;
     msg_string := '';
-    dbms_output.put_line('after  statement (count='||id.count||') ');
+    --dbms_output.put_line('after  statement (count='||id.count||') ');
     for i in 1..id.count
     loop
         indice := i;
-        dbms_output.put_line('after  row '||i||', '||id(i)||', '||codigo(i));
+        --dbms_output.put_line('after  row '||i||', '||id(i)||', '||codigo(i));
         begin
             select count(*)
             into   pdq
@@ -195,7 +195,7 @@ begin
     end loop;
 exception
     when others then
-        msg_string := trim(replace(replace(replace(DBMS_UTILITY.FORMAT_ERROR_STACK,
+        msg_string := trim(replace(replace(replace(--dbms_UTILITY.FORMAT_ERROR_STACK,
             chr(13), ''), chr(10), ''), 'ORA'||err_number||':', ''));
         if (indice >= 1 and indice <= id.count) then
             msg_string := msg_string||'; no es posible actualizar el Potencial Beneficiario #'||id(indice)
