@@ -19,6 +19,7 @@ sql="${scriptpath}/${scriptname}.sql"
 echo "drop user $dbuser cascade;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_ARCHIVES;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_ATTACHMENTS;" >> $sql
+echo "drop directory ${UPPER_CASE_PROJECT}_DATOS;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_SPOOL;" >> $sql
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"

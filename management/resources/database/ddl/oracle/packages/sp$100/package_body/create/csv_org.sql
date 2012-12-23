@@ -24,7 +24,7 @@ begin
     org := 'ORGANIZATION EXTERNAL '
         || '( '
         || 'TYPE ORACLE_LOADER '
-        || 'DEFAULT DIRECTORY MHZAP201_ATTACHMENTS '
+        || 'DEFAULT DIRECTORY MHZAP201_DATOS '
         || 'ACCESS PARAMETERS '
         || '( '
         || record_format_info
@@ -34,7 +34,7 @@ begin
         || 'REJECT ROWS WITH ALL NULL FIELDS '
         || campos
         || ') '
-        || 'LOCATION (  ''' || archivo ||  ''' ) '
+        || 'LOCATION (  ''' || replace(archivo, 'archivo_datos_ext/', '') ||  ''' ) '
         || ') ';
     return org;
 end;
