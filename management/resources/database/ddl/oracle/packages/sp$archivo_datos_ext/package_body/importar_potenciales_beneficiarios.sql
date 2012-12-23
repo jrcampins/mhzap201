@@ -84,7 +84,7 @@ begin
     for registro in (select * from log_imp_pot where es_importado=0)
     loop
         begin
-            --DBMS_OUTPUT.PUT_LINE('Linea = ' || i);
+            ----dbms_output.PUT_LINE('Linea = ' || i);
             i:=i+1;
             new_potencial_ben.id_potencial_ben:=utils.bigintid();
             new_potencial_ben.version_potencial_ben:=0;

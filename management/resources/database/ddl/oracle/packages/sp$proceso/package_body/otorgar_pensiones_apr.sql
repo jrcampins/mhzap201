@@ -42,9 +42,9 @@ begin
     if ubicacion_consultada is not null then
         segmento_consulta_ubicacion:='and (id_departamento='||ubicacion_consultada 
                                        ||'or id_distrito='||ubicacion_consultada
-                                       ||'or id_barrio='||ubicacion_consultada||');';
+                                       ||'or id_barrio='||ubicacion_consultada||')';
     else
-         segmento_consulta_ubicacion:=';';
+         segmento_consulta_ubicacion:='';
     end if;
     --llenamos la tabla log con los registros a procesar
     --Se procesan los registros que hayan sido 
@@ -60,6 +60,9 @@ begin
                        from persona 
                        where numero_condicion_pension=2 '||segmento_consulta_ubicacion
     bulk collect into vista_pen_oto;
+    if vista_pen_oto.count=0 then
+        return 'No hay Personas pendientes por otorgar pensión';
+    end if;
     for i in vista_pen_oto.first..vista_pen_oto.last loop
             id_reg:=utils.bigintid();
             insert into log_pro_oto_pen_apr values (
@@ -72,15 +75,17 @@ begin
                         vista_pen_oto(i).id_departamento, 
                         vista_pen_oto(i).id_barrio, 
                         vista_pen_oto(i).numero_condicion_pension,
-                        null,
+                        0,
                         null,
                         current_timestamp);
-            dbms_output.put_line( 'Insertando id ('||i||')='||vista_pen_oto(i).id_persona );
+            --dbms_output.put_line( 'Insertando id ('||i||')='||vista_pen_oto(i).id_persona );
     end loop;
     --Se procesan los registros
-    execute immediate 'select * from log_pro_oto_pen_apr where procesado is null'
+    execute immediate 'select * from log_pro_oto_pen_apr where es_procesado=0 and observacion is null'
     bulk collect into table_log;
-
+    if table_log.count=0 then
+        return 'No hay registros de personas pendientes por procesar';
+    end if;
     for i in table_log.first..table_log.last loop
         begin
             total:=total+1;
@@ -91,19 +96,19 @@ begin
                 total_rechazados:=total_rechazados+1;
             end if;
             execute immediate 'update log_pro_oto_pen_apr
-                     set procesado=1, observacion='''||mensaje||
+                     set es_procesado=1, observacion='''||mensaje||
                      ''' where id_log_pro_oto_pen_apr='||table_log(i).id_log_pro_oto_pen_apr;
         exception when others then
             total_errores:=total_errores+1;
             mensaje:=SQLERRM;
             execute immediate 'update log_pro_oto_pen_apr
-                     set procesado=1, observacion='''||mensaje||
+                     set es_procesado=1, observacion='''||mensaje||
                      ''' where id_log_pro_oto_pen_apr='||table_log(i).id_log_pro_oto_pen_apr;
         end;                       
      end loop;
      mensaje_retorno:='Total de Personas Procesadas: '||total
                       ||', Pensiones Otorgadas: '||total_otorgados
                       ||', Pensiones No Otorgadas: '||total_rechazados
-                      ||', Errores: '||total_errores ;
+                      ||', Total Excepciones: '||total_errores ;
      return mensaje_retorno;                 
 end;

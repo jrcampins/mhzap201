@@ -87,7 +87,10 @@ begin
             icv_beneficiario:=sp$ficha_hogar.calcular_icv(row_ficha_hogar.id_ficha_hogar) ;
         --Se compara el icv con el punto de corte
         elsif icv_beneficiario<=icv_corte then
-        --Se copian los datos de la ficha 
+        --Se intenta solicitar la pensión
+            mensaje:=sp$persona.solicitar_pension(row_potencial_ben.id_persona,'Pension Solicitada y Acreditada automáticamente');
+            mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje;
+        --Se actualiza la persona como acreditada
             update persona
             set es_persona_acreditada_para_pen=1,
             indice_calidad_vida=icv_beneficiario,
@@ -105,9 +108,6 @@ begin
                 msg_string:='No fue posible solicitar la pension a la Persona ';
                 raise_application_error(err_number, msg_string, true);
             end if;
-                mensaje:=sp$persona.solicitar_pension(row_potencial_ben.id_persona,'Pension Solicitada y Acreditada automáticamente');
-                mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje;
-        --Se compara el icv con el punto de corte
         else
             mensaje:='Potencial Beneficiario NO está Acreditado para pensión';
         end if;

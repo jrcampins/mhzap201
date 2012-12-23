@@ -14,23 +14,23 @@ function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fech
     total_acreditados number:=0;
     total_errores number:=0;
     segmento_consulta varchar2(2000):='';
-        
-    type ben_acr is record( 
+    conta number;
+    type ben_acr is record(
           id_potencial_ben number , 
-          nombre_potencial_ben varchar2 (200), 
-          codigo_potencial_ben varchar2 (50), 
+          nombre_potencial_ben varchar2 (4000), 
+          codigo_potencial_ben varchar2 (4000), 
           fecha_registro_pot_ben timestamp,
           id_persona number,
-          nombre_persona varchar2(200),
-          codigo_persona varchar2 (50),
+          nombre_persona varchar2(4000),
+          codigo_persona varchar2 (4000),
           id_distrito number,
           id_departamento number,
           id_barrio number,
           id_ficha_persona number,
-          codigo_ficha_persona varchar2(50),
-          nombre_ficha_persona varchar2 (200),
+          codigo_ficha_persona varchar2(4000),
+          nombre_ficha_persona varchar2 (4000),
           id_ficha_hogar number,
-          codigo_ficha_hogar varchar2 (200),
+          codigo_ficha_hogar varchar2 (4000),
           indice_calidad_vida number
     ); 
     type cons_ben_acr is table of ben_acr;
@@ -63,16 +63,24 @@ begin
             segmento_consulta:=' where fecha_registro_pot_ben <= '''||fecha_registro_hasta||''' ';
         end if;
     end if;
-    segmento_consulta:=segmento_consulta||';';
+
+    --dbms_output.put_line('select * from "vista_log_pro_acr_pot_ben"'||segmento_consulta);
     --Se insertan los registros a procesar en la tabla temporal 
-    execute immediate 'select * from vista_log_pro_acr_pot_ben '||segmento_consulta
+--     select count(id_potencial_ben) into conta from vista_log_pro_acr_pot_ben;
+--     if conta =0 then
+--         return 'No hay Potenciales Beneficiarios para acreditar';
+--     end if;
+    execute immediate 'select * from vista_log_pro_acr_pot_ben'||segmento_consulta
         bulk collect into vista_ben;
+    if vista_ben.count=0 then
+        return 'No hay Potenciales Beneficiarios para acreditar';
+    end if;
     for i in vista_ben.first..vista_ben.last loop
-      id_reg:=utils.bigintid();
+      id_reg:=utils.bigintid();                                                              
       insert into log_pro_acr_pot_ben values (
           id_reg,
-          vista_ben(i).id_potencial_ben,
-          0, -- version
+          0,
+          vista_ben(i).id_potencial_ben, 
           vista_ben(i).nombre_potencial_ben, 
           vista_ben(i).codigo_potencial_ben, 
           vista_ben(i).fecha_registro_pot_ben,
@@ -88,49 +96,51 @@ begin
           vista_ben(i).id_ficha_hogar,
           vista_ben(i).codigo_ficha_hogar,
           vista_ben(i).indice_calidad_vida,
-          null,
+          0,
           null,
           current_timestamp);
-      dbms_output.put_line( 'Insertando id ('||i||')='||vista_ben(i).id_potencial_ben ); --do something here
+      ----dbms_output.put_line( 'Insertando id ('||i||')='||vista_ben(i).id_potencial_ben ); --do something here
     end loop;
 --     for current_row in execute  loop
 --         current_row.id_log_pro_acr_pot_ben:=utils.bigintid();
 --         insert into log_pro_acr_pot_ben values (current_row.*);
 --     end loop;
        
-    execute immediate 'select * from log_pro_acr_pot_ben where procesado is null '
+    execute immediate 'select * from log_pro_acr_pot_ben where es_procesado=0 and observacion is null'
     bulk collect into table_log;
-    
+    if table_log.count=0 then
+        return 'No hay registros de personas pendientes por procesar';
+    end if;
     for i in table_log.first..table_log.last loop
         begin
             total:=total+1;
             mensaje:=sp$potencial_ben.acreditar(table_log(i).id_potencial_ben);
-            if mensaje like '%Potencial Beneficiario Acreditado%' then 
+            if upper(mensaje) like upper('%Potencial Beneficiario Acreditado%') then 
                 total_acreditados:=total_acreditados+1;
-                execute immediate 'update log_pro_acr_pot_ben
-                               set procesado=1, 
-                               observacion='''||mensaje||
-                               ''',fecha_transaccion='''||current_timestamp||
-                               ''' where id_log_pro_acr_pot_ben='||table_log(i).id_log_pro_acr_pot_ben;
+                update log_pro_acr_pot_ben 
+                set es_procesado=1, 
+                observacion=mensaje,
+                fecha_hora_transaccion=current_timestamp
+                where id_log_pro_acr_pot_ben=table_log(i).id_log_pro_acr_pot_ben;
             else
                 total_no_acreditados:=total_no_acreditados+1;
-                execute immediate 'update log_pro_acr_pot_ben 
-                               set procesado=0, 
-                               observacion='''||mensaje||
-                               ''',fecha_transaccion='''||current_timestamp||
-                               ''' where id_log_pro_acr_pot_ben='||table_log(i).id_log_pro_acr_pot_ben;
+                update log_pro_acr_pot_ben 
+                set es_procesado=1, 
+                observacion=mensaje,
+                fecha_hora_transaccion=current_timestamp
+                where id_log_pro_acr_pot_ben=table_log(i).id_log_pro_acr_pot_ben;
             end if;
         exception when others then
             mensaje:=SQLERRM;
-            execute immediate 'update log_pro_acr_pot_ben 
-                     set procesado=0, 
-                     observacion= ''Error: '||mensaje||
-                     ''',fecha_transaccion='''||current_timestamp||
-                     ''' where id_log_pro_acr_pot_ben='||table_log(i).id_log_pro_acr_pot_ben;
+            update log_pro_acr_pot_ben 
+                set es_procesado=1, 
+                observacion=mensaje,
+                fecha_hora_transaccion=current_timestamp
+                where id_log_pro_acr_pot_ben=table_log(i).id_log_pro_acr_pot_ben;
             total_errores:=total_errores+1;
             continue;
         end;
     end loop;
-    mensaje:='Total: '||total||', Acreditados: '||total_acreditados||', No Acreditados: '||total_no_acreditados||', Errores: '||total_errores;
+    mensaje:='Total de Beneficiarios Procesados: '||total||', Acreditados: '||total_acreditados||', No Acreditados: '||total_no_acreditados||', Total Excepciones: '||total_errores;
     return mensaje;
 end;

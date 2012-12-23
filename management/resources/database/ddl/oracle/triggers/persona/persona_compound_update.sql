@@ -18,7 +18,7 @@ compound trigger
 
 --     before each row is
 --         begin
---             dbms_output.put_line('Actualizando el id de ficha old: '||:old.id_ficha_persona||' new: '||:new.id_ficha_persona);
+--             --dbms_output.put_line('Actualizando el id de ficha old: '||:old.id_ficha_persona||' new: '||:new.id_ficha_persona);
 --             --si hay un cambio en el id_ficha_persona o si pasa de null a no null,
 --             --se deben actualizar los icvs
 --             if ((:new.id_ficha_persona<>:old.id_ficha_persona) or
@@ -63,7 +63,7 @@ compound trigger
 --     end before each row;
 --before each row is
 --begin
---     dbms_output.put_line('desde el trigger compound '||:old.id_persona
+--     --dbms_output.put_line('desde el trigger compound '||:old.id_persona
 --         ||' ('||:old.codigo_persona||','||:new.codigo_persona||') '
 --         ||' ('||:old.nombre_persona||','||:new.nombre_persona||') ');
 /**/
@@ -72,18 +72,18 @@ compound trigger
 after each row is
 begin
        
---     dbms_output.put_line('after  row '||:new.id_persona
+--     --dbms_output.put_line('after  row '||:new.id_persona
 --         ||' ('||:old.codigo_persona||','||:new.codigo_persona||') '
 --         ||' ('||:old.nombre_persona||','||:new.nombre_persona||') ');
     indice:= indice + 1;
     ids(indice):=:new.id_persona;
---    dbms_output.put_line(indice||', '||ids(indice));
+--    --dbms_output.put_line(indice||', '||ids(indice));
 end after each row;
 after statement is
 begin
     indice := 0;
     msg_string := '';
---     dbms_output.put_line('after  statement (count='||ids.count||') ');
+--     --dbms_output.put_line('after  statement (count='||ids.count||') ');
     for i in 1..ids.count
     loop
       begin

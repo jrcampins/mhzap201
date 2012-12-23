@@ -25,6 +25,7 @@ function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desd
      total_no_revocadas number:=0;
      total_errores number:=0;
      total number:=0;
+     conta number:=0;
      type prox_pag is record(
           id_persona number,
           codigo_persona varchar2 (50),
@@ -68,6 +69,9 @@ begin
                                    or numero_condicion_reco_pen=1 
                                    or numero_condicion_denu_pen=1) '||segmento_consulta
         bulk collect into vista_prox_pag;
+        if vista_prox_pag.count=0 then
+            return 'No hay registros de Persona para Procesar';
+        end if;
         for i in vista_prox_pag.first..vista_prox_pag.last loop
             id_reg:=utils.bigintid();
             insert into log_pro_pre_pro_pag values (
@@ -86,7 +90,7 @@ begin
                     0,
                     null,
                     current_timestamp);                       
-            dbms_output.put_line( 'Insertando id ('||i||')='||vista_prox_pag(i).id_persona );
+            --dbms_output.put_line( 'Insertando id ('||i||')='||vista_prox_pag(i).id_persona );
         end loop;
     --Solo se procesan pensiones en estatus solicitada
     else      
@@ -96,6 +100,9 @@ begin
                                    or numero_condicion_reco_pen=1 
                                    or numero_condicion_denu_pen=1) '||segmento_consulta
         bulk collect into vista_prox_pag;
+        if vista_prox_pag.count=0 then
+            return 'No hay registros de Persona para Procesar';
+        end if;
         for i in vista_prox_pag.first..vista_prox_pag.last loop
             id_reg:=utils.bigintid();
             insert into log_pro_pre_pro_pag values (
@@ -114,12 +121,15 @@ begin
                     0,
                     null,
                     current_timestamp);                       
-            dbms_output.put_line( 'Insertando id ('||i||')='||vista_prox_pag(i).id_persona );
+            --dbms_output.put_line( 'Insertando id ('||i||')='||vista_prox_pag(i).id_persona );
         end loop;
     end if;
     --Se procesan los registros
-    execute immediate 'select * from log_pro_pre_pro_pag where procesado is null'
+    execute immediate 'select * from log_pro_pre_pro_pag where es_procesado=0 and observacion is null'
     bulk collect into table_log;
+    if table_log.count=0 then
+        return 'No hay registros de personas pendientes por procesar';
+    end if;
     for i in table_log.first..table_log.last loop
         begin
             total:=total+1;
@@ -192,13 +202,13 @@ begin
             end if;
             --Se registra el resultado de procesar el registro
             execute immediate 'update log_pro_pre_pro_pag
-                     set procesado=1, observacion='''||mensaje||
+                     set es_procesado=1, observacion='''||mensaje||
                      ''' where id_log_pro_pre_pro_pag='||table_log(i).id_log_pro_pre_pro_pag;
         exception when others then
             total_errores:=total_errores+1;
             mensaje:=SQLERRM;
             execute immediate 'update log_pro_pre_pro_pag
-                     set procesado=0, observacion=''Error: '||mensaje||
+                     set es_procesado=1, observacion=''Error: '||mensaje||
                      ''' where id_log_pro_pre_pro_pag='||table_log(i).id_log_pro_pre_pro_pag;
         end;                       
      end loop;
@@ -211,6 +221,6 @@ begin
                       ||', Denuncias Confirmadas: '||total_denu_conf
                       ||', Reprocesadas Revocadas: '||total_revocadas
                       ||', Reprocesadas No Revocadas: '||total_no_revocadas
-                      ||', Total Errores: '||total_errores;
+                      ||', Total Excepciones: '||total_errores;
      return mensaje_retorno;
 end;

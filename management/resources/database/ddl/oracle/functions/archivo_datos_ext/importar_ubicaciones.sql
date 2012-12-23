@@ -226,7 +226,7 @@ begin
 
          v_line:=CONVERT(v_line, 'UTF8', 'WE8ISO8859P1');
          
-          --dbms_output.put_line('Linea '||v_line);
+          ----dbms_output.put_line('Linea '||v_line);
           
           v_line := replace(v_line, chr(39), '');
           
@@ -430,7 +430,7 @@ begin
                    from ubicacion 
                    where codigo_ubicacion = codigo_ubicacion_superior;
                    new_ubicacion.id_ubicacion_superior:=id_ubicacion_superior;
-                   --dbms_output.put_line('superior '||id_ubicacion_superior||' codigo '||codigo_ubicacion_superior||' nombre '||new_ubicacion.id_ubicacion_superior);
+                   ----dbms_output.put_line('superior '||id_ubicacion_superior||' codigo '||codigo_ubicacion_superior||' nombre '||new_ubicacion.id_ubicacion_superior);
                 exception   
                    when no_data_found then
                       raise_application_error(-20001, 'Ubicacion superior desconocida para '||current_ubicacion.codigo_ubicacion||':'||current_ubicacion.nombre_ubicacion);                 

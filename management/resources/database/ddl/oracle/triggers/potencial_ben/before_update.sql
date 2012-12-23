@@ -180,18 +180,18 @@ begin
     indice         := indice + 1;
     id(indice)     := :new.id_potencial_ben;
     codigo(indice) := :new.codigo_potencial_ben;
-    --dbms_output.put_line(indice||', '||id(indice)||', '||codigo(indice));
+    ----dbms_output.put_line(indice||', '||id(indice)||', '||codigo(indice));
 end after each row;
 
 after statement is
 begin
     indice := 0;
     msg_string := '';
-    --dbms_output.put_line('after  statement (count='||id.count||') ');
+    ----dbms_output.put_line('after  statement (count='||id.count||') ');
     for i in 1..id.count
     loop
         indice := i;
-        --dbms_output.put_line('after  row '||i||', '||id(i)||', '||codigo(i));
+        ----dbms_output.put_line('after  row '||i||', '||id(i)||', '||codigo(i));
         begin
             select count(*)
             into   pdq

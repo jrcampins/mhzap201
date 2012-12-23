@@ -8,7 +8,7 @@ declare
     icv number;
     fecha_ent date;
 begin
-    dbms_output.put_line('Actualizando el id de ficha old: '||:old.id_ficha_persona||' new: '||:new.id_ficha_persona);
+    --dbms_output.put_line('Actualizando el id de ficha old: '||:old.id_ficha_persona||' new: '||:new.id_ficha_persona);
     --si hay un cambio en el id_ficha_persona o si pasa de null a no null,
     --se deben actualizar los icvs
     if ((:new.id_ficha_persona<>:old.id_ficha_persona) or

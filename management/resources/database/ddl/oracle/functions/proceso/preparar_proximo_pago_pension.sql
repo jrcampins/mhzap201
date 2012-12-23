@@ -6,7 +6,7 @@
 --@return: 0 si no se produjo ninguna excepcion.
 --
 create or replace function proceso_preparar_prox_pago_pen(rastro number,ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp) return number is
-    mensaje varchar2(200);
+    mensaje varchar2(2000);
     retcode number;
 begin
     mensaje:=sp$proceso.preparar_prox_pago_pen(ubicacion_consultada,fecha_solicitud_desde, fecha_solicitud_hasta);

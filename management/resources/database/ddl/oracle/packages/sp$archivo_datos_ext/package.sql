@@ -4,3 +4,9 @@ procedure importar_identificaciones(nombre_archivo varchar2, codigo_archivo varc
 procedure importar_pot_ben(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
 procedure importar_ubicaciones(nombre_archivo varchar2);
 procedure importar_fallecidos(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_deudores(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_empleados(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_jubilados_pens(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_penas(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_subsidios(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+function importar(archivo number) return varchar2;

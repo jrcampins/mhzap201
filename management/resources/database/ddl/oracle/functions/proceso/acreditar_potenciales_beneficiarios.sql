@@ -7,7 +7,7 @@
 --@return: 0 si no se produjo ninguna excepcion.
 --
 create or replace function proceso_acreditar_pot_ben(rastro number,ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp) return number is
-    mensaje varchar2(200);
+    mensaje varchar2(2000);
     retcode number;
 begin
     mensaje:=sp$proceso.acreditar_pot_ben(ubicacion,fecha_registro_desde,fecha_registro_hasta);         

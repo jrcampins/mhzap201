@@ -7,7 +7,7 @@
 --@return: 0 si no se produjo ninguna excepcion.
 --
 create or replace function proceso_otorgar_pensiones_apr(rastro number,ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp) return number is
-    mensaje varchar2(200);
+    mensaje varchar2(2000);
     retcode number;
 begin
     mensaje:=sp$proceso.otorgar_pensiones_apr(ubicacion_consultada,numero_resolucion,fecha_resolucion);

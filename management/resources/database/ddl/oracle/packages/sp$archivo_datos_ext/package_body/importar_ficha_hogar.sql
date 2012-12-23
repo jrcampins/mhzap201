@@ -361,7 +361,7 @@ begin
                     raise_application_error(err_number, msg_string, true);
             end;
             --Se inserta el registro importado en la tabla Ficha Hogar
-            --dbms_output.put_line('Insertando '||new_ficha_hogar.id_ficha_hogar||' '||new_ficha_hogar.codigo_ficha_hogar);
+            ----dbms_output.put_line('Insertando '||new_ficha_hogar.id_ficha_hogar||' '||new_ficha_hogar.codigo_ficha_hogar);
             insert into ficha_hogar values new_ficha_hogar; 
             --Se incrementa el numero de insertados
             retorno:=retorno+1;

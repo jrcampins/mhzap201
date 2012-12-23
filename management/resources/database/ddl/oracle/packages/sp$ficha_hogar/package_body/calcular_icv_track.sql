@@ -34,16 +34,16 @@ begin
        calcular_icv_area_rural(row_ficha_hogar,icv,puntajes,ponderaciones);
     end if;
     
-    DBMS_OUTPUT.PUT_LINE('icv = ' || icv);
+    dbms_output.PUT_LINE('icv = ' || icv);
     mensaje:='icv '||icv;
-    DBMS_OUTPUT.PUT_LINE('Ponderaciones');
+    dbms_output.PUT_LINE('Ponderaciones');
     for i in 1..ponderaciones.count() loop
-        DBMS_OUTPUT.PUT_LINE('ponderacion ('||i||')='||ponderaciones(i));
+        dbms_output.PUT_LINE('ponderacion ('||i||')='||ponderaciones(i));
     end loop;
 
-    DBMS_OUTPUT.PUT_LINE('Puntajes');
+    dbms_output.PUT_LINE('Puntajes');
     for i in 1..puntajes.count() loop
-        DBMS_OUTPUT.PUT_LINE('puntaje ('||i||')='||puntajes(i));
+        dbms_output.PUT_LINE('puntaje ('||i||')='||puntajes(i));
     end loop;
     return mensaje;
 end;
