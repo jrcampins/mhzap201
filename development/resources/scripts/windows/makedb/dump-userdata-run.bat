@@ -4,7 +4,7 @@ call "%~f1" ficha_hogar
 call "%~f1" ficha_persona                                                                                        
 call "%~f1" funcionario                                                                                          
 call "%~f1" informe                                                                                              
-call "%~f1" informe_auditoria                                                                                    
+call "%~f1" log_imp_cen                                                                                          
 call "%~f1" log_imp_deu                                                                                          
 call "%~f1" log_imp_emp                                                                                          
 call "%~f1" log_imp_fal                                                                                          
@@ -17,6 +17,7 @@ call "%~f1" log_imp_pot
 call "%~f1" log_imp_sub                                                                                          
 call "%~f1" log_imp_ubi                                                                                          
 call "%~f1" log_pro_acr_pot_ben                                                                                  
+call "%~f1" log_pro_den_pen_obj                                                                                  
 call "%~f1" log_pro_imp_arc_ext                                                                                  
 call "%~f1" log_pro_oto_pen_apr                                                                                  
 call "%~f1" log_pro_pre_pro_pag                                                                                  

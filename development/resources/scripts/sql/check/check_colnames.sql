@@ -2,6 +2,16 @@ use MHZMD201
 go
 select colname, coltype, length, prec, scale, tabname
 from xdbscripttables x1
+where colname in (
+select colname
+from xdbscripttables x2
+where x2.colname = x1.colname
+and ( x2.coltype <> x1.coltype )
+)
+order by colname, coltype, length, tabname
+go
+select colname, coltype, length, prec, scale, tabname
+from xdbscripttables x1
 where tabname not like'log[_]imp[_]%'
 and colname in (
 select colname
