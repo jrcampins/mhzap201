@@ -169,11 +169,17 @@
     <field name="fecha_aprobacion_pension" class="java.util.Date"/>
     <field name="comentarios_aprobacion_pension" class="java.lang.String"/>
     <field name="fecha_otorgamiento_pen" class="java.util.Date"/>
+    <field name="numero_resolucion_otor_pen" class="java.lang.String"/>
+    <field name="fecha_resolucion_otor_pen" class="java.util.Date"/>
     <field name="comentarios_otorgamiento_pen" class="java.lang.String"/>
-    <field name="fecha_denegacion_pension" class="java.util.Date"/>
+    <field name="fecha_objecion_pension" class="java.util.Date"/>
     <field name="numero_causa_den_pension" class="java.lang.Integer"/>
     <field name="codigo_causa_den_pensio_1x10y2" class="java.lang.String"/>
     <field name="otra_causa_den_pension" class="java.lang.String"/>
+    <field name="comentarios_objecion_pension" class="java.lang.String"/>
+    <field name="fecha_denegacion_pension" class="java.util.Date"/>
+    <field name="numero_resolucion_den_pen" class="java.lang.String"/>
+    <field name="fecha_resolucion_den_pen" class="java.util.Date"/>
     <field name="comentarios_denegacion_pension" class="java.lang.String"/>
     <field name="fecha_revocacion_pension" class="java.util.Date"/>
     <field name="numero_causa_rev_pension" class="java.lang.Integer"/>
@@ -283,10 +289,6 @@
     <field name="numero_tipo_act_jupe" class="java.lang.Integer"/>
     <field name="codigo_tipo_act_jupe_1x16y2" class="java.lang.String"/>
     <field name="fecha_hora_ult_act_jupe" class="java.util.Date"/>
-    <field name="numero_resolucion_otor_pen" class="java.lang.String"/>
-    <field name="fecha_resolucion_otor_pen" class="java.util.Date"/>
-    <field name="numero_resolucion_den_pen" class="java.lang.String"/>
-    <field name="fecha_resolucion_den_pen" class="java.util.Date"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

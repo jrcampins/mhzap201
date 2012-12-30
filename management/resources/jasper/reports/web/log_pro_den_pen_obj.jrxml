@@ -3,7 +3,7 @@
     xmlns="http://jasperreports.sourceforge.net/jasperreports"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-    name="log_pro_acr_pot_ben"
+    name="log_pro_den_pen_obj"
     columnCount="1"
     printOrder="Vertical"
     orientation="Landscape"
@@ -70,175 +70,117 @@
         <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
     </parameter>
 
-    <queryString><![CDATA[select * from consulta_log_pro_acr_pot_ben_1]]></queryString>
+    <queryString><![CDATA[select * from consulta_log_pro_den_pen_obj_1]]></queryString>
 
-    <field name="id_log_pro_acr_pot_ben" class="java.lang.Long"/>
-    <field name="version_log_pro_acr_pot_ben" class="java.lang.Long"/>
-    <field name="id_potencial_ben" class="java.lang.Long"/>
-    <field name="codigo_potencial_ben_1x1y3" class="java.lang.String"/>
-    <field name="nombre_potencial_ben_1x1y4" class="java.lang.String"/>
-    <field name="numero_tipo_reg_pot_ben_1x1y5" class="java.lang.Integer"/>
-    <field name="id_persona_1x1y6" class="java.lang.Long"/>
-    <field name="numero_cedula_1x1y7" class="java.lang.Integer"/>
-    <field name="letra_cedula_1x1y8" class="java.lang.String"/>
-    <field name="fecha_expedicion_cedula_1x1y9" class="java.util.Date"/>
-    <field name="fecha_vencimiento_cedul_1x1y10" class="java.util.Date"/>
-    <field name="primer_nombre_1x1y11" class="java.lang.String"/>
-    <field name="segundo_nombre_1x1y12" class="java.lang.String"/>
-    <field name="primer_apellido_1x1y13" class="java.lang.String"/>
-    <field name="segundo_apellido_1x1y14" class="java.lang.String"/>
-    <field name="apellido_casada_1x1y15" class="java.lang.String"/>
-    <field name="apodo_1x1y16" class="java.lang.String"/>
-    <field name="fecha_nacimiento_1x1y17" class="java.util.Date"/>
-    <field name="edad_1x1y18" class="java.lang.Integer"/>
-    <field name="es_paraguayo_natural_1x1y19" class="java.lang.Integer"/>
-    <field name="es_indigena_1x1y20" class="java.lang.Integer"/>
-    <field name="id_etnia_indigena_1x1y21" class="java.lang.Long"/>
-    <field name="nombre_comunidad_indige_1x1y22" class="java.lang.String"/>
-    <field name="id_departamento_1x1y23" class="java.lang.Long"/>
-    <field name="id_distrito_1x1y24" class="java.lang.Long"/>
-    <field name="numero_tipo_area_1x1y25" class="java.lang.Integer"/>
-    <field name="id_barrio_1x1y26" class="java.lang.Long"/>
-    <field name="id_manzana_1x1y27" class="java.lang.Long"/>
-    <field name="manzana_1x1y28" class="java.lang.String"/>
-    <field name="compania_1x1y29" class="java.lang.String"/>
-    <field name="direccion_1x1y30" class="java.lang.String"/>
-    <field name="nombre_responsable_hoga_1x1y31" class="java.lang.String"/>
-    <field name="numero_telefono_resp_ho_1x1y32" class="java.lang.String"/>
-    <field name="es_persona_con_empleo_1x1y33" class="java.lang.Integer"/>
-    <field name="es_persona_con_jubilaci_1x1y34" class="java.lang.Integer"/>
-    <field name="es_persona_con_pension_1x1y35" class="java.lang.Integer"/>
-    <field name="es_persona_con_subsidio_1x1y36" class="java.lang.Integer"/>
-    <field name="es_persona_con_deuda_1x1y37" class="java.lang.Integer"/>
-    <field name="es_persona_con_pena_jud_1x1y38" class="java.lang.Integer"/>
-    <field name="es_persona_con_cer_vida_1x1y39" class="java.lang.Integer"/>
-    <field name="es_persona_con_carta_re_1x1y40" class="java.lang.Integer"/>
-    <field name="nombre_referente_1x1y41" class="java.lang.String"/>
-    <field name="numero_telefono_referen_1x1y42" class="java.lang.String"/>
-    <field name="numero_condicion_censo_1x1y43" class="java.lang.Integer"/>
-    <field name="fecha_validacion_censo_1x1y44" class="java.util.Date"/>
-    <field name="id_funcionario_validaci_1x1y45" class="java.lang.Long"/>
-    <field name="numero_causa_inv_censo_1x1y46" class="java.lang.Integer"/>
-    <field name="otra_causa_inv_censo_1x1y47" class="java.lang.String"/>
-    <field name="comentarios_validacion__1x1y48" class="java.lang.String"/>
-    <field name="id_ficha_persona_1x1y49" class="java.lang.Long"/>
-    <field name="numero_condicion_recl_c_1x1y50" class="java.lang.Integer"/>
-    <field name="fecha_reclamo_censo_1x1y51" class="java.util.Date"/>
-    <field name="comentarios_reclamo_cen_1x1y52" class="java.lang.String"/>
-    <field name="fecha_aprobacion_reclam_1x1y53" class="java.util.Date"/>
-    <field name="comentarios_apr_recl_ce_1x1y54" class="java.lang.String"/>
-    <field name="fecha_denegacion_reclam_1x1y55" class="java.util.Date"/>
-    <field name="numero_causa_den_recl_c_1x1y56" class="java.lang.Integer"/>
-    <field name="otra_causa_den_recl_cen_1x1y57" class="java.lang.String"/>
-    <field name="comentarios_den_recl_ce_1x1y58" class="java.lang.String"/>
-    <field name="fecha_registro_pot_ben_1x1y59" class="java.util.Date"/>
-    <field name="id_usuario_reg_pot_ben_1x1y60" class="java.lang.Long"/>
-    <field name="es_potencial_ben_inacti_1x1y61" class="java.lang.Integer"/>
-    <field name="fecha_ultima_visita_cen_1x1y62" class="java.util.Date"/>
-    <field name="observaciones_ult_visit_1x1y63" class="java.lang.String"/>
-    <field name="id_funcionario_ult_visi_1x1y64" class="java.lang.Long"/>
-    <field name="referencia_direccion_1x1y65" class="java.lang.String"/>
-    <field name="nombre_potencial_ben" class="java.lang.String"/>
-    <field name="codigo_potencial_ben" class="java.lang.String"/>
-    <field name="fecha_registro_pot_ben" class="java.util.Date"/>
+    <field name="id_log_pro_den_pen_obj" class="java.lang.Long"/>
+    <field name="version_log_pro_den_pen_obj" class="java.lang.Long"/>
     <field name="id_persona" class="java.lang.Long"/>
-    <field name="codigo_persona_1x2y3" class="java.lang.String"/>
-    <field name="nombre_persona_1x2y4" class="java.lang.String"/>
-    <field name="numero_cedula_1x2y5" class="java.lang.Integer"/>
-    <field name="letra_cedula_1x2y6" class="java.lang.String"/>
-    <field name="fecha_expedicion_cedula_1x2y7" class="java.util.Date"/>
-    <field name="fecha_vencimiento_cedula_1x2y8" class="java.util.Date"/>
-    <field name="primer_nombre_1x2y9" class="java.lang.String"/>
-    <field name="segundo_nombre_1x2y10" class="java.lang.String"/>
-    <field name="primer_apellido_1x2y11" class="java.lang.String"/>
-    <field name="segundo_apellido_1x2y12" class="java.lang.String"/>
-    <field name="apellido_casada_1x2y13" class="java.lang.String"/>
-    <field name="apodo_1x2y14" class="java.lang.String"/>
-    <field name="fecha_nacimiento_1x2y15" class="java.util.Date"/>
-    <field name="numero_sexo_persona_1x2y16" class="java.lang.Integer"/>
-    <field name="numero_estado_civil_1x2y17" class="java.lang.Integer"/>
-    <field name="es_paraguayo_natural_1x2y18" class="java.lang.Integer"/>
-    <field name="es_indigena_1x2y19" class="java.lang.Integer"/>
-    <field name="id_etnia_indigena_1x2y20" class="java.lang.Long"/>
-    <field name="nombre_comunidad_indige_1x2y21" class="java.lang.String"/>
-    <field name="id_departamento_1x2y22" class="java.lang.Long"/>
-    <field name="id_distrito_1x2y23" class="java.lang.Long"/>
-    <field name="numero_tipo_area_1x2y24" class="java.lang.Integer"/>
-    <field name="id_barrio_1x2y25" class="java.lang.Long"/>
-    <field name="id_manzana_1x2y26" class="java.lang.Long"/>
-    <field name="manzana_1x2y27" class="java.lang.String"/>
-    <field name="direccion_1x2y28" class="java.lang.String"/>
-    <field name="numero_telefono_linea_b_1x2y29" class="java.lang.String"/>
-    <field name="numero_telefono_celular_1x2y30" class="java.lang.String"/>
-    <field name="certificado_vida_1x2y31" class="java.lang.String"/>
-    <field name="fecha_certificado_vida_1x2y32" class="java.util.Date"/>
-    <field name="es_certificado_vida_anu_1x2y33" class="java.lang.Integer"/>
-    <field name="comentarios_anul_cer_vi_1x2y34" class="java.lang.String"/>
-    <field name="certificado_defuncion_1x2y35" class="java.lang.String"/>
-    <field name="fecha_certificado_defun_1x2y36" class="java.util.Date"/>
-    <field name="es_cer_defuncion_anulad_1x2y37" class="java.lang.Integer"/>
-    <field name="comentarios_anul_cer_de_1x2y38" class="java.lang.String"/>
-    <field name="es_persona_con_empleo_1x2y39" class="java.lang.Integer"/>
-    <field name="es_persona_con_jubilaci_1x2y40" class="java.lang.Integer"/>
-    <field name="es_persona_con_pension_1x2y41" class="java.lang.Integer"/>
-    <field name="es_persona_con_subsidio_1x2y42" class="java.lang.Integer"/>
-    <field name="es_persona_con_deuda_1x2y43" class="java.lang.Integer"/>
-    <field name="es_persona_con_pena_jud_1x2y44" class="java.lang.Integer"/>
-    <field name="es_persona_con_cer_vida_1x2y45" class="java.lang.Integer"/>
-    <field name="es_persona_con_carta_re_1x2y46" class="java.lang.Integer"/>
-    <field name="es_persona_elegible_par_1x2y47" class="java.lang.Integer"/>
-    <field name="es_persona_acreditada_p_1x2y48" class="java.lang.Integer"/>
-    <field name="es_persona_con_copia_ce_1x2y49" class="java.lang.Integer"/>
-    <field name="es_persona_con_declarac_1x2y50" class="java.lang.Integer"/>
-    <field name="monto_pension_1x2y51" class="java.math.BigDecimal"/>
-    <field name="numero_condicion_pensio_1x2y52" class="java.lang.Integer"/>
-    <field name="lugar_solicitud_pension_1x2y53" class="java.lang.String"/>
-    <field name="fecha_solicitud_pension_1x2y54" class="java.util.Date"/>
-    <field name="comentarios_solicitud_p_1x2y55" class="java.lang.String"/>
-    <field name="fecha_aprobacion_pensio_1x2y56" class="java.util.Date"/>
-    <field name="comentarios_aprobacion__1x2y57" class="java.lang.String"/>
-    <field name="fecha_otorgamiento_pen_1x2y58" class="java.util.Date"/>
-    <field name="numero_resolucion_otor__1x2y59" class="java.lang.String"/>
-    <field name="fecha_resolucion_otor_p_1x2y60" class="java.util.Date"/>
-    <field name="comentarios_otorgamient_1x2y61" class="java.lang.String"/>
-    <field name="fecha_objecion_pension_1x2y62" class="java.util.Date"/>
-    <field name="numero_causa_den_pensio_1x2y63" class="java.lang.Integer"/>
-    <field name="otra_causa_den_pension_1x2y64" class="java.lang.String"/>
-    <field name="comentarios_objecion_pe_1x2y65" class="java.lang.String"/>
-    <field name="fecha_denegacion_pensio_1x2y66" class="java.util.Date"/>
-    <field name="numero_resolucion_den_p_1x2y67" class="java.lang.String"/>
-    <field name="fecha_resolucion_den_pe_1x2y68" class="java.util.Date"/>
-    <field name="comentarios_denegacion__1x2y69" class="java.lang.String"/>
-    <field name="fecha_revocacion_pensio_1x2y70" class="java.util.Date"/>
-    <field name="numero_causa_rev_pensio_1x2y71" class="java.lang.Integer"/>
-    <field name="otra_causa_rev_pension_1x2y72" class="java.lang.String"/>
-    <field name="comentarios_revocacion__1x2y73" class="java.lang.String"/>
-    <field name="numero_condicion_reco_p_1x2y74" class="java.lang.Integer"/>
-    <field name="fecha_solicitud_reco_pe_1x2y75" class="java.util.Date"/>
-    <field name="comentarios_solicitud_r_1x2y76" class="java.lang.String"/>
-    <field name="fecha_aprobacion_reco_p_1x2y77" class="java.util.Date"/>
-    <field name="comentarios_apr_reco_pe_1x2y78" class="java.lang.String"/>
-    <field name="fecha_denegacion_reco_p_1x2y79" class="java.util.Date"/>
-    <field name="numero_causa_den_reco_p_1x2y80" class="java.lang.Integer"/>
-    <field name="otra_causa_den_reco_pen_1x2y81" class="java.lang.String"/>
-    <field name="comentarios_den_reco_pe_1x2y82" class="java.lang.String"/>
-    <field name="numero_condicion_denu_p_1x2y83" class="java.lang.Integer"/>
-    <field name="fecha_registro_denuncia_1x2y84" class="java.util.Date"/>
-    <field name="comentarios_registro_de_1x2y85" class="java.lang.String"/>
-    <field name="fecha_confirmacion_denu_1x2y86" class="java.util.Date"/>
-    <field name="comentarios_conf_denu_p_1x2y87" class="java.lang.String"/>
-    <field name="fecha_desmentido_denunc_1x2y88" class="java.util.Date"/>
-    <field name="comentarios_des_denu_pe_1x2y89" class="java.lang.String"/>
-    <field name="id_ficha_persona_1x2y90" class="java.lang.Long"/>
-    <field name="fecha_ficha_persona_1x2y91" class="java.util.Date"/>
-    <field name="indice_calidad_vida_1x2y92" class="java.math.BigDecimal"/>
-    <field name="fecha_ultimo_cobro_pens_1x2y93" class="java.util.Date"/>
-    <field name="notas_anul_fec_ult_cob__1x2y94" class="java.lang.String"/>
-    <field name="numero_tipo_act_jupe_1x2y95" class="java.lang.Integer"/>
-    <field name="fecha_hora_ult_act_jupe_1x2y96" class="java.util.Date"/>
-    <field name="nombre_persona" class="java.lang.String"/>
+    <field name="codigo_persona_1x1y3" class="java.lang.String"/>
+    <field name="nombre_persona_1x1y4" class="java.lang.String"/>
+    <field name="numero_cedula_1x1y5" class="java.lang.Integer"/>
+    <field name="letra_cedula_1x1y6" class="java.lang.String"/>
+    <field name="fecha_expedicion_cedula_1x1y7" class="java.util.Date"/>
+    <field name="fecha_vencimiento_cedula_1x1y8" class="java.util.Date"/>
+    <field name="primer_nombre_1x1y9" class="java.lang.String"/>
+    <field name="segundo_nombre_1x1y10" class="java.lang.String"/>
+    <field name="primer_apellido_1x1y11" class="java.lang.String"/>
+    <field name="segundo_apellido_1x1y12" class="java.lang.String"/>
+    <field name="apellido_casada_1x1y13" class="java.lang.String"/>
+    <field name="apodo_1x1y14" class="java.lang.String"/>
+    <field name="fecha_nacimiento_1x1y15" class="java.util.Date"/>
+    <field name="numero_sexo_persona_1x1y16" class="java.lang.Integer"/>
+    <field name="numero_estado_civil_1x1y17" class="java.lang.Integer"/>
+    <field name="es_paraguayo_natural_1x1y18" class="java.lang.Integer"/>
+    <field name="es_indigena_1x1y19" class="java.lang.Integer"/>
+    <field name="id_etnia_indigena_1x1y20" class="java.lang.Long"/>
+    <field name="nombre_comunidad_indige_1x1y21" class="java.lang.String"/>
+    <field name="id_departamento_1x1y22" class="java.lang.Long"/>
+    <field name="id_distrito_1x1y23" class="java.lang.Long"/>
+    <field name="numero_tipo_area_1x1y24" class="java.lang.Integer"/>
+    <field name="id_barrio_1x1y25" class="java.lang.Long"/>
+    <field name="id_manzana_1x1y26" class="java.lang.Long"/>
+    <field name="manzana_1x1y27" class="java.lang.String"/>
+    <field name="direccion_1x1y28" class="java.lang.String"/>
+    <field name="numero_telefono_linea_b_1x1y29" class="java.lang.String"/>
+    <field name="numero_telefono_celular_1x1y30" class="java.lang.String"/>
+    <field name="certificado_vida_1x1y31" class="java.lang.String"/>
+    <field name="fecha_certificado_vida_1x1y32" class="java.util.Date"/>
+    <field name="es_certificado_vida_anu_1x1y33" class="java.lang.Integer"/>
+    <field name="comentarios_anul_cer_vi_1x1y34" class="java.lang.String"/>
+    <field name="certificado_defuncion_1x1y35" class="java.lang.String"/>
+    <field name="fecha_certificado_defun_1x1y36" class="java.util.Date"/>
+    <field name="es_cer_defuncion_anulad_1x1y37" class="java.lang.Integer"/>
+    <field name="comentarios_anul_cer_de_1x1y38" class="java.lang.String"/>
+    <field name="es_persona_con_empleo_1x1y39" class="java.lang.Integer"/>
+    <field name="es_persona_con_jubilaci_1x1y40" class="java.lang.Integer"/>
+    <field name="es_persona_con_pension_1x1y41" class="java.lang.Integer"/>
+    <field name="es_persona_con_subsidio_1x1y42" class="java.lang.Integer"/>
+    <field name="es_persona_con_deuda_1x1y43" class="java.lang.Integer"/>
+    <field name="es_persona_con_pena_jud_1x1y44" class="java.lang.Integer"/>
+    <field name="es_persona_con_cer_vida_1x1y45" class="java.lang.Integer"/>
+    <field name="es_persona_con_carta_re_1x1y46" class="java.lang.Integer"/>
+    <field name="es_persona_elegible_par_1x1y47" class="java.lang.Integer"/>
+    <field name="es_persona_acreditada_p_1x1y48" class="java.lang.Integer"/>
+    <field name="es_persona_con_copia_ce_1x1y49" class="java.lang.Integer"/>
+    <field name="es_persona_con_declarac_1x1y50" class="java.lang.Integer"/>
+    <field name="monto_pension_1x1y51" class="java.math.BigDecimal"/>
+    <field name="numero_condicion_pensio_1x1y52" class="java.lang.Integer"/>
+    <field name="lugar_solicitud_pension_1x1y53" class="java.lang.String"/>
+    <field name="fecha_solicitud_pension_1x1y54" class="java.util.Date"/>
+    <field name="comentarios_solicitud_p_1x1y55" class="java.lang.String"/>
+    <field name="fecha_aprobacion_pensio_1x1y56" class="java.util.Date"/>
+    <field name="comentarios_aprobacion__1x1y57" class="java.lang.String"/>
+    <field name="fecha_otorgamiento_pen_1x1y58" class="java.util.Date"/>
+    <field name="numero_resolucion_otor__1x1y59" class="java.lang.String"/>
+    <field name="fecha_resolucion_otor_p_1x1y60" class="java.util.Date"/>
+    <field name="comentarios_otorgamient_1x1y61" class="java.lang.String"/>
+    <field name="fecha_objecion_pension_1x1y62" class="java.util.Date"/>
+    <field name="numero_causa_den_pensio_1x1y63" class="java.lang.Integer"/>
+    <field name="otra_causa_den_pension_1x1y64" class="java.lang.String"/>
+    <field name="comentarios_objecion_pe_1x1y65" class="java.lang.String"/>
+    <field name="fecha_denegacion_pensio_1x1y66" class="java.util.Date"/>
+    <field name="numero_resolucion_den_p_1x1y67" class="java.lang.String"/>
+    <field name="fecha_resolucion_den_pe_1x1y68" class="java.util.Date"/>
+    <field name="comentarios_denegacion__1x1y69" class="java.lang.String"/>
+    <field name="fecha_revocacion_pensio_1x1y70" class="java.util.Date"/>
+    <field name="numero_causa_rev_pensio_1x1y71" class="java.lang.Integer"/>
+    <field name="otra_causa_rev_pension_1x1y72" class="java.lang.String"/>
+    <field name="comentarios_revocacion__1x1y73" class="java.lang.String"/>
+    <field name="numero_condicion_reco_p_1x1y74" class="java.lang.Integer"/>
+    <field name="fecha_solicitud_reco_pe_1x1y75" class="java.util.Date"/>
+    <field name="comentarios_solicitud_r_1x1y76" class="java.lang.String"/>
+    <field name="fecha_aprobacion_reco_p_1x1y77" class="java.util.Date"/>
+    <field name="comentarios_apr_reco_pe_1x1y78" class="java.lang.String"/>
+    <field name="fecha_denegacion_reco_p_1x1y79" class="java.util.Date"/>
+    <field name="numero_causa_den_reco_p_1x1y80" class="java.lang.Integer"/>
+    <field name="otra_causa_den_reco_pen_1x1y81" class="java.lang.String"/>
+    <field name="comentarios_den_reco_pe_1x1y82" class="java.lang.String"/>
+    <field name="numero_condicion_denu_p_1x1y83" class="java.lang.Integer"/>
+    <field name="fecha_registro_denuncia_1x1y84" class="java.util.Date"/>
+    <field name="comentarios_registro_de_1x1y85" class="java.lang.String"/>
+    <field name="fecha_confirmacion_denu_1x1y86" class="java.util.Date"/>
+    <field name="comentarios_conf_denu_p_1x1y87" class="java.lang.String"/>
+    <field name="fecha_desmentido_denunc_1x1y88" class="java.util.Date"/>
+    <field name="comentarios_des_denu_pe_1x1y89" class="java.lang.String"/>
+    <field name="id_ficha_persona_1x1y90" class="java.lang.Long"/>
+    <field name="fecha_ficha_persona_1x1y91" class="java.util.Date"/>
+    <field name="indice_calidad_vida_1x1y92" class="java.math.BigDecimal"/>
+    <field name="fecha_ultimo_cobro_pens_1x1y93" class="java.util.Date"/>
+    <field name="notas_anul_fec_ult_cob__1x1y94" class="java.lang.String"/>
+    <field name="numero_tipo_act_jupe_1x1y95" class="java.lang.Integer"/>
+    <field name="fecha_hora_ult_act_jupe_1x1y96" class="java.util.Date"/>
     <field name="codigo_persona" class="java.lang.String"/>
+    <field name="nombre_persona" class="java.lang.String"/>
     <field name="id_departamento" class="java.lang.Long"/>
+    <field name="codigo_ubicacion_1x2y3" class="java.lang.String"/>
+    <field name="nombre_ubicacion_1x2y4" class="java.lang.String"/>
+    <field name="id_ubicacion_superior_1x2y5" class="java.lang.Long"/>
+    <field name="numero_tipo_nodo_1x2y6" class="java.lang.Integer"/>
+    <field name="numero_nivel_ubicacion_1x2y7" class="java.lang.Integer"/>
+    <field name="secuencia_ubicacion_1x2y8" class="java.lang.Integer"/>
+    <field name="clave_ubicacion_1x2y9" class="java.lang.String"/>
+    <field name="numero_tipo_area_1x2y10" class="java.lang.Integer"/>
+    <field name="id_distrito" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x3y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x3y4" class="java.lang.String"/>
     <field name="id_ubicacion_superior_1x3y5" class="java.lang.Long"/>
@@ -247,7 +189,7 @@
     <field name="secuencia_ubicacion_1x3y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x3y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x3y10" class="java.lang.Integer"/>
-    <field name="id_distrito" class="java.lang.Long"/>
+    <field name="id_barrio" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x4y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x4y4" class="java.lang.String"/>
     <field name="id_ubicacion_superior_1x4y5" class="java.lang.Long"/>
@@ -256,158 +198,8 @@
     <field name="secuencia_ubicacion_1x4y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x4y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x4y10" class="java.lang.Integer"/>
-    <field name="id_barrio" class="java.lang.Long"/>
-    <field name="codigo_ubicacion_1x5y3" class="java.lang.String"/>
-    <field name="nombre_ubicacion_1x5y4" class="java.lang.String"/>
-    <field name="id_ubicacion_superior_1x5y5" class="java.lang.Long"/>
-    <field name="numero_tipo_nodo_1x5y6" class="java.lang.Integer"/>
-    <field name="numero_nivel_ubicacion_1x5y7" class="java.lang.Integer"/>
-    <field name="secuencia_ubicacion_1x5y8" class="java.lang.Integer"/>
-    <field name="clave_ubicacion_1x5y9" class="java.lang.String"/>
-    <field name="numero_tipo_area_1x5y10" class="java.lang.Integer"/>
-    <field name="id_ficha_persona" class="java.lang.Long"/>
-    <field name="codigo_ficha_persona_1x6y3" class="java.lang.String"/>
-    <field name="nombre_ficha_persona_1x6y4" class="java.lang.String"/>
-    <field name="es_respondente_1x6y5" class="java.lang.Integer"/>
-    <field name="id_ficha_hogar_1x6y6" class="java.lang.Long"/>
-    <field name="numero_orden_identificac_1x6y7" class="java.lang.Integer"/>
-    <field name="primer_nombre_1x6y8" class="java.lang.String"/>
-    <field name="segundo_nombre_1x6y9" class="java.lang.String"/>
-    <field name="primer_apellido_1x6y10" class="java.lang.String"/>
-    <field name="segundo_apellido_1x6y11" class="java.lang.String"/>
-    <field name="apellido_casada_1x6y12" class="java.lang.String"/>
-    <field name="apodo_1x6y13" class="java.lang.String"/>
-    <field name="edad_1x6y14" class="java.lang.Integer"/>
-    <field name="numero_sexo_persona_1x6y15" class="java.lang.Integer"/>
-    <field name="numero_estado_civil_1x6y16" class="java.lang.Integer"/>
-    <field name="numero_tipo_persona_hog_1x6y17" class="java.lang.Integer"/>
-    <field name="numero_siono_miembro_ho_1x6y18" class="java.lang.Integer"/>
-    <field name="numero_orden_iden_conyu_1x6y19" class="java.lang.Integer"/>
-    <field name="numero_orden_iden_padre_1x6y20" class="java.lang.Integer"/>
-    <field name="numero_orden_iden_madre_1x6y21" class="java.lang.Integer"/>
-    <field name="numero_cedula_1x6y22" class="java.lang.Integer"/>
-    <field name="letra_cedula_1x6y23" class="java.lang.String"/>
-    <field name="numero_tipo_excepcion_c_1x6y24" class="java.lang.Integer"/>
-    <field name="fecha_nacimiento_1x6y25" class="java.util.Date"/>
-    <field name="id_departamento_nacimie_1x6y26" class="java.lang.Long"/>
-    <field name="id_distrito_nacimiento_1x6y27" class="java.lang.Long"/>
-    <field name="numero_tipo_area_lugar__1x6y28" class="java.lang.Integer"/>
-    <field name="numero_idioma_hogar_1x6y29" class="java.lang.Integer"/>
-    <field name="otro_idioma_hogar_1x6y30" class="java.lang.String"/>
-    <field name="numero_siono_asistencia_1x6y31" class="java.lang.Integer"/>
-    <field name="numero_motivo_ina_esc_1x6y32" class="java.lang.Integer"/>
-    <field name="otro_motivo_ina_esc_1x6y33" class="java.lang.String"/>
-    <field name="numero_siono_matriculac_1x6y34" class="java.lang.Integer"/>
-    <field name="ultimo_curso_aprobado_1x6y35" class="java.lang.Integer"/>
-    <field name="numero_nivel_edu_ult_cu_1x6y36" class="java.lang.Integer"/>
-    <field name="numero_siono_curso_no_f_1x6y37" class="java.lang.Integer"/>
-    <field name="numero_tipo_seguro_medi_1x6y38" class="java.lang.Integer"/>
-    <field name="numero_estado_salud_1x6y39" class="java.lang.Integer"/>
-    <field name="numero_clase_enf_acc_1x6y40" class="java.lang.Integer"/>
-    <field name="otra_clase_enf_acc_1x6y41" class="java.lang.String"/>
-    <field name="numero_clase_enf_cronic_1x6y42" class="java.lang.Integer"/>
-    <field name="otra_clase_enf_cronica_1x6y43" class="java.lang.String"/>
-    <field name="numero_siono_atencion_m_1x6y44" class="java.lang.Integer"/>
-    <field name="numero_motivo_no_atenci_1x6y45" class="java.lang.Integer"/>
-    <field name="otro_motivo_no_atencion_1x6y46" class="java.lang.String"/>
-    <field name="numero_siono_carnet_vac_1x6y47" class="java.lang.Integer"/>
-    <field name="numero_clase_impediment_1x6y48" class="java.lang.Integer"/>
-    <field name="otra_clase_impedimento_1x6y49" class="java.lang.String"/>
-    <field name="numero_causa_impediment_1x6y50" class="java.lang.Integer"/>
-    <field name="otra_causa_impedimento_1x6y51" class="java.lang.String"/>
-    <field name="numero_siono_dif_para_c_1x6y52" class="java.lang.Integer"/>
-    <field name="numero_siono_dif_para_v_1x6y53" class="java.lang.Integer"/>
-    <field name="numero_siono_dif_para_b_1x6y54" class="java.lang.Integer"/>
-    <field name="numero_siono_dif_para_c_1x6y55" class="java.lang.Integer"/>
-    <field name="numero_siono_dif_para_l_1x6y56" class="java.lang.Integer"/>
-    <field name="numero_siono_dif_para_e_1x6y57" class="java.lang.Integer"/>
-    <field name="numero_siono_trabajo_1x6y58" class="java.lang.Integer"/>
-    <field name="numero_motivo_no_trabaj_1x6y59" class="java.lang.Integer"/>
-    <field name="otro_motivo_no_trabajo_1x6y60" class="java.lang.String"/>
-    <field name="descripcion_ocupacion_p_1x6y61" class="java.lang.String"/>
-    <field name="descripcion_dedicacion__1x6y62" class="java.lang.String"/>
-    <field name="numero_tipo_relacion_la_1x6y63" class="java.lang.Integer"/>
-    <field name="monto_ingreso_ocupacion_1x6y64" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_ocupacion_1x6y65" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_otras_ocu_1x6y66" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_alquilere_1x6y67" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_intereses_1x6y68" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_ayuda_fam_1x6y69" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_ayuda_fam_1x6y70" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_jubilacio_1x6y71" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_pensiones_1x6y72" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_tekopora_1x6y73" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_programas_1x6y74" class="java.math.BigDecimal"/>
-    <field name="monto_ingreso_adicional_1x6y75" class="java.math.BigDecimal"/>
-    <field name="total_ingreso_mensual_1x6y76" class="java.math.BigDecimal"/>
-    <field name="id_potencial_ben_1x6y77" class="java.lang.Long"/>
-    <field name="es_ficha_persona_inacti_1x6y78" class="java.lang.Integer"/>
-    <field name="codigo_ficha_persona" class="java.lang.String"/>
-    <field name="nombre_ficha_persona" class="java.lang.String"/>
-    <field name="id_ficha_hogar" class="java.lang.Long"/>
-    <field name="codigo_ficha_hogar_1x7y3" class="java.lang.String"/>
-    <field name="fecha_entrevista_1x7y4" class="java.util.Date"/>
-    <field name="id_funcionario_censista_1x7y5" class="java.lang.Long"/>
-    <field name="id_funcionario_superviso_1x7y6" class="java.lang.Long"/>
-    <field name="id_funcionario_critico_d_1x7y7" class="java.lang.Long"/>
-    <field name="id_funcionario_digitador_1x7y8" class="java.lang.Long"/>
-    <field name="observaciones_1x7y9" class="java.lang.String"/>
-    <field name="huso_utm_1x7y10" class="java.lang.Integer"/>
-    <field name="franja_utm_1x7y11" class="java.lang.String"/>
-    <field name="distancia_este_utm_1x7y12" class="java.lang.Integer"/>
-    <field name="distancia_norte_utm_1x7y13" class="java.lang.Integer"/>
-    <field name="numero_formulario_1x7y14" class="java.lang.Integer"/>
-    <field name="numero_vivienda_1x7y15" class="java.lang.Integer"/>
-    <field name="numero_hogar_1x7y16" class="java.lang.Integer"/>
-    <field name="id_departamento_1x7y17" class="java.lang.Long"/>
-    <field name="id_distrito_1x7y18" class="java.lang.Long"/>
-    <field name="numero_tipo_area_1x7y19" class="java.lang.Integer"/>
-    <field name="id_barrio_1x7y20" class="java.lang.Long"/>
-    <field name="id_manzana_1x7y21" class="java.lang.Long"/>
-    <field name="manzana_1x7y22" class="java.lang.String"/>
-    <field name="direccion_1x7y23" class="java.lang.String"/>
-    <field name="total_personas_1x7y24" class="java.lang.Integer"/>
-    <field name="total_hombres_1x7y25" class="java.lang.Integer"/>
-    <field name="total_mujeres_1x7y26" class="java.lang.Integer"/>
-    <field name="numero_tipo_mat_paredes_1x7y27" class="java.lang.Integer"/>
-    <field name="numero_tipo_mat_piso_1x7y28" class="java.lang.Integer"/>
-    <field name="numero_tipo_mat_techo_1x7y29" class="java.lang.Integer"/>
-    <field name="numero_tipo_ocupacion_v_1x7y30" class="java.lang.Integer"/>
-    <field name="otro_tipo_ocupacion_viv_1x7y31" class="java.lang.String"/>
-    <field name="cantidad_piezas_1x7y32" class="java.lang.Integer"/>
-    <field name="cantidad_dormitorios_1x7y33" class="java.lang.Integer"/>
-    <field name="numero_siono_pieza_coci_1x7y34" class="java.lang.Integer"/>
-    <field name="numero_tipo_combustible_1x7y35" class="java.lang.Integer"/>
-    <field name="numero_tipo_pieza_bano_1x7y36" class="java.lang.Integer"/>
-    <field name="numero_tipo_servicio_sa_1x7y37" class="java.lang.Integer"/>
-    <field name="numero_tipo_servicio_ag_1x7y38" class="java.lang.Integer"/>
-    <field name="numero_tipo_aba_agua_1x7y39" class="java.lang.Integer"/>
-    <field name="numero_siono_corriente__1x7y40" class="java.lang.Integer"/>
-    <field name="numero_tipo_desecho_bas_1x7y41" class="java.lang.Integer"/>
-    <field name="numero_siono_telefono_c_1x7y42" class="java.lang.Integer"/>
-    <field name="numero_telefono_celular_1x7y43" class="java.lang.String"/>
-    <field name="numero_siono_tlf_linea__1x7y44" class="java.lang.Integer"/>
-    <field name="numero_telefono_linea_b_1x7y45" class="java.lang.String"/>
-    <field name="numero_siono_disp_helad_1x7y46" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_lavar_1x7y47" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_termo_1x7y48" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_aire__1x7y49" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_autom_1x7y50" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_camio_1x7y51" class="java.lang.Integer"/>
-    <field name="numero_siono_disp_motoc_1x7y52" class="java.lang.Integer"/>
-    <field name="nombre_jefe_hogar_1x7y53" class="java.lang.String"/>
-    <field name="numero_cedula_jefe_hoga_1x7y54" class="java.lang.Integer"/>
-    <field name="letra_cedula_jefe_hogar_1x7y55" class="java.lang.String"/>
-    <field name="numero_orden_iden_jefe__1x7y56" class="java.lang.Integer"/>
-    <field name="nombre_respondente_1x7y57" class="java.lang.String"/>
-    <field name="numero_cedula_responden_1x7y58" class="java.lang.Integer"/>
-    <field name="letra_cedula_respondent_1x7y59" class="java.lang.String"/>
-    <field name="numero_orden_iden_respo_1x7y60" class="java.lang.Integer"/>
-    <field name="id_proveedor_dat_ext_1x7y61" class="java.lang.Long"/>
-    <field name="indice_calidad_vida_1x7y62" class="java.math.BigDecimal"/>
-    <field name="es_ficha_hogar_inactiva_1x7y63" class="java.lang.Integer"/>
-    <field name="codigo_ficha_hogar" class="java.lang.String"/>
-    <field name="indice_calidad_vida" class="java.math.BigDecimal"/>
+    <field name="numero_causa_den_pension" class="java.lang.Integer"/>
+    <field name="codigo_causa_den_pension_1x5y2" class="java.lang.String"/>
     <field name="es_procesado" class="java.lang.Integer"/>
     <field name="observacion" class="java.lang.String"/>
     <field name="fecha_hora_transaccion" class="java.util.Date"/>
@@ -723,56 +515,23 @@
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[potencial ben]]></text>
+                <text><![CDATA[persona]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
                     x="128"
                     y="0"
-                    width="192"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[nombre potencial ben]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="320"
-                    y="0"
                     width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[codigo potencial ben]]></text>
+                <text><![CDATA[codigo persona]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="448"
-                    y="0"
-                    width="64"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha registro pot ben]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="512"
-                    y="0"
-                    width="128"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[persona]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="640"
+                    x="256"
                     y="0"
                     width="192"
                     height="20"
@@ -783,13 +542,46 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
+                    x="448"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[ubicacion]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="576"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[ubicacion]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="704"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[ubicacion]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
                     x="832"
                     y="0"
                     width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[codigo persona]]></text>
+                <text><![CDATA[causa den pension]]></text>
             </staticText>
             </frame>
         </band>
@@ -833,7 +625,7 @@
                     height="32"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[RASTROS DE ACREDITACION DE POTENCIALES BENEFICIARIOS]]></text>
+                <text><![CDATA[RASTROS DE DENEGACION DE PENSIONES]]></text>
             </staticText>
             <staticText>
                 <reportElement
@@ -877,7 +669,7 @@
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_potencial_ben_1x1y3}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_persona_1x1y3}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -891,47 +683,11 @@
                     stretchType="RelativeToBandHeight"
                     x="128"
                     y="0"
-                    width="192"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_potencial_ben}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="320"
-                    y="0"
                     width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_potencial_ben}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="dd/MM/yyyy"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="448"
-                    y="0"
-                    width="64"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_registro_pot_ben}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_persona}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -943,25 +699,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="512"
-                    y="0"
-                    width="128"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_persona_1x2y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="640"
+                    x="256"
                     y="0"
                     width="192"
                     height="16"
@@ -979,13 +717,67 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
+                    x="448"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x2y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="576"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x3y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="704"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_ubicacion_1x4y3}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
                     x="832"
                     y="0"
                     width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_persona}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_causa_den_pension_1x5y2}]]></textFieldExpression>
             </textField>
             </frame>
         </band>
