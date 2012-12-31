@@ -188,6 +188,8 @@ ALTER TABLE funcionario DROP CONSTRAINT CC_funcionario_0002_ZY
 GO
 ALTER TABLE funcionario DROP CONSTRAINT CC_funcionario_0003_ZY
 GO
+ALTER TABLE log_imp_cen DROP CONSTRAINT CC_log_imp_cen_0001_ZY
+GO
 ALTER TABLE log_imp_deu DROP CONSTRAINT CC_log_imp_deu_0001_ZY
 GO
 ALTER TABLE log_imp_emp DROP CONSTRAINT CC_log_imp_emp_0001_ZY
@@ -211,6 +213,8 @@ GO
 ALTER TABLE log_imp_ubi DROP CONSTRAINT CC_log_imp_ubi_0001_ZY
 GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT CC_log_pro_acr_pot_ben_0001_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT CC_log_pro_den_pen_obj_0001_ZY
 GO
 ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT CC_log_pro_imp_arc_ext_0001_ZY
 GO

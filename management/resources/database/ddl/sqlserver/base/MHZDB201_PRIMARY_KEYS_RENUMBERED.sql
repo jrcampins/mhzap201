@@ -84,7 +84,7 @@ ALTER TABLE idioma_hogar WITH NOCHECK ADD CONSTRAINT PK_idioma_hogar_ZY PRIMARY 
 GO
 ALTER TABLE informe WITH NOCHECK ADD CONSTRAINT PK_informe_ZY PRIMARY KEY CLUSTERED (id_informe) ON [PRIMARY]
 GO
-ALTER TABLE informe_auditoria WITH NOCHECK ADD CONSTRAINT PK_informe_auditoria_ZY PRIMARY KEY CLUSTERED (id_informe_auditoria) ON [PRIMARY]
+ALTER TABLE log_imp_cen WITH NOCHECK ADD CONSTRAINT PK_log_imp_cen_ZY PRIMARY KEY CLUSTERED (id_log_imp_cen) ON [PRIMARY]
 GO
 ALTER TABLE log_imp_deu WITH NOCHECK ADD CONSTRAINT PK_log_imp_deu_ZY PRIMARY KEY CLUSTERED (id_log_imp_deu) ON [PRIMARY]
 GO
@@ -109,6 +109,8 @@ GO
 ALTER TABLE log_imp_ubi WITH NOCHECK ADD CONSTRAINT PK_log_imp_ubi_ZY PRIMARY KEY CLUSTERED (id_log_imp_ubi) ON [PRIMARY]
 GO
 ALTER TABLE log_pro_acr_pot_ben WITH NOCHECK ADD CONSTRAINT PK_log_pro_acr_pot_ben_ZY PRIMARY KEY CLUSTERED (id_log_pro_acr_pot_ben) ON [PRIMARY]
+GO
+ALTER TABLE log_pro_den_pen_obj WITH NOCHECK ADD CONSTRAINT PK_log_pro_den_pen_obj_ZY PRIMARY KEY CLUSTERED (id_log_pro_den_pen_obj) ON [PRIMARY]
 GO
 ALTER TABLE log_pro_imp_arc_ext WITH NOCHECK ADD CONSTRAINT PK_log_pro_imp_arc_ext_ZY PRIMARY KEY CLUSTERED (id_log_pro_imp_arc_ext) ON [PRIMARY]
 GO

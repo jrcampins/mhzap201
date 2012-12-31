@@ -188,6 +188,8 @@ ALTER TABLE funcionario ADD CONSTRAINT CC_funcionario_0002_ZY CHECK ([letra_cedu
 GO
 ALTER TABLE funcionario ADD CONSTRAINT CC_funcionario_0003_ZY CHECK ([letra_cedula] is null or [letra_cedula] <= 'Z')
 GO
+ALTER TABLE log_imp_cen ADD CONSTRAINT CC_log_imp_cen_0001_ZY CHECK ([es_importado] >= 0 and [es_importado] <= 1)
+GO
 ALTER TABLE log_imp_deu ADD CONSTRAINT CC_log_imp_deu_0001_ZY CHECK ([es_importado] >= 0 and [es_importado] <= 1)
 GO
 ALTER TABLE log_imp_emp ADD CONSTRAINT CC_log_imp_emp_0001_ZY CHECK ([es_importado] >= 0 and [es_importado] <= 1)
@@ -211,6 +213,8 @@ GO
 ALTER TABLE log_imp_ubi ADD CONSTRAINT CC_log_imp_ubi_0001_ZY CHECK ([es_importado] >= 0 and [es_importado] <= 1)
 GO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT CC_log_pro_acr_pot_ben_0001_ZY CHECK ([es_procesado] >= 0 and [es_procesado] <= 1)
+GO
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT CC_log_pro_den_pen_obj_0001_ZY CHECK ([es_procesado] >= 0 and [es_procesado] <= 1)
 GO
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT CC_log_pro_imp_arc_ext_0001_ZY CHECK ([es_importado] >= 0 and [es_importado] <= 1)
 GO

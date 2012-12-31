@@ -280,6 +280,16 @@ ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0006_ZY
 GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0007_ZY
 GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0001_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0002_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0003_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0004_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0005_ZY
+GO
 ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_0001_ZY
 GO
 ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_0002_ZY

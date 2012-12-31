@@ -661,18 +661,40 @@ CREATE TABLE informe
 	id_informe bigint NOT NULL,
 	version_informe bigint NOT NULL,
 	codigo_informe varchar(30) NOT NULL,
-	nombre_informe varchar(100) NOT NULL
+	nombre_informe varchar(100) NOT NULL,
+	fecha_transaccion smalldatetime
 	)
 	ON [PRIMARY]
 GO
 	
-CREATE TABLE informe_auditoria
+CREATE TABLE log_imp_cen
 	(
-	id_informe_auditoria bigint NOT NULL,
-	version_informe_auditoria bigint NOT NULL,
-	codigo_informe_auditoria varchar(30) NOT NULL,
-	nombre_informe_auditoria varchar(100) NOT NULL,
-	fecha_transaccion smalldatetime
+	id_log_imp_cen bigint NOT NULL,
+	version_log_imp_cen bigint NOT NULL,
+	orden varchar(256),
+	barrio varchar(256),
+	direccion varchar(256),
+	telefono varchar(256),
+	primer_nombre varchar(256),
+	segundo_nombre varchar(256),
+	primer_apellido varchar(256),
+	segundo_apellido varchar(256),
+	edad_a_la_fecha varchar(256),
+	sexo varchar(256),
+	parentesco varchar(256),
+	cedula varchar(256),
+	nombre_jefe_hogar varchar(256),
+	cedula_jefe_hogar varchar(256),
+	icv varchar(256),
+	validado varchar(256),
+	observaciones varchar(256),
+	funcionario varchar(256),
+	causa_invalidacion varchar(256),
+	es_importado int NOT NULL,
+	observacion varchar(256),
+	fecha_hora_transaccion datetime NOT NULL,
+	nombre_archivo varchar(256),
+	codigo_archivo varchar(256)
 	)
 	ON [PRIMARY]
 GO
@@ -1049,6 +1071,24 @@ CREATE TABLE log_pro_acr_pot_ben
 	id_ficha_hogar bigint,
 	codigo_ficha_hogar varchar(30),
 	indice_calidad_vida decimal(7,4),
+	es_procesado int NOT NULL,
+	observacion varchar(256),
+	fecha_hora_transaccion datetime NOT NULL
+	)
+	ON [PRIMARY]
+GO
+	
+CREATE TABLE log_pro_den_pen_obj
+	(
+	id_log_pro_den_pen_obj bigint NOT NULL,
+	version_log_pro_den_pen_obj bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(30),
+	nombre_persona varchar(100),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	numero_causa_den_pension int,
 	es_procesado int NOT NULL,
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL
@@ -1478,10 +1518,16 @@ CREATE TABLE persona
 	fecha_aprobacion_pension smalldatetime,
 	comentarios_aprobacion_pension varchar(256),
 	fecha_otorgamiento_pen smalldatetime,
+	numero_resolucion_otor_pen varchar(50),
+	fecha_resolucion_otor_pen smalldatetime,
 	comentarios_otorgamiento_pen varchar(256),
-	fecha_denegacion_pension smalldatetime,
+	fecha_objecion_pension smalldatetime,
 	numero_causa_den_pension int,
 	otra_causa_den_pension varchar(100),
+	comentarios_objecion_pension varchar(256),
+	fecha_denegacion_pension smalldatetime,
+	numero_resolucion_den_pen varchar(50),
+	fecha_resolucion_den_pen smalldatetime,
 	comentarios_denegacion_pension varchar(256),
 	fecha_revocacion_pension smalldatetime,
 	numero_causa_rev_pension int,
@@ -1509,11 +1555,7 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension smalldatetime,
 	notas_anul_fec_ult_cob_pen varchar(256),
 	numero_tipo_act_jupe int,
-	fecha_hora_ult_act_jupe datetime,
-	numero_resolucion_otor_pen varchar(50),
-	fecha_resolucion_otor_pen smalldatetime,
-	numero_resolucion_den_pen varchar(50),
-	fecha_resolucion_den_pen smalldatetime
+	fecha_hora_ult_act_jupe datetime
 	)
 	ON [PRIMARY]
 GO

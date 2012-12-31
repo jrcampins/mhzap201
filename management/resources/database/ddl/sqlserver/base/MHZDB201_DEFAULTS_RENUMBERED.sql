@@ -136,7 +136,11 @@ ALTER TABLE grupo_proceso ADD CONSTRAINT DF_grupo_proceso_0001_ZY DEFAULT (0) FO
 GO
 ALTER TABLE informe ADD CONSTRAINT DF_informe_0001_ZY DEFAULT (0) FOR version_informe
 GO
-ALTER TABLE informe_auditoria ADD CONSTRAINT DF_informe_auditoria_0001_ZY DEFAULT (0) FOR version_informe_auditoria
+ALTER TABLE log_imp_cen ADD CONSTRAINT DF_log_imp_cen_0001_ZY DEFAULT (0) FOR version_log_imp_cen
+GO
+ALTER TABLE log_imp_cen ADD CONSTRAINT DF_log_imp_cen_0002_ZY DEFAULT (0) FOR es_importado
+GO
+ALTER TABLE log_imp_cen ADD CONSTRAINT DF_log_imp_cen_0003_ZY DEFAULT (getdate()) FOR fecha_hora_transaccion
 GO
 ALTER TABLE log_imp_deu ADD CONSTRAINT DF_log_imp_deu_0001_ZY DEFAULT (0) FOR version_log_imp_deu
 GO
@@ -211,6 +215,12 @@ GO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT DF_log_pro_acr_pot_ben_0003_ZY DEFAULT (0) FOR es_procesado
 GO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT DF_log_pro_acr_pot_ben_0004_ZY DEFAULT (getdate()) FOR fecha_hora_transaccion
+GO
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT DF_log_pro_den_pen_obj_0001_ZY DEFAULT (0) FOR version_log_pro_den_pen_obj
+GO
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT DF_log_pro_den_pen_obj_0002_ZY DEFAULT (0) FOR es_procesado
+GO
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT DF_log_pro_den_pen_obj_0003_ZY DEFAULT (getdate()) FOR fecha_hora_transaccion
 GO
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT DF_log_pro_imp_arc_ext_0001_ZY DEFAULT (0) FOR version_log_pro_imp_arc_ext
 GO

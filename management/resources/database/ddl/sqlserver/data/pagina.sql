@@ -161,8 +161,6 @@ VALUES (108200302, 0, 'FiltroFuncionPar2', 'Registro de Criterios de Búsqueda', 
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (200200004, 10, 'Proceso4', 'Ejecución de Procesos de Procesos Globales', 'Ejecución de Procesos de Procesos Globales', '/faces/Proceso4.jsp', 51000, 0, 4, 2002001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
-VALUES (200300004, 10, 'InformeAuditoria4', 'Ejecución de Procesos de Informes de Auditoria', 'Ejecución de Procesos de Informes de Auditoria', '/faces/InformeAuditoria4.jsp', 51000, 0, 4, 2003001, NULL, NULL);
-INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (201000001, 1, 'Persona1', 'Registro de Personas', 'Registro de Personas', '/faces/Persona1.jsp', 42110, 0, 1, 2010001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (201000002, 1, 'Persona2', 'Registro de Personas', 'Registro de Personas', '/faces/Persona2.jsp', 42110, 0, 2, 2010001, NULL, NULL);
@@ -297,6 +295,10 @@ VALUES (330800005, 11, 'LogImpSub5', 'Consulta de Rastros de Importación de Subs
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (330800006, 11, 'LogImpSub6', 'Consulta de Rastros de Importación de Subsidios', 'Consulta de Rastros de Importación de Subsidios', '/faces/LogImpSub6.jsp', 52000, 0, 6, 3308001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (331000005, 11, 'LogImpCen5', 'Consulta de Rastros de Importación de Censos Validados', 'Consulta de Rastros de Importación de Censos Validados', '/faces/LogImpCen5.jsp', 52000, 0, 5, 3310001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (331000006, 11, 'LogImpCen6', 'Consulta de Rastros de Importación de Censos Validados', 'Consulta de Rastros de Importación de Censos Validados', '/faces/LogImpCen6.jsp', 52000, 0, 6, 3310001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (331100005, 11, 'LogImpHog5', 'Consulta de Rastros de Importación de Fichas Hogar', 'Consulta de Rastros de Importación de Fichas Hogar', '/faces/LogImpHog5.jsp', 52000, 0, 5, 3311001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (331100006, 11, 'LogImpHog6', 'Consulta de Rastros de Importación de Fichas Hogar', 'Consulta de Rastros de Importación de Fichas Hogar', '/faces/LogImpHog6.jsp', 52000, 0, 6, 3311001, NULL, NULL);
@@ -328,4 +330,8 @@ INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, des
 VALUES (332500005, 11, 'LogProImpArcExt5', 'Consulta de Rastros de Importación de Archivos Externos', 'Consulta de Rastros de Importación de Archivos Externos', '/faces/LogProImpArcExt5.jsp', 52000, 0, 5, 3325001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (332500006, 11, 'LogProImpArcExt6', 'Consulta de Rastros de Importación de Archivos Externos', 'Consulta de Rastros de Importación de Archivos Externos', '/faces/LogProImpArcExt6.jsp', 52000, 0, 6, 3325001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (332600005, 11, 'LogProDenPenObj5', 'Consulta de Rastros de Denegación de Pensiones', 'Consulta de Rastros de Denegación de Pensiones', '/faces/LogProDenPenObj5.jsp', 52000, 0, 5, 3326001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (332600006, 11, 'LogProDenPenObj6', 'Consulta de Rastros de Denegación de Pensiones', 'Consulta de Rastros de Denegación de Pensiones', '/faces/LogProDenPenObj6.jsp', 52000, 0, 6, 3326001, NULL, NULL);
 GO

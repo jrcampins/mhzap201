@@ -136,7 +136,11 @@ ALTER TABLE grupo_proceso DROP CONSTRAINT DF_grupo_proceso_0001_ZY
 GO
 ALTER TABLE informe DROP CONSTRAINT DF_informe_0001_ZY
 GO
-ALTER TABLE informe_auditoria DROP CONSTRAINT DF_informe_auditoria_0001_ZY
+ALTER TABLE log_imp_cen DROP CONSTRAINT DF_log_imp_cen_0001_ZY
+GO
+ALTER TABLE log_imp_cen DROP CONSTRAINT DF_log_imp_cen_0002_ZY
+GO
+ALTER TABLE log_imp_cen DROP CONSTRAINT DF_log_imp_cen_0003_ZY
 GO
 ALTER TABLE log_imp_deu DROP CONSTRAINT DF_log_imp_deu_0001_ZY
 GO
@@ -211,6 +215,12 @@ GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT DF_log_pro_acr_pot_ben_0003_ZY
 GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT DF_log_pro_acr_pot_ben_0004_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT DF_log_pro_den_pen_obj_0001_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT DF_log_pro_den_pen_obj_0002_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT DF_log_pro_den_pen_obj_0003_ZY
 GO
 ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT DF_log_pro_imp_arc_ext_0001_ZY
 GO

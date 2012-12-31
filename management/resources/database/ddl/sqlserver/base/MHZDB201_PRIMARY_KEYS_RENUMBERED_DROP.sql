@@ -84,7 +84,7 @@ ALTER TABLE idioma_hogar DROP CONSTRAINT PK_idioma_hogar_ZY
 GO
 ALTER TABLE informe DROP CONSTRAINT PK_informe_ZY
 GO
-ALTER TABLE informe_auditoria DROP CONSTRAINT PK_informe_auditoria_ZY
+ALTER TABLE log_imp_cen DROP CONSTRAINT PK_log_imp_cen_ZY
 GO
 ALTER TABLE log_imp_deu DROP CONSTRAINT PK_log_imp_deu_ZY
 GO
@@ -109,6 +109,8 @@ GO
 ALTER TABLE log_imp_ubi DROP CONSTRAINT PK_log_imp_ubi_ZY
 GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT PK_log_pro_acr_pot_ben_ZY
+GO
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT PK_log_pro_den_pen_obj_ZY
 GO
 ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT PK_log_pro_imp_arc_ext_ZY
 GO

@@ -76,8 +76,6 @@ ALTER TABLE idioma_hogar ADD CONSTRAINT UQ_idioma_hogar_0001_ZY UNIQUE NONCLUSTE
 GO
 ALTER TABLE informe ADD CONSTRAINT UQ_informe_0001_ZY UNIQUE NONCLUSTERED (codigo_informe) ON [PRIMARY]
 GO
-ALTER TABLE informe_auditoria ADD CONSTRAINT UQ_informe_auditoria_0001_ZY UNIQUE NONCLUSTERED (codigo_informe_auditoria) ON [PRIMARY]
-GO
 ALTER TABLE mensaje ADD CONSTRAINT UQ_mensaje_0001_ZY UNIQUE NONCLUSTERED (codigo_mensaje) ON [PRIMARY]
 GO
 ALTER TABLE motivo_ina_esc ADD CONSTRAINT UQ_motivo_ina_esc_0001_ZY UNIQUE NONCLUSTERED (codigo_motivo_ina_esc) ON [PRIMARY]

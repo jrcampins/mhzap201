@@ -84,7 +84,7 @@ DROP TABLE idioma_hogar
 GO
 DROP TABLE informe
 GO
-DROP TABLE informe_auditoria
+DROP TABLE log_imp_cen
 GO
 DROP TABLE log_imp_deu
 GO
@@ -109,6 +109,8 @@ GO
 DROP TABLE log_imp_ubi
 GO
 DROP TABLE log_pro_acr_pot_ben
+GO
+DROP TABLE log_pro_den_pen_obj
 GO
 DROP TABLE log_pro_imp_arc_ext
 GO
