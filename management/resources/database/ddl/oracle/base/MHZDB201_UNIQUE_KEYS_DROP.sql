@@ -76,8 +76,6 @@ ALTER TABLE idioma_hogar DROP (CONSTRAINT UQ_idioma_hogar_0001_ZY);
 DROP INDEX idioma_hogar.UQ_idioma_hogar_0001_ZY;
 ALTER TABLE informe DROP (CONSTRAINT UQ_informe_0001_ZY);
 DROP INDEX informe.UQ_informe_0001_ZY;
-ALTER TABLE informe_auditoria DROP (CONSTRAINT UQ_informe_auditoria_0001_ZY);
-DROP INDEX informe_auditoria.UQ_informe_auditoria_0001_ZY;
 ALTER TABLE mensaje DROP (CONSTRAINT UQ_mensaje_0001_ZY);
 DROP INDEX mensaje.UQ_mensaje_0001_ZY;
 ALTER TABLE motivo_ina_esc DROP (CONSTRAINT UQ_motivo_ina_esc_0001_ZY);

@@ -76,8 +76,6 @@ CREATE UNIQUE INDEX UQ_idioma_hogar_0001_ZY ON idioma_hogar (codigo_idioma_hogar
 ALTER TABLE idioma_hogar ADD (CONSTRAINT UQ_idioma_hogar_0001_ZY UNIQUE (codigo_idioma_hogar));
 CREATE UNIQUE INDEX UQ_informe_0001_ZY ON informe (codigo_informe);
 ALTER TABLE informe ADD (CONSTRAINT UQ_informe_0001_ZY UNIQUE (codigo_informe));
-CREATE UNIQUE INDEX UQ_informe_auditoria_0001_ZY ON informe_auditoria (codigo_informe_auditoria);
-ALTER TABLE informe_auditoria ADD (CONSTRAINT UQ_informe_auditoria_0001_ZY UNIQUE (codigo_informe_auditoria));
 CREATE UNIQUE INDEX UQ_mensaje_0001_ZY ON mensaje (codigo_mensaje);
 ALTER TABLE mensaje ADD (CONSTRAINT UQ_mensaje_0001_ZY UNIQUE (codigo_mensaje));
 CREATE UNIQUE INDEX UQ_motivo_ina_esc_0001_ZY ON motivo_ina_esc (codigo_motivo_ina_esc);

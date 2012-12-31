@@ -1,11 +1,11 @@
 /**/
-exec xsp.dropone('view','consulta_log_pro_pre_pro_pag_1');
+exec xsp.dropone('view','consulta_log_pro_den_pen_obj_1');
 /**/
-CREATE VIEW consulta_log_pro_pre_pro_pag_1 AS
+CREATE VIEW consulta_log_pro_den_pen_obj_1 AS
 SELECT
-	log_pro_pre_pro_pag.id_log_pro_pre_pro_pag AS id_log_pro_pre_pro_pag,
-	log_pro_pre_pro_pag.version_log_pro_pre_pro_pag AS version_log_pro_pre_pro_pag,
-	log_pro_pre_pro_pag.id_persona AS id_persona,
+	log_pro_den_pen_obj.id_log_pro_den_pen_obj AS id_log_pro_den_pen_obj,
+	log_pro_den_pen_obj.version_log_pro_den_pen_obj AS version_log_pro_den_pen_obj,
+	log_pro_den_pen_obj.id_persona AS id_persona,
 		persona_1x1.codigo_persona AS codigo_persona_1x1y3,
 		persona_1x1.nombre_persona AS nombre_persona_1x1y4,
 		persona_1x1.numero_cedula AS numero_cedula_1x1y5,
@@ -100,9 +100,9 @@ SELECT
 		persona_1x1.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob__1x1y94,
 		persona_1x1.numero_tipo_act_jupe AS numero_tipo_act_jupe_1x1y95,
 		persona_1x1.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x1y96,
-	log_pro_pre_pro_pag.codigo_persona AS codigo_persona,
-	log_pro_pre_pro_pag.nombre_persona AS nombre_persona,
-	log_pro_pre_pro_pag.id_departamento AS id_departamento,
+	log_pro_den_pen_obj.codigo_persona AS codigo_persona,
+	log_pro_den_pen_obj.nombre_persona AS nombre_persona,
+	log_pro_den_pen_obj.id_departamento AS id_departamento,
 		ubicacion_1x2.codigo_ubicacion AS codigo_ubicacion_1x2y3,
 		ubicacion_1x2.nombre_ubicacion AS nombre_ubicacion_1x2y4,
 		ubicacion_1x2.id_ubicacion_superior AS id_ubicacion_superior_1x2y5,
@@ -111,7 +111,7 @@ SELECT
 		ubicacion_1x2.secuencia_ubicacion AS secuencia_ubicacion_1x2y8,
 		ubicacion_1x2.clave_ubicacion AS clave_ubicacion_1x2y9,
 		ubicacion_1x2.numero_tipo_area AS numero_tipo_area_1x2y10,
-	log_pro_pre_pro_pag.id_distrito AS id_distrito,
+	log_pro_den_pen_obj.id_distrito AS id_distrito,
 		ubicacion_1x3.codigo_ubicacion AS codigo_ubicacion_1x3y3,
 		ubicacion_1x3.nombre_ubicacion AS nombre_ubicacion_1x3y4,
 		ubicacion_1x3.id_ubicacion_superior AS id_ubicacion_superior_1x3y5,
@@ -120,7 +120,7 @@ SELECT
 		ubicacion_1x3.secuencia_ubicacion AS secuencia_ubicacion_1x3y8,
 		ubicacion_1x3.clave_ubicacion AS clave_ubicacion_1x3y9,
 		ubicacion_1x3.numero_tipo_area AS numero_tipo_area_1x3y10,
-	log_pro_pre_pro_pag.id_barrio AS id_barrio,
+	log_pro_den_pen_obj.id_barrio AS id_barrio,
 		ubicacion_1x4.codigo_ubicacion AS codigo_ubicacion_1x4y3,
 		ubicacion_1x4.nombre_ubicacion AS nombre_ubicacion_1x4y4,
 		ubicacion_1x4.id_ubicacion_superior AS id_ubicacion_superior_1x4y5,
@@ -129,23 +129,16 @@ SELECT
 		ubicacion_1x4.secuencia_ubicacion AS secuencia_ubicacion_1x4y8,
 		ubicacion_1x4.clave_ubicacion AS clave_ubicacion_1x4y9,
 		ubicacion_1x4.numero_tipo_area AS numero_tipo_area_1x4y10,
-	log_pro_pre_pro_pag.numero_condicion_pension AS numero_condicion_pension,
-		condicion_pension_1x5.codigo_condicion_pension AS codigo_condicion_pension_1x5y2,
-	log_pro_pre_pro_pag.fecha_solicitud_pension AS fecha_solicitud_pension,
-	log_pro_pre_pro_pag.numero_condicion_denu_pen AS numero_condicion_denu_pen,
-		condicion_denu_pen_1x6.codigo_condicion_denu_pen AS codigo_condicion_denu_pe_1x6y2,
-	log_pro_pre_pro_pag.numero_condicion_reco_pen AS numero_condicion_reco_pen,
-		condicion_reco_pen_1x7.codigo_condicion_reco_pen AS codigo_condicion_reco_pe_1x7y2,
-	log_pro_pre_pro_pag.es_procesado AS es_procesado,
-	log_pro_pre_pro_pag.observacion AS observacion,
-	log_pro_pre_pro_pag.fecha_hora_transaccion AS fecha_hora_transaccion
+	log_pro_den_pen_obj.numero_causa_den_pension AS numero_causa_den_pension,
+		causa_den_pension_1x5.codigo_causa_den_pension AS codigo_causa_den_pension_1x5y2,
+	log_pro_den_pen_obj.es_procesado AS es_procesado,
+	log_pro_den_pen_obj.observacion AS observacion,
+	log_pro_den_pen_obj.fecha_hora_transaccion AS fecha_hora_transaccion
 FROM
-	log_pro_pre_pro_pag log_pro_pre_pro_pag
-	LEFT OUTER JOIN persona persona_1x1 ON persona_1x1.id_persona = log_pro_pre_pro_pag.id_persona
-	LEFT OUTER JOIN ubicacion ubicacion_1x2 ON ubicacion_1x2.id_ubicacion = log_pro_pre_pro_pag.id_departamento
-	LEFT OUTER JOIN ubicacion ubicacion_1x3 ON ubicacion_1x3.id_ubicacion = log_pro_pre_pro_pag.id_distrito
-	LEFT OUTER JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = log_pro_pre_pro_pag.id_barrio
-	LEFT OUTER JOIN condicion_pension condicion_pension_1x5 ON condicion_pension_1x5.numero_condicion_pension = log_pro_pre_pro_pag.numero_condicion_pension
-	LEFT OUTER JOIN condicion_denu_pen condicion_denu_pen_1x6 ON condicion_denu_pen_1x6.numero_condicion_denu_pen = log_pro_pre_pro_pag.numero_condicion_denu_pen
-	LEFT OUTER JOIN condicion_reco_pen condicion_reco_pen_1x7 ON condicion_reco_pen_1x7.numero_condicion_reco_pen = log_pro_pre_pro_pag.numero_condicion_reco_pen;
+	log_pro_den_pen_obj log_pro_den_pen_obj
+	LEFT OUTER JOIN persona persona_1x1 ON persona_1x1.id_persona = log_pro_den_pen_obj.id_persona
+	LEFT OUTER JOIN ubicacion ubicacion_1x2 ON ubicacion_1x2.id_ubicacion = log_pro_den_pen_obj.id_departamento
+	LEFT OUTER JOIN ubicacion ubicacion_1x3 ON ubicacion_1x3.id_ubicacion = log_pro_den_pen_obj.id_distrito
+	LEFT OUTER JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = log_pro_den_pen_obj.id_barrio
+	LEFT OUTER JOIN causa_den_pension causa_den_pension_1x5 ON causa_den_pension_1x5.numero_causa_den_pension = log_pro_den_pen_obj.numero_causa_den_pension;
 

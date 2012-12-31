@@ -577,16 +577,38 @@ CREATE TABLE informe
 	id_informe NUMBER(19) NOT NULL,
 	version_informe NUMBER(19) NOT NULL,
 	codigo_informe VARCHAR2(60) NOT NULL,
-	nombre_informe VARCHAR2(200) NOT NULL
+	nombre_informe VARCHAR2(200) NOT NULL,
+	fecha_transaccion DATE
 	);
 	
-CREATE TABLE informe_auditoria
+CREATE TABLE log_imp_cen
 	(
-	id_informe_auditoria NUMBER(19) NOT NULL,
-	version_informe_auditoria NUMBER(19) NOT NULL,
-	codigo_informe_auditoria VARCHAR2(60) NOT NULL,
-	nombre_informe_auditoria VARCHAR2(200) NOT NULL,
-	fecha_transaccion DATE
+	id_log_imp_cen NUMBER(19) NOT NULL,
+	version_log_imp_cen NUMBER(19) NOT NULL,
+	orden VARCHAR2(4000),
+	barrio VARCHAR2(4000),
+	direccion VARCHAR2(4000),
+	telefono VARCHAR2(4000),
+	primer_nombre VARCHAR2(4000),
+	segundo_nombre VARCHAR2(4000),
+	primer_apellido VARCHAR2(4000),
+	segundo_apellido VARCHAR2(4000),
+	edad_a_la_fecha VARCHAR2(4000),
+	sexo VARCHAR2(4000),
+	parentesco VARCHAR2(4000),
+	cedula VARCHAR2(4000),
+	nombre_jefe_hogar VARCHAR2(4000),
+	cedula_jefe_hogar VARCHAR2(4000),
+	icv VARCHAR2(4000),
+	validado VARCHAR2(4000),
+	observaciones VARCHAR2(4000),
+	funcionario VARCHAR2(4000),
+	causa_invalidacion VARCHAR2(4000),
+	es_importado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL,
+	nombre_archivo VARCHAR2(4000),
+	codigo_archivo VARCHAR2(4000)
 	);
 	
 CREATE TABLE log_imp_deu
@@ -939,6 +961,22 @@ CREATE TABLE log_pro_acr_pot_ben
 	id_ficha_hogar NUMBER(19),
 	codigo_ficha_hogar VARCHAR2(60),
 	indice_calidad_vida NUMBER(7,4),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
+CREATE TABLE log_pro_den_pen_obj
+	(
+	id_log_pro_den_pen_obj NUMBER(19) NOT NULL,
+	version_log_pro_den_pen_obj NUMBER(19) NOT NULL,
+	id_persona NUMBER(19),
+	codigo_persona VARCHAR2(60),
+	nombre_persona VARCHAR2(200),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	numero_causa_den_pension NUMBER(10),
 	es_procesado NUMBER(10) NOT NULL,
 	observacion VARCHAR2(4000),
 	fecha_hora_transaccion DATE NOT NULL
@@ -1320,10 +1358,16 @@ CREATE TABLE persona
 	fecha_aprobacion_pension DATE,
 	comentarios_aprobacion_pension VARCHAR2(4000),
 	fecha_otorgamiento_pen DATE,
+	numero_resolucion_otor_pen VARCHAR2(100),
+	fecha_resolucion_otor_pen DATE,
 	comentarios_otorgamiento_pen VARCHAR2(4000),
-	fecha_denegacion_pension DATE,
+	fecha_objecion_pension DATE,
 	numero_causa_den_pension NUMBER(10),
 	otra_causa_den_pension VARCHAR2(200),
+	comentarios_objecion_pension VARCHAR2(4000),
+	fecha_denegacion_pension DATE,
+	numero_resolucion_den_pen VARCHAR2(100),
+	fecha_resolucion_den_pen DATE,
 	comentarios_denegacion_pension VARCHAR2(4000),
 	fecha_revocacion_pension DATE,
 	numero_causa_rev_pension NUMBER(10),
@@ -1351,11 +1395,7 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension DATE,
 	notas_anul_fec_ult_cob_pen VARCHAR2(4000),
 	numero_tipo_act_jupe NUMBER(10),
-	fecha_hora_ult_act_jupe DATE,
-	numero_resolucion_otor_pen VARCHAR2(100),
-	fecha_resolucion_otor_pen DATE,
-	numero_resolucion_den_pen VARCHAR2(100),
-	fecha_resolucion_den_pen DATE
+	fecha_hora_ult_act_jupe DATE
 	);
 	
 CREATE TABLE potencial_ben
