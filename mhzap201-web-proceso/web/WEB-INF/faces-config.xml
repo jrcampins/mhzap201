@@ -108,11 +108,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>InformeAuditoria4</managed-bean-name>
-        <managed-bean-class>com.egt.web.proceso.InformeAuditoria4</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>Persona4</managed-bean-name>
         <managed-bean-class>com.egt.web.proceso.Persona4</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>

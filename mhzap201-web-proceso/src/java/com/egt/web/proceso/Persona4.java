@@ -101,9 +101,10 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
-import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
@@ -137,16 +138,17 @@ public class Persona4 extends AbstractPageBean
         validatorComentariosAnulCerDefuncion1.setMaximum(2000);
         validatorComentariosAprobacionPension1.setMaximum(2000);
         validatorOtraCausaDenPension1.setMaximum(2000);
-        validatorNumeroResolucionDenPen1.setMaximum(2000);
-        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
-        converterFechaResolucionDenPen1.setType("date");
-        validatorComentariosDenegacionPension1.setMaximum(2000);
+        validatorComentariosObjecionPension1.setMaximum(2000);
         validatorOtraCausaRevPension1.setMaximum(2000);
         validatorComentariosRevocacionPension1.setMaximum(2000);
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
         validatorComentariosOtorgamientoPen1.setMaximum(2000);
+        validatorNumeroResolucionDenPen1.setMaximum(2000);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
+        validatorComentariosDenegacionPension1.setMaximum(2000);
         validatorComentariosSolicitudRecoPen1.setMaximum(2000);
         validatorComentariosAprRecoPen1.setMaximum(2000);
         validatorOtraCausaDenRecoPen1.setMaximum(2000);
@@ -796,154 +798,54 @@ public class Persona4 extends AbstractPageBean
         this.validatorOtraCausaDenPension1 = validator;
     }
   
-    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelComentariosObjecionPension1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelNumeroResolucionDenPen1() {
-        return labelNumeroResolucionDenPen1;
+    public Label getLabelComentariosObjecionPension1() {
+        return labelComentariosObjecionPension1;
     }
 
-    public void setLabelNumeroResolucionDenPen1(Label l) {
-        this.labelNumeroResolucionDenPen1 = l;
+    public void setLabelComentariosObjecionPension1(Label l) {
+        this.labelComentariosObjecionPension1 = l;
     }
 
-    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoComentariosObjecionPension1 = new com.egt.core.jsf.component.CampoTexto();
 
-    public TextField getCampoNumeroResolucionDenPen1() {
-        return campoNumeroResolucionDenPen1;
+    public TextField getCampoComentariosObjecionPension1() {
+        return campoComentariosObjecionPension1;
     }
 
-    public void setCampoNumeroResolucionDenPen1(TextField component) {
-        this.campoNumeroResolucionDenPen1 = component;
+    public void setCampoComentariosObjecionPension1(TextField component) {
+        this.campoComentariosObjecionPension1 = component;
     }
 
-    private HelpInline helpInlineNumeroResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+    private HelpInline helpInlineComentariosObjecionPension1 = new com.egt.core.jsf.component.AyudaEnLinea();
 
-    public HelpInline getHelpInlineNumeroResolucionDenPen1() {
-        return helpInlineNumeroResolucionDenPen1;
+    public HelpInline getHelpInlineComentariosObjecionPension1() {
+        return helpInlineComentariosObjecionPension1;
     }
 
-    public void setHelpInlineNumeroResolucionDenPen1(HelpInline hi) {
-        this.helpInlineNumeroResolucionDenPen1 = hi;
+    public void setHelpInlineComentariosObjecionPension1(HelpInline hi) {
+        this.helpInlineComentariosObjecionPension1 = hi;
     }
 
-    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoComentariosObjecionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
-        return campoNumeroResolucionDenPen1Texto1;
+    public StaticText getCampoComentariosObjecionPension1Texto1() {
+        return campoComentariosObjecionPension1Texto1;
     }
 
-    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
-        this.campoNumeroResolucionDenPen1Texto1 = component;
+    public void setCampoComentariosObjecionPension1Texto1(StaticText component) {
+        this.campoComentariosObjecionPension1Texto1 = component;
     }
 
-    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+    private LengthValidator validatorComentariosObjecionPension1 = new LengthValidator();
   
-    public LengthValidator getValidatorNumeroResolucionDenPen1() {
-        return validatorNumeroResolucionDenPen1;
-    }
-  
-    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
-        this.validatorNumeroResolucionDenPen1 = validator;
+    public LengthValidator getValidatorComentariosObjecionPension1() {
+        return validatorComentariosObjecionPension1;
     }
   
-    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaResolucionDenPen1() {
-        return labelFechaResolucionDenPen1;
-    }
-
-    public void setLabelFechaResolucionDenPen1(Label l) {
-        this.labelFechaResolucionDenPen1 = l;
-    }
-
-    private Calendar campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.Calendario();
-
-    public Calendar getCampoFechaResolucionDenPen1() {
-        return campoFechaResolucionDenPen1;
-    }
-
-    public void setCampoFechaResolucionDenPen1(Calendar component) {
-        this.campoFechaResolucionDenPen1 = component;
-    }
-
-    private HelpInline helpInlineFechaResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineFechaResolucionDenPen1() {
-        return helpInlineFechaResolucionDenPen1;
-    }
-
-    public void setHelpInlineFechaResolucionDenPen1(HelpInline hi) {
-        this.helpInlineFechaResolucionDenPen1 = hi;
-    }
-
-    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionDenPen1Texto1() {
-        return campoFechaResolucionDenPen1Texto1;
-    }
-
-    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
-        this.campoFechaResolucionDenPen1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
-        return converterFechaResolucionDenPen1;
-    }
-  
-    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
-        this.converterFechaResolucionDenPen1 = converter;
-    }
-  
-    private Label labelComentariosDenegacionPension1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosDenegacionPension1() {
-        return labelComentariosDenegacionPension1;
-    }
-
-    public void setLabelComentariosDenegacionPension1(Label l) {
-        this.labelComentariosDenegacionPension1 = l;
-    }
-
-    private TextField campoComentariosDenegacionPension1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoComentariosDenegacionPension1() {
-        return campoComentariosDenegacionPension1;
-    }
-
-    public void setCampoComentariosDenegacionPension1(TextField component) {
-        this.campoComentariosDenegacionPension1 = component;
-    }
-
-    private HelpInline helpInlineComentariosDenegacionPension1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosDenegacionPension1() {
-        return helpInlineComentariosDenegacionPension1;
-    }
-
-    public void setHelpInlineComentariosDenegacionPension1(HelpInline hi) {
-        this.helpInlineComentariosDenegacionPension1 = hi;
-    }
-
-    private StaticText campoComentariosDenegacionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosDenegacionPension1Texto1() {
-        return campoComentariosDenegacionPension1Texto1;
-    }
-
-    public void setCampoComentariosDenegacionPension1Texto1(StaticText component) {
-        this.campoComentariosDenegacionPension1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosDenegacionPension1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosDenegacionPension1() {
-        return validatorComentariosDenegacionPension1;
-    }
-  
-    public void setValidatorComentariosDenegacionPension1(LengthValidator validator) {
-        this.validatorComentariosDenegacionPension1 = validator;
+    public void setValidatorComentariosObjecionPension1(LengthValidator validator) {
+        this.validatorComentariosObjecionPension1 = validator;
     }
   
     private Label labelNumeroCausaRevPension1 = new com.egt.core.jsf.component.Etiqueta();
@@ -1244,6 +1146,156 @@ public class Persona4 extends AbstractPageBean
   
     public void setValidatorComentariosOtorgamientoPen1(LengthValidator validator) {
         this.validatorComentariosOtorgamientoPen1 = validator;
+    }
+  
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionDenPen1() {
+        return helpInlineNumeroResolucionDenPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionDenPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private Calendar campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(Calendar component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionDenPen1() {
+        return helpInlineFechaResolucionDenPen1;
+    }
+
+    public void setHelpInlineFechaResolucionDenPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
+    }
+  
+    private Label labelComentariosDenegacionPension1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosDenegacionPension1() {
+        return labelComentariosDenegacionPension1;
+    }
+
+    public void setLabelComentariosDenegacionPension1(Label l) {
+        this.labelComentariosDenegacionPension1 = l;
+    }
+
+    private TextField campoComentariosDenegacionPension1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoComentariosDenegacionPension1() {
+        return campoComentariosDenegacionPension1;
+    }
+
+    public void setCampoComentariosDenegacionPension1(TextField component) {
+        this.campoComentariosDenegacionPension1 = component;
+    }
+
+    private HelpInline helpInlineComentariosDenegacionPension1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosDenegacionPension1() {
+        return helpInlineComentariosDenegacionPension1;
+    }
+
+    public void setHelpInlineComentariosDenegacionPension1(HelpInline hi) {
+        this.helpInlineComentariosDenegacionPension1 = hi;
+    }
+
+    private StaticText campoComentariosDenegacionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosDenegacionPension1Texto1() {
+        return campoComentariosDenegacionPension1Texto1;
+    }
+
+    public void setCampoComentariosDenegacionPension1Texto1(StaticText component) {
+        this.campoComentariosDenegacionPension1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosDenegacionPension1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosDenegacionPension1() {
+        return validatorComentariosDenegacionPension1;
+    }
+  
+    public void setValidatorComentariosDenegacionPension1(LengthValidator validator) {
+        this.validatorComentariosDenegacionPension1 = validator;
     }
   
     private Label labelEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.Etiqueta();
@@ -2887,47 +2939,49 @@ public class Persona4 extends AbstractPageBean
 
     static long FUNCION_ACCION_5 = PersonaConstants.FUNCION_APROBAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_6 = PersonaConstants.FUNCION_DENEGAR_PENSION_PERSONA;
+    static long FUNCION_ACCION_6 = PersonaConstants.FUNCION_OBJETAR_PENSION_PERSONA;
 
     static long FUNCION_ACCION_7 = PersonaConstants.FUNCION_REVOCAR_PENSION_PERSONA;
 
     static long FUNCION_ACCION_8 = PersonaConstants.FUNCION_OTORGAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_9 = PersonaConstants.FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA;
+    static long FUNCION_ACCION_9 = PersonaConstants.FUNCION_DENEGAR_PENSION_PERSONA;
 
-    static long FUNCION_ACCION_10 = PersonaConstants.FUNCION_SOLICITAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_10 = PersonaConstants.FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA;
 
-    static long FUNCION_ACCION_11 = PersonaConstants.FUNCION_APROBAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_11 = PersonaConstants.FUNCION_SOLICITAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_12 = PersonaConstants.FUNCION_DENEGAR_RECO_PEN_PERSONA;
+    static long FUNCION_ACCION_12 = PersonaConstants.FUNCION_APROBAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_13 = PersonaConstants.FUNCION_REGISTRAR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_13 = PersonaConstants.FUNCION_DENEGAR_RECO_PEN_PERSONA;
 
-    static long FUNCION_ACCION_14 = PersonaConstants.FUNCION_CONFIRMAR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_14 = PersonaConstants.FUNCION_REGISTRAR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_15 = PersonaConstants.FUNCION_DESMENTIR_DENU_PEN_PERSONA;
+    static long FUNCION_ACCION_15 = PersonaConstants.FUNCION_CONFIRMAR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_16 = PersonaConstants.FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
+    static long FUNCION_ACCION_16 = PersonaConstants.FUNCION_DESMENTIR_DENU_PEN_PERSONA;
 
-    static long FUNCION_ACCION_17 = PersonaConstants.FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
+    static long FUNCION_ACCION_17 = PersonaConstants.FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
 
-    static long FUNCION_ACCION_18 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
+    static long FUNCION_ACCION_18 = PersonaConstants.FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
 
-    static long FUNCION_ACCION_19 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
+    static long FUNCION_ACCION_19 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
 
-    static long FUNCION_ACCION_20 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
+    static long FUNCION_ACCION_20 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
 
-    static long FUNCION_ACCION_21 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
+    static long FUNCION_ACCION_21 = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
 
-    static long FUNCION_ACCION_22 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
+    static long FUNCION_ACCION_22 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
 
-    static long FUNCION_ACCION_23 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
+    static long FUNCION_ACCION_23 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
 
-    static long FUNCION_ACCION_24 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
+    static long FUNCION_ACCION_24 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
 
-    static long FUNCION_ACCION_25 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+    static long FUNCION_ACCION_25 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
 
-    static long FUNCION_ACCION_26 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+    static long FUNCION_ACCION_26 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+
+    static long FUNCION_ACCION_27 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
 
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
@@ -2938,27 +2992,28 @@ public class Persona4 extends AbstractPageBean
             new Option(FUNCION_ACCION_3, BundleWebui.getString("registrar_cer_defun_persona")),
             new Option(FUNCION_ACCION_4, BundleWebui.getString("anular_cer_defun_persona")),
             new Option(FUNCION_ACCION_5, BundleWebui.getString("aprobar_pension_persona")),
-            new Option(FUNCION_ACCION_6, BundleWebui.getString("denegar_pension_persona")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("objetar_pension_persona")),
             new Option(FUNCION_ACCION_7, BundleWebui.getString("revocar_pension_persona")),
             new Option(FUNCION_ACCION_8, BundleWebui.getString("otorgar_pension_persona")),
-            new Option(FUNCION_ACCION_9, BundleWebui.getString("registrar_entrega_doc_persona")),
-            new Option(FUNCION_ACCION_10, BundleWebui.getString("solicitar_reco_pen_persona")),
-            new Option(FUNCION_ACCION_11, BundleWebui.getString("aprobar_reco_pen_persona")),
-            new Option(FUNCION_ACCION_12, BundleWebui.getString("denegar_reco_pen_persona")),
-            new Option(FUNCION_ACCION_13, BundleWebui.getString("registrar_denu_pen_persona")),
-            new Option(FUNCION_ACCION_14, BundleWebui.getString("confirmar_denu_pen_persona")),
-            new Option(FUNCION_ACCION_15, BundleWebui.getString("desmentir_denu_pen_persona")),
-            new Option(FUNCION_ACCION_16, BundleWebui.getString("act_fec_ult_cob_pen_persona")),
-            new Option(FUNCION_ACCION_17, BundleWebui.getString("anul_fec_ult_cob_pen_persona")),
-            new Option(FUNCION_ACCION_18, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
-            new Option(FUNCION_ACCION_19, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
-            new Option(FUNCION_ACCION_20, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
-            new Option(FUNCION_ACCION_21, BundleWebui.getString("emitir_persona_con_pension_aprobada")),
-            new Option(FUNCION_ACCION_22, BundleWebui.getString("emitir_persona_con_pension_denegada")),
-            new Option(FUNCION_ACCION_23, BundleWebui.getString("emitir_persona_con_pension_revocada")),
-            new Option(FUNCION_ACCION_24, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
-            new Option(FUNCION_ACCION_25, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
-            new Option(FUNCION_ACCION_26, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
+            new Option(FUNCION_ACCION_9, BundleWebui.getString("denegar_pension_persona")),
+            new Option(FUNCION_ACCION_10, BundleWebui.getString("registrar_entrega_doc_persona")),
+            new Option(FUNCION_ACCION_11, BundleWebui.getString("solicitar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_12, BundleWebui.getString("aprobar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_13, BundleWebui.getString("denegar_reco_pen_persona")),
+            new Option(FUNCION_ACCION_14, BundleWebui.getString("registrar_denu_pen_persona")),
+            new Option(FUNCION_ACCION_15, BundleWebui.getString("confirmar_denu_pen_persona")),
+            new Option(FUNCION_ACCION_16, BundleWebui.getString("desmentir_denu_pen_persona")),
+            new Option(FUNCION_ACCION_17, BundleWebui.getString("act_fec_ult_cob_pen_persona")),
+            new Option(FUNCION_ACCION_18, BundleWebui.getString("anul_fec_ult_cob_pen_persona")),
+            new Option(FUNCION_ACCION_19, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
+            new Option(FUNCION_ACCION_20, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
+            new Option(FUNCION_ACCION_21, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
+            new Option(FUNCION_ACCION_22, BundleWebui.getString("emitir_persona_con_pension_aprobada")),
+            new Option(FUNCION_ACCION_23, BundleWebui.getString("emitir_persona_con_pension_denegada")),
+            new Option(FUNCION_ACCION_24, BundleWebui.getString("emitir_persona_con_pension_revocada")),
+            new Option(FUNCION_ACCION_25, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
+            new Option(FUNCION_ACCION_26, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
+            new Option(FUNCION_ACCION_27, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -2966,7 +3021,7 @@ public class Persona4 extends AbstractPageBean
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
     public boolean isIdPersonaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == 0 || f == FUNCION_ACCION_1 || f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_7 || f == FUNCION_ACCION_8 || f == FUNCION_ACCION_9 || f == FUNCION_ACCION_10 || f == FUNCION_ACCION_11 || f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
+        return f == 0 || f == FUNCION_ACCION_1 || f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_7 || f == FUNCION_ACCION_8 || f == FUNCION_ACCION_9 || f == FUNCION_ACCION_10 || f == FUNCION_ACCION_11 || f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17 || f == FUNCION_ACCION_18;
     }
 
     private Bit bitIdPersonaRendered = new Bit() {
@@ -2983,7 +3038,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isCertificadoVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_9;
+        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_10;
     }
 
     private Bit bitCertificadoVidaRendered = new Bit() {
@@ -3000,7 +3055,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaCertificadoVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_9;
+        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_10;
     }
 
     private Bit bitFechaCertificadoVidaRendered = new Bit() {
@@ -3102,7 +3157,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isNumeroCausaDenPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6 || f == FUNCION_ACCION_22;
+        return f == FUNCION_ACCION_6 || f == FUNCION_ACCION_23;
     }
 
     private Bit bitNumeroCausaDenPensionRendered = new Bit() {
@@ -3134,60 +3189,26 @@ public class Persona4 extends AbstractPageBean
         return bitOtraCausaDenPensionRendered;
     }
 
-    public boolean isNumeroResolucionDenPenRendered() {
+    public boolean isComentariosObjecionPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_6;
     }
 
-    private Bit bitNumeroResolucionDenPenRendered = new Bit() {
+    private Bit bitComentariosObjecionPensionRendered = new Bit() {
         // override metodo isOn
         @Override
         public boolean isOn() {
-            return isNumeroResolucionDenPenRendered();
+            return isComentariosObjecionPensionRendered();
         }
     };
 
-    public Bit getBitNumeroResolucionDenPenRendered() {
-        return bitNumeroResolucionDenPenRendered;
-    }
-
-    public boolean isFechaResolucionDenPenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
-    }
-
-    private Bit bitFechaResolucionDenPenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isFechaResolucionDenPenRendered();
-        }
-    };
-
-    public Bit getBitFechaResolucionDenPenRendered() {
-        return bitFechaResolucionDenPenRendered;
-    }
-
-    public boolean isComentariosDenegacionPensionRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_6;
-    }
-
-    private Bit bitComentariosDenegacionPensionRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isComentariosDenegacionPensionRendered();
-        }
-    };
-
-    public Bit getBitComentariosDenegacionPensionRendered() {
-        return bitComentariosDenegacionPensionRendered;
+    public Bit getBitComentariosObjecionPensionRendered() {
+        return bitComentariosObjecionPensionRendered;
     }
 
     public boolean isNumeroCausaRevPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_23;
+        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_24;
     }
 
     private Bit bitNumeroCausaRevPensionRendered = new Bit() {
@@ -3204,7 +3225,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isOtraCausaRevPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_14;
+        return f == FUNCION_ACCION_7 || f == FUNCION_ACCION_15;
     }
 
     private Bit bitOtraCausaRevPensionRendered = new Bit() {
@@ -3287,9 +3308,60 @@ public class Persona4 extends AbstractPageBean
         return bitComentariosOtorgamientoPenRendered;
     }
 
-    public boolean isEsPersonaConCopiaCedulaRendered() {
+    public boolean isNumeroResolucionDenPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_9;
+    }
+
+    private Bit bitNumeroResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitNumeroResolucionDenPenRendered() {
+        return bitNumeroResolucionDenPenRendered;
+    }
+
+    public boolean isFechaResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_9;
+    }
+
+    private Bit bitFechaResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitFechaResolucionDenPenRendered() {
+        return bitFechaResolucionDenPenRendered;
+    }
+
+    public boolean isComentariosDenegacionPensionRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_9;
+    }
+
+    private Bit bitComentariosDenegacionPensionRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosDenegacionPensionRendered();
+        }
+    };
+
+    public Bit getBitComentariosDenegacionPensionRendered() {
+        return bitComentariosDenegacionPensionRendered;
+    }
+
+    public boolean isEsPersonaConCopiaCedulaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_10;
     }
 
     private Bit bitEsPersonaConCopiaCedulaRendered = new Bit() {
@@ -3306,7 +3378,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isEsPersonaConDeclaracionJurRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_9;
+        return f == FUNCION_ACCION_10;
     }
 
     private Bit bitEsPersonaConDeclaracionJurRendered = new Bit() {
@@ -3323,7 +3395,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosSolicitudRecoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10;
+        return f == FUNCION_ACCION_11;
     }
 
     private Bit bitComentariosSolicitudRecoPenRendered = new Bit() {
@@ -3340,7 +3412,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosAprRecoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_11;
+        return f == FUNCION_ACCION_12;
     }
 
     private Bit bitComentariosAprRecoPenRendered = new Bit() {
@@ -3357,7 +3429,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isNumeroCausaDenRecoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12;
+        return f == FUNCION_ACCION_13;
     }
 
     private Bit bitNumeroCausaDenRecoPenRendered = new Bit() {
@@ -3374,7 +3446,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isOtraCausaDenRecoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12;
+        return f == FUNCION_ACCION_13;
     }
 
     private Bit bitOtraCausaDenRecoPenRendered = new Bit() {
@@ -3391,7 +3463,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosDenRecoPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12;
+        return f == FUNCION_ACCION_13;
     }
 
     private Bit bitComentariosDenRecoPenRendered = new Bit() {
@@ -3408,7 +3480,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosRegistroDenuPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_13;
+        return f == FUNCION_ACCION_14;
     }
 
     private Bit bitComentariosRegistroDenuPenRendered = new Bit() {
@@ -3425,7 +3497,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosConfDenuPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_14;
+        return f == FUNCION_ACCION_15;
     }
 
     private Bit bitComentariosConfDenuPenRendered = new Bit() {
@@ -3442,7 +3514,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isComentariosDesDenuPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_15;
+        return f == FUNCION_ACCION_16;
     }
 
     private Bit bitComentariosDesDenuPenRendered = new Bit() {
@@ -3459,7 +3531,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaUltimoCobroPensionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_17;
     }
 
     private Bit bitFechaUltimoCobroPensionRendered = new Bit() {
@@ -3476,7 +3548,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isNotasAnulFecUltCobPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_17;
+        return f == FUNCION_ACCION_18;
     }
 
     private Bit bitNotasAnulFecUltCobPenRendered = new Bit() {
@@ -3493,7 +3565,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdDepartamentoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_26;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
     }
 
     private Bit bitIdDepartamentoRendered = new Bit() {
@@ -3510,7 +3582,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdDistritoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_26;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
     }
 
     private Bit bitIdDistritoRendered = new Bit() {
@@ -3527,7 +3599,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdBarrioRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_26;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
     }
 
     private Bit bitIdBarrioRendered = new Bit() {
@@ -3544,7 +3616,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaSolicitudPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21;
     }
 
     private Bit bitFechaSolicitudPensionDesdeRendered = new Bit() {
@@ -3561,7 +3633,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaSolicitudPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_18 || f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21;
     }
 
     private Bit bitFechaSolicitudPensionHastaRendered = new Bit() {
@@ -3578,7 +3650,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaAprobacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_21;
+        return f == FUNCION_ACCION_22;
     }
 
     private Bit bitFechaAprobacionPensionDesdeRendered = new Bit() {
@@ -3595,7 +3667,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaAprobacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_21;
+        return f == FUNCION_ACCION_22;
     }
 
     private Bit bitFechaAprobacionPensionHastaRendered = new Bit() {
@@ -3612,7 +3684,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaDenegacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_22;
+        return f == FUNCION_ACCION_23;
     }
 
     private Bit bitFechaDenegacionPensionDesdeRendered = new Bit() {
@@ -3629,7 +3701,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaDenegacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_22;
+        return f == FUNCION_ACCION_23;
     }
 
     private Bit bitFechaDenegacionPensionHastaRendered = new Bit() {
@@ -3646,7 +3718,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaRevocacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_23;
+        return f == FUNCION_ACCION_24;
     }
 
     private Bit bitFechaRevocacionPensionDesdeRendered = new Bit() {
@@ -3663,7 +3735,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaRevocacionPensionHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_23;
+        return f == FUNCION_ACCION_24;
     }
 
     private Bit bitFechaRevocacionPensionHastaRendered = new Bit() {
@@ -3680,7 +3752,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaOtorgamientoPenDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_24;
+        return f == FUNCION_ACCION_25;
     }
 
     private Bit bitFechaOtorgamientoPenDesdeRendered = new Bit() {
@@ -3697,7 +3769,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaOtorgamientoPenHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_24;
+        return f == FUNCION_ACCION_25;
     }
 
     private Bit bitFechaOtorgamientoPenHastaRendered = new Bit() {
@@ -3714,7 +3786,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaHoraUltActJupeDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_26;
     }
 
     private Bit bitFechaHoraUltActJupeDesdeRendered = new Bit() {
@@ -3731,7 +3803,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaHoraUltActJupeHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_26;
     }
 
     private Bit bitFechaHoraUltActJupeHastaRendered = new Bit() {
@@ -3871,34 +3943,14 @@ public class Persona4 extends AbstractPageBean
         this.textoCampoOtraCausaDenPension1 = valor;
     }
 
-    private String textoCampoNumeroResolucionDenPen1;
+    private String textoCampoComentariosObjecionPension1;
 
-    public String getTextoCampoNumeroResolucionDenPen1() {
-        return this.textoCampoNumeroResolucionDenPen1;
+    public String getTextoCampoComentariosObjecionPension1() {
+        return this.textoCampoComentariosObjecionPension1;
     }
 
-    public void setTextoCampoNumeroResolucionDenPen1(String valor) {
-        this.textoCampoNumeroResolucionDenPen1 = valor;
-    }
-
-    private java.sql.Timestamp valorCampoFechaResolucionDenPen1;
-
-    public java.sql.Timestamp getValorCampoFechaResolucionDenPen1() {
-        return this.valorCampoFechaResolucionDenPen1;
-    }
-
-    public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
-        this.valorCampoFechaResolucionDenPen1 = valor;
-    }
-
-    private String textoCampoComentariosDenegacionPension1;
-
-    public String getTextoCampoComentariosDenegacionPension1() {
-        return this.textoCampoComentariosDenegacionPension1;
-    }
-
-    public void setTextoCampoComentariosDenegacionPension1(String valor) {
-        this.textoCampoComentariosDenegacionPension1 = valor;
+    public void setTextoCampoComentariosObjecionPension1(String valor) {
+        this.textoCampoComentariosObjecionPension1 = valor;
     }
 
     private String textoCampoOtraCausaRevPension1;
@@ -3949,6 +4001,36 @@ public class Persona4 extends AbstractPageBean
 
     public void setTextoCampoComentariosOtorgamientoPen1(String valor) {
         this.textoCampoComentariosOtorgamientoPen1 = valor;
+    }
+
+    private String textoCampoNumeroResolucionDenPen1;
+
+    public String getTextoCampoNumeroResolucionDenPen1() {
+        return this.textoCampoNumeroResolucionDenPen1;
+    }
+
+    public void setTextoCampoNumeroResolucionDenPen1(String valor) {
+        this.textoCampoNumeroResolucionDenPen1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaResolucionDenPen1;
+
+    public java.sql.Timestamp getValorCampoFechaResolucionDenPen1() {
+        return this.valorCampoFechaResolucionDenPen1;
+    }
+
+    public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
+        this.valorCampoFechaResolucionDenPen1 = valor;
+    }
+
+    private String textoCampoComentariosDenegacionPension1;
+
+    public String getTextoCampoComentariosDenegacionPension1() {
+        return this.textoCampoComentariosDenegacionPension1;
+    }
+
+    public void setTextoCampoComentariosDenegacionPension1(String valor) {
+        this.textoCampoComentariosDenegacionPension1 = valor;
     }
 
     private String textoCampoComentariosSolicitudRecoPen1;
@@ -4789,27 +4871,28 @@ public class Persona4 extends AbstractPageBean
                 : f == FUNCION_ACCION_3 ? this.accion3(f) /* registrarCerDefunPersona */
                 : f == FUNCION_ACCION_4 ? this.accion4(f) /* anularCerDefunPersona */
                 : f == FUNCION_ACCION_5 ? this.accion5(f) /* aprobarPensionPersona */
-                : f == FUNCION_ACCION_6 ? this.accion6(f) /* denegarPensionPersona */
+                : f == FUNCION_ACCION_6 ? this.accion6(f) /* objetarPensionPersona */
                 : f == FUNCION_ACCION_7 ? this.accion7(f) /* revocarPensionPersona */
                 : f == FUNCION_ACCION_8 ? this.accion8(f) /* otorgarPensionPersona */
-                : f == FUNCION_ACCION_9 ? this.accion9(f) /* registrarEntregaDocPersona */
-                : f == FUNCION_ACCION_10 ? this.accion10(f) /* solicitarRecoPenPersona */
-                : f == FUNCION_ACCION_11 ? this.accion11(f) /* aprobarRecoPenPersona */
-                : f == FUNCION_ACCION_12 ? this.accion12(f) /* denegarRecoPenPersona */
-                : f == FUNCION_ACCION_13 ? this.accion13(f) /* registrarDenuPenPersona */
-                : f == FUNCION_ACCION_14 ? this.accion14(f) /* confirmarDenuPenPersona */
-                : f == FUNCION_ACCION_15 ? this.accion15(f) /* desmentirDenuPenPersona */
-                : f == FUNCION_ACCION_16 ? this.accion16(f) /* actFecUltCobPenPersona */
-                : f == FUNCION_ACCION_17 ? this.accion17(f) /* anulFecUltCobPenPersona */
-                : f == FUNCION_ACCION_18 ? this.accion18(f) /* emitirPersonaConPensionSolicitada */
-                : f == FUNCION_ACCION_19 ? this.accion19(f) /* emitirPersonaAcreditadaSinObjeciones */
-                : f == FUNCION_ACCION_20 ? this.accion20(f) /* emitirPersonaAcreditadaConObjeciones */
-                : f == FUNCION_ACCION_21 ? this.accion21(f) /* emitirPersonaConPensionAprobada */
-                : f == FUNCION_ACCION_22 ? this.accion22(f) /* emitirPersonaConPensionDenegada */
-                : f == FUNCION_ACCION_23 ? this.accion23(f) /* emitirPersonaConPensionRevocada */
-                : f == FUNCION_ACCION_24 ? this.accion24(f) /* emitirPersonaConPensionOtorgada */
-                : f == FUNCION_ACCION_25 ? this.accion25(f) /* emitirUltimaActualizacionPersonaEnJupe */
-                : f == FUNCION_ACCION_26 ? this.accion26(f) /* emitirCuadroResumenPensionPersona */
+                : f == FUNCION_ACCION_9 ? this.accion9(f) /* denegarPensionPersona */
+                : f == FUNCION_ACCION_10 ? this.accion10(f) /* registrarEntregaDocPersona */
+                : f == FUNCION_ACCION_11 ? this.accion11(f) /* solicitarRecoPenPersona */
+                : f == FUNCION_ACCION_12 ? this.accion12(f) /* aprobarRecoPenPersona */
+                : f == FUNCION_ACCION_13 ? this.accion13(f) /* denegarRecoPenPersona */
+                : f == FUNCION_ACCION_14 ? this.accion14(f) /* registrarDenuPenPersona */
+                : f == FUNCION_ACCION_15 ? this.accion15(f) /* confirmarDenuPenPersona */
+                : f == FUNCION_ACCION_16 ? this.accion16(f) /* desmentirDenuPenPersona */
+                : f == FUNCION_ACCION_17 ? this.accion17(f) /* actFecUltCobPenPersona */
+                : f == FUNCION_ACCION_18 ? this.accion18(f) /* anulFecUltCobPenPersona */
+                : f == FUNCION_ACCION_19 ? this.accion19(f) /* emitirPersonaConPensionSolicitada */
+                : f == FUNCION_ACCION_20 ? this.accion20(f) /* emitirPersonaAcreditadaSinObjeciones */
+                : f == FUNCION_ACCION_21 ? this.accion21(f) /* emitirPersonaAcreditadaConObjeciones */
+                : f == FUNCION_ACCION_22 ? this.accion22(f) /* emitirPersonaConPensionAprobada */
+                : f == FUNCION_ACCION_23 ? this.accion23(f) /* emitirPersonaConPensionDenegada */
+                : f == FUNCION_ACCION_24 ? this.accion24(f) /* emitirPersonaConPensionRevocada */
+                : f == FUNCION_ACCION_25 ? this.accion25(f) /* emitirPersonaConPensionOtorgada */
+                : f == FUNCION_ACCION_26 ? this.accion26(f) /* emitirUltimaActualizacionPersonaEnJupe */
+                : f == FUNCION_ACCION_27 ? this.accion27(f) /* emitirCuadroResumenPensionPersona */
                 : null;
     }
     // </editor-fold>
@@ -4868,9 +4951,9 @@ public class Persona4 extends AbstractPageBean
     private String accion6(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
-            this.denegarPensionPersona();
+            this.objetarPensionPersona();
         } else {
-            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "denegar_pension_persona");
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "objetar_pension_persona");
         }
         return null;
     }
@@ -4898,6 +4981,16 @@ public class Persona4 extends AbstractPageBean
     private String accion9(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
+            this.denegarPensionPersona();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "denegar_pension_persona");
+        }
+        return null;
+    }
+
+    private String accion10(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
             this.registrarEntregaDocPersona();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "registrar_entrega_doc_persona");
@@ -4905,7 +4998,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion10(long f) {
+    private String accion11(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.solicitarRecoPenPersona();
@@ -4915,7 +5008,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion11(long f) {
+    private String accion12(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.aprobarRecoPenPersona();
@@ -4925,7 +5018,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion12(long f) {
+    private String accion13(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.denegarRecoPenPersona();
@@ -4935,7 +5028,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion13(long f) {
+    private String accion14(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.registrarDenuPenPersona();
@@ -4945,7 +5038,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion14(long f) {
+    private String accion15(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.confirmarDenuPenPersona();
@@ -4955,7 +5048,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion15(long f) {
+    private String accion16(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.desmentirDenuPenPersona();
@@ -4965,7 +5058,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion16(long f) {
+    private String accion17(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.actFecUltCobPenPersona();
@@ -4975,7 +5068,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion17(long f) {
+    private String accion18(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.anulFecUltCobPenPersona();
@@ -4985,7 +5078,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion18(long f) {
+    private String accion19(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionSolicitada();
@@ -4995,7 +5088,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion19(long f) {
+    private String accion20(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaSinObjeciones();
@@ -5005,7 +5098,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion20(long f) {
+    private String accion21(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaAcreditadaConObjeciones();
@@ -5015,7 +5108,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion21(long f) {
+    private String accion22(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionAprobada();
@@ -5025,7 +5118,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion22(long f) {
+    private String accion23(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionDenegada();
@@ -5035,7 +5128,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion23(long f) {
+    private String accion24(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionRevocada();
@@ -5045,7 +5138,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion24(long f) {
+    private String accion25(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirPersonaConPensionOtorgada();
@@ -5055,7 +5148,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion25(long f) {
+    private String accion26(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirUltimaActualizacionPersonaEnJupe();
@@ -5065,7 +5158,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion26(long f) {
+    private String accion27(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirCuadroResumenPensionPersona();
@@ -5191,22 +5284,20 @@ public class Persona4 extends AbstractPageBean
         }
     }
 
-    private void denegarPensionPersona() { /* denegar pension persona */
-        this.denegarPensionPersona(synchronously);
+    private void objetarPensionPersona() { /* objetar pension persona */
+        this.objetarPensionPersona(synchronously);
     }
 
-    private void denegarPensionPersona(boolean synchronously) { /* denegar pension persona */
+    private void objetarPensionPersona(boolean synchronously) { /* objetar pension persona */
         try {
             Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
             Integer numeroCausaDenPension = this.getValorListaNumeroCausaDenPension1();
             String otraCausaDenPension = this.getTextoCampoOtraCausaDenPension1();
-            String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
-            Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
-            String comentariosDenegacionPension = this.getTextoCampoComentariosDenegacionPension1();
-            DenegarPensionPersonaMessage message = new DenegarPensionPersonaMessage(idPersona, numeroCausaDenPension, otraCausaDenPension, numeroResolucionDenPen, fechaResolucionDenPen, comentariosDenegacionPension);
+            String comentariosObjecionPension = this.getTextoCampoComentariosObjecionPension1();
+            ObjetarPensionPersonaMessage message = new ObjetarPensionPersonaMessage(idPersona, numeroCausaDenPension, otraCausaDenPension, comentariosObjecionPension);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
-                this.personaBusinessProcess.denegarPensionPersona(message);
+                this.personaBusinessProcess.objetarPensionPersona(message);
             } else {
                 this.requestReply(message);
             }
@@ -5251,6 +5342,28 @@ public class Persona4 extends AbstractPageBean
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.personaBusinessProcess.otorgarPensionPersona(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void denegarPensionPersona() { /* denegar pension persona */
+        this.denegarPensionPersona(synchronously);
+    }
+
+    private void denegarPensionPersona(boolean synchronously) { /* denegar pension persona */
+        try {
+            Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
+            Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
+            String comentariosDenegacionPension = this.getTextoCampoComentariosDenegacionPension1();
+            DenegarPensionPersonaMessage message = new DenegarPensionPersonaMessage(idPersona, numeroResolucionDenPen, fechaResolucionDenPen, comentariosDenegacionPension);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.personaBusinessProcess.denegarPensionPersona(message);
             } else {
                 this.requestReply(message);
             }

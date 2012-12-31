@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Proceso4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -317,7 +317,7 @@
                                                     binding="#{Proceso4.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
-                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -348,7 +348,7 @@
                                                     binding="#{Proceso4.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -370,6 +370,68 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionDenPen1" rendered="#{Proceso4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"
+                                                    text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionDenPen2" rendered="#{Proceso4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Proceso4.campoNumeroResolucionDenPen1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Proceso4.textoCampoNumeroResolucionDenPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen"
+                                                    validatorExpression="#{Proceso4.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Proceso4.campoNumeroResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1"
+                                                    binding="#{Proceso4.helpInlineNumeroResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_den_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionDenPen1" rendered="#{Proceso4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"
+                                                    text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionDenPen2" rendered="#{Proceso4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionDenPen1"
+                                                    binding="#{Proceso4.campoFechaResolucionDenPen1}"
+                                                    maxDate="#{Proceso4.gestor.defaultMaxDate}"
+                                                    minDate="#{Proceso4.gestor.defaultMinDate}"
+                                                     required="true"
+                                                    selectedDate="#{Proceso4.valorCampoFechaResolucionDenPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Proceso4.campoFechaResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1"
+                                                    binding="#{Proceso4.helpInlineFechaResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_den_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

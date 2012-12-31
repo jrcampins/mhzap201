@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -393,7 +393,6 @@
                                                 <webuijsf:textField id="campoComentariosAprobacionPension1"
                                                     binding="#{Persona4.campoComentariosAprobacionPension1}"
                                                     columns="50"
-                                                     required="true"
                                                     text="#{Persona4.textoCampoComentariosAprobacionPension1}"
                                                     toolTip="BundleParametros.comentarios_aprobacion_pension"
                                                     validatorExpression="#{Persona4.validatorComentariosAprobacionPension1.validate}"/>
@@ -469,93 +468,33 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroResolucionDenPen1" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                id="gridComentariosObjecionPension1" rendered="#{Persona4.bitComentariosObjecionPensionRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
-                                                    binding="#{Persona4.labelNumeroResolucionDenPen1}"
-                                                    id="labelNumeroResolucionDenPen1"
-                                                    for="campoNumeroResolucionDenPen1"
-                                                    text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
+                                                    binding="#{Persona4.labelComentariosObjecionPension1}"
+                                                    id="labelComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"
+                                                    text="comentarios objeci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridNumeroResolucionDenPen2" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                id="gridComentariosObjecionPension2" rendered="#{Persona4.bitComentariosObjecionPensionRendered.on}"
                                                 styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
-                                                    binding="#{Persona4.campoNumeroResolucionDenPen1}"
+                                                <webuijsf:textField id="campoComentariosObjecionPension1"
+                                                    binding="#{Persona4.campoComentariosObjecionPension1}"
                                                     columns="50"
-                                                    text="#{Persona4.textoCampoNumeroResolucionDenPen1}"
-                                                    toolTip="BundleParametros.numero_resolucion_den_pen"
-                                                    validatorExpression="#{Persona4.validatorNumeroResolucionDenPen1.validate}"/>
-                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
-                                                    binding="#{Persona4.campoNumeroResolucionDenPen1Texto1}"/>
-                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
-                                                    for="campoNumeroResolucionDenPen1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1"
-                                                    binding="#{Persona4.helpInlineNumeroResolucionDenPen1}"                                                    
+                                                    text="#{Persona4.textoCampoComentariosObjecionPension1}"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension"
+                                                    validatorExpression="#{Persona4.validatorComentariosObjecionPension1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosObjecionPension1Texto1"
+                                                    binding="#{Persona4.campoComentariosObjecionPension1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosObjecionPension1"
+                                                    binding="#{Persona4.helpInlineComentariosObjecionPension1}"                                                    
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_resolucion_den_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaResolucionDenPen1" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelFechaResolucionDenPen1}"
-                                                    id="labelFechaResolucionDenPen1"
-                                                    for="campoFechaResolucionDenPen1"
-                                                    text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaResolucionDenPen2" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaResolucionDenPen1"
-                                                    binding="#{Persona4.campoFechaResolucionDenPen1}"
-                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona4.gestor.defaultMinDate}"
-                                                    selectedDate="#{Persona4.valorCampoFechaResolucionDenPen1}"
-                                                    toolTip="BundleParametros.fecha_resolucion_den_pen"/>
-                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
-                                                    binding="#{Persona4.campoFechaResolucionDenPen1Texto1}"/>
-                                                <webuijsf:message id="messageFechaResolucionDenPen1"
-                                                    for="campoFechaResolucionDenPen1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1"
-                                                    binding="#{Persona4.helpInlineFechaResolucionDenPen1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_resolucion_den_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridComentariosDenegacionPension1" rendered="#{Persona4.bitComentariosDenegacionPensionRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona4.labelComentariosDenegacionPension1}"
-                                                    id="labelComentariosDenegacionPension1"
-                                                    for="campoComentariosDenegacionPension1"
-                                                    text="comentarios denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosDenegacionPension2" rendered="#{Persona4.bitComentariosDenegacionPensionRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoComentariosDenegacionPension1"
-                                                    binding="#{Persona4.campoComentariosDenegacionPension1}"
-                                                    columns="50"
-                                                    text="#{Persona4.textoCampoComentariosDenegacionPension1}"
-                                                    toolTip="BundleParametros.comentarios_denegacion_pension"
-                                                    validatorExpression="#{Persona4.validatorComentariosDenegacionPension1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosDenegacionPension1Texto1"
-                                                    binding="#{Persona4.campoComentariosDenegacionPension1Texto1}"/>
-                                                <webuijsf:message id="messageComentariosDenegacionPension1"
-                                                    for="campoComentariosDenegacionPension1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosDenegacionPension1"
-                                                    binding="#{Persona4.helpInlineComentariosDenegacionPension1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_denegacion_pension"
+                                                    text="BundleParametros.comentarios_objecion_pension"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -655,7 +594,7 @@
                                                     binding="#{Persona4.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
-                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -664,6 +603,7 @@
                                                 <webuijsf:textField id="campoNumeroResolucionOtorPen1"
                                                     binding="#{Persona4.campoNumeroResolucionOtorPen1}"
                                                     columns="50"
+                                                     required="true"
                                                     text="#{Persona4.textoCampoNumeroResolucionOtorPen1}"
                                                     toolTip="BundleParametros.numero_resolucion_otor_pen"
                                                     validatorExpression="#{Persona4.validatorNumeroResolucionOtorPen1.validate}"/>
@@ -685,7 +625,7 @@
                                                     binding="#{Persona4.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -695,6 +635,7 @@
                                                     binding="#{Persona4.campoFechaResolucionOtorPen1}"
                                                     maxDate="#{Persona4.gestor.defaultMaxDate}"
                                                     minDate="#{Persona4.gestor.defaultMinDate}"
+                                                     required="true"
                                                     selectedDate="#{Persona4.valorCampoFechaResolucionOtorPen1}"
                                                     toolTip="BundleParametros.fecha_resolucion_otor_pen"/>
                                                 <webuijsf:staticText id="campoFechaResolucionOtorPen1Texto1"
@@ -736,6 +677,98 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.comentarios_otorgamiento_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionDenPen1" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"
+                                                    text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionDenPen2" rendered="#{Persona4.bitNumeroResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Persona4.campoNumeroResolucionDenPen1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Persona4.textoCampoNumeroResolucionDenPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen"
+                                                    validatorExpression="#{Persona4.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Persona4.campoNumeroResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionDenPen1"
+                                                    binding="#{Persona4.helpInlineNumeroResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_den_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionDenPen1" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"
+                                                    text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionDenPen2" rendered="#{Persona4.bitFechaResolucionDenPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionDenPen1"
+                                                    binding="#{Persona4.campoFechaResolucionDenPen1}"
+                                                    maxDate="#{Persona4.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona4.gestor.defaultMinDate}"
+                                                     required="true"
+                                                    selectedDate="#{Persona4.valorCampoFechaResolucionDenPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Persona4.campoFechaResolucionDenPen1Texto1}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionDenPen1"
+                                                    binding="#{Persona4.helpInlineFechaResolucionDenPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_den_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosDenegacionPension1" rendered="#{Persona4.bitComentariosDenegacionPensionRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelComentariosDenegacionPension1}"
+                                                    id="labelComentariosDenegacionPension1"
+                                                    for="campoComentariosDenegacionPension1"
+                                                    text="comentarios denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosDenegacionPension2" rendered="#{Persona4.bitComentariosDenegacionPensionRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoComentariosDenegacionPension1"
+                                                    binding="#{Persona4.campoComentariosDenegacionPension1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoComentariosDenegacionPension1}"
+                                                    toolTip="BundleParametros.comentarios_denegacion_pension"
+                                                    validatorExpression="#{Persona4.validatorComentariosDenegacionPension1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosDenegacionPension1Texto1"
+                                                    binding="#{Persona4.campoComentariosDenegacionPension1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosDenegacionPension1"
+                                                    for="campoComentariosDenegacionPension1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosDenegacionPension1"
+                                                    binding="#{Persona4.helpInlineComentariosDenegacionPension1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_denegacion_pension"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

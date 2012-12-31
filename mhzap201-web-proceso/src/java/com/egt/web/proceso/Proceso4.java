@@ -96,6 +96,7 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import com.egt.ejb.business.process.ProcesoBusinessProcessLocal;
@@ -119,6 +120,9 @@ public class Proceso4 extends AbstractPageBean
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
+        validatorNumeroResolucionDenPen1.setMaximum(2000);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
     }
 
     private Form form1 = new Form();
@@ -584,6 +588,106 @@ public class Proceso4 extends AbstractPageBean
         this.converterFechaResolucionOtorPen1 = converter;
     }
   
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionDenPen1() {
+        return helpInlineNumeroResolucionDenPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionDenPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private Calendar campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(Calendar component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionDenPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionDenPen1() {
+        return helpInlineFechaResolucionDenPen1;
+    }
+
+    public void setHelpInlineFechaResolucionDenPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionDenPen1 = hi;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
+    }
+  
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonAplicar1() {
@@ -753,9 +857,11 @@ public class Proceso4 extends AbstractPageBean
 
     static long FUNCION_ACCION_4 = ProcesoConstants.FUNCION_PROCESO_OTORGAR_PENSIONES_APR;
 
-    static long FUNCION_ACCION_5 = ProcesoConstants.FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
+    static long FUNCION_ACCION_5 = ProcesoConstants.FUNCION_PROCESO_DENEGAR_PENSIONES_OBJ;
 
-    static long FUNCION_ACCION_6 = ProcesoConstants.FUNCION_PROCESO_VERIFICAR_ELE_PEN;
+    static long FUNCION_ACCION_6 = ProcesoConstants.FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
+
+    static long FUNCION_ACCION_7 = ProcesoConstants.FUNCION_PROCESO_VERIFICAR_ELE_PEN;
 
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
@@ -765,8 +871,9 @@ public class Proceso4 extends AbstractPageBean
             new Option(FUNCION_ACCION_2, BundleWebui.getString("proceso_acreditar_pot_ben")),
             new Option(FUNCION_ACCION_3, BundleWebui.getString("proceso_preparar_prox_pago_pen")),
             new Option(FUNCION_ACCION_4, BundleWebui.getString("proceso_otorgar_pensiones_apr")),
-            new Option(FUNCION_ACCION_5, BundleWebui.getString("proceso_actualizar_pen_en_jupe")),
-            new Option(FUNCION_ACCION_6, BundleWebui.getString("proceso_verificar_ele_pen"))
+            new Option(FUNCION_ACCION_5, BundleWebui.getString("proceso_denegar_pensiones_obj")),
+            new Option(FUNCION_ACCION_6, BundleWebui.getString("proceso_actualizar_pen_en_jupe")),
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("proceso_verificar_ele_pen"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -774,7 +881,7 @@ public class Proceso4 extends AbstractPageBean
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
     public boolean isIdUbicacionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_6;
+        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_7;
     }
 
     private Bit bitIdUbicacionRendered = new Bit() {
@@ -891,6 +998,40 @@ public class Proceso4 extends AbstractPageBean
         return bitFechaResolucionOtorPenRendered;
     }
 
+    public boolean isNumeroResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_5;
+    }
+
+    private Bit bitNumeroResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitNumeroResolucionDenPenRendered() {
+        return bitNumeroResolucionDenPenRendered;
+    }
+
+    public boolean isFechaResolucionDenPenRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_5;
+    }
+
+    private Bit bitFechaResolucionDenPenRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaResolucionDenPenRendered();
+        }
+    };
+
+    public Bit getBitFechaResolucionDenPenRendered() {
+        return bitFechaResolucionDenPenRendered;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Facades">
@@ -993,6 +1134,26 @@ public class Proceso4 extends AbstractPageBean
 
     public void setValorCampoFechaResolucionOtorPen1(java.sql.Timestamp valor) {
         this.valorCampoFechaResolucionOtorPen1 = valor;
+    }
+
+    private String textoCampoNumeroResolucionDenPen1;
+
+    public String getTextoCampoNumeroResolucionDenPen1() {
+        return this.textoCampoNumeroResolucionDenPen1;
+    }
+
+    public void setTextoCampoNumeroResolucionDenPen1(String valor) {
+        this.textoCampoNumeroResolucionDenPen1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaResolucionDenPen1;
+
+    public java.sql.Timestamp getValorCampoFechaResolucionDenPen1() {
+        return this.valorCampoFechaResolucionDenPen1;
+    }
+
+    public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
+        this.valorCampoFechaResolucionDenPen1 = valor;
     }
 
     // </editor-fold>
@@ -1136,8 +1297,9 @@ public class Proceso4 extends AbstractPageBean
                 : f == FUNCION_ACCION_2 ? this.accion2(f) /* procesoAcreditarPotBen */
                 : f == FUNCION_ACCION_3 ? this.accion3(f) /* procesoPrepararProxPagoPen */
                 : f == FUNCION_ACCION_4 ? this.accion4(f) /* procesoOtorgarPensionesApr */
-                : f == FUNCION_ACCION_5 ? this.accion5(f) /* procesoActualizarPenEnJupe */
-                : f == FUNCION_ACCION_6 ? this.accion6(f) /* procesoVerificarElePen */
+                : f == FUNCION_ACCION_5 ? this.accion5(f) /* procesoDenegarPensionesObj */
+                : f == FUNCION_ACCION_6 ? this.accion6(f) /* procesoActualizarPenEnJupe */
+                : f == FUNCION_ACCION_7 ? this.accion7(f) /* procesoVerificarElePen */
                 : null;
     }
     // </editor-fold>
@@ -1186,6 +1348,16 @@ public class Proceso4 extends AbstractPageBean
     private String accion5(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
+            this.procesoDenegarPensionesObj();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_denegar_pensiones_obj");
+        }
+        return null;
+    }
+
+    private String accion6(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
             this.procesoActualizarPenEnJupe();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_actualizar_pen_en_jupe");
@@ -1193,7 +1365,7 @@ public class Proceso4 extends AbstractPageBean
         return null;
     }
 
-    private String accion6(long f) {
+    private String accion7(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.procesoVerificarElePen();
@@ -1287,6 +1459,27 @@ public class Proceso4 extends AbstractPageBean
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoOtorgarPensionesApr(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void procesoDenegarPensionesObj() { /* proceso denegar pensiones obj */
+        this.procesoDenegarPensionesObj(synchronously);
+    }
+
+    private void procesoDenegarPensionesObj(boolean synchronously) { /* proceso denegar pensiones obj */
+        try {
+            Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
+            String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
+            Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
+            ProcesoDenegarPensionesObjMessage message = new ProcesoDenegarPensionesObjMessage(idUbicacion, numeroResolucionDenPen, fechaResolucionDenPen);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.procesoBusinessProcess.procesoDenegarPensionesObj(message);
             } else {
                 this.requestReply(message);
             }
