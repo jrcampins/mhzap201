@@ -1,5 +1,7 @@
 :preguntar
 set siono=S
+if defined siono_por_omision set siono=%siono_por_omision%
+set siono_por_omision=
 set pregunta="%* ? (S/N) "
 set pregunta="%* ? (S/N) [%siono%] "
 set /p siono=%pregunta%

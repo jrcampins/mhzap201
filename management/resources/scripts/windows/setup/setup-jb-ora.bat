@@ -37,11 +37,13 @@ if /i "%1" == "install" (
 )
 
 set siono=N
+set siono_por_omision=N
 if /i "%1" == "install" (
-    call "%~dp0..\setsiono" restaurar de la base de datos a partir de un archivo respaldo
+    call "%~dp0..\setsiono" restaurar la base de datos a partir de un archivo respaldo
     echo.
 )
 
+set siono_por_omision=
 if /i "%1" == "install" (
     if /i "%siono%" == "S" (
         call %oracle%\import
