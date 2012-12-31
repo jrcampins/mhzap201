@@ -7,6 +7,8 @@
 --@return: mensaje indicando la condición de ejecución del proceso.
 --
 function revocar_pension(persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return varchar2 is
+    v_numero_causa number;
+    v_otra_causa varchar2(200);
     mensaje_denegacion_pension varchar2(200):='';
     mensaje varchar2 (200):='';
     row_persona persona%rowtype;
@@ -31,12 +33,23 @@ begin
     --Este proceso no hace ninguna validación, solo se registran los datos indicados por el usuario.
     --
     else
+        if numero_causa is null then
+            v_numero_causa := 99;
+        else
+            v_numero_causa := numero_causa;
+        end if;
+        if v_numero_causa = 99 then
+            v_otra_causa := trim(otra_causa);
+            if v_otra_causa is null or v_otra_causa = '' then
+                v_otra_causa := 'Causa no especificada';
+            end if;
+        end if;
         update persona 
         set    numero_condicion_pension = 4,
                fecha_revocacion_pension = CURRENT_TIMESTAMP,
-               numero_causa_rev_pension=numero_causa,
-               comentarios_revocacion_pension=comentarios,
-               otra_causa_rev_pension = otra_causa
+               numero_causa_rev_pension = v_numero_causa,
+               otra_causa_rev_pension = v_otra_causa,
+               comentarios_revocacion_pension = comentarios
         where  id_persona = persona_consultada;
         mensaje:='Pensión Revocada';
         return mensaje;
