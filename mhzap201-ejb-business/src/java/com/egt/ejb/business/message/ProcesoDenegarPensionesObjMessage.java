@@ -14,39 +14,34 @@ import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
 import java.util.Date;
 
-public class DenegarPensionPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage implements Serializable {
 
-    public static final long PARAMETRO_ID_PERSONA = 20002L;
+    public static final long PARAMETRO_ID_UBICACION = 20513L;
 
     public static final long PARAMETRO_NUMERO_RESOLUCION_DEN_PEN = 20683L;
 
     public static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN = 20681L;
 
-    public static final long PARAMETRO_COMENTARIOS_DENEGACION_PENSION = 20231L;
-
-    protected Long idPersona;
+    protected Long idUbicacion;
 
     protected String numeroResolucionDenPen;
 
     protected Date fechaResolucionDenPen;
 
-    protected String comentariosDenegacionPension;
-
-    public DenegarPensionPersonaMessage(Long idPersona, String numeroResolucionDenPen, Date fechaResolucionDenPen, String comentariosDenegacionPension) {
+    public ProcesoDenegarPensionesObjMessage(Long idUbicacion, String numeroResolucionDenPen, Date fechaResolucionDenPen) {
         this.init();
-        this.funcion = 201000159L;
-        this.idPersona = idPersona;
+        this.funcion = 200200155L;
+        this.idUbicacion = idUbicacion;
         this.numeroResolucionDenPen = numeroResolucionDenPen;
         this.fechaResolucionDenPen = fechaResolucionDenPen;
-        this.comentariosDenegacionPension = comentariosDenegacionPension;
     }
 
-    public Long getIdPersona() {
-        return idPersona;
+    public Long getIdUbicacion() {
+        return idUbicacion;
     }
 
-    public void setIdPersona(Long idPersona) {
-        this.idPersona = idPersona;
+    public void setIdUbicacion(Long idUbicacion) {
+        this.idUbicacion = idUbicacion;
     }
 
     public String getNumeroResolucionDenPen() {
@@ -63,13 +58,5 @@ public class DenegarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
         this.fechaResolucionDenPen = fechaResolucionDenPen;
-    }
-
-    public String getComentariosDenegacionPension() {
-        return comentariosDenegacionPension;
-    }
-
-    public void setComentariosDenegacionPension(String comentariosDenegacionPension) {
-        this.comentariosDenegacionPension = comentariosDenegacionPension;
     }
 }

@@ -21,7 +21,7 @@ public class ProcesoVerificarElePenMessage extends BusinessProcessMessage implem
 
     public ProcesoVerificarElePenMessage(Long idUbicacion) {
         this.init();
-        this.funcion = 200200156L;
+        this.funcion = 200200157L;
         this.idUbicacion = idUbicacion;
     }
 

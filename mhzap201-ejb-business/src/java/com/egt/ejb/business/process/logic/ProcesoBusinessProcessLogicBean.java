@@ -19,6 +19,7 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import com.egt.ejb.persistence.entity.Proceso;
@@ -80,6 +81,19 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     public void procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoOtorgarPensionesAprMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoDenegarPensionesObj(ProcesoDenegarPensionesObjMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoDenegarPensionesObjMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());

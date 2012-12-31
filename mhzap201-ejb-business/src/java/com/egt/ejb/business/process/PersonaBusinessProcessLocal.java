@@ -15,9 +15,10 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
-import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
@@ -42,11 +43,13 @@ public interface PersonaBusinessProcessLocal {
 
     public AprobarPensionPersonaMessage aprobarPensionPersona(AprobarPensionPersonaMessage message);
 
-    public DenegarPensionPersonaMessage denegarPensionPersona(DenegarPensionPersonaMessage message);
+    public ObjetarPensionPersonaMessage objetarPensionPersona(ObjetarPensionPersonaMessage message);
 
     public RevocarPensionPersonaMessage revocarPensionPersona(RevocarPensionPersonaMessage message);
 
     public OtorgarPensionPersonaMessage otorgarPensionPersona(OtorgarPensionPersonaMessage message);
+
+    public DenegarPensionPersonaMessage denegarPensionPersona(DenegarPensionPersonaMessage message);
 
     public RegistrarEntregaDocPersonaMessage registrarEntregaDocPersona(RegistrarEntregaDocPersonaMessage message);
 

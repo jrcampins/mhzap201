@@ -26,7 +26,7 @@ public class AprobarRecoPenPersonaMessage extends BusinessProcessMessage impleme
 
     public AprobarRecoPenPersonaMessage(Long idPersona, String comentariosAprRecoPen) {
         this.init();
-        this.funcion = 201000161L;
+        this.funcion = 201000162L;
         this.idPersona = idPersona;
         this.comentariosAprRecoPen = comentariosAprRecoPen;
     }

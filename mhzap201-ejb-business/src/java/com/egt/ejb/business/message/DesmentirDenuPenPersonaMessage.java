@@ -26,7 +26,7 @@ public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage imple
 
     public DesmentirDenuPenPersonaMessage(Long idPersona, String comentariosDesDenuPen) {
         this.init();
-        this.funcion = 201000165L;
+        this.funcion = 201000166L;
         this.idPersona = idPersona;
         this.comentariosDesDenuPen = comentariosDesDenuPen;
     }

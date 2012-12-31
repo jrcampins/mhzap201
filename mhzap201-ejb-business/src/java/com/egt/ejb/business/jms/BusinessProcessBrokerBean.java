@@ -31,6 +31,7 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
@@ -38,9 +39,10 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
-import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
@@ -166,6 +168,8 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = proceso.procesoPrepararProxPagoPen((ProcesoPrepararProxPagoPenMessage) message);
                 } else if (message instanceof ProcesoOtorgarPensionesAprMessage) {
                     message = proceso.procesoOtorgarPensionesApr((ProcesoOtorgarPensionesAprMessage) message);
+                } else if (message instanceof ProcesoDenegarPensionesObjMessage) {
+                    message = proceso.procesoDenegarPensionesObj((ProcesoDenegarPensionesObjMessage) message);
                 } else if (message instanceof ProcesoActualizarPenEnJupeMessage) {
                     message = proceso.procesoActualizarPenEnJupe((ProcesoActualizarPenEnJupeMessage) message);
                 } else if (message instanceof ProcesoVerificarElePenMessage) {
@@ -180,12 +184,14 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = persona.anularCerDefunPersona((AnularCerDefunPersonaMessage) message);
                 } else if (message instanceof AprobarPensionPersonaMessage) {
                     message = persona.aprobarPensionPersona((AprobarPensionPersonaMessage) message);
-                } else if (message instanceof DenegarPensionPersonaMessage) {
-                    message = persona.denegarPensionPersona((DenegarPensionPersonaMessage) message);
+                } else if (message instanceof ObjetarPensionPersonaMessage) {
+                    message = persona.objetarPensionPersona((ObjetarPensionPersonaMessage) message);
                 } else if (message instanceof RevocarPensionPersonaMessage) {
                     message = persona.revocarPensionPersona((RevocarPensionPersonaMessage) message);
                 } else if (message instanceof OtorgarPensionPersonaMessage) {
                     message = persona.otorgarPensionPersona((OtorgarPensionPersonaMessage) message);
+                } else if (message instanceof DenegarPensionPersonaMessage) {
+                    message = persona.denegarPensionPersona((DenegarPensionPersonaMessage) message);
                 } else if (message instanceof RegistrarEntregaDocPersonaMessage) {
                     message = persona.registrarEntregaDocPersona((RegistrarEntregaDocPersonaMessage) message);
                 } else if (message instanceof SolicitarRecoPenPersonaMessage) {

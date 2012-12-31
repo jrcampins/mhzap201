@@ -17,6 +17,6 @@ public class ProcesoActualizarPenEnJupeMessage extends BusinessProcessMessage im
 
     public ProcesoActualizarPenEnJupeMessage() {
         this.init();
-        this.funcion = 200200155L;
+        this.funcion = 200200156L;
     }
 }

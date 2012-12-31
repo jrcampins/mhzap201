@@ -24,9 +24,10 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
-import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
@@ -352,7 +353,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     }
 
     @Override
-    public DenegarPensionPersonaMessage denegarPensionPersona(DenegarPensionPersonaMessage message) {
+    public ObjetarPensionPersonaMessage objetarPensionPersona(ObjetarPensionPersonaMessage message) {
         Long idPersona = null;
         Persona persona = null;
         try {
@@ -364,7 +365,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
             } else {
                 message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
                 message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
-                this.denegarPensionPersona(message, persona);
+                this.objetarPensionPersona(message, persona);
                 this.grabarRastroFuncion(message, persona);
             }
         } catch (Exception ex) {
@@ -375,34 +376,30 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         return message;
     }
 
-    protected void denegarPensionPersona(DenegarPensionPersonaMessage message, Persona persona) throws Exception {
-        String sql = PersonaConstants.PROCESO_FUNCION_DENEGAR_PENSION_PERSONA;
+    protected void objetarPensionPersona(ObjetarPensionPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_OBJETAR_PENSION_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[7]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
             args[index++] = message.getNumeroCausaDenPension();
             args[index++] = message.getOtraCausaDenPension();
-            args[index++] = message.getNumeroResolucionDenPen();
-            args[index++] = message.getFechaResolucionDenPen();
-            args[index++] = message.getComentariosDenegacionPension();
+            args[index++] = message.getComentariosObjecionPension();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
-            logician.denegarPensionPersona(message, persona);
+            logician.objetarPensionPersona(message, persona);
             facade.flush();
         }
     }
 
-    protected Long grabarRastroFuncion(DenegarPensionPersonaMessage message, Persona persona) {
+    protected Long grabarRastroFuncion(ObjetarPensionPersonaMessage message, Persona persona) {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_NUMERO_CAUSA_DEN_PENSION, STP.getString(message.getNumeroCausaDenPension()));
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_OTRA_CAUSA_DEN_PENSION, STP.getString(message.getOtraCausaDenPension()));
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_NUMERO_RESOLUCION_DEN_PEN, STP.getString(message.getNumeroResolucionDenPen()));
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_FECHA_RESOLUCION_DEN_PEN, STP.getString(message.getFechaResolucionDenPen()));
-        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_COMENTARIOS_DENEGACION_PENSION, STP.getString(message.getComentariosDenegacionPension()));
+        rastro.addParametro(ObjetarPensionPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(ObjetarPensionPersonaMessage.PARAMETRO_NUMERO_CAUSA_DEN_PENSION, STP.getString(message.getNumeroCausaDenPension()));
+        rastro.addParametro(ObjetarPensionPersonaMessage.PARAMETRO_OTRA_CAUSA_DEN_PENSION, STP.getString(message.getOtraCausaDenPension()));
+        rastro.addParametro(ObjetarPensionPersonaMessage.PARAMETRO_COMENTARIOS_OBJECION_PENSION, STP.getString(message.getComentariosObjecionPension()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -505,6 +502,57 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         rastro.addParametro(OtorgarPensionPersonaMessage.PARAMETRO_NUMERO_RESOLUCION_OTOR_PEN, STP.getString(message.getNumeroResolucionOtorPen()));
         rastro.addParametro(OtorgarPensionPersonaMessage.PARAMETRO_FECHA_RESOLUCION_OTOR_PEN, STP.getString(message.getFechaResolucionOtorPen()));
         rastro.addParametro(OtorgarPensionPersonaMessage.PARAMETRO_COMENTARIOS_OTORGAMIENTO_PEN, STP.getString(message.getComentariosOtorgamientoPen()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public DenegarPensionPersonaMessage denegarPensionPersona(DenegarPensionPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.denegarPensionPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void denegarPensionPersona(DenegarPensionPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_DENEGAR_PENSION_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            args[index++] = message.getNumeroResolucionDenPen();
+            args[index++] = message.getFechaResolucionDenPen();
+            args[index++] = message.getComentariosDenegacionPension();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.denegarPensionPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(DenegarPensionPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_NUMERO_RESOLUCION_DEN_PEN, STP.getString(message.getNumeroResolucionDenPen()));
+        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_FECHA_RESOLUCION_DEN_PEN, STP.getString(message.getFechaResolucionDenPen()));
+        rastro.addParametro(DenegarPensionPersonaMessage.PARAMETRO_COMENTARIOS_DENEGACION_PENSION, STP.getString(message.getComentariosDenegacionPension()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

@@ -26,7 +26,7 @@ public class ActFecUltCobPenPersonaMessage extends BusinessProcessMessage implem
 
     public ActFecUltCobPenPersonaMessage(Long idPersona, Date fechaUltimoCobroPension) {
         this.init();
-        this.funcion = 201000166L;
+        this.funcion = 201000167L;
         this.idPersona = idPersona;
         this.fechaUltimoCobroPension = fechaUltimoCobroPension;
     }

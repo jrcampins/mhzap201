@@ -14,6 +14,7 @@ import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
 import javax.ejb.Local;
@@ -28,6 +29,8 @@ public interface ProcesoBusinessProcessLocal {
     public ProcesoPrepararProxPagoPenMessage procesoPrepararProxPagoPen(ProcesoPrepararProxPagoPenMessage message);
 
     public ProcesoOtorgarPensionesAprMessage procesoOtorgarPensionesApr(ProcesoOtorgarPensionesAprMessage message);
+
+    public ProcesoDenegarPensionesObjMessage procesoDenegarPensionesObj(ProcesoDenegarPensionesObjMessage message);
 
     public ProcesoActualizarPenEnJupeMessage procesoActualizarPenEnJupe(ProcesoActualizarPenEnJupeMessage message);
 

@@ -20,9 +20,10 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
-import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
@@ -181,9 +182,9 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     }
 
     @Override
-    public void denegarPensionPersona(DenegarPensionPersonaMessage message, Persona persona) throws Exception {
+    public void objetarPensionPersona(ObjetarPensionPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
-            throw new EJBException(DenegarPensionPersonaMessage.class.getSimpleName());
+            throw new EJBException(ObjetarPensionPersonaMessage.class.getSimpleName());
         }
         if (persona == null) {
             throw new EJBException(Persona.class.getSimpleName());
@@ -193,11 +194,9 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         persona.setCausaDenPensionNumeroCausaDenPension(this.causaDenPensionFacade.find(message.getNumeroCausaDenPension()));
         persona.setOtraCausaDenPension(message.getOtraCausaDenPension());
-        persona.setNumeroResolucionDenPen(message.getNumeroResolucionDenPen());
-        persona.setFechaResolucionDenPen(message.getFechaResolucionDenPen());
-        persona.setComentariosDenegacionPension(message.getComentariosDenegacionPension());
-        persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.DENEGADA.intValue()));
-        persona.setFechaDenegacionPension((Date) TimeUtils.currentDate());
+        persona.setComentariosObjecionPension(message.getComentariosObjecionPension());
+        persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.OBJETADA.intValue()));
+        persona.setFechaObjecionPension((Date) TimeUtils.currentDate());
     }
 
     @Override
@@ -232,6 +231,26 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setNumeroResolucionOtorPen(message.getNumeroResolucionOtorPen());
         persona.setFechaResolucionOtorPen(message.getFechaResolucionOtorPen());
         persona.setComentariosOtorgamientoPen(message.getComentariosOtorgamientoPen());
+        persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.OTORGADA.intValue()));
+        persona.setFechaRevocacionPension((Date) TimeUtils.currentDate());
+    }
+
+    @Override
+    public void denegarPensionPersona(DenegarPensionPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(DenegarPensionPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setNumeroResolucionDenPen(message.getNumeroResolucionDenPen());
+        persona.setFechaResolucionDenPen(message.getFechaResolucionDenPen());
+        persona.setComentariosDenegacionPension(message.getComentariosDenegacionPension());
+        persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.DENEGADA.intValue()));
+        persona.setFechaDenegacionPension((Date) TimeUtils.currentDate());
     }
 
     @Override
