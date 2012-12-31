@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -2101,45 +2101,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosOtorgamientoPen1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosOtorgamientoPen1}"
-                                                    id="labelComentariosOtorgamientoPen1"
-                                                    for="campoComentariosOtorgamientoPen1"
-                                                    text="comentarios otorgamiento pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosOtorgamientoPen2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosOtorgamientoPen1"
-                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"
-                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosOtorgamientoPen1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1Texto1"
-                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"/>
-                                                <webuijsf:message id="messageComentariosOtorgamientoPen1"
-                                                    for="campoComentariosOtorgamientoPen1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1"
-                                                    binding="#{Persona2.helpInlineComentariosOtorgamientoPen1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_otorgamiento_pen.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridNumeroResolucionOtorPen1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
-                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2172,7 +2140,7 @@
                                                     binding="#{Persona2.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
-                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -2196,6 +2164,201 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosOtorgamientoPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosOtorgamientoPen1}"
+                                                    id="labelComentariosOtorgamientoPen1"
+                                                    for="campoComentariosOtorgamientoPen1"
+                                                    text="comentarios otorgamiento pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosOtorgamientoPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosOtorgamientoPen1"
+                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosOtorgamientoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1Texto1"
+                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"/>
+                                                <webuijsf:message id="messageComentariosOtorgamientoPen1"
+                                                    for="campoComentariosOtorgamientoPen1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1"
+                                                    binding="#{Persona2.helpInlineComentariosOtorgamientoPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_otorgamiento_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaObjecionPension1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaObjecionPension1}"
+                                                    id="labelFechaObjecionPension1"
+                                                    for="campoFechaObjecionPension1"
+                                                    text="fecha objeci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaObjecionPension2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaObjecionPension1"
+                                                    binding="#{Persona2.campoFechaObjecionPension1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_objecion_pension']}"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaObjecionPension1Texto1"
+                                                    binding="#{Persona2.campoFechaObjecionPension1Texto1}"
+                                                    converter="#{Persona2.converterFechaObjecionPension1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_objecion_pension']}"/>
+                                                <webuijsf:message id="messageFechaObjecionPension1"
+                                                    for="campoFechaObjecionPension1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaObjecionPension1"
+                                                    binding="#{Persona2.helpInlineFechaObjecionPension1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_objecion_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroCausaDenPension1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroCausaDenPension1}"
+                                                    id="labelNumeroCausaDenPension1"
+                                                    for="listaNumeroCausaDenPension1"
+                                                    text="causa denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroCausaDenPension2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaNumeroCausaDenPension1"
+                                                    binding="#{Persona2.listaNumeroCausaDenPension1}"
+                                                    converter="#{Persona2.converterNumeroCausaDenPension1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaNumeroCausaDenPension1}"
+                                                    selected="#{Persona2.personaDataProvider.value['numero_causa_den_pension']}"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"/>
+                                                <webuijsf:staticText id="listaNumeroCausaDenPension1Texto1"
+                                                    binding="#{Persona2.listaNumeroCausaDenPension1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
+                                                <webuijsf:message id="messageNumeroCausaDenPension1"
+                                                    for="listaNumeroCausaDenPension1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1"
+                                                    binding="#{Persona2.helpInlineNumeroCausaDenPension1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_causa_den_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridOtraCausaDenPension1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelOtraCausaDenPension1}"
+                                                    id="labelOtraCausaDenPension1"
+                                                    for="campoOtraCausaDenPension1"
+                                                    text="otra causa denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridOtraCausaDenPension2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoOtraCausaDenPension1"
+                                                    binding="#{Persona2.campoOtraCausaDenPension1}"
+                                                    columns="50"
+                                                    maxLength="100"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"
+                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
+                                                    validatorExpression="#{Persona2.validatorOtraCausaDenPension1.validate}"/>
+                                                <webuijsf:staticText id="campoOtraCausaDenPension1Texto1"
+                                                    binding="#{Persona2.campoOtraCausaDenPension1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"/>
+                                                <webuijsf:message id="messageOtraCausaDenPension1"
+                                                    for="campoOtraCausaDenPension1"/>
+                                                <webuijsf:helpInline id="helpInlineOtraCausaDenPension1"
+                                                    binding="#{Persona2.helpInlineOtraCausaDenPension1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.otra_causa_den_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosObjecionPension1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosObjecionPension1}"
+                                                    id="labelComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"
+                                                    text="comentarios objeci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosObjecionPension2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosObjecionPension1"
+                                                    binding="#{Persona2.campoComentariosObjecionPension1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_objecion_pension']}"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosObjecionPension1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosObjecionPension1Texto1"
+                                                    binding="#{Persona2.campoComentariosObjecionPension1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_objecion_pension']}"/>
+                                                <webuijsf:message id="messageComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosObjecionPension1"
+                                                    binding="#{Persona2.helpInlineComentariosObjecionPension1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_objecion_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaDenegacionPension1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaDenegacionPension1}"
+                                                    id="labelFechaDenegacionPension1"
+                                                    for="campoFechaDenegacionPension1"
+                                                    text="fecha denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaDenegacionPension2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaDenegacionPension1"
+                                                    binding="#{Persona2.campoFechaDenegacionPension1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaDenegacionPension1Texto1"
+                                                    binding="#{Persona2.campoFechaDenegacionPension1Texto1}"
+                                                    converter="#{Persona2.converterFechaDenegacionPension1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"/>
+                                                <webuijsf:message id="messageFechaDenegacionPension1"
+                                                    for="campoFechaDenegacionPension1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaDenegacionPension1"
+                                                    binding="#{Persona2.helpInlineFechaDenegacionPension1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_denegacion_pension.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2262,104 +2425,6 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_den_pen.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridFechaDenegacionPension1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelFechaDenegacionPension1}"
-                                                    id="labelFechaDenegacionPension1"
-                                                    for="campoFechaDenegacionPension1"
-                                                    text="fecha denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaDenegacionPension2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaDenegacionPension1"
-                                                    binding="#{Persona2.campoFechaDenegacionPension1}"
-                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona2.gestor.defaultMinDate}"
-                                                    readOnly="true"
-                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"
-                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
-                                                <webuijsf:staticText id="campoFechaDenegacionPension1Texto1"
-                                                    binding="#{Persona2.campoFechaDenegacionPension1Texto1}"
-                                                    converter="#{Persona2.converterFechaDenegacionPension1}"
-                                                    text="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"/>
-                                                <webuijsf:message id="messageFechaDenegacionPension1"
-                                                    for="campoFechaDenegacionPension1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaDenegacionPension1"
-                                                    binding="#{Persona2.helpInlineFechaDenegacionPension1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_denegacion_pension.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridNumeroCausaDenPension1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelNumeroCausaDenPension1}"
-                                                    id="labelNumeroCausaDenPension1"
-                                                    for="listaNumeroCausaDenPension1"
-                                                    text="causa denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroCausaDenPension2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaNumeroCausaDenPension1"
-                                                    binding="#{Persona2.listaNumeroCausaDenPension1}"
-                                                    converter="#{Persona2.converterNumeroCausaDenPension1}"
-                                                    disabled="true"
-                                                    items="#{Persona2.asistente.opcionesListaNumeroCausaDenPension1}"
-                                                    selected="#{Persona2.personaDataProvider.value['numero_causa_den_pension']}"
-                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"/>
-                                                <webuijsf:staticText id="listaNumeroCausaDenPension1Texto1"
-                                                    binding="#{Persona2.listaNumeroCausaDenPension1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
-                                                <webuijsf:message id="messageNumeroCausaDenPension1"
-                                                    for="listaNumeroCausaDenPension1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1"
-                                                    binding="#{Persona2.helpInlineNumeroCausaDenPension1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_causa_den_pension.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridOtraCausaDenPension1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelOtraCausaDenPension1}"
-                                                    id="labelOtraCausaDenPension1"
-                                                    for="campoOtraCausaDenPension1"
-                                                    text="otra causa denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridOtraCausaDenPension2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoOtraCausaDenPension1"
-                                                    binding="#{Persona2.campoOtraCausaDenPension1}"
-                                                    columns="50"
-                                                    maxLength="100"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"
-                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
-                                                    validatorExpression="#{Persona2.validatorOtraCausaDenPension1.validate}"/>
-                                                <webuijsf:staticText id="campoOtraCausaDenPension1Texto1"
-                                                    binding="#{Persona2.campoOtraCausaDenPension1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"/>
-                                                <webuijsf:message id="messageOtraCausaDenPension1"
-                                                    for="campoOtraCausaDenPension1"/>
-                                                <webuijsf:helpInline id="helpInlineOtraCausaDenPension1"
-                                                    binding="#{Persona2.helpInlineOtraCausaDenPension1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.otra_causa_den_pension.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5180,45 +5245,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosOtorgamientoPen1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosOtorgamientoPen1x1}"
-                                                    id="labelComentariosOtorgamientoPen1x1"
-                                                    for="campoComentariosOtorgamientoPen1x1"
-                                                    text="comentarios otorgamiento pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosOtorgamientoPen1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosOtorgamientoPen1x1"
-                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1x1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"
-                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosOtorgamientoPen1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1x1Texto1"
-                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"/>
-                                                <webuijsf:message id="messageComentariosOtorgamientoPen1x1"
-                                                    for="campoComentariosOtorgamientoPen1x1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1x1"
-                                                    binding="#{Persona2.helpInlineComentariosOtorgamientoPen1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_otorgamiento_pen.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridNumeroResolucionOtorPen1x1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelNumeroResolucionOtorPen1x1}"
                                                     id="labelNumeroResolucionOtorPen1x1"
                                                     for="campoNumeroResolucionOtorPen1x1"
-                                                    text="n&#250;mero resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5251,7 +5284,7 @@
                                                     binding="#{Persona2.labelFechaResolucionOtorPen1x1}"
                                                     id="labelFechaResolucionOtorPen1x1"
                                                     for="campoFechaResolucionOtorPen1x1"
-                                                    text="fecha resoluci&#243;n otor pensi&#243;n"/>
+                                                    text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -5275,6 +5308,218 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosOtorgamientoPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosOtorgamientoPen1x1}"
+                                                    id="labelComentariosOtorgamientoPen1x1"
+                                                    for="campoComentariosOtorgamientoPen1x1"
+                                                    text="comentarios otorgamiento pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosOtorgamientoPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosOtorgamientoPen1x1"
+                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1x1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosOtorgamientoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosOtorgamientoPen1x1Texto1"
+                                                    binding="#{Persona2.campoComentariosOtorgamientoPen1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_otorgamiento_pen']}"/>
+                                                <webuijsf:message id="messageComentariosOtorgamientoPen1x1"
+                                                    for="campoComentariosOtorgamientoPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosOtorgamientoPen1x1"
+                                                    binding="#{Persona2.helpInlineComentariosOtorgamientoPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_otorgamiento_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+                                        </webuijsf:tab>
+                                        <webuijsf:tab
+                                            id="tab8"
+                                            rendered="#{Persona2.asistente.seccionPension3Rendered}"
+                                            text="pension 3">
+                                        <h:panelGrid
+                                            id="gridPanel130"
+                                            rendered="#{Persona2.asistente.seccionPension3Hidden}">
+                                            <webuijsf:staticText
+                                                id="hiddenStaticTextTab8"
+                                                text="#{Persona2.gestor.i18n.textHiddenStaticTextTab}"/>
+                                        </h:panelGrid>
+                                        <h:panelGrid
+                                            columns="2"
+                                            id="gridPanel131"
+                                            rendered="#{Persona2.asistente.seccionPension3Rendered}">
+                                            <h:panelGrid
+                                                id="gridFechaObjecionPension1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaObjecionPension1x1}"
+                                                    id="labelFechaObjecionPension1x1"
+                                                    for="campoFechaObjecionPension1x1"
+                                                    text="fecha objeci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaObjecionPension1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaObjecionPension1x1"
+                                                    binding="#{Persona2.campoFechaObjecionPension1x1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_objecion_pension']}"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaObjecionPension1x1Texto1"
+                                                    binding="#{Persona2.campoFechaObjecionPension1x1Texto1}"
+                                                    converter="#{Persona2.converterFechaObjecionPension1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_objecion_pension']}"/>
+                                                <webuijsf:message id="messageFechaObjecionPension1x1"
+                                                    for="campoFechaObjecionPension1x1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaObjecionPension1x1"
+                                                    binding="#{Persona2.helpInlineFechaObjecionPension1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_objecion_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroCausaDenPension1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroCausaDenPension1x1}"
+                                                    id="labelNumeroCausaDenPension1x1"
+                                                    for="listaNumeroCausaDenPension1x1"
+                                                    text="causa denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroCausaDenPension1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaNumeroCausaDenPension1x1"
+                                                    binding="#{Persona2.listaNumeroCausaDenPension1x1}"
+                                                    converter="#{Persona2.converterNumeroCausaDenPension1}"
+                                                    disabled="true"
+                                                    items="#{Persona2.asistente.opcionesListaNumeroCausaDenPension1}"
+                                                    selected="#{Persona2.personaDataProvider.value['numero_causa_den_pension']}"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"/>
+                                                <webuijsf:staticText id="listaNumeroCausaDenPension1x1Texto1"
+                                                    binding="#{Persona2.listaNumeroCausaDenPension1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
+                                                <webuijsf:message id="messageNumeroCausaDenPension1x1"
+                                                    for="listaNumeroCausaDenPension1x1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1x1"
+                                                    binding="#{Persona2.helpInlineNumeroCausaDenPension1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_causa_den_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridOtraCausaDenPension1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelOtraCausaDenPension1x1}"
+                                                    id="labelOtraCausaDenPension1x1"
+                                                    for="campoOtraCausaDenPension1x1"
+                                                    text="otra causa denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridOtraCausaDenPension1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoOtraCausaDenPension1x1"
+                                                    binding="#{Persona2.campoOtraCausaDenPension1x1}"
+                                                    columns="50"
+                                                    maxLength="100"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"
+                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
+                                                    validatorExpression="#{Persona2.validatorOtraCausaDenPension1.validate}"/>
+                                                <webuijsf:staticText id="campoOtraCausaDenPension1x1Texto1"
+                                                    binding="#{Persona2.campoOtraCausaDenPension1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"/>
+                                                <webuijsf:message id="messageOtraCausaDenPension1x1"
+                                                    for="campoOtraCausaDenPension1x1"/>
+                                                <webuijsf:helpInline id="helpInlineOtraCausaDenPension1x1"
+                                                    binding="#{Persona2.helpInlineOtraCausaDenPension1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.otra_causa_den_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosObjecionPension1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosObjecionPension1x1}"
+                                                    id="labelComentariosObjecionPension1x1"
+                                                    for="campoComentariosObjecionPension1x1"
+                                                    text="comentarios objeci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosObjecionPension1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosObjecionPension1x1"
+                                                    binding="#{Persona2.campoComentariosObjecionPension1x1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_objecion_pension']}"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosObjecionPension1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosObjecionPension1x1Texto1"
+                                                    binding="#{Persona2.campoComentariosObjecionPension1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_objecion_pension']}"/>
+                                                <webuijsf:message id="messageComentariosObjecionPension1x1"
+                                                    for="campoComentariosObjecionPension1x1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosObjecionPension1x1"
+                                                    binding="#{Persona2.helpInlineComentariosObjecionPension1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_objecion_pension.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaDenegacionPension1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaDenegacionPension1x1}"
+                                                    id="labelFechaDenegacionPension1x1"
+                                                    for="campoFechaDenegacionPension1x1"
+                                                    text="fecha denegaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaDenegacionPension1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaDenegacionPension1x1"
+                                                    binding="#{Persona2.campoFechaDenegacionPension1x1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaDenegacionPension1x1Texto1"
+                                                    binding="#{Persona2.campoFechaDenegacionPension1x1Texto1}"
+                                                    converter="#{Persona2.converterFechaDenegacionPension1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"/>
+                                                <webuijsf:message id="messageFechaDenegacionPension1x1"
+                                                    for="campoFechaDenegacionPension1x1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaDenegacionPension1x1"
+                                                    binding="#{Persona2.helpInlineFechaDenegacionPension1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_denegacion_pension.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5341,121 +5586,6 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_den_pen.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                        </h:panelGrid>
-                                        </webuijsf:tab>
-                                        <webuijsf:tab
-                                            id="tab8"
-                                            rendered="#{Persona2.asistente.seccionPension3Rendered}"
-                                            text="pension 3">
-                                        <h:panelGrid
-                                            id="gridPanel130"
-                                            rendered="#{Persona2.asistente.seccionPension3Hidden}">
-                                            <webuijsf:staticText
-                                                id="hiddenStaticTextTab8"
-                                                text="#{Persona2.gestor.i18n.textHiddenStaticTextTab}"/>
-                                        </h:panelGrid>
-                                        <h:panelGrid
-                                            columns="2"
-                                            id="gridPanel131"
-                                            rendered="#{Persona2.asistente.seccionPension3Rendered}">
-                                            <h:panelGrid
-                                                id="gridFechaDenegacionPension1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelFechaDenegacionPension1x1}"
-                                                    id="labelFechaDenegacionPension1x1"
-                                                    for="campoFechaDenegacionPension1x1"
-                                                    text="fecha denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridFechaDenegacionPension1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:calendar id="campoFechaDenegacionPension1x1"
-                                                    binding="#{Persona2.campoFechaDenegacionPension1x1}"
-                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
-                                                    minDate="#{Persona2.gestor.defaultMinDate}"
-                                                    readOnly="true"
-                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"
-                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
-                                                <webuijsf:staticText id="campoFechaDenegacionPension1x1Texto1"
-                                                    binding="#{Persona2.campoFechaDenegacionPension1x1Texto1}"
-                                                    converter="#{Persona2.converterFechaDenegacionPension1}"
-                                                    text="#{Persona2.personaDataProvider.value['fecha_denegacion_pension']}"/>
-                                                <webuijsf:message id="messageFechaDenegacionPension1x1"
-                                                    for="campoFechaDenegacionPension1x1"/>
-                                                <webuijsf:helpInline id="helpInlineFechaDenegacionPension1x1"
-                                                    binding="#{Persona2.helpInlineFechaDenegacionPension1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.fecha_denegacion_pension.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridNumeroCausaDenPension1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelNumeroCausaDenPension1x1}"
-                                                    id="labelNumeroCausaDenPension1x1"
-                                                    for="listaNumeroCausaDenPension1x1"
-                                                    text="causa denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroCausaDenPension1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaNumeroCausaDenPension1x1"
-                                                    binding="#{Persona2.listaNumeroCausaDenPension1x1}"
-                                                    converter="#{Persona2.converterNumeroCausaDenPension1}"
-                                                    disabled="true"
-                                                    items="#{Persona2.asistente.opcionesListaNumeroCausaDenPension1}"
-                                                    selected="#{Persona2.personaDataProvider.value['numero_causa_den_pension']}"
-                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"/>
-                                                <webuijsf:staticText id="listaNumeroCausaDenPension1x1Texto1"
-                                                    binding="#{Persona2.listaNumeroCausaDenPension1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
-                                                <webuijsf:message id="messageNumeroCausaDenPension1x1"
-                                                    for="listaNumeroCausaDenPension1x1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1x1"
-                                                    binding="#{Persona2.helpInlineNumeroCausaDenPension1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_causa_den_pension.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridOtraCausaDenPension1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelOtraCausaDenPension1x1}"
-                                                    id="labelOtraCausaDenPension1x1"
-                                                    for="campoOtraCausaDenPension1x1"
-                                                    text="otra causa denegaci&#243;n pensi&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridOtraCausaDenPension1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoOtraCausaDenPension1x1"
-                                                    binding="#{Persona2.campoOtraCausaDenPension1x1}"
-                                                    columns="50"
-                                                    maxLength="100"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"
-                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
-                                                    validatorExpression="#{Persona2.validatorOtraCausaDenPension1.validate}"/>
-                                                <webuijsf:staticText id="campoOtraCausaDenPension1x1Texto1"
-                                                    binding="#{Persona2.campoOtraCausaDenPension1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['otra_causa_den_pension']}"/>
-                                                <webuijsf:message id="messageOtraCausaDenPension1x1"
-                                                    for="campoOtraCausaDenPension1x1"/>
-                                                <webuijsf:helpInline id="helpInlineOtraCausaDenPension1x1"
-                                                    binding="#{Persona2.helpInlineOtraCausaDenPension1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.otra_causa_den_pension.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

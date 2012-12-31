@@ -131,13 +131,25 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getTextFieldCampoFechaOtorgamientoPen1();
 
+    TextField getCampoNumeroResolucionOtorPen1();
+
+    TextField getTextFieldCampoFechaResolucionOtorPen1();
+
     TextArea getCampoComentariosOtorgamientoPen1();
 
-    TextField getTextFieldCampoFechaDenegacionPension1();
+    TextField getTextFieldCampoFechaObjecionPension1();
 
     DropDown getListaNumeroCausaDenPension1();
 
     TextField getCampoOtraCausaDenPension1();
+
+    TextArea getCampoComentariosObjecionPension1();
+
+    TextField getTextFieldCampoFechaDenegacionPension1();
+
+    TextField getCampoNumeroResolucionDenPen1();
+
+    TextField getTextFieldCampoFechaResolucionDenPen1();
 
     TextArea getCampoComentariosDenegacionPension1();
 
@@ -194,14 +206,6 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
     DropDown getListaNumeroTipoActJupe1();
 
     TextField getTextFieldCampoFechaHoraUltActJupe1();
-
-    TextField getCampoNumeroResolucionOtorPen1();
-
-    TextField getTextFieldCampoFechaResolucionOtorPen1();
-
-    TextField getCampoNumeroResolucionDenPen1();
-
-    TextField getTextFieldCampoFechaResolucionDenPen1();
 
     Button getBotonAplicar1();
 

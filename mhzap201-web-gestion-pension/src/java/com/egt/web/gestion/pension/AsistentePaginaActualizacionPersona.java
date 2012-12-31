@@ -41,7 +41,7 @@ import com.egt.core.control.Auditor;
 import com.egt.core.jsf.JSF;
 import com.egt.core.util.STP;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
-import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
+import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
 import com.egt.ejb.business.process.PersonaBusinessProcessLocal;
 import com.egt.ejb.core.reporter.ReporterBrokerLocal;
 import com.sun.data.provider.RowKey;
@@ -81,7 +81,7 @@ public class AsistentePaginaActualizacionPersona {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
-            new Option(PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA, BundleWebui.getString("otorgar_pension_persona")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_PENSION_PERSONA, BundleWebui.getString("aprobar_pension_persona")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
@@ -112,8 +112,8 @@ public class AsistentePaginaActualizacionPersona {
         long f = bean.getRecursoDataProvider().getFuncionBusinessProcess();
         boolean esFilaAutorizada = bean.getRecursoDataProvider().esFilaAutorizada(rowKey, f);
         if (!esFilaAutorizada) {
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_OTORGAR_PENSION_PERSONA) {
-            this.otorgarPensionPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_PENSION_PERSONA) {
+            this.aprobarPensionPersona(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA) {
             this.emitirPersonaConPensionSolicitada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES) {
@@ -135,17 +135,15 @@ public class AsistentePaginaActualizacionPersona {
         }
     }
 
-    private boolean otorgarPensionPersona(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "otorgarPensionPersona", rowKey);
+    private boolean aprobarPensionPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "aprobarPensionPersona", rowKey);
         bean.getGestor().setReadOnlyProcessing(false);
         Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
-        String numeroResolucionOtorPen = null;
-        Date fechaResolucionOtorPen = null;
-        String comentariosOtorgamientoPen = null;
-        OtorgarPensionPersonaMessage message = new OtorgarPensionPersonaMessage(idPersona, numeroResolucionOtorPen, fechaResolucionOtorPen, comentariosOtorgamientoPen);
+        String comentariosAprobacionPension = null;
+        AprobarPensionPersonaMessage message = new AprobarPensionPersonaMessage(idPersona, comentariosAprobacionPension);
         TLC.getControlador().ponerUsuarioEnMensaje(message);
         if (synchronously) {
-            this.getPersonaBusinessProcess().otorgarPensionPersona(message);
+            this.getPersonaBusinessProcess().aprobarPensionPersona(message);
         } else {
             this.requestReply(message);
         }
@@ -1717,13 +1715,13 @@ public class AsistentePaginaActualizacionPersona {
         return value != null && value.equals(EnumCondicionPension.APROBADA.intValue());
     }
 
-    public boolean isNumeroCondicionPensionDenegada() {
+    public boolean isNumeroCondicionPensionObjetada() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
+        return value != null && value.equals(EnumCondicionPension.OBJETADA.intValue());
     }
 
     public boolean isNumeroCondicionPensionRevocada() {
@@ -1742,6 +1740,15 @@ public class AsistentePaginaActualizacionPersona {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getNumeroCondicionPension(rowKey);
         return value != null && value.equals(EnumCondicionPension.OTORGADA.intValue());
+    }
+
+    public boolean isNumeroCondicionPensionDenegada() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCondicionPension(rowKey);
+        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
     }
 
     public boolean isNullNumeroCausaDenPension() {
@@ -2608,13 +2615,6 @@ public class AsistentePaginaActualizacionPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
     }
 
-    public boolean isGridComentariosOtorgamientoPenRendered() {
-        if (bean == null) {
-            return true;
-        }
-        return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
-    }
-
     public boolean isGridNumeroResolucionOtorPenRendered() {
         if (bean == null) {
             return true;
@@ -2629,21 +2629,14 @@ public class AsistentePaginaActualizacionPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
     }
 
-    public boolean isGridNumeroResolucionDenPenRendered() {
+    public boolean isGridComentariosOtorgamientoPenRendered() {
         if (bean == null) {
             return true;
         }
         return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
     }
 
-    public boolean isGridFechaResolucionDenPenRendered() {
-        if (bean == null) {
-            return true;
-        }
-        return bean.getGestor().isFilaProcesada() && isSeccionPension2Rendered();
-    }
-
-    public boolean isGridFechaDenegacionPensionRendered() {
+    public boolean isGridFechaObjecionPensionRendered() {
         if (bean == null) {
             return true;
         }
@@ -2658,6 +2651,34 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridOtraCausaDenPensionRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
+    public boolean isGridComentariosObjecionPensionRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
+    public boolean isGridFechaDenegacionPensionRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
+    public boolean isGridNumeroResolucionDenPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
+    public boolean isGridFechaResolucionDenPenRendered() {
         if (bean == null) {
             return true;
         }
