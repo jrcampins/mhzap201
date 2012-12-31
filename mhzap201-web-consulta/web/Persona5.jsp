@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoComentariosOtorgamientoPen1 campoFechaDenegacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1737,6 +1737,59 @@
                                                     for="campoFechaOtorgamientoPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnNumeroResolucionOtorPen1}"
+                                                    headerText="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"
+                                                    id="tableColumnNumeroResolucionOtorPen1" rendered="false"
+                                                    sort="numero_resolucion_otor_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNumeroResolucionOtorPen1"
+                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelNumeroResolucionOtorPen1}"
+                                                    id="labelNumeroResolucionOtorPen1"
+                                                    for="campoNumeroResolucionOtorPen1"/>
+                                                <webuijsf:textField id="campoNumeroResolucionOtorPen1"
+                                                    binding="#{Persona5.campoNumeroResolucionOtorPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_otor_pen.persona"
+                                                    validatorExpression="#{Persona5.validatorNumeroResolucionOtorPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionOtorPen1Texto1"
+                                                    binding="#{Persona5.campoNumeroResolucionOtorPen1Texto1}"
+                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionOtorPen1"
+                                                    for="campoNumeroResolucionOtorPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnFechaResolucionOtorPen1}"
+                                                    headerText="fecha resoluci&#243;n otorgamiento pensi&#243;n"
+                                                    id="tableColumnFechaResolucionOtorPen1" rendered="false"
+                                                    sort="fecha_resolucion_otor_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaResolucionOtorPen1"
+                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelFechaResolucionOtorPen1}"
+                                                    id="labelFechaResolucionOtorPen1"
+                                                    for="campoFechaResolucionOtorPen1"/>
+                                                <webuijsf:textField id="campoFechaResolucionOtorPen1"
+                                                    binding="#{Persona5.campoFechaResolucionOtorPen1}"
+                                                    converter="#{Persona5.converterFechaResolucionOtorPen1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionOtorPen1Texto1"
+                                                    binding="#{Persona5.campoFechaResolucionOtorPen1Texto1}"
+                                                    converter="#{Persona5.converterFechaResolucionOtorPen1}"
+                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionOtorPen1"
+                                                    for="campoFechaResolucionOtorPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosOtorgamientoPen1}"
                                                     headerText="comentarios otorgamiento pensi&#243;n"
                                                     id="tableColumnComentariosOtorgamientoPen1" rendered="false"
@@ -1763,30 +1816,30 @@
                                                     for="campoComentariosOtorgamientoPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnFechaDenegacionPension1}"
-                                                    headerText="fecha denegaci&#243;n pensi&#243;n"
-                                                    id="tableColumnFechaDenegacionPension1" rendered="false"
-                                                    sort="fecha_denegacion_pension">
+                                                    binding="#{Persona5.tableColumnFechaObjecionPension1}"
+                                                    headerText="fecha objeci&#243;n pensi&#243;n"
+                                                    id="tableColumnFechaObjecionPension1" rendered="false"
+                                                    sort="fecha_objecion_pension">
                                                 <webuijsf:staticText
-                                                    id="hiddenStaticTextFechaDenegacionPension1"
-                                                    text="#{currentRow.value['fecha_denegacion_pension']}"
+                                                    id="hiddenStaticTextFechaObjecionPension1"
+                                                    text="#{currentRow.value['fecha_objecion_pension']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
-                                                    binding="#{Persona5.labelFechaDenegacionPension1}"
-                                                    id="labelFechaDenegacionPension1"
-                                                    for="campoFechaDenegacionPension1"/>
-                                                <webuijsf:textField id="campoFechaDenegacionPension1"
-                                                    binding="#{Persona5.campoFechaDenegacionPension1}"
-                                                    converter="#{Persona5.converterFechaDenegacionPension1}"
+                                                    binding="#{Persona5.labelFechaObjecionPension1}"
+                                                    id="labelFechaObjecionPension1"
+                                                    for="campoFechaObjecionPension1"/>
+                                                <webuijsf:textField id="campoFechaObjecionPension1"
+                                                    binding="#{Persona5.campoFechaObjecionPension1}"
+                                                    converter="#{Persona5.converterFechaObjecionPension1}"
                                                     readOnly="true"
-                                                    text="#{currentRow.value['fecha_denegacion_pension']}"
-                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
-                                                <webuijsf:staticText id="campoFechaDenegacionPension1Texto1"
-                                                    binding="#{Persona5.campoFechaDenegacionPension1Texto1}"
-                                                    converter="#{Persona5.converterFechaDenegacionPension1}"
-                                                    text="#{currentRow.value['fecha_denegacion_pension']}"/>
-                                                <webuijsf:message id="messageFechaDenegacionPension1"
-                                                    for="campoFechaDenegacionPension1"/>
+                                                    text="#{currentRow.value['fecha_objecion_pension']}"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaObjecionPension1Texto1"
+                                                    binding="#{Persona5.campoFechaObjecionPension1Texto1}"
+                                                    converter="#{Persona5.converterFechaObjecionPension1}"
+                                                    text="#{currentRow.value['fecha_objecion_pension']}"/>
+                                                <webuijsf:message id="messageFechaObjecionPension1"
+                                                    for="campoFechaObjecionPension1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCausaDenPension1}"
@@ -1840,6 +1893,111 @@
                                                     text="#{currentRow.value['otra_causa_den_pension']}"/>
                                                 <webuijsf:message id="messageOtraCausaDenPension1"
                                                     for="campoOtraCausaDenPension1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnComentariosObjecionPension1}"
+                                                    headerText="comentarios objeci&#243;n pensi&#243;n"
+                                                    id="tableColumnComentariosObjecionPension1" rendered="false"
+                                                    sort="comentarios_objecion_pension">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextComentariosObjecionPension1"
+                                                    text="#{currentRow.value['comentarios_objecion_pension']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelComentariosObjecionPension1}"
+                                                    id="labelComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"/>
+                                                <webuijsf:textArea id="campoComentariosObjecionPension1"
+                                                    binding="#{Persona5.campoComentariosObjecionPension1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['comentarios_objecion_pension']}"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
+                                                    validatorExpression="#{Persona5.validatorComentariosObjecionPension1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosObjecionPension1Texto1"
+                                                    binding="#{Persona5.campoComentariosObjecionPension1Texto1}"
+                                                    text="#{currentRow.value['comentarios_objecion_pension']}"/>
+                                                <webuijsf:message id="messageComentariosObjecionPension1"
+                                                    for="campoComentariosObjecionPension1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnFechaDenegacionPension1}"
+                                                    headerText="fecha denegaci&#243;n pensi&#243;n"
+                                                    id="tableColumnFechaDenegacionPension1" rendered="false"
+                                                    sort="fecha_denegacion_pension">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaDenegacionPension1"
+                                                    text="#{currentRow.value['fecha_denegacion_pension']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelFechaDenegacionPension1}"
+                                                    id="labelFechaDenegacionPension1"
+                                                    for="campoFechaDenegacionPension1"/>
+                                                <webuijsf:textField id="campoFechaDenegacionPension1"
+                                                    binding="#{Persona5.campoFechaDenegacionPension1}"
+                                                    converter="#{Persona5.converterFechaDenegacionPension1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_denegacion_pension']}"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"/>
+                                                <webuijsf:staticText id="campoFechaDenegacionPension1Texto1"
+                                                    binding="#{Persona5.campoFechaDenegacionPension1Texto1}"
+                                                    converter="#{Persona5.converterFechaDenegacionPension1}"
+                                                    text="#{currentRow.value['fecha_denegacion_pension']}"/>
+                                                <webuijsf:message id="messageFechaDenegacionPension1"
+                                                    for="campoFechaDenegacionPension1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnNumeroResolucionDenPen1}"
+                                                    headerText="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"
+                                                    id="tableColumnNumeroResolucionDenPen1" rendered="false"
+                                                    sort="numero_resolucion_den_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNumeroResolucionDenPen1"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelNumeroResolucionDenPen1}"
+                                                    id="labelNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
+                                                    binding="#{Persona5.campoNumeroResolucionDenPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
+                                                    validatorExpression="#{Persona5.validatorNumeroResolucionDenPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
+                                                    binding="#{Persona5.campoNumeroResolucionDenPen1Texto1}"
+                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
+                                                    for="campoNumeroResolucionDenPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnFechaResolucionDenPen1}"
+                                                    headerText="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"
+                                                    id="tableColumnFechaResolucionDenPen1" rendered="false"
+                                                    sort="fecha_resolucion_den_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaResolucionDenPen1"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelFechaResolucionDenPen1}"
+                                                    id="labelFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
+                                                <webuijsf:textField id="campoFechaResolucionDenPen1"
+                                                    binding="#{Persona5.campoFechaResolucionDenPen1}"
+                                                    converter="#{Persona5.converterFechaResolucionDenPen1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
+                                                    binding="#{Persona5.campoFechaResolucionDenPen1Texto1}"
+                                                    converter="#{Persona5.converterFechaResolucionDenPen1}"
+                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionDenPen1"
+                                                    for="campoFechaResolucionDenPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosDenegacionPension1}"
@@ -2610,112 +2768,6 @@
                                                     text="#{currentRow.value['fecha_hora_ult_act_jupe']}"/>
                                                 <webuijsf:message id="messageFechaHoraUltActJupe1"
                                                     for="campoFechaHoraUltActJupe1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnNumeroResolucionOtorPen1}"
-                                                    headerText="n&#250;mero resoluci&#243;n otor pensi&#243;n"
-                                                    id="tableColumnNumeroResolucionOtorPen1" rendered="false"
-                                                    sort="numero_resolucion_otor_pen">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextNumeroResolucionOtorPen1"
-                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelNumeroResolucionOtorPen1}"
-                                                    id="labelNumeroResolucionOtorPen1"
-                                                    for="campoNumeroResolucionOtorPen1"/>
-                                                <webuijsf:textField id="campoNumeroResolucionOtorPen1"
-                                                    binding="#{Persona5.campoNumeroResolucionOtorPen1}"
-                                                    columns="20"
-                                                    maxLength="50"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"
-                                                    toolTip="BundleParametros.numero_resolucion_otor_pen.persona"
-                                                    validatorExpression="#{Persona5.validatorNumeroResolucionOtorPen1.validate}"/>
-                                                <webuijsf:staticText id="campoNumeroResolucionOtorPen1Texto1"
-                                                    binding="#{Persona5.campoNumeroResolucionOtorPen1Texto1}"
-                                                    text="#{currentRow.value['numero_resolucion_otor_pen']}"/>
-                                                <webuijsf:message id="messageNumeroResolucionOtorPen1"
-                                                    for="campoNumeroResolucionOtorPen1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnFechaResolucionOtorPen1}"
-                                                    headerText="fecha resoluci&#243;n otor pensi&#243;n"
-                                                    id="tableColumnFechaResolucionOtorPen1" rendered="false"
-                                                    sort="fecha_resolucion_otor_pen">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextFechaResolucionOtorPen1"
-                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelFechaResolucionOtorPen1}"
-                                                    id="labelFechaResolucionOtorPen1"
-                                                    for="campoFechaResolucionOtorPen1"/>
-                                                <webuijsf:textField id="campoFechaResolucionOtorPen1"
-                                                    binding="#{Persona5.campoFechaResolucionOtorPen1}"
-                                                    converter="#{Persona5.converterFechaResolucionOtorPen1}"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"
-                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen.persona"/>
-                                                <webuijsf:staticText id="campoFechaResolucionOtorPen1Texto1"
-                                                    binding="#{Persona5.campoFechaResolucionOtorPen1Texto1}"
-                                                    converter="#{Persona5.converterFechaResolucionOtorPen1}"
-                                                    text="#{currentRow.value['fecha_resolucion_otor_pen']}"/>
-                                                <webuijsf:message id="messageFechaResolucionOtorPen1"
-                                                    for="campoFechaResolucionOtorPen1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnNumeroResolucionDenPen1}"
-                                                    headerText="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"
-                                                    id="tableColumnNumeroResolucionDenPen1" rendered="false"
-                                                    sort="numero_resolucion_den_pen">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextNumeroResolucionDenPen1"
-                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelNumeroResolucionDenPen1}"
-                                                    id="labelNumeroResolucionDenPen1"
-                                                    for="campoNumeroResolucionDenPen1"/>
-                                                <webuijsf:textField id="campoNumeroResolucionDenPen1"
-                                                    binding="#{Persona5.campoNumeroResolucionDenPen1}"
-                                                    columns="20"
-                                                    maxLength="50"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"
-                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
-                                                    validatorExpression="#{Persona5.validatorNumeroResolucionDenPen1.validate}"/>
-                                                <webuijsf:staticText id="campoNumeroResolucionDenPen1Texto1"
-                                                    binding="#{Persona5.campoNumeroResolucionDenPen1Texto1}"
-                                                    text="#{currentRow.value['numero_resolucion_den_pen']}"/>
-                                                <webuijsf:message id="messageNumeroResolucionDenPen1"
-                                                    for="campoNumeroResolucionDenPen1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnFechaResolucionDenPen1}"
-                                                    headerText="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"
-                                                    id="tableColumnFechaResolucionDenPen1" rendered="false"
-                                                    sort="fecha_resolucion_den_pen">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextFechaResolucionDenPen1"
-                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelFechaResolucionDenPen1}"
-                                                    id="labelFechaResolucionDenPen1"
-                                                    for="campoFechaResolucionDenPen1"/>
-                                                <webuijsf:textField id="campoFechaResolucionDenPen1"
-                                                    binding="#{Persona5.campoFechaResolucionDenPen1}"
-                                                    converter="#{Persona5.converterFechaResolucionDenPen1}"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"
-                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"/>
-                                                <webuijsf:staticText id="campoFechaResolucionDenPen1Texto1"
-                                                    binding="#{Persona5.campoFechaResolucionDenPen1Texto1}"
-                                                    converter="#{Persona5.converterFechaResolucionDenPen1}"
-                                                    text="#{currentRow.value['fecha_resolucion_den_pen']}"/>
-                                                <webuijsf:message id="messageFechaResolucionDenPen1"
-                                                    for="campoFechaResolucionDenPen1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

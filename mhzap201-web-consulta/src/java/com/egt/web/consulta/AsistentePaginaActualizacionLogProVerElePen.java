@@ -586,13 +586,13 @@ public class AsistentePaginaActualizacionLogProVerElePen {
         return value != null && value.equals(EnumCondicionPension.APROBADA.intValue());
     }
 
-    public boolean isNumeroCondicionPensionDenegada() {
+    public boolean isNumeroCondicionPensionObjetada() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getLogProVerElePenDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
+        return value != null && value.equals(EnumCondicionPension.OBJETADA.intValue());
     }
 
     public boolean isNumeroCondicionPensionRevocada() {
@@ -611,6 +611,15 @@ public class AsistentePaginaActualizacionLogProVerElePen {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getLogProVerElePenDataProvider().getNumeroCondicionPension(rowKey);
         return value != null && value.equals(EnumCondicionPension.OTORGADA.intValue());
+    }
+
+    public boolean isNumeroCondicionPensionDenegada() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProVerElePenDataProvider().getNumeroCondicionPension(rowKey);
+        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
     }
 
     public boolean isNullNumeroCondicionDenuPen() {

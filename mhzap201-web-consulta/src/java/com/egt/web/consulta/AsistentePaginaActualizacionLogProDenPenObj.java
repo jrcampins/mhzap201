@@ -15,11 +15,9 @@
  */
 package com.egt.web.consulta;
 
-import com.egt.base.enums.EnumCondicionPension;
-import com.egt.base.enums.EnumCondicionDenuPen;
-import com.egt.base.enums.EnumCondicionRecoPen;
+import com.egt.base.enums.EnumCausaDenPension;
 import com.egt.base.enums.EnumOpcionBinaria;
-import com.egt.data.specific.xdp2.LogProPreProPagCachedRowSetDataProvider2;
+import com.egt.data.specific.xdp2.LogProDenPenObjCachedRowSetDataProvider2;
 import com.egt.data.generic.xdp2.PersonaCachedRowSetDataProvider2;
 import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
 import com.egt.base.constants.URX2;
@@ -47,15 +45,15 @@ import javax.faces.context.FacesContext;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class AsistentePaginaActualizacionLogProPreProPag {
+public class AsistentePaginaActualizacionLogProDenPenObj {
 
-    private PaginaActualizacionLogProPreProPag bean;
+    private PaginaActualizacionLogProDenPenObj bean;
 
-    public AsistentePaginaActualizacionLogProPreProPag() {
+    public AsistentePaginaActualizacionLogProDenPenObj() {
         this.bean = null;
     }
 
-    public AsistentePaginaActualizacionLogProPreProPag(PaginaActualizacionLogProPreProPag bean) {
+    public AsistentePaginaActualizacionLogProDenPenObj(PaginaActualizacionLogProDenPenObj bean) {
         this.bean = bean;
     }
 
@@ -106,9 +104,9 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     protected GestorBusquedaReferencia getGestorBusquedaIdPersona() {
         if (this.gestorBusquedaIdPersona == null) {
             this.gestorBusquedaIdPersona = new GestorBusquedaReferencia(
-                    bean.getLogProPreProPagDataProvider(),
+                    bean.getLogProDenPenObjDataProvider(),
                     bean.getPersonaReferenceDataProvider(),
-                    LogProPreProPagCachedRowSetDataProvider2.COLUMNA_ID_PERSONA,
+                    LogProDenPenObjCachedRowSetDataProvider2.COLUMNA_ID_PERSONA,
                     this.funcionSelectEjecutableIdPersona);
         }
         return this.gestorBusquedaIdPersona;
@@ -141,7 +139,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdPersona(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdPersona(rowKey));
         }
         this.getGestorBusquedaIdPersona().setFiltroBusqueda(this.getFiltroBusquedaIdPersona());
         return this.getGestorBusquedaIdPersona().getCodigoRecursoReferenciado(rowKey);
@@ -161,7 +159,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdPersona(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdPersona(rowKey));
         }
         this.getGestorBusquedaIdPersona().setFiltroBusqueda(this.getFiltroBusquedaIdPersona());
         return this.getGestorBusquedaIdPersona().getNombreRecursoReferenciado(rowKey);
@@ -184,7 +182,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         String urx = URX2.CONSULTA_DETALLE_PERSONA;
-        Long id = bean.getLogProPreProPagDataProvider().getIdPersona(rowKey);
+        Long id = bean.getLogProDenPenObjDataProvider().getIdPersona(rowKey);
         return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
     }
 
@@ -214,9 +212,9 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     protected GestorBusquedaReferencia getGestorBusquedaIdDepartamento() {
         if (this.gestorBusquedaIdDepartamento == null) {
             this.gestorBusquedaIdDepartamento = new GestorBusquedaReferencia(
-                    bean.getLogProPreProPagDataProvider(),
+                    bean.getLogProDenPenObjDataProvider(),
                     bean.getUbicacionReferenceDataProvider(),
-                    LogProPreProPagCachedRowSetDataProvider2.COLUMNA_ID_DEPARTAMENTO,
+                    LogProDenPenObjCachedRowSetDataProvider2.COLUMNA_ID_DEPARTAMENTO,
                     this.funcionSelectEjecutableIdDepartamento);
         }
         return this.gestorBusquedaIdDepartamento;
@@ -249,7 +247,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdDepartamento(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdDepartamento(rowKey));
         }
         this.getGestorBusquedaIdDepartamento().setFiltroBusqueda(this.getFiltroBusquedaIdDepartamento());
         return this.getGestorBusquedaIdDepartamento().getCodigoRecursoReferenciado(rowKey);
@@ -269,7 +267,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdDepartamento(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdDepartamento(rowKey));
         }
         this.getGestorBusquedaIdDepartamento().setFiltroBusqueda(this.getFiltroBusquedaIdDepartamento());
         return this.getGestorBusquedaIdDepartamento().getNombreRecursoReferenciado(rowKey);
@@ -292,7 +290,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         String urx = URX2.CONSULTA_DETALLE_UBICACION;
-        Long id = bean.getLogProPreProPagDataProvider().getIdDepartamento(rowKey);
+        Long id = bean.getLogProDenPenObjDataProvider().getIdDepartamento(rowKey);
         return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
     }
 
@@ -322,9 +320,9 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     protected GestorBusquedaReferencia getGestorBusquedaIdDistrito() {
         if (this.gestorBusquedaIdDistrito == null) {
             this.gestorBusquedaIdDistrito = new GestorBusquedaReferencia(
-                    bean.getLogProPreProPagDataProvider(),
+                    bean.getLogProDenPenObjDataProvider(),
                     bean.getUbicacionReferenceDataProvider(),
-                    LogProPreProPagCachedRowSetDataProvider2.COLUMNA_ID_DISTRITO,
+                    LogProDenPenObjCachedRowSetDataProvider2.COLUMNA_ID_DISTRITO,
                     this.funcionSelectEjecutableIdDistrito);
         }
         return this.gestorBusquedaIdDistrito;
@@ -357,7 +355,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdDistrito(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdDistrito(rowKey));
         }
         this.getGestorBusquedaIdDistrito().setFiltroBusqueda(this.getFiltroBusquedaIdDistrito());
         return this.getGestorBusquedaIdDistrito().getCodigoRecursoReferenciado(rowKey);
@@ -377,7 +375,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdDistrito(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdDistrito(rowKey));
         }
         this.getGestorBusquedaIdDistrito().setFiltroBusqueda(this.getFiltroBusquedaIdDistrito());
         return this.getGestorBusquedaIdDistrito().getNombreRecursoReferenciado(rowKey);
@@ -400,7 +398,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         String urx = URX2.CONSULTA_DETALLE_UBICACION;
-        Long id = bean.getLogProPreProPagDataProvider().getIdDistrito(rowKey);
+        Long id = bean.getLogProDenPenObjDataProvider().getIdDistrito(rowKey);
         return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
     }
 
@@ -430,9 +428,9 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     protected GestorBusquedaReferencia getGestorBusquedaIdBarrio() {
         if (this.gestorBusquedaIdBarrio == null) {
             this.gestorBusquedaIdBarrio = new GestorBusquedaReferencia(
-                    bean.getLogProPreProPagDataProvider(),
+                    bean.getLogProDenPenObjDataProvider(),
                     bean.getUbicacionReferenceDataProvider(),
-                    LogProPreProPagCachedRowSetDataProvider2.COLUMNA_ID_BARRIO,
+                    LogProDenPenObjCachedRowSetDataProvider2.COLUMNA_ID_BARRIO,
                     this.funcionSelectEjecutableIdBarrio);
         }
         return this.gestorBusquedaIdBarrio;
@@ -465,7 +463,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdBarrio(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdBarrio(rowKey));
         }
         this.getGestorBusquedaIdBarrio().setFiltroBusqueda(this.getFiltroBusquedaIdBarrio());
         return this.getGestorBusquedaIdBarrio().getCodigoRecursoReferenciado(rowKey);
@@ -485,7 +483,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         if (bean.getGestor().isFilaNoProcesada()) {
-            return STP.getString(bean.getLogProPreProPagDataProvider().getIdBarrio(rowKey));
+            return STP.getString(bean.getLogProDenPenObjDataProvider().getIdBarrio(rowKey));
         }
         this.getGestorBusquedaIdBarrio().setFiltroBusqueda(this.getFiltroBusquedaIdBarrio());
         return this.getGestorBusquedaIdBarrio().getNombreRecursoReferenciado(rowKey);
@@ -508,7 +506,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         String urx = URX2.CONSULTA_DETALLE_UBICACION;
-        Long id = bean.getLogProPreProPagDataProvider().getIdBarrio(rowKey);
+        Long id = bean.getLogProDenPenObjDataProvider().getIdBarrio(rowKey);
         return bean.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
     }
 
@@ -531,16 +529,8 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
-    public Object getOpcionesListaNumeroCondicionPension1() {
-        return JSF.getListaOpciones(EnumCondicionPension.values(), true, false);
-    }
-
-    public Object getOpcionesListaNumeroCondicionDenuPen1() {
-        return JSF.getListaOpciones(EnumCondicionDenuPen.values(), true, false);
-    }
-
-    public Object getOpcionesListaNumeroCondicionRecoPen1() {
-        return JSF.getListaOpciones(EnumCondicionRecoPen.values(), true, false);
+    public Object getOpcionesListaNumeroCausaDenPension1() {
+        return JSF.getListaOpciones(EnumCausaDenPension.values(), true, false);
     }
 
     public Object getOpcionesListaEsProcesado1() {
@@ -550,166 +540,130 @@ public class AsistentePaginaActualizacionLogProPreProPag {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
-    public boolean isNullNumeroCondicionPension() {
+    public boolean isNullNumeroCausaDenPension() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
         return value == null;
     }
 
-    public boolean isNotNullNumeroCondicionPension() {
+    public boolean isNotNullNumeroCausaDenPension() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
         return value != null;
     }
 
-    public boolean isNumeroCondicionPensionSolicitada() {
+    public boolean isNumeroCausaDenPensionPersonaSinCvrVigente() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.SOLICITADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_SIN_CVR_VIGENTE.intValue());
     }
 
-    public boolean isNumeroCondicionPensionAprobada() {
+    public boolean isNumeroCausaDenPensionPersonaFallecida() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.APROBADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_FALLECIDA.intValue());
     }
 
-    public boolean isNumeroCondicionPensionObjetada() {
+    public boolean isNumeroCausaDenPensionPersonaNoEsNatural() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.OBJETADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_NO_ES_NATURAL.intValue());
     }
 
-    public boolean isNumeroCondicionPensionRevocada() {
+    public boolean isNumeroCausaDenPensionPersonaNoEsMayorDe65Anos() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.REVOCADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_NO_ES_MAYOR_DE_65_ANOS.intValue());
     }
 
-    public boolean isNumeroCondicionPensionOtorgada() {
+    public boolean isNumeroCausaDenPensionPersonaConEmpleo() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.OTORGADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_EMPLEO.intValue());
     }
 
-    public boolean isNumeroCondicionPensionDenegada() {
+    public boolean isNumeroCausaDenPensionPersonaConJubilacion() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_JUBILACION.intValue());
     }
 
-    public boolean isNullNumeroCondicionDenuPen() {
+    public boolean isNumeroCausaDenPensionPersonaConDeuda() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionDenuPen(rowKey);
-        return value == null;
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_DEUDA.intValue());
     }
 
-    public boolean isNotNullNumeroCondicionDenuPen() {
+    public boolean isNumeroCausaDenPensionPersonaConPenaJudicial() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionDenuPen(rowKey);
-        return value != null;
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_PENA_JUDICIAL.intValue());
     }
 
-    public boolean isNumeroCondicionDenuPenRegistrada() {
+    public boolean isNumeroCausaDenPensionPersonaConOtraPension() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionDenuPen(rowKey);
-        return value != null && value.equals(EnumCondicionDenuPen.REGISTRADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_OTRA_PENSION.intValue());
     }
 
-    public boolean isNumeroCondicionDenuPenConfirmada() {
+    public boolean isNumeroCausaDenPensionPersonaSinFichaHogar() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionDenuPen(rowKey);
-        return value != null && value.equals(EnumCondicionDenuPen.CONFIRMADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_SIN_FICHA_HOGAR.intValue());
     }
 
-    public boolean isNumeroCondicionDenuPenDesmentida() {
+    public boolean isNumeroCausaDenPensionPersonaConIcvMayorQue65() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionDenuPen(rowKey);
-        return value != null && value.equals(EnumCondicionDenuPen.DESMENTIDA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_ICV_MAYOR_QUE_65.intValue());
     }
 
-    public boolean isNullNumeroCondicionRecoPen() {
+    public boolean isNumeroCausaDenPensionOtraCausa() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionRecoPen(rowKey);
-        return value == null;
-    }
-
-    public boolean isNotNullNumeroCondicionRecoPen() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionRecoPen(rowKey);
-        return value != null;
-    }
-
-    public boolean isNumeroCondicionRecoPenSolicitada() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionRecoPen(rowKey);
-        return value != null && value.equals(EnumCondicionRecoPen.SOLICITADA.intValue());
-    }
-
-    public boolean isNumeroCondicionRecoPenAprobada() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionRecoPen(rowKey);
-        return value != null && value.equals(EnumCondicionRecoPen.APROBADA.intValue());
-    }
-
-    public boolean isNumeroCondicionRecoPenDenegada() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getNumeroCondicionRecoPen(rowKey);
-        return value != null && value.equals(EnumCondicionRecoPen.DENEGADA.intValue());
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.OTRA_CAUSA.intValue());
     }
 
    public boolean isEsProcesado() {
@@ -717,7 +671,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getEsProcesado(rowKey);
+        Integer value = bean.getLogProDenPenObjDataProvider().getEsProcesado(rowKey);
         return BitUtils.valueOf(value);
     }
 
@@ -726,11 +680,11 @@ public class AsistentePaginaActualizacionLogProPreProPag {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getLogProPreProPagDataProvider().getEsProcesado(rowKey);
+        Integer value = bean.getLogProDenPenObjDataProvider().getEsProcesado(rowKey);
         return !BitUtils.valueOf(value);
     }
 
-    public boolean isGridIdLogProPreProPagRendered() {
+    public boolean isGridIdLogProDenPenObjRendered() {
         return true;
     }
 
@@ -758,19 +712,7 @@ public class AsistentePaginaActualizacionLogProPreProPag {
         return true;
     }
 
-    public boolean isGridNumeroCondicionPensionRendered() {
-        return true;
-    }
-
-    public boolean isGridFechaSolicitudPensionRendered() {
-        return true;
-    }
-
-    public boolean isGridNumeroCondicionDenuPenRendered() {
-        return true;
-    }
-
-    public boolean isGridNumeroCondicionRecoPenRendered() {
+    public boolean isGridNumeroCausaDenPensionRendered() {
         return true;
     }
 

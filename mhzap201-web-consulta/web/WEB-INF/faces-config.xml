@@ -193,6 +193,16 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>LogProDenPenObj5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProDenPenObj5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogProDenPenObj6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProDenPenObj6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>LogProImpArcExt5</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogProImpArcExt5</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -200,6 +210,16 @@
     <managed-bean>
         <managed-bean-name>LogProImpArcExt6</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogProImpArcExt6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogImpCen5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpCen5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogImpCen6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpCen6</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -438,10 +458,24 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
+        <from-view-id>/LogProDenPenObj5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogProDenPenObj6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/LogProImpArcExt5.jsp</from-view-id>
         <navigation-case>
             <from-outcome>detalle</from-outcome>
             <to-view-id>/LogProImpArcExt6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LogImpCen5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogImpCen6.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>

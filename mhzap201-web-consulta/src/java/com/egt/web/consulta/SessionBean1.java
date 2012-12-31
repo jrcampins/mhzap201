@@ -78,9 +78,15 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         logProAcrPotBenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProAcrPotBenRowSet.setCommand("SELECT * FROM consulta_log_pro_acr_pot_ben_1");
         logProAcrPotBenRowSet.setTableName("log_pro_acr_pot_ben");
+        logProDenPenObjRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProDenPenObjRowSet.setCommand("SELECT * FROM consulta_log_pro_den_pen_obj_1");
+        logProDenPenObjRowSet.setTableName("log_pro_den_pen_obj");
         logProImpArcExtRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProImpArcExtRowSet.setCommand("SELECT * FROM consulta_log_pro_imp_arc_ext_1");
         logProImpArcExtRowSet.setTableName("log_pro_imp_arc_ext");
+        logImpCenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpCenRowSet.setCommand("SELECT * FROM consulta_log_imp_cen_1");
+        logImpCenRowSet.setTableName("log_imp_cen");
         logImpDeuRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logImpDeuRowSet.setCommand("SELECT * FROM consulta_log_imp_deu_1");
         logImpDeuRowSet.setTableName("log_imp_deu");
@@ -392,6 +398,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         this.logProAcrPotBenRowSet = crsxi;
     }
 
+    private CachedRowSetXImpl logProDenPenObjRowSet;
+
+    public CachedRowSetXImpl getLogProDenPenObjRowSet() {
+        if (logProDenPenObjRowSet == null) {
+            logProDenPenObjRowSet = new RecursoCachedRowSet();
+            try {
+                logProDenPenObjRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProDenPenObjRowSet.setCommand("SELECT * FROM consulta_log_pro_den_pen_obj_1");
+                logProDenPenObjRowSet.setTableName("log_pro_den_pen_obj");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProDenPenObjRowSet;
+    }
+
+    public void setLogProDenPenObjRowSet(CachedRowSetXImpl crsxi) {
+        this.logProDenPenObjRowSet = crsxi;
+    }
+
     private CachedRowSetXImpl logProImpArcExtRowSet;
 
     public CachedRowSetXImpl getLogProImpArcExtRowSet() {
@@ -411,6 +438,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setLogProImpArcExtRowSet(CachedRowSetXImpl crsxi) {
         this.logProImpArcExtRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpCenRowSet;
+
+    public CachedRowSetXImpl getLogImpCenRowSet() {
+        if (logImpCenRowSet == null) {
+            logImpCenRowSet = new RecursoCachedRowSet();
+            try {
+                logImpCenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpCenRowSet.setCommand("SELECT * FROM consulta_log_imp_cen_1");
+                logImpCenRowSet.setTableName("log_imp_cen");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpCenRowSet;
+    }
+
+    public void setLogImpCenRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpCenRowSet = crsxi;
     }
 
     private CachedRowSetXImpl logImpDeuRowSet;

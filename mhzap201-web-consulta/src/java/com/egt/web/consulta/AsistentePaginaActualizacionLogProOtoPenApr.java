@@ -576,13 +576,13 @@ public class AsistentePaginaActualizacionLogProOtoPenApr {
         return value != null && value.equals(EnumCondicionPension.APROBADA.intValue());
     }
 
-    public boolean isNumeroCondicionPensionDenegada() {
+    public boolean isNumeroCondicionPensionObjetada() {
         if (bean == null) {
             return true;
         }
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getLogProOtoPenAprDataProvider().getNumeroCondicionPension(rowKey);
-        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
+        return value != null && value.equals(EnumCondicionPension.OBJETADA.intValue());
     }
 
     public boolean isNumeroCondicionPensionRevocada() {
@@ -601,6 +601,15 @@ public class AsistentePaginaActualizacionLogProOtoPenApr {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getLogProOtoPenAprDataProvider().getNumeroCondicionPension(rowKey);
         return value != null && value.equals(EnumCondicionPension.OTORGADA.intValue());
+    }
+
+    public boolean isNumeroCondicionPensionDenegada() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProOtoPenAprDataProvider().getNumeroCondicionPension(rowKey);
+        return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
     }
 
    public boolean isEsProcesado() {

@@ -1366,7 +1366,7 @@
                                                     binding="#{PotencialBen6.labelCompania1}"
                                                     id="labelCompania1"
                                                     for="campoCompania1"
-                                                    text="compania"/>
+                                                    text="compa&#241;ia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
@@ -3519,7 +3519,7 @@
                                                     binding="#{PotencialBen6.labelCompania1x1}"
                                                     id="labelCompania1x1"
                                                     for="campoCompania1x1"
-                                                    text="compania"/>
+                                                    text="compa&#241;ia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"

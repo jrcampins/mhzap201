@@ -144,10 +144,19 @@ public class Persona5 extends AbstractPageBean
         validatorComentariosAprobacionPension1.setMaximum(8160);
         converterFechaOtorgamientoPen1.setPattern("dd/MM/yyyy");
         converterFechaOtorgamientoPen1.setType("date");
+        validatorNumeroResolucionOtorPen1.setMaximum(50);
+        converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionOtorPen1.setType("date");
         validatorComentariosOtorgamientoPen1.setMaximum(8160);
+        converterFechaObjecionPension1.setPattern("dd/MM/yyyy");
+        converterFechaObjecionPension1.setType("date");
+        validatorOtraCausaDenPension1.setMaximum(100);
+        validatorComentariosObjecionPension1.setMaximum(8160);
         converterFechaDenegacionPension1.setPattern("dd/MM/yyyy");
         converterFechaDenegacionPension1.setType("date");
-        validatorOtraCausaDenPension1.setMaximum(100);
+        validatorNumeroResolucionDenPen1.setMaximum(50);
+        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionDenPen1.setType("date");
         validatorComentariosDenegacionPension1.setMaximum(8160);
         converterFechaRevocacionPension1.setPattern("dd/MM/yyyy");
         converterFechaRevocacionPension1.setType("date");
@@ -184,12 +193,6 @@ public class Persona5 extends AbstractPageBean
         validatorNotasAnulFecUltCobPen1.setMaximum(8160);
         converterFechaHoraUltActJupe1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraUltActJupe1.setType("both");
-        validatorNumeroResolucionOtorPen1.setMaximum(50);
-        converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
-        converterFechaResolucionOtorPen1.setType("date");
-        validatorNumeroResolucionDenPen1.setMaximum(50);
-        converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
-        converterFechaResolucionDenPen1.setType("date");
         personaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -4378,6 +4381,147 @@ public class Persona5 extends AbstractPageBean
         this.converterFechaOtorgamientoPen1 = converter;
     }
   
+    private TableColumn tableColumnNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnNumeroResolucionOtorPen1() {
+        return tableColumnNumeroResolucionOtorPen1;
+    }
+
+    public void setTableColumnNumeroResolucionOtorPen1(TableColumn component) {
+        this.tableColumnNumeroResolucionOtorPen1 = component;
+    }
+
+    private Label labelNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionOtorPen1() {
+        return labelNumeroResolucionOtorPen1;
+    }
+
+    public void setLabelNumeroResolucionOtorPen1(Label l) {
+        this.labelNumeroResolucionOtorPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoNumeroResolucionOtorPen1() {
+        return campoNumeroResolucionOtorPen1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1(TextField component) {
+        this.campoNumeroResolucionOtorPen1 = component;
+    }
+
+    private TextField campoNumeroResolucionOtorPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionOtorPen1x1() {
+        return campoNumeroResolucionOtorPen1x1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1x1(TextField component) {
+        this.campoNumeroResolucionOtorPen1x1 = component;
+    }
+
+    private StaticText campoNumeroResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionOtorPen1Texto1() {
+        return campoNumeroResolucionOtorPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionOtorPen1Texto1 = component;
+    }
+
+    private StaticText campoNumeroResolucionOtorPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionOtorPen1x1Texto1() {
+        return campoNumeroResolucionOtorPen1x1Texto1;
+    }
+
+    public void setCampoNumeroResolucionOtorPen1x1Texto1(StaticText component) {
+        this.campoNumeroResolucionOtorPen1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionOtorPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionOtorPen1() {
+        return validatorNumeroResolucionOtorPen1;
+    }
+  
+    public void setValidatorNumeroResolucionOtorPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionOtorPen1 = validator;
+    }
+  
+    private TableColumn tableColumnFechaResolucionOtorPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaResolucionOtorPen1() {
+        return tableColumnFechaResolucionOtorPen1;
+    }
+
+    public void setTableColumnFechaResolucionOtorPen1(TableColumn component) {
+        this.tableColumnFechaResolucionOtorPen1 = component;
+    }
+
+    private Label labelFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionOtorPen1() {
+        return labelFechaResolucionOtorPen1;
+    }
+
+    public void setLabelFechaResolucionOtorPen1(Label l) {
+        this.labelFechaResolucionOtorPen1 = l;
+    }
+
+    private TextField campoFechaResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionOtorPen1() {
+        return campoFechaResolucionOtorPen1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1(TextField component) {
+        this.campoFechaResolucionOtorPen1 = component;
+    }
+
+    private TextField campoFechaResolucionOtorPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionOtorPen1x1() {
+        return campoFechaResolucionOtorPen1x1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1x1(TextField component) {
+        this.campoFechaResolucionOtorPen1x1 = component;
+    }
+
+    private StaticText campoFechaResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionOtorPen1Texto1() {
+        return campoFechaResolucionOtorPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1Texto1(StaticText component) {
+        this.campoFechaResolucionOtorPen1Texto1 = component;
+    }
+
+    private StaticText campoFechaResolucionOtorPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionOtorPen1x1Texto1() {
+        return campoFechaResolucionOtorPen1x1Texto1;
+    }
+
+    public void setCampoFechaResolucionOtorPen1x1Texto1(StaticText component) {
+        this.campoFechaResolucionOtorPen1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionOtorPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionOtorPen1() {
+        return converterFechaResolucionOtorPen1;
+    }
+  
+    public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionOtorPen1 = converter;
+    }
+  
     private TableColumn tableColumnComentariosOtorgamientoPen1 = new com.egt.core.jsf.component.ColumnaTabla();
 
     public TableColumn getTableColumnComentariosOtorgamientoPen1() {
@@ -4449,74 +4593,74 @@ public class Persona5 extends AbstractPageBean
         this.validatorComentariosOtorgamientoPen1 = validator;
     }
   
-    private TableColumn tableColumnFechaDenegacionPension1 = new com.egt.core.jsf.component.ColumnaTabla();
+    private TableColumn tableColumnFechaObjecionPension1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnFechaDenegacionPension1() {
-        return tableColumnFechaDenegacionPension1;
+    public TableColumn getTableColumnFechaObjecionPension1() {
+        return tableColumnFechaObjecionPension1;
     }
 
-    public void setTableColumnFechaDenegacionPension1(TableColumn component) {
-        this.tableColumnFechaDenegacionPension1 = component;
+    public void setTableColumnFechaObjecionPension1(TableColumn component) {
+        this.tableColumnFechaObjecionPension1 = component;
     }
 
-    private Label labelFechaDenegacionPension1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelFechaObjecionPension1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelFechaDenegacionPension1() {
-        return labelFechaDenegacionPension1;
+    public Label getLabelFechaObjecionPension1() {
+        return labelFechaObjecionPension1;
     }
 
-    public void setLabelFechaDenegacionPension1(Label l) {
-        this.labelFechaDenegacionPension1 = l;
+    public void setLabelFechaObjecionPension1(Label l) {
+        this.labelFechaObjecionPension1 = l;
     }
 
-    private TextField campoFechaDenegacionPension1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoFechaObjecionPension1 = new com.egt.core.jsf.component.CampoTexto();
 
-    public TextField getCampoFechaDenegacionPension1() {
-        return campoFechaDenegacionPension1;
+    public TextField getCampoFechaObjecionPension1() {
+        return campoFechaObjecionPension1;
     }
 
-    public void setCampoFechaDenegacionPension1(TextField component) {
-        this.campoFechaDenegacionPension1 = component;
+    public void setCampoFechaObjecionPension1(TextField component) {
+        this.campoFechaObjecionPension1 = component;
     }
 
-    private TextField campoFechaDenegacionPension1x1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoFechaObjecionPension1x1 = new com.egt.core.jsf.component.CampoTexto();
 
-    public TextField getCampoFechaDenegacionPension1x1() {
-        return campoFechaDenegacionPension1x1;
+    public TextField getCampoFechaObjecionPension1x1() {
+        return campoFechaObjecionPension1x1;
     }
 
-    public void setCampoFechaDenegacionPension1x1(TextField component) {
-        this.campoFechaDenegacionPension1x1 = component;
+    public void setCampoFechaObjecionPension1x1(TextField component) {
+        this.campoFechaObjecionPension1x1 = component;
     }
 
-    private StaticText campoFechaDenegacionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoFechaObjecionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoFechaDenegacionPension1Texto1() {
-        return campoFechaDenegacionPension1Texto1;
+    public StaticText getCampoFechaObjecionPension1Texto1() {
+        return campoFechaObjecionPension1Texto1;
     }
 
-    public void setCampoFechaDenegacionPension1Texto1(StaticText component) {
-        this.campoFechaDenegacionPension1Texto1 = component;
+    public void setCampoFechaObjecionPension1Texto1(StaticText component) {
+        this.campoFechaObjecionPension1Texto1 = component;
     }
 
-    private StaticText campoFechaDenegacionPension1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoFechaObjecionPension1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoFechaDenegacionPension1x1Texto1() {
-        return campoFechaDenegacionPension1x1Texto1;
+    public StaticText getCampoFechaObjecionPension1x1Texto1() {
+        return campoFechaObjecionPension1x1Texto1;
     }
 
-    public void setCampoFechaDenegacionPension1x1Texto1(StaticText component) {
-        this.campoFechaDenegacionPension1x1Texto1 = component;
+    public void setCampoFechaObjecionPension1x1Texto1(StaticText component) {
+        this.campoFechaObjecionPension1x1Texto1 = component;
     }
 
-    private SqlTimestampConverter converterFechaDenegacionPension1 = new SqlTimestampConverter();
+    private SqlTimestampConverter converterFechaObjecionPension1 = new SqlTimestampConverter();
   
-    public SqlTimestampConverter getConverterFechaDenegacionPension1() {
-        return converterFechaDenegacionPension1;
+    public SqlTimestampConverter getConverterFechaObjecionPension1() {
+        return converterFechaObjecionPension1;
     }
   
-    public void setConverterFechaDenegacionPension1(SqlTimestampConverter converter) {
-        this.converterFechaDenegacionPension1 = converter;
+    public void setConverterFechaObjecionPension1(SqlTimestampConverter converter) {
+        this.converterFechaObjecionPension1 = converter;
     }
   
     private TableColumn tableColumnNumeroCausaDenPension1 = new com.egt.core.jsf.component.ColumnaTabla();
@@ -4659,6 +4803,288 @@ public class Persona5 extends AbstractPageBean
   
     public void setValidatorOtraCausaDenPension1(LengthValidator validator) {
         this.validatorOtraCausaDenPension1 = validator;
+    }
+  
+    private TableColumn tableColumnComentariosObjecionPension1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnComentariosObjecionPension1() {
+        return tableColumnComentariosObjecionPension1;
+    }
+
+    public void setTableColumnComentariosObjecionPension1(TableColumn component) {
+        this.tableColumnComentariosObjecionPension1 = component;
+    }
+
+    private Label labelComentariosObjecionPension1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosObjecionPension1() {
+        return labelComentariosObjecionPension1;
+    }
+
+    public void setLabelComentariosObjecionPension1(Label l) {
+        this.labelComentariosObjecionPension1 = l;
+    }
+
+    private TextArea campoComentariosObjecionPension1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoComentariosObjecionPension1() {
+        return campoComentariosObjecionPension1;
+    }
+
+    public void setCampoComentariosObjecionPension1(TextArea component) {
+        this.campoComentariosObjecionPension1 = component;
+    }
+
+    private TextArea campoComentariosObjecionPension1x1 = new com.egt.core.jsf.component.AreaTexto();
+
+    public TextArea getCampoComentariosObjecionPension1x1() {
+        return campoComentariosObjecionPension1x1;
+    }
+
+    public void setCampoComentariosObjecionPension1x1(TextArea component) {
+        this.campoComentariosObjecionPension1x1 = component;
+    }
+
+    private StaticText campoComentariosObjecionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosObjecionPension1Texto1() {
+        return campoComentariosObjecionPension1Texto1;
+    }
+
+    public void setCampoComentariosObjecionPension1Texto1(StaticText component) {
+        this.campoComentariosObjecionPension1Texto1 = component;
+    }
+
+    private StaticText campoComentariosObjecionPension1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosObjecionPension1x1Texto1() {
+        return campoComentariosObjecionPension1x1Texto1;
+    }
+
+    public void setCampoComentariosObjecionPension1x1Texto1(StaticText component) {
+        this.campoComentariosObjecionPension1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosObjecionPension1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosObjecionPension1() {
+        return validatorComentariosObjecionPension1;
+    }
+  
+    public void setValidatorComentariosObjecionPension1(LengthValidator validator) {
+        this.validatorComentariosObjecionPension1 = validator;
+    }
+  
+    private TableColumn tableColumnFechaDenegacionPension1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaDenegacionPension1() {
+        return tableColumnFechaDenegacionPension1;
+    }
+
+    public void setTableColumnFechaDenegacionPension1(TableColumn component) {
+        this.tableColumnFechaDenegacionPension1 = component;
+    }
+
+    private Label labelFechaDenegacionPension1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaDenegacionPension1() {
+        return labelFechaDenegacionPension1;
+    }
+
+    public void setLabelFechaDenegacionPension1(Label l) {
+        this.labelFechaDenegacionPension1 = l;
+    }
+
+    private TextField campoFechaDenegacionPension1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaDenegacionPension1() {
+        return campoFechaDenegacionPension1;
+    }
+
+    public void setCampoFechaDenegacionPension1(TextField component) {
+        this.campoFechaDenegacionPension1 = component;
+    }
+
+    private TextField campoFechaDenegacionPension1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaDenegacionPension1x1() {
+        return campoFechaDenegacionPension1x1;
+    }
+
+    public void setCampoFechaDenegacionPension1x1(TextField component) {
+        this.campoFechaDenegacionPension1x1 = component;
+    }
+
+    private StaticText campoFechaDenegacionPension1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaDenegacionPension1Texto1() {
+        return campoFechaDenegacionPension1Texto1;
+    }
+
+    public void setCampoFechaDenegacionPension1Texto1(StaticText component) {
+        this.campoFechaDenegacionPension1Texto1 = component;
+    }
+
+    private StaticText campoFechaDenegacionPension1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaDenegacionPension1x1Texto1() {
+        return campoFechaDenegacionPension1x1Texto1;
+    }
+
+    public void setCampoFechaDenegacionPension1x1Texto1(StaticText component) {
+        this.campoFechaDenegacionPension1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaDenegacionPension1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaDenegacionPension1() {
+        return converterFechaDenegacionPension1;
+    }
+  
+    public void setConverterFechaDenegacionPension1(SqlTimestampConverter converter) {
+        this.converterFechaDenegacionPension1 = converter;
+    }
+  
+    private TableColumn tableColumnNumeroResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnNumeroResolucionDenPen1() {
+        return tableColumnNumeroResolucionDenPen1;
+    }
+
+    public void setTableColumnNumeroResolucionDenPen1(TableColumn component) {
+        this.tableColumnNumeroResolucionDenPen1 = component;
+    }
+
+    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionDenPen1() {
+        return labelNumeroResolucionDenPen1;
+    }
+
+    public void setLabelNumeroResolucionDenPen1(Label l) {
+        this.labelNumeroResolucionDenPen1 = l;
+    }
+
+    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoNumeroResolucionDenPen1() {
+        return campoNumeroResolucionDenPen1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1(TextField component) {
+        this.campoNumeroResolucionDenPen1 = component;
+    }
+
+    private TextField campoNumeroResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionDenPen1x1() {
+        return campoNumeroResolucionDenPen1x1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1x1(TextField component) {
+        this.campoNumeroResolucionDenPen1x1 = component;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
+        return campoNumeroResolucionDenPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1Texto1 = component;
+    }
+
+    private StaticText campoNumeroResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionDenPen1x1Texto1() {
+        return campoNumeroResolucionDenPen1x1Texto1;
+    }
+
+    public void setCampoNumeroResolucionDenPen1x1Texto1(StaticText component) {
+        this.campoNumeroResolucionDenPen1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionDenPen1() {
+        return validatorNumeroResolucionDenPen1;
+    }
+  
+    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionDenPen1 = validator;
+    }
+  
+    private TableColumn tableColumnFechaResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaResolucionDenPen1() {
+        return tableColumnFechaResolucionDenPen1;
+    }
+
+    public void setTableColumnFechaResolucionDenPen1(TableColumn component) {
+        this.tableColumnFechaResolucionDenPen1 = component;
+    }
+
+    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionDenPen1() {
+        return labelFechaResolucionDenPen1;
+    }
+
+    public void setLabelFechaResolucionDenPen1(Label l) {
+        this.labelFechaResolucionDenPen1 = l;
+    }
+
+    private TextField campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionDenPen1() {
+        return campoFechaResolucionDenPen1;
+    }
+
+    public void setCampoFechaResolucionDenPen1(TextField component) {
+        this.campoFechaResolucionDenPen1 = component;
+    }
+
+    private TextField campoFechaResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaResolucionDenPen1x1() {
+        return campoFechaResolucionDenPen1x1;
+    }
+
+    public void setCampoFechaResolucionDenPen1x1(TextField component) {
+        this.campoFechaResolucionDenPen1x1 = component;
+    }
+
+    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1Texto1() {
+        return campoFechaResolucionDenPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1Texto1 = component;
+    }
+
+    private StaticText campoFechaResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionDenPen1x1Texto1() {
+        return campoFechaResolucionDenPen1x1Texto1;
+    }
+
+    public void setCampoFechaResolucionDenPen1x1Texto1(StaticText component) {
+        this.campoFechaResolucionDenPen1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
+        return converterFechaResolucionDenPen1;
+    }
+  
+    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionDenPen1 = converter;
     }
   
     private TableColumn tableColumnComentariosDenegacionPension1 = new com.egt.core.jsf.component.ColumnaTabla();
@@ -6709,288 +7135,6 @@ public class Persona5 extends AbstractPageBean
         this.converterFechaHoraUltActJupe1 = converter;
     }
   
-    private TableColumn tableColumnNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnNumeroResolucionOtorPen1() {
-        return tableColumnNumeroResolucionOtorPen1;
-    }
-
-    public void setTableColumnNumeroResolucionOtorPen1(TableColumn component) {
-        this.tableColumnNumeroResolucionOtorPen1 = component;
-    }
-
-    private Label labelNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelNumeroResolucionOtorPen1() {
-        return labelNumeroResolucionOtorPen1;
-    }
-
-    public void setLabelNumeroResolucionOtorPen1(Label l) {
-        this.labelNumeroResolucionOtorPen1 = l;
-    }
-
-    private TextField campoNumeroResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    @Override
-    public TextField getCampoNumeroResolucionOtorPen1() {
-        return campoNumeroResolucionOtorPen1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1(TextField component) {
-        this.campoNumeroResolucionOtorPen1 = component;
-    }
-
-    private TextField campoNumeroResolucionOtorPen1x1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoNumeroResolucionOtorPen1x1() {
-        return campoNumeroResolucionOtorPen1x1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1x1(TextField component) {
-        this.campoNumeroResolucionOtorPen1x1 = component;
-    }
-
-    private StaticText campoNumeroResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoNumeroResolucionOtorPen1Texto1() {
-        return campoNumeroResolucionOtorPen1Texto1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1Texto1(StaticText component) {
-        this.campoNumeroResolucionOtorPen1Texto1 = component;
-    }
-
-    private StaticText campoNumeroResolucionOtorPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoNumeroResolucionOtorPen1x1Texto1() {
-        return campoNumeroResolucionOtorPen1x1Texto1;
-    }
-
-    public void setCampoNumeroResolucionOtorPen1x1Texto1(StaticText component) {
-        this.campoNumeroResolucionOtorPen1x1Texto1 = component;
-    }
-
-    private LengthValidator validatorNumeroResolucionOtorPen1 = new LengthValidator();
-  
-    public LengthValidator getValidatorNumeroResolucionOtorPen1() {
-        return validatorNumeroResolucionOtorPen1;
-    }
-  
-    public void setValidatorNumeroResolucionOtorPen1(LengthValidator validator) {
-        this.validatorNumeroResolucionOtorPen1 = validator;
-    }
-  
-    private TableColumn tableColumnFechaResolucionOtorPen1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnFechaResolucionOtorPen1() {
-        return tableColumnFechaResolucionOtorPen1;
-    }
-
-    public void setTableColumnFechaResolucionOtorPen1(TableColumn component) {
-        this.tableColumnFechaResolucionOtorPen1 = component;
-    }
-
-    private Label labelFechaResolucionOtorPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaResolucionOtorPen1() {
-        return labelFechaResolucionOtorPen1;
-    }
-
-    public void setLabelFechaResolucionOtorPen1(Label l) {
-        this.labelFechaResolucionOtorPen1 = l;
-    }
-
-    private TextField campoFechaResolucionOtorPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaResolucionOtorPen1() {
-        return campoFechaResolucionOtorPen1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1(TextField component) {
-        this.campoFechaResolucionOtorPen1 = component;
-    }
-
-    private TextField campoFechaResolucionOtorPen1x1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaResolucionOtorPen1x1() {
-        return campoFechaResolucionOtorPen1x1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1x1(TextField component) {
-        this.campoFechaResolucionOtorPen1x1 = component;
-    }
-
-    private StaticText campoFechaResolucionOtorPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionOtorPen1Texto1() {
-        return campoFechaResolucionOtorPen1Texto1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1Texto1(StaticText component) {
-        this.campoFechaResolucionOtorPen1Texto1 = component;
-    }
-
-    private StaticText campoFechaResolucionOtorPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionOtorPen1x1Texto1() {
-        return campoFechaResolucionOtorPen1x1Texto1;
-    }
-
-    public void setCampoFechaResolucionOtorPen1x1Texto1(StaticText component) {
-        this.campoFechaResolucionOtorPen1x1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaResolucionOtorPen1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaResolucionOtorPen1() {
-        return converterFechaResolucionOtorPen1;
-    }
-  
-    public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
-        this.converterFechaResolucionOtorPen1 = converter;
-    }
-  
-    private TableColumn tableColumnNumeroResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnNumeroResolucionDenPen1() {
-        return tableColumnNumeroResolucionDenPen1;
-    }
-
-    public void setTableColumnNumeroResolucionDenPen1(TableColumn component) {
-        this.tableColumnNumeroResolucionDenPen1 = component;
-    }
-
-    private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelNumeroResolucionDenPen1() {
-        return labelNumeroResolucionDenPen1;
-    }
-
-    public void setLabelNumeroResolucionDenPen1(Label l) {
-        this.labelNumeroResolucionDenPen1 = l;
-    }
-
-    private TextField campoNumeroResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    @Override
-    public TextField getCampoNumeroResolucionDenPen1() {
-        return campoNumeroResolucionDenPen1;
-    }
-
-    public void setCampoNumeroResolucionDenPen1(TextField component) {
-        this.campoNumeroResolucionDenPen1 = component;
-    }
-
-    private TextField campoNumeroResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoNumeroResolucionDenPen1x1() {
-        return campoNumeroResolucionDenPen1x1;
-    }
-
-    public void setCampoNumeroResolucionDenPen1x1(TextField component) {
-        this.campoNumeroResolucionDenPen1x1 = component;
-    }
-
-    private StaticText campoNumeroResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoNumeroResolucionDenPen1Texto1() {
-        return campoNumeroResolucionDenPen1Texto1;
-    }
-
-    public void setCampoNumeroResolucionDenPen1Texto1(StaticText component) {
-        this.campoNumeroResolucionDenPen1Texto1 = component;
-    }
-
-    private StaticText campoNumeroResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoNumeroResolucionDenPen1x1Texto1() {
-        return campoNumeroResolucionDenPen1x1Texto1;
-    }
-
-    public void setCampoNumeroResolucionDenPen1x1Texto1(StaticText component) {
-        this.campoNumeroResolucionDenPen1x1Texto1 = component;
-    }
-
-    private LengthValidator validatorNumeroResolucionDenPen1 = new LengthValidator();
-  
-    public LengthValidator getValidatorNumeroResolucionDenPen1() {
-        return validatorNumeroResolucionDenPen1;
-    }
-  
-    public void setValidatorNumeroResolucionDenPen1(LengthValidator validator) {
-        this.validatorNumeroResolucionDenPen1 = validator;
-    }
-  
-    private TableColumn tableColumnFechaResolucionDenPen1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnFechaResolucionDenPen1() {
-        return tableColumnFechaResolucionDenPen1;
-    }
-
-    public void setTableColumnFechaResolucionDenPen1(TableColumn component) {
-        this.tableColumnFechaResolucionDenPen1 = component;
-    }
-
-    private Label labelFechaResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaResolucionDenPen1() {
-        return labelFechaResolucionDenPen1;
-    }
-
-    public void setLabelFechaResolucionDenPen1(Label l) {
-        this.labelFechaResolucionDenPen1 = l;
-    }
-
-    private TextField campoFechaResolucionDenPen1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaResolucionDenPen1() {
-        return campoFechaResolucionDenPen1;
-    }
-
-    public void setCampoFechaResolucionDenPen1(TextField component) {
-        this.campoFechaResolucionDenPen1 = component;
-    }
-
-    private TextField campoFechaResolucionDenPen1x1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaResolucionDenPen1x1() {
-        return campoFechaResolucionDenPen1x1;
-    }
-
-    public void setCampoFechaResolucionDenPen1x1(TextField component) {
-        this.campoFechaResolucionDenPen1x1 = component;
-    }
-
-    private StaticText campoFechaResolucionDenPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionDenPen1Texto1() {
-        return campoFechaResolucionDenPen1Texto1;
-    }
-
-    public void setCampoFechaResolucionDenPen1Texto1(StaticText component) {
-        this.campoFechaResolucionDenPen1Texto1 = component;
-    }
-
-    private StaticText campoFechaResolucionDenPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaResolucionDenPen1x1Texto1() {
-        return campoFechaResolucionDenPen1x1Texto1;
-    }
-
-    public void setCampoFechaResolucionDenPen1x1Texto1(StaticText component) {
-        this.campoFechaResolucionDenPen1x1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaResolucionDenPen1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaResolucionDenPen1() {
-        return converterFechaResolucionDenPen1;
-    }
-  
-    public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
-        this.converterFechaResolucionDenPen1 = converter;
-    }
-  
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getEtiquetaTextoFilasPorPagina1() {
@@ -7449,8 +7593,23 @@ public class Persona5 extends AbstractPageBean
     }
 
     @Override
+    public TextField getTextFieldCampoFechaResolucionOtorPen1() {
+        return this.getCampoFechaResolucionOtorPen1();
+    }
+
+    @Override
+    public TextField getTextFieldCampoFechaObjecionPension1() {
+        return this.getCampoFechaObjecionPension1();
+    }
+
+    @Override
     public TextField getTextFieldCampoFechaDenegacionPension1() {
         return this.getCampoFechaDenegacionPension1();
+    }
+
+    @Override
+    public TextField getTextFieldCampoFechaResolucionDenPen1() {
+        return this.getCampoFechaResolucionDenPen1();
     }
 
     @Override
@@ -7501,16 +7660,6 @@ public class Persona5 extends AbstractPageBean
     @Override
     public TextField getTextFieldCampoFechaHoraUltActJupe1() {
         return this.getCampoFechaHoraUltActJupe1();
-    }
-
-    @Override
-    public TextField getTextFieldCampoFechaResolucionOtorPen1() {
-        return this.getCampoFechaResolucionOtorPen1();
-    }
-
-    @Override
-    public TextField getTextFieldCampoFechaResolucionDenPen1() {
-        return this.getCampoFechaResolucionDenPen1();
     }
 
     // </editor-fold>
