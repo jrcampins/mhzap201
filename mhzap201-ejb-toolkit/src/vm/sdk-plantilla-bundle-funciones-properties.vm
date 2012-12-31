@@ -1,0 +1,3 @@
+#foreach($funcion in $funciones)
+$funcion.codigoFuncion=$utils.getStringJava($funcion.nombreFuncion)
+#end##foreach

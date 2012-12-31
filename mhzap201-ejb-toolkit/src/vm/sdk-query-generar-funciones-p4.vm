@@ -1,0 +1,5 @@
+select *
+from funcion
+where id_dominio is not null
+and numero_tipo_funcion in (13, 22)
+order by id_funcion

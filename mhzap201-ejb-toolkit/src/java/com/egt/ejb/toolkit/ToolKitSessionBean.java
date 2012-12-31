@@ -262,6 +262,12 @@ public class ToolKitSessionBean implements ToolKitSessionLocal {
             VelocityContext context = new VelocityContext();
             context.put("utils", utils);
 //
+            query = VelocityEngineer.write(context, "sdk-query-generar-funciones-p4.vm").toString();
+            List<Funcion> funcionesP4 = funcionFacade.findByQuery(query, EnumTipoQuery.NATIVE, REFRESH);
+            context.put("funciones", funcionesP4);
+            filename = filedir + "BundleFunciones.properties";
+            write(context, "sdk-plantilla-bundle-funciones-properties.vm", filename);
+//
             List<SystemRoutine> procedimientos = systemRoutineFacade.findAll();
             context.put("procedimientos", procedimientos);
             filename = filedir + "BundleProcedimientos.properties";
