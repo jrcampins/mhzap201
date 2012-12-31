@@ -96,6 +96,15 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
     private Collection<LogProAcrPotBen> logProAcrPotBenIdBarrioCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProDenPenObj> logProDenPenObjIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProDenPenObj> logProDenPenObjIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProDenPenObj> logProDenPenObjIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
     private Collection<LogProOtoPenApr> logProOtoPenAprIdDepartamentoCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
@@ -321,6 +330,33 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
 
     public void setLogProAcrPotBenIdBarrioCollection(Collection<LogProAcrPotBen> collection) {
         this.logProAcrPotBenIdBarrioCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProDenPenObj> getLogProDenPenObjIdDepartamentoCollection() {
+        return this.logProDenPenObjIdDepartamentoCollection;
+    }
+
+    public void setLogProDenPenObjIdDepartamentoCollection(Collection<LogProDenPenObj> collection) {
+        this.logProDenPenObjIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProDenPenObj> getLogProDenPenObjIdDistritoCollection() {
+        return this.logProDenPenObjIdDistritoCollection;
+    }
+
+    public void setLogProDenPenObjIdDistritoCollection(Collection<LogProDenPenObj> collection) {
+        this.logProDenPenObjIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProDenPenObj> getLogProDenPenObjIdBarrioCollection() {
+        return this.logProDenPenObjIdBarrioCollection;
+    }
+
+    public void setLogProDenPenObjIdBarrioCollection(Collection<LogProDenPenObj> collection) {
+        this.logProDenPenObjIdBarrioCollection = collection;
     }
 
     @Override

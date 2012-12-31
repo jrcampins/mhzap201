@@ -42,6 +42,9 @@ public class CausaDenPension implements CausaDenPensionBase, Comparable, Seriali
     private String codigoCausaDenPension;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "causaDenPensionNumeroCausaDenPension")
+    private Collection<LogProDenPenObj> logProDenPenObjNumeroCausaDenPensionCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "causaDenPensionNumeroCausaDenPension")
     private Collection<Persona> personaNumeroCausaDenPensionCollection;
 
     public CausaDenPension() {
@@ -63,6 +66,15 @@ public class CausaDenPension implements CausaDenPensionBase, Comparable, Seriali
 
     public void setCodigoCausaDenPension(String codigoCausaDenPension) {
         this.codigoCausaDenPension = codigoCausaDenPension;
+    }
+
+    @Override
+    public Collection<LogProDenPenObj> getLogProDenPenObjNumeroCausaDenPensionCollection() {
+        return this.logProDenPenObjNumeroCausaDenPensionCollection;
+    }
+
+    public void setLogProDenPenObjNumeroCausaDenPensionCollection(Collection<LogProDenPenObj> collection) {
+        this.logProDenPenObjNumeroCausaDenPensionCollection = collection;
     }
 
     @Override

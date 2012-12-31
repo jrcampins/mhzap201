@@ -12,11 +12,14 @@ package com.egt.ejb.persistence.entity;
 
 import com.egt.base.persistence.entity.InformeBase;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "informe")
@@ -40,6 +43,10 @@ public class Informe implements InformeBase, Comparable, Serializable {
     @Basic(optional = false)
     @Column(name = "nombre_informe")
     private String nombreInforme;
+
+    @Column(name = "fecha_transaccion")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaTransaccion;
 
     public Informe() {
     }
@@ -78,6 +85,15 @@ public class Informe implements InformeBase, Comparable, Serializable {
 
     public void setNombreInforme(String nombreInforme) {
         this.nombreInforme = nombreInforme;
+    }
+
+    @Override
+    public Date getFechaTransaccion() {
+        return this.fechaTransaccion;
+    }
+
+    public void setFechaTransaccion(Date fechaTransaccion) {
+        this.fechaTransaccion = fechaTransaccion;
     }
 
     @Override

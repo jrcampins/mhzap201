@@ -210,15 +210,36 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaOtorgamientoPen;
 
+    @Column(name = "numero_resolucion_otor_pen")
+    private String numeroResolucionOtorPen;
+
+    @Column(name = "fecha_resolucion_otor_pen")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaResolucionOtorPen;
+
     @Column(name = "comentarios_otorgamiento_pen")
     private String comentariosOtorgamientoPen;
+
+    @Column(name = "fecha_objecion_pension")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaObjecionPension;
+
+    @Column(name = "otra_causa_den_pension")
+    private String otraCausaDenPension;
+
+    @Column(name = "comentarios_objecion_pension")
+    private String comentariosObjecionPension;
 
     @Column(name = "fecha_denegacion_pension")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaDenegacionPension;
 
-    @Column(name = "otra_causa_den_pension")
-    private String otraCausaDenPension;
+    @Column(name = "numero_resolucion_den_pen")
+    private String numeroResolucionDenPen;
+
+    @Column(name = "fecha_resolucion_den_pen")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaResolucionDenPen;
 
     @Column(name = "comentarios_denegacion_pension")
     private String comentariosDenegacionPension;
@@ -296,20 +317,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaHoraUltActJupe;
 
-    @Column(name = "numero_resolucion_otor_pen")
-    private String numeroResolucionOtorPen;
-
-    @Column(name = "fecha_resolucion_otor_pen")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaResolucionOtorPen;
-
-    @Column(name = "numero_resolucion_den_pen")
-    private String numeroResolucionDenPen;
-
-    @Column(name = "fecha_resolucion_den_pen")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaResolucionDenPen;
-
     @JoinColumn(name = "numero_sexo_persona", referencedColumnName = "numero_sexo_persona")
     @ManyToOne
     private SexoPersona sexoPersonaNumeroSexoPersona;
@@ -376,6 +383,9 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
     private Collection<LogProAcrPotBen> logProAcrPotBenIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProDenPenObj> logProDenPenObjIdPersonaCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
     private Collection<LogProOtoPenApr> logProOtoPenAprIdPersonaCollection;
@@ -837,12 +847,57 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
+    public String getNumeroResolucionOtorPen() {
+        return this.numeroResolucionOtorPen;
+    }
+
+    public void setNumeroResolucionOtorPen(String numeroResolucionOtorPen) {
+        this.numeroResolucionOtorPen = numeroResolucionOtorPen;
+    }
+
+    @Override
+    public Date getFechaResolucionOtorPen() {
+        return this.fechaResolucionOtorPen;
+    }
+
+    public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen) {
+        this.fechaResolucionOtorPen = fechaResolucionOtorPen;
+    }
+
+    @Override
     public String getComentariosOtorgamientoPen() {
         return this.comentariosOtorgamientoPen;
     }
 
     public void setComentariosOtorgamientoPen(String comentariosOtorgamientoPen) {
         this.comentariosOtorgamientoPen = comentariosOtorgamientoPen;
+    }
+
+    @Override
+    public Date getFechaObjecionPension() {
+        return this.fechaObjecionPension;
+    }
+
+    public void setFechaObjecionPension(Date fechaObjecionPension) {
+        this.fechaObjecionPension = fechaObjecionPension;
+    }
+
+    @Override
+    public String getOtraCausaDenPension() {
+        return this.otraCausaDenPension;
+    }
+
+    public void setOtraCausaDenPension(String otraCausaDenPension) {
+        this.otraCausaDenPension = otraCausaDenPension;
+    }
+
+    @Override
+    public String getComentariosObjecionPension() {
+        return this.comentariosObjecionPension;
+    }
+
+    public void setComentariosObjecionPension(String comentariosObjecionPension) {
+        this.comentariosObjecionPension = comentariosObjecionPension;
     }
 
     @Override
@@ -855,12 +910,21 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
-    public String getOtraCausaDenPension() {
-        return this.otraCausaDenPension;
+    public String getNumeroResolucionDenPen() {
+        return this.numeroResolucionDenPen;
     }
 
-    public void setOtraCausaDenPension(String otraCausaDenPension) {
-        this.otraCausaDenPension = otraCausaDenPension;
+    public void setNumeroResolucionDenPen(String numeroResolucionDenPen) {
+        this.numeroResolucionDenPen = numeroResolucionDenPen;
+    }
+
+    @Override
+    public Date getFechaResolucionDenPen() {
+        return this.fechaResolucionDenPen;
+    }
+
+    public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
+        this.fechaResolucionDenPen = fechaResolucionDenPen;
     }
 
     @Override
@@ -1062,42 +1126,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
-    public String getNumeroResolucionOtorPen() {
-        return this.numeroResolucionOtorPen;
-    }
-
-    public void setNumeroResolucionOtorPen(String numeroResolucionOtorPen) {
-        this.numeroResolucionOtorPen = numeroResolucionOtorPen;
-    }
-
-    @Override
-    public Date getFechaResolucionOtorPen() {
-        return this.fechaResolucionOtorPen;
-    }
-
-    public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen) {
-        this.fechaResolucionOtorPen = fechaResolucionOtorPen;
-    }
-
-    @Override
-    public String getNumeroResolucionDenPen() {
-        return this.numeroResolucionDenPen;
-    }
-
-    public void setNumeroResolucionDenPen(String numeroResolucionDenPen) {
-        this.numeroResolucionDenPen = numeroResolucionDenPen;
-    }
-
-    @Override
-    public Date getFechaResolucionDenPen() {
-        return this.fechaResolucionDenPen;
-    }
-
-    public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
-        this.fechaResolucionDenPen = fechaResolucionDenPen;
-    }
-
-    @Override
     public SexoPersona getSexoPersonaNumeroSexoPersona() {
         return this.sexoPersonaNumeroSexoPersona;
     }
@@ -1248,6 +1276,15 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setLogProAcrPotBenIdPersonaCollection(Collection<LogProAcrPotBen> collection) {
         this.logProAcrPotBenIdPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProDenPenObj> getLogProDenPenObjIdPersonaCollection() {
+        return this.logProDenPenObjIdPersonaCollection;
+    }
+
+    public void setLogProDenPenObjIdPersonaCollection(Collection<LogProDenPenObj> collection) {
+        this.logProDenPenObjIdPersonaCollection = collection;
     }
 
     @Override

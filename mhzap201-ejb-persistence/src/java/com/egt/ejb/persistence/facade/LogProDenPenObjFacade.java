@@ -1,5 +1,10 @@
 /*
- * Copyright (C) 2009, EGT Consultores, C.A.
+ * Copyright (C) 2010, EGT Consultores, C.A.
+ *
+ * Este archivo fue totalmente generado utilizando herramientas de software de EGT Consultores, C.A.
+ * En consecuencia, partes del archivo podrian ser similares o hasta iguales a las de archivos de
+ * programas de otros clientes, generados por las mismas herramientas; por lo tanto, esta similitud
+ * no podra ser considerada como violacion del copyright.
  *
  * Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
  * de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
@@ -11,7 +16,7 @@
 package com.egt.ejb.persistence.facade;
 
 import com.egt.base.persistence.enums.EnumTipoQuery;
-import com.egt.ejb.persistence.entity.InformeAuditoria;
+import com.egt.ejb.persistence.entity.LogProDenPenObj;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,20 +28,20 @@ import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 
 @Stateless
-public class InformeAuditoriaFacade implements InformeAuditoriaFacadeLocal {
+public class LogProDenPenObjFacade implements LogProDenPenObjFacadeLocal {
 
     @PersistenceContext
     private EntityManager em;
 
     @Override
-    public InformeAuditoria find(Object id) {
+    public LogProDenPenObj find(Object id) {
         return this.find(id, false);
     }
 
     @Override
-    public InformeAuditoria find(Object id, boolean refresh) {
-        String query = "select o from InformeAuditoria as o where o.idInformeAuditoria = :id";
-        InformeAuditoria o = null;
+    public LogProDenPenObj find(Object id, boolean refresh) {
+        String query = "select o from LogProDenPenObj as o where o.idLogProDenPenObj = :id";
+        LogProDenPenObj o = null;
         Query q;
         if (id != null) {
             try {
@@ -46,7 +51,7 @@ public class InformeAuditoriaFacade implements InformeAuditoriaFacadeLocal {
                     q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
                     q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
                 }
-                o = (InformeAuditoria) q.getSingleResult();
+                o = (LogProDenPenObj) q.getSingleResult();
             } catch (NoResultException nrex) {
                 o = null;
             }
@@ -55,76 +60,50 @@ public class InformeAuditoriaFacade implements InformeAuditoriaFacadeLocal {
     }
 
     @Override
-    public InformeAuditoria findByCodigo(String codigo) {
-        return this.findByCodigo(codigo, false);
-    }
-
-    @Override
-    public InformeAuditoria findByCodigo(String codigo, boolean refresh) {
-        String query = "select o from InformeAuditoria as o where o.codigoInformeAuditoria = :codigo";
-        InformeAuditoria o = null;
-        Query q;
-        if (codigo != null) {
-            try {
-                q = em.createQuery(query);
-                q = q.setParameter("codigo", codigo);
-                if (refresh) {
-                    q = q.setHint(QueryHints.REFRESH, HintValues.TRUE);
-                    q = q.setHint(QueryHints.REFRESH_CASCADE, CascadePolicy.CascadeAllParts);
-                }
-                o = (InformeAuditoria) q.getSingleResult();
-            } catch (NoResultException nrex) {
-                o = null;
-            }
-        }
-        return o;
-    }
-
-    @Override
-    public List<InformeAuditoria> findAll() {
+    public List<LogProDenPenObj> findAll() {
         return this.findAll(false);
     }
 
     @Override
-    public List<InformeAuditoria> findAll(boolean refresh) {
-        String query = "select object(o) from InformeAuditoria as o";
+    public List<LogProDenPenObj> findAll(boolean refresh) {
+        String query = "select object(o) from LogProDenPenObj as o";
         return this.findByQuery(query, refresh);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query) {
+    public List<LogProDenPenObj> findByQuery(String query) {
         return findByQuery(query, false);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query, boolean refresh) {
+    public List<LogProDenPenObj> findByQuery(String query, boolean refresh) {
         return findByQuery(query, EnumTipoQuery.JPQL, refresh);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo) {
+    public List<LogProDenPenObj> findByQuery(String query, EnumTipoQuery tipo) {
         return findByQuery(query, tipo, false);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, boolean refresh) {
+    public List<LogProDenPenObj> findByQuery(String query, EnumTipoQuery tipo, boolean refresh) {
         return findByQuery(query, tipo, 0, refresh);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, int max) {
+    public List<LogProDenPenObj> findByQuery(String query, EnumTipoQuery tipo, int max) {
         return findByQuery(query, tipo, max, false);
     }
 
     @Override
-    public List<InformeAuditoria> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh) {
+    public List<LogProDenPenObj> findByQuery(String query, EnumTipoQuery tipo, int max, boolean refresh) {
         Query q;
         switch (tipo) {
             case NAMED:
                 q = em.createNamedQuery(query);
                 break;
             case NATIVE:
-                q = em.createNativeQuery(query, InformeAuditoria.class);
+                q = em.createNativeQuery(query, LogProDenPenObj.class);
                 break;
             default:
                 q = em.createQuery(query);
@@ -146,22 +125,22 @@ public class InformeAuditoriaFacade implements InformeAuditoriaFacadeLocal {
     }
 
     @Override
-    public void merge(InformeAuditoria informeAuditoria) {
-        em.merge(informeAuditoria);
+    public void merge(LogProDenPenObj logProDenPenObj) {
+        em.merge(logProDenPenObj);
     }
 
     @Override
-    public void persist(InformeAuditoria informeAuditoria) {
-        em.persist(informeAuditoria);
+    public void persist(LogProDenPenObj logProDenPenObj) {
+        em.persist(logProDenPenObj);
     }
 
     @Override
-    public void refresh(InformeAuditoria informeAuditoria) {
-        em.refresh(informeAuditoria);
+    public void refresh(LogProDenPenObj logProDenPenObj) {
+        em.refresh(logProDenPenObj);
     }
 
     @Override
-    public void remove(InformeAuditoria informeAuditoria) {
-        em.remove(em.merge(informeAuditoria));
+    public void remove(LogProDenPenObj logProDenPenObj) {
+        em.remove(em.merge(logProDenPenObj));
     }
 }
