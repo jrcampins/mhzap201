@@ -93,6 +93,7 @@ ALTER TABLE funcion_parametro ADD CONSTRAINT CC_funcion_parametro_0002_ZY CHECK 
 ALTER TABLE funcionario ADD CONSTRAINT CC_funcionario_0001_ZY CHECK (numero_cedula >= 1 and numero_cedula <= 1000000000);
 ALTER TABLE funcionario ADD CONSTRAINT CC_funcionario_0002_ZY CHECK (letra_cedula is null or letra_cedula >= 'A');
 ALTER TABLE funcionario ADD CONSTRAINT CC_funcionario_0003_ZY CHECK (letra_cedula is null or letra_cedula <= 'Z');
+ALTER TABLE log_imp_cen ADD CONSTRAINT CC_log_imp_cen_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_imp_deu ADD CONSTRAINT CC_log_imp_deu_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_imp_emp ADD CONSTRAINT CC_log_imp_emp_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_imp_fal ADD CONSTRAINT CC_log_imp_fal_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
@@ -105,6 +106,7 @@ ALTER TABLE log_imp_pot ADD CONSTRAINT CC_log_imp_pot_0001_ZY CHECK (es_importad
 ALTER TABLE log_imp_sub ADD CONSTRAINT CC_log_imp_sub_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_imp_ubi ADD CONSTRAINT CC_log_imp_ubi_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT CC_log_pro_acr_pot_ben_0001_ZY CHECK (es_procesado >= 0 and es_procesado <= 1);
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT CC_log_pro_den_pen_obj_0001_ZY CHECK (es_procesado >= 0 and es_procesado <= 1);
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT CC_log_pro_imp_arc_ext_0001_ZY CHECK (es_importado >= 0 and es_importado <= 1);
 ALTER TABLE log_pro_oto_pen_apr ADD CONSTRAINT CC_log_pro_oto_pen_apr_0001_ZY CHECK (es_procesado >= 0 and es_procesado <= 1);
 ALTER TABLE log_pro_pre_pro_pag ADD CONSTRAINT CC_log_pro_pre_pro_pag_0001_ZY CHECK (es_procesado >= 0 and es_procesado <= 1);

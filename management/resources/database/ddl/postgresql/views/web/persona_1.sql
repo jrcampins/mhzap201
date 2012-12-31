@@ -100,11 +100,17 @@ SELECT
 	persona.fecha_aprobacion_pension AS fecha_aprobacion_pension,
 	persona.comentarios_aprobacion_pension AS comentarios_aprobacion_pension,
 	persona.fecha_otorgamiento_pen AS fecha_otorgamiento_pen,
+	persona.numero_resolucion_otor_pen AS numero_resolucion_otor_pen,
+	persona.fecha_resolucion_otor_pen AS fecha_resolucion_otor_pen,
 	persona.comentarios_otorgamiento_pen AS comentarios_otorgamiento_pen,
-	persona.fecha_denegacion_pension AS fecha_denegacion_pension,
+	persona.fecha_objecion_pension AS fecha_objecion_pension,
 	persona.numero_causa_den_pension AS numero_causa_den_pension,
 		causa_den_pension_1x10.codigo_causa_den_pension AS codigo_causa_den_pensio_1x10y2,
 	persona.otra_causa_den_pension AS otra_causa_den_pension,
+	persona.comentarios_objecion_pension AS comentarios_objecion_pension,
+	persona.fecha_denegacion_pension AS fecha_denegacion_pension,
+	persona.numero_resolucion_den_pen AS numero_resolucion_den_pen,
+	persona.fecha_resolucion_den_pen AS fecha_resolucion_den_pen,
 	persona.comentarios_denegacion_pension AS comentarios_denegacion_pension,
 	persona.fecha_revocacion_pension AS fecha_revocacion_pension,
 	persona.numero_causa_rev_pension AS numero_causa_rev_pension,
@@ -213,11 +219,7 @@ SELECT
 	persona.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob_pen,
 	persona.numero_tipo_act_jupe AS numero_tipo_act_jupe,
 		tipo_act_jupe_1x16.codigo_tipo_act_jupe AS codigo_tipo_act_jupe_1x16y2,
-	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe,
-	persona.numero_resolucion_otor_pen AS numero_resolucion_otor_pen,
-	persona.fecha_resolucion_otor_pen AS fecha_resolucion_otor_pen,
-	persona.numero_resolucion_den_pen AS numero_resolucion_den_pen,
-	persona.fecha_resolucion_den_pen AS fecha_resolucion_den_pen
+	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe
 FROM
 	persona persona
 	LEFT OUTER JOIN sexo_persona sexo_persona_1x1 ON sexo_persona_1x1.numero_sexo_persona = persona.numero_sexo_persona

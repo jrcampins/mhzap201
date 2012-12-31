@@ -99,8 +99,7 @@ CREATE INDEX IX_grupo_proceso_nombre_grupo_proceso ON grupo_proceso (nombre_grup
 CREATE INDEX IX_grupo_proceso_version_grupo_proceso ON grupo_proceso (version_grupo_proceso);
 CREATE INDEX IX_informe_nombre_informe ON informe (nombre_informe);
 CREATE INDEX IX_informe_version_informe ON informe (version_informe);
-CREATE INDEX IX_informe_auditoria_nombre_informe_auditoria ON informe_auditoria (nombre_informe_auditoria);
-CREATE INDEX IX_informe_auditoria_version_informe_auditoria ON informe_auditoria (version_informe_auditoria);
+CREATE INDEX IX_log_imp_cen_version_log_imp_cen ON log_imp_cen (version_log_imp_cen);
 CREATE INDEX IX_log_imp_deu_version_log_imp_deu ON log_imp_deu (version_log_imp_deu);
 CREATE INDEX IX_log_imp_emp_version_log_imp_emp ON log_imp_emp (version_log_imp_emp);
 CREATE INDEX IX_log_imp_fal_version_log_imp_fal ON log_imp_fal (version_log_imp_fal);
@@ -120,6 +119,11 @@ CREATE INDEX IX_log_pro_acr_pot_ben_id_ficha_persona ON log_pro_acr_pot_ben (id_
 CREATE INDEX IX_log_pro_acr_pot_ben_id_persona ON log_pro_acr_pot_ben (id_persona);
 CREATE INDEX IX_log_pro_acr_pot_ben_id_potencial_ben ON log_pro_acr_pot_ben (id_potencial_ben);
 CREATE INDEX IX_log_pro_acr_pot_ben_version_log_pro_acr_pot_ben ON log_pro_acr_pot_ben (version_log_pro_acr_pot_ben);
+CREATE INDEX IX_log_pro_den_pen_obj_id_barrio ON log_pro_den_pen_obj (id_barrio);
+CREATE INDEX IX_log_pro_den_pen_obj_id_departamento ON log_pro_den_pen_obj (id_departamento);
+CREATE INDEX IX_log_pro_den_pen_obj_id_distrito ON log_pro_den_pen_obj (id_distrito);
+CREATE INDEX IX_log_pro_den_pen_obj_id_persona ON log_pro_den_pen_obj (id_persona);
+CREATE INDEX IX_log_pro_den_pen_obj_version_log_pro_den_pen_obj ON log_pro_den_pen_obj (version_log_pro_den_pen_obj);
 CREATE INDEX IX_log_pro_imp_arc_ext_id_archivo_datos_ext ON log_pro_imp_arc_ext (id_archivo_datos_ext);
 CREATE INDEX IX_log_pro_imp_arc_ext_version_log_pro_imp_arc_ext ON log_pro_imp_arc_ext (version_log_pro_imp_arc_ext);
 CREATE INDEX IX_log_pro_oto_pen_apr_id_barrio ON log_pro_oto_pen_apr (id_barrio);

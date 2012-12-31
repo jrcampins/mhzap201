@@ -577,16 +577,38 @@ CREATE TABLE informe
 	id_informe bigint NOT NULL,
 	version_informe bigint NOT NULL,
 	codigo_informe varchar(30) NOT NULL,
-	nombre_informe varchar(100) NOT NULL
+	nombre_informe varchar(100) NOT NULL,
+	fecha_transaccion timestamp with time zone
 	);
 	
-CREATE TABLE informe_auditoria
+CREATE TABLE log_imp_cen
 	(
-	id_informe_auditoria bigint NOT NULL,
-	version_informe_auditoria bigint NOT NULL,
-	codigo_informe_auditoria varchar(30) NOT NULL,
-	nombre_informe_auditoria varchar(100) NOT NULL,
-	fecha_transaccion timestamp with time zone
+	id_log_imp_cen bigint NOT NULL,
+	version_log_imp_cen bigint NOT NULL,
+	orden varchar,
+	barrio varchar,
+	direccion varchar,
+	telefono varchar,
+	primer_nombre varchar,
+	segundo_nombre varchar,
+	primer_apellido varchar,
+	segundo_apellido varchar,
+	edad_a_la_fecha varchar,
+	sexo varchar,
+	parentesco varchar,
+	cedula varchar,
+	nombre_jefe_hogar varchar,
+	cedula_jefe_hogar varchar,
+	icv varchar,
+	validado varchar,
+	observaciones varchar,
+	funcionario varchar,
+	causa_invalidacion varchar,
+	es_importado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL,
+	nombre_archivo varchar,
+	codigo_archivo varchar
 	);
 	
 CREATE TABLE log_imp_deu
@@ -939,6 +961,22 @@ CREATE TABLE log_pro_acr_pot_ben
 	id_ficha_hogar bigint,
 	codigo_ficha_hogar varchar(30),
 	indice_calidad_vida decimal(7,4),
+	es_procesado int NOT NULL,
+	observacion varchar,
+	fecha_hora_transaccion timestamp with time zone NOT NULL
+	);
+	
+CREATE TABLE log_pro_den_pen_obj
+	(
+	id_log_pro_den_pen_obj bigint NOT NULL,
+	version_log_pro_den_pen_obj bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(30),
+	nombre_persona varchar(100),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	numero_causa_den_pension int,
 	es_procesado int NOT NULL,
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
@@ -1320,10 +1358,16 @@ CREATE TABLE persona
 	fecha_aprobacion_pension timestamp with time zone,
 	comentarios_aprobacion_pension varchar,
 	fecha_otorgamiento_pen timestamp with time zone,
+	numero_resolucion_otor_pen varchar(50),
+	fecha_resolucion_otor_pen timestamp with time zone,
 	comentarios_otorgamiento_pen varchar,
-	fecha_denegacion_pension timestamp with time zone,
+	fecha_objecion_pension timestamp with time zone,
 	numero_causa_den_pension int,
 	otra_causa_den_pension varchar(100),
+	comentarios_objecion_pension varchar,
+	fecha_denegacion_pension timestamp with time zone,
+	numero_resolucion_den_pen varchar(50),
+	fecha_resolucion_den_pen timestamp with time zone,
 	comentarios_denegacion_pension varchar,
 	fecha_revocacion_pension timestamp with time zone,
 	numero_causa_rev_pension int,
@@ -1351,11 +1395,7 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension timestamp with time zone,
 	notas_anul_fec_ult_cob_pen varchar,
 	numero_tipo_act_jupe int,
-	fecha_hora_ult_act_jupe timestamp with time zone,
-	numero_resolucion_otor_pen varchar(50),
-	fecha_resolucion_otor_pen timestamp with time zone,
-	numero_resolucion_den_pen varchar(50),
-	fecha_resolucion_den_pen timestamp with time zone
+	fecha_hora_ult_act_jupe timestamp with time zone
 	);
 	
 CREATE TABLE potencial_ben

@@ -37,7 +37,6 @@ ALTER TABLE grupo_aplicacion ADD CONSTRAINT UQ_grupo_aplicacion_0001_ZY UNIQUE (
 ALTER TABLE grupo_proceso ADD CONSTRAINT UQ_grupo_proceso_0001_ZY UNIQUE (codigo_grupo_proceso);
 ALTER TABLE idioma_hogar ADD CONSTRAINT UQ_idioma_hogar_0001_ZY UNIQUE (codigo_idioma_hogar);
 ALTER TABLE informe ADD CONSTRAINT UQ_informe_0001_ZY UNIQUE (codigo_informe);
-ALTER TABLE informe_auditoria ADD CONSTRAINT UQ_informe_auditoria_0001_ZY UNIQUE (codigo_informe_auditoria);
 ALTER TABLE mensaje ADD CONSTRAINT UQ_mensaje_0001_ZY UNIQUE (codigo_mensaje);
 ALTER TABLE motivo_ina_esc ADD CONSTRAINT UQ_motivo_ina_esc_0001_ZY UNIQUE (codigo_motivo_ina_esc);
 ALTER TABLE motivo_no_atencion ADD CONSTRAINT UQ_motivo_no_atencion_0001_ZY UNIQUE (codigo_motivo_no_atencion);

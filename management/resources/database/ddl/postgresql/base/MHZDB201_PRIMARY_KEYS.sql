@@ -41,7 +41,7 @@ ALTER TABLE grupo_aplicacion ADD CONSTRAINT PK_grupo_aplicacion_ZY PRIMARY KEY (
 ALTER TABLE grupo_proceso ADD CONSTRAINT PK_grupo_proceso_ZY PRIMARY KEY (id_grupo_proceso);
 ALTER TABLE idioma_hogar ADD CONSTRAINT PK_idioma_hogar_ZY PRIMARY KEY (numero_idioma_hogar);
 ALTER TABLE informe ADD CONSTRAINT PK_informe_ZY PRIMARY KEY (id_informe);
-ALTER TABLE informe_auditoria ADD CONSTRAINT PK_informe_auditoria_ZY PRIMARY KEY (id_informe_auditoria);
+ALTER TABLE log_imp_cen ADD CONSTRAINT PK_log_imp_cen_ZY PRIMARY KEY (id_log_imp_cen);
 ALTER TABLE log_imp_deu ADD CONSTRAINT PK_log_imp_deu_ZY PRIMARY KEY (id_log_imp_deu);
 ALTER TABLE log_imp_emp ADD CONSTRAINT PK_log_imp_emp_ZY PRIMARY KEY (id_log_imp_emp);
 ALTER TABLE log_imp_fal ADD CONSTRAINT PK_log_imp_fal_ZY PRIMARY KEY (id_log_imp_fal);
@@ -54,6 +54,7 @@ ALTER TABLE log_imp_pot ADD CONSTRAINT PK_log_imp_pot_ZY PRIMARY KEY (id_log_imp
 ALTER TABLE log_imp_sub ADD CONSTRAINT PK_log_imp_sub_ZY PRIMARY KEY (id_log_imp_sub);
 ALTER TABLE log_imp_ubi ADD CONSTRAINT PK_log_imp_ubi_ZY PRIMARY KEY (id_log_imp_ubi);
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT PK_log_pro_acr_pot_ben_ZY PRIMARY KEY (id_log_pro_acr_pot_ben);
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT PK_log_pro_den_pen_obj_ZY PRIMARY KEY (id_log_pro_den_pen_obj);
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT PK_log_pro_imp_arc_ext_ZY PRIMARY KEY (id_log_pro_imp_arc_ext);
 ALTER TABLE log_pro_oto_pen_apr ADD CONSTRAINT PK_log_pro_oto_pen_apr_ZY PRIMARY KEY (id_log_pro_oto_pen_apr);
 ALTER TABLE log_pro_pre_pro_pag ADD CONSTRAINT PK_log_pro_pre_pro_pag_ZY PRIMARY KEY (id_log_pro_pre_pro_pag);

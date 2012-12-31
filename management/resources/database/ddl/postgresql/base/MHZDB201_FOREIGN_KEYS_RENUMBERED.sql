@@ -139,6 +139,11 @@ ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_0004_ZY FO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_0005_ZY FOREIGN KEY (id_departamento) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_0006_ZY FOREIGN KEY (id_distrito) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_0007_ZY FOREIGN KEY (id_barrio) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT FK_log_pro_den_pen_obj_0001_ZY FOREIGN KEY (numero_causa_den_pension) REFERENCES causa_den_pension (numero_causa_den_pension) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT FK_log_pro_den_pen_obj_0002_ZY FOREIGN KEY (id_persona) REFERENCES persona (id_persona) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT FK_log_pro_den_pen_obj_0003_ZY FOREIGN KEY (id_departamento) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT FK_log_pro_den_pen_obj_0004_ZY FOREIGN KEY (id_distrito) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE log_pro_den_pen_obj ADD CONSTRAINT FK_log_pro_den_pen_obj_0005_ZY FOREIGN KEY (id_barrio) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT FK_log_pro_imp_arc_ext_0001_ZY FOREIGN KEY (id_archivo_datos_ext) REFERENCES archivo_datos_ext (id_archivo_datos_ext) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE log_pro_imp_arc_ext ADD CONSTRAINT FK_log_pro_imp_arc_ext_0002_ZY FOREIGN KEY (numero_tipo_arc_dat_ext) REFERENCES tipo_arc_dat_ext (numero_tipo_arc_dat_ext) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE log_pro_oto_pen_apr ADD CONSTRAINT FK_log_pro_oto_pen_apr_0001_ZY FOREIGN KEY (numero_condicion_pension) REFERENCES condicion_pension (numero_condicion_pension) ON DELETE NO ACTION ON UPDATE NO ACTION;
