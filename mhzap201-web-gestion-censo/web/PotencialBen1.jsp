@@ -1064,7 +1064,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen1.tableColumnCompania1}"
-                                                    headerText="compania"
+                                                    headerText="compa&#241;ia"
                                                     id="tableColumnCompania1" rendered="false"
                                                     sort="compania">
                                                 <webuijsf:staticText
