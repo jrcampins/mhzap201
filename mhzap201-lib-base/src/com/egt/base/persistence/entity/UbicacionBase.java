@@ -90,6 +90,18 @@ public interface UbicacionBase {
 //
 //  public void setLogProAcrPotBenIdBarrioCollection(Collection<? extends LogProAcrPotBenBase> collection);
 
+    public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjIdDepartamentoCollection();
+//
+//  public void setLogProDenPenObjIdDepartamentoCollection(Collection<? extends LogProDenPenObjBase> collection);
+
+    public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjIdDistritoCollection();
+//
+//  public void setLogProDenPenObjIdDistritoCollection(Collection<? extends LogProDenPenObjBase> collection);
+
+    public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjIdBarrioCollection();
+//
+//  public void setLogProDenPenObjIdBarrioCollection(Collection<? extends LogProDenPenObjBase> collection);
+
     public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdDepartamentoCollection();
 //
 //  public void setLogProOtoPenAprIdDepartamentoCollection(Collection<? extends LogProOtoPenAprBase> collection);

@@ -18,9 +18,10 @@ public enum EnumCondicionPension implements ListOption {
 
     SOLICITADA(1, "condicion_pension_solicitada"),
     APROBADA(2, "condicion_pension_aprobada"),
-    DENEGADA(3, "condicion_pension_denegada"),
+    OBJETADA(3, "condicion_pension_objetada"),
     REVOCADA(4, "condicion_pension_revocada"),
-    OTORGADA(5, "condicion_pension_otorgada");
+    OTORGADA(5, "condicion_pension_otorgada"),
+    DENEGADA(6, "condicion_pension_denegada");
 
     public static EnumCondicionPension valueOf(int i) {
         switch (i) {
@@ -29,11 +30,13 @@ public enum EnumCondicionPension implements ListOption {
             case 2:
                 return APROBADA;
             case 3:
-                return DENEGADA;
+                return OBJETADA;
             case 4:
                 return REVOCADA;
             case 5:
                 return OTORGADA;
+            case 6:
+                return DENEGADA;
             default:
                 return null;
         }

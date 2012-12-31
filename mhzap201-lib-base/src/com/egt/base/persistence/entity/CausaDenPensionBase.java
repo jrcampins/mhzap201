@@ -27,6 +27,10 @@ public interface CausaDenPensionBase {
 //
 //  public void setCodigoCausaDenPension(String codigoCausaDenPension);
 
+    public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjNumeroCausaDenPensionCollection();
+//
+//  public void setLogProDenPenObjNumeroCausaDenPensionCollection(Collection<? extends LogProDenPenObjBase> collection);
+
     public Collection<? extends PersonaBase> getPersonaNumeroCausaDenPensionCollection();
 //
 //  public void setPersonaNumeroCausaDenPensionCollection(Collection<? extends PersonaBase> collection);

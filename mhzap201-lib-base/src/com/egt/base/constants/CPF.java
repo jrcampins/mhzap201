@@ -30,7 +30,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CANTIDAD_PIEZAS = 20295L; // Cantidad Piezas
 
+    public static final Long CAUSA_INVALIDACION = 20887L; // Causa Invalidacion
+
     public static final Long CEDULA = 20697L; // Cedula
+
+    public static final Long CEDULA_JEFE_HOGAR = 20888L; // Cedula Jefe Hogar
 
     public static final Long CERTIFICADO_DEFUNCION = 20111L; // Certificado Defuncion
 
@@ -173,8 +177,6 @@ public class CPF { // Clave Parametro Funcion
     public static final Long CODIGO_IDIOMA_HOGAR = 20301L; // Codigo Idioma Hogar
 
     public static final Long CODIGO_INFORME = 20688L; // Codigo Informe
-
-    public static final Long CODIGO_INFORME_AUDITORIA = 20689L; // Codigo Informe Auditoria
 
     public static final Long CODIGO_MENSAJE = 1102L; // Codigo Mensaje
 
@@ -442,6 +444,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long COMENTARIOS_DES_DENU_PEN = 20233L; // Comentarios Desmentido Denuncia Pension
 
+    public static final Long COMENTARIOS_OBJECION_PENSION = 20896L; // Comentarios Objecion Pension
+
     public static final Long COMENTARIOS_OTORGAMIENTO_PEN = 20662L; // Comentarios Otorgamiento Pension
 
     public static final Long COMENTARIOS_RECLAMO_CENSO = 20632L; // Comentarios Reclamo Censo
@@ -702,6 +706,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_NACIMIENTO = 20067L; // Fecha Nacimiento
 
+    public static final Long FECHA_OBJECION_PENSION = 20897L; // Fecha Objecion Pension
+
     public static final Long FECHA_OTORGAMIENTO_PEN = 20663L; // Fecha Otorgamiento Pension
 
     public static final Long FECHA_OTORGAMIENTO_PEN_DESDE = 10017L; // Fecha Otorgamiento Pension
@@ -761,6 +767,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long FICHA_ACTIVA = 20710L; // Ficha Activa
 
     public static final Long FRANJA_UTM = 20331L; // Franja UTM
+
+    public static final Long FUNCIONARIO = 20889L; // Funcionario
 
     public static final Long GPS = 20711L; // GPS
 
@@ -878,11 +886,11 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_INFORME = 20252L; // Informe
 
-    public static final Long ID_INFORME_AUDITORIA = 20685L; // Informe Auditoria
-
     public static final Long ID_LISTA_VALOR = 1334L; // Lista Valor
 
     public static final Long ID_LISTA_VALOR_ALTERNATIVA = 1964L; // Lista Valor Alternativa
+
+    public static final Long ID_LOG_IMP_CEN = 20890L; // Log Imp Censo
 
     public static final Long ID_LOG_IMP_DEU = 20713L; // Log Imp Deu
 
@@ -907,6 +915,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ID_LOG_IMP_UBI = 20723L; // Log Imp Ubi
 
     public static final Long ID_LOG_PRO_ACR_POT_BEN = 20724L; // Log Pro Acr Potencial Beneficiario
+
+    public static final Long ID_LOG_PRO_DEN_PEN_OBJ = 20891L; // Log Pro Denegacion Pension Objecion
 
     public static final Long ID_LOG_PRO_IMP_ARC_EXT = 20725L; // Log Pro Imp Archivo Externos
 
@@ -1107,8 +1117,6 @@ public class CPF { // Clave Parametro Funcion
     public static final Long NOMBRE_GRUPO_PROCESO = 1424L; // Nombre Grupo Proceso
 
     public static final Long NOMBRE_INFORME = 20691L; // Nombre Informe
-
-    public static final Long NOMBRE_INFORME_AUDITORIA = 20692L; // Nombre Informe Auditoria
 
     public static final Long NOMBRE_INTERFAZ = 1430L; // Nombre Interfaz
 
@@ -1664,6 +1672,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long P92 = 20834L; // P92
 
+    public static final Long PARENTESCO = 20892L; // Parentesco
+
     public static final Long PASSWORD_USUARIO = 1505L; // Contrasena Usuario
 
     public static final Long PATRON_MENSAJE = 1506L; // Patron Mensaje
@@ -1747,6 +1757,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long URL_PAGINA = 1527L; // URL Pagina
 
     public static final Long UTM = 20844L; // UTM
+
+    public static final Long VALIDADO = 20893L; // Validado
 
     public static final Long VALOR = 1529L; // Valor
 
@@ -1866,7 +1878,7 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long VERSION_INFORME = 20256L; // Version Informe
 
-    public static final Long VERSION_INFORME_AUDITORIA = 20687L; // Version Informe Auditoria
+    public static final Long VERSION_LOG_IMP_CEN = 20894L; // Version Log Imp Censo
 
     public static final Long VERSION_LOG_IMP_DEU = 20871L; // Version Log Imp Deu
 
@@ -1891,6 +1903,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VERSION_LOG_IMP_UBI = 20881L; // Version Log Imp Ubi
 
     public static final Long VERSION_LOG_PRO_ACR_POT_BEN = 20882L; // Version Log Pro Acr Potencial Beneficiario
+
+    public static final Long VERSION_LOG_PRO_DEN_PEN_OBJ = 20895L; // Version Log Pro Denegacion Pension Objecion
 
     public static final Long VERSION_LOG_PRO_IMP_ARC_EXT = 20883L; // Version Log Pro Imp Archivo Externos
 

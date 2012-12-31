@@ -122,11 +122,11 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_INFORME = "id_informe"; // Informe
 
-    public static final String ID_INFORME_AUDITORIA = "id_informe_auditoria"; // Informe Auditoria
-
     public static final String ID_LISTA_VALOR = "id_lista_valor"; // Lista Valor
 
     public static final String ID_LISTA_VALOR_ALTERNATIVA = "id_lista_valor_alternativa"; // Lista Valor Alternativa
+
+    public static final String ID_LOG_IMP_CEN = "id_log_imp_cen"; // Log Imp Censo
 
     public static final String ID_LOG_IMP_DEU = "id_log_imp_deu"; // Log Imp Deu
 
@@ -151,6 +151,8 @@ public class CPP { // Clave Parametro Peticion
     public static final String ID_LOG_IMP_UBI = "id_log_imp_ubi"; // Log Imp Ubi
 
     public static final String ID_LOG_PRO_ACR_POT_BEN = "id_log_pro_acr_pot_ben"; // Log Pro Acr Potencial Beneficiario
+
+    public static final String ID_LOG_PRO_DEN_PEN_OBJ = "id_log_pro_den_pen_obj"; // Log Pro Denegacion Pension Objecion
 
     public static final String ID_LOG_PRO_IMP_ARC_EXT = "id_log_pro_imp_arc_ext"; // Log Pro Imp Archivo Externos
 

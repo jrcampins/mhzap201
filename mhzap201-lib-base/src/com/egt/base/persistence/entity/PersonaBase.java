@@ -212,17 +212,41 @@ public interface PersonaBase {
 //
 //  public void setFechaOtorgamientoPen(Date fechaOtorgamientoPen);
 
+    public String getNumeroResolucionOtorPen();
+//
+//  public void setNumeroResolucionOtorPen(String numeroResolucionOtorPen);
+
+    public Date getFechaResolucionOtorPen();
+//
+//  public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen);
+
     public String getComentariosOtorgamientoPen();
 //
 //  public void setComentariosOtorgamientoPen(String comentariosOtorgamientoPen);
+
+    public Date getFechaObjecionPension();
+//
+//  public void setFechaObjecionPension(Date fechaObjecionPension);
+
+    public String getOtraCausaDenPension();
+//
+//  public void setOtraCausaDenPension(String otraCausaDenPension);
+
+    public String getComentariosObjecionPension();
+//
+//  public void setComentariosObjecionPension(String comentariosObjecionPension);
 
     public Date getFechaDenegacionPension();
 //
 //  public void setFechaDenegacionPension(Date fechaDenegacionPension);
 
-    public String getOtraCausaDenPension();
+    public String getNumeroResolucionDenPen();
 //
-//  public void setOtraCausaDenPension(String otraCausaDenPension);
+//  public void setNumeroResolucionDenPen(String numeroResolucionDenPen);
+
+    public Date getFechaResolucionDenPen();
+//
+//  public void setFechaResolucionDenPen(Date fechaResolucionDenPen);
 
     public String getComentariosDenegacionPension();
 //
@@ -312,22 +336,6 @@ public interface PersonaBase {
 //
 //  public void setFechaHoraUltActJupe(Date fechaHoraUltActJupe);
 
-    public String getNumeroResolucionOtorPen();
-//
-//  public void setNumeroResolucionOtorPen(String numeroResolucionOtorPen);
-
-    public Date getFechaResolucionOtorPen();
-//
-//  public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen);
-
-    public String getNumeroResolucionDenPen();
-//
-//  public void setNumeroResolucionDenPen(String numeroResolucionDenPen);
-
-    public Date getFechaResolucionDenPen();
-//
-//  public void setFechaResolucionDenPen(Date fechaResolucionDenPen);
-
     public SexoPersonaBase getSexoPersonaNumeroSexoPersona();
 //
 //  public void setSexoPersonaNumeroSexoPersona(SexoPersonaBase sexoPersona);
@@ -395,6 +403,10 @@ public interface PersonaBase {
     public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdPersonaCollection();
 //
 //  public void setLogProAcrPotBenIdPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);
+
+    public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjIdPersonaCollection();
+//
+//  public void setLogProDenPenObjIdPersonaCollection(Collection<? extends LogProDenPenObjBase> collection);
 
     public Collection<? extends LogProOtoPenAprBase> getLogProOtoPenAprIdPersonaCollection();
 //

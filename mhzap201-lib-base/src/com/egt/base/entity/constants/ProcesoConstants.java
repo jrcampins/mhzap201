@@ -42,9 +42,11 @@ public class ProcesoConstants {
 
     public static final long FUNCION_PROCESO_OTORGAR_PENSIONES_APR = 200200154L;
 
-    public static final long FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE = 200200155L;
+    public static final long FUNCION_PROCESO_DENEGAR_PENSIONES_OBJ = 200200155L;
 
-    public static final long FUNCION_PROCESO_VERIFICAR_ELE_PEN = 200200156L;
+    public static final long FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE = 200200156L;
+
+    public static final long FUNCION_PROCESO_VERIFICAR_ELE_PEN = 200200157L;
 
     public static final String PROCESO_FUNCION_PROCESO_IMPORTAR_ARCHIVOS_EXT = "proceso_importar_archivos_ext";
 
@@ -53,6 +55,8 @@ public class ProcesoConstants {
     public static final String PROCESO_FUNCION_PROCESO_PREPARAR_PROX_PAGO_PEN = "proceso_preparar_prox_pago_pen";
 
     public static final String PROCESO_FUNCION_PROCESO_OTORGAR_PENSIONES_APR = "proceso_otorgar_pensiones_apr";
+
+    public static final String PROCESO_FUNCION_PROCESO_DENEGAR_PENSIONES_OBJ = "proceso_denegar_pensiones_obj";
 
     public static final String PROCESO_FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE = "proceso_actualizar_pen_en_jupe";
 

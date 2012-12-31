@@ -24,6 +24,8 @@ public class InformeConstants {
 
     public static final String COLUMNA_NOMBRE_INFORME = "nombre_informe";
 
+    public static final String COLUMNA_FECHA_TRANSACCION = "fecha_transaccion";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_informe";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_informe";

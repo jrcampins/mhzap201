@@ -10,6 +10,7 @@
  */
 package com.egt.base.persistence.entity;
 
+import java.util.Date;
 
 public interface InformeBase {
 
@@ -28,5 +29,9 @@ public interface InformeBase {
     public String getNombreInforme();
 //
 //  public void setNombreInforme(String nombreInforme);
+
+    public Date getFechaTransaccion();
+//
+//  public void setFechaTransaccion(Date fechaTransaccion);
 
 }
