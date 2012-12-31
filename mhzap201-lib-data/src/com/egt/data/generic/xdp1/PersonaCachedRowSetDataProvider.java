@@ -120,10 +120,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_FECHA_APROBACION_PENSION = "fecha_aprobacion_pension";
     public static final String COLUMNA_COMENTARIOS_APROBACION_PENSION = "comentarios_aprobacion_pension";
     public static final String COLUMNA_FECHA_OTORGAMIENTO_PEN = "fecha_otorgamiento_pen";
+    public static final String COLUMNA_NUMERO_RESOLUCION_OTOR_PEN = "numero_resolucion_otor_pen";
+    public static final String COLUMNA_FECHA_RESOLUCION_OTOR_PEN = "fecha_resolucion_otor_pen";
     public static final String COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN = "comentarios_otorgamiento_pen";
-    public static final String COLUMNA_FECHA_DENEGACION_PENSION = "fecha_denegacion_pension";
+    public static final String COLUMNA_FECHA_OBJECION_PENSION = "fecha_objecion_pension";
     public static final String COLUMNA_NUMERO_CAUSA_DEN_PENSION = "numero_causa_den_pension";
     public static final String COLUMNA_OTRA_CAUSA_DEN_PENSION = "otra_causa_den_pension";
+    public static final String COLUMNA_COMENTARIOS_OBJECION_PENSION = "comentarios_objecion_pension";
+    public static final String COLUMNA_FECHA_DENEGACION_PENSION = "fecha_denegacion_pension";
+    public static final String COLUMNA_NUMERO_RESOLUCION_DEN_PEN = "numero_resolucion_den_pen";
+    public static final String COLUMNA_FECHA_RESOLUCION_DEN_PEN = "fecha_resolucion_den_pen";
     public static final String COLUMNA_COMENTARIOS_DENEGACION_PENSION = "comentarios_denegacion_pension";
     public static final String COLUMNA_FECHA_REVOCACION_PENSION = "fecha_revocacion_pension";
     public static final String COLUMNA_NUMERO_CAUSA_REV_PENSION = "numero_causa_rev_pension";
@@ -152,10 +158,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN = "notas_anul_fec_ult_cob_pen";
     public static final String COLUMNA_NUMERO_TIPO_ACT_JUPE = "numero_tipo_act_jupe";
     public static final String COLUMNA_FECHA_HORA_ULT_ACT_JUPE = "fecha_hora_ult_act_jupe";
-    public static final String COLUMNA_NUMERO_RESOLUCION_OTOR_PEN = "numero_resolucion_otor_pen";
-    public static final String COLUMNA_FECHA_RESOLUCION_OTOR_PEN = "fecha_resolucion_otor_pen";
-    public static final String COLUMNA_NUMERO_RESOLUCION_DEN_PEN = "numero_resolucion_den_pen";
-    public static final String COLUMNA_FECHA_RESOLUCION_DEN_PEN = "fecha_resolucion_den_pen";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_PERSONA, Long.class);
@@ -216,10 +218,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_APROBACION_PENSION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_APROBACION_PENSION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_OTORGAMIENTO_PEN, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_DENEGACION_PENSION, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_OBJECION_PENSION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CAUSA_DEN_PENSION, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OTRA_CAUSA_DEN_PENSION, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_OBJECION_PENSION, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_DENEGACION_PENSION, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_RESOLUCION_DEN_PEN, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_DENEGACION_PENSION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_REVOCACION_PENSION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CAUSA_REV_PENSION, Integer.class);
@@ -248,10 +256,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TIPO_ACT_JUPE, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, Timestamp.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, Timestamp.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, String.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_RESOLUCION_DEN_PEN, Timestamp.class);
     }
 
     protected void setColumnasInsertables() {
@@ -314,10 +318,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_FECHA_APROBACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_APROBACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_OTORGAMIENTO_PEN, true);
+        this.setColumnasInsertables(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN, true);
-        this.setColumnasInsertables(COLUMNA_FECHA_DENEGACION_PENSION, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_OBJECION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_CAUSA_DEN_PENSION, true);
         this.setColumnasInsertables(COLUMNA_OTRA_CAUSA_DEN_PENSION, true);
+        this.setColumnasInsertables(COLUMNA_COMENTARIOS_OBJECION_PENSION, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_DENEGACION_PENSION, true);
+        this.setColumnasInsertables(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_RESOLUCION_DEN_PEN, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_DENEGACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_REVOCACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_CAUSA_REV_PENSION, true);
@@ -346,10 +356,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TIPO_ACT_JUPE, true);
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
-        this.setColumnasInsertables(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, true);
-        this.setColumnasInsertables(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, true);
-        this.setColumnasInsertables(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, true);
-        this.setColumnasInsertables(COLUMNA_FECHA_RESOLUCION_DEN_PEN, true);
     }
 
     protected void setColumnasModificables() {
@@ -412,10 +418,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_FECHA_APROBACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_APROBACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_FECHA_OTORGAMIENTO_PEN, true);
+        this.setColumnasModificables(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, true);
+        this.setColumnasModificables(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN, true);
-        this.setColumnasModificables(COLUMNA_FECHA_DENEGACION_PENSION, true);
+        this.setColumnasModificables(COLUMNA_FECHA_OBJECION_PENSION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_CAUSA_DEN_PENSION, true);
         this.setColumnasModificables(COLUMNA_OTRA_CAUSA_DEN_PENSION, true);
+        this.setColumnasModificables(COLUMNA_COMENTARIOS_OBJECION_PENSION, true);
+        this.setColumnasModificables(COLUMNA_FECHA_DENEGACION_PENSION, true);
+        this.setColumnasModificables(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, true);
+        this.setColumnasModificables(COLUMNA_FECHA_RESOLUCION_DEN_PEN, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_DENEGACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_FECHA_REVOCACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_CAUSA_REV_PENSION, true);
@@ -444,10 +456,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TIPO_ACT_JUPE, true);
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
-        this.setColumnasModificables(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, true);
-        this.setColumnasModificables(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, true);
-        this.setColumnasModificables(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, true);
-        this.setColumnasModificables(COLUMNA_FECHA_RESOLUCION_DEN_PEN, true);
     }
 
     public Long getIdPersona() {
@@ -1204,6 +1212,32 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_FECHA_OTORGAMIENTO_PEN, rowKey, valor);
     }
 
+    public String getNumeroResolucionOtorPen() {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN);
+    }
+    public String getNumeroResolucionOtorPen(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, rowKey);
+    }
+    public void setNumeroResolucionOtorPen(String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, valor);
+    }
+    public void setNumeroResolucionOtorPen(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, rowKey, valor);
+    }
+
+    public Timestamp getFechaResolucionOtorPen() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN);
+    }
+    public Timestamp getFechaResolucionOtorPen(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, rowKey);
+    }
+    public void setFechaResolucionOtorPen(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, valor);
+    }
+    public void setFechaResolucionOtorPen(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, rowKey, valor);
+    }
+
     public String getComentariosOtorgamientoPen() {
         return (String) super.getValue(COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN);
     }
@@ -1217,17 +1251,17 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_COMENTARIOS_OTORGAMIENTO_PEN, rowKey, valor);
     }
 
-    public Timestamp getFechaDenegacionPension() {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_DENEGACION_PENSION);
+    public Timestamp getFechaObjecionPension() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_OBJECION_PENSION);
     }
-    public Timestamp getFechaDenegacionPension(RowKey rowKey) {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_DENEGACION_PENSION, rowKey);
+    public Timestamp getFechaObjecionPension(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_OBJECION_PENSION, rowKey);
     }
-    public void setFechaDenegacionPension(Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_DENEGACION_PENSION, valor);
+    public void setFechaObjecionPension(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_OBJECION_PENSION, valor);
     }
-    public void setFechaDenegacionPension(RowKey rowKey, Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_DENEGACION_PENSION, rowKey, valor);
+    public void setFechaObjecionPension(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_OBJECION_PENSION, rowKey, valor);
     }
 
     public Integer getNumeroCausaDenPension() {
@@ -1254,6 +1288,58 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setOtraCausaDenPension(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_OTRA_CAUSA_DEN_PENSION, rowKey, valor);
+    }
+
+    public String getComentariosObjecionPension() {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_OBJECION_PENSION);
+    }
+    public String getComentariosObjecionPension(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_OBJECION_PENSION, rowKey);
+    }
+    public void setComentariosObjecionPension(String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_OBJECION_PENSION, valor);
+    }
+    public void setComentariosObjecionPension(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_OBJECION_PENSION, rowKey, valor);
+    }
+
+    public Timestamp getFechaDenegacionPension() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_DENEGACION_PENSION);
+    }
+    public Timestamp getFechaDenegacionPension(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_DENEGACION_PENSION, rowKey);
+    }
+    public void setFechaDenegacionPension(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_DENEGACION_PENSION, valor);
+    }
+    public void setFechaDenegacionPension(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_DENEGACION_PENSION, rowKey, valor);
+    }
+
+    public String getNumeroResolucionDenPen() {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN);
+    }
+    public String getNumeroResolucionDenPen(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, rowKey);
+    }
+    public void setNumeroResolucionDenPen(String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, valor);
+    }
+    public void setNumeroResolucionDenPen(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, rowKey, valor);
+    }
+
+    public Timestamp getFechaResolucionDenPen() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN);
+    }
+    public Timestamp getFechaResolucionDenPen(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, rowKey);
+    }
+    public void setFechaResolucionDenPen(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, valor);
+    }
+    public void setFechaResolucionDenPen(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, rowKey, valor);
     }
 
     public String getComentariosDenegacionPension() {
@@ -1618,58 +1704,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setFechaHoraUltActJupe(RowKey rowKey, Timestamp valor) {
         super.setValue(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, rowKey, valor);
-    }
-
-    public String getNumeroResolucionOtorPen() {
-        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN);
-    }
-    public String getNumeroResolucionOtorPen(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, rowKey);
-    }
-    public void setNumeroResolucionOtorPen(String valor) {
-        super.setValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, valor);
-    }
-    public void setNumeroResolucionOtorPen(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_NUMERO_RESOLUCION_OTOR_PEN, rowKey, valor);
-    }
-
-    public Timestamp getFechaResolucionOtorPen() {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN);
-    }
-    public Timestamp getFechaResolucionOtorPen(RowKey rowKey) {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, rowKey);
-    }
-    public void setFechaResolucionOtorPen(Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, valor);
-    }
-    public void setFechaResolucionOtorPen(RowKey rowKey, Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_RESOLUCION_OTOR_PEN, rowKey, valor);
-    }
-
-    public String getNumeroResolucionDenPen() {
-        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN);
-    }
-    public String getNumeroResolucionDenPen(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, rowKey);
-    }
-    public void setNumeroResolucionDenPen(String valor) {
-        super.setValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, valor);
-    }
-    public void setNumeroResolucionDenPen(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_NUMERO_RESOLUCION_DEN_PEN, rowKey, valor);
-    }
-
-    public Timestamp getFechaResolucionDenPen() {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN);
-    }
-    public Timestamp getFechaResolucionDenPen(RowKey rowKey) {
-        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, rowKey);
-    }
-    public void setFechaResolucionDenPen(Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, valor);
-    }
-    public void setFechaResolucionDenPen(RowKey rowKey, Timestamp valor) {
-        super.setValue(COLUMNA_FECHA_RESOLUCION_DEN_PEN, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";

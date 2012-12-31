@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012, EGT Consultores, C.A.
+ * Copyright (C) 2010, EGT Consultores, C.A.
  *
  * Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
  * de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
@@ -8,7 +8,7 @@
  * vea la licencia "GNU General Public License" para obtener mas informacion.
  *
  */
-package com.egt.data.generic.xdp2;
+package com.egt.data.specific.xdp2;
 
 import com.egt.base.constants.CBM2;
 import com.egt.base.enums.EnumOperadorCom;
@@ -18,21 +18,21 @@ import com.egt.core.aplicacion.ExcepcionAplicacion;
 import com.egt.core.aplicacion.FiltroBusqueda;
 import com.egt.core.aplicacion.TLC;
 import com.egt.core.db.xdp.RecursoConsultableDataProvider;
-import com.egt.data.generic.xdp1.InformeCachedRowSetDataProvider;
+import com.egt.data.specific.xdp1.LogProDenPenObjCachedRowSetDataProvider;
 import com.sun.data.provider.RowKey;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Set;
 import javax.sql.rowset.CachedRowSet;
 
-public class InformeCachedRowSetDataProvider2 extends InformeCachedRowSetDataProvider
+public class LogProDenPenObjCachedRowSetDataProvider2 extends LogProDenPenObjCachedRowSetDataProvider
         implements RecursoConsultableDataProvider {
 
-    public InformeCachedRowSetDataProvider2() {
+    public LogProDenPenObjCachedRowSetDataProvider2() {
         super();
     }
 
-    public InformeCachedRowSetDataProvider2(CachedRowSet cachedRowSet) {
+    public LogProDenPenObjCachedRowSetDataProvider2(CachedRowSet cachedRowSet) {
         super(cachedRowSet);
         if (cachedRowSet != null) {
             this.initCachedRowSet();
@@ -67,15 +67,32 @@ public class InformeCachedRowSetDataProvider2 extends InformeCachedRowSetDataPro
         this.setComandoEmptyCachedRowSet(this.getComandoSelectNothing());
     }
 
-    public static final long FUNCION_CONSULTAR_RECURSO = 200100101L;
+    public static final long FUNCION_CONSULTAR_RECURSO = 332600101L;
 
-    public static final long FUNCION_CONSULTAR_INFORME = 200100101L;
+    public static final long FUNCION_CONSULTAR_LOG_PRO_DEN_PEN_OBJ = 332600101L;
 
-    protected static final long PARAMETRO_ID_INFORME = 20252L;
-    protected static final long PARAMETRO_VERSION_INFORME = 20256L;
-    protected static final long PARAMETRO_CODIGO_INFORME = 20688L;
-    protected static final long PARAMETRO_NOMBRE_INFORME = 20691L;
-    protected static final long PARAMETRO_FECHA_TRANSACCION = 1990L;
+    protected static final long PARAMETRO_ID_LOG_PRO_DEN_PEN_OBJ = 20891L;
+    protected static final long PARAMETRO_VERSION_LOG_PRO_DEN_PEN_OBJ = 20895L;
+    protected static final long PARAMETRO_ID_PERSONA = 20002L;
+    protected static final long PARAMETRO_CODIGO_PERSONA = 20001L;
+    protected static final long PARAMETRO_NOMBRE_PERSONA = 20003L;
+    protected static final long PARAMETRO_ID_DEPARTAMENTO = 20336L;
+    protected static final long PARAMETRO_ID_DISTRITO = 20339L;
+    protected static final long PARAMETRO_ID_BARRIO = 20333L;
+    protected static final long PARAMETRO_NUMERO_CAUSA_DEN_PENSION = 20224L;
+    protected static final long PARAMETRO_ES_PROCESADO = 20707L;
+    protected static final long PARAMETRO_OBSERVACION = 20738L;
+    protected static final long PARAMETRO_FECHA_HORA_TRANSACCION = 20709L;
+
+    public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_UBICACION = 202000101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_CAUSA_DEN_PENSION = 311600101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_PERSONA = {"persona", "id_persona", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_UBICACION = {"ubicacion", "id_ubicacion", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_CAUSA_DEN_PENSION = {"causa_den_pension", "numero_causa_den_pension", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_OPCION_BINARIA = {"opcion_binaria", "numero_opcion_binaria", "", ""};
 
     @Override
     public long getFuncionConsultarRecurso() {
@@ -125,30 +142,30 @@ public class InformeCachedRowSetDataProvider2 extends InformeCachedRowSetDataPro
 
     @Override
     public void ejecutarFuncionSelect(long funcion, FiltroBusqueda filtro) throws ExcepcionAplicacion {
-        if (funcion == FUNCION_CONSULTAR_INFORME) {
-            this.consultarInforme(filtro);
+        if (funcion == FUNCION_CONSULTAR_LOG_PRO_DEN_PEN_OBJ) {
+            this.consultarLogProDenPenObj(filtro);
             return;
         }
     }
 
-    public void consultarInforme() throws ExcepcionAplicacion {
-        this.consultarInforme(new FiltroBusqueda());
+    public void consultarLogProDenPenObj() throws ExcepcionAplicacion {
+        this.consultarLogProDenPenObj(new FiltroBusqueda());
     }
 
-    public void consultarInforme(Long filtro) throws ExcepcionAplicacion {
+    public void consultarLogProDenPenObj(Long filtro) throws ExcepcionAplicacion {
         if (filtro == null) {
-            this.consultarInforme(new FiltroBusqueda());
+            this.consultarLogProDenPenObj(new FiltroBusqueda());
         } else {
-            this.consultarInforme(new FiltroBusqueda(filtro));
+            this.consultarLogProDenPenObj(new FiltroBusqueda(filtro));
         }
     }
 
-    public void consultarInforme(FiltroBusqueda filtro) throws ExcepcionAplicacion {
+    public void consultarLogProDenPenObj(FiltroBusqueda filtro) throws ExcepcionAplicacion {
         String comando = this.getComandoSelect();
         String clausula = "WHERE";
         String criterios = null;
         try {
-            this.setFuncionSelect(FUNCION_CONSULTAR_INFORME);
+            this.setFuncionSelect(FUNCION_CONSULTAR_LOG_PRO_DEN_PEN_OBJ);
             criterios = this.getCriteriosBusqueda();
             if (criterios != null && !criterios.equals("")) {
                 comando += clausula + " (" + criterios + ") ";
@@ -163,7 +180,7 @@ public class InformeCachedRowSetDataProvider2 extends InformeCachedRowSetDataPro
             if (criterios != null && !criterios.equals("")) {
                 comando += clausula + " " + criterios + " ";
             } else {
-                comando += clausula + " id_informe ";
+                comando += clausula + " id_log_pro_den_pen_obj ";
             }
         } catch (ExcepcionAplicacion ex) {
             comando = this.getComandoSelectNothing();

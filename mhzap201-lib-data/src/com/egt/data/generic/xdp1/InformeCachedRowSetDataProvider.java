@@ -15,6 +15,7 @@ import com.egt.core.db.xdp.RecursoVersionableDataProvider;
 import com.egt.core.db.xdp.RecursoCodificableDataProvider;
 import com.egt.core.db.xdp.RecursoNombrableDataProvider;
 import com.sun.data.provider.RowKey;
+import java.sql.Timestamp;
 import javax.sql.rowset.CachedRowSet;
 
 public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProvider
@@ -64,12 +65,14 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_VERSION_INFORME = "version_informe";
     public static final String COLUMNA_CODIGO_INFORME = "codigo_informe";
     public static final String COLUMNA_NOMBRE_INFORME = "nombre_informe";
+    public static final String COLUMNA_FECHA_TRANSACCION = "fecha_transaccion";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_INFORME, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_VERSION_INFORME, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_INFORME, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_INFORME, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_TRANSACCION, Timestamp.class);
     }
 
     protected void setColumnasInsertables() {
@@ -78,6 +81,7 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_VERSION_INFORME, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_INFORME, true);
         this.setColumnasInsertables(COLUMNA_NOMBRE_INFORME, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_TRANSACCION, true);
     }
 
     protected void setColumnasModificables() {
@@ -86,6 +90,7 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_VERSION_INFORME, true);
         this.setColumnasModificables(COLUMNA_CODIGO_INFORME, true);
         this.setColumnasModificables(COLUMNA_NOMBRE_INFORME, true);
+        this.setColumnasModificables(COLUMNA_FECHA_TRANSACCION, true);
     }
 
     public Long getIdInforme() {
@@ -138,6 +143,19 @@ public class InformeCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setNombreInforme(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_NOMBRE_INFORME, rowKey, valor);
+    }
+
+    public Timestamp getFechaTransaccion() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_TRANSACCION);
+    }
+    public Timestamp getFechaTransaccion(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_TRANSACCION, rowKey);
+    }
+    public void setFechaTransaccion(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_TRANSACCION, valor);
+    }
+    public void setFechaTransaccion(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_TRANSACCION, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_informe";
