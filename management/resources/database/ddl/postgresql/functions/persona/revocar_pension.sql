@@ -26,6 +26,8 @@ $$ language plpgsql;
 create or replace function persona_revocar_pension(persona_consultada bigint, numero_causa integer, otra_causa varchar, comentarios varchar) returns varchar as $$
 declare
     row_persona persona;
+    v_numero_causa integer;
+    v_otra_causa varchar;
     mensaje varchar:='';
 begin
     select *
@@ -39,13 +41,25 @@ begin
     if (row_persona.numero_condicion_pension <>2 and row_persona.numero_condicion_pension <>5) then
         raise exception 'Persona no tiene pensión aprobada ni otorgada a revocar';
     end if;
+    --
+    if numero_causa is null then
+        v_numero_causa := 99;
+    else
+        v_numero_causa := v_numero_causa;
+    end if;
+    if v_numero_causa = 99 then
+        v_otra_causa := btrim(otra_causa);
+        if v_otra_causa is null or v_otra_causa = '' then
+            v_otra_causa := 'Causa no especificada';
+        end if;
+    end if;
     --Este proceso no hace ninguna validación, solo se registran los datos indicados por el usuario.
     update persona 
     set    numero_condicion_pension = 4,
            fecha_revocacion_pension = CURRENT_TIMESTAMP,
-           numero_causa_rev_pension=numero_causa,
-           comentarios_revocacion_pension=comentarios,
-           otra_causa_rev_pension = otra_causa
+           numero_causa_rev_pension = v_numero_causa,
+           otra_causa_rev_pension = v_otra_causa,
+           comentarios_revocacion_pension = comentarios
     where  id_persona = persona_consultada;
     mensaje:='Pensión Revocada';
     return mensaje;
