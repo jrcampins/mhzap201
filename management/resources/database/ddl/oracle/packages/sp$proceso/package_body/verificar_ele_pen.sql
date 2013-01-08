@@ -44,7 +44,7 @@ function verificar_ele_pen(ubicacion_consultada number) return varchar2 is
 begin
     --Determinamos si la ubicación sera un parametro para filtrar los registros
     if ubicacion_consultada is not null then
-        segmento_consulta_ubicacion:='and (id_departamento='||ubicacion_consultada 
+        segmento_consulta_ubicacion:='where (id_departamento='||ubicacion_consultada 
                                        ||'or id_distrito='||ubicacion_consultada
                                        ||'or id_barrio='||ubicacion_consultada||')';     
     end if;
