@@ -36,9 +36,9 @@ SELECT persona.codigo_persona AS cedula, persona.nombre_persona,
     persona.direccion, ecp.codigo_estado_civil,
     cp.codigo_condicion_pension, sp.codigo_sexo_persona, persona.numero_cedula,
     persona.fecha_solicitud_pension, persona.fecha_aprobacion_pension,
-    --TODO: Agregar la fecha de resolucion y el numero de resolucion
-    persona.fecha_otorgamiento_pen, persona.comentarios_otorgamiento_pen,
     persona.fecha_otorgamiento_pen,
+    persona.numero_resolucion_otor_pen,
+    persona.fecha_resolucion_otor_pen,
     extract(year from persona.fecha_solicitud_pension) AS anho, persona.indice_calidad_vida,
     fh.nombre_jefe_hogar, fh.numero_cedula_jefe_hogar, fh.direccion AS
     referencia_casa, pb.numero_telefono_resp_hogar, pb.nombre_referente,

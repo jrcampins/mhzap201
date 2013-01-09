@@ -1,6 +1,18 @@
 --------------------------------------------------------------------------------
 Instalación de mhzap201 en Windows, con GlassFish y PostgreSQL
 --------------------------------------------------------------------------------
+00. Ajustar la Configuración Regional de Windows
+
+    El formato de la fecha debe ser dia, mes y año; el separador debe ser barra,
+    guión o punto. Por ejemplo: "dd/MM/aaaa".
+
+    El formato de la hora debe ser hora, minutos y, opcionalmente, periodo; el
+    separador debe ser dos puntos, guión o punto. Si se incluye el periodo, éste
+    debe estar separado de los minutos por el separador o un espacio en blanco.
+    Por ejemplo, con periodo, "hh:mm tt"; sin periodo, "HH:mm".
+    El símbolo "a.m." debe comenzar por la letra "A", en mayúscula o minúscula.
+    El símbolo "p.m." debe comenzar por la letra "P", en mayúscula o minúscula.
+
 01. Crear el directorio mhzap201, preferiblemente en C:\
 
     El path del directorio NO debe contener espacios ni caracteres especiales

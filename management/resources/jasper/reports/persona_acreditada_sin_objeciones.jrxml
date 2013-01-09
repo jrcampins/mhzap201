@@ -228,8 +228,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="10" isItalic="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " -  AÑO: "
-+new DecimalFormat("0").format($F{anho})]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: " + $F{anho}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="780" y="34" width="78" height="13"/>
