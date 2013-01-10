@@ -27,7 +27,7 @@
 	<field name="codigo_sexo_persona" class="java.lang.String"/>
 	<field name="numero_cedula" class="java.lang.Integer"/>
 	<field name="fecha_solicitud_pension" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Double"/>
+	<field name="anho" class="java.lang.Long"/>
 	<field name="indice_calidad_vida" class="java.math.BigDecimal"/>
 	<field name="nombre_jefe_hogar" class="java.lang.String"/>
 	<field name="numero_cedula_jefe_hogar" class="java.lang.Integer"/>

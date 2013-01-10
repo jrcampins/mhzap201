@@ -80,7 +80,7 @@
 	<field name="direccion" class="java.lang.String"/>
 	<field name="tiene_jubilacion" class="java.lang.Integer"/>
 	<field name="fecha_registro_pot_ben" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Double"/>
+	<field name="anho" class="java.lang.Long"/>
 	<field name="nombre_referente" class="java.lang.String"/>
 	<field name="telefono_referente" class="java.lang.String"/>
 	<variable name="tiene_letra_cedula" class="java.lang.Boolean">

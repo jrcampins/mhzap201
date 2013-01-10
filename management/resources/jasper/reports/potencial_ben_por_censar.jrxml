@@ -27,7 +27,7 @@
 	<field name="direccion" class="java.lang.String"/>
 	<field name="numero_cedula" class="java.lang.Integer"/>
 	<field name="fecha_registro_pot_ben" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Double"/>
+	<field name="anho" class="java.lang.Long"/>
 	<field name="nombre_responsable_hogar" class="java.lang.String"/>
 	<field name="referencia_casa" class="java.lang.String"/>
 	<field name="numero_telefono_resp_hogar" class="java.lang.String"/>

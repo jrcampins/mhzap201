@@ -32,7 +32,7 @@
 	<field name="fecha_otorgamiento_pen" class="java.sql.Timestamp"/>
 	<field name="numero_resolucion_pension" class="java.lang.String"/>
 	<field name="fecha_resolucion_pension" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Double"/>
+	<field name="anho" class="java.lang.Long"/>
 	<field name="indice_calidad_vida" class="java.math.BigDecimal"/>
 	<field name="fecha_hora_ult_act_jupe" class="java.sql.Timestamp"/>
 	<sortField name="id_departamento"/>
