@@ -12,7 +12,11 @@ package com.egt.core.db.util;
 
 import com.egt.core.aplicacion.Bitacora;
 import com.egt.core.enums.EnumTipoResultadoSQL;
+import com.egt.core.util.STP;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import org.apache.commons.lang.StringUtils;
 
 public class InterpreteSqlOracle extends InterpreteSqlAbstracto {
@@ -57,6 +61,24 @@ public class InterpreteSqlOracle extends InterpreteSqlAbstracto {
 
     InterpreteSqlOracle() {
         stamp();
+    }
+
+    @Override
+    public String getStringDelimitado(Object obj) {
+        String string = getString(obj);
+        if (string == null) {
+            return null;
+        } else if (obj instanceof String) {
+            return "'" + string + "'";
+        } else if (obj instanceof Date) {
+            return "DATE" + "'" + string + "'";
+        } else if (obj instanceof Time) {
+            return "TIME" + "'" + string + "'";
+        } else if (obj instanceof Timestamp || obj instanceof java.util.Date) {
+            return "TIMESTAMP" + "'" + string + "'";
+        } else {
+            return STP.getStringSqlDelimitado(obj);
+        }
     }
 
     @Override
