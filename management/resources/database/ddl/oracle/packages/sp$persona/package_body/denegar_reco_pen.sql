@@ -35,7 +35,7 @@ begin
         --Se deniega la reconsideración de la pensión con los parámetros recibidos
         update persona 
         set    numero_condicion_reco_pen = 3,
-           fecha_denegacion_reco_pen = CURRENT_TIMESTAMP,
+           fecha_denegacion_reco_pen = trunc(current_timestamp),
            numero_causa_den_reco_pen =numero_causa,
            comentarios_den_reco_pen=comentarios,
            otra_causa_den_reco_pen = otra_causa

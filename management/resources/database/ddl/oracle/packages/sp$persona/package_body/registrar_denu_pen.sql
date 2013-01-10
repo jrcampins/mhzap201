@@ -31,8 +31,8 @@ begin
         --Se actualiza el estado de la denuncia, registrando los valores indicados por el usuario
         update persona 
         set    numero_condicion_denu_pen = 1,
-               fecha_registro_denuncia_pen = CURRENT_TIMESTAMP,
-               comentarios_registro_denu_pen =comentarios
+               fecha_registro_denuncia_pen = trunc(current_timestamp),
+               comentarios_registro_denu_pen = comentarios
         where  id_persona = persona_consultada;
         mensaje:='Denuncia Registrada';
     end if;

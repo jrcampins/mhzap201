@@ -35,7 +35,7 @@ begin
         if condicion_elegibilidad=0 then  
             update persona 
             set  numero_condicion_denu_pen = 3,
-                 fecha_desmentido_denuncia_pen = CURRENT_TIMESTAMP,
+                 fecha_desmentido_denuncia_pen = trunc(current_timestamp),
                  comentarios_des_denu_pen=comentarios
             where  id_persona = persona_consultada;
             mensaje:='Denuncia Desmentida';

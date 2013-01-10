@@ -32,7 +32,7 @@ begin
     else
         update persona 
         set    numero_condicion_reco_pen = 1,
-               fecha_solicitud_reco_pen = CURRENT_TIMESTAMP,
+               fecha_solicitud_reco_pen = trunc(current_timestamp),
                comentarios_solicitud_reco_pen =comentarios
         where  id_persona = persona_consultada;
         mensaje:='Reconsideración solicitada';

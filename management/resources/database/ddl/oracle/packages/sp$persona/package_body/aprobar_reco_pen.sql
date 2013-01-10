@@ -36,10 +36,10 @@ begin
         if requisitos_personales=0 and condicion_elegibilidad=0 and vigencia_pension=0 then  
             update persona 
             set  numero_condicion_pension=2,
-                fecha_aprobacion_pension=CURRENT_TIMESTAMP,
+                fecha_aprobacion_pension = trunc(current_timestamp),
                 comentarios_aprobacion_pension='Pensión Aprobada por reconsideración',
                 numero_condicion_reco_pen = 2,
-                fecha_aprobacion_reco_pen = CURRENT_TIMESTAMP,
+                fecha_aprobacion_reco_pen = trunc(current_timestamp),
                 comentarios_apr_reco_pen=comentarios
             where  id_persona = persona_consultada;
             mensaje:='Reconsideración Aprobada, Pensión Aprobada';

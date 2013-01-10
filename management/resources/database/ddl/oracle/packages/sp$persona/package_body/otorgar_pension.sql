@@ -29,7 +29,7 @@ begin
     else
         update persona 
         set    numero_condicion_pension = 5,
-               fecha_otorgamiento_pen = CURRENT_TIMESTAMP,
+               fecha_otorgamiento_pen = trunc(current_timestamp),
                numero_resolucion_otor_pen=numero_resolucion,
                fecha_resolucion_otor_pen=fecha_resolucion
         where  id_persona = persona_consultada;

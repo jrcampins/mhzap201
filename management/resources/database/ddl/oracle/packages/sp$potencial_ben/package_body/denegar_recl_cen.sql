@@ -35,7 +35,7 @@ begin
     set    numero_condicion_recl_cen = 3,
            numero_causa_den_recl_cen=numero_causa,
            otra_causa_den_recl_cen=otra_causa,
-           fecha_denegacion_reclamo_censo  = CURRENT_TIMESTAMP,
+           fecha_denegacion_reclamo_censo  = trunc(current_timestamp),
            comentarios_den_recl_cen =comentarios
     where  id_potencial_ben=beneficiario_consultado;
     mensaje:='Reclamo de Censo Negado';

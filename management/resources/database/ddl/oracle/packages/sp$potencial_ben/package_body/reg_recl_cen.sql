@@ -59,7 +59,7 @@ begin
     --Se actualiza el estado del potencial beneficiario, registrando un reclamo para el censo
     update potencial_ben
     set    numero_condicion_recl_cen = 1,
-           fecha_reclamo_censo  = CURRENT_TIMESTAMP,
+           fecha_reclamo_censo = trunc(current_timestamp),
            comentarios_reclamo_censo =comentarios
     where  id_potencial_ben=beneficiario_consultado;
     mensaje:='Reclamo de Censo Registrado: '||row_potencial_ben.nombre_potencial_ben;

@@ -57,7 +57,7 @@ begin
         --
         update persona 
         set    numero_condicion_pension = 3,
-               fecha_objecion_pension = CURRENT_TIMESTAMP,
+               fecha_objecion_pension = trunc(current_timestamp),
                numero_causa_den_pension = v_numero_causa,
                otra_causa_den_pension = v_otra_causa,
                comentarios_objecion_pension = comentarios

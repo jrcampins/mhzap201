@@ -31,7 +31,7 @@ begin
     update potencial_ben
     set    numero_condicion_censo=1,
            numero_condicion_recl_cen = 2,
-           fecha_aprobacion_reclamo_censo  = CURRENT_TIMESTAMP,
+           fecha_aprobacion_reclamo_censo  = trunc(current_timestamp),
            comentarios_apr_recl_cen =comentarios
     where  id_potencial_ben=beneficiario_consultado;
     mensaje:='Reclamo de Censo Aprobado';

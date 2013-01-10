@@ -41,10 +41,10 @@ begin
             set    numero_condicion_pension =4,
                numero_causa_rev_pension=numero_causa,
                otra_causa_rev_pension=otra_causa,
-               fecha_revocacion_pension = CURRENT_TIMESTAMP,
+               fecha_revocacion_pension = trunc(current_timestamp),
                comentarios_revocacion_pension='Pensión revocada por denuncia',
                numero_condicion_denu_pen = 2,
-               fecha_confirmacion_denu_pen  = CURRENT_TIMESTAMP,
+               fecha_confirmacion_denu_pen = trunc(current_timestamp),
                comentarios_conf_denu_pen= comentarios
             where  id_persona = persona_consultada;
             mensaje:='Denuncia Confirmada, Pensión Revocada: '||mensaje_den ;

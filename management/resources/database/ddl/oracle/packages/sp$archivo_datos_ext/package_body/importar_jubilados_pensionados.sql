@@ -88,7 +88,7 @@ begin
     --Se desactivan todas las objeciones de deuda de ese proveedor
     update objecion_ele_pen
     set es_objecion_ele_pen_inactiva=1,
-    fecha_ultima_actualizacion=current_timestamp
+    fecha_ultima_actualizacion=trunc(current_timestamp)
     where numero_tipo_obj_ele_pen=22
     or numero_tipo_obj_ele_pen=25
     and id_proveedor_dat_ext=id_proveedor;
@@ -126,7 +126,7 @@ begin
                         --Si consigue la objecion la mantiene activa
                         update objecion_ele_pen
                         set es_objecion_ele_pen_inactiva=0,
-                        fecha_ultima_actualizacion=current_timestamp
+                        fecha_ultima_actualizacion=trunc(current_timestamp)
                         where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                     else
                         --Si no la consigue, la inserta como nueva
@@ -136,7 +136,7 @@ begin
                         row_objecion.id_proveedor_dat_ext:=id_proveedor;
                         row_objecion.numero_tipo_obj_ele_pen:=25;
                         row_objecion.es_objecion_ele_pen_inactiva:=0;
-                        row_objecion.fecha_ultima_actualizacion:=current_timestamp;
+                        row_objecion.fecha_ultima_actualizacion:=trunc(current_timestamp);
                         row_objecion.nombre_archivo_ultima_act:=nombre_archivo;
                         insert into objecion_ele_pen values row_objecion;
                     end if;
@@ -152,7 +152,7 @@ begin
                         --Si consigue la objecion la mantiene activa
                         update objecion_ele_pen
                         set es_objecion_ele_pen_inactiva=0,
-                        fecha_ultima_actualizacion=current_timestamp
+                        fecha_ultima_actualizacion=trunc(current_timestamp)
                         where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                     else
                         --Si no la consigue, la inserta como nueva
@@ -162,7 +162,7 @@ begin
                         row_objecion.id_proveedor_dat_ext:=id_proveedor;
                         row_objecion.numero_tipo_obj_ele_pen:=22;
                         row_objecion.es_objecion_ele_pen_inactiva:=0;
-                        row_objecion.fecha_ultima_actualizacion:=current_timestamp;
+                        row_objecion.fecha_ultima_actualizacion:=trunc(current_timestamp);
                         row_objecion.nombre_archivo_ultima_act:=nombre_archivo;
                         insert into objecion_ele_pen values row_objecion;
                     end if;

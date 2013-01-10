@@ -35,7 +35,7 @@ begin
         if (condicion_elegibilidad=0) then  
             update persona 
             set    numero_condicion_pension = 2,
-            fecha_aprobacion_pension = CURRENT_TIMESTAMP,
+            fecha_aprobacion_pension = trunc(current_timestamp),
             comentarios_aprobacion_pension=comentarios
             where  id_persona = persona_consultada;
             mensaje:='Pensión Aprobada';

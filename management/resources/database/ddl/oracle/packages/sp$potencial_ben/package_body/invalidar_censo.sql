@@ -34,7 +34,7 @@ begin
     else
         update potencial_ben 
         set numero_condicion_censo=4,
-            fecha_validacion_censo=current_timestamp,
+            fecha_validacion_censo=trunc(current_timestamp),
             id_funcionario_validacion_cen=funcionario,
             numero_causa_inv_censo=numero_causa,
             otra_causa_inv_censo=otra_causa,

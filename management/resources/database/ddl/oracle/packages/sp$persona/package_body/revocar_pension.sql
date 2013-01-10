@@ -46,7 +46,7 @@ begin
         end if;
         update persona 
         set    numero_condicion_pension = 4,
-               fecha_revocacion_pension = CURRENT_TIMESTAMP,
+               fecha_revocacion_pension = trunc(current_timestamp),
                numero_causa_rev_pension = v_numero_causa,
                otra_causa_rev_pension = v_otra_causa,
                comentarios_revocacion_pension = comentarios

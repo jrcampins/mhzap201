@@ -32,7 +32,7 @@ begin
     else
         update potencial_ben 
         set numero_condicion_censo=3,
-            fecha_validacion_censo=current_timestamp,
+            fecha_validacion_censo=trunc(current_timestamp),
             id_funcionario_validacion_cen=funcionario,
             comentarios_validacion_censo=comentarios
         where id_potencial_ben=beneficiario;

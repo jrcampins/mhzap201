@@ -44,7 +44,7 @@ begin
         --
         update persona 
         set    numero_condicion_pension = 6,
-               fecha_denegacion_pension = CURRENT_TIMESTAMP,
+               fecha_denegacion_pension = trunc(current_timestamp),
                numero_resolucion_den_pen = numero_res,
                fecha_resolucion_den_pen = fecha_res,
                comentarios_denegacion_pension = comentarios

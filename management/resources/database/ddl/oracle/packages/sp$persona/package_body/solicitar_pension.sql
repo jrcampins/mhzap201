@@ -59,7 +59,7 @@ begin
         --Se solicita la pensión de la persona
         update persona 
         set    numero_condicion_pension = 1,
-           fecha_solicitud_pension = CURRENT_TIMESTAMP,
+           fecha_solicitud_pension = trunc(current_timestamp),
            comentarios_solicitud_pension=comentarios
         where  id_persona = persona_consultada;
         mensaje:='Pensión solicitada';
