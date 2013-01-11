@@ -219,8 +219,7 @@ public class JSF {
             for (UIComponent child : children) {
                 if (child instanceof WebuiInput) {
                     if (child.getId() == null || uic.getId().equals(child.getId())) {
-                    } else if (uic instanceof Etiqueta && child.getId().equals(((Etiqueta) uic).getFor(
-                            true))) {
+                    } else if (uic instanceof Etiqueta && child.getId().equals(((Etiqueta) uic).getFor(true))) {
                         //Bitacora.trace(uic.getClass().getName() + "$" + uic.getId() + ".webuiInput=" + child.getId());
                         return (WebuiInput) child;
                     } else if (child instanceof TabSet) {
@@ -914,8 +913,10 @@ public class JSF {
     private static String getCookie(String key, int option) {
         Bitacora.trace(JSF.class, "getCookie", "key=" + key, "option=" + option);
         /*
-         * 1 = busca con clave privada (cualificada) 2 = busca con clave publica (no cualificada) 3 = busca primero con clave privada y luego con
-         * clave publica 4 = busca primero con clave publica y luego con clave privada
+         * 1 = busca con clave privada (cualificada)
+         * 2 = busca con clave publica (no cualificada)
+         * 3 = busca primero con clave privada y luego con clave publica
+         * 4 = busca primero con clave publica y luego con clave privada
          */
         FacesContext facesContext = FacesContext.getCurrentInstance();
         String qualifiedKey = key + getRequestQualifier();
