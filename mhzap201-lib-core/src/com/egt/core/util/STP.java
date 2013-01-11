@@ -81,13 +81,13 @@ public class STP {
             /*
              * OJO: configuracion regional
              */
-            return new DateTime(obj).toString("hh:mm aa"); 
+            return new DateTime(obj).toString("hh:mm aa");
         } else if (obj instanceof Timestamp || obj instanceof java.util.Date) {
             /*
              * OJO: configuracion regional
              */
             DateTime datetime = new DateTime(obj);
-            String pattern = datetime.getMillisOfDay() == 0 ? "dd/MM/yyyy" : "dd/MM/yyyy hh:mm:ss aa"; 
+            String pattern = datetime.getMillisOfDay() == 0 ? "dd/MM/yyyy" : "dd/MM/yyyy hh:mm:ss aa";
             return datetime.toString(pattern);
         } else {
             return obj.toString();
@@ -336,8 +336,7 @@ public class STP {
                             dayOfMonth = Integer.parseInt(cadena.substring(0, 2));
                             break;
                     }
-                    DateTime dateTime = new DateTime(year, monthOfYear, dayOfMonth, hourOfDay, minuteOfHour,
-                            secondOfMinute, 0);
+                    DateTime dateTime = new DateTime(year, monthOfYear, dayOfMonth, hourOfDay, minuteOfHour, secondOfMinute, 0);
                     objeto = new Timestamp(dateTime.getMillis());
                 } catch (RuntimeException e) {
                     objeto = null;
