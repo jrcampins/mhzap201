@@ -1357,8 +1357,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
                 this.getOperadorCom(codigo), this.getValorComparacion(codigo));
         }
         if (StringUtils.isNotBlank(nombre) && this.getPaginaActualizacion().getRecursoDataProvider().isRecursoNombrable()) {
-            filtroBusqueda.addCriterio(this.getRecursoNombrableDataProvider().getColumnaNombreRecurso(), this.
-                getOperadorCom(nombre), this.getValorComparacion(nombre));
+            filtroBusqueda.addCriterio(this.getRecursoNombrableDataProvider().getColumnaNombreRecurso(),
+                this.getOperadorCom(nombre), this.getValorComparacion(nombre));
         }
         if (segmento != null && this.getPaginaActualizacion().getRecursoDataProvider().isRecursoSegmentable()) {
             filtroBusqueda.addCriterio(this.getRecursoSegmentableDataProvider().getColumnaSegmentoRecurso(),
