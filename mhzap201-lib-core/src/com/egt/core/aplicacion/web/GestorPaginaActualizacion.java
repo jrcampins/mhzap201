@@ -18,16 +18,16 @@ import com.egt.core.aplicacion.ExcepcionAplicacion;
 import com.egt.core.aplicacion.FiltroBusqueda;
 import com.egt.core.aplicacion.TLC;
 import com.egt.core.constants.Global;
-import com.egt.core.enums.EnumSeveridadMensaje;
 import com.egt.core.db.xdp.RecursoCodificableDataProvider;
 import com.egt.core.db.xdp.RecursoConsultableDataProvider;
 import com.egt.core.db.xdp.RecursoIdentificableDataProvider;
 import com.egt.core.db.xdp.RecursoNombrableDataProvider;
 import com.egt.core.db.xdp.RecursoSegmentableDataProvider;
 import com.egt.core.enums.EnumOpcionAbrirVentana;
-import com.egt.core.util.STP;
-import com.egt.core.util.JS;
+import com.egt.core.enums.EnumSeveridadMensaje;
 import com.egt.core.util.Bundle;
+import com.egt.core.util.JS;
+import com.egt.core.util.STP;
 import com.sun.data.provider.RowKey;
 import com.sun.webui.jsf.model.Option;
 import java.lang.reflect.Method;
@@ -49,6 +49,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
     // <editor-fold defaultstate="collapsed" desc="propiedades estandar de la pagina de actualizacion">
     /**
      * Getter para propiedad paginaActualizacion.
+     *
      * @return Valor de la propiedad paginaActualizacion.
      */
     protected PaginaActualizacion getPaginaActualizacion() {
@@ -59,6 +60,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad paginaActualizacionConAccionMultiple.
+     *
      * @return Valor de la propiedad paginaActualizacionConAccionMultiple.
      */
     protected PaginaActualizacionConAccionMultiple getPaginaActualizacionConAccionMultiple() {
@@ -69,6 +71,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad paginaActualizacionConEdicionMultiple.
+     *
      * @return Valor de la propiedad paginaActualizacionConEdicionMultiple.
      */
     protected PaginaActualizacionConEdicionMultiple getPaginaActualizacionConEdicionMultiple() {
@@ -79,6 +82,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad paginaConsultaConFiltro.
+     *
      * @return Valor de la propiedad paginaConsultaConFiltro.
      */
     protected PaginaConsultaConFiltro getPaginaConsultaConFiltro() {
@@ -89,6 +93,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad paginaConsultaConMaestro.
+     *
      * @return Valor de la propiedad paginaConsultaConMaestro.
      */
     protected PaginaConsultaConMaestro getPaginaConsultaConMaestro() {
@@ -358,8 +363,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getFuncionConsultarRecurso() > 0 &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectHabilitada());
+        return (this.getPaginaActualizacion().getFuncionConsultarRecurso() > 0
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectHabilitada());
     }
 
     public boolean isFuncionSelectInhabilitada() {
@@ -370,8 +375,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getFuncionCrearRecurso() > 0 &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionInsertHabilitada());
+        return (this.getPaginaActualizacion().getFuncionCrearRecurso() > 0
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionInsertHabilitada());
     }
 
     public boolean isFuncionInsertInhabilitada() {
@@ -382,9 +387,9 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getFuncionModificarRecurso() > 0 &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionUpdateHabilitada() &&
-                this.isEdicionMultiFuncionInhabilitada());
+        return (this.getPaginaActualizacion().getFuncionModificarRecurso() > 0
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionUpdateHabilitada()
+                && this.isEdicionMultiFuncionInhabilitada());
     }
 
     public boolean isFuncionUpdateInhabilitada() {
@@ -395,8 +400,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getFuncionEliminarRecurso() > 0 &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionDeleteHabilitada());
+        return (this.getPaginaActualizacion().getFuncionEliminarRecurso() > 0
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionDeleteHabilitada());
     }
 
     public boolean isFuncionDeleteInhabilitada() {
@@ -407,8 +412,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.isFilaDisponible() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()));
+        return (this.isFilaDisponible()
+                && this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()));
     }
 
     public boolean isFuncionCheckChangesInhabilitada() {
@@ -419,8 +424,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.isFilaDisponible() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()));
+        return (this.isFilaDisponible()
+                && this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()));
     }
 
     public boolean isFuncionCancelUpdateInhabilitada() {
@@ -465,8 +470,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return true;
         }
 //      return this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectEjecutada();
-        return (this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectEjecutada() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectHabilitada());
+        return (this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectEjecutada()
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionSelectHabilitada());
     }
 
     public boolean isFuncionRefreshInhabilitada() {
@@ -499,9 +504,9 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.isFilaDisponible() &&
-                this.isValorRetornoRecursoDisponible() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isLoteSinCambios());
+        return (this.isFilaDisponible()
+                && this.isValorRetornoRecursoDisponible()
+                && this.getPaginaActualizacion().getRecursoDataProvider().isLoteSinCambios());
     }
 
     public boolean isFuncionReturnInhabilitada() {
@@ -512,9 +517,9 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.isFilaEscogidaDisponible() &&
-                this.isValorRetornoRecursoDisponible() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isLoteSinCambios());
+        return (this.isFilaEscogidaDisponible()
+                && this.isValorRetornoRecursoDisponible()
+                && this.getPaginaActualizacion().getRecursoDataProvider().isLoteSinCambios());
     }
 
     public boolean isFuncionReturnFilaEscogidaInhabilitada() {
@@ -588,10 +593,10 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()) &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionInsertEjecutada() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().getFuncionInsert() ==
-                this.getPaginaActualizacion().getFuncionCrearRecurso());
+        return (this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey())
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionInsertEjecutada()
+                && this.getPaginaActualizacion().getRecursoDataProvider().getFuncionInsert()
+                == this.getPaginaActualizacion().getFuncionCrearRecurso());
     }
 
     public boolean isFilaNoCreada() { /* 14/08/2007 "Fila no procesada por FuncionCrearRecurso" */
@@ -602,10 +607,10 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         if (designing) {
             return true;
         }
-        return (this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey()) &&
-                this.getPaginaActualizacion().getRecursoDataProvider().isFuncionUpdateEjecutada() &&
-                this.getPaginaActualizacion().getRecursoDataProvider().getFuncionUpdate() ==
-                this.getPaginaActualizacion().getFuncionModificarRecurso());
+        return (this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey())
+                && this.getPaginaActualizacion().getRecursoDataProvider().isFuncionUpdateEjecutada()
+                && this.getPaginaActualizacion().getRecursoDataProvider().getFuncionUpdate()
+                == this.getPaginaActualizacion().getFuncionModificarRecurso());
     }
 
     public boolean isFilaNoModificada() { /* 14/08/2007 "Fila no procesada por FuncionModificarRecurso" */
@@ -619,12 +624,12 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         // 19/06/2007 a partir de hoy significa "Fila procesada por FuncionCrearRecurso o FuncionModificarRecurso"
         if (this.getPaginaActualizacion().getRecursoDataProvider().esFilaProcesada(this.getCurrentRowKey())) {
             if (this.getPaginaActualizacion().getRecursoDataProvider().isFuncionInsertEjecutada()) {
-                return (this.getPaginaActualizacion().getRecursoDataProvider().getFuncionInsert() ==
-                        this.getPaginaActualizacion().getFuncionCrearRecurso());
+                return (this.getPaginaActualizacion().getRecursoDataProvider().getFuncionInsert()
+                        == this.getPaginaActualizacion().getFuncionCrearRecurso());
             }
             if (this.getPaginaActualizacion().getRecursoDataProvider().isFuncionUpdateEjecutada()) {
-                return (this.getPaginaActualizacion().getRecursoDataProvider().getFuncionUpdate() ==
-                        this.getPaginaActualizacion().getFuncionModificarRecurso());
+                return (this.getPaginaActualizacion().getRecursoDataProvider().getFuncionUpdate()
+                        == this.getPaginaActualizacion().getFuncionModificarRecurso());
             }
         }
         return false;
@@ -647,9 +652,9 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return true;
         }
         try {
-            return (this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowInserted() ||
-                    this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowUpdated() ||
-                    this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowDeleted());
+            return (this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowInserted()
+                    || this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowUpdated()
+                    || this.getPaginaActualizacion().getRecursoDataProvider().getCachedRowSet().rowDeleted());
         } catch (Exception ex) {
             this.handle(ex);
         }
@@ -709,6 +714,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad nuevaPosicionCursor.
+     *
      * @return Valor de la propiedad nuevaPosicionCursor.
      */
     public boolean isNuevaPosicionCursor() {
@@ -717,6 +723,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad nuevaPosicionCursor.
+     *
      * @param nuevaPosicionCursor Nuevo valor de la propiedad nuevaPosicionCursor.
      */
     public void setNuevaPosicionCursor(boolean nuevaPosicionCursor) {
@@ -754,6 +761,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad peticionInsert.
+     *
      * @return Valor de la propiedad peticionInsert.
      */
     public boolean isPeticionInsert() {
@@ -762,6 +770,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad peticionInsert.
+     *
      * @param peticionInsert Nuevo valor de la propiedad peticionInsert.
      */
     public void setPeticionInsert(boolean peticionInsert) {
@@ -775,6 +784,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad reposicionPendiente.
+     *
      * @return Valor de la propiedad reposicionPendiente.
      */
     public boolean isReposicionPendiente() {
@@ -783,6 +793,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad reposicionPendiente.
+     *
      * @param reposicionPendiente Nuevo valor de la propiedad reposicionPendiente.
      */
     public void setReposicionPendiente(boolean reposicionPendiente) {
@@ -796,6 +807,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad consultaPendiente.
+     *
      * @return Valor de la propiedad consultaPendiente.
      */
     public boolean isConsultaPendiente() {
@@ -804,6 +816,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad consultaPendiente.
+     *
      * @param consultaPendiente Nuevo valor de la propiedad consultaPendiente.
      */
     public void setConsultaPendiente(boolean consultaPendiente) {
@@ -817,6 +830,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad iniciacionPendiente.
+     *
      * @return Valor de la propiedad iniciacionPendiente.
      */
     public boolean isIniciacionPendiente() {
@@ -825,6 +839,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad iniciacionPendiente.
+     *
      * @param iniciacionPendiente Nuevo valor de la propiedad iniciacionPendiente.
      */
     public void setIniciacionPendiente(boolean iniciacionPendiente) {
@@ -838,6 +853,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Getter para propiedad readOnlyProcessing.
+     *
      * @return Valor de la propiedad readOnlyProcessing.
      */
     public boolean isReadOnlyProcessing() {
@@ -846,6 +862,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     /**
      * Setter para propiedad readOnlyProcessing.
+     *
      * @param readOnlyProcessing Nuevo valor de la propiedad readOnlyProcessing.
      */
     public void setReadOnlyProcessing(boolean readOnlyProcessing) {
@@ -964,8 +981,8 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return this.getPaginaActualizacion().getRecursoDataProvider().isRecursoIdentificable();
         }
         if (opcion.equals(String.valueOf(EnumOpcionAbrirVentana.BUSCAR_CODIGO.intValue()))) {
-            return (this.getPaginaActualizacion().getRecursoDataProvider().isRecursoCodificable() ||
-                    this.getPaginaActualizacion().getRecursoDataProvider().isRecursoIdentificable());
+            return (this.getPaginaActualizacion().getRecursoDataProvider().isRecursoCodificable()
+                    || this.getPaginaActualizacion().getRecursoDataProvider().isRecursoIdentificable());
         }
         return this.getPaginaActualizacion().getRecursoDataProvider().isColumnaDisponible(opcion);
     }
@@ -1273,7 +1290,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return ok;
         }
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para posicionar/reposicionar">
@@ -1326,7 +1342,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return ok;
         }
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para obtener el filtro de busqueda">
@@ -1344,7 +1359,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         this.getPaginaActualizacion().getRecursoDataProvider().setCodigoFuncionSelect(null);
         this.getPaginaActualizacion().getRecursoDataProvider().setNombreFuncionSelect(null);
         this.getPaginaActualizacion().getRecursoDataProvider().setSegmentoFuncionSelect(null);
-        FiltroBusqueda filtroBusqueda = null;
+        FiltroBusqueda filtroBusqueda;
         if (filtro == null) {
 //          filtroBusqueda = new FiltroBusqueda(this.getRecursoDataProviderDataSourceName());
             filtroBusqueda = new FiltroBusqueda();
@@ -1354,15 +1369,15 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         }
         if (StringUtils.isNotBlank(codigo) && this.getPaginaActualizacion().getRecursoDataProvider().isRecursoCodificable()) {
             filtroBusqueda.addCriterio(this.getRecursoCodificableDataProvider().getColumnaCodigoRecurso(),
-                this.getOperadorCom(codigo), this.getValorComparacion(codigo));
+                    this.getOperadorCom(codigo), this.getValorComparacion(codigo));
         }
         if (StringUtils.isNotBlank(nombre) && this.getPaginaActualizacion().getRecursoDataProvider().isRecursoNombrable()) {
             filtroBusqueda.addCriterio(this.getRecursoNombrableDataProvider().getColumnaNombreRecurso(),
-                this.getOperadorCom(nombre), this.getValorComparacion(nombre));
+                    this.getOperadorCom(nombre), this.getValorComparacion(nombre));
         }
         if (segmento != null && this.getPaginaActualizacion().getRecursoDataProvider().isRecursoSegmentable()) {
             filtroBusqueda.addCriterio(this.getRecursoSegmentableDataProvider().getColumnaSegmentoRecurso(),
-                EnumOperadorCom.ES_IGUAL, segmento);
+                    EnumOperadorCom.ES_IGUAL, segmento);
         }
         String columna;
         Long maestro;
@@ -1402,22 +1417,22 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         String not = "-";
         String any = TLC.getInterpreteSql().getLikeString();
         return StringUtils.isBlank(string)
-            ? EnumOperadorCom.ES_NULO
-            : string.startsWith(not + any) && string.endsWith(any)
-            ? EnumOperadorCom.NO_CONTIENE
-            : string.startsWith(not + any)
-            ? EnumOperadorCom.NO_TERMINA_EN
-            : string.startsWith(not) && string.endsWith(any)
-            ? EnumOperadorCom.NO_COMIENZA_POR
-            : string.startsWith(not)
-            ? EnumOperadorCom.NO_ES_IGUAL
-            : string.startsWith(any) && string.endsWith(any)
-            ? EnumOperadorCom.CONTIENE
-            : string.startsWith(any)
-            ? EnumOperadorCom.TERMINA_EN
-            : string.endsWith(any)
-            ? EnumOperadorCom.COMIENZA_POR
-            : EnumOperadorCom.ES_IGUAL;
+                ? EnumOperadorCom.ES_NULO
+                : string.startsWith(not + any) && string.endsWith(any)
+                ? EnumOperadorCom.NO_CONTIENE
+                : string.startsWith(not + any)
+                ? EnumOperadorCom.NO_TERMINA_EN
+                : string.startsWith(not) && string.endsWith(any)
+                ? EnumOperadorCom.NO_COMIENZA_POR
+                : string.startsWith(not)
+                ? EnumOperadorCom.NO_ES_IGUAL
+                : string.startsWith(any) && string.endsWith(any)
+                ? EnumOperadorCom.CONTIENE
+                : string.startsWith(any)
+                ? EnumOperadorCom.TERMINA_EN
+                : string.endsWith(any)
+                ? EnumOperadorCom.COMIENZA_POR
+                : EnumOperadorCom.ES_IGUAL;
     }
 
     private String getValorComparacion(String string) {
@@ -1426,22 +1441,22 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         String valor = StringUtils.trimToNull(string);
         int endIndex = valor == null ? 0 : valor.length() - 1;
         valor = valor == null
-            ? null // ES_NULO
-            : valor.startsWith(not + any) && valor.endsWith(any)
-            ? valor.substring(2, endIndex) // NO_CONTIENE
-            : valor.startsWith(not + any)
-            ? valor.substring(2) // NO_TERMINA_EN
-            : valor.startsWith(not) && valor.endsWith(any)
-            ? valor.substring(1, endIndex) // NO_COMIENZA_POR
-            : valor.startsWith(not)
-            ? valor.substring(1) // NO_ES_IGUAL
-            : valor.startsWith(any) && valor.endsWith(any)
-            ? valor.substring(1, endIndex) // CONTIENE
-            : valor.startsWith(any)
-            ? valor.substring(1) // TERMINA_EN
-            : valor.endsWith(any)
-            ? valor.substring(0, endIndex) // COMIENZA_POR
-            : valor; // ES_IGUAL
+                ? null // ES_NULO
+                : valor.startsWith(not + any) && valor.endsWith(any)
+                ? valor.substring(2, endIndex) // NO_CONTIENE
+                : valor.startsWith(not + any)
+                ? valor.substring(2) // NO_TERMINA_EN
+                : valor.startsWith(not) && valor.endsWith(any)
+                ? valor.substring(1, endIndex) // NO_COMIENZA_POR
+                : valor.startsWith(not)
+                ? valor.substring(1) // NO_ES_IGUAL
+                : valor.startsWith(any) && valor.endsWith(any)
+                ? valor.substring(1, endIndex) // CONTIENE
+                : valor.startsWith(any)
+                ? valor.substring(1) // TERMINA_EN
+                : valor.endsWith(any)
+                ? valor.substring(0, endIndex) // COMIENZA_POR
+                : valor; // ES_IGUAL
         /**/
         valor = StringUtils.trimToNull(valor);
         return valor == null ? null : valor.replace('/' + not + '/', not).replace('/' + any + '/', any);
@@ -1543,7 +1558,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         }
         TLC.getBitacora().setSeveridadMinima(severidad);
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para ejecutar las acciones de la pagina de actualizacion">
@@ -1802,7 +1816,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
     protected String accionVincular(String vinculo, int validacion, boolean remover, int origen) {
         return StringUtils.isNotBlank(vinculo) && this.vincular(validacion, remover, origen) ? vinculo : null;
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para obtener el script de los botones de la pagina de actualizacion">
@@ -1944,12 +1957,14 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
     }
 
     public String getScriptAbrirVentana(String urx, int origen) {
-        Long recurso = null;
+        Long recurso;
         switch (origen) {
             case 1:  /* OJO con la constante: usa la fila escogida */
                 recurso = this.getIdentificacionRecursoEscogido();
+                break;
             default: /* usa la fila actual */
                 recurso = this.getIdentificacionRecursoActual();
+                break;
         }
         return recurso == null ? null : this.getScriptAbrirVentana(urx, recurso);
     }
@@ -1959,12 +1974,14 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
     }
 
     public String getScriptAbrirVentanaVerDetalle(String urx, int origen) {
-        Long recurso = null;
+        Long recurso;
         switch (origen) {
             case 1:  /* OJO con la constante: usa la fila escogida */
                 recurso = this.getIdentificacionRecursoEscogido();
+                break;
             default: /* usa la fila actual */
                 recurso = this.getIdentificacionRecursoActual();
+                break;
         }
         return recurso == null ? null : this.getScriptAbrirVentanaVerDetalle(urx, recurso);
     }
@@ -2109,7 +2126,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
     public String getUrlImagenSeveridadMensajeFilaNoDisponible() {
         return "resources/info_medium.gif";
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para obtener el toolTip de los botones de la pagina de actualizacion">
@@ -2139,18 +2155,15 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         String valor = (String) this.getPaginaActualizacion().getRecursoDataProvider().getFilasConflictivas().get(clave);
         return valor == null ? null : valor.substring(1);
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estándar para establecer la identificacion del recurso (comentados)">
 //  protected boolean setIdentificacionRecursoPagina() {
 //      return this.setIdentificacionRecursoPagina(0); /* OJO con la constante: no valida nada */
 //  }
-
 //  protected boolean setIdentificacionRecursoPagina(int validacion) {
 //      return this.setIdentificacionRecursoPagina(validacion, 0); /* OJO con la constante: usa la fila actual */
 //  }
-
 //  protected boolean setIdentificacionRecursoPagina(int validacion, int origen) {
 //      this.track("setIdentificacionRecursoPagina", "validacion=" + validacion, "origen=" + origen);
 //      RowKey rowKey = null;
@@ -2164,7 +2177,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 //      }
 //      return this.setIdentificacionRecursoPagina(validacion, rowKey);
 //  }
-
 //  protected boolean setIdentificacionRecursoPagina(int validacion, RowKey rowKey) {
 //      boolean ok = false;
 //      Long valor = null;
@@ -2200,7 +2212,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 //      return ok;
 //  }
     // </editor-fold>
-
+//
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para establecer la identificacion del recurso">
     protected boolean setIdentificacionRecursoPagina() {
         return this.setIdentificacionRecursoPagina(0); /* OJO con la constante: usa la fila actual */
@@ -2208,7 +2220,7 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
 
     protected boolean setIdentificacionRecursoPagina(int origen) {
         this.track("setIdentificacionRecursoPagina", "origen=" + origen);
-        RowKey rowKey = null;
+        RowKey rowKey;
         switch (origen) {
             case 1:  /* OJO con la constante: usa la fila escogida */
                 rowKey = this.getPaginaActualizacion().getRecursoDataProvider().getFilaEscogida();
@@ -2242,7 +2254,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
         this.getPaginaActualizacion().getContextoPeticion().setIdentificacionRecurso(valor);
         return rowKey != null;
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para establecer la posicion del cursor">
@@ -2298,7 +2309,6 @@ public class GestorPaginaActualizacion extends GestorPaginaBasica {
             return ok;
         }
     }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para el refresh de la pagina de actualizacion">
