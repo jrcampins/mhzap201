@@ -9,3 +9,4 @@ procedure create_csv_log_imp_per(archivo varchar2, conjunto varchar2, ignorados 
 procedure create_csv_log_imp_pot(archivo varchar2, conjunto varchar2, ignorados varchar2, separador varchar2, demarcador varchar2);
 procedure create_csv_log_imp_sub(archivo varchar2, conjunto varchar2, ignorados varchar2, separador varchar2, demarcador varchar2);
 procedure create_csv_log_imp_ubi(archivo varchar2, conjunto varchar2, ignorados varchar2, separador varchar2, demarcador varchar2);
+procedure create_csv_log_imp_cen(archivo varchar2, conjunto varchar2, ignorados varchar2, separador varchar2, demarcador varchar2);

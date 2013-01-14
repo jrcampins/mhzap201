@@ -9,4 +9,5 @@ procedure importar_empleados(nombre_archivo varchar2, codigo_archivo varchar2, r
 procedure importar_jubilados_pens(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
 procedure importar_penas(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
 procedure importar_subsidios(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
+procedure importar_censos_validados(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number);
 function importar(archivo number) return varchar2;

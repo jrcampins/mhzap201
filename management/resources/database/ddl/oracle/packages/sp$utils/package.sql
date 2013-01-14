@@ -2,6 +2,8 @@ type t_array is table of varchar2(50) index by binary_integer;
 function ext_tipo_area_ubi(str varchar2) return number;
 function split (p_in_string varchar2, p_delim varchar2) return t_array;
 function extract_id_persona(cedula varchar2, nombre_1 varchar2, nombre_2 varchar2,apellido_1 varchar2, apellido_2 varchar2, apellido_3 varchar2) return number;
+function extract_id_funcionario(cedula varchar2) return number;
+function extract_id_pot_ben(cedula varchar2, nombre_1 varchar2, nombre_2 varchar2, apellido_1 varchar2, apellido_2 varchar2) return number;
 function get_id_barrio(distrito varchar2,barrio varchar2) return number;
 function get_id_departamento(departamento varchar2) return number;
 function get_id_distrito(departamento varchar2,distrito varchar2) return number;

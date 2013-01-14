@@ -80,6 +80,11 @@ begin
         importar_ficha_persona(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Ficha de Persona Importados: ';
         mensaje:=mensaje||num_importados;
+    --501: Censos Validados
+    elsif tipo_archivo=501 then
+        importar_censos_validados(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        mensaje:='Registros de Censos Validados Importados: ';
+        mensaje:=mensaje||num_importados;
     end if;
     --Luego de importado el contenido del archivo, se actualiza como importado
     update archivo_datos_ext set es_archivo_datos_ext_importado=1 where id_archivo_datos_ext=archivo;
