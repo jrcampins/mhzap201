@@ -18,13 +18,14 @@ function extract_id_pot_ben(cedula varchar2,
     
     nombre_concat varchar2(255);
     
-    conta number := 0;
     
     array_nombres t_array;
     
     v5 number;
     
     i binary_integer;
+    err_number  constant number := -20000; -- an integer in the range -20000..-20999
+    msg_string  varchar2(2000); -- a character string of at most 2048 bytes
     
 begin
 
@@ -43,9 +44,10 @@ begin
     exception
        when no_data_found then
           raise_application_error(-20001, 'Cedula no encontrada');
-          
-    end;      
-    if nombre_1 is not null then    
+ 
+    end;
+ 
+    if nombre_1 is not null then
         if instr(upper(row_pot_ben.nombre_potencial_ben),upper(nombre_1))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
@@ -65,12 +67,12 @@ begin
             ocurrencias:=ocurrencias+1;       
         end if;
     end if;
-    if conta>=2 then
+    if ocurrencias>=2 then
         id_pot_ben:=row_pot_ben.id_potencial_ben;
     else
         return 0;
     end if;
-    
+    --raise_application_error(-20001, 'Retornando '||id_pot_ben);
     return id_pot_ben;    
 end;
 

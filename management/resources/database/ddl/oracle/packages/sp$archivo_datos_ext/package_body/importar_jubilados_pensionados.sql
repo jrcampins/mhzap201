@@ -93,7 +93,7 @@ begin
     or numero_tipo_obj_ele_pen=25
     and id_proveedor_dat_ext=id_proveedor;
     --
-    for jubilado in (select * from log_imp_jub where es_importado=0)
+    for jubilado in (select * from log_imp_jub where es_importado=0 and observacion is null)
     loop
         begin
             id_persona_act:=sp$utils.extract_id_persona(jubilado.cedula,jubilado.primer_nombre,jubilado.segundo_nombre,jubilado.primer_apellido,jubilado.segundo_apellido,jubilado.apellido_casada);

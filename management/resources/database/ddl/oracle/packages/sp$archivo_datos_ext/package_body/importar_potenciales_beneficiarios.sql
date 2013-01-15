@@ -81,7 +81,7 @@ begin
         nombre_referente,
         numero_telefono_referente
     from csv_log_imp_pot;    
-    for registro in (select * from log_imp_pot where es_importado=0)
+    for registro in (select * from log_imp_pot where es_importado=0 and observacion is null)
     loop
         begin
             ----dbms_output.PUT_LINE('Linea = ' || i);

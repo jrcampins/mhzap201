@@ -18,7 +18,7 @@ procedure importar_censos_validados(nombre_archivo varchar2, codigo_archivo varc
     row_objecion objecion_ele_pen%rowtype;
     row_arc_dat_ext archivo_datos_ext%rowtype;
     row_potencial_ben potencial_ben%rowtype;
-    id_potencial_ben number;
+    id_pot_ben number;
     id_funcionario number;
     id_proveedor number;
     tipo_archivo number;
@@ -72,6 +72,7 @@ begin
     sp$100.create_csv_log_imp_cen(nombre_archivo, 'WE8ISO8859P1', '1', ';', '"');
     insert into log_imp_cen
            (id_log_imp_cen,
+            orden,
             barrio,
             direccion,
             telefono,
@@ -92,6 +93,7 @@ begin
             causa_invalidacion)
     select
             utils.bigintid(),
+            orden,
             barrio,
             direccion,
             telefono,
@@ -112,19 +114,20 @@ begin
             causa_invalidacion
     from csv_log_imp_cen;
     --
-    for censo in (select * from log_imp_cen where es_importado=0)
+    for censo in (select * from log_imp_cen where es_importado=0 and observacion is null)
     loop
         begin
-            id_potencial_ben:=sp$utils.extract_id_pot_ben(censo.cedula,censo.primer_nombre,censo.segundo_nombre,censo.primer_apellido,censo.segundo_apellido);
-            if id_potencial_ben=0 then
+            id_pot_ben:=sp$utils.extract_id_pot_ben(censo.cedula,censo.primer_nombre,censo.segundo_nombre,censo.primer_apellido,censo.segundo_apellido);
+            if id_pot_ben=0 then
                 msg_string := 'Potencial Beneficiario No encontrado ';
                 raise_application_error(err_number, msg_string, true);
             else
                 begin
-                    select * into row_potencial_ben from potencial_ben p where p.id_potencial_ben=id_potencial_ben;
+                    select * into row_potencial_ben from potencial_ben p where p.id_potencial_ben=id_pot_ben;
                 exception
                     when no_data_found then null;
                 end;
+                --raise_application_error(-20001, 'select * into row_potencial_ben from potencial_ben p where p.id_potencial_ben='||id_pot_ben);
                 --Si no se encuentra un registro, no se hace nada
                 if not sql%found then
                     msg_string:='Potencial beneficiario no existe';
@@ -132,7 +135,7 @@ begin
                 end if;
                 if row_potencial_ben.id_ficha_persona is not null then
                     begin
-                        select fh.indice_calidad_vida into icv_pot_ben from ficha_persona fp left join ficha_hogar fh on fp.id_ficha_hogar=fh.id_ficha_hogar;
+                        select fh.indice_calidad_vida into icv_pot_ben from ficha_persona fp left join ficha_hogar fh on fp.id_ficha_hogar=fh.id_ficha_hogar where fp.id_ficha_persona=row_potencial_ben.id_ficha_persona;
                     exception
                         when no_data_found then null;
                     end;
@@ -146,10 +149,14 @@ begin
                         raise_application_error(err_number, msg_string, true);
                     end if;
                     id_funcionario:=sp$utils.extract_id_funcionario(censo.funcionario);
+                    if id_funcionario is null then
+                        msg_string:='Funcionario No Existe';
+                        raise_application_error(err_number, msg_string, true);
+                    end if;
                     if(upper(censo.validado)='SI') then
-                        mensaje:=sp$potencial_ben.validar_censo(id_potencial_ben,id_funcionario,censo.observaciones);
+                        mensaje:=sp$potencial_ben.validar_censo(id_pot_ben,id_funcionario,censo.observaciones);
                     else
-                        mensaje:=sp$potencial_ben.invalidar_censo(id_potencial_ben,id_funcionario,99,censo.observaciones,'Censo invalidado mediante archivo externo');
+                        mensaje:=sp$potencial_ben.invalidar_censo(id_pot_ben,id_funcionario,99,censo.observaciones,'Censo invalidado mediante archivo externo');
                     end if;
                 else
                     msg_string:='Potencial beneficiario no tiene Ficha Hogar';
@@ -159,7 +166,8 @@ begin
             --Se incrementa el número de importados
             retorno:=retorno+1;
             --Se registra la inserción en la tabla intermedia
-            update log_imp_cen set es_importado=1, 
+            update log_imp_cen set es_importado=1,
+                   observacion=mensaje,
                    nombre_archivo=nombre_archivo, 
                    codigo_archivo=codigo_archivo, 
                    fecha_hora_transaccion= current_timestamp 

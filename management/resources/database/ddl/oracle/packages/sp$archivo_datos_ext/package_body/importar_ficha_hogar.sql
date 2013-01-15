@@ -171,7 +171,7 @@ begin
         p104
     from csv_log_imp_hog;
     --importar fichas
-    for current_row in (select * from log_imp_hog where es_importado=0)
+    for current_row in (select * from log_imp_hog where es_importado=0 and observacion is null)
     loop
         begin
             --Reiniciar los valores de la nueva ficha para cada registro a importar

@@ -90,7 +90,7 @@ begin
     where numero_tipo_obj_ele_pen=24
     and id_proveedor_dat_ext=id_proveedor;
     --
-    for pena in (select * from log_imp_pen where es_importado=0)
+    for pena in (select * from log_imp_pen where es_importado=0 and observacion is null)
     loop
         begin
             id_persona_act:=sp$utils.extract_id_persona(pena.cedula,pena.primer_nombre,pena.segundo_nombre,pena.primer_apellido,pena.segundo_apellido,pena.apellido_casada);

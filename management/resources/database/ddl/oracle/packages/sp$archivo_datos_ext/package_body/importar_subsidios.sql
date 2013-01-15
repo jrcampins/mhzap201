@@ -82,7 +82,7 @@ begin
             segundo_apellido,
             apellido_casada
     from csv_log_imp_sub;
-    for subsidio in (select * from log_imp_sub where es_importado=0)
+    for subsidio in (select * from log_imp_sub where es_importado=0 and observacion is null)
     loop
         begin
             id_persona_act:=sp$utils.extract_id_persona(subsidio.cedula,subsidio.primer_nombre,subsidio.segundo_nombre,subsidio.primer_apellido,subsidio.segundo_apellido,subsidio.apellido_casada);

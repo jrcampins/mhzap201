@@ -90,7 +90,7 @@ begin
     where numero_tipo_obj_ele_pen=21
     and id_proveedor_dat_ext=id_proveedor;
     --
-    for empleado in (select * from log_imp_emp where es_importado=0)
+    for empleado in (select * from log_imp_emp where es_importado=0 and observacion is null)
     loop
         begin
             id_persona_act:=sp$utils.extract_id_persona(empleado.cedula,empleado.primer_nombre,empleado.segundo_nombre,empleado.primer_apellido,empleado.segundo_apellido,empleado.apellido_casada);

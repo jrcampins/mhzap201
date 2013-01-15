@@ -65,7 +65,7 @@ begin
             apellido_casada,
             fecha_defuncion
     from csv_log_imp_fal;
-    for fallecido in (select * from log_imp_fal where es_importado=0)
+    for fallecido in (select * from log_imp_fal where es_importado=0 and observacion is null)
     loop
         begin
             id_persona_act:=sp$utils.extract_id_persona(fallecido.cedula,fallecido.primer_nombre,fallecido.segundo_nombre,fallecido.primer_apellido,fallecido.segundo_apellido,fallecido.apellido_casada);

@@ -4,6 +4,7 @@ begin
     xsp.dropone('TABLE','csv_log_imp_cen');
     comando := 'create table csv_log_imp_cen '
             ||'('
+            || 'orden VARCHAR2(4000),'
             || 'barrio VARCHAR2(4000), '
             ||' direccion VARCHAR2(4000), '
             ||' telefono VARCHAR2(4000), '
