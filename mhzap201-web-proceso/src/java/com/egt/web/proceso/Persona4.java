@@ -2979,9 +2979,11 @@ public class Persona4 extends AbstractPageBean
 
     static long FUNCION_ACCION_25 = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
 
-    static long FUNCION_ACCION_26 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+    static long FUNCION_ACCION_26 = PersonaConstants.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
 
-    static long FUNCION_ACCION_27 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
+    static long FUNCION_ACCION_27 = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+
+    static long FUNCION_ACCION_28 = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
 
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
@@ -3012,8 +3014,9 @@ public class Persona4 extends AbstractPageBean
             new Option(FUNCION_ACCION_23, BundleWebui.getString("emitir_persona_con_pension_denegada")),
             new Option(FUNCION_ACCION_24, BundleWebui.getString("emitir_persona_con_pension_revocada")),
             new Option(FUNCION_ACCION_25, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
-            new Option(FUNCION_ACCION_26, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
-            new Option(FUNCION_ACCION_27, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
+            new Option(FUNCION_ACCION_26, BundleWebui.getString("emitir_documentos_persona_pension_otorgada")),
+            new Option(FUNCION_ACCION_27, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
+            new Option(FUNCION_ACCION_28, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -3565,7 +3568,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdDepartamentoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdDepartamentoRendered = new Bit() {
@@ -3582,7 +3585,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdDistritoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdDistritoRendered = new Bit() {
@@ -3599,7 +3602,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isIdBarrioRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_27;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_28;
     }
 
     private Bit bitIdBarrioRendered = new Bit() {
@@ -3752,7 +3755,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaOtorgamientoPenDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26;
     }
 
     private Bit bitFechaOtorgamientoPenDesdeRendered = new Bit() {
@@ -3769,7 +3772,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaOtorgamientoPenHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_25;
+        return f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26;
     }
 
     private Bit bitFechaOtorgamientoPenHastaRendered = new Bit() {
@@ -3786,7 +3789,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaHoraUltActJupeDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_26;
+        return f == FUNCION_ACCION_27;
     }
 
     private Bit bitFechaHoraUltActJupeDesdeRendered = new Bit() {
@@ -3803,7 +3806,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isFechaHoraUltActJupeHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_26;
+        return f == FUNCION_ACCION_27;
     }
 
     private Bit bitFechaHoraUltActJupeHastaRendered = new Bit() {
@@ -4891,8 +4894,9 @@ public class Persona4 extends AbstractPageBean
                 : f == FUNCION_ACCION_23 ? this.accion23(f) /* emitirPersonaConPensionDenegada */
                 : f == FUNCION_ACCION_24 ? this.accion24(f) /* emitirPersonaConPensionRevocada */
                 : f == FUNCION_ACCION_25 ? this.accion25(f) /* emitirPersonaConPensionOtorgada */
-                : f == FUNCION_ACCION_26 ? this.accion26(f) /* emitirUltimaActualizacionPersonaEnJupe */
-                : f == FUNCION_ACCION_27 ? this.accion27(f) /* emitirCuadroResumenPensionPersona */
+                : f == FUNCION_ACCION_26 ? this.accion26(f) /* emitirDocumentosPersonaPensionOtorgada */
+                : f == FUNCION_ACCION_27 ? this.accion27(f) /* emitirUltimaActualizacionPersonaEnJupe */
+                : f == FUNCION_ACCION_28 ? this.accion28(f) /* emitirCuadroResumenPensionPersona */
                 : null;
     }
     // </editor-fold>
@@ -5151,6 +5155,16 @@ public class Persona4 extends AbstractPageBean
     private String accion26(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
+            this.emitirDocumentosPersonaPensionOtorgada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_documentos_persona_pension_otorgada");
+        }
+        return null;
+    }
+
+    private String accion27(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
             this.emitirUltimaActualizacionPersonaEnJupe();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_ultima_actualizacion_persona_en_jupe");
@@ -5158,7 +5172,7 @@ public class Persona4 extends AbstractPageBean
         return null;
     }
 
-    private String accion27(long f) {
+    private String accion28(long f) {
         boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
         if (esFuncionAutorizada) {
             this.emitirCuadroResumenPensionPersona();
@@ -5867,6 +5881,54 @@ public class Persona4 extends AbstractPageBean
         Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
+        parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaOtorgamientoPenDesde != null) {
+            args.add(fechaOtorgamientoPenDesde);
+            search += " and fecha_otorgamiento_pen>=?";
+        }
+        if (fechaOtorgamientoPenHasta != null) {
+            args.add(fechaOtorgamientoPenHasta);
+            search += " and fecha_otorgamiento_pen<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirDocumentosPersonaPensionOtorgada() { /* emitir documentos persona pension otorgada */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Date fechaOtorgamientoPenDesde = this.getValorCampoFechaOtorgamientoPenDesde1();
+        Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
+        String report = PersonaConstants.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
+        long function = PersonaConstants.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);

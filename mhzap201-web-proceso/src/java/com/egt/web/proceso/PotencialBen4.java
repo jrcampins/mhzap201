@@ -17,6 +17,7 @@ package com.egt.web.proceso;
 
 import com.egt.base.enums.EnumCausaInvCenso;
 import com.egt.base.enums.EnumCausaDenReclCen;
+import com.egt.base.enums.EnumTipoArea;
 import com.egt.base.enums.EnumCondicionCenso;
 import com.egt.base.enums.EnumTipoRegPotBen;
 import com.egt.base.entity.constants.PotencialBenConstants;
@@ -1364,6 +1365,56 @@ public class PotencialBen4 extends AbstractPageBean
         this.campoIdBarrio1Boton2 = component;
     }
 
+    private Label labelNumeroTipoArea1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroTipoArea1() {
+        return labelNumeroTipoArea1;
+    }
+
+    public void setLabelNumeroTipoArea1(Label l) {
+        this.labelNumeroTipoArea1 = l;
+    }
+
+    private DropDown listaNumeroTipoArea1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaNumeroTipoArea1() {
+        return listaNumeroTipoArea1;
+    }
+
+    public void setListaNumeroTipoArea1(DropDown component) {
+        this.listaNumeroTipoArea1 = component;
+    }
+
+    private HelpInline helpInlineNumeroTipoArea1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroTipoArea1() {
+        return helpInlineNumeroTipoArea1;
+    }
+
+    public void setHelpInlineNumeroTipoArea1(HelpInline hi) {
+        this.helpInlineNumeroTipoArea1 = hi;
+    }
+
+    private StaticText listaNumeroTipoArea1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaNumeroTipoArea1Texto1() {
+        return listaNumeroTipoArea1Texto1;
+    }
+
+    public void setListaNumeroTipoArea1Texto1(StaticText component) {
+        this.listaNumeroTipoArea1Texto1 = component;
+    }
+
+    private IntegerConverter converterNumeroTipoArea1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterNumeroTipoArea1() {
+        return converterNumeroTipoArea1;
+    }
+  
+    public void setConverterNumeroTipoArea1(IntegerConverter converter) {
+        this.converterNumeroTipoArea1 = converter;
+    }
+  
     private Label labelFechaRegistroPotBenDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaRegistroPotBenDesde1() {
@@ -2289,6 +2340,23 @@ public class PotencialBen4 extends AbstractPageBean
 
     public Bit getBitIdBarrioRendered() {
         return bitIdBarrioRendered;
+    }
+
+    public boolean isNumeroTipoAreaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+    }
+
+    private Bit bitNumeroTipoAreaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNumeroTipoAreaRendered();
+        }
+    };
+
+    public Bit getBitNumeroTipoAreaRendered() {
+        return bitNumeroTipoAreaRendered;
     }
 
     public boolean isFechaRegistroPotBenDesdeRendered() {
@@ -3579,6 +3647,20 @@ public class PotencialBen4 extends AbstractPageBean
         this.valorListaNumeroCausaDenReclCen1 = valor;
     }
 
+    public Object getOpcionesListaNumeroTipoArea1() {
+        return JSF.getListaOpciones(EnumTipoArea.values(), true, false);
+    }
+
+    private Integer valorListaNumeroTipoArea1;
+
+    public Integer getValorListaNumeroTipoArea1() {
+        return this.valorListaNumeroTipoArea1;
+    }
+
+    public void setValorListaNumeroTipoArea1(Integer valor) {
+        this.valorListaNumeroTipoArea1 = valor;
+    }
+
     public Object getOpcionesListaNumeroCondicionCenso1() {
         return JSF.getListaOpciones(EnumCondicionCenso.values(), true, false);
     }
@@ -4045,6 +4127,7 @@ public class PotencialBen4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         String report = PotencialBenConstants.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_CENSAR;
@@ -4053,6 +4136,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
 //      ------------------------------------------------------------------------
@@ -4072,6 +4156,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -4093,6 +4181,7 @@ public class PotencialBen4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         String report = PotencialBenConstants.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_VALIDAR;
@@ -4101,6 +4190,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
 //      ------------------------------------------------------------------------
@@ -4120,6 +4210,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -4141,6 +4235,7 @@ public class PotencialBen4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         BigDecimal indiceCalidadVidaDesde = (BigDecimal) STP.getObjeto(this.getTextoCampoIndiceCalidadVidaDesde1(), EnumTipoDatoPar.NUMERICO);
@@ -4155,6 +4250,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("indice_calidad_vida_desde", indiceCalidadVidaDesde);
@@ -4180,6 +4276,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -4225,6 +4325,7 @@ public class PotencialBen4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         BigDecimal indiceCalidadVidaDesde = (BigDecimal) STP.getObjeto(this.getTextoCampoIndiceCalidadVidaDesde1(), EnumTipoDatoPar.NUMERICO);
@@ -4236,6 +4337,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("indice_calidad_vida_desde", indiceCalidadVidaDesde);
@@ -4258,6 +4360,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -4291,6 +4397,7 @@ public class PotencialBen4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         Integer numeroTipoRegPotBen = this.getValorListaNumeroTipoRegPotBen1();
@@ -4300,6 +4407,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
@@ -4320,6 +4428,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);

@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 listaNumeroTipoRegPotBen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaNumeroTipoArea1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 listaNumeroTipoRegPotBen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -855,6 +855,36 @@
                                                     binding="#{PotencialBen4.campoIdBarrio1Boton2}"
                                                     id="campoIdBarrio1Boton2"
                                                     onClick="#{PotencialBen4.scriptCampoIdBarrio1Boton2}"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroTipoArea1" rendered="#{PotencialBen4.bitNumeroTipoAreaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen4.labelNumeroTipoArea1}"
+                                                    id="labelNumeroTipoArea1"
+                                                    for="listaNumeroTipoArea1"
+                                                    text="tipo area"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroTipoArea2" rendered="#{PotencialBen4.bitNumeroTipoAreaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaNumeroTipoArea1"
+                                                    binding="#{PotencialBen4.listaNumeroTipoArea1}"
+                                                    converter="#{PotencialBen4.converterNumeroTipoArea1}"
+                                                    items="#{PotencialBen4.opcionesListaNumeroTipoArea1}"
+                                                    selected="#{PotencialBen4.valorListaNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area"/>
+                                                <webuijsf:staticText id="listaNumeroTipoArea1Texto1"
+                                                    binding="#{PotencialBen4.listaNumeroTipoArea1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroTipoArea1"
+                                                    for="listaNumeroTipoArea1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroTipoArea1"
+                                                    binding="#{PotencialBen4.helpInlineNumeroTipoArea1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_tipo_area"
+                                                    type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 id="gridFechaRegistroPotBenDesde1" rendered="#{PotencialBen4.bitFechaRegistroPotBenDesdeRendered.on}"
