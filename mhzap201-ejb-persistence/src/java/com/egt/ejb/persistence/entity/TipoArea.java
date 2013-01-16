@@ -17,6 +17,7 @@ package com.egt.ejb.persistence.entity;
 
 import com.egt.base.persistence.entity.TipoAreaBase;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -40,6 +41,9 @@ public class TipoArea implements TipoAreaBase, Comparable, Serializable {
     @Basic(optional = false)
     @Column(name = "codigo_tipo_area")
     private String codigoTipoArea;
+
+    @Column(name = "limite_indice_calidad_vida")
+    private BigDecimal limiteIndiceCalidadVida;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "tipoAreaNumeroTipoArea")
     private Collection<FichaHogar> fichaHogarNumeroTipoAreaCollection;
@@ -75,6 +79,15 @@ public class TipoArea implements TipoAreaBase, Comparable, Serializable {
 
     public void setCodigoTipoArea(String codigoTipoArea) {
         this.codigoTipoArea = codigoTipoArea;
+    }
+
+    @Override
+    public BigDecimal getLimiteIndiceCalidadVida() {
+        return this.limiteIndiceCalidadVida;
+    }
+
+    public void setLimiteIndiceCalidadVida(BigDecimal limiteIndiceCalidadVida) {
+        this.limiteIndiceCalidadVida = limiteIndiceCalidadVida;
     }
 
     @Override

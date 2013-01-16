@@ -42,6 +42,9 @@ public class CondicionPension implements CondicionPensionBase, Comparable, Seria
     private String codigoCondicionPension;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
+    private Collection<LogProActJupe> logProActJupeNumeroCondicionPensionCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
     private Collection<LogProOtoPenApr> logProOtoPenAprNumeroCondicionPensionCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "condicionPensionNumeroCondicionPension")
@@ -72,6 +75,15 @@ public class CondicionPension implements CondicionPensionBase, Comparable, Seria
 
     public void setCodigoCondicionPension(String codigoCondicionPension) {
         this.codigoCondicionPension = codigoCondicionPension;
+    }
+
+    @Override
+    public Collection<LogProActJupe> getLogProActJupeNumeroCondicionPensionCollection() {
+        return this.logProActJupeNumeroCondicionPensionCollection;
+    }
+
+    public void setLogProActJupeNumeroCondicionPensionCollection(Collection<LogProActJupe> collection) {
+        this.logProActJupeNumeroCondicionPensionCollection = collection;
     }
 
     @Override

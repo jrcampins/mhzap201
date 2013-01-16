@@ -96,6 +96,15 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
     private Collection<LogProAcrPotBen> logProAcrPotBenIdBarrioCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
+    private Collection<LogProActJupe> logProActJupeIdDepartamentoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
+    private Collection<LogProActJupe> logProActJupeIdDistritoCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
+    private Collection<LogProActJupe> logProActJupeIdBarrioCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
     private Collection<LogProDenPenObj> logProDenPenObjIdDepartamentoCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDistrito")
@@ -330,6 +339,33 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
 
     public void setLogProAcrPotBenIdBarrioCollection(Collection<LogProAcrPotBen> collection) {
         this.logProAcrPotBenIdBarrioCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProActJupe> getLogProActJupeIdDepartamentoCollection() {
+        return this.logProActJupeIdDepartamentoCollection;
+    }
+
+    public void setLogProActJupeIdDepartamentoCollection(Collection<LogProActJupe> collection) {
+        this.logProActJupeIdDepartamentoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProActJupe> getLogProActJupeIdDistritoCollection() {
+        return this.logProActJupeIdDistritoCollection;
+    }
+
+    public void setLogProActJupeIdDistritoCollection(Collection<LogProActJupe> collection) {
+        this.logProActJupeIdDistritoCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProActJupe> getLogProActJupeIdBarrioCollection() {
+        return this.logProActJupeIdBarrioCollection;
+    }
+
+    public void setLogProActJupeIdBarrioCollection(Collection<LogProActJupe> collection) {
+        this.logProActJupeIdBarrioCollection = collection;
     }
 
     @Override

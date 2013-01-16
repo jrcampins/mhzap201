@@ -385,6 +385,9 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     private Collection<LogProAcrPotBen> logProAcrPotBenIdPersonaCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogProActJupe> logProActJupeIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
     private Collection<LogProDenPenObj> logProDenPenObjIdPersonaCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
@@ -1276,6 +1279,15 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setLogProAcrPotBenIdPersonaCollection(Collection<LogProAcrPotBen> collection) {
         this.logProAcrPotBenIdPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogProActJupe> getLogProActJupeIdPersonaCollection() {
+        return this.logProActJupeIdPersonaCollection;
+    }
+
+    public void setLogProActJupeIdPersonaCollection(Collection<LogProActJupe> collection) {
+        this.logProActJupeIdPersonaCollection = collection;
     }
 
     @Override
