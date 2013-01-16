@@ -14,10 +14,9 @@ goto:eof
 
 :make-development-links
 pushd %project_source_dir%\development\links
-call:make-link-101 ear-conf                     mhzap201\src\conf
 call:make-link-101 ejb-business-jms             mhzap201-ejb-business\src\java\com\egt\ejb\business\jms
 call:make-link-101 ejb-business-message         mhzap201-ejb-business\src\java\com\egt\ejb\business\message
-call:make-link-101 ejb-business-process         mhzap201-ejb-business\src\java\com\egt\ejb\business\process
+call:make-link-101 ejb-business-process-beans   mhzap201-ejb-business\src\java\com\egt\ejb\business\process
 call:make-link-101 ejb-business-process-logic   mhzap201-ejb-business\src\java\com\egt\ejb\business\process\logic
 call:make-link-101 ejb-persistence-entity       mhzap201-ejb-persistence\src\java\com\egt\ejb\persistence\entity
 call:make-link-101 ejb-persistence-facade       mhzap201-ejb-persistence\src\java\com\egt\ejb\persistence\facade
@@ -25,19 +24,22 @@ call:make-link-101 lib-base-bundles             mhzap201-lib-base\src\com\egt\ba
 call:make-link-101 lib-base-constants           mhzap201-lib-base\src\com\egt\base\constants
 call:make-link-101 lib-base-entity-constants    mhzap201-lib-base\src\com\egt\base\entity\constants
 call:make-link-101 lib-base-enums               mhzap201-lib-base\src\com\egt\base\enums
+call:make-link-101 lib-base-persistence-entity  mhzap201-lib-base\src\com\egt\base\persistence\entity
+call:make-link-101 lib-base-persistence-facade  mhzap201-lib-base\src\com\egt\base\persistence\facade
 call:make-link-101 lib-data-general-xdp1        mhzap201-lib-data\src\com\egt\data\general\xdp1
 call:make-link-101 lib-data-general-xdp2        mhzap201-lib-data\src\com\egt\data\general\xdp2
 call:make-link-101 lib-data-generic-xdp1        mhzap201-lib-data\src\com\egt\data\generic\xdp1
 call:make-link-101 lib-data-generic-xdp2        mhzap201-lib-data\src\com\egt\data\generic\xdp2
 call:make-link-101 lib-data-specific-xdp1       mhzap201-lib-data\src\com\egt\data\specific\xdp1
 call:make-link-101 lib-data-specific-xdp2       mhzap201-lib-data\src\com\egt\data\specific\xdp2
-call:make-link-101 xmr-ddl-oracle-data          management\resources\database\ddl\oracle\data
-call:make-link-101 xmr-ddl-oracle-views         management\resources\database\ddl\oracle\views\web
-call:make-link-101 xmr-ddl-postgresql-data      management\resources\database\ddl\postgresql\data
-call:make-link-101 xmr-ddl-postgresql-views     management\resources\database\ddl\postgresql\views\web
-call:make-link-101 xmr-ddl-sqlserver-data       management\resources\database\ddl\sqlserver\data
-call:make-link-101 xmr-ddl-sqlserver-views      management\resources\database\ddl\sqlserver\views\web
-call:make-link-101 xmr-jasper-reports-web       management\resources\jasper\reports\web
+call:make-link-101 mrd-ddl-oracle-data          management\resources\database\ddl\oracle\data
+call:make-link-101 mrd-ddl-oracle-views         management\resources\database\ddl\oracle\views\web
+call:make-link-101 mrd-ddl-postgresql-data      management\resources\database\ddl\postgresql\data
+call:make-link-101 mrd-ddl-postgresql-views     management\resources\database\ddl\postgresql\views\web
+call:make-link-101 mrd-ddl-sqlserver-data       management\resources\database\ddl\sqlserver\data
+call:make-link-101 mrd-ddl-sqlserver-views      management\resources\database\ddl\sqlserver\views\web
+call:make-link-101 mrj-reports-web		management\resources\jasper\reports\web
+call:make-link-101 src-conf                     mhzap201\src\conf
 call:make-link-101 xxx-scripts-windows          development\resources\scripts\windows
 dir /a:-d/o:n *.lnk >> %log% 2>&1
 popd
@@ -47,9 +49,7 @@ call:make-link-102 database                     C:\CVSNT\desarrollo\mhzap201\net
 call:make-link-101 links                        development\links
 call:make-link-101 metadata                     development\resources\scripts\sql\metadata
 call:make-link-101 scripts                      development\resources\scripts\windows
-copy *.lnk mhzdb201
 dir /a:-d/o:n *.lnk >> %log% 2>&1
-dir /a:-d/o:n mhzdb201\*.lnk >> %log% 2>&1
 popd
 pushd %project_source_dir%\development\resources\scripts\windows
 call:make-link-101 acceso-directo-database      development\resources\database

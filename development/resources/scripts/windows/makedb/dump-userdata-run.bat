@@ -17,6 +17,7 @@ call "%~f1" log_imp_pot
 call "%~f1" log_imp_sub                                                                                          
 call "%~f1" log_imp_ubi                                                                                          
 call "%~f1" log_pro_acr_pot_ben                                                                                  
+call "%~f1" log_pro_act_jupe                                                                                     
 call "%~f1" log_pro_den_pen_obj                                                                                  
 call "%~f1" log_pro_imp_arc_ext                                                                                  
 call "%~f1" log_pro_oto_pen_apr                                                                                  
