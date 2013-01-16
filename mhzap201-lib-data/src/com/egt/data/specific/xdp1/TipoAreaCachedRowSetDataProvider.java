@@ -14,6 +14,7 @@ import com.egt.core.db.xdp.RecursoCachedRowSetDataProvider;
 import com.egt.core.db.xdp.RecursoCodificableDataProvider;
 import com.egt.core.db.xdp.RecursoEnumerableDataProvider;
 import com.sun.data.provider.RowKey;
+import java.math.BigDecimal;
 import javax.sql.rowset.CachedRowSet;
 
 public class TipoAreaCachedRowSetDataProvider extends RecursoCachedRowSetDataProvider
@@ -61,22 +62,26 @@ public class TipoAreaCachedRowSetDataProvider extends RecursoCachedRowSetDataPro
 
     public static final String COLUMNA_NUMERO_TIPO_AREA = "numero_tipo_area";
     public static final String COLUMNA_CODIGO_TIPO_AREA = "codigo_tipo_area";
+    public static final String COLUMNA_LIMITE_INDICE_CALIDAD_VIDA = "limite_indice_calidad_vida";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TIPO_AREA, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_TIPO_AREA, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, BigDecimal.class);
     }
 
     protected void setColumnasInsertables() {
         this.setColumnasInsertables(false);
         this.setColumnasInsertables(COLUMNA_NUMERO_TIPO_AREA, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_TIPO_AREA, true);
+        this.setColumnasInsertables(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, true);
     }
 
     protected void setColumnasModificables() {
         this.setColumnasModificables(false);
         this.setColumnasModificables(COLUMNA_NUMERO_TIPO_AREA, true);
         this.setColumnasModificables(COLUMNA_CODIGO_TIPO_AREA, true);
+        this.setColumnasModificables(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, true);
     }
 
     public Integer getNumeroTipoArea() {
@@ -103,6 +108,19 @@ public class TipoAreaCachedRowSetDataProvider extends RecursoCachedRowSetDataPro
     }
     public void setCodigoTipoArea(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_CODIGO_TIPO_AREA, rowKey, valor);
+    }
+
+    public BigDecimal getLimiteIndiceCalidadVida() {
+        return (BigDecimal) super.getValue(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA);
+    }
+    public BigDecimal getLimiteIndiceCalidadVida(RowKey rowKey) {
+        return (BigDecimal) super.getValue(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, rowKey);
+    }
+    public void setLimiteIndiceCalidadVida(BigDecimal valor) {
+        super.setValue(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, valor);
+    }
+    public void setLimiteIndiceCalidadVida(RowKey rowKey, BigDecimal valor) {
+        super.setValue(COLUMNA_LIMITE_INDICE_CALIDAD_VIDA, rowKey, valor);
     }
 
     public static final String COLUMNA_CODIGO_RECURSO = "codigo_tipo_area";

@@ -19,6 +19,7 @@ import com.egt.core.aplicacion.TLC;
 import com.egt.core.db.xdp.RecursoConsultableDataProvider;
 import com.egt.data.specific.xdp1.TipoAreaCachedRowSetDataProvider;
 import com.sun.data.provider.RowKey;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Set;
 import javax.sql.rowset.CachedRowSet;
@@ -74,6 +75,7 @@ public class TipoAreaCachedRowSetDataProvider2 extends TipoAreaCachedRowSetDataP
 
     protected static final long PARAMETRO_NUMERO_TIPO_AREA = 20412L;
     protected static final long PARAMETRO_CODIGO_TIPO_AREA = 20308L;
+    protected static final long PARAMETRO_LIMITE_INDICE_CALIDAD_VIDA = 20658L;
 
     @Override
     public long getFuncionConsultarRecurso() {
@@ -315,6 +317,7 @@ public class TipoAreaCachedRowSetDataProvider2 extends TipoAreaCachedRowSetDataP
         RastroFuncion rastro = this.getRastroFuncion(rowKey, FUNCION_CREAR_TIPO_AREA);
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_TIPO_AREA, this.getCodigoTipoArea(rowKey));
+        rastro.addParametro(PARAMETRO_LIMITE_INDICE_CALIDAD_VIDA, this.getLimiteIndiceCalidadVida(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -323,6 +326,7 @@ public class TipoAreaCachedRowSetDataProvider2 extends TipoAreaCachedRowSetDataP
         RastroFuncion rastro = this.getRastroFuncion(rowKey, FUNCION_MODIFICAR_TIPO_AREA);
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_TIPO_AREA, this.getCodigoTipoArea(rowKey));
+        rastro.addParametro(PARAMETRO_LIMITE_INDICE_CALIDAD_VIDA, this.getLimiteIndiceCalidadVida(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
