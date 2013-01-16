@@ -193,6 +193,26 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>LogProActJupe5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProActJupe5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogProActJupe6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProActJupe6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogProPreProPag5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProPreProPag5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogProPreProPag6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogProPreProPag6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>LogProDenPenObj5</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogProDenPenObj5</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -323,16 +343,6 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>LogImpUbi5</managed-bean-name>
-        <managed-bean-class>com.egt.web.consulta.LogImpUbi5</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>LogImpUbi6</managed-bean-name>
-        <managed-bean-class>com.egt.web.consulta.LogImpUbi6</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
         <managed-bean-name>LogProOtoPenApr5</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogProOtoPenApr5</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -340,16 +350,6 @@
     <managed-bean>
         <managed-bean-name>LogProOtoPenApr6</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogProOtoPenApr6</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>LogProPreProPag5</managed-bean-name>
-        <managed-bean-class>com.egt.web.consulta.LogProPreProPag5</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>LogProPreProPag6</managed-bean-name>
-        <managed-bean-class>com.egt.web.consulta.LogProPreProPag6</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -458,6 +458,20 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
+        <from-view-id>/LogProActJupe5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogProActJupe6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LogProPreProPag5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogProPreProPag6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/LogProDenPenObj5.jsp</from-view-id>
         <navigation-case>
             <from-outcome>detalle</from-outcome>
@@ -549,24 +563,10 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/LogImpUbi5.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>detalle</from-outcome>
-            <to-view-id>/LogImpUbi6.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
         <from-view-id>/LogProOtoPenApr5.jsp</from-view-id>
         <navigation-case>
             <from-outcome>detalle</from-outcome>
             <to-view-id>/LogProOtoPenApr6.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/LogProPreProPag5.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>detalle</from-outcome>
-            <to-view-id>/LogProPreProPag6.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>

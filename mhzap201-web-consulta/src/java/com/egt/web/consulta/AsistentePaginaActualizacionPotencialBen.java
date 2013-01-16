@@ -213,6 +213,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         String report = PotencialBenCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_CENSAR;
@@ -221,6 +222,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
 //      ------------------------------------------------------------------------
@@ -240,6 +242,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -264,6 +270,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         String report = PotencialBenCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_VALIDAR;
@@ -272,6 +279,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
 //      ------------------------------------------------------------------------
@@ -291,6 +299,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -315,6 +327,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         BigDecimal indiceCalidadVidaDesde = null;
@@ -329,6 +342,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("indice_calidad_vida_desde", indiceCalidadVidaDesde);
@@ -354,6 +368,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -402,6 +420,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         BigDecimal indiceCalidadVidaDesde = null;
@@ -413,6 +432,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("indice_calidad_vida_desde", indiceCalidadVidaDesde);
@@ -435,6 +455,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);
@@ -471,6 +495,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         Integer numeroTipoRegPotBen = null;
@@ -480,6 +505,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
@@ -500,6 +526,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
         }
         if (fechaRegistroPotBenDesde != null) {
             args.add(fechaRegistroPotBenDesde);

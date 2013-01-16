@@ -78,6 +78,12 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         logProAcrPotBenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProAcrPotBenRowSet.setCommand("SELECT * FROM consulta_log_pro_acr_pot_ben_1");
         logProAcrPotBenRowSet.setTableName("log_pro_acr_pot_ben");
+        logProActJupeRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProActJupeRowSet.setCommand("SELECT * FROM consulta_log_pro_act_jupe_1");
+        logProActJupeRowSet.setTableName("log_pro_act_jupe");
+        logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
+        logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
         logProDenPenObjRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProDenPenObjRowSet.setCommand("SELECT * FROM consulta_log_pro_den_pen_obj_1");
         logProDenPenObjRowSet.setTableName("log_pro_den_pen_obj");
@@ -117,15 +123,9 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         logImpSubRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logImpSubRowSet.setCommand("SELECT * FROM consulta_log_imp_sub_1");
         logImpSubRowSet.setTableName("log_imp_sub");
-        logImpUbiRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-        logImpUbiRowSet.setCommand("SELECT * FROM consulta_log_imp_ubi_1");
-        logImpUbiRowSet.setTableName("log_imp_ubi");
         logProOtoPenAprRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProOtoPenAprRowSet.setCommand("SELECT * FROM consulta_log_pro_oto_pen_apr_1");
         logProOtoPenAprRowSet.setTableName("log_pro_oto_pen_apr");
-        logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-        logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
-        logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
         logProVerElePenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logProVerElePenRowSet.setCommand("SELECT * FROM consulta_log_pro_ver_ele_pen_1");
         logProVerElePenRowSet.setTableName("log_pro_ver_ele_pen");
@@ -396,6 +396,48 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setLogProAcrPotBenRowSet(CachedRowSetXImpl crsxi) {
         this.logProAcrPotBenRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProActJupeRowSet;
+
+    public CachedRowSetXImpl getLogProActJupeRowSet() {
+        if (logProActJupeRowSet == null) {
+            logProActJupeRowSet = new RecursoCachedRowSet();
+            try {
+                logProActJupeRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProActJupeRowSet.setCommand("SELECT * FROM consulta_log_pro_act_jupe_1");
+                logProActJupeRowSet.setTableName("log_pro_act_jupe");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProActJupeRowSet;
+    }
+
+    public void setLogProActJupeRowSet(CachedRowSetXImpl crsxi) {
+        this.logProActJupeRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logProPreProPagRowSet;
+
+    public CachedRowSetXImpl getLogProPreProPagRowSet() {
+        if (logProPreProPagRowSet == null) {
+            logProPreProPagRowSet = new RecursoCachedRowSet();
+            try {
+                logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
+                logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logProPreProPagRowSet;
+    }
+
+    public void setLogProPreProPagRowSet(CachedRowSetXImpl crsxi) {
+        this.logProPreProPagRowSet = crsxi;
     }
 
     private CachedRowSetXImpl logProDenPenObjRowSet;
@@ -671,27 +713,6 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         this.logImpSubRowSet = crsxi;
     }
 
-    private CachedRowSetXImpl logImpUbiRowSet;
-
-    public CachedRowSetXImpl getLogImpUbiRowSet() {
-        if (logImpUbiRowSet == null) {
-            logImpUbiRowSet = new RecursoCachedRowSet();
-            try {
-                logImpUbiRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-                logImpUbiRowSet.setCommand("SELECT * FROM consulta_log_imp_ubi_1");
-                logImpUbiRowSet.setTableName("log_imp_ubi");
-            } catch (Exception e) {
-                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
-                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
-            }
-        }
-        return logImpUbiRowSet;
-    }
-
-    public void setLogImpUbiRowSet(CachedRowSetXImpl crsxi) {
-        this.logImpUbiRowSet = crsxi;
-    }
-
     private CachedRowSetXImpl logProOtoPenAprRowSet;
 
     public CachedRowSetXImpl getLogProOtoPenAprRowSet() {
@@ -711,27 +732,6 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setLogProOtoPenAprRowSet(CachedRowSetXImpl crsxi) {
         this.logProOtoPenAprRowSet = crsxi;
-    }
-
-    private CachedRowSetXImpl logProPreProPagRowSet;
-
-    public CachedRowSetXImpl getLogProPreProPagRowSet() {
-        if (logProPreProPagRowSet == null) {
-            logProPreProPagRowSet = new RecursoCachedRowSet();
-            try {
-                logProPreProPagRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-                logProPreProPagRowSet.setCommand("SELECT * FROM consulta_log_pro_pre_pro_pag_1");
-                logProPreProPagRowSet.setTableName("log_pro_pre_pro_pag");
-            } catch (Exception e) {
-                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
-                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
-            }
-        }
-        return logProPreProPagRowSet;
-    }
-
-    public void setLogProPreProPagRowSet(CachedRowSetXImpl crsxi) {
-        this.logProPreProPagRowSet = crsxi;
     }
 
     private CachedRowSetXImpl logProVerElePenRowSet;
