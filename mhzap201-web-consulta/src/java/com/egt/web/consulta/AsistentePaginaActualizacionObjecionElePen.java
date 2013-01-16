@@ -486,6 +486,10 @@ public class AsistentePaginaActualizacionObjecionElePen {
         return true;
     }
 
+    public boolean isGridObservacionesRendered() {
+        return true;
+    }
+
     // </editor-fold>
 
 /**/

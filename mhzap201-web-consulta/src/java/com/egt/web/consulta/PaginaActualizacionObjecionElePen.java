@@ -41,6 +41,8 @@ public interface PaginaActualizacionObjecionElePen extends PaginaActualizacion {
 
     TextArea getCampoNombreArchivoUltimaAct1();
 
+    TextArea getCampoObservaciones1();
+
     Button getBotonAplicar1();
 
     ObjecionElePenCachedRowSetDataProvider2 getObjecionElePenDataProvider();

@@ -103,6 +103,7 @@ public class ObjecionElePen6 extends AbstractPageBean
         converterFechaUltimaActualizacion1.setPattern("dd/MM/yyyy");
         converterFechaUltimaActualizacion1.setType("date");
         validatorNombreArchivoUltimaAct1.setMaximum(200);
+        validatorObservaciones1.setMaximum(8160);
         objecionElePenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.objecionElePenRowSet}"));
         personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
         proveedorDatExtReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.proveedorDatExtReferenceRowSet}"));
@@ -654,6 +655,57 @@ public class ObjecionElePen6 extends AbstractPageBean
   
     public void setValidatorNombreArchivoUltimaAct1(LengthValidator validator) {
         this.validatorNombreArchivoUltimaAct1 = validator;
+    }
+  
+    private Label labelObservaciones1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelObservaciones1() {
+        return labelObservaciones1;
+    }
+
+    public void setLabelObservaciones1(Label l) {
+        this.labelObservaciones1 = l;
+    }
+
+    private TextArea campoObservaciones1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoObservaciones1() {
+        return campoObservaciones1;
+    }
+
+    public void setCampoObservaciones1(TextArea component) {
+        this.campoObservaciones1 = component;
+    }
+
+    private HelpInline helpInlineObservaciones1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineObservaciones1() {
+        return helpInlineObservaciones1;
+    }
+
+    public void setHelpInlineObservaciones1(HelpInline hi) {
+        this.helpInlineObservaciones1 = hi;
+    }
+
+    private StaticText campoObservaciones1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoObservaciones1Texto1() {
+        return campoObservaciones1Texto1;
+    }
+
+    public void setCampoObservaciones1Texto1(StaticText component) {
+        this.campoObservaciones1Texto1 = component;
+    }
+
+    private LengthValidator validatorObservaciones1 = new LengthValidator();
+  
+    public LengthValidator getValidatorObservaciones1() {
+        return validatorObservaciones1;
+    }
+  
+    public void setValidatorObservaciones1(LengthValidator validator) {
+        this.validatorObservaciones1 = validator;
     }
   
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();

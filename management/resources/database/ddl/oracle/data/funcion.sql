@@ -541,7 +541,7 @@ VALUES (201000158, 0, 'otorgar_pension_persona', 'Otorgar Pensión AM', NULL, 13,
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (201000159, 0, 'denegar_pension_persona', 'Denegar Pensión AM', NULL, 13, 1, 2010001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (201000160, 0, 'registrar_entrega_doc_persona', 'Registrar Entrega de Documentación', NULL, 13, 1, 2010001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (201000160, 0, 'registrar_entrega_doc_persona', 'Registrar Entrega de Documentos de Pensión AM', NULL, 13, 1, 2010001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (201000161, 0, 'solicitar_reco_pen_persona', 'Solicitar Reconsideración de Pensión AM', NULL, 13, 1, 2010001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
@@ -769,9 +769,9 @@ VALUES (320400152, 0, 'reactivar_potencial_ben', 'Reactivar Potencial Beneficiar
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (320400153, 0, 'vincular_potencial_ben', 'Vincular Potencial Beneficiario', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (320400154, 0, 'validar_censo_potencial_ben', 'Invalidar Censo', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (320400154, 0, 'validar_censo_potencial_ben', 'Validar Censo', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
-VALUES (320400155, 0, 'invalidar_censo_potencial_ben', 'Validar Censo', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
+VALUES (320400155, 0, 'invalidar_censo_potencial_ben', 'Invalidar Censo', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (320400156, 0, 'reg_recl_cen_potencial_ben', 'Registrar Reclamo asociado a Censo', NULL, 13, 1, 3204001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)

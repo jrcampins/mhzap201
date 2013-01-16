@@ -1126,7 +1126,8 @@ CREATE TABLE objecion_ele_pen
 	numero_tipo_obj_ele_pen int NOT NULL,
 	es_objecion_ele_pen_inactiva int NOT NULL,
 	fecha_ultima_actualizacion timestamp with time zone,
-	nombre_archivo_ultima_act varchar(200)
+	nombre_archivo_ultima_act varchar(200),
+	observaciones varchar
 	);
 	
 CREATE TABLE opcion_binaria

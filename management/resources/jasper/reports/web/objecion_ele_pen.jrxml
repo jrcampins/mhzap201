@@ -177,6 +177,7 @@
     <field name="es_objecion_ele_pen_inactiva" class="java.lang.Integer"/>
     <field name="fecha_ultima_actualizacion" class="java.util.Date"/>
     <field name="nombre_archivo_ultima_act" class="java.lang.String"/>
+    <field name="observaciones" class="java.lang.String"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

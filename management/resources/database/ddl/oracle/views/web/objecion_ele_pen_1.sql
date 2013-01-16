@@ -107,7 +107,8 @@ SELECT
 		tipo_obj_ele_pen_1x3.codigo_tipo_obj_ele_pen AS codigo_tipo_obj_ele_pen_1x3y2,
 	objecion_ele_pen.es_objecion_ele_pen_inactiva AS es_objecion_ele_pen_inactiva,
 	objecion_ele_pen.fecha_ultima_actualizacion AS fecha_ultima_actualizacion,
-	objecion_ele_pen.nombre_archivo_ultima_act AS nombre_archivo_ultima_act
+	objecion_ele_pen.nombre_archivo_ultima_act AS nombre_archivo_ultima_act,
+	objecion_ele_pen.observaciones AS observaciones
 FROM
 	objecion_ele_pen objecion_ele_pen
 	INNER JOIN persona persona_1x1 ON persona_1x1.id_persona = objecion_ele_pen.id_persona

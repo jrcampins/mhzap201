@@ -1126,7 +1126,8 @@ CREATE TABLE objecion_ele_pen
 	numero_tipo_obj_ele_pen NUMBER(10) NOT NULL,
 	es_objecion_ele_pen_inactiva NUMBER(10) NOT NULL,
 	fecha_ultima_actualizacion DATE,
-	nombre_archivo_ultima_act VARCHAR2(400)
+	nombre_archivo_ultima_act VARCHAR2(400),
+	observaciones VARCHAR2(4000)
 	);
 	
 CREATE TABLE opcion_binaria

@@ -37,6 +37,8 @@ public class ObjecionElePenConstants {
 
     public static final String COLUMNA_NOMBRE_ARCHIVO_ULTIMA_ACT = "nombre_archivo_ultima_act";
 
+    public static final String COLUMNA_OBSERVACIONES = "observaciones";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_objecion_ele_pen";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_objecion_ele_pen";

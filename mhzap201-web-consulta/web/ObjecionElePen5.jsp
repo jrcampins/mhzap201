@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -458,6 +458,32 @@
                                                     rendered="#{ObjecionElePen5.asistente.campoNombreArchivoUltimaAct1Boton3Rendered}"
                                                     text="#{ObjecionElePen5.asistente.textCampoNombreArchivoUltimaAct1Boton3}"
                                                     toolTip="#{ObjecionElePen5.asistente.toolTipCampoNombreArchivoUltimaAct1Boton3}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ObjecionElePen5.tableColumnObservaciones1}"
+                                                    headerText="observaciones"
+                                                    id="tableColumnObservaciones1" rendered="false"
+                                                    sort="observaciones">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextObservaciones1"
+                                                    text="#{currentRow.value['observaciones']}"
+                                                    rendered="#{ObjecionElePen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen5.labelObservaciones1}"
+                                                    id="labelObservaciones1"
+                                                    for="campoObservaciones1"/>
+                                                <webuijsf:textArea id="campoObservaciones1"
+                                                    binding="#{ObjecionElePen5.campoObservaciones1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="#{ObjecionElePen5.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['observaciones']}"
+                                                    toolTip="BundleParametros.observaciones.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen5.validatorObservaciones1.validate}"/>
+                                                <webuijsf:staticText id="campoObservaciones1Texto1"
+                                                    binding="#{ObjecionElePen5.campoObservaciones1Texto1}"
+                                                    text="#{currentRow.value['observaciones']}"/>
+                                                <webuijsf:message id="messageObservaciones1"
+                                                    for="campoObservaciones1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

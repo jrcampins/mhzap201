@@ -39,6 +39,10 @@ public interface ObjecionElePenBase {
 //
 //  public void setNombreArchivoUltimaAct(String nombreArchivoUltimaAct);
 
+    public String getObservaciones();
+//
+//  public void setObservaciones(String observaciones);
+
     public PersonaBase getPersonaIdPersona();
 //
 //  public void setPersonaIdPersona(PersonaBase persona);

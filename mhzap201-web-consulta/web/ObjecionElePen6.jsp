@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -489,6 +489,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.nombre_archivo_ultima_act.objecion_ele_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridObservaciones1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen6.labelObservaciones1}"
+                                                    id="labelObservaciones1"
+                                                    for="campoObservaciones1"
+                                                    text="observaciones"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridObservaciones2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoObservaciones1"
+                                                    binding="#{ObjecionElePen6.campoObservaciones1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="#{ObjecionElePen6.gestor.filaNoProcesada}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['observaciones']}"
+                                                    toolTip="BundleParametros.observaciones.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen6.validatorObservaciones1.validate}"/>
+                                                <webuijsf:staticText id="campoObservaciones1Texto1"
+                                                    binding="#{ObjecionElePen6.campoObservaciones1Texto1}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['observaciones']}"/>
+                                                <webuijsf:message id="messageObservaciones1"
+                                                    for="campoObservaciones1"/>
+                                                <webuijsf:helpInline id="helpInlineObservaciones1"
+                                                    binding="#{ObjecionElePen6.helpInlineObservaciones1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.observaciones.objecion_ele_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
