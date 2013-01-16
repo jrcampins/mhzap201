@@ -152,6 +152,8 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_LOG_PRO_ACR_POT_BEN = "id_log_pro_acr_pot_ben"; // Log Pro Acr Potencial Beneficiario
 
+    public static final String ID_LOG_PRO_ACT_JUPE = "id_log_pro_act_jupe"; // Log Pro Actualizacion Pension JUPE
+
     public static final String ID_LOG_PRO_DEN_PEN_OBJ = "id_log_pro_den_pen_obj"; // Log Pro Denegacion Pension Objecion
 
     public static final String ID_LOG_PRO_IMP_ARC_EXT = "id_log_pro_imp_arc_ext"; // Log Pro Imp Archivo Externos

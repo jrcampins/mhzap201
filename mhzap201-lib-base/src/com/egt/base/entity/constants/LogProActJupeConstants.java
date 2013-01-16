@@ -15,15 +15,15 @@
  */
 package com.egt.base.entity.constants;
 
-public class LogProPreProPagConstants {
+public class LogProActJupeConstants {
 
-    public static final String CODIGO_DOMINIO_RECURSO = "log_pro_pre_pro_pag";
+    public static final String CODIGO_DOMINIO_RECURSO = "log_pro_act_jupe";
 
-    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Aprobaci\u00F3n y Objeci\u00F3n de Pensiones AM";
+    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Actualizaci\u00F3n de Pensiones en JUPE";
 
-    public static final String COLUMNA_ID_LOG_PRO_PRE_PRO_PAG = "id_log_pro_pre_pro_pag";
+    public static final String COLUMNA_ID_LOG_PRO_ACT_JUPE = "id_log_pro_act_jupe";
 
-    public static final String COLUMNA_VERSION_LOG_PRO_PRE_PRO_PAG = "version_log_pro_pre_pro_pag";
+    public static final String COLUMNA_VERSION_LOG_PRO_ACT_JUPE = "version_log_pro_act_jupe";
 
     public static final String COLUMNA_ID_PERSONA = "id_persona";
 
@@ -39,33 +39,23 @@ public class LogProPreProPagConstants {
 
     public static final String COLUMNA_NUMERO_CONDICION_PENSION = "numero_condicion_pension";
 
-    public static final String COLUMNA_FECHA_SOLICITUD_PENSION = "fecha_solicitud_pension";
-
-    public static final String COLUMNA_NUMERO_CONDICION_DENU_PEN = "numero_condicion_denu_pen";
-
-    public static final String COLUMNA_NUMERO_CONDICION_RECO_PEN = "numero_condicion_reco_pen";
-
     public static final String COLUMNA_ES_PROCESADO = "es_procesado";
 
     public static final String COLUMNA_OBSERVACION = "observacion";
 
     public static final String COLUMNA_FECHA_HORA_TRANSACCION = "fecha_hora_transaccion";
 
-    public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_pro_pre_pro_pag";
+    public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_pro_act_jupe";
 
-    public static final String COLUMNA_VERSION_RECURSO = "version_log_pro_pre_pro_pag";
+    public static final String COLUMNA_VERSION_RECURSO = "version_log_pro_act_jupe";
 
-    public static final long FUNCION_CONSULTAR_LOG_PRO_PRE_PRO_PAG = 332300101L;
+    public static final long FUNCION_CONSULTAR_LOG_PRO_ACT_JUPE = 332700101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_UBICACION = 202000101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_PENSION = 311300101L;
-
-    public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_DENU_PEN = 311500101L;
-
-    public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_RECO_PEN = 311400101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
 }

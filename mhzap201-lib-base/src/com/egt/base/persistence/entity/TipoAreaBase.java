@@ -15,6 +15,7 @@
  */
 package com.egt.base.persistence.entity;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 public interface TipoAreaBase {
@@ -26,6 +27,10 @@ public interface TipoAreaBase {
     public String getCodigoTipoArea();
 //
 //  public void setCodigoTipoArea(String codigoTipoArea);
+
+    public BigDecimal getLimiteIndiceCalidadVida();
+//
+//  public void setLimiteIndiceCalidadVida(BigDecimal limiteIndiceCalidadVida);
 
     public Collection<? extends FichaHogarBase> getFichaHogarNumeroTipoAreaCollection();
 //

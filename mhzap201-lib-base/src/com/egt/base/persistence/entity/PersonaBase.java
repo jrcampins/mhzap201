@@ -404,6 +404,10 @@ public interface PersonaBase {
 //
 //  public void setLogProAcrPotBenIdPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);
 
+    public Collection<? extends LogProActJupeBase> getLogProActJupeIdPersonaCollection();
+//
+//  public void setLogProActJupeIdPersonaCollection(Collection<? extends LogProActJupeBase> collection);
+
     public Collection<? extends LogProDenPenObjBase> getLogProDenPenObjIdPersonaCollection();
 //
 //  public void setLogProDenPenObjIdPersonaCollection(Collection<? extends LogProDenPenObjBase> collection);

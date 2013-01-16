@@ -916,6 +916,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_LOG_PRO_ACR_POT_BEN = 20724L; // Log Pro Acr Potencial Beneficiario
 
+    public static final Long ID_LOG_PRO_ACT_JUPE = 20898L; // Log Pro Actualizacion Pension JUPE
+
     public static final Long ID_LOG_PRO_DEN_PEN_OBJ = 20891L; // Log Pro Denegacion Pension Objecion
 
     public static final Long ID_LOG_PRO_IMP_ARC_EXT = 20725L; // Log Pro Imp Archivo Externos
@@ -1903,6 +1905,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VERSION_LOG_IMP_UBI = 20881L; // Version Log Imp Ubi
 
     public static final Long VERSION_LOG_PRO_ACR_POT_BEN = 20882L; // Version Log Pro Acr Potencial Beneficiario
+
+    public static final Long VERSION_LOG_PRO_ACT_JUPE = 20899L; // Version Log Pro Actualizacion Pension JUPE
 
     public static final Long VERSION_LOG_PRO_DEN_PEN_OBJ = 20895L; // Version Log Pro Denegacion Pension Objecion
 

@@ -180,8 +180,6 @@ public class URX2 extends URX {
 
     public static final String CONSULTA_TABLA_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer5.jsp";
 
-    public static final String CONSULTA_TABLA_LOG_IMP_UBI = "/mhzap201-web-consulta/faces/LogImpUbi5.jsp";
-
     public static final String CONSULTA_TABLA_LOG_PRO_ACR_POT_BEN = "/mhzap201-web-consulta/faces/LogProAcrPotBen5.jsp";
 
     public static final String CONSULTA_TABLA_LOG_PRO_OTO_PEN_APR = "/mhzap201-web-consulta/faces/LogProOtoPenApr5.jsp";
@@ -193,6 +191,8 @@ public class URX2 extends URX {
     public static final String CONSULTA_TABLA_LOG_PRO_IMP_ARC_EXT = "/mhzap201-web-consulta/faces/LogProImpArcExt5.jsp";
 
     public static final String CONSULTA_TABLA_LOG_PRO_DEN_PEN_OBJ = "/mhzap201-web-consulta/faces/LogProDenPenObj5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_PRO_ACT_JUPE = "/mhzap201-web-consulta/faces/LogProActJupe5.jsp";
 
     public static final String CONSULTA_DETALLE_PERSONA = "/mhzap201-web-consulta/faces/Persona6.jsp";
 
@@ -238,8 +238,6 @@ public class URX2 extends URX {
 
     public static final String CONSULTA_DETALLE_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer6.jsp";
 
-    public static final String CONSULTA_DETALLE_LOG_IMP_UBI = "/mhzap201-web-consulta/faces/LogImpUbi6.jsp";
-
     public static final String CONSULTA_DETALLE_LOG_PRO_ACR_POT_BEN = "/mhzap201-web-consulta/faces/LogProAcrPotBen6.jsp";
 
     public static final String CONSULTA_DETALLE_LOG_PRO_OTO_PEN_APR = "/mhzap201-web-consulta/faces/LogProOtoPenApr6.jsp";
@@ -251,6 +249,8 @@ public class URX2 extends URX {
     public static final String CONSULTA_DETALLE_LOG_PRO_IMP_ARC_EXT = "/mhzap201-web-consulta/faces/LogProImpArcExt6.jsp";
 
     public static final String CONSULTA_DETALLE_LOG_PRO_DEN_PEN_OBJ = "/mhzap201-web-consulta/faces/LogProDenPenObj6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_PRO_ACT_JUPE = "/mhzap201-web-consulta/faces/LogProActJupe6.jsp";
 
     public static final String CONSULTA_ARBOL_UBICACION = "/mhzap201-web-consulta/faces/Ubicacion7.jsp";
 }

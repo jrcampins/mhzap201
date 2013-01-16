@@ -25,6 +25,8 @@ public class TipoAreaConstants {
 
     public static final String COLUMNA_CODIGO_TIPO_AREA = "codigo_tipo_area";
 
+    public static final String COLUMNA_LIMITE_INDICE_CALIDAD_VIDA = "limite_indice_calidad_vida";
+
     public static final String COLUMNA_CODIGO_RECURSO = "codigo_tipo_area";
 
     public static final String COLUMNA_NUMERO_RECURSO = "numero_tipo_area";

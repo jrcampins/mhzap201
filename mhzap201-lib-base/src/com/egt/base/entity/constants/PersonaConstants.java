@@ -274,9 +274,11 @@ public class PersonaConstants {
 
     public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000175L;
 
-    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000176L;
+    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = 201000176L;
 
-    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000177L;
+    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000177L;
+
+    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000178L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_SEXO_PERSONA = 201200101L;
 
@@ -355,6 +357,8 @@ public class PersonaConstants {
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = "persona_con_pension_revocada";
 
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = "persona_con_pension_otorgada";
+
+    public static final String INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = "persona_documentos_pension_otorgada";
 
     public static final String INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = "persona_ultima_actualizacion_en_jupe";
 
