@@ -89,6 +89,7 @@ public class AsistentePaginaActualizacionPersona {
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA, BundleWebui.getString("emitir_persona_con_pension_denegada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA, BundleWebui.getString("emitir_persona_con_pension_revocada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
+            new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA, BundleWebui.getString("emitir_documentos_persona_pension_otorgada")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
             new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
         };
@@ -128,6 +129,8 @@ public class AsistentePaginaActualizacionPersona {
             this.emitirPersonaConPensionRevocada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA) {
             this.emitirPersonaConPensionOtorgada(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA) {
+            this.emitirDocumentosPersonaPensionOtorgada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE) {
             this.emitirUltimaActualizacionPersonaEnJupe(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA) {
@@ -478,6 +481,57 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaOtorgamientoPenHasta = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
+        parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaOtorgamientoPenDesde != null) {
+            args.add(fechaOtorgamientoPenDesde);
+            search += " and fecha_otorgamiento_pen>=?";
+        }
+        if (fechaOtorgamientoPenHasta != null) {
+            args.add(fechaOtorgamientoPenHasta);
+            search += " and fecha_otorgamiento_pen<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirDocumentosPersonaPensionOtorgada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirDocumentosPersonaPensionOtorgada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaOtorgamientoPenDesde = null;
+        Date fechaOtorgamientoPenHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
