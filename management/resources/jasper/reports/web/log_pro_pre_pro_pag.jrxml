@@ -630,7 +630,7 @@
                     height="32"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[RASTROS DE PREPARACION DE PAGOS]]></text>
+                <text><![CDATA[RASTROS DE APROBACION Y OBJECION DE PENSIONES AM]]></text>
             </staticText>
             <staticText>
                 <reportElement

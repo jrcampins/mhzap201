@@ -1952,4 +1952,8 @@ INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre
 VALUES (20896, 0, 'comentarios_objecion_pension', 'Comentarios Objeción Pensión', 'comentarios objeción pensión', NULL, 1, 'comentarios_objecion_pension');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20897, 1, 'fecha_objecion_pension', 'Fecha Objeción Pensión', 'fecha objeción pensión', NULL, 3, 'fecha_objecion_pension');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20898, 1, 'id_log_pro_act_jupe', 'Log Pro Actualización Pensión JUPE', 'log pro actualización pensión jupe', NULL, 5, 'id_log_pro_act_pen_jupe');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20899, 1, 'version_log_pro_act_jupe', 'Versión Log Pro Actualización Pensión JUPE', 'versión log pro actualización pensión jupe', NULL, 5, 'version_log_pro_act_pen_jupe');
 GO

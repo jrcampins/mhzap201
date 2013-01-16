@@ -711,6 +711,8 @@ VALUES (20100000130, 0, 201000001, 201000176, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000131, 0, 201000001, 201000177, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (20100000132, 0, 201000001, 201000178, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000201, 0, 201000002, 201000101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000202, 0, 201000002, 201000102, 0, NULL);
@@ -773,6 +775,8 @@ VALUES (20100000230, 0, 201000002, 201000176, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000231, 0, 201000002, 201000177, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (20100000232, 0, 201000002, 201000178, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000401, 0, 201000004, 201000151, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000402, 0, 201000004, 201000152, 0, NULL);
@@ -827,6 +831,8 @@ VALUES (20100000426, 0, 201000004, 201000176, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000427, 0, 201000004, 201000177, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (20100000428, 0, 201000004, 201000178, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000501, 0, 201000005, 201000101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000502, 0, 201000005, 201000169, 0, NULL);
@@ -847,6 +853,8 @@ VALUES (20100000509, 0, 201000005, 201000176, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000510, 0, 201000005, 201000177, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (20100000511, 0, 201000005, 201000178, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000601, 0, 201000006, 201000101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000602, 0, 201000006, 201000169, 0, NULL);
@@ -866,6 +874,8 @@ INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina
 VALUES (20100000609, 0, 201000006, 201000176, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20100000610, 0, 201000006, 201000177, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (20100000611, 0, 201000006, 201000178, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (20200000101, 0, 202000001, 202000101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
@@ -1279,10 +1289,6 @@ VALUES (33120000501, 0, 331200005, 331200101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (33120000601, 0, 331200006, 331200101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
-VALUES (33130000501, 0, 331300005, 331300101, 0, NULL);
-INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
-VALUES (33130000601, 0, 331300006, 331300101, 0, NULL);
-INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (33210000501, 0, 332100005, 332100101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (33210000601, 0, 332100006, 332100101, 0, NULL);
@@ -1306,4 +1312,8 @@ INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina
 VALUES (33260000501, 0, 332600005, 332600101, 0, NULL);
 INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
 VALUES (33260000601, 0, 332600006, 332600101, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (33270000501, 0, 332700005, 332700101, 0, NULL);
+INSERT INTO pagina_funcion (id_pagina_funcion, version_pagina_funcion, id_pagina, id_funcion, es_funcion_inicial, control_pagina_funcion)
+VALUES (33270000601, 0, 332700006, 332700101, 0, NULL);
 GO

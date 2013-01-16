@@ -966,6 +966,22 @@ CREATE TABLE log_pro_acr_pot_ben
 	fecha_hora_transaccion DATE NOT NULL
 	);
 	
+CREATE TABLE log_pro_act_jupe
+	(
+	id_log_pro_act_jupe NUMBER(19) NOT NULL,
+	version_log_pro_act_jupe NUMBER(19) NOT NULL,
+	id_persona NUMBER(19),
+	codigo_persona VARCHAR2(60),
+	nombre_persona VARCHAR2(200),
+	id_departamento NUMBER(19),
+	id_distrito NUMBER(19),
+	id_barrio NUMBER(19),
+	numero_condicion_pension NUMBER(10),
+	es_procesado NUMBER(10) NOT NULL,
+	observacion VARCHAR2(4000),
+	fecha_hora_transaccion DATE NOT NULL
+	);
+	
 CREATE TABLE log_pro_den_pen_obj
 	(
 	id_log_pro_den_pen_obj NUMBER(19) NOT NULL,
@@ -1641,7 +1657,8 @@ CREATE TABLE tipo_arc_dat_ext
 CREATE TABLE tipo_area
 	(
 	numero_tipo_area NUMBER(10) NOT NULL,
-	codigo_tipo_area VARCHAR2(60) NOT NULL
+	codigo_tipo_area VARCHAR2(60) NOT NULL,
+	limite_indice_calidad_vida NUMBER(7,4)
 	);
 	
 CREATE TABLE tipo_clase_recurso

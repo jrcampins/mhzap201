@@ -1078,6 +1078,24 @@ CREATE TABLE log_pro_acr_pot_ben
 	ON [PRIMARY]
 GO
 	
+CREATE TABLE log_pro_act_jupe
+	(
+	id_log_pro_act_jupe bigint NOT NULL,
+	version_log_pro_act_jupe bigint NOT NULL,
+	id_persona bigint,
+	codigo_persona varchar(30),
+	nombre_persona varchar(100),
+	id_departamento bigint,
+	id_distrito bigint,
+	id_barrio bigint,
+	numero_condicion_pension int,
+	es_procesado int NOT NULL,
+	observacion varchar(256),
+	fecha_hora_transaccion datetime NOT NULL
+	)
+	ON [PRIMARY]
+GO
+	
 CREATE TABLE log_pro_den_pen_obj
 	(
 	id_log_pro_den_pen_obj bigint NOT NULL,
@@ -1841,7 +1859,8 @@ GO
 CREATE TABLE tipo_area
 	(
 	numero_tipo_area int NOT NULL,
-	codigo_tipo_area varchar(30) NOT NULL
+	codigo_tipo_area varchar(30) NOT NULL,
+	limite_indice_calidad_vida decimal(7,4)
 	)
 	ON [PRIMARY]
 GO

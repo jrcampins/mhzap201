@@ -75,6 +75,7 @@ SELECT
 		ubicacion_1x6.numero_tipo_area AS numero_tipo_area_1x6y10,
 	ficha_hogar.numero_tipo_area AS numero_tipo_area,
 		tipo_area_1x7.codigo_tipo_area AS codigo_tipo_area_1x7y2,
+		tipo_area_1x7.limite_indice_calidad_vida AS limite_indice_calidad_vi_1x7y3,
 	ficha_hogar.id_barrio AS id_barrio,
 		ubicacion_1x8.codigo_ubicacion AS codigo_ubicacion_1x8y3,
 		ubicacion_1x8.nombre_ubicacion AS nombre_ubicacion_1x8y4,

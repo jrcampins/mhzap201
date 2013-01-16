@@ -1,492 +1,502 @@
-ALTER TABLE aplicacion DROP CONSTRAINT FK_aplicacion_0001_ZY
+ALTER TABLE aplicacion DROP CONSTRAINT FK_aplicacion_001___
 GO
-ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_0001_ZY
+ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_001___
 GO
-ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_0002_ZY
+ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_002___
 GO
-ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_0003_ZY
+ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_003___
 GO
-ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_0004_ZY
+ALTER TABLE archivo_datos_ext DROP CONSTRAINT FK_archivo_datos_ext_004___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0001_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_001___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0002_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_002___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0003_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_003___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0004_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_004___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0005_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_005___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0006_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_006___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0007_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_007___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0008_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_008___
 GO
-ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_0009_ZY
+ALTER TABLE clase_recurso DROP CONSTRAINT FK_clase_recurso_009___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0001_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_001___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0002_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_002___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0003_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_003___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0004_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_004___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0005_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_005___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0006_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_006___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0007_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_007___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0008_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_008___
 GO
-ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_0009_ZY
+ALTER TABLE clase_recurso_par DROP CONSTRAINT FK_clase_recurso_par_009___
 GO
-ALTER TABLE clase_recurso_sec DROP CONSTRAINT FK_clase_recurso_sec_0001_ZY
+ALTER TABLE clase_recurso_sec DROP CONSTRAINT FK_clase_recurso_sec_001___
 GO
-ALTER TABLE conjunto_segmento DROP CONSTRAINT FK_conjunto_segmento_0001_ZY
+ALTER TABLE conjunto_segmento DROP CONSTRAINT FK_conjunto_segmento_001___
 GO
-ALTER TABLE dominio DROP CONSTRAINT FK_dominio_0001_ZY
+ALTER TABLE dominio DROP CONSTRAINT FK_dominio_001___
 GO
-ALTER TABLE dominio DROP CONSTRAINT FK_dominio_0002_ZY
+ALTER TABLE dominio DROP CONSTRAINT FK_dominio_002___
 GO
-ALTER TABLE dominio DROP CONSTRAINT FK_dominio_0003_ZY
+ALTER TABLE dominio DROP CONSTRAINT FK_dominio_003___
 GO
-ALTER TABLE dominio DROP CONSTRAINT FK_dominio_0004_ZY
+ALTER TABLE dominio DROP CONSTRAINT FK_dominio_004___
 GO
-ALTER TABLE dominio DROP CONSTRAINT FK_dominio_0005_ZY
+ALTER TABLE dominio DROP CONSTRAINT FK_dominio_005___
 GO
-ALTER TABLE dominio_paquete DROP CONSTRAINT FK_dominio_paquete_0001_ZY
+ALTER TABLE dominio_paquete DROP CONSTRAINT FK_dominio_paquete_001___
 GO
-ALTER TABLE dominio_paquete DROP CONSTRAINT FK_dominio_paquete_0002_ZY
+ALTER TABLE dominio_paquete DROP CONSTRAINT FK_dominio_paquete_002___
 GO
-ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_0001_ZY
+ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_001___
 GO
-ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_0002_ZY
+ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_002___
 GO
-ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_0003_ZY
+ALTER TABLE dominio_parametro DROP CONSTRAINT FK_dominio_parametro_003___
 GO
-ALTER TABLE elemento_segmento DROP CONSTRAINT FK_elemento_segmento_0001_ZY
+ALTER TABLE elemento_segmento DROP CONSTRAINT FK_elemento_segmento_001___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0001_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_001___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0002_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_002___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0003_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_003___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0004_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_004___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0005_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_005___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0006_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_006___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0007_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_007___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0008_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_008___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0009_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_009___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0010_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_010___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0011_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_011___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0012_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_012___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0013_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_013___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0014_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_014___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0015_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_015___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0016_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_016___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0017_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_017___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0018_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_018___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0019_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_019___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0020_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_020___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0021_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_021___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0022_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_022___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0023_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_023___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0024_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_024___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0025_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_025___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0026_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_026___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0027_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_027___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0028_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_028___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0029_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_029___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0030_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_030___
 GO
-ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_0031_ZY
+ALTER TABLE ficha_hogar DROP CONSTRAINT FK_ficha_hogar_031___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0001_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_001___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0002_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_002___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0003_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_003___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0004_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_004___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0005_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_005___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0006_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_006___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0007_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_007___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0008_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_008___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0009_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_009___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0010_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_010___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0011_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_011___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0012_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_012___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0013_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_013___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0014_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_014___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0015_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_015___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0016_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_016___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0017_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_017___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0018_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_018___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0019_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_019___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0020_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_020___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0021_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_021___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0022_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_022___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0023_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_023___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0024_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_024___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0025_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_025___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0026_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_026___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0027_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_027___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0028_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_028___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0029_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_029___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0030_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_030___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0031_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_031___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0032_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_032___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0033_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_033___
 GO
-ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_0034_ZY
+ALTER TABLE ficha_persona DROP CONSTRAINT FK_ficha_persona_034___
 GO
-ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_0001_ZY
+ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_001___
 GO
-ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_0002_ZY
+ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_002___
 GO
-ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_0003_ZY
+ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_003___
 GO
-ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_0004_ZY
+ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT FK_filtro_cla_rec_fun_004___
 GO
-ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_0001_ZY
+ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_001___
 GO
-ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_0002_ZY
+ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_002___
 GO
-ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_0003_ZY
+ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_003___
 GO
-ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_0004_ZY
+ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT FK_filtro_cla_rec_par_004___
 GO
-ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_0001_ZY
+ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_001___
 GO
-ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_0002_ZY
+ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_002___
 GO
-ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_0003_ZY
+ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_003___
 GO
-ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_0004_ZY
+ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT FK_filtro_cla_rec_sec_004___
 GO
-ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_0001_ZY
+ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_001___
 GO
-ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_0002_ZY
+ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_002___
 GO
-ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_0003_ZY
+ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_003___
 GO
-ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_0004_ZY
+ALTER TABLE filtro_cla_rec_vin DROP CONSTRAINT FK_filtro_cla_rec_vin_004___
 GO
-ALTER TABLE filtro_funcion DROP CONSTRAINT FK_filtro_funcion_0001_ZY
+ALTER TABLE filtro_funcion DROP CONSTRAINT FK_filtro_funcion_001___
 GO
-ALTER TABLE filtro_funcion DROP CONSTRAINT FK_filtro_funcion_0002_ZY
+ALTER TABLE filtro_funcion DROP CONSTRAINT FK_filtro_funcion_002___
 GO
-ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_0001_ZY
+ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_001___
 GO
-ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_0002_ZY
+ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_002___
 GO
-ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_0003_ZY
+ALTER TABLE filtro_funcion_par DROP CONSTRAINT FK_filtro_funcion_par_003___
 GO
-ALTER TABLE funcion DROP CONSTRAINT FK_funcion_0001_ZY
+ALTER TABLE funcion DROP CONSTRAINT FK_funcion_001___
 GO
-ALTER TABLE funcion DROP CONSTRAINT FK_funcion_0002_ZY
+ALTER TABLE funcion DROP CONSTRAINT FK_funcion_002___
 GO
-ALTER TABLE funcion DROP CONSTRAINT FK_funcion_0003_ZY
+ALTER TABLE funcion DROP CONSTRAINT FK_funcion_003___
 GO
-ALTER TABLE funcion DROP CONSTRAINT FK_funcion_0004_ZY
+ALTER TABLE funcion DROP CONSTRAINT FK_funcion_004___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0001_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_001___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0002_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_002___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0003_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_003___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0004_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_004___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0005_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_005___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0006_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_006___
 GO
-ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_0007_ZY
+ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_007___
 GO
-ALTER TABLE grupo_proceso DROP CONSTRAINT FK_grupo_proceso_0001_ZY
+ALTER TABLE grupo_proceso DROP CONSTRAINT FK_grupo_proceso_001___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0001_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_001___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0002_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_002___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0003_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_003___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0004_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_004___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0005_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_005___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0006_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_006___
 GO
-ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_0007_ZY
+ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_007___
 GO
-ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0001_ZY
+ALTER TABLE log_pro_act_jupe DROP CONSTRAINT FK_log_pro_act_jupe_001___
 GO
-ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0002_ZY
+ALTER TABLE log_pro_act_jupe DROP CONSTRAINT FK_log_pro_act_jupe_002___
 GO
-ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0003_ZY
+ALTER TABLE log_pro_act_jupe DROP CONSTRAINT FK_log_pro_act_jupe_003___
 GO
-ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0004_ZY
+ALTER TABLE log_pro_act_jupe DROP CONSTRAINT FK_log_pro_act_jupe_004___
 GO
-ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_0005_ZY
+ALTER TABLE log_pro_act_jupe DROP CONSTRAINT FK_log_pro_act_jupe_005___
 GO
-ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_0001_ZY
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_001___
 GO
-ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_0002_ZY
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_002___
 GO
-ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_0001_ZY
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_003___
 GO
-ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_0002_ZY
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_004___
 GO
-ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_0003_ZY
+ALTER TABLE log_pro_den_pen_obj DROP CONSTRAINT FK_log_pro_den_pen_obj_005___
 GO
-ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_0004_ZY
+ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_001___
 GO
-ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_0005_ZY
+ALTER TABLE log_pro_imp_arc_ext DROP CONSTRAINT FK_log_pro_imp_arc_ext_002___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0001_ZY
+ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_001___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0002_ZY
+ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_002___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0003_ZY
+ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_003___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0004_ZY
+ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_004___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0005_ZY
+ALTER TABLE log_pro_oto_pen_apr DROP CONSTRAINT FK_log_pro_oto_pen_apr_005___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0006_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_001___
 GO
-ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_0007_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_002___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0001_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_003___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0002_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_004___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0003_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_005___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0004_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_006___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0005_ZY
+ALTER TABLE log_pro_pre_pro_pag DROP CONSTRAINT FK_log_pro_pre_pro_pag_007___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0006_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_001___
 GO
-ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_0007_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_002___
 GO
-ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_0001_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_003___
 GO
-ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_0002_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_004___
 GO
-ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_0003_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_005___
 GO
-ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_0001_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_006___
 GO
-ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_0002_ZY
+ALTER TABLE log_pro_ver_ele_pen DROP CONSTRAINT FK_log_pro_ver_ele_pen_007___
 GO
-ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_0003_ZY
+ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_001___
 GO
-ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_0004_ZY
+ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_002___
 GO
-ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_0005_ZY
+ALTER TABLE objecion_ele_pen DROP CONSTRAINT FK_objecion_ele_pen_003___
 GO
-ALTER TABLE opcion_menu_plus DROP CONSTRAINT FK_opcion_menu_plus_0001_ZY
+ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_001___
 GO
-ALTER TABLE opcion_menu_plus DROP CONSTRAINT FK_opcion_menu_plus_0002_ZY
+ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_002___
 GO
-ALTER TABLE pagina DROP CONSTRAINT FK_pagina_0001_ZY
+ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_003___
 GO
-ALTER TABLE pagina DROP CONSTRAINT FK_pagina_0002_ZY
+ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_004___
 GO
-ALTER TABLE pagina DROP CONSTRAINT FK_pagina_0003_ZY
+ALTER TABLE opcion_menu DROP CONSTRAINT FK_opcion_menu_005___
 GO
-ALTER TABLE pagina DROP CONSTRAINT FK_pagina_0004_ZY
+ALTER TABLE opcion_menu_plus DROP CONSTRAINT FK_opcion_menu_plus_001___
 GO
-ALTER TABLE pagina DROP CONSTRAINT FK_pagina_0005_ZY
+ALTER TABLE opcion_menu_plus DROP CONSTRAINT FK_opcion_menu_plus_002___
 GO
-ALTER TABLE pagina_funcion DROP CONSTRAINT FK_pagina_funcion_0001_ZY
+ALTER TABLE pagina DROP CONSTRAINT FK_pagina_001___
 GO
-ALTER TABLE pagina_funcion DROP CONSTRAINT FK_pagina_funcion_0002_ZY
+ALTER TABLE pagina DROP CONSTRAINT FK_pagina_002___
 GO
-ALTER TABLE pagina_usuario DROP CONSTRAINT FK_pagina_usuario_0001_ZY
+ALTER TABLE pagina DROP CONSTRAINT FK_pagina_003___
 GO
-ALTER TABLE pagina_usuario DROP CONSTRAINT FK_pagina_usuario_0002_ZY
+ALTER TABLE pagina DROP CONSTRAINT FK_pagina_004___
 GO
-ALTER TABLE parametro DROP CONSTRAINT FK_parametro_0001_ZY
+ALTER TABLE pagina DROP CONSTRAINT FK_pagina_005___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0001_ZY
+ALTER TABLE pagina_funcion DROP CONSTRAINT FK_pagina_funcion_001___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0002_ZY
+ALTER TABLE pagina_funcion DROP CONSTRAINT FK_pagina_funcion_002___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0003_ZY
+ALTER TABLE pagina_usuario DROP CONSTRAINT FK_pagina_usuario_001___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0004_ZY
+ALTER TABLE pagina_usuario DROP CONSTRAINT FK_pagina_usuario_002___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0005_ZY
+ALTER TABLE parametro DROP CONSTRAINT FK_parametro_001___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0006_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_001___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0007_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_002___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0008_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_003___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0009_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_004___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0010_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_005___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0011_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_006___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0012_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_007___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0013_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_008___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0014_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_009___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0015_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_010___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_0016_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_011___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0001_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_012___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0002_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_013___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0003_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_014___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0004_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_015___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0005_ZY
+ALTER TABLE persona DROP CONSTRAINT FK_persona_016___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0006_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_001___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0007_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_002___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0008_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_003___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0009_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_004___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0010_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_005___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0011_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_006___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0012_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_007___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0013_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_008___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0014_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_009___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0015_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_010___
 GO
-ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_0016_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_011___
 GO
-ALTER TABLE rastro_funcion DROP CONSTRAINT FK_rastro_funcion_0001_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_012___
 GO
-ALTER TABLE rastro_funcion_par DROP CONSTRAINT FK_rastro_funcion_par_0001_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_013___
 GO
-ALTER TABLE rastro_funcion_par DROP CONSTRAINT FK_rastro_funcion_par_0002_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_014___
 GO
-ALTER TABLE rastro_informe DROP CONSTRAINT FK_rastro_informe_0001_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_015___
 GO
-ALTER TABLE rastro_informe DROP CONSTRAINT FK_rastro_informe_0002_ZY
+ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_016___
 GO
-ALTER TABLE rastro_proceso DROP CONSTRAINT FK_rastro_proceso_0001_ZY
+ALTER TABLE rastro_funcion DROP CONSTRAINT FK_rastro_funcion_001___
 GO
-ALTER TABLE rastro_proceso DROP CONSTRAINT FK_rastro_proceso_0002_ZY
+ALTER TABLE rastro_funcion_par DROP CONSTRAINT FK_rastro_funcion_par_001___
 GO
-ALTER TABLE rol DROP CONSTRAINT FK_rol_0001_ZY
+ALTER TABLE rastro_funcion_par DROP CONSTRAINT FK_rastro_funcion_par_002___
 GO
-ALTER TABLE rol DROP CONSTRAINT FK_rol_0002_ZY
+ALTER TABLE rastro_informe DROP CONSTRAINT FK_rastro_informe_001___
 GO
-ALTER TABLE rol_aplicacion DROP CONSTRAINT FK_rol_aplicacion_0001_ZY
+ALTER TABLE rastro_informe DROP CONSTRAINT FK_rastro_informe_002___
 GO
-ALTER TABLE rol_aplicacion DROP CONSTRAINT FK_rol_aplicacion_0002_ZY
+ALTER TABLE rastro_proceso DROP CONSTRAINT FK_rastro_proceso_001___
 GO
-ALTER TABLE rol_filtro_funcion DROP CONSTRAINT FK_rol_filtro_funcion_0001_ZY
+ALTER TABLE rastro_proceso DROP CONSTRAINT FK_rastro_proceso_002___
 GO
-ALTER TABLE rol_filtro_funcion DROP CONSTRAINT FK_rol_filtro_funcion_0002_ZY
+ALTER TABLE rol DROP CONSTRAINT FK_rol_001___
 GO
-ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_0001_ZY
+ALTER TABLE rol DROP CONSTRAINT FK_rol_002___
 GO
-ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_0002_ZY
+ALTER TABLE rol_aplicacion DROP CONSTRAINT FK_rol_aplicacion_001___
 GO
-ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_0003_ZY
+ALTER TABLE rol_aplicacion DROP CONSTRAINT FK_rol_aplicacion_002___
 GO
-ALTER TABLE rol_pagina DROP CONSTRAINT FK_rol_pagina_0001_ZY
+ALTER TABLE rol_filtro_funcion DROP CONSTRAINT FK_rol_filtro_funcion_001___
 GO
-ALTER TABLE rol_pagina DROP CONSTRAINT FK_rol_pagina_0002_ZY
+ALTER TABLE rol_filtro_funcion DROP CONSTRAINT FK_rol_filtro_funcion_002___
 GO
-ALTER TABLE rol_usuario DROP CONSTRAINT FK_rol_usuario_0001_ZY
+ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_001___
 GO
-ALTER TABLE rol_usuario DROP CONSTRAINT FK_rol_usuario_0002_ZY
+ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_002___
 GO
-ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_0001_ZY
+ALTER TABLE rol_funcion DROP CONSTRAINT FK_rol_funcion_003___
 GO
-ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_0002_ZY
+ALTER TABLE rol_pagina DROP CONSTRAINT FK_rol_pagina_001___
 GO
-ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_0003_ZY
+ALTER TABLE rol_pagina DROP CONSTRAINT FK_rol_pagina_002___
 GO
-ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_0004_ZY
+ALTER TABLE rol_usuario DROP CONSTRAINT FK_rol_usuario_001___
 GO
-ALTER TABLE usuario DROP CONSTRAINT FK_usuario_0001_ZY
+ALTER TABLE rol_usuario DROP CONSTRAINT FK_rol_usuario_002___
 GO
-ALTER TABLE visita_censo DROP CONSTRAINT FK_visita_censo_0001_ZY
+ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_001___
 GO
-ALTER TABLE visita_censo DROP CONSTRAINT FK_visita_censo_0002_ZY
+ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_002___
+GO
+ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_003___
+GO
+ALTER TABLE ubicacion DROP CONSTRAINT FK_ubicacion_004___
+GO
+ALTER TABLE usuario DROP CONSTRAINT FK_usuario_001___
+GO
+ALTER TABLE visita_censo DROP CONSTRAINT FK_visita_censo_001___
+GO
+ALTER TABLE visita_censo DROP CONSTRAINT FK_visita_censo_002___
 GO

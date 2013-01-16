@@ -27,6 +27,12 @@ echo drop directory %UPPER_CASE_PROJECT%_ARCHIVES;>>%sql%
 echo drop directory %UPPER_CASE_PROJECT%_ATTACHMENTS;>>%sql%
 echo drop directory %UPPER_CASE_PROJECT%_DATOS;>>%sql%
 echo drop directory %UPPER_CASE_PROJECT%_SPOOL;>>%sql%
+echo begin>>%sql%
+echo     dbms_network_acl_admin.drop_acl(>>%sql%
+echo         acl =^> 'Resolve_Access.xml'>>%sql%
+echo         );>>%sql%
+echo end;>>%sql%
+echo />>%sql%
 
 call sqlplus %sql%
 del %sql%

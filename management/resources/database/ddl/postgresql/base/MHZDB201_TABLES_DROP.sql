@@ -54,6 +54,7 @@ DROP TABLE log_imp_pot CASCADE;
 DROP TABLE log_imp_sub CASCADE;
 DROP TABLE log_imp_ubi CASCADE;
 DROP TABLE log_pro_acr_pot_ben CASCADE;
+DROP TABLE log_pro_act_jupe CASCADE;
 DROP TABLE log_pro_den_pen_obj CASCADE;
 DROP TABLE log_pro_imp_arc_ext CASCADE;
 DROP TABLE log_pro_oto_pen_apr CASCADE;

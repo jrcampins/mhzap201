@@ -229,6 +229,8 @@ VALUES (30101012, 0, 30101, 201000176, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30101013, 0, 30101, 201000177, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
+VALUES (30101014, 0, 30101, 201000178, NULL);
+INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30102001, 0, 30102, 201000101, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30102002, 0, 30102, 201000151, NULL);
@@ -285,6 +287,8 @@ VALUES (30102027, 0, 30102, 201000176, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30102028, 0, 30102, 201000177, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
+VALUES (30102029, 0, 30102, 201000178, NULL);
+INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30104001, 0, 30104, 201000101, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30104002, 0, 30104, 201000169, NULL);
@@ -304,6 +308,8 @@ INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion
 VALUES (30104009, 0, 30104, 201000176, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30104010, 0, 30104, 201000177, NULL);
+INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
+VALUES (30104011, 0, 30104, 201000178, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30116001, 0, 30116, 201000101, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
@@ -366,6 +372,8 @@ INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion
 VALUES (30116030, 0, 30116, 201000176, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30116031, 0, 30116, 201000177, NULL);
+INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
+VALUES (30116032, 0, 30116, 201000178, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)
 VALUES (30201001, 0, 30201, 320100101, NULL);
 INSERT INTO rol_funcion (id_rol_funcion, version_rol_funcion, id_rol, id_funcion, id_conjunto_segmento)

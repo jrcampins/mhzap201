@@ -280,4 +280,6 @@ INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dom
 VALUES (332500103, 0, 3325001, 3);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (332600103, 0, 3326001, 3);
+INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
+VALUES (332700103, 0, 3327001, 3);
 GO

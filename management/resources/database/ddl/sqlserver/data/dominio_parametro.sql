@@ -684,4 +684,8 @@ INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, 
 VALUES (332600101, 0, 3326001, 20891, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (332600102, 0, 3326001, 20895, 2, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (332700101, 0, 3327001, 20898, 1, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (332700102, 0, 3327001, 20899, 2, NULL);
 GO

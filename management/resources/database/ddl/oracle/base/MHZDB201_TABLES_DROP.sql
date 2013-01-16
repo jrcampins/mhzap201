@@ -54,6 +54,7 @@ exec xsp.dropone('TABLE','log_imp_pot');
 exec xsp.dropone('TABLE','log_imp_sub');
 exec xsp.dropone('TABLE','log_imp_ubi');
 exec xsp.dropone('TABLE','log_pro_acr_pot_ben');
+exec xsp.dropone('TABLE','log_pro_act_jupe');
 exec xsp.dropone('TABLE','log_pro_den_pen_obj');
 exec xsp.dropone('TABLE','log_pro_imp_arc_ext');
 exec xsp.dropone('TABLE','log_pro_oto_pen_apr');

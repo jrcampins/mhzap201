@@ -107,6 +107,9 @@ ALTER TABLE log_pro_acr_pot_ben MODIFY (version_log_pro_acr_pot_ben DEFAULT NULL
 ALTER TABLE log_pro_acr_pot_ben MODIFY (fecha_registro_pot_ben DEFAULT NULL);
 ALTER TABLE log_pro_acr_pot_ben MODIFY (es_procesado DEFAULT NULL);
 ALTER TABLE log_pro_acr_pot_ben MODIFY (fecha_hora_transaccion DEFAULT NULL);
+ALTER TABLE log_pro_act_jupe MODIFY (version_log_pro_act_jupe DEFAULT NULL);
+ALTER TABLE log_pro_act_jupe MODIFY (es_procesado DEFAULT NULL);
+ALTER TABLE log_pro_act_jupe MODIFY (fecha_hora_transaccion DEFAULT NULL);
 ALTER TABLE log_pro_den_pen_obj MODIFY (version_log_pro_den_pen_obj DEFAULT NULL);
 ALTER TABLE log_pro_den_pen_obj MODIFY (es_procesado DEFAULT NULL);
 ALTER TABLE log_pro_den_pen_obj MODIFY (fecha_hora_transaccion DEFAULT NULL);

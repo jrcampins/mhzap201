@@ -107,6 +107,9 @@ ALTER TABLE log_pro_acr_pot_ben ALTER COLUMN version_log_pro_acr_pot_ben SET DEF
 ALTER TABLE log_pro_acr_pot_ben ALTER COLUMN fecha_registro_pot_ben SET DEFAULT (current_date);
 ALTER TABLE log_pro_acr_pot_ben ALTER COLUMN es_procesado SET DEFAULT (0);
 ALTER TABLE log_pro_acr_pot_ben ALTER COLUMN fecha_hora_transaccion SET DEFAULT (now());
+ALTER TABLE log_pro_act_jupe ALTER COLUMN version_log_pro_act_jupe SET DEFAULT (0);
+ALTER TABLE log_pro_act_jupe ALTER COLUMN es_procesado SET DEFAULT (0);
+ALTER TABLE log_pro_act_jupe ALTER COLUMN fecha_hora_transaccion SET DEFAULT (now());
 ALTER TABLE log_pro_den_pen_obj ALTER COLUMN version_log_pro_den_pen_obj SET DEFAULT (0);
 ALTER TABLE log_pro_den_pen_obj ALTER COLUMN es_procesado SET DEFAULT (0);
 ALTER TABLE log_pro_den_pen_obj ALTER COLUMN fecha_hora_transaccion SET DEFAULT (now());

@@ -31,7 +31,8 @@ SELECT
 	ubicacion.secuencia_ubicacion AS secuencia_ubicacion,
 	ubicacion.clave_ubicacion AS clave_ubicacion,
 	ubicacion.numero_tipo_area AS numero_tipo_area,
-		tipo_area_1x4.codigo_tipo_area AS codigo_tipo_area_1x4y2
+		tipo_area_1x4.codigo_tipo_area AS codigo_tipo_area_1x4y2,
+		tipo_area_1x4.limite_indice_calidad_vida AS limite_indice_calidad_vi_1x4y3
 FROM
 	ubicacion ubicacion
 	LEFT OUTER JOIN ubicacion ubicacion_1x1 ON ubicacion_1x1.id_ubicacion = ubicacion.id_ubicacion_superior

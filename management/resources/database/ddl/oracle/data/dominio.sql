@@ -271,10 +271,12 @@ VALUES (3321001, 0, 'log_pro_acr_pot_ben', 'Rastros de Acreditación de Potencial
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3322001, 0, 'log_pro_oto_pen_apr', 'Rastros de Otorgamiento de Pensiones', NULL, NULL, 1, 33220, 332200101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
-VALUES (3323001, 0, 'log_pro_pre_pro_pag', 'Rastros de Preparación de Pagos', NULL, NULL, 1, 33230, 332300101, NULL, 3);
+VALUES (3323001, 0, 'log_pro_pre_pro_pag', 'Rastros de Aprobación y Objeción de Pensiones AM', NULL, NULL, 1, 33230, 332300101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3324001, 0, 'log_pro_ver_ele_pen', 'Rastros de Verificación de Elegibles', NULL, NULL, 1, 33240, 332400101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3325001, 0, 'log_pro_imp_arc_ext', 'Rastros de Importación de Archivos Externos', NULL, NULL, 1, 33250, 332500101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3326001, 0, 'log_pro_den_pen_obj', 'Rastros de Denegación de Pensiones', NULL, NULL, 1, 33260, 332600101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3327001, 0, 'log_pro_act_jupe', 'Rastros de Actualización de Pensiones en JUPE', NULL, NULL, 1, 33270, 332700101, NULL, 3);

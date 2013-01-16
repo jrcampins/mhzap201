@@ -21,9 +21,9 @@ function actualizar_pen_en_jupe(param varchar2) return varchar2 is
 
     --Agregado
     id_reg number;
-    type log_proceso is table of log_pro_act_pen_jupe%rowtype;
+    type log_proceso is table of log_pro_act_jupe%rowtype;
     table_log log_proceso;
-    reg log_pro_act_pen_jupe%rowtype;   
+    reg log_pro_act_jupe%rowtype;   
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
     mensaje varchar2(2000);
@@ -46,7 +46,7 @@ function actualizar_pen_en_jupe(param varchar2) return varchar2 is
     for row in c_persona loop
         --DBMS_OUTPUT.PUT_LINE('recorriendo '||row.nombre_persona);
         id_reg:=utils.bigintid();                                                              
-        insert into log_pro_act_pen_jupe values (
+        insert into log_pro_act_jupe values (
             id_reg,
             0,
             row.id_persona,
@@ -304,7 +304,7 @@ function actualizar_pen_en_jupe(param varchar2) return varchar2 is
                 --Agregado se actualiza el log correspondiente
                 --Como no estamos recorriendo el log, para saber el registro que se procesa se actualiza el que no tiene observacion
                    total_act:=total_act+1;
-                   update log_pro_act_pen_jupe
+                   update log_pro_act_jupe
                    set observacion=mensaje,
                    es_procesado=1,
                    fecha_hora_transaccion=current_timestamp
@@ -315,7 +315,7 @@ function actualizar_pen_en_jupe(param varchar2) return varchar2 is
         WHEN OTHERS THEN
             total_errores:=total_errores+1;
             mensaje:=SQLERRM;
-            update log_pro_act_pen_jupe
+            update log_pro_act_jupe
             set observacion=mensaje,
             es_procesado=0,
             fecha_hora_transaccion=current_timestamp

@@ -118,6 +118,7 @@
     <field name="numero_tipo_area_1x5y10" class="java.lang.Integer"/>
     <field name="numero_tipo_area" class="java.lang.Integer"/>
     <field name="codigo_tipo_area_1x6y2" class="java.lang.String"/>
+    <field name="limite_indice_calidad_vi_1x6y3" class="java.math.BigDecimal"/>
     <field name="id_barrio" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x7y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x7y4" class="java.lang.String"/>

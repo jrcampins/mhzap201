@@ -114,6 +114,7 @@ SELECT
 		ubicacion_1x8.numero_tipo_area AS numero_tipo_area_1x8y10,
 	ficha_persona.numero_tipo_area_lugar_nac AS numero_tipo_area_lugar_nac,
 		tipo_area_1x9.codigo_tipo_area AS codigo_tipo_area_1x9y2,
+		tipo_area_1x9.limite_indice_calidad_vida AS limite_indice_calidad_vi_1x9y3,
 	ficha_persona.numero_idioma_hogar AS numero_idioma_hogar,
 		idioma_hogar_1x10.codigo_idioma_hogar AS codigo_idioma_hogar_1x10y2,
 	ficha_persona.otro_idioma_hogar AS otro_idioma_hogar,

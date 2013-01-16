@@ -36,10 +36,29 @@ echo "create or replace directory ${UPPER_CASE_PROJECT}_SPOOL as '$spool';" >> $
 echo "grant connect, DBA to $dbuser;" >> $sql
 echo "grant create any table to $dbuser;" >> $sql
 echo "grant execute on SYS.UTL_FILE to $dbuser;" >> $sql
+echo "grant execute on SYS.UTL_HTTP to $dbuser;" >> $sql
 echo "grant read, write on directory ${UPPER_CASE_PROJECT}_ARCHIVES to $dbuser;" >> $sql
 echo "grant read, write on directory ${UPPER_CASE_PROJECT}_ATTACHMENTS to $dbuser;" >> $sql
 echo "grant read, write on directory ${UPPER_CASE_PROJECT}_DATOS to $dbuser;" >> $sql
 echo "grant read, write on directory ${UPPER_CASE_PROJECT}_SPOOL to $dbuser;" >> $sql
+echo "begin" >> $sql
+echo "    dbms_network_acl_admin.create_acl(" >> $sql
+echo "        acl => 'Resolve_Access.xml'," >> $sql
+echo "        description => 'Resolve Network Access using UTL_INADDR'," >> $sql
+echo "        principal => '$dbuser'," >> $sql
+echo "        is_grant => TRUE," >> $sql
+echo "        privilege => 'connect'," >> $sql
+echo "        start_date => null," >> $sql
+echo "        end_date => null" >> $sql
+echo "        );" >> $sql
+echo "    dbms_network_acl_admin.assign_acl(" >> $sql
+echo "        acl => 'Resolve_Access.xml'," >> $sql
+echo "        host => '*'," >> $sql
+echo "        lower_port => null," >> $sql
+echo "        upper_port => null" >> $sql
+echo "        );" >> $sql
+echo "end;" >> $sql
+echo "/" >> $sql
 unset SQLPATH
 xs1="$scriptpath/sqlplus.sh"
 xs2="$sql"
