@@ -16,7 +16,11 @@ import org.apache.commons.lang.StringUtils;
 
 public class DBUtils {
 
-    private static final String SUFIJO = "_zy"; // _egt_com_ve
+    private static final String[] PREFIJOS = new String[]{"cc_", "tc_", "ck_", "fk_", "pk_", "uk_", "uq_"};
+
+    private static final String SUFIJO = "___";
+
+    private static final String SEPARADORES = "|°¬!\"#$%&/()='?\\¿¡+*~{}[]^<>,;.:- \b\t\n\f\r\u000B";
 
     /**
      * Busca el nombre del constraint en el mensaje que envia el RDBMS cuando se produce un conflicto
@@ -27,22 +31,23 @@ public class DBUtils {
      * @return Si se consigue, el nombre del constraint; de lo contratio retorna null
      */
     public static String getConstraintMessageKey(String message, int status) {
-        String value = null;
-        if (!StringUtils.isEmpty(StringUtils.trimToNull(message))) {
-            int i;
-            int j = StringUtils.indexOfIgnoreCase(message, SUFIJO);
-            if (j != -1) {
-                String c = StringUtils.substring(message, j, j + 1);
-                for (i = j; i >= 0 && (StringUtils.isAlphanumeric(c) || c.equalsIgnoreCase("_")); i--, c = StringUtils.substring(message, i, i + 1)) {
+        String trimmed = StringUtils.trimToNull(message);
+        if (trimmed != null) {
+            String[] tokens = StringUtils.split(trimmed, SEPARADORES);
+            if (tokens != null && tokens.length > 0) {
+                String key;
+                for (int i = 0; i < tokens.length; i++) {
+                    key = tokens[i].toLowerCase();
+                    if (key.endsWith(SUFIJO) && StringUtils.startsWithAny(key, PREFIJOS)) {
+                        if (status == 1 && key.startsWith("fk_")) {
+                            key += "_" + status;
+                        }
+                        return "<" + key + ">";
+                    }
                 }
-                value = StringUtils.substring(message, i + 1, j + SUFIJO.length());
-                if (StringUtils.substring(value, 0, 2).equalsIgnoreCase("fk") && status == 1) {
-                    value = value + "_" + status;
-                }
-                value = "<" + value.toLowerCase() + ">";
             }
         }
-        return value;
+        return null;
     }
 
     public static String getTransactionLabel(int status) {
