@@ -39,7 +39,7 @@ SELECT persona.codigo_persona AS cedula, persona.nombre_persona,
     fh.nombre_jefe_hogar, fh.numero_cedula_jefe_hogar, fh.direccion AS
     referencia_casa, pb.numero_telefono_resp_hogar, pb.nombre_referente,
     COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono,   
-    toep.codigo_tipo_obj_ele_pen||' : '||pde.nombre_proveedor_dat_ext AS objeciones_elegibilidad
+    toep.codigo_tipo_obj_ele_pen||' : '||pde.nombre_proveedor_dat_ext||NVL(' '||oep.observaciones,'.') AS objeciones_elegibilidad
 FROM persona persona
    LEFT JOIN potencial_ben pb ON pb.id_persona =
        persona.id_persona

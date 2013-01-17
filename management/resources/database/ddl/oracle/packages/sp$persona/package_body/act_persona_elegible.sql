@@ -9,6 +9,7 @@ function act_persona_elegible(persona_consultada number) return number is
     condicion number := 0;
     conta_objeciones number :=0;
     retcode number;
+    resultado varchar2(4000);
     err_number constant number := -20000; -- an integer in the range -20000..-20999
     msg_string varchar2(2000); -- a character string of at most 2048 bytes
 begin
@@ -19,6 +20,9 @@ begin
             msg_string := 'persona ' || persona_consultada || ' no existe ';
             raise_application_error(err_number, msg_string, true);
     end;
+    --Nuevo: Se verifican objeciones de elegibilidad utilizando WS
+    resultado:=verif_ws_sinarh_jupe(row_persona.codigo_persona,row_persona.id_persona);
+    
     --Se buscan las objeciones que tiene la persona
     for row_objecion in (
         select * from objecion_ele_pen 

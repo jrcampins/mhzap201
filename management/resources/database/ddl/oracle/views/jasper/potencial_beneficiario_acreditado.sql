@@ -42,6 +42,6 @@ WHERE (pb.numero_condicion_censo=3
   AND pb.id_ficha_persona is not null
   AND fh.indice_calidad_vida<(select limite_indice_calidad_vida from parametro_global)
   AND pb.es_paraguayo_natural=1
-  AND utils.years_since(pb.fecha_nacimiento)>65
+  AND utils.years_since(pb.fecha_nacimiento)>=65
 ORDER BY pb.numero_tipo_reg_pot_ben,pb.fecha_registro_pot_ben, pb.id_departamento,
     pb.id_distrito, pb.id_barrio, pb.nombre_potencial_ben;
