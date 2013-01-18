@@ -17,10 +17,14 @@ ORAPASSWORD="$REPLY"
 sql="${scriptpath}/${scriptname}.sql"
 [ -f "$sql" ] && rm "$sql"
 echo "drop user $dbuser cascade;" >> $sql
+echo "commit;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_ARCHIVES;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_ATTACHMENTS;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_DATOS;" >> $sql
 echo "drop directory ${UPPER_CASE_PROJECT}_SPOOL;" >> $sql
+echo "commit;" >> $sql
+echo "drop tablespace ${UPPER_CASE_PROJECT}TS1 including contents and datafiles;" >> $sql
+echo "commit;" >> $sql
 echo "begin" >> $sql
 echo "    dbms_network_acl_admin.drop_acl(" >> $sql
 echo "        acl => 'Resolve_Access.xml'" >> $sql
