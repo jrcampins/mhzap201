@@ -2,50 +2,95 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona_cuadro_resumen_pension" pageWidth="612" pageHeight="1008" columnWidth="563" leftMargin="25" rightMargin="24" topMargin="20" bottomMargin="20">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="24"/>
 	<property name="ireport.y" value="0"/>
+	<property name="ireport.callouts" value="##Thu Jan 17 22:15:36 VET 2013"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
-        </parameter>
+	<parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+	</parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[select * from persona_cuadro_resumen_pension]]>
+		<![CDATA[select * from cuadro_resumen_3]]>
 	</queryString>
-	<field name="cedula" class="java.lang.String"/>
-	<field name="nombre_persona" class="java.lang.String"/>
-	<field name="edad" class="java.lang.Double"/>
-	<field name="departamento" class="java.lang.String"/>
-	<field name="distrito" class="java.lang.String"/>
-	<field name="barrio" class="java.lang.String"/>
-	<field name="direccion" class="java.lang.String"/>
-	<field name="codigo_estado_civil" class="java.lang.String"/>
-	<field name="codigo_condicion_pension" class="java.lang.String"/>
-	<field name="codigo_sexo_persona" class="java.lang.String"/>
-	<field name="numero_cedula" class="java.lang.Integer"/>
-	<field name="fecha_solicitud_pension" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Long"/>
-	<field name="indice_calidad_vida" class="java.math.BigDecimal"/>
-	<field name="nombre_jefe_hogar" class="java.lang.String"/>
-	<field name="numero_cedula_jefe_hogar" class="java.lang.Integer"/>
-	<field name="referencia_casa" class="java.lang.String"/>
-	<field name="numero_telefono_responsable_hogar" class="java.lang.String"/>
-	<field name="nombre_referente" class="java.lang.String"/>
-	<field name="numero_telefono" class="java.lang.String"/>
-	<field name="observaciones" class="java.lang.String"/>
+	<field name="ANHO" class="java.math.BigDecimal"/>
+	<field name="DEPARTAMENTO" class="java.lang.String"/>
+	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
+	<field name="DISTRITO" class="java.lang.String"/>
+	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
+	<field name="NUMERO_TIPO_AREA" class="java.math.BigDecimal"/>
+	<field name="CODIGO_TIPO_AREA" class="java.lang.String"/>
+	<field name="TOTAL_POR_CENSAR" class="java.math.BigDecimal"/>
+	<field name="TOTAL_CENSADOS" class="java.math.BigDecimal"/>
+	<field name="TOTAL_NO_CENSADOS" class="java.math.BigDecimal"/>
+	<field name="TOTAL_POT_BEN" class="java.math.BigDecimal"/>
+	<field name="TOTAL_POT_BEN_CON_CEDULA" class="java.math.BigDecimal"/>
+	<field name="TOTAL_POT_BEN_SIN_CEDULA" class="java.math.BigDecimal"/>
+	<field name="TOTAL_NO_POT_BEN" class="java.math.BigDecimal"/>
+	<field name="TOTAL_CENSADO_VALIDADO" class="java.math.BigDecimal"/>
+	<field name="TOTAL_BEN_ELEGIBLE" class="java.math.BigDecimal"/>
+	<field name="TOTAL_BEN_NO_ELEGIBLE" class="java.math.BigDecimal"/>
+	<field name="TOTAL_POR_VALIDAR" class="java.math.BigDecimal"/>
+	<field name="TOTAL_VALIDADO" class="java.math.BigDecimal"/>
+	<field name="TOTAL_INVALIDADO" class="java.math.BigDecimal"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
-		<variableExpression><![CDATA[$F{cedula}]]></variableExpression>
+		<variableExpression><![CDATA[]]></variableExpression>
 	</variable>
 	<variable name="total_personas_solicitantes" class="java.lang.Integer" calculation="Count">
-		<variableExpression><![CDATA[$F{numero_cedula}]]></variableExpression>
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="total_ent_cen" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_POR_CENSAR}]]></variableExpression>
+	</variable>
+	<variable name="total_cen" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_CENSADOS}]]></variableExpression>
+	</variable>
+	<variable name="total_no_cen" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_NO_CENSADOS}]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_POT_BEN}]]></variableExpression>
+	</variable>
+	<variable name="total_con_ci" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_POT_BEN_CON_CEDULA}]]></variableExpression>
+	</variable>
+	<variable name="total_sin_ci" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_POT_BEN_SIN_CEDULA}]]></variableExpression>
+	</variable>
+	<variable name="total_no_pb" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_NO_POT_BEN}]]></variableExpression>
+	</variable>
+	<variable name="total_val" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_VALIDADO}]]></variableExpression>
+	</variable>
+	<variable name="total_ben" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_BEN_ELEGIBLE}]]></variableExpression>
+	</variable>
+	<variable name="total_no_ben" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_BEN_NO_ELEGIBLE}]]></variableExpression>
+	</variable>
+	<variable name="porc_amp" class="java.lang.Double">
+		<variableExpression><![CDATA[new Double((($V{total_con_ci}.doubleValue()+$V{total_sin_ci}.doubleValue())/$V{total_ent_cen}.doubleValue())*100)]]></variableExpression>
+	</variable>
+	<variable name="porc_cen" class="java.lang.Double">
+		<variableExpression><![CDATA[new Double($V{total_cen}.doubleValue()/$V{total_ent_cen}.doubleValue())*100]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="porc_amp_ci" class="java.lang.Double">
+		<variableExpression><![CDATA[new Double(($V{total_con_ci}.doubleValue()/$V{total_ent_cen}.doubleValue())*100)]]></variableExpression>
+	</variable>
+	<variable name="porc_amp_ci_ben" class="java.lang.Double">
+		<variableExpression><![CDATA[new Double(($V{total_ben}.doubleValue()/$V{total_ent_cen}.doubleValue())*100)]]></variableExpression>
 	</variable>
 	<group name="grupo_distrito_anho" isStartNewPage="true" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{distrito}+$F{anho}]]></groupExpression>
+		<groupExpression><![CDATA[]]></groupExpression>
 		<groupHeader>
-			<band height="208" splitType="Stretch">
+			<band height="207" splitType="Stretch">
 				<rectangle>
 					<reportElement key="rectangle-1" x="2" y="4" width="559" height="114" backcolor="#CCCCCC"/>
 					<graphicElement>
@@ -150,11 +195,11 @@
  BARRIO]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement key="textField-3" x="160" y="101" width="242" height="12"/>
+					<reportElement key="textField-3" x="78" y="85" width="423" height="12"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="8" isBold="true" isItalic="true" />
+						<font fontName="Arial" size="8" isBold="true" isItalic="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: " + $F{anho}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["DEPARTAMENTO: "+$F{DEPARTAMENTO}+"    DISTRITO: " + $F{DISTRITO} + " - AÑO: " +$F{ANHO}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="436" y="34" width="65" height="13"/>
@@ -400,12 +445,118 @@ BENEFICIARIO]]></text>
 	</columnHeader>
 	<detail>
 		<band height="15" splitType="Stretch">
+			<rectangle>
+				<reportElement x="134" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="134" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="184" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="234" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="284" y="0" width="25" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="2" y="0" width="132" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="333" y="0" width="25" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="358" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="408" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="458" y="0" width="52" height="15"/>
+			</rectangle>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField" x="4" y="1" width="131" height="12"/>
+				<reportElement key="textField" x="135" y="1" width="49" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_POR_CENSAR}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="510" y="0" width="52" height="15"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="184" y="1" width="50" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_CENSADOS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="234" y="1" width="50" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_NO_CENSADOS}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="284" y="1" width="25" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_POT_BEN}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="333" y="1" width="25" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_POT_BEN_SIN_CEDULA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="358" y="1" width="50" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_NO_POT_BEN}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="408" y="1" width="50" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_VALIDADO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="458" y="1" width="52" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_BEN_ELEGIBLE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="510" y="1" width="52" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_BEN_NO_ELEGIBLE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" mode="Transparent" x="7" y="0" width="127" height="15"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="309" y="0" width="24" height="15"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="309" y="1" width="25" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_POT_BEN_CON_CEDULA}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -416,20 +567,152 @@ BENEFICIARIO]]></text>
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="22" splitType="Stretch">
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="446" height="16" backcolor="#CCCCCC"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false" />
+		<band height="108" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="0" width="132" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="234" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="284" y="0" width="25" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="309" y="0" width="24" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="333" y="0" width="25" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="358" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="408" y="0" width="50" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="458" y="0" width="52" height="15"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="510" y="0" width="52" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="7" y="0" width="117" height="15"/>
+				<textElement>
+					<font size="11" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de personas solicitantes acreditadas sin objeciones:  " + $V{total_personas_solicitantes}]]></textFieldExpression>
+				<text><![CDATA[TOTAL GENERAL]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="134" y="0" width="50" height="15"/>
+			</rectangle>
+			<textField>
+				<reportElement x="134" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_ent_cen}]]></textFieldExpression>
 			</textField>
-			<line>
-				<reportElement key="line-1" x="11" y="3" width="550" height="1"/>
-				<graphicElement>
-					<pen lineWidth="1.0" lineStyle="Double"/>
-				</graphicElement>
-			</line>
+			<rectangle>
+				<reportElement x="184" y="0" width="50" height="15"/>
+			</rectangle>
+			<textField>
+				<reportElement x="184" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_cen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_no_cen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="25" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="309" y="0" width="24" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_con_ci}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="24" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_sin_ci}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="0" width="51" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_no_pb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="0" width="50" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_val}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="52" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_ben}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="510" y="0" width="51" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{total_no_ben}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="12" y="39" width="446" height="16" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[ "% de Censados del Listado a Censar : "+new DecimalFormat("0.0").format($V{porc_cen})+"%"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="19" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[RESUMEN]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="12" y="55" width="446" height="16" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[ "% de Censados que calificó como AMP : "+new DecimalFormat("0.0").format($V{porc_amp})+"%"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="12" y="71" width="446" height="16" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[ "% de Censados que calificó como AMP con Cédula: "+new DecimalFormat("0.0").format($V{porc_amp_ci})+"%"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="12" y="87" width="446" height="16" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[ "% de Censados que calificó como AMP con Cédula Beneficiario: "+new DecimalFormat("0.0").format($V{porc_amp_ci_ben})+"%"]]></textFieldExpression>
+			</textField>
 		</band>
 	</summary>
 </jasperReport>

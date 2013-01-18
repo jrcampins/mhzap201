@@ -45,6 +45,7 @@ begin
     where id_ficha_hogar=id_ficha;
     --Se actualiz el icv de las personas asociadas
     for row_ficha_persona in (select * from ficha_persona where id_ficha_hogar=id_ficha) loop
+        dbms_output.put_line('probando'||row_ficha_persona.id_ficha_persona);
         update persona
         set indice_calidad_vida=icv
         where id_ficha_persona=row_ficha_persona.id_ficha_persona;
