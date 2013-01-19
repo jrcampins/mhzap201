@@ -11,7 +11,7 @@ CREATE TABLE aplicacion
 	es_publica int NOT NULL,
 	id_grupo_aplicacion bigint
 	);
-	
+
 CREATE TABLE archivo_datos_ext
 	(
 	id_archivo_datos_ext bigint NOT NULL,
@@ -29,61 +29,61 @@ CREATE TABLE archivo_datos_ext
 	fecha_hora_ultima_importacion timestamp with time zone,
 	id_usuario_ultima_importacion bigint
 	);
-	
+
 CREATE TABLE causa_den_pension
 	(
 	numero_causa_den_pension int NOT NULL,
 	codigo_causa_den_pension varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE causa_den_recl_cen
 	(
 	numero_causa_den_recl_cen int NOT NULL,
 	codigo_causa_den_recl_cen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE causa_den_reco_pen
 	(
 	numero_causa_den_reco_pen int NOT NULL,
 	codigo_causa_den_reco_pen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE causa_impedimento
 	(
 	numero_causa_impedimento int NOT NULL,
 	codigo_causa_impedimento varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE causa_inv_censo
 	(
 	numero_causa_inv_censo int NOT NULL,
 	codigo_causa_inv_censo varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE causa_rev_pension
 	(
 	numero_causa_rev_pension int NOT NULL,
 	codigo_causa_rev_pension varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE clase_enf_acc
 	(
 	numero_clase_enf_acc int NOT NULL,
 	codigo_clase_enf_acc varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE clase_enf_cronica
 	(
 	numero_clase_enf_cronica int NOT NULL,
 	codigo_clase_enf_cronica varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE clase_impedimento
 	(
 	numero_clase_impedimento int NOT NULL,
 	codigo_clase_impedimento varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE clase_recurso
 	(
 	id_clase_recurso bigint NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE clase_recurso
 	es_enumerador_con_numero int NOT NULL,
 	alias_clase_recurso varchar(100)
 	);
-	
+
 CREATE TABLE clase_recurso_par
 	(
 	id_clase_recurso_par bigint NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE clase_recurso_par
 	id_clase_recurso_valor_alt bigint,
 	orden_pagina_seleccion int NOT NULL
 	);
-	
+
 CREATE TABLE clase_recurso_sec
 	(
 	id_clase_recurso_sec bigint NOT NULL,
@@ -161,43 +161,43 @@ CREATE TABLE clase_recurso_sec
 	orden_presentacion int NOT NULL,
 	es_pestana_detalle int NOT NULL
 	);
-	
+
 CREATE TABLE condicion_censo
 	(
 	numero_condicion_censo int NOT NULL,
 	codigo_condicion_censo varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE condicion_denu_pen
 	(
 	numero_condicion_denu_pen int NOT NULL,
 	codigo_condicion_denu_pen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE condicion_eje_fun
 	(
 	numero_condicion_eje_fun int NOT NULL,
 	codigo_condicion_eje_fun varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE condicion_pension
 	(
 	numero_condicion_pension int NOT NULL,
 	codigo_condicion_pension varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE condicion_recl_cen
 	(
 	numero_condicion_recl_cen int NOT NULL,
 	codigo_condicion_recl_cen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE condicion_reco_pen
 	(
 	numero_condicion_reco_pen int NOT NULL,
 	codigo_condicion_reco_pen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE conjunto_segmento
 	(
 	id_conjunto_segmento bigint NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE conjunto_segmento
 	descripcion_conjunto_segmento varchar,
 	id_clase_recurso bigint NOT NULL
 	);
-	
+
 CREATE TABLE dominio
 	(
 	id_dominio bigint NOT NULL,
@@ -222,7 +222,7 @@ CREATE TABLE dominio
 	id_dominio_segmento bigint,
 	id_paquete bigint
 	);
-	
+
 CREATE TABLE dominio_paquete
 	(
 	id_dominio_paquete bigint NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE dominio_paquete
 	id_dominio bigint NOT NULL,
 	id_paquete bigint NOT NULL
 	);
-	
+
 CREATE TABLE dominio_parametro
 	(
 	id_dominio_parametro bigint NOT NULL,
@@ -240,7 +240,7 @@ CREATE TABLE dominio_parametro
 	numero_tipo_parametro_dom int NOT NULL,
 	etiqueta_parametro varchar(100)
 	);
-	
+
 CREATE TABLE elemento_segmento
 	(
 	id_elemento_segmento bigint NOT NULL,
@@ -250,19 +250,19 @@ CREATE TABLE elemento_segmento
 	valor_segmento varchar(100),
 	significado_segmento varchar
 	);
-	
+
 CREATE TABLE estado_civil
 	(
 	numero_estado_civil int NOT NULL,
 	codigo_estado_civil varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE estado_salud
 	(
 	numero_estado_salud int NOT NULL,
 	codigo_estado_salud varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE etnia_indigena
 	(
 	id_etnia_indigena bigint NOT NULL,
@@ -271,7 +271,7 @@ CREATE TABLE etnia_indigena
 	nombre_etnia_indigena varchar(100),
 	descripcion_etnia_indigena varchar(2000)
 	);
-	
+
 CREATE TABLE ficha_hogar
 	(
 	id_ficha_hogar bigint NOT NULL,
@@ -338,7 +338,7 @@ CREATE TABLE ficha_hogar
 	indice_calidad_vida decimal(7,4),
 	es_ficha_hogar_inactiva int NOT NULL
 	);
-	
+
 CREATE TABLE ficha_persona
 	(
 	id_ficha_persona bigint NOT NULL,
@@ -420,7 +420,7 @@ CREATE TABLE ficha_persona
 	id_potencial_ben bigint,
 	es_ficha_persona_inactiva int NOT NULL
 	);
-	
+
 CREATE TABLE filtro_cla_rec_fun
 	(
 	id_filtro_cla_rec_fun bigint NOT NULL,
@@ -431,7 +431,7 @@ CREATE TABLE filtro_cla_rec_fun
 	id_clase_recurso_par_valor bigint,
 	valor varchar
 	);
-	
+
 CREATE TABLE filtro_cla_rec_par
 	(
 	id_filtro_cla_rec_par bigint NOT NULL,
@@ -442,7 +442,7 @@ CREATE TABLE filtro_cla_rec_par
 	id_clase_recurso_par_valor bigint,
 	valor varchar
 	);
-	
+
 CREATE TABLE filtro_cla_rec_sec
 	(
 	id_filtro_cla_rec_sec bigint NOT NULL,
@@ -453,7 +453,7 @@ CREATE TABLE filtro_cla_rec_sec
 	id_clase_recurso_par_valor bigint,
 	valor varchar
 	);
-	
+
 CREATE TABLE filtro_cla_rec_vin
 	(
 	id_filtro_cla_rec_vin bigint NOT NULL,
@@ -464,7 +464,7 @@ CREATE TABLE filtro_cla_rec_vin
 	id_clase_recurso_par_valor bigint,
 	valor varchar
 	);
-	
+
 CREATE TABLE filtro_funcion
 	(
 	id_filtro_funcion bigint NOT NULL,
@@ -477,7 +477,7 @@ CREATE TABLE filtro_funcion
 	es_publico int NOT NULL,
 	id_filtro_funcion_original bigint
 	);
-	
+
 CREATE TABLE filtro_funcion_par
 	(
 	id_filtro_funcion_par bigint NOT NULL,
@@ -491,7 +491,7 @@ CREATE TABLE filtro_funcion_par
 	valor_parametro varchar(100),
 	significado_parametro varchar
 	);
-	
+
 CREATE TABLE funcion
 	(
 	id_funcion bigint NOT NULL,
@@ -510,7 +510,7 @@ CREATE TABLE funcion
 	es_segmentada int NOT NULL,
 	id_grupo_proceso bigint
 	);
-	
+
 CREATE TABLE funcion_parametro
 	(
 	id_funcion_parametro bigint NOT NULL,
@@ -530,7 +530,7 @@ CREATE TABLE funcion_parametro
 	es_parametro_sin_rastro int NOT NULL,
 	es_parametro_segmento int NOT NULL
 	);
-	
+
 CREATE TABLE funcionario
 	(
 	id_funcionario bigint NOT NULL,
@@ -545,7 +545,7 @@ CREATE TABLE funcionario
 	segundo_apellido varchar(30),
 	apellido_casada varchar(30)
 	);
-	
+
 CREATE TABLE grupo_aplicacion
 	(
 	id_grupo_aplicacion bigint NOT NULL,
@@ -554,7 +554,7 @@ CREATE TABLE grupo_aplicacion
 	nombre_grupo_aplicacion varchar(100),
 	descripcion_grupo_aplicacion varchar
 	);
-	
+
 CREATE TABLE grupo_proceso
 	(
 	id_grupo_proceso bigint NOT NULL,
@@ -565,13 +565,13 @@ CREATE TABLE grupo_proceso
 	id_rastro_proceso bigint,
 	numero_condicion_eje_fun int
 	);
-	
+
 CREATE TABLE idioma_hogar
 	(
 	numero_idioma_hogar int NOT NULL,
 	codigo_idioma_hogar varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE informe
 	(
 	id_informe bigint NOT NULL,
@@ -580,7 +580,7 @@ CREATE TABLE informe
 	nombre_informe varchar(100) NOT NULL,
 	fecha_transaccion timestamp with time zone
 	);
-	
+
 CREATE TABLE log_imp_cen
 	(
 	id_log_imp_cen bigint NOT NULL,
@@ -610,7 +610,7 @@ CREATE TABLE log_imp_cen
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_deu
 	(
 	id_log_imp_deu bigint NOT NULL,
@@ -627,7 +627,7 @@ CREATE TABLE log_imp_deu
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_emp
 	(
 	id_log_imp_emp bigint NOT NULL,
@@ -644,7 +644,7 @@ CREATE TABLE log_imp_emp
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_fal
 	(
 	id_log_imp_fal bigint NOT NULL,
@@ -662,7 +662,7 @@ CREATE TABLE log_imp_fal
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_hog
 	(
 	id_log_imp_hog bigint NOT NULL,
@@ -734,7 +734,7 @@ CREATE TABLE log_imp_hog
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_ids
 	(
 	id_log_imp_ids bigint NOT NULL,
@@ -755,7 +755,7 @@ CREATE TABLE log_imp_ids
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_jub
 	(
 	id_log_imp_jub bigint NOT NULL,
@@ -773,7 +773,7 @@ CREATE TABLE log_imp_jub
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_pen
 	(
 	id_log_imp_pen bigint NOT NULL,
@@ -790,7 +790,7 @@ CREATE TABLE log_imp_pen
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_per
 	(
 	id_log_imp_per bigint NOT NULL,
@@ -883,7 +883,7 @@ CREATE TABLE log_imp_per
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_pot
 	(
 	id_log_imp_pot bigint NOT NULL,
@@ -907,7 +907,7 @@ CREATE TABLE log_imp_pot
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_sub
 	(
 	id_log_imp_sub bigint NOT NULL,
@@ -924,7 +924,7 @@ CREATE TABLE log_imp_sub
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_imp_ubi
 	(
 	id_log_imp_ubi bigint NOT NULL,
@@ -940,7 +940,7 @@ CREATE TABLE log_imp_ubi
 	nombre_archivo varchar,
 	codigo_archivo varchar
 	);
-	
+
 CREATE TABLE log_pro_acr_pot_ben
 	(
 	id_log_pro_acr_pot_ben bigint NOT NULL,
@@ -965,7 +965,7 @@ CREATE TABLE log_pro_acr_pot_ben
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_act_jupe
 	(
 	id_log_pro_act_jupe bigint NOT NULL,
@@ -981,7 +981,7 @@ CREATE TABLE log_pro_act_jupe
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_den_pen_obj
 	(
 	id_log_pro_den_pen_obj bigint NOT NULL,
@@ -997,7 +997,7 @@ CREATE TABLE log_pro_den_pen_obj
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_imp_arc_ext
 	(
 	id_log_pro_imp_arc_ext bigint NOT NULL,
@@ -1013,7 +1013,7 @@ CREATE TABLE log_pro_imp_arc_ext
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_oto_pen_apr
 	(
 	id_log_pro_oto_pen_apr bigint NOT NULL,
@@ -1029,7 +1029,7 @@ CREATE TABLE log_pro_oto_pen_apr
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_pre_pro_pag
 	(
 	id_log_pro_pre_pro_pag bigint NOT NULL,
@@ -1048,7 +1048,7 @@ CREATE TABLE log_pro_pre_pro_pag
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE log_pro_ver_ele_pen
 	(
 	id_log_pro_ver_ele_pen bigint NOT NULL,
@@ -1067,7 +1067,7 @@ CREATE TABLE log_pro_ver_ele_pen
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL
 	);
-	
+
 CREATE TABLE mensaje
 	(
 	id_mensaje bigint NOT NULL,
@@ -1076,25 +1076,25 @@ CREATE TABLE mensaje
 	patron_mensaje varchar,
 	descripcion_mensaje varchar
 	);
-	
+
 CREATE TABLE motivo_ina_esc
 	(
 	numero_motivo_ina_esc int NOT NULL,
 	codigo_motivo_ina_esc varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE motivo_no_atencion
 	(
 	numero_motivo_no_atencion int NOT NULL,
 	codigo_motivo_no_atencion varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE motivo_no_trabajo
 	(
 	numero_motivo_no_trabajo int NOT NULL,
 	codigo_motivo_no_trabajo varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE nivel_educativo
 	(
 	numero_nivel_educativo int NOT NULL,
@@ -1102,21 +1102,21 @@ CREATE TABLE nivel_educativo
 	primer_curso int NOT NULL,
 	ultimo_curso int NOT NULL
 	);
-	
+
 CREATE TABLE nivel_opcion_menu
 	(
 	numero_nivel_opcion_menu int NOT NULL,
 	codigo_nivel_opcion_menu varchar(30) NOT NULL,
 	digitos_nivel_opcion_menu int NOT NULL
 	);
-	
+
 CREATE TABLE nivel_ubicacion
 	(
 	numero_nivel_ubicacion int NOT NULL,
 	codigo_nivel_ubicacion varchar(30) NOT NULL,
 	digitos_nivel_ubicacion int NOT NULL
 	);
-	
+
 CREATE TABLE objecion_ele_pen
 	(
 	id_objecion_ele_pen bigint NOT NULL,
@@ -1129,7 +1129,7 @@ CREATE TABLE objecion_ele_pen
 	nombre_archivo_ultima_act varchar(200),
 	observaciones varchar
 	);
-	
+
 CREATE TABLE opcion_binaria
 	(
 	numero_opcion_binaria int NOT NULL,
@@ -1140,7 +1140,7 @@ CREATE TABLE opcion_binaria
 	codigo_opcion_pos_neg varchar(30) NOT NULL,
 	codigo_opcion_verdadero_falso varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE opcion_menu
 	(
 	id_opcion_menu bigint NOT NULL,
@@ -1159,7 +1159,7 @@ CREATE TABLE opcion_menu
 	es_opcion_menu_inactiva int NOT NULL,
 	es_opcion_menu_sincronizada int NOT NULL
 	);
-	
+
 CREATE TABLE opcion_menu_plus
 	(
 	id_opcion_menu bigint NOT NULL,
@@ -1231,7 +1231,7 @@ CREATE TABLE opcion_menu_plus
 	nombre_opcion_menu_15 varchar(100),
 	clave_opcion_menu_15 varchar(30)
 	);
-	
+
 CREATE TABLE opcion_sistema
 	(
 	id_opcion_sistema bigint NOT NULL,
@@ -1240,13 +1240,13 @@ CREATE TABLE opcion_sistema
 	valor_opcion_sistema varchar(100) NOT NULL,
 	significado_opcion_sistema varchar
 	);
-	
+
 CREATE TABLE operador_com
 	(
 	numero_operador_com int NOT NULL,
 	codigo_operador_com varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE pagina
 	(
 	id_pagina bigint NOT NULL,
@@ -1262,7 +1262,7 @@ CREATE TABLE pagina
 	id_dominio_maestro bigint,
 	id_parametro bigint
 	);
-	
+
 CREATE TABLE pagina_funcion
 	(
 	id_pagina_funcion bigint NOT NULL,
@@ -1272,7 +1272,7 @@ CREATE TABLE pagina_funcion
 	es_funcion_inicial int NOT NULL,
 	control_pagina_funcion varchar(100)
 	);
-	
+
 CREATE TABLE pagina_usuario
 	(
 	id_pagina_usuario bigint NOT NULL,
@@ -1280,14 +1280,14 @@ CREATE TABLE pagina_usuario
 	id_pagina bigint NOT NULL,
 	id_usuario bigint NOT NULL
 	);
-	
+
 CREATE TABLE paquete
 	(
 	id_paquete bigint NOT NULL,
 	version_paquete bigint NOT NULL,
 	codigo_paquete varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE parametro
 	(
 	id_parametro bigint NOT NULL,
@@ -1299,7 +1299,7 @@ CREATE TABLE parametro
 	numero_tipo_dato_par int NOT NULL,
 	alias_parametro varchar(100)
 	);
-	
+
 CREATE TABLE parametro_global
 	(
 	numero_parametro_global int NOT NULL,
@@ -1314,7 +1314,7 @@ CREATE TABLE parametro_global
 	limite_indice_calidad_vida decimal(7,4) NOT NULL,
 	limite_pensiones int NOT NULL
 	);
-	
+
 CREATE TABLE persona
 	(
 	id_persona bigint NOT NULL,
@@ -1414,7 +1414,7 @@ CREATE TABLE persona
 	numero_tipo_act_jupe int,
 	fecha_hora_ult_act_jupe timestamp with time zone
 	);
-	
+
 CREATE TABLE potencial_ben
 	(
 	id_potencial_ben bigint NOT NULL,
@@ -1483,7 +1483,7 @@ CREATE TABLE potencial_ben
 	id_funcionario_ult_visita_cen bigint,
 	referencia_direccion varchar
 	);
-	
+
 CREATE TABLE proceso
 	(
 	id_proceso bigint NOT NULL,
@@ -1491,7 +1491,7 @@ CREATE TABLE proceso
 	codigo_proceso varchar(30) NOT NULL,
 	nombre_proceso varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE proveedor_dat_ext
 	(
 	id_proveedor_dat_ext bigint NOT NULL,
@@ -1499,7 +1499,7 @@ CREATE TABLE proveedor_dat_ext
 	codigo_proveedor_dat_ext varchar(30) NOT NULL,
 	nombre_proveedor_dat_ext varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE rastro_funcion
 	(
 	id_rastro_funcion bigint NOT NULL,
@@ -1515,7 +1515,7 @@ CREATE TABLE rastro_funcion
 	numero_error int,
 	descripcion_error varchar
 	);
-	
+
 CREATE TABLE rastro_funcion_par
 	(
 	id_rastro_funcion_par bigint NOT NULL,
@@ -1523,7 +1523,7 @@ CREATE TABLE rastro_funcion_par
 	id_parametro bigint NOT NULL,
 	valor_parametro varchar(100)
 	);
-	
+
 CREATE TABLE rastro_informe
 	(
 	id_rastro_informe bigint NOT NULL,
@@ -1536,7 +1536,7 @@ CREATE TABLE rastro_informe
 	nombre_archivo varchar(100),
 	descripcion_error varchar
 	);
-	
+
 CREATE TABLE rastro_proceso
 	(
 	id_rastro_proceso bigint NOT NULL,
@@ -1558,7 +1558,7 @@ CREATE TABLE rastro_proceso
 	subprocesos_cancelados int NOT NULL,
 	procedimiento_after_update varchar(100)
 	);
-	
+
 CREATE TABLE recurso
 	(
 	id_recurso bigint NOT NULL,
@@ -1572,7 +1572,7 @@ CREATE TABLE recurso
 	es_recurso_inactivo int NOT NULL,
 	numero_recurso int NOT NULL
 	);
-	
+
 CREATE TABLE rol
 	(
 	id_rol bigint NOT NULL,
@@ -1583,7 +1583,7 @@ CREATE TABLE rol
 	numero_tipo_rol int,
 	id_grupo_aplicacion bigint
 	);
-	
+
 CREATE TABLE rol_aplicacion
 	(
 	id_rol_aplicacion bigint NOT NULL,
@@ -1591,7 +1591,7 @@ CREATE TABLE rol_aplicacion
 	id_rol bigint NOT NULL,
 	id_aplicacion bigint NOT NULL
 	);
-	
+
 CREATE TABLE rol_filtro_funcion
 	(
 	id_rol_filtro_funcion bigint NOT NULL,
@@ -1599,7 +1599,7 @@ CREATE TABLE rol_filtro_funcion
 	id_rol bigint NOT NULL,
 	id_filtro_funcion bigint NOT NULL
 	);
-	
+
 CREATE TABLE rol_funcion
 	(
 	id_rol_funcion bigint NOT NULL,
@@ -1608,7 +1608,7 @@ CREATE TABLE rol_funcion
 	id_funcion bigint NOT NULL,
 	id_conjunto_segmento bigint
 	);
-	
+
 CREATE TABLE rol_pagina
 	(
 	id_rol_pagina bigint NOT NULL,
@@ -1616,7 +1616,7 @@ CREATE TABLE rol_pagina
 	id_rol bigint NOT NULL,
 	id_pagina bigint NOT NULL
 	);
-	
+
 CREATE TABLE rol_usuario
 	(
 	id_rol_usuario bigint NOT NULL,
@@ -1624,140 +1624,140 @@ CREATE TABLE rol_usuario
 	id_rol bigint NOT NULL,
 	id_usuario bigint NOT NULL
 	);
-	
+
 CREATE TABLE sexo_persona
 	(
 	numero_sexo_persona int NOT NULL,
 	codigo_sexo_persona varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE siono
 	(
 	numero_siono int NOT NULL,
 	codigo_siono varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_aba_agua
 	(
 	numero_tipo_aba_agua int NOT NULL,
 	codigo_tipo_aba_agua varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_act_jupe
 	(
 	numero_tipo_act_jupe int NOT NULL,
 	codigo_tipo_act_jupe varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_arc_dat_ext
 	(
 	numero_tipo_arc_dat_ext int NOT NULL,
 	codigo_tipo_arc_dat_ext varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_area
 	(
 	numero_tipo_area int NOT NULL,
 	codigo_tipo_area varchar(30) NOT NULL,
 	limite_indice_calidad_vida decimal(7,4)
 	);
-	
+
 CREATE TABLE tipo_clase_recurso
 	(
 	numero_tipo_clase_recurso int NOT NULL,
 	codigo_tipo_clase_recurso varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_combustible
 	(
 	numero_tipo_combustible int NOT NULL,
 	codigo_tipo_combustible varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_comparacion
 	(
 	numero_tipo_comparacion int NOT NULL,
 	codigo_tipo_comparacion varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_dato_par
 	(
 	numero_tipo_dato_par int NOT NULL,
 	codigo_tipo_dato_par varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_desecho_bas
 	(
 	numero_tipo_desecho_bas int NOT NULL,
 	codigo_tipo_desecho_bas varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_dominio
 	(
 	numero_tipo_dominio int NOT NULL,
 	codigo_tipo_dominio varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_excepcion_ced
 	(
 	numero_tipo_excepcion_ced int NOT NULL,
 	codigo_tipo_excepcion_ced varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_funcion
 	(
 	numero_tipo_funcion int NOT NULL,
 	codigo_tipo_funcion varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_mat_paredes
 	(
 	numero_tipo_mat_paredes int NOT NULL,
 	codigo_tipo_mat_paredes varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_mat_piso
 	(
 	numero_tipo_mat_piso int NOT NULL,
 	codigo_tipo_mat_piso varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_mat_techo
 	(
 	numero_tipo_mat_techo int NOT NULL,
 	codigo_tipo_mat_techo varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_nodo
 	(
 	numero_tipo_nodo int NOT NULL,
 	codigo_tipo_nodo varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_obj_ele_pen
 	(
 	numero_tipo_obj_ele_pen int NOT NULL,
 	codigo_tipo_obj_ele_pen varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_ocupacion_viv
 	(
 	numero_tipo_ocupacion_viv int NOT NULL,
 	codigo_tipo_ocupacion_viv varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_pagina
 	(
 	numero_tipo_pagina int NOT NULL,
 	codigo_tipo_pagina varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_parametro
 	(
 	numero_tipo_parametro int NOT NULL,
 	codigo_tipo_parametro varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_parametro_dom
 	(
 	numero_tipo_parametro_dom int NOT NULL,
@@ -1766,73 +1766,73 @@ CREATE TABLE tipo_parametro_dom
 	nombre_interfaz varchar(100) NOT NULL,
 	etiqueta_parametro varchar(100) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_persona_hogar
 	(
 	numero_tipo_persona_hogar int NOT NULL,
 	codigo_tipo_persona_hogar varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_pieza_bano
 	(
 	numero_tipo_pieza_bano int NOT NULL,
 	codigo_tipo_pieza_bano varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_rastro_fun
 	(
 	numero_tipo_rastro_fun int NOT NULL,
 	codigo_tipo_rastro_fun varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_recurso
 	(
 	numero_tipo_recurso int NOT NULL,
 	codigo_tipo_recurso varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_reg_pot_ben
 	(
 	numero_tipo_reg_pot_ben int NOT NULL,
 	codigo_tipo_reg_pot_ben varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_relacion_lab
 	(
 	numero_tipo_relacion_lab int NOT NULL,
 	codigo_tipo_relacion_lab varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_rol
 	(
 	numero_tipo_rol int NOT NULL,
 	codigo_tipo_rol varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_seguro_medico
 	(
 	numero_tipo_seguro_medico int NOT NULL,
 	codigo_tipo_seguro_medico varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_servicio_agua
 	(
 	numero_tipo_servicio_agua int NOT NULL,
 	codigo_tipo_servicio_agua varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_servicio_san
 	(
 	numero_tipo_servicio_san int NOT NULL,
 	codigo_tipo_servicio_san varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE tipo_valor
 	(
 	numero_tipo_valor int NOT NULL,
 	codigo_tipo_valor varchar(30) NOT NULL
 	);
-	
+
 CREATE TABLE ubicacion
 	(
 	id_ubicacion bigint NOT NULL,
@@ -1846,7 +1846,7 @@ CREATE TABLE ubicacion
 	clave_ubicacion varchar(30),
 	numero_tipo_area int
 	);
-	
+
 CREATE TABLE ubicacion_plus
 	(
 	id_ubicacion bigint NOT NULL,
@@ -1918,7 +1918,7 @@ CREATE TABLE ubicacion_plus
 	nombre_ubicacion_15 varchar(100),
 	clave_ubicacion_15 varchar(30)
 	);
-	
+
 CREATE TABLE usuario
 	(
 	id_usuario bigint NOT NULL,
@@ -1933,7 +1933,7 @@ CREATE TABLE usuario
 	es_usuario_inactivo int NOT NULL,
 	es_usuario_modificado int NOT NULL
 	);
-	
+
 CREATE TABLE visita_censo
 	(
 	id_visita_censo bigint NOT NULL,
@@ -1943,4 +1943,4 @@ CREATE TABLE visita_censo
 	fecha_visita timestamp with time zone NOT NULL,
 	observaciones varchar
 	);
-	
+

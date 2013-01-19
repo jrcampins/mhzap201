@@ -13,7 +13,7 @@ CREATE TABLE aplicacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE archivo_datos_ext
 	(
 	id_archivo_datos_ext bigint NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE archivo_datos_ext
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_den_pension
 	(
 	numero_causa_den_pension int NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE causa_den_pension
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_den_recl_cen
 	(
 	numero_causa_den_recl_cen int NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE causa_den_recl_cen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_den_reco_pen
 	(
 	numero_causa_den_reco_pen int NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE causa_den_reco_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_impedimento
 	(
 	numero_causa_impedimento int NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE causa_impedimento
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_inv_censo
 	(
 	numero_causa_inv_censo int NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE causa_inv_censo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE causa_rev_pension
 	(
 	numero_causa_rev_pension int NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE causa_rev_pension
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_enf_acc
 	(
 	numero_clase_enf_acc int NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE clase_enf_acc
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_enf_cronica
 	(
 	numero_clase_enf_cronica int NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE clase_enf_cronica
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_impedimento
 	(
 	numero_clase_impedimento int NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE clase_impedimento
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_recurso
 	(
 	id_clase_recurso bigint NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE clase_recurso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_recurso_par
 	(
 	id_clase_recurso_par bigint NOT NULL,
@@ -176,7 +176,7 @@ CREATE TABLE clase_recurso_par
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE clase_recurso_sec
 	(
 	id_clase_recurso_sec bigint NOT NULL,
@@ -189,7 +189,7 @@ CREATE TABLE clase_recurso_sec
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_censo
 	(
 	numero_condicion_censo int NOT NULL,
@@ -197,7 +197,7 @@ CREATE TABLE condicion_censo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_denu_pen
 	(
 	numero_condicion_denu_pen int NOT NULL,
@@ -205,7 +205,7 @@ CREATE TABLE condicion_denu_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_eje_fun
 	(
 	numero_condicion_eje_fun int NOT NULL,
@@ -213,7 +213,7 @@ CREATE TABLE condicion_eje_fun
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_pension
 	(
 	numero_condicion_pension int NOT NULL,
@@ -221,7 +221,7 @@ CREATE TABLE condicion_pension
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_recl_cen
 	(
 	numero_condicion_recl_cen int NOT NULL,
@@ -229,7 +229,7 @@ CREATE TABLE condicion_recl_cen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE condicion_reco_pen
 	(
 	numero_condicion_reco_pen int NOT NULL,
@@ -237,7 +237,7 @@ CREATE TABLE condicion_reco_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE conjunto_segmento
 	(
 	id_conjunto_segmento bigint NOT NULL,
@@ -249,7 +249,7 @@ CREATE TABLE conjunto_segmento
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE dominio
 	(
 	id_dominio bigint NOT NULL,
@@ -266,7 +266,7 @@ CREATE TABLE dominio
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE dominio_paquete
 	(
 	id_dominio_paquete bigint NOT NULL,
@@ -276,7 +276,7 @@ CREATE TABLE dominio_paquete
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE dominio_parametro
 	(
 	id_dominio_parametro bigint NOT NULL,
@@ -288,7 +288,7 @@ CREATE TABLE dominio_parametro
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE elemento_segmento
 	(
 	id_elemento_segmento bigint NOT NULL,
@@ -300,7 +300,7 @@ CREATE TABLE elemento_segmento
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE estado_civil
 	(
 	numero_estado_civil int NOT NULL,
@@ -308,7 +308,7 @@ CREATE TABLE estado_civil
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE estado_salud
 	(
 	numero_estado_salud int NOT NULL,
@@ -316,7 +316,7 @@ CREATE TABLE estado_salud
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE etnia_indigena
 	(
 	id_etnia_indigena bigint NOT NULL,
@@ -327,7 +327,7 @@ CREATE TABLE etnia_indigena
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE ficha_hogar
 	(
 	id_ficha_hogar bigint NOT NULL,
@@ -396,7 +396,7 @@ CREATE TABLE ficha_hogar
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE ficha_persona
 	(
 	id_ficha_persona bigint NOT NULL,
@@ -480,7 +480,7 @@ CREATE TABLE ficha_persona
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_cla_rec_fun
 	(
 	id_filtro_cla_rec_fun bigint NOT NULL,
@@ -493,7 +493,7 @@ CREATE TABLE filtro_cla_rec_fun
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_cla_rec_par
 	(
 	id_filtro_cla_rec_par bigint NOT NULL,
@@ -506,7 +506,7 @@ CREATE TABLE filtro_cla_rec_par
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_cla_rec_sec
 	(
 	id_filtro_cla_rec_sec bigint NOT NULL,
@@ -519,7 +519,7 @@ CREATE TABLE filtro_cla_rec_sec
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_cla_rec_vin
 	(
 	id_filtro_cla_rec_vin bigint NOT NULL,
@@ -532,7 +532,7 @@ CREATE TABLE filtro_cla_rec_vin
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_funcion
 	(
 	id_filtro_funcion bigint NOT NULL,
@@ -547,7 +547,7 @@ CREATE TABLE filtro_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE filtro_funcion_par
 	(
 	id_filtro_funcion_par bigint NOT NULL,
@@ -563,7 +563,7 @@ CREATE TABLE filtro_funcion_par
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE funcion
 	(
 	id_funcion bigint NOT NULL,
@@ -584,7 +584,7 @@ CREATE TABLE funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE funcion_parametro
 	(
 	id_funcion_parametro bigint NOT NULL,
@@ -606,7 +606,7 @@ CREATE TABLE funcion_parametro
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE funcionario
 	(
 	id_funcionario bigint NOT NULL,
@@ -623,7 +623,7 @@ CREATE TABLE funcionario
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE grupo_aplicacion
 	(
 	id_grupo_aplicacion bigint NOT NULL,
@@ -634,7 +634,7 @@ CREATE TABLE grupo_aplicacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE grupo_proceso
 	(
 	id_grupo_proceso bigint NOT NULL,
@@ -647,7 +647,7 @@ CREATE TABLE grupo_proceso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE idioma_hogar
 	(
 	numero_idioma_hogar int NOT NULL,
@@ -655,7 +655,7 @@ CREATE TABLE idioma_hogar
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE informe
 	(
 	id_informe bigint NOT NULL,
@@ -666,7 +666,7 @@ CREATE TABLE informe
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_cen
 	(
 	id_log_imp_cen bigint NOT NULL,
@@ -698,7 +698,7 @@ CREATE TABLE log_imp_cen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_deu
 	(
 	id_log_imp_deu bigint NOT NULL,
@@ -717,7 +717,7 @@ CREATE TABLE log_imp_deu
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_emp
 	(
 	id_log_imp_emp bigint NOT NULL,
@@ -736,7 +736,7 @@ CREATE TABLE log_imp_emp
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_fal
 	(
 	id_log_imp_fal bigint NOT NULL,
@@ -756,7 +756,7 @@ CREATE TABLE log_imp_fal
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_hog
 	(
 	id_log_imp_hog bigint NOT NULL,
@@ -830,7 +830,7 @@ CREATE TABLE log_imp_hog
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_ids
 	(
 	id_log_imp_ids bigint NOT NULL,
@@ -853,7 +853,7 @@ CREATE TABLE log_imp_ids
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_jub
 	(
 	id_log_imp_jub bigint NOT NULL,
@@ -873,7 +873,7 @@ CREATE TABLE log_imp_jub
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_pen
 	(
 	id_log_imp_pen bigint NOT NULL,
@@ -892,7 +892,7 @@ CREATE TABLE log_imp_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_per
 	(
 	id_log_imp_per bigint NOT NULL,
@@ -987,7 +987,7 @@ CREATE TABLE log_imp_per
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_pot
 	(
 	id_log_imp_pot bigint NOT NULL,
@@ -1013,7 +1013,7 @@ CREATE TABLE log_imp_pot
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_sub
 	(
 	id_log_imp_sub bigint NOT NULL,
@@ -1032,7 +1032,7 @@ CREATE TABLE log_imp_sub
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_imp_ubi
 	(
 	id_log_imp_ubi bigint NOT NULL,
@@ -1050,7 +1050,7 @@ CREATE TABLE log_imp_ubi
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_acr_pot_ben
 	(
 	id_log_pro_acr_pot_ben bigint NOT NULL,
@@ -1077,7 +1077,7 @@ CREATE TABLE log_pro_acr_pot_ben
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_act_jupe
 	(
 	id_log_pro_act_jupe bigint NOT NULL,
@@ -1095,7 +1095,7 @@ CREATE TABLE log_pro_act_jupe
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_den_pen_obj
 	(
 	id_log_pro_den_pen_obj bigint NOT NULL,
@@ -1113,7 +1113,7 @@ CREATE TABLE log_pro_den_pen_obj
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_imp_arc_ext
 	(
 	id_log_pro_imp_arc_ext bigint NOT NULL,
@@ -1131,7 +1131,7 @@ CREATE TABLE log_pro_imp_arc_ext
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_oto_pen_apr
 	(
 	id_log_pro_oto_pen_apr bigint NOT NULL,
@@ -1149,7 +1149,7 @@ CREATE TABLE log_pro_oto_pen_apr
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_pre_pro_pag
 	(
 	id_log_pro_pre_pro_pag bigint NOT NULL,
@@ -1170,7 +1170,7 @@ CREATE TABLE log_pro_pre_pro_pag
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE log_pro_ver_ele_pen
 	(
 	id_log_pro_ver_ele_pen bigint NOT NULL,
@@ -1191,7 +1191,7 @@ CREATE TABLE log_pro_ver_ele_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE mensaje
 	(
 	id_mensaje bigint NOT NULL,
@@ -1202,7 +1202,7 @@ CREATE TABLE mensaje
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE motivo_ina_esc
 	(
 	numero_motivo_ina_esc int NOT NULL,
@@ -1210,7 +1210,7 @@ CREATE TABLE motivo_ina_esc
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE motivo_no_atencion
 	(
 	numero_motivo_no_atencion int NOT NULL,
@@ -1218,7 +1218,7 @@ CREATE TABLE motivo_no_atencion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE motivo_no_trabajo
 	(
 	numero_motivo_no_trabajo int NOT NULL,
@@ -1226,7 +1226,7 @@ CREATE TABLE motivo_no_trabajo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE nivel_educativo
 	(
 	numero_nivel_educativo int NOT NULL,
@@ -1236,7 +1236,7 @@ CREATE TABLE nivel_educativo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE nivel_opcion_menu
 	(
 	numero_nivel_opcion_menu int NOT NULL,
@@ -1245,7 +1245,7 @@ CREATE TABLE nivel_opcion_menu
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE nivel_ubicacion
 	(
 	numero_nivel_ubicacion int NOT NULL,
@@ -1254,7 +1254,7 @@ CREATE TABLE nivel_ubicacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE objecion_ele_pen
 	(
 	id_objecion_ele_pen bigint NOT NULL,
@@ -1269,7 +1269,7 @@ CREATE TABLE objecion_ele_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE opcion_binaria
 	(
 	numero_opcion_binaria int NOT NULL,
@@ -1282,7 +1282,7 @@ CREATE TABLE opcion_binaria
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE opcion_menu
 	(
 	id_opcion_menu bigint NOT NULL,
@@ -1303,7 +1303,7 @@ CREATE TABLE opcion_menu
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE opcion_menu_plus
 	(
 	id_opcion_menu bigint NOT NULL,
@@ -1377,7 +1377,7 @@ CREATE TABLE opcion_menu_plus
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE opcion_sistema
 	(
 	id_opcion_sistema bigint NOT NULL,
@@ -1388,7 +1388,7 @@ CREATE TABLE opcion_sistema
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE operador_com
 	(
 	numero_operador_com int NOT NULL,
@@ -1396,7 +1396,7 @@ CREATE TABLE operador_com
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE pagina
 	(
 	id_pagina bigint NOT NULL,
@@ -1414,7 +1414,7 @@ CREATE TABLE pagina
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE pagina_funcion
 	(
 	id_pagina_funcion bigint NOT NULL,
@@ -1426,7 +1426,7 @@ CREATE TABLE pagina_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE pagina_usuario
 	(
 	id_pagina_usuario bigint NOT NULL,
@@ -1436,7 +1436,7 @@ CREATE TABLE pagina_usuario
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE paquete
 	(
 	id_paquete bigint NOT NULL,
@@ -1445,7 +1445,7 @@ CREATE TABLE paquete
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE parametro
 	(
 	id_parametro bigint NOT NULL,
@@ -1459,7 +1459,7 @@ CREATE TABLE parametro
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE parametro_global
 	(
 	numero_parametro_global int NOT NULL,
@@ -1476,7 +1476,7 @@ CREATE TABLE parametro_global
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE persona
 	(
 	id_persona bigint NOT NULL,
@@ -1578,7 +1578,7 @@ CREATE TABLE persona
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE potencial_ben
 	(
 	id_potencial_ben bigint NOT NULL,
@@ -1649,7 +1649,7 @@ CREATE TABLE potencial_ben
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE proceso
 	(
 	id_proceso bigint NOT NULL,
@@ -1659,7 +1659,7 @@ CREATE TABLE proceso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE proveedor_dat_ext
 	(
 	id_proveedor_dat_ext bigint NOT NULL,
@@ -1669,7 +1669,7 @@ CREATE TABLE proveedor_dat_ext
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rastro_funcion
 	(
 	id_rastro_funcion bigint NOT NULL,
@@ -1687,7 +1687,7 @@ CREATE TABLE rastro_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rastro_funcion_par
 	(
 	id_rastro_funcion_par bigint NOT NULL,
@@ -1697,7 +1697,7 @@ CREATE TABLE rastro_funcion_par
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rastro_informe
 	(
 	id_rastro_informe bigint NOT NULL,
@@ -1712,7 +1712,7 @@ CREATE TABLE rastro_informe
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rastro_proceso
 	(
 	id_rastro_proceso bigint NOT NULL,
@@ -1736,7 +1736,7 @@ CREATE TABLE rastro_proceso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE recurso
 	(
 	id_recurso bigint NOT NULL,
@@ -1752,7 +1752,7 @@ CREATE TABLE recurso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol
 	(
 	id_rol bigint NOT NULL,
@@ -1765,7 +1765,7 @@ CREATE TABLE rol
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol_aplicacion
 	(
 	id_rol_aplicacion bigint NOT NULL,
@@ -1775,7 +1775,7 @@ CREATE TABLE rol_aplicacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol_filtro_funcion
 	(
 	id_rol_filtro_funcion bigint NOT NULL,
@@ -1785,7 +1785,7 @@ CREATE TABLE rol_filtro_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol_funcion
 	(
 	id_rol_funcion bigint NOT NULL,
@@ -1796,7 +1796,7 @@ CREATE TABLE rol_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol_pagina
 	(
 	id_rol_pagina bigint NOT NULL,
@@ -1806,7 +1806,7 @@ CREATE TABLE rol_pagina
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE rol_usuario
 	(
 	id_rol_usuario bigint NOT NULL,
@@ -1816,7 +1816,7 @@ CREATE TABLE rol_usuario
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE sexo_persona
 	(
 	numero_sexo_persona int NOT NULL,
@@ -1824,7 +1824,7 @@ CREATE TABLE sexo_persona
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE siono
 	(
 	numero_siono int NOT NULL,
@@ -1832,7 +1832,7 @@ CREATE TABLE siono
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_aba_agua
 	(
 	numero_tipo_aba_agua int NOT NULL,
@@ -1840,7 +1840,7 @@ CREATE TABLE tipo_aba_agua
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_act_jupe
 	(
 	numero_tipo_act_jupe int NOT NULL,
@@ -1848,7 +1848,7 @@ CREATE TABLE tipo_act_jupe
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_arc_dat_ext
 	(
 	numero_tipo_arc_dat_ext int NOT NULL,
@@ -1856,7 +1856,7 @@ CREATE TABLE tipo_arc_dat_ext
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_area
 	(
 	numero_tipo_area int NOT NULL,
@@ -1865,7 +1865,7 @@ CREATE TABLE tipo_area
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_clase_recurso
 	(
 	numero_tipo_clase_recurso int NOT NULL,
@@ -1873,7 +1873,7 @@ CREATE TABLE tipo_clase_recurso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_combustible
 	(
 	numero_tipo_combustible int NOT NULL,
@@ -1881,7 +1881,7 @@ CREATE TABLE tipo_combustible
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_comparacion
 	(
 	numero_tipo_comparacion int NOT NULL,
@@ -1889,7 +1889,7 @@ CREATE TABLE tipo_comparacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_dato_par
 	(
 	numero_tipo_dato_par int NOT NULL,
@@ -1897,7 +1897,7 @@ CREATE TABLE tipo_dato_par
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_desecho_bas
 	(
 	numero_tipo_desecho_bas int NOT NULL,
@@ -1905,7 +1905,7 @@ CREATE TABLE tipo_desecho_bas
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_dominio
 	(
 	numero_tipo_dominio int NOT NULL,
@@ -1913,7 +1913,7 @@ CREATE TABLE tipo_dominio
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_excepcion_ced
 	(
 	numero_tipo_excepcion_ced int NOT NULL,
@@ -1921,7 +1921,7 @@ CREATE TABLE tipo_excepcion_ced
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_funcion
 	(
 	numero_tipo_funcion int NOT NULL,
@@ -1929,7 +1929,7 @@ CREATE TABLE tipo_funcion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_mat_paredes
 	(
 	numero_tipo_mat_paredes int NOT NULL,
@@ -1937,7 +1937,7 @@ CREATE TABLE tipo_mat_paredes
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_mat_piso
 	(
 	numero_tipo_mat_piso int NOT NULL,
@@ -1945,7 +1945,7 @@ CREATE TABLE tipo_mat_piso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_mat_techo
 	(
 	numero_tipo_mat_techo int NOT NULL,
@@ -1953,7 +1953,7 @@ CREATE TABLE tipo_mat_techo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_nodo
 	(
 	numero_tipo_nodo int NOT NULL,
@@ -1961,7 +1961,7 @@ CREATE TABLE tipo_nodo
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_obj_ele_pen
 	(
 	numero_tipo_obj_ele_pen int NOT NULL,
@@ -1969,7 +1969,7 @@ CREATE TABLE tipo_obj_ele_pen
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_ocupacion_viv
 	(
 	numero_tipo_ocupacion_viv int NOT NULL,
@@ -1977,7 +1977,7 @@ CREATE TABLE tipo_ocupacion_viv
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_pagina
 	(
 	numero_tipo_pagina int NOT NULL,
@@ -1985,7 +1985,7 @@ CREATE TABLE tipo_pagina
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_parametro
 	(
 	numero_tipo_parametro int NOT NULL,
@@ -1993,7 +1993,7 @@ CREATE TABLE tipo_parametro
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_parametro_dom
 	(
 	numero_tipo_parametro_dom int NOT NULL,
@@ -2004,7 +2004,7 @@ CREATE TABLE tipo_parametro_dom
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_persona_hogar
 	(
 	numero_tipo_persona_hogar int NOT NULL,
@@ -2012,7 +2012,7 @@ CREATE TABLE tipo_persona_hogar
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_pieza_bano
 	(
 	numero_tipo_pieza_bano int NOT NULL,
@@ -2020,7 +2020,7 @@ CREATE TABLE tipo_pieza_bano
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_rastro_fun
 	(
 	numero_tipo_rastro_fun int NOT NULL,
@@ -2028,7 +2028,7 @@ CREATE TABLE tipo_rastro_fun
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_recurso
 	(
 	numero_tipo_recurso int NOT NULL,
@@ -2036,7 +2036,7 @@ CREATE TABLE tipo_recurso
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_reg_pot_ben
 	(
 	numero_tipo_reg_pot_ben int NOT NULL,
@@ -2044,7 +2044,7 @@ CREATE TABLE tipo_reg_pot_ben
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_relacion_lab
 	(
 	numero_tipo_relacion_lab int NOT NULL,
@@ -2052,7 +2052,7 @@ CREATE TABLE tipo_relacion_lab
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_rol
 	(
 	numero_tipo_rol int NOT NULL,
@@ -2060,7 +2060,7 @@ CREATE TABLE tipo_rol
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_seguro_medico
 	(
 	numero_tipo_seguro_medico int NOT NULL,
@@ -2068,7 +2068,7 @@ CREATE TABLE tipo_seguro_medico
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_servicio_agua
 	(
 	numero_tipo_servicio_agua int NOT NULL,
@@ -2076,7 +2076,7 @@ CREATE TABLE tipo_servicio_agua
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_servicio_san
 	(
 	numero_tipo_servicio_san int NOT NULL,
@@ -2084,7 +2084,7 @@ CREATE TABLE tipo_servicio_san
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE tipo_valor
 	(
 	numero_tipo_valor int NOT NULL,
@@ -2092,7 +2092,7 @@ CREATE TABLE tipo_valor
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE ubicacion
 	(
 	id_ubicacion bigint NOT NULL,
@@ -2108,7 +2108,7 @@ CREATE TABLE ubicacion
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE ubicacion_plus
 	(
 	id_ubicacion bigint NOT NULL,
@@ -2182,7 +2182,7 @@ CREATE TABLE ubicacion_plus
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE usuario
 	(
 	id_usuario bigint NOT NULL,
@@ -2199,7 +2199,7 @@ CREATE TABLE usuario
 	)
 	ON [PRIMARY]
 GO
-	
+
 CREATE TABLE visita_censo
 	(
 	id_visita_censo bigint NOT NULL,
@@ -2211,4 +2211,4 @@ CREATE TABLE visita_censo
 	)
 	ON [PRIMARY]
 GO
-	
+
