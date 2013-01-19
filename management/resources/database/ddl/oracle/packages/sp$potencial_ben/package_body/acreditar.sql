@@ -18,15 +18,6 @@ function acreditar( beneficiario_consultado number) return varchar2 is
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
     begin
-        --Se consulta el punto de corte
-        select limite_indice_calidad_vida into icv_corte from parametro_global;
-    exception
-        when no_data_found then null;
-    end;
-    if not sql%found then
-        mensaje:='No hay limite_indice_calidad_vida  definido';
-    end if;
-    begin
         --Se extrae el potencial beneficiario
         select * into row_potencial_ben from potencial_ben pb where pb.id_potencial_ben=beneficiario_consultado;
     exception
@@ -34,6 +25,24 @@ begin
     end;
     if not sql%found then
         msg_string:='Potencial Beneficiario no existe ';
+        raise_application_error(err_number, msg_string, true);
+    end if;
+    if row_potencial_ben.id_barrio is not null then
+        begin
+            select ta.limite_indice_calidad_vida into icv_corte from ubicacion u left join tipo_area ta on u.numero_tipo_area=ta.numero_tipo_area where u.id_ubicacion=row_potencial_ben.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+    else
+        begin
+            --Se consulta el punto de corte
+            select limite_indice_calidad_vida into icv_corte from parametro_global;
+        exception
+            when no_data_found then null;
+        end;        
+    end if;
+    if icv_corte is null then
+        msg_string:='No hay limite_indice_calidad_vida definido';
         raise_application_error(err_number, msg_string, true);
     end if;
     --Solo se acredita si el potencial beneficiario tiene una persona asociada

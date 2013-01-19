@@ -37,10 +37,11 @@ FROM potencial_ben pb
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = pb.id_departamento
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = pb.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
+   LEFT JOIN tipo_area area on ubicacion_1x7.numero_tipo_area = area.numero_tipo_area
 WHERE (pb.numero_condicion_censo=3
   OR pb.numero_condicion_censo=5)
   AND pb.id_ficha_persona is not null
-  AND fh.indice_calidad_vida<(select limite_indice_calidad_vida from parametro_global)
+  AND fh.indice_calidad_vida<(area.limite_indice_calidad_vida)
   AND pb.es_paraguayo_natural=1
   AND utils.years_since(pb.fecha_nacimiento)>=65
 ORDER BY pb.numero_tipo_reg_pot_ben,pb.fecha_registro_pot_ben, pb.id_departamento,

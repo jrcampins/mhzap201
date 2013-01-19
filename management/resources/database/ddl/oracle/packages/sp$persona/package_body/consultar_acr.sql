@@ -12,14 +12,6 @@ function consultar_acr(persona_consultada number) return number is
     err_number constant number := -20000; -- an integer in the range -20000..-20999
     msg_string varchar2(2000); -- a character string of at most 2048 bytes
 begin
-    --Se consulta el punto de corte
-    begin
-        select limite_indice_calidad_vida into icv_corte from parametro_global;
-    exception
-        when no_data_found then
-            msg_string := 'ICV de corte no definido ';
-            raise_application_error(err_number, msg_string, true);
-    end;
     --Se extrae la persona
     begin
         select * into row_persona from persona where id_persona=persona_consultada;
@@ -28,6 +20,24 @@ begin
             msg_string := 'Persona ' || persona_consultada || ' no existe ';
             raise_application_error(err_number, msg_string, true);
     end;
+    if row_persona.id_barrio is not null then
+        begin
+            select ta.limite_indice_calidad_vida into icv_corte from ubicacion u left join tipo_area ta on u.numero_tipo_area=ta.numero_tipo_area where u.id_ubicacion=row_persona.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+    else
+        begin
+            --Se consulta el punto de corte
+            select limite_indice_calidad_vida into icv_corte from parametro_global;
+        exception
+            when no_data_found then null;
+        end;       
+    end if;
+    if icv_corte is null then
+        msg_string:='No hay limite_indice_calidad_vida definido';
+        raise_application_error(err_number, msg_string, true);
+    end if;
     --Se verifica que la persona tenga indice de calidad de vida y tenga ficha persona 
     if (row_persona.indice_calidad_vida is null) then
         msg_string := 'Persona ' || persona_consultada || ' no  tiene Indice de Calidad de Vida ';
