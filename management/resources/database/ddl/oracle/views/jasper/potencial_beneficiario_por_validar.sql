@@ -1,23 +1,7 @@
-CREATE OR REPLACE VIEW potencial_ben_por_validar (
-    cedula,
-    nombre_persona,
-    edad,
-    departamento,
-    id_departamento,
-    distrito,
-    id_distrito,
-    barrio,
-    id_barrio,
-    direccion,
-    numero_cedula,
-    fecha_registro_pot_ben,
-    anho,
-    indice_calidad_vida,
-    nombre_jefe_hogar,
-    numero_cedula_jefe_hogar,
-    referencia_casa)
+CREATE OR REPLACE VIEW potencial_ben_por_validar 
 AS
-SELECT pb.codigo_potencial_ben AS cedula, pb.nombre_potencial_ben,
+SELECT pb.codigo_potencial_ben AS cedula, 
+    pb.nombre_potencial_ben AS nombre_persona,
     utils.years_since(pb.fecha_nacimiento) AS edad,
     ubicacion_1x4.nombre_ubicacion AS departamento, ubicacion_1x4.id_ubicacion AS id_departamento,
     ubicacion_1x5.nombre_ubicacion AS distrito, ubicacion_1x5.id_ubicacion AS id_distrito,

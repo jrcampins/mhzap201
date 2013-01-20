@@ -3,49 +3,49 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="43"/>
+	<property name="ireport.x" value="24"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
-        </parameter>
+	<parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+	</parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[select * from potencial_ben_por_resultado]]>
 	</queryString>
-	<field name="cedula" class="java.lang.String"/>
-	<field name="nombre_persona" class="java.lang.String"/>
-	<field name="edad" class="java.lang.Double"/>
-	<field name="departamento" class="java.lang.String"/>
-	<field name="id_departamento" class="java.lang.Long"/>
-	<field name="distrito" class="java.lang.String"/>
-	<field name="id_distrito" class="java.lang.Long"/>
-	<field name="barrio" class="java.lang.String"/>
-	<field name="id_barrio" class="java.lang.Long"/>
-	<field name="direccion" class="java.lang.String"/>
-	<field name="numero_cedula" class="java.lang.Integer"/>
-	<field name="fecha_registro_pot_ben" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Long"/>
-	<field name="indice_calidad_vida" class="java.math.BigDecimal"/>
-	<field name="fecha_icv" class="java.sql.Timestamp"/>
-	<field name="id_proveedor_dat_ext" class="java.lang.Long"/>
-	<field name="nombre_proveedor_dat_ext" class="java.lang.String"/>
-	<field name="numero_condicion_censo" class="java.lang.Integer"/>
-	<field name="codigo_condicion_censo" class="java.lang.String"/>
-	<field name="comentarios_validacion_censo" class="java.lang.String"/>
-	<field name="id_funcionario_validacion_cen" class="java.lang.Long"/>
-	<field name="nombre_funcionario" class="java.lang.String"/>
-	<field name="fecha_validacion_censo" class="java.sql.Timestamp"/>
+	<field name="CEDULA" class="java.lang.String"/>
+	<field name="NOMBRE_PERSONA" class="java.lang.String"/>
+	<field name="EDAD" class="java.math.BigDecimal"/>
+	<field name="DEPARTAMENTO" class="java.lang.String"/>
+	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
+	<field name="DISTRITO" class="java.lang.String"/>
+	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
+	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
+	<field name="ANHO" class="java.math.BigDecimal"/>
+	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
+	<field name="FECHA_ICV" class="java.sql.Timestamp"/>
+	<field name="ID_PROVEEDOR_DAT_EXT" class="java.math.BigDecimal"/>
+	<field name="NOMBRE_PROVEEDOR_DAT_EXT" class="java.lang.String"/>
+	<field name="NUMERO_CONDICION_CENSO" class="java.math.BigDecimal"/>
+	<field name="CODIGO_CONDICION_CENSO" class="java.lang.String"/>
+	<field name="COMENTARIOS_VALIDACION_CENSO" class="java.lang.String"/>
+	<field name="ID_FUNCIONARIO_VALIDACION_CEN" class="java.math.BigDecimal"/>
+	<field name="NOMBRE_FUNCIONARIO" class="java.lang.String"/>
+	<field name="FECHA_VALIDACION_CENSO" class="java.sql.Timestamp"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
-		<variableExpression><![CDATA[$F{cedula}]]></variableExpression>
+		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
 	<variable name="total_potenciales_beneficiarios" class="java.lang.Integer" calculation="Count">
-		<variableExpression><![CDATA[$F{numero_cedula}]]></variableExpression>
+		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
 	</variable>
 	<group name="grupo_departamento_distrito" isStartNewPage="true" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{departamento}+$F{distrito}]]></groupExpression>
+		<groupExpression><![CDATA[$F{DEPARTAMENTO}+$F{DISTRITO}]]></groupExpression>
 		<groupHeader>
 			<band height="150" splitType="Stretch">
 				<rectangle>
@@ -227,7 +227,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="10" isItalic="true"/>
 					</textElement>
-		<textFieldExpression class="java.lang.String"><![CDATA[" DEPARTAMENTO: " + $F{departamento} +" DISTRITO: " + $F{distrito} + " - AÑO: " + $F{anho}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[" DEPARTAMENTO: " + $F{DEPARTAMENTO} +" DISTRITO: " + $F{DISTRITO} + " - AÑO: " + $F{ANHO}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="780" y="34" width="78" height="13"/>
@@ -360,21 +360,21 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_cedula}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NUMERO_CEDULA}.intValue()]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="111" y="2" width="169" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_PERSONA}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" x="286" y="2" width="23" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$F{edad}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{EDAD}.doubleValue()]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="15" y="2" width="26" height="12"/>
@@ -388,49 +388,49 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_proveedor_dat_ext}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_PROVEEDOR_DAT_EXT}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="309" y="2" width="86" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DEPARTAMENTO}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="395" y="2" width="95" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="490" y="2" width="95" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
 				<reportElement key="textField" x="585" y="3" width="32" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{indice_calidad_vida}]]></textFieldExpression>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{INDICE_CALIDAD_VIDA}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" x="827" y="2" width="113" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_funcionario}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_FUNCIONARIO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" x="721" y="3" width="106" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_condicion_censo}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO_CONDICION_CENSO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

@@ -132,6 +132,7 @@ begin
     end if;
     for i in table_log.first..table_log.last loop
         begin
+            --dbms_output.put_line('Procesando linea '||i);
             total:=total+1;
             --Procesamos las pensiones solicitadas
             if table_log(i).numero_condicion_pension=1 then
@@ -201,15 +202,19 @@ begin
                 end if;
             end if;
             --Se registra el resultado de procesar el registro
-            execute immediate 'update log_pro_pre_pro_pag
-                     set es_procesado=1, observacion='''||mensaje||
-                     ''' where id_log_pro_pre_pro_pag='||table_log(i).id_log_pro_pre_pro_pag;
+            update log_pro_pre_pro_pag
+            set es_procesado=1, 
+            observacion=mensaje,
+            fecha_hora_transaccion=current_timestamp
+            where id_log_pro_pre_pro_pag=table_log(i).id_log_pro_pre_pro_pag;
         exception when others then
+            mensaje:=SQLERRM;
             total_errores:=total_errores+1;
             mensaje:=SQLERRM;
-            execute immediate 'update log_pro_pre_pro_pag
-                     set es_procesado=1, observacion=''Error: '||mensaje||
-                     ''' where id_log_pro_pre_pro_pag='||table_log(i).id_log_pro_pre_pro_pag;
+            update log_pro_pre_pro_pag
+            set es_procesado=1, 
+            observacion='Error: '||mensaje
+            where id_log_pro_pre_pro_pag=table_log(i).id_log_pro_pre_pro_pag;
         end;                       
      end loop;
      mensaje_retorno:='Total de Personas Procesadas: '||total

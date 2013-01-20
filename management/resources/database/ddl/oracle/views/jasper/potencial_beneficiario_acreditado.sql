@@ -1,22 +1,4 @@
-CREATE OR REPLACE VIEW potencial_ben_acreditado(
-    cedula,
-    nombre_persona,
-    edad,
-    departamento,
-    id_departamento,
-    distrito,
-    id_distrito,
-    barrio,
-    id_barrio,
-    direccion,
-    numero_cedula,
-    fecha_registro_pot_ben,
-    anho,
-    indice_calidad_vida,
-    nombre_jefe_hogar,
-    numero_cedula_jefe_hogar,
-    referencia_casa,
-    numero_tipo_reg_pot_ben)
+CREATE OR REPLACE VIEW potencial_ben_acreditado
 AS
 SELECT pb.codigo_potencial_ben AS cedula, pb.nombre_potencial_ben,
     utils.years_since(pb.fecha_nacimiento) AS edad,
@@ -43,6 +25,7 @@ WHERE (pb.numero_condicion_censo=3
   AND pb.id_ficha_persona is not null
   AND fh.indice_calidad_vida<(area.limite_indice_calidad_vida)
   AND pb.es_paraguayo_natural=1
+  AND pb.es_potencial_ben_inactivo=0
   AND utils.years_since(pb.fecha_nacimiento)>=65
 ORDER BY pb.numero_tipo_reg_pot_ben,pb.fecha_registro_pot_ben, pb.id_departamento,
     pb.id_distrito, pb.id_barrio, pb.nombre_potencial_ben;

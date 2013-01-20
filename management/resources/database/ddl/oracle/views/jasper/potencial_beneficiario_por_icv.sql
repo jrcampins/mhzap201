@@ -1,27 +1,5 @@
 -- OJO: se agrego referencia_casa a la lista de columnas de la vista
-CREATE OR REPLACE VIEW potencial_ben_por_icv (
-    cedula,
-    nombre_persona,
-    edad,
-    departamento,
-    id_departamento,
-    distrito,
-    id_distrito,
-    barrio,
-    id_barrio,
-    direccion,
-    numero_cedula,
-    fecha_registro_pot_ben,
-    anho,
-    indice_calidad_vida,
-    fecha_icv,
-    fuente_icv,
-    numero_condicion_censo,
-    codigo_condicion_censo,
-    nombre_jefe_hogar,
-    numero_cedula_jefe_hogar,
-    referencia_casa
-)
+CREATE OR REPLACE VIEW potencial_ben_por_icv 
 AS
 SELECT
     pb.codigo_potencial_ben AS cedula,

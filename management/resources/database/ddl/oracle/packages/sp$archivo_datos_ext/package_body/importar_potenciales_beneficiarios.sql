@@ -10,7 +10,7 @@ procedure importar_pot_ben(nombre_archivo varchar2, codigo_archivo varchar2, ret
     id_ubicacion_insertar number;
     new_potencial_ben potencial_ben%ROWTYPE;
     array_nombres sp$utils.t_array;
-    mensaje varchar2(2000):='';
+    mensaje varchar2(4000):='';
     tipo_arch number;
     i number:=0;
     nombre_beneficiario varchar2(255):='';
@@ -135,7 +135,7 @@ begin
             id_barrio_potencial_ben:=sp$utils.get_id_barrio(registro.distrito,registro.barrio);
             if(id_barrio_potencial_ben<>0 )then
                 new_potencial_ben.id_barrio:=id_barrio_potencial_ben;
-                --new_potencial_ben.numero_tipo_area:=get_numero_tipo_area(id_barrio_potencial_ben);
+                new_potencial_ben.numero_tipo_area:=sp$utils.get_numero_tipo_area(id_barrio_potencial_ben);
             end if;
             --Se capturan los nombres
             if(registro.nombres_apellidos is not null) then
@@ -164,10 +164,6 @@ begin
             new_potencial_ben.numero_telefono_resp_hogar:=registro.telefono;
             --Se importa la direccion
             new_potencial_ben.direccion:=registro.direccion;
-            --Si el barrio no fue encontrado se concatena a la direccion
-            if(new_potencial_ben.id_barrio is null and registro.barrio is not null) then
-                new_potencial_ben.direccion:=new_potencial_ben.direccion||' ('||registro.barrio||')';
-            end if;
             --Se importa la referencia
             new_potencial_ben.referencia_direccion:=registro.referencia;
             --Se importa el referente
@@ -190,12 +186,29 @@ begin
                     new_potencial_ben.letra_cedula:=null;
                     --Se notifica que se insertará sin cédula
                     update log_imp_pot
-                    set observacion='Persona no encontrada. Cédula ignorada'
+                    set observacion='Persona no encontrada. Cédula ignorada. '
                     where id_log_imp_pot=registro.id_log_imp_pot;
                 end if;
             else
                 new_potencial_ben.numero_tipo_reg_pot_ben:=2;
                 new_potencial_ben.letra_cedula:=null;
+            end if;
+            --Si el barrio no fue encontrado se concatena a la direccion
+            if(new_potencial_ben.id_barrio is null and registro.barrio is not null) then
+                new_potencial_ben.direccion:=new_potencial_ben.direccion||' ('||registro.barrio||')';
+                begin
+                    select observacion into mensaje from log_imp_pot where id_log_imp_pot=registro.id_log_imp_pot;
+                exception when no_data_found then null;
+                end;
+                if mensaje is null then
+                    update log_imp_pot
+                    set observacion='Barrio no encontrado. Se agregó a la dirección.'
+                    where id_log_imp_pot=registro.id_log_imp_pot;
+                else
+                    update log_imp_pot
+                    set observacion=mensaje||'Barrio no encontrado. Se agregó a la dirección. '
+                    where id_log_imp_pot=registro.id_log_imp_pot;
+                end if;
             end if;
             --Se inserta el registro importado en la tabla potencial_ben
             insert into potencial_ben values new_potencial_ben;

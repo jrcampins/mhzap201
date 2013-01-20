@@ -4,35 +4,35 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="216"/>
 	<import value="com.egt.commons.enums.*"/>
 	<import value="java.util.*"/>
 	<import value="java.math.BigDecimal"/>
-	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.base.util.*"/>
+	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
-        <parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["mhzap201"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="ENTERPRISE_APPLICATION_NAME" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["Gestion de Recursos"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "0.jrtx"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "1.jpg"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "2.jpg"]]></defaultValueExpression>
-        </parameter>
-        <parameter name="SUBREPORTS_DIR" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
-        </parameter>
+	<parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["mhzap201"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ENTERPRISE_APPLICATION_NAME" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Gestion de Recursos"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CUSTOM_STYLE_TEMPLATE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "0.jrtx"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "1.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAGE_HEADER_IMAGE_2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{RESOURCES_DIR} + $P{ENTERPRISE_APPLICATION_CODE} + "2.jpg"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORTS_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./subreports/"]]></defaultValueExpression>
+	</parameter>
 	<parameter name="SUPER_REPORT" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
@@ -57,37 +57,37 @@
 	<queryString>
 		<![CDATA[select * from potencial_ben_constancia_reg]]>
 	</queryString>
-	<field name="id_potencial_ben" class="java.lang.Long"/>
-	<field name="nombre_potencial_ben" class="java.lang.String"/>
-	<field name="codigo_potencial_ben" class="java.lang.String"/>
-	<field name="fecha_nacimiento" class="java.sql.Timestamp"/>
-	<field name="edad" class="java.lang.Integer"/>
-	<field name="letra_cedula" class="java.lang.String"/>
-	<field name="numero_cedula" class="java.lang.Integer"/>
-	<field name="cedula" class="java.lang.String"/>
-	<field name="fecha_expedicion_cedula" class="java.sql.Timestamp"/>
-	<field name="fecha_vencimiento_cedula" class="java.sql.Timestamp"/>
-	<field name="nombre_responsable_hogar" class="java.lang.String"/>
-	<field name="telefono_responsable_hogar" class="java.lang.String"/>
-	<field name="departamento" class="java.lang.String"/>
-	<field name="id_departamento" class="java.lang.Long"/>
-	<field name="distrito" class="java.lang.String"/>
-	<field name="id_distrito" class="java.lang.Long"/>
-	<field name="barrio" class="java.lang.String"/>
-	<field name="id_barrio" class="java.lang.Long"/>
-	<field name="manzana" class="java.lang.Long"/>
-	<field name="area" class="java.lang.String"/>
-	<field name="direccion" class="java.lang.String"/>
-	<field name="tiene_jubilacion" class="java.lang.Integer"/>
-	<field name="fecha_registro_pot_ben" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Long"/>
-	<field name="nombre_referente" class="java.lang.String"/>
-	<field name="telefono_referente" class="java.lang.String"/>
+	<field name="ID_POTENCIAL_BEN" class="java.math.BigDecimal"/>
+	<field name="NOMBRE_POTENCIAL_BEN" class="java.lang.String"/>
+	<field name="CODIGO_POTENCIAL_BEN" class="java.lang.String"/>
+	<field name="FECHA_NACIMIENTO" class="java.sql.Timestamp"/>
+	<field name="EDAD" class="java.math.BigDecimal"/>
+	<field name="LETRA_CEDULA" class="java.lang.String"/>
+	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
+	<field name="CEDULA" class="java.lang.String"/>
+	<field name="FECHA_EXPEDICION_CEDULA" class="java.sql.Timestamp"/>
+	<field name="FECHA_VENCIMIENTO_CEDULA" class="java.sql.Timestamp"/>
+	<field name="NOMBRE_RESPONSABLE_HOGAR" class="java.lang.String"/>
+	<field name="NUMERO_TELEFONO_RESP_HOGAR" class="java.lang.String"/>
+	<field name="DEPARTAMENTO" class="java.lang.String"/>
+	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
+	<field name="DISTRITO" class="java.lang.String"/>
+	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
+	<field name="MANZANA" class="java.math.BigDecimal"/>
+	<field name="AREA" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="TIENE_JUBILACION" class="java.math.BigDecimal"/>
+	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
+	<field name="ANHO" class="java.math.BigDecimal"/>
+	<field name="NOMBRE_REFERENTE" class="java.lang.String"/>
+	<field name="NUMERO_TELEFONO_REFERENTE" class="java.lang.String"/>
 	<variable name="tiene_letra_cedula" class="java.lang.Boolean">
-		<variableExpression><![CDATA[$F{letra_cedula}.equals("")]]></variableExpression>
+		<variableExpression><![CDATA[$F{LETRA_CEDULA}.equals("")]]></variableExpression>
 	</variable>
 	<variable name="tiene_jubilacion" class="java.lang.Boolean">
-		<variableExpression><![CDATA[$F{tiene_jubilacion}.toString().equals("1")]]></variableExpression>
+		<variableExpression><![CDATA[$F{TIENE_JUBILACION}.toString().equals("1")]]></variableExpression>
 	</variable>
 	<group name="Group1" minHeightToStartNewPage="132">
 		<groupExpression><![CDATA[]]></groupExpression>
@@ -176,9 +176,9 @@
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" style="default1" x="27" y="102" width="493" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12" isBold="false" isItalic="false" />
+						<font fontName="Arial" size="12" isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["POTENCIAL BENEFICIARIO: "+$F{codigo_potencial_ben}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["POTENCIAL BENEFICIARIO: "+$F{CODIGO_POTENCIAL_BEN}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -273,12 +273,12 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="29" width="192" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_potencial_ben}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_POTENCIAL_BEN}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="419" y="29" width="121" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{cedula}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{CEDULA}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="58" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -297,7 +297,7 @@
 				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="58" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_nacimiento}]]></textFieldExpression>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{FECHA_NACIMIENTO}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="270" y="58" width="136" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -344,17 +344,17 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="232" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_referente}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_REFERENTE}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="232" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{telefono_referente}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO_TELEFONO_REFERENTE}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="58" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{edad}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{EDAD}.intValue()]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="87" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -429,27 +429,27 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="87" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{DEPARTAMENTO}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="87" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="78" y="116" width="192" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="347" y="116" width="58" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.Long"><![CDATA[$F{manzana}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{MANZANA}.longValue()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" mode="Transparent" x="483" y="116" width="57" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{area}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AREA}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="145" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -468,7 +468,7 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="145" width="395" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{DIRECCION}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="174" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -501,12 +501,12 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="174" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[( new Boolean($F{tiene_jubilacion}.equals(new Integer(1))) ? "Si": "No" )]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[( new Boolean($F{TIENE_JUBILACION}.equals(new Integer(1))) ? "Si": "No" )]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="174" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{fecha_registro_pot_ben}]]></textFieldExpression>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{FECHA_REGISTRO_POT_BEN}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="203" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -539,12 +539,12 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="203" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_responsable_hogar}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_RESPONSABLE_HOGAR}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="203" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{telefono_responsable_hogar}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO_TELEFONO_RESP_HOGAR}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="356" width="200" height="29" forecolor="#000000" backcolor="#FFFFFF"/>

@@ -47,7 +47,7 @@ begin
     end if;
     --Solo se acredita si el potencial beneficiario tiene una persona asociada
     if row_potencial_ben.id_persona is null then
-        mensaje:='Potencial Beneficiario no aparece en el registro de Personas';
+        msg_string:='Potencial Beneficiario no aparece en el registro de Personas';
         raise_application_error(err_number, msg_string, true);
     --Si el potencial beneficiario es indígena, se acredita automáticamente
     elsif row_potencial_ben.es_indigena =1 then

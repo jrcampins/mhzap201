@@ -1,27 +1,4 @@
-CREATE OR REPLACE VIEW potencial_ben_por_resultado (
-    cedula,
-    nombre_persona,
-    edad,
-    departamento,
-    id_departamento,
-    distrito,
-    id_distrito,
-    barrio,
-    id_barrio,
-    direccion,
-    numero_cedula,
-    fecha_registro_pot_ben,
-    anho,
-    indice_calidad_vida,
-    fecha_icv,
-    id_proveedor_dat_ext,
-    nombre_proveedor_dat_ext,
-    numero_condicion_censo,
-    codigo_condicion_censo,
-    comentarios_validacion_censo,
-    id_funcionario_validacion_cen,
-    nombre_funcionario,
-    fecha_validacion_censo)
+CREATE OR REPLACE VIEW potencial_ben_por_resultado 
 AS
 SELECT pb.codigo_potencial_ben AS cedula, pb.nombre_potencial_ben as nombre_persona,
     utils.years_since(pb.fecha_nacimiento) AS edad,
