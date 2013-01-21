@@ -7,6 +7,7 @@ SELECT pb.codigo_potencial_ben AS cedula,
     ubicacion_1x5.nombre_ubicacion AS distrito, ubicacion_1x5.id_ubicacion AS id_distrito,
     ubicacion_1x7.nombre_ubicacion AS barrio, ubicacion_1x7.id_ubicacion AS id_barrio,
     pb.direccion, 
+    ta.numero_tipo_area,ta.codigo_tipo_area as area,
     pb.numero_cedula, 
     pb.fecha_registro_pot_ben, extract(year from pb.fecha_registro_pot_ben) AS anho, 
     fh.indice_calidad_vida,
@@ -19,6 +20,7 @@ FROM potencial_ben pb
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = pb.id_departamento
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = pb.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
+   LEFT JOIN tipo_area ta ON ubicacion_1x7.numero_tipo_area=ta.numero_tipo_area
 WHERE pb.numero_condicion_censo=2
   AND pb.id_ficha_persona is not null
 ORDER BY pb.fecha_registro_pot_ben, pb.id_departamento,

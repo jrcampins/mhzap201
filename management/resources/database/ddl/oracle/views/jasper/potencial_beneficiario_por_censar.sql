@@ -4,7 +4,7 @@ SELECT pb.codigo_potencial_ben AS cedula, pb.nombre_potencial_ben AS nombre_pers
     utils.years_since(pb.fecha_nacimiento) AS edad,
     ubicacion_1x4.nombre_ubicacion AS departamento, ubicacion_1x4.id_ubicacion AS id_departamento,
     ubicacion_1x5.nombre_ubicacion AS distrito, ubicacion_1x5.id_ubicacion AS id_distrito,
-    ubicacion_1x7.nombre_ubicacion AS barrio, ubicacion_1x7.id_ubicacion AS id_barrio, 
+    ubicacion_1x7.nombre_ubicacion AS barrio, ubicacion_1x7.id_ubicacion AS id_barrio,
     pb.direccion, 
     pb.numero_cedula,
     pb.fecha_registro_pot_ben, extract(year from pb.fecha_registro_pot_ben) AS anho, 

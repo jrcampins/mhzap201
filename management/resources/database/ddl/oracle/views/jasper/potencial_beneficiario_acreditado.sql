@@ -5,6 +5,7 @@ SELECT pb.codigo_potencial_ben AS cedula, pb.nombre_potencial_ben,
     ubicacion_1x4.nombre_ubicacion AS departamento, ubicacion_1x4.id_ubicacion AS id_departamento,
     ubicacion_1x5.nombre_ubicacion AS distrito, ubicacion_1x5.id_ubicacion AS id_distrito,
     ubicacion_1x7.nombre_ubicacion AS barrio, ubicacion_1x7.id_ubicacion AS id_barrio,
+    ta.numero_tipo_area,ta.codigo_tipo_area as area,
     pb.direccion, 
     pb.numero_cedula, 
     pb.fecha_registro_pot_ben, extract(year from pb.fecha_registro_pot_ben) AS anho, 
@@ -19,11 +20,11 @@ FROM potencial_ben pb
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = pb.id_departamento
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = pb.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
-   LEFT JOIN tipo_area area on ubicacion_1x7.numero_tipo_area = area.numero_tipo_area
+   LEFT JOIN tipo_area ta on ubicacion_1x7.numero_tipo_area = ta.numero_tipo_area
 WHERE (pb.numero_condicion_censo=3
   OR pb.numero_condicion_censo=5)
   AND pb.id_ficha_persona is not null
-  AND fh.indice_calidad_vida<(area.limite_indice_calidad_vida)
+  AND fh.indice_calidad_vida<(ta.limite_indice_calidad_vida)
   AND pb.es_paraguayo_natural=1
   AND pb.es_potencial_ben_inactivo=0
   AND utils.years_since(pb.fecha_nacimiento)>=65
