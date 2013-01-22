@@ -3,52 +3,49 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="7"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
-        <parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
-            <defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
-        </parameter>
+	<parameter name="RESOURCES_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./resources/"]]></defaultValueExpression>
+	</parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[select * from persona_con_pension_denegada]]>
 	</queryString>
-	<field name="cedula" class="java.lang.String"/>
-	<field name="nombre_persona" class="java.lang.String"/>
-	<field name="edad" class="java.lang.Double"/>
-	<field name="departamento" class="java.lang.String"/>
-	<field name="id_departamento" class="java.lang.Long"/>
-	<field name="distrito" class="java.lang.String"/>
-	<field name="id_distrito" class="java.lang.Long"/>
-	<field name="barrio" class="java.lang.String"/>
-	<field name="id_barrio" class="java.lang.Long"/>
-	<field name="direccion" class="java.lang.String"/>
-	<field name="codigo_estado_civil" class="java.lang.String"/>
-	<field name="codigo_condicion_pension" class="java.lang.String"/>
-	<field name="codigo_sexo_persona" class="java.lang.String"/>
-	<field name="numero_cedula" class="java.lang.Integer"/>
-	<field name="fecha_solicitud_pension" class="java.sql.Timestamp"/>
-	<field name="fecha_denegacion_pension" class="java.sql.Timestamp"/>
-	<field name="anho" class="java.lang.Long"/>
-	<field name="indice_calidad_vida" class="java.math.BigDecimal"/>
-	<field name="nombre_jefe_hogar" class="java.lang.String"/>
-	<field name="numero_cedula_jefe_hogar" class="java.lang.Integer"/>
-	<field name="referencia_casa" class="java.lang.String"/>
-	<field name="numero_telefono_resp_hogar" class="java.lang.String"/>
-	<field name="nombre_referente" class="java.lang.String"/>
-	<field name="numero_telefono" class="java.lang.String"/>
-	<field name="observaciones" class="java.lang.String"/>
-	<field name="causa_den_pension" class="java.lang.String"/>
+	<field name="CEDULA" class="java.lang.String"/>
+	<field name="NOMBRE_PERSONA" class="java.lang.String"/>
+	<field name="EDAD" class="java.math.BigDecimal"/>
+	<field name="DEPARTAMENTO" class="java.lang.String"/>
+	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
+	<field name="DISTRITO" class="java.lang.String"/>
+	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
+	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="NUMERO_CONDICION_PENSION" class="java.math.BigDecimal"/>
+	<field name="FECHA_SOLICITUD_PENSION" class="java.sql.Timestamp"/>
+	<field name="FECHA_DENEGACION_PENSION" class="java.sql.Timestamp"/>
+	<field name="ANHO" class="java.math.BigDecimal"/>
+	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
+	<field name="NOMBRE_JEFE_HOGAR" class="java.lang.String"/>
+	<field name="NUMERO_CEDULA_JEFE_HOGAR" class="java.math.BigDecimal"/>
+	<field name="REFERENCIA_CASA" class="java.lang.String"/>
+	<field name="NUMERO_CAUSA_DEN_PENSION" class="java.math.BigDecimal"/>
+	<field name="NUMERO_TELEFONO" class="java.lang.String"/>
+	<field name="OBSERVACIONES" class="java.lang.String"/>
+	<field name="CAUSA_DEN_PENSION" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
-		<variableExpression><![CDATA[$F{cedula}]]></variableExpression>
+		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
 	<variable name="total_personas_solicitantes" class="java.lang.Integer" calculation="Count">
-		<variableExpression><![CDATA[$F{numero_cedula}]]></variableExpression>
+		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
 	</variable>
 	<group name="grupo_distrito_anho" isStartNewPage="true" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{distrito}+$F{anho}]]></groupExpression>
+		<groupExpression><![CDATA[$F{DISTRITO}+$F{ANHO}]]></groupExpression>
 		<groupHeader>
 			<band height="150" splitType="Stretch">
 				<rectangle>
@@ -83,7 +80,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>
-					<text><![CDATA[LISTADO DE SOLICITANTES ACREDITADOS CON OBJECIONES]]></text>
+					<text><![CDATA[LISTADO DE SOLICITANTES CON PENSIÓN OBJETADA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-6" x="780" y="8" width="78" height="13"/>
@@ -258,7 +255,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="10" isItalic="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{distrito} + " - AÑO: " + $F{anho}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["DISTRITO: " + $F{DISTRITO} + " - AÑO: " + $F{ANHO}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="780" y="34" width="78" height="13"/>
@@ -363,49 +360,49 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_cedula}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NUMERO_CEDULA}.intValue()]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="102" y="2" width="169" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_PERSONA}]]></textFieldExpression>
 			</textField>
 			<textField pattern="###0" isBlankWhenNull="true">
 				<reportElement key="textField" x="277" y="2" width="23" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$F{edad}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{EDAD}.doubleValue()]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="502" y="2" width="102" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{barrio}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" x="604" y="2" width="125" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{direccion}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DIRECCION}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField" x="755" y="2" width="57" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{numero_telefono}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO_TELEFONO}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
 				<reportElement key="textField" x="813" y="2" width="125" height="12"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{causa_den_pension}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OBSERVACIONES}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="10" y="2" width="33" height="12"/>
@@ -419,21 +416,21 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{indice_calidad_vida}]]></textFieldExpression>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{INDICE_CALIDAD_VIDA}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-8" x="303" y="2" width="92" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{departamento}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DEPARTAMENTO}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement key="textField-9" x="397" y="2" width="103" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{distrito}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

@@ -4,8 +4,6 @@ select
     persona.nombre_persona,
     persona.numero_cedula,
     utils.years_since(persona.fecha_nacimiento) as edad,
-    estado_civil.codigo_estado_civil,
-    sexo_persona.codigo_sexo_persona,
     ubicacion1.id_ubicacion as id_departamento,
     ubicacion1.nombre_ubicacion as departamento,
     ubicacion2.id_ubicacion as id_distrito,
@@ -25,8 +23,6 @@ select
     persona.numero_tipo_act_jupe
 from
     persona
-    left join estado_civil on persona.numero_estado_civil = estado_civil.numero_estado_civil
-    left join sexo_persona on persona.numero_sexo_persona = sexo_persona.numero_sexo_persona
     left join ubicacion ubicacion1 on persona.id_departamento=ubicacion1.id_ubicacion
     left join ubicacion ubicacion2 on persona.id_distrito=ubicacion2.id_ubicacion
     left join ubicacion ubicacion3 on persona.id_barrio=ubicacion3.id_ubicacion

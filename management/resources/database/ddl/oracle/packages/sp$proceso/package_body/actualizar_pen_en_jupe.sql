@@ -298,7 +298,7 @@ function actualizar_pen_en_jupe(param varchar2) return varchar2 is
 
                    UPDATE persona
                    SET numero_tipo_act_jupe = 1,
-                    fecha_hora_ult_act_jupe = sysdate
+                    fecha_hora_ult_act_jupe = current_timestamp
                    WHERE id_persona = row.id_persona;
 
                 --Agregado se actualiza el log correspondiente

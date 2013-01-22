@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="24"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -19,8 +19,6 @@
 	<field name="NOMBRE_PERSONA" class="java.lang.String"/>
 	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
 	<field name="EDAD" class="java.math.BigDecimal"/>
-	<field name="CODIGO_ESTADO_CIVIL" class="java.lang.String"/>
-	<field name="CODIGO_SEXO_PERSONA" class="java.lang.String"/>
 	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
 	<field name="DEPARTAMENTO" class="java.lang.String"/>
 	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
@@ -195,7 +193,7 @@
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="554" y="127" width="102" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="554" y="127" width="150" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -206,7 +204,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="8"/>
 					</textElement>
-					<text><![CDATA[FECHA ACTUALIZACIÓN]]></text>
+					<text><![CDATA[FECHA  HORA ACTUALIZACIÓN]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" x="228" y="91" width="493" height="17"/>
@@ -294,7 +292,7 @@
 					<text><![CDATA[DEPARTAMENTO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="656" y="127" width="82" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="704" y="127" width="69" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -308,7 +306,7 @@
 					<text><![CDATA[FECHA APROBACIÓN]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="738" y="127" width="89" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="773" y="127" width="70" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -322,7 +320,7 @@
 					<text><![CDATA[FECHA RESOLUCIÓN]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="827" y="127" width="82" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="843" y="127" width="66" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -331,7 +329,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[N° RESOLUCIÓN]]></text>
 				</staticText>
@@ -376,8 +374,8 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Double"><![CDATA[$F{EDAD}.doubleValue()]]></textFieldExpression>
 			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" x="554" y="2" width="102" height="12"/>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z" isBlankWhenNull="true">
+				<reportElement key="textField" x="554" y="2" width="150" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
@@ -412,21 +410,21 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" x="656" y="1" width="82" height="13"/>
+				<reportElement key="textField" x="704" y="0" width="69" height="13"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA_APROBACION_PENSION}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" x="738" y="0" width="89" height="13"/>
+				<reportElement key="textField" x="773" y="0" width="70" height="13"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA_RESOLUCION_PENSION}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" x="827" y="0" width="82" height="13"/>
+				<reportElement key="textField" x="843" y="0" width="66" height="13"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
