@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="278"/>
+	<property name="ireport.x" value="72"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -13,8 +13,7 @@
 	</parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[select * from persona_doc_pension_oto
-]]>
+		<![CDATA[select * from persona_doc_pension_oto]]>
 	</queryString>
 	<field name="CEDULA" class="java.lang.String"/>
 	<field name="NOMBRE_PERSONA" class="java.lang.String"/>
@@ -68,7 +67,7 @@
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-3" x="176" y="53" width="597" height="17"/>
+					<reportElement key="staticText-3" x="158" y="53" width="615" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>

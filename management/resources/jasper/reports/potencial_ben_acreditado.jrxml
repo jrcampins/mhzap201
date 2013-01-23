@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="24"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -64,7 +64,7 @@
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-3" x="176" y="53" width="597" height="17"/>
+					<reportElement key="staticText-3" x="153" y="53" width="620" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>

@@ -67,7 +67,7 @@
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-3" x="176" y="53" width="597" height="17"/>
+					<reportElement key="staticText-3" x="153" y="53" width="620" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>
