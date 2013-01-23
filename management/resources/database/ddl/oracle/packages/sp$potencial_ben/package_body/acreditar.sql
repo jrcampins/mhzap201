@@ -94,8 +94,9 @@ begin
         --Si la ficha hogar no tiene icv
         if icv_beneficiario is null then    
             icv_beneficiario:=sp$ficha_hogar.calcular_icv(row_ficha_hogar.id_ficha_hogar) ;
+        end if;
         --Se compara el icv con el punto de corte
-        elsif icv_beneficiario<=icv_corte then
+        if icv_beneficiario<=icv_corte then
         --Se intenta solicitar la pensión
             mensaje:=sp$persona.solicitar_pension(row_potencial_ben.id_persona,'Pension Solicitada y Acreditada automáticamente');
             mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje;
