@@ -5,7 +5,6 @@
 --@return: mensaje indicando el numero de registros procesados, aprobados y denegados
 -- 
 function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp) return varchar2 is
-
      mensaje varchar2(2000):='';
      mensaje_retorno varchar2(2000):='';
      segmento_consulta varchar2(2000):='';
@@ -93,7 +92,7 @@ begin
             --dbms_output.put_line( 'Insertando id ('||i||')='||vista_prox_pag(i).id_persona );
         end loop;
     --Solo se procesan pensiones en estatus solicitada
-    else      
+    else
         --llenamos la tabla log con los registros a procesar
         execute immediate 'select * from vista_log_pro_pre_pro_pag where 
                                   (numero_condicion_pension=1
@@ -136,7 +135,9 @@ begin
             total:=total+1;
             --Procesamos las pensiones solicitadas
             if table_log(i).numero_condicion_pension=1 then
+                --dbms_output.put_line('Prnsion solicitada '||i);
                 mensaje:= sp$persona.aprobar_pension(table_log(i).id_persona, 'Pensión Aprobada Automáticamente');
+                --dbms_output.put_line('Mensaje de aprobacion '||mensaje);
                 --Si se aprobo se actualiza la tabla temporal
                 if mensaje like '%Pensión Aprobada%' then
                      total_aprobados:=total_aprobados+1;
@@ -157,6 +158,7 @@ begin
                 end if;
             --Procesamos las reconsideraciones solicitadas
             elsif table_log(i).numero_condicion_reco_pen=1 then
+                --dbms_output.put_line('Pension reconsideracion '||i);
                 mensaje:=sp$persona.proc_reco_pen(table_log(i).id_persona);
                 --Si la reconsideración fue aprobada se registra la aprobación de la pensicón
                 if mensaje like '%Reconsideración Aprobada%' then
@@ -167,6 +169,7 @@ begin
                 end if;
             --Procesamos las denuncias registradas
             elsif table_log(i).numero_condicion_denu_pen=1 then
+                --dbms_output.put_line('Prnsion denuncia '||i);
                 mensaje:=sp$persona.proc_denu_pen(table_log(i).id_persona);
                 --Si la denuncia fue desmentida se registra el desmentido de la denuncia
                 if mensaje like '%Denuncia Desmentida%' then
@@ -176,6 +179,7 @@ begin
                 end if;
             --Si la bandera está activa reprocesamos las pensiones ya otorgadas
             elsif table_log(i).numero_condicion_pension=5 then
+                --dbms_output.put_line('Pension otorgada '||i);
                 --Se verifica la vigencia de la pensión
                 condicion_vigencia:=sp$persona.consultar_vig_pen(table_log(i).id_persona);
                 --Si está vigente se verifica la elegibilidad
