@@ -20,7 +20,7 @@ function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion var
           id_distrito number,
           id_departamento number,
           id_barrio number,
-          numero_condicion_pension number);
+          numero_causa_den_pension number);
     type cons_pen_den is table of pen_den;
     id_reg number;
     vista_pen_den cons_pen_den;
@@ -55,7 +55,7 @@ begin
                               id_distrito, 
                               id_departamento, 
                               id_barrio , 
-                              numero_condicion_pension
+                              numero_causa_den_pension
                        from persona 
                        where numero_condicion_pension=3 '||segmento_consulta_ubicacion
     bulk collect into vista_pen_den;
@@ -73,7 +73,7 @@ begin
                         vista_pen_den(i).id_distrito, 
                         vista_pen_den(i).id_departamento, 
                         vista_pen_den(i).id_barrio, 
-                        vista_pen_den(i).numero_condicion_pension,
+                        vista_pen_den(i).numero_causa_den_pension,
                         0,
                         null,
                         current_timestamp);

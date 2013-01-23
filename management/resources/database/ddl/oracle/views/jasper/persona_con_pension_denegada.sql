@@ -20,7 +20,8 @@ SELECT persona.codigo_persona AS cedula,
        extract(year from persona.fecha_solicitud_pension) AS anho, 
        persona.indice_calidad_vida,
        persona.numero_causa_den_pension,
-       COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono
+       COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono,
+       cd.codigo_causa_den_pension
 FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =
        persona.id_departamento
@@ -28,6 +29,7 @@ FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
+   LEFT JOIN causa_den_pension cd on persona.numero_causa_den_pension=cd.numero_causa_den_pension
 WHERE persona.numero_condicion_pension = 6
 ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

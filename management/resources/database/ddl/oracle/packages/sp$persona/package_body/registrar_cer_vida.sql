@@ -35,7 +35,8 @@ begin
         set fecha_certificado_vida = fecha_certificado,
             certificado_vida = certificado,
             es_certificado_vida_anulado=0,
-            comentarios_anul_cer_vida=null
+            comentarios_anul_cer_vida=null,
+            es_persona_con_cer_vida=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Vida actualizado';
     --
@@ -46,7 +47,8 @@ begin
         set fecha_certificado_vida = fecha_certificado,
             certificado_vida = certificado,
             es_certificado_vida_anulado=0,
-            comentarios_anul_cer_vida=null
+            comentarios_anul_cer_vida=null,
+            es_persona_con_cer_vida=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Vida Registrado';
     end if;
