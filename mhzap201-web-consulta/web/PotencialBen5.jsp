@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 campoIndiceCalidadVida1 listaEsPotencialBenMigrado1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -960,7 +960,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{PotencialBen5.listaNumeroTipoArea1}"
                                                     converter="#{PotencialBen5.converterNumeroTipoArea1}"
-                                                    disabled="#{PotencialBen5.gestor.filaNoProcesada}"
+                                                    disabled="true"
                                                     items="#{PotencialBen5.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{currentRow.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.potencial_ben"/>
@@ -2052,6 +2052,58 @@
                                                     text="#{currentRow.value['referencia_direccion']}"/>
                                                 <webuijsf:message id="messageReferenciaDireccion1"
                                                     for="campoReferenciaDireccion1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{PotencialBen5.tableColumnIndiceCalidadVida1}"
+                                                    headerText="indice calidad vida"
+                                                    id="tableColumnIndiceCalidadVida1" rendered="false"
+                                                    sort="indice_calidad_vida">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIndiceCalidadVida1"
+                                                    text="#{currentRow.value['indice_calidad_vida']}"
+                                                    rendered="#{PotencialBen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen5.labelIndiceCalidadVida1}"
+                                                    id="labelIndiceCalidadVida1"
+                                                    for="campoIndiceCalidadVida1"/>
+                                                <webuijsf:textField id="campoIndiceCalidadVida1"
+                                                    binding="#{PotencialBen5.campoIndiceCalidadVida1}"
+                                                    converter="#{PotencialBen5.converterIndiceCalidadVida1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['indice_calidad_vida']}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
+                                                    validatorExpression="#{PotencialBen5.validatorIndiceCalidadVida1.validate}"/>
+                                                <webuijsf:staticText id="campoIndiceCalidadVida1Texto1"
+                                                    binding="#{PotencialBen5.campoIndiceCalidadVida1Texto1}"
+                                                    converter="#{PotencialBen5.converterIndiceCalidadVida1}"
+                                                    text="#{currentRow.value['indice_calidad_vida']}"/>
+                                                <webuijsf:message id="messageIndiceCalidadVida1"
+                                                    for="campoIndiceCalidadVida1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{PotencialBen5.tableColumnEsPotencialBenMigrado1}"
+                                                    headerText="migrado"
+                                                    id="tableColumnEsPotencialBenMigrado1" rendered="false"
+                                                    sort="es_potencial_ben_migrado">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextEsPotencialBenMigrado1"
+                                                    text="#{currentRow.value['es_potencial_ben_migrado']}"
+                                                    rendered="#{PotencialBen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen5.labelEsPotencialBenMigrado1}"
+                                                    id="labelEsPotencialBenMigrado1"
+                                                    for="listaEsPotencialBenMigrado1"/>
+                                                <webuijsf:dropDown id="listaEsPotencialBenMigrado1"
+                                                    binding="#{PotencialBen5.listaEsPotencialBenMigrado1}"
+                                                    converter="#{PotencialBen5.converterEsPotencialBenMigrado1}"
+                                                    disabled="true"
+                                                    items="#{PotencialBen5.asistente.opcionesListaEsPotencialBenMigrado1}"
+                                                    selected="#{currentRow.value['es_potencial_ben_migrado']}"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"/>
+                                                <webuijsf:staticText id="listaEsPotencialBenMigrado1Texto1"
+                                                    binding="#{PotencialBen5.listaEsPotencialBenMigrado1Texto1}"/>
+                                                <webuijsf:message id="messageEsPotencialBenMigrado1"
+                                                    for="listaEsPotencialBenMigrado1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

@@ -1041,8 +1041,7 @@
                                                     onClick="#{Persona6.asistente.scriptCampoIdDistrito1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroTipoArea1"
-                                                rendered="#{Persona6.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea1" rendered="#{Persona6.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona6.labelNumeroTipoArea1}"
@@ -1052,13 +1051,12 @@
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridNumeroTipoArea2"
-                                                rendered="#{Persona6.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea2" rendered="#{Persona6.gestor.designing}"
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{Persona6.listaNumeroTipoArea1}"
                                                     converter="#{Persona6.converterNumeroTipoArea1}"
-                                                    disabled="#{Persona6.gestor.filaNoModificada}"
+                                                    disabled="true"
                                                     items="#{Persona6.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{Persona6.personaDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.persona"/>
@@ -4159,7 +4157,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1x1"
                                                     binding="#{Persona6.listaNumeroTipoArea1x1}"
                                                     converter="#{Persona6.converterNumeroTipoArea1}"
-                                                    disabled="#{Persona6.gestor.filaNoModificada}"
+                                                    disabled="true"
                                                     items="#{Persona6.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{Persona6.personaDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.persona"/>

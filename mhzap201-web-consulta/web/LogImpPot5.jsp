@@ -573,7 +573,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

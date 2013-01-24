@@ -275,7 +275,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProDenPenObj5.tableColumnCodigoPersona1}"
                                                     headerText="c&#243;digo persona"
-                                                    id="tableColumnCodigoPersona1" rendered="false"
+                                                    id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextCodigoPersona1"
@@ -550,7 +550,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProDenPenObj5.tableColumnEsProcesado1}"
                                                     headerText="procesado"
-                                                    id="tableColumnEsProcesado1" rendered="false"
+                                                    id="tableColumnEsProcesado1"
                                                     sort="es_procesado">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextEsProcesado1"
@@ -575,7 +575,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProDenPenObj5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"
@@ -601,7 +601,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProDenPenObj5.tableColumnFechaHoraTransaccion1}"
                                                     headerText="fecha hora transacci&#243;n"
-                                                    id="tableColumnFechaHoraTransaccion1" rendered="false"
+                                                    id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextFechaHoraTransaccion1"

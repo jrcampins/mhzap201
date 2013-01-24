@@ -210,7 +210,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnIdArchivoDatosExt1}"
                                                     headerText="archivo datos externos"
-                                                    id="tableColumnIdArchivoDatosExt1"
+                                                    id="tableColumnIdArchivoDatosExt1" rendered="false"
                                                     sort="codigo_archivo_datos_ext_1x1y3">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdArchivoDatosExt1"
@@ -233,8 +233,7 @@
                                                     for="campoIdArchivoDatosExt1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    id="tableColumnIdArchivoDatosExt3"
-                                                    rendered="#{LogProImpArcExt5.asistente.tableColumnIdArchivoDatosExt3Rendered}"
+                                                    id="tableColumnIdArchivoDatosExt3" rendered="false"
                                                     align="center">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdArchivoDatosExt3"
@@ -253,8 +252,7 @@
                                                 <webuijsf:tableColumn 
                                                     binding="#{LogProImpArcExt5.tableColumnIdArchivoDatosExt2}"
                                                     headerText="nombre archivo datos externos"
-                                                    id="tableColumnIdArchivoDatosExt2"
-                                                    rendered="#{LogProImpArcExt5.asistente.campoIdArchivoDatosExt1Boton2Rendered}"
+                                                    id="tableColumnIdArchivoDatosExt2" rendered="false"
                                                     sort="nombre_archivo_datos_ext_1x1y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
@@ -384,7 +382,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnCodigoArchivoDatosExt1}"
                                                     headerText="c&#243;digo archivo datos externos"
-                                                    id="tableColumnCodigoArchivoDatosExt1" rendered="false"
+                                                    id="tableColumnCodigoArchivoDatosExt1"
                                                     sort="codigo_archivo_datos_ext">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextCodigoArchivoDatosExt1"
@@ -462,7 +460,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

@@ -262,7 +262,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpIds5.tableColumnApellidos1}"
                                                     headerText="apellidos"
-                                                    id="tableColumnApellidos1"
+                                                    id="tableColumnApellidos1" rendered="false"
                                                     sort="apellidos">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextApellidos1"
@@ -288,7 +288,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpIds5.tableColumnNombres1}"
                                                     headerText="nombres"
-                                                    id="tableColumnNombres1"
+                                                    id="tableColumnNombres1" rendered="false"
                                                     sort="nombres">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNombres1"
@@ -495,7 +495,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpIds5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

@@ -210,7 +210,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdPotencialBen1}"
                                                     headerText="potencial beneficiario"
-                                                    id="tableColumnIdPotencialBen1"
+                                                    id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="codigo_potencial_ben_1x1y3">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdPotencialBen1"
@@ -233,8 +233,7 @@
                                                     for="campoIdPotencialBen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    id="tableColumnIdPotencialBen3"
-                                                    rendered="#{LogProAcrPotBen5.asistente.tableColumnIdPotencialBen3Rendered}"
+                                                    id="tableColumnIdPotencialBen3" rendered="false"
                                                     align="center">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdPotencialBen3"
@@ -253,8 +252,7 @@
                                                 <webuijsf:tableColumn 
                                                     binding="#{LogProAcrPotBen5.tableColumnIdPotencialBen2}"
                                                     headerText="nombre potencial beneficiario"
-                                                    id="tableColumnIdPotencialBen2"
-                                                    rendered="#{LogProAcrPotBen5.asistente.campoIdPotencialBen1Boton2Rendered}"
+                                                    id="tableColumnIdPotencialBen2" rendered="false"
                                                     sort="nombre_potencial_ben_1x1y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
@@ -304,7 +302,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnCodigoPotencialBen1}"
                                                     headerText="c&#243;digo potencial beneficiario"
-                                                    id="tableColumnCodigoPotencialBen1" rendered="false"
+                                                    id="tableColumnCodigoPotencialBen1"
                                                     sort="codigo_potencial_ben">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextCodigoPotencialBen1"
@@ -932,7 +930,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

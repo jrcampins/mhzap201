@@ -236,7 +236,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpEmp5.tableColumnPrimerNombre1}"
                                                     headerText="primer nombre"
-                                                    id="tableColumnPrimerNombre1"
+                                                    id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextPrimerNombre1"
@@ -288,7 +288,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpEmp5.tableColumnPrimerApellido1}"
                                                     headerText="primer apellido"
-                                                    id="tableColumnPrimerApellido1"
+                                                    id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextPrimerApellido1"
@@ -391,7 +391,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpEmp5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

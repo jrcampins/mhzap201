@@ -890,7 +890,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{Persona5.listaNumeroTipoArea1}"
                                                     converter="#{Persona5.converterNumeroTipoArea1}"
-                                                    disabled="#{Persona5.gestor.filaNoModificada}"
+                                                    disabled="true"
                                                     items="#{Persona5.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{currentRow.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.persona"/>

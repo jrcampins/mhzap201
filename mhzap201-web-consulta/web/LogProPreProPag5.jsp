@@ -210,7 +210,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdPersona1}"
                                                     headerText="persona"
-                                                    id="tableColumnIdPersona1"
+                                                    id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x1y3">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdPersona1"
@@ -233,8 +233,7 @@
                                                     for="campoIdPersona1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    id="tableColumnIdPersona3"
-                                                    rendered="#{LogProPreProPag5.asistente.tableColumnIdPersona3Rendered}"
+                                                    id="tableColumnIdPersona3" rendered="false"
                                                     align="center">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdPersona3"
@@ -253,8 +252,7 @@
                                                 <webuijsf:tableColumn 
                                                     binding="#{LogProPreProPag5.tableColumnIdPersona2}"
                                                     headerText="nombre persona"
-                                                    id="tableColumnIdPersona2"
-                                                    rendered="#{LogProPreProPag5.asistente.campoIdPersona1Boton2Rendered}"
+                                                    id="tableColumnIdPersona2" rendered="false"
                                                     sort="nombre_persona_1x1y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
@@ -277,7 +275,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnCodigoPersona1}"
                                                     headerText="c&#243;digo persona"
-                                                    id="tableColumnCodigoPersona1" rendered="false"
+                                                    id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextCodigoPersona1"
@@ -655,7 +653,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"

@@ -2153,7 +2153,9 @@ public class LogImpCen5 extends AbstractPageBean
     }
 
     public String botonAgregar1_action() {
-        this.getGestor().agregar();
+        if (this.getGestor().agregar()) {
+            return this.getGestor().accionVincularDetalle();
+        }
         return null;
     }
 

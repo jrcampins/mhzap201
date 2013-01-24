@@ -875,7 +875,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{FichaHogar5.listaNumeroTipoArea1}"
                                                     converter="#{FichaHogar5.converterNumeroTipoArea1}"
-                                                    disabled="#{FichaHogar5.gestor.filaNoProcesada}" required="true"
+                                                    disabled="true"
                                                     items="#{FichaHogar5.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{currentRow.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.ficha_hogar"/>

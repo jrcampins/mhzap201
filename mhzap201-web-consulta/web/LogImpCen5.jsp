@@ -496,7 +496,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnCedula1}"
                                                     headerText="c&#233;dula"
-                                                    id="tableColumnCedula1" rendered="false"
+                                                    id="tableColumnCedula1"
                                                     sort="cedula">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextCedula1"
@@ -704,7 +704,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnEsImportado1}"
                                                     headerText="importado"
-                                                    id="tableColumnEsImportado1" rendered="false"
+                                                    id="tableColumnEsImportado1"
                                                     sort="es_importado">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextEsImportado1"
@@ -729,7 +729,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"
@@ -755,7 +755,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnFechaHoraTransaccion1}"
                                                     headerText="fecha hora transacci&#243;n"
-                                                    id="tableColumnFechaHoraTransaccion1" rendered="false"
+                                                    id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextFechaHoraTransaccion1"

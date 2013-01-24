@@ -1598,6 +1598,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
     }
 
+    public Object getOpcionesListaEsPotencialBenMigrado1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
@@ -1970,6 +1974,24 @@ public class AsistentePaginaActualizacionPotencialBen {
         return !BitUtils.valueOf(value);
     }
 
+   public boolean isEsPotencialBenMigrado() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPotencialBenDataProvider().getEsPotencialBenMigrado(rowKey);
+        return BitUtils.valueOf(value);
+    }
+
+    public boolean isNoEsPotencialBenMigrado() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPotencialBenDataProvider().getEsPotencialBenMigrado(rowKey);
+        return !BitUtils.valueOf(value);
+    }
+
     public boolean isGridIdPotencialBenRendered() {
         return true;
     }
@@ -2004,6 +2026,13 @@ public class AsistentePaginaActualizacionPotencialBen {
     }
 
     public boolean isGridEsPotencialBenInactivoRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionGeneralRendered();
+    }
+
+    public boolean isGridEsPotencialBenMigradoRendered() {
         if (bean == null) {
             return true;
         }
@@ -2277,6 +2306,13 @@ public class AsistentePaginaActualizacionPotencialBen {
     }
 
     public boolean isGridIdFichaPersonaRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionCensoRendered();
+    }
+
+    public boolean isGridIndiceCalidadVidaRendered() {
         if (bean == null) {
             return true;
         }

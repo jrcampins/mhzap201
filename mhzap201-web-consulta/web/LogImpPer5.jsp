@@ -210,7 +210,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP01a1}"
                                                     headerText="p01a"
-                                                    id="tableColumnP01a1"
+                                                    id="tableColumnP01a1" rendered="false"
                                                     sort="p01a">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01a1"
@@ -236,7 +236,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP01b1}"
                                                     headerText="p01b"
-                                                    id="tableColumnP01b1"
+                                                    id="tableColumnP01b1" rendered="false"
                                                     sort="p01b">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01b1"
@@ -262,7 +262,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP01c1}"
                                                     headerText="p01c"
-                                                    id="tableColumnP01c1"
+                                                    id="tableColumnP01c1" rendered="false"
                                                     sort="p01c">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01c1"
@@ -288,7 +288,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP01d1}"
                                                     headerText="p01d"
-                                                    id="tableColumnP01d1"
+                                                    id="tableColumnP01d1" rendered="false"
                                                     sort="p01d">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01d1"
@@ -418,7 +418,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP45a1}"
                                                     headerText="p45a"
-                                                    id="tableColumnP45a1" rendered="false"
+                                                    id="tableColumnP45a1"
                                                     sort="p45a">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP45a1"
@@ -470,7 +470,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnP44a1}"
                                                     headerText="p44a"
-                                                    id="tableColumnP44a1" rendered="false"
+                                                    id="tableColumnP44a1"
                                                     sort="p44a">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP44a1"
@@ -2367,7 +2367,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPer5.tableColumnObservacion1}"
                                                     headerText="observaci&#243;n"
-                                                    id="tableColumnObservacion1" rendered="false"
+                                                    id="tableColumnObservacion1"
                                                     sort="observacion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextObservacion1"
