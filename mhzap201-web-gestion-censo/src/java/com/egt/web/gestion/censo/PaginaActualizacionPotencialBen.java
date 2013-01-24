@@ -147,6 +147,10 @@ public interface PaginaActualizacionPotencialBen extends PaginaActualizacion {
 
     TextArea getCampoReferenciaDireccion1();
 
+    TextField getCampoIndiceCalidadVida1();
+
+    DropDown getListaEsPotencialBenMigrado1();
+
     Button getBotonAplicar1();
 
     PotencialBenCachedRowSetDataProvider2 getPotencialBenDataProvider();

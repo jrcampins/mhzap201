@@ -994,8 +994,7 @@
                                                     onClick="#{FichaHogar2.asistente.scriptCampoIdDistrito1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroTipoArea1"
-                                                rendered="#{FichaHogar2.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea1" rendered="#{FichaHogar2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{FichaHogar2.labelNumeroTipoArea1}"
@@ -1005,13 +1004,12 @@
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridNumeroTipoArea2"
-                                                rendered="#{FichaHogar2.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea2" rendered="#{FichaHogar2.gestor.designing}"
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{FichaHogar2.listaNumeroTipoArea1}"
                                                     converter="#{FichaHogar2.converterNumeroTipoArea1}"
-                                                    disabled="#{FichaHogar2.gestor.filaNoProcesada}" required="true"
+                                                    disabled="true"
                                                     items="#{FichaHogar2.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{FichaHogar2.fichaHogarDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.ficha_hogar"/>
@@ -3265,7 +3263,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1x1"
                                                     binding="#{FichaHogar2.listaNumeroTipoArea1x1}"
                                                     converter="#{FichaHogar2.converterNumeroTipoArea1}"
-                                                    disabled="#{FichaHogar2.gestor.filaNoProcesada}" required="true"
+                                                    disabled="true"
                                                     items="#{FichaHogar2.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{FichaHogar2.fichaHogarDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.ficha_hogar"/>

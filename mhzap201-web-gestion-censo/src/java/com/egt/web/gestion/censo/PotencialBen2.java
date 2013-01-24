@@ -155,6 +155,11 @@ public class PotencialBen2 extends AbstractPageBean
         converterFechaUltimaVisitaCenso1.setType("date");
         validatorObservacionesUltVisitaCen1.setMaximum(8160);
         validatorReferenciaDireccion1.setMaximum(8160);
+        converterIndiceCalidadVida1.setMinIntegerDigits(1);
+        converterIndiceCalidadVida1.setMaxIntegerDigits(40);
+        converterIndiceCalidadVida1.setMaxFractionDigits(3);
+        validatorIndiceCalidadVida1.setMinimum(0.0);
+        validatorIndiceCalidadVida1.setMaximum(1.0E2);
         potencialBenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.potencialBenRowSet}"));
         personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
@@ -6245,6 +6250,198 @@ public class PotencialBen2 extends AbstractPageBean
         this.validatorReferenciaDireccion1 = validator;
     }
   
+    private Label labelIndiceCalidadVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIndiceCalidadVida1() {
+        return labelIndiceCalidadVida1;
+    }
+
+    public void setLabelIndiceCalidadVida1(Label l) {
+        this.labelIndiceCalidadVida1 = l;
+    }
+
+    private Label labelIndiceCalidadVida1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIndiceCalidadVida1x1() {
+        return labelIndiceCalidadVida1x1;
+    }
+
+    public void setLabelIndiceCalidadVida1x1(Label l) {
+        this.labelIndiceCalidadVida1x1 = l;
+    }
+
+    private TextField campoIndiceCalidadVida1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoIndiceCalidadVida1() {
+        return campoIndiceCalidadVida1;
+    }
+
+    public void setCampoIndiceCalidadVida1(TextField component) {
+        this.campoIndiceCalidadVida1 = component;
+    }
+
+    private TextField campoIndiceCalidadVida1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoIndiceCalidadVida1x1() {
+        return campoIndiceCalidadVida1x1;
+    }
+
+    public void setCampoIndiceCalidadVida1x1(TextField component) {
+        this.campoIndiceCalidadVida1x1 = component;
+    }
+
+    private HelpInline helpInlineIndiceCalidadVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIndiceCalidadVida1() {
+        return helpInlineIndiceCalidadVida1;
+    }
+
+    public void setHelpInlineIndiceCalidadVida1(HelpInline hi) {
+        this.helpInlineIndiceCalidadVida1 = hi;
+    }
+
+    private HelpInline helpInlineIndiceCalidadVida1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIndiceCalidadVida1x1() {
+        return helpInlineIndiceCalidadVida1x1;
+    }
+
+    public void setHelpInlineIndiceCalidadVida1x1(HelpInline hi) {
+        this.helpInlineIndiceCalidadVida1x1 = hi;
+    }
+
+    private StaticText campoIndiceCalidadVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIndiceCalidadVida1Texto1() {
+        return campoIndiceCalidadVida1Texto1;
+    }
+
+    public void setCampoIndiceCalidadVida1Texto1(StaticText component) {
+        this.campoIndiceCalidadVida1Texto1 = component;
+    }
+
+    private StaticText campoIndiceCalidadVida1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIndiceCalidadVida1x1Texto1() {
+        return campoIndiceCalidadVida1x1Texto1;
+    }
+
+    public void setCampoIndiceCalidadVida1x1Texto1(StaticText component) {
+        this.campoIndiceCalidadVida1x1Texto1 = component;
+    }
+
+    private NumberConverter converterIndiceCalidadVida1 = new NumberConverter();
+  
+    public NumberConverter getConverterIndiceCalidadVida1() {
+        return converterIndiceCalidadVida1;
+    }
+  
+    public void setConverterIndiceCalidadVida1(NumberConverter converter) {
+        this.converterIndiceCalidadVida1 = converter;
+    }
+  
+    private DoubleRangeValidator validatorIndiceCalidadVida1 = new DoubleRangeValidator();
+  
+    public DoubleRangeValidator getValidatorIndiceCalidadVida1() {
+        return validatorIndiceCalidadVida1;
+    }
+  
+    public void setValidatorIndiceCalidadVida1(DoubleRangeValidator validator) {
+        this.validatorIndiceCalidadVida1 = validator;
+    }
+  
+    private Label labelEsPotencialBenMigrado1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPotencialBenMigrado1() {
+        return labelEsPotencialBenMigrado1;
+    }
+
+    public void setLabelEsPotencialBenMigrado1(Label l) {
+        this.labelEsPotencialBenMigrado1 = l;
+    }
+
+    private Label labelEsPotencialBenMigrado1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPotencialBenMigrado1x1() {
+        return labelEsPotencialBenMigrado1x1;
+    }
+
+    public void setLabelEsPotencialBenMigrado1x1(Label l) {
+        this.labelEsPotencialBenMigrado1x1 = l;
+    }
+
+    private DropDown listaEsPotencialBenMigrado1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaEsPotencialBenMigrado1() {
+        return listaEsPotencialBenMigrado1;
+    }
+
+    public void setListaEsPotencialBenMigrado1(DropDown component) {
+        this.listaEsPotencialBenMigrado1 = component;
+    }
+
+    private DropDown listaEsPotencialBenMigrado1x1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPotencialBenMigrado1x1() {
+        return listaEsPotencialBenMigrado1x1;
+    }
+
+    public void setListaEsPotencialBenMigrado1x1(DropDown component) {
+        this.listaEsPotencialBenMigrado1x1 = component;
+    }
+
+    private HelpInline helpInlineEsPotencialBenMigrado1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsPotencialBenMigrado1() {
+        return helpInlineEsPotencialBenMigrado1;
+    }
+
+    public void setHelpInlineEsPotencialBenMigrado1(HelpInline hi) {
+        this.helpInlineEsPotencialBenMigrado1 = hi;
+    }
+
+    private HelpInline helpInlineEsPotencialBenMigrado1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsPotencialBenMigrado1x1() {
+        return helpInlineEsPotencialBenMigrado1x1;
+    }
+
+    public void setHelpInlineEsPotencialBenMigrado1x1(HelpInline hi) {
+        this.helpInlineEsPotencialBenMigrado1x1 = hi;
+    }
+
+    private StaticText listaEsPotencialBenMigrado1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPotencialBenMigrado1Texto1() {
+        return listaEsPotencialBenMigrado1Texto1;
+    }
+
+    public void setListaEsPotencialBenMigrado1Texto1(StaticText component) {
+        this.listaEsPotencialBenMigrado1Texto1 = component;
+    }
+
+    private StaticText listaEsPotencialBenMigrado1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPotencialBenMigrado1x1Texto1() {
+        return listaEsPotencialBenMigrado1x1Texto1;
+    }
+
+    public void setListaEsPotencialBenMigrado1x1Texto1(StaticText component) {
+        this.listaEsPotencialBenMigrado1x1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPotencialBenMigrado1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPotencialBenMigrado1() {
+        return converterEsPotencialBenMigrado1;
+    }
+  
+    public void setConverterEsPotencialBenMigrado1(IntegerConverter converter) {
+        this.converterEsPotencialBenMigrado1 = converter;
+    }
+  
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonIrAlPrimero2() {
@@ -6825,6 +7022,9 @@ public class PotencialBen2 extends AbstractPageBean
          * *despues* de que se inicien los componentes administrados.
          */
         this.getGestor().iniciar();
+        converterIndiceCalidadVida1.setMinIntegerDigits(1);
+        converterIndiceCalidadVida1.setMaxIntegerDigits(3);
+        converterIndiceCalidadVida1.setMaxFractionDigits(4);
     }
 
     protected void preprocesar() {

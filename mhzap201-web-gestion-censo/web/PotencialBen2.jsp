@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 campoIndiceCalidadVida1 listaEsPotencialBenMigrado1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -456,6 +456,37 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.es_potencial_ben_inactivo.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPotencialBenMigrado1" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelEsPotencialBenMigrado1}"
+                                                    id="labelEsPotencialBenMigrado1"
+                                                    for="listaEsPotencialBenMigrado1"
+                                                    text="migrado"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPotencialBenMigrado2" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPotencialBenMigrado1"
+                                                    binding="#{PotencialBen2.listaEsPotencialBenMigrado1}"
+                                                    converter="#{PotencialBen2.converterEsPotencialBenMigrado1}"
+                                                    disabled="true"
+                                                    items="#{PotencialBen2.asistente.opcionesListaEsPotencialBenMigrado1}"
+                                                    selected="#{PotencialBen2.potencialBenDataProvider.value['es_potencial_ben_migrado']}"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"/>
+                                                <webuijsf:staticText id="listaEsPotencialBenMigrado1Texto1"
+                                                    binding="#{PotencialBen2.listaEsPotencialBenMigrado1Texto1}"/>
+                                                <webuijsf:message id="messageEsPotencialBenMigrado1"
+                                                    for="listaEsPotencialBenMigrado1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPotencialBenMigrado1"
+                                                    binding="#{PotencialBen2.helpInlineEsPotencialBenMigrado1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_potencial_ben_migrado.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1226,8 +1257,7 @@
                                                     onClick="#{PotencialBen2.asistente.scriptCampoIdDistrito1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroTipoArea1"
-                                                rendered="#{PotencialBen2.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea1" rendered="#{PotencialBen2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{PotencialBen2.labelNumeroTipoArea1}"
@@ -1237,13 +1267,12 @@
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridNumeroTipoArea2"
-                                                rendered="#{PotencialBen2.asistente.gridNumeroTipoAreaRendered}"
+                                                id="gridNumeroTipoArea2" rendered="#{PotencialBen2.gestor.designing}"
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1"
                                                     binding="#{PotencialBen2.listaNumeroTipoArea1}"
                                                     converter="#{PotencialBen2.converterNumeroTipoArea1}"
-                                                    disabled="#{PotencialBen2.gestor.filaNoProcesada}"
+                                                    disabled="true"
                                                     items="#{PotencialBen2.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{PotencialBen2.potencialBenDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.potencial_ben"/>
@@ -1983,6 +2012,39 @@
                                                     onClick="#{PotencialBen2.asistente.scriptCampoIdFichaPersona1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridIndiceCalidadVida1" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIndiceCalidadVida1}"
+                                                    id="labelIndiceCalidadVida1"
+                                                    for="campoIndiceCalidadVida1"
+                                                    text="indice calidad vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIndiceCalidadVida2" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIndiceCalidadVida1"
+                                                    binding="#{PotencialBen2.campoIndiceCalidadVida1}"
+                                                    converter="#{PotencialBen2.converterIndiceCalidadVida1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['indice_calidad_vida']}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorIndiceCalidadVida1.validate}"/>
+                                                <webuijsf:staticText id="campoIndiceCalidadVida1Texto1"
+                                                    binding="#{PotencialBen2.campoIndiceCalidadVida1Texto1}"
+                                                    converter="#{PotencialBen2.converterIndiceCalidadVida1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['indice_calidad_vida']}"/>
+                                                <webuijsf:message id="messageIndiceCalidadVida1"
+                                                    for="campoIndiceCalidadVida1"/>
+                                                <webuijsf:helpInline id="helpInlineIndiceCalidadVida1"
+                                                    binding="#{PotencialBen2.helpInlineIndiceCalidadVida1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.indice_calidad_vida.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridNumeroCondicionReclCen1" rendered="#{PotencialBen2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -2578,6 +2640,37 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.es_potencial_ben_inactivo.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsPotencialBenMigrado1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelEsPotencialBenMigrado1x1}"
+                                                    id="labelEsPotencialBenMigrado1x1"
+                                                    for="listaEsPotencialBenMigrado1x1"
+                                                    text="migrado"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPotencialBenMigrado1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPotencialBenMigrado1x1"
+                                                    binding="#{PotencialBen2.listaEsPotencialBenMigrado1x1}"
+                                                    converter="#{PotencialBen2.converterEsPotencialBenMigrado1}"
+                                                    disabled="true"
+                                                    items="#{PotencialBen2.asistente.opcionesListaEsPotencialBenMigrado1}"
+                                                    selected="#{PotencialBen2.potencialBenDataProvider.value['es_potencial_ben_migrado']}"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"/>
+                                                <webuijsf:staticText id="listaEsPotencialBenMigrado1x1Texto1"
+                                                    binding="#{PotencialBen2.listaEsPotencialBenMigrado1x1Texto1}"/>
+                                                <webuijsf:message id="messageEsPotencialBenMigrado1x1"
+                                                    for="listaEsPotencialBenMigrado1x1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPotencialBenMigrado1x1"
+                                                    binding="#{PotencialBen2.helpInlineEsPotencialBenMigrado1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_potencial_ben_migrado.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
@@ -3401,7 +3494,7 @@
                                                 <webuijsf:dropDown id="listaNumeroTipoArea1x1"
                                                     binding="#{PotencialBen2.listaNumeroTipoArea1x1}"
                                                     converter="#{PotencialBen2.converterNumeroTipoArea1}"
-                                                    disabled="#{PotencialBen2.gestor.filaNoProcesada}"
+                                                    disabled="true"
                                                     items="#{PotencialBen2.asistente.opcionesListaNumeroTipoArea1}"
                                                     selected="#{PotencialBen2.potencialBenDataProvider.value['numero_tipo_area']}"
                                                     toolTip="BundleParametros.numero_tipo_area.potencial_ben"/>
@@ -4187,6 +4280,39 @@
                                                     binding="#{PotencialBen2.campoIdFichaPersona1x1Boton2}"
                                                     id="campoIdFichaPersona1x1Boton2"
                                                     onClick="#{PotencialBen2.asistente.scriptCampoIdFichaPersona1Boton2}"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIndiceCalidadVida1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelIndiceCalidadVida1x1}"
+                                                    id="labelIndiceCalidadVida1x1"
+                                                    for="campoIndiceCalidadVida1x1"
+                                                    text="indice calidad vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIndiceCalidadVida1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIndiceCalidadVida1x1"
+                                                    binding="#{PotencialBen2.campoIndiceCalidadVida1x1}"
+                                                    converter="#{PotencialBen2.converterIndiceCalidadVida1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['indice_calidad_vida']}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorIndiceCalidadVida1.validate}"/>
+                                                <webuijsf:staticText id="campoIndiceCalidadVida1x1Texto1"
+                                                    binding="#{PotencialBen2.campoIndiceCalidadVida1x1Texto1}"
+                                                    converter="#{PotencialBen2.converterIndiceCalidadVida1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['indice_calidad_vida']}"/>
+                                                <webuijsf:message id="messageIndiceCalidadVida1x1"
+                                                    for="campoIndiceCalidadVida1x1"/>
+                                                <webuijsf:helpInline id="helpInlineIndiceCalidadVida1x1"
+                                                    binding="#{PotencialBen2.helpInlineIndiceCalidadVida1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.indice_calidad_vida.potencial_ben"
+                                                    type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
                                         </webuijsf:tab>
