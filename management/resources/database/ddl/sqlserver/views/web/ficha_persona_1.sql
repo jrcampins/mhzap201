@@ -260,6 +260,8 @@ SELECT
 		potencial_ben_1x34.observaciones_ult_visita_cen AS observaciones_ult_visi_1x34y63,
 		potencial_ben_1x34.id_funcionario_ult_visita_cen AS id_funcionario_ult_vis_1x34y64,
 		potencial_ben_1x34.referencia_direccion AS referencia_direccion_1x34y65,
+		potencial_ben_1x34.indice_calidad_vida AS indice_calidad_vida_1x34y66,
+		potencial_ben_1x34.es_potencial_ben_migrado AS es_potencial_ben_migra_1x34y67,
 	ficha_persona.es_ficha_persona_inactiva AS es_ficha_persona_inactiva
 FROM
 	ficha_persona ficha_persona

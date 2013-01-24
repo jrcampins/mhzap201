@@ -376,6 +376,8 @@
     <field name="segundo_apellido_1x16y10" class="java.lang.String"/>
     <field name="apellido_casada_1x16y11" class="java.lang.String"/>
     <field name="referencia_direccion" class="java.lang.String"/>
+    <field name="indice_calidad_vida" class="java.math.BigDecimal"/>
+    <field name="es_potencial_ben_migrado" class="java.lang.Integer"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

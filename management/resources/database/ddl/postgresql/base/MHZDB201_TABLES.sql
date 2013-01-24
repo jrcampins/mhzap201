@@ -1481,7 +1481,9 @@ CREATE TABLE potencial_ben
 	fecha_ultima_visita_censo timestamp with time zone,
 	observaciones_ult_visita_cen varchar,
 	id_funcionario_ult_visita_cen bigint,
-	referencia_direccion varchar
+	referencia_direccion varchar,
+	indice_calidad_vida decimal(7,4),
+	es_potencial_ben_migrado int
 	);
 
 CREATE TABLE proceso

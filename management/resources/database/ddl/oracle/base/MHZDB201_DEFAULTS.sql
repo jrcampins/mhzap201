@@ -177,6 +177,7 @@ ALTER TABLE potencial_ben MODIFY (es_persona_con_cer_vida DEFAULT (0));
 ALTER TABLE potencial_ben MODIFY (es_persona_con_carta_renuncia DEFAULT (0));
 ALTER TABLE potencial_ben MODIFY (fecha_registro_pot_ben DEFAULT (current_date));
 ALTER TABLE potencial_ben MODIFY (es_potencial_ben_inactivo DEFAULT (0));
+ALTER TABLE potencial_ben MODIFY (es_potencial_ben_migrado DEFAULT (0));
 ALTER TABLE proceso MODIFY (version_proceso DEFAULT (0));
 ALTER TABLE proveedor_dat_ext MODIFY (version_proveedor_dat_ext DEFAULT (0));
 ALTER TABLE rastro_funcion MODIFY (fecha_hora_ejecucion DEFAULT (current_timestamp));

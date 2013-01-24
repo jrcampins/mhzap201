@@ -76,6 +76,8 @@ SELECT
 		potencial_ben_1x1.observaciones_ult_visita_cen AS observaciones_ult_visit_1x1y63,
 		potencial_ben_1x1.id_funcionario_ult_visita_cen AS id_funcionario_ult_visi_1x1y64,
 		potencial_ben_1x1.referencia_direccion AS referencia_direccion_1x1y65,
+		potencial_ben_1x1.indice_calidad_vida AS indice_calidad_vida_1x1y66,
+		potencial_ben_1x1.es_potencial_ben_migrado AS es_potencial_ben_migrad_1x1y67,
 	log_pro_acr_pot_ben.nombre_potencial_ben AS nombre_potencial_ben,
 	log_pro_acr_pot_ben.codigo_potencial_ben AS codigo_potencial_ben,
 	log_pro_acr_pot_ben.fecha_registro_pot_ben AS fecha_registro_pot_ben,

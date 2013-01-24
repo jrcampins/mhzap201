@@ -1954,3 +1954,5 @@ INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre
 VALUES (20898, 1, 'id_log_pro_act_jupe', 'Log Pro Actualización Pensión JUPE', 'log pro actualización pensión jupe', NULL, 5, 'id_log_pro_act_pen_jupe');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20899, 1, 'version_log_pro_act_jupe', 'Versión Log Pro Actualización Pensión JUPE', 'versión log pro actualización pensión jupe', NULL, 5, 'version_log_pro_act_pen_jupe');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20900, 1, 'es_potencial_ben_migrado', 'Potencial Beneficiario Migrado', 'potencial beneficiario migrado', NULL, 4, 'es_potencial_ben_migrado');

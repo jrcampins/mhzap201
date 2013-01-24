@@ -173,6 +173,7 @@ ALTER TABLE potencial_ben DROP CONSTRAINT CC_potencial_ben_012___;
 ALTER TABLE potencial_ben DROP CONSTRAINT CC_potencial_ben_013___;
 ALTER TABLE potencial_ben DROP CONSTRAINT CC_potencial_ben_014___;
 ALTER TABLE potencial_ben DROP CONSTRAINT CC_potencial_ben_015___;
+ALTER TABLE potencial_ben DROP CONSTRAINT CC_potencial_ben_016___;
 ALTER TABLE rastro_funcion DROP CONSTRAINT CC_rastro_funcion_001___;
 ALTER TABLE rastro_funcion DROP CONSTRAINT CC_rastro_funcion_002___;
 ALTER TABLE rastro_proceso DROP CONSTRAINT CC_rastro_proceso_001___;

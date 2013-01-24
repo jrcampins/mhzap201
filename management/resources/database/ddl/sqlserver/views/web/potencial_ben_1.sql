@@ -313,7 +313,9 @@ SELECT
 		funcionario_1x16.primer_apellido AS primer_apellido_1x16y9,
 		funcionario_1x16.segundo_apellido AS segundo_apellido_1x16y10,
 		funcionario_1x16.apellido_casada AS apellido_casada_1x16y11,
-	potencial_ben.referencia_direccion AS referencia_direccion
+	potencial_ben.referencia_direccion AS referencia_direccion,
+	potencial_ben.indice_calidad_vida AS indice_calidad_vida,
+	potencial_ben.es_potencial_ben_migrado AS es_potencial_ben_migrado
 FROM
 	potencial_ben potencial_ben
 	INNER JOIN tipo_reg_pot_ben tipo_reg_pot_ben_1x1 ON tipo_reg_pot_ben_1x1.numero_tipo_reg_pot_ben = potencial_ben.numero_tipo_reg_pot_ben

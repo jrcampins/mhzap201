@@ -348,6 +348,8 @@ ALTER TABLE potencial_ben ADD CONSTRAINT CC_potencial_ben_014___ CHECK ([es_pers
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT CC_potencial_ben_015___ CHECK ([es_potencial_ben_inactivo] >= 0 and [es_potencial_ben_inactivo] <= 1)
 GO
+ALTER TABLE potencial_ben ADD CONSTRAINT CC_potencial_ben_016___ CHECK ([es_potencial_ben_migrado] >= 0 and [es_potencial_ben_migrado] <= 1)
+GO
 ALTER TABLE rastro_funcion ADD CONSTRAINT CC_rastro_funcion_001___ CHECK ([numero_error] is null or [numero_error] >= 0)
 GO
 ALTER TABLE rastro_funcion ADD CONSTRAINT CC_rastro_funcion_002___ CHECK ([numero_error] is null or [numero_error] <= 1000000000)

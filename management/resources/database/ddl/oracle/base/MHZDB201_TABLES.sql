@@ -1891,7 +1891,9 @@ CREATE TABLE potencial_ben
 	fecha_ultima_visita_censo DATE,
 	observaciones_ult_visita_cen VARCHAR2(4000),
 	id_funcionario_ult_visita_cen NUMBER(19),
-	referencia_direccion VARCHAR2(4000)
+	referencia_direccion VARCHAR2(4000),
+	indice_calidad_vida NUMBER(7,4),
+	es_potencial_ben_migrado NUMBER(10)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING

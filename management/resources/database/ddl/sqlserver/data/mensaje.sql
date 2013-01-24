@@ -1847,43 +1847,45 @@ VALUES (922, 0, 'cc_potencial_ben_014___', '*no cumple con la regla: "persona co
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (923, 0, 'cc_potencial_ben_015___', '*no cumple con la regla: "potencial ben inactivo es mayor o igual que 0 y potencial ben inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (924, 0, 'cc_rastro_funcion_001___', '*no cumple con la regla: "error es nulo ó error es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (924, 0, 'cc_potencial_ben_016___', '*no cumple con la regla: "potencial ben migrado es mayor o igual que 0 y potencial ben migrado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (925, 0, 'cc_rastro_funcion_002___', '*no cumple con la regla: "error es nulo ó error es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (925, 0, 'cc_rastro_funcion_001___', '*no cumple con la regla: "error es nulo ó error es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (926, 0, 'cc_rastro_proceso_001___', '*no cumple con la regla: "subprocesos es mayor o igual que 0 y subprocesos es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (926, 0, 'cc_rastro_funcion_002___', '*no cumple con la regla: "error es nulo ó error es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (927, 0, 'cc_rastro_proceso_002___', '*no cumple con la regla: "subprocesos pendientes es mayor o igual que 0 y subprocesos pendientes es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (927, 0, 'cc_rastro_proceso_001___', '*no cumple con la regla: "subprocesos es mayor o igual que 0 y subprocesos es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (928, 0, 'cc_rastro_proceso_003___', '*no cumple con la regla: "subprocesos en progreso es mayor o igual que 0 y subprocesos en progreso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (928, 0, 'cc_rastro_proceso_002___', '*no cumple con la regla: "subprocesos pendientes es mayor o igual que 0 y subprocesos pendientes es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (929, 0, 'cc_rastro_proceso_004___', '*no cumple con la regla: "subprocesos sin errores es mayor o igual que 0 y subprocesos sin errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (929, 0, 'cc_rastro_proceso_003___', '*no cumple con la regla: "subprocesos en progreso es mayor o igual que 0 y subprocesos en progreso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (930, 0, 'cc_rastro_proceso_005___', '*no cumple con la regla: "subprocesos con errores es mayor o igual que 0 y subprocesos con errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (930, 0, 'cc_rastro_proceso_004___', '*no cumple con la regla: "subprocesos sin errores es mayor o igual que 0 y subprocesos sin errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (931, 0, 'cc_rastro_proceso_006___', '*no cumple con la regla: "subprocesos cancelados es mayor o igual que 0 y subprocesos cancelados es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (931, 0, 'cc_rastro_proceso_005___', '*no cumple con la regla: "subprocesos con errores es mayor o igual que 0 y subprocesos con errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (932, 0, 'cc_recurso_001___', '*no cumple con la regla: "recurso inactivo es mayor o igual que 0 y recurso inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (932, 0, 'cc_rastro_proceso_006___', '*no cumple con la regla: "subprocesos cancelados es mayor o igual que 0 y subprocesos cancelados es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (933, 0, 'cc_recurso_002___', '*no cumple con la regla: "recurso es mayor o igual que 0 y recurso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (933, 0, 'cc_recurso_001___', '*no cumple con la regla: "recurso inactivo es mayor o igual que 0 y recurso inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (934, 0, 'cc_ubicacion_001___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (934, 0, 'cc_recurso_002___', '*no cumple con la regla: "recurso es mayor o igual que 0 y recurso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (935, 0, 'cc_ubicacion_002___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es menor o igual que 100"; no es posible {0} el recurso {1}', NULL);
+VALUES (935, 0, 'cc_ubicacion_001___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (936, 0, 'cc_ubicacion_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
+VALUES (936, 0, 'cc_ubicacion_002___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es menor o igual que 100"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (937, 0, 'cc_ubicacion_plus_002___', '*no cumple con la regla: "nivel ubicacion es mayor o igual que 0 y nivel ubicacion es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
+VALUES (937, 0, 'cc_ubicacion_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (938, 0, 'tc_usuario_001___', '*no cumple con la regla: "usuario supervisor no es igual a usuario"; no es posible {0} el recurso {1}', NULL);
+VALUES (938, 0, 'cc_ubicacion_plus_002___', '*no cumple con la regla: "nivel ubicacion es mayor o igual que 0 y nivel ubicacion es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (939, 0, 'cc_usuario_001___', '*no cumple con la regla: "super usuario es mayor o igual que 0 y super usuario es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (939, 0, 'tc_usuario_001___', '*no cumple con la regla: "usuario supervisor no es igual a usuario"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (940, 0, 'cc_usuario_002___', '*no cumple con la regla: "usuario especial es mayor o igual que 0 y usuario especial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (940, 0, 'cc_usuario_001___', '*no cumple con la regla: "super usuario es mayor o igual que 0 y super usuario es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (941, 0, 'cc_usuario_003___', '*no cumple con la regla: "usuario inactivo es mayor o igual que 0 y usuario inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (941, 0, 'cc_usuario_002___', '*no cumple con la regla: "usuario especial es mayor o igual que 0 y usuario especial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (942, 0, 'cc_usuario_004___', '*no cumple con la regla: "usuario modificado es mayor o igual que 0 y usuario modificado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (942, 0, 'cc_usuario_003___', '*no cumple con la regla: "usuario inactivo es mayor o igual que 0 y usuario inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (943, 0, 'cc_usuario_004___', '*no cumple con la regla: "usuario modificado es mayor o igual que 0 y usuario modificado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (100001101, 0, 'funcion_no_existe', 'función {0} no existe', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)

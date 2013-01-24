@@ -358,6 +358,8 @@ ALTER TABLE potencial_ben DROP CONSTRAINT DF_potencial_ben_013___
 GO
 ALTER TABLE potencial_ben DROP CONSTRAINT DF_potencial_ben_014___
 GO
+ALTER TABLE potencial_ben DROP CONSTRAINT DF_potencial_ben_015___
+GO
 ALTER TABLE proceso DROP CONSTRAINT DF_proceso_001___
 GO
 ALTER TABLE proveedor_dat_ext DROP CONSTRAINT DF_proveedor_dat_ext_001___

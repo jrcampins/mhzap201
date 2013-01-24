@@ -1645,7 +1645,9 @@ CREATE TABLE potencial_ben
 	fecha_ultima_visita_censo smalldatetime,
 	observaciones_ult_visita_cen varchar(256),
 	id_funcionario_ult_visita_cen bigint,
-	referencia_direccion varchar(256)
+	referencia_direccion varchar(256),
+	indice_calidad_vida decimal(7,4),
+	es_potencial_ben_migrado int
 	)
 	ON [PRIMARY]
 GO

@@ -358,6 +358,8 @@ ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_013___ DEFAULT (user_i
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_014___ DEFAULT (0) FOR es_potencial_ben_inactivo
 GO
+ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_015___ DEFAULT (0) FOR es_potencial_ben_migrado
+GO
 ALTER TABLE proceso ADD CONSTRAINT DF_proceso_001___ DEFAULT (0) FOR version_proceso
 GO
 ALTER TABLE proveedor_dat_ext ADD CONSTRAINT DF_proveedor_dat_ext_001___ DEFAULT (0) FOR version_proveedor_dat_ext

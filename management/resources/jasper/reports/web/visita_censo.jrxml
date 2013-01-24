@@ -138,6 +138,8 @@
     <field name="observaciones_ult_visit_1x1y63" class="java.lang.String"/>
     <field name="id_funcionario_ult_visi_1x1y64" class="java.lang.Long"/>
     <field name="referencia_direccion_1x1y65" class="java.lang.String"/>
+    <field name="indice_calidad_vida_1x1y66" class="java.math.BigDecimal"/>
+    <field name="es_potencial_ben_migrad_1x1y67" class="java.lang.Integer"/>
     <field name="id_funcionario_censista" class="java.lang.Long"/>
     <field name="codigo_funcionario_1x2y3" class="java.lang.String"/>
     <field name="nombre_funcionario_1x2y4" class="java.lang.String"/>
