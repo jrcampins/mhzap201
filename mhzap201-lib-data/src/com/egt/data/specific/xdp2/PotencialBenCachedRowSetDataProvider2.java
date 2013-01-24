@@ -20,6 +20,7 @@ import com.egt.core.aplicacion.TLC;
 import com.egt.core.db.xdp.RecursoConsultableDataProvider;
 import com.egt.data.specific.xdp1.PotencialBenCachedRowSetDataProvider;
 import com.sun.data.provider.RowKey;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Set;
@@ -173,6 +174,8 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN = 20653L;
     protected static final long PARAMETRO_ID_USUARIO_REG_POT_BEN = 20694L;
     protected static final long PARAMETRO_REFERENCIA_DIRECCION = 20677L;
+    protected static final long PARAMETRO_INDICE_CALIDAD_VIDA = 20219L;
+    protected static final long PARAMETRO_ES_POTENCIAL_BEN_MIGRADO = 20900L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_DESDE = 10011L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_HASTA = 10012L;
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA_DESDE = 10015L;
@@ -671,6 +674,8 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_OBSERVACIONES_ULT_VISITA_CEN, this.getObservacionesUltVisitaCen(rowKey));
         rastro.addParametro(PARAMETRO_ID_FUNCIONARIO_ULT_VISITA_CEN, this.getIdFuncionarioUltVisitaCen(rowKey));
         rastro.addParametro(PARAMETRO_REFERENCIA_DIRECCION, this.getReferenciaDireccion(rowKey));
+        rastro.addParametro(PARAMETRO_INDICE_CALIDAD_VIDA, this.getIndiceCalidadVida(rowKey));
+        rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_MIGRADO, this.getEsPotencialBenMigrado(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -742,6 +747,8 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_OBSERVACIONES_ULT_VISITA_CEN, this.getObservacionesUltVisitaCen(rowKey));
         rastro.addParametro(PARAMETRO_ID_FUNCIONARIO_ULT_VISITA_CEN, this.getIdFuncionarioUltVisitaCen(rowKey));
         rastro.addParametro(PARAMETRO_REFERENCIA_DIRECCION, this.getReferenciaDireccion(rowKey));
+        rastro.addParametro(PARAMETRO_INDICE_CALIDAD_VIDA, this.getIndiceCalidadVida(rowKey));
+        rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_MIGRADO, this.getEsPotencialBenMigrado(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -779,5 +786,6 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         this.setFechaRegistroPotBen(rowKey, currentDate);
         this.setIdUsuarioRegPotBen(rowKey, TLC.getControlador().getUsuario().getIdUsuario());
         this.setEsPotencialBenInactivo(rowKey, 0);
+        this.setEsPotencialBenMigrado(rowKey, 0);
     }
 }

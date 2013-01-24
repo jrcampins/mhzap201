@@ -16,6 +16,7 @@ import com.egt.core.db.xdp.RecursoCodificableDataProvider;
 import com.egt.core.db.xdp.RecursoNombrableDataProvider;
 import com.egt.core.db.xdp.RecursoDesactivableDataProvider;
 import com.sun.data.provider.RowKey;
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import javax.sql.rowset.CachedRowSet;
 
@@ -127,6 +128,8 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
     public static final String COLUMNA_OBSERVACIONES_ULT_VISITA_CEN = "observaciones_ult_visita_cen";
     public static final String COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN = "id_funcionario_ult_visita_cen";
     public static final String COLUMNA_REFERENCIA_DIRECCION = "referencia_direccion";
+    public static final String COLUMNA_INDICE_CALIDAD_VIDA = "indice_calidad_vida";
+    public static final String COLUMNA_ES_POTENCIAL_BEN_MIGRADO = "es_potencial_ben_migrado";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_POTENCIAL_BEN, Long.class);
@@ -194,6 +197,8 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_REFERENCIA_DIRECCION, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_INDICE_CALIDAD_VIDA, BigDecimal.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, Integer.class);
     }
 
     protected void setColumnasInsertables() {
@@ -263,6 +268,8 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasInsertables(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, true);
         this.setColumnasInsertables(COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN, true);
         this.setColumnasInsertables(COLUMNA_REFERENCIA_DIRECCION, true);
+        this.setColumnasInsertables(COLUMNA_INDICE_CALIDAD_VIDA, true);
+        this.setColumnasInsertables(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, true);
     }
 
     protected void setColumnasModificables() {
@@ -332,6 +339,8 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasModificables(COLUMNA_OBSERVACIONES_ULT_VISITA_CEN, true);
         this.setColumnasModificables(COLUMNA_ID_FUNCIONARIO_ULT_VISITA_CEN, true);
         this.setColumnasModificables(COLUMNA_REFERENCIA_DIRECCION, true);
+        this.setColumnasModificables(COLUMNA_INDICE_CALIDAD_VIDA, true);
+        this.setColumnasModificables(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, true);
     }
 
     public Long getIdPotencialBen() {
@@ -1177,6 +1186,32 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
     }
     public void setReferenciaDireccion(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_REFERENCIA_DIRECCION, rowKey, valor);
+    }
+
+    public BigDecimal getIndiceCalidadVida() {
+        return (BigDecimal) super.getValue(COLUMNA_INDICE_CALIDAD_VIDA);
+    }
+    public BigDecimal getIndiceCalidadVida(RowKey rowKey) {
+        return (BigDecimal) super.getValue(COLUMNA_INDICE_CALIDAD_VIDA, rowKey);
+    }
+    public void setIndiceCalidadVida(BigDecimal valor) {
+        super.setValue(COLUMNA_INDICE_CALIDAD_VIDA, valor);
+    }
+    public void setIndiceCalidadVida(RowKey rowKey, BigDecimal valor) {
+        super.setValue(COLUMNA_INDICE_CALIDAD_VIDA, rowKey, valor);
+    }
+
+    public Integer getEsPotencialBenMigrado() {
+        return (Integer) super.getValue(COLUMNA_ES_POTENCIAL_BEN_MIGRADO);
+    }
+    public Integer getEsPotencialBenMigrado(RowKey rowKey) {
+        return (Integer) super.getValue(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, rowKey);
+    }
+    public void setEsPotencialBenMigrado(Integer valor) {
+        super.setValue(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, valor);
+    }
+    public void setEsPotencialBenMigrado(RowKey rowKey, Integer valor) {
+        super.setValue(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_potencial_ben";

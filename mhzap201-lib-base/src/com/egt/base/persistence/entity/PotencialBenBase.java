@@ -15,6 +15,7 @@
  */
 package com.egt.base.persistence.entity;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 
@@ -215,6 +216,14 @@ public interface PotencialBenBase {
     public String getReferenciaDireccion();
 //
 //  public void setReferenciaDireccion(String referenciaDireccion);
+
+    public BigDecimal getIndiceCalidadVida();
+//
+//  public void setIndiceCalidadVida(BigDecimal indiceCalidadVida);
+
+    public Integer getEsPotencialBenMigrado();
+//
+//  public void setEsPotencialBenMigrado(Integer esPotencialBenMigrado);
 
     public TipoRegPotBenBase getTipoRegPotBenNumeroTipoRegPotBen();
 //

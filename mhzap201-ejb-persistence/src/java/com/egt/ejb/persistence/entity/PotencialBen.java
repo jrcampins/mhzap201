@@ -17,6 +17,7 @@ package com.egt.ejb.persistence.entity;
 
 import com.egt.base.persistence.entity.PotencialBenBase;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -209,6 +210,12 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     @Column(name = "referencia_direccion")
     private String referenciaDireccion;
+
+    @Column(name = "indice_calidad_vida")
+    private BigDecimal indiceCalidadVida;
+
+    @Column(name = "es_potencial_ben_migrado")
+    private Integer esPotencialBenMigrado;
 
     @JoinColumn(name = "numero_tipo_reg_pot_ben", referencedColumnName = "numero_tipo_reg_pot_ben")
     @ManyToOne
@@ -725,6 +732,24 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     public void setReferenciaDireccion(String referenciaDireccion) {
         this.referenciaDireccion = referenciaDireccion;
+    }
+
+    @Override
+    public BigDecimal getIndiceCalidadVida() {
+        return this.indiceCalidadVida;
+    }
+
+    public void setIndiceCalidadVida(BigDecimal indiceCalidadVida) {
+        this.indiceCalidadVida = indiceCalidadVida;
+    }
+
+    @Override
+    public Integer getEsPotencialBenMigrado() {
+        return this.esPotencialBenMigrado;
+    }
+
+    public void setEsPotencialBenMigrado(Integer esPotencialBenMigrado) {
+        this.esPotencialBenMigrado = esPotencialBenMigrado;
     }
 
     @Override

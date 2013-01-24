@@ -620,6 +620,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ES_POTENCIAL_BEN_INACTIVO = 20601L; // Potencial Beneficiario Inactivo
 
+    public static final Long ES_POTENCIAL_BEN_MIGRADO = 20900L; // Potencial Beneficiario Migrado
+
     public static final Long ES_PROCESADO = 20707L; // Procesado
 
     public static final Long ES_PROGRAMATICA = 1270L; // Programatica
