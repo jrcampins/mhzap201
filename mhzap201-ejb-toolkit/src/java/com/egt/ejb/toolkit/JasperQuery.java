@@ -10,6 +10,7 @@
 package com.egt.ejb.toolkit;
 
 import com.egt.base.enums.EnumTipoDatoPar;
+import com.egt.base.enums.EnumTipoParametro;
 import com.egt.commons.util.BitUtils;
 import com.egt.ejb.persistence.entity.ClaseRecursoPar;
 import com.egt.ejb.persistence.entity.Dominio;
@@ -63,6 +64,8 @@ public class JasperQuery {
 
     private Dominio dominio;
 
+    private Collection<ClaseRecursoPar> parametros;
+
     private SystemTable baseTable;
 
     private Collection<SystemColumn> baseTableColumns;
@@ -70,6 +73,7 @@ public class JasperQuery {
     public JasperQuery(ToolKitBeanLocator locator, Dominio dominio) {
         this.locator = locator;
         this.dominio = dominio;
+        this.parametros = dominio.getClaseRecursoIdClaseRecurso().getClaseRecursoParIdClaseRecursoCollection();
         this.name = dominio.getCodigoDominio();
         this.queryString = "";
         this.fields = new LinkedHashSet();
@@ -79,8 +83,8 @@ public class JasperQuery {
 
     private void initBaseTable() {
         baseTable = dominio.getClaseRecursoIdClaseRecurso().getClaseRecursoIdClaseRecursoBase() == null
-                ? locator.getSystemTableFacade().findByCodigo(dominio.getClaseRecursoIdClaseRecurso().getCodigoClaseRecurso())
-                : locator.getSystemTableFacade().findByCodigo(dominio.getClaseRecursoIdClaseRecurso().getClaseRecursoIdClaseRecursoBase().getCodigoClaseRecurso());
+            ? locator.getSystemTableFacade().findByCodigo(dominio.getClaseRecursoIdClaseRecurso().getCodigoClaseRecurso())
+            : locator.getSystemTableFacade().findByCodigo(dominio.getClaseRecursoIdClaseRecurso().getClaseRecursoIdClaseRecursoBase().getCodigoClaseRecurso());
     }
 
     private void initBaseTableColumns() {
@@ -282,11 +286,13 @@ public class JasperQuery {
     private JasperReportField field(SystemColumn c, String alias, String suffix, int depth, JasperReportField keyField) {
         boolean pkey = c.getPkcid() != null;
         boolean fkey = c.getFkcid() != null;
-//      boolean col1 = prefixed(c, "id");
+        boolean col1 = prefixed(c, "id");
         boolean col2 = prefixed(c, "version");
         boolean col3 = prefixed(c, "codigo");
-//      boolean col4 = prefixed(c, "nombre");
-//      boolean col5 = prefixed(c, "descripcion");
+        boolean col4 = prefixed(c, "nombre");
+        boolean col5 = prefixed(c, "numero_condicion");
+        boolean col6 = enclosed(c, "es", "inactiva");
+        boolean col7 = enclosed(c, "es", "inactivo");
         boolean join = depth > 0;
         boolean skip = depth > fieldDepth || fieldCount >= fieldLimit || pkey || col2;
         if (join) {
@@ -294,9 +300,27 @@ public class JasperQuery {
                 return null;
             }
         }
-        boolean hide = depth > 0 || pkey || fkey || col2;
-        boolean show = depth == 1 && col3; /* depth == 1 && (col3 || col4 || col5); */
-        JasperReportField f = field(c, alias, suffix, join, hide && !show, keyField);
+        boolean hidden = pkey || fkey || col1 || col2;
+        boolean omitted = false;
+        boolean printable = false;
+        boolean cvp0 = false;
+        if (depth == 0) {
+            String colname = c.getColname();
+            EnumTipoParametro tipo;
+            for (ClaseRecursoPar crp : parametros) {
+                if (crp.getParametroIdParametro().getCodigoParametro().equals(colname)) {
+                    tipo = EnumTipoParametro.valueOf(crp.getTipoParametroNumeroTipoParametro().getNumeroTipoParametro());
+                    omitted = EnumTipoParametro.OMITIDO.equals(tipo);
+                    printable = !omitted && BitUtils.valueOf(crp.getEsParametroPrimordial());
+                    break;
+                }
+            }
+            cvp0 = !omitted && (col3 || col4 || col5 || col6 || col7);
+        }
+        boolean cvp1 = depth == 1 && col3 && keyField != null && keyField.printable;
+        boolean show = !hidden && (printable || cvp0 || cvp1);
+        JasperReportField f = field(c, alias, suffix, join, show, keyField);
+        f.printable = printable;
         fields.add(f);
         return f;
     }
@@ -305,7 +329,11 @@ public class JasperQuery {
         return c.getColname().equals(prefix + "_" + c.getTabid().getTabname());
     }
 
-    private JasperReportField field(SystemColumn c, String alias, String suffix, boolean join, boolean hide, JasperReportField keyField) {
+    private boolean enclosed(SystemColumn c, String prefix, String suffix) {
+        return c.getColname().equals(prefix + "_" + c.getTabid().getTabname() + "_" + suffix);
+    }
+
+    private JasperReportField field(SystemColumn c, String alias, String suffix, boolean join, boolean show, JasperReportField keyField) {
         JasperReportField field = field(c);
         if (StringUtils.isNotBlank(suffix)) {
             field.name = shortAlias(c, suffix);
@@ -318,8 +346,10 @@ public class JasperQuery {
                 keyField.suffix = suffix;
             }
         }
-        if (hide || field.pixels > 256) {
+        if (!show) {
             field.pixels = 0;
+        } else if (field.pixels > 384) {
+            field.pixels = 384;
         }
         return field;
     }

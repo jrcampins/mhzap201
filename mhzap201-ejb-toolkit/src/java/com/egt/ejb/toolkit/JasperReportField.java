@@ -31,6 +31,8 @@ public class JasperReportField {
 
     int pixels;
 
+    boolean printable;
+
     EnumTipoDatoPar dataType;
 
     public JasperReportField() {
@@ -43,6 +45,7 @@ public class JasperReportField {
         this.label = "";
         this.javaClassName = "";
         this.pixels = 0;
+        this.printable = false;
         this.dataType = null;
     }
 

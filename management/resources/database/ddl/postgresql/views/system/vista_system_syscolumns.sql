@@ -69,10 +69,18 @@ select  1000 * cast(tab.oid as bigint) + cast(att.attnum as bigint) as colid,
             end as colscale,
         case(typ.typname)
             when('bpchar')then(48)
-            when('varchar')then(case when(att.atttypmod<0)then(384)when((att.atttypmod-4)>100)then(256)when((att.atttypmod-4)>50)then(192)when((att.atttypmod-4)>20)then(128)else(48)end)
+            when('varchar')then(case
+                when(att.atttypmod<0)then(case
+                    when(tab.relname like'log_imp%' and att.attname like'nombre%')then(192)
+                    when(tab.relname like'log_imp%' and att.attname not like'observacion%')then(128)
+                    else(384)end)
+                when((att.atttypmod-4)>100)then(256)
+                when((att.atttypmod-4)>50)then(192)
+                when((att.atttypmod-4)>20)then(128)
+                else(48)end)
             when('numeric')then(96)
-            when('timestamp')then(64)
-            when('timestamptz')then(64)
+            when('timestamp')then(case when(att.attname like'fecha_hora%')then(96)else(64)end)
+            when('timestamptz')then(case when(att.attname like'fecha_hora%')then(96)else(64)end)
             when('int4')then(64)
             when('int8')then(96)
 --          when('bytea')then(0)

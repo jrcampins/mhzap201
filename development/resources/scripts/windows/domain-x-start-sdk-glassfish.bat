@@ -22,8 +22,8 @@ set ASADMIN="%GLASSFISH_HOME%\bin\asadmin.bat"
 set ASADMIN
 echo.
 
-echo %ASADMIN% %ascst1% start-domain
-call %ASADMIN% %ascst1% start-domain
+echo %ASADMIN% %ascst1% start-domain --debug %domain%
+call %ASADMIN% %ascst1% start-domain --debug %domain%
 echo.
 
 echo %ASADMIN% %ascst2% list-components

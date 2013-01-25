@@ -101,7 +101,7 @@ public class JasperReport {
                 last = field;
                 fits++;
                 used += field.pixels;
-                if (this.resizeable(field.dataType)) {
+                if (this.resizeable(field)) {
                     size += field.pixels;
                 }
             }
@@ -115,10 +115,10 @@ public class JasperReport {
 //          used += gaps * ifgw;
             free = COLUMN_WIDTH - used;
             if (free > 0) {
-                int extra = 0;
+                int extra;
                 for (JasperReportField field : group.getFields()) {
-                    if (field.pixels > 0 && field.pixels + used <= COLUMN_WIDTH) {
-                        if (this.resizeable(field.dataType)) {
+                    if (field.pixels > 0 && used <= COLUMN_WIDTH) {
+                        if (this.resizeable(field)) {
                             extra = free * field.pixels / size;
                             used += extra;
                             field.pixels += extra;
@@ -137,14 +137,14 @@ public class JasperReport {
         this.interFieldGapWidth = ifgw;
     }
 
-    private boolean resizeable(EnumTipoDatoPar tipo) {
+    private boolean resizeable(JasperReportField field) {
+        EnumTipoDatoPar tipo = field.dataType;
         switch (tipo) {
             case ALFANUMERICO:
-            case ENTERO:
-            case ENTERO_GRANDE:
-                return true;
+                return field.pixels > 128;
             default:
                 return false;
         }
     }
+
 }
