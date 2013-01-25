@@ -460,7 +460,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="448"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -469,9 +469,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="448"
+                    x="128"
                     y="0"
-                    width="448"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -480,9 +480,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="896"
+                    x="256"
                     y="0"
-                    width="64"
+                    width="704"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -570,7 +570,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="448"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -586,9 +586,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="448"
+                    x="128"
                     y="0"
-                    width="448"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -604,9 +604,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="896"
+                    x="256"
                     y="0"
-                    width="64"
+                    width="704"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>

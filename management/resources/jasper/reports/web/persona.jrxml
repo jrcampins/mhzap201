@@ -609,7 +609,7 @@
                     style="ch-text1"
                     x="128"
                     y="0"
-                    width="192"
+                    width="640"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -618,79 +618,35 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="320"
-                    y="0"
-                    width="64"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[numero cedula]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="384"
-                    y="0"
-                    width="48"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[letra cedula]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="432"
+                    x="768"
                     y="0"
                     width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha expedicion cedula]]></text>
+                <text><![CDATA[fecha nacimiento]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="496"
+                    x="832"
                     y="0"
                     width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha vencimiento cedula]]></text>
+                <text><![CDATA[paraguayo natural]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="560"
+                    x="896"
                     y="0"
-                    width="128"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[primer nombre]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="688"
-                    y="0"
-                    width="128"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[segundo nombre]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="816"
-                    y="0"
-                    width="144"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[primer apellido]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[indigena]]></text>
             </staticText>
             </frame>
         </band>
@@ -792,49 +748,13 @@
                     stretchType="RelativeToBandHeight"
                     x="128"
                     y="0"
-                    width="192"
+                    width="640"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_persona}]]></textFieldExpression>
             </textField>
             <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="320"
-                    y="0"
-                    width="64"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_cedula}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="384"
-                    y="0"
-                    width="48"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{letra_cedula}]]></textFieldExpression>
-            </textField>
-            <textField
                 pattern="dd/MM/yyyy"
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
@@ -844,16 +764,16 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="432"
+                    x="768"
                     y="0"
                     width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_expedicion_cedula}]]></textFieldExpression>
+                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_nacimiento}]]></textFieldExpression>
             </textField>
             <textField
-                pattern="dd/MM/yyyy"
+                pattern=""
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -862,13 +782,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="496"
+                    x="832"
                     y="0"
                     width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_vencimiento_cedula}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_paraguayo_natural}).getLabel()]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -880,49 +800,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="560"
+                    x="896"
                     y="0"
-                    width="128"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{primer_nombre}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="688"
-                    y="0"
-                    width="128"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{segundo_nombre}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="816"
-                    y="0"
-                    width="144"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{primer_apellido}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_indigena}).getLabel()]]></textFieldExpression>
             </textField>
             </frame>
         </band>

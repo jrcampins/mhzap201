@@ -388,7 +388,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="225"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -397,9 +397,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="225"
+                    x="128"
                     y="0"
-                    width="338"
+                    width="704"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -408,20 +408,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="563"
+                    x="832"
                     y="0"
-                    width="169"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[id rastro proceso]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="732"
-                    y="0"
-                    width="228"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -509,7 +498,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="225"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -525,31 +514,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="225"
+                    x="128"
                     y="0"
-                    width="338"
+                    width="704"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_grupo_proceso}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="563"
-                    y="0"
-                    width="169"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Long"><![CDATA[$F{id_rastro_proceso}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -561,9 +532,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="732"
+                    x="832"
                     y="0"
-                    width="228"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>

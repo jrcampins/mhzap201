@@ -403,29 +403,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="64"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha hora inicio ejecucion]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="64"
-                    y="0"
-                    width="64"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha hora fin ejecucion]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="128"
-                    y="0"
-                    width="131"
+                    width="96"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
@@ -434,9 +412,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="259"
+                    x="96"
                     y="0"
-                    width="192"
+                    width="736"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -445,24 +423,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="451"
+                    x="832"
                     y="0"
-                    width="175"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <text><![CDATA[condicion eje fun]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="626"
-                    y="0"
-                    width="334"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[nombre archivo]]></text>
             </staticText>
             </frame>
         </band>
@@ -535,7 +502,7 @@
                     height="16"
                     key="frame"/>
             <textField
-                pattern="dd/MM/yyyy hh:mm aa"
+                pattern="#,##0;-#,##0"
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -546,43 +513,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="64"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_hora_inicio_ejecucion}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="dd/MM/yyyy hh:mm aa"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="64"
-                    y="0"
-                    width="64"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_hora_fin_ejecucion}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="128"
-                    y="0"
-                    width="131"
+                    width="96"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
@@ -598,9 +529,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="259"
+                    x="96"
                     y="0"
-                    width="192"
+                    width="736"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -616,31 +547,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="451"
+                    x="832"
                     y="0"
-                    width="175"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_condicion_eje_fun_1x2y2}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="626"
-                    y="0"
-                    width="334"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_archivo}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

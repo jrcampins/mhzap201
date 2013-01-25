@@ -412,7 +412,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="192"
+                    width="832"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -421,57 +421,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="192"
+                    x="832"
                     y="0"
-                    width="153"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <text><![CDATA[operador com]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="345"
-                    y="0"
-                    width="115"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[id valor lista]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="460"
-                    y="0"
-                    width="115"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[id objeto valor]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="575"
-                    y="0"
-                    width="115"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[id recurso valor]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="690"
-                    y="0"
-                    width="270"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[valor parametro]]></text>
             </staticText>
             </frame>
         </band>
@@ -555,7 +511,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="192"
+                    width="832"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -571,85 +527,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="192"
+                    x="832"
                     y="0"
-                    width="153"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_operador_com_1x3y2}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="345"
-                    y="0"
-                    width="115"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Long"><![CDATA[$F{id_valor_lista}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="460"
-                    y="0"
-                    width="115"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Long"><![CDATA[$F{id_objeto_valor}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="575"
-                    y="0"
-                    width="115"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Long"><![CDATA[$F{id_recurso_valor}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="690"
-                    y="0"
-                    width="270"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{valor_parametro}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

@@ -486,7 +486,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="162"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -495,9 +495,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="162"
+                    x="128"
                     y="0"
-                    width="162"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -506,7 +506,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="324"
+                    x="256"
                     y="0"
                     width="128"
                     height="20"
@@ -517,35 +517,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="452"
+                    x="384"
                     y="0"
-                    width="81"
+                    width="576"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <text><![CDATA[inactiva]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="533"
-                    y="0"
-                    width="64"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[fecha ultima actualizacion]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="597"
-                    y="0"
-                    width="363"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[nombre archivo ultima act]]></text>
             </staticText>
             </frame>
         </band>
@@ -629,7 +607,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="162"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -645,9 +623,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="162"
+                    x="128"
                     y="0"
-                    width="162"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -663,7 +641,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="324"
+                    x="256"
                     y="0"
                     width="128"
                     height="16"
@@ -681,49 +659,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="452"
+                    x="384"
                     y="0"
-                    width="81"
+                    width="576"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_objecion_ele_pen_inactiva}).getLabel()]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="dd/MM/yyyy"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="533"
-                    y="0"
-                    width="64"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_ultima_actualizacion}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="597"
-                    y="0"
-                    width="363"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_archivo_ultima_act}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

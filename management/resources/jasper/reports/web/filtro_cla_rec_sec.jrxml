@@ -446,17 +446,6 @@
                     width="960"
                     height="20"
                     key="frame"/>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="0"
-                    y="0"
-                    width="960"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[operador com]]></text>
-            </staticText>
             </frame>
         </band>
     </groupHeader>
@@ -527,24 +516,6 @@
                     width="960"
                     height="16"
                     key="frame"/>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="0"
-                    y="0"
-                    width="960"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_operador_com_1x3y2}]]></textFieldExpression>
-            </textField>
             </frame>
         </band>
     </detail>

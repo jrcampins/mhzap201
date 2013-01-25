@@ -459,22 +459,11 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="576"
+                    width="960"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <text><![CDATA[funcion]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="576"
-                    y="0"
-                    width="384"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[operador com]]></text>
             </staticText>
             </frame>
         </band>
@@ -558,29 +547,11 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="576"
+                    width="960"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcion_1x1y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="576"
-                    y="0"
-                    width="384"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_operador_com_1x3y2}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

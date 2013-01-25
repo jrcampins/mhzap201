@@ -440,7 +440,7 @@
                     style="ch-text1"
                     x="128"
                     y="0"
-                    width="192"
+                    width="640"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -449,29 +449,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="320"
-                    y="0"
-                    width="192"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[aplicacion]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="512"
-                    y="0"
-                    width="192"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[pagina]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="704"
+                    x="768"
                     y="0"
                     width="128"
                     height="20"
@@ -482,13 +460,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="832"
+                    x="896"
                     y="0"
-                    width="128"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[tipo nodo]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[inactiva]]></text>
             </staticText>
             </frame>
         </band>
@@ -590,7 +568,7 @@
                     stretchType="RelativeToBandHeight"
                     x="128"
                     y="0"
-                    width="192"
+                    width="640"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -606,43 +584,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="320"
-                    y="0"
-                    width="192"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_aplicacion_1x1y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="512"
-                    y="0"
-                    width="192"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_pagina_1x2y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="704"
+                    x="768"
                     y="0"
                     width="128"
                     height="16"
@@ -660,13 +602,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="832"
+                    x="896"
                     y="0"
-                    width="128"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_tipo_nodo_1x4y2}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_opcion_menu_inactiva}).getLabel()]]></textFieldExpression>
             </textField>
             </frame>
         </band>

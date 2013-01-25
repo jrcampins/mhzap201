@@ -390,7 +390,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="295"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -399,24 +399,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="295"
+                    x="128"
                     y="0"
-                    width="221"
+                    width="832"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <text><![CDATA[id segmento]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="516"
-                    y="0"
-                    width="444"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[valor segmento]]></text>
             </staticText>
             </frame>
         </band>
@@ -500,7 +489,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="295"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -516,31 +505,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="295"
+                    x="128"
                     y="0"
-                    width="221"
+                    width="832"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.Long"><![CDATA[$F{id_segmento}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="516"
-                    y="0"
-                    width="444"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{valor_segmento}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

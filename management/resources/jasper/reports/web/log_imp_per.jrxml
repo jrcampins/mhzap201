@@ -469,7 +469,29 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="896"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p45a]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="128"
+                    y="0"
+                    width="128"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p44a]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="256"
+                    y="0"
+                    width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -478,9 +500,20 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="896"
+                    x="320"
                     y="0"
-                    width="64"
+                    width="544"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[observacion]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="864"
+                    y="0"
+                    width="96"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -568,11 +601,65 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="896"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p45a}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="128"
+                    y="0"
+                    width="128"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p44a}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="256"
+                    y="0"
+                    width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_importado}).getLabel()]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
+                    y="0"
+                    width="544"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{observacion}]]></textFieldExpression>
             </textField>
             <textField
                 pattern="dd/MM/yyyy hh:mm aa"
@@ -584,9 +671,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="896"
+                    x="864"
                     y="0"
-                    width="64"
+                    width="96"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>

@@ -405,7 +405,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="261"
+                    width="416"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -414,9 +414,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="261"
+                    x="416"
                     y="0"
-                    width="192"
+                    width="416"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -425,24 +425,13 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="453"
+                    x="832"
                     y="0"
-                    width="174"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <text><![CDATA[tipo parametro dom]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="627"
-                    y="0"
-                    width="333"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[etiqueta parametro]]></text>
             </staticText>
             </frame>
         </band>
@@ -526,7 +515,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="261"
+                    width="416"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -542,9 +531,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="261"
+                    x="416"
                     y="0"
-                    width="192"
+                    width="416"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -560,31 +549,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="453"
+                    x="832"
                     y="0"
-                    width="174"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_tipo_parametro_do_1x3y2}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="627"
-                    y="0"
-                    width="333"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{etiqueta_parametro}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

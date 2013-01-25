@@ -558,88 +558,55 @@
                     style="ch-text1"
                     x="192"
                     y="0"
-                    width="128"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[funcionario]]></text>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[numero formulario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="256"
+                    y="0"
+                    width="64"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[numero vivienda]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
                     x="320"
                     y="0"
-                    width="128"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[funcionario]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="448"
-                    y="0"
-                    width="128"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[funcionario]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="576"
-                    y="0"
-                    width="128"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[funcionario]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="704"
-                    y="0"
                     width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[huso utm]]></text>
+                <text><![CDATA[numero hogar]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="768"
+                    x="384"
                     y="0"
-                    width="48"
+                    width="512"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[franja utm]]></text>
+                <text><![CDATA[nombre jefe hogar]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="816"
+                    x="896"
                     y="0"
                     width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[distancia este utm]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="880"
-                    y="0"
-                    width="80"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <text><![CDATA[distancia norte utm]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[inactiva]]></text>
             </staticText>
             </frame>
         </band>
@@ -748,7 +715,7 @@
                 <textFieldExpression class="java.util.Date"><![CDATA[$F{fecha_entrevista}]]></textFieldExpression>
             </textField>
             <textField
-                pattern=""
+                pattern="#,##0;-#,##0"
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -759,14 +726,32 @@
                     stretchType="RelativeToBandHeight"
                     x="192"
                     y="0"
-                    width="128"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x1y3}]]></textFieldExpression>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_formulario}]]></textFieldExpression>
             </textField>
             <textField
-                pattern=""
+                pattern="#,##0;-#,##0"
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="256"
+                    y="0"
+                    width="64"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_vivienda}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern="#,##0;-#,##0"
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -777,65 +762,11 @@
                     stretchType="RelativeToBandHeight"
                     x="320"
                     y="0"
-                    width="128"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x2y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="448"
-                    y="0"
-                    width="128"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x3y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="576"
-                    y="0"
-                    width="128"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcionario_1x4y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="704"
-                    y="0"
                     width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{huso_utm}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{numero_hogar}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -847,16 +778,16 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="768"
+                    x="384"
                     y="0"
-                    width="48"
+                    width="512"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{franja_utm}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_jefe_hogar}]]></textFieldExpression>
             </textField>
             <textField
-                pattern="#,##0;-#,##0"
+                pattern=""
                 isBlankWhenNull="true"
                 isStretchWithOverflow="true"
                 evaluationTime="Now"
@@ -865,31 +796,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="816"
+                    x="896"
                     y="0"
                     width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{distancia_este_utm}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern="#,##0;-#,##0"
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="880"
-                    y="0"
-                    width="80"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Right" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Integer"><![CDATA[$F{distancia_norte_utm}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_ficha_hogar_inactiva}).getLabel()]]></textFieldExpression>
             </textField>
             </frame>
         </band>

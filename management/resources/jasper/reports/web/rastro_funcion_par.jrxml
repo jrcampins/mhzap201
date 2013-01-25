@@ -401,22 +401,11 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="480"
+                    width="960"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <text><![CDATA[parametro]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="480"
-                    y="0"
-                    width="480"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[valor parametro]]></text>
             </staticText>
             </frame>
         </band>
@@ -500,29 +489,11 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="480"
+                    width="960"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_parametro_1x2y3}]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="480"
-                    y="0"
-                    width="480"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{valor_parametro}]]></textFieldExpression>
             </textField>
             </frame>
         </band>

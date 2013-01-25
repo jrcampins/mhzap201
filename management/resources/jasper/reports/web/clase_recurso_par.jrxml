@@ -491,7 +491,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="192"
+                    width="288"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -500,9 +500,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="192"
+                    x="288"
                     y="0"
-                    width="192"
+                    width="288"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -511,7 +511,7 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="384"
+                    x="576"
                     y="0"
                     width="128"
                     height="20"
@@ -522,35 +522,46 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="512"
+                    x="704"
                     y="0"
-                    width="128"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[tipo comparacion]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[parametro inmutable]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="640"
+                    x="768"
                     y="0"
-                    width="192"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[funcion]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[parametro primordial]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
                     x="832"
                     y="0"
-                    width="128"
+                    width="64"
                     height="20"
                     key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[tipo valor]]></text>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[parametro maestro]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="896"
+                    y="0"
+                    width="64"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[parametro segmento]]></text>
             </staticText>
             </frame>
         </band>
@@ -634,7 +645,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="192"
+                    width="288"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -650,9 +661,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="192"
+                    x="288"
                     y="0"
-                    width="192"
+                    width="288"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -668,7 +679,7 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="384"
+                    x="576"
                     y="0"
                     width="128"
                     height="16"
@@ -686,13 +697,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="512"
+                    x="704"
                     y="0"
-                    width="128"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_tipo_comparacion_1x4y2}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_parametro_inmutable}).getLabel()]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -704,13 +715,13 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="640"
+                    x="768"
                     y="0"
-                    width="192"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_funcion_1x5y3}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_parametro_primordial}).getLabel()]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -724,11 +735,29 @@
                     stretchType="RelativeToBandHeight"
                     x="832"
                     y="0"
-                    width="128"
+                    width="64"
                     height="16"
                     key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{codigo_tipo_valor_1x6y2}]]></textFieldExpression>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_parametro_maestro}).getLabel()]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="896"
+                    y="0"
+                    width="64"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_parametro_segmento}).getLabel()]]></textFieldExpression>
             </textField>
             </frame>
         </band>
