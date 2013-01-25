@@ -16,8 +16,12 @@ compound trigger
 
 before each row is
 begin
+    if(:old.numero_tipo_area<>:new.numero_tipo_area) then
+        msg_string:='No se puede cambiar el tipo de área de una ubicación';
+        raise_application_error(err_number, msg_string, true);
+    end if;
     dbms_output.put_line('before row '||:new.id_ubicacion
-        ||' ('||:old.id_ubicacion_superior||','||:new.id_ubicacion_superior||') ');
+    ||' ('||:old.id_ubicacion_superior||','||:new.id_ubicacion_superior||') ');
 end before each row;
 
 after each row is

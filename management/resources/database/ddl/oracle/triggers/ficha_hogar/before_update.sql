@@ -3,6 +3,7 @@ before update on ficha_hogar
 for each row
 declare
     xnew ficha_hogar%rowtype;
+    tipo_area number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
@@ -10,6 +11,21 @@ begin
         msg_string := 'La Ficha Hogar está inactiva. No se puede actualizar';
         raise_application_error(err_number, msg_string, true);
     end if;
+    --Si hay cambios en el barrio
+    if (:new.id_barrio<>:old.id_barrio
+        or(:old.id_barrio is null and :new.id_barrio is not null)) then
+        begin
+            select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string := 'Tipo de área no existe para barrio ' || :new.id_barrio ;
+            raise_application_error(err_number, msg_string, true);
+        end if;
+        :new.numero_tipo_area:=tipo_area; 
+    end if;
+    
     /**/
     xnew.id_ficha_hogar := :new.id_ficha_hogar;                                
     xnew.version_ficha_hogar := :new.version_ficha_hogar;                      

@@ -3,9 +3,23 @@ before insert on persona
 for each row
 declare
     xnew persona%rowtype;
+    tipo_area number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    --Se actualiza el tipo de area desde el barrio
+    if (:new.id_barrio is not null) then
+        begin
+            select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string := 'Tipo de área no existe para barrio ' || :new.id_barrio ;
+            raise_application_error(err_number, msg_string, true);
+        end if;
+        :new.numero_tipo_area:=tipo_area; 
+    end if;
     /**/
     xnew.id_persona := :new.id_persona;                                        
     xnew.version_persona := :new.version_persona;                              

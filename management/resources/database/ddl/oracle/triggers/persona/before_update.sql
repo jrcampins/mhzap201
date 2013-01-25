@@ -7,7 +7,22 @@ declare
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
     icv number;
     fecha_ent date;
+    tipo_area number;
 begin
+    --Si hay cambios en el barrio
+    if (:new.id_barrio<>:old.id_barrio
+        or(:old.id_barrio is null and :new.id_barrio is not null)) then
+        begin
+            select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string := 'Tipo de área no existe para barrio ' || :new.id_barrio ;
+            raise_application_error(err_number, msg_string, true);
+        end if;
+        :new.numero_tipo_area:=tipo_area; 
+    end if;
     --dbms_output.put_line('Actualizando el id de ficha old: '||:old.id_ficha_persona||' new: '||:new.id_ficha_persona);
     --si hay un cambio en el id_ficha_persona o si pasa de null a no null,
     --se deben actualizar los icvs

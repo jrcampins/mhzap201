@@ -71,7 +71,8 @@ begin
     else
         --Se crea el vinculo de potencial_ben a ficha_persona
         update potencial_ben
-        set id_ficha_persona=ficha
+        set id_ficha_persona=ficha,
+        indice_calidad_vida=row_ficha_h.indice_calidad_vida
         where id_potencial_ben=beneficiario;
         --Se crea el vinculo de ficha_persona a potencial_ben
         update ficha_persona

@@ -3,7 +3,7 @@ for update on potencial_ben
 compound trigger
     type tabla_bigints is table of potencial_ben.id_potencial_ben%type      index by binary_integer;
     type tabla_codigos is table of potencial_ben.codigo_potencial_ben%type  index by binary_integer;
-
+    tipo_area number;
     xnew        potencial_ben%rowtype;
     row_persona persona%rowtype;
     id          tabla_bigints;
@@ -49,7 +49,6 @@ begin
         :new.es_paraguayo_natural := row_persona.es_paraguayo_natural;
         :new.numero_cedula := row_persona.numero_cedula;
         :new.letra_cedula := row_persona.letra_cedula;
-        :new.id_ficha_persona := row_persona.id_ficha_persona;
         :new.es_persona_con_empleo := row_persona.es_persona_con_empleo;
         :new.es_persona_con_deuda := row_persona.es_persona_con_deuda;
         :new.es_persona_con_pena_judicial := row_persona.es_persona_con_pena_judicial;
@@ -68,11 +67,8 @@ begin
         if (:new.id_distrito is null) then
             :new.id_distrito := row_persona.id_distrito;
         end if;
-        if (:new.numero_tipo_area is null) then
-            :new.numero_tipo_area := row_persona.numero_tipo_area;
-        end if;
         if (:new.id_barrio is null) then
-            :new.id_barrio := row_persona.id_barrio;
+            :new.id_barrio := row_persona.id_barrio; 
         end if;
         if (:new.manzana is null) then
             :new.manzana := row_persona.manzana;
@@ -89,7 +85,24 @@ begin
         if (:new.es_persona_con_jubilacion is null) then
             :new.es_persona_con_jubilacion := row_persona.es_persona_con_jubilacion ;
         end if;
-        /**/
+        --Sólo si el id de ficha persona proviene de una ficha se reemplaza el anterior.
+        if(row_persona.id_ficha_persona is not null and row_persona.indice_calidad_vida is not null ) then
+            :new.indice_calidad_vida:=row_persona.indice_calidad_vida;
+            :new.id_ficha_persona:=row_persona.id_ficha_persona;
+        end if;
+        --Si tiene barrio hay que obtener el tipo de area.
+        if(:new.id_barrio is not null) then
+            begin
+                select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;
+            exception
+                when no_data_found then null;
+            end;
+            if not sql%found then
+                msg_string := 'Tipo de área no existe para barrio ' || :new.id_barrio ;
+                raise_application_error(err_number, msg_string, true);
+            end if;
+            :new.numero_tipo_area:=tipo_area;
+        end if;
     end if;
     /**/
     xnew.id_potencial_ben := :new.id_potencial_ben;                            
@@ -139,7 +152,7 @@ begin
     xnew.numero_causa_inv_censo := :new.numero_causa_inv_censo;                
     xnew.otra_causa_inv_censo := :new.otra_causa_inv_censo;                    
     xnew.comentarios_validacion_censo := :new.comentarios_validacion_censo;    
-    xnew.id_ficha_persona := :new.id_ficha_persona;                            
+    xnew.id_ficha_persona := :new.id_ficha_persona;             
     xnew.numero_condicion_recl_cen := :new.numero_condicion_recl_cen;          
     xnew.fecha_reclamo_censo := :new.fecha_reclamo_censo;                      
     xnew.comentarios_reclamo_censo := :new.comentarios_reclamo_censo;          

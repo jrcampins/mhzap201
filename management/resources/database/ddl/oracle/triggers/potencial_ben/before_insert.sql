@@ -3,7 +3,7 @@ for insert on potencial_ben
 compound trigger
     type tabla_bigints is table of potencial_ben.id_potencial_ben%type      index by binary_integer;
     type tabla_codigos is table of potencial_ben.codigo_potencial_ben%type  index by binary_integer;
-
+    tipo_area number;
     xnew        potencial_ben%rowtype;
     row_persona persona%rowtype;
     id          tabla_bigints;
@@ -53,18 +53,15 @@ begin
         :new.es_indigena := row_persona.es_indigena;
         :new.id_etnia_indigena := row_persona.id_etnia_indigena;
         :new.nombre_comunidad_indigena := row_persona.nombre_comunidad_indigena;
-        --Aquellos campos que no provengan del repositorio de identificaciones son obtenidos desde persona.
+        --Aquellos campos que no provengan del repositorio de identificaciones son obtenidos desde potencial_ben
         if (:new.id_departamento is null) then
             :new.id_departamento := row_persona.id_departamento;
         end if;
         if (:new.id_distrito is null) then
             :new.id_distrito := row_persona.id_distrito;
         end if;
-        if (:new.numero_tipo_area is null) then
-            :new.numero_tipo_area := row_persona.numero_tipo_area;
-        end if;
         if (:new.id_barrio is null) then
-            :new.id_barrio := row_persona.id_barrio;
+            :new.id_barrio := row_persona.id_barrio; 
         end if;
         if (:new.manzana is null) then
             :new.manzana := row_persona.manzana;
@@ -82,6 +79,19 @@ begin
             :new.es_persona_con_jubilacion := row_persona.es_persona_con_jubilacion ;
         end if;
         /**/
+    end if;
+    
+    if(:new.id_barrio is not null) then
+        begin
+            select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;
+        exception
+            when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string := 'Tipo de área no existe para barrio ' || :new.id_barrio ;
+            raise_application_error(err_number, msg_string, true);
+        end if;
+        :new.numero_tipo_area:=tipo_area;
     end if;
     /**/
     xnew.id_potencial_ben := :new.id_potencial_ben;                            
