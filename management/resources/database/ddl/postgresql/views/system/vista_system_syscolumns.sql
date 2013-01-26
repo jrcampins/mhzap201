@@ -77,6 +77,7 @@ select  1000 * cast(tab.oid as bigint) + cast(att.attnum as bigint) as colid,
                 when((att.atttypmod-4)>100)then(256)
                 when((att.atttypmod-4)>50)then(192)
                 when((att.atttypmod-4)>20)then(128)
+                when((att.atttypmod-4)>10)then(64)
                 else(48)end)
             when('numeric')then(96)
             when('timestamp')then(case when(att.attname like'fecha_hora%')then(96)else(64)end)

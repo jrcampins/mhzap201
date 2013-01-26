@@ -9,8 +9,6 @@
  */
 package com.egt.ejb.toolkit;
 
-import com.egt.base.enums.EnumTipoDatoPar;
-import com.egt.core.aplicacion.Bitacora;
 import com.egt.ejb.persistence.entity.Dominio;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -92,58 +90,35 @@ public class JasperReport {
     private void resize(JasperReportGroup group) {
         int used = 0;
         int size = 0;
-        int fits = 0;
-//      int MIN_IFGW = 4;
-//      int MAX_IFGW = 16;
         JasperReportField last = null;
         for (JasperReportField field : group.getFields()) {
             if (field.pixels > 0 && field.pixels + used <= COLUMN_WIDTH) {
-                last = field;
-                fits++;
                 used += field.pixels;
-                if (this.resizeable(field)) {
+                if (field.resizeable()) {
+                    last = field;
                     size += field.pixels;
                 }
             }
         }
-        int ifgw = 0;
         int free = COLUMN_WIDTH - used;
-        int gaps = fits - 1;
-        if (gaps > 0) {
-//          ifgw = free / gaps;
-//          ifgw = ifgw < MIN_IFGW ? MIN_IFGW : ifgw > MAX_IFGW ? MAX_IFGW : ifgw;
-//          used += gaps * ifgw;
-            free = COLUMN_WIDTH - used;
-            if (free > 0) {
-                int extra;
-                for (JasperReportField field : group.getFields()) {
-                    if (field.pixels > 0 && used <= COLUMN_WIDTH) {
-                        if (this.resizeable(field)) {
-                            extra = free * field.pixels / size;
-                            used += extra;
-                            field.pixels += extra;
-                        }
+        if (last != null && free > 0) {
+            int extra;
+            for (JasperReportField field : group.getFields()) {
+                if (field.pixels > 0 && used < COLUMN_WIDTH) {
+                    if (field == last) {
+                        extra = COLUMN_WIDTH - used;
+                    } else if (field.resizeable()) {
+                        extra = field.pixels * free / size;
+                    } else {
+                        extra = 0;
                     }
+                    if (extra > field.pixels) {
+                        extra = field.pixels;
+                    }
+                    used += extra;
+                    field.pixels += extra;
                 }
             }
-        }
-        if (last != null) {
-            free = COLUMN_WIDTH - used;
-            if (free > 0) {
-                last.pixels += free;
-            }
-        }
-        Bitacora.trace(JasperReport.class, this.name, "free=" + free + ", used=" + used + ", fits=" + fits + ", gaps=" + gaps + ", ifgw=" + ifgw);
-        this.interFieldGapWidth = ifgw;
-    }
-
-    private boolean resizeable(JasperReportField field) {
-        EnumTipoDatoPar tipo = field.dataType;
-        switch (tipo) {
-            case ALFANUMERICO:
-                return field.pixels > 128;
-            default:
-                return false;
         }
     }
 

@@ -90,4 +90,14 @@ public class JasperReportField {
         return dataType;
     }
 
+    boolean resizeable() {
+        if (dataType != null) {
+            switch (dataType) {
+                case ALFANUMERICO:
+                    return pixels > 100;
+            }
+        }
+        return false;
+    }
+
 }
