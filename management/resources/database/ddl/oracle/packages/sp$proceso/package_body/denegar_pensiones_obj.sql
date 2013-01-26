@@ -17,8 +17,8 @@ function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion var
           id_persona number,
           codigo_persona varchar2 (50),
           nombre_persona varchar2(200),
-          id_distrito number,
           id_departamento number,
+          id_distrito number,
           id_barrio number,
           numero_causa_den_pension number);
     type cons_pen_den is table of pen_den;
@@ -52,8 +52,8 @@ begin
     execute immediate 'select id_persona, 
                               codigo_persona, 
                               nombre_persona, 
-                              id_distrito, 
                               id_departamento, 
+                              id_distrito, 
                               id_barrio , 
                               numero_causa_den_pension
                        from persona 
@@ -69,9 +69,9 @@ begin
                         0, -- version
                         vista_pen_den(i).id_persona, 
                         vista_pen_den(i).codigo_persona, 
-                        vista_pen_den(i).nombre_persona, 
-                        vista_pen_den(i).id_distrito, 
-                        vista_pen_den(i).id_departamento, 
+                        vista_pen_den(i).nombre_persona,
+                        vista_pen_den(i).id_departamento,
+                        vista_pen_den(i).id_distrito,  
                         vista_pen_den(i).id_barrio, 
                         vista_pen_den(i).numero_causa_den_pension,
                         0,

@@ -16,23 +16,16 @@ SELECT
     pb.numero_cedula, 
     pb.fecha_registro_pot_ben,
     extract(year from pb.fecha_registro_pot_ben) AS anho, 
-    fh.indice_calidad_vida,
-    fh.fecha_entrevista,
-    pd.nombre_proveedor_dat_ext,
+    pb.indice_calidad_vida,
     pb.numero_condicion_censo,
     cc.codigo_condicion_censo,
-    fh.nombre_jefe_hogar,
-    fh.numero_cedula_jefe_hogar,
-    fh.direccion AS referencia_casa
+    case when pb.es_potencial_ben_migrado=1 then '*' else ' ' end as es_potencial_ben_migrado
 FROM potencial_ben pb
-   LEFT JOIN ficha_persona fp ON pb.id_ficha_persona = fp.id_ficha_persona
-   LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
-   LEFT JOIN proveedor_dat_ext pd ON fh.id_proveedor_dat_ext=pd.id_proveedor_dat_ext
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = pb.id_departamento
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = pb.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
    LEFT JOIN condicion_censo cc ON cc.numero_condicion_censo=pb.numero_condicion_censo
    LEFT JOIN tipo_area ta ON ubicacion_1x7.numero_tipo_area=ta.numero_tipo_area
-WHERE pb.id_ficha_persona is not null
-ORDER BY cc.numero_condicion_censo,fh.id_departamento,
-    fh.id_distrito, fh.id_barrio, pb.nombre_potencial_ben;
+WHERE pb.indice_calidad_vida is not null
+ORDER BY cc.numero_condicion_censo,pb.id_departamento,
+    pb.id_distrito, pb.id_barrio, pb.nombre_potencial_ben;

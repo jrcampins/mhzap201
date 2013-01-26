@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="229"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -24,6 +24,8 @@
 	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
 	<field name="BARRIO" class="java.lang.String"/>
 	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
+	<field name="NUMERO_TIPO_AREA" class="java.math.BigDecimal"/>
+	<field name="AREA" class="java.lang.String"/>
 	<field name="DIRECCION" class="java.lang.String"/>
 	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
 	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
@@ -33,6 +35,7 @@
 	<field name="NUMERO_CEDULA_JEFE_HOGAR" class="java.math.BigDecimal"/>
 	<field name="REFERENCIA_CASA" class="java.lang.String"/>
 	<field name="NUMERO_TIPO_REG_POT_BEN" class="java.math.BigDecimal"/>
+	<field name="ES_POTENCIAL_BEN_MIGRADO" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
@@ -227,7 +230,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
 					<text><![CDATA[REFERENCIA PARA LLEGAR A LA CASA]]></text>
 				</staticText>
@@ -246,7 +249,7 @@
 					<text><![CDATA[NOMBRE JEFE HOGAR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-16" mode="Opaque" x="849" y="127" width="59" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-16" mode="Opaque" x="902" y="127" width="38" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -257,7 +260,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[NRO.C.I. JEFE]]></text>
+					<text><![CDATA[ICV]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
 					<reportElement key="textField-3" x="228" y="91" width="493" height="17"/>
@@ -303,7 +306,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-18" mode="Opaque" x="908" y="127" width="32" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-18" mode="Opaque" x="849" y="127" width="53" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -312,9 +315,9 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
-					<text><![CDATA[ICV]]></text>
+					<text><![CDATA[CEDULA JEFE HOGAR]]></text>
 				</staticText>
 			</band>
 		</groupHeader>
@@ -343,7 +346,7 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NUMERO_CEDULA}.intValue()]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" x="111" y="2" width="169" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
@@ -364,21 +367,21 @@
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" x="424" y="2" width="134" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{DIRECCION}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" x="561" y="2" width="145" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{REFERENCIA_CASA}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement key="textField" x="707" y="2" width="142" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
@@ -386,11 +389,11 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_JEFE_HOGAR}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0" isBlankWhenNull="true">
-				<reportElement key="textField" x="851" y="2" width="56" height="12"/>
+				<reportElement key="textField" x="902" y="0" width="36" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NUMERO_CEDULA_JEFE_HOGAR}.intValue()]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{INDICE_CALIDAD_VIDA}.toString()+$F{ES_POTENCIAL_BEN_MIGRADO}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField" x="15" y="2" width="26" height="12"/>
@@ -399,12 +402,12 @@
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{contador_item_anho_distrito}]]></textFieldExpression>
 			</textField>
-			<textField pattern="###0.0" isBlankWhenNull="true">
-				<reportElement key="textField-7" x="909" y="2" width="31" height="12"/>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="849" y="2" width="53" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{INDICE_CALIDAD_VIDA}]]></textFieldExpression>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{NUMERO_CEDULA_JEFE_HOGAR}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -429,6 +432,13 @@
 					<pen lineWidth="1.0" lineStyle="Double"/>
 				</graphicElement>
 			</line>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="502" y="6" width="431" height="16" backcolor="#CCCCCC"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" * Indica que el Potencial Beneficiario fue migrado"]]></textFieldExpression>
+			</textField>
 		</band>
 	</summary>
 </jasperReport>

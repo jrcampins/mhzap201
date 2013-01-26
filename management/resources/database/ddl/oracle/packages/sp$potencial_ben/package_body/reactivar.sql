@@ -50,7 +50,7 @@ begin
             set id_potencial_ben=beneficiario
             where id_ficha_persona=row_ficha_persona.id_ficha_persona;
         end if;
-        mensaje:='Se anuló vinculo de Ficha Persona';
+        mensaje:='Se reactivo el vinculo de Ficha Persona';
     end if;
     --Se reactiva el potencial_ben
     update potencial_ben

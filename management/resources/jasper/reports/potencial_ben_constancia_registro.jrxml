@@ -8,8 +8,8 @@
 	<import value="com.egt.commons.enums.*"/>
 	<import value="java.util.*"/>
 	<import value="java.math.BigDecimal"/>
-	<import value="com.egt.base.util.*"/>
 	<import value="com.egt.base.enums.*"/>
+	<import value="com.egt.base.util.*"/>
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
 	<parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
@@ -75,7 +75,8 @@
 	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
 	<field name="BARRIO" class="java.lang.String"/>
 	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
-	<field name="MANZANA" class="java.math.BigDecimal"/>
+	<field name="MANZANA" class="java.lang.String"/>
+	<field name="NUMERO_TIPO_AREA" class="java.math.BigDecimal"/>
 	<field name="AREA" class="java.lang.String"/>
 	<field name="DIRECCION" class="java.lang.String"/>
 	<field name="TIENE_JUBILACION" class="java.math.BigDecimal"/>

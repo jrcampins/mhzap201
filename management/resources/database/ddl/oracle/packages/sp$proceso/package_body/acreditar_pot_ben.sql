@@ -23,8 +23,8 @@ function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fech
           id_persona number,
           nombre_persona varchar2(4000),
           codigo_persona varchar2 (4000),
-          id_distrito number,
           id_departamento number,
+          id_distrito number,
           id_barrio number,
           id_ficha_persona number,
           codigo_ficha_persona varchar2(4000),
@@ -77,7 +77,8 @@ begin
     end if;
     for i in vista_ben.first..vista_ben.last loop
       id_reg:=utils.bigintid();                                                              
-      insert into log_pro_acr_pot_ben values (
+      insert into log_pro_acr_pot_ben
+        values (
           id_reg,
           0,
           vista_ben(i).id_potencial_ben, 
@@ -87,8 +88,8 @@ begin
           vista_ben(i).id_persona,
           vista_ben(i).nombre_persona,
           vista_ben(i).codigo_persona,
-          vista_ben(i).id_distrito,
           vista_ben(i).id_departamento,
+          vista_ben(i).id_distrito,
           vista_ben(i).id_barrio,
           vista_ben(i).id_ficha_persona,
           vista_ben(i).codigo_ficha_persona,

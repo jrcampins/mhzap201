@@ -20,8 +20,8 @@ function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion var
           id_persona number,
           codigo_persona varchar2 (50),
           nombre_persona varchar2(200),
-          id_distrito number,
           id_departamento number,
+          id_distrito number,
           id_barrio number,
           numero_condicion_pension number);
      type cons_pen_oto is table of pen_oto;
@@ -52,9 +52,9 @@ begin
     --no hayan sido revocados
     execute immediate 'select id_persona, 
                               codigo_persona, 
-                              nombre_persona, 
+                              nombre_persona,
+                              id_departamento,
                               id_distrito, 
-                              id_departamento, 
                               id_barrio , 
                               numero_condicion_pension
                        from persona 
@@ -70,9 +70,9 @@ begin
                         0, -- version
                         vista_pen_oto(i).id_persona, 
                         vista_pen_oto(i).codigo_persona, 
-                        vista_pen_oto(i).nombre_persona, 
-                        vista_pen_oto(i).id_distrito, 
-                        vista_pen_oto(i).id_departamento, 
+                        vista_pen_oto(i).nombre_persona,
+                        vista_pen_oto(i).id_departamento,
+                        vista_pen_oto(i).id_distrito,  
                         vista_pen_oto(i).id_barrio, 
                         vista_pen_oto(i).numero_condicion_pension,
                         0,

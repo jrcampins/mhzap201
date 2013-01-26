@@ -2,20 +2,29 @@ CREATE OR REPLACE VIEW persona_con_pension_otorgada
 AS
 SELECT persona.codigo_persona AS cedula, persona.nombre_persona,
     utils.years_since(persona.fecha_nacimiento) as edad,
-    ubicacion_1x4.nombre_ubicacion AS departamento,ubicacion_1x4.id_ubicacion AS id_departamento,
-    ubicacion_1x5.nombre_ubicacion AS distrito, ubicacion_1x5.id_ubicacion AS id_distrito,
-    ubicacion_1x7.nombre_ubicacion AS barrio, ubicacion_1x7.id_ubicacion AS id_barrio,
-    persona.direccion, ecp.codigo_estado_civil,
-    cp.codigo_condicion_pension, sp.codigo_sexo_persona, persona.numero_cedula,
-    persona.fecha_solicitud_pension, persona.fecha_aprobacion_pension,
+    ubicacion_1x4.nombre_ubicacion AS departamento,
+    ubicacion_1x4.id_ubicacion AS id_departamento,
+    ubicacion_1x5.nombre_ubicacion AS distrito,
+    ubicacion_1x5.id_ubicacion AS id_distrito,
+    ubicacion_1x7.nombre_ubicacion AS barrio, 
+    ubicacion_1x7.id_ubicacion AS id_barrio,
+    persona.direccion, 
+    ecp.codigo_estado_civil,
+    cp.codigo_condicion_pension, 
+    sp.codigo_sexo_persona, persona.numero_cedula,
+    persona.fecha_solicitud_pension, 
+    persona.fecha_aprobacion_pension,
     persona.fecha_otorgamiento_pen,
     persona.numero_resolucion_otor_pen,
     persona.fecha_resolucion_otor_pen,
-    extract(year from persona.fecha_solicitud_pension) AS anho, persona.indice_calidad_vida,
-    fh.nombre_jefe_hogar, fh.numero_cedula_jefe_hogar, fh.direccion AS
-    referencia_casa, pb.numero_telefono_resp_hogar, pb.nombre_referente,
-    COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS
-    numero_telefono, fh.observaciones
+    extract(year from persona.fecha_solicitud_pension) AS anho, 
+    persona.indice_calidad_vida,
+    fh.nombre_jefe_hogar, 
+    fh.numero_cedula_jefe_hogar, fh.direccion AS referencia_casa, 
+    pb.numero_telefono_resp_hogar, 
+    pb.nombre_referente,
+    COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono, 
+    fh.observaciones
 FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =
        persona.id_departamento

@@ -31,6 +31,7 @@ begin
         /**/
         --el método original fue modificado 
         --Se copian aquellos datos que siempre estarán actualizados en persona
+        --Se indica que no es migrado por defecto
         :new.primer_nombre := row_persona.primer_nombre;
         :new.segundo_nombre := row_persona.segundo_nombre;
         :new.primer_apellido := row_persona.primer_apellido;
@@ -78,9 +79,25 @@ begin
         if (:new.es_persona_con_jubilacion is null) then
             :new.es_persona_con_jubilacion := row_persona.es_persona_con_jubilacion ;
         end if;
+        --Sólo si el id de ficha persona proviene de una ficha se apunta
+        --El ICV no sería migrado
+        if(row_persona.id_ficha_persona is not null and row_persona.indice_calidad_vida is not null ) then
+            :new.indice_calidad_vida:=row_persona.indice_calidad_vida;
+            :new.id_ficha_persona:=row_persona.id_ficha_persona;
+            :new.es_potencial_ben_migrado:=0;
+        end if;
         /**/
     end if;
     
+    --Si es migrado se coloca como censado
+    if(:new.es_potencial_ben_migrado=1) then
+        :new.numero_condicion_censo:=5;
+    end if;
+    --Si no tiene valor de migrado se coloca en 0
+    if(:new.es_potencial_ben_migrado is null) then
+        :new.es_potencial_ben_migrado:=0;
+    end if;
+
     if(:new.id_barrio is not null) then
         begin
             select u.numero_tipo_area into tipo_area from ubicacion u where u.id_ubicacion=:new.id_barrio;

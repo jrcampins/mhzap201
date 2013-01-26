@@ -86,9 +86,11 @@ begin
             :new.es_persona_con_jubilacion := row_persona.es_persona_con_jubilacion ;
         end if;
         --Sólo si el id de ficha persona proviene de una ficha se reemplaza el anterior.
+        --Ya el ICV no sería migrado
         if(row_persona.id_ficha_persona is not null and row_persona.indice_calidad_vida is not null ) then
             :new.indice_calidad_vida:=row_persona.indice_calidad_vida;
             :new.id_ficha_persona:=row_persona.id_ficha_persona;
+            :new.es_potencial_ben_migrado:=0;
         end if;
         --Si tiene barrio hay que obtener el tipo de area.
         if(:new.id_barrio is not null) then
