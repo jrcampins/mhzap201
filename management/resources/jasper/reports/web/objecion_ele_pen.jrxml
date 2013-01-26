@@ -519,7 +519,7 @@
                     style="ch-text1"
                     x="384"
                     y="0"
-                    width="576"
+                    width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
@@ -661,7 +661,7 @@
                     stretchType="RelativeToBandHeight"
                     x="384"
                     y="0"
-                    width="576"
+                    width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>

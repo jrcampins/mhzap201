@@ -433,7 +433,7 @@
                     style="ch-text1"
                     x="554"
                     y="0"
-                    width="277"
+                    width="278"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -442,9 +442,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="831"
+                    x="832"
                     y="0"
-                    width="129"
+                    width="128"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -568,7 +568,7 @@
                     stretchType="RelativeToBandHeight"
                     x="554"
                     y="0"
-                    width="277"
+                    width="278"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -584,9 +584,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="831"
+                    x="832"
                     y="0"
-                    width="129"
+                    width="128"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
