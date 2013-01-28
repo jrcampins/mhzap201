@@ -34,7 +34,8 @@ begin
     end if;
     --Se vincula el potencial beneficiario a la persona
     update potencial_ben
-    set    id_persona = persona_vincular
+    set    id_persona = persona_vincular,
+    numero_tipo_reg_pot_ben=1
     where  id_potencial_ben = beneficiario;
     mensaje:='Potencial Beneficiario Vinculado a Persona';
     --Se verifica si el potencial_ben viene con id_ficha

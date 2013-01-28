@@ -90,7 +90,7 @@ begin
             new_potencial_ben.version_potencial_ben:=0;
             new_potencial_ben.es_paraguayo_natural:=1;
             new_potencial_ben.es_indigena:=0;
-            new_potencial_ben.numero_tipo_reg_pot_ben:=0;
+            new_potencial_ben.numero_tipo_reg_pot_ben:=2;
             new_potencial_ben.numero_cedula:=null;
             new_potencial_ben.letra_cedula:=null;
             new_potencial_ben.primer_nombre:=null;
