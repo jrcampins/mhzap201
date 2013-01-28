@@ -251,6 +251,8 @@ VALUES (320400005, 11, 'PotencialBen5', 'Consulta de Potenciales Beneficiarios',
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (320400006, 11, 'PotencialBen6', 'Consulta de Potenciales Beneficiarios', 'Consulta de Potenciales Beneficiarios', '/faces/PotencialBen6.jsp', 52000, 0, 6, 3204001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (322200001, 12, 'TipoArea1', 'Registro de Tipos de Area', 'Registro de Tipos de Area', '/faces/TipoArea1.jsp', 41200, 0, 1, 3222001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (324000001, 1, 'VisitaCenso1', 'Registro de VisItas de Censo', 'Registro de VisItas de Censo', '/faces/VisitaCenso1.jsp', 42120, 0, 1, 3240001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (324000002, 1, 'VisitaCenso2', 'Registro de VisItas de Censo', 'Registro de VisItas de Censo', '/faces/VisitaCenso2.jsp', 42120, 0, 2, 3240001, NULL, NULL);

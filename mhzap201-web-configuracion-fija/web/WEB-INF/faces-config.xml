@@ -97,4 +97,9 @@
         <managed-bean-class>com.egt.web.configuracion.fija.ParametroGlobal1</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>TipoArea1</managed-bean-name>
+        <managed-bean-class>com.egt.web.configuracion.fija.TipoArea1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

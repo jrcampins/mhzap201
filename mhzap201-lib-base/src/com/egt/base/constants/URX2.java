@@ -48,6 +48,8 @@ public class URX2 extends URX {
 
     public static final String TABLA_PARAMETRO_GLOBAL = "/mhzap201-web-configuracion-fija/faces/ParametroGlobal1.jsp";
 
+    public static final String TABLA_TIPO_AREA = "/mhzap201-web-configuracion-fija/faces/TipoArea1.jsp";
+
     public static final String TABLA_UBICACION = "/mhzap201-web-configuracion-manual/faces/Ubicacion1.jsp";
 
     public static final String TABLA_ETNIA_INDIGENA = "/mhzap201-web-configuracion-manual/faces/EtniaIndigena1.jsp";

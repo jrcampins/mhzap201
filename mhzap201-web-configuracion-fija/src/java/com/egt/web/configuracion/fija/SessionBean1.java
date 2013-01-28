@@ -51,6 +51,9 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         parametroGlobalRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         parametroGlobalRowSet.setCommand("SELECT * FROM consulta_parametro_global_1");
         parametroGlobalRowSet.setTableName("parametro_global");
+        tipoAreaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        tipoAreaRowSet.setCommand("SELECT * FROM consulta_tipo_area_1");
+        tipoAreaRowSet.setTableName("tipo_area");
     }
 
     private CachedRowSetXImpl filtroRowSet;
@@ -93,6 +96,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setParametroGlobalRowSet(CachedRowSetXImpl crsxi) {
         this.parametroGlobalRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl tipoAreaRowSet;
+
+    public CachedRowSetXImpl getTipoAreaRowSet() {
+        if (tipoAreaRowSet == null) {
+            tipoAreaRowSet = new RecursoCachedRowSet();
+            try {
+                tipoAreaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                tipoAreaRowSet.setCommand("SELECT * FROM consulta_tipo_area_1");
+                tipoAreaRowSet.setTableName("tipo_area");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return tipoAreaRowSet;
+    }
+
+    public void setTipoAreaRowSet(CachedRowSetXImpl crsxi) {
+        this.tipoAreaRowSet = crsxi;
     }
     // </editor-fold>
 /**/
