@@ -5,6 +5,8 @@
 -- @returns numero de registros importados
 --
 procedure importar_pot_ben(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_pot';
     registro log_imp_pot%rowtype;
     id_ubicacion_insertar number;
@@ -22,6 +24,8 @@ procedure importar_pot_ben(nombre_archivo varchar2, codigo_archivo varchar2, ret
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
@@ -216,16 +220,16 @@ begin
             retorno:=retorno+1;
             --Se registra la inserción en la tabla intermedia
             update log_imp_pot set es_importado=1, 
-                                   nombre_archivo=nombre_archivo,
-                                   codigo_archivo=codigo_archivo,
+                                   nombre_archivo=archivo,
+                                   codigo_archivo=codigo,
                                    fecha_hora_transaccion=current_timestamp 
             where id_log_imp_pot=registro.id_log_imp_pot;
         --Si no se pudo insertar el registro se marca el motivo
         exception when others then
             mensaje:='Error: '||SQLERRM;
             update log_imp_pot set es_importado=0,
-                   nombre_archivo=nombre_archivo,
-                   codigo_archivo=codigo_archivo,
+                   nombre_archivo=archivo,
+                   codigo_archivo=codigo,
                    fecha_hora_transaccion=current_timestamp,
                    observacion=mensaje
             where id_log_imp_pot=registro.id_log_imp_pot;

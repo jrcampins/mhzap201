@@ -6,6 +6,8 @@
 --
 procedure importar_subsidios(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_sub';
     tipo_arch varchar2(10);
     subsidio log_imp_sub%rowtype;
@@ -22,6 +24,8 @@ procedure importar_subsidios(nombre_archivo varchar2, codigo_archivo varchar2, r
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
@@ -107,8 +111,8 @@ begin
                 retorno:=retorno+1;
                 --Se registra la inserción en la tabla intermedia
                 update log_imp_sub set es_importado=1, 
-                       nombre_archivo=nombre_Archivo, 
-                       codigo_archivo=codigo_archivo, 
+                       nombre_archivo=archivo, 
+                       codigo_archivo=codigo, 
                        fecha_hora_transaccion= current_timestamp 
                 where id_log_imp_sub=subsidio.id_log_imp_sub;
             end if;
@@ -116,7 +120,7 @@ begin
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_sub set es_importado=0, nombre_archivo=nombre_Archivo, codigo_archivo=codigo_archivo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_sub=subsidio.id_log_imp_sub;
+                    update log_imp_sub set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_sub=subsidio.id_log_imp_sub;
                     continue;
         end;
     end loop;

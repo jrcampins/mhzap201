@@ -6,6 +6,8 @@
 --
 procedure importar_empleados(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_emp';
     tipo_arch varchar2(10);
     empleado log_imp_emp%rowtype;
@@ -24,6 +26,8 @@ procedure importar_empleados(nombre_archivo varchar2, codigo_archivo varchar2, r
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
     retorno:=0;
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
         raise_application_error(err_number, msg_string, true);
@@ -137,8 +141,8 @@ begin
                 retorno:=retorno+1;
                 --Se registra la inserción en la tabla intermedia
                 update log_imp_emp set es_importado=1, 
-                       nombre_archivo=nombre_Archivo, 
-                       codigo_archivo=codigo_archivo, 
+                       nombre_archivo=archivo, 
+                       codigo_archivo=codigo, 
                        fecha_hora_transaccion= current_timestamp 
                 where id_log_imp_emp=empleado.id_log_imp_emp;
             end if;
@@ -146,7 +150,7 @@ begin
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_emp set es_importado=0, nombre_archivo=nombre_Archivo, codigo_archivo=codigo_archivo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_emp=empleado.id_log_imp_emp;
+                    update log_imp_emp set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_emp=empleado.id_log_imp_emp;
                     continue;
         end;
     end loop;

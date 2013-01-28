@@ -6,6 +6,8 @@
 --
 procedure importar_censos_validados(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_cen';
     tipo_arch varchar2(10);
     censo log_imp_cen%rowtype;
@@ -26,7 +28,9 @@ procedure importar_censos_validados(nombre_archivo varchar2, codigo_archivo varc
     icv_comparar number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
-begin
+begin    
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
@@ -168,15 +172,15 @@ begin
             --Se registra la inserción en la tabla intermedia
             update log_imp_cen set es_importado=1,
                    observacion=mensaje,
-                   nombre_archivo=nombre_archivo, 
-                   codigo_archivo=codigo_archivo, 
+                   nombre_archivo=archivo, 
+                   codigo_archivo=codigo, 
                    fecha_hora_transaccion= current_timestamp 
             where id_log_imp_cen=censo.id_log_imp_cen;
         --Si no se pudo insertar el registro se marca el motivo
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_cen set es_importado=0, nombre_archivo=nombre_Archivo, codigo_archivo=codigo_archivo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_cen=censo.id_log_imp_cen;
+                    update log_imp_cen set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_cen=censo.id_log_imp_cen;
                     continue;
         end;
      end loop;

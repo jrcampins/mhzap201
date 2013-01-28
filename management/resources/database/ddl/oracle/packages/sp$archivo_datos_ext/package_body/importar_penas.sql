@@ -6,6 +6,8 @@
 --
 procedure importar_penas(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_pen';
     tipo_arch varchar2(10);
     pena log_imp_pen%rowtype;
@@ -23,6 +25,8 @@ procedure importar_penas(nombre_archivo varchar2, codigo_archivo varchar2, retor
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
@@ -137,8 +141,8 @@ begin
                 retorno:=retorno+1;
                 --Se registra la inserción en la tabla intermedia
                 update log_imp_pen set es_importado=1, 
-                       nombre_archivo=nombre_Archivo, 
-                       codigo_archivo=codigo_archivo, 
+                       nombre_archivo=archivo, 
+                       codigo_archivo=codigo, 
                        fecha_hora_transaccion= current_timestamp 
                 where id_log_imp_pen=pena.id_log_imp_pen;
             end if;
@@ -146,7 +150,7 @@ begin
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_pen set es_importado=0, nombre_archivo=nombre_Archivo, codigo_archivo=codigo_archivo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_pen=pena.id_log_imp_pen;
+                    update log_imp_pen set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_pen=pena.id_log_imp_pen;
                     continue;
         end;
     end loop;

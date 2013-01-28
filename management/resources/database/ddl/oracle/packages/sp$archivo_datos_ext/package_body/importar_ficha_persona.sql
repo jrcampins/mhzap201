@@ -1,6 +1,8 @@
 procedure importar_ficha_persona(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
     i number:=0;
+    archivo varchar2(2000);
+    codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_per';
     tipo_arch varchar2(10);
     numero_cedula number;
@@ -29,6 +31,8 @@ procedure importar_ficha_persona(nombre_archivo varchar2, codigo_archivo varchar
     secuencia_anterior varchar2(2000):=' ';
     actualizar_ficha_hogar number:=0;
 begin
+    archivo:=nombre_archivo;
+    codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
         msg_string := 'archivo no existe';
@@ -511,14 +515,14 @@ begin
             retorno:=retorno+1;
             
             update log_imp_per set es_importado=1, 
-                                nombre_archivo=nombre_Archivo, 
-                                codigo_archivo=codigo_archivo, 
+                                nombre_archivo=archivo, 
+                                codigo_archivo=codigo, 
                                 fecha_hora_transaccion= current_timestamp 
             where id_log_imp_per=current_row.id_log_imp_per;
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_per set es_importado=0, nombre_archivo=nombre_Archivo, codigo_archivo=codigo_archivo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per=current_row.id_log_imp_per;
+                    update log_imp_per set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per=current_row.id_log_imp_per;
                 continue;
         end;
     end loop;
