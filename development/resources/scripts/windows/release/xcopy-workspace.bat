@@ -29,7 +29,7 @@ echo md %DQPATH%
 md %DQPATH%
 call:x-junction
 echo.
-set siono=N
+set siono=S
 call:setsiono actualizar workspace antes de copiarlo
 echo.
 if /i "%siono%" == "S" (
@@ -102,7 +102,7 @@ goto:eof
 :x-dist
 set target_eeas=
 set /a target_eeas_count=0
-set siono=S
+set siono=N
 call:setsiono copiar "%management%\dist\glassfish\%project%.ear"
 echo.
 if /i "%siono%" == "S" call:set-sub-dir "%VRPATH%\dist\glassfish"
@@ -140,7 +140,7 @@ if /i "%siono%" == "S" (
     call:xcopy-file-batch "%management%\sql\oracle\*.sql" %SUBDIR%
     call:xcopy-folder %management%\sql\oracle %SUBDIR% custom /s
 )
-set siono=S
+set siono=N
 call:setsiono copiar "%management%\sql\postgresql"
 echo.
 if /i "%siono%" == "S" call:set-sub-dir "%VRPATH%\sql\postgresql"
