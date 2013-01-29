@@ -7,9 +7,12 @@
 function calcular_icv (id_ficha number) return varchar2 is
     row_ficha_hogar ficha_hogar%ROWTYPE;
     row_ficha_persona ficha_persona%rowtype;
+    row_persona persona%rowtype;
+    row_pot_ben potencial_ben%rowtype;
     puntajes array_number;
     ponderaciones array_number;
     icv number:=0;
+    mensaje varchar2(2000);
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
@@ -34,6 +37,7 @@ begin
     --
        calcular_icv_area_rural(row_ficha_hogar,icv,puntajes,ponderaciones);
     end if;
+    dbms_output.put_line('retornando'||icv);
     --Se actualiza la ficha hogar con el icv y se inactiva para no ser modificado ese valor
     update ficha_hogar 
     set indice_calidad_vida=icv,
@@ -45,10 +49,29 @@ begin
     where id_ficha_hogar=id_ficha;
     --Se actualiz el icv de las personas asociadas
     for row_ficha_persona in (select * from ficha_persona where id_ficha_hogar=id_ficha) loop
-        dbms_output.put_line('probando'||row_ficha_persona.id_ficha_persona);
-        update persona
-        set indice_calidad_vida=icv
-        where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+         --dbms_output.put_line('probando'||row_ficha_persona.id_ficha_persona);
+         begin
+            select * into row_persona from persona where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+         exception
+            when no_data_found then null;
+         end;
+         if sql%found then
+            update persona
+            set indice_calidad_vida=icv
+            where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+         end if;
+         begin
+            select * into row_pot_ben from potencial_ben where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+         exception
+            when no_data_found then null;
+         end;
+         if sql%found then
+            update potencial_ben
+            set indice_calidad_vida=icv
+            where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+         end if;
+         --dbms_output.put_line('SALIENDO'||row_ficha_persona.id_ficha_persona);
     end loop;
-    return icv;
+    mensaje:='Valor de ICV: '||icv;
+    return mensaje;
 end;
