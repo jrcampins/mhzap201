@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ParametroGlobal1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoNumeroParametroGlobal1 campoCodigoParametroGlobal1 campoMontoSalarioMinimo1 campoPorcentajePensionAlimentaria1 listaEsControlCerVidaActivo1 campoMesesValidezCertificadoVida1 listaEsControlCobroPensionActiv1 campoMesesUltimoCobroPension1 listaEsControlReprocesoPenActiv1 campoLimiteIndiceCalidadVida1 campoLimitePensiones1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoNumeroParametroGlobal1 campoMontoSalarioMinimo1 campoPorcentajePensionAlimentaria1 listaEsControlCerVidaActivo1 campoMesesValidezCertificadoVida1 listaEsControlCobroPensionActiv1 campoMesesUltimoCobroPension1 listaEsControlReprocesoPenActiv1 campoLimiteIndiceCalidadVida1 campoLimitePensiones1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -206,33 +206,6 @@
                                                     text="#{currentRow.value['numero_parametro_global']}"/>
                                                 <webuijsf:message id="messageNumeroParametroGlobal1"
                                                     for="campoNumeroParametroGlobal1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{ParametroGlobal1.tableColumnCodigoParametroGlobal1}"
-                                                    headerText="c&#243;digo"
-                                                    id="tableColumnCodigoParametroGlobal1"
-                                                    sort="codigo_parametro_global">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextCodigoParametroGlobal1"
-                                                    text="#{currentRow.value['codigo_parametro_global']}"
-                                                    rendered="#{ParametroGlobal1.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{ParametroGlobal1.labelCodigoParametroGlobal1}"
-                                                    id="labelCodigoParametroGlobal1"
-                                                    for="campoCodigoParametroGlobal1"/>
-                                                <webuijsf:textField id="campoCodigoParametroGlobal1"
-                                                    binding="#{ParametroGlobal1.campoCodigoParametroGlobal1}"
-                                                    columns="20"
-                                                    maxLength="30"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['codigo_parametro_global']}"
-                                                    toolTip="BundleParametros.codigo_parametro_global.parametro_global"
-                                                    validatorExpression="#{ParametroGlobal1.validatorCodigoParametroGlobal1.validate}"/>
-                                                <webuijsf:staticText id="campoCodigoParametroGlobal1Texto1"
-                                                    binding="#{ParametroGlobal1.campoCodigoParametroGlobal1Texto1}"
-                                                    text="#{currentRow.value['codigo_parametro_global']}"/>
-                                                <webuijsf:message id="messageCodigoParametroGlobal1"
-                                                    for="campoCodigoParametroGlobal1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnMontoSalarioMinimo1}"

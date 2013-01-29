@@ -169,10 +169,6 @@ public class AsistentePaginaActualizacionParametroGlobal {
         return true;
     }
 
-    public boolean isGridCodigoParametroGlobalRendered() {
-        return true;
-    }
-
     public boolean isGridMontoSalarioMinimoRendered() {
         return true;
     }

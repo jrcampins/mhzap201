@@ -250,7 +250,7 @@
                                                 <webuijsf:textField id="campoLimiteIndiceCalidadVida1"
                                                     binding="#{TipoArea1.campoLimiteIndiceCalidadVida1}"
                                                     converter="#{TipoArea1.converterLimiteIndiceCalidadVida1}"
-                                                    readOnly="#{TipoArea1.gestor.filaNoProcesada}"
+                                                    readOnly="#{TipoArea1.gestor.filaNoProcesada}" required="true"
                                                     text="#{currentRow.value['limite_indice_calidad_vida']}"
                                                     toolTip="BundleParametros.limite_indice_calidad_vida.tipo_area"
                                                     validatorExpression="#{TipoArea1.validatorLimiteIndiceCalidadVida1.validate}"/>

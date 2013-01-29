@@ -852,7 +852,7 @@ public class TipoArea1 extends AbstractPageBean
 
     @Override
     public long getFuncionModificarRecurso() {
-        return -1;
+        return TipoAreaCachedRowSetDataProvider2.FUNCION_MODIFICAR_TIPO_AREA;
     }
 
     @Override

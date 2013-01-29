@@ -27,8 +27,6 @@ public interface PaginaActualizacionParametroGlobal extends PaginaActualizacion 
 
     TextField getCampoNumeroParametroGlobal1();
 
-    TextField getCampoCodigoParametroGlobal1();
-
     TextField getCampoMontoSalarioMinimo1();
 
     TextField getCampoPorcentajePensionAlimentaria1();

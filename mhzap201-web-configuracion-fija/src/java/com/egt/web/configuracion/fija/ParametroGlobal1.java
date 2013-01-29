@@ -100,7 +100,6 @@ public class ParametroGlobal1 extends AbstractPageBean
         textoFilasPorPagina1Validator1.setMaximum(50L);
         validatorNumeroParametroGlobal1.setMinimum(0L);
         validatorNumeroParametroGlobal1.setMaximum(1000000000L);
-        validatorCodigoParametroGlobal1.setMaximum(30);
         converterMontoSalarioMinimo1.setMinIntegerDigits(1);
         converterMontoSalarioMinimo1.setMaxIntegerDigits(40);
         converterMontoSalarioMinimo1.setMaxFractionDigits(3);
@@ -330,57 +329,6 @@ public class ParametroGlobal1 extends AbstractPageBean
   
     public void setValidatorNumeroParametroGlobal1(LongRangeValidator validator) {
         this.validatorNumeroParametroGlobal1 = validator;
-    }
-  
-    private TableColumn tableColumnCodigoParametroGlobal1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnCodigoParametroGlobal1() {
-        return tableColumnCodigoParametroGlobal1;
-    }
-
-    public void setTableColumnCodigoParametroGlobal1(TableColumn component) {
-        this.tableColumnCodigoParametroGlobal1 = component;
-    }
-
-    private Label labelCodigoParametroGlobal1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelCodigoParametroGlobal1() {
-        return labelCodigoParametroGlobal1;
-    }
-
-    public void setLabelCodigoParametroGlobal1(Label l) {
-        this.labelCodigoParametroGlobal1 = l;
-    }
-
-    private TextField campoCodigoParametroGlobal1 = new com.egt.core.jsf.component.CampoTexto();
-
-    @Override
-    public TextField getCampoCodigoParametroGlobal1() {
-        return campoCodigoParametroGlobal1;
-    }
-
-    public void setCampoCodigoParametroGlobal1(TextField component) {
-        this.campoCodigoParametroGlobal1 = component;
-    }
-
-    private StaticText campoCodigoParametroGlobal1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoCodigoParametroGlobal1Texto1() {
-        return campoCodigoParametroGlobal1Texto1;
-    }
-
-    public void setCampoCodigoParametroGlobal1Texto1(StaticText component) {
-        this.campoCodigoParametroGlobal1Texto1 = component;
-    }
-
-    private LengthValidator validatorCodigoParametroGlobal1 = new LengthValidator();
-  
-    public LengthValidator getValidatorCodigoParametroGlobal1() {
-        return validatorCodigoParametroGlobal1;
-    }
-  
-    public void setValidatorCodigoParametroGlobal1(LengthValidator validator) {
-        this.validatorCodigoParametroGlobal1 = validator;
     }
   
     private TableColumn tableColumnMontoSalarioMinimo1 = new com.egt.core.jsf.component.ColumnaTabla();
