@@ -273,6 +273,16 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>LogImpHogEec5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpHogEec5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogImpHogEec6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpHogEec6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>LogImpHog5</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogImpHog5</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
@@ -280,6 +290,16 @@
     <managed-bean>
         <managed-bean-name>LogImpHog6</managed-bean-name>
         <managed-bean-class>com.egt.web.consulta.LogImpHog6</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogImpPerEec5</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpPerEec5</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>LogImpPerEec6</managed-bean-name>
+        <managed-bean-class>com.egt.web.consulta.LogImpPerEec6</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
@@ -514,10 +534,24 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
+        <from-view-id>/LogImpHogEec5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogImpHogEec6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
         <from-view-id>/LogImpHog5.jsp</from-view-id>
         <navigation-case>
             <from-outcome>detalle</from-outcome>
             <to-view-id>/LogImpHog6.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LogImpPerEec5.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/LogImpPerEec6.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>

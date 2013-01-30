@@ -178,7 +178,11 @@ public class URX2 extends URX {
 
     public static final String CONSULTA_TABLA_LOG_IMP_CEN = "/mhzap201-web-consulta/faces/LogImpCen5.jsp";
 
+    public static final String CONSULTA_TABLA_LOG_IMP_HOG_EEC = "/mhzap201-web-consulta/faces/LogImpHogEec5.jsp";
+
     public static final String CONSULTA_TABLA_LOG_IMP_HOG = "/mhzap201-web-consulta/faces/LogImpHog5.jsp";
+
+    public static final String CONSULTA_TABLA_LOG_IMP_PER_EEC = "/mhzap201-web-consulta/faces/LogImpPerEec5.jsp";
 
     public static final String CONSULTA_TABLA_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer5.jsp";
 
@@ -236,7 +240,11 @@ public class URX2 extends URX {
 
     public static final String CONSULTA_DETALLE_LOG_IMP_CEN = "/mhzap201-web-consulta/faces/LogImpCen6.jsp";
 
+    public static final String CONSULTA_DETALLE_LOG_IMP_HOG_EEC = "/mhzap201-web-consulta/faces/LogImpHogEec6.jsp";
+
     public static final String CONSULTA_DETALLE_LOG_IMP_HOG = "/mhzap201-web-consulta/faces/LogImpHog6.jsp";
+
+    public static final String CONSULTA_DETALLE_LOG_IMP_PER_EEC = "/mhzap201-web-consulta/faces/LogImpPerEec6.jsp";
 
     public static final String CONSULTA_DETALLE_LOG_IMP_PER = "/mhzap201-web-consulta/faces/LogImpPer6.jsp";
 

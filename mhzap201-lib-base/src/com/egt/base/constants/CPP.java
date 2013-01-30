@@ -136,6 +136,8 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_LOG_IMP_HOG = "id_log_imp_hog"; // Log Imp Hog
 
+    public static final String ID_LOG_IMP_HOG_EEC = "id_log_imp_hog_eec"; // Log Imp Hog Eec
+
     public static final String ID_LOG_IMP_IDS = "id_log_imp_ids"; // Log Imp Ids
 
     public static final String ID_LOG_IMP_JUB = "id_log_imp_jub"; // Log Imp Jub
@@ -143,6 +145,8 @@ public class CPP { // Clave Parametro Peticion
     public static final String ID_LOG_IMP_PEN = "id_log_imp_pen"; // Log Imp Pension
 
     public static final String ID_LOG_IMP_PER = "id_log_imp_per"; // Log Imp Per
+
+    public static final String ID_LOG_IMP_PER_EEC = "id_log_imp_per_eec"; // Log Imp Per Eec
 
     public static final String ID_LOG_IMP_POT = "id_log_imp_pot"; // Log Imp Potencial
 

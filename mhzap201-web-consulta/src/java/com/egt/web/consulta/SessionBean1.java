@@ -102,9 +102,15 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         logImpFalRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logImpFalRowSet.setCommand("SELECT * FROM consulta_log_imp_fal_1");
         logImpFalRowSet.setTableName("log_imp_fal");
+        logImpHogEecRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpHogEecRowSet.setCommand("SELECT * FROM consulta_log_imp_hog_eec_1");
+        logImpHogEecRowSet.setTableName("log_imp_hog_eec");
         logImpHogRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logImpHogRowSet.setCommand("SELECT * FROM consulta_log_imp_hog_1");
         logImpHogRowSet.setTableName("log_imp_hog");
+        logImpPerEecRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        logImpPerEecRowSet.setCommand("SELECT * FROM consulta_log_imp_per_eec_1");
+        logImpPerEecRowSet.setTableName("log_imp_per_eec");
         logImpPerRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         logImpPerRowSet.setCommand("SELECT * FROM consulta_log_imp_per_1");
         logImpPerRowSet.setTableName("log_imp_per");
@@ -566,6 +572,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         this.logImpFalRowSet = crsxi;
     }
 
+    private CachedRowSetXImpl logImpHogEecRowSet;
+
+    public CachedRowSetXImpl getLogImpHogEecRowSet() {
+        if (logImpHogEecRowSet == null) {
+            logImpHogEecRowSet = new RecursoCachedRowSet();
+            try {
+                logImpHogEecRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpHogEecRowSet.setCommand("SELECT * FROM consulta_log_imp_hog_eec_1");
+                logImpHogEecRowSet.setTableName("log_imp_hog_eec");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpHogEecRowSet;
+    }
+
+    public void setLogImpHogEecRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpHogEecRowSet = crsxi;
+    }
+
     private CachedRowSetXImpl logImpHogRowSet;
 
     public CachedRowSetXImpl getLogImpHogRowSet() {
@@ -585,6 +612,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setLogImpHogRowSet(CachedRowSetXImpl crsxi) {
         this.logImpHogRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl logImpPerEecRowSet;
+
+    public CachedRowSetXImpl getLogImpPerEecRowSet() {
+        if (logImpPerEecRowSet == null) {
+            logImpPerEecRowSet = new RecursoCachedRowSet();
+            try {
+                logImpPerEecRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                logImpPerEecRowSet.setCommand("SELECT * FROM consulta_log_imp_per_eec_1");
+                logImpPerEecRowSet.setTableName("log_imp_per_eec");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return logImpPerEecRowSet;
+    }
+
+    public void setLogImpPerEecRowSet(CachedRowSetXImpl crsxi) {
+        this.logImpPerEecRowSet = crsxi;
     }
 
     private CachedRowSetXImpl logImpPerRowSet;

@@ -522,7 +522,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP01a1}"
                                                     headerText="p01a"
-                                                    id="tableColumnP01a1" rendered="false"
+                                                    id="tableColumnP01a1"
                                                     sort="p01a">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01a1"
@@ -548,7 +548,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP01b1}"
                                                     headerText="p01b"
-                                                    id="tableColumnP01b1" rendered="false"
+                                                    id="tableColumnP01b1"
                                                     sort="p01b">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01b1"
@@ -574,7 +574,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP01c1}"
                                                     headerText="p01c"
-                                                    id="tableColumnP01c1" rendered="false"
+                                                    id="tableColumnP01c1"
                                                     sort="p01c">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01c1"
@@ -600,7 +600,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP01d1}"
                                                     headerText="p01d"
-                                                    id="tableColumnP01d1" rendered="false"
+                                                    id="tableColumnP01d1"
                                                     sort="p01d">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP01d1"
@@ -626,7 +626,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP021}"
                                                     headerText="p02"
-                                                    id="tableColumnP021" rendered="false"
+                                                    id="tableColumnP021"
                                                     sort="p02">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP021"
@@ -1614,7 +1614,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHog5.tableColumnP42ci1}"
                                                     headerText="p42ci"
-                                                    id="tableColumnP42ci1"
+                                                    id="tableColumnP42ci1" rendered="false"
                                                     sort="p42ci">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextP42ci1"

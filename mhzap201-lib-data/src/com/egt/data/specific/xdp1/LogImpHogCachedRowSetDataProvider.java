@@ -28,7 +28,7 @@ public class LogImpHogCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     }
 
     public static final String CODIGO_DOMINIO_RECURSO = "log_imp_hog";
-    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importacion de Fichas Hogar";
+    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importacion de Fichas Hogar SAS";
 
     @Override
     public String getCodigoDominioRecurso() {

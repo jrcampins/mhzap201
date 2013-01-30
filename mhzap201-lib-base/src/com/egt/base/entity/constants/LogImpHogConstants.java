@@ -19,7 +19,7 @@ public class LogImpHogConstants {
 
     public static final String CODIGO_DOMINIO_RECURSO = "log_imp_hog";
 
-    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importaci\u00F3n de Fichas Hogar";
+    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importaci\u00F3n de Fichas Hogar SAS";
 
     public static final String COLUMNA_ID_LOG_IMP_HOG = "id_log_imp_hog";
 

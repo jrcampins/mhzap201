@@ -19,7 +19,7 @@ public class LogImpPerConstants {
 
     public static final String CODIGO_DOMINIO_RECURSO = "log_imp_per";
 
-    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importaci\u00F3n de Fichas Persona";
+    public static final String NOMBRE_DOMINIO_RECURSO = "Rastros de Importaci\u00F3n de Fichas Persona SAS";
 
     public static final String COLUMNA_ID_LOG_IMP_PER = "id_log_imp_per";
 
