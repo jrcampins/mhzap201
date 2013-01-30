@@ -649,9 +649,17 @@ VALUES (331000101, 0, 3310001, 20890, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (331000102, 0, 3310001, 20894, 2, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (331050101, 0, 3310501, 20911, 1, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (331050102, 0, 3310501, 20993, 2, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (331100101, 0, 3311001, 20716, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (331100102, 0, 3311001, 20874, 2, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (331150101, 0, 3311501, 20912, 1, NULL);
+INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
+VALUES (331150102, 0, 3311501, 20994, 2, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)
 VALUES (331200101, 0, 3312001, 20720, 1, NULL);
 INSERT INTO dominio_parametro (id_dominio_parametro, version_dominio_parametro, id_dominio, id_parametro, numero_tipo_parametro_dom, etiqueta_parametro)

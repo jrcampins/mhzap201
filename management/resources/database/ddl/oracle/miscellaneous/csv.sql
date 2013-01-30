@@ -16,3 +16,6 @@ exec sp$100.create_csv_log_imp_pot('pot.csv', 'WE8ISO8859P1', '0', ',', '"');
 exec sp$100.create_csv_log_imp_sub('sub.csv', 'WE8ISO8859P1', '0', ',', '"');
 exec sp$100.create_csv_log_imp_ubi('ubi.csv', 'WE8ISO8859P1', '0', ',', '"');
 exec sp$100.create_csv_log_imp_cen('cen.csv', 'WE8ISO8859P1', '0', ',', '"');
+
+exec sp$100.create_csv_log_imp_hog_eec('hog_eec.csv', 'WE8ISO8859P1', '0', ',', '"');
+exec sp$100.create_csv_log_imp_per_eec('per_eec.csv', 'WE8ISO8859P1', '0', ',', '"');

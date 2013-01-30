@@ -263,9 +263,13 @@ VALUES (3308001, 0, 'log_imp_sub', 'Rastros de Importación de Subsidios', NULL, 
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3310001, 0, 'log_imp_cen', 'Rastros de Importación de Censos Validados', NULL, NULL, 1, 33100, 331000101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
-VALUES (3311001, 0, 'log_imp_hog', 'Rastros de Importación de Fichas Hogar', NULL, NULL, 1, 33110, 331100101, NULL, 3);
+VALUES (3310501, 0, 'log_imp_hog_eec', 'Rastros de Importación de Fichas Hogar DGEEC', NULL, NULL, 1, 33105, 331050101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
-VALUES (3312001, 0, 'log_imp_per', 'Rastros de Importación de Fichas Persona', NULL, NULL, 1, 33120, 331200101, NULL, 3);
+VALUES (3311001, 0, 'log_imp_hog', 'Rastros de Importación de Fichas Hogar SAS', NULL, NULL, 1, 33110, 331100101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3311501, 0, 'log_imp_per_eec', 'Rastros de Importación de Fichas Persona DGEEC', NULL, NULL, 1, 33115, 331150101, NULL, 3);
+INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
+VALUES (3312001, 0, 'log_imp_per', 'Rastros de Importación de Fichas Persona SAS', NULL, NULL, 1, 33120, 331200101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)
 VALUES (3313001, 0, 'log_imp_ubi', 'Rastros de Importación de Ubicaciones', NULL, NULL, 1, 33130, 331300101, NULL, 3);
 INSERT INTO dominio (id_dominio, version_dominio, codigo_dominio, nombre_dominio, descripcion_dominio, nombre_tabla, numero_tipo_dominio, id_clase_recurso, id_funcion_seleccion, id_dominio_segmento, id_paquete)

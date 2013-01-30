@@ -561,7 +561,7 @@
                     height="32"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[RASTROS DE IMPORTACION DE FICHAS PERSONA]]></text>
+                <text><![CDATA[RASTROS DE IMPORTACION DE FICHAS PERSONA SAS]]></text>
             </staticText>
             <staticText>
                 <reportElement

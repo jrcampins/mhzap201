@@ -82,6 +82,9 @@ ALTER TABLE log_imp_fal MODIFY (fecha_hora_transaccion DEFAULT (current_timestam
 ALTER TABLE log_imp_hog MODIFY (version_log_imp_hog DEFAULT (0));
 ALTER TABLE log_imp_hog MODIFY (es_importado DEFAULT (0));
 ALTER TABLE log_imp_hog MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));
+ALTER TABLE log_imp_hog_eec MODIFY (version_log_imp_hog_eec DEFAULT (0));
+ALTER TABLE log_imp_hog_eec MODIFY (es_importado DEFAULT (0));
+ALTER TABLE log_imp_hog_eec MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));
 ALTER TABLE log_imp_ids MODIFY (version_log_imp_ids DEFAULT (0));
 ALTER TABLE log_imp_ids MODIFY (es_importado DEFAULT (0));
 ALTER TABLE log_imp_ids MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));
@@ -94,6 +97,9 @@ ALTER TABLE log_imp_pen MODIFY (fecha_hora_transaccion DEFAULT (current_timestam
 ALTER TABLE log_imp_per MODIFY (version_log_imp_per DEFAULT (0));
 ALTER TABLE log_imp_per MODIFY (es_importado DEFAULT (0));
 ALTER TABLE log_imp_per MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));
+ALTER TABLE log_imp_per_eec MODIFY (version_log_imp_per_eec DEFAULT (0));
+ALTER TABLE log_imp_per_eec MODIFY (es_importado DEFAULT (0));
+ALTER TABLE log_imp_per_eec MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));
 ALTER TABLE log_imp_pot MODIFY (version_log_imp_pot DEFAULT (0));
 ALTER TABLE log_imp_pot MODIFY (es_importado DEFAULT (0));
 ALTER TABLE log_imp_pot MODIFY (fecha_hora_transaccion DEFAULT (current_timestamp));

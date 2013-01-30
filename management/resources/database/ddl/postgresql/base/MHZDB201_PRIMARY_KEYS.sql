@@ -46,10 +46,12 @@ ALTER TABLE log_imp_deu ADD CONSTRAINT PK_log_imp_deu___ PRIMARY KEY (id_log_imp
 ALTER TABLE log_imp_emp ADD CONSTRAINT PK_log_imp_emp___ PRIMARY KEY (id_log_imp_emp);
 ALTER TABLE log_imp_fal ADD CONSTRAINT PK_log_imp_fal___ PRIMARY KEY (id_log_imp_fal);
 ALTER TABLE log_imp_hog ADD CONSTRAINT PK_log_imp_hog___ PRIMARY KEY (id_log_imp_hog);
+ALTER TABLE log_imp_hog_eec ADD CONSTRAINT PK_log_imp_hog_eec___ PRIMARY KEY (id_log_imp_hog_eec);
 ALTER TABLE log_imp_ids ADD CONSTRAINT PK_log_imp_ids___ PRIMARY KEY (id_log_imp_ids);
 ALTER TABLE log_imp_jub ADD CONSTRAINT PK_log_imp_jub___ PRIMARY KEY (id_log_imp_jub);
 ALTER TABLE log_imp_pen ADD CONSTRAINT PK_log_imp_pen___ PRIMARY KEY (id_log_imp_pen);
 ALTER TABLE log_imp_per ADD CONSTRAINT PK_log_imp_per___ PRIMARY KEY (id_log_imp_per);
+ALTER TABLE log_imp_per_eec ADD CONSTRAINT PK_log_imp_per_eec___ PRIMARY KEY (id_log_imp_per_eec);
 ALTER TABLE log_imp_pot ADD CONSTRAINT PK_log_imp_pot___ PRIMARY KEY (id_log_imp_pot);
 ALTER TABLE log_imp_sub ADD CONSTRAINT PK_log_imp_sub___ PRIMARY KEY (id_log_imp_sub);
 ALTER TABLE log_imp_ubi ADD CONSTRAINT PK_log_imp_ubi___ PRIMARY KEY (id_log_imp_ubi);

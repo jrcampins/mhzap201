@@ -166,6 +166,12 @@ ALTER TABLE log_imp_hog DROP CONSTRAINT DF_log_imp_hog_002___
 GO
 ALTER TABLE log_imp_hog DROP CONSTRAINT DF_log_imp_hog_003___
 GO
+ALTER TABLE log_imp_hog_eec DROP CONSTRAINT DF_log_imp_hog_eec_001___
+GO
+ALTER TABLE log_imp_hog_eec DROP CONSTRAINT DF_log_imp_hog_eec_002___
+GO
+ALTER TABLE log_imp_hog_eec DROP CONSTRAINT DF_log_imp_hog_eec_003___
+GO
 ALTER TABLE log_imp_ids DROP CONSTRAINT DF_log_imp_ids_001___
 GO
 ALTER TABLE log_imp_ids DROP CONSTRAINT DF_log_imp_ids_002___
@@ -189,6 +195,12 @@ GO
 ALTER TABLE log_imp_per DROP CONSTRAINT DF_log_imp_per_002___
 GO
 ALTER TABLE log_imp_per DROP CONSTRAINT DF_log_imp_per_003___
+GO
+ALTER TABLE log_imp_per_eec DROP CONSTRAINT DF_log_imp_per_eec_001___
+GO
+ALTER TABLE log_imp_per_eec DROP CONSTRAINT DF_log_imp_per_eec_002___
+GO
+ALTER TABLE log_imp_per_eec DROP CONSTRAINT DF_log_imp_per_eec_003___
 GO
 ALTER TABLE log_imp_pot DROP CONSTRAINT DF_log_imp_pot_001___
 GO

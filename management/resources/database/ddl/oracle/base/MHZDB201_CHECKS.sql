@@ -98,10 +98,12 @@ ALTER TABLE log_imp_deu ADD (CONSTRAINT CC_log_imp_deu_001___ CHECK (es_importad
 ALTER TABLE log_imp_emp ADD (CONSTRAINT CC_log_imp_emp_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_fal ADD (CONSTRAINT CC_log_imp_fal_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_hog ADD (CONSTRAINT CC_log_imp_hog_001___ CHECK (es_importado >= 0 and es_importado <= 1));
+ALTER TABLE log_imp_hog_eec ADD (CONSTRAINT CC_log_imp_hog_eec_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_ids ADD (CONSTRAINT CC_log_imp_ids_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_jub ADD (CONSTRAINT CC_log_imp_jub_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_pen ADD (CONSTRAINT CC_log_imp_pen_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_per ADD (CONSTRAINT CC_log_imp_per_001___ CHECK (es_importado >= 0 and es_importado <= 1));
+ALTER TABLE log_imp_per_eec ADD (CONSTRAINT CC_log_imp_per_eec_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_pot ADD (CONSTRAINT CC_log_imp_pot_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_sub ADD (CONSTRAINT CC_log_imp_sub_001___ CHECK (es_importado >= 0 and es_importado <= 1));
 ALTER TABLE log_imp_ubi ADD (CONSTRAINT CC_log_imp_ubi_001___ CHECK (es_importado >= 0 and es_importado <= 1));

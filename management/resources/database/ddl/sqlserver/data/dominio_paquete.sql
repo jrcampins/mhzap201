@@ -263,7 +263,11 @@ VALUES (330800103, 0, 3308001, 3);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (331000103, 0, 3310001, 3);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
+VALUES (331050103, 0, 3310501, 3);
+INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (331100103, 0, 3311001, 3);
+INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
+VALUES (331150103, 0, 3311501, 3);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)
 VALUES (331200103, 0, 3312001, 3);
 INSERT INTO dominio_paquete (id_dominio_paquete, version_dominio_paquete, id_dominio, id_paquete)

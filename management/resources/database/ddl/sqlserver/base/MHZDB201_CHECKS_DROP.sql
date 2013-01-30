@@ -198,6 +198,8 @@ ALTER TABLE log_imp_fal DROP CONSTRAINT CC_log_imp_fal_001___
 GO
 ALTER TABLE log_imp_hog DROP CONSTRAINT CC_log_imp_hog_001___
 GO
+ALTER TABLE log_imp_hog_eec DROP CONSTRAINT CC_log_imp_hog_eec_001___
+GO
 ALTER TABLE log_imp_ids DROP CONSTRAINT CC_log_imp_ids_001___
 GO
 ALTER TABLE log_imp_jub DROP CONSTRAINT CC_log_imp_jub_001___
@@ -205,6 +207,8 @@ GO
 ALTER TABLE log_imp_pen DROP CONSTRAINT CC_log_imp_pen_001___
 GO
 ALTER TABLE log_imp_per DROP CONSTRAINT CC_log_imp_per_001___
+GO
+ALTER TABLE log_imp_per_eec DROP CONSTRAINT CC_log_imp_per_eec_001___
 GO
 ALTER TABLE log_imp_pot DROP CONSTRAINT CC_log_imp_pot_001___
 GO

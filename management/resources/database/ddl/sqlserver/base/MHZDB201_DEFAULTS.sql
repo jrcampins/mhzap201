@@ -166,6 +166,12 @@ ALTER TABLE log_imp_hog ADD CONSTRAINT DF_log_imp_hog_002___ DEFAULT (0) FOR es_
 GO
 ALTER TABLE log_imp_hog ADD CONSTRAINT DF_log_imp_hog_003___ DEFAULT (getdate()) FOR fecha_hora_transaccion
 GO
+ALTER TABLE log_imp_hog_eec ADD CONSTRAINT DF_log_imp_hog_eec_001___ DEFAULT (0) FOR version_log_imp_hog_eec
+GO
+ALTER TABLE log_imp_hog_eec ADD CONSTRAINT DF_log_imp_hog_eec_002___ DEFAULT (0) FOR es_importado
+GO
+ALTER TABLE log_imp_hog_eec ADD CONSTRAINT DF_log_imp_hog_eec_003___ DEFAULT (getdate()) FOR fecha_hora_transaccion
+GO
 ALTER TABLE log_imp_ids ADD CONSTRAINT DF_log_imp_ids_001___ DEFAULT (0) FOR version_log_imp_ids
 GO
 ALTER TABLE log_imp_ids ADD CONSTRAINT DF_log_imp_ids_002___ DEFAULT (0) FOR es_importado
@@ -189,6 +195,12 @@ GO
 ALTER TABLE log_imp_per ADD CONSTRAINT DF_log_imp_per_002___ DEFAULT (0) FOR es_importado
 GO
 ALTER TABLE log_imp_per ADD CONSTRAINT DF_log_imp_per_003___ DEFAULT (getdate()) FOR fecha_hora_transaccion
+GO
+ALTER TABLE log_imp_per_eec ADD CONSTRAINT DF_log_imp_per_eec_001___ DEFAULT (0) FOR version_log_imp_per_eec
+GO
+ALTER TABLE log_imp_per_eec ADD CONSTRAINT DF_log_imp_per_eec_002___ DEFAULT (0) FOR es_importado
+GO
+ALTER TABLE log_imp_per_eec ADD CONSTRAINT DF_log_imp_per_eec_003___ DEFAULT (getdate()) FOR fecha_hora_transaccion
 GO
 ALTER TABLE log_imp_pot ADD CONSTRAINT DF_log_imp_pot_001___ DEFAULT (0) FOR version_log_imp_pot
 GO

@@ -448,33 +448,66 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="200"
+                    width="160"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[p42ci]]></text>
+                <text><![CDATA[p01a]]></text>
             </staticText>
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="200"
+                    x="160"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p01b]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="320"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p01c]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="480"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p01d]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="640"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[p02]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="800"
                     y="0"
                     width="64"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <text><![CDATA[importado]]></text>
-            </staticText>
-            <staticText>
-                <reportElement
-                    style="ch-text1"
-                    x="264"
-                    y="0"
-                    width="600"
-                    height="20"
-                    key="staticText"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <text><![CDATA[observacion]]></text>
             </staticText>
             <staticText>
                 <reportElement
@@ -529,7 +562,7 @@
                     height="32"
                     key="staticText"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[RASTROS DE IMPORTACION DE FICHAS HOGAR]]></text>
+                <text><![CDATA[RASTROS DE IMPORTACION DE FICHAS HOGAR SAS]]></text>
             </staticText>
             <staticText>
                 <reportElement
@@ -569,11 +602,11 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="200"
+                    width="160"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{p42ci}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01a}]]></textFieldExpression>
             </textField>
             <textField
                 pattern=""
@@ -585,31 +618,85 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="200"
+                    x="160"
+                    y="0"
+                    width="160"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01b}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
+                    y="0"
+                    width="160"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01c}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="480"
+                    y="0"
+                    width="160"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p01d}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="640"
+                    y="0"
+                    width="160"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{p02}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="800"
                     y="0"
                     width="64"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression class="java.lang.String"><![CDATA[EnumBit.valueOf($F{es_importado}).getLabel()]]></textFieldExpression>
-            </textField>
-            <textField
-                pattern=""
-                isBlankWhenNull="true"
-                isStretchWithOverflow="true"
-                evaluationTime="Now"
-                hyperlinkType="None"
-                hyperlinkTarget="Self">
-                <reportElement
-                    style="dx-text1"
-                    stretchType="RelativeToBandHeight"
-                    x="264"
-                    y="0"
-                    width="600"
-                    height="16"
-                    key="textField"/>
-                <textElement textAlignment="Left" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{observacion}]]></textFieldExpression>
             </textField>
             <textField
                 pattern="dd/MM/yyyy hh:mm aa"

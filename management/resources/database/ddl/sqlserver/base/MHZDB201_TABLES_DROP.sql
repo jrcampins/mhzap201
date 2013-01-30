@@ -94,6 +94,8 @@ DROP TABLE log_imp_fal
 GO
 DROP TABLE log_imp_hog
 GO
+DROP TABLE log_imp_hog_eec
+GO
 DROP TABLE log_imp_ids
 GO
 DROP TABLE log_imp_jub
@@ -101,6 +103,8 @@ GO
 DROP TABLE log_imp_pen
 GO
 DROP TABLE log_imp_per
+GO
+DROP TABLE log_imp_per_eec
 GO
 DROP TABLE log_imp_pot
 GO
