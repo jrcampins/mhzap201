@@ -9,10 +9,12 @@ call "%~f1" log_imp_deu
 call "%~f1" log_imp_emp                                                                                          
 call "%~f1" log_imp_fal                                                                                          
 call "%~f1" log_imp_hog                                                                                          
+call "%~f1" log_imp_hog_eec                                                                                      
 call "%~f1" log_imp_ids                                                                                          
 call "%~f1" log_imp_jub                                                                                          
 call "%~f1" log_imp_pen                                                                                          
 call "%~f1" log_imp_per                                                                                          
+call "%~f1" log_imp_per_eec                                                                                      
 call "%~f1" log_imp_pot                                                                                          
 call "%~f1" log_imp_sub                                                                                          
 call "%~f1" log_imp_ubi                                                                                          
