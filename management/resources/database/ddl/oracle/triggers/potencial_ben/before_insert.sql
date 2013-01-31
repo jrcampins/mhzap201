@@ -178,7 +178,7 @@ begin
     :new.codigo_potencial_ben   := sp$potencial_ben.concat_codigo(xnew);
     :new.nombre_potencial_ben   := sp$potencial_ben.concat_nombre(xnew);
     :new.numero_condicion_censo := sp$potencial_ben.actualizar_condicion_censo(xnew);
-    :new.fecha_registro_pot_ben := current_timestamp;
+    :new.fecha_registro_pot_ben := trunc(current_timestamp);
 --  if :new.es_paraguayo_natural=0 then
 --      raise exception 'Error al insertar Potencial Beneficiario: no es Paraguayo natural';
 --  end if;

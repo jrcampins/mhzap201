@@ -4,12 +4,12 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="216"/>
+	<property name="ireport.y" value="0"/>
 	<import value="com.egt.commons.enums.*"/>
 	<import value="java.util.*"/>
 	<import value="java.math.BigDecimal"/>
-	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.base.util.*"/>
+	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
 	<parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
@@ -79,7 +79,7 @@
 	<field name="NUMERO_TIPO_AREA" class="java.math.BigDecimal"/>
 	<field name="AREA" class="java.lang.String"/>
 	<field name="DIRECCION" class="java.lang.String"/>
-	<field name="TIENE_JUBILACION" class="java.math.BigDecimal"/>
+	<field name="TIENE_JUBILACION" class="java.lang.String"/>
 	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
 	<field name="ANHO" class="java.math.BigDecimal"/>
 	<field name="NOMBRE_REFERENTE" class="java.lang.String"/>
@@ -139,12 +139,8 @@
 					</graphicElement>
 				</rectangle>
 				<image hAlign="Center" vAlign="Middle">
-					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="430" y="10" width="90" height="92"/>
+					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="10" y="10" width="90" height="92"/>
 					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_mh.png"]]></imageExpression>
-				</image>
-				<image hAlign="Center" vAlign="Middle">
-					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="10" y="10" width="93" height="92"/>
-					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_dgeec.jpg"]]></imageExpression>
 				</image>
 				<staticText>
 					<reportElement key="staticText-2" x="170" y="33" width="200" height="17"/>
@@ -423,7 +419,7 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[TIPO DE ÁREA]]></text>
 				</staticText>
@@ -440,17 +436,17 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="78" y="116" width="192" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="347" y="116" width="58" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.Long"><![CDATA[$F{MANZANA}.longValue()]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{MANZANA}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" mode="Transparent" x="483" y="116" width="57" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{AREA}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{AREA}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="0" y="145" width="134" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -502,7 +498,7 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="145" y="174" width="125" height="29"/>
 					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[( new Boolean($F{TIENE_JUBILACION}.equals(new Integer(1))) ? "Si": "No" )]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{TIENE_JUBILACION}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" style="pf-text2" stretchType="RelativeToBandHeight" x="415" y="174" width="125" height="29"/>

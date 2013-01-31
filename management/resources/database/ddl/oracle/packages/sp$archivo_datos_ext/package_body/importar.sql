@@ -6,6 +6,7 @@
 function importar(archivo number) return varchar2 is
     row_archivo archivo_datos_ext%rowtype;
     tipo_archivo number;
+    proveedor number;
     mensaje varchar2(2000):='';
     num_importados number:=0;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
@@ -34,6 +35,7 @@ begin
     end if;
     --Se cargan los datos del tipo del archivo
     tipo_archivo:= row_archivo.numero_tipo_arc_dat_ext;
+    proveedor:=row_archivo.id_proveedor_dat_ext;
     --Dependiendo del tipo de archivo se carga
     --101: Identificaciones
     if tipo_archivo=101 then
@@ -72,14 +74,30 @@ begin
         mensaje:=mensaje||num_importados;
     --401: Ficha Hogar
     elsif tipo_archivo=401 then
-        importar_ficha_hogar(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
-        mensaje:='Registros de Ficha Hogar Importados: ';
-        mensaje:=mensaje||num_importados;
+        --102: Ficha Hogar de DGEEC
+        if proveedor=102 then
+            importar_ficha_hogar_dgeec(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            mensaje:='Registros de Ficha Hogar (DGEEC) Importados: ';
+            mensaje:=mensaje||num_importados;
+        --103: Ficha Hogar de SAS
+        else
+            importar_ficha_hogar_sas(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            mensaje:='Registros de Ficha Hogar (SAS) Importados: ';
+            mensaje:=mensaje||num_importados;
+        end if;
     --402: Ficha Persona
     elsif tipo_archivo=402 then
-        importar_ficha_persona(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
-        mensaje:='Registros de Ficha de Persona Importados: ';
-        mensaje:=mensaje||num_importados;
+        --102: Ficha Persona de DGEEC
+        if proveedor=102 then
+            importar_ficha_persona_dgeec(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            mensaje:='Registros de Ficha de Persona (DGEEC) Importados: ';
+            mensaje:=mensaje||num_importados;
+        --103: Ficha Persona de SAS
+        else
+            importar_ficha_persona_sas(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            mensaje:='Registros de Ficha Hogar (SAS) Importados: ';
+            mensaje:=mensaje||num_importados;
+         end if;
     --501: Censos Validados
     elsif tipo_archivo=501 then
         importar_censos_validados(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);

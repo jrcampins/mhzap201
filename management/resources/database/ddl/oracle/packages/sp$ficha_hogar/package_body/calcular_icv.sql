@@ -37,7 +37,7 @@ begin
     --
        calcular_icv_area_rural(row_ficha_hogar,icv,puntajes,ponderaciones);
     end if;
-    dbms_output.put_line('retornando'||icv);
+    --dbms_output.put_line('retornando '||icv);
     --Se actualiza la ficha hogar con el icv y se inactiva para no ser modificado ese valor
     update ficha_hogar 
     set indice_calidad_vida=icv,

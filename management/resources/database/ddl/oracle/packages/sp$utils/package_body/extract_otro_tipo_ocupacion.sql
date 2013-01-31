@@ -11,5 +11,6 @@ begin
     else
         return null;
     end if;
+    
 return otro_tipo_ocupacion;
 end;

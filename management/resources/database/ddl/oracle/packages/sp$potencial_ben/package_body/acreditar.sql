@@ -76,6 +76,19 @@ begin
         raise_application_error(err_number, msg_string, true);
     --Si el potencial beneficiario es indígena, se acredita automáticamente
     elsif row_potencial_ben.es_indigena =1 then
+        begin
+            select * into row_persona from persona where id_persona=row_potencial_ben.id_persona;
+        exception when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string:='Persona NO existe';
+            raise_application_error(err_number, msg_string, true);
+        else
+            if row_persona.es_persona_acreditada_para_pen=1 then
+               msg_string:='Persona ya fue acreditada';
+               raise_application_error(err_number, msg_string, true); 
+            end if;            
+        end if;
         update persona
         set es_persona_acreditada_para_pen=1
         where id_persona=row_potencial_ben.id_persona;
@@ -94,6 +107,19 @@ begin
         mensaje:='Potencial Beneficiario no tiene Censo Válido';
     --Si no es indigena hay que acreditar
     else
+        begin
+            select * into row_persona from persona where id_persona=row_potencial_ben.id_persona;
+        exception when no_data_found then null;
+        end;
+        if not sql%found then
+            msg_string:='Persona NO existe';
+            raise_application_error(err_number, msg_string, true);
+        else
+            if row_persona.es_persona_acreditada_para_pen=1 then
+               msg_string:='Persona ya fue acreditada';
+               raise_application_error(err_number, msg_string, true); 
+            end if;            
+        end if;
         --Se toma el icv
         icv_beneficiario:=row_potencial_ben.indice_calidad_vida;
         --Si la ficha hogar no tiene icv
@@ -132,6 +158,10 @@ begin
                 direccion=row_potencial_ben.direccion
                 where id_persona=row_potencial_ben.id_persona;
             end if;
+--             --Se inactiva el potencial beneficiario
+--             update potencial_ben
+--             set es_potencial_ben_inactivo=1 
+--             where id_potencial_ben=row_potencial_ben.id_potencial_ben;
         else
             mensaje:='Potencial Beneficiario NO está Acreditado para pensión';
         end if;

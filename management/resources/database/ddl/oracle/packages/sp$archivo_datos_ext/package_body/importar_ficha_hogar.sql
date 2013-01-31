@@ -1,9 +1,10 @@
-procedure importar_ficha_hogar(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
+procedure importar_ficha_hogar_sas(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
     archivo varchar2(2000);
     codigo varchar2(200);
     nombre_tabla varchar2(200):='csv_log_imp_hog';
     tipo_arch varchar2(10);
+    proveedor varchar2(10);
     numero_cedula number;
     letra_cedula char;
     current_row log_imp_hog%rowtype;
@@ -37,6 +38,23 @@ begin
         if sql%found then
             if tipo_arch!='401' then
                 msg_string := 'Archivo ' || codigo_archivo || ' NO es de Ficha Hogar ';
+                raise_application_error(err_number, msg_string, true);
+            end if;
+        end if;
+        begin
+            select p.codigo_proveedor_dat_ext 
+            into proveedor 
+            from archivo_datos_ext a 
+            left join proveedor_dat_ext p on a.id_proveedor_dat_ext=p.id_proveedor_dat_ext 
+            where a.codigo_archivo_datos_ext=codigo_archivo;
+        exception
+            when no_data_found then
+            msg_string := 'Proveedor ' || proveedor || ' no existe ';
+            raise_application_error(err_number, msg_string, true);
+        end;
+        if sql%found then
+            if proveedor!='103' then
+                msg_string := 'Proveedor ' || proveedor || ' no corresponde al tipo de archivo SAS '||codigo_archivo;
                 raise_application_error(err_number, msg_string, true);
             end if;
         end if;
@@ -215,7 +233,7 @@ begin
                 new_ficha_hogar.id_funcionario_critico_deco:=null;
             end ;
             if not sql%found then
-                new_ficha_hogar.id_funcionario_supervisor:=null;
+                new_ficha_hogar.id_funcionario_critico_deco:=null;
             end if;
             --Observaciones (observaciones)
             new_ficha_hogar.observaciones:=current_row.observaciones;
