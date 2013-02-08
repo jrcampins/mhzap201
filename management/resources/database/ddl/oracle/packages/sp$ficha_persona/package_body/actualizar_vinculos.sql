@@ -44,6 +44,7 @@ begin
     if((row_persona.id_ficha_persona is null) or 
        (row_persona.fecha_ficha_persona<row_ficha_hogar.fecha_entrevista 
         and  row_persona.es_persona_acreditada_para_pen=0)) then
+        --dbms_output.put_line('creando vinculo');
         update persona  
         set id_ficha_persona=xnew.id_ficha_persona
         where id_persona=id_persona_actualizar;

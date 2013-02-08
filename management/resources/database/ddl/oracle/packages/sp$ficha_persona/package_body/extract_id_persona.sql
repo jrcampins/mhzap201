@@ -4,6 +4,7 @@ function extract_id_persona(xrow ficha_persona%rowtype) return number is
     row_persona persona%rowtype;
     ocurrencias number:=0;
 begin
+    --Si no, se empieza a buscar la persona
     if xrow.numero_cedula is null or xrow.nombre_ficha_persona is null then
         return null;
     end if;

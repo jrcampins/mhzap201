@@ -6,6 +6,8 @@
 function reactivar(ficha number) return varchar2 is
     mensaje varchar2(2000);
     row_ficha_hogar ficha_hogar%rowtype;
+    row_persona persona%rowtype;
+    row_ficha_persona ficha_persona%rowtype;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000);
     conta number:=0;
@@ -39,9 +41,16 @@ begin
                              from ficha_persona 
                              where id_ficha_hogar=ficha) loop
         --Se desvincula las ficha_persona de persona
-        update persona
-        set id_ficha_persona=null
-        where id_ficha_persona=row_ficha_persona.id_ficha_persona ;        
+        begin
+            select * into row_persona from persona where id_ficha_persona=row_ficha_persona.id_ficha_persona;
+        exception 
+            when no_data_found then null;
+        end;
+        if sql%found then
+            update persona
+            set id_ficha_persona=null
+            where id_persona=row_persona.id_persona;
+         end if;
         --Se reactiva las ficha_persona
         update ficha_persona
         set es_ficha_persona_inactiva=0

@@ -12,7 +12,8 @@ compound trigger
     pdq         number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
-
+    row_potencial_ben potencial_ben%rowtype;
+    id_proveedor number;
 before each row is
 begin
     --if(:new.numero_tipo_reg_pot_ben<>:old.numero_tipo_reg_pot_ben) then
@@ -91,6 +92,10 @@ begin
             :new.indice_calidad_vida:=row_persona.indice_calidad_vida;
             :new.id_ficha_persona:=row_persona.id_ficha_persona;
             :new.es_potencial_ben_migrado:=0;
+        elsif(row_persona.id_ficha_persona is null and row_persona.indice_calidad_vida is null ) then
+            :new.indice_calidad_vida:=null;
+            :new.id_ficha_persona:=null;
+            :new.numero_condicion_censo:=1;
         end if;
         --Si tiene barrio hay que obtener el tipo de area.
         if(:new.id_barrio is not null) then
@@ -251,7 +256,8 @@ begin
     end if;
     --Solo si cambia id_ficha_persona es que se verifica la condición de censo
     if (:old.id_ficha_persona<>:new.id_ficha_persona
-    or (:old.id_ficha_persona is null and :new.id_ficha_persona is not null)) then 
+    or (:old.id_ficha_persona is null and :new.id_ficha_persona is not null)) then
+        --dbms_output.put_line('cambiando condicion_Censo');
         :new.numero_condicion_censo := sp$potencial_ben.actualizar_condicion_censo(xnew);
     elsif(:old.id_ficha_persona is not null and :new.id_ficha_persona is null)then
         :new.numero_condicion_censo := 1;

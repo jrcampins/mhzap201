@@ -26,3 +26,4 @@ function proc_denu_pen(persona_consultada number) return varchar2;
 function proc_reco_pen(persona_consultada number) return varchar2;
 function registrar_entrega_doc(persona_consultada number, cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number) return varchar2;
 function verif_ws_sinarh_jupe(cedula  IN  varchar2,id_persona NUMBER)return varchar2;
+function get_last_ficha_persona(xrow persona%rowtype) return number;

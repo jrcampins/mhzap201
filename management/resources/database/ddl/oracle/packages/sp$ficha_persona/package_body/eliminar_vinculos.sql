@@ -23,6 +23,7 @@ begin
     --Se ajusta el enlace de ficha_persona al potencial_ben asociado
     --Al actualizar id_ficha_persona, se copia sobre potencial_ben
     --Se actualiza la persona 
+    --dbms_output.put_line('eliminando vinculo');
     update persona  
     set id_ficha_persona=null
     where id_persona=id_persona_actualizar;  
