@@ -50,10 +50,11 @@ begin
             end if;
         end if;
     end if;
+    --Se marca el archivo como importado
     update archivo_datos_ext set es_archivo_datos_ext_importado=1, fecha_hora_ultima_importacion=current_timestamp where codigo_archivo_datos_ext=codigo_archivo;
     --Ubicamos el archivo de datos externos
     begin
-        select * into row_arc_dat_ext from archivo_datos_ext where codigo_archivo_datos_ext=codigo_archivo;
+        select * into row_arc_dat_ext from archivo_datos_ext where codigo_archivo_datos_ext=codigo;
     exception
         when no_data_found then
             null;
@@ -67,7 +68,8 @@ begin
         --Determinamos el tipo de archivo
         tipo_archivo:=row_arc_dat_ext.numero_tipo_arc_dat_ext;
     end if;
-
+    --Eliminamos el log anterior de ese archivo (recuerda que hay varios archivos de deudores)
+    delete from log_imp_jub l where l.codigo_archivo=codigo;
     --creamos y llenamos la tabla externa csv_log_imp_ids
     sp$100.create_csv_log_imp_jub(nombre_archivo, 'WE8ISO8859P1', '1', ';', '"');
     insert into log_imp_jub
@@ -78,7 +80,13 @@ begin
             primer_apellido,
             segundo_apellido,
             apellido_casada,
-            tipo_registro)
+            tipo_registro,
+            es_importado,
+            codigo_archivo,
+            nombre_archivo,
+            fecha_hora_transaccion,
+            observacion
+            )
     select
             utils.bigintid(),
             cedula,
@@ -87,110 +95,14 @@ begin
             primer_apellido,
             segundo_apellido,
             apellido_casada,
-            tipo_registro
+            tipo_registro,
+            1,
+            codigo,
+            archivo,
+            current_timestamp,
+            'Registro cargado. Objeción pendiente por actualizar'
     from csv_log_imp_jub;
-    --Se desactivan todas las objeciones de deuda de ese proveedor
-    update objecion_ele_pen
-    set es_objecion_ele_pen_inactiva=1,
-    fecha_ultima_actualizacion=trunc(current_timestamp)
-    where numero_tipo_obj_ele_pen=22
-    or numero_tipo_obj_ele_pen=25
-    and id_proveedor_dat_ext=id_proveedor;
-    --
-    for jubilado in (select * from log_imp_jub where es_importado=0 and observacion is null)
-    loop
-        begin
-            id_persona_act:=sp$utils.extract_id_persona(jubilado.cedula,jubilado.primer_nombre,jubilado.segundo_nombre,jubilado.primer_apellido,jubilado.segundo_apellido,jubilado.apellido_casada);
-            if id_persona_act is null then
-                msg_string:= 'Persona no encontrada';
-                raise_application_error(err_number, msg_string, true);
-            --Se registra la inserción en la tabla intermedia
-            else
-                ----dbms_output.put_line('buscando persona');
-                 --Se selecciona la persona
-                begin
-                    select * into row_persona from persona where id_persona=id_persona_act;
-                exception when no_data_found then 
-                    null;
-                end;
-                if not sql%found then
-                    msg_string := 'Persona no encontrada';
-                    raise_application_error(err_number, msg_string, true);
-                end if;
-                --Se verifica si ya existe una objecion
-                if upper(jubilado.tipo_registro) like '%PENSIONADO%' then
-                    --Se verifica si ya existe una objecion
-                    begin
-                        select * into row_objecion from objecion_ele_pen where id_persona=row_persona.id_persona and numero_tipo_obj_ele_pen=25 and id_proveedor_dat_ext=id_proveedor;
-                    exception when no_data_found then 
-                        null;
-                    end;
-                    if sql%found then
-                        ----dbms_output.put_line('Pensionado');
-                        --Si consigue la objecion la mantiene activa
-                        update objecion_ele_pen
-                        set es_objecion_ele_pen_inactiva=0,
-                        fecha_ultima_actualizacion=trunc(current_timestamp)
-                        where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
-                    else
-                        --Si no la consigue, la inserta como nueva
-                        row_objecion.id_objecion_ele_pen:=utils.bigintid();
-                        row_objecion.version_objecion_ele_pen:=0;
-                        row_objecion.id_persona:=row_persona.id_persona;
-                        row_objecion.id_proveedor_dat_ext:=id_proveedor;
-                        row_objecion.numero_tipo_obj_ele_pen:=25;
-                        row_objecion.es_objecion_ele_pen_inactiva:=0;
-                        row_objecion.fecha_ultima_actualizacion:=trunc(current_timestamp);
-                        row_objecion.nombre_archivo_ultima_act:=nombre_archivo;
-                        insert into objecion_ele_pen values row_objecion;
-                    end if;
-                elsif upper(jubilado.tipo_registro) like '%JUBILADO%' then
-                    ----dbms_output.put_line('Jubilado');
-                --Se verifica si ya existe una objecion
-                    begin
-                        select * into row_objecion from objecion_ele_pen where id_persona=row_persona.id_persona and numero_tipo_obj_ele_pen=22 and id_proveedor_dat_ext=id_proveedor;
-                    exception when no_data_found then 
-                        null;
-                    end;
-                    if sql%found then
-                        --Si consigue la objecion la mantiene activa
-                        update objecion_ele_pen
-                        set es_objecion_ele_pen_inactiva=0,
-                        fecha_ultima_actualizacion=trunc(current_timestamp)
-                        where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
-                    else
-                        --Si no la consigue, la inserta como nueva
-                        row_objecion.id_objecion_ele_pen:=utils.bigintid();
-                        row_objecion.version_objecion_ele_pen:=0;
-                        row_objecion.id_persona:=row_persona.id_persona;
-                        row_objecion.id_proveedor_dat_ext:=id_proveedor;
-                        row_objecion.numero_tipo_obj_ele_pen:=22;
-                        row_objecion.es_objecion_ele_pen_inactiva:=0;
-                        row_objecion.fecha_ultima_actualizacion:=trunc(current_timestamp);
-                        row_objecion.nombre_archivo_ultima_act:=nombre_archivo;
-                        insert into objecion_ele_pen values row_objecion;
-                    end if;
-                else
-                    msg_string := 'Tipo de registro inválido';
-                    raise_application_error(err_number, msg_string, true);
-                end if;
-                --Se incrementa el número de importados
-                retorno:=retorno+1;
-                ----dbms_output.put_line('retorno'||retorno);
-                --Se registra la inserción en la tabla intermedia
-                update log_imp_jub set es_importado=1, 
-                       nombre_archivo=archivo, 
-                       codigo_archivo=codigo, 
-                       fecha_hora_transaccion= current_timestamp 
-                where id_log_imp_jub=jubilado.id_log_imp_jub;
-            end if;
-        --Si no se pudo insertar el registro se marca el motivo
-        exception
-                when others then
-                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_jub set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_jub=jubilado.id_log_imp_jub;
-                    continue;
-        end;
-    end loop;
-end;
+    --Se retorna el numero de registros
+    select count(id_log_imp_jub) into retorno from log_imp_jub where codigo_archivo=codigo;
+   end;
         

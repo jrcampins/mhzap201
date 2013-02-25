@@ -10,6 +10,7 @@ function act_persona_elegible(persona_consultada number) return number is
     conta_objeciones number :=0;
     retcode number;
     resultado varchar2(4000);
+    objeciones number;
     err_number constant number := -20000; -- an integer in the range -20000..-20999
     msg_string varchar2(2000); -- a character string of at most 2048 bytes
 begin
@@ -20,54 +21,57 @@ begin
             msg_string := 'persona ' || persona_consultada || ' no existe ';
             raise_application_error(err_number, msg_string, true);
     end;
+    --Nuevo: Actualizar las objeciones de una persona
+    objeciones:=actualizar_objeciones(row_persona.codigo_persona,row_persona.id_persona);
     --Nuevo: Se verifican objeciones de elegibilidad utilizando WS
     resultado:=verif_ws_sinarh_jupe(row_persona.codigo_persona,row_persona.id_persona);
-    
-    --Se buscan las objeciones que tiene la persona
-    for row_objecion in (
-        select * from objecion_ele_pen 
-        where id_persona=persona_consultada 
-        and es_objecion_ele_pen_inactiva=0
-    ) 
-    loop
-        conta_objeciones:=conta_objeciones+1;
-        --Si la persona tiene empleo
-        if row_objecion.numero_tipo_obj_ele_pen=21 then
-            update persona 
-            set es_persona_con_empleo=1,
-            es_persona_elegible_para_pen=0
-            where id_persona=persona_consultada;
-            condicion:=21;
-        --Si la persona tiene jubilacion
-        elsif row_objecion.numero_tipo_obj_ele_pen=22 then
-            update persona 
-            set es_persona_con_jubilacion=1,
-            es_persona_elegible_para_pen=0 
-            where id_persona=persona_consultada;
-            condicion:=22;
-        --Si la persona tiene deuda
-        elsif row_objecion.numero_tipo_obj_ele_pen=23 then
-            update persona 
-            set es_persona_con_deuda=1,
-            es_persona_elegible_para_pen=0 
-            where id_persona=persona_consultada;
-            condicion:=23;
-        --Si la persona tiene pena judicial
-        elsif row_objecion.numero_tipo_obj_ele_pen=24 then
-            update persona 
-            set es_persona_con_pena_judicial=1,
-            es_persona_elegible_para_pen=0 
-            where id_persona=persona_consultada;
-            condicion:=24;
-        --Si la persona tiene otra pension
-        elsif row_objecion.numero_tipo_obj_ele_pen=24 then
-            update persona 
-            set es_persona_con_pension=1,
-            es_persona_elegible_para_pen=0 
-            where id_persona=persona_consultada;
-            condicion:=25;
-        end if;
-    end loop;                       
+    --Se buscan las objeciones que tiene la persona (Nuevo: solo si hay objeciones que buscar)
+    if objeciones>0 then
+        for row_objecion in (
+            select * from objecion_ele_pen 
+            where id_persona=persona_consultada 
+            and es_objecion_ele_pen_inactiva=0
+        ) 
+        loop
+            conta_objeciones:=conta_objeciones+1;
+            --Si la persona tiene empleo
+            if row_objecion.numero_tipo_obj_ele_pen=21 then
+                update persona 
+                set es_persona_con_empleo=1,
+                es_persona_elegible_para_pen=0
+                where id_persona=persona_consultada;
+                condicion:=21;
+            --Si la persona tiene jubilacion
+            elsif row_objecion.numero_tipo_obj_ele_pen=22 then
+                update persona 
+                set es_persona_con_jubilacion=1,
+                es_persona_elegible_para_pen=0 
+                where id_persona=persona_consultada;
+                condicion:=22;
+            --Si la persona tiene deuda
+            elsif row_objecion.numero_tipo_obj_ele_pen=23 then
+                update persona 
+                set es_persona_con_deuda=1,
+                es_persona_elegible_para_pen=0 
+                where id_persona=persona_consultada;
+                condicion:=23;
+            --Si la persona tiene pena judicial
+            elsif row_objecion.numero_tipo_obj_ele_pen=24 then
+                update persona 
+                set es_persona_con_pena_judicial=1,
+                es_persona_elegible_para_pen=0 
+                where id_persona=persona_consultada;
+                condicion:=24;
+            --Si la persona tiene otra pension
+            elsif row_objecion.numero_tipo_obj_ele_pen=24 then
+                update persona 
+                set es_persona_con_pension=1,
+                es_persona_elegible_para_pen=0 
+                where id_persona=persona_consultada;
+                condicion:=25;
+            end if;
+        end loop;
+    end if;
     --Si no hay objeciones se coloca la persona como elegible
     if conta_objeciones=0 then
         update persona 

@@ -1,3 +1,4 @@
+function actualizar_objeciones(codigo varchar2,persona_consultada number) return number;
 function concat_codigo(xrow persona%rowtype) return varchar2;
 function concat_nombre(xrow persona%rowtype) return varchar2;
 function anul_fec_ult_cob_pen(persona_consultada number, comentarios varchar2) return varchar2;
