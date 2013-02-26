@@ -107,6 +107,8 @@ SELECT
 		persona_1x1.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob__1x1y94,
 		persona_1x1.numero_tipo_act_jupe AS numero_tipo_act_jupe_1x1y95,
 		persona_1x1.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x1y96,
+		persona_1x1.lote AS lote_1x1y97,
+		persona_1x1.codigo_sime AS codigo_sime_1x1y98,
 	objecion_ele_pen.id_proveedor_dat_ext AS id_proveedor_dat_ext,
 		proveedor_dat_ext_1x2.codigo_proveedor_dat_ext AS codigo_proveedor_dat_ext_1x2y3,
 		proveedor_dat_ext_1x2.nombre_proveedor_dat_ext AS nombre_proveedor_dat_ext_1x2y4,

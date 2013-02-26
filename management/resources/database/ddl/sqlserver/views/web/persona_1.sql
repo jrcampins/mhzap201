@@ -227,7 +227,9 @@ SELECT
 	persona.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob_pen,
 	persona.numero_tipo_act_jupe AS numero_tipo_act_jupe,
 		tipo_act_jupe_1x16.codigo_tipo_act_jupe AS codigo_tipo_act_jupe_1x16y2,
-	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe
+	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe,
+	persona.lote AS lote,
+	persona.codigo_sime AS codigo_sime
 FROM
 	persona persona
 	LEFT OUTER JOIN sexo_persona sexo_persona_1x1 ON sexo_persona_1x1.numero_sexo_persona = persona.numero_sexo_persona

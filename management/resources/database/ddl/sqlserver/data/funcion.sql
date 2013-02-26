@@ -517,6 +517,8 @@ VALUES (200200156, 0, 'proceso_actualizar_pen_en_jupe', 'Incorporar Pensionados 
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (200200157, 0, 'proceso_verificar_ele_pen', 'Verificar Elegibilidad para Pensión AM', NULL, 13, 1, 2002001, NULL, NULL, 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
+VALUES (200200158, 0, 'proceso_asignar_mesa', 'Asignar Mesa de Entrada a Lote', NULL, 13, 1, 2002001, NULL, NULL, 0, 0, 0, 0, NULL);
+INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (201000101, 0, 'consultar_persona', 'Consultar Persona', NULL, 21, 0, 2010001, NULL, 'id_persona', 0, 0, 0, 0, NULL);
 INSERT INTO funcion (id_funcion, version_funcion, codigo_funcion, nombre_funcion, descripcion_funcion, numero_tipo_funcion, numero_tipo_rastro_fun, id_dominio, clausula_where, clausula_order, es_publica, es_programatica, es_personalizada, es_segmentada, id_grupo_proceso)
 VALUES (201000102, 0, 'crear_persona', 'Crear Persona', NULL, 31, 1, 2010001, NULL, NULL, 0, 0, 0, 0, NULL);

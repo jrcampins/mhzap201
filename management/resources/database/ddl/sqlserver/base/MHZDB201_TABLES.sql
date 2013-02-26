@@ -28,6 +28,8 @@ CREATE TABLE archivo_datos_ext
 	es_archivo_datos_ext_inactivo int NOT NULL,
 	fecha_hora_ultima_carga datetime,
 	id_usuario_ultima_carga bigint,
+	nombre_archivo_datos varchar(250),
+	nombre_original_archivo_datos varchar(250),
 	fecha_hora_ultima_importacion datetime,
 	id_usuario_ultima_importacion bigint
 	)
@@ -1728,7 +1730,9 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension smalldatetime,
 	notas_anul_fec_ult_cob_pen varchar(256),
 	numero_tipo_act_jupe int,
-	fecha_hora_ult_act_jupe datetime
+	fecha_hora_ult_act_jupe datetime,
+	lote bigint,
+	codigo_sime varchar(50)
 	)
 	ON [PRIMARY]
 GO
@@ -1801,7 +1805,8 @@ CREATE TABLE potencial_ben
 	id_funcionario_ult_visita_cen bigint,
 	referencia_direccion varchar(256),
 	indice_calidad_vida decimal(7,4),
-	es_potencial_ben_migrado int
+	es_potencial_ben_migrado int,
+	lote bigint
 	)
 	ON [PRIMARY]
 GO

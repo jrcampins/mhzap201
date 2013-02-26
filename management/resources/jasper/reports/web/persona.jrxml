@@ -290,6 +290,8 @@
     <field name="numero_tipo_act_jupe" class="java.lang.Integer"/>
     <field name="codigo_tipo_act_jupe_1x16y2" class="java.lang.String"/>
     <field name="fecha_hora_ult_act_jupe" class="java.util.Date"/>
+    <field name="lote" class="java.lang.Long"/>
+    <field name="codigo_sime" class="java.lang.String"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

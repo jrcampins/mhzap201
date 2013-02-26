@@ -17,6 +17,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.persistence.entity.Proceso;
 import javax.ejb.Local;
 
@@ -36,4 +37,6 @@ public interface ProcesoBusinessProcessLogicLocal {
     public void procesoActualizarPenEnJupe(ProcesoActualizarPenEnJupeMessage message, Proceso proceso) throws Exception;
 
     public void procesoVerificarElePen(ProcesoVerificarElePenMessage message, Proceso proceso) throws Exception;
+
+    public void procesoAsignarMesa(ProcesoAsignarMesaMessage message, Proceso proceso) throws Exception;
 }

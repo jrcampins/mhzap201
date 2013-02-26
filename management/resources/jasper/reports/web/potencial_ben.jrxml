@@ -173,6 +173,8 @@
     <field name="notas_anul_fec_ult_cob__1x2y94" class="java.lang.String"/>
     <field name="numero_tipo_act_jupe_1x2y95" class="java.lang.Integer"/>
     <field name="fecha_hora_ult_act_jupe_1x2y96" class="java.util.Date"/>
+    <field name="lote_1x2y97" class="java.lang.Long"/>
+    <field name="codigo_sime_1x2y98" class="java.lang.String"/>
     <field name="numero_cedula" class="java.lang.Integer"/>
     <field name="letra_cedula" class="java.lang.String"/>
     <field name="fecha_expedicion_cedula" class="java.util.Date"/>
@@ -378,6 +380,7 @@
     <field name="referencia_direccion" class="java.lang.String"/>
     <field name="indice_calidad_vida" class="java.math.BigDecimal"/>
     <field name="es_potencial_ben_migrado" class="java.lang.Integer"/>
+    <field name="lote" class="java.lang.Long"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

@@ -75,6 +75,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider extends RecursoCachedRowSet
     public static final String COLUMNA_ES_ARCHIVO_DATOS_EXT_INACTIVO = "es_archivo_datos_ext_inactivo";
     public static final String COLUMNA_FECHA_HORA_ULTIMA_CARGA = "fecha_hora_ultima_carga";
     public static final String COLUMNA_ID_USUARIO_ULTIMA_CARGA = "id_usuario_ultima_carga";
+    public static final String COLUMNA_NOMBRE_ARCHIVO_DATOS = "nombre_archivo_datos";
+    public static final String COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS = "nombre_original_archivo_datos";
     public static final String COLUMNA_FECHA_HORA_ULTIMA_IMPORTACION = "fecha_hora_ultima_importacion";
     public static final String COLUMNA_ID_USUARIO_ULTIMA_IMPORTACION = "id_usuario_ultima_importacion";
 
@@ -91,6 +93,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider extends RecursoCachedRowSet
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_ARCHIVO_DATOS_EXT_INACTIVO, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULTIMA_CARGA, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_USUARIO_ULTIMA_CARGA, Long.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_ARCHIVO_DATOS, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULTIMA_IMPORTACION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_USUARIO_ULTIMA_IMPORTACION, Long.class);
     }
@@ -109,6 +113,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider extends RecursoCachedRowSet
         this.setColumnasInsertables(COLUMNA_ES_ARCHIVO_DATOS_EXT_INACTIVO, true);
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULTIMA_CARGA, true);
         this.setColumnasInsertables(COLUMNA_ID_USUARIO_ULTIMA_CARGA, true);
+        this.setColumnasInsertables(COLUMNA_NOMBRE_ARCHIVO_DATOS, true);
+        this.setColumnasInsertables(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, true);
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULTIMA_IMPORTACION, true);
         this.setColumnasInsertables(COLUMNA_ID_USUARIO_ULTIMA_IMPORTACION, true);
     }
@@ -127,6 +133,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider extends RecursoCachedRowSet
         this.setColumnasModificables(COLUMNA_ES_ARCHIVO_DATOS_EXT_INACTIVO, true);
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULTIMA_CARGA, true);
         this.setColumnasModificables(COLUMNA_ID_USUARIO_ULTIMA_CARGA, true);
+        this.setColumnasModificables(COLUMNA_NOMBRE_ARCHIVO_DATOS, true);
+        this.setColumnasModificables(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, true);
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULTIMA_IMPORTACION, true);
         this.setColumnasModificables(COLUMNA_ID_USUARIO_ULTIMA_IMPORTACION, true);
     }
@@ -285,6 +293,32 @@ public class ArchivoDatosExtCachedRowSetDataProvider extends RecursoCachedRowSet
     }
     public void setIdUsuarioUltimaCarga(RowKey rowKey, Long valor) {
         super.setValue(COLUMNA_ID_USUARIO_ULTIMA_CARGA, rowKey, valor);
+    }
+
+    public String getNombreArchivoDatos() {
+        return (String) super.getValue(COLUMNA_NOMBRE_ARCHIVO_DATOS);
+    }
+    public String getNombreArchivoDatos(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NOMBRE_ARCHIVO_DATOS, rowKey);
+    }
+    public void setNombreArchivoDatos(String valor) {
+        super.setValue(COLUMNA_NOMBRE_ARCHIVO_DATOS, valor);
+    }
+    public void setNombreArchivoDatos(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NOMBRE_ARCHIVO_DATOS, rowKey, valor);
+    }
+
+    public String getNombreOriginalArchivoDatos() {
+        return (String) super.getValue(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS);
+    }
+    public String getNombreOriginalArchivoDatos(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, rowKey);
+    }
+    public void setNombreOriginalArchivoDatos(String valor) {
+        super.setValue(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, valor);
+    }
+    public void setNombreOriginalArchivoDatos(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS, rowKey, valor);
     }
 
     public Timestamp getFechaHoraUltimaImportacion() {

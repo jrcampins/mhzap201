@@ -130,6 +130,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
     public static final String COLUMNA_REFERENCIA_DIRECCION = "referencia_direccion";
     public static final String COLUMNA_INDICE_CALIDAD_VIDA = "indice_calidad_vida";
     public static final String COLUMNA_ES_POTENCIAL_BEN_MIGRADO = "es_potencial_ben_migrado";
+    public static final String COLUMNA_LOTE = "lote";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_POTENCIAL_BEN, Long.class);
@@ -199,6 +200,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_REFERENCIA_DIRECCION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_INDICE_CALIDAD_VIDA, BigDecimal.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, Integer.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LOTE, Long.class);
     }
 
     protected void setColumnasInsertables() {
@@ -270,6 +272,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasInsertables(COLUMNA_REFERENCIA_DIRECCION, true);
         this.setColumnasInsertables(COLUMNA_INDICE_CALIDAD_VIDA, true);
         this.setColumnasInsertables(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, true);
+        this.setColumnasInsertables(COLUMNA_LOTE, true);
     }
 
     protected void setColumnasModificables() {
@@ -341,6 +344,7 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasModificables(COLUMNA_REFERENCIA_DIRECCION, true);
         this.setColumnasModificables(COLUMNA_INDICE_CALIDAD_VIDA, true);
         this.setColumnasModificables(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, true);
+        this.setColumnasModificables(COLUMNA_LOTE, true);
     }
 
     public Long getIdPotencialBen() {
@@ -1212,6 +1216,19 @@ public class PotencialBenCachedRowSetDataProvider extends RecursoCachedRowSetDat
     }
     public void setEsPotencialBenMigrado(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_ES_POTENCIAL_BEN_MIGRADO, rowKey, valor);
+    }
+
+    public Long getLote() {
+        return (Long) super.getValue(COLUMNA_LOTE);
+    }
+    public Long getLote(RowKey rowKey) {
+        return (Long) super.getValue(COLUMNA_LOTE, rowKey);
+    }
+    public void setLote(Long valor) {
+        super.setValue(COLUMNA_LOTE, valor);
+    }
+    public void setLote(RowKey rowKey, Long valor) {
+        super.setValue(COLUMNA_LOTE, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_potencial_ben";

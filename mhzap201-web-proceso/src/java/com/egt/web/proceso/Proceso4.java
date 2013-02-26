@@ -99,6 +99,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.business.process.ProcesoBusinessProcessLocal;
 import java.util.Date;
 import javax.jms.JMSException;
@@ -120,9 +121,12 @@ public class Proceso4 extends AbstractPageBean
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
+        validatorCodigoSime1.setMaximum(2000);
         validatorNumeroResolucionDenPen1.setMaximum(2000);
         converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionDenPen1.setType("date");
+        validatorLote1.setMinimum(0L);
+        validatorLote1.setMaximum(1000000000000000000L);
     }
 
     private Form form1 = new Form();
@@ -588,6 +592,56 @@ public class Proceso4 extends AbstractPageBean
         this.converterFechaResolucionOtorPen1 = converter;
     }
   
+    private Label labelCodigoSime1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSime1() {
+        return labelCodigoSime1;
+    }
+
+    public void setLabelCodigoSime1(Label l) {
+        this.labelCodigoSime1 = l;
+    }
+
+    private TextField campoCodigoSime1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCodigoSime1() {
+        return campoCodigoSime1;
+    }
+
+    public void setCampoCodigoSime1(TextField component) {
+        this.campoCodigoSime1 = component;
+    }
+
+    private HelpInline helpInlineCodigoSime1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoSime1() {
+        return helpInlineCodigoSime1;
+    }
+
+    public void setHelpInlineCodigoSime1(HelpInline hi) {
+        this.helpInlineCodigoSime1 = hi;
+    }
+
+    private StaticText campoCodigoSime1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSime1Texto1() {
+        return campoCodigoSime1Texto1;
+    }
+
+    public void setCampoCodigoSime1Texto1(StaticText component) {
+        this.campoCodigoSime1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoSime1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoSime1() {
+        return validatorCodigoSime1;
+    }
+  
+    public void setValidatorCodigoSime1(LengthValidator validator) {
+        this.validatorCodigoSime1 = validator;
+    }
+  
     private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelNumeroResolucionDenPen1() {
@@ -686,6 +740,66 @@ public class Proceso4 extends AbstractPageBean
   
     public void setConverterFechaResolucionDenPen1(SqlTimestampConverter converter) {
         this.converterFechaResolucionDenPen1 = converter;
+    }
+  
+    private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1() {
+        return labelLote1;
+    }
+
+    public void setLabelLote1(Label l) {
+        this.labelLote1 = l;
+    }
+
+    private TextField campoLote1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoLote1() {
+        return campoLote1;
+    }
+
+    public void setCampoLote1(TextField component) {
+        this.campoLote1 = component;
+    }
+
+    private HelpInline helpInlineLote1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineLote1() {
+        return helpInlineLote1;
+    }
+
+    public void setHelpInlineLote1(HelpInline hi) {
+        this.helpInlineLote1 = hi;
+    }
+
+    private StaticText campoLote1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1Texto1() {
+        return campoLote1Texto1;
+    }
+
+    public void setCampoLote1Texto1(StaticText component) {
+        this.campoLote1Texto1 = component;
+    }
+
+    private LongConverter converterLote1 = new LongConverter();
+  
+    public LongConverter getConverterLote1() {
+        return converterLote1;
+    }
+  
+    public void setConverterLote1(LongConverter converter) {
+        this.converterLote1 = converter;
+    }
+  
+    private LongRangeValidator validatorLote1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorLote1() {
+        return validatorLote1;
+    }
+  
+    public void setValidatorLote1(LongRangeValidator validator) {
+        this.validatorLote1 = validator;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -863,6 +977,8 @@ public class Proceso4 extends AbstractPageBean
 
     static long FUNCION_ACCION_7 = ProcesoConstants.FUNCION_PROCESO_VERIFICAR_ELE_PEN;
 
+    static long FUNCION_ACCION_8 = ProcesoConstants.FUNCION_PROCESO_ASIGNAR_MESA;
+
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
@@ -873,7 +989,8 @@ public class Proceso4 extends AbstractPageBean
             new Option(FUNCION_ACCION_4, BundleWebui.getString("proceso_otorgar_pensiones_apr")),
             new Option(FUNCION_ACCION_5, BundleWebui.getString("proceso_denegar_pensiones_obj")),
             new Option(FUNCION_ACCION_6, BundleWebui.getString("proceso_actualizar_pen_en_jupe")),
-            new Option(FUNCION_ACCION_7, BundleWebui.getString("proceso_verificar_ele_pen"))
+            new Option(FUNCION_ACCION_7, BundleWebui.getString("proceso_verificar_ele_pen")),
+            new Option(FUNCION_ACCION_8, BundleWebui.getString("proceso_asignar_mesa"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -998,6 +1115,23 @@ public class Proceso4 extends AbstractPageBean
         return bitFechaResolucionOtorPenRendered;
     }
 
+    public boolean isCodigoSimeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_8;
+    }
+
+    private Bit bitCodigoSimeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCodigoSimeRendered();
+        }
+    };
+
+    public Bit getBitCodigoSimeRendered() {
+        return bitCodigoSimeRendered;
+    }
+
     public boolean isNumeroResolucionDenPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_5;
@@ -1030,6 +1164,23 @@ public class Proceso4 extends AbstractPageBean
 
     public Bit getBitFechaResolucionDenPenRendered() {
         return bitFechaResolucionDenPenRendered;
+    }
+
+    public boolean isLoteRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_8;
+    }
+
+    private Bit bitLoteRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isLoteRendered();
+        }
+    };
+
+    public Bit getBitLoteRendered() {
+        return bitLoteRendered;
     }
 
     // </editor-fold>
@@ -1136,6 +1287,16 @@ public class Proceso4 extends AbstractPageBean
         this.valorCampoFechaResolucionOtorPen1 = valor;
     }
 
+    private String textoCampoCodigoSime1;
+
+    public String getTextoCampoCodigoSime1() {
+        return this.textoCampoCodigoSime1;
+    }
+
+    public void setTextoCampoCodigoSime1(String valor) {
+        this.textoCampoCodigoSime1 = valor;
+    }
+
     private String textoCampoNumeroResolucionDenPen1;
 
     public String getTextoCampoNumeroResolucionDenPen1() {
@@ -1154,6 +1315,16 @@ public class Proceso4 extends AbstractPageBean
 
     public void setValorCampoFechaResolucionDenPen1(java.sql.Timestamp valor) {
         this.valorCampoFechaResolucionDenPen1 = valor;
+    }
+
+    private String textoCampoLote1;
+
+    public String getTextoCampoLote1() {
+        return this.textoCampoLote1;
+    }
+
+    public void setTextoCampoLote1(String valor) {
+        this.textoCampoLote1 = valor;
     }
 
     // </editor-fold>
@@ -1300,6 +1471,7 @@ public class Proceso4 extends AbstractPageBean
                 : f == FUNCION_ACCION_5 ? this.accion5(f) /* procesoDenegarPensionesObj */
                 : f == FUNCION_ACCION_6 ? this.accion6(f) /* procesoActualizarPenEnJupe */
                 : f == FUNCION_ACCION_7 ? this.accion7(f) /* procesoVerificarElePen */
+                : f == FUNCION_ACCION_8 ? this.accion8(f) /* procesoAsignarMesa */
                 : null;
     }
     // </editor-fold>
@@ -1371,6 +1543,16 @@ public class Proceso4 extends AbstractPageBean
             this.procesoVerificarElePen();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_verificar_ele_pen");
+        }
+        return null;
+    }
+
+    private String accion8(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.procesoAsignarMesa();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "proceso_asignar_mesa");
         }
         return null;
     }
@@ -1455,7 +1637,8 @@ public class Proceso4 extends AbstractPageBean
             Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
             String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
             Date fechaResolucionOtorPen = this.getValorCampoFechaResolucionOtorPen1();
-            ProcesoOtorgarPensionesAprMessage message = new ProcesoOtorgarPensionesAprMessage(idUbicacion, numeroResolucionOtorPen, fechaResolucionOtorPen);
+            String codigoSime = this.getTextoCampoCodigoSime1();
+            ProcesoOtorgarPensionesAprMessage message = new ProcesoOtorgarPensionesAprMessage(idUbicacion, numeroResolucionOtorPen, fechaResolucionOtorPen, codigoSime);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoOtorgarPensionesApr(message);
@@ -1476,7 +1659,8 @@ public class Proceso4 extends AbstractPageBean
             Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
             String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
             Date fechaResolucionDenPen = this.getValorCampoFechaResolucionDenPen1();
-            ProcesoDenegarPensionesObjMessage message = new ProcesoDenegarPensionesObjMessage(idUbicacion, numeroResolucionDenPen, fechaResolucionDenPen);
+            String codigoSime = this.getTextoCampoCodigoSime1();
+            ProcesoDenegarPensionesObjMessage message = new ProcesoDenegarPensionesObjMessage(idUbicacion, numeroResolucionDenPen, fechaResolucionDenPen, codigoSime);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoDenegarPensionesObj(message);
@@ -1494,7 +1678,8 @@ public class Proceso4 extends AbstractPageBean
 
     private void procesoActualizarPenEnJupe(boolean synchronously) { /* proceso actualizar pen en jupe */
         try {
-            ProcesoActualizarPenEnJupeMessage message = new ProcesoActualizarPenEnJupeMessage();
+            String codigoSime = this.getTextoCampoCodigoSime1();
+            ProcesoActualizarPenEnJupeMessage message = new ProcesoActualizarPenEnJupeMessage(codigoSime);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoActualizarPenEnJupe(message);
@@ -1517,6 +1702,26 @@ public class Proceso4 extends AbstractPageBean
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoVerificarElePen(message);
+            } else {
+                this.requestReply(message);
+            }
+        } catch (Exception ex) {
+            this.getGestor().handle(ex);
+        }
+    }
+
+    private void procesoAsignarMesa() { /* proceso asignar mesa */
+        this.procesoAsignarMesa(synchronously);
+    }
+
+    private void procesoAsignarMesa(boolean synchronously) { /* proceso asignar mesa */
+        try {
+            Long lote = (Long) STP.getObjeto(this.getTextoCampoLote1(), EnumTipoDatoPar.ENTERO_GRANDE);
+            String codigoSime = this.getTextoCampoCodigoSime1();
+            ProcesoAsignarMesaMessage message = new ProcesoAsignarMesaMessage(lote, codigoSime);
+            TLC.getControlador().ponerUsuarioEnMensaje(message);
+            if (synchronously) {
+                this.procesoBusinessProcess.procesoAsignarMesa(message);
             } else {
                 this.requestReply(message);
             }

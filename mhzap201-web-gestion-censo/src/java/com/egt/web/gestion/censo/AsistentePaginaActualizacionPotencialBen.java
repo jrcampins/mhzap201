@@ -499,6 +499,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
         Integer numeroTipoRegPotBen = null;
+        Long lote = null;
         String report = PotencialBenCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         long function = PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         Map parameters = new LinkedHashMap();
@@ -509,6 +510,7 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
+        parameters.put("lote", lote);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -542,6 +544,10 @@ public class AsistentePaginaActualizacionPotencialBen {
         if (numeroTipoRegPotBen != null) {
             args.add(numeroTipoRegPotBen);
             search += " and numero_tipo_reg_pot_ben=?";
+        }
+        if (lote != null) {
+            args.add(lote);
+            search += " and lote=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -2033,6 +2039,13 @@ public class AsistentePaginaActualizacionPotencialBen {
     }
 
     public boolean isGridEsPotencialBenMigradoRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionGeneralRendered();
+    }
+
+    public boolean isGridLoteRendered() {
         if (bean == null) {
             return true;
         }

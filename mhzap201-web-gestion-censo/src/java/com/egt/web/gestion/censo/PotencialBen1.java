@@ -162,6 +162,8 @@ public class PotencialBen1 extends AbstractPageBean
         converterIndiceCalidadVida1.setMaxFractionDigits(3);
         validatorIndiceCalidadVida1.setMinimum(0.0);
         validatorIndiceCalidadVida1.setMaximum(1.0E2);
+        validatorLote1.setMinimum(0L);
+        validatorLote1.setMaximum(1000000000000000000L);
         potencialBenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.potencialBenRowSet}"));
         personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
@@ -5086,6 +5088,87 @@ public class PotencialBen1 extends AbstractPageBean
   
     public void setConverterEsPotencialBenMigrado1(IntegerConverter converter) {
         this.converterEsPotencialBenMigrado1 = converter;
+    }
+  
+    private TableColumn tableColumnLote1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnLote1() {
+        return tableColumnLote1;
+    }
+
+    public void setTableColumnLote1(TableColumn component) {
+        this.tableColumnLote1 = component;
+    }
+
+    private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1() {
+        return labelLote1;
+    }
+
+    public void setLabelLote1(Label l) {
+        this.labelLote1 = l;
+    }
+
+    private TextField campoLote1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoLote1() {
+        return campoLote1;
+    }
+
+    public void setCampoLote1(TextField component) {
+        this.campoLote1 = component;
+    }
+
+    private TextField campoLote1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoLote1x1() {
+        return campoLote1x1;
+    }
+
+    public void setCampoLote1x1(TextField component) {
+        this.campoLote1x1 = component;
+    }
+
+    private StaticText campoLote1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1Texto1() {
+        return campoLote1Texto1;
+    }
+
+    public void setCampoLote1Texto1(StaticText component) {
+        this.campoLote1Texto1 = component;
+    }
+
+    private StaticText campoLote1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1x1Texto1() {
+        return campoLote1x1Texto1;
+    }
+
+    public void setCampoLote1x1Texto1(StaticText component) {
+        this.campoLote1x1Texto1 = component;
+    }
+
+    private LongConverter converterLote1 = new LongConverter();
+  
+    public LongConverter getConverterLote1() {
+        return converterLote1;
+    }
+  
+    public void setConverterLote1(LongConverter converter) {
+        this.converterLote1 = converter;
+    }
+  
+    private LongRangeValidator validatorLote1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorLote1() {
+        return validatorLote1;
+    }
+  
+    public void setValidatorLote1(LongRangeValidator validator) {
+        this.validatorLote1 = validator;
     }
   
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();

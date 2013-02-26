@@ -225,6 +225,10 @@ public interface PotencialBenBase {
 //
 //  public void setEsPotencialBenMigrado(Integer esPotencialBenMigrado);
 
+    public Long getLote();
+//
+//  public void setLote(Long lote);
+
     public TipoRegPotBenBase getTipoRegPotBenNumeroTipoRegPotBen();
 //
 //  public void setTipoRegPotBenNumeroTipoRegPotBen(TipoRegPotBenBase tipoRegPotBen);

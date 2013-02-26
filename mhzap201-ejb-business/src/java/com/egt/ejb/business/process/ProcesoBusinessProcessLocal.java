@@ -17,6 +17,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import javax.ejb.Local;
 
 @Local
@@ -35,4 +36,6 @@ public interface ProcesoBusinessProcessLocal {
     public ProcesoActualizarPenEnJupeMessage procesoActualizarPenEnJupe(ProcesoActualizarPenEnJupeMessage message);
 
     public ProcesoVerificarElePenMessage procesoVerificarElePen(ProcesoVerificarElePenMessage message);
+
+    public ProcesoAsignarMesaMessage procesoAsignarMesa(ProcesoAsignarMesaMessage message);
 }

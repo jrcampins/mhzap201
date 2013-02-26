@@ -31,6 +31,8 @@ CREATE TABLE archivo_datos_ext
 	es_archivo_datos_ext_inactivo NUMBER(10) NOT NULL,
 	fecha_hora_ultima_carga DATE,
 	id_usuario_ultima_carga NUMBER(19),
+	nombre_archivo_datos VARCHAR2(500),
+	nombre_original_archivo_datos VARCHAR2(500),
 	fecha_hora_ultima_importacion DATE,
 	id_usuario_ultima_importacion NUMBER(19)
 	)
@@ -1977,7 +1979,9 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension DATE,
 	notas_anul_fec_ult_cob_pen VARCHAR2(4000),
 	numero_tipo_act_jupe NUMBER(10),
-	fecha_hora_ult_act_jupe DATE
+	fecha_hora_ult_act_jupe DATE,
+	lote NUMBER(19),
+	codigo_sime VARCHAR2(100)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
@@ -2053,7 +2057,8 @@ CREATE TABLE potencial_ben
 	id_funcionario_ult_visita_cen NUMBER(19),
 	referencia_direccion VARCHAR2(4000),
 	indice_calidad_vida NUMBER(7,4),
-	es_potencial_ben_migrado NUMBER(10)
+	es_potencial_ben_migrado NUMBER(10),
+	lote NUMBER(19)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING

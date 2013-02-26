@@ -80,7 +80,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider2 extends ArchivoDatosExtCac
     public static final String PROCESO_FUNCION_IMPORTAR_ARCHIVO_DATOS_EXT = "archivo_datos_ext_importar";
 
     protected static final long PARAMETRO_ID_ARCHIVO_DATOS_EXT = 20268L;
-    protected static final long PARAMETRO_NOMBRE_ARCHIVO_DATOS_EXT = 20279L;
+    protected static final long PARAMETRO_NOMBRE_ARCHIVO_DATOS = 21000L;
+    protected static final long PARAMETRO_NOMBRE_ORIGINAL_ARCHIVO_DATOS = 21001L;
     protected static final long PARAMETRO_ES_ARCHIVO_DATOS_EXT_IMPORTADO = 20282L;
     protected static final long PARAMETRO_FECHA_HORA_ULTIMA_CARGA = 20283L;
     protected static final long PARAMETRO_ID_USUARIO_ULTIMA_CARGA = 20285L;
@@ -88,6 +89,7 @@ public class ArchivoDatosExtCachedRowSetDataProvider2 extends ArchivoDatosExtCac
     protected static final long PARAMETRO_ID_USUARIO_ULTIMA_IMPORTACION = 20286L;
     protected static final long PARAMETRO_VERSION_ARCHIVO_DATOS_EXT = 20272L;
     protected static final long PARAMETRO_CODIGO_ARCHIVO_DATOS_EXT = 20275L;
+    protected static final long PARAMETRO_NOMBRE_ARCHIVO_DATOS_EXT = 20279L;
     protected static final long PARAMETRO_ID_PROVEEDOR_DAT_EXT = 20269L;
     protected static final long PARAMETRO_NUMERO_TIPO_ARC_DAT_EXT = 20271L;
     protected static final long PARAMETRO_OBJETO_ARCHIVO_DATOS_EXT = 20280L;
@@ -442,6 +444,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider2 extends ArchivoDatosExtCac
         rastro.addParametro(PARAMETRO_ES_ARCHIVO_DATOS_EXT_INACTIVO, this.getEsArchivoDatosExtInactivo(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULTIMA_CARGA, this.getFechaHoraUltimaCarga(rowKey));
         rastro.addParametro(PARAMETRO_ID_USUARIO_ULTIMA_CARGA, this.getIdUsuarioUltimaCarga(rowKey));
+        rastro.addParametro(PARAMETRO_NOMBRE_ARCHIVO_DATOS, this.getNombreArchivoDatos(rowKey));
+        rastro.addParametro(PARAMETRO_NOMBRE_ORIGINAL_ARCHIVO_DATOS, this.getNombreOriginalArchivoDatos(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULTIMA_IMPORTACION, this.getFechaHoraUltimaImportacion(rowKey));
         rastro.addParametro(PARAMETRO_ID_USUARIO_ULTIMA_IMPORTACION, this.getIdUsuarioUltimaImportacion(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
@@ -462,6 +466,8 @@ public class ArchivoDatosExtCachedRowSetDataProvider2 extends ArchivoDatosExtCac
         rastro.addParametro(PARAMETRO_ES_ARCHIVO_DATOS_EXT_INACTIVO, this.getEsArchivoDatosExtInactivo(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULTIMA_CARGA, this.getFechaHoraUltimaCarga(rowKey));
         rastro.addParametro(PARAMETRO_ID_USUARIO_ULTIMA_CARGA, this.getIdUsuarioUltimaCarga(rowKey));
+        rastro.addParametro(PARAMETRO_NOMBRE_ARCHIVO_DATOS, this.getNombreArchivoDatos(rowKey));
+        rastro.addParametro(PARAMETRO_NOMBRE_ORIGINAL_ARCHIVO_DATOS, this.getNombreOriginalArchivoDatos(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULTIMA_IMPORTACION, this.getFechaHoraUltimaImportacion(rowKey));
         rastro.addParametro(PARAMETRO_ID_USUARIO_ULTIMA_IMPORTACION, this.getIdUsuarioUltimaImportacion(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);

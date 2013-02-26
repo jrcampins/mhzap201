@@ -372,7 +372,7 @@ public class ${pagecode} extends AbstractPageBean
 #set($col2 = $utils.sortCollection($obj1.funcionIdFuncion.funcionParametroIdFuncionCollection))
 #foreach($obj2 in $col2)
 #if($obj2.parametroIdParametro.codigoParametro == $colname0)
-#if($obj2.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+#if($obj2.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2 && $obj2.tipoParametroNumeroTipoParametro.numeroTipoParametro != 4)##No-Omitido
 #set($fee = "$fee$faa")
 #end
 #end
@@ -381,7 +381,7 @@ public class ${pagecode} extends AbstractPageBean
 #end
 #end##foreach-obj1
 #if($fee == '')
-        return true;
+        return false;
 #elseif($col1.size() > 1)
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
 #if($colname0 == $pkid0)
@@ -463,13 +463,22 @@ public class ${pagecode} extends AbstractPageBean
 
     private void $funcion2(boolean synchronously) { /* $funcion3 */
         try {
+#foreach($funparam in $funparams)
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2 && $funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 4)
+        #setPropiedadesFuncionParametroRPL($funparam)
+        #if($objtype1 == 'Upload')
+            JSF.upload($objname2, ${dominio1}Constants.CODIGO_DOMINIO_RECURSO);
+            $objtype3 ${objname2}X = ($objtype3) $objname2;
+        #end
+#end
+#end##foreach
 #set($rpl = '')
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
-#set($rpl = "$rpl, $parametro2")
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
+        #set($rpl = "$rpl, $parametro2")
             $paramtype2 $parametro2 = $paramvalue;
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
 #if($rpl.length() > 0)
 #set($rpl = $rpl.substring(2))
@@ -489,11 +498,11 @@ public class ${pagecode} extends AbstractPageBean
     private void $funcion2() { /* $funcion3 */
 #set($rpl = '')
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
-#set($rpl = "$rpl, $parametro2")
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
+        #set($rpl = "$rpl, $parametro2")
         $paramtype2 $parametro2 = $paramvalue;
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
 ##      String report = ${fooclass1}.CODIGO_DOMINIO_RECURSO;
 ##      long function = ${fooclass1}.FUNCION_CONSULTAR_$dominio0.toUpperCase();
@@ -503,11 +512,11 @@ public class ${pagecode} extends AbstractPageBean
         Map parameters = new LinkedHashMap();
 #set($sql = '')
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
-#set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
+        #set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
         parameters.put("$parametro0", $parametro2);
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
 #set($rpl = $rpl.substring(2))
 #set($sql = $sql.substring(5))
@@ -523,22 +532,22 @@ public class ${pagecode} extends AbstractPageBean
         String search = "";
         ArrayList args = new ArrayList();
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
         if ($parametro2 != null) {
             args.add($parametro2);
-#if($parametro0.endsWith('_desde'))
+        #if($parametro0.endsWith('_desde'))
 ##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
             search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
-#elseif($parametro0.endsWith('_hasta'))
+        #elseif($parametro0.endsWith('_hasta'))
 ##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
             search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
-#else
+        #else
 ##          search += " and ${dominio0}.$parametro0=?";
             search += " and $parametro0=?";
-#end##parametro0.endsWith
+        #end##parametro0.endsWith
         }
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -558,12 +567,12 @@ public class ${pagecode} extends AbstractPageBean
 #set($rpl = '')
 #set($sql = '')
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
-#set($rpl = "$rpl, $parametro2")
-#set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
+        #set($rpl = "$rpl, $parametro2")
+        #set($sql = "$sql and $parametro0=?")##set($sql = "$sql and ${dominio0}.$parametro0=?")
         $paramtype2 $parametro2 = $paramvalue;
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
 ##      String report = ${fooclass1}.CODIGO_DOMINIO_RECURSO;
 ##      long function = ${fooclass1}.FUNCION_CONSULTAR_$dominio0.toUpperCase();
@@ -581,22 +590,22 @@ public class ${pagecode} extends AbstractPageBean
         String search = "";
         ArrayList args = new ArrayList();
 #foreach($funparam in $funparams)
-#if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
-#setPropiedadesFuncionParametroRPL($funparam)
+    #if($funparam.tipoParametroNumeroTipoParametro.numeroTipoParametro != 2)##No-Omitido
+        #setPropiedadesFuncionParametroRPL($funparam)
         if ($parametro2 != null) {
             args.add($parametro2);
-#if($parametro0.endsWith('_desde'))
+        #if($parametro0.endsWith('_desde'))
 ##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
             search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))>=?";
-#elseif($parametro0.endsWith('_hasta'))
+        #elseif($parametro0.endsWith('_hasta'))
 ##          search += " and ${dominio0}.$parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
             search += " and $parametro0.substring(0, $parametro0.lastIndexOf('_'))<=?";
-#else
+        #else
 ##          search += " and ${dominio0}.$parametro0=?";
             search += " and $parametro0=?";
-#end##parametro0.endsWith
+        #end##parametro0.endsWith
         }
-#end##No-Omitido
+    #end##No-Omitido
 #end##foreach
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

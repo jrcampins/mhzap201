@@ -71,6 +71,7 @@ SELECT
 		potencial_ben_1x1.referencia_direccion AS referencia_direccion_1x1y65,
 		potencial_ben_1x1.indice_calidad_vida AS indice_calidad_vida_1x1y66,
 		potencial_ben_1x1.es_potencial_ben_migrado AS es_potencial_ben_migrad_1x1y67,
+		potencial_ben_1x1.lote AS lote_1x1y68,
 	visita_censo.id_funcionario_censista AS id_funcionario_censista,
 		funcionario_1x2.codigo_funcionario AS codigo_funcionario_1x2y3,
 		funcionario_1x2.nombre_funcionario AS nombre_funcionario_1x2y4,

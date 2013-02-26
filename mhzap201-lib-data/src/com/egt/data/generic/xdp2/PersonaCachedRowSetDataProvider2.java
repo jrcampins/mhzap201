@@ -229,6 +229,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA = 20219L;
     protected static final long PARAMETRO_NUMERO_TIPO_ACT_JUPE = 20645L;
     protected static final long PARAMETRO_FECHA_HORA_ULT_ACT_JUPE = 20654L;
+    protected static final long PARAMETRO_LOTE = 20997L;
+    protected static final long PARAMETRO_CODIGO_SIME = 20996L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_DESDE = 10001L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_HASTA = 10002L;
     protected static final long PARAMETRO_FECHA_APROBACION_PENSION_DESDE = 10003L;
@@ -710,6 +712,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN, this.getNotasAnulFecUltCobPen(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_ACT_JUPE, this.getNumeroTipoActJupe(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
+        rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -812,6 +816,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN, this.getNotasAnulFecUltCobPen(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_ACT_JUPE, this.getNumeroTipoActJupe(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
+        rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 

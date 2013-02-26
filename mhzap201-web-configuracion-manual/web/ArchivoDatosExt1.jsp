@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ArchivoDatosExt1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdArchivoDatosExt1 campoCodigoArchivoDatosExt1 campoNombreArchivoDatosExt1 campoIdProveedorDatExt1 listaNumeroTipoArcDatExt1 listaEsArchivoDatosExtImportado1 campoFechaHoraUltimaCarga1 campoIdUsuarioUltimaCarga1 campoFechaHoraUltimaImportacion1 campoIdUsuarioUltimaImportacion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdArchivoDatosExt1 campoCodigoArchivoDatosExt1 campoNombreArchivoDatosExt1 campoIdProveedorDatExt1 listaNumeroTipoArcDatExt1 listaEsArchivoDatosExtImportado1 campoFechaHoraUltimaCarga1 campoIdUsuarioUltimaCarga1 campoNombreArchivoDatos1 campoNombreOriginalArchivoDatos1 campoFechaHoraUltimaImportacion1 campoIdUsuarioUltimaImportacion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -485,6 +485,73 @@
                                                 <webuijsf:button
                                                     id="campoIdUsuarioUltimaCarga1Boton2"
                                                     rendered="false"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ArchivoDatosExt1.tableColumnNombreArchivoDatos1}"
+                                                    headerText="nombre archivo datos"
+                                                    id="tableColumnNombreArchivoDatos1" rendered="false"
+                                                    sort="nombre_archivo_datos">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNombreArchivoDatos1"
+                                                    text="#{currentRow.value['nombre_archivo_datos']}"
+                                                    rendered="#{ArchivoDatosExt1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ArchivoDatosExt1.labelNombreArchivoDatos1}"
+                                                    id="labelNombreArchivoDatos1"
+                                                    for="campoNombreArchivoDatos1"/>
+                                                <webuijsf:textArea id="campoNombreArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt1.campoNombreArchivoDatos1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['nombre_archivo_datos']}"
+                                                    toolTip="BundleParametros.nombre_archivo_datos.archivo_datos_ext"
+                                                    validatorExpression="#{ArchivoDatosExt1.validatorNombreArchivoDatos1.validate}"/>
+                                                <webuijsf:staticText id="campoNombreArchivoDatos1Texto1"
+                                                    binding="#{ArchivoDatosExt1.campoNombreArchivoDatos1Texto1}"
+                                                    text="#{currentRow.value['nombre_archivo_datos']}"/>
+                                                <webuijsf:message id="messageNombreArchivoDatos1"
+                                                    for="campoNombreArchivoDatos1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    id="tableColumnNombreArchivoDatos3" rendered="false"
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNombreArchivoDatos3"
+                                                    text="#{currentRow.value['nombre_archivo_datos']}"
+                                                    rendered="#{ArchivoDatosExt1.gestor.designing}"/>
+                                                <webuijsf:button
+                                                    binding="#{ArchivoDatosExt1.campoNombreArchivoDatos1Boton3}"
+                                                    id="campoNombreArchivoDatos1Boton3"
+                                                    onClick="#{ArchivoDatosExt1.asistente.scriptCampoNombreArchivoDatos1Boton3}"
+                                                    rendered="#{ArchivoDatosExt1.asistente.campoNombreArchivoDatos1Boton3Rendered}"
+                                                    text="#{ArchivoDatosExt1.asistente.textCampoNombreArchivoDatos1Boton3}"
+                                                    toolTip="#{ArchivoDatosExt1.asistente.toolTipCampoNombreArchivoDatos1Boton3}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ArchivoDatosExt1.tableColumnNombreOriginalArchivoDatos1}"
+                                                    headerText="nombre original archivo datos"
+                                                    id="tableColumnNombreOriginalArchivoDatos1" rendered="false"
+                                                    sort="nombre_original_archivo_datos">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNombreOriginalArchivoDatos1"
+                                                    text="#{currentRow.value['nombre_original_archivo_datos']}"
+                                                    rendered="#{ArchivoDatosExt1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ArchivoDatosExt1.labelNombreOriginalArchivoDatos1}"
+                                                    id="labelNombreOriginalArchivoDatos1"
+                                                    for="campoNombreOriginalArchivoDatos1"/>
+                                                <webuijsf:textArea id="campoNombreOriginalArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt1.campoNombreOriginalArchivoDatos1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['nombre_original_archivo_datos']}"
+                                                    toolTip="BundleParametros.nombre_original_archivo_datos.archivo_datos_ext"
+                                                    validatorExpression="#{ArchivoDatosExt1.validatorNombreOriginalArchivoDatos1.validate}"/>
+                                                <webuijsf:staticText id="campoNombreOriginalArchivoDatos1Texto1"
+                                                    binding="#{ArchivoDatosExt1.campoNombreOriginalArchivoDatos1Texto1}"
+                                                    text="#{currentRow.value['nombre_original_archivo_datos']}"/>
+                                                <webuijsf:message id="messageNombreOriginalArchivoDatos1"
+                                                    for="campoNombreOriginalArchivoDatos1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt1.tableColumnFechaHoraUltimaImportacion1}"

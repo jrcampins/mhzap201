@@ -163,6 +163,7 @@ public class Persona4 extends AbstractPageBean
         converterFechaSolicitudPensionDesde1.setType("date");
         converterFechaSolicitudPensionHasta1.setPattern("dd/MM/yyyy");
         converterFechaSolicitudPensionHasta1.setType("date");
+        validatorCodigoSime1.setMaximum(2000);
         converterFechaAprobacionPensionDesde1.setPattern("dd/MM/yyyy");
         converterFechaAprobacionPensionDesde1.setType("date");
         converterFechaAprobacionPensionHasta1.setPattern("dd/MM/yyyy");
@@ -2268,6 +2269,56 @@ public class Persona4 extends AbstractPageBean
         this.converterFechaSolicitudPensionHasta1 = converter;
     }
   
+    private Label labelCodigoSime1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSime1() {
+        return labelCodigoSime1;
+    }
+
+    public void setLabelCodigoSime1(Label l) {
+        this.labelCodigoSime1 = l;
+    }
+
+    private TextField campoCodigoSime1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCodigoSime1() {
+        return campoCodigoSime1;
+    }
+
+    public void setCampoCodigoSime1(TextField component) {
+        this.campoCodigoSime1 = component;
+    }
+
+    private HelpInline helpInlineCodigoSime1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoSime1() {
+        return helpInlineCodigoSime1;
+    }
+
+    public void setHelpInlineCodigoSime1(HelpInline hi) {
+        this.helpInlineCodigoSime1 = hi;
+    }
+
+    private StaticText campoCodigoSime1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSime1Texto1() {
+        return campoCodigoSime1Texto1;
+    }
+
+    public void setCampoCodigoSime1Texto1(StaticText component) {
+        this.campoCodigoSime1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoSime1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoSime1() {
+        return validatorCodigoSime1;
+    }
+  
+    public void setValidatorCodigoSime1(LengthValidator validator) {
+        this.validatorCodigoSime1 = validator;
+    }
+  
     private Label labelFechaAprobacionPensionDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaAprobacionPensionDesde1() {
@@ -3651,6 +3702,23 @@ public class Persona4 extends AbstractPageBean
         return bitFechaSolicitudPensionHastaRendered;
     }
 
+    public boolean isCodigoSimeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_27 || f == FUNCION_ACCION_28;
+    }
+
+    private Bit bitCodigoSimeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCodigoSimeRendered();
+        }
+    };
+
+    public Bit getBitCodigoSimeRendered() {
+        return bitCodigoSimeRendered;
+    }
+
     public boolean isFechaAprobacionPensionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_22;
@@ -4144,6 +4212,16 @@ public class Persona4 extends AbstractPageBean
 
     public void setValorCampoFechaSolicitudPensionHasta1(java.sql.Timestamp valor) {
         this.valorCampoFechaSolicitudPensionHasta1 = valor;
+    }
+
+    private String textoCampoCodigoSime1;
+
+    public String getTextoCampoCodigoSime1() {
+        return this.textoCampoCodigoSime1;
+    }
+
+    public void setTextoCampoCodigoSime1(String valor) {
+        this.textoCampoCodigoSime1 = valor;
     }
 
     private java.sql.Timestamp valorCampoFechaAprobacionPensionDesde1;
@@ -5579,6 +5657,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
         Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
         Map parameters = new LinkedHashMap();
@@ -5587,6 +5666,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5612,6 +5692,10 @@ public class Persona4 extends AbstractPageBean
         if (fechaSolicitudPensionHasta != null) {
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -5627,6 +5711,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
         Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         Map parameters = new LinkedHashMap();
@@ -5635,6 +5720,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5660,6 +5746,10 @@ public class Persona4 extends AbstractPageBean
         if (fechaSolicitudPensionHasta != null) {
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -5675,6 +5765,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
         Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         Map parameters = new LinkedHashMap();
@@ -5683,6 +5774,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5709,6 +5801,10 @@ public class Persona4 extends AbstractPageBean
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -5723,6 +5819,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaAprobacionPensionDesde = this.getValorCampoFechaAprobacionPensionDesde1();
         Date fechaAprobacionPensionHasta = this.getValorCampoFechaAprobacionPensionHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
         Map parameters = new LinkedHashMap();
@@ -5731,6 +5828,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_aprobacion_pension_desde", fechaAprobacionPensionDesde);
         parameters.put("fecha_aprobacion_pension_hasta", fechaAprobacionPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5757,6 +5855,10 @@ public class Persona4 extends AbstractPageBean
             args.add(fechaAprobacionPensionHasta);
             search += " and fecha_aprobacion_pension<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -5772,6 +5874,7 @@ public class Persona4 extends AbstractPageBean
         Date fechaDenegacionPensionDesde = this.getValorCampoFechaDenegacionPensionDesde1();
         Date fechaDenegacionPensionHasta = this.getValorCampoFechaDenegacionPensionHasta1();
         Integer numeroCausaDenPension = this.getValorListaNumeroCausaDenPension1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         Map parameters = new LinkedHashMap();
@@ -5781,6 +5884,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("fecha_denegacion_pension_desde", fechaDenegacionPensionDesde);
         parameters.put("fecha_denegacion_pension_hasta", fechaDenegacionPensionHasta);
         parameters.put("numero_causa_den_pension", numeroCausaDenPension);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5811,6 +5915,10 @@ public class Persona4 extends AbstractPageBean
             args.add(numeroCausaDenPension);
             search += " and numero_causa_den_pension=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -5826,6 +5934,7 @@ public class Persona4 extends AbstractPageBean
         Date fechaRevocacionPensionDesde = this.getValorCampoFechaRevocacionPensionDesde1();
         Date fechaRevocacionPensionHasta = this.getValorCampoFechaRevocacionPensionHasta1();
         Integer numeroCausaRevPension = this.getValorListaNumeroCausaRevPension1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
         Map parameters = new LinkedHashMap();
@@ -5835,6 +5944,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("fecha_revocacion_pension_desde", fechaRevocacionPensionDesde);
         parameters.put("fecha_revocacion_pension_hasta", fechaRevocacionPensionHasta);
         parameters.put("numero_causa_rev_pension", numeroCausaRevPension);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5865,6 +5975,10 @@ public class Persona4 extends AbstractPageBean
             args.add(numeroCausaRevPension);
             search += " and numero_causa_rev_pension=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -5879,6 +5993,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaOtorgamientoPenDesde = this.getValorCampoFechaOtorgamientoPenDesde1();
         Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -5887,6 +6002,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5912,6 +6028,10 @@ public class Persona4 extends AbstractPageBean
         if (fechaOtorgamientoPenHasta != null) {
             args.add(fechaOtorgamientoPenHasta);
             search += " and fecha_otorgamiento_pen<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -5927,6 +6047,7 @@ public class Persona4 extends AbstractPageBean
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
         Date fechaOtorgamientoPenDesde = this.getValorCampoFechaOtorgamientoPenDesde1();
         Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         long function = PersonaConstants.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -5935,6 +6056,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5961,6 +6083,10 @@ public class Persona4 extends AbstractPageBean
             args.add(fechaOtorgamientoPenHasta);
             search += " and fecha_otorgamiento_pen<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -5972,11 +6098,13 @@ public class Persona4 extends AbstractPageBean
     private void emitirUltimaActualizacionPersonaEnJupe() { /* emitir ultima actualizacion persona en jupe */
         Date fechaHoraUltActJupeDesde = this.getValorCampoFechaHoraUltActJupeDesde1();
         Date fechaHoraUltActJupeHasta = this.getValorCampoFechaHoraUltActJupeHasta1();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
         long function = PersonaConstants.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
         Map parameters = new LinkedHashMap();
         parameters.put("fecha_hora_ult_act_jupe_desde", fechaHoraUltActJupeDesde);
         parameters.put("fecha_hora_ult_act_jupe_hasta", fechaHoraUltActJupeHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -5991,6 +6119,10 @@ public class Persona4 extends AbstractPageBean
             args.add(fechaHoraUltActJupeHasta);
             search += " and fecha_hora_ult_act_jupe<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.reporter.executeReport(report, function, select, args.toArray(), parameters);
@@ -6003,12 +6135,14 @@ public class Persona4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         long function = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -6026,6 +6160,10 @@ public class Persona4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

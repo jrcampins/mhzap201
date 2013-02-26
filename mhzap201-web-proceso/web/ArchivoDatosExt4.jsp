@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ArchivoDatosExt4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdArchivoDatosExt1 campoNombreArchivoDatosExt1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdArchivoDatosExt1 campoNombreArchivoDatos1 campoNombreOriginalArchivoDatos1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -196,31 +196,61 @@
                                                     onClick="#{ArchivoDatosExt4.scriptCampoIdArchivoDatosExt1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNombreArchivoDatosExt1" rendered="#{ArchivoDatosExt4.bitNombreArchivoDatosExtRendered.on}"
+                                                id="gridNombreArchivoDatos1" rendered="#{ArchivoDatosExt4.bitNombreArchivoDatosRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
-                                                    binding="#{ArchivoDatosExt4.labelNombreArchivoDatosExt1}"
-                                                    id="labelNombreArchivoDatosExt1"
-                                                    for="campoNombreArchivoDatosExt1"
-                                                    text="nombre"/>
+                                                    binding="#{ArchivoDatosExt4.labelNombreArchivoDatos1}"
+                                                    id="labelNombreArchivoDatos1"
+                                                    for="campoNombreArchivoDatos1"
+                                                    text="nombre archivo datos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridNombreArchivoDatosExt2" rendered="#{ArchivoDatosExt4.bitNombreArchivoDatosExtRendered.on}"
+                                                id="gridNombreArchivoDatos2" rendered="#{ArchivoDatosExt4.bitNombreArchivoDatosRendered.on}"
                                                 styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:upload id="campoNombreArchivoDatosExt1"
-                                                    binding="#{ArchivoDatosExt4.campoNombreArchivoDatosExt1}"
+                                                <webuijsf:upload id="campoNombreArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt4.campoNombreArchivoDatos1}"
                                                      required="true"
-                                                    toolTip="BundleParametros.nombre_archivo_datos_ext"/>
-                                                <webuijsf:staticText id="campoNombreArchivoDatosExt1Texto1"
-                                                    binding="#{ArchivoDatosExt4.campoNombreArchivoDatosExt1Texto1}"/>
-                                                <webuijsf:message id="messageNombreArchivoDatosExt1"
-                                                    for="campoNombreArchivoDatosExt1"/>
-                                                <webuijsf:helpInline id="helpInlineNombreArchivoDatosExt1"
-                                                    binding="#{ArchivoDatosExt4.helpInlineNombreArchivoDatosExt1}"                                                    
+                                                    toolTip="BundleParametros.nombre_archivo_datos"/>
+                                                <webuijsf:staticText id="campoNombreArchivoDatos1Texto1"
+                                                    binding="#{ArchivoDatosExt4.campoNombreArchivoDatos1Texto1}"/>
+                                                <webuijsf:message id="messageNombreArchivoDatos1"
+                                                    for="campoNombreArchivoDatos1"/>
+                                                <webuijsf:helpInline id="helpInlineNombreArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt4.helpInlineNombreArchivoDatos1}"                                                    
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.nombre_archivo_datos_ext"
+                                                    text="BundleParametros.nombre_archivo_datos"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNombreOriginalArchivoDatos1" rendered="#{ArchivoDatosExt4.bitNombreOriginalArchivoDatosRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{ArchivoDatosExt4.labelNombreOriginalArchivoDatos1}"
+                                                    id="labelNombreOriginalArchivoDatos1"
+                                                    for="campoNombreOriginalArchivoDatos1"
+                                                    text="nombre original archivo datos"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNombreOriginalArchivoDatos2" rendered="#{ArchivoDatosExt4.bitNombreOriginalArchivoDatosRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNombreOriginalArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt4.campoNombreOriginalArchivoDatos1}"
+                                                    columns="50"
+                                                    text="#{ArchivoDatosExt4.textoCampoNombreOriginalArchivoDatos1}"
+                                                    toolTip="BundleParametros.nombre_original_archivo_datos"
+                                                    validatorExpression="#{ArchivoDatosExt4.validatorNombreOriginalArchivoDatos1.validate}"/>
+                                                <webuijsf:staticText id="campoNombreOriginalArchivoDatos1Texto1"
+                                                    binding="#{ArchivoDatosExt4.campoNombreOriginalArchivoDatos1Texto1}"/>
+                                                <webuijsf:message id="messageNombreOriginalArchivoDatos1"
+                                                    for="campoNombreOriginalArchivoDatos1"/>
+                                                <webuijsf:helpInline id="helpInlineNombreOriginalArchivoDatos1"
+                                                    binding="#{ArchivoDatosExt4.helpInlineNombreOriginalArchivoDatos1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.nombre_original_archivo_datos"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

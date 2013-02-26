@@ -85,8 +85,10 @@
     <field name="es_archivo_datos_ext_in_1x1y10" class="java.lang.Integer"/>
     <field name="fecha_hora_ultima_carga_1x1y11" class="java.util.Date"/>
     <field name="id_usuario_ultima_carga_1x1y12" class="java.lang.Long"/>
-    <field name="fecha_hora_ultima_impor_1x1y13" class="java.util.Date"/>
-    <field name="id_usuario_ultima_impor_1x1y14" class="java.lang.Long"/>
+    <field name="nombre_archivo_datos_1x1y13" class="java.lang.String"/>
+    <field name="nombre_original_archivo_1x1y14" class="java.lang.String"/>
+    <field name="fecha_hora_ultima_impor_1x1y15" class="java.util.Date"/>
+    <field name="id_usuario_ultima_impor_1x1y16" class="java.lang.Long"/>
     <field name="codigo_tipo_arc_dat_ext" class="java.lang.String"/>
     <field name="numero_tipo_arc_dat_ext" class="java.lang.Integer"/>
     <field name="codigo_tipo_arc_dat_ext_1x2y2" class="java.lang.String"/>

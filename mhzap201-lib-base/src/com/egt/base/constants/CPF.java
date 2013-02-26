@@ -328,6 +328,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_SEXO_PERSONA = 20058L; // Codigo Sexo Persona
 
+    public static final Long CODIGO_SIME = 20996L; // Codigo Sime
+
     public static final Long CODIGO_SIONO = 20306L; // Codigo Si o No
 
     public static final Long CODIGO_TIPO_ABA_AGUA = 20307L; // Codigo Tipo Abastecimiento Agua
@@ -1072,6 +1074,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long LIMITE_PENSIONES = 20659L; // Limite Pensiones
 
+    public static final Long LOTE = 20997L; // Lote
+
     public static final Long LUGAR_NACIMIENTO = 20731L; // Lugar Nacimiento
 
     public static final Long LUGAR_SOLICITUD_PENSION = 20289L; // Lugar Solicitud Pension
@@ -1119,6 +1123,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long NOMBRE_APLICACION = 1388L; // Nombre Aplicacion
 
     public static final Long NOMBRE_ARCHIVO = 1389L; // Nombre Archivo
+
+    public static final Long NOMBRE_ARCHIVO_DATOS = 21000L; // Nombre Archivo Datos
 
     public static final Long NOMBRE_ARCHIVO_DATOS_EXT = 20279L; // Nombre Archivo Datos Externos
 
@@ -1183,6 +1189,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long NOMBRE_OPCION_MENU_14 = 1943L; // Nombre Opcion Menu
 
     public static final Long NOMBRE_OPCION_MENU_15 = 1944L; // Nombre Opcion Menu
+
+    public static final Long NOMBRE_ORIGINAL_ARCHIVO_DATOS = 21001L; // Nombre Original Archivo Datos
 
     public static final Long NOMBRE_PAGINA = 1460L; // Nombre Pagina
 

@@ -193,6 +193,9 @@ public class Persona1 extends AbstractPageBean
         validatorNotasAnulFecUltCobPen1.setMaximum(8160);
         converterFechaHoraUltActJupe1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraUltActJupe1.setType("both");
+        validatorLote1.setMinimum(0L);
+        validatorLote1.setMaximum(1000000000000000000L);
+        validatorCodigoSime1.setMaximum(50);
         personaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -7133,6 +7136,158 @@ public class Persona1 extends AbstractPageBean
   
     public void setConverterFechaHoraUltActJupe1(SqlTimestampConverter converter) {
         this.converterFechaHoraUltActJupe1 = converter;
+    }
+  
+    private TableColumn tableColumnLote1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnLote1() {
+        return tableColumnLote1;
+    }
+
+    public void setTableColumnLote1(TableColumn component) {
+        this.tableColumnLote1 = component;
+    }
+
+    private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1() {
+        return labelLote1;
+    }
+
+    public void setLabelLote1(Label l) {
+        this.labelLote1 = l;
+    }
+
+    private TextField campoLote1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoLote1() {
+        return campoLote1;
+    }
+
+    public void setCampoLote1(TextField component) {
+        this.campoLote1 = component;
+    }
+
+    private TextField campoLote1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoLote1x1() {
+        return campoLote1x1;
+    }
+
+    public void setCampoLote1x1(TextField component) {
+        this.campoLote1x1 = component;
+    }
+
+    private StaticText campoLote1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1Texto1() {
+        return campoLote1Texto1;
+    }
+
+    public void setCampoLote1Texto1(StaticText component) {
+        this.campoLote1Texto1 = component;
+    }
+
+    private StaticText campoLote1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1x1Texto1() {
+        return campoLote1x1Texto1;
+    }
+
+    public void setCampoLote1x1Texto1(StaticText component) {
+        this.campoLote1x1Texto1 = component;
+    }
+
+    private LongConverter converterLote1 = new LongConverter();
+  
+    public LongConverter getConverterLote1() {
+        return converterLote1;
+    }
+  
+    public void setConverterLote1(LongConverter converter) {
+        this.converterLote1 = converter;
+    }
+  
+    private LongRangeValidator validatorLote1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorLote1() {
+        return validatorLote1;
+    }
+  
+    public void setValidatorLote1(LongRangeValidator validator) {
+        this.validatorLote1 = validator;
+    }
+  
+    private TableColumn tableColumnCodigoSime1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnCodigoSime1() {
+        return tableColumnCodigoSime1;
+    }
+
+    public void setTableColumnCodigoSime1(TableColumn component) {
+        this.tableColumnCodigoSime1 = component;
+    }
+
+    private Label labelCodigoSime1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSime1() {
+        return labelCodigoSime1;
+    }
+
+    public void setLabelCodigoSime1(Label l) {
+        this.labelCodigoSime1 = l;
+    }
+
+    private TextField campoCodigoSime1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoCodigoSime1() {
+        return campoCodigoSime1;
+    }
+
+    public void setCampoCodigoSime1(TextField component) {
+        this.campoCodigoSime1 = component;
+    }
+
+    private TextField campoCodigoSime1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCodigoSime1x1() {
+        return campoCodigoSime1x1;
+    }
+
+    public void setCampoCodigoSime1x1(TextField component) {
+        this.campoCodigoSime1x1 = component;
+    }
+
+    private StaticText campoCodigoSime1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSime1Texto1() {
+        return campoCodigoSime1Texto1;
+    }
+
+    public void setCampoCodigoSime1Texto1(StaticText component) {
+        this.campoCodigoSime1Texto1 = component;
+    }
+
+    private StaticText campoCodigoSime1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSime1x1Texto1() {
+        return campoCodigoSime1x1Texto1;
+    }
+
+    public void setCampoCodigoSime1x1Texto1(StaticText component) {
+        this.campoCodigoSime1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoSime1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoSime1() {
+        return validatorCodigoSime1;
+    }
+  
+    public void setValidatorCodigoSime1(LengthValidator validator) {
+        this.validatorCodigoSime1 = validator;
     }
   
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();

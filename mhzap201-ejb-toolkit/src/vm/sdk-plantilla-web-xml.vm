@@ -28,7 +28,7 @@
         <init-param>
             <description>The maximum allowed upload size in bytes.  If this is set to a negative value, there is no maximum.  The default value is 1000000.</description>
             <param-name>maxSize</param-name>
-            <param-value>2000000</param-value>
+            <param-value>20000000</param-value>
         </init-param>
         <init-param>
             <description>The size (in bytes) of an uploaded file which, if it is exceeded, will cause the file to be written directly to disk instead of stored in memory.  Files smaller than or equal to this size will be stored in memory.  The default value is 4096.</description>

@@ -2148,4 +2148,12 @@ INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre
 VALUES (20994, 1, 'version_log_imp_per_eec', 'Versión Log Imp Per Eec', 'versión log imp per eec', NULL, 5, 'version_log_imp_per_eec');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (20995, 1, 'vivi', 'Vivi', 'vivi', NULL, 1, 'vivi');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20996, 1, 'codigo_sime', 'Código Sime', 'código sime', NULL, 1, 'codigo_sime');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (20997, 1, 'lote', 'Lote', 'lote', NULL, 5, 'lote');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (21000, 1, 'nombre_archivo_datos', 'Nombre Archivo Datos', 'nombre archivo datos', NULL, 1, 'nombre_archivo_datos');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (21001, 1, 'nombre_original_archivo_datos', 'Nombre Original Archivo Datos', 'nombre original archivo datos', NULL, 1, 'nombre_original_archivo_datos');
 GO

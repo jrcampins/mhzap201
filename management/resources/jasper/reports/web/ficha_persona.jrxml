@@ -324,6 +324,7 @@
     <field name="referencia_direccion_1x34y65" class="java.lang.String"/>
     <field name="indice_calidad_vida_1x34y66" class="java.math.BigDecimal"/>
     <field name="es_potencial_ben_migra_1x34y67" class="java.lang.Integer"/>
+    <field name="lote_1x34y68" class="java.lang.Long"/>
     <field name="es_ficha_persona_inactiva" class="java.lang.Integer"/>
 
 

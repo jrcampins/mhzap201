@@ -111,6 +111,8 @@ SELECT
 		persona_1x2.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob__1x2y94,
 		persona_1x2.numero_tipo_act_jupe AS numero_tipo_act_jupe_1x2y95,
 		persona_1x2.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x2y96,
+		persona_1x2.lote AS lote_1x2y97,
+		persona_1x2.codigo_sime AS codigo_sime_1x2y98,
 	potencial_ben.numero_cedula AS numero_cedula,
 	potencial_ben.letra_cedula AS letra_cedula,
 	potencial_ben.fecha_expedicion_cedula AS fecha_expedicion_cedula,
@@ -315,7 +317,8 @@ SELECT
 		funcionario_1x16.apellido_casada AS apellido_casada_1x16y11,
 	potencial_ben.referencia_direccion AS referencia_direccion,
 	potencial_ben.indice_calidad_vida AS indice_calidad_vida,
-	potencial_ben.es_potencial_ben_migrado AS es_potencial_ben_migrado
+	potencial_ben.es_potencial_ben_migrado AS es_potencial_ben_migrado,
+	potencial_ben.lote AS lote
 FROM
 	potencial_ben potencial_ben
 	INNER JOIN tipo_reg_pot_ben tipo_reg_pot_ben_1x1 ON tipo_reg_pot_ben_1x1.numero_tipo_reg_pot_ben = potencial_ben.numero_tipo_reg_pot_ben

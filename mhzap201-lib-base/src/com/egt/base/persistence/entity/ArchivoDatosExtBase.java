@@ -56,6 +56,14 @@ public interface ArchivoDatosExtBase {
 //
 //  public void setFechaHoraUltimaCarga(Date fechaHoraUltimaCarga);
 
+    public String getNombreArchivoDatos();
+//
+//  public void setNombreArchivoDatos(String nombreArchivoDatos);
+
+    public String getNombreOriginalArchivoDatos();
+//
+//  public void setNombreOriginalArchivoDatos(String nombreOriginalArchivoDatos);
+
     public Date getFechaHoraUltimaImportacion();
 //
 //  public void setFechaHoraUltimaImportacion(Date fechaHoraUltimaImportacion);

@@ -43,6 +43,10 @@ public interface PaginaActualizacionArchivoDatosExt extends PaginaActualizacion 
 
     TextField getCampoIdUsuarioUltimaCarga1();
 
+    TextArea getCampoNombreArchivoDatos1();
+
+    TextArea getCampoNombreOriginalArchivoDatos1();
+
     TextField getTextFieldCampoFechaHoraUltimaImportacion1();
 
     TextField getCampoIdUsuarioUltimaImportacion1();

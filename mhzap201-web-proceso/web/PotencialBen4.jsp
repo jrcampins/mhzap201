@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaNumeroTipoArea1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 listaNumeroTipoRegPotBen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaNumeroTipoArea1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 listaNumeroTipoRegPotBen1 campoLote1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1124,6 +1124,36 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.numero_tipo_reg_pot_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridLote1" rendered="#{PotencialBen4.bitLoteRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen4.labelLote1}"
+                                                    id="labelLote1"
+                                                    for="campoLote1"
+                                                    text="lote"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridLote2" rendered="#{PotencialBen4.bitLoteRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoLote1"
+                                                    binding="#{PotencialBen4.campoLote1}"
+                                                    converter="#{PotencialBen4.converterLote1}"
+                                                    text="#{PotencialBen4.textoCampoLote1}"
+                                                    toolTip="BundleParametros.lote"
+                                                    validatorExpression="#{PotencialBen4.validatorLote1.validate}"/>
+                                                <webuijsf:staticText id="campoLote1Texto1"
+                                                    binding="#{PotencialBen4.campoLote1Texto1}"/>
+                                                <webuijsf:message id="messageLote1"
+                                                    for="campoLote1"/>
+                                                <webuijsf:helpInline id="helpInlineLote1"
+                                                    binding="#{PotencialBen4.helpInlineLote1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.lote"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

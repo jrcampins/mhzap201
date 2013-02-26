@@ -71,6 +71,12 @@ public class ArchivoDatosExt implements ArchivoDatosExtBase, Comparable, Seriali
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaHoraUltimaCarga;
 
+    @Column(name = "nombre_archivo_datos")
+    private String nombreArchivoDatos;
+
+    @Column(name = "nombre_original_archivo_datos")
+    private String nombreOriginalArchivoDatos;
+
     @Column(name = "fecha_hora_ultima_importacion")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaHoraUltimaImportacion;
@@ -176,6 +182,24 @@ public class ArchivoDatosExt implements ArchivoDatosExtBase, Comparable, Seriali
 
     public void setFechaHoraUltimaCarga(Date fechaHoraUltimaCarga) {
         this.fechaHoraUltimaCarga = fechaHoraUltimaCarga;
+    }
+
+    @Override
+    public String getNombreArchivoDatos() {
+        return this.nombreArchivoDatos;
+    }
+
+    public void setNombreArchivoDatos(String nombreArchivoDatos) {
+        this.nombreArchivoDatos = nombreArchivoDatos;
+    }
+
+    @Override
+    public String getNombreOriginalArchivoDatos() {
+        return this.nombreOriginalArchivoDatos;
+    }
+
+    public void setNombreOriginalArchivoDatos(String nombreOriginalArchivoDatos) {
+        this.nombreOriginalArchivoDatos = nombreOriginalArchivoDatos;
     }
 
     @Override

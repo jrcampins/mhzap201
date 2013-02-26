@@ -34,6 +34,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
 import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
@@ -174,6 +175,8 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = proceso.procesoActualizarPenEnJupe((ProcesoActualizarPenEnJupeMessage) message);
                 } else if (message instanceof ProcesoVerificarElePenMessage) {
                     message = proceso.procesoVerificarElePen((ProcesoVerificarElePenMessage) message);
+                } else if (message instanceof ProcesoAsignarMesaMessage) {
+                    message = proceso.procesoAsignarMesa((ProcesoAsignarMesaMessage) message);
                 } else if (message instanceof RegistrarCerVidaPersonaMessage) {
                     message = persona.registrarCerVidaPersona((RegistrarCerVidaPersonaMessage) message);
                 } else if (message instanceof AnularCerVidaPersonaMessage) {

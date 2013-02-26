@@ -22,18 +22,23 @@ public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN = 20681L;
 
+    public static final long PARAMETRO_CODIGO_SIME = 20996L;
+
     protected Long idUbicacion;
 
     protected String numeroResolucionDenPen;
 
     protected Date fechaResolucionDenPen;
 
-    public ProcesoDenegarPensionesObjMessage(Long idUbicacion, String numeroResolucionDenPen, Date fechaResolucionDenPen) {
+    protected String codigoSime;
+
+    public ProcesoDenegarPensionesObjMessage(Long idUbicacion, String numeroResolucionDenPen, Date fechaResolucionDenPen, String codigoSime) {
         this.init();
         this.funcion = 200200155L;
         this.idUbicacion = idUbicacion;
         this.numeroResolucionDenPen = numeroResolucionDenPen;
         this.fechaResolucionDenPen = fechaResolucionDenPen;
+        this.codigoSime = codigoSime;
     }
 
     public Long getIdUbicacion() {
@@ -58,5 +63,13 @@ public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage im
 
     public void setFechaResolucionDenPen(Date fechaResolucionDenPen) {
         this.fechaResolucionDenPen = fechaResolucionDenPen;
+    }
+
+    public String getCodigoSime() {
+        return codigoSime;
+    }
+
+    public void setCodigoSime(String codigoSime) {
+        this.codigoSime = codigoSime;
     }
 }

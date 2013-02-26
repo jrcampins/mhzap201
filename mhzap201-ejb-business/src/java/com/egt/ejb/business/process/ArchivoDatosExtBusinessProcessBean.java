@@ -93,10 +93,11 @@ public class ArchivoDatosExtBusinessProcessBean implements ArchivoDatosExtBusine
         String sql = ArchivoDatosExtConstants.PROCESO_FUNCION_CARGAR_ARCHIVO_DATOS_EXT;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdArchivoDatosExt();
-            args[index++] = message.getNombreArchivoDatosExt();
+            args[index++] = message.getNombreArchivoDatos();
+            args[index++] = message.getNombreOriginalArchivoDatos();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -108,7 +109,8 @@ public class ArchivoDatosExtBusinessProcessBean implements ArchivoDatosExtBusine
     protected Long grabarRastroFuncion(CargarArchivoDatosExtMessage message, ArchivoDatosExt archivoDatosExt) {
         RastroFuncion rastro = this.getRastroFuncion(message, archivoDatosExt);
         rastro.addParametro(CargarArchivoDatosExtMessage.PARAMETRO_ID_ARCHIVO_DATOS_EXT, STP.getString(message.getIdArchivoDatosExt()));
-        rastro.addParametro(CargarArchivoDatosExtMessage.PARAMETRO_NOMBRE_ARCHIVO_DATOS_EXT, STP.getString(message.getNombreArchivoDatosExt()));
+        rastro.addParametro(CargarArchivoDatosExtMessage.PARAMETRO_NOMBRE_ARCHIVO_DATOS, STP.getString(message.getNombreArchivoDatos()));
+        rastro.addParametro(CargarArchivoDatosExtMessage.PARAMETRO_NOMBRE_ORIGINAL_ARCHIVO_DATOS, STP.getString(message.getNombreOriginalArchivoDatos()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

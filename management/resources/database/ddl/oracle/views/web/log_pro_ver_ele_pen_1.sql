@@ -100,6 +100,8 @@ SELECT
 		persona_1x1.notas_anul_fec_ult_cob_pen AS notas_anul_fec_ult_cob__1x1y94,
 		persona_1x1.numero_tipo_act_jupe AS numero_tipo_act_jupe_1x1y95,
 		persona_1x1.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x1y96,
+		persona_1x1.lote AS lote_1x1y97,
+		persona_1x1.codigo_sime AS codigo_sime_1x1y98,
 	log_pro_ver_ele_pen.codigo_persona AS codigo_persona,
 	log_pro_ver_ele_pen.nombre_persona AS nombre_persona,
 	log_pro_ver_ele_pen.id_departamento AS id_departamento,

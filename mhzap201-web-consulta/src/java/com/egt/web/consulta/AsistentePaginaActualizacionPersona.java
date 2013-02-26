@@ -161,6 +161,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaSolicitudPensionDesde = null;
         Date fechaSolicitudPensionHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA;
         Map parameters = new LinkedHashMap();
@@ -169,6 +170,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -194,6 +196,10 @@ public class AsistentePaginaActualizacionPersona {
         if (fechaSolicitudPensionHasta != null) {
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -212,6 +218,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaSolicitudPensionDesde = null;
         Date fechaSolicitudPensionHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES;
         Map parameters = new LinkedHashMap();
@@ -220,6 +227,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -245,6 +253,10 @@ public class AsistentePaginaActualizacionPersona {
         if (fechaSolicitudPensionHasta != null) {
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -263,6 +275,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaSolicitudPensionDesde = null;
         Date fechaSolicitudPensionHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES;
         Map parameters = new LinkedHashMap();
@@ -271,6 +284,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_solicitud_pension_desde", fechaSolicitudPensionDesde);
         parameters.put("fecha_solicitud_pension_hasta", fechaSolicitudPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -297,6 +311,10 @@ public class AsistentePaginaActualizacionPersona {
             args.add(fechaSolicitudPensionHasta);
             search += " and fecha_solicitud_pension<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
@@ -314,6 +332,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaAprobacionPensionDesde = null;
         Date fechaAprobacionPensionHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA;
         Map parameters = new LinkedHashMap();
@@ -322,6 +341,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_aprobacion_pension_desde", fechaAprobacionPensionDesde);
         parameters.put("fecha_aprobacion_pension_hasta", fechaAprobacionPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -348,6 +368,10 @@ public class AsistentePaginaActualizacionPersona {
             args.add(fechaAprobacionPensionHasta);
             search += " and fecha_aprobacion_pension<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
@@ -366,6 +390,7 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaDenegacionPensionDesde = null;
         Date fechaDenegacionPensionHasta = null;
         Integer numeroCausaDenPension = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         Map parameters = new LinkedHashMap();
@@ -375,6 +400,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("fecha_denegacion_pension_desde", fechaDenegacionPensionDesde);
         parameters.put("fecha_denegacion_pension_hasta", fechaDenegacionPensionHasta);
         parameters.put("numero_causa_den_pension", numeroCausaDenPension);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -405,6 +431,10 @@ public class AsistentePaginaActualizacionPersona {
             args.add(numeroCausaDenPension);
             search += " and numero_causa_den_pension=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
@@ -423,6 +453,7 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaRevocacionPensionDesde = null;
         Date fechaRevocacionPensionHasta = null;
         Integer numeroCausaRevPension = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA;
         Map parameters = new LinkedHashMap();
@@ -432,6 +463,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("fecha_revocacion_pension_desde", fechaRevocacionPensionDesde);
         parameters.put("fecha_revocacion_pension_hasta", fechaRevocacionPensionHasta);
         parameters.put("numero_causa_rev_pension", numeroCausaRevPension);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -462,6 +494,10 @@ public class AsistentePaginaActualizacionPersona {
             args.add(numeroCausaRevPension);
             search += " and numero_causa_rev_pension=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
@@ -479,6 +515,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaOtorgamientoPenDesde = null;
         Date fechaOtorgamientoPenHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -487,6 +524,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -512,6 +550,10 @@ public class AsistentePaginaActualizacionPersona {
         if (fechaOtorgamientoPenHasta != null) {
             args.add(fechaOtorgamientoPenHasta);
             search += " and fecha_otorgamiento_pen<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -530,6 +572,7 @@ public class AsistentePaginaActualizacionPersona {
         Long idBarrio = null;
         Date fechaOtorgamientoPenDesde = null;
         Date fechaOtorgamientoPenHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -538,6 +581,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -564,6 +608,10 @@ public class AsistentePaginaActualizacionPersona {
             args.add(fechaOtorgamientoPenHasta);
             search += " and fecha_otorgamiento_pen<=?";
         }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
             this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
@@ -578,11 +626,13 @@ public class AsistentePaginaActualizacionPersona {
         bean.getGestor().setReadOnlyProcessing(true);
         Date fechaHoraUltActJupeDesde = null;
         Date fechaHoraUltActJupeHasta = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
         Map parameters = new LinkedHashMap();
         parameters.put("fecha_hora_ult_act_jupe_desde", fechaHoraUltActJupeDesde);
         parameters.put("fecha_hora_ult_act_jupe_hasta", fechaHoraUltActJupeHasta);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -596,6 +646,10 @@ public class AsistentePaginaActualizacionPersona {
         if (fechaHoraUltActJupeHasta != null) {
             args.add(fechaHoraUltActJupeHasta);
             search += " and fecha_hora_ult_act_jupe<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -612,12 +666,14 @@ public class AsistentePaginaActualizacionPersona {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
+        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
+        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -635,6 +691,10 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -2929,6 +2989,20 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridFechaHoraUltActJupeRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
+    public boolean isGridLoteRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
+    public boolean isGridCodigoSimeRendered() {
         if (bean == null) {
             return true;
         }

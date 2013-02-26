@@ -140,6 +140,7 @@
     <field name="referencia_direccion_1x1y65" class="java.lang.String"/>
     <field name="indice_calidad_vida_1x1y66" class="java.math.BigDecimal"/>
     <field name="es_potencial_ben_migrad_1x1y67" class="java.lang.Integer"/>
+    <field name="lote_1x1y68" class="java.lang.Long"/>
     <field name="nombre_potencial_ben" class="java.lang.String"/>
     <field name="codigo_potencial_ben" class="java.lang.String"/>
     <field name="fecha_registro_pot_ben" class="java.util.Date"/>
@@ -238,6 +239,8 @@
     <field name="notas_anul_fec_ult_cob__1x2y94" class="java.lang.String"/>
     <field name="numero_tipo_act_jupe_1x2y95" class="java.lang.Integer"/>
     <field name="fecha_hora_ult_act_jupe_1x2y96" class="java.util.Date"/>
+    <field name="lote_1x2y97" class="java.lang.Long"/>
+    <field name="codigo_sime_1x2y98" class="java.lang.String"/>
     <field name="nombre_persona" class="java.lang.String"/>
     <field name="codigo_persona" class="java.lang.String"/>
     <field name="id_departamento" class="java.lang.Long"/>

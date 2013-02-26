@@ -34,6 +34,8 @@ SELECT
 		usuario_1x3.es_usuario_especial AS es_usuario_especial_1x3y9,
 		usuario_1x3.es_usuario_inactivo AS es_usuario_inactivo_1x3y10,
 		usuario_1x3.es_usuario_modificado AS es_usuario_modificado_1x3y11,
+	archivo_datos_ext.nombre_archivo_datos AS nombre_archivo_datos,
+	archivo_datos_ext.nombre_original_archivo_datos AS nombre_original_archivo_datos,
 	archivo_datos_ext.fecha_hora_ultima_importacion AS fecha_hora_ultima_importacion,
 	archivo_datos_ext.id_usuario_ultima_importacion AS id_usuario_ultima_importacion,
 		usuario_1x4.codigo_usuario AS codigo_usuario_1x4y3,

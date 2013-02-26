@@ -176,6 +176,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     protected static final long PARAMETRO_REFERENCIA_DIRECCION = 20677L;
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA = 20219L;
     protected static final long PARAMETRO_ES_POTENCIAL_BEN_MIGRADO = 20900L;
+    protected static final long PARAMETRO_LOTE = 20997L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_DESDE = 10011L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_HASTA = 10012L;
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA_DESDE = 10015L;
@@ -676,6 +677,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_REFERENCIA_DIRECCION, this.getReferenciaDireccion(rowKey));
         rastro.addParametro(PARAMETRO_INDICE_CALIDAD_VIDA, this.getIndiceCalidadVida(rowKey));
         rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_MIGRADO, this.getEsPotencialBenMigrado(rowKey));
+        rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -749,6 +751,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
         rastro.addParametro(PARAMETRO_REFERENCIA_DIRECCION, this.getReferenciaDireccion(rowKey));
         rastro.addParametro(PARAMETRO_INDICE_CALIDAD_VIDA, this.getIndiceCalidadVida(rowKey));
         rastro.addParametro(PARAMETRO_ES_POTENCIAL_BEN_MIGRADO, this.getEsPotencialBenMigrado(rowKey));
+        rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 

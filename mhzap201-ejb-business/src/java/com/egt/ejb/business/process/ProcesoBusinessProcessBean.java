@@ -26,6 +26,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.business.process.logic.ProcesoBusinessProcessLogicLocal;
 import com.egt.ejb.core.sqlagent.SqlAgentBrokerLocal;
 import com.egt.ejb.persistence.entity.Proceso;
@@ -219,11 +220,12 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_OTORGAR_PENSIONES_APR;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdUbicacion();
             args[index++] = message.getNumeroResolucionOtorPen();
             args[index++] = message.getFechaResolucionOtorPen();
+            args[index++] = message.getCodigoSime();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -237,6 +239,7 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_NUMERO_RESOLUCION_OTOR_PEN, STP.getString(message.getNumeroResolucionOtorPen()));
         rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_FECHA_RESOLUCION_OTOR_PEN, STP.getString(message.getFechaResolucionOtorPen()));
+        rastro.addParametro(ProcesoOtorgarPensionesAprMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -268,11 +271,12 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_DENEGAR_PENSIONES_OBJ;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdUbicacion();
             args[index++] = message.getNumeroResolucionDenPen();
             args[index++] = message.getFechaResolucionDenPen();
+            args[index++] = message.getCodigoSime();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -286,6 +290,7 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         rastro.addParametro(ProcesoDenegarPensionesObjMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
         rastro.addParametro(ProcesoDenegarPensionesObjMessage.PARAMETRO_NUMERO_RESOLUCION_DEN_PEN, STP.getString(message.getNumeroResolucionDenPen()));
         rastro.addParametro(ProcesoDenegarPensionesObjMessage.PARAMETRO_FECHA_RESOLUCION_DEN_PEN, STP.getString(message.getFechaResolucionDenPen()));
+        rastro.addParametro(ProcesoDenegarPensionesObjMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -317,8 +322,9 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[1]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getCodigoSime();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -329,6 +335,7 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
 
     protected Long grabarRastroFuncion(ProcesoActualizarPenEnJupeMessage message, Proceso proceso) {
         RastroFuncion rastro = this.getRastroFuncion(message, proceso);
+        rastro.addParametro(ProcesoActualizarPenEnJupeMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -374,6 +381,53 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
     protected Long grabarRastroFuncion(ProcesoVerificarElePenMessage message, Proceso proceso) {
         RastroFuncion rastro = this.getRastroFuncion(message, proceso);
         rastro.addParametro(ProcesoVerificarElePenMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public ProcesoAsignarMesaMessage procesoAsignarMesa(ProcesoAsignarMesaMessage message) {
+        Object idProceso = null;
+        Proceso proceso = null;
+        try {
+//          idProceso = message.getIdProceso();
+//          proceso = facade.find(idProceso, true);
+//          if (proceso == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idProceso));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.procesoAsignarMesa(message, proceso);
+                this.grabarRastroFuncion(message, proceso);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void procesoAsignarMesa(ProcesoAsignarMesaMessage message, Proceso proceso) throws Exception {
+        String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_ASIGNAR_MESA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getLote();
+            args[index++] = message.getCodigoSime();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.procesoAsignarMesa(message, proceso);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(ProcesoAsignarMesaMessage message, Proceso proceso) {
+        RastroFuncion rastro = this.getRastroFuncion(message, proceso);
+        rastro.addParametro(ProcesoAsignarMesaMessage.PARAMETRO_LOTE, STP.getString(message.getLote()));
+        rastro.addParametro(ProcesoAsignarMesaMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

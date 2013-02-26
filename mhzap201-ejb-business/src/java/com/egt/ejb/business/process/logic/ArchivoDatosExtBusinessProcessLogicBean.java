@@ -61,7 +61,8 @@ public class ArchivoDatosExtBusinessProcessLogicBean implements ArchivoDatosExtB
         //
         // TODO: comprobar la logica del proceso de negocio
         //
-        archivoDatosExt.setNombreArchivoDatosExt(message.getNombreArchivoDatosExt());
+        archivoDatosExt.setNombreArchivoDatos(message.getNombreArchivoDatos());
+        archivoDatosExt.setNombreOriginalArchivoDatos(message.getNombreOriginalArchivoDatos());
         archivoDatosExt.setEsArchivoDatosExtImportado(IntUtils.FALSE);
         archivoDatosExt.setFechaHoraUltimaCarga((Date) TimeUtils.currentTimestamp());
         archivoDatosExt.setUsuarioIdUsuarioUltimaCarga(this.usuarioFacade.find(message.getUsuario()));

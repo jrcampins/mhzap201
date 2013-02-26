@@ -24,6 +24,7 @@ import com.egt.core.db.wrapper.RecursoWrapper;
 import com.egt.core.db.xdp.RecursoCachedRowSetDataProvider;
 import com.egt.core.enums.EnumColumnaEtiqueta;
 import com.egt.core.enums.EnumOpcionAbrirVentana;
+import com.egt.core.jsf.component.CampoArchivo;
 import com.egt.core.jsf.component.ComponenteComplementario;
 import com.egt.core.jsf.component.Etiqueta;
 import com.egt.core.jsf.component.TextoEstaticoAlternativo;
@@ -74,23 +75,30 @@ import org.apache.commons.lang.StringUtils;
 public class JSF {
 
     // <editor-fold defaultstate="collapsed" desc="metodos para el manejo de archivos adjuntos ">
-    public static String upload(Upload upload) throws Exception {
-        return upload(upload, null);
+    public static void upload(Upload upload) throws Exception {
+        upload(upload, null);
     }
 
-    public static String upload(Upload upload, String carpeta) throws Exception {
+    public static void upload(Upload upload, String carpeta) throws Exception {
         Bitacora.trace(JSF.class, "upload", upload, carpeta);
         if (upload == null) {
-            return null;
+            return;
+        }
+        CampoArchivo campoArchivo = upload instanceof CampoArchivo ? (CampoArchivo) upload : null;
+        if (campoArchivo != null) {
+            campoArchivo.setClientFileName(null);
+            campoArchivo.setServerFileName(null);
         }
         UploadedFile uploadedFile = upload.getUploadedFile();
         if (uploadedFile == null) {
-            return null;
+            return;
         }
+        /**/
         Bitacora.trace(JSF.class, "upload", "name=" + uploadedFile.getOriginalName());
         Bitacora.trace(JSF.class, "upload", "path=" + uploadedFile.getClientFilePath());
         Bitacora.trace(JSF.class, "upload", "type=" + uploadedFile.getContentType());
         Bitacora.trace(JSF.class, "upload", "size=" + uploadedFile.getSize());
+        /**/
         String validChars = "abcdefghijklmnopqrstuvwxyz_1234567890";
         String filepath = null;
         if (StringUtils.isNotBlank(carpeta)) {
@@ -112,7 +120,15 @@ public class JSF {
         }
         File file = new File(pathname);
         uploadedFile.write(file);
-        return StringUtils.trimToEmpty(filepath) + filename;
+        /**/
+        String clientFilePath = uploadedFile.getClientFilePath();
+        String originalName = uploadedFile.getOriginalName();
+        String clientFileName = clientFilePath == null ? originalName : clientFilePath + originalName;
+        String serverFileName = StringUtils.trimToEmpty(filepath) + filename;
+        if (campoArchivo != null) {
+            campoArchivo.setClientFileName(clientFileName);
+            campoArchivo.setServerFileName(serverFileName);
+        }
     }
 
     public static String getExtensionNombreArchivo(String pathname) {
@@ -473,38 +489,38 @@ public class JSF {
          *
          */
         mensaje = mensaje.replace(
-                "is not a number",
-                "debe ser un número");
+            "is not a number",
+            "debe ser un número");
         mensaje = mensaje.replace(
-                "must be a number consisting of one or more digits",
-                "debe ser un número");
+            "must be a number consisting of one or more digits",
+            "debe ser un número");
         mensaje = mensaje.replace(
-                "must be a number between",
-                "debe ser un número entre");
+            "must be a number between",
+            "debe ser un número entre");
         mensaje = mensaje.replace(
-                "Specified attribute is not between the expected values of",
-                "El valor debe estar comprendido entre");
+            "Specified attribute is not between the expected values of",
+            "El valor debe estar comprendido entre");
         mensaje = mensaje.replace(
-                " and ",
-                " y ");
+            " and ",
+            " y ");
         /*
          *
          */
         mensaje = mensaje.replace(
-                "Valor es necesario",
-                "El valor es necesario");
+            "Valor es necesario",
+            "El valor es necesario");
         /*
          *
          */
         String sujeto = uic instanceof TextArea
-                ? "La longitud del valor"
-                : "El valor";
+            ? "La longitud del valor"
+            : "El valor";
         mensaje = mensaje.replace(
-                "Valor es más grande de valor de máximo permitido:",
-                sujeto + " debe ser menor o igual que");
+            "Valor es más grande de valor de máximo permitido:",
+            sujeto + " debe ser menor o igual que");
         mensaje = mensaje.replace(
-                "Valor is menos de valor de mínimo permitido:",
-                sujeto + " debe ser mayor o igual que");
+            "Valor is menos de valor de mínimo permitido:",
+            sujeto + " debe ser mayor o igual que");
         /*
          *
          */
@@ -563,7 +579,7 @@ public class JSF {
                     DropDown dropDown = (DropDown) webuiInput;
                     Option selected = getOpcion(dropDown);
                     text = selected == null ? "selected == null" : dropDown.getItems() == null ? "items == null"
-                            : selected.getLabel();
+                        : selected.getLabel();
                 }
             }
             staticText.setText(text);
@@ -709,7 +725,7 @@ public class JSF {
             return null;
         }
         return request.getRequestURL() == null ? null : StringUtils.trimToNull(request.getRequestURL().
-                toString());
+            toString());
     }
 
     private static String getWindowName() {
@@ -1001,8 +1017,8 @@ public class JSF {
     public static HttpServletRequest getRequest() {
         FacesContext fc = FacesContext.getCurrentInstance();
         return fc != null && fc.getExternalContext() != null
-                && fc.getExternalContext().getRequest() instanceof HttpServletRequest
-                ? (HttpServletRequest) fc.getExternalContext().getRequest() : null;
+            && fc.getExternalContext().getRequest() instanceof HttpServletRequest
+            ? (HttpServletRequest) fc.getExternalContext().getRequest() : null;
     }
 
     public static HttpSession getSession() {
@@ -1196,7 +1212,7 @@ public class JSF {
     }
 
     public static Tree getArbolNodos(RecursoCachedRowSetDataProvider dp, String colname, EnumColumnaEtiqueta coltype, String url, MethodExpression mex, Long id, boolean base,
-            boolean activeOnly) {
+        boolean activeOnly) {
         Tree arbol = getNewTree(dp);
         if (dp.isRecursoJerarquizable()) {
             if (dp.cursorFirst()) {
@@ -1216,7 +1232,7 @@ public class JSF {
                     } while (dp.cursorNext());
                 } else {
                     RowKey rowKey = dp.findFirst(dp.getRecursoJerarquizableDataProvider().
-                            getColumnaIdentificacionRecurso(), id);
+                        getColumnaIdentificacionRecurso(), id);
                     if (dp.isRowAvailable(rowKey)) {
                         if (base) {
                             addTreeNode(arbol, dp, colname, coltype, url, mex, rowKey, activeOnly);
@@ -1226,9 +1242,9 @@ public class JSF {
                             do {
                                 if (dp.getRecursoJerarquizableDataProvider().getRecursoSuperior() != null) {
                                     if (dp.getRecursoJerarquizableDataProvider().getRecursoSuperior().equals(
-                                            id)) {
+                                        id)) {
                                         addTreeNode(arbol, dp, colname, coltype, url, mex, dp.getCursorRow(),
-                                                activeOnly);
+                                            activeOnly);
                                     }
                                 }
                             } while (dp.cursorNext());
@@ -1560,7 +1576,7 @@ public class JSF {
             child = (Hyperlink) iterator.next();
             if (child != null) {
                 if (StringUtils.substringBefore(url, "?").equals(StringUtils.substringBefore(child.getUrl(),
-                        "?"))) {
+                    "?"))) {
                     return child;
                 }
             }

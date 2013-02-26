@@ -207,6 +207,10 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getTextFieldCampoFechaHoraUltActJupe1();
 
+    TextField getCampoLote1();
+
+    TextField getCampoCodigoSime1();
+
     Button getBotonAplicar1();
 
     PersonaCachedRowSetDataProvider2 getPersonaDataProvider();

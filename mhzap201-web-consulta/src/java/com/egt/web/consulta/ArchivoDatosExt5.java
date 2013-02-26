@@ -109,6 +109,8 @@ public class ArchivoDatosExt5 extends AbstractPageBean
         validatorNombreArchivoDatosExt1.setMaximum(100);
         converterFechaHoraUltimaCarga1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraUltimaCarga1.setType("both");
+        validatorNombreArchivoDatos1.setMaximum(250);
+        validatorNombreOriginalArchivoDatos1.setMaximum(250);
         converterFechaHoraUltimaImportacion1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraUltimaImportacion1.setType("both");
         archivoDatosExtDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.archivoDatosExtRowSet}"));
@@ -769,6 +771,118 @@ public class ArchivoDatosExt5 extends AbstractPageBean
         this.campoIdUsuarioUltimaCarga1Hiper1 = component;
     }
 
+    private TableColumn tableColumnNombreArchivoDatos1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnNombreArchivoDatos1() {
+        return tableColumnNombreArchivoDatos1;
+    }
+
+    public void setTableColumnNombreArchivoDatos1(TableColumn component) {
+        this.tableColumnNombreArchivoDatos1 = component;
+    }
+
+    private Label labelNombreArchivoDatos1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNombreArchivoDatos1() {
+        return labelNombreArchivoDatos1;
+    }
+
+    public void setLabelNombreArchivoDatos1(Label l) {
+        this.labelNombreArchivoDatos1 = l;
+    }
+
+    private TextArea campoNombreArchivoDatos1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoNombreArchivoDatos1() {
+        return campoNombreArchivoDatos1;
+    }
+
+    public void setCampoNombreArchivoDatos1(TextArea component) {
+        this.campoNombreArchivoDatos1 = component;
+    }
+
+    private StaticText campoNombreArchivoDatos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNombreArchivoDatos1Texto1() {
+        return campoNombreArchivoDatos1Texto1;
+    }
+
+    public void setCampoNombreArchivoDatos1Texto1(StaticText component) {
+        this.campoNombreArchivoDatos1Texto1 = component;
+    }
+
+    private Button campoNombreArchivoDatos1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoNombreArchivoDatos1Boton3() {
+        return campoNombreArchivoDatos1Boton3;
+    }
+
+    public void setCampoNombreArchivoDatos1Boton3(Button component) {
+        this.campoNombreArchivoDatos1Boton3 = component;
+    }
+
+    private LengthValidator validatorNombreArchivoDatos1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNombreArchivoDatos1() {
+        return validatorNombreArchivoDatos1;
+    }
+  
+    public void setValidatorNombreArchivoDatos1(LengthValidator validator) {
+        this.validatorNombreArchivoDatos1 = validator;
+    }
+  
+    private TableColumn tableColumnNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnNombreOriginalArchivoDatos1() {
+        return tableColumnNombreOriginalArchivoDatos1;
+    }
+
+    public void setTableColumnNombreOriginalArchivoDatos1(TableColumn component) {
+        this.tableColumnNombreOriginalArchivoDatos1 = component;
+    }
+
+    private Label labelNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNombreOriginalArchivoDatos1() {
+        return labelNombreOriginalArchivoDatos1;
+    }
+
+    public void setLabelNombreOriginalArchivoDatos1(Label l) {
+        this.labelNombreOriginalArchivoDatos1 = l;
+    }
+
+    private TextArea campoNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoNombreOriginalArchivoDatos1() {
+        return campoNombreOriginalArchivoDatos1;
+    }
+
+    public void setCampoNombreOriginalArchivoDatos1(TextArea component) {
+        this.campoNombreOriginalArchivoDatos1 = component;
+    }
+
+    private StaticText campoNombreOriginalArchivoDatos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNombreOriginalArchivoDatos1Texto1() {
+        return campoNombreOriginalArchivoDatos1Texto1;
+    }
+
+    public void setCampoNombreOriginalArchivoDatos1Texto1(StaticText component) {
+        this.campoNombreOriginalArchivoDatos1Texto1 = component;
+    }
+
+    private LengthValidator validatorNombreOriginalArchivoDatos1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNombreOriginalArchivoDatos1() {
+        return validatorNombreOriginalArchivoDatos1;
+    }
+  
+    public void setValidatorNombreOriginalArchivoDatos1(LengthValidator validator) {
+        this.validatorNombreOriginalArchivoDatos1 = validator;
+    }
+  
     private TableColumn tableColumnFechaHoraUltimaImportacion1 = new com.egt.core.jsf.component.ColumnaTabla();
 
     public TableColumn getTableColumnFechaHoraUltimaImportacion1() {

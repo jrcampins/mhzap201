@@ -26,6 +26,8 @@ CREATE TABLE archivo_datos_ext
 	es_archivo_datos_ext_inactivo int NOT NULL,
 	fecha_hora_ultima_carga timestamp with time zone,
 	id_usuario_ultima_carga bigint,
+	nombre_archivo_datos varchar(250),
+	nombre_original_archivo_datos varchar(250),
 	fecha_hora_ultima_importacion timestamp with time zone,
 	id_usuario_ultima_importacion bigint
 	);
@@ -1562,7 +1564,9 @@ CREATE TABLE persona
 	fecha_ultimo_cobro_pension timestamp with time zone,
 	notas_anul_fec_ult_cob_pen varchar,
 	numero_tipo_act_jupe int,
-	fecha_hora_ult_act_jupe timestamp with time zone
+	fecha_hora_ult_act_jupe timestamp with time zone,
+	lote bigint,
+	codigo_sime varchar(50)
 	);
 
 CREATE TABLE potencial_ben
@@ -1633,7 +1637,8 @@ CREATE TABLE potencial_ben
 	id_funcionario_ult_visita_cen bigint,
 	referencia_direccion varchar,
 	indice_calidad_vida decimal(7,4),
-	es_potencial_ben_migrado int
+	es_potencial_ben_migrado int,
+	lote bigint
 	);
 
 CREATE TABLE proceso

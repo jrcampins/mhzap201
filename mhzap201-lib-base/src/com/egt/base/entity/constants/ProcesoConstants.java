@@ -48,6 +48,8 @@ public class ProcesoConstants {
 
     public static final long FUNCION_PROCESO_VERIFICAR_ELE_PEN = 200200157L;
 
+    public static final long FUNCION_PROCESO_ASIGNAR_MESA = 200200158L;
+
     public static final String PROCESO_FUNCION_PROCESO_IMPORTAR_ARCHIVOS_EXT = "proceso_importar_archivos_ext";
 
     public static final String PROCESO_FUNCION_PROCESO_ACREDITAR_POT_BEN = "proceso_acreditar_pot_ben";
@@ -61,4 +63,6 @@ public class ProcesoConstants {
     public static final String PROCESO_FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE = "proceso_actualizar_pen_en_jupe";
 
     public static final String PROCESO_FUNCION_PROCESO_VERIFICAR_ELE_PEN = "proceso_verificar_ele_pen";
+
+    public static final String PROCESO_FUNCION_PROCESO_ASIGNAR_MESA = "proceso_asignar_mesa";
 }

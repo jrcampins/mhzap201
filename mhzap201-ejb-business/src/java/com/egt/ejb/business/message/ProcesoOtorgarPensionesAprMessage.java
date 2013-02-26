@@ -22,18 +22,23 @@ public class ProcesoOtorgarPensionesAprMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_FECHA_RESOLUCION_OTOR_PEN = 20672L;
 
+    public static final long PARAMETRO_CODIGO_SIME = 20996L;
+
     protected Long idUbicacion;
 
     protected String numeroResolucionOtorPen;
 
     protected Date fechaResolucionOtorPen;
 
-    public ProcesoOtorgarPensionesAprMessage(Long idUbicacion, String numeroResolucionOtorPen, Date fechaResolucionOtorPen) {
+    protected String codigoSime;
+
+    public ProcesoOtorgarPensionesAprMessage(Long idUbicacion, String numeroResolucionOtorPen, Date fechaResolucionOtorPen, String codigoSime) {
         this.init();
         this.funcion = 200200154L;
         this.idUbicacion = idUbicacion;
         this.numeroResolucionOtorPen = numeroResolucionOtorPen;
         this.fechaResolucionOtorPen = fechaResolucionOtorPen;
+        this.codigoSime = codigoSime;
     }
 
     public Long getIdUbicacion() {
@@ -58,5 +63,13 @@ public class ProcesoOtorgarPensionesAprMessage extends BusinessProcessMessage im
 
     public void setFechaResolucionOtorPen(Date fechaResolucionOtorPen) {
         this.fechaResolucionOtorPen = fechaResolucionOtorPen;
+    }
+
+    public String getCodigoSime() {
+        return codigoSime;
+    }
+
+    public void setCodigoSime(String codigoSime) {
+        this.codigoSime = codigoSime;
     }
 }

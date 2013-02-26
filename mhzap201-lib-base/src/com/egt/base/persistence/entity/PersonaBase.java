@@ -336,6 +336,14 @@ public interface PersonaBase {
 //
 //  public void setFechaHoraUltActJupe(Date fechaHoraUltActJupe);
 
+    public Long getLote();
+//
+//  public void setLote(Long lote);
+
+    public String getCodigoSime();
+//
+//  public void setCodigoSime(String codigoSime);
+
     public SexoPersonaBase getSexoPersonaNumeroSexoPersona();
 //
 //  public void setSexoPersonaNumeroSexoPersona(SexoPersonaBase sexoPersona);

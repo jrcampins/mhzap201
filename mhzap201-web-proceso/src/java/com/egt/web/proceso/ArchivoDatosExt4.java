@@ -106,7 +106,8 @@ public class ArchivoDatosExt4 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     private void _init() throws Exception {
-        validatorNombreArchivoDatosExt1.setMaximum(2000);
+        validatorNombreArchivoDatos1.setMaximum(2000);
+        validatorNombreOriginalArchivoDatos1.setMaximum(2000);
     }
 
     private Form form1 = new Form();
@@ -272,64 +273,114 @@ public class ArchivoDatosExt4 extends AbstractPageBean
         this.campoIdArchivoDatosExt1Boton2 = component;
     }
 
-    private Label labelNombreArchivoDatosExt1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelNombreArchivoDatos1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelNombreArchivoDatosExt1() {
-        return labelNombreArchivoDatosExt1;
+    public Label getLabelNombreArchivoDatos1() {
+        return labelNombreArchivoDatos1;
     }
 
-    public void setLabelNombreArchivoDatosExt1(Label l) {
-        this.labelNombreArchivoDatosExt1 = l;
+    public void setLabelNombreArchivoDatos1(Label l) {
+        this.labelNombreArchivoDatos1 = l;
     }
 
-    private Upload campoNombreArchivoDatosExt1 = new com.egt.core.jsf.component.CampoArchivo();
+    private Upload campoNombreArchivoDatos1 = new com.egt.core.jsf.component.CampoArchivo();
 
-    public Upload getCampoNombreArchivoDatosExt1() {
-        return campoNombreArchivoDatosExt1;
+    public Upload getCampoNombreArchivoDatos1() {
+        return campoNombreArchivoDatos1;
     }
 
-    public void setCampoNombreArchivoDatosExt1(Upload component) {
-        this.campoNombreArchivoDatosExt1 = component;
+    public void setCampoNombreArchivoDatos1(Upload component) {
+        this.campoNombreArchivoDatos1 = component;
     }
 
-    private HelpInline helpInlineNombreArchivoDatosExt1 = new com.egt.core.jsf.component.AyudaEnLinea();
+    private HelpInline helpInlineNombreArchivoDatos1 = new com.egt.core.jsf.component.AyudaEnLinea();
 
-    public HelpInline getHelpInlineNombreArchivoDatosExt1() {
-        return helpInlineNombreArchivoDatosExt1;
+    public HelpInline getHelpInlineNombreArchivoDatos1() {
+        return helpInlineNombreArchivoDatos1;
     }
 
-    public void setHelpInlineNombreArchivoDatosExt1(HelpInline hi) {
-        this.helpInlineNombreArchivoDatosExt1 = hi;
+    public void setHelpInlineNombreArchivoDatos1(HelpInline hi) {
+        this.helpInlineNombreArchivoDatos1 = hi;
     }
 
-    private StaticText campoNombreArchivoDatosExt1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoNombreArchivoDatos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoNombreArchivoDatosExt1Texto1() {
-        return campoNombreArchivoDatosExt1Texto1;
+    public StaticText getCampoNombreArchivoDatos1Texto1() {
+        return campoNombreArchivoDatos1Texto1;
     }
 
-    public void setCampoNombreArchivoDatosExt1Texto1(StaticText component) {
-        this.campoNombreArchivoDatosExt1Texto1 = component;
+    public void setCampoNombreArchivoDatos1Texto1(StaticText component) {
+        this.campoNombreArchivoDatos1Texto1 = component;
     }
 
-    private Button campoNombreArchivoDatosExt1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+    private Button campoNombreArchivoDatos1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
 
-    public Button getCampoNombreArchivoDatosExt1Boton3() {
-        return campoNombreArchivoDatosExt1Boton3;
+    public Button getCampoNombreArchivoDatos1Boton3() {
+        return campoNombreArchivoDatos1Boton3;
     }
 
-    public void setCampoNombreArchivoDatosExt1Boton3(Button component) {
-        this.campoNombreArchivoDatosExt1Boton3 = component;
+    public void setCampoNombreArchivoDatos1Boton3(Button component) {
+        this.campoNombreArchivoDatos1Boton3 = component;
     }
 
-    private LengthValidator validatorNombreArchivoDatosExt1 = new LengthValidator();
+    private LengthValidator validatorNombreArchivoDatos1 = new LengthValidator();
   
-    public LengthValidator getValidatorNombreArchivoDatosExt1() {
-        return validatorNombreArchivoDatosExt1;
+    public LengthValidator getValidatorNombreArchivoDatos1() {
+        return validatorNombreArchivoDatos1;
     }
   
-    public void setValidatorNombreArchivoDatosExt1(LengthValidator validator) {
-        this.validatorNombreArchivoDatosExt1 = validator;
+    public void setValidatorNombreArchivoDatos1(LengthValidator validator) {
+        this.validatorNombreArchivoDatos1 = validator;
+    }
+  
+    private Label labelNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNombreOriginalArchivoDatos1() {
+        return labelNombreOriginalArchivoDatos1;
+    }
+
+    public void setLabelNombreOriginalArchivoDatos1(Label l) {
+        this.labelNombreOriginalArchivoDatos1 = l;
+    }
+
+    private TextField campoNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNombreOriginalArchivoDatos1() {
+        return campoNombreOriginalArchivoDatos1;
+    }
+
+    public void setCampoNombreOriginalArchivoDatos1(TextField component) {
+        this.campoNombreOriginalArchivoDatos1 = component;
+    }
+
+    private HelpInline helpInlineNombreOriginalArchivoDatos1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNombreOriginalArchivoDatos1() {
+        return helpInlineNombreOriginalArchivoDatos1;
+    }
+
+    public void setHelpInlineNombreOriginalArchivoDatos1(HelpInline hi) {
+        this.helpInlineNombreOriginalArchivoDatos1 = hi;
+    }
+
+    private StaticText campoNombreOriginalArchivoDatos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNombreOriginalArchivoDatos1Texto1() {
+        return campoNombreOriginalArchivoDatos1Texto1;
+    }
+
+    public void setCampoNombreOriginalArchivoDatos1Texto1(StaticText component) {
+        this.campoNombreOriginalArchivoDatos1Texto1 = component;
+    }
+
+    private LengthValidator validatorNombreOriginalArchivoDatos1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNombreOriginalArchivoDatos1() {
+        return validatorNombreOriginalArchivoDatos1;
+    }
+  
+    public void setValidatorNombreOriginalArchivoDatos1(LengthValidator validator) {
+        this.validatorNombreOriginalArchivoDatos1 = validator;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -525,21 +576,37 @@ public class ArchivoDatosExt4 extends AbstractPageBean
         return bitIdArchivoDatosExtRendered;
     }
 
-    public boolean isNombreArchivoDatosExtRendered() {
+    public boolean isNombreArchivoDatosRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_1;
     }
 
-    private Bit bitNombreArchivoDatosExtRendered = new Bit() {
+    private Bit bitNombreArchivoDatosRendered = new Bit() {
         // override metodo isOn
         @Override
         public boolean isOn() {
-            return isNombreArchivoDatosExtRendered();
+            return isNombreArchivoDatosRendered();
         }
     };
 
-    public Bit getBitNombreArchivoDatosExtRendered() {
-        return bitNombreArchivoDatosExtRendered;
+    public Bit getBitNombreArchivoDatosRendered() {
+        return bitNombreArchivoDatosRendered;
+    }
+
+    public boolean isNombreOriginalArchivoDatosRendered() {
+        return false;
+    }
+
+    private Bit bitNombreOriginalArchivoDatosRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isNombreOriginalArchivoDatosRendered();
+        }
+    };
+
+    public Bit getBitNombreOriginalArchivoDatosRendered() {
+        return bitNombreOriginalArchivoDatosRendered;
     }
 
     // </editor-fold>
@@ -584,6 +651,16 @@ public class ArchivoDatosExt4 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
+    private String textoCampoNombreOriginalArchivoDatos1;
+
+    public String getTextoCampoNombreOriginalArchivoDatos1() {
+        return this.textoCampoNombreOriginalArchivoDatos1;
+    }
+
+    public void setTextoCampoNombreOriginalArchivoDatos1(String valor) {
+        this.textoCampoNombreOriginalArchivoDatos1 = valor;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idArchivoDatosExt">
@@ -790,9 +867,12 @@ public class ArchivoDatosExt4 extends AbstractPageBean
 
     private void cargarArchivoDatosExt(boolean synchronously) { /* cargar archivo datos ext */
         try {
+            JSF.upload(campoNombreArchivoDatos1, ArchivoDatosExtConstants.CODIGO_DOMINIO_RECURSO);
+            com.egt.core.jsf.component.CampoArchivo campoNombreArchivoDatos1X = (com.egt.core.jsf.component.CampoArchivo) campoNombreArchivoDatos1;
             Long idArchivoDatosExt = this.getArchivoDatosExtIdArchivoDatosExt() == null ? null : this.getArchivoDatosExtIdArchivoDatosExt().getIdArchivoDatosExt();
-            String nombreArchivoDatosExt = JSF.upload(this.campoNombreArchivoDatosExt1, ArchivoDatosExtConstants.CODIGO_DOMINIO_RECURSO);
-            CargarArchivoDatosExtMessage message = new CargarArchivoDatosExtMessage(idArchivoDatosExt, nombreArchivoDatosExt);
+            String nombreArchivoDatos = campoNombreArchivoDatos1X.getServerFileName();
+            String nombreOriginalArchivoDatos = campoNombreArchivoDatos1X.getClientFileName();
+            CargarArchivoDatosExtMessage message = new CargarArchivoDatosExtMessage(idArchivoDatosExt, nombreArchivoDatos, nombreOriginalArchivoDatos);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.archivoDatosExtBusinessProcess.cargarArchivoDatosExt(message);

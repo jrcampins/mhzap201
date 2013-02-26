@@ -160,6 +160,8 @@ public class PotencialBen2 extends AbstractPageBean
         converterIndiceCalidadVida1.setMaxFractionDigits(3);
         validatorIndiceCalidadVida1.setMinimum(0.0);
         validatorIndiceCalidadVida1.setMaximum(1.0E2);
+        validatorLote1.setMinimum(0L);
+        validatorLote1.setMaximum(1000000000000000000L);
         potencialBenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.potencialBenRowSet}"));
         personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
@@ -6440,6 +6442,107 @@ public class PotencialBen2 extends AbstractPageBean
   
     public void setConverterEsPotencialBenMigrado1(IntegerConverter converter) {
         this.converterEsPotencialBenMigrado1 = converter;
+    }
+  
+    private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1() {
+        return labelLote1;
+    }
+
+    public void setLabelLote1(Label l) {
+        this.labelLote1 = l;
+    }
+
+    private Label labelLote1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1x1() {
+        return labelLote1x1;
+    }
+
+    public void setLabelLote1x1(Label l) {
+        this.labelLote1x1 = l;
+    }
+
+    private TextField campoLote1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoLote1() {
+        return campoLote1;
+    }
+
+    public void setCampoLote1(TextField component) {
+        this.campoLote1 = component;
+    }
+
+    private TextField campoLote1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoLote1x1() {
+        return campoLote1x1;
+    }
+
+    public void setCampoLote1x1(TextField component) {
+        this.campoLote1x1 = component;
+    }
+
+    private HelpInline helpInlineLote1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineLote1() {
+        return helpInlineLote1;
+    }
+
+    public void setHelpInlineLote1(HelpInline hi) {
+        this.helpInlineLote1 = hi;
+    }
+
+    private HelpInline helpInlineLote1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineLote1x1() {
+        return helpInlineLote1x1;
+    }
+
+    public void setHelpInlineLote1x1(HelpInline hi) {
+        this.helpInlineLote1x1 = hi;
+    }
+
+    private StaticText campoLote1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1Texto1() {
+        return campoLote1Texto1;
+    }
+
+    public void setCampoLote1Texto1(StaticText component) {
+        this.campoLote1Texto1 = component;
+    }
+
+    private StaticText campoLote1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1x1Texto1() {
+        return campoLote1x1Texto1;
+    }
+
+    public void setCampoLote1x1Texto1(StaticText component) {
+        this.campoLote1x1Texto1 = component;
+    }
+
+    private LongConverter converterLote1 = new LongConverter();
+  
+    public LongConverter getConverterLote1() {
+        return converterLote1;
+    }
+  
+    public void setConverterLote1(LongConverter converter) {
+        this.converterLote1 = converter;
+    }
+  
+    private LongRangeValidator validatorLote1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorLote1() {
+        return validatorLote1;
+    }
+  
+    public void setValidatorLote1(LongRangeValidator validator) {
+        this.validatorLote1 = validator;
     }
   
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();

@@ -208,6 +208,10 @@ public class PersonaConstants {
 
     public static final String COLUMNA_FECHA_HORA_ULT_ACT_JUPE = "fecha_hora_ult_act_jupe";
 
+    public static final String COLUMNA_LOTE = "lote";
+
+    public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_persona";

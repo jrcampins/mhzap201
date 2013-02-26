@@ -160,6 +160,8 @@ public class PotencialBen4 extends AbstractPageBean
         converterFechaValidacionCensoDesde1.setType("date");
         converterFechaValidacionCensoHasta1.setPattern("dd/MM/yyyy");
         converterFechaValidacionCensoHasta1.setType("date");
+        validatorLote1.setMinimum(0L);
+        validatorLote1.setMaximum(1000000000000000000L);
     }
 
     private Form form1 = new Form();
@@ -1835,6 +1837,66 @@ public class PotencialBen4 extends AbstractPageBean
         this.converterNumeroTipoRegPotBen1 = converter;
     }
   
+    private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelLote1() {
+        return labelLote1;
+    }
+
+    public void setLabelLote1(Label l) {
+        this.labelLote1 = l;
+    }
+
+    private TextField campoLote1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoLote1() {
+        return campoLote1;
+    }
+
+    public void setCampoLote1(TextField component) {
+        this.campoLote1 = component;
+    }
+
+    private HelpInline helpInlineLote1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineLote1() {
+        return helpInlineLote1;
+    }
+
+    public void setHelpInlineLote1(HelpInline hi) {
+        this.helpInlineLote1 = hi;
+    }
+
+    private StaticText campoLote1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoLote1Texto1() {
+        return campoLote1Texto1;
+    }
+
+    public void setCampoLote1Texto1(StaticText component) {
+        this.campoLote1Texto1 = component;
+    }
+
+    private LongConverter converterLote1 = new LongConverter();
+  
+    public LongConverter getConverterLote1() {
+        return converterLote1;
+    }
+  
+    public void setConverterLote1(LongConverter converter) {
+        this.converterLote1 = converter;
+    }
+  
+    private LongRangeValidator validatorLote1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorLote1() {
+        return validatorLote1;
+    }
+  
+    public void setValidatorLote1(LongRangeValidator validator) {
+        this.validatorLote1 = validator;
+    }
+  
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonAplicar1() {
@@ -2495,6 +2557,23 @@ public class PotencialBen4 extends AbstractPageBean
         return bitNumeroTipoRegPotBenRendered;
     }
 
+    public boolean isLoteRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_16;
+    }
+
+    private Bit bitLoteRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isLoteRendered();
+        }
+    };
+
+    public Bit getBitLoteRendered() {
+        return bitLoteRendered;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Facades">
@@ -2684,6 +2763,16 @@ public class PotencialBen4 extends AbstractPageBean
 
     public void setValorCampoFechaValidacionCensoHasta1(java.sql.Timestamp valor) {
         this.valorCampoFechaValidacionCensoHasta1 = valor;
+    }
+
+    private String textoCampoLote1;
+
+    public String getTextoCampoLote1() {
+        return this.textoCampoLote1;
+    }
+
+    public void setTextoCampoLote1(String valor) {
+        this.textoCampoLote1 = valor;
     }
 
     // </editor-fold>
@@ -4401,6 +4490,7 @@ public class PotencialBen4 extends AbstractPageBean
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
         Integer numeroTipoRegPotBen = this.getValorListaNumeroTipoRegPotBen1();
+        Long lote = (Long) STP.getObjeto(this.getTextoCampoLote1(), EnumTipoDatoPar.ENTERO_GRANDE);
         String report = PotencialBenConstants.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         long function = PotencialBenConstants.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         Map parameters = new LinkedHashMap();
@@ -4411,6 +4501,7 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
         parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
+        parameters.put("lote", lote);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -4444,6 +4535,10 @@ public class PotencialBen4 extends AbstractPageBean
         if (numeroTipoRegPotBen != null) {
             args.add(numeroTipoRegPotBen);
             search += " and numero_tipo_reg_pot_ben=?";
+        }
+        if (lote != null) {
+            args.add(lote);
+            search += " and lote=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

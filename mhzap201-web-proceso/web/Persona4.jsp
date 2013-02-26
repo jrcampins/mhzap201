@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoCodigoSime1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1375,6 +1375,36 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_solicitud_pension_hasta"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCodigoSime1" rendered="#{Persona4.bitCodigoSimeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelCodigoSime1}"
+                                                    id="labelCodigoSime1"
+                                                    for="campoCodigoSime1"
+                                                    text="c&#243;digo sime"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCodigoSime2" rendered="#{Persona4.bitCodigoSimeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCodigoSime1"
+                                                    binding="#{Persona4.campoCodigoSime1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoCodigoSime1}"
+                                                    toolTip="BundleParametros.codigo_sime"
+                                                    validatorExpression="#{Persona4.validatorCodigoSime1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoSime1Texto1"
+                                                    binding="#{Persona4.campoCodigoSime1Texto1}"/>
+                                                <webuijsf:message id="messageCodigoSime1"
+                                                    for="campoCodigoSime1"/>
+                                                <webuijsf:helpInline id="helpInlineCodigoSime1"
+                                                    binding="#{Persona4.helpInlineCodigoSime1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.codigo_sime"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

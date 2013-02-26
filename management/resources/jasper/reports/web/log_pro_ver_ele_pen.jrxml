@@ -169,6 +169,8 @@
     <field name="notas_anul_fec_ult_cob__1x1y94" class="java.lang.String"/>
     <field name="numero_tipo_act_jupe_1x1y95" class="java.lang.Integer"/>
     <field name="fecha_hora_ult_act_jupe_1x1y96" class="java.util.Date"/>
+    <field name="lote_1x1y97" class="java.lang.Long"/>
+    <field name="codigo_sime_1x1y98" class="java.lang.String"/>
     <field name="codigo_persona" class="java.lang.String"/>
     <field name="nombre_persona" class="java.lang.String"/>
     <field name="id_departamento" class="java.lang.Long"/>

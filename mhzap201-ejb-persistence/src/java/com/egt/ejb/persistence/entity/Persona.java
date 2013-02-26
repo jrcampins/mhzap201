@@ -317,6 +317,12 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaHoraUltActJupe;
 
+    @Column(name = "lote")
+    private Long lote;
+
+    @Column(name = "codigo_sime")
+    private String codigoSime;
+
     @JoinColumn(name = "numero_sexo_persona", referencedColumnName = "numero_sexo_persona")
     @ManyToOne
     private SexoPersona sexoPersonaNumeroSexoPersona;
@@ -1126,6 +1132,24 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setFechaHoraUltActJupe(Date fechaHoraUltActJupe) {
         this.fechaHoraUltActJupe = fechaHoraUltActJupe;
+    }
+
+    @Override
+    public Long getLote() {
+        return this.lote;
+    }
+
+    public void setLote(Long lote) {
+        this.lote = lote;
+    }
+
+    @Override
+    public String getCodigoSime() {
+        return this.codigoSime;
+    }
+
+    public void setCodigoSime(String codigoSime) {
+        this.codigoSime = codigoSime;
     }
 
     @Override

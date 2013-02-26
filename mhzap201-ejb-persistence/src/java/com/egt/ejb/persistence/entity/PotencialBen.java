@@ -217,6 +217,9 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
     @Column(name = "es_potencial_ben_migrado")
     private Integer esPotencialBenMigrado;
 
+    @Column(name = "lote")
+    private Long lote;
+
     @JoinColumn(name = "numero_tipo_reg_pot_ben", referencedColumnName = "numero_tipo_reg_pot_ben")
     @ManyToOne
     private TipoRegPotBen tipoRegPotBenNumeroTipoRegPotBen;
@@ -750,6 +753,15 @@ public class PotencialBen implements PotencialBenBase, Comparable, Serializable 
 
     public void setEsPotencialBenMigrado(Integer esPotencialBenMigrado) {
         this.esPotencialBenMigrado = esPotencialBenMigrado;
+    }
+
+    @Override
+    public Long getLote() {
+        return this.lote;
+    }
+
+    public void setLote(Long lote) {
+        this.lote = lote;
     }
 
     @Override

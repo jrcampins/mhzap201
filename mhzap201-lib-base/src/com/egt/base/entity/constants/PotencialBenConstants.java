@@ -155,6 +155,8 @@ public class PotencialBenConstants {
 
     public static final String COLUMNA_ES_POTENCIAL_BEN_MIGRADO = "es_potencial_ben_migrado";
 
+    public static final String COLUMNA_LOTE = "lote";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_potencial_ben";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_potencial_ben";

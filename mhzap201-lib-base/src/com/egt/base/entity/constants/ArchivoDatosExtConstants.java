@@ -45,6 +45,10 @@ public class ArchivoDatosExtConstants {
 
     public static final String COLUMNA_ID_USUARIO_ULTIMA_CARGA = "id_usuario_ultima_carga";
 
+    public static final String COLUMNA_NOMBRE_ARCHIVO_DATOS = "nombre_archivo_datos";
+
+    public static final String COLUMNA_NOMBRE_ORIGINAL_ARCHIVO_DATOS = "nombre_original_archivo_datos";
+
     public static final String COLUMNA_FECHA_HORA_ULTIMA_IMPORTACION = "fecha_hora_ultima_importacion";
 
     public static final String COLUMNA_ID_USUARIO_ULTIMA_IMPORTACION = "id_usuario_ultima_importacion";

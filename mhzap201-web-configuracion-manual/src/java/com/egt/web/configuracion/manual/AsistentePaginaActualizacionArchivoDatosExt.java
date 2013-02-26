@@ -169,6 +169,50 @@ public class AsistentePaginaActualizacionArchivoDatosExt {
         return true;
     }
 
+    public String getTextCampoNombreArchivoDatos1Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.getArchivoDatosExtDataProvider().getNombreArchivoDatos(rowKey);
+        return JSF.getExtensionNombreArchivo(nombre);
+    }
+
+    public String getToolTipCampoNombreArchivoDatos1Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.getArchivoDatosExtDataProvider().getNombreArchivoDatos(rowKey);
+        return JSF.getUrlNombreArchivo(nombre);
+    }
+
+    public String getScriptCampoNombreArchivoDatos1Boton3() {
+        if (bean == null) {
+            return null;
+        }
+        if (bean.getGestor().isFilaNoDisponible()) {
+            return null;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        String nombre = bean.getArchivoDatosExtDataProvider().getNombreArchivoDatos(rowKey);
+        return JSF.getScriptAbrirVentanaArchivo(nombre);
+    }
+
+    public boolean isCampoNombreArchivoDatos1Boton3Rendered() {
+        return bean == null ? true : this.getTextCampoNombreArchivoDatos1Boton3() != null;
+    }
+
+    public boolean isTableColumnNombreArchivoDatos3Rendered() {
+        return true;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idProveedorDatExt">
@@ -678,6 +722,14 @@ public class AsistentePaginaActualizacionArchivoDatosExt {
     }
 
     public boolean isGridIdUsuarioUltimaCargaRendered() {
+        return true;
+    }
+
+    public boolean isGridNombreArchivoDatosRendered() {
+        return true;
+    }
+
+    public boolean isGridNombreOriginalArchivoDatosRendered() {
         return true;
     }
 

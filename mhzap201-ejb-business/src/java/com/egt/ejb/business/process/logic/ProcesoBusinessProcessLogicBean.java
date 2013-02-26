@@ -22,6 +22,7 @@ import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.persistence.entity.Proceso;
 import com.egt.ejb.persistence.facade.ProcesoFacadeLocal;
 import java.math.BigDecimal;
@@ -120,6 +121,19 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     public void procesoVerificarElePen(ProcesoVerificarElePenMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoVerificarElePenMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoAsignarMesa(ProcesoAsignarMesaMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoAsignarMesaMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());

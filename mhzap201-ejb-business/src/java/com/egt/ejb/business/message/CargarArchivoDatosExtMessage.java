@@ -23,17 +23,22 @@ public class CargarArchivoDatosExtMessage extends BusinessProcessMessage impleme
 
     public static final long PARAMETRO_ID_ARCHIVO_DATOS_EXT = 20268L;
 
-    public static final long PARAMETRO_NOMBRE_ARCHIVO_DATOS_EXT = 20279L;
+    public static final long PARAMETRO_NOMBRE_ARCHIVO_DATOS = 21000L;
+
+    public static final long PARAMETRO_NOMBRE_ORIGINAL_ARCHIVO_DATOS = 21001L;
 
     protected Long idArchivoDatosExt;
 
-    protected String nombreArchivoDatosExt;
+    protected String nombreArchivoDatos;
 
-    public CargarArchivoDatosExtMessage(Long idArchivoDatosExt, String nombreArchivoDatosExt) {
+    protected String nombreOriginalArchivoDatos;
+
+    public CargarArchivoDatosExtMessage(Long idArchivoDatosExt, String nombreArchivoDatos, String nombreOriginalArchivoDatos) {
         this.init();
         this.funcion = 312300151L;
         this.idArchivoDatosExt = idArchivoDatosExt;
-        this.nombreArchivoDatosExt = nombreArchivoDatosExt;
+        this.nombreArchivoDatos = nombreArchivoDatos;
+        this.nombreOriginalArchivoDatos = nombreOriginalArchivoDatos;
     }
 
     public Long getIdArchivoDatosExt() {
@@ -44,11 +49,19 @@ public class CargarArchivoDatosExtMessage extends BusinessProcessMessage impleme
         this.idArchivoDatosExt = idArchivoDatosExt;
     }
 
-    public String getNombreArchivoDatosExt() {
-        return nombreArchivoDatosExt;
+    public String getNombreArchivoDatos() {
+        return nombreArchivoDatos;
     }
 
-    public void setNombreArchivoDatosExt(String nombreArchivoDatosExt) {
-        this.nombreArchivoDatosExt = nombreArchivoDatosExt;
+    public void setNombreArchivoDatos(String nombreArchivoDatos) {
+        this.nombreArchivoDatos = nombreArchivoDatos;
+    }
+
+    public String getNombreOriginalArchivoDatos() {
+        return nombreOriginalArchivoDatos;
+    }
+
+    public void setNombreOriginalArchivoDatos(String nombreOriginalArchivoDatos) {
+        this.nombreOriginalArchivoDatos = nombreOriginalArchivoDatos;
     }
 }

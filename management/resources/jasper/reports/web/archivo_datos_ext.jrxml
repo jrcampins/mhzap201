@@ -96,6 +96,8 @@
     <field name="es_usuario_especial_1x3y9" class="java.lang.Integer"/>
     <field name="es_usuario_inactivo_1x3y10" class="java.lang.Integer"/>
     <field name="es_usuario_modificado_1x3y11" class="java.lang.Integer"/>
+    <field name="nombre_archivo_datos" class="java.lang.String"/>
+    <field name="nombre_original_archivo_datos" class="java.lang.String"/>
     <field name="fecha_hora_ultima_importacion" class="java.util.Date"/>
     <field name="id_usuario_ultima_importacion" class="java.lang.Long"/>
     <field name="codigo_usuario_1x4y3" class="java.lang.String"/>

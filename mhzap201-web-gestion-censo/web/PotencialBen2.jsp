@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 campoIndiceCalidadVida1 listaEsPotencialBenMigrado1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPotencialBen1 campoCodigoPotencialBen1 campoNombrePotencialBen1 listaNumeroTipoRegPotBen1 campoIdPersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 campoEdad1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoManzana1 campoCompania1 campoDireccion1 campoNombreResponsableHogar1 campoNumeroTelefonoRespHogar1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 campoNombreReferente1 campoNumeroTelefonoReferente1 listaNumeroCondicionCenso1 campoFechaValidacionCenso1 campoIdFuncionarioValidacionCen1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosValidacionCenso1 campoIdFichaPersona1 listaNumeroCondicionReclCen1 campoFechaReclamoCenso1 campoComentariosReclamoCenso1 campoFechaAprobacionReclamoCenso1 campoComentariosAprReclCen1 campoFechaDenegacionReclamoCenso1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaRegistroPotBen1 campoIdUsuarioRegPotBen1 listaEsPotencialBenInactivo1 campoFechaUltimaVisitaCenso1 campoObservacionesUltVisitaCen1 campoIdFuncionarioUltVisitaCen1 campoReferenciaDireccion1 campoIndiceCalidadVida1 listaEsPotencialBenMigrado1 campoLote1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -487,6 +487,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.es_potencial_ben_migrado.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridLote1" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelLote1}"
+                                                    id="labelLote1"
+                                                    for="campoLote1"
+                                                    text="lote"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridLote2" rendered="#{PotencialBen2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoLote1"
+                                                    binding="#{PotencialBen2.campoLote1}"
+                                                    converter="#{PotencialBen2.converterLote1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['lote']}"
+                                                    toolTip="BundleParametros.lote.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorLote1.validate}"/>
+                                                <webuijsf:staticText id="campoLote1Texto1"
+                                                    binding="#{PotencialBen2.campoLote1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['lote']}"/>
+                                                <webuijsf:message id="messageLote1"
+                                                    for="campoLote1"/>
+                                                <webuijsf:helpInline id="helpInlineLote1"
+                                                    binding="#{PotencialBen2.helpInlineLote1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.lote.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2671,6 +2703,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.es_potencial_ben_migrado.potencial_ben"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridLote1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen2.labelLote1x1}"
+                                                    id="labelLote1x1"
+                                                    for="campoLote1x1"
+                                                    text="lote"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridLote1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoLote1x1"
+                                                    binding="#{PotencialBen2.campoLote1x1}"
+                                                    converter="#{PotencialBen2.converterLote1}"
+                                                    readOnly="true"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['lote']}"
+                                                    toolTip="BundleParametros.lote.potencial_ben"
+                                                    validatorExpression="#{PotencialBen2.validatorLote1.validate}"/>
+                                                <webuijsf:staticText id="campoLote1x1Texto1"
+                                                    binding="#{PotencialBen2.campoLote1x1Texto1}"
+                                                    text="#{PotencialBen2.potencialBenDataProvider.value['lote']}"/>
+                                                <webuijsf:message id="messageLote1x1"
+                                                    for="campoLote1x1"/>
+                                                <webuijsf:helpInline id="helpInlineLote1x1"
+                                                    binding="#{PotencialBen2.helpInlineLote1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.lote.potencial_ben"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>

@@ -158,6 +158,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN = "notas_anul_fec_ult_cob_pen";
     public static final String COLUMNA_NUMERO_TIPO_ACT_JUPE = "numero_tipo_act_jupe";
     public static final String COLUMNA_FECHA_HORA_ULT_ACT_JUPE = "fecha_hora_ult_act_jupe";
+    public static final String COLUMNA_LOTE = "lote";
+    public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_PERSONA, Long.class);
@@ -256,6 +258,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TIPO_ACT_JUPE, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LOTE, Long.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_SIME, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -356,6 +360,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TIPO_ACT_JUPE, true);
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
+        this.setColumnasInsertables(COLUMNA_LOTE, true);
+        this.setColumnasInsertables(COLUMNA_CODIGO_SIME, true);
     }
 
     protected void setColumnasModificables() {
@@ -456,6 +462,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_NOTAS_ANUL_FEC_ULT_COB_PEN, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TIPO_ACT_JUPE, true);
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
+        this.setColumnasModificables(COLUMNA_LOTE, true);
+        this.setColumnasModificables(COLUMNA_CODIGO_SIME, true);
     }
 
     public Long getIdPersona() {
@@ -1704,6 +1712,32 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setFechaHoraUltActJupe(RowKey rowKey, Timestamp valor) {
         super.setValue(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, rowKey, valor);
+    }
+
+    public Long getLote() {
+        return (Long) super.getValue(COLUMNA_LOTE);
+    }
+    public Long getLote(RowKey rowKey) {
+        return (Long) super.getValue(COLUMNA_LOTE, rowKey);
+    }
+    public void setLote(Long valor) {
+        super.setValue(COLUMNA_LOTE, valor);
+    }
+    public void setLote(RowKey rowKey, Long valor) {
+        super.setValue(COLUMNA_LOTE, rowKey, valor);
+    }
+
+    public String getCodigoSime() {
+        return (String) super.getValue(COLUMNA_CODIGO_SIME);
+    }
+    public String getCodigoSime(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_CODIGO_SIME, rowKey);
+    }
+    public void setCodigoSime(String valor) {
+        super.setValue(COLUMNA_CODIGO_SIME, valor);
+    }
+    public void setCodigoSime(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_CODIGO_SIME, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";
