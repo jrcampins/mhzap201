@@ -16,6 +16,7 @@ SELECT
 		ubicacion_1x1.secuencia_ubicacion AS secuencia_ubicacion_1x1y8,
 		ubicacion_1x1.clave_ubicacion AS clave_ubicacion_1x1y9,
 		ubicacion_1x1.numero_tipo_area AS numero_tipo_area_1x1y10,
+		ubicacion_1x1.codigo_ubicacion_jupe AS codigo_ubicacion_jupe_1x1y11,
 	ubicacion.numero_tipo_nodo AS numero_tipo_nodo,
 		tipo_nodo_1x2.codigo_tipo_nodo AS codigo_tipo_nodo_1x2y2,
 	ubicacion.numero_nivel_ubicacion AS numero_nivel_ubicacion,
@@ -25,7 +26,8 @@ SELECT
 	ubicacion.clave_ubicacion AS clave_ubicacion,
 	ubicacion.numero_tipo_area AS numero_tipo_area,
 		tipo_area_1x4.codigo_tipo_area AS codigo_tipo_area_1x4y2,
-		tipo_area_1x4.limite_indice_calidad_vida AS limite_indice_calidad_vi_1x4y3
+		tipo_area_1x4.limite_indice_calidad_vida AS limite_indice_calidad_vi_1x4y3,
+	ubicacion.codigo_ubicacion_jupe AS codigo_ubicacion_jupe
 FROM
 	ubicacion ubicacion
 	LEFT OUTER JOIN ubicacion ubicacion_1x1 ON ubicacion_1x1.id_ubicacion = ubicacion.id_ubicacion_superior

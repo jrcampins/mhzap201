@@ -19,6 +19,8 @@ VALUES (24, 'Persona con pena judicial');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (25, 'Persona con otra pensión');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
+VALUES (26, 'Persona con subsidio');
+INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (31, 'Persona sin ficha hogar');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (32, 'Persona con ICV mayor que 65');

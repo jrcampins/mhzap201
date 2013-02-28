@@ -107,6 +107,7 @@
     <field name="secuencia_ubicacion_1x4y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x4y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x4y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x4y11" class="java.lang.String"/>
     <field name="id_distrito" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x5y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x5y4" class="java.lang.String"/>
@@ -116,6 +117,7 @@
     <field name="secuencia_ubicacion_1x5y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x5y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x5y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x5y11" class="java.lang.String"/>
     <field name="numero_tipo_area" class="java.lang.Integer"/>
     <field name="codigo_tipo_area_1x6y2" class="java.lang.String"/>
     <field name="limite_indice_calidad_vi_1x6y3" class="java.math.BigDecimal"/>
@@ -128,6 +130,7 @@
     <field name="secuencia_ubicacion_1x7y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x7y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x7y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x7y11" class="java.lang.String"/>
     <field name="id_manzana" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x8y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x8y4" class="java.lang.String"/>
@@ -137,6 +140,7 @@
     <field name="secuencia_ubicacion_1x8y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x8y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x8y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x8y11" class="java.lang.String"/>
     <field name="manzana" class="java.lang.String"/>
     <field name="direccion" class="java.lang.String"/>
     <field name="numero_telefono_linea_baja" class="java.lang.String"/>

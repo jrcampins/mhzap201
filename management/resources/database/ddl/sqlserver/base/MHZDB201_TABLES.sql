@@ -2265,7 +2265,8 @@ CREATE TABLE ubicacion
 	numero_nivel_ubicacion int,
 	secuencia_ubicacion int,
 	clave_ubicacion varchar(30),
-	numero_tipo_area int
+	numero_tipo_area int,
+	codigo_ubicacion_jupe varchar(30)
 	)
 	ON [PRIMARY]
 GO

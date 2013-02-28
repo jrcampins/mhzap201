@@ -182,6 +182,7 @@
     <field name="secuencia_ubicacion_1x2y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x2y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x2y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x2y11" class="java.lang.String"/>
     <field name="id_distrito" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x3y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x3y4" class="java.lang.String"/>
@@ -191,6 +192,7 @@
     <field name="secuencia_ubicacion_1x3y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x3y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x3y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x3y11" class="java.lang.String"/>
     <field name="id_barrio" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x4y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x4y4" class="java.lang.String"/>
@@ -200,6 +202,7 @@
     <field name="secuencia_ubicacion_1x4y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x4y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x4y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x4y11" class="java.lang.String"/>
     <field name="numero_condicion_pension" class="java.lang.Integer"/>
     <field name="codigo_condicion_pension_1x5y2" class="java.lang.String"/>
     <field name="fecha_solicitud_pension" class="java.util.Date"/>

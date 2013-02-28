@@ -2661,7 +2661,8 @@ CREATE TABLE ubicacion
 	numero_nivel_ubicacion NUMBER(10),
 	secuencia_ubicacion NUMBER(10),
 	clave_ubicacion VARCHAR2(60),
-	numero_tipo_area NUMBER(10)
+	numero_tipo_area NUMBER(10),
+	codigo_ubicacion_jupe VARCHAR2(60)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING

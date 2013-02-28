@@ -172,6 +172,7 @@
     <field name="secuencia_ubicacion_1x7y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x7y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x7y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x7y11" class="java.lang.String"/>
     <field name="id_distrito_nacimiento" class="java.lang.Long"/>
     <field name="codigo_ubicacion_1x8y3" class="java.lang.String"/>
     <field name="nombre_ubicacion_1x8y4" class="java.lang.String"/>
@@ -181,6 +182,7 @@
     <field name="secuencia_ubicacion_1x8y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x8y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x8y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x8y11" class="java.lang.String"/>
     <field name="numero_tipo_area_lugar_nac" class="java.lang.Integer"/>
     <field name="codigo_tipo_area_1x9y2" class="java.lang.String"/>
     <field name="limite_indice_calidad_vi_1x9y3" class="java.math.BigDecimal"/>

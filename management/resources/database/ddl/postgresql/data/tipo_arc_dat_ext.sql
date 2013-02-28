@@ -13,6 +13,8 @@ VALUES (204, 'Penas Judiciales Pendientes');
 INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
 VALUES (205, 'Pensionados');
 INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
+VALUES (206, 'Subsidiados');
+INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
 VALUES (301, 'Fallecidos');
 INSERT INTO tipo_arc_dat_ext (numero_tipo_arc_dat_ext, codigo_tipo_arc_dat_ext)
 VALUES (302, 'Presuntos Fallecidos');

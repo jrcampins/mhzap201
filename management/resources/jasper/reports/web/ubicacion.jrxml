@@ -85,6 +85,7 @@
     <field name="secuencia_ubicacion_1x1y8" class="java.lang.Integer"/>
     <field name="clave_ubicacion_1x1y9" class="java.lang.String"/>
     <field name="numero_tipo_area_1x1y10" class="java.lang.Integer"/>
+    <field name="codigo_ubicacion_jupe_1x1y11" class="java.lang.String"/>
     <field name="numero_tipo_nodo" class="java.lang.Integer"/>
     <field name="codigo_tipo_nodo_1x2y2" class="java.lang.String"/>
     <field name="numero_nivel_ubicacion" class="java.lang.Integer"/>
@@ -95,6 +96,7 @@
     <field name="numero_tipo_area" class="java.lang.Integer"/>
     <field name="codigo_tipo_area_1x4y2" class="java.lang.String"/>
     <field name="limite_indice_calidad_vi_1x4y3" class="java.math.BigDecimal"/>
+    <field name="codigo_ubicacion_jupe" class="java.lang.String"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

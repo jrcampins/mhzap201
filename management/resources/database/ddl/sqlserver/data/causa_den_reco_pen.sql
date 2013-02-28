@@ -17,6 +17,10 @@ VALUES (23, 'Persona con deuda');
 INSERT INTO causa_den_reco_pen (numero_causa_den_reco_pen, codigo_causa_den_reco_pen)
 VALUES (24, 'Persona con pena judicial');
 INSERT INTO causa_den_reco_pen (numero_causa_den_reco_pen, codigo_causa_den_reco_pen)
+VALUES (25, 'Persona con otra pensión');
+INSERT INTO causa_den_reco_pen (numero_causa_den_reco_pen, codigo_causa_den_reco_pen)
+VALUES (26, 'Persona con subsidio');
+INSERT INTO causa_den_reco_pen (numero_causa_den_reco_pen, codigo_causa_den_reco_pen)
 VALUES (31, 'Persona sin ficha hogar');
 INSERT INTO causa_den_reco_pen (numero_causa_den_reco_pen, codigo_causa_den_reco_pen)
 VALUES (32, 'Persona con ICV mayor que 65');
