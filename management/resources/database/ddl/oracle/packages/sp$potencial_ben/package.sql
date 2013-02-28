@@ -2,7 +2,7 @@ function concat_codigo(xrow potencial_ben%rowtype) return varchar2;
 function concat_nombre(xrow potencial_ben%rowtype) return varchar2;
 function actualizar_condicion_censo(xnew potencial_ben%rowtype) return number;
 function desactivar(beneficiario number) return varchar2;
-function acreditar( beneficiario_consultado number) return varchar2;
+function acreditar( beneficiario_consultado number, lote number) return varchar2;
 function reactivar(beneficiario number) return varchar2;
 function vincular(beneficiario number, persona_vincular number) return varchar2;
 function desvincular(beneficiario number) return varchar2;

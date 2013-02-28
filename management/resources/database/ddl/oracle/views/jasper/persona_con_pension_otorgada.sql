@@ -24,7 +24,8 @@ SELECT persona.codigo_persona AS cedula, persona.nombre_persona,
     pb.numero_telefono_resp_hogar, 
     pb.nombre_referente,
     COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono, 
-    fh.observaciones
+    fh.observaciones,
+    persona.codigo_sime
 FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =
        persona.id_departamento
@@ -39,6 +40,7 @@ FROM persona persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN potencial_ben pb ON fp.id_potencial_ben =
        pb.id_potencial_ben
-WHERE persona.numero_condicion_pension = 5
+WHERE persona.numero_condicion_pension = 5  AND
+      persona.codigo_sime is not null
 ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

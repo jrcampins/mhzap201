@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="210"/>
+	<property name="ireport.y" value="242"/>
 	<property name="ireport.callouts" value="##Thu Jan 17 22:15:36 VET 2013"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>

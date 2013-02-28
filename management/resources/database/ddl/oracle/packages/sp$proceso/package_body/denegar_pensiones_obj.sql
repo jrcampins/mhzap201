@@ -5,7 +5,7 @@
 --@param fecha_resolucion: fecha de la resolución en la que se otorga la pensión
 --@return: mensaje indicando el numero de pensiones otorgadas
 --
-function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp) return varchar2 is
+function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2) return varchar2 is
 
     mensaje varchar2(2000):='';
     mensaje_retorno varchar2(2000):='';
@@ -26,9 +26,15 @@ function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion var
     vista_pen_den cons_pen_den;
     type log_proceso is table of log_pro_den_pen_obj%rowtype;
     table_log log_proceso;
+    valor_sime varchar2(2000);
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    valor_sime:=sime;
+    if sime is null then
+        msg_string:='Código de SIME no puede ser vacío';
+        raise_application_error(err_number, msg_string, true);
+    end if;
     if numero_resolucion is null then
         msg_string:='Número de Resolución no puede ser vacío';
         raise_application_error(err_number, msg_string, true);
@@ -57,7 +63,8 @@ begin
                               id_barrio , 
                               numero_causa_den_pension
                        from persona 
-                       where numero_condicion_pension=3 '||segmento_consulta_ubicacion
+                       where codigo_sime='''||valor_sime||'''
+                       and numero_condicion_pension=3 '||segmento_consulta_ubicacion
     bulk collect into vista_pen_den;
     if vista_pen_den.count=0 then
         return 'No hay Personas pendientes por resolución denegatoria';

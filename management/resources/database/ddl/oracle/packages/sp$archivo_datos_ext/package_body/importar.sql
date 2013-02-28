@@ -39,49 +39,54 @@ begin
     --Dependiendo del tipo de archivo se carga
     --101: Identificaciones
     if tipo_archivo=101 then
-        importar_identificaciones(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_identificaciones(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Identificación Importados: ';
         mensaje:=mensaje||num_importados;
     --1010: Potenciales beneficiarios
     elsif tipo_archivo=102 then
-        importar_pot_ben(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext, num_importados);
+        importar_pot_ben(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext, num_importados);
         mensaje:='Registros de Potenciales Beneficiarios Importados: ';
         mensaje:=mensaje||num_importados;
     --201: Empleados
     elsif tipo_archivo=201 then
-        importar_empleados(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_empleados(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Empleados Actualizados: ';
         mensaje:=mensaje||num_importados;
     --202: Jubilados y Pensionados
     elsif tipo_archivo=202 then
-        importar_jubilados_pens(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_jubilados_pens(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Jubilados y Pensionados Actualizados: ';
         mensaje:=mensaje||num_importados;
     --203: Deudores
     elsif tipo_archivo=203 then
-        importar_deudores(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_deudores(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Deudores Actualizados: ';
         mensaje:=mensaje||num_importados;
     --204: Penas Judiciales
     elsif tipo_archivo=204 then
-        importar_penas(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_penas(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Penas Judiciales Actualizados: ';
+        mensaje:=mensaje||num_importados;
+    --205: Subsidios (Cambiar por 206)
+    elsif tipo_archivo=205 then
+        importar_subsidios(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
+        mensaje:='Registros de Subsidios Actualizados: ';
         mensaje:=mensaje||num_importados;
     --301: Fallecidos
     elsif tipo_archivo=301 then
-        importar_fallecidos(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_fallecidos(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Fallecidos Importados: ';
         mensaje:=mensaje||num_importados;
     --401: Ficha Hogar
     elsif tipo_archivo=401 then
         --102: Ficha Hogar de DGEEC
         if proveedor=102 then
-            importar_ficha_hogar_dgeec(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            importar_ficha_hogar_dgeec(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
             mensaje:='Registros de Ficha Hogar (DGEEC) Importados: ';
             mensaje:=mensaje||num_importados;
         --103: Ficha Hogar de SAS
         else
-            importar_ficha_hogar_sas(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            importar_ficha_hogar_sas(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
             mensaje:='Registros de Ficha Hogar (SAS) Importados: ';
             mensaje:=mensaje||num_importados;
         end if;
@@ -89,18 +94,18 @@ begin
     elsif tipo_archivo=402 then
         --102: Ficha Persona de DGEEC
         if proveedor=102 then
-            importar_ficha_persona_dgeec(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            importar_ficha_persona_dgeec(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
             mensaje:='Registros de Ficha de Persona (DGEEC) Importados: ';
             mensaje:=mensaje||num_importados;
         --103: Ficha Persona de SAS
         else
-            importar_ficha_persona_sas(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+            importar_ficha_persona_sas(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
             mensaje:='Registros de Ficha Hogar (SAS) Importados: ';
             mensaje:=mensaje||num_importados;
          end if;
     --501: Censos Validados
     elsif tipo_archivo=501 then
-        importar_censos_validados(row_archivo.nombre_archivo_datos_ext,row_archivo.codigo_archivo_datos_ext,num_importados);
+        importar_censos_validados(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Censos Validados Importados: ';
         mensaje:=mensaje||num_importados;
     end if;

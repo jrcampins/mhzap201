@@ -19,11 +19,13 @@ SELECT persona.codigo_persona AS cedula,
        extract(year from persona.fecha_solicitud_pension) AS anho, 
        case when persona.es_persona_con_copia_cedula=1 then 'Sí' else 'No' end as copia_cedula,
        case when persona.es_persona_con_cer_vida=1 then 'Sí' else 'No' end as certificado_vida,
-       case when persona.es_persona_con_declaracion_jur=1 then 'Sí' else 'No' end as declaracion_jur
+       case when persona.es_persona_con_declaracion_jur=1 then 'Sí' else 'No' end as declaracion_jur,
+        persona.codigo_sime
    FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = persona.id_departamento
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = persona.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    JOIN condicion_pension cp ON persona.numero_condicion_pension = cp.numero_condicion_pension
-WHERE persona.numero_condicion_pension = 5
+WHERE persona.numero_condicion_pension = 5  AND
+      persona.codigo_sime is not null 
 ORDER BY persona.fecha_solicitud_pension, persona.id_departamento, persona.id_distrito, persona.id_barrio, persona.nombre_persona;

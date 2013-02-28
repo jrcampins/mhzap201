@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="24"/>
+	<property name="ireport.x" value="153"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -34,6 +34,7 @@
 	<field name="REFERENCIA_CASA" class="java.lang.String"/>
 	<field name="NUMERO_TELEFONO_RESP_HOGAR" class="java.lang.String"/>
 	<field name="NOMBRE_REFERENTE" class="java.lang.String"/>
+	<field name="CODIGO_SIME" class="java.lang.String"/>
 	<field name="NUMERO_TELEFONO" class="java.lang.String"/>
 	<field name="OBJECIONES_ELEGIBILIDAD" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
@@ -45,9 +46,9 @@
 	<group name="grupo_distrito_anho" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{DISTRITO}+$F{ANHO}]]></groupExpression>
 		<groupHeader>
-			<band height="150" splitType="Stretch">
+			<band height="170" splitType="Stretch">
 				<rectangle>
-					<reportElement key="rectangle-1" x="11" y="4" width="929" height="114" backcolor="#CCCCCC"/>
+					<reportElement key="rectangle-1" x="11" y="4" width="929" height="130" backcolor="#CCCCCC"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -135,7 +136,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_CODE}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-8" mode="Opaque" x="11" y="127" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-8" mode="Opaque" x="11" y="150" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -149,7 +150,7 @@
 					<text><![CDATA[Nº]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-9" mode="Opaque" x="47" y="127" width="54" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-9" mode="Opaque" x="47" y="150" width="54" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -163,7 +164,7 @@
 					<text><![CDATA[NRO. C.I.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-10" mode="Opaque" x="101" y="127" width="173" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-10" mode="Opaque" x="101" y="150" width="173" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -178,7 +179,7 @@
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-11" mode="Opaque" x="274" y="127" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-11" mode="Opaque" x="274" y="150" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -193,7 +194,7 @@
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="501" y="127" width="103" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="501" y="150" width="103" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -207,7 +208,7 @@
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="604" y="127" width="126" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="604" y="150" width="126" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -221,7 +222,7 @@
 					<text><![CDATA[DIRECCION]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-15" mode="Opaque" x="755" y="127" width="57" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-15" mode="Opaque" x="755" y="150" width="57" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -235,7 +236,7 @@
 					<text><![CDATA[TELEFONO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-16" mode="Opaque" x="812" y="127" width="127" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-16" mode="Opaque" x="812" y="150" width="127" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -292,7 +293,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-18" mode="Opaque" x="730" y="127" width="25" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-18" mode="Opaque" x="730" y="150" width="25" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -306,7 +307,7 @@
 					<text><![CDATA[ICV]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-19" mode="Opaque" x="395" y="127" width="106" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-19" mode="Opaque" x="395" y="150" width="106" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -320,7 +321,7 @@
 					<text><![CDATA[DISTRITO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-20" mode="Opaque" x="303" y="127" width="92" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-20" mode="Opaque" x="303" y="150" width="92" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -333,6 +334,13 @@
 					</textElement>
 					<text><![CDATA[DEPARTAMENTO]]></text>
 				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-3" x="347" y="108" width="224" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["CODIGO SIME: "+$F{CODIGO_SIME}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupHeader>
 		<groupFooter>

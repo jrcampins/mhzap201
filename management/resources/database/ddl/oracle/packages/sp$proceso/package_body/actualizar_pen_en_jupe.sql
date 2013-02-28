@@ -3,7 +3,7 @@
 --@return: mensaje indicando el resultado de la operación
 --
 --Cambiado nombre de función
-function actualizar_pen_en_jupe(param varchar2) return varchar2 is
+function actualizar_pen_en_jupe(param varchar2, sime varchar2) return varchar2 is
     v_existe_a_ben varchar2(10);
     v_existe_cedula varchar2(10);
     v_existe_a_per varchar2(10);

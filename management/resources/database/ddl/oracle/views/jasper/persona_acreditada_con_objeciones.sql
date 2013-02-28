@@ -20,6 +20,7 @@ SELECT persona.codigo_persona AS cedula,
     fh.direccion AS referencia_casa, 
     pb.numero_telefono_resp_hogar, 
     pb.nombre_referente,
+    persona.codigo_sime,
     COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono,   
     toep.codigo_tipo_obj_ele_pen||' : '||pde.nombre_proveedor_dat_ext||NVL(' '||oep.observaciones,'.') AS objeciones_elegibilidad
 FROM persona persona
@@ -34,6 +35,7 @@ FROM persona persona
    LEFT JOIN tipo_obj_ele_pen toep on toep.numero_tipo_obj_ele_pen= oep.numero_tipo_obj_ele_pen
 WHERE  persona.es_persona_acreditada_para_pen = 1 AND
        (persona.numero_condicion_pension=1 or persona.numero_condicion_pension=3) AND
-       oep.es_objecion_ele_pen_inactiva=0
+       oep.es_objecion_ele_pen_inactiva=0 AND
+       persona.codigo_sime is not null
 ORDER BY persona.nombre_persona,persona.id_departamento,
     persona.id_distrito, persona.id_barrio;

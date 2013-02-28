@@ -9,8 +9,10 @@
 create or replace function proceso_acreditar_pot_ben(rastro number,ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp) return number is
     mensaje varchar2(2000);
     retcode number;
+    lote number;
 begin
-    mensaje:=sp$proceso.acreditar_pot_ben(ubicacion,fecha_registro_desde,fecha_registro_hasta);         
+    lote:=rastro;
+    mensaje:=sp$proceso.acreditar_pot_ben(ubicacion,fecha_registro_desde,fecha_registro_hasta,lote);         
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

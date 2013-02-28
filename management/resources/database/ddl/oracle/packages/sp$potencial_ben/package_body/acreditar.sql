@@ -3,9 +3,10 @@
 --para ello hace las validaciones correspondientes y solicita la pensión
 --@param rastro: Identificador del proceso ejecutado.
 --@param beneficiario_consultado: id del potencial beneficiario sobre el que se ejecutara la funcion
+--@param lote: identificador del lote
 --@return: 0 si no se produjo ninguna excepcion.
 --
-function acreditar( beneficiario_consultado number) return varchar2 is
+function acreditar( beneficiario_consultado number, lote number) return varchar2 is
 
     mensaje varchar2(2000);
     row_potencial_ben potencial_ben%rowtype;
@@ -13,10 +14,12 @@ function acreditar( beneficiario_consultado number) return varchar2 is
     row_ficha_hogar ficha_hogar%rowtype;
     row_persona persona%rowtype;
     icv_corte number;
+    numero_lote number;
     icv_beneficiario number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    numero_lote:=lote;
     begin
         --Se extrae el potencial beneficiario
         select * into row_potencial_ben from potencial_ben pb where pb.id_potencial_ben=beneficiario_consultado;
@@ -88,24 +91,35 @@ begin
                msg_string:='Persona ya fue acreditada';
                raise_application_error(err_number, msg_string, true); 
             end if;            
-        end if;
-        update persona
-        set es_persona_acreditada_para_pen=1
-        where id_persona=row_potencial_ben.id_persona;
-        if not sql%found then
-            msg_string:='No fue posible solicitar la pension a la Persona';
-            raise_application_error(err_number, msg_string, true);
-        end if;
+        end if;        
         mensaje:=sp$persona.solicitar_pension(row_potencial_ben.id_persona,'Pension Solicitada y Acreditada automáticamente. Persona Indígena');
-        mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje;
-    --Si no es indigena, se acredita por ICV
+        if mensaje like '%Pensión solicitada%' then
+            --Actualizar lote y acreditación de persona
+            update persona p
+            set p.es_persona_acreditada_para_pen=1,
+            p.lote=numero_lote
+            where p.id_persona=row_potencial_ben.id_persona;
+            if not sql%found then
+                msg_string:='No fue posible solicitar la pension a la Persona';
+                raise_application_error(err_number, msg_string, true);
+            end if;
+            --Asignar el lote al potencial beneficiario
+            update potencial_ben pb
+            set pb.lote=numero_lote
+            where pb.id_potencial_ben=row_potencial_ben.id_potencial_ben;
+            if not sql%found then
+                msg_string:='No fue posible asignar el lote al Potencial Beneficiario';
+                raise_application_error(err_number, msg_string, true);
+            end if;
+            mensaje:='Potencial Beneficiario (Indígena) Acreditado para pensión. '||mensaje||' Lote: '||lote;
+        end if;
     --Solo se acredita si el potencial beneficiario tiene una ficha persona o icv
     elsif row_potencial_ben.indice_calidad_vida is null and row_potencial_ben.id_ficha_persona is null then
         mensaje:='Potencial Beneficiario no tiene ICV ni Ficha Persona. No se puede acreditar';
     --Solo se acredita si el potencial beneficiario tiene estado de censo censado o validado
     elsif row_potencial_ben.numero_condicion_censo<>3 and row_potencial_ben.numero_condicion_censo<>5 then
         mensaje:='Potencial Beneficiario no tiene Censo Válido';
-    --Si no es indigena hay que acreditar
+    --Si no es indigena, se acredita por ICV
     else
         begin
             select * into row_persona from persona where id_persona=row_potencial_ben.id_persona;
@@ -126,42 +140,54 @@ begin
         if icv_beneficiario is null then    
             icv_beneficiario:=sp$ficha_hogar.calcular_icv(row_ficha_hogar.id_ficha_hogar) ;
         end if;
-        --Se compara el icv con el punto de corte
-        if icv_beneficiario<=icv_corte then
+        --Se compara el icv con el punto de corte y se verifica que la persona tenga condición de censo válida
+        if icv_beneficiario<=icv_corte
+           and (row_potencial_ben.numero_condicion_censo=5 or row_potencial_ben.numero_condicion_censo=3) then
         --Se intenta solicitar la pensión
             mensaje:=sp$persona.solicitar_pension(row_potencial_ben.id_persona,'Pensión Solicitada y Acreditada automáticamente');
-            mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje;
-            --Se actualiza la persona como acreditada
-            if row_potencial_ben.id_ficha_persona is not null then
-                update persona
-                set es_persona_acreditada_para_pen=1,
-                indice_calidad_vida=icv_beneficiario,
-                fecha_ficha_persona=row_ficha_hogar.fecha_entrevista,
-                id_departamento=row_ficha_hogar.id_departamento,
-                id_distrito=row_ficha_hogar.id_distrito,
-                id_barrio=row_ficha_hogar.id_barrio,
-                numero_tipo_area=row_ficha_hogar.numero_tipo_area,
-                manzana=row_potencial_ben.manzana,
-                direccion=row_potencial_ben.direccion,
-                numero_telefono_linea_baja=row_ficha_hogar.numero_telefono_linea_baja,
-                numero_telefono_celular=row_ficha_hogar.numero_telefono_celular
-                where id_persona=row_potencial_ben.id_persona;
-            else
-                update persona
-                set es_persona_acreditada_para_pen=1,
-                indice_calidad_vida=icv_beneficiario,
-                id_departamento=row_potencial_ben.id_departamento,
-                id_distrito=row_potencial_ben.id_distrito,
-                id_barrio=row_potencial_ben.id_barrio,
-                numero_tipo_area=row_potencial_ben.numero_tipo_area,
-                manzana=row_potencial_ben.manzana,
-                direccion=row_potencial_ben.direccion
-                where id_persona=row_potencial_ben.id_persona;
+            if mensaje like '%Pensión solicitada%' then
+                --Se asigna el lote al potencial beneficiario
+                update potencial_ben pb
+                set pb.lote=numero_lote
+                where pb.id_potencial_ben=row_potencial_ben.id_potencial_ben; 
+                --Si ya tiene ficha se actualiza y se copia la dirección de la ficha
+                if row_potencial_ben.id_ficha_persona is not null then
+                    update persona p
+                    set p.es_persona_acreditada_para_pen=1,
+                    p.indice_calidad_vida=icv_beneficiario,
+                    p.fecha_ficha_persona=row_ficha_hogar.fecha_entrevista,
+                    p.id_departamento=row_ficha_hogar.id_departamento,
+                    p.id_distrito=row_ficha_hogar.id_distrito,
+                    p.id_barrio=row_ficha_hogar.id_barrio,
+                    p.numero_tipo_area=row_ficha_hogar.numero_tipo_area,
+                    p.manzana=row_potencial_ben.manzana,
+                    p.direccion=row_potencial_ben.direccion,
+                    p.numero_telefono_linea_baja=row_ficha_hogar.numero_telefono_linea_baja,
+                    p.numero_telefono_celular=row_ficha_hogar.numero_telefono_celular,
+                    p.lote=numero_lote
+                    where p.id_persona=row_potencial_ben.id_persona;
+                --Si es un potencial beneficiario que solo tiene icv se acredita solamente
+                else
+                    update persona p
+                    set p.es_persona_acreditada_para_pen=1,
+                    p.indice_calidad_vida=icv_beneficiario,
+                    p.id_departamento=row_potencial_ben.id_departamento,
+                    p.id_distrito=row_potencial_ben.id_distrito,
+                    p.id_barrio=row_potencial_ben.id_barrio,
+                    p.numero_tipo_area=row_potencial_ben.numero_tipo_area,
+                    p.manzana=row_potencial_ben.manzana,
+                    p.direccion=row_potencial_ben.direccion,
+                    p.lote=numero_lote
+                    where p.id_persona=row_potencial_ben.id_persona;
+                end if;
+                mensaje:='Potencial Beneficiario Acreditado para pensión. '||mensaje||' Lote: '||lote;
+    --             --Se inactiva el potencial beneficiario
+    --             update potencial_ben
+    --             set es_potencial_ben_inactivo=1 
+    --             where id_potencial_ben=row_potencial_ben.id_potencial_ben;
             end if;
---             --Se inactiva el potencial beneficiario
---             update potencial_ben
---             set es_potencial_ben_inactivo=1 
---             where id_potencial_ben=row_potencial_ben.id_potencial_ben;
+        elsif (row_potencial_ben.numero_condicion_censo!=5 and row_potencial_ben.numero_condicion_censo!=3) then
+            mensaje:='Potencial Beneficiario NO está Acreditado para pensión.Censo no válido';
         else
             mensaje:='Potencial Beneficiario NO está Acreditado para pensión';
         end if;

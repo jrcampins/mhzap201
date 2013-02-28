@@ -5,7 +5,7 @@
 --@param fecha_resolucion: fecha de la resolución en la que se otorga la pensión
 --@return: mensaje indicando el numero de pensiones otorgadas
 --
-function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp) return varchar2 is
+function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2) return varchar2 is
 
     mensaje varchar2(2000):='';
     mensaje_retorno varchar2(2000):='';
@@ -29,7 +29,13 @@ function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion var
      vista_pen_oto cons_pen_oto;
      type log_proceso is table of log_pro_oto_pen_apr%rowtype;
      table_log log_proceso;
+     valor_sime varchar2(2000);
 begin
+    valor_sime:=sime;
+    if sime is null then
+        msg_string:='Código de SIME no puede ser vacío';
+        raise_application_error(err_number, msg_string, true);
+    end if;
     if numero_resolucion is null then
         msg_string:='Número de Resolución no puede ser vacío';
         raise_application_error(err_number, msg_string, true);
@@ -58,7 +64,8 @@ begin
                               id_barrio , 
                               numero_condicion_pension
                        from persona 
-                       where numero_condicion_pension=2 '||segmento_consulta_ubicacion
+                       where codigo_sime='''||valor_sime||'''
+                       and numero_condicion_pension=2 '||segmento_consulta_ubicacion
     bulk collect into vista_pen_oto;
     if vista_pen_oto.count=0 then
         return 'No hay Personas pendientes por otorgar pensión';

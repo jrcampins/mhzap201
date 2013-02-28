@@ -36,15 +36,15 @@ begin
                               pd.nombre_proveedor_dat_ext,
                               pd.codigo_proveedor_dat_ext,
                               ae.codigo_archivo_datos_ext,
-                              ae.nombre_archivo_datos_ext
+                              ae.nombre_archivo_datos
         from archivo_datos_ext ae
         left join tipo_arc_dat_ext ta 
         on ae.numero_tipo_arc_dat_ext=ta.numero_tipo_arc_dat_ext
         left join proveedor_dat_ext pd
         on ae.id_proveedor_dat_ext=pd.id_proveedor_dat_ext
         where ae.es_archivo_datos_ext_importado=0 and
-        ae.es_archivo_datos_ext_inactivo=0 and
-        ae.nombre_archivo_datos_ext is not null 
+        ae.es_archivo_datos_ext_inactivo=0 amd
+        ae.nombre_archivo_datos is not null
         order by ae.numero_tipo_arc_dat_ext'
         bulk collect into vista_arc;
 

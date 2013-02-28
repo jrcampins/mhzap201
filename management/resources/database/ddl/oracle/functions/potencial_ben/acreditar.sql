@@ -7,9 +7,11 @@
 create or replace function potencial_ben_acreditar(rastro number, beneficiario_consultado number) return integer is
     mensaje varchar2(200);
     retcode number;
+    lote number;
 begin
-    mensaje:=sp$potencial_ben.acreditar(beneficiario_consultado); 
-    retcode := rastro_proceso_update(rastro, 21, null, mensaje);
+    lote:=rastro;
+    mensaje:=sp$potencial_ben.acreditar(beneficiario_consultado,rastro); 
+    retcode := rastro_proceso_update(rastro, 21, null, lote);
     return retcode;
 end;
 /

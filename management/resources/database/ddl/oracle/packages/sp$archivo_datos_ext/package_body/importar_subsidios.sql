@@ -17,6 +17,7 @@ procedure importar_subsidios(nombre_archivo varchar2, codigo_archivo varchar2, r
     p_letra_cedula char:=null;
     observacion_no_elegible varchar2(2000):='';
     mensaje varchar2(2000):='';
+    row_objecion objecion_ele_pen%rowtype;
     row_arc_dat_ext archivo_datos_ext%rowtype;
     row_persona persona%rowtype;
     id_proveedor number;
@@ -49,6 +50,7 @@ begin
             end if;
         end if;
     end if;
+    --Se marca el archivo como importado
     update archivo_datos_ext set es_archivo_datos_ext_importado=1, fecha_hora_ultima_importacion=current_timestamp where codigo_archivo_datos_ext=codigo_archivo;
     --Ubicamos el archivo de datos externos
     begin
@@ -66,7 +68,8 @@ begin
         --Determinamos el tipo de archivo
         tipo_archivo:=row_arc_dat_ext.numero_tipo_arc_dat_ext;
     end if;
-
+    --Eliminamos el log anterior de ese archivo (recuerda que hay varios archivos de deudores)
+    delete from log_imp_sub l where l.codigo_archivo=codigo;
     --creamos y llenamos la tabla externa csv_log_imp_ids
     sp$100.create_csv_log_imp_sub(nombre_archivo, 'WE8ISO8859P1', '1', ';', '"');
     insert into log_imp_sub
@@ -76,7 +79,13 @@ begin
             segundo_nombre,
             primer_apellido,
             segundo_apellido,
-            apellido_casada)
+            apellido_casada,
+            es_importado,
+            codigo_archivo,
+            nombre_archivo,
+            fecha_hora_transaccion,
+            observacion
+            )
     select
             utils.bigintid(),
             cedula,
@@ -84,44 +93,13 @@ begin
             segundo_nombre,
             primer_apellido,
             segundo_apellido,
-            apellido_casada
+            apellido_casada,
+            1,
+            codigo,
+            archivo,
+            current_timestamp,
+            'Registro cargado. Objeción pendiente por actualizar'
     from csv_log_imp_sub;
-    for subsidio in (select * from log_imp_sub where es_importado=0 and observacion is null)
-    loop
-        begin
-            id_persona_act:=sp$utils.extract_id_persona(subsidio.cedula,subsidio.primer_nombre,subsidio.segundo_nombre,subsidio.primer_apellido,subsidio.segundo_apellido,subsidio.apellido_casada);
-            if id_persona_act is null then
-                msg_string:= 'Persona no encontrada';
-                raise_application_error(err_number, msg_string, true);
-            --Se registra la inserción en la tabla intermedia
-            else
-                 --Se selecciona la persona
-                begin
-                    select * into row_persona from persona where id_persona=id_persona_act;
-                exception when no_data_found then 
-                    null;
-                end;
-                if not sql%found then
-                    msg_string := 'Persona no encontrada';
-                    raise_application_error(err_number, msg_string, true);
-                else 
-                    update persona set es_persona_con_subsidio=1 where id_persona=id_persona_act;
-                end if;
-                --Se incrementa el número de importados
-                retorno:=retorno+1;
-                --Se registra la inserción en la tabla intermedia
-                update log_imp_sub set es_importado=1, 
-                       nombre_archivo=archivo, 
-                       codigo_archivo=codigo, 
-                       fecha_hora_transaccion= current_timestamp 
-                where id_log_imp_sub=subsidio.id_log_imp_sub;
-            end if;
-        --Si no se pudo insertar el registro se marca el motivo
-        exception
-                when others then
-                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_sub set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_sub=subsidio.id_log_imp_sub;
-                    continue;
-        end;
-    end loop;
-end;
+    --Se retorna el numero de registros
+    select count(id_log_imp_sub) into retorno from log_imp_sub where codigo_archivo=codigo;
+   end;

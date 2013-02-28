@@ -5,9 +5,10 @@
 --@param ubicacion: Identificador de la ubicación para filtrar potenciales beneficiarios
 --@param fecha_registro_desde: Fecha de registro para filtrar potenciales beneficiarios
 --@param fecha_registro_hasta: Fecha de registro para filtrar potenciales beneficiarios
+--@param lote: Numero de lote
 --@return: mensaje indicando el resultado de la acreditación
 --
-function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp) return varchar2 is
+function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp, lote number) return varchar2 is
     mensaje varchar2(2000);
     total number:=0;
     total_no_acreditados number:=0;
@@ -38,10 +39,12 @@ function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fech
     vista_ben cons_ben_acr;
     type log_proceso is table of log_pro_acr_pot_ben%rowtype;
     table_log log_proceso;
-    reg log_pro_acr_pot_ben%rowtype;   
+    reg log_pro_acr_pot_ben%rowtype;
+    numero_lote number;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    numero_lote:=lote;
     --Determinamos si la ubicación sera un parametro a consultar o no
     if ubicacion is not null then
         segmento_consulta:=' where (id_departamento='||ubicacion
@@ -115,7 +118,7 @@ begin
     for i in table_log.first..table_log.last loop
         begin
             total:=total+1;
-            mensaje:=sp$potencial_ben.acreditar(table_log(i).id_potencial_ben);
+            mensaje:=sp$potencial_ben.acreditar(table_log(i).id_potencial_ben,numero_lote);
             if upper(mensaje) like upper('%Potencial Beneficiario Acreditado%') then 
                 total_acreditados:=total_acreditados+1;
                 update log_pro_acr_pot_ben 
@@ -132,7 +135,7 @@ begin
                 where id_log_pro_acr_pot_ben=table_log(i).id_log_pro_acr_pot_ben;
             end if;
         exception when others then
-            mensaje:=SQLERRM;
+            mensaje:='ERROR: '||SQLERRM;
             update log_pro_acr_pot_ben 
                 set es_procesado=1, 
                 observacion=mensaje,
@@ -142,6 +145,6 @@ begin
             continue;
         end;
     end loop;
-    mensaje:='Total de Beneficiarios Procesados: '||total||', Acreditados: '||total_acreditados||', No Acreditados: '||total_no_acreditados||', Total Excepciones: '||total_errores;
+    mensaje:='Lote: '||numero_lote||'. Total de Beneficiarios Procesados: '||total||', Acreditados: '||total_acreditados||', No Acreditados: '||total_no_acreditados||', Total Excepciones: '||total_errores;
     return mensaje;
 end;

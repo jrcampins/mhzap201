@@ -29,6 +29,7 @@
 	<field name="DIRECCION" class="java.lang.String"/>
 	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
 	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
+	<field name="LOTE" class="java.math.BigDecimal"/>
 	<field name="ANHO" class="java.math.BigDecimal"/>
 	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
 	<field name="NOMBRE_JEFE_HOGAR" class="java.lang.String"/>
@@ -45,9 +46,9 @@
 	<group name="grupo_departamento_distrito" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{DEPARTAMENTO}+$F{DISTRITO}]]></groupExpression>
 		<groupHeader>
-			<band height="147" splitType="Stretch">
+			<band height="162" splitType="Stretch">
 				<rectangle>
-					<reportElement key="rectangle-1" x="11" y="4" width="929" height="114" backcolor="#CCCCCC"/>
+					<reportElement key="rectangle-1" x="11" y="4" width="929" height="127" backcolor="#CCCCCC"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -135,7 +136,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_CODE}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-8" mode="Opaque" x="11" y="127" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-8" mode="Opaque" x="11" y="142" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -149,7 +150,7 @@
 					<text><![CDATA[ORDEN]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-9" mode="Opaque" x="47" y="127" width="62" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-9" mode="Opaque" x="47" y="142" width="62" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -163,7 +164,7 @@
 					<text><![CDATA[NRO. C.I.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-10" mode="Opaque" x="109" y="127" width="144" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-10" mode="Opaque" x="109" y="142" width="144" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -178,7 +179,7 @@
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-11" mode="Opaque" x="253" y="127" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-11" mode="Opaque" x="253" y="142" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -193,7 +194,7 @@
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="282" y="127" width="76" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="282" y="142" width="76" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -207,7 +208,7 @@
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="424" y="127" width="134" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="424" y="142" width="134" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -221,7 +222,7 @@
 					<text><![CDATA[DIRECCION]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-14" mode="Opaque" x="558" y="127" width="149" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-14" mode="Opaque" x="558" y="142" width="149" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -235,7 +236,7 @@
 					<text><![CDATA[REFERENCIA PARA LLEGAR A LA CASA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-15" mode="Opaque" x="707" y="127" width="142" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-15" mode="Opaque" x="707" y="142" width="142" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -249,7 +250,7 @@
 					<text><![CDATA[NOMBRE JEFE HOGAR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-16" mode="Opaque" x="902" y="127" width="38" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-16" mode="Opaque" x="902" y="142" width="38" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -306,7 +307,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-18" mode="Opaque" x="849" y="127" width="53" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-18" mode="Opaque" x="849" y="142" width="53" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -320,7 +321,7 @@
 					<text><![CDATA[CEDULA JEFE HOGAR]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="358" y="127" width="66" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="358" y="142" width="66" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -333,6 +334,13 @@
 					</textElement>
 					<text><![CDATA[TIPO DE ÁREA]]></text>
 				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-3" x="228" y="108" width="493" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["LOTE: "+$F{LOTE}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupHeader>
 		<groupFooter>
