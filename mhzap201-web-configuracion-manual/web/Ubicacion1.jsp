@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Ubicacion1.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -452,6 +452,33 @@
                                                     text="#{currentRow.value['codigo_tipo_area_1x4y2']}"/>
                                                 <webuijsf:message id="messageNumeroTipoArea1"
                                                     for="listaNumeroTipoArea1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Ubicacion1.tableColumnCodigoUbicacionJupe1}"
+                                                    headerText="c&#243;digo ubicaci&#243;n jupe"
+                                                    id="tableColumnCodigoUbicacionJupe1" rendered="false"
+                                                    sort="codigo_ubicacion_jupe">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextCodigoUbicacionJupe1"
+                                                    text="#{currentRow.value['codigo_ubicacion_jupe']}"
+                                                    rendered="#{Ubicacion1.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Ubicacion1.labelCodigoUbicacionJupe1}"
+                                                    id="labelCodigoUbicacionJupe1"
+                                                    for="campoCodigoUbicacionJupe1"/>
+                                                <webuijsf:textField id="campoCodigoUbicacionJupe1"
+                                                    binding="#{Ubicacion1.campoCodigoUbicacionJupe1}"
+                                                    columns="20"
+                                                    maxLength="30"
+                                                    readOnly="#{Ubicacion1.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['codigo_ubicacion_jupe']}"
+                                                    toolTip="BundleParametros.codigo_ubicacion_jupe.ubicacion"
+                                                    validatorExpression="#{Ubicacion1.validatorCodigoUbicacionJupe1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoUbicacionJupe1Texto1"
+                                                    binding="#{Ubicacion1.campoCodigoUbicacionJupe1Texto1}"
+                                                    text="#{currentRow.value['codigo_ubicacion_jupe']}"/>
+                                                <webuijsf:message id="messageCodigoUbicacionJupe1"
+                                                    for="campoCodigoUbicacionJupe1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Ubicacion2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -516,6 +516,39 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.numero_tipo_area.ubicacion"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCodigoUbicacionJupe1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Ubicacion2.labelCodigoUbicacionJupe1}"
+                                                    id="labelCodigoUbicacionJupe1"
+                                                    for="campoCodigoUbicacionJupe1"
+                                                    text="c&#243;digo ubicaci&#243;n jupe"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCodigoUbicacionJupe2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCodigoUbicacionJupe1"
+                                                    binding="#{Ubicacion2.campoCodigoUbicacionJupe1}"
+                                                    columns="20"
+                                                    maxLength="30"
+                                                    readOnly="#{Ubicacion2.gestor.filaNoProcesada}"
+                                                    text="#{Ubicacion2.ubicacionDataProvider.value['codigo_ubicacion_jupe']}"
+                                                    toolTip="BundleParametros.codigo_ubicacion_jupe.ubicacion"
+                                                    validatorExpression="#{Ubicacion2.validatorCodigoUbicacionJupe1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoUbicacionJupe1Texto1"
+                                                    binding="#{Ubicacion2.campoCodigoUbicacionJupe1Texto1}"
+                                                    text="#{Ubicacion2.ubicacionDataProvider.value['codigo_ubicacion_jupe']}"/>
+                                                <webuijsf:message id="messageCodigoUbicacionJupe1"
+                                                    for="campoCodigoUbicacionJupe1"/>
+                                                <webuijsf:helpInline id="helpInlineCodigoUbicacionJupe1"
+                                                    binding="#{Ubicacion2.helpInlineCodigoUbicacionJupe1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.codigo_ubicacion_jupe.ubicacion"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>

@@ -23,6 +23,7 @@ public enum EnumTipoArcDatExt implements ListOption {
     DEUDORES(203, "tipo_arc_dat_ext_deudores"),
     PENAS_JUDICIALES_PENDIENTES(204, "tipo_arc_dat_ext_penas_judiciales_pendientes"),
     PENSIONADOS(205, "tipo_arc_dat_ext_pensionados"),
+    SUBSIDIADOS(206, "tipo_arc_dat_ext_subsidiados"),
     FALLECIDOS(301, "tipo_arc_dat_ext_fallecidos"),
     PRESUNTOS_FALLECIDOS(302, "tipo_arc_dat_ext_presuntos_fallecidos"),
     FICHA_HOGAR(401, "tipo_arc_dat_ext_ficha_hogar"),
@@ -45,6 +46,8 @@ public enum EnumTipoArcDatExt implements ListOption {
                 return PENAS_JUDICIALES_PENDIENTES;
             case 205:
                 return PENSIONADOS;
+            case 206:
+                return SUBSIDIADOS;
             case 301:
                 return FALLECIDOS;
             case 302:

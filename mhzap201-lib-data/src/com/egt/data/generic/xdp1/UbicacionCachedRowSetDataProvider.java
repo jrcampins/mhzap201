@@ -71,6 +71,7 @@ public class UbicacionCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     public static final String COLUMNA_SECUENCIA_UBICACION = "secuencia_ubicacion";
     public static final String COLUMNA_CLAVE_UBICACION = "clave_ubicacion";
     public static final String COLUMNA_NUMERO_TIPO_AREA = "numero_tipo_area";
+    public static final String COLUMNA_CODIGO_UBICACION_JUPE = "codigo_ubicacion_jupe";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_UBICACION, Long.class);
@@ -83,6 +84,7 @@ public class UbicacionCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_SECUENCIA_UBICACION, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CLAVE_UBICACION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TIPO_AREA, Integer.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_UBICACION_JUPE, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -97,6 +99,7 @@ public class UbicacionCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasInsertables(COLUMNA_SECUENCIA_UBICACION, true);
         this.setColumnasInsertables(COLUMNA_CLAVE_UBICACION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TIPO_AREA, true);
+        this.setColumnasInsertables(COLUMNA_CODIGO_UBICACION_JUPE, true);
     }
 
     protected void setColumnasModificables() {
@@ -111,6 +114,7 @@ public class UbicacionCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasModificables(COLUMNA_SECUENCIA_UBICACION, true);
         this.setColumnasModificables(COLUMNA_CLAVE_UBICACION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TIPO_AREA, true);
+        this.setColumnasModificables(COLUMNA_CODIGO_UBICACION_JUPE, true);
     }
 
     public Long getIdUbicacion() {
@@ -241,6 +245,19 @@ public class UbicacionCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     }
     public void setNumeroTipoArea(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_NUMERO_TIPO_AREA, rowKey, valor);
+    }
+
+    public String getCodigoUbicacionJupe() {
+        return (String) super.getValue(COLUMNA_CODIGO_UBICACION_JUPE);
+    }
+    public String getCodigoUbicacionJupe(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_CODIGO_UBICACION_JUPE, rowKey);
+    }
+    public void setCodigoUbicacionJupe(String valor) {
+        super.setValue(COLUMNA_CODIGO_UBICACION_JUPE, valor);
+    }
+    public void setCodigoUbicacionJupe(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_CODIGO_UBICACION_JUPE, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_ubicacion";

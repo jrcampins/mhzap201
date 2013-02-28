@@ -428,6 +428,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_UBICACION_15 = 20511L; // Codigo Ubicacion 15
 
+    public static final Long CODIGO_UBICACION_JUPE = 21002L; // Codigo Ubicacion JUPE
+
     public static final Long CODIGO_UBICACION_SUPERIOR = 20700L; // Codigo Ubicacion Superior
 
     public static final Long CODIGO_USUARIO = 1207L; // Codigo Usuario

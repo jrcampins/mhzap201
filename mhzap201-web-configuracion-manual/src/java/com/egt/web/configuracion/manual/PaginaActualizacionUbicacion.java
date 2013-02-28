@@ -38,6 +38,8 @@ public interface PaginaActualizacionUbicacion extends PaginaActualizacion {
 
     DropDown getListaNumeroTipoArea1();
 
+    TextField getCampoCodigoUbicacionJupe1();
+
     Button getBotonAplicar1();
 
     UbicacionCachedRowSetDataProvider2 getUbicacionDataProvider();

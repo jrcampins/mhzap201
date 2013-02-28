@@ -38,6 +38,10 @@ public interface UbicacionBase {
 //
 //  public void setClaveUbicacion(String claveUbicacion);
 
+    public String getCodigoUbicacionJupe();
+//
+//  public void setCodigoUbicacionJupe(String codigoUbicacionJupe);
+
     public UbicacionBase getUbicacionIdUbicacionSuperior();
 //
 //  public void setUbicacionIdUbicacionSuperior(UbicacionBase ubicacion);

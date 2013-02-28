@@ -36,6 +36,8 @@ public class UbicacionConstants {
 
     public static final String COLUMNA_NUMERO_TIPO_AREA = "numero_tipo_area";
 
+    public static final String COLUMNA_CODIGO_UBICACION_JUPE = "codigo_ubicacion_jupe";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_ubicacion";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_ubicacion";

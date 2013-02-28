@@ -85,6 +85,7 @@ public class UbicacionCachedRowSetDataProvider2 extends UbicacionCachedRowSetDat
     protected static final long PARAMETRO_SECUENCIA_UBICACION = 20532L;
     protected static final long PARAMETRO_CLAVE_UBICACION = 20464L;
     protected static final long PARAMETRO_NUMERO_TIPO_AREA = 20412L;
+    protected static final long PARAMETRO_CODIGO_UBICACION_JUPE = 21002L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_UBICACION = 202000101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_TIPO_NODO = 100300101L;
@@ -378,6 +379,7 @@ public class UbicacionCachedRowSetDataProvider2 extends UbicacionCachedRowSetDat
         rastro.addParametro(PARAMETRO_SECUENCIA_UBICACION, this.getSecuenciaUbicacion(rowKey));
         rastro.addParametro(PARAMETRO_CLAVE_UBICACION, this.getClaveUbicacion(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_UBICACION_JUPE, this.getCodigoUbicacionJupe(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -394,6 +396,7 @@ public class UbicacionCachedRowSetDataProvider2 extends UbicacionCachedRowSetDat
         rastro.addParametro(PARAMETRO_SECUENCIA_UBICACION, this.getSecuenciaUbicacion(rowKey));
         rastro.addParametro(PARAMETRO_CLAVE_UBICACION, this.getClaveUbicacion(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_UBICACION_JUPE, this.getCodigoUbicacionJupe(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 

@@ -3704,7 +3704,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isCodigoSimeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_27 || f == FUNCION_ACCION_28;
+        return f == FUNCION_ACCION_19 || f == FUNCION_ACCION_20 || f == FUNCION_ACCION_21 || f == FUNCION_ACCION_22 || f == FUNCION_ACCION_23 || f == FUNCION_ACCION_24 || f == FUNCION_ACCION_25 || f == FUNCION_ACCION_26 || f == FUNCION_ACCION_27;
     }
 
     private Bit bitCodigoSimeRendered = new Bit() {
@@ -6135,14 +6135,12 @@ public class Persona4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
-        String codigoSime = this.getTextoCampoCodigoSime1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         long function = PersonaConstants.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -6160,10 +6158,6 @@ public class Persona4 extends AbstractPageBean
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
-        }
-        if (codigoSime != null) {
-            args.add(codigoSime);
-            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

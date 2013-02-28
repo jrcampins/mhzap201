@@ -666,14 +666,12 @@ public class AsistentePaginaActualizacionPersona {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
-        String codigoSime = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA;
         Map parameters = new LinkedHashMap();
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("codigo_sime", codigoSime);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -691,10 +689,6 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
-        }
-        if (codigoSime != null) {
-            args.add(codigoSime);
-            search += " and codigo_sime=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -1964,6 +1958,15 @@ public class AsistentePaginaActualizacionPersona {
         return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_OTRA_PENSION.intValue());
     }
 
+    public boolean isNumeroCausaDenPensionPersonaConSubsidio() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_SUBSIDIO.intValue());
+    }
+
     public boolean isNumeroCausaDenPensionPersonaSinFichaHogar() {
         if (bean == null) {
             return true;
@@ -2088,6 +2091,15 @@ public class AsistentePaginaActualizacionPersona {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getNumeroCausaRevPension(rowKey);
         return value != null && value.equals(EnumCausaRevPension.PERSONA_CON_OTRA_PENSION.intValue());
+    }
+
+    public boolean isNumeroCausaRevPensionPersonaConSubsidio() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCausaRevPension(rowKey);
+        return value != null && value.equals(EnumCausaRevPension.PERSONA_CON_SUBSIDIO.intValue());
     }
 
     public boolean isNumeroCausaRevPensionPersonaSinFichaHogar() {
@@ -2250,6 +2262,24 @@ public class AsistentePaginaActualizacionPersona {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getNumeroCausaDenRecoPen(rowKey);
         return value != null && value.equals(EnumCausaDenRecoPen.PERSONA_CON_PENA_JUDICIAL.intValue());
+    }
+
+    public boolean isNumeroCausaDenRecoPenPersonaConOtraPension() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCausaDenRecoPen(rowKey);
+        return value != null && value.equals(EnumCausaDenRecoPen.PERSONA_CON_OTRA_PENSION.intValue());
+    }
+
+    public boolean isNumeroCausaDenRecoPenPersonaConSubsidio() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCausaDenRecoPen(rowKey);
+        return value != null && value.equals(EnumCausaDenRecoPen.PERSONA_CON_SUBSIDIO.intValue());
     }
 
     public boolean isNumeroCausaDenRecoPenPersonaSinFichaHogar() {

@@ -514,6 +514,10 @@ public class AsistentePaginaActualizacionUbicacion {
         return true;
     }
 
+    public boolean isGridCodigoUbicacionJupeRendered() {
+        return true;
+    }
+
     // </editor-fold>
 
 /**/

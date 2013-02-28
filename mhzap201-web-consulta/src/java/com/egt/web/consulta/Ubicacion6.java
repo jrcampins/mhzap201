@@ -101,6 +101,7 @@ public class Ubicacion6 extends AbstractPageBean
         validatorSecuenciaUbicacion1.setMinimum(0L);
         validatorSecuenciaUbicacion1.setMaximum(100L);
         validatorClaveUbicacion1.setMaximum(30);
+        validatorCodigoUbicacionJupe1.setMaximum(30);
         ubicacionDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
     }
@@ -714,6 +715,57 @@ public class Ubicacion6 extends AbstractPageBean
   
     public void setConverterNumeroTipoArea1(IntegerConverter converter) {
         this.converterNumeroTipoArea1 = converter;
+    }
+  
+    private Label labelCodigoUbicacionJupe1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoUbicacionJupe1() {
+        return labelCodigoUbicacionJupe1;
+    }
+
+    public void setLabelCodigoUbicacionJupe1(Label l) {
+        this.labelCodigoUbicacionJupe1 = l;
+    }
+
+    private TextField campoCodigoUbicacionJupe1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoCodigoUbicacionJupe1() {
+        return campoCodigoUbicacionJupe1;
+    }
+
+    public void setCampoCodigoUbicacionJupe1(TextField component) {
+        this.campoCodigoUbicacionJupe1 = component;
+    }
+
+    private HelpInline helpInlineCodigoUbicacionJupe1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoUbicacionJupe1() {
+        return helpInlineCodigoUbicacionJupe1;
+    }
+
+    public void setHelpInlineCodigoUbicacionJupe1(HelpInline hi) {
+        this.helpInlineCodigoUbicacionJupe1 = hi;
+    }
+
+    private StaticText campoCodigoUbicacionJupe1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoUbicacionJupe1Texto1() {
+        return campoCodigoUbicacionJupe1Texto1;
+    }
+
+    public void setCampoCodigoUbicacionJupe1Texto1(StaticText component) {
+        this.campoCodigoUbicacionJupe1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoUbicacionJupe1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoUbicacionJupe1() {
+        return validatorCodigoUbicacionJupe1;
+    }
+  
+    public void setValidatorCodigoUbicacionJupe1(LengthValidator validator) {
+        this.validatorCodigoUbicacionJupe1 = validator;
     }
   
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();

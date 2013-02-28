@@ -386,6 +386,15 @@ public class AsistentePaginaActualizacionObjecionElePen {
         return value != null;
     }
 
+    public boolean isNumeroTipoObjElePenPersonaFallecida() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getObjecionElePenDataProvider().getNumeroTipoObjElePen(rowKey);
+        return value != null && value.equals(EnumTipoObjElePen.PERSONA_FALLECIDA.intValue());
+    }
+
     public boolean isNumeroTipoObjElePenPersonaConEmpleo() {
         if (bean == null) {
             return true;
@@ -429,6 +438,15 @@ public class AsistentePaginaActualizacionObjecionElePen {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getObjecionElePenDataProvider().getNumeroTipoObjElePen(rowKey);
         return value != null && value.equals(EnumTipoObjElePen.PERSONA_CON_OTRA_PENSION.intValue());
+    }
+
+    public boolean isNumeroTipoObjElePenPersonaConSubsidio() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getObjecionElePenDataProvider().getNumeroTipoObjElePen(rowKey);
+        return value != null && value.equals(EnumTipoObjElePen.PERSONA_CON_SUBSIDIO.intValue());
     }
 
     public boolean isNumeroTipoObjElePenOtraCausa() {

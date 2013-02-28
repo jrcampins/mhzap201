@@ -639,6 +639,15 @@ public class AsistentePaginaActualizacionLogProDenPenObj {
         return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_OTRA_PENSION.intValue());
     }
 
+    public boolean isNumeroCausaDenPensionPersonaConSubsidio() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_SUBSIDIO.intValue());
+    }
+
     public boolean isNumeroCausaDenPensionPersonaSinFichaHogar() {
         if (bean == null) {
             return true;

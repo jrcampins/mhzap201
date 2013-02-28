@@ -16,15 +16,19 @@ import com.egt.commons.util.IntUtils;
 
 public enum EnumTipoObjElePen implements ListOption {
 
+    PERSONA_FALLECIDA(12, "tipo_obj_ele_pen_persona_fallecida"),
     PERSONA_CON_EMPLEO(21, "tipo_obj_ele_pen_persona_con_empleo"),
     PERSONA_CON_JUBILACION(22, "tipo_obj_ele_pen_persona_con_jubilacion"),
     PERSONA_CON_DEUDA(23, "tipo_obj_ele_pen_persona_con_deuda"),
     PERSONA_CON_PENA_JUDICIAL(24, "tipo_obj_ele_pen_persona_con_pena_judicial"),
     PERSONA_CON_OTRA_PENSION(25, "tipo_obj_ele_pen_persona_con_otra_pension"),
+    PERSONA_CON_SUBSIDIO(26, "tipo_obj_ele_pen_persona_con_subsidio"),
     OTRA_CAUSA(99, "tipo_obj_ele_pen_otra_causa");
 
     public static EnumTipoObjElePen valueOf(int i) {
         switch (i) {
+            case 12:
+                return PERSONA_FALLECIDA;
             case 21:
                 return PERSONA_CON_EMPLEO;
             case 22:
@@ -35,6 +39,8 @@ public enum EnumTipoObjElePen implements ListOption {
                 return PERSONA_CON_PENA_JUDICIAL;
             case 25:
                 return PERSONA_CON_OTRA_PENSION;
+            case 26:
+                return PERSONA_CON_SUBSIDIO;
             case 99:
                 return OTRA_CAUSA;
             default:

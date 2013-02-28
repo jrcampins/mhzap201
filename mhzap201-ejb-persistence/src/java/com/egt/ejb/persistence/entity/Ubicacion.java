@@ -52,6 +52,9 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
     @Column(name = "clave_ubicacion")
     private String claveUbicacion;
 
+    @Column(name = "codigo_ubicacion_jupe")
+    private String codigoUbicacionJupe;
+
     @JoinColumn(name = "id_ubicacion_superior", referencedColumnName = "id_ubicacion")
     @ManyToOne
     private Ubicacion ubicacionIdUbicacionSuperior;
@@ -222,6 +225,15 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
 
     public void setClaveUbicacion(String claveUbicacion) {
         this.claveUbicacion = claveUbicacion;
+    }
+
+    @Override
+    public String getCodigoUbicacionJupe() {
+        return this.codigoUbicacionJupe;
+    }
+
+    public void setCodigoUbicacionJupe(String codigoUbicacionJupe) {
+        this.codigoUbicacionJupe = codigoUbicacionJupe;
     }
 
     @Override

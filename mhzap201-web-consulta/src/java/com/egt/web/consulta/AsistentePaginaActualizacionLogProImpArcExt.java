@@ -296,6 +296,15 @@ public class AsistentePaginaActualizacionLogProImpArcExt {
         return value != null && value.equals(EnumTipoArcDatExt.PENSIONADOS.intValue());
     }
 
+    public boolean isNumeroTipoArcDatExtSubsidiados() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProImpArcExtDataProvider().getNumeroTipoArcDatExt(rowKey);
+        return value != null && value.equals(EnumTipoArcDatExt.SUBSIDIADOS.intValue());
+    }
+
     public boolean isNumeroTipoArcDatExtFallecidos() {
         if (bean == null) {
             return true;
