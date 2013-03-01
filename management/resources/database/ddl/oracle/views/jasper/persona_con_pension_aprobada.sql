@@ -25,7 +25,6 @@ FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
-WHERE persona.numero_condicion_pension = 2  AND
-       persona.codigo_sime is not null
+WHERE persona.numero_condicion_pension = 2  
 ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

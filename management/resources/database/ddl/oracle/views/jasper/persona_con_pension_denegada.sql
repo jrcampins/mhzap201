@@ -31,7 +31,6 @@ FROM persona persona
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN causa_den_pension cd on persona.numero_causa_den_pension=cd.numero_causa_den_pension
-WHERE persona.numero_condicion_pension = 6  AND
-       persona.codigo_sime is not null
+WHERE persona.numero_condicion_pension = 6  
 ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

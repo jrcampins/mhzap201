@@ -35,7 +35,6 @@ FROM persona persona
    LEFT JOIN tipo_obj_ele_pen toep on toep.numero_tipo_obj_ele_pen= oep.numero_tipo_obj_ele_pen
 WHERE  persona.es_persona_acreditada_para_pen = 1 AND
        (persona.numero_condicion_pension=1 or persona.numero_condicion_pension=3) AND
-       oep.es_objecion_ele_pen_inactiva=0 AND
-       persona.codigo_sime is not null
+       oep.es_objecion_ele_pen_inactiva=0
 ORDER BY persona.nombre_persona,persona.id_departamento,
     persona.id_distrito, persona.id_barrio;

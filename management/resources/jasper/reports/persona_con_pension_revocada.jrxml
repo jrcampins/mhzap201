@@ -38,6 +38,7 @@
 	<field name="NUMERO_TELEFONO" class="java.lang.String"/>
 	<field name="OBSERVACIONES" class="java.lang.String"/>
 	<field name="NUMERO_CAUSA_DEN_PENSION" class="java.math.BigDecimal"/>
+	<field name="CODIGO_SIME" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>

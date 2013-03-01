@@ -29,6 +29,6 @@ from
     left join ubicacion ubicacion3 on persona.id_barrio=ubicacion3.id_ubicacion
     left join condicion_pension on persona.numero_condicion_pension = condicion_pension.numero_condicion_pension
 where
-    persona.numero_condicion_pension = 5 and persona.fecha_hora_ult_act_jupe is not null and persona.codigo_sime is not null
+    persona.numero_condicion_pension = 5 and persona.fecha_hora_ult_act_jupe is not null
 order by
     persona.id_departamento, persona.id_distrito, persona.nombre_persona;

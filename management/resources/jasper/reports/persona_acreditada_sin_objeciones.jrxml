@@ -311,7 +311,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["CÓDIGO SIME: " +$F{CODIGO_SIME} ]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["CÓDIGO SIME: " +$F{CODIGO_SIME}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>

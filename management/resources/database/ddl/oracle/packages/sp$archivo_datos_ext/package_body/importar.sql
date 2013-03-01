@@ -67,8 +67,8 @@ begin
         importar_penas(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Penas Judiciales Actualizados: ';
         mensaje:=mensaje||num_importados;
-    --205: Subsidios (Cambiar por 206)
-    elsif tipo_archivo=205 then
+    --206: Subsidios 
+    elsif tipo_archivo=206 then
         importar_subsidios(row_archivo.nombre_archivo_datos,row_archivo.codigo_archivo_datos_ext,num_importados);
         mensaje:='Registros de Subsidios Actualizados: ';
         mensaje:=mensaje||num_importados;

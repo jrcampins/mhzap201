@@ -8,8 +8,8 @@
 	<import value="com.egt.commons.enums.*"/>
 	<import value="java.util.*"/>
 	<import value="java.math.BigDecimal"/>
-	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.base.util.*"/>
+	<import value="com.egt.base.enums.*"/>
 	<import value="com.egt.commons.util.*"/>
 	<template><![CDATA[$P{CUSTOM_STYLE_TEMPLATE}]]></template>
 	<parameter name="ENTERPRISE_APPLICATION_CODE" class="java.lang.String" isForPrompting="false">
@@ -49,17 +49,17 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from log_imp_jubilados]]>
+		<![CDATA[select * from log_imp_fallecidos]]>
 	</queryString>
-	<field name="ID_LOG_IMP_JUB" class="java.math.BigDecimal"/>
-	<field name="VERSION_LOG_IMP_JUB" class="java.math.BigDecimal"/>
+	<field name="ID_LOG_IMP_FAL" class="java.math.BigDecimal"/>
+	<field name="VERSION_LOG_IMP_FAL" class="java.math.BigDecimal"/>
 	<field name="CEDULA" class="java.lang.String"/>
 	<field name="PRIMER_NOMBRE" class="java.lang.String"/>
 	<field name="SEGUNDO_NOMBRE" class="java.lang.String"/>
 	<field name="PRIMER_APELLIDO" class="java.lang.String"/>
 	<field name="SEGUNDO_APELLIDO" class="java.lang.String"/>
 	<field name="APELLIDO_CASADA" class="java.lang.String"/>
-	<field name="TIPO_REGISTRO" class="java.lang.String"/>
+	<field name="DEFUNCION" class="java.lang.String"/>
 	<field name="ES_IMPORTADO" class="java.math.BigDecimal"/>
 	<field name="OBSERVACION" class="java.lang.String"/>
 	<field name="FECHA_HORA_TRANSACCION" class="java.sql.Timestamp"/>
@@ -73,7 +73,7 @@
 		<variableExpression><![CDATA[$F{ES_IMPORTADO}]]></variableExpression>
 	</variable>
 	<variable name="procesados" class="java.math.BigDecimal" calculation="Count">
-		<variableExpression><![CDATA[$F{ID_LOG_IMP_JUB}]]></variableExpression>
+		<variableExpression><![CDATA[$F{ID_LOG_IMP_FAL}]]></variableExpression>
 	</variable>
 	<group name="reportGroup1" minHeightToStartNewPage="132">
 		<groupExpression><![CDATA[]]></groupExpression>
@@ -243,8 +243,10 @@
 					</staticText>
 					<staticText>
 						<reportElement key="staticText" style="ch-text1" x="314" y="0" width="83" height="20"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle"/>
-						<text><![CDATA[TIPO]]></text>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="8"/>
+						</textElement>
+						<text><![CDATA[FECHA DEFUNCIÓN]]></text>
 					</staticText>
 				</frame>
 			</band>
@@ -266,7 +268,7 @@
 				<staticText>
 					<reportElement key="staticText" style="ph-text1" x="160" y="0" width="640" height="32"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<text><![CDATA[RASTROS DE IMPORTACION DE JUBILADOS Y PENSIONADOS]]></text>
+					<text><![CDATA[RASTROS DE IMPORTACION DE FALLECIDOS]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText" style="ph-text1" x="800" y="0" width="160" height="32"/>
@@ -319,7 +321,7 @@
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement key="textField" style="dx-text1" stretchType="RelativeToBandHeight" x="314" y="0" width="83" height="16"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$F{TIPO_REGISTRO}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{DEFUNCION}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

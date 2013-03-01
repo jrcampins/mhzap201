@@ -28,7 +28,6 @@ FROM persona persona
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN potencial_ben pb ON fp.id_potencial_ben = pb.id_potencial_ben
-WHERE persona.numero_condicion_pension = 1 AND
-      persona.codigo_sime is not null 
-ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
+WHERE persona.numero_condicion_pension = 1
+ORDER BY persona.codigo_sime,persona.fecha_solicitud_pension, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

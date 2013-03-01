@@ -58,7 +58,13 @@ begin
             primer_apellido,
             segundo_apellido,
             apellido_casada,
-            defuncion)
+            defuncion,
+            es_importado,
+            codigo_archivo,
+            nombre_archivo,
+            fecha_hora_transaccion,
+            observacion
+            )
     select
             utils.bigintid(),
             cedula,
@@ -67,45 +73,14 @@ begin
             primer_apellido,
             segundo_apellido,
             apellido_casada,
-            fecha_defuncion
+            fecha_defuncion,
+            1,
+            codigo,
+            archivo,
+            current_timestamp,
+            'Registro cargado. Objeción pendiente por actualizar'
     from csv_log_imp_fal;
-    for fallecido in (select * from log_imp_fal where es_importado=0 and observacion is null)
-    loop
-        begin
-            id_persona_act:=sp$utils.extract_id_persona(fallecido.cedula,fallecido.primer_nombre,fallecido.segundo_nombre,fallecido.primer_apellido,fallecido.segundo_apellido,fallecido.apellido_casada);
-            if id_persona_act is null then
-                msg_string:= 'Persona no encontrada';
-                raise_application_error(err_number, msg_string, true);
-            --Se registra la inserción en la tabla intermedia
-            else
-                 --Se selecciona la persona
-                begin
-                    select * into row_persona from persona where id_persona=id_persona_act;
-                exception when no_data_found then 
-                    null;
-                end;
-                if not sql%found then
-                    msg_string := 'Persona no encontrada';
-                    raise_application_error(err_number, msg_string, true);
-                end if;
-                p_fecha_defuncion:=to_timestamp(fallecido.defuncion,'dd/mm/yyyy');
-                mensaje_defuncion:=sp$persona.registrar_cer_defun(row_persona.id_persona,'S/N',p_fecha_defuncion);
-                --dbms_output.put_line(p_fecha_defuncion||' : '||mensaje_defuncion);
-                retorno:=retorno+1;
-                --Se registra la inserción en la tabla intermedia
-                update log_imp_fal set es_importado=1, 
-                       nombre_archivo=archivo, 
-                       codigo_archivo=codigo, 
-                       fecha_hora_transaccion= current_timestamp 
-                where id_log_imp_fal=fallecido.id_log_imp_fal;
-            end if;
-        --Si no se pudo insertar el registro se marca el motivo
-        exception
-                when others then
-                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_fal set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_fal=fallecido.id_log_imp_fal;
-                    continue;
-        end;
-    end loop;
+    --Se retorna el numero de registros
+    select count(cedula) into retorno from csv_log_imp_fal where codigo_archivo=codigo;
 end;
         

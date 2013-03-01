@@ -438,6 +438,7 @@ begin
                                                         row_log_fal.primer_apellido,
                                                         row_log_fal.segundo_apellido,
                                                         row_log_fal.apellido_casada);
+            dbms_output.put_line('entrando con id'||id_persona_act);
             --Si no consigue la persona no hace nada
             if id_persona_act is null then
                 continue;
@@ -445,8 +446,10 @@ begin
                 begin
                 --Si se consigue se registra la defunción
                    p_fecha_defuncion:=to_timestamp(row_log_fal.defuncion,'dd/mm/yyyy');
+                   dbms_output.put_line('defuncion '||id_persona_Act||' '||p_fecha_Defuncion);
                    mensaje_defuncion:=sp$persona.registrar_cer_defun(id_persona_act,'S/N',p_fecha_defuncion);
-                   if mensaje_defuncion is not null then
+                    if mensaje_defuncion is not null then
+         
                         --Siempre la inserta como nueva
                         row_objecion.id_objecion_ele_pen:=utils.bigintid();
                         row_objecion.version_objecion_ele_pen:=0;

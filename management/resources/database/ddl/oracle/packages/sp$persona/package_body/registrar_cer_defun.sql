@@ -18,14 +18,14 @@ begin
         when no_data_found then null;
     end;
     if not sql%found then
+
         msg_string := 'Persona no existe (id='||persona_consultada||')';
         raise_application_error(err_number, msg_string, true);
     --
     --Persona ya tiene certificado de defuncion: no hay nada que procesar.
     --
     elsif row_persona.certificado_defuncion is not null and row_persona.es_cer_defuncion_anulado=0 then
-        msg_string := 'ERROR: Persona ya tiene Certificado de Defunción Registrado ';
-        raise_application_error(err_number, msg_string, true);
+        mensaje := 'ERROR: Persona ya tiene Certificado de Defunción Registrado ';
     --
     --Pension ya aprobada: Se revoca por fallecimiento
     --
