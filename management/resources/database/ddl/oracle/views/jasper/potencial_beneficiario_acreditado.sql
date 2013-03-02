@@ -35,5 +35,5 @@ WHERE (pb.numero_condicion_censo=3
   AND pb.es_paraguayo_natural=1
   AND pb.es_potencial_ben_inactivo=0
   AND utils.years_since(pb.fecha_nacimiento)>=65
-ORDER BY pb.numero_tipo_reg_pot_ben,pb.fecha_registro_pot_ben, pb.id_departamento,
+ORDER BY pb.lote, pb.numero_tipo_reg_pot_ben,pb.fecha_registro_pot_ben, pb.id_departamento,
     pb.id_distrito, pb.id_barrio, pb.nombre_potencial_ben;

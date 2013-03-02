@@ -23,6 +23,7 @@ begin
     end;
     --Nuevo: Actualizar las objeciones de una persona
     objeciones:=actualizar_objeciones(row_persona.codigo_persona,row_persona.id_persona);
+    --dbms_output.put_line('total de objeciones recibidas'||objeciones);
     --Nuevo: Se verifican objeciones de elegibilidad utilizando WS
     resultado:=verif_ws_sinarh_jupe(row_persona.codigo_persona,row_persona.id_persona);
     --Se buscan las objeciones que tiene la persona (Nuevo: solo si hay objeciones que buscar)
@@ -34,8 +35,14 @@ begin
         ) 
         loop
             conta_objeciones:=conta_objeciones+1;
+            --Si la persona es fallecida. No hay que cambiar bandera
+            if row_objecion.numero_tipo_obj_ele_pen=12 then
+                update persona 
+                set es_persona_elegible_para_pen=0
+                where id_persona=persona_consultada;
+                condicion:=12;
             --Si la persona tiene empleo
-            if row_objecion.numero_tipo_obj_ele_pen=21 then
+            elsif row_objecion.numero_tipo_obj_ele_pen=21 then
                 update persona 
                 set es_persona_con_empleo=1,
                 es_persona_elegible_para_pen=0
@@ -63,12 +70,19 @@ begin
                 where id_persona=persona_consultada;
                 condicion:=24;
             --Si la persona tiene otra pension
-            elsif row_objecion.numero_tipo_obj_ele_pen=24 then
+            elsif row_objecion.numero_tipo_obj_ele_pen=25 then
                 update persona 
                 set es_persona_con_pension=1,
                 es_persona_elegible_para_pen=0 
                 where id_persona=persona_consultada;
                 condicion:=25;
+            --Si la persona tiene subsidio
+            elsif row_objecion.numero_tipo_obj_ele_pen=26 then
+                update persona 
+                set es_persona_con_subsidio=1,
+                es_persona_elegible_para_pen=0 
+                where id_persona=persona_consultada;
+                condicion:=26;
             end if;
         end loop;
     end if;
@@ -81,6 +95,7 @@ begin
     elsif conta_objeciones>1 then
         condicion:=99;
     end if;
+    --dbms_output.put_line('conta objeciones'||conta_objeciones);
     --Se retorna la condicion de objeción a la elegibilidad
     return condicion;
 end;

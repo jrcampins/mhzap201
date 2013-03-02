@@ -18,7 +18,7 @@ function actualizar_objeciones(codigo varchar2,persona_consultada number) return
     p_fecha_Defuncion timestamp;
     condicion number := 0;
     conta_objeciones number :=0;
-    total number:=0;
+    total_objeciones number:=0;
     retcode number;
     id_proveedor number;
     resultado varchar2(4000);
@@ -92,7 +92,7 @@ begin
                       fecha_hora_transaccion= current_timestamp,
                       observacion='Objeción actualizada'
                where id_log_imp_deu=row_log_deu.id_log_imp_deu;
-               total:=total+1;
+               total_objeciones:=total_objeciones+1;
             end if;
         end loop;
     end loop;
@@ -158,7 +158,7 @@ begin
                       fecha_hora_transaccion= current_timestamp,
                       observacion='Objeción actualizada'
                where id_log_imp_emp=row_log_emp.id_log_imp_emp;
-               total:=total+1;
+               total_objeciones:=total_objeciones+1;
             end if;
         end loop;
     end loop;
@@ -227,7 +227,7 @@ begin
                           fecha_hora_transaccion= current_timestamp,
                           observacion='Objeción actualizada'
                    where id_log_imp_jub=row_log_jub.id_log_imp_jub;
-                   total:=total+1;
+                   total_objeciones:=total_objeciones+1;
                 end if;
             --Pensionados 
             elsif (upper(row_log_jub.tipo_registro) like '%PENSIONADO%') then
@@ -287,7 +287,7 @@ begin
                           fecha_hora_transaccion= current_timestamp,
                           observacion='Objeción actualizada'
                    where id_log_imp_jub=row_log_jub.id_log_imp_jub;
-                   total:=total+1;
+                   total_objeciones:=total_objeciones+1;
                 end if;
             end if;
         end loop;
@@ -354,7 +354,7 @@ begin
                       fecha_hora_transaccion= current_timestamp,
                       observacion='Objeción actualizada'
                where id_log_imp_pen=row_log_pen.id_log_imp_pen;
-               total:=total+1;
+               total_objeciones:=total_objeciones+1;
             end if;
         end loop;
     end loop;
@@ -421,7 +421,7 @@ begin
                       fecha_hora_transaccion= current_timestamp,
                       observacion='Objeción actualizada'
                where id_log_imp_sub=row_log_sub.id_log_imp_sub;
-               total:=total+1;
+               total_objeciones:=total_objeciones+1;
             end if;
         end loop;
     end loop;
@@ -438,7 +438,6 @@ begin
                                                         row_log_fal.primer_apellido,
                                                         row_log_fal.segundo_apellido,
                                                         row_log_fal.apellido_casada);
-            dbms_output.put_line('entrando con id'||id_persona_act);
             --Si no consigue la persona no hace nada
             if id_persona_act is null then
                 continue;
@@ -446,11 +445,9 @@ begin
                 begin
                 --Si se consigue se registra la defunción
                    p_fecha_defuncion:=to_timestamp(row_log_fal.defuncion,'dd/mm/yyyy');
-                   dbms_output.put_line('defuncion '||id_persona_Act||' '||p_fecha_Defuncion);
                    mensaje_defuncion:=sp$persona.registrar_cer_defun(id_persona_act,'S/N',p_fecha_defuncion);
-                    if mensaje_defuncion is not null then
-         
-                        --Siempre la inserta como nueva
+                   if mensaje_defuncion like 'Certificado de Defunción Registrado%' then
+                        --Se inserta como nueva
                         row_objecion.id_objecion_ele_pen:=utils.bigintid();
                         row_objecion.version_objecion_ele_pen:=0;
                         row_objecion.id_persona:=id_persona_act;
@@ -460,6 +457,8 @@ begin
                         row_objecion.fecha_ultima_actualizacion:=trunc(current_timestamp);
                         row_objecion.nombre_archivo_ultima_act:=row_archivo.nombre_original_archivo_datos;
                         insert into objecion_ele_pen values row_objecion;
+                        --Se incrementa el total de objeciones. En este caso solo se incrementa cuando se inserta
+                        total_objeciones:=total_objeciones+1;
                    end if;
                    --Se actualiza el log para que la observación diga que la objeción se actualizó
                    update log_imp_fal set es_importado=1, 
@@ -468,14 +467,14 @@ begin
                           fecha_hora_transaccion= current_timestamp,
                           observacion='Objeción actualizada'
                    where id_log_imp_fal=row_log_fal.id_log_imp_fal;
-                   total:=total+1;
+                   --dbms_output.put_line('total objeciones '||total_objeciones);
                 exception when others then
                     continue;
                 end;
             end if;
         end loop;
     end loop;
-    return total;
+    return total_objeciones;
 exception
     when others then
         mensaje:='Error '||SQLCODE||'('||SQLERRM||')';

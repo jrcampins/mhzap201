@@ -25,9 +25,9 @@ SELECT persona.codigo_persona AS cedula,
     toep.codigo_tipo_obj_ele_pen||' : '||pde.nombre_proveedor_dat_ext||NVL(' '||oep.observaciones,'.') AS objeciones_elegibilidad
 FROM persona persona
    LEFT JOIN potencial_ben pb ON pb.id_persona =persona.id_persona
-   LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =pb.id_departamento
-   LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = pb.id_distrito
-   LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
+   LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =persona.id_departamento
+   LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = persona.id_distrito
+   LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN objecion_ele_pen oep on oep.id_persona=persona.id_persona
@@ -36,6 +36,6 @@ FROM persona persona
 WHERE  persona.es_persona_acreditada_para_pen = 1 AND
        persona.numero_condicion_pension=1 AND
        (oep.id_objecion_ele_pen is null or oep.es_objecion_ele_pen_inactiva=1) 
-ORDER BY persona.nombre_persona,persona.id_departamento,
+ORDER BY persona.codigo_sime,persona.nombre_persona,persona.id_departamento,
     persona.id_distrito, persona.id_barrio;
 

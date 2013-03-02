@@ -41,5 +41,5 @@ FROM persona persona
    LEFT JOIN potencial_ben pb ON fp.id_potencial_ben =
        pb.id_potencial_ben
 WHERE persona.numero_condicion_pension = 5  
-ORDER BY persona.fecha_solicitud_pension, persona.id_departamento,
+ORDER BY persona.codigo_sime,persona.fecha_otorgamiento_pen, persona.id_departamento,
     persona.id_distrito, persona.id_barrio, persona.nombre_persona;

@@ -27,4 +27,4 @@ SELECT persona.codigo_persona AS cedula,
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    JOIN condicion_pension cp ON persona.numero_condicion_pension = cp.numero_condicion_pension
 WHERE persona.numero_condicion_pension = 5  
-ORDER BY persona.fecha_solicitud_pension, persona.id_departamento, persona.id_distrito, persona.id_barrio, persona.nombre_persona;
+ORDER BY persona.codigo_sime,persona.fecha_otorgamiento_pen, persona.id_departamento, persona.id_distrito, persona.id_barrio, persona.nombre_persona;

@@ -6,9 +6,9 @@
 --@return: mensaje indicando la cantidad de personas elegibles y no elegibles
 --
 function verificar_ele_pen(ubicacion_consultada number) return varchar2 is
-     mensaje varchar2(5000):='';
-     mensaje_retorno varchar2(2000):='';
-     segmento_consulta_ubicacion varchar2(2000):='';
+     mensaje varchar2(4000):='';
+     mensaje_retorno varchar2(4000):='';
+     segmento_consulta_ubicacion varchar2(2000):=' ';
      reproceso_pension_activo number:=0;
      condicion_elegibilidad number;
      condicion_vigencia number;
@@ -218,4 +218,7 @@ begin
                      ', Total No Vigentes: '||total_no_vigentes||
                      ', Total Excepciones: '||total_errores;
     return mensaje_retorno;
+exception when others then
+            mensaje:=SQLERRM;
+            dbms_output.put_line('error'||mensaje);
 end;

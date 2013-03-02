@@ -44,7 +44,7 @@ begin
             raise_application_error(err_number, msg_string, true);
         end;
         if sql%found then
-            if tipo_arch!='204' then
+            if tipo_arch!='206' then
                 msg_string := 'Archivo ' || codigo_archivo || ' NO es de subsidios ';
                 raise_application_error(err_number, msg_string, true);
             end if;

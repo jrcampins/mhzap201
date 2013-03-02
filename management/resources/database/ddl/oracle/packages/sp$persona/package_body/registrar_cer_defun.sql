@@ -37,7 +37,7 @@ begin
             es_cer_defuncion_anulado =0,
             comentarios_anul_cer_defuncion=null
         where  id_persona = persona_consultada;
-        mensaje:='Pensión Revocada por Fallecimiento';
+        mensaje:='Certificado de Defunción Registrado. Pensión Revocada por Fallecimiento';
     --
     --Pension solicitada: Se deniega por fallecimiento
     --
@@ -49,7 +49,7 @@ begin
             es_cer_defuncion_anulado =0,
             comentarios_anul_cer_defuncion=null
         where  id_persona = persona_consultada;
-        mensaje:='Pensión Denegada por Fallecimiento';
+        mensaje:='Certificado de Defunción Registrado. Pensión Denegada por Fallecimiento';
 
     --
     --En cualquier otro caso, se registra el certificado de defuncion
