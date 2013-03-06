@@ -443,10 +443,23 @@ begin
                 continue;
             else
                 begin
-                --Si se consigue se registra la defunción
-                   p_fecha_defuncion:=to_timestamp(row_log_fal.defuncion,'dd/mm/yyyy');
-                   mensaje_defuncion:=sp$persona.registrar_cer_defun(id_persona_act,'S/N',p_fecha_defuncion);
-                   if mensaje_defuncion like 'Certificado de Defunción Registrado%' then
+                    select * into row_objecion from objecion_ele_pen 
+                    where id_persona=id_persona_act
+                    and numero_tipo_obj_ele_pen=12
+                    and id_proveedor_dat_ext=id_proveedor;
+                exception when no_data_found then null;
+                end;
+                if not sql%found then
+                    begin
+                    --Si se consigue se registra la defunción
+                        p_fecha_defuncion:=to_timestamp(row_log_fal.defuncion,'dd/mm/yyyy');
+                        --Se inserta la persona como fallecida
+                        update persona
+                        set fecha_certificado_defuncion = p_fecha_defuncion,
+                        certificado_defuncion = 'S/N',
+                        es_cer_defuncion_anulado =0,
+                        comentarios_anul_cer_defuncion=null
+                        where  id_persona = id_persona_act;
                         --Se inserta como nueva
                         row_objecion.id_objecion_ele_pen:=utils.bigintid();
                         row_objecion.version_objecion_ele_pen:=0;
@@ -459,18 +472,18 @@ begin
                         insert into objecion_ele_pen values row_objecion;
                         --Se incrementa el total de objeciones. En este caso solo se incrementa cuando se inserta
                         total_objeciones:=total_objeciones+1;
-                   end if;
-                   --Se actualiza el log para que la observación diga que la objeción se actualizó
-                   update log_imp_fal set es_importado=1, 
-                          nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
-                          codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
-                          fecha_hora_transaccion= current_timestamp,
-                          observacion='Objeción actualizada'
-                   where id_log_imp_fal=row_log_fal.id_log_imp_fal;
-                   --dbms_output.put_line('total objeciones '||total_objeciones);
-                exception when others then
-                    continue;
-                end;
+                        --Se actualiza el log para que la observación diga que la objeción se actualizó
+                        update log_imp_fal set es_importado=1, 
+                              nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
+                              codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
+                              fecha_hora_transaccion= current_timestamp,
+                              observacion='Objeción actualizada'
+                        where id_log_imp_fal=row_log_fal.id_log_imp_fal;
+                       --dbms_output.put_line('total objeciones '||total_objeciones);
+                    exception when others then
+                        continue;
+                    end;
+                end if;
             end if;
         end loop;
     end loop;

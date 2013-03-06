@@ -14,6 +14,7 @@ function act_persona_elegible(persona_consultada number) return number is
     err_number constant number := -20000; -- an integer in the range -20000..-20999
     msg_string varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    --dbms_output.put_line('entro');
     begin
         select * into row_persona from persona where id_persona=persona_consultada;
     exception
@@ -95,7 +96,7 @@ begin
     elsif conta_objeciones>1 then
         condicion:=99;
     end if;
-    --dbms_output.put_line('conta objeciones'||conta_objeciones);
+    dbms_output.put_line('retornando'||condicion);
     --Se retorna la condicion de objeción a la elegibilidad
     return condicion;
 end;

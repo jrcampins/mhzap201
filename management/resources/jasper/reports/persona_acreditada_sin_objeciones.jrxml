@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="61"/>
+	<property name="ireport.x" value="38"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -338,7 +338,7 @@
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de personas solicitantes acreditadas sin objeciones (Código SIME "+$F{CODIGO_SIME}+") : " + $V{total_lote}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de personas solicitantes acreditadas sin objeciones (Código SIME "+$F{CODIGO_SIME}+") " + $V{total_lote}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement key="line-1" x="12" y="0" width="929" height="1"/>

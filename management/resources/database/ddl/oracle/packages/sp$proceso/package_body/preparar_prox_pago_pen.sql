@@ -50,10 +50,10 @@ begin
     end if;
     --Determinamos si la fecha sera un parametro a consultar 
     if fecha_solicitud_desde is not null then
-            segmento_consulta:=segmento_consulta||' and fecha_solicitud_pension >= '''||fecha_solicitud_desde||''' ';
+            segmento_consulta:=segmento_consulta||' and fecha_solicitud_pension >= '''||to_char(fecha_solicitud_desde,'dd/mm/yyyy')||''' ';
     end if;
     if fecha_solicitud_hasta is not null then
-            segmento_consulta:=segmento_consulta||' and fecha_solicitud_pension <= '''||fecha_solicitud_hasta||''' ';
+            segmento_consulta:=segmento_consulta||' and fecha_solicitud_pension <= '''||to_char(fecha_solicitud_hasta,'dd/mm/yyyy')||''' ';
     end if;
      --Determinamos si se van a reprocesar las pensiones ya aprobadas
     select es_control_reproceso_pen_activ 
@@ -143,9 +143,11 @@ begin
                      total_aprobados:=total_aprobados+1;
                 --Si no se aprobo fue por no elegibilidad, en otro caso se generaría una excepción
                 else
+                    dbms_output.put_line('mensaje: '||mensaje);
                     total_denegados:=total_denegados+1;
                     --Se determina la causa de no elegibilidad
-                    condicion_elegibilidad:=sp$persona.act_persona_elegible(table_log(i).id_persona);
+                    condicion_elegibilidad:=sp$persona.consultar_objeciones(table_log(i).id_persona);
+                    dbms_output.put_line('condición: '||condicion_elegibilidad);
                     if condicion_elegibilidad=99 then
                        causa_denegacion:=99;
                        otra_causa_denegacion:='Pensión con varias objeciones';

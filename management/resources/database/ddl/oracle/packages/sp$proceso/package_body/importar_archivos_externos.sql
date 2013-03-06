@@ -43,7 +43,7 @@ begin
         left join proveedor_dat_ext pd
         on ae.id_proveedor_dat_ext=pd.id_proveedor_dat_ext
         where ae.es_archivo_datos_ext_importado=0 and
-        ae.es_archivo_datos_ext_inactivo=0 amd
+        ae.es_archivo_datos_ext_inactivo=0 and
         ae.nombre_archivo_datos is not null
         order by ae.numero_tipo_arc_dat_ext'
         bulk collect into vista_arc;

@@ -40,6 +40,7 @@ begin
             where  id_persona = persona_consultada;
             mensaje:='Pensión Aprobada';
         else
+            dbms_output.put_line('no se aprueba por '||condicion_elegibilidad);
             --La persona no es elegible 
             mensaje:='No se pudo aprobar la pensión';
         end if;

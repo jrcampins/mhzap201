@@ -44,6 +44,7 @@ function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fech
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    --dbms_output.put_line(' where fecha_registro_pot_ben <= trunc('''||to_char(fecha_registro_hasta)||''') ');
     numero_lote:=lote;
     --Determinamos si la ubicación sera un parametro a consultar o no
     if ubicacion is not null then
@@ -54,16 +55,16 @@ begin
     --Determinamos si la fecha sera un parametro a consultar 
     if fecha_registro_desde is not null then
         if segmento_consulta<>'' then
-            segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben >= '''||fecha_registro_desde||''' ';
+            segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben >= '''||to_char(fecha_registro_desde,'dd/mm/yyyy')||''' ';
         else
-            segmento_consulta:=' where fecha_registro_pot_ben >= '''||fecha_registro_desde||''' ';
+            segmento_consulta:=' where fecha_registro_pot_ben >= '''||to_char(fecha_registro_desde,'dd/mm/yyyy')||''' ';
         end if;
     end if;
     if fecha_registro_hasta is not null then
         if segmento_consulta<>'' then
-            segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben <= '''||fecha_registro_hasta||''' ';
+            segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben <= '''||to_char(fecha_registro_hasta,'dd/mm/yyyy')||''' ';
         else
-            segmento_consulta:=' where fecha_registro_pot_ben <= '''||fecha_registro_hasta||''' ';
+            segmento_consulta:=' where fecha_registro_pot_ben <= '''||to_char(fecha_registro_hasta,'dd/mm/yyyy')||''' ';
         end if;
     end if;
 
@@ -73,8 +74,9 @@ begin
 --     if conta =0 then
 --         return 'No hay Potenciales Beneficiarios para acreditar';
 --     end if;
+    --dbms_output.put_line('select * from vista_log_pro_acr_pot_ben'||segmento_consulta);
     execute immediate 'select * from vista_log_pro_acr_pot_ben'||segmento_consulta
-        bulk collect into vista_ben;
+      bulk collect into vista_ben;
     if vista_ben.count=0 then
         return 'No hay Potenciales Beneficiarios para acreditar';
     end if;

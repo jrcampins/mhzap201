@@ -40,7 +40,7 @@
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
-	<variable name="total_lote" class="java.lang.Integer" resetType="Group" resetGroup="codigo_sime" calculation="Count">
+	<variable name="total_lote" class="java.lang.Integer" resetType="Group" resetGroup="codigo_sime" calculation="DistinctCount">
 		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
 	</variable>
 	<group name="grupo_distrito_anho" isStartNewPage="true" isReprintHeaderOnEachPage="true">
