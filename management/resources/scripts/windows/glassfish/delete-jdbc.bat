@@ -11,8 +11,6 @@ call "%~dp0..\setsiono" ejecutar "%~n0"
 if /i "%siono%" NEQ "S" goto:eof
 
 echo.
-set JDBC
-echo.
 set REALMID="%lower_case_project%-jdbc-realm"
 set REALMID
 echo.
