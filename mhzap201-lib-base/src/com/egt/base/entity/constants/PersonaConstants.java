@@ -212,6 +212,8 @@ public class PersonaConstants {
 
     public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
 
+    public static final String COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS = "comentarios_entrega_documentos";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_persona";

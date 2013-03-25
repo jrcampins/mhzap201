@@ -623,6 +623,7 @@ CREATE TABLE log_imp_deu
 	primer_apellido varchar,
 	segundo_apellido varchar,
 	apellido_casada varchar,
+	referencia varchar,
 	es_importado int NOT NULL,
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL,
@@ -1566,7 +1567,8 @@ CREATE TABLE persona
 	numero_tipo_act_jupe int,
 	fecha_hora_ult_act_jupe timestamp with time zone,
 	lote bigint,
-	codigo_sime varchar(50)
+	codigo_sime varchar(50),
+	comentarios_entrega_documentos varchar
 	);
 
 CREATE TABLE potencial_ben

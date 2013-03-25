@@ -18,6 +18,8 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
+    public static final long PARAMETRO_ES_PERSONA_CON_CER_VIDA = 20580L;
+
     public static final long PARAMETRO_CERTIFICADO_VIDA = 20112L;
 
     public static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
@@ -26,7 +28,11 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR = 20680L;
 
+    public static final long PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS = 21003L;
+
     protected Long idPersona;
+
+    protected Integer esPersonaConCerVida;
 
     protected String certificadoVida;
 
@@ -36,14 +42,18 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     protected Integer esPersonaConDeclaracionJur;
 
-    public RegistrarEntregaDocPersonaMessage(Long idPersona, String certificadoVida, Date fechaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur) {
+    protected String comentariosEntregaDocumentos;
+
+    public RegistrarEntregaDocPersonaMessage(Long idPersona, Integer esPersonaConCerVida, String certificadoVida, Date fechaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur, String comentariosEntregaDocumentos) {
         this.init();
         this.funcion = 201000160L;
         this.idPersona = idPersona;
+        this.esPersonaConCerVida = esPersonaConCerVida;
         this.certificadoVida = certificadoVida;
         this.fechaCertificadoVida = fechaCertificadoVida;
         this.esPersonaConCopiaCedula = esPersonaConCopiaCedula;
         this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
+        this.comentariosEntregaDocumentos = comentariosEntregaDocumentos;
     }
 
     public Long getIdPersona() {
@@ -52,6 +62,14 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public void setIdPersona(Long idPersona) {
         this.idPersona = idPersona;
+    }
+
+    public Integer getEsPersonaConCerVida() {
+        return esPersonaConCerVida;
+    }
+
+    public void setEsPersonaConCerVida(Integer esPersonaConCerVida) {
+        this.esPersonaConCerVida = esPersonaConCerVida;
     }
 
     public String getCertificadoVida() {
@@ -84,5 +102,13 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public void setEsPersonaConDeclaracionJur(Integer esPersonaConDeclaracionJur) {
         this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
+    }
+
+    public String getComentariosEntregaDocumentos() {
+        return comentariosEntregaDocumentos;
+    }
+
+    public void setComentariosEntregaDocumentos(String comentariosEntregaDocumentos) {
+        this.comentariosEntregaDocumentos = comentariosEntregaDocumentos;
     }
 }

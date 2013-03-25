@@ -138,6 +138,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
     protected static final long PARAMETRO_COMENTARIOS_ANUL_CER_VIDA = 20260L;
     protected static final long PARAMETRO_ES_CERTIFICADO_VIDA_ANULADO = 20263L;
+    protected static final long PARAMETRO_ES_PERSONA_CON_CER_VIDA = 20580L;
     protected static final long PARAMETRO_CERTIFICADO_DEFUNCION = 20111L;
     protected static final long PARAMETRO_FECHA_CERTIFICADO_DEFUNCION = 20121L;
     protected static final long PARAMETRO_COMENTARIOS_ANUL_CER_DEFUNCION = 20258L;
@@ -162,6 +163,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_FECHA_DENEGACION_PENSION = 20241L;
     protected static final long PARAMETRO_ES_PERSONA_CON_COPIA_CEDULA = 20679L;
     protected static final long PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR = 20680L;
+    protected static final long PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS = 21003L;
     protected static final long PARAMETRO_COMENTARIOS_SOLICITUD_RECO_PEN = 20237L;
     protected static final long PARAMETRO_NUMERO_CONDICION_RECO_PEN = 20170L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_RECO_PEN = 20247L;
@@ -215,7 +217,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_ES_PERSONA_CON_SUBSIDIO = 20581L;
     protected static final long PARAMETRO_ES_PERSONA_CON_DEUDA = 20223L;
     protected static final long PARAMETRO_ES_PERSONA_CON_PENA_JUDICIAL = 20225L;
-    protected static final long PARAMETRO_ES_PERSONA_CON_CER_VIDA = 20580L;
     protected static final long PARAMETRO_ES_PERSONA_CON_CARTA_RENUNCIA = 20579L;
     protected static final long PARAMETRO_ES_PERSONA_ELEGIBLE_PARA_PEN = 20149L;
     protected static final long PARAMETRO_ES_PERSONA_ACREDITADA_PARA_PEN = 20147L;
@@ -714,6 +715,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
         rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
+        rastro.addParametro(PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS, this.getComentariosEntregaDocumentos(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -818,6 +820,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
         rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
+        rastro.addParametro(PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS, this.getComentariosEntregaDocumentos(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 

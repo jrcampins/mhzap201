@@ -711,6 +711,7 @@ CREATE TABLE log_imp_deu
 	primer_apellido varchar(256),
 	segundo_apellido varchar(256),
 	apellido_casada varchar(256),
+	referencia varchar(256),
 	es_importado int NOT NULL,
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL,
@@ -1732,7 +1733,8 @@ CREATE TABLE persona
 	numero_tipo_act_jupe int,
 	fecha_hora_ult_act_jupe datetime,
 	lote bigint,
-	codigo_sime varchar(50)
+	codigo_sime varchar(50),
+	comentarios_entrega_documentos varchar(256)
 	)
 	ON [PRIMARY]
 GO

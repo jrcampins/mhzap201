@@ -323,6 +323,9 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Column(name = "codigo_sime")
     private String codigoSime;
 
+    @Column(name = "comentarios_entrega_documentos")
+    private String comentariosEntregaDocumentos;
+
     @JoinColumn(name = "numero_sexo_persona", referencedColumnName = "numero_sexo_persona")
     @ManyToOne
     private SexoPersona sexoPersonaNumeroSexoPersona;
@@ -1150,6 +1153,15 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setCodigoSime(String codigoSime) {
         this.codigoSime = codigoSime;
+    }
+
+    @Override
+    public String getComentariosEntregaDocumentos() {
+        return this.comentariosEntregaDocumentos;
+    }
+
+    public void setComentariosEntregaDocumentos(String comentariosEntregaDocumentos) {
+        this.comentariosEntregaDocumentos = comentariosEntregaDocumentos;
     }
 
     @Override

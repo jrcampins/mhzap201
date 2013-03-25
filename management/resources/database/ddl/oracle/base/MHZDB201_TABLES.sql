@@ -843,6 +843,7 @@ CREATE TABLE log_imp_deu
 	primer_apellido VARCHAR2(4000),
 	segundo_apellido VARCHAR2(4000),
 	apellido_casada VARCHAR2(4000),
+	referencia VARCHAR2(4000),
 	es_importado NUMBER(10) NOT NULL,
 	observacion VARCHAR2(4000),
 	fecha_hora_transaccion DATE NOT NULL,
@@ -1981,7 +1982,8 @@ CREATE TABLE persona
 	numero_tipo_act_jupe NUMBER(10),
 	fecha_hora_ult_act_jupe DATE,
 	lote NUMBER(19),
-	codigo_sime VARCHAR2(100)
+	codigo_sime VARCHAR2(100),
+	comentarios_entrega_documentos VARCHAR2(4000)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING

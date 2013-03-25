@@ -113,6 +113,7 @@ SELECT
 		persona_1x2.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x2y96,
 		persona_1x2.lote AS lote_1x2y97,
 		persona_1x2.codigo_sime AS codigo_sime_1x2y98,
+		persona_1x2.comentarios_entrega_documentos AS comentarios_entrega_doc_1x2y99,
 	potencial_ben.numero_cedula AS numero_cedula,
 	potencial_ben.letra_cedula AS letra_cedula,
 	potencial_ben.fecha_expedicion_cedula AS fecha_expedicion_cedula,

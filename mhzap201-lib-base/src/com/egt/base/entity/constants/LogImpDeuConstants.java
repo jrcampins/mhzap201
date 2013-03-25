@@ -37,6 +37,8 @@ public class LogImpDeuConstants {
 
     public static final String COLUMNA_APELLIDO_CASADA = "apellido_casada";
 
+    public static final String COLUMNA_REFERENCIA = "referencia";
+
     public static final String COLUMNA_ES_IMPORTADO = "es_importado";
 
     public static final String COLUMNA_OBSERVACION = "observacion";

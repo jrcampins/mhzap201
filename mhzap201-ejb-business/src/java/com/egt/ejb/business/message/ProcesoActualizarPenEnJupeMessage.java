@@ -17,12 +17,17 @@ public class ProcesoActualizarPenEnJupeMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_CODIGO_SIME = 20996L;
 
+    public static final long PARAMETRO_ID_UBICACION = 20513L;
+
     protected String codigoSime;
 
-    public ProcesoActualizarPenEnJupeMessage(String codigoSime) {
+    protected Long idUbicacion;
+
+    public ProcesoActualizarPenEnJupeMessage(String codigoSime, Long idUbicacion) {
         this.init();
         this.funcion = 200200156L;
         this.codigoSime = codigoSime;
+        this.idUbicacion = idUbicacion;
     }
 
     public String getCodigoSime() {
@@ -31,5 +36,13 @@ public class ProcesoActualizarPenEnJupeMessage extends BusinessProcessMessage im
 
     public void setCodigoSime(String codigoSime) {
         this.codigoSime = codigoSime;
+    }
+
+    public Long getIdUbicacion() {
+        return idUbicacion;
+    }
+
+    public void setIdUbicacion(Long idUbicacion) {
+        this.idUbicacion = idUbicacion;
     }
 }

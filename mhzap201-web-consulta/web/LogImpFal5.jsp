@@ -366,7 +366,7 @@
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpFal5.tableColumnDefuncion1}"
                                                     headerText="defunci&#243;n"
-                                                    id="tableColumnDefuncion1" rendered="false"
+                                                    id="tableColumnDefuncion1"
                                                     sort="defuncion">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextDefuncion1"

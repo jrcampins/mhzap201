@@ -171,6 +171,7 @@
     <field name="fecha_hora_ult_act_jupe_1x1y96" class="java.util.Date"/>
     <field name="lote_1x1y97" class="java.lang.Long"/>
     <field name="codigo_sime_1x1y98" class="java.lang.String"/>
+    <field name="comentarios_entrega_doc_1x1y99" class="java.lang.String"/>
     <field name="id_proveedor_dat_ext" class="java.lang.Long"/>
     <field name="codigo_proveedor_dat_ext_1x2y3" class="java.lang.String"/>
     <field name="nombre_proveedor_dat_ext_1x2y4" class="java.lang.String"/>

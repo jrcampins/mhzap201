@@ -9,7 +9,8 @@ begin
             || 'segundo_nombre varchar2(4000), '
             || 'primer_apellido varchar2(4000), '
             || 'segundo_apellido varchar2(4000), '
-            || 'apellido_casada varchar2(4000) '
+            || 'apellido_casada varchar2(4000), '
+            || 'referencia varchar2(4000) '
             || ') '
             || csv_org(archivo, conjunto, ignorados, separador, demarcador, comando);
     dbms_output.put_line(comando);

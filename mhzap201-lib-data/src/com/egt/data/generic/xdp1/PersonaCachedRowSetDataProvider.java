@@ -160,6 +160,7 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_FECHA_HORA_ULT_ACT_JUPE = "fecha_hora_ult_act_jupe";
     public static final String COLUMNA_LOTE = "lote";
     public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
+    public static final String COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS = "comentarios_entrega_documentos";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_PERSONA, Long.class);
@@ -260,6 +261,7 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LOTE, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_SIME, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -362,6 +364,7 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
         this.setColumnasInsertables(COLUMNA_LOTE, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_SIME, true);
+        this.setColumnasInsertables(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, true);
     }
 
     protected void setColumnasModificables() {
@@ -464,6 +467,7 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
         this.setColumnasModificables(COLUMNA_LOTE, true);
         this.setColumnasModificables(COLUMNA_CODIGO_SIME, true);
+        this.setColumnasModificables(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, true);
     }
 
     public Long getIdPersona() {
@@ -1738,6 +1742,19 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setCodigoSime(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_CODIGO_SIME, rowKey, valor);
+    }
+
+    public String getComentariosEntregaDocumentos() {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS);
+    }
+    public String getComentariosEntregaDocumentos(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, rowKey);
+    }
+    public void setComentariosEntregaDocumentos(String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, valor);
+    }
+    public void setComentariosEntregaDocumentos(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";

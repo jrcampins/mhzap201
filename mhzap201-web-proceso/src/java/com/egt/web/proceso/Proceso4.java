@@ -114,6 +114,7 @@ public class Proceso4 extends AbstractPageBean
         converterFechaRegistroPotBenDesde1.setType("date");
         converterFechaRegistroPotBenHasta1.setPattern("dd/MM/yyyy");
         converterFechaRegistroPotBenHasta1.setType("date");
+        validatorCodigoSime1.setMaximum(2000);
         converterFechaSolicitudPensionDesde1.setPattern("dd/MM/yyyy");
         converterFechaSolicitudPensionDesde1.setType("date");
         converterFechaSolicitudPensionHasta1.setPattern("dd/MM/yyyy");
@@ -121,7 +122,6 @@ public class Proceso4 extends AbstractPageBean
         validatorNumeroResolucionOtorPen1.setMaximum(2000);
         converterFechaResolucionOtorPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionOtorPen1.setType("date");
-        validatorCodigoSime1.setMaximum(2000);
         validatorNumeroResolucionDenPen1.setMaximum(2000);
         converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionDenPen1.setType("date");
@@ -392,6 +392,56 @@ public class Proceso4 extends AbstractPageBean
         this.converterFechaRegistroPotBenHasta1 = converter;
     }
   
+    private Label labelCodigoSime1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSime1() {
+        return labelCodigoSime1;
+    }
+
+    public void setLabelCodigoSime1(Label l) {
+        this.labelCodigoSime1 = l;
+    }
+
+    private TextField campoCodigoSime1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCodigoSime1() {
+        return campoCodigoSime1;
+    }
+
+    public void setCampoCodigoSime1(TextField component) {
+        this.campoCodigoSime1 = component;
+    }
+
+    private HelpInline helpInlineCodigoSime1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoSime1() {
+        return helpInlineCodigoSime1;
+    }
+
+    public void setHelpInlineCodigoSime1(HelpInline hi) {
+        this.helpInlineCodigoSime1 = hi;
+    }
+
+    private StaticText campoCodigoSime1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSime1Texto1() {
+        return campoCodigoSime1Texto1;
+    }
+
+    public void setCampoCodigoSime1Texto1(StaticText component) {
+        this.campoCodigoSime1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoSime1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoSime1() {
+        return validatorCodigoSime1;
+    }
+  
+    public void setValidatorCodigoSime1(LengthValidator validator) {
+        this.validatorCodigoSime1 = validator;
+    }
+  
     private Label labelFechaSolicitudPensionDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaSolicitudPensionDesde1() {
@@ -590,56 +640,6 @@ public class Proceso4 extends AbstractPageBean
   
     public void setConverterFechaResolucionOtorPen1(SqlTimestampConverter converter) {
         this.converterFechaResolucionOtorPen1 = converter;
-    }
-  
-    private Label labelCodigoSime1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelCodigoSime1() {
-        return labelCodigoSime1;
-    }
-
-    public void setLabelCodigoSime1(Label l) {
-        this.labelCodigoSime1 = l;
-    }
-
-    private TextField campoCodigoSime1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoCodigoSime1() {
-        return campoCodigoSime1;
-    }
-
-    public void setCampoCodigoSime1(TextField component) {
-        this.campoCodigoSime1 = component;
-    }
-
-    private HelpInline helpInlineCodigoSime1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineCodigoSime1() {
-        return helpInlineCodigoSime1;
-    }
-
-    public void setHelpInlineCodigoSime1(HelpInline hi) {
-        this.helpInlineCodigoSime1 = hi;
-    }
-
-    private StaticText campoCodigoSime1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoCodigoSime1Texto1() {
-        return campoCodigoSime1Texto1;
-    }
-
-    public void setCampoCodigoSime1Texto1(StaticText component) {
-        this.campoCodigoSime1Texto1 = component;
-    }
-
-    private LengthValidator validatorCodigoSime1 = new LengthValidator();
-  
-    public LengthValidator getValidatorCodigoSime1() {
-        return validatorCodigoSime1;
-    }
-  
-    public void setValidatorCodigoSime1(LengthValidator validator) {
-        this.validatorCodigoSime1 = validator;
     }
   
     private Label labelNumeroResolucionDenPen1 = new com.egt.core.jsf.component.Etiqueta();
@@ -998,7 +998,7 @@ public class Proceso4 extends AbstractPageBean
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
     public boolean isIdUbicacionRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_7;
+        return f == FUNCION_ACCION_2 || f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_7;
     }
 
     private Bit bitIdUbicacionRendered = new Bit() {
@@ -1045,6 +1045,23 @@ public class Proceso4 extends AbstractPageBean
 
     public Bit getBitFechaRegistroPotBenHastaRendered() {
         return bitFechaRegistroPotBenHastaRendered;
+    }
+
+    public boolean isCodigoSimeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3 || f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_8;
+    }
+
+    private Bit bitCodigoSimeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCodigoSimeRendered();
+        }
+    };
+
+    public Bit getBitCodigoSimeRendered() {
+        return bitCodigoSimeRendered;
     }
 
     public boolean isFechaSolicitudPensionDesdeRendered() {
@@ -1113,23 +1130,6 @@ public class Proceso4 extends AbstractPageBean
 
     public Bit getBitFechaResolucionOtorPenRendered() {
         return bitFechaResolucionOtorPenRendered;
-    }
-
-    public boolean isCodigoSimeRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_4 || f == FUNCION_ACCION_5 || f == FUNCION_ACCION_6 || f == FUNCION_ACCION_8;
-    }
-
-    private Bit bitCodigoSimeRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isCodigoSimeRendered();
-        }
-    };
-
-    public Bit getBitCodigoSimeRendered() {
-        return bitCodigoSimeRendered;
     }
 
     public boolean isNumeroResolucionDenPenRendered() {
@@ -1247,6 +1247,16 @@ public class Proceso4 extends AbstractPageBean
         this.valorCampoFechaRegistroPotBenHasta1 = valor;
     }
 
+    private String textoCampoCodigoSime1;
+
+    public String getTextoCampoCodigoSime1() {
+        return this.textoCampoCodigoSime1;
+    }
+
+    public void setTextoCampoCodigoSime1(String valor) {
+        this.textoCampoCodigoSime1 = valor;
+    }
+
     private java.sql.Timestamp valorCampoFechaSolicitudPensionDesde1;
 
     public java.sql.Timestamp getValorCampoFechaSolicitudPensionDesde1() {
@@ -1285,16 +1295,6 @@ public class Proceso4 extends AbstractPageBean
 
     public void setValorCampoFechaResolucionOtorPen1(java.sql.Timestamp valor) {
         this.valorCampoFechaResolucionOtorPen1 = valor;
-    }
-
-    private String textoCampoCodigoSime1;
-
-    public String getTextoCampoCodigoSime1() {
-        return this.textoCampoCodigoSime1;
-    }
-
-    public void setTextoCampoCodigoSime1(String valor) {
-        this.textoCampoCodigoSime1 = valor;
     }
 
     private String textoCampoNumeroResolucionDenPen1;
@@ -1613,10 +1613,11 @@ public class Proceso4 extends AbstractPageBean
 
     private void procesoPrepararProxPagoPen(boolean synchronously) { /* proceso preparar prox pago pen */
         try {
+            String codigoSime = this.getTextoCampoCodigoSime1();
             Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
             Date fechaSolicitudPensionDesde = this.getValorCampoFechaSolicitudPensionDesde1();
             Date fechaSolicitudPensionHasta = this.getValorCampoFechaSolicitudPensionHasta1();
-            ProcesoPrepararProxPagoPenMessage message = new ProcesoPrepararProxPagoPenMessage(idUbicacion, fechaSolicitudPensionDesde, fechaSolicitudPensionHasta);
+            ProcesoPrepararProxPagoPenMessage message = new ProcesoPrepararProxPagoPenMessage(codigoSime, idUbicacion, fechaSolicitudPensionDesde, fechaSolicitudPensionHasta);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoPrepararProxPagoPen(message);
@@ -1679,7 +1680,8 @@ public class Proceso4 extends AbstractPageBean
     private void procesoActualizarPenEnJupe(boolean synchronously) { /* proceso actualizar pen en jupe */
         try {
             String codigoSime = this.getTextoCampoCodigoSime1();
-            ProcesoActualizarPenEnJupeMessage message = new ProcesoActualizarPenEnJupeMessage(codigoSime);
+            Long idUbicacion = this.getUbicacionIdUbicacion() == null ? null : this.getUbicacionIdUbicacion().getIdUbicacion();
+            ProcesoActualizarPenEnJupeMessage message = new ProcesoActualizarPenEnJupeMessage(codigoSime, idUbicacion);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.procesoBusinessProcess.procesoActualizarPenEnJupe(message);

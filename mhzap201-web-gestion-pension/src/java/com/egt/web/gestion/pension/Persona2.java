@@ -194,6 +194,7 @@ public class Persona2 extends AbstractPageBean
         validatorLote1.setMinimum(0L);
         validatorLote1.setMaximum(1000000000000000000L);
         validatorCodigoSime1.setMaximum(50);
+        validatorComentariosEntregaDocumentos1.setMaximum(8160);
         personaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -9202,6 +9203,97 @@ public class Persona2 extends AbstractPageBean
   
     public void setValidatorCodigoSime1(LengthValidator validator) {
         this.validatorCodigoSime1 = validator;
+    }
+  
+    private Label labelComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosEntregaDocumentos1() {
+        return labelComentariosEntregaDocumentos1;
+    }
+
+    public void setLabelComentariosEntregaDocumentos1(Label l) {
+        this.labelComentariosEntregaDocumentos1 = l;
+    }
+
+    private Label labelComentariosEntregaDocumentos1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosEntregaDocumentos1x1() {
+        return labelComentariosEntregaDocumentos1x1;
+    }
+
+    public void setLabelComentariosEntregaDocumentos1x1(Label l) {
+        this.labelComentariosEntregaDocumentos1x1 = l;
+    }
+
+    private TextArea campoComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoComentariosEntregaDocumentos1() {
+        return campoComentariosEntregaDocumentos1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1(TextArea component) {
+        this.campoComentariosEntregaDocumentos1 = component;
+    }
+
+    private TextArea campoComentariosEntregaDocumentos1x1 = new com.egt.core.jsf.component.AreaTexto();
+
+    public TextArea getCampoComentariosEntregaDocumentos1x1() {
+        return campoComentariosEntregaDocumentos1x1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1x1(TextArea component) {
+        this.campoComentariosEntregaDocumentos1x1 = component;
+    }
+
+    private HelpInline helpInlineComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosEntregaDocumentos1() {
+        return helpInlineComentariosEntregaDocumentos1;
+    }
+
+    public void setHelpInlineComentariosEntregaDocumentos1(HelpInline hi) {
+        this.helpInlineComentariosEntregaDocumentos1 = hi;
+    }
+
+    private HelpInline helpInlineComentariosEntregaDocumentos1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosEntregaDocumentos1x1() {
+        return helpInlineComentariosEntregaDocumentos1x1;
+    }
+
+    public void setHelpInlineComentariosEntregaDocumentos1x1(HelpInline hi) {
+        this.helpInlineComentariosEntregaDocumentos1x1 = hi;
+    }
+
+    private StaticText campoComentariosEntregaDocumentos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosEntregaDocumentos1Texto1() {
+        return campoComentariosEntregaDocumentos1Texto1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1Texto1(StaticText component) {
+        this.campoComentariosEntregaDocumentos1Texto1 = component;
+    }
+
+    private StaticText campoComentariosEntregaDocumentos1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosEntregaDocumentos1x1Texto1() {
+        return campoComentariosEntregaDocumentos1x1Texto1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1x1Texto1(StaticText component) {
+        this.campoComentariosEntregaDocumentos1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosEntregaDocumentos1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosEntregaDocumentos1() {
+        return validatorComentariosEntregaDocumentos1;
+    }
+  
+    public void setValidatorComentariosEntregaDocumentos1(LengthValidator validator) {
+        this.validatorComentariosEntregaDocumentos1 = validator;
     }
   
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();

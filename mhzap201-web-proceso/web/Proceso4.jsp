@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Proceso4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoCodigoSime1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoLote1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoCodigoSime1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoLote1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -251,6 +251,37 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridCodigoSime1" rendered="#{Proceso4.bitCodigoSimeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelCodigoSime1}"
+                                                    id="labelCodigoSime1"
+                                                    for="campoCodigoSime1"
+                                                    text="c&#243;digo sime"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCodigoSime2" rendered="#{Proceso4.bitCodigoSimeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCodigoSime1"
+                                                    binding="#{Proceso4.campoCodigoSime1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Proceso4.textoCampoCodigoSime1}"
+                                                    toolTip="BundleParametros.codigo_sime"
+                                                    validatorExpression="#{Proceso4.validatorCodigoSime1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoSime1Texto1"
+                                                    binding="#{Proceso4.campoCodigoSime1Texto1}"/>
+                                                <webuijsf:message id="messageCodigoSime1"
+                                                    for="campoCodigoSime1"/>
+                                                <webuijsf:helpInline id="helpInlineCodigoSime1"
+                                                    binding="#{Proceso4.helpInlineCodigoSime1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.codigo_sime"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridFechaSolicitudPensionDesde1" rendered="#{Proceso4.bitFechaSolicitudPensionDesdeRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -370,37 +401,6 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_resolucion_otor_pen"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridCodigoSime1" rendered="#{Proceso4.bitCodigoSimeRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Proceso4.labelCodigoSime1}"
-                                                    id="labelCodigoSime1"
-                                                    for="campoCodigoSime1"
-                                                    text="c&#243;digo sime"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridCodigoSime2" rendered="#{Proceso4.bitCodigoSimeRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoCodigoSime1"
-                                                    binding="#{Proceso4.campoCodigoSime1}"
-                                                    columns="50"
-                                                     required="true"
-                                                    text="#{Proceso4.textoCampoCodigoSime1}"
-                                                    toolTip="BundleParametros.codigo_sime"
-                                                    validatorExpression="#{Proceso4.validatorCodigoSime1.validate}"/>
-                                                <webuijsf:staticText id="campoCodigoSime1Texto1"
-                                                    binding="#{Proceso4.campoCodigoSime1Texto1}"/>
-                                                <webuijsf:message id="messageCodigoSime1"
-                                                    for="campoCodigoSime1"/>
-                                                <webuijsf:helpInline id="helpInlineCodigoSime1"
-                                                    binding="#{Proceso4.helpInlineCodigoSime1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.codigo_sime"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

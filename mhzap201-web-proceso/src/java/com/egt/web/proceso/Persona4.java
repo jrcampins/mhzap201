@@ -149,6 +149,7 @@ public class Persona4 extends AbstractPageBean
         converterFechaResolucionDenPen1.setPattern("dd/MM/yyyy");
         converterFechaResolucionDenPen1.setType("date");
         validatorComentariosDenegacionPension1.setMaximum(2000);
+        validatorComentariosEntregaDocumentos1.setMaximum(2000);
         validatorComentariosSolicitudRecoPen1.setMaximum(2000);
         validatorComentariosAprRecoPen1.setMaximum(2000);
         validatorOtraCausaDenRecoPen1.setMaximum(2000);
@@ -1299,6 +1300,56 @@ public class Persona4 extends AbstractPageBean
         this.validatorComentariosDenegacionPension1 = validator;
     }
   
+    private Label labelEsPersonaConCerVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsPersonaConCerVida1() {
+        return labelEsPersonaConCerVida1;
+    }
+
+    public void setLabelEsPersonaConCerVida1(Label l) {
+        this.labelEsPersonaConCerVida1 = l;
+    }
+
+    private DropDown listaEsPersonaConCerVida1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsPersonaConCerVida1() {
+        return listaEsPersonaConCerVida1;
+    }
+
+    public void setListaEsPersonaConCerVida1(DropDown component) {
+        this.listaEsPersonaConCerVida1 = component;
+    }
+
+    private HelpInline helpInlineEsPersonaConCerVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsPersonaConCerVida1() {
+        return helpInlineEsPersonaConCerVida1;
+    }
+
+    public void setHelpInlineEsPersonaConCerVida1(HelpInline hi) {
+        this.helpInlineEsPersonaConCerVida1 = hi;
+    }
+
+    private StaticText listaEsPersonaConCerVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsPersonaConCerVida1Texto1() {
+        return listaEsPersonaConCerVida1Texto1;
+    }
+
+    public void setListaEsPersonaConCerVida1Texto1(StaticText component) {
+        this.listaEsPersonaConCerVida1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsPersonaConCerVida1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsPersonaConCerVida1() {
+        return converterEsPersonaConCerVida1;
+    }
+  
+    public void setConverterEsPersonaConCerVida1(IntegerConverter converter) {
+        this.converterEsPersonaConCerVida1 = converter;
+    }
+  
     private Label labelEsPersonaConCopiaCedula1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelEsPersonaConCopiaCedula1() {
@@ -1397,6 +1448,56 @@ public class Persona4 extends AbstractPageBean
   
     public void setConverterEsPersonaConDeclaracionJur1(IntegerConverter converter) {
         this.converterEsPersonaConDeclaracionJur1 = converter;
+    }
+  
+    private Label labelComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosEntregaDocumentos1() {
+        return labelComentariosEntregaDocumentos1;
+    }
+
+    public void setLabelComentariosEntregaDocumentos1(Label l) {
+        this.labelComentariosEntregaDocumentos1 = l;
+    }
+
+    private TextField campoComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoComentariosEntregaDocumentos1() {
+        return campoComentariosEntregaDocumentos1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1(TextField component) {
+        this.campoComentariosEntregaDocumentos1 = component;
+    }
+
+    private HelpInline helpInlineComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosEntregaDocumentos1() {
+        return helpInlineComentariosEntregaDocumentos1;
+    }
+
+    public void setHelpInlineComentariosEntregaDocumentos1(HelpInline hi) {
+        this.helpInlineComentariosEntregaDocumentos1 = hi;
+    }
+
+    private StaticText campoComentariosEntregaDocumentos1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosEntregaDocumentos1Texto1() {
+        return campoComentariosEntregaDocumentos1Texto1;
+    }
+
+    public void setCampoComentariosEntregaDocumentos1Texto1(StaticText component) {
+        this.campoComentariosEntregaDocumentos1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosEntregaDocumentos1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosEntregaDocumentos1() {
+        return validatorComentariosEntregaDocumentos1;
+    }
+  
+    public void setValidatorComentariosEntregaDocumentos1(LengthValidator validator) {
+        this.validatorComentariosEntregaDocumentos1 = validator;
     }
   
     private Label labelComentariosSolicitudRecoPen1 = new com.egt.core.jsf.component.Etiqueta();
@@ -3413,9 +3514,26 @@ public class Persona4 extends AbstractPageBean
         return bitComentariosDenegacionPensionRendered;
     }
 
+    public boolean isEsPersonaConCerVidaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_10 || f == FUNCION_ACCION_26;
+    }
+
+    private Bit bitEsPersonaConCerVidaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEsPersonaConCerVidaRendered();
+        }
+    };
+
+    public Bit getBitEsPersonaConCerVidaRendered() {
+        return bitEsPersonaConCerVidaRendered;
+    }
+
     public boolean isEsPersonaConCopiaCedulaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10;
+        return f == FUNCION_ACCION_10 || f == FUNCION_ACCION_26;
     }
 
     private Bit bitEsPersonaConCopiaCedulaRendered = new Bit() {
@@ -3432,7 +3550,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isEsPersonaConDeclaracionJurRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10;
+        return f == FUNCION_ACCION_10 || f == FUNCION_ACCION_26;
     }
 
     private Bit bitEsPersonaConDeclaracionJurRendered = new Bit() {
@@ -3445,6 +3563,23 @@ public class Persona4 extends AbstractPageBean
 
     public Bit getBitEsPersonaConDeclaracionJurRendered() {
         return bitEsPersonaConDeclaracionJurRendered;
+    }
+
+    public boolean isComentariosEntregaDocumentosRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_10;
+    }
+
+    private Bit bitComentariosEntregaDocumentosRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isComentariosEntregaDocumentosRendered();
+        }
+    };
+
+    public Bit getBitComentariosEntregaDocumentosRendered() {
+        return bitComentariosEntregaDocumentosRendered;
     }
 
     public boolean isComentariosSolicitudRecoPenRendered() {
@@ -4102,6 +4237,16 @@ public class Persona4 extends AbstractPageBean
 
     public void setTextoCampoComentariosDenegacionPension1(String valor) {
         this.textoCampoComentariosDenegacionPension1 = valor;
+    }
+
+    private String textoCampoComentariosEntregaDocumentos1;
+
+    public String getTextoCampoComentariosEntregaDocumentos1() {
+        return this.textoCampoComentariosEntregaDocumentos1;
+    }
+
+    public void setTextoCampoComentariosEntregaDocumentos1(String valor) {
+        this.textoCampoComentariosEntregaDocumentos1 = valor;
     }
 
     private String textoCampoComentariosSolicitudRecoPen1;
@@ -4895,6 +5040,20 @@ public class Persona4 extends AbstractPageBean
         this.valorListaNumeroCausaRevPension1 = valor;
     }
 
+    public Object getOpcionesListaEsPersonaConCerVida1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
+    private Integer valorListaEsPersonaConCerVida1;
+
+    public Integer getValorListaEsPersonaConCerVida1() {
+        return this.valorListaEsPersonaConCerVida1;
+    }
+
+    public void setValorListaEsPersonaConCerVida1(Integer valor) {
+        this.valorListaEsPersonaConCerVida1 = valor;
+    }
+
     public Object getOpcionesListaEsPersonaConCopiaCedula1() {
         return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
     }
@@ -5471,11 +5630,13 @@ public class Persona4 extends AbstractPageBean
     private void registrarEntregaDocPersona(boolean synchronously) { /* registrar entrega doc persona */
         try {
             Long idPersona = this.getPersonaIdPersona() == null ? null : this.getPersonaIdPersona().getIdPersona();
+            Integer esPersonaConCerVida = this.getValorListaEsPersonaConCerVida1();
             String certificadoVida = this.getTextoCampoCertificadoVida1();
             Date fechaCertificadoVida = this.getValorCampoFechaCertificadoVida1();
             Integer esPersonaConCopiaCedula = this.getValorListaEsPersonaConCopiaCedula1();
             Integer esPersonaConDeclaracionJur = this.getValorListaEsPersonaConDeclaracionJur1();
-            RegistrarEntregaDocPersonaMessage message = new RegistrarEntregaDocPersonaMessage(idPersona, certificadoVida, fechaCertificadoVida, esPersonaConCopiaCedula, esPersonaConDeclaracionJur);
+            String comentariosEntregaDocumentos = this.getTextoCampoComentariosEntregaDocumentos1();
+            RegistrarEntregaDocPersonaMessage message = new RegistrarEntregaDocPersonaMessage(idPersona, esPersonaConCerVida, certificadoVida, fechaCertificadoVida, esPersonaConCopiaCedula, esPersonaConDeclaracionJur, comentariosEntregaDocumentos);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.personaBusinessProcess.registrarEntregaDocPersona(message);
@@ -6048,6 +6209,9 @@ public class Persona4 extends AbstractPageBean
         Date fechaOtorgamientoPenDesde = this.getValorCampoFechaOtorgamientoPenDesde1();
         Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
         String codigoSime = this.getTextoCampoCodigoSime1();
+        Integer esPersonaConCerVida = this.getValorListaEsPersonaConCerVida1();
+        Integer esPersonaConCopiaCedula = this.getValorListaEsPersonaConCopiaCedula1();
+        Integer esPersonaConDeclaracionJur = this.getValorListaEsPersonaConDeclaracionJur1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         long function = PersonaConstants.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -6057,6 +6221,9 @@ public class Persona4 extends AbstractPageBean
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("es_persona_con_cer_vida", esPersonaConCerVida);
+        parameters.put("es_persona_con_copia_cedula", esPersonaConCopiaCedula);
+        parameters.put("es_persona_con_declaracion_jur", esPersonaConDeclaracionJur);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -6086,6 +6253,18 @@ public class Persona4 extends AbstractPageBean
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (esPersonaConCerVida != null) {
+            args.add(esPersonaConCerVida);
+            search += " and es_persona_con_cer_vida=?";
+        }
+        if (esPersonaConCopiaCedula != null) {
+            args.add(esPersonaConCopiaCedula);
+            search += " and es_persona_con_copia_cedula=?";
+        }
+        if (esPersonaConDeclaracionJur != null) {
+            args.add(esPersonaConDeclaracionJur);
+            search += " and es_persona_con_declaracion_jur=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

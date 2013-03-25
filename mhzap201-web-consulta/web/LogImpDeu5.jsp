@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpDeu5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpDeu1 campoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpDeu1 campoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoReferencia1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -362,6 +362,32 @@
                                                     text="#{currentRow.value['apellido_casada']}"/>
                                                 <webuijsf:message id="messageApellidoCasada1"
                                                     for="campoApellidoCasada1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{LogImpDeu5.tableColumnReferencia1}"
+                                                    headerText="referencia"
+                                                    id="tableColumnReferencia1"
+                                                    sort="referencia">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextReferencia1"
+                                                    text="#{currentRow.value['referencia']}"
+                                                    rendered="#{LogImpDeu5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpDeu5.labelReferencia1}"
+                                                    id="labelReferencia1"
+                                                    for="campoReferencia1"/>
+                                                <webuijsf:textArea id="campoReferencia1"
+                                                    binding="#{LogImpDeu5.campoReferencia1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="#{LogImpDeu5.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['referencia']}"
+                                                    toolTip="BundleParametros.referencia.log_imp_deu"
+                                                    validatorExpression="#{LogImpDeu5.validatorReferencia1.validate}"/>
+                                                <webuijsf:staticText id="campoReferencia1Texto1"
+                                                    binding="#{LogImpDeu5.campoReferencia1Texto1}"
+                                                    text="#{currentRow.value['referencia']}"/>
+                                                <webuijsf:message id="messageReferencia1"
+                                                    for="campoReferencia1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpDeu5.tableColumnEsImportado1}"

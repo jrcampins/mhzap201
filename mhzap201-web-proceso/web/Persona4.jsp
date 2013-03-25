@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoCodigoSime1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPersona1 campoCertificadoVida1 campoFechaCertificadoVida1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 campoComentariosAnulCerDefuncion1 campoComentariosAprobacionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 listaEsPersonaConCerVida1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoComentariosEntregaDocumentos1 campoComentariosSolicitudRecoPen1 campoComentariosAprRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 campoComentariosRegistroDenuPen1 campoComentariosConfDenuPen1 campoComentariosDesDenuPen1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoCodigoSime1 campoFechaAprobacionPensionDesde1 campoFechaAprobacionPensionHasta1 campoFechaDenegacionPensionDesde1 campoFechaDenegacionPensionHasta1 campoFechaRevocacionPensionDesde1 campoFechaRevocacionPensionHasta1 campoFechaOtorgamientoPenDesde1 campoFechaOtorgamientoPenHasta1 campoFechaHoraUltActJupeDesde1 campoFechaHoraUltActJupeHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -207,7 +207,6 @@
                                                 <webuijsf:textField id="campoCertificadoVida1"
                                                     binding="#{Persona4.campoCertificadoVida1}"
                                                     columns="50"
-                                                     required="true"
                                                     text="#{Persona4.textoCampoCertificadoVida1}"
                                                     toolTip="BundleParametros.certificado_vida"
                                                     validatorExpression="#{Persona4.validatorCertificadoVida1.validate}"/>
@@ -239,7 +238,6 @@
                                                     binding="#{Persona4.campoFechaCertificadoVida1}"
                                                     maxDate="#{Persona4.gestor.defaultMaxDate}"
                                                     minDate="#{Persona4.gestor.defaultMinDate}"
-                                                     required="true"
                                                     selectedDate="#{Persona4.valorCampoFechaCertificadoVida1}"
                                                     toolTip="BundleParametros.fecha_certificado_vida"/>
                                                 <webuijsf:staticText id="campoFechaCertificadoVida1Texto1"
@@ -772,6 +770,36 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridEsPersonaConCerVida1" rendered="#{Persona4.bitEsPersonaConCerVidaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelEsPersonaConCerVida1}"
+                                                    id="labelEsPersonaConCerVida1"
+                                                    for="listaEsPersonaConCerVida1"
+                                                    text="con certificado vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsPersonaConCerVida2" rendered="#{Persona4.bitEsPersonaConCerVidaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsPersonaConCerVida1"
+                                                    binding="#{Persona4.listaEsPersonaConCerVida1}"
+                                                    converter="#{Persona4.converterEsPersonaConCerVida1}"
+                                                    items="#{Persona4.opcionesListaEsPersonaConCerVida1}"
+                                                    selected="#{Persona4.valorListaEsPersonaConCerVida1}"
+                                                    toolTip="BundleParametros.es_persona_con_cer_vida"/>
+                                                <webuijsf:staticText id="listaEsPersonaConCerVida1Texto1"
+                                                    binding="#{Persona4.listaEsPersonaConCerVida1Texto1}"/>
+                                                <webuijsf:message id="messageEsPersonaConCerVida1"
+                                                    for="listaEsPersonaConCerVida1"/>
+                                                <webuijsf:helpInline id="helpInlineEsPersonaConCerVida1"
+                                                    binding="#{Persona4.helpInlineEsPersonaConCerVida1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_persona_con_cer_vida"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridEsPersonaConCopiaCedula1" rendered="#{Persona4.bitEsPersonaConCopiaCedulaRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -788,7 +816,6 @@
                                                     binding="#{Persona4.listaEsPersonaConCopiaCedula1}"
                                                     converter="#{Persona4.converterEsPersonaConCopiaCedula1}"
                                                     items="#{Persona4.opcionesListaEsPersonaConCopiaCedula1}"
-                                                     required="true"
                                                     selected="#{Persona4.valorListaEsPersonaConCopiaCedula1}"
                                                     toolTip="BundleParametros.es_persona_con_copia_cedula"/>
                                                 <webuijsf:staticText id="listaEsPersonaConCopiaCedula1Texto1"
@@ -819,7 +846,6 @@
                                                     binding="#{Persona4.listaEsPersonaConDeclaracionJur1}"
                                                     converter="#{Persona4.converterEsPersonaConDeclaracionJur1}"
                                                     items="#{Persona4.opcionesListaEsPersonaConDeclaracionJur1}"
-                                                     required="true"
                                                     selected="#{Persona4.valorListaEsPersonaConDeclaracionJur1}"
                                                     toolTip="BundleParametros.es_persona_con_declaracion_jur"/>
                                                 <webuijsf:staticText id="listaEsPersonaConDeclaracionJur1Texto1"
@@ -831,6 +857,36 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.es_persona_con_declaracion_jur"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosEntregaDocumentos1" rendered="#{Persona4.bitComentariosEntregaDocumentosRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona4.labelComentariosEntregaDocumentos1}"
+                                                    id="labelComentariosEntregaDocumentos1"
+                                                    for="campoComentariosEntregaDocumentos1"
+                                                    text="comentarios entrega documentos"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosEntregaDocumentos2" rendered="#{Persona4.bitComentariosEntregaDocumentosRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoComentariosEntregaDocumentos1"
+                                                    binding="#{Persona4.campoComentariosEntregaDocumentos1}"
+                                                    columns="50"
+                                                    text="#{Persona4.textoCampoComentariosEntregaDocumentos1}"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos"
+                                                    validatorExpression="#{Persona4.validatorComentariosEntregaDocumentos1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosEntregaDocumentos1Texto1"
+                                                    binding="#{Persona4.campoComentariosEntregaDocumentos1Texto1}"/>
+                                                <webuijsf:message id="messageComentariosEntregaDocumentos1"
+                                                    for="campoComentariosEntregaDocumentos1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosEntregaDocumentos1"
+                                                    binding="#{Persona4.helpInlineComentariosEntregaDocumentos1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_entrega_documentos"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpDeu6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdLogImpDeu1 campoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdLogImpDeu1 campoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoReferencia1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -423,6 +423,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.apellido_casada.log_imp_deu"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridReferencia1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{LogImpDeu6.labelReferencia1}"
+                                                    id="labelReferencia1"
+                                                    for="campoReferencia1"
+                                                    text="referencia"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridReferencia2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoReferencia1"
+                                                    binding="#{LogImpDeu6.campoReferencia1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="#{LogImpDeu6.gestor.filaNoProcesada}"
+                                                    text="#{LogImpDeu6.logImpDeuDataProvider.value['referencia']}"
+                                                    toolTip="BundleParametros.referencia.log_imp_deu"
+                                                    validatorExpression="#{LogImpDeu6.validatorReferencia1.validate}"/>
+                                                <webuijsf:staticText id="campoReferencia1Texto1"
+                                                    binding="#{LogImpDeu6.campoReferencia1Texto1}"
+                                                    text="#{LogImpDeu6.logImpDeuDataProvider.value['referencia']}"/>
+                                                <webuijsf:message id="messageReferencia1"
+                                                    for="campoReferencia1"/>
+                                                <webuijsf:helpInline id="helpInlineReferencia1"
+                                                    binding="#{LogImpDeu6.helpInlineReferencia1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.referencia.log_imp_deu"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

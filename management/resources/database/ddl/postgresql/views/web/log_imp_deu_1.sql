@@ -11,6 +11,7 @@ SELECT
 	log_imp_deu.primer_apellido AS primer_apellido,
 	log_imp_deu.segundo_apellido AS segundo_apellido,
 	log_imp_deu.apellido_casada AS apellido_casada,
+	log_imp_deu.referencia AS referencia,
 	log_imp_deu.es_importado AS es_importado,
 	log_imp_deu.observacion AS observacion,
 	log_imp_deu.fecha_hora_transaccion AS fecha_hora_transaccion,

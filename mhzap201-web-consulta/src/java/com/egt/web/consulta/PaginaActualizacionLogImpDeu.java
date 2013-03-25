@@ -39,6 +39,8 @@ public interface PaginaActualizacionLogImpDeu extends PaginaActualizacion {
 
     TextArea getCampoApellidoCasada1();
 
+    TextArea getCampoReferencia1();
+
     DropDown getListaEsImportado1();
 
     TextArea getCampoObservacion1();

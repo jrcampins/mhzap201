@@ -106,6 +106,7 @@ public class LogImpDeu5 extends AbstractPageBean
         validatorPrimerApellido1.setMaximum(8160);
         validatorSegundoApellido1.setMaximum(8160);
         validatorApellidoCasada1.setMaximum(8160);
+        validatorReferencia1.setMaximum(8160);
         validatorObservacion1.setMaximum(8160);
         converterFechaHoraTransaccion1.setPattern("dd/MM/yyyy hh:mm aa");
         converterFechaHoraTransaccion1.setType("both");
@@ -625,6 +626,57 @@ public class LogImpDeu5 extends AbstractPageBean
   
     public void setValidatorApellidoCasada1(LengthValidator validator) {
         this.validatorApellidoCasada1 = validator;
+    }
+  
+    private TableColumn tableColumnReferencia1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnReferencia1() {
+        return tableColumnReferencia1;
+    }
+
+    public void setTableColumnReferencia1(TableColumn component) {
+        this.tableColumnReferencia1 = component;
+    }
+
+    private Label labelReferencia1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelReferencia1() {
+        return labelReferencia1;
+    }
+
+    public void setLabelReferencia1(Label l) {
+        this.labelReferencia1 = l;
+    }
+
+    private TextArea campoReferencia1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoReferencia1() {
+        return campoReferencia1;
+    }
+
+    public void setCampoReferencia1(TextArea component) {
+        this.campoReferencia1 = component;
+    }
+
+    private StaticText campoReferencia1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoReferencia1Texto1() {
+        return campoReferencia1Texto1;
+    }
+
+    public void setCampoReferencia1Texto1(StaticText component) {
+        this.campoReferencia1Texto1 = component;
+    }
+
+    private LengthValidator validatorReferencia1 = new LengthValidator();
+  
+    public LengthValidator getValidatorReferencia1() {
+        return validatorReferencia1;
+    }
+  
+    public void setValidatorReferencia1(LengthValidator validator) {
+        this.validatorReferencia1 = validator;
     }
   
     private TableColumn tableColumnEsImportado1 = new com.egt.core.jsf.component.ColumnaTabla();

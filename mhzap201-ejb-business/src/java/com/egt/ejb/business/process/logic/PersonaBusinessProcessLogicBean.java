@@ -116,6 +116,7 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
         persona.setComentariosAnulCerVida(null);
         persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
+        persona.setEsPersonaConCerVida(IntUtils.TRUE);
     }
 
     @Override
@@ -264,12 +265,12 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         // TODO: comprobar la logica del proceso de negocio
         //
+        persona.setEsPersonaConCerVida(message.getEsPersonaConCerVida() == null ? IntUtils.FALSE : message.getEsPersonaConCerVida());
         persona.setCertificadoVida(message.getCertificadoVida());
         persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
-        persona.setComentariosAnulCerVida(null);
-        persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
         persona.setEsPersonaConCopiaCedula(message.getEsPersonaConCopiaCedula() == null ? IntUtils.FALSE : message.getEsPersonaConCopiaCedula());
         persona.setEsPersonaConDeclaracionJur(message.getEsPersonaConDeclaracionJur() == null ? IntUtils.FALSE : message.getEsPersonaConDeclaracionJur());
+        persona.setComentariosEntregaDocumentos(message.getComentariosEntregaDocumentos());
     }
 
     @Override

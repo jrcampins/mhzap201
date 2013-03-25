@@ -59,6 +59,9 @@ public class LogImpDeu implements LogImpDeuBase, Comparable, Serializable {
     @Column(name = "apellido_casada")
     private String apellidoCasada;
 
+    @Column(name = "referencia")
+    private String referencia;
+
     @Basic(optional = false)
     @Column(name = "es_importado")
     private int esImportado;
@@ -150,6 +153,15 @@ public class LogImpDeu implements LogImpDeuBase, Comparable, Serializable {
 
     public void setApellidoCasada(String apellidoCasada) {
         this.apellidoCasada = apellidoCasada;
+    }
+
+    @Override
+    public String getReferencia() {
+        return this.referencia;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
     }
 
     @Override

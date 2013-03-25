@@ -79,6 +79,7 @@ public class LogImpDeuCachedRowSetDataProvider2 extends LogImpDeuCachedRowSetDat
     protected static final long PARAMETRO_PRIMER_APELLIDO = 20103L;
     protected static final long PARAMETRO_SEGUNDO_APELLIDO = 20106L;
     protected static final long PARAMETRO_APELLIDO_CASADA = 20006L;
+    protected static final long PARAMETRO_REFERENCIA = 20835L;
     protected static final long PARAMETRO_ES_IMPORTADO = 20706L;
     protected static final long PARAMETRO_OBSERVACION = 20738L;
     protected static final long PARAMETRO_FECHA_HORA_TRANSACCION = 20709L;

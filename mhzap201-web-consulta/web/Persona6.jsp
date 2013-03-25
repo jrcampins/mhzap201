@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 campoComentariosEntregaDocumentos1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1496,6 +1496,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.comentarios_anul_cer_defuncion.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosEntregaDocumentos1" rendered="#{Persona6.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona6.labelComentariosEntregaDocumentos1}"
+                                                    id="labelComentariosEntregaDocumentos1"
+                                                    for="campoComentariosEntregaDocumentos1"
+                                                    text="comentarios entrega documentos"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosEntregaDocumentos2" rendered="#{Persona6.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosEntregaDocumentos1"
+                                                    binding="#{Persona6.campoComentariosEntregaDocumentos1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona6.personaDataProvider.value['comentarios_entrega_documentos']}"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos.persona"
+                                                    validatorExpression="#{Persona6.validatorComentariosEntregaDocumentos1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosEntregaDocumentos1Texto1"
+                                                    binding="#{Persona6.campoComentariosEntregaDocumentos1Texto1}"
+                                                    text="#{Persona6.personaDataProvider.value['comentarios_entrega_documentos']}"/>
+                                                <webuijsf:message id="messageComentariosEntregaDocumentos1"
+                                                    for="campoComentariosEntregaDocumentos1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosEntregaDocumentos1"
+                                                    binding="#{Persona6.helpInlineComentariosEntregaDocumentos1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_entrega_documentos.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4671,6 +4703,38 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.comentarios_anul_cer_defuncion.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosEntregaDocumentos1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona6.labelComentariosEntregaDocumentos1x1}"
+                                                    id="labelComentariosEntregaDocumentos1x1"
+                                                    for="campoComentariosEntregaDocumentos1x1"
+                                                    text="comentarios entrega documentos"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosEntregaDocumentos1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosEntregaDocumentos1x1"
+                                                    binding="#{Persona6.campoComentariosEntregaDocumentos1x1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona6.personaDataProvider.value['comentarios_entrega_documentos']}"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos.persona"
+                                                    validatorExpression="#{Persona6.validatorComentariosEntregaDocumentos1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosEntregaDocumentos1x1Texto1"
+                                                    binding="#{Persona6.campoComentariosEntregaDocumentos1x1Texto1}"
+                                                    text="#{Persona6.personaDataProvider.value['comentarios_entrega_documentos']}"/>
+                                                <webuijsf:message id="messageComentariosEntregaDocumentos1x1"
+                                                    for="campoComentariosEntregaDocumentos1x1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosEntregaDocumentos1x1"
+                                                    binding="#{Persona6.helpInlineComentariosEntregaDocumentos1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_entrega_documentos.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>

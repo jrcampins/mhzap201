@@ -16,11 +16,15 @@ import java.util.Date;
 
 public class ProcesoPrepararProxPagoPenMessage extends BusinessProcessMessage implements Serializable {
 
+    public static final long PARAMETRO_CODIGO_SIME = 20996L;
+
     public static final long PARAMETRO_ID_UBICACION = 20513L;
 
     public static final long PARAMETRO_FECHA_SOLICITUD_PENSION_DESDE = 10001L;
 
     public static final long PARAMETRO_FECHA_SOLICITUD_PENSION_HASTA = 10002L;
+
+    protected String codigoSime;
 
     protected Long idUbicacion;
 
@@ -28,12 +32,21 @@ public class ProcesoPrepararProxPagoPenMessage extends BusinessProcessMessage im
 
     protected Date fechaSolicitudPensionHasta;
 
-    public ProcesoPrepararProxPagoPenMessage(Long idUbicacion, Date fechaSolicitudPensionDesde, Date fechaSolicitudPensionHasta) {
+    public ProcesoPrepararProxPagoPenMessage(String codigoSime, Long idUbicacion, Date fechaSolicitudPensionDesde, Date fechaSolicitudPensionHasta) {
         this.init();
         this.funcion = 200200153L;
+        this.codigoSime = codigoSime;
         this.idUbicacion = idUbicacion;
         this.fechaSolicitudPensionDesde = fechaSolicitudPensionDesde;
         this.fechaSolicitudPensionHasta = fechaSolicitudPensionHasta;
+    }
+
+    public String getCodigoSime() {
+        return codigoSime;
+    }
+
+    public void setCodigoSime(String codigoSime) {
+        this.codigoSime = codigoSime;
     }
 
     public Long getIdUbicacion() {

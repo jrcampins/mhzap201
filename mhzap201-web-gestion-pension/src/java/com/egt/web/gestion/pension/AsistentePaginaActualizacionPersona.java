@@ -573,6 +573,9 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaOtorgamientoPenDesde = null;
         Date fechaOtorgamientoPenHasta = null;
         String codigoSime = null;
+        Integer esPersonaConCerVida = null;
+        Integer esPersonaConCopiaCedula = null;
+        Integer esPersonaConDeclaracionJur = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -582,6 +585,9 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("es_persona_con_cer_vida", esPersonaConCerVida);
+        parameters.put("es_persona_con_copia_cedula", esPersonaConCopiaCedula);
+        parameters.put("es_persona_con_declaracion_jur", esPersonaConDeclaracionJur);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -611,6 +617,18 @@ public class AsistentePaginaActualizacionPersona {
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (esPersonaConCerVida != null) {
+            args.add(esPersonaConCerVida);
+            search += " and es_persona_con_cer_vida=?";
+        }
+        if (esPersonaConCopiaCedula != null) {
+            args.add(esPersonaConCopiaCedula);
+            search += " and es_persona_con_copia_cedula=?";
+        }
+        if (esPersonaConDeclaracionJur != null) {
+            args.add(esPersonaConDeclaracionJur);
+            search += " and es_persona_con_declaracion_jur=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -2620,6 +2638,13 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridComentariosAnulCerDefuncionRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionRegistroRendered();
+    }
+
+    public boolean isGridComentariosEntregaDocumentosRendered() {
         if (bean == null) {
             return true;
         }

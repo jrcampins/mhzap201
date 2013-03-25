@@ -171,8 +171,9 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_PREPARAR_PROX_PAGO_PEN;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getCodigoSime();
             args[index++] = message.getIdUbicacion();
             args[index++] = message.getFechaSolicitudPensionDesde();
             args[index++] = message.getFechaSolicitudPensionHasta();
@@ -186,6 +187,7 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
 
     protected Long grabarRastroFuncion(ProcesoPrepararProxPagoPenMessage message, Proceso proceso) {
         RastroFuncion rastro = this.getRastroFuncion(message, proceso);
+        rastro.addParametro(ProcesoPrepararProxPagoPenMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
         rastro.addParametro(ProcesoPrepararProxPagoPenMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
         rastro.addParametro(ProcesoPrepararProxPagoPenMessage.PARAMETRO_FECHA_SOLICITUD_PENSION_DESDE, STP.getString(message.getFechaSolicitudPensionDesde()));
         rastro.addParametro(ProcesoPrepararProxPagoPenMessage.PARAMETRO_FECHA_SOLICITUD_PENSION_HASTA, STP.getString(message.getFechaSolicitudPensionHasta()));
@@ -322,9 +324,10 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
         String sql = ProcesoConstants.PROCESO_FUNCION_PROCESO_ACTUALIZAR_PEN_EN_JUPE;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getCodigoSime();
+            args[index++] = message.getIdUbicacion();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -336,6 +339,7 @@ public class ProcesoBusinessProcessBean implements ProcesoBusinessProcessLocal {
     protected Long grabarRastroFuncion(ProcesoActualizarPenEnJupeMessage message, Proceso proceso) {
         RastroFuncion rastro = this.getRastroFuncion(message, proceso);
         rastro.addParametro(ProcesoActualizarPenEnJupeMessage.PARAMETRO_CODIGO_SIME, STP.getString(message.getCodigoSime()));
+        rastro.addParametro(ProcesoActualizarPenEnJupeMessage.PARAMETRO_ID_UBICACION, STP.getString(message.getIdUbicacion()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

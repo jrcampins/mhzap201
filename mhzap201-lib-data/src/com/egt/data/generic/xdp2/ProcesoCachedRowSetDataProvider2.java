@@ -89,11 +89,11 @@ public class ProcesoCachedRowSetDataProvider2 extends ProcesoCachedRowSetDataPro
     protected static final long PARAMETRO_ID_UBICACION = 20513L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_DESDE = 10011L;
     protected static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_HASTA = 10012L;
+    protected static final long PARAMETRO_CODIGO_SIME = 20996L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_DESDE = 10001L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_HASTA = 10002L;
     protected static final long PARAMETRO_NUMERO_RESOLUCION_OTOR_PEN = 20675L;
     protected static final long PARAMETRO_FECHA_RESOLUCION_OTOR_PEN = 20672L;
-    protected static final long PARAMETRO_CODIGO_SIME = 20996L;
     protected static final long PARAMETRO_NUMERO_RESOLUCION_DEN_PEN = 20683L;
     protected static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN = 20681L;
     protected static final long PARAMETRO_LOTE = 20997L;

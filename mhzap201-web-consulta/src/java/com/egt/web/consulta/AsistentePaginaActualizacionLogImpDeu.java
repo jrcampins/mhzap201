@@ -191,6 +191,10 @@ public class AsistentePaginaActualizacionLogImpDeu {
         return true;
     }
 
+    public boolean isGridReferenciaRendered() {
+        return true;
+    }
+
     public boolean isGridEsImportadoRendered() {
         return true;
     }

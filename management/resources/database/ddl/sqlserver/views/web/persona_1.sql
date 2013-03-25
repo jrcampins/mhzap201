@@ -233,7 +233,8 @@ SELECT
 		tipo_act_jupe_1x16.codigo_tipo_act_jupe AS codigo_tipo_act_jupe_1x16y2,
 	persona.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe,
 	persona.lote AS lote,
-	persona.codigo_sime AS codigo_sime
+	persona.codigo_sime AS codigo_sime,
+	persona.comentarios_entrega_documentos AS comentarios_entrega_documentos
 FROM
 	persona persona
 	LEFT OUTER JOIN sexo_persona sexo_persona_1x1 ON sexo_persona_1x1.numero_sexo_persona = persona.numero_sexo_persona

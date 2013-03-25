@@ -211,6 +211,8 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getCampoCodigoSime1();
 
+    TextArea getCampoComentariosEntregaDocumentos1();
+
     Button getBotonAplicar1();
 
     PersonaCachedRowSetDataProvider2 getPersonaDataProvider();

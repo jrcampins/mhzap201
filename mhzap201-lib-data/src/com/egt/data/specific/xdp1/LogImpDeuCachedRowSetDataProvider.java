@@ -67,6 +67,7 @@ public class LogImpDeuCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     public static final String COLUMNA_PRIMER_APELLIDO = "primer_apellido";
     public static final String COLUMNA_SEGUNDO_APELLIDO = "segundo_apellido";
     public static final String COLUMNA_APELLIDO_CASADA = "apellido_casada";
+    public static final String COLUMNA_REFERENCIA = "referencia";
     public static final String COLUMNA_ES_IMPORTADO = "es_importado";
     public static final String COLUMNA_OBSERVACION = "observacion";
     public static final String COLUMNA_FECHA_HORA_TRANSACCION = "fecha_hora_transaccion";
@@ -82,6 +83,7 @@ public class LogImpDeuCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_PRIMER_APELLIDO, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_SEGUNDO_APELLIDO, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_APELLIDO_CASADA, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_REFERENCIA, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_IMPORTADO, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_TRANSACCION, Timestamp.class);
@@ -99,6 +101,7 @@ public class LogImpDeuCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasInsertables(COLUMNA_PRIMER_APELLIDO, true);
         this.setColumnasInsertables(COLUMNA_SEGUNDO_APELLIDO, true);
         this.setColumnasInsertables(COLUMNA_APELLIDO_CASADA, true);
+        this.setColumnasInsertables(COLUMNA_REFERENCIA, true);
         this.setColumnasInsertables(COLUMNA_ES_IMPORTADO, true);
         this.setColumnasInsertables(COLUMNA_OBSERVACION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_TRANSACCION, true);
@@ -116,6 +119,7 @@ public class LogImpDeuCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasModificables(COLUMNA_PRIMER_APELLIDO, true);
         this.setColumnasModificables(COLUMNA_SEGUNDO_APELLIDO, true);
         this.setColumnasModificables(COLUMNA_APELLIDO_CASADA, true);
+        this.setColumnasModificables(COLUMNA_REFERENCIA, true);
         this.setColumnasModificables(COLUMNA_ES_IMPORTADO, true);
         this.setColumnasModificables(COLUMNA_OBSERVACION, true);
         this.setColumnasModificables(COLUMNA_FECHA_HORA_TRANSACCION, true);
@@ -225,6 +229,19 @@ public class LogImpDeuCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     }
     public void setApellidoCasada(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_APELLIDO_CASADA, rowKey, valor);
+    }
+
+    public String getReferencia() {
+        return (String) super.getValue(COLUMNA_REFERENCIA);
+    }
+    public String getReferencia(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_REFERENCIA, rowKey);
+    }
+    public void setReferencia(String valor) {
+        super.setValue(COLUMNA_REFERENCIA, valor);
+    }
+    public void setReferencia(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_REFERENCIA, rowKey, valor);
     }
 
     public Integer getEsImportado() {

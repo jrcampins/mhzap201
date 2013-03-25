@@ -109,6 +109,7 @@ SELECT
 		persona_1x1.fecha_hora_ult_act_jupe AS fecha_hora_ult_act_jupe_1x1y96,
 		persona_1x1.lote AS lote_1x1y97,
 		persona_1x1.codigo_sime AS codigo_sime_1x1y98,
+		persona_1x1.comentarios_entrega_documentos AS comentarios_entrega_doc_1x1y99,
 	log_pro_ver_ele_pen.codigo_persona AS codigo_persona,
 	log_pro_ver_ele_pen.nombre_persona AS nombre_persona,
 	log_pro_ver_ele_pen.id_departamento AS id_departamento,

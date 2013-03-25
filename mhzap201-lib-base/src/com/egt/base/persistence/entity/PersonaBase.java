@@ -344,6 +344,10 @@ public interface PersonaBase {
 //
 //  public void setCodigoSime(String codigoSime);
 
+    public String getComentariosEntregaDocumentos();
+//
+//  public void setComentariosEntregaDocumentos(String comentariosEntregaDocumentos);
+
     public SexoPersonaBase getSexoPersonaNumeroSexoPersona();
 //
 //  public void setSexoPersonaNumeroSexoPersona(SexoPersonaBase sexoPersona);

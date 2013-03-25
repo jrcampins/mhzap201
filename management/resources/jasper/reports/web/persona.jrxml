@@ -296,6 +296,7 @@
     <field name="fecha_hora_ult_act_jupe" class="java.util.Date"/>
     <field name="lote" class="java.lang.Long"/>
     <field name="codigo_sime" class="java.lang.String"/>
+    <field name="comentarios_entrega_documentos" class="java.lang.String"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

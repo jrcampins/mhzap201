@@ -51,6 +51,10 @@ public interface LogImpDeuBase {
 //
 //  public void setApellidoCasada(String apellidoCasada);
 
+    public String getReferencia();
+//
+//  public void setReferencia(String referencia);
+
     public int getEsImportado();
 //
 //  public void setEsImportado(int esImportado);

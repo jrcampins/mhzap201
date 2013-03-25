@@ -2158,4 +2158,6 @@ INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre
 VALUES (21001, 1, 'nombre_original_archivo_datos', 'Nombre Original Archivo Datos', 'nombre original archivo datos', NULL, 1, 'nombre_original_archivo_datos');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (21002, 1, 'codigo_ubicacion_jupe', 'Código Ubicación JUPE', 'código ubicación jupe', NULL, 1, 'codigo_ubicacion_jupe');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (21003, 1, 'comentarios_entrega_documentos', 'Comentarios Entrega Documentos', 'comentarios entrega documentos', NULL, 1, 'comentarios_entrega_documentos');
 GO

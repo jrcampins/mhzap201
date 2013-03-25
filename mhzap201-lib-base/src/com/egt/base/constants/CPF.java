@@ -454,6 +454,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long COMENTARIOS_DES_DENU_PEN = 20233L; // Comentarios Desmentido Denuncia Pension
 
+    public static final Long COMENTARIOS_ENTREGA_DOCUMENTOS = 21003L; // Comentarios Entrega Documentos
+
     public static final Long COMENTARIOS_OBJECION_PENSION = 20896L; // Comentarios Objecion Pension
 
     public static final Long COMENTARIOS_OTORGAMIENTO_PEN = 20662L; // Comentarios Otorgamiento Pension

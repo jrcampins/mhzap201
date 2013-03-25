@@ -80,6 +80,7 @@
     <field name="primer_apellido" class="java.lang.String"/>
     <field name="segundo_apellido" class="java.lang.String"/>
     <field name="apellido_casada" class="java.lang.String"/>
+    <field name="referencia" class="java.lang.String"/>
     <field name="es_importado" class="java.lang.Integer"/>
     <field name="observacion" class="java.lang.String"/>
     <field name="fecha_hora_transaccion" class="java.util.Date"/>
@@ -393,7 +394,7 @@
                     style="ch-text1"
                     x="0"
                     y="0"
-                    width="200"
+                    width="160"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -402,7 +403,18 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="200"
+                    x="160"
+                    y="0"
+                    width="160"
+                    height="20"
+                    key="staticText"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <text><![CDATA[referencia]]></text>
+            </staticText>
+            <staticText>
+                <reportElement
+                    style="ch-text1"
+                    x="320"
                     y="0"
                     width="64"
                     height="20"
@@ -413,9 +425,9 @@
             <staticText>
                 <reportElement
                     style="ch-text1"
-                    x="264"
+                    x="384"
                     y="0"
-                    width="600"
+                    width="480"
                     height="20"
                     key="staticText"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -514,7 +526,7 @@
                     stretchType="RelativeToBandHeight"
                     x="0"
                     y="0"
-                    width="200"
+                    width="160"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
@@ -530,7 +542,25 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="200"
+                    x="160"
+                    y="0"
+                    width="160"
+                    height="16"
+                    key="textField"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{referencia}]]></textFieldExpression>
+            </textField>
+            <textField
+                pattern=""
+                isBlankWhenNull="true"
+                isStretchWithOverflow="true"
+                evaluationTime="Now"
+                hyperlinkType="None"
+                hyperlinkTarget="Self">
+                <reportElement
+                    style="dx-text1"
+                    stretchType="RelativeToBandHeight"
+                    x="320"
                     y="0"
                     width="64"
                     height="16"
@@ -548,9 +578,9 @@
                 <reportElement
                     style="dx-text1"
                     stretchType="RelativeToBandHeight"
-                    x="264"
+                    x="384"
                     y="0"
-                    width="600"
+                    width="480"
                     height="16"
                     key="textField"/>
                 <textElement textAlignment="Left" verticalAlignment="Middle"/>
