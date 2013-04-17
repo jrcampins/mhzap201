@@ -81,7 +81,7 @@ goto:eof
 :make-link-102
 if /i "%~1" == "" goto:eof
 if /i "%~2" == "" goto:eof
-set xxmklink="%ProgramFiles%\Pixelab\xxmklink"
+set xxmklink="%ProgramFiles%\Pixelab\xxmklink\XXMKLINK.EXE"
 set spath="%~f1"
 set opath="%~f2"
 set arg=""
@@ -103,7 +103,7 @@ goto:eof
 :make-link-202
 if /i "%~1" == "" goto:eof
 if /i "%~2" == "" goto:eof
-set xxmklink="%ProgramFiles%\Pixelab\xxmklink"
+set xxmklink="%ProgramFiles%\Pixelab\xxmklink\XXMKLINK.EXE"
 set spath="%~f1"
 set opath="%~f2"
 set arg=""
