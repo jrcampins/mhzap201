@@ -17,9 +17,6 @@
                     <file>${libs.woodstock-components.classpath}</file>
                 </library>
                 <library dirs="200">
-                    <file>${libs.woodstock-theme-default.classpath}</file>
-                </library>
-                <library dirs="200">
                     <file>${reference.commons-lib.jar}</file>
                 </library>
                 <library dirs="200">
