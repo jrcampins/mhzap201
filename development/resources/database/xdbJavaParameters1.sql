@@ -33,7 +33,3 @@ SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON 
 GO
-SELECT COUNT(*) FROM dbo.xdbJavaParameters1
-GO
-SELECT * FROM dbo.xdbJavaParameters1 WHERE tabname is not null and paramhint is not null
-GO
