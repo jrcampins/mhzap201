@@ -81,8 +81,8 @@
                                                 <webuijsf:tableColumn binding="#{RastroProceso1.tableColumn4}" headerText="usuario" id="tableColumn4" sort="nombre_usuario">
                                                     <webuijsf:staticText binding="#{RastroProceso1.staticText2}" id="staticText2" text="#{currentRow.value['nombre_usuario']}"/>
                                                 </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn binding="#{RastroProceso1.tableColumn5}" headerText="función" id="tableColumn5" sort="codigo_funcion">
-                                                    <webuijsf:staticText binding="#{RastroProceso1.staticText3}" id="staticText3" text="#{currentRow.value['codigo_funcion']}"/>
+                                                <webuijsf:tableColumn binding="#{RastroProceso1.tableColumn5}" headerText="función" id="tableColumn5" sort="nombre_funcion">
+                                                    <webuijsf:staticText binding="#{RastroProceso1.staticText3}" id="staticText3" text="#{currentRow.value['nombre_funcion']}"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn binding="#{RastroProceso1.tableColumn6}" headerText="condición" id="tableColumn6" sort="codigo_condicion_eje_fun">
                                                     <webuijsf:staticText binding="#{RastroProceso1.staticText4}" id="staticText4" text="#{currentRow.value['codigo_condicion_eje_fun']}"/>

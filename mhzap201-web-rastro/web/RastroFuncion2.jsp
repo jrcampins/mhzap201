@@ -82,8 +82,8 @@
                                                 <webuijsf:tableColumn binding="#{RastroFuncion2.tableColumn4}" headerText="usuario" id="tableColumn4" sort="nombre_usuario">
                                                     <webuijsf:staticText binding="#{RastroFuncion2.staticText4}" id="staticText4" text="#{currentRow.value['nombre_usuario']}"/>
                                                 </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn binding="#{RastroFuncion2.tableColumn5}" headerText="función" id="tableColumn5" sort="codigo_funcion">
-                                                    <webuijsf:staticText binding="#{RastroFuncion2.staticText5}" id="staticText5" text="#{currentRow.value['codigo_funcion']}"/>
+                                                <webuijsf:tableColumn binding="#{RastroFuncion2.tableColumn5}" headerText="función" id="tableColumn5" sort="nombre_funcion">
+                                                    <webuijsf:staticText binding="#{RastroFuncion2.staticText5}" id="staticText5" text="#{currentRow.value['nombre_funcion']}"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn binding="#{RastroFuncion2.tableColumn6}" headerText="fecha/hora" id="tableColumn6" sort="fecha_hora_ejecucion">
                                                     <webuijsf:staticText binding="#{RastroFuncion2.staticText6}" id="staticText6" text="#{currentRow.value['fecha_hora_ejecucion']}"/>
