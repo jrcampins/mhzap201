@@ -139,6 +139,6 @@ Configuración de JBoss en Linux
         set "JAVA_OPTS=-Xms128M -Xmx1024M -XX:MaxPermSize=384M"
 
 
-04. Copiar el directorio modules (https://www.dropbox.com/sh/sdgogsijs50m291/e4nevcdMBh) a /opt/jboss/modules
+04. Copiar el directorio modules (https://www.dropbox.com/sh/lz7nrky9t9xslhl/kH6SQ0J_Zl) a C:\jboss\modules
 
 

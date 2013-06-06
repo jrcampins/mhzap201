@@ -42,6 +42,11 @@
         <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
         <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
         <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
+        <property name="eclipselink.deploy-on-startup" value="true"/>
+        <property name="eclipselink.id-validation" value="NULL"/>
+        <property name="eclipselink.target-server" value="JBoss"/>
+        <property name="eclipselink.archive.factory" value="id.au.ringerc.as7.eclipselinkintegration.JBossArchiveFactoryImpl"/>
+        <property name="eclipselink.logging.logger" value="id.au.ringerc.as7.eclipselinkintegration.JBossLogger"/>
     </system-properties>
 
     <management>
