@@ -204,6 +204,7 @@
                                                     binding="#{Rol2.labelIdRol1}"
                                                     id="labelIdRol1"
                                                     for="campoIdRol1"
+                                                    toolTip="BundleParametros.id_rol.rol"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Rol2.labelCodigoRol1}"
                                                     id="labelCodigoRol1"
                                                     for="campoCodigoRol1"
+                                                    toolTip="BundleParametros.codigo_rol.rol"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Rol2.labelNombreRol1}"
                                                     id="labelNombreRol1"
                                                     for="campoNombreRol1"
+                                                    toolTip="BundleParametros.nombre_rol.rol"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Rol2.labelDescripcionRol1}"
                                                     id="labelDescripcionRol1"
                                                     for="campoDescripcionRol1"
+                                                    toolTip="BundleParametros.descripcion_rol.rol"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

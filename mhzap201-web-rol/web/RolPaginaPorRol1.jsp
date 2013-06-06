@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolPaginaPorRol1.tableColumnIdRolPagina1}"
+                                                    toolTip="BundleParametros.id_rol_pagina.rol_pagina"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolPagina1" rendered="false"
                                                     sort="id_rol_pagina">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolPaginaPorRol1.tableColumnIdPagina1}"
+                                                    toolTip="BundleParametros.id_pagina.rol_pagina"
                                                     headerText="p&#225;gina"
                                                     id="tableColumnIdPagina1"
                                                     sort="codigo_pagina_1x2y3">

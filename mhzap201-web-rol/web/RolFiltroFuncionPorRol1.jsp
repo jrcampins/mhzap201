@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFiltroFuncionPorRol1.tableColumnIdRolFiltroFuncion1}"
+                                                    toolTip="BundleParametros.id_rol_filtro_funcion.rol_filtro_funcion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolFiltroFuncion1" rendered="false"
                                                     sort="id_rol_filtro_funcion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFiltroFuncionPorRol1.tableColumnIdFiltroFuncion1}"
+                                                    toolTip="BundleParametros.id_filtro_funcion.rol_filtro_funcion"
                                                     headerText="filtro funci&#243;n"
                                                     id="tableColumnIdFiltroFuncion1"
                                                     sort="codigo_filtro_funcion_1x2y3">

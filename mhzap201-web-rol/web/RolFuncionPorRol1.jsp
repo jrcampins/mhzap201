@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFuncionPorRol1.tableColumnIdRolFuncion1}"
+                                                    toolTip="BundleParametros.id_rol_funcion.rol_funcion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolFuncion1" rendered="false"
                                                     sort="id_rol_funcion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFuncionPorRol1.tableColumnIdFuncion1}"
+                                                    toolTip="BundleParametros.id_funcion.rol_funcion"
                                                     headerText="funci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="codigo_funcion_1x2y3">
@@ -272,6 +274,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolFuncionPorRol1.tableColumnIdConjuntoSegmento1}"
+                                                    toolTip="BundleParametros.id_conjunto_segmento.rol_funcion"
                                                     headerText="conjunto segmento"
                                                     id="tableColumnIdConjuntoSegmento1"
                                                     sort="codigo_conjunto_segmento_1x3y3">

@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Rol1.tableColumnIdRol1}"
+                                                    toolTip="BundleParametros.id_rol.rol"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdRol1" rendered="false"
                                                     sort="id_rol">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Rol1.tableColumnCodigoRol1}"
+                                                    toolTip="BundleParametros.codigo_rol.rol"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoRol1"
                                                     sort="codigo_rol">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Rol1.tableColumnNombreRol1}"
+                                                    toolTip="BundleParametros.nombre_rol.rol"
                                                     headerText="nombre"
                                                     id="tableColumnNombreRol1"
                                                     sort="nombre_rol">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Rol1.tableColumnDescripcionRol1}"
+                                                    toolTip="BundleParametros.descripcion_rol.rol"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionRol1" rendered="false"
                                                     sort="descripcion_rol">
