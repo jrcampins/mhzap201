@@ -57,6 +57,13 @@ public class ObjecionElePen implements ObjecionElePenBase, Comparable, Serializa
     @Column(name = "observaciones")
     private String observaciones;
 
+    @Column(name = "fecha_anulacion")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaAnulacion;
+
+    @Column(name = "observaciones_anulacion")
+    private String observacionesAnulacion;
+
     @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
     @ManyToOne
     private Persona personaIdPersona;
@@ -124,6 +131,24 @@ public class ObjecionElePen implements ObjecionElePenBase, Comparable, Serializa
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+
+    @Override
+    public Date getFechaAnulacion() {
+        return this.fechaAnulacion;
+    }
+
+    public void setFechaAnulacion(Date fechaAnulacion) {
+        this.fechaAnulacion = fechaAnulacion;
+    }
+
+    @Override
+    public String getObservacionesAnulacion() {
+        return this.observacionesAnulacion;
+    }
+
+    public void setObservacionesAnulacion(String observacionesAnulacion) {
+        this.observacionesAnulacion = observacionesAnulacion;
     }
 
     @Override

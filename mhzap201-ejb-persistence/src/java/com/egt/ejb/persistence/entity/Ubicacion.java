@@ -152,9 +152,6 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdBarrio")
     private Collection<Persona> personaIdBarrioCollection;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdManzana")
-    private Collection<Persona> personaIdManzanaCollection;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "ubicacionIdDepartamento")
     private Collection<PotencialBen> potencialBenIdDepartamentoCollection;
 
@@ -513,15 +510,6 @@ public class Ubicacion implements UbicacionBase, Comparable, Serializable {
 
     public void setPersonaIdBarrioCollection(Collection<Persona> collection) {
         this.personaIdBarrioCollection = collection;
-    }
-
-    @Override
-    public Collection<Persona> getPersonaIdManzanaCollection() {
-        return this.personaIdManzanaCollection;
-    }
-
-    public void setPersonaIdManzanaCollection(Collection<Persona> collection) {
-        this.personaIdManzanaCollection = collection;
     }
 
     @Override

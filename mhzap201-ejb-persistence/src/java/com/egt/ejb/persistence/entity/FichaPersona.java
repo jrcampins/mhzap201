@@ -179,6 +179,14 @@ public class FichaPersona implements FichaPersonaBase, Comparable, Serializable 
     @Column(name = "es_ficha_persona_inactiva")
     private int esFichaPersonaInactiva;
 
+    @Basic(optional = false)
+    @Column(name = "es_ficha_persona_importada")
+    private int esFichaPersonaImportada;
+
+    @Column(name = "fecha_importacion")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaImportacion;
+
     @JoinColumn(name = "id_ficha_hogar", referencedColumnName = "id_ficha_hogar")
     @ManyToOne
     private FichaHogar fichaHogarIdFichaHogar;
@@ -721,6 +729,24 @@ public class FichaPersona implements FichaPersonaBase, Comparable, Serializable 
 
     public void setEsFichaPersonaInactiva(int esFichaPersonaInactiva) {
         this.esFichaPersonaInactiva = esFichaPersonaInactiva;
+    }
+
+    @Override
+    public int getEsFichaPersonaImportada() {
+        return this.esFichaPersonaImportada;
+    }
+
+    public void setEsFichaPersonaImportada(int esFichaPersonaImportada) {
+        this.esFichaPersonaImportada = esFichaPersonaImportada;
+    }
+
+    @Override
+    public Date getFechaImportacion() {
+        return this.fechaImportacion;
+    }
+
+    public void setFechaImportacion(Date fechaImportacion) {
+        this.fechaImportacion = fechaImportacion;
     }
 
     @Override

@@ -98,9 +98,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Column(name = "nombre_comunidad_indigena")
     private String nombreComunidadIndigena;
 
-    @Column(name = "manzana")
-    private String manzana;
-
     @Column(name = "direccion")
     private String direccion;
 
@@ -117,12 +114,12 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCertificadoVida;
 
+    @Column(name = "dias_vigencia_certificado_vida")
+    private Integer diasVigenciaCertificadoVida;
+
     @Basic(optional = false)
     @Column(name = "es_certificado_vida_anulado")
     private int esCertificadoVidaAnulado;
-
-    @Column(name = "comentarios_anul_cer_vida")
-    private String comentariosAnulCerVida;
 
     @Column(name = "certificado_defuncion")
     private String certificadoDefuncion;
@@ -134,9 +131,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Basic(optional = false)
     @Column(name = "es_cer_defuncion_anulado")
     private int esCerDefuncionAnulado;
-
-    @Column(name = "comentarios_anul_cer_defuncion")
-    private String comentariosAnulCerDefuncion;
 
     @Basic(optional = false)
     @Column(name = "es_persona_con_empleo")
@@ -188,9 +182,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     @Column(name = "monto_pension")
     private BigDecimal montoPension;
-
-    @Column(name = "lugar_solicitud_pension")
-    private String lugarSolicitudPension;
 
     @Column(name = "fecha_solicitud_pension")
     @Temporal(TemporalType.TIMESTAMP)
@@ -250,6 +241,13 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     @Column(name = "otra_causa_rev_pension")
     private String otraCausaRevPension;
+
+    @Column(name = "numero_resolucion_rev_pen")
+    private String numeroResolucionRevPen;
+
+    @Column(name = "fecha_resolucion_rev_pen")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaResolucionRevPen;
 
     @Column(name = "comentarios_revocacion_pension")
     private String comentariosRevocacionPension;
@@ -323,8 +321,14 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @Column(name = "codigo_sime")
     private String codigoSime;
 
+    @Column(name = "codigo_sime_reco_pen")
+    private String codigoSimeRecoPen;
+
     @Column(name = "comentarios_entrega_documentos")
     private String comentariosEntregaDocumentos;
+
+    @Column(name = "comentarios_insercion_jupe")
+    private String comentariosInsercionJupe;
 
     @JoinColumn(name = "numero_sexo_persona", referencedColumnName = "numero_sexo_persona")
     @ManyToOne
@@ -353,10 +357,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     @JoinColumn(name = "id_barrio", referencedColumnName = "id_ubicacion")
     @ManyToOne
     private Ubicacion ubicacionIdBarrio;
-
-    @JoinColumn(name = "id_manzana", referencedColumnName = "id_ubicacion")
-    @ManyToOne
-    private Ubicacion ubicacionIdManzana;
 
     @JoinColumn(name = "numero_condicion_pension", referencedColumnName = "numero_condicion_pension")
     @ManyToOne
@@ -580,15 +580,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
-    public String getManzana() {
-        return this.manzana;
-    }
-
-    public void setManzana(String manzana) {
-        this.manzana = manzana;
-    }
-
-    @Override
     public String getDireccion() {
         return this.direccion;
     }
@@ -634,21 +625,21 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
+    public Integer getDiasVigenciaCertificadoVida() {
+        return this.diasVigenciaCertificadoVida;
+    }
+
+    public void setDiasVigenciaCertificadoVida(Integer diasVigenciaCertificadoVida) {
+        this.diasVigenciaCertificadoVida = diasVigenciaCertificadoVida;
+    }
+
+    @Override
     public int getEsCertificadoVidaAnulado() {
         return this.esCertificadoVidaAnulado;
     }
 
     public void setEsCertificadoVidaAnulado(int esCertificadoVidaAnulado) {
         this.esCertificadoVidaAnulado = esCertificadoVidaAnulado;
-    }
-
-    @Override
-    public String getComentariosAnulCerVida() {
-        return this.comentariosAnulCerVida;
-    }
-
-    public void setComentariosAnulCerVida(String comentariosAnulCerVida) {
-        this.comentariosAnulCerVida = comentariosAnulCerVida;
     }
 
     @Override
@@ -676,15 +667,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setEsCerDefuncionAnulado(int esCerDefuncionAnulado) {
         this.esCerDefuncionAnulado = esCerDefuncionAnulado;
-    }
-
-    @Override
-    public String getComentariosAnulCerDefuncion() {
-        return this.comentariosAnulCerDefuncion;
-    }
-
-    public void setComentariosAnulCerDefuncion(String comentariosAnulCerDefuncion) {
-        this.comentariosAnulCerDefuncion = comentariosAnulCerDefuncion;
     }
 
     @Override
@@ -802,15 +784,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setMontoPension(BigDecimal montoPension) {
         this.montoPension = montoPension;
-    }
-
-    @Override
-    public String getLugarSolicitudPension() {
-        return this.lugarSolicitudPension;
-    }
-
-    public void setLugarSolicitudPension(String lugarSolicitudPension) {
-        this.lugarSolicitudPension = lugarSolicitudPension;
     }
 
     @Override
@@ -964,6 +937,24 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setOtraCausaRevPension(String otraCausaRevPension) {
         this.otraCausaRevPension = otraCausaRevPension;
+    }
+
+    @Override
+    public String getNumeroResolucionRevPen() {
+        return this.numeroResolucionRevPen;
+    }
+
+    public void setNumeroResolucionRevPen(String numeroResolucionRevPen) {
+        this.numeroResolucionRevPen = numeroResolucionRevPen;
+    }
+
+    @Override
+    public Date getFechaResolucionRevPen() {
+        return this.fechaResolucionRevPen;
+    }
+
+    public void setFechaResolucionRevPen(Date fechaResolucionRevPen) {
+        this.fechaResolucionRevPen = fechaResolucionRevPen;
     }
 
     @Override
@@ -1156,12 +1147,30 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     }
 
     @Override
+    public String getCodigoSimeRecoPen() {
+        return this.codigoSimeRecoPen;
+    }
+
+    public void setCodigoSimeRecoPen(String codigoSimeRecoPen) {
+        this.codigoSimeRecoPen = codigoSimeRecoPen;
+    }
+
+    @Override
     public String getComentariosEntregaDocumentos() {
         return this.comentariosEntregaDocumentos;
     }
 
     public void setComentariosEntregaDocumentos(String comentariosEntregaDocumentos) {
         this.comentariosEntregaDocumentos = comentariosEntregaDocumentos;
+    }
+
+    @Override
+    public String getComentariosInsercionJupe() {
+        return this.comentariosInsercionJupe;
+    }
+
+    public void setComentariosInsercionJupe(String comentariosInsercionJupe) {
+        this.comentariosInsercionJupe = comentariosInsercionJupe;
     }
 
     @Override
@@ -1225,15 +1234,6 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setUbicacionIdBarrio(Ubicacion ubicacion) {
         this.ubicacionIdBarrio = ubicacion;
-    }
-
-    @Override
-    public Ubicacion getUbicacionIdManzana() {
-        return this.ubicacionIdManzana;
-    }
-
-    public void setUbicacionIdManzana(Ubicacion ubicacion) {
-        this.ubicacionIdManzana = ubicacion;
     }
 
     @Override
