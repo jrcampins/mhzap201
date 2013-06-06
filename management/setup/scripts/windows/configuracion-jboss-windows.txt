@@ -20,6 +20,11 @@ Configuración de JBoss en Windows
     	<property name="mhzap201.jdbc.user" value="MHZ"/>
     	<property name="mhzap201.jdbc.password" value="sesamo"/>
         <property name="org.apache.el.parser.COERCE_TO_ZERO" value="false"/>
+        <property name="eclipselink.deploy-on-startup" value="true"/>
+        <property name="eclipselink.id-validation" value="NULL"/>
+        <property name="eclipselink.target-server" value="JBoss"/>
+        <property name="eclipselink.archive.factory" value="id.au.ringerc.as7.eclipselinkintegration.JBossArchiveFactoryImpl"/>
+        <property name="eclipselink.logging.logger" value="id.au.ringerc.as7.eclipselinkintegration.JBossLogger"/>
     </system-properties>
 
     NOTA: <system-properties> debe colocarse inmediatamente después de </extensions>
