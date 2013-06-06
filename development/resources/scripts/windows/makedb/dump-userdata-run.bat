@@ -27,6 +27,7 @@ call "%~f1" log_pro_pre_pro_pag
 call "%~f1" log_pro_ver_ele_pen                                                                                  
 call "%~f1" objecion_ele_pen                                                                                     
 call "%~f1" persona                                                                                              
+call "%~f1" persona_anotada                                                                                      
 call "%~f1" potencial_ben                                                                                        
 call "%~f1" proceso                                                                                              
 call "%~f1" proveedor_dat_ext                                                                                    
