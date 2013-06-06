@@ -100,6 +100,7 @@
                                                     binding="#{${pagecode}.label${fullcolname1}1}"
                                                     id="label${fullcolname1}1"
                                                     for="${fullobjname2}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"
                                                     text="$columnlabel1"/>
                                             </h:panelGrid>
                                             <h:panelGrid

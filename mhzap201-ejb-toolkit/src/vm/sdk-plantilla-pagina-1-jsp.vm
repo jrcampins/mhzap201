@@ -156,6 +156,7 @@
 #end
                                                 <webuijsf:tableColumn
                                                     binding="#{${pagecode}.tableColumn${colname1}1}"
+                                                    toolTip="BundleParametros.${colname0}.${domain0}"
                                                     headerText="$columnlabel1"
                                                     id="tableColumn${colname1}1"$rendered1
 #if($foreignCode != '')
