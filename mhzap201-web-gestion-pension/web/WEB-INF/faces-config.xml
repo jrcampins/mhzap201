@@ -102,11 +102,28 @@
         <managed-bean-class>com.egt.web.gestion.pension.Persona2</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>PersonaAnotada1</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.PersonaAnotada1</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>PersonaAnotada2</managed-bean-name>
+        <managed-bean-class>com.egt.web.gestion.pension.PersonaAnotada2</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <navigation-rule>
         <from-view-id>/Persona1.jsp</from-view-id>
         <navigation-case>
             <from-outcome>detalle</from-outcome>
             <to-view-id>/Persona2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/PersonaAnotada1.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>detalle</from-outcome>
+            <to-view-id>/PersonaAnotada2.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

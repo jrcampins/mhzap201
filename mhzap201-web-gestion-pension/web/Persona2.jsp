@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona2.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 campoComentariosEntregaDocumentos1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 campoDiasVigenciaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoNumeroResolucionRevPen1 campoFechaResolucionRevPen1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 campoCodigoSimeRecoPen1 campoComentariosEntregaDocumentos1 campoComentariosInsercionJupe1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -204,6 +204,7 @@
                                                     binding="#{Persona2.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.persona"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Persona2.labelCodigoPersona1}"
                                                     id="labelCodigoPersona1"
                                                     for="campoCodigoPersona1"
+                                                    toolTip="BundleParametros.codigo_persona.persona"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Persona2.labelNombrePersona1}"
                                                     id="labelNombrePersona1"
                                                     for="campoNombrePersona1"
+                                                    toolTip="BundleParametros.nombre_persona.persona"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -303,6 +306,7 @@
                                                     binding="#{Persona2.labelNumeroCedula1}"
                                                     id="labelNumeroCedula1"
                                                     for="campoNumeroCedula1"
+                                                    toolTip="BundleParametros.numero_cedula.persona"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -337,6 +341,7 @@
                                                     binding="#{Persona2.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
+                                                    toolTip="BundleParametros.letra_cedula.persona"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -372,6 +377,7 @@
                                                     binding="#{Persona2.labelFechaExpedicionCedula1}"
                                                     id="labelFechaExpedicionCedula1"
                                                     for="campoFechaExpedicionCedula1"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.persona"
                                                     text="fecha expedici&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -407,6 +413,7 @@
                                                     binding="#{Persona2.labelFechaVencimientoCedula1}"
                                                     id="labelFechaVencimientoCedula1"
                                                     for="campoFechaVencimientoCedula1"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.persona"
                                                     text="fecha vencimiento c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -442,6 +449,7 @@
                                                     binding="#{Persona2.labelPrimerNombre1}"
                                                     id="labelPrimerNombre1"
                                                     for="campoPrimerNombre1"
+                                                    toolTip="BundleParametros.primer_nombre.persona"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -477,6 +485,7 @@
                                                     binding="#{Persona2.labelSegundoNombre1}"
                                                     id="labelSegundoNombre1"
                                                     for="campoSegundoNombre1"
+                                                    toolTip="BundleParametros.segundo_nombre.persona"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -512,6 +521,7 @@
                                                     binding="#{Persona2.labelPrimerApellido1}"
                                                     id="labelPrimerApellido1"
                                                     for="campoPrimerApellido1"
+                                                    toolTip="BundleParametros.primer_apellido.persona"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -547,6 +557,7 @@
                                                     binding="#{Persona2.labelSegundoApellido1}"
                                                     id="labelSegundoApellido1"
                                                     for="campoSegundoApellido1"
+                                                    toolTip="BundleParametros.segundo_apellido.persona"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -582,6 +593,7 @@
                                                     binding="#{Persona2.labelApellidoCasada1}"
                                                     id="labelApellidoCasada1"
                                                     for="campoApellidoCasada1"
+                                                    toolTip="BundleParametros.apellido_casada.persona"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -617,6 +629,7 @@
                                                     binding="#{Persona2.labelApodo1}"
                                                     id="labelApodo1"
                                                     for="campoApodo1"
+                                                    toolTip="BundleParametros.apodo.persona"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -652,6 +665,7 @@
                                                     binding="#{Persona2.labelFechaNacimiento1}"
                                                     id="labelFechaNacimiento1"
                                                     for="campoFechaNacimiento1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.persona"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -687,6 +701,7 @@
                                                     binding="#{Persona2.labelNumeroSexoPersona1}"
                                                     id="labelNumeroSexoPersona1"
                                                     for="listaNumeroSexoPersona1"
+                                                    toolTip="BundleParametros.numero_sexo_persona.persona"
                                                     text="sexo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -721,6 +736,7 @@
                                                     binding="#{Persona2.labelNumeroEstadoCivil1}"
                                                     id="labelNumeroEstadoCivil1"
                                                     for="listaNumeroEstadoCivil1"
+                                                    toolTip="BundleParametros.numero_estado_civil.persona"
                                                     text="estado civil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -755,6 +771,7 @@
                                                     binding="#{Persona2.labelEsParaguayoNatural1}"
                                                     id="labelEsParaguayoNatural1"
                                                     for="listaEsParaguayoNatural1"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.persona"
                                                     text="paraguayo natural"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -788,6 +805,7 @@
                                                     binding="#{Persona2.labelEsIndigena1}"
                                                     id="labelEsIndigena1"
                                                     for="listaEsIndigena1"
+                                                    toolTip="BundleParametros.es_indigena.persona"
                                                     text="indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -821,6 +839,7 @@
                                                     binding="#{Persona2.labelIdEtniaIndigena1}"
                                                     id="labelIdEtniaIndigena1"
                                                     for="campoIdEtniaIndigena1"
+                                                    toolTip="BundleParametros.id_etnia_indigena.persona"
                                                     text="etnia indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -885,6 +904,7 @@
                                                     binding="#{Persona2.labelNombreComunidadIndigena1}"
                                                     id="labelNombreComunidadIndigena1"
                                                     for="campoNombreComunidadIndigena1"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.persona"
                                                     text="nombre comunidad indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -920,6 +940,7 @@
                                                     binding="#{Persona2.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.persona"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -984,6 +1005,7 @@
                                                     binding="#{Persona2.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.persona"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1047,6 +1069,7 @@
                                                     binding="#{Persona2.labelNumeroTipoArea1}"
                                                     id="labelNumeroTipoArea1"
                                                     for="listaNumeroTipoArea1"
+                                                    toolTip="BundleParametros.numero_tipo_area.persona"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1080,6 +1103,7 @@
                                                     binding="#{Persona2.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.persona"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1144,6 +1168,7 @@
                                                     binding="#{Persona2.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.persona"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1178,6 +1203,7 @@
                                                     binding="#{Persona2.labelNumeroTelefonoLineaBaja1}"
                                                     id="labelNumeroTelefonoLineaBaja1"
                                                     for="campoNumeroTelefonoLineaBaja1"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.persona"
                                                     text="n&#250;mero tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1213,6 +1239,7 @@
                                                     binding="#{Persona2.labelNumeroTelefonoCelular1}"
                                                     id="labelNumeroTelefonoCelular1"
                                                     for="campoNumeroTelefonoCelular1"
+                                                    toolTip="BundleParametros.numero_telefono_celular.persona"
                                                     text="n&#250;mero tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1247,6 +1274,7 @@
                                                     binding="#{Persona2.labelCertificadoVida1}"
                                                     id="labelCertificadoVida1"
                                                     for="campoCertificadoVida1"
+                                                    toolTip="BundleParametros.certificado_vida.persona"
                                                     text="certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1280,6 +1308,7 @@
                                                     binding="#{Persona2.labelFechaCertificadoVida1}"
                                                     id="labelFechaCertificadoVida1"
                                                     for="campoFechaCertificadoVida1"
+                                                    toolTip="BundleParametros.fecha_certificado_vida.persona"
                                                     text="fecha certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1307,12 +1336,46 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridDiasVigenciaCertificadoVida1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelDiasVigenciaCertificadoVida1}"
+                                                    id="labelDiasVigenciaCertificadoVida1"
+                                                    for="campoDiasVigenciaCertificadoVida1"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    text="dias vigencia certificado vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridDiasVigenciaCertificadoVida2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoDiasVigenciaCertificadoVida1"
+                                                    binding="#{Persona2.campoDiasVigenciaCertificadoVida1}"
+                                                    converter="#{Persona2.converterDiasVigenciaCertificadoVida1}"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['dias_vigencia_certificado_vida']}"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    validatorExpression="#{Persona2.validatorDiasVigenciaCertificadoVida1.validate}"/>
+                                                <webuijsf:staticText id="campoDiasVigenciaCertificadoVida1Texto1"
+                                                    binding="#{Persona2.campoDiasVigenciaCertificadoVida1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['dias_vigencia_certificado_vida']}"/>
+                                                <webuijsf:message id="messageDiasVigenciaCertificadoVida1"
+                                                    for="campoDiasVigenciaCertificadoVida1"/>
+                                                <webuijsf:helpInline id="helpInlineDiasVigenciaCertificadoVida1"
+                                                    binding="#{Persona2.helpInlineDiasVigenciaCertificadoVida1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridEsCertificadoVidaAnulado1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelEsCertificadoVidaAnulado1}"
                                                     id="labelEsCertificadoVidaAnulado1"
                                                     for="listaEsCertificadoVidaAnulado1"
+                                                    toolTip="BundleParametros.es_certificado_vida_anulado.persona"
                                                     text="certificado vida anulado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1338,44 +1401,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosAnulCerVida1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosAnulCerVida1}"
-                                                    id="labelComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"
-                                                    text="comentarios anulaci&#243;n certificado vida"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerVida2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosAnulCerVida1"
-                                                    binding="#{Persona2.campoComentariosAnulCerVida1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_vida']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_vida.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosAnulCerVida1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerVida1Texto1"
-                                                    binding="#{Persona2.campoComentariosAnulCerVida1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_vida']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerVida1"
-                                                    binding="#{Persona2.helpInlineComentariosAnulCerVida1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_vida.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridCertificadoDefuncion1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelCertificadoDefuncion1}"
                                                     id="labelCertificadoDefuncion1"
                                                     for="campoCertificadoDefuncion1"
+                                                    toolTip="BundleParametros.certificado_defuncion.persona"
                                                     text="certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1409,6 +1441,7 @@
                                                     binding="#{Persona2.labelFechaCertificadoDefuncion1}"
                                                     id="labelFechaCertificadoDefuncion1"
                                                     for="campoFechaCertificadoDefuncion1"
+                                                    toolTip="BundleParametros.fecha_certificado_defuncion.persona"
                                                     text="fecha certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1442,6 +1475,7 @@
                                                     binding="#{Persona2.labelEsCerDefuncionAnulado1}"
                                                     id="labelEsCerDefuncionAnulado1"
                                                     for="listaEsCerDefuncionAnulado1"
+                                                    toolTip="BundleParametros.es_cer_defuncion_anulado.persona"
                                                     text="certificado defunci&#243;n anulado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1467,44 +1501,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosAnulCerDefuncion1" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosAnulCerDefuncion1}"
-                                                    id="labelComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"
-                                                    text="comentarios anulaci&#243;n certificado defunci&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerDefuncion2" rendered="#{Persona2.gestor.designing}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosAnulCerDefuncion1"
-                                                    binding="#{Persona2.campoComentariosAnulCerDefuncion1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_defuncion']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_defuncion.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosAnulCerDefuncion1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerDefuncion1Texto1"
-                                                    binding="#{Persona2.campoComentariosAnulCerDefuncion1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_defuncion']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerDefuncion1"
-                                                    binding="#{Persona2.helpInlineComentariosAnulCerDefuncion1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_defuncion.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridComentariosEntregaDocumentos1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelComentariosEntregaDocumentos1}"
                                                     id="labelComentariosEntregaDocumentos1"
                                                     for="campoComentariosEntregaDocumentos1"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos.persona"
                                                     text="comentarios entrega documentos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1537,6 +1540,7 @@
                                                     binding="#{Persona2.labelEsPersonaConEmpleo1}"
                                                     id="labelEsPersonaConEmpleo1"
                                                     for="listaEsPersonaConEmpleo1"
+                                                    toolTip="BundleParametros.es_persona_con_empleo.persona"
                                                     text="con empleo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1568,6 +1572,7 @@
                                                     binding="#{Persona2.labelEsPersonaConJubilacion1}"
                                                     id="labelEsPersonaConJubilacion1"
                                                     for="listaEsPersonaConJubilacion1"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.persona"
                                                     text="con jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1599,6 +1604,7 @@
                                                     binding="#{Persona2.labelEsPersonaConPension1}"
                                                     id="labelEsPersonaConPension1"
                                                     for="listaEsPersonaConPension1"
+                                                    toolTip="BundleParametros.es_persona_con_pension.persona"
                                                     text="con pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1630,6 +1636,7 @@
                                                     binding="#{Persona2.labelEsPersonaConSubsidio1}"
                                                     id="labelEsPersonaConSubsidio1"
                                                     for="listaEsPersonaConSubsidio1"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.persona"
                                                     text="con subsidio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1661,6 +1668,7 @@
                                                     binding="#{Persona2.labelEsPersonaConDeuda1}"
                                                     id="labelEsPersonaConDeuda1"
                                                     for="listaEsPersonaConDeuda1"
+                                                    toolTip="BundleParametros.es_persona_con_deuda.persona"
                                                     text="con deuda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1692,6 +1700,7 @@
                                                     binding="#{Persona2.labelEsPersonaConPenaJudicial1}"
                                                     id="labelEsPersonaConPenaJudicial1"
                                                     for="listaEsPersonaConPenaJudicial1"
+                                                    toolTip="BundleParametros.es_persona_con_pena_judicial.persona"
                                                     text="con pena judicial"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1723,6 +1732,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCerVida1}"
                                                     id="labelEsPersonaConCerVida1"
                                                     for="listaEsPersonaConCerVida1"
+                                                    toolTip="BundleParametros.es_persona_con_cer_vida.persona"
                                                     text="con certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1754,6 +1764,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCartaRenuncia1}"
                                                     id="labelEsPersonaConCartaRenuncia1"
                                                     for="listaEsPersonaConCartaRenuncia1"
+                                                    toolTip="BundleParametros.es_persona_con_carta_renuncia.persona"
                                                     text="con carta renuncia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1785,6 +1796,7 @@
                                                     binding="#{Persona2.labelEsPersonaElegibleParaPen1}"
                                                     id="labelEsPersonaElegibleParaPen1"
                                                     for="listaEsPersonaElegibleParaPen1"
+                                                    toolTip="BundleParametros.es_persona_elegible_para_pen.persona"
                                                     text="elegible para pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1816,6 +1828,7 @@
                                                     binding="#{Persona2.labelEsPersonaAcreditadaParaPen1}"
                                                     id="labelEsPersonaAcreditadaParaPen1"
                                                     for="listaEsPersonaAcreditadaParaPen1"
+                                                    toolTip="BundleParametros.es_persona_acreditada_para_pen.persona"
                                                     text="acreditada para pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1847,6 +1860,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCopiaCedula1}"
                                                     id="labelEsPersonaConCopiaCedula1"
                                                     for="listaEsPersonaConCopiaCedula1"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"
                                                     text="con copia c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1878,6 +1892,7 @@
                                                     binding="#{Persona2.labelEsPersonaConDeclaracionJur1}"
                                                     id="labelEsPersonaConDeclaracionJur1"
                                                     for="listaEsPersonaConDeclaracionJur1"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"
                                                     text="con declaraci&#243;n jurada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1909,6 +1924,7 @@
                                                     binding="#{Persona2.labelMontoPension1}"
                                                     id="labelMontoPension1"
                                                     for="campoMontoPension1"
+                                                    toolTip="BundleParametros.monto_pension.persona"
                                                     text="monto pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1942,6 +1958,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionPension1}"
                                                     id="labelNumeroCondicionPension1"
                                                     for="listaNumeroCondicionPension1"
+                                                    toolTip="BundleParametros.numero_condicion_pension.persona"
                                                     text="condici&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1957,7 +1974,7 @@
                                                     toolTip="BundleParametros.numero_condicion_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionPension1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionPension1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_pension_1x9y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_pension_1x8y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionPension1"
                                                     for="listaNumeroCondicionPension1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionPension1"
@@ -1974,6 +1991,7 @@
                                                     binding="#{Persona2.labelFechaSolicitudPension1}"
                                                     id="labelFechaSolicitudPension1"
                                                     for="campoFechaSolicitudPension1"
+                                                    toolTip="BundleParametros.fecha_solicitud_pension.persona"
                                                     text="fecha solicitud pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2007,6 +2025,7 @@
                                                     binding="#{Persona2.labelComentariosSolicitudPension1}"
                                                     id="labelComentariosSolicitudPension1"
                                                     for="campoComentariosSolicitudPension1"
+                                                    toolTip="BundleParametros.comentarios_solicitud_pension.persona"
                                                     text="comentarios solicitud pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2039,6 +2058,7 @@
                                                     binding="#{Persona2.labelFechaAprobacionPension1}"
                                                     id="labelFechaAprobacionPension1"
                                                     for="campoFechaAprobacionPension1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_pension.persona"
                                                     text="fecha aprobaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2072,6 +2092,7 @@
                                                     binding="#{Persona2.labelComentariosAprobacionPension1}"
                                                     id="labelComentariosAprobacionPension1"
                                                     for="campoComentariosAprobacionPension1"
+                                                    toolTip="BundleParametros.comentarios_aprobacion_pension.persona"
                                                     text="comentarios aprobaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2104,6 +2125,7 @@
                                                     binding="#{Persona2.labelFechaOtorgamientoPen1}"
                                                     id="labelFechaOtorgamientoPen1"
                                                     for="campoFechaOtorgamientoPen1"
+                                                    toolTip="BundleParametros.fecha_otorgamiento_pen.persona"
                                                     text="fecha otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2137,6 +2159,7 @@
                                                     binding="#{Persona2.labelNumeroResolucionOtorPen1}"
                                                     id="labelNumeroResolucionOtorPen1"
                                                     for="campoNumeroResolucionOtorPen1"
+                                                    toolTip="BundleParametros.numero_resolucion_otor_pen.persona"
                                                     text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2170,6 +2193,7 @@
                                                     binding="#{Persona2.labelFechaResolucionOtorPen1}"
                                                     id="labelFechaResolucionOtorPen1"
                                                     for="campoFechaResolucionOtorPen1"
+                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen.persona"
                                                     text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2203,6 +2227,7 @@
                                                     binding="#{Persona2.labelComentariosOtorgamientoPen1}"
                                                     id="labelComentariosOtorgamientoPen1"
                                                     for="campoComentariosOtorgamientoPen1"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
                                                     text="comentarios otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2235,6 +2260,7 @@
                                                     binding="#{Persona2.labelFechaObjecionPension1}"
                                                     id="labelFechaObjecionPension1"
                                                     for="campoFechaObjecionPension1"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"
                                                     text="fecha objeci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2268,6 +2294,7 @@
                                                     binding="#{Persona2.labelNumeroCausaDenPension1}"
                                                     id="labelNumeroCausaDenPension1"
                                                     for="listaNumeroCausaDenPension1"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"
                                                     text="causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2283,7 +2310,7 @@
                                                     toolTip="BundleParametros.numero_causa_den_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenPension1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaDenPension1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pension_1x9y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenPension1"
                                                     for="listaNumeroCausaDenPension1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1"
@@ -2300,6 +2327,7 @@
                                                     binding="#{Persona2.labelOtraCausaDenPension1}"
                                                     id="labelOtraCausaDenPension1"
                                                     for="campoOtraCausaDenPension1"
+                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
                                                     text="otra causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2333,6 +2361,7 @@
                                                     binding="#{Persona2.labelComentariosObjecionPension1}"
                                                     id="labelComentariosObjecionPension1"
                                                     for="campoComentariosObjecionPension1"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
                                                     text="comentarios objeci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2365,6 +2394,7 @@
                                                     binding="#{Persona2.labelFechaDenegacionPension1}"
                                                     id="labelFechaDenegacionPension1"
                                                     for="campoFechaDenegacionPension1"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"
                                                     text="fecha denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2398,6 +2428,7 @@
                                                     binding="#{Persona2.labelNumeroResolucionDenPen1}"
                                                     id="labelNumeroResolucionDenPen1"
                                                     for="campoNumeroResolucionDenPen1"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
                                                     text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2431,6 +2462,7 @@
                                                     binding="#{Persona2.labelFechaResolucionDenPen1}"
                                                     id="labelFechaResolucionDenPen1"
                                                     for="campoFechaResolucionDenPen1"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"
                                                     text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2464,6 +2496,7 @@
                                                     binding="#{Persona2.labelComentariosDenegacionPension1}"
                                                     id="labelComentariosDenegacionPension1"
                                                     for="campoComentariosDenegacionPension1"
+                                                    toolTip="BundleParametros.comentarios_denegacion_pension.persona"
                                                     text="comentarios denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2496,6 +2529,7 @@
                                                     binding="#{Persona2.labelFechaRevocacionPension1}"
                                                     id="labelFechaRevocacionPension1"
                                                     for="campoFechaRevocacionPension1"
+                                                    toolTip="BundleParametros.fecha_revocacion_pension.persona"
                                                     text="fecha revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2529,6 +2563,7 @@
                                                     binding="#{Persona2.labelNumeroCausaRevPension1}"
                                                     id="labelNumeroCausaRevPension1"
                                                     for="listaNumeroCausaRevPension1"
+                                                    toolTip="BundleParametros.numero_causa_rev_pension.persona"
                                                     text="causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2544,7 +2579,7 @@
                                                     toolTip="BundleParametros.numero_causa_rev_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaRevPension1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaRevPension1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_rev_pensio_1x11y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_rev_pensio_1x10y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaRevPension1"
                                                     for="listaNumeroCausaRevPension1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaRevPension1"
@@ -2561,6 +2596,7 @@
                                                     binding="#{Persona2.labelOtraCausaRevPension1}"
                                                     id="labelOtraCausaRevPension1"
                                                     for="campoOtraCausaRevPension1"
+                                                    toolTip="BundleParametros.otra_causa_rev_pension.persona"
                                                     text="otra causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2588,12 +2624,81 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridNumeroResolucionRevPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroResolucionRevPen1}"
+                                                    id="labelNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    text="n&#250;mero resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionRevPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionRevPen1"
+                                                    binding="#{Persona2.campoNumeroResolucionRevPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorNumeroResolucionRevPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionRevPen1Texto1"
+                                                    binding="#{Persona2.campoNumeroResolucionRevPen1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionRevPen1"
+                                                    binding="#{Persona2.helpInlineNumeroResolucionRevPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionRevPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaResolucionRevPen1}"
+                                                    id="labelFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"
+                                                    text="fecha resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionRevPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionRevPen1"
+                                                    binding="#{Persona2.campoFechaResolucionRevPen1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionRevPen1Texto1"
+                                                    binding="#{Persona2.campoFechaResolucionRevPen1Texto1}"
+                                                    converter="#{Persona2.converterFechaResolucionRevPen1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionRevPen1"
+                                                    binding="#{Persona2.helpInlineFechaResolucionRevPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_rev_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridComentariosRevocacionPension1" rendered="#{Persona2.gestor.designing}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelComentariosRevocacionPension1}"
                                                     id="labelComentariosRevocacionPension1"
                                                     for="campoComentariosRevocacionPension1"
+                                                    toolTip="BundleParametros.comentarios_revocacion_pension.persona"
                                                     text="comentarios revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2626,6 +2731,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionRecoPen1}"
                                                     id="labelNumeroCondicionRecoPen1"
                                                     for="listaNumeroCondicionRecoPen1"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.persona"
                                                     text="condici&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2641,7 +2747,7 @@
                                                     toolTip="BundleParametros.numero_condicion_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionRecoPen1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionRecoPen1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_reco_p_1x12y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_reco_p_1x11y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionRecoPen1"
                                                     for="listaNumeroCondicionRecoPen1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionRecoPen1"
@@ -2658,6 +2764,7 @@
                                                     binding="#{Persona2.labelFechaSolicitudRecoPen1}"
                                                     id="labelFechaSolicitudRecoPen1"
                                                     for="campoFechaSolicitudRecoPen1"
+                                                    toolTip="BundleParametros.fecha_solicitud_reco_pen.persona"
                                                     text="fecha solicitud reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2691,6 +2798,7 @@
                                                     binding="#{Persona2.labelComentariosSolicitudRecoPen1}"
                                                     id="labelComentariosSolicitudRecoPen1"
                                                     for="campoComentariosSolicitudRecoPen1"
+                                                    toolTip="BundleParametros.comentarios_solicitud_reco_pen.persona"
                                                     text="comentarios solicitud reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2723,6 +2831,7 @@
                                                     binding="#{Persona2.labelFechaAprobacionRecoPen1}"
                                                     id="labelFechaAprobacionRecoPen1"
                                                     for="campoFechaAprobacionRecoPen1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reco_pen.persona"
                                                     text="fecha aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2756,6 +2865,7 @@
                                                     binding="#{Persona2.labelComentariosAprRecoPen1}"
                                                     id="labelComentariosAprRecoPen1"
                                                     for="campoComentariosAprRecoPen1"
+                                                    toolTip="BundleParametros.comentarios_apr_reco_pen.persona"
                                                     text="comentarios aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2788,6 +2898,7 @@
                                                     binding="#{Persona2.labelFechaDenegacionRecoPen1}"
                                                     id="labelFechaDenegacionRecoPen1"
                                                     for="campoFechaDenegacionRecoPen1"
+                                                    toolTip="BundleParametros.fecha_denegacion_reco_pen.persona"
                                                     text="fecha denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2821,6 +2932,7 @@
                                                     binding="#{Persona2.labelNumeroCausaDenRecoPen1}"
                                                     id="labelNumeroCausaDenRecoPen1"
                                                     for="listaNumeroCausaDenRecoPen1"
+                                                    toolTip="BundleParametros.numero_causa_den_reco_pen.persona"
                                                     text="causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2836,7 +2948,7 @@
                                                     toolTip="BundleParametros.numero_causa_den_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenRecoPen1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaDenRecoPen1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_reco_p_1x13y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_reco_p_1x12y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenRecoPen1"
                                                     for="listaNumeroCausaDenRecoPen1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaDenRecoPen1"
@@ -2853,6 +2965,7 @@
                                                     binding="#{Persona2.labelOtraCausaDenRecoPen1}"
                                                     id="labelOtraCausaDenRecoPen1"
                                                     for="campoOtraCausaDenRecoPen1"
+                                                    toolTip="BundleParametros.otra_causa_den_reco_pen.persona"
                                                     text="otra causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2886,6 +2999,7 @@
                                                     binding="#{Persona2.labelComentariosDenRecoPen1}"
                                                     id="labelComentariosDenRecoPen1"
                                                     for="campoComentariosDenRecoPen1"
+                                                    toolTip="BundleParametros.comentarios_den_reco_pen.persona"
                                                     text="comentarios denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2918,6 +3032,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionDenuPen1}"
                                                     id="labelNumeroCondicionDenuPen1"
                                                     for="listaNumeroCondicionDenuPen1"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.persona"
                                                     text="condici&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2933,7 +3048,7 @@
                                                     toolTip="BundleParametros.numero_condicion_denu_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionDenuPen1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionDenuPen1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_denu_p_1x14y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_denu_p_1x13y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionDenuPen1"
                                                     for="listaNumeroCondicionDenuPen1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionDenuPen1"
@@ -2950,6 +3065,7 @@
                                                     binding="#{Persona2.labelFechaRegistroDenunciaPen1}"
                                                     id="labelFechaRegistroDenunciaPen1"
                                                     for="campoFechaRegistroDenunciaPen1"
+                                                    toolTip="BundleParametros.fecha_registro_denuncia_pen.persona"
                                                     text="fecha registro denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2983,6 +3099,7 @@
                                                     binding="#{Persona2.labelComentariosRegistroDenuPen1}"
                                                     id="labelComentariosRegistroDenuPen1"
                                                     for="campoComentariosRegistroDenuPen1"
+                                                    toolTip="BundleParametros.comentarios_registro_denu_pen.persona"
                                                     text="comentarios registro denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3015,6 +3132,7 @@
                                                     binding="#{Persona2.labelFechaConfirmacionDenuPen1}"
                                                     id="labelFechaConfirmacionDenuPen1"
                                                     for="campoFechaConfirmacionDenuPen1"
+                                                    toolTip="BundleParametros.fecha_confirmacion_denu_pen.persona"
                                                     text="fecha confirmaci&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3048,6 +3166,7 @@
                                                     binding="#{Persona2.labelComentariosConfDenuPen1}"
                                                     id="labelComentariosConfDenuPen1"
                                                     for="campoComentariosConfDenuPen1"
+                                                    toolTip="BundleParametros.comentarios_conf_denu_pen.persona"
                                                     text="comentarios confirmaci&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3080,6 +3199,7 @@
                                                     binding="#{Persona2.labelFechaDesmentidoDenunciaPen1}"
                                                     id="labelFechaDesmentidoDenunciaPen1"
                                                     for="campoFechaDesmentidoDenunciaPen1"
+                                                    toolTip="BundleParametros.fecha_desmentido_denuncia_pen.persona"
                                                     text="fecha desmentido denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3113,6 +3233,7 @@
                                                     binding="#{Persona2.labelComentariosDesDenuPen1}"
                                                     id="labelComentariosDesDenuPen1"
                                                     for="campoComentariosDesDenuPen1"
+                                                    toolTip="BundleParametros.comentarios_des_denu_pen.persona"
                                                     text="comentarios desmentido denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3145,6 +3266,7 @@
                                                     binding="#{Persona2.labelIdFichaPersona1}"
                                                     id="labelIdFichaPersona1"
                                                     for="campoIdFichaPersona1"
+                                                    toolTip="BundleParametros.id_ficha_persona.persona"
                                                     text="ficha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3159,7 +3281,7 @@
                                                     validatorExpression="#{Persona2.campoIdFichaPersona1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFichaPersona1Texto1"
                                                     binding="#{Persona2.campoIdFichaPersona1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_ficha_persona_1x15y3']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_ficha_persona_1x14y3']}"/>
                                                 <webuijsf:button id="campoIdFichaPersona1Boton1"
                                                     binding="#{Persona2.campoIdFichaPersona1Boton1}"
                                                     onClick="#{Persona2.asistente.scriptCampoIdFichaPersona1Boton1}"/>
@@ -3191,7 +3313,7 @@
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:staticText
                                                     binding="#{Persona2.campoIdFichaPersona1Texto2}"
-                                                    text="#{Persona2.personaDataProvider.value['nombre_ficha_persona_1x15y4']}"
+                                                    text="#{Persona2.personaDataProvider.value['nombre_ficha_persona_1x14y4']}"
                                                     id="campoIdFichaPersona1Texto2"/>
                                                 <webuijsf:button
                                                     binding="#{Persona2.campoIdFichaPersona1Boton2}"
@@ -3205,6 +3327,7 @@
                                                     binding="#{Persona2.labelFechaFichaPersona1}"
                                                     id="labelFechaFichaPersona1"
                                                     for="campoFechaFichaPersona1"
+                                                    toolTip="BundleParametros.fecha_ficha_persona.persona"
                                                     text="fecha ficha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3238,6 +3361,7 @@
                                                     binding="#{Persona2.labelIndiceCalidadVida1}"
                                                     id="labelIndiceCalidadVida1"
                                                     for="campoIndiceCalidadVida1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.persona"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3271,6 +3395,7 @@
                                                     binding="#{Persona2.labelFechaUltimoCobroPension1}"
                                                     id="labelFechaUltimoCobroPension1"
                                                     for="campoFechaUltimoCobroPension1"
+                                                    toolTip="BundleParametros.fecha_ultimo_cobro_pension.persona"
                                                     text="fecha ultimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3304,6 +3429,7 @@
                                                     binding="#{Persona2.labelNotasAnulFecUltCobPen1}"
                                                     id="labelNotasAnulFecUltCobPen1"
                                                     for="campoNotasAnulFecUltCobPen1"
+                                                    toolTip="BundleParametros.notas_anul_fec_ult_cob_pen.persona"
                                                     text="notas anulaci&#243;n fecha &#250;ltimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3336,6 +3462,7 @@
                                                     binding="#{Persona2.labelNumeroTipoActJupe1}"
                                                     id="labelNumeroTipoActJupe1"
                                                     for="listaNumeroTipoActJupe1"
+                                                    toolTip="BundleParametros.numero_tipo_act_jupe.persona"
                                                     text="tipo actualizaci&#243;n jupe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3351,7 +3478,7 @@
                                                     toolTip="BundleParametros.numero_tipo_act_jupe.persona"/>
                                                 <webuijsf:staticText id="listaNumeroTipoActJupe1Texto1"
                                                     binding="#{Persona2.listaNumeroTipoActJupe1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_tipo_act_jupe_1x16y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_tipo_act_jupe_1x15y2']}"/>
                                                 <webuijsf:message id="messageNumeroTipoActJupe1"
                                                     for="listaNumeroTipoActJupe1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroTipoActJupe1"
@@ -3368,6 +3495,7 @@
                                                     binding="#{Persona2.labelFechaHoraUltActJupe1}"
                                                     id="labelFechaHoraUltActJupe1"
                                                     for="campoFechaHoraUltActJupe1"
+                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe.persona"
                                                     text="fecha hora &#250;ltima actualizaci&#243;n jupe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3400,6 +3528,7 @@
                                                     binding="#{Persona2.labelLote1}"
                                                     id="labelLote1"
                                                     for="campoLote1"
+                                                    toolTip="BundleParametros.lote.persona"
                                                     text="lote"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3432,6 +3561,7 @@
                                                     binding="#{Persona2.labelCodigoSime1}"
                                                     id="labelCodigoSime1"
                                                     for="campoCodigoSime1"
+                                                    toolTip="BundleParametros.codigo_sime.persona"
                                                     text="c&#243;digo sime"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3456,6 +3586,73 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.codigo_sime.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCodigoSimeRecoPen1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelCodigoSimeRecoPen1}"
+                                                    id="labelCodigoSimeRecoPen1"
+                                                    for="campoCodigoSimeRecoPen1"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    text="c&#243;digo sime reconsideraci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCodigoSimeRecoPen2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCodigoSimeRecoPen1"
+                                                    binding="#{Persona2.campoCodigoSimeRecoPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_sime_reco_pen']}"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorCodigoSimeRecoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoSimeRecoPen1Texto1"
+                                                    binding="#{Persona2.campoCodigoSimeRecoPen1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_sime_reco_pen']}"/>
+                                                <webuijsf:message id="messageCodigoSimeRecoPen1"
+                                                    for="campoCodigoSimeRecoPen1"/>
+                                                <webuijsf:helpInline id="helpInlineCodigoSimeRecoPen1"
+                                                    binding="#{Persona2.helpInlineCodigoSimeRecoPen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosInsercionJupe1" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosInsercionJupe1}"
+                                                    id="labelComentariosInsercionJupe1"
+                                                    for="campoComentariosInsercionJupe1"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    text="comentarios inserci&#243;n jupe"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosInsercionJupe2" rendered="#{Persona2.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosInsercionJupe1"
+                                                    binding="#{Persona2.campoComentariosInsercionJupe1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_insercion_jupe']}"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosInsercionJupe1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosInsercionJupe1Texto1"
+                                                    binding="#{Persona2.campoComentariosInsercionJupe1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_insercion_jupe']}"/>
+                                                <webuijsf:message id="messageComentariosInsercionJupe1"
+                                                    for="campoComentariosInsercionJupe1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosInsercionJupe1"
+                                                    binding="#{Persona2.helpInlineComentariosInsercionJupe1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_insercion_jupe.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
@@ -3487,6 +3684,7 @@
                                                     binding="#{Persona2.labelNumeroCedula1x1}"
                                                     id="labelNumeroCedula1x1"
                                                     for="campoNumeroCedula1x1"
+                                                    toolTip="BundleParametros.numero_cedula.persona"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3519,6 +3717,7 @@
                                                     binding="#{Persona2.labelLetraCedula1x1}"
                                                     id="labelLetraCedula1x1"
                                                     for="campoLetraCedula1x1"
+                                                    toolTip="BundleParametros.letra_cedula.persona"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3552,6 +3751,7 @@
                                                     binding="#{Persona2.labelFechaExpedicionCedula1x1}"
                                                     id="labelFechaExpedicionCedula1x1"
                                                     for="campoFechaExpedicionCedula1x1"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.persona"
                                                     text="fecha expedici&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3585,6 +3785,7 @@
                                                     binding="#{Persona2.labelFechaVencimientoCedula1x1}"
                                                     id="labelFechaVencimientoCedula1x1"
                                                     for="campoFechaVencimientoCedula1x1"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.persona"
                                                     text="fecha vencimiento c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3635,6 +3836,7 @@
                                                     binding="#{Persona2.labelPrimerNombre1x1}"
                                                     id="labelPrimerNombre1x1"
                                                     for="campoPrimerNombre1x1"
+                                                    toolTip="BundleParametros.primer_nombre.persona"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3668,6 +3870,7 @@
                                                     binding="#{Persona2.labelSegundoNombre1x1}"
                                                     id="labelSegundoNombre1x1"
                                                     for="campoSegundoNombre1x1"
+                                                    toolTip="BundleParametros.segundo_nombre.persona"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3701,6 +3904,7 @@
                                                     binding="#{Persona2.labelPrimerApellido1x1}"
                                                     id="labelPrimerApellido1x1"
                                                     for="campoPrimerApellido1x1"
+                                                    toolTip="BundleParametros.primer_apellido.persona"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3734,6 +3938,7 @@
                                                     binding="#{Persona2.labelSegundoApellido1x1}"
                                                     id="labelSegundoApellido1x1"
                                                     for="campoSegundoApellido1x1"
+                                                    toolTip="BundleParametros.segundo_apellido.persona"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3767,6 +3972,7 @@
                                                     binding="#{Persona2.labelApellidoCasada1x1}"
                                                     id="labelApellidoCasada1x1"
                                                     for="campoApellidoCasada1x1"
+                                                    toolTip="BundleParametros.apellido_casada.persona"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3800,6 +4006,7 @@
                                                     binding="#{Persona2.labelApodo1x1}"
                                                     id="labelApodo1x1"
                                                     for="campoApodo1x1"
+                                                    toolTip="BundleParametros.apodo.persona"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3833,6 +4040,7 @@
                                                     binding="#{Persona2.labelFechaNacimiento1x1}"
                                                     id="labelFechaNacimiento1x1"
                                                     for="campoFechaNacimiento1x1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.persona"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3866,6 +4074,7 @@
                                                     binding="#{Persona2.labelNumeroSexoPersona1x1}"
                                                     id="labelNumeroSexoPersona1x1"
                                                     for="listaNumeroSexoPersona1x1"
+                                                    toolTip="BundleParametros.numero_sexo_persona.persona"
                                                     text="sexo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3898,6 +4107,7 @@
                                                     binding="#{Persona2.labelNumeroEstadoCivil1x1}"
                                                     id="labelNumeroEstadoCivil1x1"
                                                     for="listaNumeroEstadoCivil1x1"
+                                                    toolTip="BundleParametros.numero_estado_civil.persona"
                                                     text="estado civil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3947,6 +4157,7 @@
                                                     binding="#{Persona2.labelEsParaguayoNatural1x1}"
                                                     id="labelEsParaguayoNatural1x1"
                                                     for="listaEsParaguayoNatural1x1"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.persona"
                                                     text="paraguayo natural"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3978,6 +4189,7 @@
                                                     binding="#{Persona2.labelEsIndigena1x1}"
                                                     id="labelEsIndigena1x1"
                                                     for="listaEsIndigena1x1"
+                                                    toolTip="BundleParametros.es_indigena.persona"
                                                     text="indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4009,6 +4221,7 @@
                                                     binding="#{Persona2.labelIdEtniaIndigena1x1}"
                                                     id="labelIdEtniaIndigena1x1"
                                                     for="campoIdEtniaIndigena1x1"
+                                                    toolTip="BundleParametros.id_etnia_indigena.persona"
                                                     text="etnia indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4071,6 +4284,7 @@
                                                     binding="#{Persona2.labelNombreComunidadIndigena1x1}"
                                                     id="labelNombreComunidadIndigena1x1"
                                                     for="campoNombreComunidadIndigena1x1"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.persona"
                                                     text="nombre comunidad indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4121,6 +4335,7 @@
                                                     binding="#{Persona2.labelIdDepartamento1x1}"
                                                     id="labelIdDepartamento1x1"
                                                     for="campoIdDepartamento1x1"
+                                                    toolTip="BundleParametros.id_departamento.persona"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4183,6 +4398,7 @@
                                                     binding="#{Persona2.labelIdDistrito1x1}"
                                                     id="labelIdDistrito1x1"
                                                     for="campoIdDistrito1x1"
+                                                    toolTip="BundleParametros.id_distrito.persona"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4245,6 +4461,7 @@
                                                     binding="#{Persona2.labelNumeroTipoArea1x1}"
                                                     id="labelNumeroTipoArea1x1"
                                                     for="listaNumeroTipoArea1x1"
+                                                    toolTip="BundleParametros.numero_tipo_area.persona"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4277,6 +4494,7 @@
                                                     binding="#{Persona2.labelIdBarrio1x1}"
                                                     id="labelIdBarrio1x1"
                                                     for="campoIdBarrio1x1"
+                                                    toolTip="BundleParametros.id_barrio.persona"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4339,6 +4557,7 @@
                                                     binding="#{Persona2.labelDireccion1x1}"
                                                     id="labelDireccion1x1"
                                                     for="campoDireccion1x1"
+                                                    toolTip="BundleParametros.direccion.persona"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4371,6 +4590,7 @@
                                                     binding="#{Persona2.labelNumeroTelefonoLineaBaja1x1}"
                                                     id="labelNumeroTelefonoLineaBaja1x1"
                                                     for="campoNumeroTelefonoLineaBaja1x1"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.persona"
                                                     text="n&#250;mero tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4404,6 +4624,7 @@
                                                     binding="#{Persona2.labelNumeroTelefonoCelular1x1}"
                                                     id="labelNumeroTelefonoCelular1x1"
                                                     for="campoNumeroTelefonoCelular1x1"
+                                                    toolTip="BundleParametros.numero_telefono_celular.persona"
                                                     text="n&#250;mero tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4454,6 +4675,7 @@
                                                     binding="#{Persona2.labelCertificadoVida1x1}"
                                                     id="labelCertificadoVida1x1"
                                                     for="campoCertificadoVida1x1"
+                                                    toolTip="BundleParametros.certificado_vida.persona"
                                                     text="certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4487,6 +4709,7 @@
                                                     binding="#{Persona2.labelFechaCertificadoVida1x1}"
                                                     id="labelFechaCertificadoVida1x1"
                                                     for="campoFechaCertificadoVida1x1"
+                                                    toolTip="BundleParametros.fecha_certificado_vida.persona"
                                                     text="fecha certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4514,12 +4737,46 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridDiasVigenciaCertificadoVida1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelDiasVigenciaCertificadoVida1x1}"
+                                                    id="labelDiasVigenciaCertificadoVida1x1"
+                                                    for="campoDiasVigenciaCertificadoVida1x1"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    text="dias vigencia certificado vida"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridDiasVigenciaCertificadoVida1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoDiasVigenciaCertificadoVida1x1"
+                                                    binding="#{Persona2.campoDiasVigenciaCertificadoVida1x1}"
+                                                    converter="#{Persona2.converterDiasVigenciaCertificadoVida1}"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['dias_vigencia_certificado_vida']}"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    validatorExpression="#{Persona2.validatorDiasVigenciaCertificadoVida1.validate}"/>
+                                                <webuijsf:staticText id="campoDiasVigenciaCertificadoVida1x1Texto1"
+                                                    binding="#{Persona2.campoDiasVigenciaCertificadoVida1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['dias_vigencia_certificado_vida']}"/>
+                                                <webuijsf:message id="messageDiasVigenciaCertificadoVida1x1"
+                                                    for="campoDiasVigenciaCertificadoVida1x1"/>
+                                                <webuijsf:helpInline id="helpInlineDiasVigenciaCertificadoVida1x1"
+                                                    binding="#{Persona2.helpInlineDiasVigenciaCertificadoVida1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridEsCertificadoVidaAnulado1x1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelEsCertificadoVidaAnulado1x1}"
                                                     id="labelEsCertificadoVidaAnulado1x1"
                                                     for="listaEsCertificadoVidaAnulado1x1"
+                                                    toolTip="BundleParametros.es_certificado_vida_anulado.persona"
                                                     text="certificado vida anulado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4545,44 +4802,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosAnulCerVida1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosAnulCerVida1x1}"
-                                                    id="labelComentariosAnulCerVida1x1"
-                                                    for="campoComentariosAnulCerVida1x1"
-                                                    text="comentarios anulaci&#243;n certificado vida"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerVida1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosAnulCerVida1x1"
-                                                    binding="#{Persona2.campoComentariosAnulCerVida1x1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_vida']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_vida.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosAnulCerVida1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerVida1x1Texto1"
-                                                    binding="#{Persona2.campoComentariosAnulCerVida1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_vida']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerVida1x1"
-                                                    for="campoComentariosAnulCerVida1x1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerVida1x1"
-                                                    binding="#{Persona2.helpInlineComentariosAnulCerVida1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_vida.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridCertificadoDefuncion1x1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelCertificadoDefuncion1x1}"
                                                     id="labelCertificadoDefuncion1x1"
                                                     for="campoCertificadoDefuncion1x1"
+                                                    toolTip="BundleParametros.certificado_defuncion.persona"
                                                     text="certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4616,6 +4842,7 @@
                                                     binding="#{Persona2.labelFechaCertificadoDefuncion1x1}"
                                                     id="labelFechaCertificadoDefuncion1x1"
                                                     for="campoFechaCertificadoDefuncion1x1"
+                                                    toolTip="BundleParametros.fecha_certificado_defuncion.persona"
                                                     text="fecha certificado defunci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4649,6 +4876,7 @@
                                                     binding="#{Persona2.labelEsCerDefuncionAnulado1x1}"
                                                     id="labelEsCerDefuncionAnulado1x1"
                                                     for="listaEsCerDefuncionAnulado1x1"
+                                                    toolTip="BundleParametros.es_cer_defuncion_anulado.persona"
                                                     text="certificado defunci&#243;n anulado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4674,44 +4902,13 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridComentariosAnulCerDefuncion1x1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Persona2.labelComentariosAnulCerDefuncion1x1}"
-                                                    id="labelComentariosAnulCerDefuncion1x1"
-                                                    for="campoComentariosAnulCerDefuncion1x1"
-                                                    text="comentarios anulaci&#243;n certificado defunci&#243;n"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridComentariosAnulCerDefuncion1x2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textArea id="campoComentariosAnulCerDefuncion1x1"
-                                                    binding="#{Persona2.campoComentariosAnulCerDefuncion1x1}"
-                                                    columns="100" rows="3"
-                                                    readOnly="true"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_defuncion']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_defuncion.persona"
-                                                    validatorExpression="#{Persona2.validatorComentariosAnulCerDefuncion1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerDefuncion1x1Texto1"
-                                                    binding="#{Persona2.campoComentariosAnulCerDefuncion1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['comentarios_anul_cer_defuncion']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerDefuncion1x1"
-                                                    for="campoComentariosAnulCerDefuncion1x1"/>
-                                                <webuijsf:helpInline id="helpInlineComentariosAnulCerDefuncion1x1"
-                                                    binding="#{Persona2.helpInlineComentariosAnulCerDefuncion1x1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.comentarios_anul_cer_defuncion.persona"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridComentariosEntregaDocumentos1x1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelComentariosEntregaDocumentos1x1}"
                                                     id="labelComentariosEntregaDocumentos1x1"
                                                     for="campoComentariosEntregaDocumentos1x1"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos.persona"
                                                     text="comentarios entrega documentos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4761,6 +4958,7 @@
                                                     binding="#{Persona2.labelEsPersonaConEmpleo1x1}"
                                                     id="labelEsPersonaConEmpleo1x1"
                                                     for="listaEsPersonaConEmpleo1x1"
+                                                    toolTip="BundleParametros.es_persona_con_empleo.persona"
                                                     text="con empleo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4792,6 +4990,7 @@
                                                     binding="#{Persona2.labelEsPersonaConJubilacion1x1}"
                                                     id="labelEsPersonaConJubilacion1x1"
                                                     for="listaEsPersonaConJubilacion1x1"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.persona"
                                                     text="con jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4823,6 +5022,7 @@
                                                     binding="#{Persona2.labelEsPersonaConPension1x1}"
                                                     id="labelEsPersonaConPension1x1"
                                                     for="listaEsPersonaConPension1x1"
+                                                    toolTip="BundleParametros.es_persona_con_pension.persona"
                                                     text="con pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4854,6 +5054,7 @@
                                                     binding="#{Persona2.labelEsPersonaConSubsidio1x1}"
                                                     id="labelEsPersonaConSubsidio1x1"
                                                     for="listaEsPersonaConSubsidio1x1"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.persona"
                                                     text="con subsidio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4885,6 +5086,7 @@
                                                     binding="#{Persona2.labelEsPersonaConDeuda1x1}"
                                                     id="labelEsPersonaConDeuda1x1"
                                                     for="listaEsPersonaConDeuda1x1"
+                                                    toolTip="BundleParametros.es_persona_con_deuda.persona"
                                                     text="con deuda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4916,6 +5118,7 @@
                                                     binding="#{Persona2.labelEsPersonaConPenaJudicial1x1}"
                                                     id="labelEsPersonaConPenaJudicial1x1"
                                                     for="listaEsPersonaConPenaJudicial1x1"
+                                                    toolTip="BundleParametros.es_persona_con_pena_judicial.persona"
                                                     text="con pena judicial"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4947,6 +5150,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCerVida1x1}"
                                                     id="labelEsPersonaConCerVida1x1"
                                                     for="listaEsPersonaConCerVida1x1"
+                                                    toolTip="BundleParametros.es_persona_con_cer_vida.persona"
                                                     text="con certificado vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4978,6 +5182,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCartaRenuncia1x1}"
                                                     id="labelEsPersonaConCartaRenuncia1x1"
                                                     for="listaEsPersonaConCartaRenuncia1x1"
+                                                    toolTip="BundleParametros.es_persona_con_carta_renuncia.persona"
                                                     text="con carta renuncia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5009,6 +5214,7 @@
                                                     binding="#{Persona2.labelEsPersonaElegibleParaPen1x1}"
                                                     id="labelEsPersonaElegibleParaPen1x1"
                                                     for="listaEsPersonaElegibleParaPen1x1"
+                                                    toolTip="BundleParametros.es_persona_elegible_para_pen.persona"
                                                     text="elegible para pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5040,6 +5246,7 @@
                                                     binding="#{Persona2.labelEsPersonaAcreditadaParaPen1x1}"
                                                     id="labelEsPersonaAcreditadaParaPen1x1"
                                                     for="listaEsPersonaAcreditadaParaPen1x1"
+                                                    toolTip="BundleParametros.es_persona_acreditada_para_pen.persona"
                                                     text="acreditada para pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5071,6 +5278,7 @@
                                                     binding="#{Persona2.labelEsPersonaConCopiaCedula1x1}"
                                                     id="labelEsPersonaConCopiaCedula1x1"
                                                     for="listaEsPersonaConCopiaCedula1x1"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"
                                                     text="con copia c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5102,6 +5310,7 @@
                                                     binding="#{Persona2.labelEsPersonaConDeclaracionJur1x1}"
                                                     id="labelEsPersonaConDeclaracionJur1x1"
                                                     for="listaEsPersonaConDeclaracionJur1x1"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"
                                                     text="con declaraci&#243;n jurada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5150,6 +5359,7 @@
                                                     binding="#{Persona2.labelMontoPension1x1}"
                                                     id="labelMontoPension1x1"
                                                     for="campoMontoPension1x1"
+                                                    toolTip="BundleParametros.monto_pension.persona"
                                                     text="monto pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5183,6 +5393,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionPension1x1}"
                                                     id="labelNumeroCondicionPension1x1"
                                                     for="listaNumeroCondicionPension1x1"
+                                                    toolTip="BundleParametros.numero_condicion_pension.persona"
                                                     text="condici&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5198,7 +5409,7 @@
                                                     toolTip="BundleParametros.numero_condicion_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionPension1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionPension1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_pension_1x9y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_pension_1x8y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionPension1x1"
                                                     for="listaNumeroCondicionPension1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionPension1x1"
@@ -5215,6 +5426,7 @@
                                                     binding="#{Persona2.labelFechaSolicitudPension1x1}"
                                                     id="labelFechaSolicitudPension1x1"
                                                     for="campoFechaSolicitudPension1x1"
+                                                    toolTip="BundleParametros.fecha_solicitud_pension.persona"
                                                     text="fecha solicitud pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5248,6 +5460,7 @@
                                                     binding="#{Persona2.labelComentariosSolicitudPension1x1}"
                                                     id="labelComentariosSolicitudPension1x1"
                                                     for="campoComentariosSolicitudPension1x1"
+                                                    toolTip="BundleParametros.comentarios_solicitud_pension.persona"
                                                     text="comentarios solicitud pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5280,6 +5493,7 @@
                                                     binding="#{Persona2.labelFechaAprobacionPension1x1}"
                                                     id="labelFechaAprobacionPension1x1"
                                                     for="campoFechaAprobacionPension1x1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_pension.persona"
                                                     text="fecha aprobaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5313,6 +5527,7 @@
                                                     binding="#{Persona2.labelComentariosAprobacionPension1x1}"
                                                     id="labelComentariosAprobacionPension1x1"
                                                     for="campoComentariosAprobacionPension1x1"
+                                                    toolTip="BundleParametros.comentarios_aprobacion_pension.persona"
                                                     text="comentarios aprobaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5345,6 +5560,7 @@
                                                     binding="#{Persona2.labelFechaOtorgamientoPen1x1}"
                                                     id="labelFechaOtorgamientoPen1x1"
                                                     for="campoFechaOtorgamientoPen1x1"
+                                                    toolTip="BundleParametros.fecha_otorgamiento_pen.persona"
                                                     text="fecha otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5378,6 +5594,7 @@
                                                     binding="#{Persona2.labelNumeroResolucionOtorPen1x1}"
                                                     id="labelNumeroResolucionOtorPen1x1"
                                                     for="campoNumeroResolucionOtorPen1x1"
+                                                    toolTip="BundleParametros.numero_resolucion_otor_pen.persona"
                                                     text="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5411,6 +5628,7 @@
                                                     binding="#{Persona2.labelFechaResolucionOtorPen1x1}"
                                                     id="labelFechaResolucionOtorPen1x1"
                                                     for="campoFechaResolucionOtorPen1x1"
+                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen.persona"
                                                     text="fecha resoluci&#243;n otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5444,6 +5662,7 @@
                                                     binding="#{Persona2.labelComentariosOtorgamientoPen1x1}"
                                                     id="labelComentariosOtorgamientoPen1x1"
                                                     for="campoComentariosOtorgamientoPen1x1"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
                                                     text="comentarios otorgamiento pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5493,6 +5712,7 @@
                                                     binding="#{Persona2.labelFechaObjecionPension1x1}"
                                                     id="labelFechaObjecionPension1x1"
                                                     for="campoFechaObjecionPension1x1"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"
                                                     text="fecha objeci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5526,6 +5746,7 @@
                                                     binding="#{Persona2.labelNumeroCausaDenPension1x1}"
                                                     id="labelNumeroCausaDenPension1x1"
                                                     for="listaNumeroCausaDenPension1x1"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"
                                                     text="causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5541,7 +5762,7 @@
                                                     toolTip="BundleParametros.numero_causa_den_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenPension1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaDenPension1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pensio_1x10y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_pension_1x9y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenPension1x1"
                                                     for="listaNumeroCausaDenPension1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaDenPension1x1"
@@ -5558,6 +5779,7 @@
                                                     binding="#{Persona2.labelOtraCausaDenPension1x1}"
                                                     id="labelOtraCausaDenPension1x1"
                                                     for="campoOtraCausaDenPension1x1"
+                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
                                                     text="otra causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5591,6 +5813,7 @@
                                                     binding="#{Persona2.labelComentariosObjecionPension1x1}"
                                                     id="labelComentariosObjecionPension1x1"
                                                     for="campoComentariosObjecionPension1x1"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
                                                     text="comentarios objeci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5623,6 +5846,7 @@
                                                     binding="#{Persona2.labelFechaDenegacionPension1x1}"
                                                     id="labelFechaDenegacionPension1x1"
                                                     for="campoFechaDenegacionPension1x1"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"
                                                     text="fecha denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5656,6 +5880,7 @@
                                                     binding="#{Persona2.labelNumeroResolucionDenPen1x1}"
                                                     id="labelNumeroResolucionDenPen1x1"
                                                     for="campoNumeroResolucionDenPen1x1"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
                                                     text="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5689,6 +5914,7 @@
                                                     binding="#{Persona2.labelFechaResolucionDenPen1x1}"
                                                     id="labelFechaResolucionDenPen1x1"
                                                     for="campoFechaResolucionDenPen1x1"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"
                                                     text="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5722,6 +5948,7 @@
                                                     binding="#{Persona2.labelComentariosDenegacionPension1x1}"
                                                     id="labelComentariosDenegacionPension1x1"
                                                     for="campoComentariosDenegacionPension1x1"
+                                                    toolTip="BundleParametros.comentarios_denegacion_pension.persona"
                                                     text="comentarios denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5754,6 +5981,7 @@
                                                     binding="#{Persona2.labelFechaRevocacionPension1x1}"
                                                     id="labelFechaRevocacionPension1x1"
                                                     for="campoFechaRevocacionPension1x1"
+                                                    toolTip="BundleParametros.fecha_revocacion_pension.persona"
                                                     text="fecha revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5787,6 +6015,7 @@
                                                     binding="#{Persona2.labelNumeroCausaRevPension1x1}"
                                                     id="labelNumeroCausaRevPension1x1"
                                                     for="listaNumeroCausaRevPension1x1"
+                                                    toolTip="BundleParametros.numero_causa_rev_pension.persona"
                                                     text="causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5802,7 +6031,7 @@
                                                     toolTip="BundleParametros.numero_causa_rev_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaRevPension1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaRevPension1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_rev_pensio_1x11y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_rev_pensio_1x10y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaRevPension1x1"
                                                     for="listaNumeroCausaRevPension1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaRevPension1x1"
@@ -5819,6 +6048,7 @@
                                                     binding="#{Persona2.labelOtraCausaRevPension1x1}"
                                                     id="labelOtraCausaRevPension1x1"
                                                     for="campoOtraCausaRevPension1x1"
+                                                    toolTip="BundleParametros.otra_causa_rev_pension.persona"
                                                     text="otra causa revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5846,12 +6076,81 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridNumeroResolucionRevPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelNumeroResolucionRevPen1x1}"
+                                                    id="labelNumeroResolucionRevPen1x1"
+                                                    for="campoNumeroResolucionRevPen1x1"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    text="n&#250;mero resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionRevPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionRevPen1x1"
+                                                    binding="#{Persona2.campoNumeroResolucionRevPen1x1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorNumeroResolucionRevPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionRevPen1x1Texto1"
+                                                    binding="#{Persona2.campoNumeroResolucionRevPen1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['numero_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionRevPen1x1"
+                                                    for="campoNumeroResolucionRevPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionRevPen1x1"
+                                                    binding="#{Persona2.helpInlineNumeroResolucionRevPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionRevPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelFechaResolucionRevPen1x1}"
+                                                    id="labelFechaResolucionRevPen1x1"
+                                                    for="campoFechaResolucionRevPen1x1"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"
+                                                    text="fecha resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionRevPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionRevPen1x1"
+                                                    binding="#{Persona2.campoFechaResolucionRevPen1x1}"
+                                                    maxDate="#{Persona2.gestor.defaultMaxDate}"
+                                                    minDate="#{Persona2.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{Persona2.personaDataProvider.value['fecha_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionRevPen1x1Texto1"
+                                                    binding="#{Persona2.campoFechaResolucionRevPen1x1Texto1}"
+                                                    converter="#{Persona2.converterFechaResolucionRevPen1}"
+                                                    text="#{Persona2.personaDataProvider.value['fecha_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionRevPen1x1"
+                                                    for="campoFechaResolucionRevPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionRevPen1x1"
+                                                    binding="#{Persona2.helpInlineFechaResolucionRevPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_rev_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridComentariosRevocacionPension1x1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Persona2.labelComentariosRevocacionPension1x1}"
                                                     id="labelComentariosRevocacionPension1x1"
                                                     for="campoComentariosRevocacionPension1x1"
+                                                    toolTip="BundleParametros.comentarios_revocacion_pension.persona"
                                                     text="comentarios revocaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5901,6 +6200,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionRecoPen1x1}"
                                                     id="labelNumeroCondicionRecoPen1x1"
                                                     for="listaNumeroCondicionRecoPen1x1"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.persona"
                                                     text="condici&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5916,7 +6216,7 @@
                                                     toolTip="BundleParametros.numero_condicion_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionRecoPen1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionRecoPen1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_reco_p_1x12y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_reco_p_1x11y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionRecoPen1x1"
                                                     for="listaNumeroCondicionRecoPen1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionRecoPen1x1"
@@ -5933,6 +6233,7 @@
                                                     binding="#{Persona2.labelFechaSolicitudRecoPen1x1}"
                                                     id="labelFechaSolicitudRecoPen1x1"
                                                     for="campoFechaSolicitudRecoPen1x1"
+                                                    toolTip="BundleParametros.fecha_solicitud_reco_pen.persona"
                                                     text="fecha solicitud reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5966,6 +6267,7 @@
                                                     binding="#{Persona2.labelComentariosSolicitudRecoPen1x1}"
                                                     id="labelComentariosSolicitudRecoPen1x1"
                                                     for="campoComentariosSolicitudRecoPen1x1"
+                                                    toolTip="BundleParametros.comentarios_solicitud_reco_pen.persona"
                                                     text="comentarios solicitud reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5998,6 +6300,7 @@
                                                     binding="#{Persona2.labelFechaAprobacionRecoPen1x1}"
                                                     id="labelFechaAprobacionRecoPen1x1"
                                                     for="campoFechaAprobacionRecoPen1x1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reco_pen.persona"
                                                     text="fecha aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6031,6 +6334,7 @@
                                                     binding="#{Persona2.labelComentariosAprRecoPen1x1}"
                                                     id="labelComentariosAprRecoPen1x1"
                                                     for="campoComentariosAprRecoPen1x1"
+                                                    toolTip="BundleParametros.comentarios_apr_reco_pen.persona"
                                                     text="comentarios aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6063,6 +6367,7 @@
                                                     binding="#{Persona2.labelFechaDenegacionRecoPen1x1}"
                                                     id="labelFechaDenegacionRecoPen1x1"
                                                     for="campoFechaDenegacionRecoPen1x1"
+                                                    toolTip="BundleParametros.fecha_denegacion_reco_pen.persona"
                                                     text="fecha denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6096,6 +6401,7 @@
                                                     binding="#{Persona2.labelNumeroCausaDenRecoPen1x1}"
                                                     id="labelNumeroCausaDenRecoPen1x1"
                                                     for="listaNumeroCausaDenRecoPen1x1"
+                                                    toolTip="BundleParametros.numero_causa_den_reco_pen.persona"
                                                     text="causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6111,7 +6417,7 @@
                                                     toolTip="BundleParametros.numero_causa_den_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenRecoPen1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCausaDenRecoPen1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_reco_p_1x13y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_causa_den_reco_p_1x12y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenRecoPen1x1"
                                                     for="listaNumeroCausaDenRecoPen1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCausaDenRecoPen1x1"
@@ -6128,6 +6434,7 @@
                                                     binding="#{Persona2.labelOtraCausaDenRecoPen1x1}"
                                                     id="labelOtraCausaDenRecoPen1x1"
                                                     for="campoOtraCausaDenRecoPen1x1"
+                                                    toolTip="BundleParametros.otra_causa_den_reco_pen.persona"
                                                     text="otra causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6161,6 +6468,7 @@
                                                     binding="#{Persona2.labelComentariosDenRecoPen1x1}"
                                                     id="labelComentariosDenRecoPen1x1"
                                                     for="campoComentariosDenRecoPen1x1"
+                                                    toolTip="BundleParametros.comentarios_den_reco_pen.persona"
                                                     text="comentarios denegaci&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6210,6 +6518,7 @@
                                                     binding="#{Persona2.labelNumeroCondicionDenuPen1x1}"
                                                     id="labelNumeroCondicionDenuPen1x1"
                                                     for="listaNumeroCondicionDenuPen1x1"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.persona"
                                                     text="condici&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6225,7 +6534,7 @@
                                                     toolTip="BundleParametros.numero_condicion_denu_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionDenuPen1x1Texto1"
                                                     binding="#{Persona2.listaNumeroCondicionDenuPen1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_denu_p_1x14y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_condicion_denu_p_1x13y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionDenuPen1x1"
                                                     for="listaNumeroCondicionDenuPen1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroCondicionDenuPen1x1"
@@ -6242,6 +6551,7 @@
                                                     binding="#{Persona2.labelFechaRegistroDenunciaPen1x1}"
                                                     id="labelFechaRegistroDenunciaPen1x1"
                                                     for="campoFechaRegistroDenunciaPen1x1"
+                                                    toolTip="BundleParametros.fecha_registro_denuncia_pen.persona"
                                                     text="fecha registro denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6275,6 +6585,7 @@
                                                     binding="#{Persona2.labelComentariosRegistroDenuPen1x1}"
                                                     id="labelComentariosRegistroDenuPen1x1"
                                                     for="campoComentariosRegistroDenuPen1x1"
+                                                    toolTip="BundleParametros.comentarios_registro_denu_pen.persona"
                                                     text="comentarios registro denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6307,6 +6618,7 @@
                                                     binding="#{Persona2.labelFechaConfirmacionDenuPen1x1}"
                                                     id="labelFechaConfirmacionDenuPen1x1"
                                                     for="campoFechaConfirmacionDenuPen1x1"
+                                                    toolTip="BundleParametros.fecha_confirmacion_denu_pen.persona"
                                                     text="fecha confirmaci&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6340,6 +6652,7 @@
                                                     binding="#{Persona2.labelComentariosConfDenuPen1x1}"
                                                     id="labelComentariosConfDenuPen1x1"
                                                     for="campoComentariosConfDenuPen1x1"
+                                                    toolTip="BundleParametros.comentarios_conf_denu_pen.persona"
                                                     text="comentarios confirmaci&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6372,6 +6685,7 @@
                                                     binding="#{Persona2.labelFechaDesmentidoDenunciaPen1x1}"
                                                     id="labelFechaDesmentidoDenunciaPen1x1"
                                                     for="campoFechaDesmentidoDenunciaPen1x1"
+                                                    toolTip="BundleParametros.fecha_desmentido_denuncia_pen.persona"
                                                     text="fecha desmentido denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6405,6 +6719,7 @@
                                                     binding="#{Persona2.labelComentariosDesDenuPen1x1}"
                                                     id="labelComentariosDesDenuPen1x1"
                                                     for="campoComentariosDesDenuPen1x1"
+                                                    toolTip="BundleParametros.comentarios_des_denu_pen.persona"
                                                     text="comentarios desmentido denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6454,6 +6769,7 @@
                                                     binding="#{Persona2.labelIdFichaPersona1x1}"
                                                     id="labelIdFichaPersona1x1"
                                                     for="campoIdFichaPersona1x1"
+                                                    toolTip="BundleParametros.id_ficha_persona.persona"
                                                     text="ficha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6468,7 +6784,7 @@
                                                     validatorExpression="#{Persona2.campoIdFichaPersona1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFichaPersona1x1Texto1"
                                                     binding="#{Persona2.campoIdFichaPersona1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_ficha_persona_1x15y3']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_ficha_persona_1x14y3']}"/>
                                                 <webuijsf:button id="campoIdFichaPersona1x1Boton1"
                                                     binding="#{Persona2.campoIdFichaPersona1x1Boton1}"
                                                     onClick="#{Persona2.asistente.scriptCampoIdFichaPersona1Boton1}"/>
@@ -6502,7 +6818,7 @@
                                                 styleClass="pdq-grid-elemento-1">
                                                 <webuijsf:staticText
                                                     binding="#{Persona2.campoIdFichaPersona1x1Texto2}"
-                                                    text="#{Persona2.personaDataProvider.value['nombre_ficha_persona_1x15y4']}"
+                                                    text="#{Persona2.personaDataProvider.value['nombre_ficha_persona_1x14y4']}"
                                                     id="campoIdFichaPersona1x1Texto2"/>
                                                 <webuijsf:button
                                                     binding="#{Persona2.campoIdFichaPersona1x1Boton2}"
@@ -6516,6 +6832,7 @@
                                                     binding="#{Persona2.labelFechaFichaPersona1x1}"
                                                     id="labelFechaFichaPersona1x1"
                                                     for="campoFechaFichaPersona1x1"
+                                                    toolTip="BundleParametros.fecha_ficha_persona.persona"
                                                     text="fecha ficha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6549,6 +6866,7 @@
                                                     binding="#{Persona2.labelIndiceCalidadVida1x1}"
                                                     id="labelIndiceCalidadVida1x1"
                                                     for="campoIndiceCalidadVida1x1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.persona"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6582,6 +6900,7 @@
                                                     binding="#{Persona2.labelFechaUltimoCobroPension1x1}"
                                                     id="labelFechaUltimoCobroPension1x1"
                                                     for="campoFechaUltimoCobroPension1x1"
+                                                    toolTip="BundleParametros.fecha_ultimo_cobro_pension.persona"
                                                     text="fecha ultimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6615,6 +6934,7 @@
                                                     binding="#{Persona2.labelNotasAnulFecUltCobPen1x1}"
                                                     id="labelNotasAnulFecUltCobPen1x1"
                                                     for="campoNotasAnulFecUltCobPen1x1"
+                                                    toolTip="BundleParametros.notas_anul_fec_ult_cob_pen.persona"
                                                     text="notas anulaci&#243;n fecha &#250;ltimo cobro pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6647,6 +6967,7 @@
                                                     binding="#{Persona2.labelNumeroTipoActJupe1x1}"
                                                     id="labelNumeroTipoActJupe1x1"
                                                     for="listaNumeroTipoActJupe1x1"
+                                                    toolTip="BundleParametros.numero_tipo_act_jupe.persona"
                                                     text="tipo actualizaci&#243;n jupe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6662,7 +6983,7 @@
                                                     toolTip="BundleParametros.numero_tipo_act_jupe.persona"/>
                                                 <webuijsf:staticText id="listaNumeroTipoActJupe1x1Texto1"
                                                     binding="#{Persona2.listaNumeroTipoActJupe1x1Texto1}"
-                                                    text="#{Persona2.personaDataProvider.value['codigo_tipo_act_jupe_1x16y2']}"/>
+                                                    text="#{Persona2.personaDataProvider.value['codigo_tipo_act_jupe_1x15y2']}"/>
                                                 <webuijsf:message id="messageNumeroTipoActJupe1x1"
                                                     for="listaNumeroTipoActJupe1x1"/>
                                                 <webuijsf:helpInline id="helpInlineNumeroTipoActJupe1x1"
@@ -6679,6 +7000,7 @@
                                                     binding="#{Persona2.labelFechaHoraUltActJupe1x1}"
                                                     id="labelFechaHoraUltActJupe1x1"
                                                     for="campoFechaHoraUltActJupe1x1"
+                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe.persona"
                                                     text="fecha hora &#250;ltima actualizaci&#243;n jupe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6711,6 +7033,7 @@
                                                     binding="#{Persona2.labelLote1x1}"
                                                     id="labelLote1x1"
                                                     for="campoLote1x1"
+                                                    toolTip="BundleParametros.lote.persona"
                                                     text="lote"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6743,6 +7066,7 @@
                                                     binding="#{Persona2.labelCodigoSime1x1}"
                                                     id="labelCodigoSime1x1"
                                                     for="campoCodigoSime1x1"
+                                                    toolTip="BundleParametros.codigo_sime.persona"
                                                     text="c&#243;digo sime"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -6767,6 +7091,73 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.codigo_sime.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCodigoSimeRecoPen1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelCodigoSimeRecoPen1x1}"
+                                                    id="labelCodigoSimeRecoPen1x1"
+                                                    for="campoCodigoSimeRecoPen1x1"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    text="c&#243;digo sime reconsideraci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCodigoSimeRecoPen1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCodigoSimeRecoPen1x1"
+                                                    binding="#{Persona2.campoCodigoSimeRecoPen1x1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_sime_reco_pen']}"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    validatorExpression="#{Persona2.validatorCodigoSimeRecoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoSimeRecoPen1x1Texto1"
+                                                    binding="#{Persona2.campoCodigoSimeRecoPen1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['codigo_sime_reco_pen']}"/>
+                                                <webuijsf:message id="messageCodigoSimeRecoPen1x1"
+                                                    for="campoCodigoSimeRecoPen1x1"/>
+                                                <webuijsf:helpInline id="helpInlineCodigoSimeRecoPen1x1"
+                                                    binding="#{Persona2.helpInlineCodigoSimeRecoPen1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridComentariosInsercionJupe1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Persona2.labelComentariosInsercionJupe1x1}"
+                                                    id="labelComentariosInsercionJupe1x1"
+                                                    for="campoComentariosInsercionJupe1x1"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    text="comentarios inserci&#243;n jupe"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridComentariosInsercionJupe1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoComentariosInsercionJupe1x1"
+                                                    binding="#{Persona2.campoComentariosInsercionJupe1x1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="true"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_insercion_jupe']}"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    validatorExpression="#{Persona2.validatorComentariosInsercionJupe1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosInsercionJupe1x1Texto1"
+                                                    binding="#{Persona2.campoComentariosInsercionJupe1x1Texto1}"
+                                                    text="#{Persona2.personaDataProvider.value['comentarios_insercion_jupe']}"/>
+                                                <webuijsf:message id="messageComentariosInsercionJupe1x1"
+                                                    for="campoComentariosInsercionJupe1x1"/>
+                                                <webuijsf:helpInline id="helpInlineComentariosInsercionJupe1x1"
+                                                    binding="#{Persona2.helpInlineComentariosInsercionJupe1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.comentarios_insercion_jupe.persona"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
