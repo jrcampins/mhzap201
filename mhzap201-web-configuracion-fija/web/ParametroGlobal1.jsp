@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnNumeroParametroGlobal1}"
+                                                    toolTip="BundleParametros.numero_parametro_global.parametro_global"
                                                     headerText="n&#250;mero"
                                                     id="tableColumnNumeroParametroGlobal1"
                                                     sort="numero_parametro_global">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnMontoSalarioMinimo1}"
+                                                    toolTip="BundleParametros.monto_salario_minimo.parametro_global"
                                                     headerText="monto salario minimo"
                                                     id="tableColumnMontoSalarioMinimo1"
                                                     sort="monto_salario_minimo">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnPorcentajePensionAlimentaria1}"
+                                                    toolTip="BundleParametros.porcentaje_pension_alimentaria.parametro_global"
                                                     headerText="porcentaje pensi&#243;n alimentaria"
                                                     id="tableColumnPorcentajePensionAlimentaria1"
                                                     sort="porcentaje_pension_alimentaria">
@@ -263,6 +266,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlCerVidaActivo1}"
+                                                    toolTip="BundleParametros.es_control_cer_vida_activo.parametro_global"
                                                     headerText="control certificado vida activo"
                                                     id="tableColumnEsControlCerVidaActivo1"
                                                     sort="es_control_cer_vida_activo">
@@ -288,6 +292,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnMesesValidezCertificadoVida1}"
+                                                    toolTip="BundleParametros.meses_validez_certificado_vida.parametro_global"
                                                     headerText="meses validez certificado vida"
                                                     id="tableColumnMesesValidezCertificadoVida1"
                                                     sort="meses_validez_certificado_vida">
@@ -314,6 +319,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlCobroPensionActiv1}"
+                                                    toolTip="BundleParametros.es_control_cobro_pension_activ.parametro_global"
                                                     headerText="control cobro pensi&#243;n activo"
                                                     id="tableColumnEsControlCobroPensionActiv1"
                                                     sort="es_control_cobro_pension_activ">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnMesesUltimoCobroPension1}"
+                                                    toolTip="BundleParametros.meses_ultimo_cobro_pension.parametro_global"
                                                     headerText="meses ultimo cobro pensi&#243;n"
                                                     id="tableColumnMesesUltimoCobroPension1"
                                                     sort="meses_ultimo_cobro_pension">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnEsControlReprocesoPenActiv1}"
+                                                    toolTip="BundleParametros.es_control_reproceso_pen_activ.parametro_global"
                                                     headerText="control reproceso pensi&#243;n activo"
                                                     id="tableColumnEsControlReprocesoPenActiv1"
                                                     sort="es_control_reproceso_pen_activ">
@@ -390,6 +398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnLimiteIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.limite_indice_calidad_vida.parametro_global"
                                                     headerText="limite indice calidad vida"
                                                     id="tableColumnLimiteIndiceCalidadVida1"
                                                     sort="limite_indice_calidad_vida">
@@ -417,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ParametroGlobal1.tableColumnLimitePensiones1}"
+                                                    toolTip="BundleParametros.limite_pensiones.parametro_global"
                                                     headerText="limite pensiones"
                                                     id="tableColumnLimitePensiones1"
                                                     sort="limite_pensiones">

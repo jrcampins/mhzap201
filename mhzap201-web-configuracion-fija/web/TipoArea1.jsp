@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{TipoArea1.tableColumnNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area.tipo_area"
                                                     headerText="n&#250;mero"
                                                     id="tableColumnNumeroTipoArea1"
                                                     sort="numero_tipo_area">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{TipoArea1.tableColumnCodigoTipoArea1}"
+                                                    toolTip="BundleParametros.codigo_tipo_area.tipo_area"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoTipoArea1"
                                                     sort="codigo_tipo_area">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{TipoArea1.tableColumnLimiteIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.limite_indice_calidad_vida.tipo_area"
                                                     headerText="limite indice calidad vida"
                                                     id="tableColumnLimiteIndiceCalidadVida1"
                                                     sort="limite_indice_calidad_vida">
