@@ -57,9 +57,15 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         fichaPersonaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         fichaPersonaRowSet.setCommand("SELECT * FROM consulta_ficha_persona_1");
         fichaPersonaRowSet.setTableName("ficha_persona");
+        objecionElePenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        objecionElePenRowSet.setCommand("SELECT * FROM consulta_objecion_ele_pen_1");
+        objecionElePenRowSet.setTableName("objecion_ele_pen");
         personaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         personaRowSet.setCommand("SELECT * FROM consulta_persona_1");
         personaRowSet.setTableName("persona");
+        personaAnotadaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        personaAnotadaRowSet.setCommand("SELECT * FROM consulta_persona_anotada_1");
+        personaAnotadaRowSet.setTableName("persona_anotada");
         potencialBenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         potencialBenRowSet.setCommand("SELECT * FROM consulta_potencial_ben_1");
         potencialBenRowSet.setTableName("potencial_ben");
@@ -87,15 +93,15 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         potencialBenReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         potencialBenReferenceRowSet.setCommand("SELECT * FROM consulta_potencial_ben_1");
         potencialBenReferenceRowSet.setTableName("potencial_ben");
+        personaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+        personaReferenceRowSet.setCommand("SELECT * FROM consulta_persona_1");
+        personaReferenceRowSet.setTableName("persona");
         etniaIndigenaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         etniaIndigenaReferenceRowSet.setCommand("SELECT * FROM consulta_etnia_indigena_1");
         etniaIndigenaReferenceRowSet.setTableName("etnia_indigena");
         fichaPersonaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
         fichaPersonaReferenceRowSet.setCommand("SELECT * FROM consulta_ficha_persona_1");
         fichaPersonaReferenceRowSet.setTableName("ficha_persona");
-        personaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-        personaReferenceRowSet.setCommand("SELECT * FROM consulta_persona_1");
-        personaReferenceRowSet.setTableName("persona");
     }
 
     private CachedRowSetXImpl filtroRowSet;
@@ -182,6 +188,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         this.fichaPersonaRowSet = crsxi;
     }
 
+    private CachedRowSetXImpl objecionElePenRowSet;
+
+    public CachedRowSetXImpl getObjecionElePenRowSet() {
+        if (objecionElePenRowSet == null) {
+            objecionElePenRowSet = new RecursoCachedRowSet();
+            try {
+                objecionElePenRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                objecionElePenRowSet.setCommand("SELECT * FROM consulta_objecion_ele_pen_1");
+                objecionElePenRowSet.setTableName("objecion_ele_pen");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return objecionElePenRowSet;
+    }
+
+    public void setObjecionElePenRowSet(CachedRowSetXImpl crsxi) {
+        this.objecionElePenRowSet = crsxi;
+    }
+
     private CachedRowSetXImpl personaRowSet;
 
     public CachedRowSetXImpl getPersonaRowSet() {
@@ -201,6 +228,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setPersonaRowSet(CachedRowSetXImpl crsxi) {
         this.personaRowSet = crsxi;
+    }
+
+    private CachedRowSetXImpl personaAnotadaRowSet;
+
+    public CachedRowSetXImpl getPersonaAnotadaRowSet() {
+        if (personaAnotadaRowSet == null) {
+            personaAnotadaRowSet = new RecursoCachedRowSet();
+            try {
+                personaAnotadaRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                personaAnotadaRowSet.setCommand("SELECT * FROM consulta_persona_anotada_1");
+                personaAnotadaRowSet.setTableName("persona_anotada");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return personaAnotadaRowSet;
+    }
+
+    public void setPersonaAnotadaRowSet(CachedRowSetXImpl crsxi) {
+        this.personaAnotadaRowSet = crsxi;
     }
 
     private CachedRowSetXImpl potencialBenRowSet;
@@ -392,6 +440,27 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
         this.potencialBenReferenceRowSet = crsxi;
     }
 
+    private CachedRowSetXImpl personaReferenceRowSet;
+
+    public CachedRowSetXImpl getPersonaReferenceRowSet() {
+        if (personaReferenceRowSet == null) {
+            personaReferenceRowSet = new RecursoCachedRowSet();
+            try {
+                personaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
+                personaReferenceRowSet.setCommand("SELECT * FROM consulta_persona_1");
+                personaReferenceRowSet.setTableName("persona");
+            } catch (Exception e) {
+                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
+                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
+            }
+        }
+        return personaReferenceRowSet;
+    }
+
+    public void setPersonaReferenceRowSet(CachedRowSetXImpl crsxi) {
+        this.personaReferenceRowSet = crsxi;
+    }
+
     private CachedRowSetXImpl etniaIndigenaReferenceRowSet;
 
     public CachedRowSetXImpl getEtniaIndigenaReferenceRowSet() {
@@ -432,27 +501,6 @@ public class SessionBean1 extends AbstractSessionBean implements ContextoSesionB
 
     public void setFichaPersonaReferenceRowSet(CachedRowSetXImpl crsxi) {
         this.fichaPersonaReferenceRowSet = crsxi;
-    }
-
-    private CachedRowSetXImpl personaReferenceRowSet;
-
-    public CachedRowSetXImpl getPersonaReferenceRowSet() {
-        if (personaReferenceRowSet == null) {
-            personaReferenceRowSet = new RecursoCachedRowSet();
-            try {
-                personaReferenceRowSet.setDataSourceName("java:comp/env/jdbc/mhzap201");
-                personaReferenceRowSet.setCommand("SELECT * FROM consulta_persona_1");
-                personaReferenceRowSet.setTableName("persona");
-            } catch (Exception e) {
-                log(com.egt.core.util.Bundle.getString("bean.initialization.error"), e);
-                throw e instanceof FacesException ? (FacesException) e : new FacesException(e);
-            }
-        }
-        return personaReferenceRowSet;
-    }
-
-    public void setPersonaReferenceRowSet(CachedRowSetXImpl crsxi) {
-        this.personaReferenceRowSet = crsxi;
     }
     // </editor-fold>
 /**/

@@ -15,12 +15,16 @@
  */
 package com.egt.web.proceso;
 
+import com.egt.base.enums.EnumOpcionBinaria;
 import com.egt.base.entity.constants.FichaPersonaConstants;
 import com.egt.base.entity.constants.PotencialBenConstants;
+import com.egt.base.entity.constants.UbicacionConstants;
 import com.egt.ejb.persistence.entity.FichaPersona;
 import com.egt.ejb.persistence.entity.PotencialBen;
+import com.egt.ejb.persistence.entity.Ubicacion;
 import com.egt.ejb.persistence.facade.FichaPersonaFacadeLocal;
 import com.egt.ejb.persistence.facade.PotencialBenFacadeLocal;
+import com.egt.ejb.persistence.facade.UbicacionFacadeLocal;
 import com.egt.base.persistence.enums.EnumTipoQuery;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.FGS;
@@ -100,6 +104,11 @@ import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
 import com.egt.ejb.business.message.VincularFichaPersonaMessage;
 import com.egt.ejb.business.message.DesvincularFichaPersonaMessage;
 import com.egt.ejb.business.process.FichaPersonaBusinessProcessLocal;
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.jms.JMSException;
 import javax.jms.ObjectMessage;
 
@@ -108,6 +117,10 @@ public class FichaPersona4 extends AbstractPageBean
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     private void _init() throws Exception {
+        converterFechaImportacionDesde1.setPattern("dd/MM/yyyy");
+        converterFechaImportacionDesde1.setType("date");
+        converterFechaImportacionHasta1.setPattern("dd/MM/yyyy");
+        converterFechaImportacionHasta1.setType("date");
     }
 
     private Form form1 = new Form();
@@ -363,6 +376,426 @@ public class FichaPersona4 extends AbstractPageBean
         this.campoIdPotencialBen1Boton2 = component;
     }
 
+    private Label labelIdDepartamento1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdDepartamento1() {
+        return labelIdDepartamento1;
+    }
+
+    public void setLabelIdDepartamento1(Label l) {
+        this.labelIdDepartamento1 = l;
+    }
+
+    private TextField campoIdDepartamento1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoIdDepartamento1() {
+        return campoIdDepartamento1;
+    }
+
+    public void setCampoIdDepartamento1(TextField component) {
+        this.campoIdDepartamento1 = component;
+    }
+
+    private HelpInline helpInlineIdDepartamento1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdDepartamento1() {
+        return helpInlineIdDepartamento1;
+    }
+
+    public void setHelpInlineIdDepartamento1(HelpInline hi) {
+        this.helpInlineIdDepartamento1 = hi;
+    }
+
+    private StaticText campoIdDepartamento1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdDepartamento1Texto1() {
+        return campoIdDepartamento1Texto1;
+    }
+
+    public void setCampoIdDepartamento1Texto1(StaticText component) {
+        this.campoIdDepartamento1Texto1 = component;
+    }
+
+    private Button campoIdDepartamento1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdDepartamento1Boton1() {
+        return campoIdDepartamento1Boton1;
+    }
+
+    public void setCampoIdDepartamento1Boton1(Button component) {
+        this.campoIdDepartamento1Boton1 = component;
+    }
+
+    private Button campoIdDepartamento1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdDepartamento1Boton3() {
+        return campoIdDepartamento1Boton3;
+    }
+
+    public void setCampoIdDepartamento1Boton3(Button component) {
+        this.campoIdDepartamento1Boton3 = component;
+    }
+
+    private Label labelIdDepartamento2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdDepartamento2() {
+        return labelIdDepartamento2;
+    }
+
+    public void setLabelIdDepartamento2(Label l) {
+        this.labelIdDepartamento2 = l;
+    }
+
+    private StaticText campoIdDepartamento1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdDepartamento1Texto2() {
+        return campoIdDepartamento1Texto2;
+    }
+
+    public void setCampoIdDepartamento1Texto2(StaticText component) {
+        this.campoIdDepartamento1Texto2 = component;
+    }
+
+    private Button campoIdDepartamento1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdDepartamento1Boton2() {
+        return campoIdDepartamento1Boton2;
+    }
+
+    public void setCampoIdDepartamento1Boton2(Button component) {
+        this.campoIdDepartamento1Boton2 = component;
+    }
+
+    private Label labelIdDistrito1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdDistrito1() {
+        return labelIdDistrito1;
+    }
+
+    public void setLabelIdDistrito1(Label l) {
+        this.labelIdDistrito1 = l;
+    }
+
+    private TextField campoIdDistrito1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoIdDistrito1() {
+        return campoIdDistrito1;
+    }
+
+    public void setCampoIdDistrito1(TextField component) {
+        this.campoIdDistrito1 = component;
+    }
+
+    private HelpInline helpInlineIdDistrito1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdDistrito1() {
+        return helpInlineIdDistrito1;
+    }
+
+    public void setHelpInlineIdDistrito1(HelpInline hi) {
+        this.helpInlineIdDistrito1 = hi;
+    }
+
+    private StaticText campoIdDistrito1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdDistrito1Texto1() {
+        return campoIdDistrito1Texto1;
+    }
+
+    public void setCampoIdDistrito1Texto1(StaticText component) {
+        this.campoIdDistrito1Texto1 = component;
+    }
+
+    private Button campoIdDistrito1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdDistrito1Boton1() {
+        return campoIdDistrito1Boton1;
+    }
+
+    public void setCampoIdDistrito1Boton1(Button component) {
+        this.campoIdDistrito1Boton1 = component;
+    }
+
+    private Button campoIdDistrito1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdDistrito1Boton3() {
+        return campoIdDistrito1Boton3;
+    }
+
+    public void setCampoIdDistrito1Boton3(Button component) {
+        this.campoIdDistrito1Boton3 = component;
+    }
+
+    private Label labelIdDistrito2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdDistrito2() {
+        return labelIdDistrito2;
+    }
+
+    public void setLabelIdDistrito2(Label l) {
+        this.labelIdDistrito2 = l;
+    }
+
+    private StaticText campoIdDistrito1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdDistrito1Texto2() {
+        return campoIdDistrito1Texto2;
+    }
+
+    public void setCampoIdDistrito1Texto2(StaticText component) {
+        this.campoIdDistrito1Texto2 = component;
+    }
+
+    private Button campoIdDistrito1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdDistrito1Boton2() {
+        return campoIdDistrito1Boton2;
+    }
+
+    public void setCampoIdDistrito1Boton2(Button component) {
+        this.campoIdDistrito1Boton2 = component;
+    }
+
+    private Label labelIdBarrio1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdBarrio1() {
+        return labelIdBarrio1;
+    }
+
+    public void setLabelIdBarrio1(Label l) {
+        this.labelIdBarrio1 = l;
+    }
+
+    private TextField campoIdBarrio1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoIdBarrio1() {
+        return campoIdBarrio1;
+    }
+
+    public void setCampoIdBarrio1(TextField component) {
+        this.campoIdBarrio1 = component;
+    }
+
+    private HelpInline helpInlineIdBarrio1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdBarrio1() {
+        return helpInlineIdBarrio1;
+    }
+
+    public void setHelpInlineIdBarrio1(HelpInline hi) {
+        this.helpInlineIdBarrio1 = hi;
+    }
+
+    private StaticText campoIdBarrio1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdBarrio1Texto1() {
+        return campoIdBarrio1Texto1;
+    }
+
+    public void setCampoIdBarrio1Texto1(StaticText component) {
+        this.campoIdBarrio1Texto1 = component;
+    }
+
+    private Button campoIdBarrio1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdBarrio1Boton1() {
+        return campoIdBarrio1Boton1;
+    }
+
+    public void setCampoIdBarrio1Boton1(Button component) {
+        this.campoIdBarrio1Boton1 = component;
+    }
+
+    private Button campoIdBarrio1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdBarrio1Boton3() {
+        return campoIdBarrio1Boton3;
+    }
+
+    public void setCampoIdBarrio1Boton3(Button component) {
+        this.campoIdBarrio1Boton3 = component;
+    }
+
+    private Label labelIdBarrio2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdBarrio2() {
+        return labelIdBarrio2;
+    }
+
+    public void setLabelIdBarrio2(Label l) {
+        this.labelIdBarrio2 = l;
+    }
+
+    private StaticText campoIdBarrio1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdBarrio1Texto2() {
+        return campoIdBarrio1Texto2;
+    }
+
+    public void setCampoIdBarrio1Texto2(StaticText component) {
+        this.campoIdBarrio1Texto2 = component;
+    }
+
+    private Button campoIdBarrio1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdBarrio1Boton2() {
+        return campoIdBarrio1Boton2;
+    }
+
+    public void setCampoIdBarrio1Boton2(Button component) {
+        this.campoIdBarrio1Boton2 = component;
+    }
+
+    private Label labelEsFichaPersonaImportada1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsFichaPersonaImportada1() {
+        return labelEsFichaPersonaImportada1;
+    }
+
+    public void setLabelEsFichaPersonaImportada1(Label l) {
+        this.labelEsFichaPersonaImportada1 = l;
+    }
+
+    private DropDown listaEsFichaPersonaImportada1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsFichaPersonaImportada1() {
+        return listaEsFichaPersonaImportada1;
+    }
+
+    public void setListaEsFichaPersonaImportada1(DropDown component) {
+        this.listaEsFichaPersonaImportada1 = component;
+    }
+
+    private HelpInline helpInlineEsFichaPersonaImportada1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEsFichaPersonaImportada1() {
+        return helpInlineEsFichaPersonaImportada1;
+    }
+
+    public void setHelpInlineEsFichaPersonaImportada1(HelpInline hi) {
+        this.helpInlineEsFichaPersonaImportada1 = hi;
+    }
+
+    private StaticText listaEsFichaPersonaImportada1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsFichaPersonaImportada1Texto1() {
+        return listaEsFichaPersonaImportada1Texto1;
+    }
+
+    public void setListaEsFichaPersonaImportada1Texto1(StaticText component) {
+        this.listaEsFichaPersonaImportada1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsFichaPersonaImportada1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsFichaPersonaImportada1() {
+        return converterEsFichaPersonaImportada1;
+    }
+  
+    public void setConverterEsFichaPersonaImportada1(IntegerConverter converter) {
+        this.converterEsFichaPersonaImportada1 = converter;
+    }
+  
+    private Label labelFechaImportacionDesde1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaImportacionDesde1() {
+        return labelFechaImportacionDesde1;
+    }
+
+    public void setLabelFechaImportacionDesde1(Label l) {
+        this.labelFechaImportacionDesde1 = l;
+    }
+
+    private Calendar campoFechaImportacionDesde1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaImportacionDesde1() {
+        return campoFechaImportacionDesde1;
+    }
+
+    public void setCampoFechaImportacionDesde1(Calendar component) {
+        this.campoFechaImportacionDesde1 = component;
+    }
+
+    private HelpInline helpInlineFechaImportacionDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaImportacionDesde1() {
+        return helpInlineFechaImportacionDesde1;
+    }
+
+    public void setHelpInlineFechaImportacionDesde1(HelpInline hi) {
+        this.helpInlineFechaImportacionDesde1 = hi;
+    }
+
+    private StaticText campoFechaImportacionDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaImportacionDesde1Texto1() {
+        return campoFechaImportacionDesde1Texto1;
+    }
+
+    public void setCampoFechaImportacionDesde1Texto1(StaticText component) {
+        this.campoFechaImportacionDesde1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaImportacionDesde1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaImportacionDesde1() {
+        return converterFechaImportacionDesde1;
+    }
+  
+    public void setConverterFechaImportacionDesde1(SqlTimestampConverter converter) {
+        this.converterFechaImportacionDesde1 = converter;
+    }
+  
+    private Label labelFechaImportacionHasta1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaImportacionHasta1() {
+        return labelFechaImportacionHasta1;
+    }
+
+    public void setLabelFechaImportacionHasta1(Label l) {
+        this.labelFechaImportacionHasta1 = l;
+    }
+
+    private Calendar campoFechaImportacionHasta1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaImportacionHasta1() {
+        return campoFechaImportacionHasta1;
+    }
+
+    public void setCampoFechaImportacionHasta1(Calendar component) {
+        this.campoFechaImportacionHasta1 = component;
+    }
+
+    private HelpInline helpInlineFechaImportacionHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaImportacionHasta1() {
+        return helpInlineFechaImportacionHasta1;
+    }
+
+    public void setHelpInlineFechaImportacionHasta1(HelpInline hi) {
+        this.helpInlineFechaImportacionHasta1 = hi;
+    }
+
+    private StaticText campoFechaImportacionHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaImportacionHasta1Texto1() {
+        return campoFechaImportacionHasta1Texto1;
+    }
+
+    public void setCampoFechaImportacionHasta1Texto1(StaticText component) {
+        this.campoFechaImportacionHasta1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaImportacionHasta1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaImportacionHasta1() {
+        return converterFechaImportacionHasta1;
+    }
+  
+    public void setConverterFechaImportacionHasta1(SqlTimestampConverter converter) {
+        this.converterFechaImportacionHasta1 = converter;
+    }
+  
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonAplicar1() {
@@ -528,12 +961,15 @@ public class FichaPersona4 extends AbstractPageBean
 
     static long FUNCION_ACCION_2 = FichaPersonaConstants.FUNCION_DESVINCULAR_FICHA_PERSONA;
 
+    static long FUNCION_ACCION_3 = FichaPersonaConstants.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
+
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
             new Option(FUNCION_ACCION_1, BundleWebui.getString("vincular_ficha_persona")),
-            new Option(FUNCION_ACCION_2, BundleWebui.getString("desvincular_ficha_persona"))
+            new Option(FUNCION_ACCION_2, BundleWebui.getString("desvincular_ficha_persona")),
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("emitir_ficha_persona_importada"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -573,6 +1009,108 @@ public class FichaPersona4 extends AbstractPageBean
         return bitIdPotencialBenRendered;
     }
 
+    public boolean isIdDepartamentoRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitIdDepartamentoRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isIdDepartamentoRendered();
+        }
+    };
+
+    public Bit getBitIdDepartamentoRendered() {
+        return bitIdDepartamentoRendered;
+    }
+
+    public boolean isIdDistritoRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitIdDistritoRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isIdDistritoRendered();
+        }
+    };
+
+    public Bit getBitIdDistritoRendered() {
+        return bitIdDistritoRendered;
+    }
+
+    public boolean isIdBarrioRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitIdBarrioRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isIdBarrioRendered();
+        }
+    };
+
+    public Bit getBitIdBarrioRendered() {
+        return bitIdBarrioRendered;
+    }
+
+    public boolean isEsFichaPersonaImportadaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitEsFichaPersonaImportadaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEsFichaPersonaImportadaRendered();
+        }
+    };
+
+    public Bit getBitEsFichaPersonaImportadaRendered() {
+        return bitEsFichaPersonaImportadaRendered;
+    }
+
+    public boolean isFechaImportacionDesdeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitFechaImportacionDesdeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaImportacionDesdeRendered();
+        }
+    };
+
+    public Bit getBitFechaImportacionDesdeRendered() {
+        return bitFechaImportacionDesdeRendered;
+    }
+
+    public boolean isFechaImportacionHastaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_3;
+    }
+
+    private Bit bitFechaImportacionHastaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isFechaImportacionHastaRendered();
+        }
+    };
+
+    public Bit getBitFechaImportacionHastaRendered() {
+        return bitFechaImportacionHastaRendered;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Facades">
@@ -581,6 +1119,9 @@ public class FichaPersona4 extends AbstractPageBean
 
     @EJB
     private PotencialBenFacadeLocal potencialBenFacade;
+
+    @EJB
+    private UbicacionFacadeLocal ubicacionFacade;
 
     // </editor-fold>
 
@@ -618,6 +1159,26 @@ public class FichaPersona4 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer los valores de los campos">
+    private java.sql.Timestamp valorCampoFechaImportacionDesde1;
+
+    public java.sql.Timestamp getValorCampoFechaImportacionDesde1() {
+        return this.valorCampoFechaImportacionDesde1;
+    }
+
+    public void setValorCampoFechaImportacionDesde1(java.sql.Timestamp valor) {
+        this.valorCampoFechaImportacionDesde1 = valor;
+    }
+
+    private java.sql.Timestamp valorCampoFechaImportacionHasta1;
+
+    public java.sql.Timestamp getValorCampoFechaImportacionHasta1() {
+        return this.valorCampoFechaImportacionHasta1;
+    }
+
+    public void setValorCampoFechaImportacionHasta1(java.sql.Timestamp valor) {
+        this.valorCampoFechaImportacionHasta1 = valor;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idFichaPersona">
@@ -885,7 +1446,393 @@ public class FichaPersona4 extends AbstractPageBean
 
     // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idDepartamento">
+    private Ubicacion ubicacionIdDepartamento;
+
+    private FiltroBusqueda getFiltroBusquedaIdDepartamento() {
+        FiltroBusqueda filtro = new FiltroBusqueda();
+        return filtro;
+    }
+
+    public Ubicacion getUbicacionIdDepartamento() {
+        return this.ubicacionIdDepartamento;
+    }
+
+    public void campoIdDepartamento1_validate(FacesContext context, UIComponent component, Object value) {
+        this.ubicacionIdDepartamento = null;
+        String string = STP.getString(value);
+        if (string != null && !string.trim().equals("")) {
+            try {
+                Object o = STP.getObjetoCodigoRecurso(string);
+                String c = UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO;
+                FiltroBusqueda filtro = getFiltroBusquedaIdDepartamento();
+                String query = "select * from ubicacion ";
+                List<Ubicacion> lista;
+                boolean refresh = false;
+                if (o instanceof Long) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdDepartamento = this.ubicacionFacade.find(o, refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdDepartamento = lista.get(0);
+                        }
+                    }
+                } else if (o instanceof String) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdDepartamento = this.ubicacionFacade.findByCodigo(o.toString(), refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_CODIGO_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdDepartamento = lista.get(0);
+                        }
+                    }
+                }
+                if (this.ubicacionIdDepartamento == null) {
+                    throw new ExcepcionAplicacion(Bitacora.getTextoMensaje(CBM2.RECURSO_NO_REFERENCIABLE, "<" + c + ">", ""));
+                }
+            } catch (Exception ex) {
+                if (ex instanceof ValidatorException) {
+                    throw (ValidatorException) ex;
+                } else {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
+                    throw new ValidatorException(message);
+                }
+            }
+        }
+    }
+
+    private String textoCampoIdDepartamento1;
+
+    public String getTextoCampoIdDepartamento1() {
+        return this.textoCampoIdDepartamento1 != null ? this.textoCampoIdDepartamento1
+                : this.ubicacionIdDepartamento != null ? this.ubicacionIdDepartamento.getCodigoUbicacion()
+                : null;
+    }
+
+    public void setTextoCampoIdDepartamento1(String valor) {
+        this.textoCampoIdDepartamento1 = valor;
+    }
+
+    public String getToolTipCampoIdDepartamento1() {
+        return this.ubicacionIdDepartamento == null ? null : STP.trimToStringRecursoSinNombre(this.ubicacionIdDepartamento.getNombreUbicacion());
+    }
+
+    public String getScriptCampoIdDepartamento1Boton1() {
+        long funcion = UbicacionConstants.FUNCION_CONSULTAR_UBICACION;
+        String campo = this.getCampoIdDepartamento1().getClientId(this.getFacesContext());
+        String boton = this.getBotonAplicar1().getClientId(this.getFacesContext());
+        String urx = URX2.CONSULTA_TABLA_UBICACION;
+        return this.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, getFiltroBusquedaIdDepartamento());
+    }
+
+    public String getScriptCampoIdDepartamento1Boton2() {
+        String urx = URX2.CONSULTA_DETALLE_UBICACION;
+        Long id = this.ubicacionIdDepartamento == null ? null : this.ubicacionIdDepartamento.getIdUbicacion();
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+    }
+
+    private boolean isCampoIdDepartamento1Boton2Rendered() {
+        return this.isIdDepartamentoRendered();
+    }
+
+    private Bit bitCampoIdDepartamento1Boton2Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdDepartamento1Boton2Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdDepartamento1Boton2Rendered() {
+        return bitCampoIdDepartamento1Boton2Rendered;
+    }
+
+    private boolean isCampoIdDepartamento1Boton3Rendered() {
+        return !this.isCampoIdDepartamento1Boton2Rendered();
+    }
+
+    private Bit bitCampoIdDepartamento1Boton3Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdDepartamento1Boton3Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdDepartamento1Boton3Rendered() {
+        return bitCampoIdDepartamento1Boton3Rendered;
+    }
+
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idDistrito">
+    private Ubicacion ubicacionIdDistrito;
+
+    private FiltroBusqueda getFiltroBusquedaIdDistrito() {
+        FiltroBusqueda filtro = new FiltroBusqueda();
+        return filtro;
+    }
+
+    public Ubicacion getUbicacionIdDistrito() {
+        return this.ubicacionIdDistrito;
+    }
+
+    public void campoIdDistrito1_validate(FacesContext context, UIComponent component, Object value) {
+        this.ubicacionIdDistrito = null;
+        String string = STP.getString(value);
+        if (string != null && !string.trim().equals("")) {
+            try {
+                Object o = STP.getObjetoCodigoRecurso(string);
+                String c = UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO;
+                FiltroBusqueda filtro = getFiltroBusquedaIdDistrito();
+                String query = "select * from ubicacion ";
+                List<Ubicacion> lista;
+                boolean refresh = false;
+                if (o instanceof Long) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdDistrito = this.ubicacionFacade.find(o, refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdDistrito = lista.get(0);
+                        }
+                    }
+                } else if (o instanceof String) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdDistrito = this.ubicacionFacade.findByCodigo(o.toString(), refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_CODIGO_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdDistrito = lista.get(0);
+                        }
+                    }
+                }
+                if (this.ubicacionIdDistrito == null) {
+                    throw new ExcepcionAplicacion(Bitacora.getTextoMensaje(CBM2.RECURSO_NO_REFERENCIABLE, "<" + c + ">", ""));
+                }
+            } catch (Exception ex) {
+                if (ex instanceof ValidatorException) {
+                    throw (ValidatorException) ex;
+                } else {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
+                    throw new ValidatorException(message);
+                }
+            }
+        }
+    }
+
+    private String textoCampoIdDistrito1;
+
+    public String getTextoCampoIdDistrito1() {
+        return this.textoCampoIdDistrito1 != null ? this.textoCampoIdDistrito1
+                : this.ubicacionIdDistrito != null ? this.ubicacionIdDistrito.getCodigoUbicacion()
+                : null;
+    }
+
+    public void setTextoCampoIdDistrito1(String valor) {
+        this.textoCampoIdDistrito1 = valor;
+    }
+
+    public String getToolTipCampoIdDistrito1() {
+        return this.ubicacionIdDistrito == null ? null : STP.trimToStringRecursoSinNombre(this.ubicacionIdDistrito.getNombreUbicacion());
+    }
+
+    public String getScriptCampoIdDistrito1Boton1() {
+        long funcion = UbicacionConstants.FUNCION_CONSULTAR_UBICACION;
+        String campo = this.getCampoIdDistrito1().getClientId(this.getFacesContext());
+        String boton = this.getBotonAplicar1().getClientId(this.getFacesContext());
+        String urx = URX2.CONSULTA_TABLA_UBICACION;
+        return this.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, getFiltroBusquedaIdDistrito());
+    }
+
+    public String getScriptCampoIdDistrito1Boton2() {
+        String urx = URX2.CONSULTA_DETALLE_UBICACION;
+        Long id = this.ubicacionIdDistrito == null ? null : this.ubicacionIdDistrito.getIdUbicacion();
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+    }
+
+    private boolean isCampoIdDistrito1Boton2Rendered() {
+        return this.isIdDistritoRendered();
+    }
+
+    private Bit bitCampoIdDistrito1Boton2Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdDistrito1Boton2Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdDistrito1Boton2Rendered() {
+        return bitCampoIdDistrito1Boton2Rendered;
+    }
+
+    private boolean isCampoIdDistrito1Boton3Rendered() {
+        return !this.isCampoIdDistrito1Boton2Rendered();
+    }
+
+    private Bit bitCampoIdDistrito1Boton3Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdDistrito1Boton3Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdDistrito1Boton3Rendered() {
+        return bitCampoIdDistrito1Boton3Rendered;
+    }
+
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="metodos para buscar, validar y establecer idBarrio">
+    private Ubicacion ubicacionIdBarrio;
+
+    private FiltroBusqueda getFiltroBusquedaIdBarrio() {
+        FiltroBusqueda filtro = new FiltroBusqueda();
+        return filtro;
+    }
+
+    public Ubicacion getUbicacionIdBarrio() {
+        return this.ubicacionIdBarrio;
+    }
+
+    public void campoIdBarrio1_validate(FacesContext context, UIComponent component, Object value) {
+        this.ubicacionIdBarrio = null;
+        String string = STP.getString(value);
+        if (string != null && !string.trim().equals("")) {
+            try {
+                Object o = STP.getObjetoCodigoRecurso(string);
+                String c = UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO;
+                FiltroBusqueda filtro = getFiltroBusquedaIdBarrio();
+                String query = "select * from ubicacion ";
+                List<Ubicacion> lista;
+                boolean refresh = false;
+                if (o instanceof Long) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdBarrio = this.ubicacionFacade.find(o, refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_IDENTIFICACION_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdBarrio = lista.get(0);
+                        }
+                    }
+                } else if (o instanceof String) {
+                    if (filtro == null || StringUtils.isBlank(filtro.toString())) {
+                        this.ubicacionIdBarrio = this.ubicacionFacade.findByCodigo(o.toString(), refresh);
+                    } else {
+                        filtro.addCriterio(UbicacionConstants.COLUMNA_CODIGO_RECURSO, EnumOperadorCom.ES_IGUAL, o);
+                        query += "where " + filtro;
+                        lista = this.ubicacionFacade.findByQuery(query, EnumTipoQuery.NATIVE);
+                        if (lista != null && !lista.isEmpty()) {
+                            this.ubicacionIdBarrio = lista.get(0);
+                        }
+                    }
+                }
+                if (this.ubicacionIdBarrio == null) {
+                    throw new ExcepcionAplicacion(Bitacora.getTextoMensaje(CBM2.RECURSO_NO_REFERENCIABLE, "<" + c + ">", ""));
+                }
+            } catch (Exception ex) {
+                if (ex instanceof ValidatorException) {
+                    throw (ValidatorException) ex;
+                } else {
+                    FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null);
+                    throw new ValidatorException(message);
+                }
+            }
+        }
+    }
+
+    private String textoCampoIdBarrio1;
+
+    public String getTextoCampoIdBarrio1() {
+        return this.textoCampoIdBarrio1 != null ? this.textoCampoIdBarrio1
+                : this.ubicacionIdBarrio != null ? this.ubicacionIdBarrio.getCodigoUbicacion()
+                : null;
+    }
+
+    public void setTextoCampoIdBarrio1(String valor) {
+        this.textoCampoIdBarrio1 = valor;
+    }
+
+    public String getToolTipCampoIdBarrio1() {
+        return this.ubicacionIdBarrio == null ? null : STP.trimToStringRecursoSinNombre(this.ubicacionIdBarrio.getNombreUbicacion());
+    }
+
+    public String getScriptCampoIdBarrio1Boton1() {
+        long funcion = UbicacionConstants.FUNCION_CONSULTAR_UBICACION;
+        String campo = this.getCampoIdBarrio1().getClientId(this.getFacesContext());
+        String boton = this.getBotonAplicar1().getClientId(this.getFacesContext());
+        String urx = URX2.CONSULTA_TABLA_UBICACION;
+        return this.getGestor().getScriptAbrirVentanaBuscarCodigo(urx, funcion, campo, boton, getFiltroBusquedaIdBarrio());
+    }
+
+    public String getScriptCampoIdBarrio1Boton2() {
+        String urx = URX2.CONSULTA_DETALLE_UBICACION;
+        Long id = this.ubicacionIdBarrio == null ? null : this.ubicacionIdBarrio.getIdUbicacion();
+        return this.getGestor().getScriptAbrirVentanaVerDetalle(urx, id);
+    }
+
+    private boolean isCampoIdBarrio1Boton2Rendered() {
+        return this.isIdBarrioRendered();
+    }
+
+    private Bit bitCampoIdBarrio1Boton2Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdBarrio1Boton2Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdBarrio1Boton2Rendered() {
+        return bitCampoIdBarrio1Boton2Rendered;
+    }
+
+    private boolean isCampoIdBarrio1Boton3Rendered() {
+        return !this.isCampoIdBarrio1Boton2Rendered();
+    }
+
+    private Bit bitCampoIdBarrio1Boton3Rendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isCampoIdBarrio1Boton3Rendered();
+        }
+    };
+
+    public Bit getBitCampoIdBarrio1Boton3Rendered() {
+        return bitCampoIdBarrio1Boton3Rendered;
+    }
+
+    // </editor-fold>
+
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
+    public Object getOpcionesListaEsFichaPersonaImportada1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
+    }
+
+    private Integer valorListaEsFichaPersonaImportada1;
+
+    public Integer getValorListaEsFichaPersonaImportada1() {
+        return this.valorListaEsFichaPersonaImportada1;
+    }
+
+    public void setValorListaEsFichaPersonaImportada1(Integer valor) {
+        this.valorListaEsFichaPersonaImportada1 = valor;
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="botones de accion de la plantilla #4">
@@ -898,6 +1845,7 @@ public class FichaPersona4 extends AbstractPageBean
         return f == 0 ? null
                 : f == FUNCION_ACCION_1 ? this.accion1(f) /* vincularFichaPersona */
                 : f == FUNCION_ACCION_2 ? this.accion2(f) /* desvincularFichaPersona */
+                : f == FUNCION_ACCION_3 ? this.accion3(f) /* emitirFichaPersonaImportada */
                 : null;
     }
     // </editor-fold>
@@ -923,6 +1871,16 @@ public class FichaPersona4 extends AbstractPageBean
         return null;
     }
 
+    private String accion3(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirFichaPersonaImportada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_ficha_persona_importada");
+        }
+        return null;
+    }
+
     // </editor-fold>
 
 /**/
@@ -933,6 +1891,9 @@ public class FichaPersona4 extends AbstractPageBean
 
     @EJB
     private FichaPersonaBusinessProcessLocal fichaPersonaBusinessProcess;
+
+    @EJB
+    private ReporterBrokerLocal reporter;
 
     private void vincularFichaPersona() { /* vincular ficha persona */
         this.vincularFichaPersona(synchronously);
@@ -970,6 +1931,60 @@ public class FichaPersona4 extends AbstractPageBean
             }
         } catch (Exception ex) {
             this.getGestor().handle(ex);
+        }
+    }
+
+    private void emitirFichaPersonaImportada() { /* emitir ficha persona importada */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer esFichaPersonaImportada = this.getValorListaEsFichaPersonaImportada1();
+        Date fechaImportacionDesde = this.getValorCampoFechaImportacionDesde1();
+        Date fechaImportacionHasta = this.getValorCampoFechaImportacionHasta1();
+        String report = FichaPersonaConstants.INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
+        long function = FichaPersonaConstants.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("es_ficha_persona_importada", esFichaPersonaImportada);
+        parameters.put("fecha_importacion_desde", fechaImportacionDesde);
+        parameters.put("fecha_importacion_hasta", fechaImportacionHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from ficha_persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (esFichaPersonaImportada != null) {
+            args.add(esFichaPersonaImportada);
+            search += " and es_ficha_persona_importada=?";
+        }
+        if (fechaImportacionDesde != null) {
+            args.add(fechaImportacionDesde);
+            search += " and fecha_importacion>=?";
+        }
+        if (fechaImportacionHasta != null) {
+            args.add(fechaImportacionHasta);
+            search += " and fecha_importacion<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
         }
     }
 

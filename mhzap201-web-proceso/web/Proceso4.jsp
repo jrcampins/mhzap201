@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Proceso4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoCodigoSime1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoLote1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdUbicacion1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoEdadDesde1 campoEdadHasta1 campoLote1 campoCodigoSime1 campoFechaSolicitudPensionDesde1 campoFechaSolicitudPensionHasta1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoCedulaDesde1 campoCedulaHasta1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoMontoPension1 campoFechaResolucionRevPen1 campoNumeroResolucionRevPen1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -251,6 +251,97 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridEdadDesde1" rendered="#{Proceso4.bitEdadDesdeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelEdadDesde1}"
+                                                    id="labelEdadDesde1"
+                                                    for="campoEdadDesde1"
+                                                    text="edad desde"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEdadDesde2" rendered="#{Proceso4.bitEdadDesdeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoEdadDesde1"
+                                                    binding="#{Proceso4.campoEdadDesde1}"
+                                                    converter="#{Proceso4.converterEdadDesde1}"
+                                                    text="#{Proceso4.textoCampoEdadDesde1}"
+                                                    toolTip="BundleParametros.edad_desde"
+                                                    validatorExpression="#{Proceso4.validatorEdadDesde1.validate}"/>
+                                                <webuijsf:staticText id="campoEdadDesde1Texto1"
+                                                    binding="#{Proceso4.campoEdadDesde1Texto1}"/>
+                                                <webuijsf:message id="messageEdadDesde1"
+                                                    for="campoEdadDesde1"/>
+                                                <webuijsf:helpInline id="helpInlineEdadDesde1"
+                                                    binding="#{Proceso4.helpInlineEdadDesde1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.edad_desde"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEdadHasta1" rendered="#{Proceso4.bitEdadHastaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelEdadHasta1}"
+                                                    id="labelEdadHasta1"
+                                                    for="campoEdadHasta1"
+                                                    text="edad hasta"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEdadHasta2" rendered="#{Proceso4.bitEdadHastaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoEdadHasta1"
+                                                    binding="#{Proceso4.campoEdadHasta1}"
+                                                    converter="#{Proceso4.converterEdadHasta1}"
+                                                    text="#{Proceso4.textoCampoEdadHasta1}"
+                                                    toolTip="BundleParametros.edad_hasta"
+                                                    validatorExpression="#{Proceso4.validatorEdadHasta1.validate}"/>
+                                                <webuijsf:staticText id="campoEdadHasta1Texto1"
+                                                    binding="#{Proceso4.campoEdadHasta1Texto1}"/>
+                                                <webuijsf:message id="messageEdadHasta1"
+                                                    for="campoEdadHasta1"/>
+                                                <webuijsf:helpInline id="helpInlineEdadHasta1"
+                                                    binding="#{Proceso4.helpInlineEdadHasta1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.edad_hasta"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridLote1" rendered="#{Proceso4.bitLoteRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelLote1}"
+                                                    id="labelLote1"
+                                                    for="campoLote1"
+                                                    text="lote"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridLote2" rendered="#{Proceso4.bitLoteRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoLote1"
+                                                    binding="#{Proceso4.campoLote1}"
+                                                    converter="#{Proceso4.converterLote1}"
+                                                     required="true"
+                                                    text="#{Proceso4.textoCampoLote1}"
+                                                    toolTip="BundleParametros.lote"
+                                                    validatorExpression="#{Proceso4.validatorLote1.validate}"/>
+                                                <webuijsf:staticText id="campoLote1Texto1"
+                                                    binding="#{Proceso4.campoLote1Texto1}"/>
+                                                <webuijsf:message id="messageLote1"
+                                                    for="campoLote1"/>
+                                                <webuijsf:helpInline id="helpInlineLote1"
+                                                    binding="#{Proceso4.helpInlineLote1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.lote"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridCodigoSime1" rendered="#{Proceso4.bitCodigoSimeRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -404,6 +495,66 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
+                                                id="gridCedulaDesde1" rendered="#{Proceso4.bitCedulaDesdeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelCedulaDesde1}"
+                                                    id="labelCedulaDesde1"
+                                                    for="campoCedulaDesde1"
+                                                    text="c&#233;dula desde"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCedulaDesde2" rendered="#{Proceso4.bitCedulaDesdeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCedulaDesde1"
+                                                    binding="#{Proceso4.campoCedulaDesde1}"
+                                                    columns="50"
+                                                    text="#{Proceso4.textoCampoCedulaDesde1}"
+                                                    toolTip="BundleParametros.cedula_desde"
+                                                    validatorExpression="#{Proceso4.validatorCedulaDesde1.validate}"/>
+                                                <webuijsf:staticText id="campoCedulaDesde1Texto1"
+                                                    binding="#{Proceso4.campoCedulaDesde1Texto1}"/>
+                                                <webuijsf:message id="messageCedulaDesde1"
+                                                    for="campoCedulaDesde1"/>
+                                                <webuijsf:helpInline id="helpInlineCedulaDesde1"
+                                                    binding="#{Proceso4.helpInlineCedulaDesde1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.cedula_desde"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridCedulaHasta1" rendered="#{Proceso4.bitCedulaHastaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelCedulaHasta1}"
+                                                    id="labelCedulaHasta1"
+                                                    for="campoCedulaHasta1"
+                                                    text="c&#233;dula hasta"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridCedulaHasta2" rendered="#{Proceso4.bitCedulaHastaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoCedulaHasta1"
+                                                    binding="#{Proceso4.campoCedulaHasta1}"
+                                                    columns="50"
+                                                    text="#{Proceso4.textoCampoCedulaHasta1}"
+                                                    toolTip="BundleParametros.cedula_hasta"
+                                                    validatorExpression="#{Proceso4.validatorCedulaHasta1.validate}"/>
+                                                <webuijsf:staticText id="campoCedulaHasta1Texto1"
+                                                    binding="#{Proceso4.campoCedulaHasta1Texto1}"/>
+                                                <webuijsf:message id="messageCedulaHasta1"
+                                                    for="campoCedulaHasta1"/>
+                                                <webuijsf:helpInline id="helpInlineCedulaHasta1"
+                                                    binding="#{Proceso4.helpInlineCedulaHasta1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.cedula_hasta"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
                                                 id="gridNumeroResolucionDenPen1" rendered="#{Proceso4.bitNumeroResolucionDenPenRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -466,34 +617,96 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridLote1" rendered="#{Proceso4.bitLoteRendered.on}"
+                                                id="gridMontoPension1" rendered="#{Proceso4.bitMontoPensionRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
-                                                    binding="#{Proceso4.labelLote1}"
-                                                    id="labelLote1"
-                                                    for="campoLote1"
-                                                    text="lote"/>
+                                                    binding="#{Proceso4.labelMontoPension1}"
+                                                    id="labelMontoPension1"
+                                                    for="campoMontoPension1"
+                                                    text="monto pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
                                                 columns="7"
-                                                id="gridLote2" rendered="#{Proceso4.bitLoteRendered.on}"
+                                                id="gridMontoPension2" rendered="#{Proceso4.bitMontoPensionRendered.on}"
                                                 styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoLote1"
-                                                    binding="#{Proceso4.campoLote1}"
-                                                    converter="#{Proceso4.converterLote1}"
+                                                <webuijsf:textField id="campoMontoPension1"
+                                                    binding="#{Proceso4.campoMontoPension1}"
+                                                    converter="#{Proceso4.converterMontoPension1}"
                                                      required="true"
-                                                    text="#{Proceso4.textoCampoLote1}"
-                                                    toolTip="BundleParametros.lote"
-                                                    validatorExpression="#{Proceso4.validatorLote1.validate}"/>
-                                                <webuijsf:staticText id="campoLote1Texto1"
-                                                    binding="#{Proceso4.campoLote1Texto1}"/>
-                                                <webuijsf:message id="messageLote1"
-                                                    for="campoLote1"/>
-                                                <webuijsf:helpInline id="helpInlineLote1"
-                                                    binding="#{Proceso4.helpInlineLote1}"                                                    
+                                                    text="#{Proceso4.textoCampoMontoPension1}"
+                                                    toolTip="BundleParametros.monto_pension"
+                                                    validatorExpression="#{Proceso4.validatorMontoPension1.validate}"/>
+                                                <webuijsf:staticText id="campoMontoPension1Texto1"
+                                                    binding="#{Proceso4.campoMontoPension1Texto1}"/>
+                                                <webuijsf:message id="messageMontoPension1"
+                                                    for="campoMontoPension1"/>
+                                                <webuijsf:helpInline id="helpInlineMontoPension1"
+                                                    binding="#{Proceso4.helpInlineMontoPension1}"                                                    
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.lote"
+                                                    text="BundleParametros.monto_pension"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaResolucionRevPen1" rendered="#{Proceso4.bitFechaResolucionRevPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelFechaResolucionRevPen1}"
+                                                    id="labelFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"
+                                                    text="fecha resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaResolucionRevPen2" rendered="#{Proceso4.bitFechaResolucionRevPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaResolucionRevPen1"
+                                                    binding="#{Proceso4.campoFechaResolucionRevPen1}"
+                                                    maxDate="#{Proceso4.gestor.defaultMaxDate}"
+                                                    minDate="#{Proceso4.gestor.defaultMinDate}"
+                                                     required="true"
+                                                    selectedDate="#{Proceso4.valorCampoFechaResolucionRevPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen"/>
+                                                <webuijsf:staticText id="campoFechaResolucionRevPen1Texto1"
+                                                    binding="#{Proceso4.campoFechaResolucionRevPen1Texto1}"/>
+                                                <webuijsf:message id="messageFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaResolucionRevPen1"
+                                                    binding="#{Proceso4.helpInlineFechaResolucionRevPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_resolucion_rev_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridNumeroResolucionRevPen1" rendered="#{Proceso4.bitNumeroResolucionRevPenRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{Proceso4.labelNumeroResolucionRevPen1}"
+                                                    id="labelNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"
+                                                    text="n&#250;mero resoluci&#243;n revocaci&#243;n pensi&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridNumeroResolucionRevPen2" rendered="#{Proceso4.bitNumeroResolucionRevPenRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoNumeroResolucionRevPen1"
+                                                    binding="#{Proceso4.campoNumeroResolucionRevPen1}"
+                                                    columns="50"
+                                                     required="true"
+                                                    text="#{Proceso4.textoCampoNumeroResolucionRevPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen"
+                                                    validatorExpression="#{Proceso4.validatorNumeroResolucionRevPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionRevPen1Texto1"
+                                                    binding="#{Proceso4.campoNumeroResolucionRevPen1Texto1}"/>
+                                                <webuijsf:message id="messageNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"/>
+                                                <webuijsf:helpInline id="helpInlineNumeroResolucionRevPen1"
+                                                    binding="#{Proceso4.helpInlineNumeroResolucionRevPen1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.numero_resolucion_rev_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

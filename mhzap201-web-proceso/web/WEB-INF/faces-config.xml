@@ -108,8 +108,18 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
+        <managed-bean-name>ObjecionElePen4</managed-bean-name>
+        <managed-bean-class>com.egt.web.proceso.ObjecionElePen4</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>Persona4</managed-bean-name>
         <managed-bean-class>com.egt.web.proceso.Persona4</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>PersonaAnotada4</managed-bean-name>
+        <managed-bean-class>com.egt.web.proceso.PersonaAnotada4</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
