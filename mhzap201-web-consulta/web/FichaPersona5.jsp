@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{FichaPersona5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdFichaPersona1 campoCodigoFichaPersona1 campoNombreFichaPersona1 listaEsRespondente1 campoIdFichaHogar1 campoNumeroOrdenIdentificacion1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoEdad1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaNumeroTipoPersonaHogar1 listaNumeroSionoMiembroHogar1 campoNumeroOrdenIdenConyuge1 campoNumeroOrdenIdenPadre1 campoNumeroOrdenIdenMadre1 campoNumeroCedula1 campoLetraCedula1 listaNumeroTipoExcepcionCed1 campoFechaNacimiento1 campoIdDepartamentoNacimiento1 campoIdDistritoNacimiento1 listaNumeroTipoAreaLugarNac1 listaNumeroIdiomaHogar1 campoOtroIdiomaHogar1 listaNumeroSionoAsistenciaEsc1 listaNumeroMotivoInaEsc1 campoOtroMotivoInaEsc1 listaNumeroSionoMatriculacionEsc1 campoUltimoCursoAprobado1 listaNumeroNivelEduUltCurAprob1 listaNumeroSionoCursoNoFormal1 listaNumeroTipoSeguroMedico1 listaNumeroEstadoSalud1 listaNumeroClaseEnfAcc1 campoOtraClaseEnfAcc1 listaNumeroClaseEnfCronica1 campoOtraClaseEnfCronica1 listaNumeroSionoAtencionMedica1 listaNumeroMotivoNoAtencion1 campoOtroMotivoNoAtencion1 listaNumeroSionoCarnetVacunacion1 listaNumeroClaseImpedimento1 campoOtraClaseImpedimento1 listaNumeroCausaImpedimento1 campoOtraCausaImpedimento1 listaNumeroSionoDifParaCaminar1 listaNumeroSionoDifParaVestirse1 listaNumeroSionoDifParaBanarse1 listaNumeroSionoDifParaComer1 listaNumeroSionoDifParaLaCama1 listaNumeroSionoDifParaElBano1 listaNumeroSionoTrabajo1 listaNumeroMotivoNoTrabajo1 campoOtroMotivoNoTrabajo1 campoDescripcionOcupacionPrin1 campoDescripcionDedicacionPrin1 listaNumeroTipoRelacionLab1 campoMontoIngresoOcupacionPrin1 campoMontoIngresoOcupacionSecun1 campoMontoIngresoOtrasOcup1 campoMontoIngresoAlquileres1 campoMontoIngresoIntereses1 campoMontoIngresoAyudaFamPais1 campoMontoIngresoAyudaFamExter1 campoMontoIngresoJubilacion1 campoMontoIngresoPensiones1 campoMontoIngresoTekopora1 campoMontoIngresoProgramas1 campoMontoIngresoAdicional1 campoTotalIngresoMensual1 campoIdPotencialBen1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdFichaPersona1 campoCodigoFichaPersona1 campoNombreFichaPersona1 listaEsRespondente1 campoIdFichaHogar1 campoNumeroOrdenIdentificacion1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoEdad1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaNumeroTipoPersonaHogar1 listaNumeroSionoMiembroHogar1 campoNumeroOrdenIdenConyuge1 campoNumeroOrdenIdenPadre1 campoNumeroOrdenIdenMadre1 campoNumeroCedula1 campoLetraCedula1 listaNumeroTipoExcepcionCed1 campoFechaNacimiento1 campoIdDepartamentoNacimiento1 campoIdDistritoNacimiento1 listaNumeroTipoAreaLugarNac1 listaNumeroIdiomaHogar1 campoOtroIdiomaHogar1 listaNumeroSionoAsistenciaEsc1 listaNumeroMotivoInaEsc1 campoOtroMotivoInaEsc1 listaNumeroSionoMatriculacionEsc1 campoUltimoCursoAprobado1 listaNumeroNivelEduUltCurAprob1 listaNumeroSionoCursoNoFormal1 listaNumeroTipoSeguroMedico1 listaNumeroEstadoSalud1 listaNumeroClaseEnfAcc1 campoOtraClaseEnfAcc1 listaNumeroClaseEnfCronica1 campoOtraClaseEnfCronica1 listaNumeroSionoAtencionMedica1 listaNumeroMotivoNoAtencion1 campoOtroMotivoNoAtencion1 listaNumeroSionoCarnetVacunacion1 listaNumeroClaseImpedimento1 campoOtraClaseImpedimento1 listaNumeroCausaImpedimento1 campoOtraCausaImpedimento1 listaNumeroSionoDifParaCaminar1 listaNumeroSionoDifParaVestirse1 listaNumeroSionoDifParaBanarse1 listaNumeroSionoDifParaComer1 listaNumeroSionoDifParaLaCama1 listaNumeroSionoDifParaElBano1 listaNumeroSionoTrabajo1 listaNumeroMotivoNoTrabajo1 campoOtroMotivoNoTrabajo1 campoDescripcionOcupacionPrin1 campoDescripcionDedicacionPrin1 listaNumeroTipoRelacionLab1 campoMontoIngresoOcupacionPrin1 campoMontoIngresoOcupacionSecun1 campoMontoIngresoOtrasOcup1 campoMontoIngresoAlquileres1 campoMontoIngresoIntereses1 campoMontoIngresoAyudaFamPais1 campoMontoIngresoAyudaFamExter1 campoMontoIngresoJubilacion1 campoMontoIngresoPensiones1 campoMontoIngresoTekopora1 campoMontoIngresoProgramas1 campoMontoIngresoAdicional1 campoTotalIngresoMensual1 campoIdPotencialBen1 listaEsFichaPersonaImportada1 campoFechaImportacion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnIdFichaPersona1}"
+                                                    toolTip="BundleParametros.id_ficha_persona.ficha_persona"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFichaPersona1" rendered="false"
                                                     sort="id_ficha_persona">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnCodigoFichaPersona1}"
+                                                    toolTip="BundleParametros.codigo_ficha_persona.ficha_persona"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoFichaPersona1"
                                                     sort="codigo_ficha_persona">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNombreFichaPersona1}"
+                                                    toolTip="BundleParametros.nombre_ficha_persona.ficha_persona"
                                                     headerText="nombre"
                                                     id="tableColumnNombreFichaPersona1"
                                                     sort="nombre_ficha_persona">
@@ -263,6 +266,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnEsRespondente1}"
+                                                    toolTip="BundleParametros.es_respondente.ficha_persona"
                                                     headerText="respondente"
                                                     id="tableColumnEsRespondente1" rendered="false"
                                                     sort="es_respondente">
@@ -288,6 +292,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnIdFichaHogar1}"
+                                                    toolTip="BundleParametros.id_ficha_hogar.ficha_persona"
                                                     headerText="ficha hogar"
                                                     id="tableColumnIdFichaHogar1"
                                                     sort="codigo_ficha_hogar_1x1y3">
@@ -353,6 +358,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroOrdenIdentificacion1}"
+                                                    toolTip="BundleParametros.numero_orden_identificacion.ficha_persona"
                                                     headerText="n&#250;mero orden identificaci&#243;n"
                                                     id="tableColumnNumeroOrdenIdentificacion1"
                                                     sort="numero_orden_identificacion">
@@ -379,6 +385,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnPrimerNombre1}"
+                                                    toolTip="BundleParametros.primer_nombre.ficha_persona"
                                                     headerText="primer nombre"
                                                     id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
@@ -406,6 +413,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnSegundoNombre1}"
+                                                    toolTip="BundleParametros.segundo_nombre.ficha_persona"
                                                     headerText="segundo nombre"
                                                     id="tableColumnSegundoNombre1" rendered="false"
                                                     sort="segundo_nombre">
@@ -433,6 +441,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnPrimerApellido1}"
+                                                    toolTip="BundleParametros.primer_apellido.ficha_persona"
                                                     headerText="primer apellido"
                                                     id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
@@ -460,6 +469,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnSegundoApellido1}"
+                                                    toolTip="BundleParametros.segundo_apellido.ficha_persona"
                                                     headerText="segundo apellido"
                                                     id="tableColumnSegundoApellido1" rendered="false"
                                                     sort="segundo_apellido">
@@ -487,6 +497,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnApellidoCasada1}"
+                                                    toolTip="BundleParametros.apellido_casada.ficha_persona"
                                                     headerText="apellido casada"
                                                     id="tableColumnApellidoCasada1" rendered="false"
                                                     sort="apellido_casada">
@@ -514,6 +525,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnApodo1}"
+                                                    toolTip="BundleParametros.apodo.ficha_persona"
                                                     headerText="apodo"
                                                     id="tableColumnApodo1" rendered="false"
                                                     sort="apodo">
@@ -541,6 +553,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnEdad1}"
+                                                    toolTip="BundleParametros.edad.ficha_persona"
                                                     headerText="edad"
                                                     id="tableColumnEdad1" rendered="false"
                                                     sort="edad">
@@ -567,6 +580,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSexoPersona1}"
+                                                    toolTip="BundleParametros.numero_sexo_persona.ficha_persona"
                                                     headerText="sexo persona"
                                                     id="tableColumnNumeroSexoPersona1" rendered="false"
                                                     sort="codigo_sexo_persona_1x2y2">
@@ -593,6 +607,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroEstadoCivil1}"
+                                                    toolTip="BundleParametros.numero_estado_civil.ficha_persona"
                                                     headerText="estado civil"
                                                     id="tableColumnNumeroEstadoCivil1" rendered="false"
                                                     sort="codigo_estado_civil_1x3y2">
@@ -619,6 +634,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroTipoPersonaHogar1}"
+                                                    toolTip="BundleParametros.numero_tipo_persona_hogar.ficha_persona"
                                                     headerText="tipo persona hogar"
                                                     id="tableColumnNumeroTipoPersonaHogar1"
                                                     sort="codigo_tipo_persona_hoga_1x4y2">
@@ -645,6 +661,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoMiembroHogar1}"
+                                                    toolTip="BundleParametros.numero_siono_miembro_hogar.ficha_persona"
                                                     headerText="miembro hogar"
                                                     id="tableColumnNumeroSionoMiembroHogar1" rendered="false"
                                                     sort="codigo_siono_1x5y2">
@@ -671,6 +688,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroOrdenIdenConyuge1}"
+                                                    toolTip="BundleParametros.numero_orden_iden_conyuge.ficha_persona"
                                                     headerText="n&#250;mero orden identificaci&#243;n conyuge"
                                                     id="tableColumnNumeroOrdenIdenConyuge1" rendered="false"
                                                     sort="numero_orden_iden_conyuge">
@@ -697,6 +715,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroOrdenIdenPadre1}"
+                                                    toolTip="BundleParametros.numero_orden_iden_padre.ficha_persona"
                                                     headerText="n&#250;mero orden identificaci&#243;n padre"
                                                     id="tableColumnNumeroOrdenIdenPadre1" rendered="false"
                                                     sort="numero_orden_iden_padre">
@@ -723,6 +742,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroOrdenIdenMadre1}"
+                                                    toolTip="BundleParametros.numero_orden_iden_madre.ficha_persona"
                                                     headerText="n&#250;mero orden identificaci&#243;n madre"
                                                     id="tableColumnNumeroOrdenIdenMadre1" rendered="false"
                                                     sort="numero_orden_iden_madre">
@@ -749,6 +769,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroCedula1}"
+                                                    toolTip="BundleParametros.numero_cedula.ficha_persona"
                                                     headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
@@ -775,6 +796,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnLetraCedula1}"
+                                                    toolTip="BundleParametros.letra_cedula.ficha_persona"
                                                     headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
@@ -802,6 +824,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroTipoExcepcionCed1}"
+                                                    toolTip="BundleParametros.numero_tipo_excepcion_ced.ficha_persona"
                                                     headerText="tipo excepci&#243;n c&#233;dula"
                                                     id="tableColumnNumeroTipoExcepcionCed1" rendered="false"
                                                     sort="codigo_tipo_excepcion_ce_1x6y2">
@@ -828,6 +851,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnFechaNacimiento1}"
+                                                    toolTip="BundleParametros.fecha_nacimiento.ficha_persona"
                                                     headerText="fecha nacimiento"
                                                     id="tableColumnFechaNacimiento1" rendered="false"
                                                     sort="fecha_nacimiento">
@@ -854,6 +878,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnIdDepartamentoNacimiento1}"
+                                                    toolTip="BundleParametros.id_departamento_nacimiento.ficha_persona"
                                                     headerText="departamento nacimiento"
                                                     id="tableColumnIdDepartamentoNacimiento1" rendered="false"
                                                     sort="codigo_ubicacion_1x7y3">
@@ -919,6 +944,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnIdDistritoNacimiento1}"
+                                                    toolTip="BundleParametros.id_distrito_nacimiento.ficha_persona"
                                                     headerText="distrito nacimiento"
                                                     id="tableColumnIdDistritoNacimiento1" rendered="false"
                                                     sort="codigo_ubicacion_1x8y3">
@@ -984,6 +1010,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroTipoAreaLugarNac1}"
+                                                    toolTip="BundleParametros.numero_tipo_area_lugar_nac.ficha_persona"
                                                     headerText="tipo area lugar nacimiento"
                                                     id="tableColumnNumeroTipoAreaLugarNac1" rendered="false"
                                                     sort="codigo_tipo_area_1x9y2">
@@ -1010,6 +1037,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroIdiomaHogar1}"
+                                                    toolTip="BundleParametros.numero_idioma_hogar.ficha_persona"
                                                     headerText="idioma hogar"
                                                     id="tableColumnNumeroIdiomaHogar1" rendered="false"
                                                     sort="codigo_idioma_hogar_1x10y2">
@@ -1036,6 +1064,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtroIdiomaHogar1}"
+                                                    toolTip="BundleParametros.otro_idioma_hogar.ficha_persona"
                                                     headerText="otro idioma hogar"
                                                     id="tableColumnOtroIdiomaHogar1" rendered="false"
                                                     sort="otro_idioma_hogar">
@@ -1063,6 +1092,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoAsistenciaEsc1}"
+                                                    toolTip="BundleParametros.numero_siono_asistencia_esc.ficha_persona"
                                                     headerText="asistencia escolar"
                                                     id="tableColumnNumeroSionoAsistenciaEsc1" rendered="false"
                                                     sort="codigo_siono_1x11y2">
@@ -1089,6 +1119,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroMotivoInaEsc1}"
+                                                    toolTip="BundleParametros.numero_motivo_ina_esc.ficha_persona"
                                                     headerText="motivo inasistencia escolar"
                                                     id="tableColumnNumeroMotivoInaEsc1" rendered="false"
                                                     sort="codigo_motivo_ina_esc_1x12y2">
@@ -1115,6 +1146,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtroMotivoInaEsc1}"
+                                                    toolTip="BundleParametros.otro_motivo_ina_esc.ficha_persona"
                                                     headerText="otro motivo inasistencia escolar"
                                                     id="tableColumnOtroMotivoInaEsc1" rendered="false"
                                                     sort="otro_motivo_ina_esc">
@@ -1142,6 +1174,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoMatriculacionEsc1}"
+                                                    toolTip="BundleParametros.numero_siono_matriculacion_esc.ficha_persona"
                                                     headerText="matriculaci&#243;n escolar"
                                                     id="tableColumnNumeroSionoMatriculacionEsc1" rendered="false"
                                                     sort="codigo_siono_1x13y2">
@@ -1168,6 +1201,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnUltimoCursoAprobado1}"
+                                                    toolTip="BundleParametros.ultimo_curso_aprobado.ficha_persona"
                                                     headerText="ultimo curso aprobado"
                                                     id="tableColumnUltimoCursoAprobado1" rendered="false"
                                                     sort="ultimo_curso_aprobado">
@@ -1194,6 +1228,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroNivelEduUltCurAprob1}"
+                                                    toolTip="BundleParametros.numero_nivel_edu_ult_cur_aprob.ficha_persona"
                                                     headerText="nivel educativo &#250;ltimo curso aprobado"
                                                     id="tableColumnNumeroNivelEduUltCurAprob1" rendered="false"
                                                     sort="codigo_nivel_educativo_1x14y2">
@@ -1220,6 +1255,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoCursoNoFormal1}"
+                                                    toolTip="BundleParametros.numero_siono_curso_no_formal.ficha_persona"
                                                     headerText="curso no formal"
                                                     id="tableColumnNumeroSionoCursoNoFormal1" rendered="false"
                                                     sort="codigo_siono_1x15y2">
@@ -1246,6 +1282,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroTipoSeguroMedico1}"
+                                                    toolTip="BundleParametros.numero_tipo_seguro_medico.ficha_persona"
                                                     headerText="tipo seguro medico"
                                                     id="tableColumnNumeroTipoSeguroMedico1" rendered="false"
                                                     sort="codigo_tipo_seguro_medi_1x16y2">
@@ -1272,6 +1309,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroEstadoSalud1}"
+                                                    toolTip="BundleParametros.numero_estado_salud.ficha_persona"
                                                     headerText="estado salud"
                                                     id="tableColumnNumeroEstadoSalud1" rendered="false"
                                                     sort="codigo_estado_salud_1x17y2">
@@ -1298,6 +1336,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroClaseEnfAcc1}"
+                                                    toolTip="BundleParametros.numero_clase_enf_acc.ficha_persona"
                                                     headerText="clase enfermedad accidente"
                                                     id="tableColumnNumeroClaseEnfAcc1" rendered="false"
                                                     sort="codigo_clase_enf_acc_1x18y2">
@@ -1324,6 +1363,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtraClaseEnfAcc1}"
+                                                    toolTip="BundleParametros.otra_clase_enf_acc.ficha_persona"
                                                     headerText="otra clase enfermedad accidente"
                                                     id="tableColumnOtraClaseEnfAcc1" rendered="false"
                                                     sort="otra_clase_enf_acc">
@@ -1351,6 +1391,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroClaseEnfCronica1}"
+                                                    toolTip="BundleParametros.numero_clase_enf_cronica.ficha_persona"
                                                     headerText="clase enfermedad cronica"
                                                     id="tableColumnNumeroClaseEnfCronica1" rendered="false"
                                                     sort="codigo_clase_enf_cronic_1x19y2">
@@ -1377,6 +1418,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtraClaseEnfCronica1}"
+                                                    toolTip="BundleParametros.otra_clase_enf_cronica.ficha_persona"
                                                     headerText="otra clase enfermedad cronica"
                                                     id="tableColumnOtraClaseEnfCronica1" rendered="false"
                                                     sort="otra_clase_enf_cronica">
@@ -1404,6 +1446,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoAtencionMedica1}"
+                                                    toolTip="BundleParametros.numero_siono_atencion_medica.ficha_persona"
                                                     headerText="atenci&#243;n medica"
                                                     id="tableColumnNumeroSionoAtencionMedica1" rendered="false"
                                                     sort="codigo_siono_1x20y2">
@@ -1430,6 +1473,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroMotivoNoAtencion1}"
+                                                    toolTip="BundleParametros.numero_motivo_no_atencion.ficha_persona"
                                                     headerText="motivo no atenci&#243;n"
                                                     id="tableColumnNumeroMotivoNoAtencion1" rendered="false"
                                                     sort="codigo_motivo_no_atenci_1x21y2">
@@ -1456,6 +1500,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtroMotivoNoAtencion1}"
+                                                    toolTip="BundleParametros.otro_motivo_no_atencion.ficha_persona"
                                                     headerText="otro motivo no atenci&#243;n"
                                                     id="tableColumnOtroMotivoNoAtencion1" rendered="false"
                                                     sort="otro_motivo_no_atencion">
@@ -1483,6 +1528,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoCarnetVacunacion1}"
+                                                    toolTip="BundleParametros.numero_siono_carnet_vacunacion.ficha_persona"
                                                     headerText="carnet vacunaci&#243;n"
                                                     id="tableColumnNumeroSionoCarnetVacunacion1" rendered="false"
                                                     sort="codigo_siono_1x22y2">
@@ -1509,6 +1555,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroClaseImpedimento1}"
+                                                    toolTip="BundleParametros.numero_clase_impedimento.ficha_persona"
                                                     headerText="clase impedimento"
                                                     id="tableColumnNumeroClaseImpedimento1" rendered="false"
                                                     sort="codigo_clase_impediment_1x23y2">
@@ -1535,6 +1582,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtraClaseImpedimento1}"
+                                                    toolTip="BundleParametros.otra_clase_impedimento.ficha_persona"
                                                     headerText="otra clase impedimento"
                                                     id="tableColumnOtraClaseImpedimento1" rendered="false"
                                                     sort="otra_clase_impedimento">
@@ -1562,6 +1610,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroCausaImpedimento1}"
+                                                    toolTip="BundleParametros.numero_causa_impedimento.ficha_persona"
                                                     headerText="causa impedimento"
                                                     id="tableColumnNumeroCausaImpedimento1" rendered="false"
                                                     sort="codigo_causa_impediment_1x24y2">
@@ -1588,6 +1637,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtraCausaImpedimento1}"
+                                                    toolTip="BundleParametros.otra_causa_impedimento.ficha_persona"
                                                     headerText="otra causa impedimento"
                                                     id="tableColumnOtraCausaImpedimento1" rendered="false"
                                                     sort="otra_causa_impedimento">
@@ -1615,6 +1665,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaCaminar1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_caminar.ficha_persona"
                                                     headerText="dificultad para caminar"
                                                     id="tableColumnNumeroSionoDifParaCaminar1" rendered="false"
                                                     sort="codigo_siono_1x25y2">
@@ -1641,6 +1692,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaVestirse1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_vestirse.ficha_persona"
                                                     headerText="dificultad para vestirse"
                                                     id="tableColumnNumeroSionoDifParaVestirse1" rendered="false"
                                                     sort="codigo_siono_1x26y2">
@@ -1667,6 +1719,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaBanarse1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_banarse.ficha_persona"
                                                     headerText="dificultad para ba&#241;arse"
                                                     id="tableColumnNumeroSionoDifParaBanarse1" rendered="false"
                                                     sort="codigo_siono_1x27y2">
@@ -1693,6 +1746,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaComer1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_comer.ficha_persona"
                                                     headerText="dificultad para comer"
                                                     id="tableColumnNumeroSionoDifParaComer1" rendered="false"
                                                     sort="codigo_siono_1x28y2">
@@ -1719,6 +1773,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaLaCama1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_la_cama.ficha_persona"
                                                     headerText="dificultad para la cama"
                                                     id="tableColumnNumeroSionoDifParaLaCama1" rendered="false"
                                                     sort="codigo_siono_1x29y2">
@@ -1745,6 +1800,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoDifParaElBano1}"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_el_bano.ficha_persona"
                                                     headerText="dificultad para el ba&#241;o"
                                                     id="tableColumnNumeroSionoDifParaElBano1" rendered="false"
                                                     sort="codigo_siono_1x30y2">
@@ -1771,6 +1827,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroSionoTrabajo1}"
+                                                    toolTip="BundleParametros.numero_siono_trabajo.ficha_persona"
                                                     headerText="trabajo"
                                                     id="tableColumnNumeroSionoTrabajo1" rendered="false"
                                                     sort="codigo_siono_1x31y2">
@@ -1797,6 +1854,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroMotivoNoTrabajo1}"
+                                                    toolTip="BundleParametros.numero_motivo_no_trabajo.ficha_persona"
                                                     headerText="motivo no trabajo"
                                                     id="tableColumnNumeroMotivoNoTrabajo1" rendered="false"
                                                     sort="codigo_motivo_no_trabaj_1x32y2">
@@ -1823,6 +1881,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnOtroMotivoNoTrabajo1}"
+                                                    toolTip="BundleParametros.otro_motivo_no_trabajo.ficha_persona"
                                                     headerText="otro motivo no trabajo"
                                                     id="tableColumnOtroMotivoNoTrabajo1" rendered="false"
                                                     sort="otro_motivo_no_trabajo">
@@ -1850,6 +1909,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnDescripcionOcupacionPrin1}"
+                                                    toolTip="BundleParametros.descripcion_ocupacion_prin.ficha_persona"
                                                     headerText="descripci&#243;n ocupaci&#243;n principal"
                                                     id="tableColumnDescripcionOcupacionPrin1" rendered="false"
                                                     sort="descripcion_ocupacion_prin">
@@ -1877,6 +1937,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnDescripcionDedicacionPrin1}"
+                                                    toolTip="BundleParametros.descripcion_dedicacion_prin.ficha_persona"
                                                     headerText="descripci&#243;n dedicaci&#243;n principal"
                                                     id="tableColumnDescripcionDedicacionPrin1" rendered="false"
                                                     sort="descripcion_dedicacion_prin">
@@ -1904,6 +1965,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnNumeroTipoRelacionLab1}"
+                                                    toolTip="BundleParametros.numero_tipo_relacion_lab.ficha_persona"
                                                     headerText="tipo relaci&#243;n laboral"
                                                     id="tableColumnNumeroTipoRelacionLab1" rendered="false"
                                                     sort="codigo_tipo_relacion_la_1x33y2">
@@ -1930,6 +1992,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoOcupacionPrin1}"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_prin.ficha_persona"
                                                     headerText="monto ingreso ocupaci&#243;n principal"
                                                     id="tableColumnMontoIngresoOcupacionPrin1" rendered="false"
                                                     sort="monto_ingreso_ocupacion_prin">
@@ -1957,6 +2020,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoOcupacionSecun1}"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_secun.ficha_persona"
                                                     headerText="monto ingreso ocupaci&#243;n secundaria"
                                                     id="tableColumnMontoIngresoOcupacionSecun1" rendered="false"
                                                     sort="monto_ingreso_ocupacion_secun">
@@ -1984,6 +2048,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoOtrasOcup1}"
+                                                    toolTip="BundleParametros.monto_ingreso_otras_ocup.ficha_persona"
                                                     headerText="monto ingreso otras ocupaciones"
                                                     id="tableColumnMontoIngresoOtrasOcup1" rendered="false"
                                                     sort="monto_ingreso_otras_ocup">
@@ -2011,6 +2076,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoAlquileres1}"
+                                                    toolTip="BundleParametros.monto_ingreso_alquileres.ficha_persona"
                                                     headerText="monto ingreso alquileres"
                                                     id="tableColumnMontoIngresoAlquileres1" rendered="false"
                                                     sort="monto_ingreso_alquileres">
@@ -2038,6 +2104,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoIntereses1}"
+                                                    toolTip="BundleParametros.monto_ingreso_intereses.ficha_persona"
                                                     headerText="monto ingreso intereses"
                                                     id="tableColumnMontoIngresoIntereses1" rendered="false"
                                                     sort="monto_ingreso_intereses">
@@ -2065,6 +2132,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoAyudaFamPais1}"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_pais.ficha_persona"
                                                     headerText="monto ingreso ayuda familiar pais"
                                                     id="tableColumnMontoIngresoAyudaFamPais1" rendered="false"
                                                     sort="monto_ingreso_ayuda_fam_pais">
@@ -2092,6 +2160,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoAyudaFamExter1}"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_exter.ficha_persona"
                                                     headerText="monto ingreso ayuda familiar exterior"
                                                     id="tableColumnMontoIngresoAyudaFamExter1" rendered="false"
                                                     sort="monto_ingreso_ayuda_fam_exter">
@@ -2119,6 +2188,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoJubilacion1}"
+                                                    toolTip="BundleParametros.monto_ingreso_jubilacion.ficha_persona"
                                                     headerText="monto ingreso jubilaci&#243;n"
                                                     id="tableColumnMontoIngresoJubilacion1" rendered="false"
                                                     sort="monto_ingreso_jubilacion">
@@ -2146,6 +2216,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoPensiones1}"
+                                                    toolTip="BundleParametros.monto_ingreso_pensiones.ficha_persona"
                                                     headerText="monto ingreso pensiones"
                                                     id="tableColumnMontoIngresoPensiones1" rendered="false"
                                                     sort="monto_ingreso_pensiones">
@@ -2173,6 +2244,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoTekopora1}"
+                                                    toolTip="BundleParametros.monto_ingreso_tekopora.ficha_persona"
                                                     headerText="monto ingreso tekopora"
                                                     id="tableColumnMontoIngresoTekopora1" rendered="false"
                                                     sort="monto_ingreso_tekopora">
@@ -2200,6 +2272,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoProgramas1}"
+                                                    toolTip="BundleParametros.monto_ingreso_programas.ficha_persona"
                                                     headerText="monto ingreso programas"
                                                     id="tableColumnMontoIngresoProgramas1" rendered="false"
                                                     sort="monto_ingreso_programas">
@@ -2227,6 +2300,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnMontoIngresoAdicional1}"
+                                                    toolTip="BundleParametros.monto_ingreso_adicional.ficha_persona"
                                                     headerText="monto ingreso adicional"
                                                     id="tableColumnMontoIngresoAdicional1" rendered="false"
                                                     sort="monto_ingreso_adicional">
@@ -2254,6 +2328,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnTotalIngresoMensual1}"
+                                                    toolTip="BundleParametros.total_ingreso_mensual.ficha_persona"
                                                     headerText="total ingreso mensual"
                                                     id="tableColumnTotalIngresoMensual1" rendered="false"
                                                     sort="total_ingreso_mensual">
@@ -2281,6 +2356,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaPersona5.tableColumnIdPotencialBen1}"
+                                                    toolTip="BundleParametros.id_potencial_ben.ficha_persona"
                                                     headerText="potencial beneficiario"
                                                     id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="codigo_potencial_ben_1x34y3">
@@ -2343,6 +2419,59 @@
                                                 <webuijsf:button
                                                     id="campoIdPotencialBen1Boton2"
                                                     rendered="false"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{FichaPersona5.tableColumnEsFichaPersonaImportada1}"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"
+                                                    headerText="importada"
+                                                    id="tableColumnEsFichaPersonaImportada1" rendered="false"
+                                                    sort="es_ficha_persona_importada">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextEsFichaPersonaImportada1"
+                                                    text="#{currentRow.value['es_ficha_persona_importada']}"
+                                                    rendered="#{FichaPersona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona5.labelEsFichaPersonaImportada1}"
+                                                    id="labelEsFichaPersonaImportada1"
+                                                    for="listaEsFichaPersonaImportada1"/>
+                                                <webuijsf:dropDown id="listaEsFichaPersonaImportada1"
+                                                    binding="#{FichaPersona5.listaEsFichaPersonaImportada1}"
+                                                    converter="#{FichaPersona5.converterEsFichaPersonaImportada1}"
+                                                    disabled="true"
+                                                    items="#{FichaPersona5.asistente.opcionesListaEsFichaPersonaImportada1}"
+                                                    selected="#{currentRow.value['es_ficha_persona_importada']}"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"/>
+                                                <webuijsf:staticText id="listaEsFichaPersonaImportada1Texto1"
+                                                    binding="#{FichaPersona5.listaEsFichaPersonaImportada1Texto1}"/>
+                                                <webuijsf:message id="messageEsFichaPersonaImportada1"
+                                                    for="listaEsFichaPersonaImportada1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{FichaPersona5.tableColumnFechaImportacion1}"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"
+                                                    headerText="fecha importaci&#243;n"
+                                                    id="tableColumnFechaImportacion1" rendered="false"
+                                                    sort="fecha_importacion">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaImportacion1"
+                                                    text="#{currentRow.value['fecha_importacion']}"
+                                                    rendered="#{FichaPersona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona5.labelFechaImportacion1}"
+                                                    id="labelFechaImportacion1"
+                                                    for="campoFechaImportacion1"/>
+                                                <webuijsf:textField id="campoFechaImportacion1"
+                                                    binding="#{FichaPersona5.campoFechaImportacion1}"
+                                                    converter="#{FichaPersona5.converterFechaImportacion1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_importacion']}"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"/>
+                                                <webuijsf:staticText id="campoFechaImportacion1Texto1"
+                                                    binding="#{FichaPersona5.campoFechaImportacion1Texto1}"
+                                                    converter="#{FichaPersona5.converterFechaImportacion1}"
+                                                    text="#{currentRow.value['fecha_importacion']}"/>
+                                                <webuijsf:message id="messageFechaImportacion1"
+                                                    for="campoFechaImportacion1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

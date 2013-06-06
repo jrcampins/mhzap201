@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnIdLogProImpArcExt1}"
+                                                    toolTip="BundleParametros.id_log_pro_imp_arc_ext.log_pro_imp_arc_ext"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogProImpArcExt1" rendered="false"
                                                     sort="id_log_pro_imp_arc_ext">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnIdArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.id_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     headerText="archivo datos externos"
                                                     id="tableColumnIdArchivoDatosExt1" rendered="false"
                                                     sort="codigo_archivo_datos_ext_1x1y3">
@@ -274,6 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnCodigoTipoArcDatExt1}"
+                                                    toolTip="BundleParametros.codigo_tipo_arc_dat_ext.log_pro_imp_arc_ext"
                                                     headerText="c&#243;digo tipo archivo datos externos"
                                                     id="tableColumnCodigoTipoArcDatExt1" rendered="false"
                                                     sort="codigo_tipo_arc_dat_ext">
@@ -301,6 +304,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnNumeroTipoArcDatExt1}"
+                                                    toolTip="BundleParametros.numero_tipo_arc_dat_ext.log_pro_imp_arc_ext"
                                                     headerText="tipo archivo datos externos"
                                                     id="tableColumnNumeroTipoArcDatExt1" rendered="false"
                                                     sort="codigo_tipo_arc_dat_ext_1x2y2">
@@ -327,6 +331,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnNombreProveedorDatExt1}"
+                                                    toolTip="BundleParametros.nombre_proveedor_dat_ext.log_pro_imp_arc_ext"
                                                     headerText="nombre proveedor datos externos"
                                                     id="tableColumnNombreProveedorDatExt1" rendered="false"
                                                     sort="nombre_proveedor_dat_ext">
@@ -354,6 +359,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnCodigoProveedorDatExt1}"
+                                                    toolTip="BundleParametros.codigo_proveedor_dat_ext.log_pro_imp_arc_ext"
                                                     headerText="c&#243;digo proveedor datos externos"
                                                     id="tableColumnCodigoProveedorDatExt1" rendered="false"
                                                     sort="codigo_proveedor_dat_ext">
@@ -381,6 +387,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnCodigoArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.codigo_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     headerText="c&#243;digo archivo datos externos"
                                                     id="tableColumnCodigoArchivoDatosExt1"
                                                     sort="codigo_archivo_datos_ext">
@@ -408,6 +415,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnRutaArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.ruta_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     headerText="ruta archivo datos externos"
                                                     id="tableColumnRutaArchivoDatosExt1" rendered="false"
                                                     sort="ruta_archivo_datos_ext">
@@ -434,6 +442,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnEsImportado1}"
+                                                    toolTip="BundleParametros.es_importado.log_pro_imp_arc_ext"
                                                     headerText="importado"
                                                     id="tableColumnEsImportado1"
                                                     sort="es_importado">
@@ -459,6 +468,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_pro_imp_arc_ext"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -485,6 +495,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProImpArcExt5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_imp_arc_ext"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">

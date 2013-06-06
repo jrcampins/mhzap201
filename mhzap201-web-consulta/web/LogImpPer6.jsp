@@ -208,6 +208,7 @@
                                                     binding="#{LogImpPer6.labelIdLogImpPer1}"
                                                     id="labelIdLogImpPer1"
                                                     for="campoIdLogImpPer1"
+                                                    toolTip="BundleParametros.id_log_imp_per.log_imp_per"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpPer6.labelP01a1}"
                                                     id="labelP01a1"
                                                     for="campoP01a1"
+                                                    toolTip="BundleParametros.p01a.log_imp_per"
                                                     text="p01a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpPer6.labelP01b1}"
                                                     id="labelP01b1"
                                                     for="campoP01b1"
+                                                    toolTip="BundleParametros.p01b.log_imp_per"
                                                     text="p01b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpPer6.labelP01c1}"
                                                     id="labelP01c1"
                                                     for="campoP01c1"
+                                                    toolTip="BundleParametros.p01c.log_imp_per"
                                                     text="p01c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpPer6.labelP01d1}"
                                                     id="labelP01d1"
                                                     for="campoP01d1"
+                                                    toolTip="BundleParametros.p01d.log_imp_per"
                                                     text="p01d"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpPer6.labelP021}"
                                                     id="labelP021"
                                                     for="campoP021"
+                                                    toolTip="BundleParametros.p02.log_imp_per"
                                                     text="p02"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpPer6.labelP031}"
                                                     id="labelP031"
                                                     for="campoP031"
+                                                    toolTip="BundleParametros.p03.log_imp_per"
                                                     text="p03"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpPer6.labelP1041}"
                                                     id="labelP1041"
                                                     for="campoP1041"
+                                                    toolTip="BundleParametros.p104.log_imp_per"
                                                     text="p104"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpPer6.labelP431}"
                                                     id="labelP431"
                                                     for="campoP431"
+                                                    toolTip="BundleParametros.p43.log_imp_per"
                                                     text="p43"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpPer6.labelP45a1}"
                                                     id="labelP45a1"
                                                     for="campoP45a1"
+                                                    toolTip="BundleParametros.p45a.log_imp_per"
                                                     text="p45a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpPer6.labelP45b1}"
                                                     id="labelP45b1"
                                                     for="campoP45b1"
+                                                    toolTip="BundleParametros.p45b.log_imp_per"
                                                     text="p45b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpPer6.labelP44a1}"
                                                     id="labelP44a1"
                                                     for="campoP44a1"
+                                                    toolTip="BundleParametros.p44a.log_imp_per"
                                                     text="p44a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +604,7 @@
                                                     binding="#{LogImpPer6.labelP44b1}"
                                                     id="labelP44b1"
                                                     for="campoP44b1"
+                                                    toolTip="BundleParametros.p44b.log_imp_per"
                                                     text="p44b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +637,7 @@
                                                     binding="#{LogImpPer6.labelVar000011}"
                                                     id="labelVar000011"
                                                     for="campoVar000011"
+                                                    toolTip="BundleParametros.var00001.log_imp_per"
                                                     text="var00001"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -656,6 +670,7 @@
                                                     binding="#{LogImpPer6.labelVar000021}"
                                                     id="labelVar000021"
                                                     for="campoVar000021"
+                                                    toolTip="BundleParametros.var00002.log_imp_per"
                                                     text="var00002"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -688,6 +703,7 @@
                                                     binding="#{LogImpPer6.labelP461}"
                                                     id="labelP461"
                                                     for="campoP461"
+                                                    toolTip="BundleParametros.p46.log_imp_per"
                                                     text="p46"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -720,6 +736,7 @@
                                                     binding="#{LogImpPer6.labelP471}"
                                                     id="labelP471"
                                                     for="campoP471"
+                                                    toolTip="BundleParametros.p47.log_imp_per"
                                                     text="p47"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -752,6 +769,7 @@
                                                     binding="#{LogImpPer6.labelVar000301}"
                                                     id="labelVar000301"
                                                     for="campoVar000301"
+                                                    toolTip="BundleParametros.var00030.log_imp_per"
                                                     text="var00030"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -784,6 +802,7 @@
                                                     binding="#{LogImpPer6.labelP481}"
                                                     id="labelP481"
                                                     for="campoP481"
+                                                    toolTip="BundleParametros.p48.log_imp_per"
                                                     text="p48"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -816,6 +835,7 @@
                                                     binding="#{LogImpPer6.labelP491}"
                                                     id="labelP491"
                                                     for="campoP491"
+                                                    toolTip="BundleParametros.p49.log_imp_per"
                                                     text="p49"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -848,6 +868,7 @@
                                                     binding="#{LogImpPer6.labelP50a1}"
                                                     id="labelP50a1"
                                                     for="campoP50a1"
+                                                    toolTip="BundleParametros.p50a.log_imp_per"
                                                     text="p50a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -880,6 +901,7 @@
                                                     binding="#{LogImpPer6.labelP50b1}"
                                                     id="labelP50b1"
                                                     for="campoP50b1"
+                                                    toolTip="BundleParametros.p50b.log_imp_per"
                                                     text="p50b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -912,6 +934,7 @@
                                                     binding="#{LogImpPer6.labelP50c1}"
                                                     id="labelP50c1"
                                                     for="campoP50c1"
+                                                    toolTip="BundleParametros.p50c.log_imp_per"
                                                     text="p50c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -944,6 +967,7 @@
                                                     binding="#{LogImpPer6.labelP511}"
                                                     id="labelP511"
                                                     for="campoP511"
+                                                    toolTip="BundleParametros.p51.log_imp_per"
                                                     text="p51"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -976,6 +1000,7 @@
                                                     binding="#{LogImpPer6.labelVar000031}"
                                                     id="labelVar000031"
                                                     for="campoVar000031"
+                                                    toolTip="BundleParametros.var00003.log_imp_per"
                                                     text="var00003"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1008,6 +1033,7 @@
                                                     binding="#{LogImpPer6.labelVar000041}"
                                                     id="labelVar000041"
                                                     for="campoVar000041"
+                                                    toolTip="BundleParametros.var00004.log_imp_per"
                                                     text="var00004"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1040,6 +1066,7 @@
                                                     binding="#{LogImpPer6.labelP52d1}"
                                                     id="labelP52d1"
                                                     for="campoP52d1"
+                                                    toolTip="BundleParametros.p52d.log_imp_per"
                                                     text="p52d"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1072,6 +1099,7 @@
                                                     binding="#{LogImpPer6.labelP52m1}"
                                                     id="labelP52m1"
                                                     for="campoP52m1"
+                                                    toolTip="BundleParametros.p52m.log_imp_per"
                                                     text="p52m"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1104,6 +1132,7 @@
                                                     binding="#{LogImpPer6.labelP52a1}"
                                                     id="labelP52a1"
                                                     for="campoP52a1"
+                                                    toolTip="BundleParametros.p52a.log_imp_per"
                                                     text="p52a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1136,6 +1165,7 @@
                                                     binding="#{LogImpPer6.labelP53a1}"
                                                     id="labelP53a1"
                                                     for="campoP53a1"
+                                                    toolTip="BundleParametros.p53a.log_imp_per"
                                                     text="p53a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1168,6 +1198,7 @@
                                                     binding="#{LogImpPer6.labelP53b1}"
                                                     id="labelP53b1"
                                                     for="campoP53b1"
+                                                    toolTip="BundleParametros.p53b.log_imp_per"
                                                     text="p53b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1200,6 +1231,7 @@
                                                     binding="#{LogImpPer6.labelP53c1}"
                                                     id="labelP53c1"
                                                     for="campoP53c1"
+                                                    toolTip="BundleParametros.p53c.log_imp_per"
                                                     text="p53c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1232,6 +1264,7 @@
                                                     binding="#{LogImpPer6.labelP53z1}"
                                                     id="labelP53z1"
                                                     for="campoP53z1"
+                                                    toolTip="BundleParametros.p53z.log_imp_per"
                                                     text="p53z"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1264,6 +1297,7 @@
                                                     binding="#{LogImpPer6.labelP541}"
                                                     id="labelP541"
                                                     for="campoP541"
+                                                    toolTip="BundleParametros.p54.log_imp_per"
                                                     text="p54"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1296,6 +1330,7 @@
                                                     binding="#{LogImpPer6.labelP54e1}"
                                                     id="labelP54e1"
                                                     for="campoP54e1"
+                                                    toolTip="BundleParametros.p54e.log_imp_per"
                                                     text="p54e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1328,6 +1363,7 @@
                                                     binding="#{LogImpPer6.labelP561}"
                                                     id="labelP561"
                                                     for="campoP561"
+                                                    toolTip="BundleParametros.p56.log_imp_per"
                                                     text="p56"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1360,6 +1396,7 @@
                                                     binding="#{LogImpPer6.labelP581}"
                                                     id="labelP581"
                                                     for="campoP581"
+                                                    toolTip="BundleParametros.p58.log_imp_per"
                                                     text="p58"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1392,6 +1429,7 @@
                                                     binding="#{LogImpPer6.labelP58e1}"
                                                     id="labelP58e1"
                                                     for="campoP58e1"
+                                                    toolTip="BundleParametros.p58e.log_imp_per"
                                                     text="p58e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1424,6 +1462,7 @@
                                                     binding="#{LogImpPer6.labelP591}"
                                                     id="labelP591"
                                                     for="campoP591"
+                                                    toolTip="BundleParametros.p59.log_imp_per"
                                                     text="p59"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1456,6 +1495,7 @@
                                                     binding="#{LogImpPer6.labelP601}"
                                                     id="labelP601"
                                                     for="campoP601"
+                                                    toolTip="BundleParametros.p60.log_imp_per"
                                                     text="p60"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1488,6 +1528,7 @@
                                                     binding="#{LogImpPer6.labelP611}"
                                                     id="labelP611"
                                                     for="campoP611"
+                                                    toolTip="BundleParametros.p61.log_imp_per"
                                                     text="p61"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1520,6 +1561,7 @@
                                                     binding="#{LogImpPer6.labelP621}"
                                                     id="labelP621"
                                                     for="campoP621"
+                                                    toolTip="BundleParametros.p62.log_imp_per"
                                                     text="p62"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1552,6 +1594,7 @@
                                                     binding="#{LogImpPer6.labelP631}"
                                                     id="labelP631"
                                                     for="campoP631"
+                                                    toolTip="BundleParametros.p63.log_imp_per"
                                                     text="p63"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1584,6 +1627,7 @@
                                                     binding="#{LogImpPer6.labelP641}"
                                                     id="labelP641"
                                                     for="campoP641"
+                                                    toolTip="BundleParametros.p64.log_imp_per"
                                                     text="p64"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1616,6 +1660,7 @@
                                                     binding="#{LogImpPer6.labelP651}"
                                                     id="labelP651"
                                                     for="campoP651"
+                                                    toolTip="BundleParametros.p65.log_imp_per"
                                                     text="p65"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1648,6 +1693,7 @@
                                                     binding="#{LogImpPer6.labelP65e1}"
                                                     id="labelP65e1"
                                                     for="campoP65e1"
+                                                    toolTip="BundleParametros.p65e.log_imp_per"
                                                     text="p65e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1680,6 +1726,7 @@
                                                     binding="#{LogImpPer6.labelP661}"
                                                     id="labelP661"
                                                     for="campoP661"
+                                                    toolTip="BundleParametros.p66.log_imp_per"
                                                     text="p66"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1712,6 +1759,7 @@
                                                     binding="#{LogImpPer6.labelP66e1}"
                                                     id="labelP66e1"
                                                     for="campoP66e1"
+                                                    toolTip="BundleParametros.p66e.log_imp_per"
                                                     text="p66e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1744,6 +1792,7 @@
                                                     binding="#{LogImpPer6.labelP671}"
                                                     id="labelP671"
                                                     for="campoP671"
+                                                    toolTip="BundleParametros.p67.log_imp_per"
                                                     text="p67"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1776,6 +1825,7 @@
                                                     binding="#{LogImpPer6.labelP681}"
                                                     id="labelP681"
                                                     for="campoP681"
+                                                    toolTip="BundleParametros.p68.log_imp_per"
                                                     text="p68"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1808,6 +1858,7 @@
                                                     binding="#{LogImpPer6.labelP68e1}"
                                                     id="labelP68e1"
                                                     for="campoP68e1"
+                                                    toolTip="BundleParametros.p68e.log_imp_per"
                                                     text="p68e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1840,6 +1891,7 @@
                                                     binding="#{LogImpPer6.labelP731}"
                                                     id="labelP731"
                                                     for="campoP731"
+                                                    toolTip="BundleParametros.p73.log_imp_per"
                                                     text="p73"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1872,6 +1924,7 @@
                                                     binding="#{LogImpPer6.labelP741}"
                                                     id="labelP741"
                                                     for="campoP741"
+                                                    toolTip="BundleParametros.p74.log_imp_per"
                                                     text="p74"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1904,6 +1957,7 @@
                                                     binding="#{LogImpPer6.labelVar000061}"
                                                     id="labelVar000061"
                                                     for="campoVar000061"
+                                                    toolTip="BundleParametros.var00006.log_imp_per"
                                                     text="var00006"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1936,6 +1990,7 @@
                                                     binding="#{LogImpPer6.labelVar000071}"
                                                     id="labelVar000071"
                                                     for="campoVar000071"
+                                                    toolTip="BundleParametros.var00007.log_imp_per"
                                                     text="var00007"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1968,6 +2023,7 @@
                                                     binding="#{LogImpPer6.labelVar000081}"
                                                     id="labelVar000081"
                                                     for="campoVar000081"
+                                                    toolTip="BundleParametros.var00008.log_imp_per"
                                                     text="var00008"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2000,6 +2056,7 @@
                                                     binding="#{LogImpPer6.labelVar000091}"
                                                     id="labelVar000091"
                                                     for="campoVar000091"
+                                                    toolTip="BundleParametros.var00009.log_imp_per"
                                                     text="var00009"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2032,6 +2089,7 @@
                                                     binding="#{LogImpPer6.labelVar000101}"
                                                     id="labelVar000101"
                                                     for="campoVar000101"
+                                                    toolTip="BundleParametros.var00010.log_imp_per"
                                                     text="var00010"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2064,6 +2122,7 @@
                                                     binding="#{LogImpPer6.labelVar000111}"
                                                     id="labelVar000111"
                                                     for="campoVar000111"
+                                                    toolTip="BundleParametros.var00011.log_imp_per"
                                                     text="var00011"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2096,6 +2155,7 @@
                                                     binding="#{LogImpPer6.labelVar000311}"
                                                     id="labelVar000311"
                                                     for="campoVar000311"
+                                                    toolTip="BundleParametros.var00031.log_imp_per"
                                                     text="var00031"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2128,6 +2188,7 @@
                                                     binding="#{LogImpPer6.labelVar000121}"
                                                     id="labelVar000121"
                                                     for="campoVar000121"
+                                                    toolTip="BundleParametros.var00012.log_imp_per"
                                                     text="var00012"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2160,6 +2221,7 @@
                                                     binding="#{LogImpPer6.labelVar000131}"
                                                     id="labelVar000131"
                                                     for="campoVar000131"
+                                                    toolTip="BundleParametros.var00013.log_imp_per"
                                                     text="var00013"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2192,6 +2254,7 @@
                                                     binding="#{LogImpPer6.labelP861}"
                                                     id="labelP861"
                                                     for="campoP861"
+                                                    toolTip="BundleParametros.p86.log_imp_per"
                                                     text="p86"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2224,6 +2287,7 @@
                                                     binding="#{LogImpPer6.labelP871}"
                                                     id="labelP871"
                                                     for="campoP871"
+                                                    toolTip="BundleParametros.p87.log_imp_per"
                                                     text="p87"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2256,6 +2320,7 @@
                                                     binding="#{LogImpPer6.labelP87e1}"
                                                     id="labelP87e1"
                                                     for="campoP87e1"
+                                                    toolTip="BundleParametros.p87e.log_imp_per"
                                                     text="p87e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2288,6 +2353,7 @@
                                                     binding="#{LogImpPer6.labelP881}"
                                                     id="labelP881"
                                                     for="campoP881"
+                                                    toolTip="BundleParametros.p88.log_imp_per"
                                                     text="p88"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2320,6 +2386,7 @@
                                                     binding="#{LogImpPer6.labelP88e1}"
                                                     id="labelP88e1"
                                                     for="campoP88e1"
+                                                    toolTip="BundleParametros.p88e.log_imp_per"
                                                     text="p88e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2352,6 +2419,7 @@
                                                     binding="#{LogImpPer6.labelP911}"
                                                     id="labelP911"
                                                     for="campoP911"
+                                                    toolTip="BundleParametros.p91.log_imp_per"
                                                     text="p91"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2384,6 +2452,7 @@
                                                     binding="#{LogImpPer6.labelVar000171}"
                                                     id="labelVar000171"
                                                     for="campoVar000171"
+                                                    toolTip="BundleParametros.var00017.log_imp_per"
                                                     text="var00017"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2416,6 +2485,7 @@
                                                     binding="#{LogImpPer6.labelVar000181}"
                                                     id="labelVar000181"
                                                     for="campoVar000181"
+                                                    toolTip="BundleParametros.var00018.log_imp_per"
                                                     text="var00018"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2448,6 +2518,7 @@
                                                     binding="#{LogImpPer6.labelVar000191}"
                                                     id="labelVar000191"
                                                     for="campoVar000191"
+                                                    toolTip="BundleParametros.var00019.log_imp_per"
                                                     text="var00019"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2480,6 +2551,7 @@
                                                     binding="#{LogImpPer6.labelVar000201}"
                                                     id="labelVar000201"
                                                     for="campoVar000201"
+                                                    toolTip="BundleParametros.var00020.log_imp_per"
                                                     text="var00020"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2512,6 +2584,7 @@
                                                     binding="#{LogImpPer6.labelVar000211}"
                                                     id="labelVar000211"
                                                     for="campoVar000211"
+                                                    toolTip="BundleParametros.var00021.log_imp_per"
                                                     text="var00021"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2544,6 +2617,7 @@
                                                     binding="#{LogImpPer6.labelVar000221}"
                                                     id="labelVar000221"
                                                     for="campoVar000221"
+                                                    toolTip="BundleParametros.var00022.log_imp_per"
                                                     text="var00022"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2576,6 +2650,7 @@
                                                     binding="#{LogImpPer6.labelVar000231}"
                                                     id="labelVar000231"
                                                     for="campoVar000231"
+                                                    toolTip="BundleParametros.var00023.log_imp_per"
                                                     text="var00023"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2608,6 +2683,7 @@
                                                     binding="#{LogImpPer6.labelVar000241}"
                                                     id="labelVar000241"
                                                     for="campoVar000241"
+                                                    toolTip="BundleParametros.var00024.log_imp_per"
                                                     text="var00024"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2640,6 +2716,7 @@
                                                     binding="#{LogImpPer6.labelVar000251}"
                                                     id="labelVar000251"
                                                     for="campoVar000251"
+                                                    toolTip="BundleParametros.var00025.log_imp_per"
                                                     text="var00025"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2672,6 +2749,7 @@
                                                     binding="#{LogImpPer6.labelVar000261}"
                                                     id="labelVar000261"
                                                     for="campoVar000261"
+                                                    toolTip="BundleParametros.var00026.log_imp_per"
                                                     text="var00026"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2704,6 +2782,7 @@
                                                     binding="#{LogImpPer6.labelVar000271}"
                                                     id="labelVar000271"
                                                     for="campoVar000271"
+                                                    toolTip="BundleParametros.var00027.log_imp_per"
                                                     text="var00027"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2736,6 +2815,7 @@
                                                     binding="#{LogImpPer6.labelVar000281}"
                                                     id="labelVar000281"
                                                     for="campoVar000281"
+                                                    toolTip="BundleParametros.var00028.log_imp_per"
                                                     text="var00028"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2768,6 +2848,7 @@
                                                     binding="#{LogImpPer6.labelP921}"
                                                     id="labelP921"
                                                     for="campoP921"
+                                                    toolTip="BundleParametros.p92.log_imp_per"
                                                     text="p92"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2800,6 +2881,7 @@
                                                     binding="#{LogImpPer6.labelIcv1}"
                                                     id="labelIcv1"
                                                     for="campoIcv1"
+                                                    toolTip="BundleParametros.icv.log_imp_per"
                                                     text="icv"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2832,6 +2914,7 @@
                                                     binding="#{LogImpPer6.labelFichaActiva1}"
                                                     id="labelFichaActiva1"
                                                     for="campoFichaActiva1"
+                                                    toolTip="BundleParametros.ficha_activa.log_imp_per"
                                                     text="ficha activa"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2864,6 +2947,7 @@
                                                     binding="#{LogImpPer6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_per"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2895,6 +2979,7 @@
                                                     binding="#{LogImpPer6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_per"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2927,6 +3012,7 @@
                                                     binding="#{LogImpPer6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_per"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2959,6 +3045,7 @@
                                                     binding="#{LogImpPer6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_per"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2997,6 +3084,7 @@
                                                     binding="#{LogImpPer6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_per"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdLogProPreProPag1}"
+                                                    toolTip="BundleParametros.id_log_pro_pre_pro_pag.log_pro_pre_pro_pag"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogProPreProPag1" rendered="false"
                                                     sort="id_log_pro_pre_pro_pag">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.log_pro_pre_pro_pag"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x1y3">
@@ -274,6 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnCodigoPersona1}"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_pre_pro_pag"
                                                     headerText="c&#243;digo persona"
                                                     id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
@@ -301,6 +304,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnNombrePersona1}"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_pre_pro_pag"
                                                     headerText="nombre persona"
                                                     id="tableColumnNombrePersona1" rendered="false"
                                                     sort="nombre_persona">
@@ -328,6 +332,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_pre_pro_pag"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x2y3">
@@ -393,6 +398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_pre_pro_pag"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x3y3">
@@ -458,6 +464,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_pre_pro_pag"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -523,6 +530,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnNumeroCondicionPension1}"
+                                                    toolTip="BundleParametros.numero_condicion_pension.log_pro_pre_pro_pag"
                                                     headerText="condici&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionPension1" rendered="false"
                                                     sort="codigo_condicion_pension_1x5y2">
@@ -549,6 +557,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnFechaSolicitudPension1}"
+                                                    toolTip="BundleParametros.fecha_solicitud_pension.log_pro_pre_pro_pag"
                                                     headerText="fecha solicitud pensi&#243;n"
                                                     id="tableColumnFechaSolicitudPension1" rendered="false"
                                                     sort="fecha_solicitud_pension">
@@ -575,6 +584,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnNumeroCondicionDenuPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.log_pro_pre_pro_pag"
                                                     headerText="condici&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnNumeroCondicionDenuPen1" rendered="false"
                                                     sort="codigo_condicion_denu_pe_1x6y2">
@@ -601,6 +611,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnNumeroCondicionRecoPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.log_pro_pre_pro_pag"
                                                     headerText="condici&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionRecoPen1" rendered="false"
                                                     sort="codigo_condicion_reco_pe_1x7y2">
@@ -627,6 +638,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnEsProcesado1}"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_pre_pro_pag"
                                                     headerText="procesado"
                                                     id="tableColumnEsProcesado1"
                                                     sort="es_procesado">
@@ -652,6 +664,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_pro_pre_pro_pag"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -678,6 +691,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProPreProPag5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_pre_pro_pag"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">

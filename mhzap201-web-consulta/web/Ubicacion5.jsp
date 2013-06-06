@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Ubicacion5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnIdUbicacion1}"
+                                                    toolTip="BundleParametros.id_ubicacion.ubicacion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdUbicacion1" rendered="false"
                                                     sort="id_ubicacion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnCodigoUbicacion1}"
+                                                    toolTip="BundleParametros.codigo_ubicacion.ubicacion"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoUbicacion1"
                                                     sort="codigo_ubicacion">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnNombreUbicacion1}"
+                                                    toolTip="BundleParametros.nombre_ubicacion.ubicacion"
                                                     headerText="nombre"
                                                     id="tableColumnNombreUbicacion1"
                                                     sort="nombre_ubicacion">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnIdUbicacionSuperior1}"
+                                                    toolTip="BundleParametros.id_ubicacion_superior.ubicacion"
                                                     headerText="ubicaci&#243;n superior"
                                                     id="tableColumnIdUbicacionSuperior1" rendered="false"
                                                     sort="codigo_ubicacion_1x1y3">
@@ -323,112 +327,8 @@
                                                     rendered="false"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    binding="#{Ubicacion5.tableColumnNumeroTipoNodo1}"
-                                                    headerText="tipo nodo"
-                                                    id="tableColumnNumeroTipoNodo1" rendered="false"
-                                                    sort="codigo_tipo_nodo_1x2y2">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextNumeroTipoNodo1"
-                                                    text="#{currentRow.value['codigo_tipo_nodo_1x2y2']}"
-                                                    rendered="#{Ubicacion5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion5.labelNumeroTipoNodo1}"
-                                                    id="labelNumeroTipoNodo1"
-                                                    for="listaNumeroTipoNodo1"/>
-                                                <webuijsf:dropDown id="listaNumeroTipoNodo1"
-                                                    binding="#{Ubicacion5.listaNumeroTipoNodo1}"
-                                                    converter="#{Ubicacion5.converterNumeroTipoNodo1}"
-                                                    disabled="#{Ubicacion5.gestor.filaNoProcesada}"
-                                                    items="#{Ubicacion5.asistente.opcionesListaNumeroTipoNodo1}"
-                                                    selected="#{currentRow.value['numero_tipo_nodo']}"
-                                                    toolTip="BundleParametros.numero_tipo_nodo.ubicacion"/>
-                                                <webuijsf:staticText id="listaNumeroTipoNodo1Texto1"
-                                                    binding="#{Ubicacion5.listaNumeroTipoNodo1Texto1}"
-                                                    text="#{currentRow.value['codigo_tipo_nodo_1x2y2']}"/>
-                                                <webuijsf:message id="messageNumeroTipoNodo1"
-                                                    for="listaNumeroTipoNodo1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Ubicacion5.tableColumnNumeroNivelUbicacion1}"
-                                                    headerText="nivel"
-                                                    id="tableColumnNumeroNivelUbicacion1" rendered="false"
-                                                    sort="codigo_nivel_ubicacion_1x3y2">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextNumeroNivelUbicacion1"
-                                                    text="#{currentRow.value['codigo_nivel_ubicacion_1x3y2']}"
-                                                    rendered="#{Ubicacion5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion5.labelNumeroNivelUbicacion1}"
-                                                    id="labelNumeroNivelUbicacion1"
-                                                    for="listaNumeroNivelUbicacion1"/>
-                                                <webuijsf:dropDown id="listaNumeroNivelUbicacion1"
-                                                    binding="#{Ubicacion5.listaNumeroNivelUbicacion1}"
-                                                    converter="#{Ubicacion5.converterNumeroNivelUbicacion1}"
-                                                    disabled="#{Ubicacion5.gestor.filaNoProcesada}"
-                                                    items="#{Ubicacion5.asistente.opcionesListaNumeroNivelUbicacion1}"
-                                                    selected="#{currentRow.value['numero_nivel_ubicacion']}"
-                                                    toolTip="BundleParametros.numero_nivel_ubicacion.ubicacion"/>
-                                                <webuijsf:staticText id="listaNumeroNivelUbicacion1Texto1"
-                                                    binding="#{Ubicacion5.listaNumeroNivelUbicacion1Texto1}"
-                                                    text="#{currentRow.value['codigo_nivel_ubicacion_1x3y2']}"/>
-                                                <webuijsf:message id="messageNumeroNivelUbicacion1"
-                                                    for="listaNumeroNivelUbicacion1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Ubicacion5.tableColumnSecuenciaUbicacion1}"
-                                                    headerText="secuencia"
-                                                    id="tableColumnSecuenciaUbicacion1" rendered="false"
-                                                    sort="secuencia_ubicacion">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextSecuenciaUbicacion1"
-                                                    text="#{currentRow.value['secuencia_ubicacion']}"
-                                                    rendered="#{Ubicacion5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion5.labelSecuenciaUbicacion1}"
-                                                    id="labelSecuenciaUbicacion1"
-                                                    for="campoSecuenciaUbicacion1"/>
-                                                <webuijsf:textField id="campoSecuenciaUbicacion1"
-                                                    binding="#{Ubicacion5.campoSecuenciaUbicacion1}"
-                                                    converter="#{Ubicacion5.converterSecuenciaUbicacion1}"
-                                                    readOnly="#{Ubicacion5.gestor.filaNoProcesada}"
-                                                    text="#{currentRow.value['secuencia_ubicacion']}"
-                                                    toolTip="BundleParametros.secuencia_ubicacion.ubicacion"
-                                                    validatorExpression="#{Ubicacion5.validatorSecuenciaUbicacion1.validate}"/>
-                                                <webuijsf:staticText id="campoSecuenciaUbicacion1Texto1"
-                                                    binding="#{Ubicacion5.campoSecuenciaUbicacion1Texto1}"
-                                                    text="#{currentRow.value['secuencia_ubicacion']}"/>
-                                                <webuijsf:message id="messageSecuenciaUbicacion1"
-                                                    for="campoSecuenciaUbicacion1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
-                                                    binding="#{Ubicacion5.tableColumnClaveUbicacion1}"
-                                                    headerText="clave"
-                                                    id="tableColumnClaveUbicacion1" rendered="false"
-                                                    sort="clave_ubicacion">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextClaveUbicacion1"
-                                                    text="#{currentRow.value['clave_ubicacion']}"
-                                                    rendered="#{Ubicacion5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion5.labelClaveUbicacion1}"
-                                                    id="labelClaveUbicacion1"
-                                                    for="campoClaveUbicacion1"/>
-                                                <webuijsf:textField id="campoClaveUbicacion1"
-                                                    binding="#{Ubicacion5.campoClaveUbicacion1}"
-                                                    columns="20"
-                                                    maxLength="30"
-                                                    readOnly="#{Ubicacion5.gestor.filaNoProcesada}"
-                                                    text="#{currentRow.value['clave_ubicacion']}"
-                                                    toolTip="BundleParametros.clave_ubicacion.ubicacion"
-                                                    validatorExpression="#{Ubicacion5.validatorClaveUbicacion1.validate}"/>
-                                                <webuijsf:staticText id="campoClaveUbicacion1Texto1"
-                                                    binding="#{Ubicacion5.campoClaveUbicacion1Texto1}"
-                                                    text="#{currentRow.value['clave_ubicacion']}"/>
-                                                <webuijsf:message id="messageClaveUbicacion1"
-                                                    for="campoClaveUbicacion1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area.ubicacion"
                                                     headerText="tipo area"
                                                     id="tableColumnNumeroTipoArea1" rendered="false"
                                                     sort="codigo_tipo_area_1x4y2">
@@ -455,6 +355,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Ubicacion5.tableColumnCodigoUbicacionJupe1}"
+                                                    toolTip="BundleParametros.codigo_ubicacion_jupe.ubicacion"
                                                     headerText="c&#243;digo ubicaci&#243;n jupe"
                                                     id="tableColumnCodigoUbicacionJupe1" rendered="false"
                                                     sort="codigo_ubicacion_jupe">

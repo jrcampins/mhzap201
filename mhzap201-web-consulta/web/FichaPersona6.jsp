@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{FichaPersona6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdFichaPersona1 campoCodigoFichaPersona1 campoNombreFichaPersona1 listaEsRespondente1 campoIdFichaHogar1 campoNumeroOrdenIdentificacion1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoEdad1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaNumeroTipoPersonaHogar1 listaNumeroSionoMiembroHogar1 campoNumeroOrdenIdenConyuge1 campoNumeroOrdenIdenPadre1 campoNumeroOrdenIdenMadre1 campoNumeroCedula1 campoLetraCedula1 listaNumeroTipoExcepcionCed1 campoFechaNacimiento1 campoIdDepartamentoNacimiento1 campoIdDistritoNacimiento1 listaNumeroTipoAreaLugarNac1 listaNumeroIdiomaHogar1 campoOtroIdiomaHogar1 listaNumeroSionoAsistenciaEsc1 listaNumeroMotivoInaEsc1 campoOtroMotivoInaEsc1 listaNumeroSionoMatriculacionEsc1 campoUltimoCursoAprobado1 listaNumeroNivelEduUltCurAprob1 listaNumeroSionoCursoNoFormal1 listaNumeroTipoSeguroMedico1 listaNumeroEstadoSalud1 listaNumeroClaseEnfAcc1 campoOtraClaseEnfAcc1 listaNumeroClaseEnfCronica1 campoOtraClaseEnfCronica1 listaNumeroSionoAtencionMedica1 listaNumeroMotivoNoAtencion1 campoOtroMotivoNoAtencion1 listaNumeroSionoCarnetVacunacion1 listaNumeroClaseImpedimento1 campoOtraClaseImpedimento1 listaNumeroCausaImpedimento1 campoOtraCausaImpedimento1 listaNumeroSionoDifParaCaminar1 listaNumeroSionoDifParaVestirse1 listaNumeroSionoDifParaBanarse1 listaNumeroSionoDifParaComer1 listaNumeroSionoDifParaLaCama1 listaNumeroSionoDifParaElBano1 listaNumeroSionoTrabajo1 listaNumeroMotivoNoTrabajo1 campoOtroMotivoNoTrabajo1 campoDescripcionOcupacionPrin1 campoDescripcionDedicacionPrin1 listaNumeroTipoRelacionLab1 campoMontoIngresoOcupacionPrin1 campoMontoIngresoOcupacionSecun1 campoMontoIngresoOtrasOcup1 campoMontoIngresoAlquileres1 campoMontoIngresoIntereses1 campoMontoIngresoAyudaFamPais1 campoMontoIngresoAyudaFamExter1 campoMontoIngresoJubilacion1 campoMontoIngresoPensiones1 campoMontoIngresoTekopora1 campoMontoIngresoProgramas1 campoMontoIngresoAdicional1 campoTotalIngresoMensual1 campoIdPotencialBen1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdFichaPersona1 campoCodigoFichaPersona1 campoNombreFichaPersona1 listaEsRespondente1 campoIdFichaHogar1 campoNumeroOrdenIdentificacion1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoEdad1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaNumeroTipoPersonaHogar1 listaNumeroSionoMiembroHogar1 campoNumeroOrdenIdenConyuge1 campoNumeroOrdenIdenPadre1 campoNumeroOrdenIdenMadre1 campoNumeroCedula1 campoLetraCedula1 listaNumeroTipoExcepcionCed1 campoFechaNacimiento1 campoIdDepartamentoNacimiento1 campoIdDistritoNacimiento1 listaNumeroTipoAreaLugarNac1 listaNumeroIdiomaHogar1 campoOtroIdiomaHogar1 listaNumeroSionoAsistenciaEsc1 listaNumeroMotivoInaEsc1 campoOtroMotivoInaEsc1 listaNumeroSionoMatriculacionEsc1 campoUltimoCursoAprobado1 listaNumeroNivelEduUltCurAprob1 listaNumeroSionoCursoNoFormal1 listaNumeroTipoSeguroMedico1 listaNumeroEstadoSalud1 listaNumeroClaseEnfAcc1 campoOtraClaseEnfAcc1 listaNumeroClaseEnfCronica1 campoOtraClaseEnfCronica1 listaNumeroSionoAtencionMedica1 listaNumeroMotivoNoAtencion1 campoOtroMotivoNoAtencion1 listaNumeroSionoCarnetVacunacion1 listaNumeroClaseImpedimento1 campoOtraClaseImpedimento1 listaNumeroCausaImpedimento1 campoOtraCausaImpedimento1 listaNumeroSionoDifParaCaminar1 listaNumeroSionoDifParaVestirse1 listaNumeroSionoDifParaBanarse1 listaNumeroSionoDifParaComer1 listaNumeroSionoDifParaLaCama1 listaNumeroSionoDifParaElBano1 listaNumeroSionoTrabajo1 listaNumeroMotivoNoTrabajo1 campoOtroMotivoNoTrabajo1 campoDescripcionOcupacionPrin1 campoDescripcionDedicacionPrin1 listaNumeroTipoRelacionLab1 campoMontoIngresoOcupacionPrin1 campoMontoIngresoOcupacionSecun1 campoMontoIngresoOtrasOcup1 campoMontoIngresoAlquileres1 campoMontoIngresoIntereses1 campoMontoIngresoAyudaFamPais1 campoMontoIngresoAyudaFamExter1 campoMontoIngresoJubilacion1 campoMontoIngresoPensiones1 campoMontoIngresoTekopora1 campoMontoIngresoProgramas1 campoMontoIngresoAdicional1 campoTotalIngresoMensual1 campoIdPotencialBen1 listaEsFichaPersonaImportada1 campoFechaImportacion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -208,6 +208,7 @@
                                                     binding="#{FichaPersona6.labelIdFichaPersona1}"
                                                     id="labelIdFichaPersona1"
                                                     for="campoIdFichaPersona1"
+                                                    toolTip="BundleParametros.id_ficha_persona.ficha_persona"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{FichaPersona6.labelCodigoFichaPersona1}"
                                                     id="labelCodigoFichaPersona1"
                                                     for="campoCodigoFichaPersona1"
+                                                    toolTip="BundleParametros.codigo_ficha_persona.ficha_persona"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{FichaPersona6.labelNombreFichaPersona1}"
                                                     id="labelNombreFichaPersona1"
                                                     for="campoNombreFichaPersona1"
+                                                    toolTip="BundleParametros.nombre_ficha_persona.ficha_persona"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -307,6 +310,7 @@
                                                     binding="#{FichaPersona6.labelEsRespondente1}"
                                                     id="labelEsRespondente1"
                                                     for="listaEsRespondente1"
+                                                    toolTip="BundleParametros.es_respondente.ficha_persona"
                                                     text="respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -340,6 +344,7 @@
                                                     binding="#{FichaPersona6.labelIdFichaHogar1}"
                                                     id="labelIdFichaHogar1"
                                                     for="campoIdFichaHogar1"
+                                                    toolTip="BundleParametros.id_ficha_hogar.ficha_persona"
                                                     text="ficha hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -403,6 +408,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdentificacion1}"
                                                     id="labelNumeroOrdenIdentificacion1"
                                                     for="campoNumeroOrdenIdentificacion1"
+                                                    toolTip="BundleParametros.numero_orden_identificacion.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -437,6 +443,7 @@
                                                     binding="#{FichaPersona6.labelPrimerNombre1}"
                                                     id="labelPrimerNombre1"
                                                     for="campoPrimerNombre1"
+                                                    toolTip="BundleParametros.primer_nombre.ficha_persona"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -472,6 +479,7 @@
                                                     binding="#{FichaPersona6.labelSegundoNombre1}"
                                                     id="labelSegundoNombre1"
                                                     for="campoSegundoNombre1"
+                                                    toolTip="BundleParametros.segundo_nombre.ficha_persona"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -507,6 +515,7 @@
                                                     binding="#{FichaPersona6.labelPrimerApellido1}"
                                                     id="labelPrimerApellido1"
                                                     for="campoPrimerApellido1"
+                                                    toolTip="BundleParametros.primer_apellido.ficha_persona"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -542,6 +551,7 @@
                                                     binding="#{FichaPersona6.labelSegundoApellido1}"
                                                     id="labelSegundoApellido1"
                                                     for="campoSegundoApellido1"
+                                                    toolTip="BundleParametros.segundo_apellido.ficha_persona"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -577,6 +587,7 @@
                                                     binding="#{FichaPersona6.labelApellidoCasada1}"
                                                     id="labelApellidoCasada1"
                                                     for="campoApellidoCasada1"
+                                                    toolTip="BundleParametros.apellido_casada.ficha_persona"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -612,6 +623,7 @@
                                                     binding="#{FichaPersona6.labelApodo1}"
                                                     id="labelApodo1"
                                                     for="campoApodo1"
+                                                    toolTip="BundleParametros.apodo.ficha_persona"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -647,6 +659,7 @@
                                                     binding="#{FichaPersona6.labelEdad1}"
                                                     id="labelEdad1"
                                                     for="campoEdad1"
+                                                    toolTip="BundleParametros.edad.ficha_persona"
                                                     text="edad"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -681,6 +694,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSexoPersona1}"
                                                     id="labelNumeroSexoPersona1"
                                                     for="listaNumeroSexoPersona1"
+                                                    toolTip="BundleParametros.numero_sexo_persona.ficha_persona"
                                                     text="sexo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -715,6 +729,7 @@
                                                     binding="#{FichaPersona6.labelNumeroEstadoCivil1}"
                                                     id="labelNumeroEstadoCivil1"
                                                     for="listaNumeroEstadoCivil1"
+                                                    toolTip="BundleParametros.numero_estado_civil.ficha_persona"
                                                     text="estado civil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -749,6 +764,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoPersonaHogar1}"
                                                     id="labelNumeroTipoPersonaHogar1"
                                                     for="listaNumeroTipoPersonaHogar1"
+                                                    toolTip="BundleParametros.numero_tipo_persona_hogar.ficha_persona"
                                                     text="tipo persona hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -783,6 +799,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoMiembroHogar1}"
                                                     id="labelNumeroSionoMiembroHogar1"
                                                     for="listaNumeroSionoMiembroHogar1"
+                                                    toolTip="BundleParametros.numero_siono_miembro_hogar.ficha_persona"
                                                     text="miembro hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -817,6 +834,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenConyuge1}"
                                                     id="labelNumeroOrdenIdenConyuge1"
                                                     for="campoNumeroOrdenIdenConyuge1"
+                                                    toolTip="BundleParametros.numero_orden_iden_conyuge.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n conyuge"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -851,6 +869,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenPadre1}"
                                                     id="labelNumeroOrdenIdenPadre1"
                                                     for="campoNumeroOrdenIdenPadre1"
+                                                    toolTip="BundleParametros.numero_orden_iden_padre.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n padre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -885,6 +904,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenMadre1}"
                                                     id="labelNumeroOrdenIdenMadre1"
                                                     for="campoNumeroOrdenIdenMadre1"
+                                                    toolTip="BundleParametros.numero_orden_iden_madre.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n madre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -919,6 +939,7 @@
                                                     binding="#{FichaPersona6.labelNumeroCedula1}"
                                                     id="labelNumeroCedula1"
                                                     for="campoNumeroCedula1"
+                                                    toolTip="BundleParametros.numero_cedula.ficha_persona"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -953,6 +974,7 @@
                                                     binding="#{FichaPersona6.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
+                                                    toolTip="BundleParametros.letra_cedula.ficha_persona"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -988,6 +1010,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoExcepcionCed1}"
                                                     id="labelNumeroTipoExcepcionCed1"
                                                     for="listaNumeroTipoExcepcionCed1"
+                                                    toolTip="BundleParametros.numero_tipo_excepcion_ced.ficha_persona"
                                                     text="tipo excepci&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1022,6 +1045,7 @@
                                                     binding="#{FichaPersona6.labelFechaNacimiento1}"
                                                     id="labelFechaNacimiento1"
                                                     for="campoFechaNacimiento1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.ficha_persona"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1057,6 +1081,7 @@
                                                     binding="#{FichaPersona6.labelIdDepartamentoNacimiento1}"
                                                     id="labelIdDepartamentoNacimiento1"
                                                     for="campoIdDepartamentoNacimiento1"
+                                                    toolTip="BundleParametros.id_departamento_nacimiento.ficha_persona"
                                                     text="departamento nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1121,6 +1146,7 @@
                                                     binding="#{FichaPersona6.labelIdDistritoNacimiento1}"
                                                     id="labelIdDistritoNacimiento1"
                                                     for="campoIdDistritoNacimiento1"
+                                                    toolTip="BundleParametros.id_distrito_nacimiento.ficha_persona"
                                                     text="distrito nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1185,6 +1211,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoAreaLugarNac1}"
                                                     id="labelNumeroTipoAreaLugarNac1"
                                                     for="listaNumeroTipoAreaLugarNac1"
+                                                    toolTip="BundleParametros.numero_tipo_area_lugar_nac.ficha_persona"
                                                     text="tipo area lugar nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1219,6 +1246,7 @@
                                                     binding="#{FichaPersona6.labelNumeroIdiomaHogar1}"
                                                     id="labelNumeroIdiomaHogar1"
                                                     for="listaNumeroIdiomaHogar1"
+                                                    toolTip="BundleParametros.numero_idioma_hogar.ficha_persona"
                                                     text="idioma hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1253,6 +1281,7 @@
                                                     binding="#{FichaPersona6.labelOtroIdiomaHogar1}"
                                                     id="labelOtroIdiomaHogar1"
                                                     for="campoOtroIdiomaHogar1"
+                                                    toolTip="BundleParametros.otro_idioma_hogar.ficha_persona"
                                                     text="otro idioma hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1288,6 +1317,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoAsistenciaEsc1}"
                                                     id="labelNumeroSionoAsistenciaEsc1"
                                                     for="listaNumeroSionoAsistenciaEsc1"
+                                                    toolTip="BundleParametros.numero_siono_asistencia_esc.ficha_persona"
                                                     text="asistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1322,6 +1352,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoInaEsc1}"
                                                     id="labelNumeroMotivoInaEsc1"
                                                     for="listaNumeroMotivoInaEsc1"
+                                                    toolTip="BundleParametros.numero_motivo_ina_esc.ficha_persona"
                                                     text="motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1356,6 +1387,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoInaEsc1}"
                                                     id="labelOtroMotivoInaEsc1"
                                                     for="campoOtroMotivoInaEsc1"
+                                                    toolTip="BundleParametros.otro_motivo_ina_esc.ficha_persona"
                                                     text="otro motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1391,6 +1423,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoMatriculacionEsc1}"
                                                     id="labelNumeroSionoMatriculacionEsc1"
                                                     for="listaNumeroSionoMatriculacionEsc1"
+                                                    toolTip="BundleParametros.numero_siono_matriculacion_esc.ficha_persona"
                                                     text="matriculaci&#243;n escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1425,6 +1458,7 @@
                                                     binding="#{FichaPersona6.labelUltimoCursoAprobado1}"
                                                     id="labelUltimoCursoAprobado1"
                                                     for="campoUltimoCursoAprobado1"
+                                                    toolTip="BundleParametros.ultimo_curso_aprobado.ficha_persona"
                                                     text="ultimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1459,6 +1493,7 @@
                                                     binding="#{FichaPersona6.labelNumeroNivelEduUltCurAprob1}"
                                                     id="labelNumeroNivelEduUltCurAprob1"
                                                     for="listaNumeroNivelEduUltCurAprob1"
+                                                    toolTip="BundleParametros.numero_nivel_edu_ult_cur_aprob.ficha_persona"
                                                     text="nivel educativo &#250;ltimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1493,6 +1528,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoCursoNoFormal1}"
                                                     id="labelNumeroSionoCursoNoFormal1"
                                                     for="listaNumeroSionoCursoNoFormal1"
+                                                    toolTip="BundleParametros.numero_siono_curso_no_formal.ficha_persona"
                                                     text="curso no formal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1527,6 +1563,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoSeguroMedico1}"
                                                     id="labelNumeroTipoSeguroMedico1"
                                                     for="listaNumeroTipoSeguroMedico1"
+                                                    toolTip="BundleParametros.numero_tipo_seguro_medico.ficha_persona"
                                                     text="tipo seguro medico"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1561,6 +1598,7 @@
                                                     binding="#{FichaPersona6.labelNumeroEstadoSalud1}"
                                                     id="labelNumeroEstadoSalud1"
                                                     for="listaNumeroEstadoSalud1"
+                                                    toolTip="BundleParametros.numero_estado_salud.ficha_persona"
                                                     text="estado salud"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1595,6 +1633,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseEnfAcc1}"
                                                     id="labelNumeroClaseEnfAcc1"
                                                     for="listaNumeroClaseEnfAcc1"
+                                                    toolTip="BundleParametros.numero_clase_enf_acc.ficha_persona"
                                                     text="clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1629,6 +1668,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseEnfAcc1}"
                                                     id="labelOtraClaseEnfAcc1"
                                                     for="campoOtraClaseEnfAcc1"
+                                                    toolTip="BundleParametros.otra_clase_enf_acc.ficha_persona"
                                                     text="otra clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1664,6 +1704,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseEnfCronica1}"
                                                     id="labelNumeroClaseEnfCronica1"
                                                     for="listaNumeroClaseEnfCronica1"
+                                                    toolTip="BundleParametros.numero_clase_enf_cronica.ficha_persona"
                                                     text="clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1698,6 +1739,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseEnfCronica1}"
                                                     id="labelOtraClaseEnfCronica1"
                                                     for="campoOtraClaseEnfCronica1"
+                                                    toolTip="BundleParametros.otra_clase_enf_cronica.ficha_persona"
                                                     text="otra clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1733,6 +1775,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoAtencionMedica1}"
                                                     id="labelNumeroSionoAtencionMedica1"
                                                     for="listaNumeroSionoAtencionMedica1"
+                                                    toolTip="BundleParametros.numero_siono_atencion_medica.ficha_persona"
                                                     text="atenci&#243;n medica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1767,6 +1810,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoNoAtencion1}"
                                                     id="labelNumeroMotivoNoAtencion1"
                                                     for="listaNumeroMotivoNoAtencion1"
+                                                    toolTip="BundleParametros.numero_motivo_no_atencion.ficha_persona"
                                                     text="motivo no atenci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1801,6 +1845,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoNoAtencion1}"
                                                     id="labelOtroMotivoNoAtencion1"
                                                     for="campoOtroMotivoNoAtencion1"
+                                                    toolTip="BundleParametros.otro_motivo_no_atencion.ficha_persona"
                                                     text="otro motivo no atenci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1836,6 +1881,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoCarnetVacunacion1}"
                                                     id="labelNumeroSionoCarnetVacunacion1"
                                                     for="listaNumeroSionoCarnetVacunacion1"
+                                                    toolTip="BundleParametros.numero_siono_carnet_vacunacion.ficha_persona"
                                                     text="carnet vacunaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1870,6 +1916,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseImpedimento1}"
                                                     id="labelNumeroClaseImpedimento1"
                                                     for="listaNumeroClaseImpedimento1"
+                                                    toolTip="BundleParametros.numero_clase_impedimento.ficha_persona"
                                                     text="clase impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1904,6 +1951,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseImpedimento1}"
                                                     id="labelOtraClaseImpedimento1"
                                                     for="campoOtraClaseImpedimento1"
+                                                    toolTip="BundleParametros.otra_clase_impedimento.ficha_persona"
                                                     text="otra clase impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1939,6 +1987,7 @@
                                                     binding="#{FichaPersona6.labelNumeroCausaImpedimento1}"
                                                     id="labelNumeroCausaImpedimento1"
                                                     for="listaNumeroCausaImpedimento1"
+                                                    toolTip="BundleParametros.numero_causa_impedimento.ficha_persona"
                                                     text="causa impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1973,6 +2022,7 @@
                                                     binding="#{FichaPersona6.labelOtraCausaImpedimento1}"
                                                     id="labelOtraCausaImpedimento1"
                                                     for="campoOtraCausaImpedimento1"
+                                                    toolTip="BundleParametros.otra_causa_impedimento.ficha_persona"
                                                     text="otra causa impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2008,6 +2058,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaCaminar1}"
                                                     id="labelNumeroSionoDifParaCaminar1"
                                                     for="listaNumeroSionoDifParaCaminar1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_caminar.ficha_persona"
                                                     text="dificultad para caminar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2042,6 +2093,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaVestirse1}"
                                                     id="labelNumeroSionoDifParaVestirse1"
                                                     for="listaNumeroSionoDifParaVestirse1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_vestirse.ficha_persona"
                                                     text="dificultad para vestirse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2076,6 +2128,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaBanarse1}"
                                                     id="labelNumeroSionoDifParaBanarse1"
                                                     for="listaNumeroSionoDifParaBanarse1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_banarse.ficha_persona"
                                                     text="dificultad para ba&#241;arse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2110,6 +2163,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaComer1}"
                                                     id="labelNumeroSionoDifParaComer1"
                                                     for="listaNumeroSionoDifParaComer1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_comer.ficha_persona"
                                                     text="dificultad para comer"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2144,6 +2198,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaLaCama1}"
                                                     id="labelNumeroSionoDifParaLaCama1"
                                                     for="listaNumeroSionoDifParaLaCama1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_la_cama.ficha_persona"
                                                     text="dificultad para la cama"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2178,6 +2233,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaElBano1}"
                                                     id="labelNumeroSionoDifParaElBano1"
                                                     for="listaNumeroSionoDifParaElBano1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_el_bano.ficha_persona"
                                                     text="dificultad para el ba&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2212,6 +2268,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoTrabajo1}"
                                                     id="labelNumeroSionoTrabajo1"
                                                     for="listaNumeroSionoTrabajo1"
+                                                    toolTip="BundleParametros.numero_siono_trabajo.ficha_persona"
                                                     text="trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2246,6 +2303,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoNoTrabajo1}"
                                                     id="labelNumeroMotivoNoTrabajo1"
                                                     for="listaNumeroMotivoNoTrabajo1"
+                                                    toolTip="BundleParametros.numero_motivo_no_trabajo.ficha_persona"
                                                     text="motivo no trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2280,6 +2338,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoNoTrabajo1}"
                                                     id="labelOtroMotivoNoTrabajo1"
                                                     for="campoOtroMotivoNoTrabajo1"
+                                                    toolTip="BundleParametros.otro_motivo_no_trabajo.ficha_persona"
                                                     text="otro motivo no trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2315,6 +2374,7 @@
                                                     binding="#{FichaPersona6.labelDescripcionOcupacionPrin1}"
                                                     id="labelDescripcionOcupacionPrin1"
                                                     for="campoDescripcionOcupacionPrin1"
+                                                    toolTip="BundleParametros.descripcion_ocupacion_prin.ficha_persona"
                                                     text="descripci&#243;n ocupaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2350,6 +2410,7 @@
                                                     binding="#{FichaPersona6.labelDescripcionDedicacionPrin1}"
                                                     id="labelDescripcionDedicacionPrin1"
                                                     for="campoDescripcionDedicacionPrin1"
+                                                    toolTip="BundleParametros.descripcion_dedicacion_prin.ficha_persona"
                                                     text="descripci&#243;n dedicaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2385,6 +2446,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoRelacionLab1}"
                                                     id="labelNumeroTipoRelacionLab1"
                                                     for="listaNumeroTipoRelacionLab1"
+                                                    toolTip="BundleParametros.numero_tipo_relacion_lab.ficha_persona"
                                                     text="tipo relaci&#243;n laboral"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2419,6 +2481,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOcupacionPrin1}"
                                                     id="labelMontoIngresoOcupacionPrin1"
                                                     for="campoMontoIngresoOcupacionPrin1"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_prin.ficha_persona"
                                                     text="monto ingreso ocupaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2454,6 +2517,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOcupacionSecun1}"
                                                     id="labelMontoIngresoOcupacionSecun1"
                                                     for="campoMontoIngresoOcupacionSecun1"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_secun.ficha_persona"
                                                     text="monto ingreso ocupaci&#243;n secundaria"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2489,6 +2553,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOtrasOcup1}"
                                                     id="labelMontoIngresoOtrasOcup1"
                                                     for="campoMontoIngresoOtrasOcup1"
+                                                    toolTip="BundleParametros.monto_ingreso_otras_ocup.ficha_persona"
                                                     text="monto ingreso otras ocupaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2524,6 +2589,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAlquileres1}"
                                                     id="labelMontoIngresoAlquileres1"
                                                     for="campoMontoIngresoAlquileres1"
+                                                    toolTip="BundleParametros.monto_ingreso_alquileres.ficha_persona"
                                                     text="monto ingreso alquileres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2559,6 +2625,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoIntereses1}"
                                                     id="labelMontoIngresoIntereses1"
                                                     for="campoMontoIngresoIntereses1"
+                                                    toolTip="BundleParametros.monto_ingreso_intereses.ficha_persona"
                                                     text="monto ingreso intereses"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2594,6 +2661,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAyudaFamPais1}"
                                                     id="labelMontoIngresoAyudaFamPais1"
                                                     for="campoMontoIngresoAyudaFamPais1"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_pais.ficha_persona"
                                                     text="monto ingreso ayuda familiar pais"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2629,6 +2697,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAyudaFamExter1}"
                                                     id="labelMontoIngresoAyudaFamExter1"
                                                     for="campoMontoIngresoAyudaFamExter1"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_exter.ficha_persona"
                                                     text="monto ingreso ayuda familiar exterior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2664,6 +2733,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoJubilacion1}"
                                                     id="labelMontoIngresoJubilacion1"
                                                     for="campoMontoIngresoJubilacion1"
+                                                    toolTip="BundleParametros.monto_ingreso_jubilacion.ficha_persona"
                                                     text="monto ingreso jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2699,6 +2769,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoPensiones1}"
                                                     id="labelMontoIngresoPensiones1"
                                                     for="campoMontoIngresoPensiones1"
+                                                    toolTip="BundleParametros.monto_ingreso_pensiones.ficha_persona"
                                                     text="monto ingreso pensiones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2734,6 +2805,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoTekopora1}"
                                                     id="labelMontoIngresoTekopora1"
                                                     for="campoMontoIngresoTekopora1"
+                                                    toolTip="BundleParametros.monto_ingreso_tekopora.ficha_persona"
                                                     text="monto ingreso tekopora"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2769,6 +2841,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoProgramas1}"
                                                     id="labelMontoIngresoProgramas1"
                                                     for="campoMontoIngresoProgramas1"
+                                                    toolTip="BundleParametros.monto_ingreso_programas.ficha_persona"
                                                     text="monto ingreso programas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2804,6 +2877,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAdicional1}"
                                                     id="labelMontoIngresoAdicional1"
                                                     for="campoMontoIngresoAdicional1"
+                                                    toolTip="BundleParametros.monto_ingreso_adicional.ficha_persona"
                                                     text="monto ingreso adicional"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2838,6 +2912,7 @@
                                                     binding="#{FichaPersona6.labelTotalIngresoMensual1}"
                                                     id="labelTotalIngresoMensual1"
                                                     for="campoTotalIngresoMensual1"
+                                                    toolTip="BundleParametros.total_ingreso_mensual.ficha_persona"
                                                     text="total ingreso mensual"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2871,6 +2946,7 @@
                                                     binding="#{FichaPersona6.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
+                                                    toolTip="BundleParametros.id_potencial_ben.ficha_persona"
                                                     text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2924,6 +3000,72 @@
                                                     id="campoIdPotencialBen1Boton2"
                                                     onClick="#{FichaPersona6.asistente.scriptCampoIdPotencialBen1Boton2}"/>
                                             </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsFichaPersonaImportada1" rendered="#{FichaPersona6.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona6.labelEsFichaPersonaImportada1}"
+                                                    id="labelEsFichaPersonaImportada1"
+                                                    for="listaEsFichaPersonaImportada1"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"
+                                                    text="importada"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsFichaPersonaImportada2" rendered="#{FichaPersona6.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsFichaPersonaImportada1"
+                                                    binding="#{FichaPersona6.listaEsFichaPersonaImportada1}"
+                                                    converter="#{FichaPersona6.converterEsFichaPersonaImportada1}"
+                                                    disabled="true"
+                                                    items="#{FichaPersona6.asistente.opcionesListaEsFichaPersonaImportada1}"
+                                                    selected="#{FichaPersona6.fichaPersonaDataProvider.value['es_ficha_persona_importada']}"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"/>
+                                                <webuijsf:staticText id="listaEsFichaPersonaImportada1Texto1"
+                                                    binding="#{FichaPersona6.listaEsFichaPersonaImportada1Texto1}"/>
+                                                <webuijsf:message id="messageEsFichaPersonaImportada1"
+                                                    for="listaEsFichaPersonaImportada1"/>
+                                                <webuijsf:helpInline id="helpInlineEsFichaPersonaImportada1"
+                                                    binding="#{FichaPersona6.helpInlineEsFichaPersonaImportada1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_ficha_persona_importada.ficha_persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaImportacion1" rendered="#{FichaPersona6.gestor.designing}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona6.labelFechaImportacion1}"
+                                                    id="labelFechaImportacion1"
+                                                    for="campoFechaImportacion1"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"
+                                                    text="fecha importaci&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaImportacion2" rendered="#{FichaPersona6.gestor.designing}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaImportacion1"
+                                                    binding="#{FichaPersona6.campoFechaImportacion1}"
+                                                    maxDate="#{FichaPersona6.gestor.defaultMaxDate}"
+                                                    minDate="#{FichaPersona6.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{FichaPersona6.fichaPersonaDataProvider.value['fecha_importacion']}"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"/>
+                                                <webuijsf:staticText id="campoFechaImportacion1Texto1"
+                                                    binding="#{FichaPersona6.campoFechaImportacion1Texto1}"
+                                                    converter="#{FichaPersona6.converterFechaImportacion1}"
+                                                    text="#{FichaPersona6.fichaPersonaDataProvider.value['fecha_importacion']}"/>
+                                                <webuijsf:message id="messageFechaImportacion1"
+                                                    for="campoFechaImportacion1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaImportacion1"
+                                                    binding="#{FichaPersona6.helpInlineFechaImportacion1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_importacion.ficha_persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
                                         </h:panelGrid>
                                         <webuijsf:tabSet
                                             id="tabSet1"
@@ -2953,6 +3095,7 @@
                                                     binding="#{FichaPersona6.labelEsRespondente1x1}"
                                                     id="labelEsRespondente1x1"
                                                     for="listaEsRespondente1x1"
+                                                    toolTip="BundleParametros.es_respondente.ficha_persona"
                                                     text="respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2984,6 +3127,7 @@
                                                     binding="#{FichaPersona6.labelIdFichaHogar1x1}"
                                                     id="labelIdFichaHogar1x1"
                                                     for="campoIdFichaHogar1x1"
+                                                    toolTip="BundleParametros.id_ficha_hogar.ficha_persona"
                                                     text="ficha hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3045,6 +3189,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdentificacion1x1}"
                                                     id="labelNumeroOrdenIdentificacion1x1"
                                                     for="campoNumeroOrdenIdentificacion1x1"
+                                                    toolTip="BundleParametros.numero_orden_identificacion.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3077,6 +3222,7 @@
                                                     binding="#{FichaPersona6.labelPrimerNombre1x1}"
                                                     id="labelPrimerNombre1x1"
                                                     for="campoPrimerNombre1x1"
+                                                    toolTip="BundleParametros.primer_nombre.ficha_persona"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3110,6 +3256,7 @@
                                                     binding="#{FichaPersona6.labelSegundoNombre1x1}"
                                                     id="labelSegundoNombre1x1"
                                                     for="campoSegundoNombre1x1"
+                                                    toolTip="BundleParametros.segundo_nombre.ficha_persona"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3143,6 +3290,7 @@
                                                     binding="#{FichaPersona6.labelPrimerApellido1x1}"
                                                     id="labelPrimerApellido1x1"
                                                     for="campoPrimerApellido1x1"
+                                                    toolTip="BundleParametros.primer_apellido.ficha_persona"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3176,6 +3324,7 @@
                                                     binding="#{FichaPersona6.labelSegundoApellido1x1}"
                                                     id="labelSegundoApellido1x1"
                                                     for="campoSegundoApellido1x1"
+                                                    toolTip="BundleParametros.segundo_apellido.ficha_persona"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3209,6 +3358,7 @@
                                                     binding="#{FichaPersona6.labelApellidoCasada1x1}"
                                                     id="labelApellidoCasada1x1"
                                                     for="campoApellidoCasada1x1"
+                                                    toolTip="BundleParametros.apellido_casada.ficha_persona"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3242,6 +3392,7 @@
                                                     binding="#{FichaPersona6.labelApodo1x1}"
                                                     id="labelApodo1x1"
                                                     for="campoApodo1x1"
+                                                    toolTip="BundleParametros.apodo.ficha_persona"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3275,6 +3426,7 @@
                                                     binding="#{FichaPersona6.labelEdad1x1}"
                                                     id="labelEdad1x1"
                                                     for="campoEdad1x1"
+                                                    toolTip="BundleParametros.edad.ficha_persona"
                                                     text="edad"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3307,6 +3459,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSexoPersona1x1}"
                                                     id="labelNumeroSexoPersona1x1"
                                                     for="listaNumeroSexoPersona1x1"
+                                                    toolTip="BundleParametros.numero_sexo_persona.ficha_persona"
                                                     text="sexo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3339,6 +3492,7 @@
                                                     binding="#{FichaPersona6.labelNumeroEstadoCivil1x1}"
                                                     id="labelNumeroEstadoCivil1x1"
                                                     for="listaNumeroEstadoCivil1x1"
+                                                    toolTip="BundleParametros.numero_estado_civil.ficha_persona"
                                                     text="estado civil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3388,6 +3542,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoPersonaHogar1x1}"
                                                     id="labelNumeroTipoPersonaHogar1x1"
                                                     for="listaNumeroTipoPersonaHogar1x1"
+                                                    toolTip="BundleParametros.numero_tipo_persona_hogar.ficha_persona"
                                                     text="tipo persona hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3420,6 +3575,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoMiembroHogar1x1}"
                                                     id="labelNumeroSionoMiembroHogar1x1"
                                                     for="listaNumeroSionoMiembroHogar1x1"
+                                                    toolTip="BundleParametros.numero_siono_miembro_hogar.ficha_persona"
                                                     text="miembro hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3452,6 +3608,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenConyuge1x1}"
                                                     id="labelNumeroOrdenIdenConyuge1x1"
                                                     for="campoNumeroOrdenIdenConyuge1x1"
+                                                    toolTip="BundleParametros.numero_orden_iden_conyuge.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n conyuge"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3484,6 +3641,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenPadre1x1}"
                                                     id="labelNumeroOrdenIdenPadre1x1"
                                                     for="campoNumeroOrdenIdenPadre1x1"
+                                                    toolTip="BundleParametros.numero_orden_iden_padre.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n padre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3516,6 +3674,7 @@
                                                     binding="#{FichaPersona6.labelNumeroOrdenIdenMadre1x1}"
                                                     id="labelNumeroOrdenIdenMadre1x1"
                                                     for="campoNumeroOrdenIdenMadre1x1"
+                                                    toolTip="BundleParametros.numero_orden_iden_madre.ficha_persona"
                                                     text="n&#250;mero orden identificaci&#243;n madre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3548,6 +3707,7 @@
                                                     binding="#{FichaPersona6.labelNumeroCedula1x1}"
                                                     id="labelNumeroCedula1x1"
                                                     for="campoNumeroCedula1x1"
+                                                    toolTip="BundleParametros.numero_cedula.ficha_persona"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3580,6 +3740,7 @@
                                                     binding="#{FichaPersona6.labelLetraCedula1x1}"
                                                     id="labelLetraCedula1x1"
                                                     for="campoLetraCedula1x1"
+                                                    toolTip="BundleParametros.letra_cedula.ficha_persona"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3613,6 +3774,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoExcepcionCed1x1}"
                                                     id="labelNumeroTipoExcepcionCed1x1"
                                                     for="listaNumeroTipoExcepcionCed1x1"
+                                                    toolTip="BundleParametros.numero_tipo_excepcion_ced.ficha_persona"
                                                     text="tipo excepci&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3662,6 +3824,7 @@
                                                     binding="#{FichaPersona6.labelFechaNacimiento1x1}"
                                                     id="labelFechaNacimiento1x1"
                                                     for="campoFechaNacimiento1x1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.ficha_persona"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3695,6 +3858,7 @@
                                                     binding="#{FichaPersona6.labelIdDepartamentoNacimiento1x1}"
                                                     id="labelIdDepartamentoNacimiento1x1"
                                                     for="campoIdDepartamentoNacimiento1x1"
+                                                    toolTip="BundleParametros.id_departamento_nacimiento.ficha_persona"
                                                     text="departamento nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3757,6 +3921,7 @@
                                                     binding="#{FichaPersona6.labelIdDistritoNacimiento1x1}"
                                                     id="labelIdDistritoNacimiento1x1"
                                                     for="campoIdDistritoNacimiento1x1"
+                                                    toolTip="BundleParametros.id_distrito_nacimiento.ficha_persona"
                                                     text="distrito nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3819,6 +3984,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoAreaLugarNac1x1}"
                                                     id="labelNumeroTipoAreaLugarNac1x1"
                                                     for="listaNumeroTipoAreaLugarNac1x1"
+                                                    toolTip="BundleParametros.numero_tipo_area_lugar_nac.ficha_persona"
                                                     text="tipo area lugar nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3868,6 +4034,7 @@
                                                     binding="#{FichaPersona6.labelNumeroIdiomaHogar1x1}"
                                                     id="labelNumeroIdiomaHogar1x1"
                                                     for="listaNumeroIdiomaHogar1x1"
+                                                    toolTip="BundleParametros.numero_idioma_hogar.ficha_persona"
                                                     text="idioma hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3900,6 +4067,7 @@
                                                     binding="#{FichaPersona6.labelOtroIdiomaHogar1x1}"
                                                     id="labelOtroIdiomaHogar1x1"
                                                     for="campoOtroIdiomaHogar1x1"
+                                                    toolTip="BundleParametros.otro_idioma_hogar.ficha_persona"
                                                     text="otro idioma hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3933,6 +4101,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoAsistenciaEsc1x1}"
                                                     id="labelNumeroSionoAsistenciaEsc1x1"
                                                     for="listaNumeroSionoAsistenciaEsc1x1"
+                                                    toolTip="BundleParametros.numero_siono_asistencia_esc.ficha_persona"
                                                     text="asistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3965,6 +4134,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoInaEsc1x1}"
                                                     id="labelNumeroMotivoInaEsc1x1"
                                                     for="listaNumeroMotivoInaEsc1x1"
+                                                    toolTip="BundleParametros.numero_motivo_ina_esc.ficha_persona"
                                                     text="motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3997,6 +4167,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoInaEsc1x1}"
                                                     id="labelOtroMotivoInaEsc1x1"
                                                     for="campoOtroMotivoInaEsc1x1"
+                                                    toolTip="BundleParametros.otro_motivo_ina_esc.ficha_persona"
                                                     text="otro motivo inasistencia escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4030,6 +4201,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoMatriculacionEsc1x1}"
                                                     id="labelNumeroSionoMatriculacionEsc1x1"
                                                     for="listaNumeroSionoMatriculacionEsc1x1"
+                                                    toolTip="BundleParametros.numero_siono_matriculacion_esc.ficha_persona"
                                                     text="matriculaci&#243;n escolar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4062,6 +4234,7 @@
                                                     binding="#{FichaPersona6.labelUltimoCursoAprobado1x1}"
                                                     id="labelUltimoCursoAprobado1x1"
                                                     for="campoUltimoCursoAprobado1x1"
+                                                    toolTip="BundleParametros.ultimo_curso_aprobado.ficha_persona"
                                                     text="ultimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4094,6 +4267,7 @@
                                                     binding="#{FichaPersona6.labelNumeroNivelEduUltCurAprob1x1}"
                                                     id="labelNumeroNivelEduUltCurAprob1x1"
                                                     for="listaNumeroNivelEduUltCurAprob1x1"
+                                                    toolTip="BundleParametros.numero_nivel_edu_ult_cur_aprob.ficha_persona"
                                                     text="nivel educativo &#250;ltimo curso aprobado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4126,6 +4300,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoCursoNoFormal1x1}"
                                                     id="labelNumeroSionoCursoNoFormal1x1"
                                                     for="listaNumeroSionoCursoNoFormal1x1"
+                                                    toolTip="BundleParametros.numero_siono_curso_no_formal.ficha_persona"
                                                     text="curso no formal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4175,6 +4350,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoSeguroMedico1x1}"
                                                     id="labelNumeroTipoSeguroMedico1x1"
                                                     for="listaNumeroTipoSeguroMedico1x1"
+                                                    toolTip="BundleParametros.numero_tipo_seguro_medico.ficha_persona"
                                                     text="tipo seguro medico"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4207,6 +4383,7 @@
                                                     binding="#{FichaPersona6.labelNumeroEstadoSalud1x1}"
                                                     id="labelNumeroEstadoSalud1x1"
                                                     for="listaNumeroEstadoSalud1x1"
+                                                    toolTip="BundleParametros.numero_estado_salud.ficha_persona"
                                                     text="estado salud"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4239,6 +4416,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseEnfAcc1x1}"
                                                     id="labelNumeroClaseEnfAcc1x1"
                                                     for="listaNumeroClaseEnfAcc1x1"
+                                                    toolTip="BundleParametros.numero_clase_enf_acc.ficha_persona"
                                                     text="clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4271,6 +4449,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseEnfAcc1x1}"
                                                     id="labelOtraClaseEnfAcc1x1"
                                                     for="campoOtraClaseEnfAcc1x1"
+                                                    toolTip="BundleParametros.otra_clase_enf_acc.ficha_persona"
                                                     text="otra clase enfermedad accidente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4304,6 +4483,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseEnfCronica1x1}"
                                                     id="labelNumeroClaseEnfCronica1x1"
                                                     for="listaNumeroClaseEnfCronica1x1"
+                                                    toolTip="BundleParametros.numero_clase_enf_cronica.ficha_persona"
                                                     text="clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4336,6 +4516,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseEnfCronica1x1}"
                                                     id="labelOtraClaseEnfCronica1x1"
                                                     for="campoOtraClaseEnfCronica1x1"
+                                                    toolTip="BundleParametros.otra_clase_enf_cronica.ficha_persona"
                                                     text="otra clase enfermedad cronica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4369,6 +4550,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoAtencionMedica1x1}"
                                                     id="labelNumeroSionoAtencionMedica1x1"
                                                     for="listaNumeroSionoAtencionMedica1x1"
+                                                    toolTip="BundleParametros.numero_siono_atencion_medica.ficha_persona"
                                                     text="atenci&#243;n medica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4401,6 +4583,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoNoAtencion1x1}"
                                                     id="labelNumeroMotivoNoAtencion1x1"
                                                     for="listaNumeroMotivoNoAtencion1x1"
+                                                    toolTip="BundleParametros.numero_motivo_no_atencion.ficha_persona"
                                                     text="motivo no atenci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4433,6 +4616,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoNoAtencion1x1}"
                                                     id="labelOtroMotivoNoAtencion1x1"
                                                     for="campoOtroMotivoNoAtencion1x1"
+                                                    toolTip="BundleParametros.otro_motivo_no_atencion.ficha_persona"
                                                     text="otro motivo no atenci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4466,6 +4650,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoCarnetVacunacion1x1}"
                                                     id="labelNumeroSionoCarnetVacunacion1x1"
                                                     for="listaNumeroSionoCarnetVacunacion1x1"
+                                                    toolTip="BundleParametros.numero_siono_carnet_vacunacion.ficha_persona"
                                                     text="carnet vacunaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4515,6 +4700,7 @@
                                                     binding="#{FichaPersona6.labelNumeroClaseImpedimento1x1}"
                                                     id="labelNumeroClaseImpedimento1x1"
                                                     for="listaNumeroClaseImpedimento1x1"
+                                                    toolTip="BundleParametros.numero_clase_impedimento.ficha_persona"
                                                     text="clase impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4547,6 +4733,7 @@
                                                     binding="#{FichaPersona6.labelOtraClaseImpedimento1x1}"
                                                     id="labelOtraClaseImpedimento1x1"
                                                     for="campoOtraClaseImpedimento1x1"
+                                                    toolTip="BundleParametros.otra_clase_impedimento.ficha_persona"
                                                     text="otra clase impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4580,6 +4767,7 @@
                                                     binding="#{FichaPersona6.labelNumeroCausaImpedimento1x1}"
                                                     id="labelNumeroCausaImpedimento1x1"
                                                     for="listaNumeroCausaImpedimento1x1"
+                                                    toolTip="BundleParametros.numero_causa_impedimento.ficha_persona"
                                                     text="causa impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4612,6 +4800,7 @@
                                                     binding="#{FichaPersona6.labelOtraCausaImpedimento1x1}"
                                                     id="labelOtraCausaImpedimento1x1"
                                                     for="campoOtraCausaImpedimento1x1"
+                                                    toolTip="BundleParametros.otra_causa_impedimento.ficha_persona"
                                                     text="otra causa impedimento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4645,6 +4834,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaCaminar1x1}"
                                                     id="labelNumeroSionoDifParaCaminar1x1"
                                                     for="listaNumeroSionoDifParaCaminar1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_caminar.ficha_persona"
                                                     text="dificultad para caminar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4677,6 +4867,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaVestirse1x1}"
                                                     id="labelNumeroSionoDifParaVestirse1x1"
                                                     for="listaNumeroSionoDifParaVestirse1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_vestirse.ficha_persona"
                                                     text="dificultad para vestirse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4709,6 +4900,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaBanarse1x1}"
                                                     id="labelNumeroSionoDifParaBanarse1x1"
                                                     for="listaNumeroSionoDifParaBanarse1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_banarse.ficha_persona"
                                                     text="dificultad para ba&#241;arse"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4741,6 +4933,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaComer1x1}"
                                                     id="labelNumeroSionoDifParaComer1x1"
                                                     for="listaNumeroSionoDifParaComer1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_comer.ficha_persona"
                                                     text="dificultad para comer"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4773,6 +4966,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaLaCama1x1}"
                                                     id="labelNumeroSionoDifParaLaCama1x1"
                                                     for="listaNumeroSionoDifParaLaCama1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_la_cama.ficha_persona"
                                                     text="dificultad para la cama"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4805,6 +4999,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoDifParaElBano1x1}"
                                                     id="labelNumeroSionoDifParaElBano1x1"
                                                     for="listaNumeroSionoDifParaElBano1x1"
+                                                    toolTip="BundleParametros.numero_siono_dif_para_el_bano.ficha_persona"
                                                     text="dificultad para el ba&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4854,6 +5049,7 @@
                                                     binding="#{FichaPersona6.labelNumeroSionoTrabajo1x1}"
                                                     id="labelNumeroSionoTrabajo1x1"
                                                     for="listaNumeroSionoTrabajo1x1"
+                                                    toolTip="BundleParametros.numero_siono_trabajo.ficha_persona"
                                                     text="trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4886,6 +5082,7 @@
                                                     binding="#{FichaPersona6.labelNumeroMotivoNoTrabajo1x1}"
                                                     id="labelNumeroMotivoNoTrabajo1x1"
                                                     for="listaNumeroMotivoNoTrabajo1x1"
+                                                    toolTip="BundleParametros.numero_motivo_no_trabajo.ficha_persona"
                                                     text="motivo no trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4918,6 +5115,7 @@
                                                     binding="#{FichaPersona6.labelOtroMotivoNoTrabajo1x1}"
                                                     id="labelOtroMotivoNoTrabajo1x1"
                                                     for="campoOtroMotivoNoTrabajo1x1"
+                                                    toolTip="BundleParametros.otro_motivo_no_trabajo.ficha_persona"
                                                     text="otro motivo no trabajo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4951,6 +5149,7 @@
                                                     binding="#{FichaPersona6.labelDescripcionOcupacionPrin1x1}"
                                                     id="labelDescripcionOcupacionPrin1x1"
                                                     for="campoDescripcionOcupacionPrin1x1"
+                                                    toolTip="BundleParametros.descripcion_ocupacion_prin.ficha_persona"
                                                     text="descripci&#243;n ocupaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4984,6 +5183,7 @@
                                                     binding="#{FichaPersona6.labelDescripcionDedicacionPrin1x1}"
                                                     id="labelDescripcionDedicacionPrin1x1"
                                                     for="campoDescripcionDedicacionPrin1x1"
+                                                    toolTip="BundleParametros.descripcion_dedicacion_prin.ficha_persona"
                                                     text="descripci&#243;n dedicaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5017,6 +5217,7 @@
                                                     binding="#{FichaPersona6.labelNumeroTipoRelacionLab1x1}"
                                                     id="labelNumeroTipoRelacionLab1x1"
                                                     for="listaNumeroTipoRelacionLab1x1"
+                                                    toolTip="BundleParametros.numero_tipo_relacion_lab.ficha_persona"
                                                     text="tipo relaci&#243;n laboral"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5066,6 +5267,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOcupacionPrin1x1}"
                                                     id="labelMontoIngresoOcupacionPrin1x1"
                                                     for="campoMontoIngresoOcupacionPrin1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_prin.ficha_persona"
                                                     text="monto ingreso ocupaci&#243;n principal"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5099,6 +5301,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOcupacionSecun1x1}"
                                                     id="labelMontoIngresoOcupacionSecun1x1"
                                                     for="campoMontoIngresoOcupacionSecun1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_ocupacion_secun.ficha_persona"
                                                     text="monto ingreso ocupaci&#243;n secundaria"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5132,6 +5335,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoOtrasOcup1x1}"
                                                     id="labelMontoIngresoOtrasOcup1x1"
                                                     for="campoMontoIngresoOtrasOcup1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_otras_ocup.ficha_persona"
                                                     text="monto ingreso otras ocupaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5165,6 +5369,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAlquileres1x1}"
                                                     id="labelMontoIngresoAlquileres1x1"
                                                     for="campoMontoIngresoAlquileres1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_alquileres.ficha_persona"
                                                     text="monto ingreso alquileres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5198,6 +5403,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoIntereses1x1}"
                                                     id="labelMontoIngresoIntereses1x1"
                                                     for="campoMontoIngresoIntereses1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_intereses.ficha_persona"
                                                     text="monto ingreso intereses"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5231,6 +5437,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAyudaFamPais1x1}"
                                                     id="labelMontoIngresoAyudaFamPais1x1"
                                                     for="campoMontoIngresoAyudaFamPais1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_pais.ficha_persona"
                                                     text="monto ingreso ayuda familiar pais"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5264,6 +5471,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAyudaFamExter1x1}"
                                                     id="labelMontoIngresoAyudaFamExter1x1"
                                                     for="campoMontoIngresoAyudaFamExter1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_ayuda_fam_exter.ficha_persona"
                                                     text="monto ingreso ayuda familiar exterior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5297,6 +5505,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoJubilacion1x1}"
                                                     id="labelMontoIngresoJubilacion1x1"
                                                     for="campoMontoIngresoJubilacion1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_jubilacion.ficha_persona"
                                                     text="monto ingreso jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5330,6 +5539,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoPensiones1x1}"
                                                     id="labelMontoIngresoPensiones1x1"
                                                     for="campoMontoIngresoPensiones1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_pensiones.ficha_persona"
                                                     text="monto ingreso pensiones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5363,6 +5573,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoTekopora1x1}"
                                                     id="labelMontoIngresoTekopora1x1"
                                                     for="campoMontoIngresoTekopora1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_tekopora.ficha_persona"
                                                     text="monto ingreso tekopora"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5396,6 +5607,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoProgramas1x1}"
                                                     id="labelMontoIngresoProgramas1x1"
                                                     for="campoMontoIngresoProgramas1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_programas.ficha_persona"
                                                     text="monto ingreso programas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5429,6 +5641,7 @@
                                                     binding="#{FichaPersona6.labelMontoIngresoAdicional1x1}"
                                                     id="labelMontoIngresoAdicional1x1"
                                                     for="campoMontoIngresoAdicional1x1"
+                                                    toolTip="BundleParametros.monto_ingreso_adicional.ficha_persona"
                                                     text="monto ingreso adicional"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5462,6 +5675,7 @@
                                                     binding="#{FichaPersona6.labelTotalIngresoMensual1x1}"
                                                     id="labelTotalIngresoMensual1x1"
                                                     for="campoTotalIngresoMensual1x1"
+                                                    toolTip="BundleParametros.total_ingreso_mensual.ficha_persona"
                                                     text="total ingreso mensual"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5512,6 +5726,7 @@
                                                     binding="#{FichaPersona6.labelIdPotencialBen1x1}"
                                                     id="labelIdPotencialBen1x1"
                                                     for="campoIdPotencialBen1x1"
+                                                    toolTip="BundleParametros.id_potencial_ben.ficha_persona"
                                                     text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -5566,6 +5781,72 @@
                                                     binding="#{FichaPersona6.campoIdPotencialBen1x1Boton2}"
                                                     id="campoIdPotencialBen1x1Boton2"
                                                     onClick="#{FichaPersona6.asistente.scriptCampoIdPotencialBen1Boton2}"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEsFichaPersonaImportada1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona6.labelEsFichaPersonaImportada1x1}"
+                                                    id="labelEsFichaPersonaImportada1x1"
+                                                    for="listaEsFichaPersonaImportada1x1"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"
+                                                    text="importada"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEsFichaPersonaImportada1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:dropDown id="listaEsFichaPersonaImportada1x1"
+                                                    binding="#{FichaPersona6.listaEsFichaPersonaImportada1x1}"
+                                                    converter="#{FichaPersona6.converterEsFichaPersonaImportada1}"
+                                                    disabled="true"
+                                                    items="#{FichaPersona6.asistente.opcionesListaEsFichaPersonaImportada1}"
+                                                    selected="#{FichaPersona6.fichaPersonaDataProvider.value['es_ficha_persona_importada']}"
+                                                    toolTip="BundleParametros.es_ficha_persona_importada.ficha_persona"/>
+                                                <webuijsf:staticText id="listaEsFichaPersonaImportada1x1Texto1"
+                                                    binding="#{FichaPersona6.listaEsFichaPersonaImportada1x1Texto1}"/>
+                                                <webuijsf:message id="messageEsFichaPersonaImportada1x1"
+                                                    for="listaEsFichaPersonaImportada1x1"/>
+                                                <webuijsf:helpInline id="helpInlineEsFichaPersonaImportada1x1"
+                                                    binding="#{FichaPersona6.helpInlineEsFichaPersonaImportada1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.es_ficha_persona_importada.ficha_persona"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaImportacion1x1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona6.labelFechaImportacion1x1}"
+                                                    id="labelFechaImportacion1x1"
+                                                    for="campoFechaImportacion1x1"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"
+                                                    text="fecha importaci&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaImportacion1x2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaImportacion1x1"
+                                                    binding="#{FichaPersona6.campoFechaImportacion1x1}"
+                                                    maxDate="#{FichaPersona6.gestor.defaultMaxDate}"
+                                                    minDate="#{FichaPersona6.gestor.defaultMinDate}"
+                                                    readOnly="true"
+                                                    selectedDate="#{FichaPersona6.fichaPersonaDataProvider.value['fecha_importacion']}"
+                                                    toolTip="BundleParametros.fecha_importacion.ficha_persona"/>
+                                                <webuijsf:staticText id="campoFechaImportacion1x1Texto1"
+                                                    binding="#{FichaPersona6.campoFechaImportacion1x1Texto1}"
+                                                    converter="#{FichaPersona6.converterFechaImportacion1}"
+                                                    text="#{FichaPersona6.fichaPersonaDataProvider.value['fecha_importacion']}"/>
+                                                <webuijsf:message id="messageFechaImportacion1x1"
+                                                    for="campoFechaImportacion1x1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaImportacion1x1"
+                                                    binding="#{FichaPersona6.helpInlineFechaImportacion1x1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_importacion.ficha_persona"
+                                                    type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
                                         </webuijsf:tab>

@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnIdLogProOtoPenApr1}"
+                                                    toolTip="BundleParametros.id_log_pro_oto_pen_apr.log_pro_oto_pen_apr"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogProOtoPenApr1" rendered="false"
                                                     sort="id_log_pro_oto_pen_apr">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.log_pro_oto_pen_apr"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x1y3">
@@ -274,6 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnCodigoPersona1}"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_oto_pen_apr"
                                                     headerText="c&#243;digo persona"
                                                     id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
@@ -301,6 +304,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnNombrePersona1}"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_oto_pen_apr"
                                                     headerText="nombre persona"
                                                     id="tableColumnNombrePersona1" rendered="false"
                                                     sort="nombre_persona">
@@ -328,6 +332,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_oto_pen_apr"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x2y3">
@@ -393,6 +398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_oto_pen_apr"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x3y3">
@@ -458,6 +464,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_oto_pen_apr"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -523,6 +530,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnNumeroCondicionPension1}"
+                                                    toolTip="BundleParametros.numero_condicion_pension.log_pro_oto_pen_apr"
                                                     headerText="condici&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionPension1" rendered="false"
                                                     sort="codigo_condicion_pension_1x5y2">
@@ -549,6 +557,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnEsProcesado1}"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_oto_pen_apr"
                                                     headerText="procesado"
                                                     id="tableColumnEsProcesado1"
                                                     sort="es_procesado">
@@ -574,6 +583,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_pro_oto_pen_apr"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -600,6 +610,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProOtoPenApr5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_oto_pen_apr"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">

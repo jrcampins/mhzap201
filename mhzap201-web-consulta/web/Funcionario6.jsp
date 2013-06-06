@@ -208,6 +208,7 @@
                                                     binding="#{Funcionario6.labelIdFuncionario1}"
                                                     id="labelIdFuncionario1"
                                                     for="campoIdFuncionario1"
+                                                    toolTip="BundleParametros.id_funcionario.funcionario"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{Funcionario6.labelCodigoFuncionario1}"
                                                     id="labelCodigoFuncionario1"
                                                     for="campoCodigoFuncionario1"
+                                                    toolTip="BundleParametros.codigo_funcionario.funcionario"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{Funcionario6.labelNombreFuncionario1}"
                                                     id="labelNombreFuncionario1"
                                                     for="campoNombreFuncionario1"
+                                                    toolTip="BundleParametros.nombre_funcionario.funcionario"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -306,6 +309,7 @@
                                                     binding="#{Funcionario6.labelNumeroCedula1}"
                                                     id="labelNumeroCedula1"
                                                     for="campoNumeroCedula1"
+                                                    toolTip="BundleParametros.numero_cedula.funcionario"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -338,6 +342,7 @@
                                                     binding="#{Funcionario6.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
+                                                    toolTip="BundleParametros.letra_cedula.funcionario"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -371,6 +376,7 @@
                                                     binding="#{Funcionario6.labelPrimerNombre1}"
                                                     id="labelPrimerNombre1"
                                                     for="campoPrimerNombre1"
+                                                    toolTip="BundleParametros.primer_nombre.funcionario"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -404,6 +410,7 @@
                                                     binding="#{Funcionario6.labelSegundoNombre1}"
                                                     id="labelSegundoNombre1"
                                                     for="campoSegundoNombre1"
+                                                    toolTip="BundleParametros.segundo_nombre.funcionario"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -437,6 +444,7 @@
                                                     binding="#{Funcionario6.labelPrimerApellido1}"
                                                     id="labelPrimerApellido1"
                                                     for="campoPrimerApellido1"
+                                                    toolTip="BundleParametros.primer_apellido.funcionario"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -470,6 +478,7 @@
                                                     binding="#{Funcionario6.labelSegundoApellido1}"
                                                     id="labelSegundoApellido1"
                                                     for="campoSegundoApellido1"
+                                                    toolTip="BundleParametros.segundo_apellido.funcionario"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -503,6 +512,7 @@
                                                     binding="#{Funcionario6.labelApellidoCasada1}"
                                                     id="labelApellidoCasada1"
                                                     for="campoApellidoCasada1"
+                                                    toolTip="BundleParametros.apellido_casada.funcionario"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid

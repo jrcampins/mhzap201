@@ -208,6 +208,7 @@
                                                     binding="#{LogImpIds6.labelIdLogImpIds1}"
                                                     id="labelIdLogImpIds1"
                                                     for="campoIdLogImpIds1"
+                                                    toolTip="BundleParametros.id_log_imp_ids.log_imp_ids"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpIds6.labelCedula1}"
                                                     id="labelCedula1"
                                                     for="campoCedula1"
+                                                    toolTip="BundleParametros.cedula.log_imp_ids"
                                                     text="c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpIds6.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
+                                                    toolTip="BundleParametros.letra_cedula.log_imp_ids"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpIds6.labelApellidos1}"
                                                     id="labelApellidos1"
                                                     for="campoApellidos1"
+                                                    toolTip="BundleParametros.apellidos.log_imp_ids"
                                                     text="apellidos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpIds6.labelNombres1}"
                                                     id="labelNombres1"
                                                     for="campoNombres1"
+                                                    toolTip="BundleParametros.nombres.log_imp_ids"
                                                     text="nombres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpIds6.labelNacimiento1}"
                                                     id="labelNacimiento1"
                                                     for="campoNacimiento1"
+                                                    toolTip="BundleParametros.nacimiento.log_imp_ids"
                                                     text="nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpIds6.labelSexo1}"
                                                     id="labelSexo1"
                                                     for="campoSexo1"
+                                                    toolTip="BundleParametros.sexo.log_imp_ids"
                                                     text="sexo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpIds6.labelNacionalidad1}"
                                                     id="labelNacionalidad1"
                                                     for="campoNacionalidad1"
+                                                    toolTip="BundleParametros.nacionalidad.log_imp_ids"
                                                     text="nacionalidad"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpIds6.labelEstadoCivil1}"
                                                     id="labelEstadoCivil1"
                                                     for="campoEstadoCivil1"
+                                                    toolTip="BundleParametros.estado_civil.log_imp_ids"
                                                     text="estado civil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpIds6.labelLugarNacimiento1}"
                                                     id="labelLugarNacimiento1"
                                                     for="campoLugarNacimiento1"
+                                                    toolTip="BundleParametros.lugar_nacimiento.log_imp_ids"
                                                     text="lugar nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpIds6.labelIndigena1}"
                                                     id="labelIndigena1"
                                                     for="campoIndigena1"
+                                                    toolTip="BundleParametros.indigena.log_imp_ids"
                                                     text="indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpIds6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_ids"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -591,6 +603,7 @@
                                                     binding="#{LogImpIds6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_ids"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -623,6 +636,7 @@
                                                     binding="#{LogImpIds6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_ids"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -655,6 +669,7 @@
                                                     binding="#{LogImpIds6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_ids"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -693,6 +708,7 @@
                                                     binding="#{LogImpIds6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_ids"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

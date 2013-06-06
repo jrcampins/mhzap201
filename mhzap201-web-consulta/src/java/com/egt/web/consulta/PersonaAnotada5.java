@@ -1,10 +1,5 @@
 /*
- * Copyright (C) 2010, EGT Consultores, C.A.
- *
- * Este archivo fue totalmente generado utilizando herramientas de software de EGT Consultores, C.A.
- * En consecuencia, partes del archivo podrian ser similares o hasta iguales a las de archivos de
- * programas de otros clientes, generados por las mismas herramientas; por lo tanto, esta similitud
- * no podra ser considerada como violacion del copyright.
+ * Copyright (C) 2009, EGT Consultores, C.A.
  *
  * Este programa es software libre; usted puede redistribuirlo y/o modificarlo bajo los terminos
  * de la licencia "GNU General Public License" publicada por la Fundacion "Free Software Foundation".
@@ -15,9 +10,7 @@
  */
 package com.egt.web.consulta;
 
-import com.egt.data.specific.xdp2.ObjecionElePenCachedRowSetDataProvider2;
-import com.egt.data.generic.xdp2.PersonaCachedRowSetDataProvider2;
-import com.egt.data.specific.xdp2.ProveedorDatExtCachedRowSetDataProvider2;
+import com.egt.data.generic.xdp2.PersonaAnotadaCachedRowSetDataProvider2;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.URX2;
 import com.egt.base.util.BundleWebui;
@@ -92,26 +85,30 @@ import javax.faces.validator.DoubleRangeValidator;
 import javax.faces.validator.LengthValidator;
 import javax.faces.validator.LongRangeValidator;
 import javax.faces.validator.ValidatorException;
+import javax.ejb.EJB;
+import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+import com.egt.ejb.business.process.PersonaAnotadaBusinessProcessLocal;
 
-public class ObjecionElePen5 extends AbstractPageBean
-        implements PaginaActualizacionObjecionElePen, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConFiltro, PaginaConsultaConTabla {
+public class PersonaAnotada5 extends AbstractPageBean
+        implements PaginaActualizacionPersonaAnotada, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConFiltro, PaginaConsultaConTabla {
 
     // <editor-fold defaultstate="collapsed" desc="Managed Component Definition">
     private void _init() throws Exception {
         textoFilasPorPagina1Validator1.setMinimum(1L);
         textoFilasPorPagina1Validator1.setMaximum(50L);
-        validatorIdObjecionElePen1.setMinimum(0L);
-        validatorIdObjecionElePen1.setMaximum(1000000000000000000L);
-        converterFechaUltimaActualizacion1.setPattern("dd/MM/yyyy");
-        converterFechaUltimaActualizacion1.setType("date");
-        validatorNombreArchivoUltimaAct1.setMaximum(200);
-        validatorObservaciones1.setMaximum(8160);
-        converterFechaAnulacion1.setPattern("dd/MM/yyyy");
-        converterFechaAnulacion1.setType("date");
-        validatorObservacionesAnulacion1.setMaximum(8160);
-        objecionElePenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.objecionElePenRowSet}"));
-        personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
-        proveedorDatExtReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.proveedorDatExtReferenceRowSet}"));
+        validatorIdPersonaAnotada1.setMinimum(0L);
+        validatorIdPersonaAnotada1.setMaximum(1000000000000000000L);
+        validatorIdPersona1.setMinimum(0L);
+        validatorIdPersona1.setMaximum(1000000000000000000L);
+        validatorCodigoPersona1.setMaximum(30);
+        validatorNombrePersona1.setMaximum(100);
+        validatorIdUsuario1.setMinimum(0L);
+        validatorIdUsuario1.setMaximum(1000000000000000000L);
+        validatorCodigoUsuario1.setMaximum(30);
+        validatorNombreUsuario1.setMaximum(100);
+        converterFechaHoraSeleccion1.setPattern("dd/MM/yyyy hh:mm aa");
+        converterFechaHoraSeleccion1.setType("both");
+        personaAnotadaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaAnotadaRowSet}"));
     }
 
     private Form form1 = new Form();
@@ -260,65 +257,65 @@ public class ObjecionElePen5 extends AbstractPageBean
         this.hipervinculoDetallarFila1 = ih;
     }
 
-    private TableColumn tableColumnIdObjecionElePen1 = new com.egt.core.jsf.component.ColumnaTabla();
+    private TableColumn tableColumnIdPersonaAnotada1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnIdObjecionElePen1() {
-        return tableColumnIdObjecionElePen1;
+    public TableColumn getTableColumnIdPersonaAnotada1() {
+        return tableColumnIdPersonaAnotada1;
     }
 
-    public void setTableColumnIdObjecionElePen1(TableColumn component) {
-        this.tableColumnIdObjecionElePen1 = component;
+    public void setTableColumnIdPersonaAnotada1(TableColumn component) {
+        this.tableColumnIdPersonaAnotada1 = component;
     }
 
-    private Label labelIdObjecionElePen1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelIdPersonaAnotada1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelIdObjecionElePen1() {
-        return labelIdObjecionElePen1;
+    public Label getLabelIdPersonaAnotada1() {
+        return labelIdPersonaAnotada1;
     }
 
-    public void setLabelIdObjecionElePen1(Label l) {
-        this.labelIdObjecionElePen1 = l;
+    public void setLabelIdPersonaAnotada1(Label l) {
+        this.labelIdPersonaAnotada1 = l;
     }
 
-    private TextField campoIdObjecionElePen1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoIdPersonaAnotada1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextField getCampoIdObjecionElePen1() {
-        return campoIdObjecionElePen1;
+    public TextField getCampoIdPersonaAnotada1() {
+        return campoIdPersonaAnotada1;
     }
 
-    public void setCampoIdObjecionElePen1(TextField component) {
-        this.campoIdObjecionElePen1 = component;
+    public void setCampoIdPersonaAnotada1(TextField component) {
+        this.campoIdPersonaAnotada1 = component;
     }
 
-    private StaticText campoIdObjecionElePen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoIdPersonaAnotada1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoIdObjecionElePen1Texto1() {
-        return campoIdObjecionElePen1Texto1;
-    }
-
-    public void setCampoIdObjecionElePen1Texto1(StaticText component) {
-        this.campoIdObjecionElePen1Texto1 = component;
+    public StaticText getCampoIdPersonaAnotada1Texto1() {
+        return campoIdPersonaAnotada1Texto1;
     }
 
-    private LongConverter converterIdObjecionElePen1 = new LongConverter();
+    public void setCampoIdPersonaAnotada1Texto1(StaticText component) {
+        this.campoIdPersonaAnotada1Texto1 = component;
+    }
+
+    private LongConverter converterIdPersonaAnotada1 = new LongConverter();
   
-    public LongConverter getConverterIdObjecionElePen1() {
-        return converterIdObjecionElePen1;
+    public LongConverter getConverterIdPersonaAnotada1() {
+        return converterIdPersonaAnotada1;
     }
   
-    public void setConverterIdObjecionElePen1(LongConverter converter) {
-        this.converterIdObjecionElePen1 = converter;
+    public void setConverterIdPersonaAnotada1(LongConverter converter) {
+        this.converterIdPersonaAnotada1 = converter;
     }
   
-    private LongRangeValidator validatorIdObjecionElePen1 = new LongRangeValidator();
+    private LongRangeValidator validatorIdPersonaAnotada1 = new LongRangeValidator();
   
-    public LongRangeValidator getValidatorIdObjecionElePen1() {
-        return validatorIdObjecionElePen1;
+    public LongRangeValidator getValidatorIdPersonaAnotada1() {
+        return validatorIdPersonaAnotada1;
     }
   
-    public void setValidatorIdObjecionElePen1(LongRangeValidator validator) {
-        this.validatorIdObjecionElePen1 = validator;
+    public void setValidatorIdPersonaAnotada1(LongRangeValidator validator) {
+        this.validatorIdPersonaAnotada1 = validator;
     }
   
     private TableColumn tableColumnIdPersona1 = new com.egt.core.jsf.component.ColumnaTabla();
@@ -362,510 +359,339 @@ public class ObjecionElePen5 extends AbstractPageBean
         this.campoIdPersona1Texto1 = component;
     }
 
-    private Button campoIdPersona1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+    private LongConverter converterIdPersona1 = new LongConverter();
+  
+    public LongConverter getConverterIdPersona1() {
+        return converterIdPersona1;
+    }
+  
+    public void setConverterIdPersona1(LongConverter converter) {
+        this.converterIdPersona1 = converter;
+    }
+  
+    private LongRangeValidator validatorIdPersona1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorIdPersona1() {
+        return validatorIdPersona1;
+    }
+  
+    public void setValidatorIdPersona1(LongRangeValidator validator) {
+        this.validatorIdPersona1 = validator;
+    }
+  
+    private TableColumn tableColumnCodigoPersona1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public Button getCampoIdPersona1Boton1() {
-        return campoIdPersona1Boton1;
+    public TableColumn getTableColumnCodigoPersona1() {
+        return tableColumnCodigoPersona1;
     }
 
-    public void setCampoIdPersona1Boton1(Button component) {
-        this.campoIdPersona1Boton1 = component;
+    public void setTableColumnCodigoPersona1(TableColumn component) {
+        this.tableColumnCodigoPersona1 = component;
     }
 
-    private Button campoIdPersona1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+    private Label labelCodigoPersona1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Button getCampoIdPersona1Boton3() {
-        return campoIdPersona1Boton3;
+    public Label getLabelCodigoPersona1() {
+        return labelCodigoPersona1;
     }
 
-    public void setCampoIdPersona1Boton3(Button component) {
-        this.campoIdPersona1Boton3 = component;
+    public void setLabelCodigoPersona1(Label l) {
+        this.labelCodigoPersona1 = l;
     }
 
-    private TableColumn tableColumnIdPersona2 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnIdPersona2() {
-        return tableColumnIdPersona2;
-    }
-
-    public void setTableColumnIdPersona2(TableColumn component) {
-        this.tableColumnIdPersona2 = component;
-    }
-
-    private Label labelIdPersona2 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelIdPersona2() {
-        return labelIdPersona2;
-    }
-
-    public void setLabelIdPersona2(Label l) {
-        this.labelIdPersona2 = l;
-    }
-
-    private ImageHyperlink campoIdPersona1Hiper1 = new com.egt.core.jsf.component.HipervinculoVerDetalle();
-
-    public ImageHyperlink getCampoIdPersona1Hiper1() {
-        return campoIdPersona1Hiper1;
-    }
-
-    public void setCampoIdPersona1Hiper1(ImageHyperlink component) {
-        this.campoIdPersona1Hiper1 = component;
-    }
-
-    private TableColumn tableColumnIdProveedorDatExt1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnIdProveedorDatExt1() {
-        return tableColumnIdProveedorDatExt1;
-    }
-
-    public void setTableColumnIdProveedorDatExt1(TableColumn component) {
-        this.tableColumnIdProveedorDatExt1 = component;
-    }
-
-    private Label labelIdProveedorDatExt1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelIdProveedorDatExt1() {
-        return labelIdProveedorDatExt1;
-    }
-
-    public void setLabelIdProveedorDatExt1(Label l) {
-        this.labelIdProveedorDatExt1 = l;
-    }
-
-    private TextField campoIdProveedorDatExt1 = new com.egt.core.jsf.component.CampoTexto();
+    private TextField campoCodigoPersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextField getCampoIdProveedorDatExt1() {
-        return campoIdProveedorDatExt1;
+    public TextField getCampoCodigoPersona1() {
+        return campoCodigoPersona1;
     }
 
-    public void setCampoIdProveedorDatExt1(TextField component) {
-        this.campoIdProveedorDatExt1 = component;
+    public void setCampoCodigoPersona1(TextField component) {
+        this.campoCodigoPersona1 = component;
     }
 
-    private StaticText campoIdProveedorDatExt1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoCodigoPersona1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoIdProveedorDatExt1Texto1() {
-        return campoIdProveedorDatExt1Texto1;
+    public StaticText getCampoCodigoPersona1Texto1() {
+        return campoCodigoPersona1Texto1;
     }
 
-    public void setCampoIdProveedorDatExt1Texto1(StaticText component) {
-        this.campoIdProveedorDatExt1Texto1 = component;
+    public void setCampoCodigoPersona1Texto1(StaticText component) {
+        this.campoCodigoPersona1Texto1 = component;
     }
 
-    private Button campoIdProveedorDatExt1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+    private LengthValidator validatorCodigoPersona1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoPersona1() {
+        return validatorCodigoPersona1;
+    }
+  
+    public void setValidatorCodigoPersona1(LengthValidator validator) {
+        this.validatorCodigoPersona1 = validator;
+    }
+  
+    private TableColumn tableColumnNombrePersona1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public Button getCampoIdProveedorDatExt1Boton1() {
-        return campoIdProveedorDatExt1Boton1;
+    public TableColumn getTableColumnNombrePersona1() {
+        return tableColumnNombrePersona1;
     }
 
-    public void setCampoIdProveedorDatExt1Boton1(Button component) {
-        this.campoIdProveedorDatExt1Boton1 = component;
+    public void setTableColumnNombrePersona1(TableColumn component) {
+        this.tableColumnNombrePersona1 = component;
     }
 
-    private Button campoIdProveedorDatExt1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+    private Label labelNombrePersona1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Button getCampoIdProveedorDatExt1Boton3() {
-        return campoIdProveedorDatExt1Boton3;
+    public Label getLabelNombrePersona1() {
+        return labelNombrePersona1;
     }
 
-    public void setCampoIdProveedorDatExt1Boton3(Button component) {
-        this.campoIdProveedorDatExt1Boton3 = component;
+    public void setLabelNombrePersona1(Label l) {
+        this.labelNombrePersona1 = l;
     }
 
-    private TableColumn tableColumnIdProveedorDatExt2 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnIdProveedorDatExt2() {
-        return tableColumnIdProveedorDatExt2;
-    }
-
-    public void setTableColumnIdProveedorDatExt2(TableColumn component) {
-        this.tableColumnIdProveedorDatExt2 = component;
-    }
-
-    private Label labelIdProveedorDatExt2 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelIdProveedorDatExt2() {
-        return labelIdProveedorDatExt2;
-    }
-
-    public void setLabelIdProveedorDatExt2(Label l) {
-        this.labelIdProveedorDatExt2 = l;
-    }
-
-    private ImageHyperlink campoIdProveedorDatExt1Hiper1 = new com.egt.core.jsf.component.HipervinculoVerDetalle();
-
-    public ImageHyperlink getCampoIdProveedorDatExt1Hiper1() {
-        return campoIdProveedorDatExt1Hiper1;
-    }
-
-    public void setCampoIdProveedorDatExt1Hiper1(ImageHyperlink component) {
-        this.campoIdProveedorDatExt1Hiper1 = component;
-    }
-
-    private TableColumn tableColumnNumeroTipoObjElePen1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnNumeroTipoObjElePen1() {
-        return tableColumnNumeroTipoObjElePen1;
-    }
-
-    public void setTableColumnNumeroTipoObjElePen1(TableColumn component) {
-        this.tableColumnNumeroTipoObjElePen1 = component;
-    }
-
-    private Label labelNumeroTipoObjElePen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelNumeroTipoObjElePen1() {
-        return labelNumeroTipoObjElePen1;
-    }
-
-    public void setLabelNumeroTipoObjElePen1(Label l) {
-        this.labelNumeroTipoObjElePen1 = l;
-    }
-
-    private DropDown listaNumeroTipoObjElePen1 = new com.egt.core.jsf.component.ListaDesplegable();
+    private TextField campoNombrePersona1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public DropDown getListaNumeroTipoObjElePen1() {
-        return listaNumeroTipoObjElePen1;
+    public TextField getCampoNombrePersona1() {
+        return campoNombrePersona1;
     }
 
-    public void setListaNumeroTipoObjElePen1(DropDown component) {
-        this.listaNumeroTipoObjElePen1 = component;
+    public void setCampoNombrePersona1(TextField component) {
+        this.campoNombrePersona1 = component;
     }
 
-    private StaticText listaNumeroTipoObjElePen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoNombrePersona1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getListaNumeroTipoObjElePen1Texto1() {
-        return listaNumeroTipoObjElePen1Texto1;
+    public StaticText getCampoNombrePersona1Texto1() {
+        return campoNombrePersona1Texto1;
     }
 
-    public void setListaNumeroTipoObjElePen1Texto1(StaticText component) {
-        this.listaNumeroTipoObjElePen1Texto1 = component;
+    public void setCampoNombrePersona1Texto1(StaticText component) {
+        this.campoNombrePersona1Texto1 = component;
     }
 
-    private IntegerConverter converterNumeroTipoObjElePen1 = new IntegerConverter();
+    private LengthValidator validatorNombrePersona1 = new LengthValidator();
   
-    public IntegerConverter getConverterNumeroTipoObjElePen1() {
-        return converterNumeroTipoObjElePen1;
-    }
-  
-    public void setConverterNumeroTipoObjElePen1(IntegerConverter converter) {
-        this.converterNumeroTipoObjElePen1 = converter;
+    public LengthValidator getValidatorNombrePersona1() {
+        return validatorNombrePersona1;
     }
   
-    private TableColumn tableColumnEsObjecionElePenInactiva1 = new com.egt.core.jsf.component.ColumnaTabla();
+    public void setValidatorNombrePersona1(LengthValidator validator) {
+        this.validatorNombrePersona1 = validator;
+    }
+  
+    private TableColumn tableColumnIdUsuario1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnEsObjecionElePenInactiva1() {
-        return tableColumnEsObjecionElePenInactiva1;
+    public TableColumn getTableColumnIdUsuario1() {
+        return tableColumnIdUsuario1;
     }
 
-    public void setTableColumnEsObjecionElePenInactiva1(TableColumn component) {
-        this.tableColumnEsObjecionElePenInactiva1 = component;
+    public void setTableColumnIdUsuario1(TableColumn component) {
+        this.tableColumnIdUsuario1 = component;
     }
 
-    private Label labelEsObjecionElePenInactiva1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelIdUsuario1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelEsObjecionElePenInactiva1() {
-        return labelEsObjecionElePenInactiva1;
+    public Label getLabelIdUsuario1() {
+        return labelIdUsuario1;
     }
 
-    public void setLabelEsObjecionElePenInactiva1(Label l) {
-        this.labelEsObjecionElePenInactiva1 = l;
+    public void setLabelIdUsuario1(Label l) {
+        this.labelIdUsuario1 = l;
     }
 
-    private DropDown listaEsObjecionElePenInactiva1 = new com.egt.core.jsf.component.ListaDesplegable();
+    private TextField campoIdUsuario1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public DropDown getListaEsObjecionElePenInactiva1() {
-        return listaEsObjecionElePenInactiva1;
+    public TextField getCampoIdUsuario1() {
+        return campoIdUsuario1;
     }
 
-    public void setListaEsObjecionElePenInactiva1(DropDown component) {
-        this.listaEsObjecionElePenInactiva1 = component;
+    public void setCampoIdUsuario1(TextField component) {
+        this.campoIdUsuario1 = component;
     }
 
-    private StaticText listaEsObjecionElePenInactiva1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoIdUsuario1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getListaEsObjecionElePenInactiva1Texto1() {
-        return listaEsObjecionElePenInactiva1Texto1;
+    public StaticText getCampoIdUsuario1Texto1() {
+        return campoIdUsuario1Texto1;
     }
 
-    public void setListaEsObjecionElePenInactiva1Texto1(StaticText component) {
-        this.listaEsObjecionElePenInactiva1Texto1 = component;
+    public void setCampoIdUsuario1Texto1(StaticText component) {
+        this.campoIdUsuario1Texto1 = component;
     }
 
-    private IntegerConverter converterEsObjecionElePenInactiva1 = new IntegerConverter();
+    private LongConverter converterIdUsuario1 = new LongConverter();
   
-    public IntegerConverter getConverterEsObjecionElePenInactiva1() {
-        return converterEsObjecionElePenInactiva1;
-    }
-  
-    public void setConverterEsObjecionElePenInactiva1(IntegerConverter converter) {
-        this.converterEsObjecionElePenInactiva1 = converter;
+    public LongConverter getConverterIdUsuario1() {
+        return converterIdUsuario1;
     }
   
-    private TableColumn tableColumnFechaUltimaActualizacion1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnFechaUltimaActualizacion1() {
-        return tableColumnFechaUltimaActualizacion1;
-    }
-
-    public void setTableColumnFechaUltimaActualizacion1(TableColumn component) {
-        this.tableColumnFechaUltimaActualizacion1 = component;
-    }
-
-    private Label labelFechaUltimaActualizacion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaUltimaActualizacion1() {
-        return labelFechaUltimaActualizacion1;
-    }
-
-    public void setLabelFechaUltimaActualizacion1(Label l) {
-        this.labelFechaUltimaActualizacion1 = l;
-    }
-
-    private TextField campoFechaUltimaActualizacion1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaUltimaActualizacion1() {
-        return campoFechaUltimaActualizacion1;
-    }
-
-    public void setCampoFechaUltimaActualizacion1(TextField component) {
-        this.campoFechaUltimaActualizacion1 = component;
-    }
-
-    private StaticText campoFechaUltimaActualizacion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaUltimaActualizacion1Texto1() {
-        return campoFechaUltimaActualizacion1Texto1;
-    }
-
-    public void setCampoFechaUltimaActualizacion1Texto1(StaticText component) {
-        this.campoFechaUltimaActualizacion1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaUltimaActualizacion1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaUltimaActualizacion1() {
-        return converterFechaUltimaActualizacion1;
+    public void setConverterIdUsuario1(LongConverter converter) {
+        this.converterIdUsuario1 = converter;
     }
   
-    public void setConverterFechaUltimaActualizacion1(SqlTimestampConverter converter) {
-        this.converterFechaUltimaActualizacion1 = converter;
+    private LongRangeValidator validatorIdUsuario1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorIdUsuario1() {
+        return validatorIdUsuario1;
     }
   
-    private TableColumn tableColumnNombreArchivoUltimaAct1 = new com.egt.core.jsf.component.ColumnaTabla();
+    public void setValidatorIdUsuario1(LongRangeValidator validator) {
+        this.validatorIdUsuario1 = validator;
+    }
+  
+    private TableColumn tableColumnCodigoUsuario1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnNombreArchivoUltimaAct1() {
-        return tableColumnNombreArchivoUltimaAct1;
+    public TableColumn getTableColumnCodigoUsuario1() {
+        return tableColumnCodigoUsuario1;
     }
 
-    public void setTableColumnNombreArchivoUltimaAct1(TableColumn component) {
-        this.tableColumnNombreArchivoUltimaAct1 = component;
+    public void setTableColumnCodigoUsuario1(TableColumn component) {
+        this.tableColumnCodigoUsuario1 = component;
     }
 
-    private Label labelNombreArchivoUltimaAct1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelCodigoUsuario1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelNombreArchivoUltimaAct1() {
-        return labelNombreArchivoUltimaAct1;
+    public Label getLabelCodigoUsuario1() {
+        return labelCodigoUsuario1;
     }
 
-    public void setLabelNombreArchivoUltimaAct1(Label l) {
-        this.labelNombreArchivoUltimaAct1 = l;
+    public void setLabelCodigoUsuario1(Label l) {
+        this.labelCodigoUsuario1 = l;
     }
 
-    private TextArea campoNombreArchivoUltimaAct1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoCodigoUsuario1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoNombreArchivoUltimaAct1() {
-        return campoNombreArchivoUltimaAct1;
+    public TextField getCampoCodigoUsuario1() {
+        return campoCodigoUsuario1;
     }
 
-    public void setCampoNombreArchivoUltimaAct1(TextArea component) {
-        this.campoNombreArchivoUltimaAct1 = component;
+    public void setCampoCodigoUsuario1(TextField component) {
+        this.campoCodigoUsuario1 = component;
     }
 
-    private StaticText campoNombreArchivoUltimaAct1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoCodigoUsuario1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoNombreArchivoUltimaAct1Texto1() {
-        return campoNombreArchivoUltimaAct1Texto1;
+    public StaticText getCampoCodigoUsuario1Texto1() {
+        return campoCodigoUsuario1Texto1;
     }
 
-    public void setCampoNombreArchivoUltimaAct1Texto1(StaticText component) {
-        this.campoNombreArchivoUltimaAct1Texto1 = component;
+    public void setCampoCodigoUsuario1Texto1(StaticText component) {
+        this.campoCodigoUsuario1Texto1 = component;
     }
 
-    private Button campoNombreArchivoUltimaAct1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
-
-    public Button getCampoNombreArchivoUltimaAct1Boton3() {
-        return campoNombreArchivoUltimaAct1Boton3;
-    }
-
-    public void setCampoNombreArchivoUltimaAct1Boton3(Button component) {
-        this.campoNombreArchivoUltimaAct1Boton3 = component;
-    }
-
-    private LengthValidator validatorNombreArchivoUltimaAct1 = new LengthValidator();
+    private LengthValidator validatorCodigoUsuario1 = new LengthValidator();
   
-    public LengthValidator getValidatorNombreArchivoUltimaAct1() {
-        return validatorNombreArchivoUltimaAct1;
+    public LengthValidator getValidatorCodigoUsuario1() {
+        return validatorCodigoUsuario1;
     }
   
-    public void setValidatorNombreArchivoUltimaAct1(LengthValidator validator) {
-        this.validatorNombreArchivoUltimaAct1 = validator;
+    public void setValidatorCodigoUsuario1(LengthValidator validator) {
+        this.validatorCodigoUsuario1 = validator;
     }
   
-    private TableColumn tableColumnObservaciones1 = new com.egt.core.jsf.component.ColumnaTabla();
+    private TableColumn tableColumnNombreUsuario1 = new com.egt.core.jsf.component.ColumnaTabla();
 
-    public TableColumn getTableColumnObservaciones1() {
-        return tableColumnObservaciones1;
+    public TableColumn getTableColumnNombreUsuario1() {
+        return tableColumnNombreUsuario1;
     }
 
-    public void setTableColumnObservaciones1(TableColumn component) {
-        this.tableColumnObservaciones1 = component;
+    public void setTableColumnNombreUsuario1(TableColumn component) {
+        this.tableColumnNombreUsuario1 = component;
     }
 
-    private Label labelObservaciones1 = new com.egt.core.jsf.component.Etiqueta();
+    private Label labelNombreUsuario1 = new com.egt.core.jsf.component.Etiqueta();
 
-    public Label getLabelObservaciones1() {
-        return labelObservaciones1;
+    public Label getLabelNombreUsuario1() {
+        return labelNombreUsuario1;
     }
 
-    public void setLabelObservaciones1(Label l) {
-        this.labelObservaciones1 = l;
+    public void setLabelNombreUsuario1(Label l) {
+        this.labelNombreUsuario1 = l;
     }
 
-    private TextArea campoObservaciones1 = new com.egt.core.jsf.component.AreaTexto();
+    private TextField campoNombreUsuario1 = new com.egt.core.jsf.component.CampoTexto();
 
     @Override
-    public TextArea getCampoObservaciones1() {
-        return campoObservaciones1;
+    public TextField getCampoNombreUsuario1() {
+        return campoNombreUsuario1;
     }
 
-    public void setCampoObservaciones1(TextArea component) {
-        this.campoObservaciones1 = component;
+    public void setCampoNombreUsuario1(TextField component) {
+        this.campoNombreUsuario1 = component;
     }
 
-    private StaticText campoObservaciones1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+    private StaticText campoNombreUsuario1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
 
-    public StaticText getCampoObservaciones1Texto1() {
-        return campoObservaciones1Texto1;
+    public StaticText getCampoNombreUsuario1Texto1() {
+        return campoNombreUsuario1Texto1;
     }
 
-    public void setCampoObservaciones1Texto1(StaticText component) {
-        this.campoObservaciones1Texto1 = component;
+    public void setCampoNombreUsuario1Texto1(StaticText component) {
+        this.campoNombreUsuario1Texto1 = component;
     }
 
-    private LengthValidator validatorObservaciones1 = new LengthValidator();
+    private LengthValidator validatorNombreUsuario1 = new LengthValidator();
   
-    public LengthValidator getValidatorObservaciones1() {
-        return validatorObservaciones1;
-    }
-  
-    public void setValidatorObservaciones1(LengthValidator validator) {
-        this.validatorObservaciones1 = validator;
+    public LengthValidator getValidatorNombreUsuario1() {
+        return validatorNombreUsuario1;
     }
   
-    private TableColumn tableColumnFechaAnulacion1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnFechaAnulacion1() {
-        return tableColumnFechaAnulacion1;
-    }
-
-    public void setTableColumnFechaAnulacion1(TableColumn component) {
-        this.tableColumnFechaAnulacion1 = component;
-    }
-
-    private Label labelFechaAnulacion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelFechaAnulacion1() {
-        return labelFechaAnulacion1;
-    }
-
-    public void setLabelFechaAnulacion1(Label l) {
-        this.labelFechaAnulacion1 = l;
-    }
-
-    private TextField campoFechaAnulacion1 = new com.egt.core.jsf.component.CampoTexto();
-
-    public TextField getCampoFechaAnulacion1() {
-        return campoFechaAnulacion1;
-    }
-
-    public void setCampoFechaAnulacion1(TextField component) {
-        this.campoFechaAnulacion1 = component;
-    }
-
-    private StaticText campoFechaAnulacion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoFechaAnulacion1Texto1() {
-        return campoFechaAnulacion1Texto1;
-    }
-
-    public void setCampoFechaAnulacion1Texto1(StaticText component) {
-        this.campoFechaAnulacion1Texto1 = component;
-    }
-
-    private SqlTimestampConverter converterFechaAnulacion1 = new SqlTimestampConverter();
-  
-    public SqlTimestampConverter getConverterFechaAnulacion1() {
-        return converterFechaAnulacion1;
+    public void setValidatorNombreUsuario1(LengthValidator validator) {
+        this.validatorNombreUsuario1 = validator;
     }
   
-    public void setConverterFechaAnulacion1(SqlTimestampConverter converter) {
-        this.converterFechaAnulacion1 = converter;
+    private TableColumn tableColumnFechaHoraSeleccion1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaHoraSeleccion1() {
+        return tableColumnFechaHoraSeleccion1;
+    }
+
+    public void setTableColumnFechaHoraSeleccion1(TableColumn component) {
+        this.tableColumnFechaHoraSeleccion1 = component;
+    }
+
+    private Label labelFechaHoraSeleccion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaHoraSeleccion1() {
+        return labelFechaHoraSeleccion1;
+    }
+
+    public void setLabelFechaHoraSeleccion1(Label l) {
+        this.labelFechaHoraSeleccion1 = l;
+    }
+
+    private TextField campoFechaHoraSeleccion1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaHoraSeleccion1() {
+        return campoFechaHoraSeleccion1;
+    }
+
+    public void setCampoFechaHoraSeleccion1(TextField component) {
+        this.campoFechaHoraSeleccion1 = component;
+    }
+
+    private StaticText campoFechaHoraSeleccion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaHoraSeleccion1Texto1() {
+        return campoFechaHoraSeleccion1Texto1;
+    }
+
+    public void setCampoFechaHoraSeleccion1Texto1(StaticText component) {
+        this.campoFechaHoraSeleccion1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaHoraSeleccion1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaHoraSeleccion1() {
+        return converterFechaHoraSeleccion1;
     }
   
-    private TableColumn tableColumnObservacionesAnulacion1 = new com.egt.core.jsf.component.ColumnaTabla();
-
-    public TableColumn getTableColumnObservacionesAnulacion1() {
-        return tableColumnObservacionesAnulacion1;
-    }
-
-    public void setTableColumnObservacionesAnulacion1(TableColumn component) {
-        this.tableColumnObservacionesAnulacion1 = component;
-    }
-
-    private Label labelObservacionesAnulacion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelObservacionesAnulacion1() {
-        return labelObservacionesAnulacion1;
-    }
-
-    public void setLabelObservacionesAnulacion1(Label l) {
-        this.labelObservacionesAnulacion1 = l;
-    }
-
-    private TextArea campoObservacionesAnulacion1 = new com.egt.core.jsf.component.AreaTexto();
-
-    @Override
-    public TextArea getCampoObservacionesAnulacion1() {
-        return campoObservacionesAnulacion1;
-    }
-
-    public void setCampoObservacionesAnulacion1(TextArea component) {
-        this.campoObservacionesAnulacion1 = component;
-    }
-
-    private StaticText campoObservacionesAnulacion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoObservacionesAnulacion1Texto1() {
-        return campoObservacionesAnulacion1Texto1;
-    }
-
-    public void setCampoObservacionesAnulacion1Texto1(StaticText component) {
-        this.campoObservacionesAnulacion1Texto1 = component;
-    }
-
-    private LengthValidator validatorObservacionesAnulacion1 = new LengthValidator();
-  
-    public LengthValidator getValidatorObservacionesAnulacion1() {
-        return validatorObservacionesAnulacion1;
-    }
-  
-    public void setValidatorObservacionesAnulacion1(LengthValidator validator) {
-        this.validatorObservacionesAnulacion1 = validator;
+    public void setConverterFechaHoraSeleccion1(SqlTimestampConverter converter) {
+        this.converterFechaHoraSeleccion1 = converter;
     }
   
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();
@@ -1082,42 +908,20 @@ public class ObjecionElePen5 extends AbstractPageBean
         this.imageHyperlink1 = component;
     }
 
-    private ObjecionElePenCachedRowSetDataProvider2 objecionElePenDataProvider = new ObjecionElePenCachedRowSetDataProvider2();
+    private PersonaAnotadaCachedRowSetDataProvider2 personaAnotadaDataProvider = new PersonaAnotadaCachedRowSetDataProvider2();
 
     @Override
-    public ObjecionElePenCachedRowSetDataProvider2 getObjecionElePenDataProvider() {
-        return objecionElePenDataProvider;
+    public PersonaAnotadaCachedRowSetDataProvider2 getPersonaAnotadaDataProvider() {
+        return personaAnotadaDataProvider;
     }
 
-    public void setObjecionElePenDataProvider(ObjecionElePenCachedRowSetDataProvider2 crsdp) {
-        this.objecionElePenDataProvider = crsdp;
-    }
-
-    private PersonaCachedRowSetDataProvider2 personaReferenceDataProvider = new PersonaCachedRowSetDataProvider2();
-
-    @Override
-    public PersonaCachedRowSetDataProvider2 getPersonaReferenceDataProvider() {
-        return personaReferenceDataProvider;
-    }
-
-    public void setPersonaReferenceDataProvider(PersonaCachedRowSetDataProvider2 crsdp) {
-        this.personaReferenceDataProvider = crsdp;
-    }
-
-    private ProveedorDatExtCachedRowSetDataProvider2 proveedorDatExtReferenceDataProvider = new ProveedorDatExtCachedRowSetDataProvider2();
-
-    @Override
-    public ProveedorDatExtCachedRowSetDataProvider2 getProveedorDatExtReferenceDataProvider() {
-        return proveedorDatExtReferenceDataProvider;
-    }
-
-    public void setProveedorDatExtReferenceDataProvider(ProveedorDatExtCachedRowSetDataProvider2 crsdp) {
-        this.proveedorDatExtReferenceDataProvider = crsdp;
+    public void setPersonaAnotadaDataProvider(PersonaAnotadaCachedRowSetDataProvider2 crsdp) {
+        this.personaAnotadaDataProvider = crsdp;
     }
 
     // </editor-fold>
 /**/
-    public ObjecionElePen5() {
+    public PersonaAnotada5() {
     }
 
     // <editor-fold defaultstate="collapsed" desc="metodos estandar para el manejo de eventos de la pagina: init, preprocess, prerender y destroy">
@@ -1155,9 +959,7 @@ public class ObjecionElePen5 extends AbstractPageBean
     @Override
     //@PreDestroy
     public void destroy() {
-        objecionElePenDataProvider.close();
-        personaReferenceDataProvider.close();
-        proveedorDatExtReferenceDataProvider.close();
+        personaAnotadaDataProvider.close();
     }
     // </editor-fold>
 
@@ -1272,15 +1074,10 @@ public class ObjecionElePen5 extends AbstractPageBean
     }
     // </editor-fold>
 
-    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades tipo fecha de la interfaz PaginaActualizacionObjecionElePen...">
+    // <editor-fold defaultstate="collapsed" desc="implementacion estandar de propiedades tipo fecha de la interfaz PaginaActualizacionPersonaAnotada...">
     @Override
-    public TextField getTextFieldCampoFechaUltimaActualizacion1() {
-        return this.getCampoFechaUltimaActualizacion1();
-    }
-
-    @Override
-    public TextField getTextFieldCampoFechaAnulacion1() {
-        return this.getCampoFechaAnulacion1();
+    public TextField getTextFieldCampoFechaHoraSeleccion1() {
+        return this.getCampoFechaHoraSeleccion1();
     }
 
     // </editor-fold>
@@ -1295,28 +1092,28 @@ public class ObjecionElePen5 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="propiedad asistente de pagina de actualizacion">
-    private AsistentePaginaActualizacionObjecionElePen asistente = new AsistentePaginaActualizacionObjecionElePen(this);
+    private AsistentePaginaActualizacionPersonaAnotada asistente = new AsistentePaginaActualizacionPersonaAnotada(this);
 
-    public AsistentePaginaActualizacionObjecionElePen getAsistente() {
+    public AsistentePaginaActualizacionPersonaAnotada getAsistente() {
         return this.asistente;
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="propiedades y metodos estandar: preiniciar, iniciar, preprocesar, prepresentar, consultar, posconsultar, posrefrescar">
-    private final static String ETIQUETA_MIGAS_PAN = Bundle.getString("ObjecionElePen5_ETIQUETA_MIGAS_PAN");
+    private final static String ETIQUETA_MIGAS_PAN = Bundle.getString("PersonaAnotada5_ETIQUETA_MIGAS_PAN");
 
-    private final static String ETIQUETA_CLASE_DETALLE = Bundle.getString("ObjecionElePen5_ETIQUETA_CLASE_DETALLE");
+    private final static String ETIQUETA_CLASE_DETALLE = Bundle.getString("PersonaAnotada5_ETIQUETA_CLASE_DETALLE");
 
-    private final static String ETIQUETA_CLASE_MAESTRO = Bundle.getString("ObjecionElePen5_ETIQUETA_CLASE_MAESTRO");
+    private final static String ETIQUETA_CLASE_MAESTRO = Bundle.getString("PersonaAnotada5_ETIQUETA_CLASE_MAESTRO");
 
     @Override
     public RecursoCachedRowSetDataProvider getRecursoDataProvider() {
-        return this.getObjecionElePenDataProvider();
+        return this.getPersonaAnotadaDataProvider();
     }
 
     @Override
     public long getFuncionConsultarRecurso() {
-        return ObjecionElePenCachedRowSetDataProvider2.FUNCION_CONSULTAR_OBJECION_ELE_PEN;
+        return PersonaAnotadaCachedRowSetDataProvider2.FUNCION_CONSULTAR_PERSONA_ANOTADA;
     }
 
     @Override
@@ -1409,7 +1206,7 @@ public class ObjecionElePen5 extends AbstractPageBean
     @Override
     public void consultar(Long filtro) {
         try {
-            this.getObjecionElePenDataProvider().consultarObjecionElePen(filtro);
+            this.getPersonaAnotadaDataProvider().consultarPersonaAnotada(filtro);
         } catch (Exception ex) {
             this.getGestor().handle(ex);
         } finally {
@@ -1420,7 +1217,7 @@ public class ObjecionElePen5 extends AbstractPageBean
     @Override
     public void consultar(FiltroBusqueda filtro) {
         try {
-            this.getObjecionElePenDataProvider().consultarObjecionElePen(filtro);
+            this.getPersonaAnotadaDataProvider().consultarPersonaAnotada(filtro);
         } catch (Exception ex) {
             this.getGestor().handle(ex);
         } finally {
@@ -1483,7 +1280,9 @@ public class ObjecionElePen5 extends AbstractPageBean
     }
 
     public String botonAgregar1_action() {
-        this.getGestor().agregar();
+        if (this.getGestor().agregar()) {
+            return this.getGestor().accionVincularDetalle();
+        }
         return null;
     }
 
@@ -1539,14 +1338,6 @@ public class ObjecionElePen5 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para validar referencias">
-    public void campoIdPersona1_validate(FacesContext context, UIComponent component, Object value) {
-        this.getAsistente().campoIdPersona1_validate(context, component, value);
-    }
-
-    public void campoIdProveedorDatExt1_validate(FacesContext context, UIComponent component, Object value) {
-        this.getAsistente().campoIdProveedorDatExt1_validate(context, component, value);
-    }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las acciones de los hipervinculos">
@@ -1566,7 +1357,7 @@ public class ObjecionElePen5 extends AbstractPageBean
     }
 
     public String getScriptAbrirVentanaProcesarFila1() {
-        String urx = URX2.COMANDO_OBJECION_ELE_PEN;
+        String urx = URX2.COMANDO_PERSONA_ANOTADA;
         return this.getGestor().getScriptAbrirVentana(urx);
     }
 
@@ -1598,5 +1389,21 @@ public class ObjecionElePen5 extends AbstractPageBean
  
     // </editor-fold>
 /**/
+    @EJB
+    PersonaAnotadaBusinessProcessLocal personaAnotadaBusinessProcess;
+
+    @Override
+    public Object getPersonaAnotadaBusinessProcess() {
+        return personaAnotadaBusinessProcess;
+    }
+
+    @EJB
+    private BusinessProcessMessengerLocal messenger;
+
+    @Override
+    public Object getMessenger() {
+        return messenger;
+    }
+
     String footnote = "a partir de aqui coloque el codigo especifico de la pagina";
 }

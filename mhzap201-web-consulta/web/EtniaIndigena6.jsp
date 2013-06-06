@@ -208,6 +208,7 @@
                                                     binding="#{EtniaIndigena6.labelIdEtniaIndigena1}"
                                                     id="labelIdEtniaIndigena1"
                                                     for="campoIdEtniaIndigena1"
+                                                    toolTip="BundleParametros.id_etnia_indigena.etnia_indigena"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{EtniaIndigena6.labelCodigoEtniaIndigena1}"
                                                     id="labelCodigoEtniaIndigena1"
                                                     for="campoCodigoEtniaIndigena1"
+                                                    toolTip="BundleParametros.codigo_etnia_indigena.etnia_indigena"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{EtniaIndigena6.labelNombreEtniaIndigena1}"
                                                     id="labelNombreEtniaIndigena1"
                                                     for="campoNombreEtniaIndigena1"
+                                                    toolTip="BundleParametros.nombre_etnia_indigena.etnia_indigena"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -306,6 +309,7 @@
                                                     binding="#{EtniaIndigena6.labelDescripcionEtniaIndigena1}"
                                                     id="labelDescripcionEtniaIndigena1"
                                                     for="campoDescripcionEtniaIndigena1"
+                                                    toolTip="BundleParametros.descripcion_etnia_indigena.etnia_indigena"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

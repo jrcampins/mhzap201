@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Ubicacion6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoNodo1 listaNumeroNivelUbicacion1 campoSecuenciaUbicacion1 campoClaveUbicacion1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdUbicacion1 campoCodigoUbicacion1 campoNombreUbicacion1 campoIdUbicacionSuperior1 listaNumeroTipoArea1 campoCodigoUbicacionJupe1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -204,6 +204,7 @@
                                                     binding="#{Ubicacion6.labelIdUbicacion1}"
                                                     id="labelIdUbicacion1"
                                                     for="campoIdUbicacion1"
+                                                    toolTip="BundleParametros.id_ubicacion.ubicacion"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Ubicacion6.labelCodigoUbicacion1}"
                                                     id="labelCodigoUbicacion1"
                                                     for="campoCodigoUbicacion1"
+                                                    toolTip="BundleParametros.codigo_ubicacion.ubicacion"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Ubicacion6.labelNombreUbicacion1}"
                                                     id="labelNombreUbicacion1"
                                                     for="campoNombreUbicacion1"
+                                                    toolTip="BundleParametros.nombre_ubicacion.ubicacion"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Ubicacion6.labelIdUbicacionSuperior1}"
                                                     id="labelIdUbicacionSuperior1"
                                                     for="campoIdUbicacionSuperior1"
+                                                    toolTip="BundleParametros.id_ubicacion_superior.ubicacion"
                                                     text="ubicaci&#243;n superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -358,141 +362,13 @@
                                                     onClick="#{Ubicacion6.asistente.scriptCampoIdUbicacionSuperior1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroTipoNodo1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion6.labelNumeroTipoNodo1}"
-                                                    id="labelNumeroTipoNodo1"
-                                                    for="listaNumeroTipoNodo1"
-                                                    text="tipo nodo"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroTipoNodo2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaNumeroTipoNodo1"
-                                                    binding="#{Ubicacion6.listaNumeroTipoNodo1}"
-                                                    converter="#{Ubicacion6.converterNumeroTipoNodo1}"
-                                                    disabled="#{Ubicacion6.gestor.filaNoProcesada}"
-                                                    items="#{Ubicacion6.asistente.opcionesListaNumeroTipoNodo1}"
-                                                    selected="#{Ubicacion6.ubicacionDataProvider.value['numero_tipo_nodo']}"
-                                                    toolTip="BundleParametros.numero_tipo_nodo.ubicacion"/>
-                                                <webuijsf:staticText id="listaNumeroTipoNodo1Texto1"
-                                                    binding="#{Ubicacion6.listaNumeroTipoNodo1Texto1}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['codigo_tipo_nodo_1x2y2']}"/>
-                                                <webuijsf:message id="messageNumeroTipoNodo1"
-                                                    for="listaNumeroTipoNodo1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroTipoNodo1"
-                                                    binding="#{Ubicacion6.helpInlineNumeroTipoNodo1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_tipo_nodo.ubicacion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridNumeroNivelUbicacion1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion6.labelNumeroNivelUbicacion1}"
-                                                    id="labelNumeroNivelUbicacion1"
-                                                    for="listaNumeroNivelUbicacion1"
-                                                    text="nivel"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroNivelUbicacion2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaNumeroNivelUbicacion1"
-                                                    binding="#{Ubicacion6.listaNumeroNivelUbicacion1}"
-                                                    converter="#{Ubicacion6.converterNumeroNivelUbicacion1}"
-                                                    disabled="#{Ubicacion6.gestor.filaNoProcesada}"
-                                                    items="#{Ubicacion6.asistente.opcionesListaNumeroNivelUbicacion1}"
-                                                    selected="#{Ubicacion6.ubicacionDataProvider.value['numero_nivel_ubicacion']}"
-                                                    toolTip="BundleParametros.numero_nivel_ubicacion.ubicacion"/>
-                                                <webuijsf:staticText id="listaNumeroNivelUbicacion1Texto1"
-                                                    binding="#{Ubicacion6.listaNumeroNivelUbicacion1Texto1}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['codigo_nivel_ubicacion_1x3y2']}"/>
-                                                <webuijsf:message id="messageNumeroNivelUbicacion1"
-                                                    for="listaNumeroNivelUbicacion1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroNivelUbicacion1"
-                                                    binding="#{Ubicacion6.helpInlineNumeroNivelUbicacion1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_nivel_ubicacion.ubicacion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridSecuenciaUbicacion1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion6.labelSecuenciaUbicacion1}"
-                                                    id="labelSecuenciaUbicacion1"
-                                                    for="campoSecuenciaUbicacion1"
-                                                    text="secuencia"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridSecuenciaUbicacion2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoSecuenciaUbicacion1"
-                                                    binding="#{Ubicacion6.campoSecuenciaUbicacion1}"
-                                                    converter="#{Ubicacion6.converterSecuenciaUbicacion1}"
-                                                    readOnly="#{Ubicacion6.gestor.filaNoProcesada}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['secuencia_ubicacion']}"
-                                                    toolTip="BundleParametros.secuencia_ubicacion.ubicacion"
-                                                    validatorExpression="#{Ubicacion6.validatorSecuenciaUbicacion1.validate}"/>
-                                                <webuijsf:staticText id="campoSecuenciaUbicacion1Texto1"
-                                                    binding="#{Ubicacion6.campoSecuenciaUbicacion1Texto1}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['secuencia_ubicacion']}"/>
-                                                <webuijsf:message id="messageSecuenciaUbicacion1"
-                                                    for="campoSecuenciaUbicacion1"/>
-                                                <webuijsf:helpInline id="helpInlineSecuenciaUbicacion1"
-                                                    binding="#{Ubicacion6.helpInlineSecuenciaUbicacion1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.secuencia_ubicacion.ubicacion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                id="gridClaveUbicacion1"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{Ubicacion6.labelClaveUbicacion1}"
-                                                    id="labelClaveUbicacion1"
-                                                    for="campoClaveUbicacion1"
-                                                    text="clave"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridClaveUbicacion2"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:textField id="campoClaveUbicacion1"
-                                                    binding="#{Ubicacion6.campoClaveUbicacion1}"
-                                                    columns="20"
-                                                    maxLength="30"
-                                                    readOnly="#{Ubicacion6.gestor.filaNoProcesada}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['clave_ubicacion']}"
-                                                    toolTip="BundleParametros.clave_ubicacion.ubicacion"
-                                                    validatorExpression="#{Ubicacion6.validatorClaveUbicacion1.validate}"/>
-                                                <webuijsf:staticText id="campoClaveUbicacion1Texto1"
-                                                    binding="#{Ubicacion6.campoClaveUbicacion1Texto1}"
-                                                    text="#{Ubicacion6.ubicacionDataProvider.value['clave_ubicacion']}"/>
-                                                <webuijsf:message id="messageClaveUbicacion1"
-                                                    for="campoClaveUbicacion1"/>
-                                                <webuijsf:helpInline id="helpInlineClaveUbicacion1"
-                                                    binding="#{Ubicacion6.helpInlineClaveUbicacion1}"
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.clave_ubicacion.ubicacion"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridNumeroTipoArea1"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
                                                     binding="#{Ubicacion6.labelNumeroTipoArea1}"
                                                     id="labelNumeroTipoArea1"
                                                     for="listaNumeroTipoArea1"
+                                                    toolTip="BundleParametros.numero_tipo_area.ubicacion"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -525,6 +401,7 @@
                                                     binding="#{Ubicacion6.labelCodigoUbicacionJupe1}"
                                                     id="labelCodigoUbicacionJupe1"
                                                     for="campoCodigoUbicacionJupe1"
+                                                    toolTip="BundleParametros.codigo_ubicacion_jupe.ubicacion"
                                                     text="c&#243;digo ubicaci&#243;n jupe"/>
                                             </h:panelGrid>
                                             <h:panelGrid

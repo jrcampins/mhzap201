@@ -41,7 +41,17 @@ import com.egt.core.control.Auditor;
 import com.egt.core.jsf.JSF;
 import com.egt.core.util.STP;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
+import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
+import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularAprobacionPenPersonaMessage;
+import com.egt.ejb.business.message.AnularDenegacionPenPersonaMessage;
+import com.egt.ejb.business.message.IncluirPersonaEnJupeMessage;
+import com.egt.ejb.business.message.AnotarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaMessage;
+import com.egt.ejb.business.message.SolicitarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AprobarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.DenegarRecoPenPersonaSelMessage;
 import com.egt.ejb.business.process.PersonaBusinessProcessLocal;
 import com.egt.ejb.core.reporter.ReporterBrokerLocal;
 import com.sun.data.provider.RowKey;
@@ -81,7 +91,17 @@ public class AsistentePaginaActualizacionPersona {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_CER_VIDA_PERSONA, BundleWebui.getString("anular_cer_vida_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_CER_DEFUN_PERSONA, BundleWebui.getString("anular_cer_defun_persona")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_PENSION_PERSONA, BundleWebui.getString("aprobar_pension_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_APROBACION_PEN_PERSONA, BundleWebui.getString("anular_aprobacion_pen_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_DENEGACION_PEN_PERSONA, BundleWebui.getString("anular_denegacion_pen_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_INCLUIR_PERSONA_EN_JUPE, BundleWebui.getString("incluir_persona_en_jupe")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_ANOTAR_PERSONA, BundleWebui.getString("anotar_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_BORRAR_PERSONA, BundleWebui.getString("borrar_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL, BundleWebui.getString("solicitar_reco_pen_persona_sel")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_RECO_PEN_PERSONA_SEL, BundleWebui.getString("aprobar_reco_pen_persona_sel")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL, BundleWebui.getString("denegar_reco_pen_persona_sel")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA, BundleWebui.getString("emitir_persona_con_pension_solicitada")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_sin_objeciones")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES, BundleWebui.getString("emitir_persona_acreditada_con_objeciones")),
@@ -90,8 +110,11 @@ public class AsistentePaginaActualizacionPersona {
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA, BundleWebui.getString("emitir_persona_con_pension_revocada")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA, BundleWebui.getString("emitir_persona_con_pension_otorgada")),
         //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA, BundleWebui.getString("emitir_documentos_persona_pension_otorgada")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE, BundleWebui.getString("emitir_ultima_actualizacion_persona_en_jupe")),
-        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir_cuadro_resumen_pension_persona"))
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA, BundleWebui.getString("emitir_documentos_persona_pension_denegada")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE, BundleWebui.getString("emitir_persona_incluida_en_jupe")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE, BundleWebui.getString("emitir_persona_excluida_de_jupe")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA, BundleWebui.getString("emitir_cuadro_resumen_pension_persona")),
+        //  new Option(PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA, BundleWebui.getString("emitir_persona_con_reconsideracion_solicitada"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -113,8 +136,28 @@ public class AsistentePaginaActualizacionPersona {
         long f = bean.getRecursoDataProvider().getFuncionBusinessProcess();
         boolean esFilaAutorizada = bean.getRecursoDataProvider().esFilaAutorizada(rowKey, f);
         if (!esFilaAutorizada) {
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_CER_VIDA_PERSONA) {
+            this.anularCerVidaPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_CER_DEFUN_PERSONA) {
+            this.anularCerDefunPersona(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_PENSION_PERSONA) {
             this.aprobarPensionPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_APROBACION_PEN_PERSONA) {
+            this.anularAprobacionPenPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_ANULAR_DENEGACION_PEN_PERSONA) {
+            this.anularDenegacionPenPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_INCLUIR_PERSONA_EN_JUPE) {
+            this.incluirPersonaEnJupe(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_ANOTAR_PERSONA) {
+            this.anotarPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_BORRAR_PERSONA) {
+            this.borrarPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL) {
+            this.solicitarRecoPenPersonaSel(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_APROBAR_RECO_PEN_PERSONA_SEL) {
+            this.aprobarRecoPenPersonaSel(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL) {
+            this.denegarRecoPenPersonaSel(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA) {
             this.emitirPersonaConPensionSolicitada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES) {
@@ -131,11 +174,45 @@ public class AsistentePaginaActualizacionPersona {
             this.emitirPersonaConPensionOtorgada(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA) {
             this.emitirDocumentosPersonaPensionOtorgada(rowKey);
-        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE) {
-            this.emitirUltimaActualizacionPersonaEnJupe(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA) {
+            this.emitirDocumentosPersonaPensionDenegada(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE) {
+            this.emitirPersonaIncluidaEnJupe(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE) {
+            this.emitirPersonaExcluidaDeJupe(rowKey);
         } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA) {
             this.emitirCuadroResumenPensionPersona(rowKey);
+        } else if (f == PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA) {
+            this.emitirPersonaConReconsideracionSolicitada(rowKey);
         }
+    }
+
+    private boolean anularCerVidaPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "anularCerVidaPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        AnularCerVidaPersonaMessage message = new AnularCerVidaPersonaMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().anularCerVidaPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean anularCerDefunPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "anularCerDefunPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        AnularCerDefunPersonaMessage message = new AnularCerDefunPersonaMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().anularCerDefunPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
     }
 
     private boolean aprobarPensionPersona(RowKey rowKey) throws Exception {
@@ -147,6 +224,117 @@ public class AsistentePaginaActualizacionPersona {
         TLC.getControlador().ponerUsuarioEnMensaje(message);
         if (synchronously) {
             this.getPersonaBusinessProcess().aprobarPensionPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean anularAprobacionPenPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "anularAprobacionPenPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        AnularAprobacionPenPersonaMessage message = new AnularAprobacionPenPersonaMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().anularAprobacionPenPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean anularDenegacionPenPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "anularDenegacionPenPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        AnularDenegacionPenPersonaMessage message = new AnularDenegacionPenPersonaMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().anularDenegacionPenPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean incluirPersonaEnJupe(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "incluirPersonaEnJupe", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        IncluirPersonaEnJupeMessage message = new IncluirPersonaEnJupeMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().incluirPersonaEnJupe(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean anotarPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "anotarPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        Long idPersona = bean.getPersonaDataProvider().getIdPersona(rowKey);
+        AnotarPersonaMessage message = new AnotarPersonaMessage(idPersona);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().anotarPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean borrarPersona(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "borrarPersona", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        BorrarPersonaMessage message = new BorrarPersonaMessage();
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().borrarPersona(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean solicitarRecoPenPersonaSel(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "solicitarRecoPenPersonaSel", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        String observacion = null;
+        SolicitarRecoPenPersonaSelMessage message = new SolicitarRecoPenPersonaSelMessage(observacion);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().solicitarRecoPenPersonaSel(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean aprobarRecoPenPersonaSel(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "aprobarRecoPenPersonaSel", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        String observacion = null;
+        AprobarRecoPenPersonaSelMessage message = new AprobarRecoPenPersonaSelMessage(observacion);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().aprobarRecoPenPersonaSel(message);
+        } else {
+            this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean denegarRecoPenPersonaSel(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "denegarRecoPenPersonaSel", rowKey);
+        bean.getGestor().setReadOnlyProcessing(false);
+        String observacion = null;
+        DenegarRecoPenPersonaSelMessage message = new DenegarRecoPenPersonaSelMessage(observacion);
+        TLC.getControlador().ponerUsuarioEnMensaje(message);
+        if (synchronously) {
+            this.getPersonaBusinessProcess().denegarRecoPenPersonaSel(message);
         } else {
             this.requestReply(message);
         }
@@ -639,15 +827,96 @@ public class AsistentePaginaActualizacionPersona {
         return true;
     }
 
-    private boolean emitirUltimaActualizacionPersonaEnJupe(RowKey rowKey) throws Exception {
-        Bitacora.trace(this.getClass(), "emitirUltimaActualizacionPersonaEnJupe", rowKey);
+    private boolean emitirDocumentosPersonaPensionDenegada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirDocumentosPersonaPensionDenegada", rowKey);
         bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaDenegacionPensionDesde = null;
+        Date fechaDenegacionPensionHasta = null;
+        String codigoSime = null;
+        Integer esPersonaConCerVida = null;
+        Integer esPersonaConCopiaCedula = null;
+        Integer esPersonaConDeclaracionJur = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_denegacion_pension_desde", fechaDenegacionPensionDesde);
+        parameters.put("fecha_denegacion_pension_hasta", fechaDenegacionPensionHasta);
+        parameters.put("codigo_sime", codigoSime);
+        parameters.put("es_persona_con_cer_vida", esPersonaConCerVida);
+        parameters.put("es_persona_con_copia_cedula", esPersonaConCopiaCedula);
+        parameters.put("es_persona_con_declaracion_jur", esPersonaConDeclaracionJur);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaDenegacionPensionDesde != null) {
+            args.add(fechaDenegacionPensionDesde);
+            search += " and fecha_denegacion_pension>=?";
+        }
+        if (fechaDenegacionPensionHasta != null) {
+            args.add(fechaDenegacionPensionHasta);
+            search += " and fecha_denegacion_pension<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
+        if (esPersonaConCerVida != null) {
+            args.add(esPersonaConCerVida);
+            search += " and es_persona_con_cer_vida=?";
+        }
+        if (esPersonaConCopiaCedula != null) {
+            args.add(esPersonaConCopiaCedula);
+            search += " and es_persona_con_copia_cedula=?";
+        }
+        if (esPersonaConDeclaracionJur != null) {
+            args.add(esPersonaConDeclaracionJur);
+            search += " and es_persona_con_declaracion_jur=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPersonaIncluidaEnJupe(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaIncluidaEnJupe", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
         Date fechaHoraUltActJupeDesde = null;
         Date fechaHoraUltActJupeHasta = null;
         String codigoSime = null;
-        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
-        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE;
         Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
         parameters.put("fecha_hora_ult_act_jupe_desde", fechaHoraUltActJupeDesde);
         parameters.put("fecha_hora_ult_act_jupe_hasta", fechaHoraUltActJupeHasta);
         parameters.put("codigo_sime", codigoSime);
@@ -657,6 +926,18 @@ public class AsistentePaginaActualizacionPersona {
         String select = "select * from persona";
         String search = "";
         ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
         if (fechaHoraUltActJupeDesde != null) {
             args.add(fechaHoraUltActJupeDesde);
             search += " and fecha_hora_ult_act_jupe>=?";
@@ -664,6 +945,51 @@ public class AsistentePaginaActualizacionPersona {
         if (fechaHoraUltActJupeHasta != null) {
             args.add(fechaHoraUltActJupeHasta);
             search += " and fecha_hora_ult_act_jupe<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPersonaExcluidaDeJupe(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaExcluidaDeJupe", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        String codigoSime = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("codigo_sime", codigoSime);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
         }
         if (codigoSime != null) {
             args.add(codigoSime);
@@ -707,6 +1033,81 @@ public class AsistentePaginaActualizacionPersona {
         if (idBarrio != null) {
             args.add(idBarrio);
             search += " and id_barrio=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPersonaConReconsideracionSolicitada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPersonaConReconsideracionSolicitada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Date fechaSolicitudRecoPenDesde = null;
+        Date fechaSolicitudRecoPenHasta = null;
+        String codigoSime = null;
+        String numeroResolucionDenPen = null;
+        Date fechaResolucionDenPenDesde = null;
+        Date fechaResolucionDenPenHasta = null;
+        String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA;
+        long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("fecha_solicitud_reco_pen_desde", fechaSolicitudRecoPenDesde);
+        parameters.put("fecha_solicitud_reco_pen_hasta", fechaSolicitudRecoPenHasta);
+        parameters.put("codigo_sime", codigoSime);
+        parameters.put("numero_resolucion_den_pen", numeroResolucionDenPen);
+        parameters.put("fecha_resolucion_den_pen_desde", fechaResolucionDenPenDesde);
+        parameters.put("fecha_resolucion_den_pen_hasta", fechaResolucionDenPenHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (fechaSolicitudRecoPenDesde != null) {
+            args.add(fechaSolicitudRecoPenDesde);
+            search += " and fecha_solicitud_reco_pen>=?";
+        }
+        if (fechaSolicitudRecoPenHasta != null) {
+            args.add(fechaSolicitudRecoPenHasta);
+            search += " and fecha_solicitud_reco_pen<=?";
+        }
+        if (codigoSime != null) {
+            args.add(codigoSime);
+            search += " and codigo_sime=?";
+        }
+        if (numeroResolucionDenPen != null) {
+            args.add(numeroResolucionDenPen);
+            search += " and numero_resolucion_den_pen=?";
+        }
+        if (fechaResolucionDenPenDesde != null) {
+            args.add(fechaResolucionDenPenDesde);
+            search += " and fecha_resolucion_den_pen>=?";
+        }
+        if (fechaResolucionDenPenHasta != null) {
+            args.add(fechaResolucionDenPenHasta);
+            search += " and fecha_resolucion_den_pen<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -1877,6 +2278,15 @@ public class AsistentePaginaActualizacionPersona {
         return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
     }
 
+    public boolean isNumeroCondicionPensionAExcluirJupe() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCondicionPension(rowKey);
+        return value != null && value.equals(EnumCondicionPension.A_EXCLUIR_JUPE.intValue());
+    }
+
     public boolean isNullNumeroCausaDenPension() {
         if (bean == null) {
             return true;
@@ -2602,14 +3012,14 @@ public class AsistentePaginaActualizacionPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionRegistroRendered();
     }
 
-    public boolean isGridEsCertificadoVidaAnuladoRendered() {
+    public boolean isGridDiasVigenciaCertificadoVidaRendered() {
         if (bean == null) {
             return true;
         }
         return bean.getGestor().isFilaProcesada() && isSeccionRegistroRendered();
     }
 
-    public boolean isGridComentariosAnulCerVidaRendered() {
+    public boolean isGridEsCertificadoVidaAnuladoRendered() {
         if (bean == null) {
             return true;
         }
@@ -2631,13 +3041,6 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridEsCerDefuncionAnuladoRendered() {
-        if (bean == null) {
-            return true;
-        }
-        return bean.getGestor().isFilaProcesada() && isSeccionRegistroRendered();
-    }
-
-    public boolean isGridComentariosAnulCerDefuncionRendered() {
         if (bean == null) {
             return true;
         }
@@ -2882,6 +3285,20 @@ public class AsistentePaginaActualizacionPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
     }
 
+    public boolean isGridNumeroResolucionRevPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
+    public boolean isGridFechaResolucionRevPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionPension3Rendered();
+    }
+
     public boolean isGridComentariosRevocacionPensionRendered() {
         if (bean == null) {
             return true;
@@ -3058,6 +3475,20 @@ public class AsistentePaginaActualizacionPersona {
     }
 
     public boolean isGridCodigoSimeRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
+    public boolean isGridCodigoSimeRecoPenRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
+    public boolean isGridComentariosInsercionJupeRendered() {
         if (bean == null) {
             return true;
         }

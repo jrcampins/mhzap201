@@ -208,6 +208,7 @@
                                                     binding="#{LogImpCen6.labelIdLogImpCen1}"
                                                     id="labelIdLogImpCen1"
                                                     for="campoIdLogImpCen1"
+                                                    toolTip="BundleParametros.id_log_imp_cen.log_imp_cen"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpCen6.labelOrden1}"
                                                     id="labelOrden1"
                                                     for="campoOrden1"
+                                                    toolTip="BundleParametros.orden.log_imp_cen"
                                                     text="orden"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpCen6.labelBarrio1}"
                                                     id="labelBarrio1"
                                                     for="campoBarrio1"
+                                                    toolTip="BundleParametros.barrio.log_imp_cen"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpCen6.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.log_imp_cen"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpCen6.labelTelefono1}"
                                                     id="labelTelefono1"
                                                     for="campoTelefono1"
+                                                    toolTip="BundleParametros.telefono.log_imp_cen"
                                                     text="tel&#233;fono"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpCen6.labelPrimerNombre1}"
                                                     id="labelPrimerNombre1"
                                                     for="campoPrimerNombre1"
+                                                    toolTip="BundleParametros.primer_nombre.log_imp_cen"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpCen6.labelSegundoNombre1}"
                                                     id="labelSegundoNombre1"
                                                     for="campoSegundoNombre1"
+                                                    toolTip="BundleParametros.segundo_nombre.log_imp_cen"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpCen6.labelPrimerApellido1}"
                                                     id="labelPrimerApellido1"
                                                     for="campoPrimerApellido1"
+                                                    toolTip="BundleParametros.primer_apellido.log_imp_cen"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpCen6.labelSegundoApellido1}"
                                                     id="labelSegundoApellido1"
                                                     for="campoSegundoApellido1"
+                                                    toolTip="BundleParametros.segundo_apellido.log_imp_cen"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpCen6.labelEdadALaFecha1}"
                                                     id="labelEdadALaFecha1"
                                                     for="campoEdadALaFecha1"
+                                                    toolTip="BundleParametros.edad_a_la_fecha.log_imp_cen"
                                                     text="edad a la fecha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpCen6.labelSexo1}"
                                                     id="labelSexo1"
                                                     for="campoSexo1"
+                                                    toolTip="BundleParametros.sexo.log_imp_cen"
                                                     text="sexo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpCen6.labelParentesco1}"
                                                     id="labelParentesco1"
                                                     for="campoParentesco1"
+                                                    toolTip="BundleParametros.parentesco.log_imp_cen"
                                                     text="parentesco"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +604,7 @@
                                                     binding="#{LogImpCen6.labelCedula1}"
                                                     id="labelCedula1"
                                                     for="campoCedula1"
+                                                    toolTip="BundleParametros.cedula.log_imp_cen"
                                                     text="c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +637,7 @@
                                                     binding="#{LogImpCen6.labelNombreJefeHogar1}"
                                                     id="labelNombreJefeHogar1"
                                                     for="campoNombreJefeHogar1"
+                                                    toolTip="BundleParametros.nombre_jefe_hogar.log_imp_cen"
                                                     text="nombre jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -656,6 +670,7 @@
                                                     binding="#{LogImpCen6.labelCedulaJefeHogar1}"
                                                     id="labelCedulaJefeHogar1"
                                                     for="campoCedulaJefeHogar1"
+                                                    toolTip="BundleParametros.cedula_jefe_hogar.log_imp_cen"
                                                     text="c&#233;dula jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -688,6 +703,7 @@
                                                     binding="#{LogImpCen6.labelIcv1}"
                                                     id="labelIcv1"
                                                     for="campoIcv1"
+                                                    toolTip="BundleParametros.icv.log_imp_cen"
                                                     text="icv"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -720,6 +736,7 @@
                                                     binding="#{LogImpCen6.labelValidado1}"
                                                     id="labelValidado1"
                                                     for="campoValidado1"
+                                                    toolTip="BundleParametros.validado.log_imp_cen"
                                                     text="validado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -752,6 +769,7 @@
                                                     binding="#{LogImpCen6.labelObservaciones1}"
                                                     id="labelObservaciones1"
                                                     for="campoObservaciones1"
+                                                    toolTip="BundleParametros.observaciones.log_imp_cen"
                                                     text="observaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -784,6 +802,7 @@
                                                     binding="#{LogImpCen6.labelFuncionario1}"
                                                     id="labelFuncionario1"
                                                     for="campoFuncionario1"
+                                                    toolTip="BundleParametros.funcionario.log_imp_cen"
                                                     text="funcionario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -816,6 +835,7 @@
                                                     binding="#{LogImpCen6.labelCausaInvalidacion1}"
                                                     id="labelCausaInvalidacion1"
                                                     for="campoCausaInvalidacion1"
+                                                    toolTip="BundleParametros.causa_invalidacion.log_imp_cen"
                                                     text="causa invalidaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -848,6 +868,7 @@
                                                     binding="#{LogImpCen6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_cen"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -879,6 +900,7 @@
                                                     binding="#{LogImpCen6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_cen"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -911,6 +933,7 @@
                                                     binding="#{LogImpCen6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_cen"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -943,6 +966,7 @@
                                                     binding="#{LogImpCen6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_cen"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -981,6 +1005,7 @@
                                                     binding="#{LogImpCen6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_cen"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

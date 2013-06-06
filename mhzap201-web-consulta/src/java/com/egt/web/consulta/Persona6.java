@@ -124,11 +124,11 @@ public class Persona6 extends AbstractPageBean
         validatorCertificadoVida1.setMaximum(30);
         converterFechaCertificadoVida1.setPattern("dd/MM/yyyy");
         converterFechaCertificadoVida1.setType("date");
-        validatorComentariosAnulCerVida1.setMaximum(8160);
+        validatorDiasVigenciaCertificadoVida1.setMinimum(0L);
+        validatorDiasVigenciaCertificadoVida1.setMaximum(1000000000L);
         validatorCertificadoDefuncion1.setMaximum(30);
         converterFechaCertificadoDefuncion1.setPattern("dd/MM/yyyy");
         converterFechaCertificadoDefuncion1.setType("date");
-        validatorComentariosAnulCerDefuncion1.setMaximum(8160);
         converterMontoPension1.setMinIntegerDigits(1);
         converterMontoPension1.setMaxIntegerDigits(40);
         converterMontoPension1.setMaxFractionDigits(3);
@@ -159,6 +159,9 @@ public class Persona6 extends AbstractPageBean
         converterFechaRevocacionPension1.setPattern("dd/MM/yyyy");
         converterFechaRevocacionPension1.setType("date");
         validatorOtraCausaRevPension1.setMaximum(100);
+        validatorNumeroResolucionRevPen1.setMaximum(50);
+        converterFechaResolucionRevPen1.setPattern("dd/MM/yyyy");
+        converterFechaResolucionRevPen1.setType("date");
         validatorComentariosRevocacionPension1.setMaximum(8160);
         converterFechaSolicitudRecoPen1.setPattern("dd/MM/yyyy");
         converterFechaSolicitudRecoPen1.setType("date");
@@ -194,7 +197,9 @@ public class Persona6 extends AbstractPageBean
         validatorLote1.setMinimum(0L);
         validatorLote1.setMaximum(1000000000000000000L);
         validatorCodigoSime1.setMaximum(50);
+        validatorCodigoSimeRecoPen1.setMaximum(50);
         validatorComentariosEntregaDocumentos1.setMaximum(8160);
+        validatorComentariosInsercionJupe1.setMaximum(8160);
         personaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaRowSet}"));
         etniaIndigenaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.etniaIndigenaReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -3188,6 +3193,107 @@ public class Persona6 extends AbstractPageBean
         this.converterFechaCertificadoVida1 = converter;
     }
   
+    private Label labelDiasVigenciaCertificadoVida1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelDiasVigenciaCertificadoVida1() {
+        return labelDiasVigenciaCertificadoVida1;
+    }
+
+    public void setLabelDiasVigenciaCertificadoVida1(Label l) {
+        this.labelDiasVigenciaCertificadoVida1 = l;
+    }
+
+    private Label labelDiasVigenciaCertificadoVida1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelDiasVigenciaCertificadoVida1x1() {
+        return labelDiasVigenciaCertificadoVida1x1;
+    }
+
+    public void setLabelDiasVigenciaCertificadoVida1x1(Label l) {
+        this.labelDiasVigenciaCertificadoVida1x1 = l;
+    }
+
+    private TextField campoDiasVigenciaCertificadoVida1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoDiasVigenciaCertificadoVida1() {
+        return campoDiasVigenciaCertificadoVida1;
+    }
+
+    public void setCampoDiasVigenciaCertificadoVida1(TextField component) {
+        this.campoDiasVigenciaCertificadoVida1 = component;
+    }
+
+    private TextField campoDiasVigenciaCertificadoVida1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoDiasVigenciaCertificadoVida1x1() {
+        return campoDiasVigenciaCertificadoVida1x1;
+    }
+
+    public void setCampoDiasVigenciaCertificadoVida1x1(TextField component) {
+        this.campoDiasVigenciaCertificadoVida1x1 = component;
+    }
+
+    private HelpInline helpInlineDiasVigenciaCertificadoVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineDiasVigenciaCertificadoVida1() {
+        return helpInlineDiasVigenciaCertificadoVida1;
+    }
+
+    public void setHelpInlineDiasVigenciaCertificadoVida1(HelpInline hi) {
+        this.helpInlineDiasVigenciaCertificadoVida1 = hi;
+    }
+
+    private HelpInline helpInlineDiasVigenciaCertificadoVida1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineDiasVigenciaCertificadoVida1x1() {
+        return helpInlineDiasVigenciaCertificadoVida1x1;
+    }
+
+    public void setHelpInlineDiasVigenciaCertificadoVida1x1(HelpInline hi) {
+        this.helpInlineDiasVigenciaCertificadoVida1x1 = hi;
+    }
+
+    private StaticText campoDiasVigenciaCertificadoVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoDiasVigenciaCertificadoVida1Texto1() {
+        return campoDiasVigenciaCertificadoVida1Texto1;
+    }
+
+    public void setCampoDiasVigenciaCertificadoVida1Texto1(StaticText component) {
+        this.campoDiasVigenciaCertificadoVida1Texto1 = component;
+    }
+
+    private StaticText campoDiasVigenciaCertificadoVida1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoDiasVigenciaCertificadoVida1x1Texto1() {
+        return campoDiasVigenciaCertificadoVida1x1Texto1;
+    }
+
+    public void setCampoDiasVigenciaCertificadoVida1x1Texto1(StaticText component) {
+        this.campoDiasVigenciaCertificadoVida1x1Texto1 = component;
+    }
+
+    private IntegerConverter converterDiasVigenciaCertificadoVida1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterDiasVigenciaCertificadoVida1() {
+        return converterDiasVigenciaCertificadoVida1;
+    }
+  
+    public void setConverterDiasVigenciaCertificadoVida1(IntegerConverter converter) {
+        this.converterDiasVigenciaCertificadoVida1 = converter;
+    }
+  
+    private LongRangeValidator validatorDiasVigenciaCertificadoVida1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorDiasVigenciaCertificadoVida1() {
+        return validatorDiasVigenciaCertificadoVida1;
+    }
+  
+    public void setValidatorDiasVigenciaCertificadoVida1(LongRangeValidator validator) {
+        this.validatorDiasVigenciaCertificadoVida1 = validator;
+    }
+  
     private Label labelEsCertificadoVidaAnulado1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelEsCertificadoVidaAnulado1() {
@@ -3277,97 +3383,6 @@ public class Persona6 extends AbstractPageBean
   
     public void setConverterEsCertificadoVidaAnulado1(IntegerConverter converter) {
         this.converterEsCertificadoVidaAnulado1 = converter;
-    }
-  
-    private Label labelComentariosAnulCerVida1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerVida1() {
-        return labelComentariosAnulCerVida1;
-    }
-
-    public void setLabelComentariosAnulCerVida1(Label l) {
-        this.labelComentariosAnulCerVida1 = l;
-    }
-
-    private Label labelComentariosAnulCerVida1x1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerVida1x1() {
-        return labelComentariosAnulCerVida1x1;
-    }
-
-    public void setLabelComentariosAnulCerVida1x1(Label l) {
-        this.labelComentariosAnulCerVida1x1 = l;
-    }
-
-    private TextArea campoComentariosAnulCerVida1 = new com.egt.core.jsf.component.AreaTexto();
-
-    @Override
-    public TextArea getCampoComentariosAnulCerVida1() {
-        return campoComentariosAnulCerVida1;
-    }
-
-    public void setCampoComentariosAnulCerVida1(TextArea component) {
-        this.campoComentariosAnulCerVida1 = component;
-    }
-
-    private TextArea campoComentariosAnulCerVida1x1 = new com.egt.core.jsf.component.AreaTexto();
-
-    public TextArea getCampoComentariosAnulCerVida1x1() {
-        return campoComentariosAnulCerVida1x1;
-    }
-
-    public void setCampoComentariosAnulCerVida1x1(TextArea component) {
-        this.campoComentariosAnulCerVida1x1 = component;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerVida1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerVida1() {
-        return helpInlineComentariosAnulCerVida1;
-    }
-
-    public void setHelpInlineComentariosAnulCerVida1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerVida1 = hi;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerVida1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerVida1x1() {
-        return helpInlineComentariosAnulCerVida1x1;
-    }
-
-    public void setHelpInlineComentariosAnulCerVida1x1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerVida1x1 = hi;
-    }
-
-    private StaticText campoComentariosAnulCerVida1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerVida1Texto1() {
-        return campoComentariosAnulCerVida1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerVida1Texto1(StaticText component) {
-        this.campoComentariosAnulCerVida1Texto1 = component;
-    }
-
-    private StaticText campoComentariosAnulCerVida1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerVida1x1Texto1() {
-        return campoComentariosAnulCerVida1x1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerVida1x1Texto1(StaticText component) {
-        this.campoComentariosAnulCerVida1x1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosAnulCerVida1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosAnulCerVida1() {
-        return validatorComentariosAnulCerVida1;
-    }
-  
-    public void setValidatorComentariosAnulCerVida1(LengthValidator validator) {
-        this.validatorComentariosAnulCerVida1 = validator;
     }
   
     private Label labelCertificadoDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
@@ -3640,97 +3655,6 @@ public class Persona6 extends AbstractPageBean
   
     public void setConverterEsCerDefuncionAnulado1(IntegerConverter converter) {
         this.converterEsCerDefuncionAnulado1 = converter;
-    }
-  
-    private Label labelComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerDefuncion1() {
-        return labelComentariosAnulCerDefuncion1;
-    }
-
-    public void setLabelComentariosAnulCerDefuncion1(Label l) {
-        this.labelComentariosAnulCerDefuncion1 = l;
-    }
-
-    private Label labelComentariosAnulCerDefuncion1x1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelComentariosAnulCerDefuncion1x1() {
-        return labelComentariosAnulCerDefuncion1x1;
-    }
-
-    public void setLabelComentariosAnulCerDefuncion1x1(Label l) {
-        this.labelComentariosAnulCerDefuncion1x1 = l;
-    }
-
-    private TextArea campoComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.AreaTexto();
-
-    @Override
-    public TextArea getCampoComentariosAnulCerDefuncion1() {
-        return campoComentariosAnulCerDefuncion1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1(TextArea component) {
-        this.campoComentariosAnulCerDefuncion1 = component;
-    }
-
-    private TextArea campoComentariosAnulCerDefuncion1x1 = new com.egt.core.jsf.component.AreaTexto();
-
-    public TextArea getCampoComentariosAnulCerDefuncion1x1() {
-        return campoComentariosAnulCerDefuncion1x1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1x1(TextArea component) {
-        this.campoComentariosAnulCerDefuncion1x1 = component;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerDefuncion1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerDefuncion1() {
-        return helpInlineComentariosAnulCerDefuncion1;
-    }
-
-    public void setHelpInlineComentariosAnulCerDefuncion1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerDefuncion1 = hi;
-    }
-
-    private HelpInline helpInlineComentariosAnulCerDefuncion1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineComentariosAnulCerDefuncion1x1() {
-        return helpInlineComentariosAnulCerDefuncion1x1;
-    }
-
-    public void setHelpInlineComentariosAnulCerDefuncion1x1(HelpInline hi) {
-        this.helpInlineComentariosAnulCerDefuncion1x1 = hi;
-    }
-
-    private StaticText campoComentariosAnulCerDefuncion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerDefuncion1Texto1() {
-        return campoComentariosAnulCerDefuncion1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1Texto1(StaticText component) {
-        this.campoComentariosAnulCerDefuncion1Texto1 = component;
-    }
-
-    private StaticText campoComentariosAnulCerDefuncion1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getCampoComentariosAnulCerDefuncion1x1Texto1() {
-        return campoComentariosAnulCerDefuncion1x1Texto1;
-    }
-
-    public void setCampoComentariosAnulCerDefuncion1x1Texto1(StaticText component) {
-        this.campoComentariosAnulCerDefuncion1x1Texto1 = component;
-    }
-
-    private LengthValidator validatorComentariosAnulCerDefuncion1 = new LengthValidator();
-  
-    public LengthValidator getValidatorComentariosAnulCerDefuncion1() {
-        return validatorComentariosAnulCerDefuncion1;
-    }
-  
-    public void setValidatorComentariosAnulCerDefuncion1(LengthValidator validator) {
-        this.validatorComentariosAnulCerDefuncion1 = validator;
     }
   
     private Label labelEsPersonaConEmpleo1 = new com.egt.core.jsf.component.Etiqueta();
@@ -6738,6 +6662,187 @@ public class Persona6 extends AbstractPageBean
         this.validatorOtraCausaRevPension1 = validator;
     }
   
+    private Label labelNumeroResolucionRevPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionRevPen1() {
+        return labelNumeroResolucionRevPen1;
+    }
+
+    public void setLabelNumeroResolucionRevPen1(Label l) {
+        this.labelNumeroResolucionRevPen1 = l;
+    }
+
+    private Label labelNumeroResolucionRevPen1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelNumeroResolucionRevPen1x1() {
+        return labelNumeroResolucionRevPen1x1;
+    }
+
+    public void setLabelNumeroResolucionRevPen1x1(Label l) {
+        this.labelNumeroResolucionRevPen1x1 = l;
+    }
+
+    private TextField campoNumeroResolucionRevPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoNumeroResolucionRevPen1() {
+        return campoNumeroResolucionRevPen1;
+    }
+
+    public void setCampoNumeroResolucionRevPen1(TextField component) {
+        this.campoNumeroResolucionRevPen1 = component;
+    }
+
+    private TextField campoNumeroResolucionRevPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoNumeroResolucionRevPen1x1() {
+        return campoNumeroResolucionRevPen1x1;
+    }
+
+    public void setCampoNumeroResolucionRevPen1x1(TextField component) {
+        this.campoNumeroResolucionRevPen1x1 = component;
+    }
+
+    private HelpInline helpInlineNumeroResolucionRevPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionRevPen1() {
+        return helpInlineNumeroResolucionRevPen1;
+    }
+
+    public void setHelpInlineNumeroResolucionRevPen1(HelpInline hi) {
+        this.helpInlineNumeroResolucionRevPen1 = hi;
+    }
+
+    private HelpInline helpInlineNumeroResolucionRevPen1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineNumeroResolucionRevPen1x1() {
+        return helpInlineNumeroResolucionRevPen1x1;
+    }
+
+    public void setHelpInlineNumeroResolucionRevPen1x1(HelpInline hi) {
+        this.helpInlineNumeroResolucionRevPen1x1 = hi;
+    }
+
+    private StaticText campoNumeroResolucionRevPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionRevPen1Texto1() {
+        return campoNumeroResolucionRevPen1Texto1;
+    }
+
+    public void setCampoNumeroResolucionRevPen1Texto1(StaticText component) {
+        this.campoNumeroResolucionRevPen1Texto1 = component;
+    }
+
+    private StaticText campoNumeroResolucionRevPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoNumeroResolucionRevPen1x1Texto1() {
+        return campoNumeroResolucionRevPen1x1Texto1;
+    }
+
+    public void setCampoNumeroResolucionRevPen1x1Texto1(StaticText component) {
+        this.campoNumeroResolucionRevPen1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorNumeroResolucionRevPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorNumeroResolucionRevPen1() {
+        return validatorNumeroResolucionRevPen1;
+    }
+  
+    public void setValidatorNumeroResolucionRevPen1(LengthValidator validator) {
+        this.validatorNumeroResolucionRevPen1 = validator;
+    }
+  
+    private Label labelFechaResolucionRevPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionRevPen1() {
+        return labelFechaResolucionRevPen1;
+    }
+
+    public void setLabelFechaResolucionRevPen1(Label l) {
+        this.labelFechaResolucionRevPen1 = l;
+    }
+
+    private Label labelFechaResolucionRevPen1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaResolucionRevPen1x1() {
+        return labelFechaResolucionRevPen1x1;
+    }
+
+    public void setLabelFechaResolucionRevPen1x1(Label l) {
+        this.labelFechaResolucionRevPen1x1 = l;
+    }
+
+    private Calendar campoFechaResolucionRevPen1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionRevPen1() {
+        return campoFechaResolucionRevPen1;
+    }
+
+    public void setCampoFechaResolucionRevPen1(Calendar component) {
+        this.campoFechaResolucionRevPen1 = component;
+    }
+
+    private Calendar campoFechaResolucionRevPen1x1 = new com.egt.core.jsf.component.Calendario();
+
+    public Calendar getCampoFechaResolucionRevPen1x1() {
+        return campoFechaResolucionRevPen1x1;
+    }
+
+    public void setCampoFechaResolucionRevPen1x1(Calendar component) {
+        this.campoFechaResolucionRevPen1x1 = component;
+    }
+
+    private HelpInline helpInlineFechaResolucionRevPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionRevPen1() {
+        return helpInlineFechaResolucionRevPen1;
+    }
+
+    public void setHelpInlineFechaResolucionRevPen1(HelpInline hi) {
+        this.helpInlineFechaResolucionRevPen1 = hi;
+    }
+
+    private HelpInline helpInlineFechaResolucionRevPen1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineFechaResolucionRevPen1x1() {
+        return helpInlineFechaResolucionRevPen1x1;
+    }
+
+    public void setHelpInlineFechaResolucionRevPen1x1(HelpInline hi) {
+        this.helpInlineFechaResolucionRevPen1x1 = hi;
+    }
+
+    private StaticText campoFechaResolucionRevPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionRevPen1Texto1() {
+        return campoFechaResolucionRevPen1Texto1;
+    }
+
+    public void setCampoFechaResolucionRevPen1Texto1(StaticText component) {
+        this.campoFechaResolucionRevPen1Texto1 = component;
+    }
+
+    private StaticText campoFechaResolucionRevPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaResolucionRevPen1x1Texto1() {
+        return campoFechaResolucionRevPen1x1Texto1;
+    }
+
+    public void setCampoFechaResolucionRevPen1x1Texto1(StaticText component) {
+        this.campoFechaResolucionRevPen1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaResolucionRevPen1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaResolucionRevPen1() {
+        return converterFechaResolucionRevPen1;
+    }
+  
+    public void setConverterFechaResolucionRevPen1(SqlTimestampConverter converter) {
+        this.converterFechaResolucionRevPen1 = converter;
+    }
+  
     private Label labelComentariosRevocacionPension1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelComentariosRevocacionPension1() {
@@ -9205,6 +9310,97 @@ public class Persona6 extends AbstractPageBean
         this.validatorCodigoSime1 = validator;
     }
   
+    private Label labelCodigoSimeRecoPen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSimeRecoPen1() {
+        return labelCodigoSimeRecoPen1;
+    }
+
+    public void setLabelCodigoSimeRecoPen1(Label l) {
+        this.labelCodigoSimeRecoPen1 = l;
+    }
+
+    private Label labelCodigoSimeRecoPen1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelCodigoSimeRecoPen1x1() {
+        return labelCodigoSimeRecoPen1x1;
+    }
+
+    public void setLabelCodigoSimeRecoPen1x1(Label l) {
+        this.labelCodigoSimeRecoPen1x1 = l;
+    }
+
+    private TextField campoCodigoSimeRecoPen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoCodigoSimeRecoPen1() {
+        return campoCodigoSimeRecoPen1;
+    }
+
+    public void setCampoCodigoSimeRecoPen1(TextField component) {
+        this.campoCodigoSimeRecoPen1 = component;
+    }
+
+    private TextField campoCodigoSimeRecoPen1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoCodigoSimeRecoPen1x1() {
+        return campoCodigoSimeRecoPen1x1;
+    }
+
+    public void setCampoCodigoSimeRecoPen1x1(TextField component) {
+        this.campoCodigoSimeRecoPen1x1 = component;
+    }
+
+    private HelpInline helpInlineCodigoSimeRecoPen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoSimeRecoPen1() {
+        return helpInlineCodigoSimeRecoPen1;
+    }
+
+    public void setHelpInlineCodigoSimeRecoPen1(HelpInline hi) {
+        this.helpInlineCodigoSimeRecoPen1 = hi;
+    }
+
+    private HelpInline helpInlineCodigoSimeRecoPen1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineCodigoSimeRecoPen1x1() {
+        return helpInlineCodigoSimeRecoPen1x1;
+    }
+
+    public void setHelpInlineCodigoSimeRecoPen1x1(HelpInline hi) {
+        this.helpInlineCodigoSimeRecoPen1x1 = hi;
+    }
+
+    private StaticText campoCodigoSimeRecoPen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSimeRecoPen1Texto1() {
+        return campoCodigoSimeRecoPen1Texto1;
+    }
+
+    public void setCampoCodigoSimeRecoPen1Texto1(StaticText component) {
+        this.campoCodigoSimeRecoPen1Texto1 = component;
+    }
+
+    private StaticText campoCodigoSimeRecoPen1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoCodigoSimeRecoPen1x1Texto1() {
+        return campoCodigoSimeRecoPen1x1Texto1;
+    }
+
+    public void setCampoCodigoSimeRecoPen1x1Texto1(StaticText component) {
+        this.campoCodigoSimeRecoPen1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorCodigoSimeRecoPen1 = new LengthValidator();
+  
+    public LengthValidator getValidatorCodigoSimeRecoPen1() {
+        return validatorCodigoSimeRecoPen1;
+    }
+  
+    public void setValidatorCodigoSimeRecoPen1(LengthValidator validator) {
+        this.validatorCodigoSimeRecoPen1 = validator;
+    }
+  
     private Label labelComentariosEntregaDocumentos1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelComentariosEntregaDocumentos1() {
@@ -9294,6 +9490,97 @@ public class Persona6 extends AbstractPageBean
   
     public void setValidatorComentariosEntregaDocumentos1(LengthValidator validator) {
         this.validatorComentariosEntregaDocumentos1 = validator;
+    }
+  
+    private Label labelComentariosInsercionJupe1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosInsercionJupe1() {
+        return labelComentariosInsercionJupe1;
+    }
+
+    public void setLabelComentariosInsercionJupe1(Label l) {
+        this.labelComentariosInsercionJupe1 = l;
+    }
+
+    private Label labelComentariosInsercionJupe1x1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelComentariosInsercionJupe1x1() {
+        return labelComentariosInsercionJupe1x1;
+    }
+
+    public void setLabelComentariosInsercionJupe1x1(Label l) {
+        this.labelComentariosInsercionJupe1x1 = l;
+    }
+
+    private TextArea campoComentariosInsercionJupe1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoComentariosInsercionJupe1() {
+        return campoComentariosInsercionJupe1;
+    }
+
+    public void setCampoComentariosInsercionJupe1(TextArea component) {
+        this.campoComentariosInsercionJupe1 = component;
+    }
+
+    private TextArea campoComentariosInsercionJupe1x1 = new com.egt.core.jsf.component.AreaTexto();
+
+    public TextArea getCampoComentariosInsercionJupe1x1() {
+        return campoComentariosInsercionJupe1x1;
+    }
+
+    public void setCampoComentariosInsercionJupe1x1(TextArea component) {
+        this.campoComentariosInsercionJupe1x1 = component;
+    }
+
+    private HelpInline helpInlineComentariosInsercionJupe1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosInsercionJupe1() {
+        return helpInlineComentariosInsercionJupe1;
+    }
+
+    public void setHelpInlineComentariosInsercionJupe1(HelpInline hi) {
+        this.helpInlineComentariosInsercionJupe1 = hi;
+    }
+
+    private HelpInline helpInlineComentariosInsercionJupe1x1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineComentariosInsercionJupe1x1() {
+        return helpInlineComentariosInsercionJupe1x1;
+    }
+
+    public void setHelpInlineComentariosInsercionJupe1x1(HelpInline hi) {
+        this.helpInlineComentariosInsercionJupe1x1 = hi;
+    }
+
+    private StaticText campoComentariosInsercionJupe1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosInsercionJupe1Texto1() {
+        return campoComentariosInsercionJupe1Texto1;
+    }
+
+    public void setCampoComentariosInsercionJupe1Texto1(StaticText component) {
+        this.campoComentariosInsercionJupe1Texto1 = component;
+    }
+
+    private StaticText campoComentariosInsercionJupe1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoComentariosInsercionJupe1x1Texto1() {
+        return campoComentariosInsercionJupe1x1Texto1;
+    }
+
+    public void setCampoComentariosInsercionJupe1x1Texto1(StaticText component) {
+        this.campoComentariosInsercionJupe1x1Texto1 = component;
+    }
+
+    private LengthValidator validatorComentariosInsercionJupe1 = new LengthValidator();
+  
+    public LengthValidator getValidatorComentariosInsercionJupe1() {
+        return validatorComentariosInsercionJupe1;
+    }
+  
+    public void setValidatorComentariosInsercionJupe1(LengthValidator validator) {
+        this.validatorComentariosInsercionJupe1 = validator;
     }
   
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();
@@ -9775,6 +10062,11 @@ public class Persona6 extends AbstractPageBean
     @Override
     public TextField getTextFieldCampoFechaRevocacionPension1() {
         return this.getCampoFechaRevocacionPension1();
+    }
+
+    @Override
+    public TextField getTextFieldCampoFechaResolucionRevPen1() {
+        return this.getCampoFechaResolucionRevPen1();
     }
 
     @Override

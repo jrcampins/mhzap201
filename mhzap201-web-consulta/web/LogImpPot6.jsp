@@ -208,6 +208,7 @@
                                                     binding="#{LogImpPot6.labelIdLogImpPot1}"
                                                     id="labelIdLogImpPot1"
                                                     for="campoIdLogImpPot1"
+                                                    toolTip="BundleParametros.id_log_imp_pot.log_imp_pot"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpPot6.labelDepartamento1}"
                                                     id="labelDepartamento1"
                                                     for="campoDepartamento1"
+                                                    toolTip="BundleParametros.departamento.log_imp_pot"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpPot6.labelDistrito1}"
                                                     id="labelDistrito1"
                                                     for="campoDistrito1"
+                                                    toolTip="BundleParametros.distrito.log_imp_pot"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpPot6.labelNombresApellidos1}"
                                                     id="labelNombresApellidos1"
                                                     for="campoNombresApellidos1"
+                                                    toolTip="BundleParametros.nombres_apellidos.log_imp_pot"
                                                     text="nombres apellidos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpPot6.labelApodo1}"
                                                     id="labelApodo1"
                                                     for="campoApodo1"
+                                                    toolTip="BundleParametros.apodo.log_imp_pot"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpPot6.labelEdadALaFecha1}"
                                                     id="labelEdadALaFecha1"
                                                     for="campoEdadALaFecha1"
+                                                    toolTip="BundleParametros.edad_a_la_fecha.log_imp_pot"
                                                     text="edad a la fecha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpPot6.labelNacimiento1}"
                                                     id="labelNacimiento1"
                                                     for="campoNacimiento1"
+                                                    toolTip="BundleParametros.nacimiento.log_imp_pot"
                                                     text="nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpPot6.labelCedula1}"
                                                     id="labelCedula1"
                                                     for="campoCedula1"
+                                                    toolTip="BundleParametros.cedula.log_imp_pot"
                                                     text="c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpPot6.labelTelefono1}"
                                                     id="labelTelefono1"
                                                     for="campoTelefono1"
+                                                    toolTip="BundleParametros.telefono.log_imp_pot"
                                                     text="tel&#233;fono"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpPot6.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.log_imp_pot"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpPot6.labelReferencia1}"
                                                     id="labelReferencia1"
                                                     for="campoReferencia1"
+                                                    toolTip="BundleParametros.referencia.log_imp_pot"
                                                     text="referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpPot6.labelBarrio1}"
                                                     id="labelBarrio1"
                                                     for="campoBarrio1"
+                                                    toolTip="BundleParametros.barrio.log_imp_pot"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +604,7 @@
                                                     binding="#{LogImpPot6.labelNombreReferente1}"
                                                     id="labelNombreReferente1"
                                                     for="campoNombreReferente1"
+                                                    toolTip="BundleParametros.nombre_referente.log_imp_pot"
                                                     text="nombre referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +637,7 @@
                                                     binding="#{LogImpPot6.labelTelefonoReferente1}"
                                                     id="labelTelefonoReferente1"
                                                     for="campoTelefonoReferente1"
+                                                    toolTip="BundleParametros.telefono_referente.log_imp_pot"
                                                     text="tel&#233;fono referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -656,6 +670,7 @@
                                                     binding="#{LogImpPot6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_pot"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -687,6 +702,7 @@
                                                     binding="#{LogImpPot6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_pot"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -719,6 +735,7 @@
                                                     binding="#{LogImpPot6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_pot"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -751,6 +768,7 @@
                                                     binding="#{LogImpPot6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_pot"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -789,6 +807,7 @@
                                                     binding="#{LogImpPot6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_pot"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

@@ -208,6 +208,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdLogProAcrPotBen1}"
                                                     id="labelIdLogProAcrPotBen1"
                                                     for="campoIdLogProAcrPotBen1"
+                                                    toolTip="BundleParametros.id_log_pro_acr_pot_ben.log_pro_acr_pot_ben"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
+                                                    toolTip="BundleParametros.id_potencial_ben.log_pro_acr_pot_ben"
                                                     text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{LogProAcrPotBen6.labelNombrePotencialBen1}"
                                                     id="labelNombrePotencialBen1"
                                                     for="campoNombrePotencialBen1"
+                                                    toolTip="BundleParametros.nombre_potencial_ben.log_pro_acr_pot_ben"
                                                     text="nombre potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +338,7 @@
                                                     binding="#{LogProAcrPotBen6.labelCodigoPotencialBen1}"
                                                     id="labelCodigoPotencialBen1"
                                                     for="campoCodigoPotencialBen1"
+                                                    toolTip="BundleParametros.codigo_potencial_ben.log_pro_acr_pot_ben"
                                                     text="c&#243;digo potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +372,7 @@
                                                     binding="#{LogProAcrPotBen6.labelFechaRegistroPotBen1}"
                                                     id="labelFechaRegistroPotBen1"
                                                     for="campoFechaRegistroPotBen1"
+                                                    toolTip="BundleParametros.fecha_registro_pot_ben.log_pro_acr_pot_ben"
                                                     text="fecha registro potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -401,6 +406,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.log_pro_acr_pot_ben"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -463,6 +469,7 @@
                                                     binding="#{LogProAcrPotBen6.labelNombrePersona1}"
                                                     id="labelNombrePersona1"
                                                     for="campoNombrePersona1"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_acr_pot_ben"
                                                     text="nombre persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +503,7 @@
                                                     binding="#{LogProAcrPotBen6.labelCodigoPersona1}"
                                                     id="labelCodigoPersona1"
                                                     for="campoCodigoPersona1"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_acr_pot_ben"
                                                     text="c&#243;digo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -529,6 +537,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_acr_pot_ben"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -591,6 +600,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_acr_pot_ben"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -653,6 +663,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_acr_pot_ben"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -715,6 +726,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdFichaPersona1}"
                                                     id="labelIdFichaPersona1"
                                                     for="campoIdFichaPersona1"
+                                                    toolTip="BundleParametros.id_ficha_persona.log_pro_acr_pot_ben"
                                                     text="ficha persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -777,6 +789,7 @@
                                                     binding="#{LogProAcrPotBen6.labelCodigoFichaPersona1}"
                                                     id="labelCodigoFichaPersona1"
                                                     for="campoCodigoFichaPersona1"
+                                                    toolTip="BundleParametros.codigo_ficha_persona.log_pro_acr_pot_ben"
                                                     text="c&#243;digo ficha persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -810,6 +823,7 @@
                                                     binding="#{LogProAcrPotBen6.labelNombreFichaPersona1}"
                                                     id="labelNombreFichaPersona1"
                                                     for="campoNombreFichaPersona1"
+                                                    toolTip="BundleParametros.nombre_ficha_persona.log_pro_acr_pot_ben"
                                                     text="nombre ficha persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -843,6 +857,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIdFichaHogar1}"
                                                     id="labelIdFichaHogar1"
                                                     for="campoIdFichaHogar1"
+                                                    toolTip="BundleParametros.id_ficha_hogar.log_pro_acr_pot_ben"
                                                     text="ficha hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -904,6 +919,7 @@
                                                     binding="#{LogProAcrPotBen6.labelCodigoFichaHogar1}"
                                                     id="labelCodigoFichaHogar1"
                                                     for="campoCodigoFichaHogar1"
+                                                    toolTip="BundleParametros.codigo_ficha_hogar.log_pro_acr_pot_ben"
                                                     text="c&#243;digo ficha hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -937,6 +953,7 @@
                                                     binding="#{LogProAcrPotBen6.labelIndiceCalidadVida1}"
                                                     id="labelIndiceCalidadVida1"
                                                     for="campoIndiceCalidadVida1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.log_pro_acr_pot_ben"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -970,6 +987,7 @@
                                                     binding="#{LogProAcrPotBen6.labelEsProcesado1}"
                                                     id="labelEsProcesado1"
                                                     for="listaEsProcesado1"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_acr_pot_ben"
                                                     text="procesado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1001,6 +1019,7 @@
                                                     binding="#{LogProAcrPotBen6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_pro_acr_pot_ben"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1033,6 +1052,7 @@
                                                     binding="#{LogProAcrPotBen6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_acr_pot_ben"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

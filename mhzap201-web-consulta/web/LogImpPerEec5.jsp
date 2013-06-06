@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnIdLogImpPerEec1}"
+                                                    toolTip="BundleParametros.id_log_imp_per_eec.log_imp_per_eec"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogImpPerEec1" rendered="false"
                                                     sort="id_log_imp_per_eec">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnDptod1}"
+                                                    toolTip="BundleParametros.dptod.log_imp_per_eec"
                                                     headerText="dptod"
                                                     id="tableColumnDptod1" rendered="false"
                                                     sort="dptod">
@@ -235,6 +237,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnDistritod1}"
+                                                    toolTip="BundleParametros.distritod.log_imp_per_eec"
                                                     headerText="distritod"
                                                     id="tableColumnDistritod1" rendered="false"
                                                     sort="distritod">
@@ -261,6 +264,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnDistripg1}"
+                                                    toolTip="BundleParametros.distripg.log_imp_per_eec"
                                                     headerText="distripg"
                                                     id="tableColumnDistripg1" rendered="false"
                                                     sort="distripg">
@@ -287,6 +291,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnArea1}"
+                                                    toolTip="BundleParametros.area.log_imp_per_eec"
                                                     headerText="area"
                                                     id="tableColumnArea1" rendered="false"
                                                     sort="area">
@@ -313,6 +318,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnBarrio1}"
+                                                    toolTip="BundleParametros.barrio.log_imp_per_eec"
                                                     headerText="barrio"
                                                     id="tableColumnBarrio1" rendered="false"
                                                     sort="barrio">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnManzana1}"
+                                                    toolTip="BundleParametros.manzana.log_imp_per_eec"
                                                     headerText="manzana"
                                                     id="tableColumnManzana1" rendered="false"
                                                     sort="manzana">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnFormulario1}"
+                                                    toolTip="BundleParametros.formulario.log_imp_per_eec"
                                                     headerText="formulario"
                                                     id="tableColumnFormulario1" rendered="false"
                                                     sort="formulario">
@@ -391,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnVivi1}"
+                                                    toolTip="BundleParametros.vivi.log_imp_per_eec"
                                                     headerText="vivi"
                                                     id="tableColumnVivi1" rendered="false"
                                                     sort="vivi">
@@ -417,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnHogar1}"
+                                                    toolTip="BundleParametros.hogar.log_imp_per_eec"
                                                     headerText="hogar"
                                                     id="tableColumnHogar1" rendered="false"
                                                     sort="hogar">
@@ -443,6 +453,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnOrden1}"
+                                                    toolTip="BundleParametros.orden.log_imp_per_eec"
                                                     headerText="orden"
                                                     id="tableColumnOrden1" rendered="false"
                                                     sort="orden">
@@ -469,6 +480,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP301}"
+                                                    toolTip="BundleParametros.p30.log_imp_per_eec"
                                                     headerText="p30"
                                                     id="tableColumnP301"
                                                     sort="p30">
@@ -495,6 +507,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP311}"
+                                                    toolTip="BundleParametros.p31.log_imp_per_eec"
                                                     headerText="p31"
                                                     id="tableColumnP311"
                                                     sort="p31">
@@ -521,6 +534,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP321}"
+                                                    toolTip="BundleParametros.p32.log_imp_per_eec"
                                                     headerText="p32"
                                                     id="tableColumnP321" rendered="false"
                                                     sort="p32">
@@ -547,6 +561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP331}"
+                                                    toolTip="BundleParametros.p33.log_imp_per_eec"
                                                     headerText="p33"
                                                     id="tableColumnP331" rendered="false"
                                                     sort="p33">
@@ -573,6 +588,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP341}"
+                                                    toolTip="BundleParametros.p34.log_imp_per_eec"
                                                     headerText="p34"
                                                     id="tableColumnP341" rendered="false"
                                                     sort="p34">
@@ -599,6 +615,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP351}"
+                                                    toolTip="BundleParametros.p35.log_imp_per_eec"
                                                     headerText="p35"
                                                     id="tableColumnP351" rendered="false"
                                                     sort="p35">
@@ -625,6 +642,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP36OrdenConyugue1}"
+                                                    toolTip="BundleParametros.p36_orden_conyugue.log_imp_per_eec"
                                                     headerText="p36 orden conyugue"
                                                     id="tableColumnP36OrdenConyugue1" rendered="false"
                                                     sort="p36_orden_conyugue">
@@ -651,6 +669,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP36OrdenPadre1}"
+                                                    toolTip="BundleParametros.p36_orden_padre.log_imp_per_eec"
                                                     headerText="p36 orden padre"
                                                     id="tableColumnP36OrdenPadre1" rendered="false"
                                                     sort="p36_orden_padre">
@@ -677,6 +696,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP36OrdenMadre1}"
+                                                    toolTip="BundleParametros.p36_orden_madre.log_imp_per_eec"
                                                     headerText="p36 orden madre"
                                                     id="tableColumnP36OrdenMadre1" rendered="false"
                                                     sort="p36_orden_madre">
@@ -703,6 +723,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP371}"
+                                                    toolTip="BundleParametros.p37.log_imp_per_eec"
                                                     headerText="p37"
                                                     id="tableColumnP371" rendered="false"
                                                     sort="p37">
@@ -729,6 +750,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP37Cedula1}"
+                                                    toolTip="BundleParametros.p37_cedula.log_imp_per_eec"
                                                     headerText="p37 c&#233;dula"
                                                     id="tableColumnP37Cedula1" rendered="false"
                                                     sort="p37_cedula">
@@ -755,6 +777,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP38Dia1}"
+                                                    toolTip="BundleParametros.p38_dia.log_imp_per_eec"
                                                     headerText="p38 dia"
                                                     id="tableColumnP38Dia1" rendered="false"
                                                     sort="p38_dia">
@@ -781,6 +804,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP38Mes1}"
+                                                    toolTip="BundleParametros.p38_mes.log_imp_per_eec"
                                                     headerText="p38 mes"
                                                     id="tableColumnP38Mes1" rendered="false"
                                                     sort="p38_mes">
@@ -807,6 +831,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP38Ano1}"
+                                                    toolTip="BundleParametros.p38_ano.log_imp_per_eec"
                                                     headerText="p38 a&#241;o"
                                                     id="tableColumnP38Ano1" rendered="false"
                                                     sort="p38_ano">
@@ -833,6 +858,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP39pais1}"
+                                                    toolTip="BundleParametros.p39pais.log_imp_per_eec"
                                                     headerText="p39pais"
                                                     id="tableColumnP39pais1" rendered="false"
                                                     sort="p39pais">
@@ -859,6 +885,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP39dpto1}"
+                                                    toolTip="BundleParametros.p39dpto.log_imp_per_eec"
                                                     headerText="p39dpto"
                                                     id="tableColumnP39dpto1" rendered="false"
                                                     sort="p39dpto">
@@ -885,6 +912,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP39dist1}"
+                                                    toolTip="BundleParametros.p39dist.log_imp_per_eec"
                                                     headerText="p39dist"
                                                     id="tableColumnP39dist1" rendered="false"
                                                     sort="p39dist">
@@ -911,6 +939,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP39area1}"
+                                                    toolTip="BundleParametros.p39area.log_imp_per_eec"
                                                     headerText="p39area"
                                                     id="tableColumnP39area1" rendered="false"
                                                     sort="p39area">
@@ -937,6 +966,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP40Idioma1}"
+                                                    toolTip="BundleParametros.p40_idioma.log_imp_per_eec"
                                                     headerText="p40 idioma"
                                                     id="tableColumnP40Idioma1" rendered="false"
                                                     sort="p40_idioma">
@@ -963,6 +993,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP40otr1}"
+                                                    toolTip="BundleParametros.p40otr.log_imp_per_eec"
                                                     headerText="p40otr"
                                                     id="tableColumnP40otr1" rendered="false"
                                                     sort="p40otr">
@@ -989,6 +1020,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP411}"
+                                                    toolTip="BundleParametros.p41.log_imp_per_eec"
                                                     headerText="p41"
                                                     id="tableColumnP411" rendered="false"
                                                     sort="p41">
@@ -1015,6 +1047,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP421}"
+                                                    toolTip="BundleParametros.p42.log_imp_per_eec"
                                                     headerText="p42"
                                                     id="tableColumnP421" rendered="false"
                                                     sort="p42">
@@ -1041,6 +1074,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP431}"
+                                                    toolTip="BundleParametros.p43.log_imp_per_eec"
                                                     headerText="p43"
                                                     id="tableColumnP431" rendered="false"
                                                     sort="p43">
@@ -1067,6 +1101,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP4445t1}"
+                                                    toolTip="BundleParametros.p44_45t.log_imp_per_eec"
                                                     headerText="p44 45t"
                                                     id="tableColumnP4445t1" rendered="false"
                                                     sort="p44_45t">
@@ -1093,6 +1128,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP441}"
+                                                    toolTip="BundleParametros.p44.log_imp_per_eec"
                                                     headerText="p44"
                                                     id="tableColumnP441" rendered="false"
                                                     sort="p44">
@@ -1119,6 +1155,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP451}"
+                                                    toolTip="BundleParametros.p45.log_imp_per_eec"
                                                     headerText="p45"
                                                     id="tableColumnP451" rendered="false"
                                                     sort="p45">
@@ -1145,6 +1182,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP461}"
+                                                    toolTip="BundleParametros.p46.log_imp_per_eec"
                                                     headerText="p46"
                                                     id="tableColumnP461" rendered="false"
                                                     sort="p46">
@@ -1171,6 +1209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP471}"
+                                                    toolTip="BundleParametros.p47.log_imp_per_eec"
                                                     headerText="p47"
                                                     id="tableColumnP471" rendered="false"
                                                     sort="p47">
@@ -1197,6 +1236,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP481}"
+                                                    toolTip="BundleParametros.p48.log_imp_per_eec"
                                                     headerText="p48"
                                                     id="tableColumnP481" rendered="false"
                                                     sort="p48">
@@ -1223,6 +1263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP491}"
+                                                    toolTip="BundleParametros.p49.log_imp_per_eec"
                                                     headerText="p49"
                                                     id="tableColumnP491" rendered="false"
                                                     sort="p49">
@@ -1249,6 +1290,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP49Otr1}"
+                                                    toolTip="BundleParametros.p49_otr.log_imp_per_eec"
                                                     headerText="p49 otr"
                                                     id="tableColumnP49Otr1" rendered="false"
                                                     sort="p49_otr">
@@ -1275,6 +1317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP501}"
+                                                    toolTip="BundleParametros.p50.log_imp_per_eec"
                                                     headerText="p50"
                                                     id="tableColumnP501" rendered="false"
                                                     sort="p50">
@@ -1301,6 +1344,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP50Otr1}"
+                                                    toolTip="BundleParametros.p50_otr.log_imp_per_eec"
                                                     headerText="p50 otr"
                                                     id="tableColumnP50Otr1" rendered="false"
                                                     sort="p50_otr">
@@ -1327,6 +1371,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP511}"
+                                                    toolTip="BundleParametros.p51.log_imp_per_eec"
                                                     headerText="p51"
                                                     id="tableColumnP511" rendered="false"
                                                     sort="p51">
@@ -1353,6 +1398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP521}"
+                                                    toolTip="BundleParametros.p52.log_imp_per_eec"
                                                     headerText="p52"
                                                     id="tableColumnP521" rendered="false"
                                                     sort="p52">
@@ -1379,6 +1425,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP52Otr1}"
+                                                    toolTip="BundleParametros.p52_otr.log_imp_per_eec"
                                                     headerText="p52 otr"
                                                     id="tableColumnP52Otr1" rendered="false"
                                                     sort="p52_otr">
@@ -1405,6 +1452,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP531}"
+                                                    toolTip="BundleParametros.p53.log_imp_per_eec"
                                                     headerText="p53"
                                                     id="tableColumnP531" rendered="false"
                                                     sort="p53">
@@ -1431,6 +1479,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP541}"
+                                                    toolTip="BundleParametros.p54.log_imp_per_eec"
                                                     headerText="p54"
                                                     id="tableColumnP541" rendered="false"
                                                     sort="p54">
@@ -1457,6 +1506,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP54a1}"
+                                                    toolTip="BundleParametros.p54a.log_imp_per_eec"
                                                     headerText="p54a"
                                                     id="tableColumnP54a1" rendered="false"
                                                     sort="p54a">
@@ -1483,6 +1533,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP54Otr1}"
+                                                    toolTip="BundleParametros.p54_otr.log_imp_per_eec"
                                                     headerText="p54 otr"
                                                     id="tableColumnP54Otr1" rendered="false"
                                                     sort="p54_otr">
@@ -1509,6 +1560,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP551}"
+                                                    toolTip="BundleParametros.p55.log_imp_per_eec"
                                                     headerText="p55"
                                                     id="tableColumnP551" rendered="false"
                                                     sort="p55">
@@ -1535,6 +1587,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP55Otr1}"
+                                                    toolTip="BundleParametros.p55_otr.log_imp_per_eec"
                                                     headerText="p55 otr"
                                                     id="tableColumnP55Otr1" rendered="false"
                                                     sort="p55_otr">
@@ -1561,6 +1614,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP561}"
+                                                    toolTip="BundleParametros.p56.log_imp_per_eec"
                                                     headerText="p56"
                                                     id="tableColumnP561" rendered="false"
                                                     sort="p56">
@@ -1587,6 +1641,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP571}"
+                                                    toolTip="BundleParametros.p57.log_imp_per_eec"
                                                     headerText="p57"
                                                     id="tableColumnP571" rendered="false"
                                                     sort="p57">
@@ -1613,6 +1668,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP581}"
+                                                    toolTip="BundleParametros.p58.log_imp_per_eec"
                                                     headerText="p58"
                                                     id="tableColumnP581" rendered="false"
                                                     sort="p58">
@@ -1639,6 +1695,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP591}"
+                                                    toolTip="BundleParametros.p59.log_imp_per_eec"
                                                     headerText="p59"
                                                     id="tableColumnP591" rendered="false"
                                                     sort="p59">
@@ -1665,6 +1722,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP601}"
+                                                    toolTip="BundleParametros.p60.log_imp_per_eec"
                                                     headerText="p60"
                                                     id="tableColumnP601" rendered="false"
                                                     sort="p60">
@@ -1691,6 +1749,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP611}"
+                                                    toolTip="BundleParametros.p61.log_imp_per_eec"
                                                     headerText="p61"
                                                     id="tableColumnP611" rendered="false"
                                                     sort="p61">
@@ -1717,6 +1776,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP621}"
+                                                    toolTip="BundleParametros.p62.log_imp_per_eec"
                                                     headerText="p62"
                                                     id="tableColumnP621" rendered="false"
                                                     sort="p62">
@@ -1743,6 +1803,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP631}"
+                                                    toolTip="BundleParametros.p63.log_imp_per_eec"
                                                     headerText="p63"
                                                     id="tableColumnP631" rendered="false"
                                                     sort="p63">
@@ -1769,6 +1830,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP63Especificar1}"
+                                                    toolTip="BundleParametros.p63_especificar.log_imp_per_eec"
                                                     headerText="p63 especificar"
                                                     id="tableColumnP63Especificar1" rendered="false"
                                                     sort="p63_especificar">
@@ -1795,6 +1857,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP64des1}"
+                                                    toolTip="BundleParametros.p64des.log_imp_per_eec"
                                                     headerText="p64des"
                                                     id="tableColumnP64des1" rendered="false"
                                                     sort="p64des">
@@ -1821,6 +1884,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP64c1}"
+                                                    toolTip="BundleParametros.p64c.log_imp_per_eec"
                                                     headerText="p64c"
                                                     id="tableColumnP64c1" rendered="false"
                                                     sort="p64c">
@@ -1847,6 +1911,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP65des1}"
+                                                    toolTip="BundleParametros.p65des.log_imp_per_eec"
                                                     headerText="p65des"
                                                     id="tableColumnP65des1" rendered="false"
                                                     sort="p65des">
@@ -1873,6 +1938,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP65c1}"
+                                                    toolTip="BundleParametros.p65c.log_imp_per_eec"
                                                     headerText="p65c"
                                                     id="tableColumnP65c1" rendered="false"
                                                     sort="p65c">
@@ -1899,6 +1965,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP661}"
+                                                    toolTip="BundleParametros.p66.log_imp_per_eec"
                                                     headerText="p66"
                                                     id="tableColumnP661" rendered="false"
                                                     sort="p66">
@@ -1925,6 +1992,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67a1}"
+                                                    toolTip="BundleParametros.p67a.log_imp_per_eec"
                                                     headerText="p67a"
                                                     id="tableColumnP67a1" rendered="false"
                                                     sort="p67a">
@@ -1951,6 +2019,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67b1}"
+                                                    toolTip="BundleParametros.p67b.log_imp_per_eec"
                                                     headerText="p67b"
                                                     id="tableColumnP67b1" rendered="false"
                                                     sort="p67b">
@@ -1977,6 +2046,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67c1}"
+                                                    toolTip="BundleParametros.p67c.log_imp_per_eec"
                                                     headerText="p67c"
                                                     id="tableColumnP67c1" rendered="false"
                                                     sort="p67c">
@@ -2003,6 +2073,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67d1}"
+                                                    toolTip="BundleParametros.p67d.log_imp_per_eec"
                                                     headerText="p67d"
                                                     id="tableColumnP67d1" rendered="false"
                                                     sort="p67d">
@@ -2029,6 +2100,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67e1}"
+                                                    toolTip="BundleParametros.p67e.log_imp_per_eec"
                                                     headerText="p67e"
                                                     id="tableColumnP67e1" rendered="false"
                                                     sort="p67e">
@@ -2055,6 +2127,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67f1}"
+                                                    toolTip="BundleParametros.p67f.log_imp_per_eec"
                                                     headerText="p67f"
                                                     id="tableColumnP67f1" rendered="false"
                                                     sort="p67f">
@@ -2081,6 +2154,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67g1}"
+                                                    toolTip="BundleParametros.p67g.log_imp_per_eec"
                                                     headerText="p67g"
                                                     id="tableColumnP67g1" rendered="false"
                                                     sort="p67g">
@@ -2107,6 +2181,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67h1}"
+                                                    toolTip="BundleParametros.p67h.log_imp_per_eec"
                                                     headerText="p67h"
                                                     id="tableColumnP67h1" rendered="false"
                                                     sort="p67h">
@@ -2133,6 +2208,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67i1}"
+                                                    toolTip="BundleParametros.p67i.log_imp_per_eec"
                                                     headerText="p67i"
                                                     id="tableColumnP67i1" rendered="false"
                                                     sort="p67i">
@@ -2159,6 +2235,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67j1}"
+                                                    toolTip="BundleParametros.p67j.log_imp_per_eec"
                                                     headerText="p67j"
                                                     id="tableColumnP67j1" rendered="false"
                                                     sort="p67j">
@@ -2185,6 +2262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67k1}"
+                                                    toolTip="BundleParametros.p67k.log_imp_per_eec"
                                                     headerText="p67k"
                                                     id="tableColumnP67k1" rendered="false"
                                                     sort="p67k">
@@ -2211,6 +2289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67l1}"
+                                                    toolTip="BundleParametros.p67l.log_imp_per_eec"
                                                     headerText="p67l"
                                                     id="tableColumnP67l1" rendered="false"
                                                     sort="p67l">
@@ -2237,6 +2316,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnP67tot1}"
+                                                    toolTip="BundleParametros.p67tot.log_imp_per_eec"
                                                     headerText="p67tot"
                                                     id="tableColumnP67tot1" rendered="false"
                                                     sort="p67tot">
@@ -2263,6 +2343,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnEsImportado1}"
+                                                    toolTip="BundleParametros.es_importado.log_imp_per_eec"
                                                     headerText="importado"
                                                     id="tableColumnEsImportado1"
                                                     sort="es_importado">
@@ -2288,6 +2369,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_imp_per_eec"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -2314,6 +2396,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_per_eec"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
@@ -2340,6 +2423,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnNombreArchivo1}"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_per_eec"
                                                     headerText="nombre archivo"
                                                     id="tableColumnNombreArchivo1" rendered="false"
                                                     sort="nombre_archivo">
@@ -2381,6 +2465,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPerEec5.tableColumnCodigoArchivo1}"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_per_eec"
                                                     headerText="c&#243;digo archivo"
                                                     id="tableColumnCodigoArchivo1" rendered="false"
                                                     sort="codigo_archivo">

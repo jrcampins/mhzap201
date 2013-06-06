@@ -208,6 +208,7 @@
                                                     binding="#{LogProVerElePen6.labelIdLogProVerElePen1}"
                                                     id="labelIdLogProVerElePen1"
                                                     for="campoIdLogProVerElePen1"
+                                                    toolTip="BundleParametros.id_log_pro_ver_ele_pen.log_pro_ver_ele_pen"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogProVerElePen6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.log_pro_ver_ele_pen"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{LogProVerElePen6.labelCodigoPersona1}"
                                                     id="labelCodigoPersona1"
                                                     for="campoCodigoPersona1"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_ver_ele_pen"
                                                     text="c&#243;digo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +338,7 @@
                                                     binding="#{LogProVerElePen6.labelNombrePersona1}"
                                                     id="labelNombrePersona1"
                                                     for="campoNombrePersona1"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_ver_ele_pen"
                                                     text="nombre persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +372,7 @@
                                                     binding="#{LogProVerElePen6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_ver_ele_pen"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -430,6 +435,7 @@
                                                     binding="#{LogProVerElePen6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_ver_ele_pen"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -492,6 +498,7 @@
                                                     binding="#{LogProVerElePen6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_ver_ele_pen"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -554,6 +561,7 @@
                                                     binding="#{LogProVerElePen6.labelIndiceCalidadVida1}"
                                                     id="labelIndiceCalidadVida1"
                                                     for="campoIndiceCalidadVida1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.log_pro_ver_ele_pen"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -587,6 +595,7 @@
                                                     binding="#{LogProVerElePen6.labelNumeroCondicionPension1}"
                                                     id="labelNumeroCondicionPension1"
                                                     for="listaNumeroCondicionPension1"
+                                                    toolTip="BundleParametros.numero_condicion_pension.log_pro_ver_ele_pen"
                                                     text="condici&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -619,6 +628,7 @@
                                                     binding="#{LogProVerElePen6.labelNumeroCondicionDenuPen1}"
                                                     id="labelNumeroCondicionDenuPen1"
                                                     for="listaNumeroCondicionDenuPen1"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.log_pro_ver_ele_pen"
                                                     text="condici&#243;n denuncia pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -651,6 +661,7 @@
                                                     binding="#{LogProVerElePen6.labelNumeroCondicionRecoPen1}"
                                                     id="labelNumeroCondicionRecoPen1"
                                                     for="listaNumeroCondicionRecoPen1"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.log_pro_ver_ele_pen"
                                                     text="condici&#243;n reconsideraci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -683,6 +694,7 @@
                                                     binding="#{LogProVerElePen6.labelEsProcesado1}"
                                                     id="labelEsProcesado1"
                                                     for="listaEsProcesado1"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_ver_ele_pen"
                                                     text="procesado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -714,6 +726,7 @@
                                                     binding="#{LogProVerElePen6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_pro_ver_ele_pen"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -746,6 +759,7 @@
                                                     binding="#{LogProVerElePen6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_ver_ele_pen"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

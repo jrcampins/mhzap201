@@ -208,6 +208,7 @@
                                                     binding="#{LogProImpArcExt6.labelIdLogProImpArcExt1}"
                                                     id="labelIdLogProImpArcExt1"
                                                     for="campoIdLogProImpArcExt1"
+                                                    toolTip="BundleParametros.id_log_pro_imp_arc_ext.log_pro_imp_arc_ext"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogProImpArcExt6.labelIdArchivoDatosExt1}"
                                                     id="labelIdArchivoDatosExt1"
                                                     for="campoIdArchivoDatosExt1"
+                                                    toolTip="BundleParametros.id_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     text="archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{LogProImpArcExt6.labelCodigoTipoArcDatExt1}"
                                                     id="labelCodigoTipoArcDatExt1"
                                                     for="campoCodigoTipoArcDatExt1"
+                                                    toolTip="BundleParametros.codigo_tipo_arc_dat_ext.log_pro_imp_arc_ext"
                                                     text="c&#243;digo tipo archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +338,7 @@
                                                     binding="#{LogProImpArcExt6.labelNumeroTipoArcDatExt1}"
                                                     id="labelNumeroTipoArcDatExt1"
                                                     for="listaNumeroTipoArcDatExt1"
+                                                    toolTip="BundleParametros.numero_tipo_arc_dat_ext.log_pro_imp_arc_ext"
                                                     text="tipo archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -367,6 +371,7 @@
                                                     binding="#{LogProImpArcExt6.labelNombreProveedorDatExt1}"
                                                     id="labelNombreProveedorDatExt1"
                                                     for="campoNombreProveedorDatExt1"
+                                                    toolTip="BundleParametros.nombre_proveedor_dat_ext.log_pro_imp_arc_ext"
                                                     text="nombre proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +405,7 @@
                                                     binding="#{LogProImpArcExt6.labelCodigoProveedorDatExt1}"
                                                     id="labelCodigoProveedorDatExt1"
                                                     for="campoCodigoProveedorDatExt1"
+                                                    toolTip="BundleParametros.codigo_proveedor_dat_ext.log_pro_imp_arc_ext"
                                                     text="c&#243;digo proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -433,6 +439,7 @@
                                                     binding="#{LogProImpArcExt6.labelCodigoArchivoDatosExt1}"
                                                     id="labelCodigoArchivoDatosExt1"
                                                     for="campoCodigoArchivoDatosExt1"
+                                                    toolTip="BundleParametros.codigo_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     text="c&#243;digo archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -466,6 +473,7 @@
                                                     binding="#{LogProImpArcExt6.labelRutaArchivoDatosExt1}"
                                                     id="labelRutaArchivoDatosExt1"
                                                     for="campoRutaArchivoDatosExt1"
+                                                    toolTip="BundleParametros.ruta_archivo_datos_ext.log_pro_imp_arc_ext"
                                                     text="ruta archivo datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -498,6 +506,7 @@
                                                     binding="#{LogProImpArcExt6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_pro_imp_arc_ext"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -529,6 +538,7 @@
                                                     binding="#{LogProImpArcExt6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_pro_imp_arc_ext"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -561,6 +571,7 @@
                                                     binding="#{LogProImpArcExt6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_imp_arc_ext"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

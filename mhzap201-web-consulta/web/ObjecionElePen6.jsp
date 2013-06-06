@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -208,6 +208,7 @@
                                                     binding="#{ObjecionElePen6.labelIdObjecionElePen1}"
                                                     id="labelIdObjecionElePen1"
                                                     for="campoIdObjecionElePen1"
+                                                    toolTip="BundleParametros.id_objecion_ele_pen.objecion_ele_pen"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{ObjecionElePen6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.objecion_ele_pen"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{ObjecionElePen6.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.objecion_ele_pen"
                                                     text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -364,6 +367,7 @@
                                                     binding="#{ObjecionElePen6.labelNumeroTipoObjElePen1}"
                                                     id="labelNumeroTipoObjElePen1"
                                                     for="listaNumeroTipoObjElePen1"
+                                                    toolTip="BundleParametros.numero_tipo_obj_ele_pen.objecion_ele_pen"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -396,6 +400,7 @@
                                                     binding="#{ObjecionElePen6.labelEsObjecionElePenInactiva1}"
                                                     id="labelEsObjecionElePenInactiva1"
                                                     for="listaEsObjecionElePenInactiva1"
+                                                    toolTip="BundleParametros.es_objecion_ele_pen_inactiva.objecion_ele_pen"
                                                     text="inactiva"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -427,6 +432,7 @@
                                                     binding="#{ObjecionElePen6.labelFechaUltimaActualizacion1}"
                                                     id="labelFechaUltimaActualizacion1"
                                                     for="campoFechaUltimaActualizacion1"
+                                                    toolTip="BundleParametros.fecha_ultima_actualizacion.objecion_ele_pen"
                                                     text="fecha ultima actualizaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -460,6 +466,7 @@
                                                     binding="#{ObjecionElePen6.labelNombreArchivoUltimaAct1}"
                                                     id="labelNombreArchivoUltimaAct1"
                                                     for="campoNombreArchivoUltimaAct1"
+                                                    toolTip="BundleParametros.nombre_archivo_ultima_act.objecion_ele_pen"
                                                     text="nombre archivo ultima actualizaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -498,6 +505,7 @@
                                                     binding="#{ObjecionElePen6.labelObservaciones1}"
                                                     id="labelObservaciones1"
                                                     for="campoObservaciones1"
+                                                    toolTip="BundleParametros.observaciones.objecion_ele_pen"
                                                     text="observaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -521,6 +529,73 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.observaciones.objecion_ele_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridFechaAnulacion1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen6.labelFechaAnulacion1}"
+                                                    id="labelFechaAnulacion1"
+                                                    for="campoFechaAnulacion1"
+                                                    toolTip="BundleParametros.fecha_anulacion.objecion_ele_pen"
+                                                    text="fecha anulaci&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridFechaAnulacion2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:calendar id="campoFechaAnulacion1"
+                                                    binding="#{ObjecionElePen6.campoFechaAnulacion1}"
+                                                    maxDate="#{ObjecionElePen6.gestor.defaultMaxDate}"
+                                                    minDate="#{ObjecionElePen6.gestor.defaultMinDate}"
+                                                    readOnly="#{ObjecionElePen6.gestor.filaNoProcesada}"
+                                                    selectedDate="#{ObjecionElePen6.objecionElePenDataProvider.value['fecha_anulacion']}"
+                                                    toolTip="BundleParametros.fecha_anulacion.objecion_ele_pen"/>
+                                                <webuijsf:staticText id="campoFechaAnulacion1Texto1"
+                                                    binding="#{ObjecionElePen6.campoFechaAnulacion1Texto1}"
+                                                    converter="#{ObjecionElePen6.converterFechaAnulacion1}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['fecha_anulacion']}"/>
+                                                <webuijsf:message id="messageFechaAnulacion1"
+                                                    for="campoFechaAnulacion1"/>
+                                                <webuijsf:helpInline id="helpInlineFechaAnulacion1"
+                                                    binding="#{ObjecionElePen6.helpInlineFechaAnulacion1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.fecha_anulacion.objecion_ele_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridObservacionesAnulacion1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen6.labelObservacionesAnulacion1}"
+                                                    id="labelObservacionesAnulacion1"
+                                                    for="campoObservacionesAnulacion1"
+                                                    toolTip="BundleParametros.observaciones_anulacion.objecion_ele_pen"
+                                                    text="observaciones anulaci&#243;n"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridObservacionesAnulacion2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoObservacionesAnulacion1"
+                                                    binding="#{ObjecionElePen6.campoObservacionesAnulacion1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="#{ObjecionElePen6.gestor.filaNoProcesada}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['observaciones_anulacion']}"
+                                                    toolTip="BundleParametros.observaciones_anulacion.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen6.validatorObservacionesAnulacion1.validate}"/>
+                                                <webuijsf:staticText id="campoObservacionesAnulacion1Texto1"
+                                                    binding="#{ObjecionElePen6.campoObservacionesAnulacion1Texto1}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['observaciones_anulacion']}"/>
+                                                <webuijsf:message id="messageObservacionesAnulacion1"
+                                                    for="campoObservacionesAnulacion1"/>
+                                                <webuijsf:helpInline id="helpInlineObservacionesAnulacion1"
+                                                    binding="#{ObjecionElePen6.helpInlineObservacionesAnulacion1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.observaciones_anulacion.objecion_ele_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>

@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnIdObjecionElePen1}"
+                                                    toolTip="BundleParametros.id_objecion_ele_pen.objecion_ele_pen"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdObjecionElePen1" rendered="false"
                                                     sort="id_objecion_ele_pen">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.objecion_ele_pen"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1"
                                                     sort="codigo_persona_1x1y3">
@@ -276,6 +278,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnIdProveedorDatExt1}"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.objecion_ele_pen"
                                                     headerText="proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext_1x2y3">
@@ -343,6 +346,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNumeroTipoObjElePen1}"
+                                                    toolTip="BundleParametros.numero_tipo_obj_ele_pen.objecion_ele_pen"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoObjElePen1"
                                                     sort="codigo_tipo_obj_ele_pen_1x3y2">
@@ -369,6 +373,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnEsObjecionElePenInactiva1}"
+                                                    toolTip="BundleParametros.es_objecion_ele_pen_inactiva.objecion_ele_pen"
                                                     headerText="inactiva"
                                                     id="tableColumnEsObjecionElePenInactiva1"
                                                     sort="es_objecion_ele_pen_inactiva">
@@ -394,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnFechaUltimaActualizacion1}"
+                                                    toolTip="BundleParametros.fecha_ultima_actualizacion.objecion_ele_pen"
                                                     headerText="fecha ultima actualizaci&#243;n"
                                                     id="tableColumnFechaUltimaActualizacion1" rendered="false"
                                                     sort="fecha_ultima_actualizacion">
@@ -420,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnNombreArchivoUltimaAct1}"
+                                                    toolTip="BundleParametros.nombre_archivo_ultima_act.objecion_ele_pen"
                                                     headerText="nombre archivo ultima actualizaci&#243;n"
                                                     id="tableColumnNombreArchivoUltimaAct1" rendered="false"
                                                     sort="nombre_archivo_ultima_act">
@@ -461,6 +468,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ObjecionElePen5.tableColumnObservaciones1}"
+                                                    toolTip="BundleParametros.observaciones.objecion_ele_pen"
                                                     headerText="observaciones"
                                                     id="tableColumnObservaciones1" rendered="false"
                                                     sort="observaciones">
@@ -484,6 +492,60 @@
                                                     text="#{currentRow.value['observaciones']}"/>
                                                 <webuijsf:message id="messageObservaciones1"
                                                     for="campoObservaciones1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ObjecionElePen5.tableColumnFechaAnulacion1}"
+                                                    toolTip="BundleParametros.fecha_anulacion.objecion_ele_pen"
+                                                    headerText="fecha anulaci&#243;n"
+                                                    id="tableColumnFechaAnulacion1" rendered="false"
+                                                    sort="fecha_anulacion">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaAnulacion1"
+                                                    text="#{currentRow.value['fecha_anulacion']}"
+                                                    rendered="#{ObjecionElePen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen5.labelFechaAnulacion1}"
+                                                    id="labelFechaAnulacion1"
+                                                    for="campoFechaAnulacion1"/>
+                                                <webuijsf:textField id="campoFechaAnulacion1"
+                                                    binding="#{ObjecionElePen5.campoFechaAnulacion1}"
+                                                    converter="#{ObjecionElePen5.converterFechaAnulacion1}"
+                                                    readOnly="#{ObjecionElePen5.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['fecha_anulacion']}"
+                                                    toolTip="BundleParametros.fecha_anulacion.objecion_ele_pen"/>
+                                                <webuijsf:staticText id="campoFechaAnulacion1Texto1"
+                                                    binding="#{ObjecionElePen5.campoFechaAnulacion1Texto1}"
+                                                    converter="#{ObjecionElePen5.converterFechaAnulacion1}"
+                                                    text="#{currentRow.value['fecha_anulacion']}"/>
+                                                <webuijsf:message id="messageFechaAnulacion1"
+                                                    for="campoFechaAnulacion1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ObjecionElePen5.tableColumnObservacionesAnulacion1}"
+                                                    toolTip="BundleParametros.observaciones_anulacion.objecion_ele_pen"
+                                                    headerText="observaciones anulaci&#243;n"
+                                                    id="tableColumnObservacionesAnulacion1" rendered="false"
+                                                    sort="observaciones_anulacion">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextObservacionesAnulacion1"
+                                                    text="#{currentRow.value['observaciones_anulacion']}"
+                                                    rendered="#{ObjecionElePen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen5.labelObservacionesAnulacion1}"
+                                                    id="labelObservacionesAnulacion1"
+                                                    for="campoObservacionesAnulacion1"/>
+                                                <webuijsf:textArea id="campoObservacionesAnulacion1"
+                                                    binding="#{ObjecionElePen5.campoObservacionesAnulacion1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="#{ObjecionElePen5.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['observaciones_anulacion']}"
+                                                    toolTip="BundleParametros.observaciones_anulacion.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen5.validatorObservacionesAnulacion1.validate}"/>
+                                                <webuijsf:staticText id="campoObservacionesAnulacion1Texto1"
+                                                    binding="#{ObjecionElePen5.campoObservacionesAnulacion1Texto1}"
+                                                    text="#{currentRow.value['observaciones_anulacion']}"/>
+                                                <webuijsf:message id="messageObservacionesAnulacion1"
+                                                    for="campoObservacionesAnulacion1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.id_archivo_datos_ext.archivo_datos_ext"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdArchivoDatosExt1" rendered="false"
                                                     sort="id_archivo_datos_ext">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnCodigoArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.codigo_archivo_datos_ext.archivo_datos_ext"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoArchivoDatosExt1"
                                                     sort="codigo_archivo_datos_ext">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnNombreArchivoDatosExt1}"
+                                                    toolTip="BundleParametros.nombre_archivo_datos_ext.archivo_datos_ext"
                                                     headerText="nombre"
                                                     id="tableColumnNombreArchivoDatosExt1"
                                                     sort="nombre_archivo_datos_ext">
@@ -279,6 +282,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdProveedorDatExt1}"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.archivo_datos_ext"
                                                     headerText="proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext_1x1y3">
@@ -346,6 +350,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnNumeroTipoArcDatExt1}"
+                                                    toolTip="BundleParametros.numero_tipo_arc_dat_ext.archivo_datos_ext"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoArcDatExt1"
                                                     sort="codigo_tipo_arc_dat_ext_1x2y2">
@@ -372,6 +377,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnEsArchivoDatosExtImportado1}"
+                                                    toolTip="BundleParametros.es_archivo_datos_ext_importado.archivo_datos_ext"
                                                     headerText="importado"
                                                     id="tableColumnEsArchivoDatosExtImportado1"
                                                     sort="es_archivo_datos_ext_importado">
@@ -397,6 +403,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnFechaHoraUltimaCarga1}"
+                                                    toolTip="BundleParametros.fecha_hora_ultima_carga.archivo_datos_ext"
                                                     headerText="fecha hora ultima carga"
                                                     id="tableColumnFechaHoraUltimaCarga1" rendered="false"
                                                     sort="fecha_hora_ultima_carga">
@@ -423,6 +430,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdUsuarioUltimaCarga1}"
+                                                    toolTip="BundleParametros.id_usuario_ultima_carga.archivo_datos_ext"
                                                     headerText="usuario ultima carga"
                                                     id="tableColumnIdUsuarioUltimaCarga1" rendered="false"
                                                     sort="codigo_usuario_1x3y3">
@@ -488,6 +496,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnNombreArchivoDatos1}"
+                                                    toolTip="BundleParametros.nombre_archivo_datos.archivo_datos_ext"
                                                     headerText="nombre archivo datos"
                                                     id="tableColumnNombreArchivoDatos1" rendered="false"
                                                     sort="nombre_archivo_datos">
@@ -529,6 +538,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnNombreOriginalArchivoDatos1}"
+                                                    toolTip="BundleParametros.nombre_original_archivo_datos.archivo_datos_ext"
                                                     headerText="nombre original archivo datos"
                                                     id="tableColumnNombreOriginalArchivoDatos1" rendered="false"
                                                     sort="nombre_original_archivo_datos">
@@ -555,6 +565,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnFechaHoraUltimaImportacion1}"
+                                                    toolTip="BundleParametros.fecha_hora_ultima_importacion.archivo_datos_ext"
                                                     headerText="fecha hora ultima importaci&#243;n"
                                                     id="tableColumnFechaHoraUltimaImportacion1" rendered="false"
                                                     sort="fecha_hora_ultima_importacion">
@@ -581,6 +592,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ArchivoDatosExt5.tableColumnIdUsuarioUltimaImportacion1}"
+                                                    toolTip="BundleParametros.id_usuario_ultima_importacion.archivo_datos_ext"
                                                     headerText="usuario ultima importaci&#243;n"
                                                     id="tableColumnIdUsuarioUltimaImportacion1" rendered="false"
                                                     sort="codigo_usuario_1x4y3">

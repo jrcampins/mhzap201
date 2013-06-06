@@ -90,7 +90,8 @@ public class AsistentePaginaActualizacionObjecionElePen {
         if (bean == null) {
             return true;
         }
-        return false;
+//      String urx = URX2.COMANDO_OBJECION_ELE_PEN;
+        return bean.getGestor().isLoteSinCambios();
     }
 
     // <editor-fold defaultstate="collapsed" desc="metodos para abrir archivos adjuntos">
@@ -505,6 +506,14 @@ public class AsistentePaginaActualizacionObjecionElePen {
     }
 
     public boolean isGridObservacionesRendered() {
+        return true;
+    }
+
+    public boolean isGridFechaAnulacionRendered() {
+        return true;
+    }
+
+    public boolean isGridObservacionesAnulacionRendered() {
         return true;
     }
 

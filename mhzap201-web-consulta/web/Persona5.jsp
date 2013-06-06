@@ -33,7 +33,7 @@
                     <webuijsf:form 
                         binding="#{Persona5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoComentariosAnulCerVida1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 campoComentariosAnulCerDefuncion1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 campoComentariosEntregaDocumentos1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdPersona1 campoCodigoPersona1 campoNombrePersona1 campoNumeroCedula1 campoLetraCedula1 campoFechaExpedicionCedula1 campoFechaVencimientoCedula1 campoPrimerNombre1 campoSegundoNombre1 campoPrimerApellido1 campoSegundoApellido1 campoApellidoCasada1 campoApodo1 campoFechaNacimiento1 listaNumeroSexoPersona1 listaNumeroEstadoCivil1 listaEsParaguayoNatural1 listaEsIndigena1 campoIdEtniaIndigena1 campoNombreComunidadIndigena1 campoIdDepartamento1 campoIdDistrito1 listaNumeroTipoArea1 campoIdBarrio1 campoDireccion1 campoNumeroTelefonoLineaBaja1 campoNumeroTelefonoCelular1 campoCertificadoVida1 campoFechaCertificadoVida1 campoDiasVigenciaCertificadoVida1 listaEsCertificadoVidaAnulado1 campoCertificadoDefuncion1 campoFechaCertificadoDefuncion1 listaEsCerDefuncionAnulado1 listaEsPersonaConEmpleo1 listaEsPersonaConJubilacion1 listaEsPersonaConPension1 listaEsPersonaConSubsidio1 listaEsPersonaConDeuda1 listaEsPersonaConPenaJudicial1 listaEsPersonaConCerVida1 listaEsPersonaConCartaRenuncia1 listaEsPersonaElegibleParaPen1 listaEsPersonaAcreditadaParaPen1 listaEsPersonaConCopiaCedula1 listaEsPersonaConDeclaracionJur1 campoMontoPension1 listaNumeroCondicionPension1 campoFechaSolicitudPension1 campoComentariosSolicitudPension1 campoFechaAprobacionPension1 campoComentariosAprobacionPension1 campoFechaOtorgamientoPen1 campoNumeroResolucionOtorPen1 campoFechaResolucionOtorPen1 campoComentariosOtorgamientoPen1 campoFechaObjecionPension1 listaNumeroCausaDenPension1 campoOtraCausaDenPension1 campoComentariosObjecionPension1 campoFechaDenegacionPension1 campoNumeroResolucionDenPen1 campoFechaResolucionDenPen1 campoComentariosDenegacionPension1 campoFechaRevocacionPension1 listaNumeroCausaRevPension1 campoOtraCausaRevPension1 campoNumeroResolucionRevPen1 campoFechaResolucionRevPen1 campoComentariosRevocacionPension1 listaNumeroCondicionRecoPen1 campoFechaSolicitudRecoPen1 campoComentariosSolicitudRecoPen1 campoFechaAprobacionRecoPen1 campoComentariosAprRecoPen1 campoFechaDenegacionRecoPen1 listaNumeroCausaDenRecoPen1 campoOtraCausaDenRecoPen1 campoComentariosDenRecoPen1 listaNumeroCondicionDenuPen1 campoFechaRegistroDenunciaPen1 campoComentariosRegistroDenuPen1 campoFechaConfirmacionDenuPen1 campoComentariosConfDenuPen1 campoFechaDesmentidoDenunciaPen1 campoComentariosDesDenuPen1 campoIdFichaPersona1 campoFechaFichaPersona1 campoIndiceCalidadVida1 campoFechaUltimoCobroPension1 campoNotasAnulFecUltCobPen1 listaNumeroTipoActJupe1 campoFechaHoraUltActJupe1 campoLote1 campoCodigoSime1 campoCodigoSimeRecoPen1 campoComentariosEntregaDocumentos1 campoComentariosInsercionJupe1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.persona"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="id_persona">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnCodigoPersona1}"
+                                                    toolTip="BundleParametros.codigo_persona.persona"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNombrePersona1}"
+                                                    toolTip="BundleParametros.nombre_persona.persona"
                                                     headerText="nombre"
                                                     id="tableColumnNombrePersona1"
                                                     sort="nombre_persona">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCedula1}"
+                                                    toolTip="BundleParametros.numero_cedula.persona"
                                                     headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnLetraCedula1}"
+                                                    toolTip="BundleParametros.letra_cedula.persona"
                                                     headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
@@ -312,6 +317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaExpedicionCedula1}"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.persona"
                                                     headerText="fecha expedici&#243;n c&#233;dula"
                                                     id="tableColumnFechaExpedicionCedula1" rendered="false"
                                                     sort="fecha_expedicion_cedula">
@@ -338,6 +344,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaVencimientoCedula1}"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.persona"
                                                     headerText="fecha vencimiento c&#233;dula"
                                                     id="tableColumnFechaVencimientoCedula1" rendered="false"
                                                     sort="fecha_vencimiento_cedula">
@@ -364,6 +371,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnPrimerNombre1}"
+                                                    toolTip="BundleParametros.primer_nombre.persona"
                                                     headerText="primer nombre"
                                                     id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
@@ -391,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnSegundoNombre1}"
+                                                    toolTip="BundleParametros.segundo_nombre.persona"
                                                     headerText="segundo nombre"
                                                     id="tableColumnSegundoNombre1" rendered="false"
                                                     sort="segundo_nombre">
@@ -418,6 +427,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnPrimerApellido1}"
+                                                    toolTip="BundleParametros.primer_apellido.persona"
                                                     headerText="primer apellido"
                                                     id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
@@ -445,6 +455,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnSegundoApellido1}"
+                                                    toolTip="BundleParametros.segundo_apellido.persona"
                                                     headerText="segundo apellido"
                                                     id="tableColumnSegundoApellido1" rendered="false"
                                                     sort="segundo_apellido">
@@ -472,6 +483,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnApellidoCasada1}"
+                                                    toolTip="BundleParametros.apellido_casada.persona"
                                                     headerText="apellido casada"
                                                     id="tableColumnApellidoCasada1" rendered="false"
                                                     sort="apellido_casada">
@@ -499,6 +511,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnApodo1}"
+                                                    toolTip="BundleParametros.apodo.persona"
                                                     headerText="apodo"
                                                     id="tableColumnApodo1" rendered="false"
                                                     sort="apodo">
@@ -526,6 +539,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaNacimiento1}"
+                                                    toolTip="BundleParametros.fecha_nacimiento.persona"
                                                     headerText="fecha nacimiento"
                                                     id="tableColumnFechaNacimiento1"
                                                     sort="fecha_nacimiento">
@@ -552,6 +566,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroSexoPersona1}"
+                                                    toolTip="BundleParametros.numero_sexo_persona.persona"
                                                     headerText="sexo"
                                                     id="tableColumnNumeroSexoPersona1" rendered="false"
                                                     sort="codigo_sexo_persona_1x1y2">
@@ -578,6 +593,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroEstadoCivil1}"
+                                                    toolTip="BundleParametros.numero_estado_civil.persona"
                                                     headerText="estado civil"
                                                     id="tableColumnNumeroEstadoCivil1" rendered="false"
                                                     sort="codigo_estado_civil_1x2y2">
@@ -604,6 +620,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsParaguayoNatural1}"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.persona"
                                                     headerText="paraguayo natural"
                                                     id="tableColumnEsParaguayoNatural1"
                                                     sort="es_paraguayo_natural">
@@ -629,6 +646,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsIndigena1}"
+                                                    toolTip="BundleParametros.es_indigena.persona"
                                                     headerText="indigena"
                                                     id="tableColumnEsIndigena1"
                                                     sort="es_indigena">
@@ -654,6 +672,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdEtniaIndigena1}"
+                                                    toolTip="BundleParametros.id_etnia_indigena.persona"
                                                     headerText="etnia indigena"
                                                     id="tableColumnIdEtniaIndigena1" rendered="false"
                                                     sort="codigo_etnia_indigena_1x3y3">
@@ -719,6 +738,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNombreComunidadIndigena1}"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.persona"
                                                     headerText="nombre comunidad indigena"
                                                     id="tableColumnNombreComunidadIndigena1" rendered="false"
                                                     sort="nombre_comunidad_indigena">
@@ -746,6 +766,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.persona"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -811,6 +832,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.persona"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x5y3">
@@ -876,6 +898,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area.persona"
                                                     headerText="tipo area"
                                                     id="tableColumnNumeroTipoArea1" rendered="false"
                                                     sort="codigo_tipo_area_1x6y2">
@@ -902,6 +925,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.persona"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x7y3">
@@ -967,6 +991,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.persona"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -993,6 +1018,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroTelefonoLineaBaja1}"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.persona"
                                                     headerText="n&#250;mero tel&#233;fono linea baja"
                                                     id="tableColumnNumeroTelefonoLineaBaja1" rendered="false"
                                                     sort="numero_telefono_linea_baja">
@@ -1020,6 +1046,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroTelefonoCelular1}"
+                                                    toolTip="BundleParametros.numero_telefono_celular.persona"
                                                     headerText="n&#250;mero tel&#233;fono celular"
                                                     id="tableColumnNumeroTelefonoCelular1" rendered="false"
                                                     sort="numero_telefono_celular">
@@ -1047,6 +1074,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnCertificadoVida1}"
+                                                    toolTip="BundleParametros.certificado_vida.persona"
                                                     headerText="certificado vida"
                                                     id="tableColumnCertificadoVida1" rendered="false"
                                                     sort="certificado_vida">
@@ -1074,6 +1102,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaCertificadoVida1}"
+                                                    toolTip="BundleParametros.fecha_certificado_vida.persona"
                                                     headerText="fecha certificado vida"
                                                     id="tableColumnFechaCertificadoVida1" rendered="false"
                                                     sort="fecha_certificado_vida">
@@ -1099,7 +1128,35 @@
                                                     for="campoFechaCertificadoVida1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnDiasVigenciaCertificadoVida1}"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    headerText="dias vigencia certificado vida"
+                                                    id="tableColumnDiasVigenciaCertificadoVida1" rendered="false"
+                                                    sort="dias_vigencia_certificado_vida">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextDiasVigenciaCertificadoVida1"
+                                                    text="#{currentRow.value['dias_vigencia_certificado_vida']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelDiasVigenciaCertificadoVida1}"
+                                                    id="labelDiasVigenciaCertificadoVida1"
+                                                    for="campoDiasVigenciaCertificadoVida1"/>
+                                                <webuijsf:textField id="campoDiasVigenciaCertificadoVida1"
+                                                    binding="#{Persona5.campoDiasVigenciaCertificadoVida1}"
+                                                    converter="#{Persona5.converterDiasVigenciaCertificadoVida1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['dias_vigencia_certificado_vida']}"
+                                                    toolTip="BundleParametros.dias_vigencia_certificado_vida.persona"
+                                                    validatorExpression="#{Persona5.validatorDiasVigenciaCertificadoVida1.validate}"/>
+                                                <webuijsf:staticText id="campoDiasVigenciaCertificadoVida1Texto1"
+                                                    binding="#{Persona5.campoDiasVigenciaCertificadoVida1Texto1}"
+                                                    text="#{currentRow.value['dias_vigencia_certificado_vida']}"/>
+                                                <webuijsf:message id="messageDiasVigenciaCertificadoVida1"
+                                                    for="campoDiasVigenciaCertificadoVida1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsCertificadoVidaAnulado1}"
+                                                    toolTip="BundleParametros.es_certificado_vida_anulado.persona"
                                                     headerText="certificado vida anulado"
                                                     id="tableColumnEsCertificadoVidaAnulado1" rendered="false"
                                                     sort="es_certificado_vida_anulado">
@@ -1124,33 +1181,8 @@
                                                     for="listaEsCertificadoVidaAnulado1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnComentariosAnulCerVida1}"
-                                                    headerText="comentarios anulaci&#243;n certificado vida"
-                                                    id="tableColumnComentariosAnulCerVida1" rendered="false"
-                                                    sort="comentarios_anul_cer_vida">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextComentariosAnulCerVida1"
-                                                    text="#{currentRow.value['comentarios_anul_cer_vida']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelComentariosAnulCerVida1}"
-                                                    id="labelComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"/>
-                                                <webuijsf:textArea id="campoComentariosAnulCerVida1"
-                                                    binding="#{Persona5.campoComentariosAnulCerVida1}"
-                                                    columns="50" rows="3"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['comentarios_anul_cer_vida']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_vida.persona"
-                                                    validatorExpression="#{Persona5.validatorComentariosAnulCerVida1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerVida1Texto1"
-                                                    binding="#{Persona5.campoComentariosAnulCerVida1Texto1}"
-                                                    text="#{currentRow.value['comentarios_anul_cer_vida']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerVida1"
-                                                    for="campoComentariosAnulCerVida1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnCertificadoDefuncion1}"
+                                                    toolTip="BundleParametros.certificado_defuncion.persona"
                                                     headerText="certificado defunci&#243;n"
                                                     id="tableColumnCertificadoDefuncion1" rendered="false"
                                                     sort="certificado_defuncion">
@@ -1178,6 +1210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaCertificadoDefuncion1}"
+                                                    toolTip="BundleParametros.fecha_certificado_defuncion.persona"
                                                     headerText="fecha certificado defunci&#243;n"
                                                     id="tableColumnFechaCertificadoDefuncion1" rendered="false"
                                                     sort="fecha_certificado_defuncion">
@@ -1204,6 +1237,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsCerDefuncionAnulado1}"
+                                                    toolTip="BundleParametros.es_cer_defuncion_anulado.persona"
                                                     headerText="certificado defunci&#243;n anulado"
                                                     id="tableColumnEsCerDefuncionAnulado1" rendered="false"
                                                     sort="es_cer_defuncion_anulado">
@@ -1228,33 +1262,8 @@
                                                     for="listaEsCerDefuncionAnulado1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
-                                                    binding="#{Persona5.tableColumnComentariosAnulCerDefuncion1}"
-                                                    headerText="comentarios anulaci&#243;n certificado defunci&#243;n"
-                                                    id="tableColumnComentariosAnulCerDefuncion1" rendered="false"
-                                                    sort="comentarios_anul_cer_defuncion">
-                                                <webuijsf:staticText
-                                                    id="hiddenStaticTextComentariosAnulCerDefuncion1"
-                                                    text="#{currentRow.value['comentarios_anul_cer_defuncion']}"
-                                                    rendered="#{Persona5.gestor.designing}"/>
-                                                <webuijsf:label
-                                                    binding="#{Persona5.labelComentariosAnulCerDefuncion1}"
-                                                    id="labelComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"/>
-                                                <webuijsf:textArea id="campoComentariosAnulCerDefuncion1"
-                                                    binding="#{Persona5.campoComentariosAnulCerDefuncion1}"
-                                                    columns="50" rows="3"
-                                                    readOnly="true"
-                                                    text="#{currentRow.value['comentarios_anul_cer_defuncion']}"
-                                                    toolTip="BundleParametros.comentarios_anul_cer_defuncion.persona"
-                                                    validatorExpression="#{Persona5.validatorComentariosAnulCerDefuncion1.validate}"/>
-                                                <webuijsf:staticText id="campoComentariosAnulCerDefuncion1Texto1"
-                                                    binding="#{Persona5.campoComentariosAnulCerDefuncion1Texto1}"
-                                                    text="#{currentRow.value['comentarios_anul_cer_defuncion']}"/>
-                                                <webuijsf:message id="messageComentariosAnulCerDefuncion1"
-                                                    for="campoComentariosAnulCerDefuncion1"/>
-                                                </webuijsf:tableColumn>
-                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConEmpleo1}"
+                                                    toolTip="BundleParametros.es_persona_con_empleo.persona"
                                                     headerText="con empleo"
                                                     id="tableColumnEsPersonaConEmpleo1" rendered="false"
                                                     sort="es_persona_con_empleo">
@@ -1280,6 +1289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConJubilacion1}"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.persona"
                                                     headerText="con jubilaci&#243;n"
                                                     id="tableColumnEsPersonaConJubilacion1" rendered="false"
                                                     sort="es_persona_con_jubilacion">
@@ -1305,6 +1315,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConPension1}"
+                                                    toolTip="BundleParametros.es_persona_con_pension.persona"
                                                     headerText="con pensi&#243;n"
                                                     id="tableColumnEsPersonaConPension1" rendered="false"
                                                     sort="es_persona_con_pension">
@@ -1330,6 +1341,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConSubsidio1}"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.persona"
                                                     headerText="con subsidio"
                                                     id="tableColumnEsPersonaConSubsidio1" rendered="false"
                                                     sort="es_persona_con_subsidio">
@@ -1355,6 +1367,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConDeuda1}"
+                                                    toolTip="BundleParametros.es_persona_con_deuda.persona"
                                                     headerText="con deuda"
                                                     id="tableColumnEsPersonaConDeuda1" rendered="false"
                                                     sort="es_persona_con_deuda">
@@ -1380,6 +1393,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConPenaJudicial1}"
+                                                    toolTip="BundleParametros.es_persona_con_pena_judicial.persona"
                                                     headerText="con pena judicial"
                                                     id="tableColumnEsPersonaConPenaJudicial1" rendered="false"
                                                     sort="es_persona_con_pena_judicial">
@@ -1405,6 +1419,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConCerVida1}"
+                                                    toolTip="BundleParametros.es_persona_con_cer_vida.persona"
                                                     headerText="con certificado vida"
                                                     id="tableColumnEsPersonaConCerVida1" rendered="false"
                                                     sort="es_persona_con_cer_vida">
@@ -1430,6 +1445,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConCartaRenuncia1}"
+                                                    toolTip="BundleParametros.es_persona_con_carta_renuncia.persona"
                                                     headerText="con carta renuncia"
                                                     id="tableColumnEsPersonaConCartaRenuncia1" rendered="false"
                                                     sort="es_persona_con_carta_renuncia">
@@ -1455,6 +1471,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaElegibleParaPen1}"
+                                                    toolTip="BundleParametros.es_persona_elegible_para_pen.persona"
                                                     headerText="elegible para pensi&#243;n"
                                                     id="tableColumnEsPersonaElegibleParaPen1" rendered="false"
                                                     sort="es_persona_elegible_para_pen">
@@ -1480,6 +1497,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaAcreditadaParaPen1}"
+                                                    toolTip="BundleParametros.es_persona_acreditada_para_pen.persona"
                                                     headerText="acreditada para pensi&#243;n"
                                                     id="tableColumnEsPersonaAcreditadaParaPen1" rendered="false"
                                                     sort="es_persona_acreditada_para_pen">
@@ -1505,6 +1523,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConCopiaCedula1}"
+                                                    toolTip="BundleParametros.es_persona_con_copia_cedula.persona"
                                                     headerText="con copia c&#233;dula"
                                                     id="tableColumnEsPersonaConCopiaCedula1" rendered="false"
                                                     sort="es_persona_con_copia_cedula">
@@ -1530,6 +1549,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnEsPersonaConDeclaracionJur1}"
+                                                    toolTip="BundleParametros.es_persona_con_declaracion_jur.persona"
                                                     headerText="con declaraci&#243;n jurada"
                                                     id="tableColumnEsPersonaConDeclaracionJur1" rendered="false"
                                                     sort="es_persona_con_declaracion_jur">
@@ -1555,6 +1575,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnMontoPension1}"
+                                                    toolTip="BundleParametros.monto_pension.persona"
                                                     headerText="monto pensi&#243;n"
                                                     id="tableColumnMontoPension1" rendered="false"
                                                     sort="monto_pension">
@@ -1582,12 +1603,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCondicionPension1}"
+                                                    toolTip="BundleParametros.numero_condicion_pension.persona"
                                                     headerText="condici&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionPension1" rendered="false"
-                                                    sort="codigo_condicion_pension_1x9y2">
+                                                    sort="codigo_condicion_pension_1x8y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCondicionPension1"
-                                                    text="#{currentRow.value['codigo_condicion_pension_1x9y2']}"
+                                                    text="#{currentRow.value['codigo_condicion_pension_1x8y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCondicionPension1}"
@@ -1602,12 +1624,13 @@
                                                     toolTip="BundleParametros.numero_condicion_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionPension1Texto1"
                                                     binding="#{Persona5.listaNumeroCondicionPension1Texto1}"
-                                                    text="#{currentRow.value['codigo_condicion_pension_1x9y2']}"/>
+                                                    text="#{currentRow.value['codigo_condicion_pension_1x8y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionPension1"
                                                     for="listaNumeroCondicionPension1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaSolicitudPension1}"
+                                                    toolTip="BundleParametros.fecha_solicitud_pension.persona"
                                                     headerText="fecha solicitud pensi&#243;n"
                                                     id="tableColumnFechaSolicitudPension1" rendered="false"
                                                     sort="fecha_solicitud_pension">
@@ -1634,6 +1657,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosSolicitudPension1}"
+                                                    toolTip="BundleParametros.comentarios_solicitud_pension.persona"
                                                     headerText="comentarios solicitud pensi&#243;n"
                                                     id="tableColumnComentariosSolicitudPension1" rendered="false"
                                                     sort="comentarios_solicitud_pension">
@@ -1660,6 +1684,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaAprobacionPension1}"
+                                                    toolTip="BundleParametros.fecha_aprobacion_pension.persona"
                                                     headerText="fecha aprobaci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaAprobacionPension1" rendered="false"
                                                     sort="fecha_aprobacion_pension">
@@ -1686,6 +1711,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosAprobacionPension1}"
+                                                    toolTip="BundleParametros.comentarios_aprobacion_pension.persona"
                                                     headerText="comentarios aprobaci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosAprobacionPension1" rendered="false"
                                                     sort="comentarios_aprobacion_pension">
@@ -1712,6 +1738,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaOtorgamientoPen1}"
+                                                    toolTip="BundleParametros.fecha_otorgamiento_pen.persona"
                                                     headerText="fecha otorgamiento pensi&#243;n"
                                                     id="tableColumnFechaOtorgamientoPen1" rendered="false"
                                                     sort="fecha_otorgamiento_pen">
@@ -1738,6 +1765,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroResolucionOtorPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_otor_pen.persona"
                                                     headerText="n&#250;mero resoluci&#243;n otorgamiento pensi&#243;n"
                                                     id="tableColumnNumeroResolucionOtorPen1" rendered="false"
                                                     sort="numero_resolucion_otor_pen">
@@ -1765,6 +1793,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaResolucionOtorPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_otor_pen.persona"
                                                     headerText="fecha resoluci&#243;n otorgamiento pensi&#243;n"
                                                     id="tableColumnFechaResolucionOtorPen1" rendered="false"
                                                     sort="fecha_resolucion_otor_pen">
@@ -1791,6 +1820,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosOtorgamientoPen1}"
+                                                    toolTip="BundleParametros.comentarios_otorgamiento_pen.persona"
                                                     headerText="comentarios otorgamiento pensi&#243;n"
                                                     id="tableColumnComentariosOtorgamientoPen1" rendered="false"
                                                     sort="comentarios_otorgamiento_pen">
@@ -1817,6 +1847,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaObjecionPension1}"
+                                                    toolTip="BundleParametros.fecha_objecion_pension.persona"
                                                     headerText="fecha objeci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaObjecionPension1" rendered="false"
                                                     sort="fecha_objecion_pension">
@@ -1843,12 +1874,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCausaDenPension1}"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.persona"
                                                     headerText="causa denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCausaDenPension1" rendered="false"
-                                                    sort="codigo_causa_den_pensio_1x10y2">
+                                                    sort="codigo_causa_den_pension_1x9y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCausaDenPension1"
-                                                    text="#{currentRow.value['codigo_causa_den_pensio_1x10y2']}"
+                                                    text="#{currentRow.value['codigo_causa_den_pension_1x9y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCausaDenPension1}"
@@ -1863,12 +1895,13 @@
                                                     toolTip="BundleParametros.numero_causa_den_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenPension1Texto1"
                                                     binding="#{Persona5.listaNumeroCausaDenPension1Texto1}"
-                                                    text="#{currentRow.value['codigo_causa_den_pensio_1x10y2']}"/>
+                                                    text="#{currentRow.value['codigo_causa_den_pension_1x9y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenPension1"
                                                     for="listaNumeroCausaDenPension1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnOtraCausaDenPension1}"
+                                                    toolTip="BundleParametros.otra_causa_den_pension.persona"
                                                     headerText="otra causa denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnOtraCausaDenPension1" rendered="false"
                                                     sort="otra_causa_den_pension">
@@ -1896,6 +1929,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosObjecionPension1}"
+                                                    toolTip="BundleParametros.comentarios_objecion_pension.persona"
                                                     headerText="comentarios objeci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosObjecionPension1" rendered="false"
                                                     sort="comentarios_objecion_pension">
@@ -1922,6 +1956,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaDenegacionPension1}"
+                                                    toolTip="BundleParametros.fecha_denegacion_pension.persona"
                                                     headerText="fecha denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaDenegacionPension1" rendered="false"
                                                     sort="fecha_denegacion_pension">
@@ -1948,6 +1983,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroResolucionDenPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_den_pen.persona"
                                                     headerText="n&#250;mero resoluci&#243;n denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroResolucionDenPen1" rendered="false"
                                                     sort="numero_resolucion_den_pen">
@@ -1975,6 +2011,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaResolucionDenPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_den_pen.persona"
                                                     headerText="fecha resoluci&#243;n denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaResolucionDenPen1" rendered="false"
                                                     sort="fecha_resolucion_den_pen">
@@ -2001,6 +2038,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosDenegacionPension1}"
+                                                    toolTip="BundleParametros.comentarios_denegacion_pension.persona"
                                                     headerText="comentarios denegaci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosDenegacionPension1" rendered="false"
                                                     sort="comentarios_denegacion_pension">
@@ -2027,6 +2065,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaRevocacionPension1}"
+                                                    toolTip="BundleParametros.fecha_revocacion_pension.persona"
                                                     headerText="fecha revocaci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaRevocacionPension1" rendered="false"
                                                     sort="fecha_revocacion_pension">
@@ -2053,12 +2092,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCausaRevPension1}"
+                                                    toolTip="BundleParametros.numero_causa_rev_pension.persona"
                                                     headerText="causa revocaci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCausaRevPension1" rendered="false"
-                                                    sort="codigo_causa_rev_pensio_1x11y2">
+                                                    sort="codigo_causa_rev_pensio_1x10y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCausaRevPension1"
-                                                    text="#{currentRow.value['codigo_causa_rev_pensio_1x11y2']}"
+                                                    text="#{currentRow.value['codigo_causa_rev_pensio_1x10y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCausaRevPension1}"
@@ -2073,12 +2113,13 @@
                                                     toolTip="BundleParametros.numero_causa_rev_pension.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaRevPension1Texto1"
                                                     binding="#{Persona5.listaNumeroCausaRevPension1Texto1}"
-                                                    text="#{currentRow.value['codigo_causa_rev_pensio_1x11y2']}"/>
+                                                    text="#{currentRow.value['codigo_causa_rev_pensio_1x10y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaRevPension1"
                                                     for="listaNumeroCausaRevPension1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnOtraCausaRevPension1}"
+                                                    toolTip="BundleParametros.otra_causa_rev_pension.persona"
                                                     headerText="otra causa revocaci&#243;n pensi&#243;n"
                                                     id="tableColumnOtraCausaRevPension1" rendered="false"
                                                     sort="otra_causa_rev_pension">
@@ -2105,7 +2146,63 @@
                                                     for="campoOtraCausaRevPension1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnNumeroResolucionRevPen1}"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    headerText="n&#250;mero resoluci&#243;n revocaci&#243;n pensi&#243;n"
+                                                    id="tableColumnNumeroResolucionRevPen1" rendered="false"
+                                                    sort="numero_resolucion_rev_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextNumeroResolucionRevPen1"
+                                                    text="#{currentRow.value['numero_resolucion_rev_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelNumeroResolucionRevPen1}"
+                                                    id="labelNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"/>
+                                                <webuijsf:textField id="campoNumeroResolucionRevPen1"
+                                                    binding="#{Persona5.campoNumeroResolucionRevPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['numero_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.numero_resolucion_rev_pen.persona"
+                                                    validatorExpression="#{Persona5.validatorNumeroResolucionRevPen1.validate}"/>
+                                                <webuijsf:staticText id="campoNumeroResolucionRevPen1Texto1"
+                                                    binding="#{Persona5.campoNumeroResolucionRevPen1Texto1}"
+                                                    text="#{currentRow.value['numero_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageNumeroResolucionRevPen1"
+                                                    for="campoNumeroResolucionRevPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnFechaResolucionRevPen1}"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"
+                                                    headerText="fecha resoluci&#243;n revocaci&#243;n pensi&#243;n"
+                                                    id="tableColumnFechaResolucionRevPen1" rendered="false"
+                                                    sort="fecha_resolucion_rev_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextFechaResolucionRevPen1"
+                                                    text="#{currentRow.value['fecha_resolucion_rev_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelFechaResolucionRevPen1}"
+                                                    id="labelFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"/>
+                                                <webuijsf:textField id="campoFechaResolucionRevPen1"
+                                                    binding="#{Persona5.campoFechaResolucionRevPen1}"
+                                                    converter="#{Persona5.converterFechaResolucionRevPen1}"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['fecha_resolucion_rev_pen']}"
+                                                    toolTip="BundleParametros.fecha_resolucion_rev_pen.persona"/>
+                                                <webuijsf:staticText id="campoFechaResolucionRevPen1Texto1"
+                                                    binding="#{Persona5.campoFechaResolucionRevPen1Texto1}"
+                                                    converter="#{Persona5.converterFechaResolucionRevPen1}"
+                                                    text="#{currentRow.value['fecha_resolucion_rev_pen']}"/>
+                                                <webuijsf:message id="messageFechaResolucionRevPen1"
+                                                    for="campoFechaResolucionRevPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosRevocacionPension1}"
+                                                    toolTip="BundleParametros.comentarios_revocacion_pension.persona"
                                                     headerText="comentarios revocaci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosRevocacionPension1" rendered="false"
                                                     sort="comentarios_revocacion_pension">
@@ -2132,12 +2229,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCondicionRecoPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.persona"
                                                     headerText="condici&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionRecoPen1" rendered="false"
-                                                    sort="codigo_condicion_reco_p_1x12y2">
+                                                    sort="codigo_condicion_reco_p_1x11y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCondicionRecoPen1"
-                                                    text="#{currentRow.value['codigo_condicion_reco_p_1x12y2']}"
+                                                    text="#{currentRow.value['codigo_condicion_reco_p_1x11y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCondicionRecoPen1}"
@@ -2152,12 +2250,13 @@
                                                     toolTip="BundleParametros.numero_condicion_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionRecoPen1Texto1"
                                                     binding="#{Persona5.listaNumeroCondicionRecoPen1Texto1}"
-                                                    text="#{currentRow.value['codigo_condicion_reco_p_1x12y2']}"/>
+                                                    text="#{currentRow.value['codigo_condicion_reco_p_1x11y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionRecoPen1"
                                                     for="listaNumeroCondicionRecoPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaSolicitudRecoPen1}"
+                                                    toolTip="BundleParametros.fecha_solicitud_reco_pen.persona"
                                                     headerText="fecha solicitud reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaSolicitudRecoPen1" rendered="false"
                                                     sort="fecha_solicitud_reco_pen">
@@ -2184,6 +2283,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosSolicitudRecoPen1}"
+                                                    toolTip="BundleParametros.comentarios_solicitud_reco_pen.persona"
                                                     headerText="comentarios solicitud reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosSolicitudRecoPen1" rendered="false"
                                                     sort="comentarios_solicitud_reco_pen">
@@ -2210,6 +2310,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaAprobacionRecoPen1}"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reco_pen.persona"
                                                     headerText="fecha aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaAprobacionRecoPen1" rendered="false"
                                                     sort="fecha_aprobacion_reco_pen">
@@ -2236,6 +2337,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosAprRecoPen1}"
+                                                    toolTip="BundleParametros.comentarios_apr_reco_pen.persona"
                                                     headerText="comentarios aprobaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosAprRecoPen1" rendered="false"
                                                     sort="comentarios_apr_reco_pen">
@@ -2262,6 +2364,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaDenegacionRecoPen1}"
+                                                    toolTip="BundleParametros.fecha_denegacion_reco_pen.persona"
                                                     headerText="fecha denegaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnFechaDenegacionRecoPen1" rendered="false"
                                                     sort="fecha_denegacion_reco_pen">
@@ -2288,12 +2391,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCausaDenRecoPen1}"
+                                                    toolTip="BundleParametros.numero_causa_den_reco_pen.persona"
                                                     headerText="causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCausaDenRecoPen1" rendered="false"
-                                                    sort="codigo_causa_den_reco_p_1x13y2">
+                                                    sort="codigo_causa_den_reco_p_1x12y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCausaDenRecoPen1"
-                                                    text="#{currentRow.value['codigo_causa_den_reco_p_1x13y2']}"
+                                                    text="#{currentRow.value['codigo_causa_den_reco_p_1x12y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCausaDenRecoPen1}"
@@ -2308,12 +2412,13 @@
                                                     toolTip="BundleParametros.numero_causa_den_reco_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCausaDenRecoPen1Texto1"
                                                     binding="#{Persona5.listaNumeroCausaDenRecoPen1Texto1}"
-                                                    text="#{currentRow.value['codigo_causa_den_reco_p_1x13y2']}"/>
+                                                    text="#{currentRow.value['codigo_causa_den_reco_p_1x12y2']}"/>
                                                 <webuijsf:message id="messageNumeroCausaDenRecoPen1"
                                                     for="listaNumeroCausaDenRecoPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnOtraCausaDenRecoPen1}"
+                                                    toolTip="BundleParametros.otra_causa_den_reco_pen.persona"
                                                     headerText="otra causa denegaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnOtraCausaDenRecoPen1" rendered="false"
                                                     sort="otra_causa_den_reco_pen">
@@ -2341,6 +2446,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosDenRecoPen1}"
+                                                    toolTip="BundleParametros.comentarios_den_reco_pen.persona"
                                                     headerText="comentarios denegaci&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnComentariosDenRecoPen1" rendered="false"
                                                     sort="comentarios_den_reco_pen">
@@ -2367,12 +2473,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroCondicionDenuPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.persona"
                                                     headerText="condici&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnNumeroCondicionDenuPen1" rendered="false"
-                                                    sort="codigo_condicion_denu_p_1x14y2">
+                                                    sort="codigo_condicion_denu_p_1x13y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroCondicionDenuPen1"
-                                                    text="#{currentRow.value['codigo_condicion_denu_p_1x14y2']}"
+                                                    text="#{currentRow.value['codigo_condicion_denu_p_1x13y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroCondicionDenuPen1}"
@@ -2387,12 +2494,13 @@
                                                     toolTip="BundleParametros.numero_condicion_denu_pen.persona"/>
                                                 <webuijsf:staticText id="listaNumeroCondicionDenuPen1Texto1"
                                                     binding="#{Persona5.listaNumeroCondicionDenuPen1Texto1}"
-                                                    text="#{currentRow.value['codigo_condicion_denu_p_1x14y2']}"/>
+                                                    text="#{currentRow.value['codigo_condicion_denu_p_1x13y2']}"/>
                                                 <webuijsf:message id="messageNumeroCondicionDenuPen1"
                                                     for="listaNumeroCondicionDenuPen1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaRegistroDenunciaPen1}"
+                                                    toolTip="BundleParametros.fecha_registro_denuncia_pen.persona"
                                                     headerText="fecha registro denuncia pensi&#243;n"
                                                     id="tableColumnFechaRegistroDenunciaPen1" rendered="false"
                                                     sort="fecha_registro_denuncia_pen">
@@ -2419,6 +2527,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosRegistroDenuPen1}"
+                                                    toolTip="BundleParametros.comentarios_registro_denu_pen.persona"
                                                     headerText="comentarios registro denuncia pensi&#243;n"
                                                     id="tableColumnComentariosRegistroDenuPen1" rendered="false"
                                                     sort="comentarios_registro_denu_pen">
@@ -2445,6 +2554,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaConfirmacionDenuPen1}"
+                                                    toolTip="BundleParametros.fecha_confirmacion_denu_pen.persona"
                                                     headerText="fecha confirmaci&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnFechaConfirmacionDenuPen1" rendered="false"
                                                     sort="fecha_confirmacion_denu_pen">
@@ -2471,6 +2581,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosConfDenuPen1}"
+                                                    toolTip="BundleParametros.comentarios_conf_denu_pen.persona"
                                                     headerText="comentarios confirmaci&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnComentariosConfDenuPen1" rendered="false"
                                                     sort="comentarios_conf_denu_pen">
@@ -2497,6 +2608,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaDesmentidoDenunciaPen1}"
+                                                    toolTip="BundleParametros.fecha_desmentido_denuncia_pen.persona"
                                                     headerText="fecha desmentido denuncia pensi&#243;n"
                                                     id="tableColumnFechaDesmentidoDenunciaPen1" rendered="false"
                                                     sort="fecha_desmentido_denuncia_pen">
@@ -2523,6 +2635,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosDesDenuPen1}"
+                                                    toolTip="BundleParametros.comentarios_des_denu_pen.persona"
                                                     headerText="comentarios desmentido denuncia pensi&#243;n"
                                                     id="tableColumnComentariosDesDenuPen1" rendered="false"
                                                     sort="comentarios_des_denu_pen">
@@ -2549,12 +2662,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIdFichaPersona1}"
+                                                    toolTip="BundleParametros.id_ficha_persona.persona"
                                                     headerText="ficha"
                                                     id="tableColumnIdFichaPersona1" rendered="false"
-                                                    sort="codigo_ficha_persona_1x15y3">
+                                                    sort="codigo_ficha_persona_1x14y3">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdFichaPersona1"
-                                                    text="#{currentRow.value['codigo_ficha_persona_1x15y3']}"
+                                                    text="#{currentRow.value['codigo_ficha_persona_1x14y3']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelIdFichaPersona1}"
@@ -2568,7 +2682,7 @@
                                                     validatorExpression="#{Persona5.campoIdFichaPersona1_validate}"/>
                                                 <webuijsf:staticText id="campoIdFichaPersona1Texto1"
                                                     binding="#{Persona5.campoIdFichaPersona1Texto1}"
-                                                    text="#{currentRow.value['codigo_ficha_persona_1x15y3']}"/>
+                                                    text="#{currentRow.value['codigo_ficha_persona_1x14y3']}"/>
                                                 <webuijsf:message id="messageIdFichaPersona1"
                                                     for="campoIdFichaPersona1"/>
                                                 </webuijsf:tableColumn>
@@ -2593,11 +2707,11 @@
                                                     binding="#{Persona5.tableColumnIdFichaPersona2}"
                                                     headerText="nombre ficha"
                                                     id="tableColumnIdFichaPersona2" rendered="false"
-                                                    sort="nombre_ficha_persona_1x15y4"
+                                                    sort="nombre_ficha_persona_1x14y4"
                                                     styleClass="pdq-estilo-id-2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextIdFichaPersona2"
-                                                    text="#{currentRow.value['nombre_ficha_persona_1x15y4']}"
+                                                    text="#{currentRow.value['nombre_ficha_persona_1x14y4']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelIdFichaPersona2}"
@@ -2606,7 +2720,7 @@
                                                 <webuijsf:imageHyperlink
                                                     binding="#{Persona5.campoIdFichaPersona1Hiper1}"
                                                     id="campoIdFichaPersona1Hiper1"
-                                                    text="#{currentRow.value['nombre_ficha_persona_1x15y4']}"
+                                                    text="#{currentRow.value['nombre_ficha_persona_1x14y4']}"
                                                     onClick="#{Persona5.asistente.scriptCampoIdFichaPersona1Boton2}"/>
                                                 <webuijsf:button
                                                     id="campoIdFichaPersona1Boton2"
@@ -2614,6 +2728,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaFichaPersona1}"
+                                                    toolTip="BundleParametros.fecha_ficha_persona.persona"
                                                     headerText="fecha ficha"
                                                     id="tableColumnFechaFichaPersona1" rendered="false"
                                                     sort="fecha_ficha_persona">
@@ -2640,6 +2755,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.persona"
                                                     headerText="indice calidad vida"
                                                     id="tableColumnIndiceCalidadVida1" rendered="false"
                                                     sort="indice_calidad_vida">
@@ -2667,6 +2783,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaUltimoCobroPension1}"
+                                                    toolTip="BundleParametros.fecha_ultimo_cobro_pension.persona"
                                                     headerText="fecha ultimo cobro pensi&#243;n"
                                                     id="tableColumnFechaUltimoCobroPension1" rendered="false"
                                                     sort="fecha_ultimo_cobro_pension">
@@ -2693,6 +2810,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNotasAnulFecUltCobPen1}"
+                                                    toolTip="BundleParametros.notas_anul_fec_ult_cob_pen.persona"
                                                     headerText="notas anulaci&#243;n fecha &#250;ltimo cobro pensi&#243;n"
                                                     id="tableColumnNotasAnulFecUltCobPen1" rendered="false"
                                                     sort="notas_anul_fec_ult_cob_pen">
@@ -2719,12 +2837,13 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnNumeroTipoActJupe1}"
+                                                    toolTip="BundleParametros.numero_tipo_act_jupe.persona"
                                                     headerText="tipo actualizaci&#243;n jupe"
                                                     id="tableColumnNumeroTipoActJupe1" rendered="false"
-                                                    sort="codigo_tipo_act_jupe_1x16y2">
+                                                    sort="codigo_tipo_act_jupe_1x15y2">
                                                 <webuijsf:staticText
                                                     id="hiddenStaticTextNumeroTipoActJupe1"
-                                                    text="#{currentRow.value['codigo_tipo_act_jupe_1x16y2']}"
+                                                    text="#{currentRow.value['codigo_tipo_act_jupe_1x15y2']}"
                                                     rendered="#{Persona5.gestor.designing}"/>
                                                 <webuijsf:label
                                                     binding="#{Persona5.labelNumeroTipoActJupe1}"
@@ -2739,12 +2858,13 @@
                                                     toolTip="BundleParametros.numero_tipo_act_jupe.persona"/>
                                                 <webuijsf:staticText id="listaNumeroTipoActJupe1Texto1"
                                                     binding="#{Persona5.listaNumeroTipoActJupe1Texto1}"
-                                                    text="#{currentRow.value['codigo_tipo_act_jupe_1x16y2']}"/>
+                                                    text="#{currentRow.value['codigo_tipo_act_jupe_1x15y2']}"/>
                                                 <webuijsf:message id="messageNumeroTipoActJupe1"
                                                     for="listaNumeroTipoActJupe1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnFechaHoraUltActJupe1}"
+                                                    toolTip="BundleParametros.fecha_hora_ult_act_jupe.persona"
                                                     headerText="fecha hora &#250;ltima actualizaci&#243;n jupe"
                                                     id="tableColumnFechaHoraUltActJupe1" rendered="false"
                                                     sort="fecha_hora_ult_act_jupe">
@@ -2771,6 +2891,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnLote1}"
+                                                    toolTip="BundleParametros.lote.persona"
                                                     headerText="lote"
                                                     id="tableColumnLote1" rendered="false"
                                                     sort="lote">
@@ -2797,6 +2918,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnCodigoSime1}"
+                                                    toolTip="BundleParametros.codigo_sime.persona"
                                                     headerText="c&#243;digo sime"
                                                     id="tableColumnCodigoSime1" rendered="false"
                                                     sort="codigo_sime">
@@ -2823,7 +2945,36 @@
                                                     for="campoCodigoSime1"/>
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnCodigoSimeRecoPen1}"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    headerText="c&#243;digo sime reconsideraci&#243;n pensi&#243;n"
+                                                    id="tableColumnCodigoSimeRecoPen1" rendered="false"
+                                                    sort="codigo_sime_reco_pen">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextCodigoSimeRecoPen1"
+                                                    text="#{currentRow.value['codigo_sime_reco_pen']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelCodigoSimeRecoPen1}"
+                                                    id="labelCodigoSimeRecoPen1"
+                                                    for="campoCodigoSimeRecoPen1"/>
+                                                <webuijsf:textField id="campoCodigoSimeRecoPen1"
+                                                    binding="#{Persona5.campoCodigoSimeRecoPen1}"
+                                                    columns="20"
+                                                    maxLength="50"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['codigo_sime_reco_pen']}"
+                                                    toolTip="BundleParametros.codigo_sime_reco_pen.persona"
+                                                    validatorExpression="#{Persona5.validatorCodigoSimeRecoPen1.validate}"/>
+                                                <webuijsf:staticText id="campoCodigoSimeRecoPen1Texto1"
+                                                    binding="#{Persona5.campoCodigoSimeRecoPen1Texto1}"
+                                                    text="#{currentRow.value['codigo_sime_reco_pen']}"/>
+                                                <webuijsf:message id="messageCodigoSimeRecoPen1"
+                                                    for="campoCodigoSimeRecoPen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
                                                     binding="#{Persona5.tableColumnComentariosEntregaDocumentos1}"
+                                                    toolTip="BundleParametros.comentarios_entrega_documentos.persona"
                                                     headerText="comentarios entrega documentos"
                                                     id="tableColumnComentariosEntregaDocumentos1" rendered="false"
                                                     sort="comentarios_entrega_documentos">
@@ -2847,6 +2998,33 @@
                                                     text="#{currentRow.value['comentarios_entrega_documentos']}"/>
                                                 <webuijsf:message id="messageComentariosEntregaDocumentos1"
                                                     for="campoComentariosEntregaDocumentos1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{Persona5.tableColumnComentariosInsercionJupe1}"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    headerText="comentarios inserci&#243;n jupe"
+                                                    id="tableColumnComentariosInsercionJupe1" rendered="false"
+                                                    sort="comentarios_insercion_jupe">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextComentariosInsercionJupe1"
+                                                    text="#{currentRow.value['comentarios_insercion_jupe']}"
+                                                    rendered="#{Persona5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{Persona5.labelComentariosInsercionJupe1}"
+                                                    id="labelComentariosInsercionJupe1"
+                                                    for="campoComentariosInsercionJupe1"/>
+                                                <webuijsf:textArea id="campoComentariosInsercionJupe1"
+                                                    binding="#{Persona5.campoComentariosInsercionJupe1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="true"
+                                                    text="#{currentRow.value['comentarios_insercion_jupe']}"
+                                                    toolTip="BundleParametros.comentarios_insercion_jupe.persona"
+                                                    validatorExpression="#{Persona5.validatorComentariosInsercionJupe1.validate}"/>
+                                                <webuijsf:staticText id="campoComentariosInsercionJupe1Texto1"
+                                                    binding="#{Persona5.campoComentariosInsercionJupe1Texto1}"
+                                                    text="#{currentRow.value['comentarios_insercion_jupe']}"/>
+                                                <webuijsf:message id="messageComentariosInsercionJupe1"
+                                                    for="campoComentariosInsercionJupe1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

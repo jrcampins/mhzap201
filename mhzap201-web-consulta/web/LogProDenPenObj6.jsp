@@ -208,6 +208,7 @@
                                                     binding="#{LogProDenPenObj6.labelIdLogProDenPenObj1}"
                                                     id="labelIdLogProDenPenObj1"
                                                     for="campoIdLogProDenPenObj1"
+                                                    toolTip="BundleParametros.id_log_pro_den_pen_obj.log_pro_den_pen_obj"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogProDenPenObj6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.log_pro_den_pen_obj"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{LogProDenPenObj6.labelCodigoPersona1}"
                                                     id="labelCodigoPersona1"
                                                     for="campoCodigoPersona1"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_den_pen_obj"
                                                     text="c&#243;digo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +338,7 @@
                                                     binding="#{LogProDenPenObj6.labelNombrePersona1}"
                                                     id="labelNombrePersona1"
                                                     for="campoNombrePersona1"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_den_pen_obj"
                                                     text="nombre persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +372,7 @@
                                                     binding="#{LogProDenPenObj6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_den_pen_obj"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -430,6 +435,7 @@
                                                     binding="#{LogProDenPenObj6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_den_pen_obj"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -492,6 +498,7 @@
                                                     binding="#{LogProDenPenObj6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_den_pen_obj"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -554,6 +561,7 @@
                                                     binding="#{LogProDenPenObj6.labelNumeroCausaDenPension1}"
                                                     id="labelNumeroCausaDenPension1"
                                                     for="listaNumeroCausaDenPension1"
+                                                    toolTip="BundleParametros.numero_causa_den_pension.log_pro_den_pen_obj"
                                                     text="causa denegaci&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -586,6 +594,7 @@
                                                     binding="#{LogProDenPenObj6.labelEsProcesado1}"
                                                     id="labelEsProcesado1"
                                                     for="listaEsProcesado1"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_den_pen_obj"
                                                     text="procesado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -617,6 +626,7 @@
                                                     binding="#{LogProDenPenObj6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_pro_den_pen_obj"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -649,6 +659,7 @@
                                                     binding="#{LogProDenPenObj6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_den_pen_obj"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

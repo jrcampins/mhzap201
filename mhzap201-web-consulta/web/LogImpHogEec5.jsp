@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnIdLogImpHogEec1}"
+                                                    toolTip="BundleParametros.id_log_imp_hog_eec.log_imp_hog_eec"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogImpHogEec1" rendered="false"
                                                     sort="id_log_imp_hog_eec">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnDptod1}"
+                                                    toolTip="BundleParametros.dptod.log_imp_hog_eec"
                                                     headerText="dptod"
                                                     id="tableColumnDptod1" rendered="false"
                                                     sort="dptod">
@@ -235,6 +237,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnDistritod1}"
+                                                    toolTip="BundleParametros.distritod.log_imp_hog_eec"
                                                     headerText="distritod"
                                                     id="tableColumnDistritod1" rendered="false"
                                                     sort="distritod">
@@ -261,6 +264,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnDistripg1}"
+                                                    toolTip="BundleParametros.distripg.log_imp_hog_eec"
                                                     headerText="distripg"
                                                     id="tableColumnDistripg1" rendered="false"
                                                     sort="distripg">
@@ -287,6 +291,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnArea1}"
+                                                    toolTip="BundleParametros.area.log_imp_hog_eec"
                                                     headerText="area"
                                                     id="tableColumnArea1" rendered="false"
                                                     sort="area">
@@ -313,6 +318,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnBarrio1}"
+                                                    toolTip="BundleParametros.barrio.log_imp_hog_eec"
                                                     headerText="barrio"
                                                     id="tableColumnBarrio1" rendered="false"
                                                     sort="barrio">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnManzana1}"
+                                                    toolTip="BundleParametros.manzana.log_imp_hog_eec"
                                                     headerText="manzana"
                                                     id="tableColumnManzana1" rendered="false"
                                                     sort="manzana">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnFormulario1}"
+                                                    toolTip="BundleParametros.formulario.log_imp_hog_eec"
                                                     headerText="formulario"
                                                     id="tableColumnFormulario1"
                                                     sort="formulario">
@@ -391,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnVivi1}"
+                                                    toolTip="BundleParametros.vivi.log_imp_hog_eec"
                                                     headerText="vivi"
                                                     id="tableColumnVivi1"
                                                     sort="vivi">
@@ -417,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnHogar1}"
+                                                    toolTip="BundleParametros.hogar.log_imp_hog_eec"
                                                     headerText="hogar"
                                                     id="tableColumnHogar1" rendered="false"
                                                     sort="hogar">
@@ -443,6 +453,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.log_imp_hog_eec"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -469,6 +480,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnNroDe1}"
+                                                    toolTip="BundleParametros.nro_de.log_imp_hog_eec"
                                                     headerText="nro de"
                                                     id="tableColumnNroDe1" rendered="false"
                                                     sort="nro_de">
@@ -495,6 +507,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnTelefono1}"
+                                                    toolTip="BundleParametros.telefono.log_imp_hog_eec"
                                                     headerText="tel&#233;fono"
                                                     id="tableColumnTelefono1" rendered="false"
                                                     sort="telefono">
@@ -521,6 +534,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnFecha1}"
+                                                    toolTip="BundleParametros.fecha.log_imp_hog_eec"
                                                     headerText="fecha"
                                                     id="tableColumnFecha1" rendered="false"
                                                     sort="fecha">
@@ -547,6 +561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnDia1}"
+                                                    toolTip="BundleParametros.dia.log_imp_hog_eec"
                                                     headerText="dia"
                                                     id="tableColumnDia1" rendered="false"
                                                     sort="dia">
@@ -573,6 +588,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnMes1}"
+                                                    toolTip="BundleParametros.mes.log_imp_hog_eec"
                                                     headerText="mes"
                                                     id="tableColumnMes1" rendered="false"
                                                     sort="mes">
@@ -599,6 +615,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnAno1}"
+                                                    toolTip="BundleParametros.ano.log_imp_hog_eec"
                                                     headerText="a&#241;o"
                                                     id="tableColumnAno1" rendered="false"
                                                     sort="ano">
@@ -625,6 +642,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV10t1}"
+                                                    toolTip="BundleParametros.v10t.log_imp_hog_eec"
                                                     headerText="v10t"
                                                     id="tableColumnV10t1" rendered="false"
                                                     sort="v10t">
@@ -651,6 +669,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV111}"
+                                                    toolTip="BundleParametros.v11.log_imp_hog_eec"
                                                     headerText="v11"
                                                     id="tableColumnV111" rendered="false"
                                                     sort="v11">
@@ -677,6 +696,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV121}"
+                                                    toolTip="BundleParametros.v12.log_imp_hog_eec"
                                                     headerText="v12"
                                                     id="tableColumnV121" rendered="false"
                                                     sort="v12">
@@ -703,6 +723,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV131}"
+                                                    toolTip="BundleParametros.v13.log_imp_hog_eec"
                                                     headerText="v13"
                                                     id="tableColumnV131" rendered="false"
                                                     sort="v13">
@@ -729,6 +750,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV141}"
+                                                    toolTip="BundleParametros.v14.log_imp_hog_eec"
                                                     headerText="v14"
                                                     id="tableColumnV141" rendered="false"
                                                     sort="v14">
@@ -755,6 +777,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV151}"
+                                                    toolTip="BundleParametros.v15.log_imp_hog_eec"
                                                     headerText="v15"
                                                     id="tableColumnV151" rendered="false"
                                                     sort="v15">
@@ -781,6 +804,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV161}"
+                                                    toolTip="BundleParametros.v16.log_imp_hog_eec"
                                                     headerText="v16"
                                                     id="tableColumnV161" rendered="false"
                                                     sort="v16">
@@ -807,6 +831,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV16Otr1}"
+                                                    toolTip="BundleParametros.v16_otr.log_imp_hog_eec"
                                                     headerText="v16 otr"
                                                     id="tableColumnV16Otr1" rendered="false"
                                                     sort="v16_otr">
@@ -833,6 +858,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV17a1}"
+                                                    toolTip="BundleParametros.v17a.log_imp_hog_eec"
                                                     headerText="v17a"
                                                     id="tableColumnV17a1" rendered="false"
                                                     sort="v17a">
@@ -859,6 +885,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV17b1}"
+                                                    toolTip="BundleParametros.v17b.log_imp_hog_eec"
                                                     headerText="v17b"
                                                     id="tableColumnV17b1" rendered="false"
                                                     sort="v17b">
@@ -885,6 +912,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV181}"
+                                                    toolTip="BundleParametros.v18.log_imp_hog_eec"
                                                     headerText="v18"
                                                     id="tableColumnV181" rendered="false"
                                                     sort="v18">
@@ -911,6 +939,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV191}"
+                                                    toolTip="BundleParametros.v19.log_imp_hog_eec"
                                                     headerText="v19"
                                                     id="tableColumnV191" rendered="false"
                                                     sort="v19">
@@ -937,6 +966,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV201}"
+                                                    toolTip="BundleParametros.v20.log_imp_hog_eec"
                                                     headerText="v20"
                                                     id="tableColumnV201" rendered="false"
                                                     sort="v20">
@@ -963,6 +993,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV211}"
+                                                    toolTip="BundleParametros.v21.log_imp_hog_eec"
                                                     headerText="v21"
                                                     id="tableColumnV211" rendered="false"
                                                     sort="v21">
@@ -989,6 +1020,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV221}"
+                                                    toolTip="BundleParametros.v22.log_imp_hog_eec"
                                                     headerText="v22"
                                                     id="tableColumnV221" rendered="false"
                                                     sort="v22">
@@ -1015,6 +1047,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV231}"
+                                                    toolTip="BundleParametros.v23.log_imp_hog_eec"
                                                     headerText="v23"
                                                     id="tableColumnV231" rendered="false"
                                                     sort="v23">
@@ -1041,6 +1074,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV241}"
+                                                    toolTip="BundleParametros.v24.log_imp_hog_eec"
                                                     headerText="v24"
                                                     id="tableColumnV241" rendered="false"
                                                     sort="v24">
@@ -1067,6 +1101,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV251}"
+                                                    toolTip="BundleParametros.v25.log_imp_hog_eec"
                                                     headerText="v25"
                                                     id="tableColumnV251" rendered="false"
                                                     sort="v25">
@@ -1093,6 +1128,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV261}"
+                                                    toolTip="BundleParametros.v26.log_imp_hog_eec"
                                                     headerText="v26"
                                                     id="tableColumnV261" rendered="false"
                                                     sort="v26">
@@ -1119,6 +1155,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV26espCelular1}"
+                                                    toolTip="BundleParametros.v26esp_celular.log_imp_hog_eec"
                                                     headerText="v26esp celular"
                                                     id="tableColumnV26espCelular1" rendered="false"
                                                     sort="v26esp_celular">
@@ -1145,6 +1182,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV271}"
+                                                    toolTip="BundleParametros.v27.log_imp_hog_eec"
                                                     headerText="v27"
                                                     id="tableColumnV271" rendered="false"
                                                     sort="v27">
@@ -1171,6 +1209,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV27espLinea1}"
+                                                    toolTip="BundleParametros.v27esp_linea.log_imp_hog_eec"
                                                     headerText="v27esp linea"
                                                     id="tableColumnV27espLinea1" rendered="false"
                                                     sort="v27esp_linea">
@@ -1197,6 +1236,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2811}"
+                                                    toolTip="BundleParametros.v28_1.log_imp_hog_eec"
                                                     headerText="v28 1"
                                                     id="tableColumnV2811" rendered="false"
                                                     sort="v28_1">
@@ -1223,6 +1263,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2821}"
+                                                    toolTip="BundleParametros.v28_2.log_imp_hog_eec"
                                                     headerText="v28 2"
                                                     id="tableColumnV2821" rendered="false"
                                                     sort="v28_2">
@@ -1249,6 +1290,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2831}"
+                                                    toolTip="BundleParametros.v28_3.log_imp_hog_eec"
                                                     headerText="v28 3"
                                                     id="tableColumnV2831" rendered="false"
                                                     sort="v28_3">
@@ -1275,6 +1317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2841}"
+                                                    toolTip="BundleParametros.v28_4.log_imp_hog_eec"
                                                     headerText="v28 4"
                                                     id="tableColumnV2841" rendered="false"
                                                     sort="v28_4">
@@ -1301,6 +1344,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2851}"
+                                                    toolTip="BundleParametros.v28_5.log_imp_hog_eec"
                                                     headerText="v28 5"
                                                     id="tableColumnV2851" rendered="false"
                                                     sort="v28_5">
@@ -1327,6 +1371,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2861}"
+                                                    toolTip="BundleParametros.v28_6.log_imp_hog_eec"
                                                     headerText="v28 6"
                                                     id="tableColumnV2861" rendered="false"
                                                     sort="v28_6">
@@ -1353,6 +1398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2871}"
+                                                    toolTip="BundleParametros.v28_7.log_imp_hog_eec"
                                                     headerText="v28 7"
                                                     id="tableColumnV2871" rendered="false"
                                                     sort="v28_7">
@@ -1379,6 +1425,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV2881}"
+                                                    toolTip="BundleParametros.v28_8.log_imp_hog_eec"
                                                     headerText="v28 8"
                                                     id="tableColumnV2881" rendered="false"
                                                     sort="v28_8">
@@ -1405,6 +1452,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnV29nombreJefe1}"
+                                                    toolTip="BundleParametros.v29nombre_jefe.log_imp_hog_eec"
                                                     headerText="v29nombre jefe"
                                                     id="tableColumnV29nombreJefe1" rendered="false"
                                                     sort="v29nombre_jefe">
@@ -1431,6 +1479,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnCedulajefe1}"
+                                                    toolTip="BundleParametros.cedulajefe.log_imp_hog_eec"
                                                     headerText="cedulajefe"
                                                     id="tableColumnCedulajefe1" rendered="false"
                                                     sort="cedulajefe">
@@ -1457,6 +1506,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnVar000011}"
+                                                    toolTip="BundleParametros.var00001.log_imp_hog_eec"
                                                     headerText="var00001"
                                                     id="tableColumnVar000011" rendered="false"
                                                     sort="var00001">
@@ -1483,6 +1533,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnEsImportado1}"
+                                                    toolTip="BundleParametros.es_importado.log_imp_hog_eec"
                                                     headerText="importado"
                                                     id="tableColumnEsImportado1"
                                                     sort="es_importado">
@@ -1508,6 +1559,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_imp_hog_eec"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -1534,6 +1586,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_hog_eec"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
@@ -1560,6 +1613,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnNombreArchivo1}"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_hog_eec"
                                                     headerText="nombre archivo"
                                                     id="tableColumnNombreArchivo1" rendered="false"
                                                     sort="nombre_archivo">
@@ -1601,6 +1655,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpHogEec5.tableColumnCodigoArchivo1}"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_hog_eec"
                                                     headerText="c&#243;digo archivo"
                                                     id="tableColumnCodigoArchivo1" rendered="false"
                                                     sort="codigo_archivo">

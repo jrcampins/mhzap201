@@ -208,6 +208,7 @@
                                                     binding="#{LogProActJupe6.labelIdLogProActJupe1}"
                                                     id="labelIdLogProActJupe1"
                                                     for="campoIdLogProActJupe1"
+                                                    toolTip="BundleParametros.id_log_pro_act_jupe.log_pro_act_jupe"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogProActJupe6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.log_pro_act_jupe"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{LogProActJupe6.labelCodigoPersona1}"
                                                     id="labelCodigoPersona1"
                                                     for="campoCodigoPersona1"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_act_jupe"
                                                     text="c&#243;digo persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +338,7 @@
                                                     binding="#{LogProActJupe6.labelNombrePersona1}"
                                                     id="labelNombrePersona1"
                                                     for="campoNombrePersona1"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_act_jupe"
                                                     text="nombre persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +372,7 @@
                                                     binding="#{LogProActJupe6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_act_jupe"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -430,6 +435,7 @@
                                                     binding="#{LogProActJupe6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_act_jupe"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -492,6 +498,7 @@
                                                     binding="#{LogProActJupe6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_act_jupe"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -554,6 +561,7 @@
                                                     binding="#{LogProActJupe6.labelNumeroCondicionPension1}"
                                                     id="labelNumeroCondicionPension1"
                                                     for="listaNumeroCondicionPension1"
+                                                    toolTip="BundleParametros.numero_condicion_pension.log_pro_act_jupe"
                                                     text="condici&#243;n pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -586,6 +594,7 @@
                                                     binding="#{LogProActJupe6.labelEsProcesado1}"
                                                     id="labelEsProcesado1"
                                                     for="listaEsProcesado1"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_act_jupe"
                                                     text="procesado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -617,6 +626,7 @@
                                                     binding="#{LogProActJupe6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_pro_act_jupe"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -649,6 +659,7 @@
                                                     binding="#{LogProActJupe6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_act_jupe"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

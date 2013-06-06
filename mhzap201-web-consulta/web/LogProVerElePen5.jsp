@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIdLogProVerElePen1}"
+                                                    toolTip="BundleParametros.id_log_pro_ver_ele_pen.log_pro_ver_ele_pen"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogProVerElePen1" rendered="false"
                                                     sort="id_log_pro_ver_ele_pen">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.log_pro_ver_ele_pen"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x1y3">
@@ -274,6 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnCodigoPersona1}"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_ver_ele_pen"
                                                     headerText="c&#243;digo persona"
                                                     id="tableColumnCodigoPersona1"
                                                     sort="codigo_persona">
@@ -301,6 +304,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnNombrePersona1}"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_ver_ele_pen"
                                                     headerText="nombre persona"
                                                     id="tableColumnNombrePersona1" rendered="false"
                                                     sort="nombre_persona">
@@ -328,6 +332,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_ver_ele_pen"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x2y3">
@@ -393,6 +398,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_ver_ele_pen"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x3y3">
@@ -458,6 +464,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_ver_ele_pen"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -523,6 +530,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.log_pro_ver_ele_pen"
                                                     headerText="indice calidad vida"
                                                     id="tableColumnIndiceCalidadVida1" rendered="false"
                                                     sort="indice_calidad_vida">
@@ -550,6 +558,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnNumeroCondicionPension1}"
+                                                    toolTip="BundleParametros.numero_condicion_pension.log_pro_ver_ele_pen"
                                                     headerText="condici&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionPension1" rendered="false"
                                                     sort="codigo_condicion_pension_1x5y2">
@@ -576,6 +585,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnNumeroCondicionDenuPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_denu_pen.log_pro_ver_ele_pen"
                                                     headerText="condici&#243;n denuncia pensi&#243;n"
                                                     id="tableColumnNumeroCondicionDenuPen1" rendered="false"
                                                     sort="codigo_condicion_denu_pe_1x6y2">
@@ -602,6 +612,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnNumeroCondicionRecoPen1}"
+                                                    toolTip="BundleParametros.numero_condicion_reco_pen.log_pro_ver_ele_pen"
                                                     headerText="condici&#243;n reconsideraci&#243;n pensi&#243;n"
                                                     id="tableColumnNumeroCondicionRecoPen1" rendered="false"
                                                     sort="codigo_condicion_reco_pe_1x7y2">
@@ -628,6 +639,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnEsProcesado1}"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_ver_ele_pen"
                                                     headerText="procesado"
                                                     id="tableColumnEsProcesado1"
                                                     sort="es_procesado">
@@ -653,6 +665,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_pro_ver_ele_pen"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -679,6 +692,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProVerElePen5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_ver_ele_pen"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">

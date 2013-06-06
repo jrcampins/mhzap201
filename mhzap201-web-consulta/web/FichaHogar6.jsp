@@ -208,6 +208,7 @@
                                                     binding="#{FichaHogar6.labelIdFichaHogar1}"
                                                     id="labelIdFichaHogar1"
                                                     for="campoIdFichaHogar1"
+                                                    toolTip="BundleParametros.id_ficha_hogar.ficha_hogar"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{FichaHogar6.labelCodigoFichaHogar1}"
                                                     id="labelCodigoFichaHogar1"
                                                     for="campoCodigoFichaHogar1"
+                                                    toolTip="BundleParametros.codigo_ficha_hogar.ficha_hogar"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -274,6 +276,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioCensista1}"
                                                     id="labelIdFuncionarioCensista1"
                                                     for="campoIdFuncionarioCensista1"
+                                                    toolTip="BundleParametros.id_funcionario_censista.ficha_hogar"
                                                     text="funcionario censista"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -338,6 +341,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioSupervisor1}"
                                                     id="labelIdFuncionarioSupervisor1"
                                                     for="campoIdFuncionarioSupervisor1"
+                                                    toolTip="BundleParametros.id_funcionario_supervisor.ficha_hogar"
                                                     text="funcionario supervisor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -402,6 +406,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioCriticoDeco1}"
                                                     id="labelIdFuncionarioCriticoDeco1"
                                                     for="campoIdFuncionarioCriticoDeco1"
+                                                    toolTip="BundleParametros.id_funcionario_critico_deco.ficha_hogar"
                                                     text="funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -466,6 +471,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioDigitador1}"
                                                     id="labelIdFuncionarioDigitador1"
                                                     for="campoIdFuncionarioDigitador1"
+                                                    toolTip="BundleParametros.id_funcionario_digitador.ficha_hogar"
                                                     text="funcionario digitador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -530,6 +536,7 @@
                                                     binding="#{FichaHogar6.labelNumeroFormulario1}"
                                                     id="labelNumeroFormulario1"
                                                     for="campoNumeroFormulario1"
+                                                    toolTip="BundleParametros.numero_formulario.ficha_hogar"
                                                     text="n&#250;mero formulario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -564,6 +571,7 @@
                                                     binding="#{FichaHogar6.labelNumeroVivienda1}"
                                                     id="labelNumeroVivienda1"
                                                     for="campoNumeroVivienda1"
+                                                    toolTip="BundleParametros.numero_vivienda.ficha_hogar"
                                                     text="n&#250;mero vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -598,6 +606,7 @@
                                                     binding="#{FichaHogar6.labelNumeroHogar1}"
                                                     id="labelNumeroHogar1"
                                                     for="campoNumeroHogar1"
+                                                    toolTip="BundleParametros.numero_hogar.ficha_hogar"
                                                     text="n&#250;mero hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -632,6 +641,7 @@
                                                     binding="#{FichaHogar6.labelFechaEntrevista1}"
                                                     id="labelFechaEntrevista1"
                                                     for="campoFechaEntrevista1"
+                                                    toolTip="BundleParametros.fecha_entrevista.ficha_hogar"
                                                     text="fecha entrevista"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -667,6 +677,7 @@
                                                     binding="#{FichaHogar6.labelObservaciones1}"
                                                     id="labelObservaciones1"
                                                     for="campoObservaciones1"
+                                                    toolTip="BundleParametros.observaciones.ficha_hogar"
                                                     text="observaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -701,6 +712,7 @@
                                                     binding="#{FichaHogar6.labelHusoUtm1}"
                                                     id="labelHusoUtm1"
                                                     for="campoHusoUtm1"
+                                                    toolTip="BundleParametros.huso_utm.ficha_hogar"
                                                     text="huso utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -735,6 +747,7 @@
                                                     binding="#{FichaHogar6.labelFranjaUtm1}"
                                                     id="labelFranjaUtm1"
                                                     for="campoFranjaUtm1"
+                                                    toolTip="BundleParametros.franja_utm.ficha_hogar"
                                                     text="franja utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -770,6 +783,7 @@
                                                     binding="#{FichaHogar6.labelDistanciaEsteUtm1}"
                                                     id="labelDistanciaEsteUtm1"
                                                     for="campoDistanciaEsteUtm1"
+                                                    toolTip="BundleParametros.distancia_este_utm.ficha_hogar"
                                                     text="distancia este utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -804,6 +818,7 @@
                                                     binding="#{FichaHogar6.labelDistanciaNorteUtm1}"
                                                     id="labelDistanciaNorteUtm1"
                                                     for="campoDistanciaNorteUtm1"
+                                                    toolTip="BundleParametros.distancia_norte_utm.ficha_hogar"
                                                     text="distancia norte utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -838,6 +853,7 @@
                                                     binding="#{FichaHogar6.labelManzana1}"
                                                     id="labelManzana1"
                                                     for="campoManzana1"
+                                                    toolTip="BundleParametros.manzana.ficha_hogar"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -873,6 +889,7 @@
                                                     binding="#{FichaHogar6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.ficha_hogar"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -937,6 +954,7 @@
                                                     binding="#{FichaHogar6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.ficha_hogar"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1000,6 +1018,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoArea1}"
                                                     id="labelNumeroTipoArea1"
                                                     for="listaNumeroTipoArea1"
+                                                    toolTip="BundleParametros.numero_tipo_area.ficha_hogar"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1033,6 +1052,7 @@
                                                     binding="#{FichaHogar6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.ficha_hogar"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1097,6 +1117,7 @@
                                                     binding="#{FichaHogar6.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.ficha_hogar"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1131,6 +1152,7 @@
                                                     binding="#{FichaHogar6.labelTotalPersonas1}"
                                                     id="labelTotalPersonas1"
                                                     for="campoTotalPersonas1"
+                                                    toolTip="BundleParametros.total_personas.ficha_hogar"
                                                     text="total personas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1165,6 +1187,7 @@
                                                     binding="#{FichaHogar6.labelTotalHombres1}"
                                                     id="labelTotalHombres1"
                                                     for="campoTotalHombres1"
+                                                    toolTip="BundleParametros.total_hombres.ficha_hogar"
                                                     text="total hombres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1199,6 +1222,7 @@
                                                     binding="#{FichaHogar6.labelTotalMujeres1}"
                                                     id="labelTotalMujeres1"
                                                     for="campoTotalMujeres1"
+                                                    toolTip="BundleParametros.total_mujeres.ficha_hogar"
                                                     text="total mujeres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1233,6 +1257,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatParedes1}"
                                                     id="labelNumeroTipoMatParedes1"
                                                     for="listaNumeroTipoMatParedes1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_paredes.ficha_hogar"
                                                     text="tipo material paredes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1267,6 +1292,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatPiso1}"
                                                     id="labelNumeroTipoMatPiso1"
                                                     for="listaNumeroTipoMatPiso1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_piso.ficha_hogar"
                                                     text="tipo material piso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1301,6 +1327,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatTecho1}"
                                                     id="labelNumeroTipoMatTecho1"
                                                     for="listaNumeroTipoMatTecho1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_techo.ficha_hogar"
                                                     text="tipo material techo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1335,6 +1362,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoOcupacionViv1}"
                                                     id="labelNumeroTipoOcupacionViv1"
                                                     for="listaNumeroTipoOcupacionViv1"
+                                                    toolTip="BundleParametros.numero_tipo_ocupacion_viv.ficha_hogar"
                                                     text="tipo ocupaci&#243;n vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1369,6 +1397,7 @@
                                                     binding="#{FichaHogar6.labelOtroTipoOcupacionViv1}"
                                                     id="labelOtroTipoOcupacionViv1"
                                                     for="campoOtroTipoOcupacionViv1"
+                                                    toolTip="BundleParametros.otro_tipo_ocupacion_viv.ficha_hogar"
                                                     text="otro tipo ocupaci&#243;n vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1404,6 +1433,7 @@
                                                     binding="#{FichaHogar6.labelCantidadPiezas1}"
                                                     id="labelCantidadPiezas1"
                                                     for="campoCantidadPiezas1"
+                                                    toolTip="BundleParametros.cantidad_piezas.ficha_hogar"
                                                     text="cantidad piezas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1438,6 +1468,7 @@
                                                     binding="#{FichaHogar6.labelCantidadDormitorios1}"
                                                     id="labelCantidadDormitorios1"
                                                     for="campoCantidadDormitorios1"
+                                                    toolTip="BundleParametros.cantidad_dormitorios.ficha_hogar"
                                                     text="cantidad dormitorios"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1472,6 +1503,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoPiezaCocina1}"
                                                     id="labelNumeroSionoPiezaCocina1"
                                                     for="listaNumeroSionoPiezaCocina1"
+                                                    toolTip="BundleParametros.numero_siono_pieza_cocina.ficha_hogar"
                                                     text="pieza cocina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1506,6 +1538,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoCombustible1}"
                                                     id="labelNumeroTipoCombustible1"
                                                     for="listaNumeroTipoCombustible1"
+                                                    toolTip="BundleParametros.numero_tipo_combustible.ficha_hogar"
                                                     text="tipo combustible"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1540,6 +1573,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoPiezaBano1}"
                                                     id="labelNumeroTipoPiezaBano1"
                                                     for="listaNumeroTipoPiezaBano1"
+                                                    toolTip="BundleParametros.numero_tipo_pieza_bano.ficha_hogar"
                                                     text="tipo pieza ba&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1574,6 +1608,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoServicioSan1}"
                                                     id="labelNumeroTipoServicioSan1"
                                                     for="listaNumeroTipoServicioSan1"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_san.ficha_hogar"
                                                     text="tipo servicio sanitario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1608,6 +1643,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoServicioAgua1}"
                                                     id="labelNumeroTipoServicioAgua1"
                                                     for="listaNumeroTipoServicioAgua1"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_agua.ficha_hogar"
                                                     text="tipo servicio agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1642,6 +1678,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoAbaAgua1}"
                                                     id="labelNumeroTipoAbaAgua1"
                                                     for="listaNumeroTipoAbaAgua1"
+                                                    toolTip="BundleParametros.numero_tipo_aba_agua.ficha_hogar"
                                                     text="tipo abastecimiento agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1676,6 +1713,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoCorrienteElec1}"
                                                     id="labelNumeroSionoCorrienteElec1"
                                                     for="listaNumeroSionoCorrienteElec1"
+                                                    toolTip="BundleParametros.numero_siono_corriente_elec.ficha_hogar"
                                                     text="corriente el&#233;ctrica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1710,6 +1748,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoDesechoBas1}"
                                                     id="labelNumeroTipoDesechoBas1"
                                                     for="listaNumeroTipoDesechoBas1"
+                                                    toolTip="BundleParametros.numero_tipo_desecho_bas.ficha_hogar"
                                                     text="tipo desecho basura"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1744,6 +1783,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoTelefonoCelular1}"
                                                     id="labelNumeroSionoTelefonoCelular1"
                                                     for="listaNumeroSionoTelefonoCelular1"
+                                                    toolTip="BundleParametros.numero_siono_telefono_celular.ficha_hogar"
                                                     text="tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1778,6 +1818,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTelefonoCelular1}"
                                                     id="labelNumeroTelefonoCelular1"
                                                     for="campoNumeroTelefonoCelular1"
+                                                    toolTip="BundleParametros.numero_telefono_celular.ficha_hogar"
                                                     text="n&#250;mero tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1813,6 +1854,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoTlfLineaBaja1}"
                                                     id="labelNumeroSionoTlfLineaBaja1"
                                                     for="listaNumeroSionoTlfLineaBaja1"
+                                                    toolTip="BundleParametros.numero_siono_tlf_linea_baja.ficha_hogar"
                                                     text="tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1847,6 +1889,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTelefonoLineaBaja1}"
                                                     id="labelNumeroTelefonoLineaBaja1"
                                                     for="campoNumeroTelefonoLineaBaja1"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.ficha_hogar"
                                                     text="n&#250;mero tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1882,6 +1925,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispHeladera1}"
                                                     id="labelNumeroSionoDispHeladera1"
                                                     for="listaNumeroSionoDispHeladera1"
+                                                    toolTip="BundleParametros.numero_siono_disp_heladera.ficha_hogar"
                                                     text="disponibilidad heladera"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1916,6 +1960,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispLavarropas1}"
                                                     id="labelNumeroSionoDispLavarropas1"
                                                     for="listaNumeroSionoDispLavarropas1"
+                                                    toolTip="BundleParametros.numero_siono_disp_lavarropas.ficha_hogar"
                                                     text="disponibilidad lavarropas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1950,6 +1995,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispTermo1}"
                                                     id="labelNumeroSionoDispTermo1"
                                                     for="listaNumeroSionoDispTermo1"
+                                                    toolTip="BundleParametros.numero_siono_disp_termo.ficha_hogar"
                                                     text="disponibilidad termo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1984,6 +2030,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispAireAcon1}"
                                                     id="labelNumeroSionoDispAireAcon1"
                                                     for="listaNumeroSionoDispAireAcon1"
+                                                    toolTip="BundleParametros.numero_siono_disp_aire_acon.ficha_hogar"
                                                     text="disponibilidad aire acondicionado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2018,6 +2065,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispAutomovil1}"
                                                     id="labelNumeroSionoDispAutomovil1"
                                                     for="listaNumeroSionoDispAutomovil1"
+                                                    toolTip="BundleParametros.numero_siono_disp_automovil.ficha_hogar"
                                                     text="disponibilidad automovil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2052,6 +2100,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispCamion1}"
                                                     id="labelNumeroSionoDispCamion1"
                                                     for="listaNumeroSionoDispCamion1"
+                                                    toolTip="BundleParametros.numero_siono_disp_camion.ficha_hogar"
                                                     text="disponibilidad cami&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2086,6 +2135,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispMotocicleta1}"
                                                     id="labelNumeroSionoDispMotocicleta1"
                                                     for="listaNumeroSionoDispMotocicleta1"
+                                                    toolTip="BundleParametros.numero_siono_disp_motocicleta.ficha_hogar"
                                                     text="disponibilidad motocicleta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2119,6 +2169,7 @@
                                                     binding="#{FichaHogar6.labelNombreJefeHogar1}"
                                                     id="labelNombreJefeHogar1"
                                                     for="campoNombreJefeHogar1"
+                                                    toolTip="BundleParametros.nombre_jefe_hogar.ficha_hogar"
                                                     text="nombre jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2152,6 +2203,7 @@
                                                     binding="#{FichaHogar6.labelNumeroCedulaJefeHogar1}"
                                                     id="labelNumeroCedulaJefeHogar1"
                                                     for="campoNumeroCedulaJefeHogar1"
+                                                    toolTip="BundleParametros.numero_cedula_jefe_hogar.ficha_hogar"
                                                     text="n&#250;mero c&#233;dula jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2184,6 +2236,7 @@
                                                     binding="#{FichaHogar6.labelLetraCedulaJefeHogar1}"
                                                     id="labelLetraCedulaJefeHogar1"
                                                     for="campoLetraCedulaJefeHogar1"
+                                                    toolTip="BundleParametros.letra_cedula_jefe_hogar.ficha_hogar"
                                                     text="letra c&#233;dula jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2217,6 +2270,7 @@
                                                     binding="#{FichaHogar6.labelNumeroOrdenIdenJefeHogar1}"
                                                     id="labelNumeroOrdenIdenJefeHogar1"
                                                     for="campoNumeroOrdenIdenJefeHogar1"
+                                                    toolTip="BundleParametros.numero_orden_iden_jefe_hogar.ficha_hogar"
                                                     text="n&#250;mero orden identificaci&#243;n jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2249,6 +2303,7 @@
                                                     binding="#{FichaHogar6.labelNombreRespondente1}"
                                                     id="labelNombreRespondente1"
                                                     for="campoNombreRespondente1"
+                                                    toolTip="BundleParametros.nombre_respondente.ficha_hogar"
                                                     text="nombre respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2282,6 +2337,7 @@
                                                     binding="#{FichaHogar6.labelNumeroCedulaRespondente1}"
                                                     id="labelNumeroCedulaRespondente1"
                                                     for="campoNumeroCedulaRespondente1"
+                                                    toolTip="BundleParametros.numero_cedula_respondente.ficha_hogar"
                                                     text="n&#250;mero c&#233;dula respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2314,6 +2370,7 @@
                                                     binding="#{FichaHogar6.labelLetraCedulaRespondente1}"
                                                     id="labelLetraCedulaRespondente1"
                                                     for="campoLetraCedulaRespondente1"
+                                                    toolTip="BundleParametros.letra_cedula_respondente.ficha_hogar"
                                                     text="letra c&#233;dula respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2347,6 +2404,7 @@
                                                     binding="#{FichaHogar6.labelNumeroOrdenIdenRespondente1}"
                                                     id="labelNumeroOrdenIdenRespondente1"
                                                     for="campoNumeroOrdenIdenRespondente1"
+                                                    toolTip="BundleParametros.numero_orden_iden_respondente.ficha_hogar"
                                                     text="n&#250;mero orden identificaci&#243;n respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2379,6 +2437,7 @@
                                                     binding="#{FichaHogar6.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.ficha_hogar"
                                                     text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2439,6 +2498,7 @@
                                                     binding="#{FichaHogar6.labelIndiceCalidadVida1}"
                                                     id="labelIndiceCalidadVida1"
                                                     for="campoIndiceCalidadVida1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.ficha_hogar"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2472,6 +2532,7 @@
                                                     binding="#{FichaHogar6.labelEsFichaHogarInactiva1}"
                                                     id="labelEsFichaHogarInactiva1"
                                                     for="listaEsFichaHogarInactiva1"
+                                                    toolTip="BundleParametros.es_ficha_hogar_inactiva.ficha_hogar"
                                                     text="inactiva"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2525,6 +2586,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioCensista1x1}"
                                                     id="labelIdFuncionarioCensista1x1"
                                                     for="campoIdFuncionarioCensista1x1"
+                                                    toolTip="BundleParametros.id_funcionario_censista.ficha_hogar"
                                                     text="funcionario censista"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2587,6 +2649,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioSupervisor1x1}"
                                                     id="labelIdFuncionarioSupervisor1x1"
                                                     for="campoIdFuncionarioSupervisor1x1"
+                                                    toolTip="BundleParametros.id_funcionario_supervisor.ficha_hogar"
                                                     text="funcionario supervisor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2649,6 +2712,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioCriticoDeco1x1}"
                                                     id="labelIdFuncionarioCriticoDeco1x1"
                                                     for="campoIdFuncionarioCriticoDeco1x1"
+                                                    toolTip="BundleParametros.id_funcionario_critico_deco.ficha_hogar"
                                                     text="funcionario critico decodificador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2711,6 +2775,7 @@
                                                     binding="#{FichaHogar6.labelIdFuncionarioDigitador1x1}"
                                                     id="labelIdFuncionarioDigitador1x1"
                                                     for="campoIdFuncionarioDigitador1x1"
+                                                    toolTip="BundleParametros.id_funcionario_digitador.ficha_hogar"
                                                     text="funcionario digitador"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2773,6 +2838,7 @@
                                                     binding="#{FichaHogar6.labelNumeroFormulario1x1}"
                                                     id="labelNumeroFormulario1x1"
                                                     for="campoNumeroFormulario1x1"
+                                                    toolTip="BundleParametros.numero_formulario.ficha_hogar"
                                                     text="n&#250;mero formulario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2805,6 +2871,7 @@
                                                     binding="#{FichaHogar6.labelNumeroVivienda1x1}"
                                                     id="labelNumeroVivienda1x1"
                                                     for="campoNumeroVivienda1x1"
+                                                    toolTip="BundleParametros.numero_vivienda.ficha_hogar"
                                                     text="n&#250;mero vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2837,6 +2904,7 @@
                                                     binding="#{FichaHogar6.labelNumeroHogar1x1}"
                                                     id="labelNumeroHogar1x1"
                                                     for="campoNumeroHogar1x1"
+                                                    toolTip="BundleParametros.numero_hogar.ficha_hogar"
                                                     text="n&#250;mero hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2869,6 +2937,7 @@
                                                     binding="#{FichaHogar6.labelFechaEntrevista1x1}"
                                                     id="labelFechaEntrevista1x1"
                                                     for="campoFechaEntrevista1x1"
+                                                    toolTip="BundleParametros.fecha_entrevista.ficha_hogar"
                                                     text="fecha entrevista"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2902,6 +2971,7 @@
                                                     binding="#{FichaHogar6.labelObservaciones1x1}"
                                                     id="labelObservaciones1x1"
                                                     for="campoObservaciones1x1"
+                                                    toolTip="BundleParametros.observaciones.ficha_hogar"
                                                     text="observaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2951,6 +3021,7 @@
                                                     binding="#{FichaHogar6.labelHusoUtm1x1}"
                                                     id="labelHusoUtm1x1"
                                                     for="campoHusoUtm1x1"
+                                                    toolTip="BundleParametros.huso_utm.ficha_hogar"
                                                     text="huso utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2983,6 +3054,7 @@
                                                     binding="#{FichaHogar6.labelFranjaUtm1x1}"
                                                     id="labelFranjaUtm1x1"
                                                     for="campoFranjaUtm1x1"
+                                                    toolTip="BundleParametros.franja_utm.ficha_hogar"
                                                     text="franja utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3016,6 +3088,7 @@
                                                     binding="#{FichaHogar6.labelDistanciaEsteUtm1x1}"
                                                     id="labelDistanciaEsteUtm1x1"
                                                     for="campoDistanciaEsteUtm1x1"
+                                                    toolTip="BundleParametros.distancia_este_utm.ficha_hogar"
                                                     text="distancia este utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3048,6 +3121,7 @@
                                                     binding="#{FichaHogar6.labelDistanciaNorteUtm1x1}"
                                                     id="labelDistanciaNorteUtm1x1"
                                                     for="campoDistanciaNorteUtm1x1"
+                                                    toolTip="BundleParametros.distancia_norte_utm.ficha_hogar"
                                                     text="distancia norte utm"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3097,6 +3171,7 @@
                                                     binding="#{FichaHogar6.labelManzana1x1}"
                                                     id="labelManzana1x1"
                                                     for="campoManzana1x1"
+                                                    toolTip="BundleParametros.manzana.ficha_hogar"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3130,6 +3205,7 @@
                                                     binding="#{FichaHogar6.labelIdDepartamento1x1}"
                                                     id="labelIdDepartamento1x1"
                                                     for="campoIdDepartamento1x1"
+                                                    toolTip="BundleParametros.id_departamento.ficha_hogar"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3192,6 +3268,7 @@
                                                     binding="#{FichaHogar6.labelIdDistrito1x1}"
                                                     id="labelIdDistrito1x1"
                                                     for="campoIdDistrito1x1"
+                                                    toolTip="BundleParametros.id_distrito.ficha_hogar"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3254,6 +3331,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoArea1x1}"
                                                     id="labelNumeroTipoArea1x1"
                                                     for="listaNumeroTipoArea1x1"
+                                                    toolTip="BundleParametros.numero_tipo_area.ficha_hogar"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3286,6 +3364,7 @@
                                                     binding="#{FichaHogar6.labelIdBarrio1x1}"
                                                     id="labelIdBarrio1x1"
                                                     for="campoIdBarrio1x1"
+                                                    toolTip="BundleParametros.id_barrio.ficha_hogar"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3348,6 +3427,7 @@
                                                     binding="#{FichaHogar6.labelDireccion1x1}"
                                                     id="labelDireccion1x1"
                                                     for="campoDireccion1x1"
+                                                    toolTip="BundleParametros.direccion.ficha_hogar"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3397,6 +3477,7 @@
                                                     binding="#{FichaHogar6.labelTotalPersonas1x1}"
                                                     id="labelTotalPersonas1x1"
                                                     for="campoTotalPersonas1x1"
+                                                    toolTip="BundleParametros.total_personas.ficha_hogar"
                                                     text="total personas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3429,6 +3510,7 @@
                                                     binding="#{FichaHogar6.labelTotalHombres1x1}"
                                                     id="labelTotalHombres1x1"
                                                     for="campoTotalHombres1x1"
+                                                    toolTip="BundleParametros.total_hombres.ficha_hogar"
                                                     text="total hombres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3461,6 +3543,7 @@
                                                     binding="#{FichaHogar6.labelTotalMujeres1x1}"
                                                     id="labelTotalMujeres1x1"
                                                     for="campoTotalMujeres1x1"
+                                                    toolTip="BundleParametros.total_mujeres.ficha_hogar"
                                                     text="total mujeres"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3510,6 +3593,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatParedes1x1}"
                                                     id="labelNumeroTipoMatParedes1x1"
                                                     for="listaNumeroTipoMatParedes1x1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_paredes.ficha_hogar"
                                                     text="tipo material paredes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3542,6 +3626,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatPiso1x1}"
                                                     id="labelNumeroTipoMatPiso1x1"
                                                     for="listaNumeroTipoMatPiso1x1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_piso.ficha_hogar"
                                                     text="tipo material piso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3574,6 +3659,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoMatTecho1x1}"
                                                     id="labelNumeroTipoMatTecho1x1"
                                                     for="listaNumeroTipoMatTecho1x1"
+                                                    toolTip="BundleParametros.numero_tipo_mat_techo.ficha_hogar"
                                                     text="tipo material techo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3606,6 +3692,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoOcupacionViv1x1}"
                                                     id="labelNumeroTipoOcupacionViv1x1"
                                                     for="listaNumeroTipoOcupacionViv1x1"
+                                                    toolTip="BundleParametros.numero_tipo_ocupacion_viv.ficha_hogar"
                                                     text="tipo ocupaci&#243;n vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3638,6 +3725,7 @@
                                                     binding="#{FichaHogar6.labelOtroTipoOcupacionViv1x1}"
                                                     id="labelOtroTipoOcupacionViv1x1"
                                                     for="campoOtroTipoOcupacionViv1x1"
+                                                    toolTip="BundleParametros.otro_tipo_ocupacion_viv.ficha_hogar"
                                                     text="otro tipo ocupaci&#243;n vivienda"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3671,6 +3759,7 @@
                                                     binding="#{FichaHogar6.labelCantidadPiezas1x1}"
                                                     id="labelCantidadPiezas1x1"
                                                     for="campoCantidadPiezas1x1"
+                                                    toolTip="BundleParametros.cantidad_piezas.ficha_hogar"
                                                     text="cantidad piezas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3703,6 +3792,7 @@
                                                     binding="#{FichaHogar6.labelCantidadDormitorios1x1}"
                                                     id="labelCantidadDormitorios1x1"
                                                     for="campoCantidadDormitorios1x1"
+                                                    toolTip="BundleParametros.cantidad_dormitorios.ficha_hogar"
                                                     text="cantidad dormitorios"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3752,6 +3842,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoPiezaCocina1x1}"
                                                     id="labelNumeroSionoPiezaCocina1x1"
                                                     for="listaNumeroSionoPiezaCocina1x1"
+                                                    toolTip="BundleParametros.numero_siono_pieza_cocina.ficha_hogar"
                                                     text="pieza cocina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3784,6 +3875,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoCombustible1x1}"
                                                     id="labelNumeroTipoCombustible1x1"
                                                     for="listaNumeroTipoCombustible1x1"
+                                                    toolTip="BundleParametros.numero_tipo_combustible.ficha_hogar"
                                                     text="tipo combustible"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3816,6 +3908,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoPiezaBano1x1}"
                                                     id="labelNumeroTipoPiezaBano1x1"
                                                     for="listaNumeroTipoPiezaBano1x1"
+                                                    toolTip="BundleParametros.numero_tipo_pieza_bano.ficha_hogar"
                                                     text="tipo pieza ba&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3848,6 +3941,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoServicioSan1x1}"
                                                     id="labelNumeroTipoServicioSan1x1"
                                                     for="listaNumeroTipoServicioSan1x1"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_san.ficha_hogar"
                                                     text="tipo servicio sanitario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3880,6 +3974,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoServicioAgua1x1}"
                                                     id="labelNumeroTipoServicioAgua1x1"
                                                     for="listaNumeroTipoServicioAgua1x1"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_agua.ficha_hogar"
                                                     text="tipo servicio agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3912,6 +4007,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoAbaAgua1x1}"
                                                     id="labelNumeroTipoAbaAgua1x1"
                                                     for="listaNumeroTipoAbaAgua1x1"
+                                                    toolTip="BundleParametros.numero_tipo_aba_agua.ficha_hogar"
                                                     text="tipo abastecimiento agua"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3944,6 +4040,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoCorrienteElec1x1}"
                                                     id="labelNumeroSionoCorrienteElec1x1"
                                                     for="listaNumeroSionoCorrienteElec1x1"
+                                                    toolTip="BundleParametros.numero_siono_corriente_elec.ficha_hogar"
                                                     text="corriente el&#233;ctrica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3976,6 +4073,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTipoDesechoBas1x1}"
                                                     id="labelNumeroTipoDesechoBas1x1"
                                                     for="listaNumeroTipoDesechoBas1x1"
+                                                    toolTip="BundleParametros.numero_tipo_desecho_bas.ficha_hogar"
                                                     text="tipo desecho basura"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4025,6 +4123,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoTelefonoCelular1x1}"
                                                     id="labelNumeroSionoTelefonoCelular1x1"
                                                     for="listaNumeroSionoTelefonoCelular1x1"
+                                                    toolTip="BundleParametros.numero_siono_telefono_celular.ficha_hogar"
                                                     text="tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4057,6 +4156,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTelefonoCelular1x1}"
                                                     id="labelNumeroTelefonoCelular1x1"
                                                     for="campoNumeroTelefonoCelular1x1"
+                                                    toolTip="BundleParametros.numero_telefono_celular.ficha_hogar"
                                                     text="n&#250;mero tel&#233;fono celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4090,6 +4190,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoTlfLineaBaja1x1}"
                                                     id="labelNumeroSionoTlfLineaBaja1x1"
                                                     for="listaNumeroSionoTlfLineaBaja1x1"
+                                                    toolTip="BundleParametros.numero_siono_tlf_linea_baja.ficha_hogar"
                                                     text="tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4122,6 +4223,7 @@
                                                     binding="#{FichaHogar6.labelNumeroTelefonoLineaBaja1x1}"
                                                     id="labelNumeroTelefonoLineaBaja1x1"
                                                     for="campoNumeroTelefonoLineaBaja1x1"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.ficha_hogar"
                                                     text="n&#250;mero tel&#233;fono linea baja"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4172,6 +4274,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispHeladera1x1}"
                                                     id="labelNumeroSionoDispHeladera1x1"
                                                     for="listaNumeroSionoDispHeladera1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_heladera.ficha_hogar"
                                                     text="disponibilidad heladera"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4204,6 +4307,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispLavarropas1x1}"
                                                     id="labelNumeroSionoDispLavarropas1x1"
                                                     for="listaNumeroSionoDispLavarropas1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_lavarropas.ficha_hogar"
                                                     text="disponibilidad lavarropas"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4236,6 +4340,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispTermo1x1}"
                                                     id="labelNumeroSionoDispTermo1x1"
                                                     for="listaNumeroSionoDispTermo1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_termo.ficha_hogar"
                                                     text="disponibilidad termo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4268,6 +4373,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispAireAcon1x1}"
                                                     id="labelNumeroSionoDispAireAcon1x1"
                                                     for="listaNumeroSionoDispAireAcon1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_aire_acon.ficha_hogar"
                                                     text="disponibilidad aire acondicionado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4300,6 +4406,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispAutomovil1x1}"
                                                     id="labelNumeroSionoDispAutomovil1x1"
                                                     for="listaNumeroSionoDispAutomovil1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_automovil.ficha_hogar"
                                                     text="disponibilidad automovil"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4332,6 +4439,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispCamion1x1}"
                                                     id="labelNumeroSionoDispCamion1x1"
                                                     for="listaNumeroSionoDispCamion1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_camion.ficha_hogar"
                                                     text="disponibilidad cami&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4364,6 +4472,7 @@
                                                     binding="#{FichaHogar6.labelNumeroSionoDispMotocicleta1x1}"
                                                     id="labelNumeroSionoDispMotocicleta1x1"
                                                     for="listaNumeroSionoDispMotocicleta1x1"
+                                                    toolTip="BundleParametros.numero_siono_disp_motocicleta.ficha_hogar"
                                                     text="disponibilidad motocicleta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4413,6 +4522,7 @@
                                                     binding="#{FichaHogar6.labelNombreJefeHogar1x1}"
                                                     id="labelNombreJefeHogar1x1"
                                                     for="campoNombreJefeHogar1x1"
+                                                    toolTip="BundleParametros.nombre_jefe_hogar.ficha_hogar"
                                                     text="nombre jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4446,6 +4556,7 @@
                                                     binding="#{FichaHogar6.labelNumeroCedulaJefeHogar1x1}"
                                                     id="labelNumeroCedulaJefeHogar1x1"
                                                     for="campoNumeroCedulaJefeHogar1x1"
+                                                    toolTip="BundleParametros.numero_cedula_jefe_hogar.ficha_hogar"
                                                     text="n&#250;mero c&#233;dula jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4478,6 +4589,7 @@
                                                     binding="#{FichaHogar6.labelLetraCedulaJefeHogar1x1}"
                                                     id="labelLetraCedulaJefeHogar1x1"
                                                     for="campoLetraCedulaJefeHogar1x1"
+                                                    toolTip="BundleParametros.letra_cedula_jefe_hogar.ficha_hogar"
                                                     text="letra c&#233;dula jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4511,6 +4623,7 @@
                                                     binding="#{FichaHogar6.labelNumeroOrdenIdenJefeHogar1x1}"
                                                     id="labelNumeroOrdenIdenJefeHogar1x1"
                                                     for="campoNumeroOrdenIdenJefeHogar1x1"
+                                                    toolTip="BundleParametros.numero_orden_iden_jefe_hogar.ficha_hogar"
                                                     text="n&#250;mero orden identificaci&#243;n jefe hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4560,6 +4673,7 @@
                                                     binding="#{FichaHogar6.labelNombreRespondente1x1}"
                                                     id="labelNombreRespondente1x1"
                                                     for="campoNombreRespondente1x1"
+                                                    toolTip="BundleParametros.nombre_respondente.ficha_hogar"
                                                     text="nombre respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4593,6 +4707,7 @@
                                                     binding="#{FichaHogar6.labelNumeroCedulaRespondente1x1}"
                                                     id="labelNumeroCedulaRespondente1x1"
                                                     for="campoNumeroCedulaRespondente1x1"
+                                                    toolTip="BundleParametros.numero_cedula_respondente.ficha_hogar"
                                                     text="n&#250;mero c&#233;dula respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4625,6 +4740,7 @@
                                                     binding="#{FichaHogar6.labelLetraCedulaRespondente1x1}"
                                                     id="labelLetraCedulaRespondente1x1"
                                                     for="campoLetraCedulaRespondente1x1"
+                                                    toolTip="BundleParametros.letra_cedula_respondente.ficha_hogar"
                                                     text="letra c&#233;dula respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4658,6 +4774,7 @@
                                                     binding="#{FichaHogar6.labelNumeroOrdenIdenRespondente1x1}"
                                                     id="labelNumeroOrdenIdenRespondente1x1"
                                                     for="campoNumeroOrdenIdenRespondente1x1"
+                                                    toolTip="BundleParametros.numero_orden_iden_respondente.ficha_hogar"
                                                     text="n&#250;mero orden identificaci&#243;n respondente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4707,6 +4824,7 @@
                                                     binding="#{FichaHogar6.labelIdProveedorDatExt1x1}"
                                                     id="labelIdProveedorDatExt1x1"
                                                     for="campoIdProveedorDatExt1x1"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.ficha_hogar"
                                                     text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4769,6 +4887,7 @@
                                                     binding="#{FichaHogar6.labelIndiceCalidadVida1x1}"
                                                     id="labelIndiceCalidadVida1x1"
                                                     for="campoIndiceCalidadVida1x1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.ficha_hogar"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4802,6 +4921,7 @@
                                                     binding="#{FichaHogar6.labelEsFichaHogarInactiva1x1}"
                                                     id="labelEsFichaHogarInactiva1x1"
                                                     for="listaEsFichaHogarInactiva1x1"
+                                                    toolTip="BundleParametros.es_ficha_hogar_inactiva.ficha_hogar"
                                                     text="inactiva"/>
                                             </h:panelGrid>
                                             <h:panelGrid

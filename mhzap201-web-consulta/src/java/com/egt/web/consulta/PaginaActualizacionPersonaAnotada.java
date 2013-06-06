@@ -10,7 +10,7 @@
  */
 package com.egt.web.consulta;
 
-import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
+import com.egt.data.generic.xdp2.PersonaAnotadaCachedRowSetDataProvider2;
 import com.egt.core.aplicacion.web.PaginaActualizacion;
 import com.sun.webui.jsf.component.Button;
 import com.sun.webui.jsf.component.DropDown;
@@ -18,27 +18,29 @@ import com.sun.webui.jsf.component.TextArea;
 import com.sun.webui.jsf.component.TextField;
 import com.sun.webui.jsf.component.Upload;
 
-public interface PaginaActualizacionUbicacion extends PaginaActualizacion {
+public interface PaginaActualizacionPersonaAnotada extends PaginaActualizacion {
 
-    TextField getCampoIdUbicacion1();
+    TextField getCampoIdPersonaAnotada1();
 
-    TextField getCampoCodigoUbicacion1();
+    TextField getCampoIdPersona1();
 
-    TextField getCampoNombreUbicacion1();
+    TextField getCampoCodigoPersona1();
 
-    TextField getCampoIdUbicacionSuperior1();
+    TextField getCampoNombrePersona1();
 
-    DropDown getListaNumeroTipoArea1();
+    TextField getCampoIdUsuario1();
 
-    TextField getCampoCodigoUbicacionJupe1();
+    TextField getCampoCodigoUsuario1();
+
+    TextField getCampoNombreUsuario1();
+
+    TextField getTextFieldCampoFechaHoraSeleccion1();
 
     Button getBotonAplicar1();
 
-    UbicacionCachedRowSetDataProvider2 getUbicacionDataProvider();
+    PersonaAnotadaCachedRowSetDataProvider2 getPersonaAnotadaDataProvider();
 
-    UbicacionCachedRowSetDataProvider2 getUbicacionReferenceDataProvider();
-
-    Object getUbicacionBusinessProcess();
+    Object getPersonaAnotadaBusinessProcess();
 
     Object getMessenger();
 }

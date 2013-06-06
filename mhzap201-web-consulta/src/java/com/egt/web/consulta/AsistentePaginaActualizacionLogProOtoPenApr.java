@@ -612,6 +612,15 @@ public class AsistentePaginaActualizacionLogProOtoPenApr {
         return value != null && value.equals(EnumCondicionPension.DENEGADA.intValue());
     }
 
+    public boolean isNumeroCondicionPensionAExcluirJupe() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProOtoPenAprDataProvider().getNumeroCondicionPension(rowKey);
+        return value != null && value.equals(EnumCondicionPension.A_EXCLUIR_JUPE.intValue());
+    }
+
    public boolean isEsProcesado() {
         if (bean == null) {
             return true;

@@ -208,6 +208,7 @@
                                                     binding="#{LogImpHogEec6.labelIdLogImpHogEec1}"
                                                     id="labelIdLogImpHogEec1"
                                                     for="campoIdLogImpHogEec1"
+                                                    toolTip="BundleParametros.id_log_imp_hog_eec.log_imp_hog_eec"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpHogEec6.labelDptod1}"
                                                     id="labelDptod1"
                                                     for="campoDptod1"
+                                                    toolTip="BundleParametros.dptod.log_imp_hog_eec"
                                                     text="dptod"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpHogEec6.labelDistritod1}"
                                                     id="labelDistritod1"
                                                     for="campoDistritod1"
+                                                    toolTip="BundleParametros.distritod.log_imp_hog_eec"
                                                     text="distritod"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpHogEec6.labelDistripg1}"
                                                     id="labelDistripg1"
                                                     for="campoDistripg1"
+                                                    toolTip="BundleParametros.distripg.log_imp_hog_eec"
                                                     text="distripg"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpHogEec6.labelArea1}"
                                                     id="labelArea1"
                                                     for="campoArea1"
+                                                    toolTip="BundleParametros.area.log_imp_hog_eec"
                                                     text="area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpHogEec6.labelBarrio1}"
                                                     id="labelBarrio1"
                                                     for="campoBarrio1"
+                                                    toolTip="BundleParametros.barrio.log_imp_hog_eec"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpHogEec6.labelManzana1}"
                                                     id="labelManzana1"
                                                     for="campoManzana1"
+                                                    toolTip="BundleParametros.manzana.log_imp_hog_eec"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpHogEec6.labelFormulario1}"
                                                     id="labelFormulario1"
                                                     for="campoFormulario1"
+                                                    toolTip="BundleParametros.formulario.log_imp_hog_eec"
                                                     text="formulario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpHogEec6.labelVivi1}"
                                                     id="labelVivi1"
                                                     for="campoVivi1"
+                                                    toolTip="BundleParametros.vivi.log_imp_hog_eec"
                                                     text="vivi"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpHogEec6.labelHogar1}"
                                                     id="labelHogar1"
                                                     for="campoHogar1"
+                                                    toolTip="BundleParametros.hogar.log_imp_hog_eec"
                                                     text="hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpHogEec6.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.log_imp_hog_eec"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpHogEec6.labelNroDe1}"
                                                     id="labelNroDe1"
                                                     for="campoNroDe1"
+                                                    toolTip="BundleParametros.nro_de.log_imp_hog_eec"
                                                     text="nro de"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +604,7 @@
                                                     binding="#{LogImpHogEec6.labelTelefono1}"
                                                     id="labelTelefono1"
                                                     for="campoTelefono1"
+                                                    toolTip="BundleParametros.telefono.log_imp_hog_eec"
                                                     text="tel&#233;fono"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +637,7 @@
                                                     binding="#{LogImpHogEec6.labelFecha1}"
                                                     id="labelFecha1"
                                                     for="campoFecha1"
+                                                    toolTip="BundleParametros.fecha.log_imp_hog_eec"
                                                     text="fecha"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -656,6 +670,7 @@
                                                     binding="#{LogImpHogEec6.labelDia1}"
                                                     id="labelDia1"
                                                     for="campoDia1"
+                                                    toolTip="BundleParametros.dia.log_imp_hog_eec"
                                                     text="dia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -688,6 +703,7 @@
                                                     binding="#{LogImpHogEec6.labelMes1}"
                                                     id="labelMes1"
                                                     for="campoMes1"
+                                                    toolTip="BundleParametros.mes.log_imp_hog_eec"
                                                     text="mes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -720,6 +736,7 @@
                                                     binding="#{LogImpHogEec6.labelAno1}"
                                                     id="labelAno1"
                                                     for="campoAno1"
+                                                    toolTip="BundleParametros.ano.log_imp_hog_eec"
                                                     text="a&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -752,6 +769,7 @@
                                                     binding="#{LogImpHogEec6.labelV10t1}"
                                                     id="labelV10t1"
                                                     for="campoV10t1"
+                                                    toolTip="BundleParametros.v10t.log_imp_hog_eec"
                                                     text="v10t"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -784,6 +802,7 @@
                                                     binding="#{LogImpHogEec6.labelV111}"
                                                     id="labelV111"
                                                     for="campoV111"
+                                                    toolTip="BundleParametros.v11.log_imp_hog_eec"
                                                     text="v11"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -816,6 +835,7 @@
                                                     binding="#{LogImpHogEec6.labelV121}"
                                                     id="labelV121"
                                                     for="campoV121"
+                                                    toolTip="BundleParametros.v12.log_imp_hog_eec"
                                                     text="v12"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -848,6 +868,7 @@
                                                     binding="#{LogImpHogEec6.labelV131}"
                                                     id="labelV131"
                                                     for="campoV131"
+                                                    toolTip="BundleParametros.v13.log_imp_hog_eec"
                                                     text="v13"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -880,6 +901,7 @@
                                                     binding="#{LogImpHogEec6.labelV141}"
                                                     id="labelV141"
                                                     for="campoV141"
+                                                    toolTip="BundleParametros.v14.log_imp_hog_eec"
                                                     text="v14"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -912,6 +934,7 @@
                                                     binding="#{LogImpHogEec6.labelV151}"
                                                     id="labelV151"
                                                     for="campoV151"
+                                                    toolTip="BundleParametros.v15.log_imp_hog_eec"
                                                     text="v15"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -944,6 +967,7 @@
                                                     binding="#{LogImpHogEec6.labelV161}"
                                                     id="labelV161"
                                                     for="campoV161"
+                                                    toolTip="BundleParametros.v16.log_imp_hog_eec"
                                                     text="v16"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -976,6 +1000,7 @@
                                                     binding="#{LogImpHogEec6.labelV16Otr1}"
                                                     id="labelV16Otr1"
                                                     for="campoV16Otr1"
+                                                    toolTip="BundleParametros.v16_otr.log_imp_hog_eec"
                                                     text="v16 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1008,6 +1033,7 @@
                                                     binding="#{LogImpHogEec6.labelV17a1}"
                                                     id="labelV17a1"
                                                     for="campoV17a1"
+                                                    toolTip="BundleParametros.v17a.log_imp_hog_eec"
                                                     text="v17a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1040,6 +1066,7 @@
                                                     binding="#{LogImpHogEec6.labelV17b1}"
                                                     id="labelV17b1"
                                                     for="campoV17b1"
+                                                    toolTip="BundleParametros.v17b.log_imp_hog_eec"
                                                     text="v17b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1072,6 +1099,7 @@
                                                     binding="#{LogImpHogEec6.labelV181}"
                                                     id="labelV181"
                                                     for="campoV181"
+                                                    toolTip="BundleParametros.v18.log_imp_hog_eec"
                                                     text="v18"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1104,6 +1132,7 @@
                                                     binding="#{LogImpHogEec6.labelV191}"
                                                     id="labelV191"
                                                     for="campoV191"
+                                                    toolTip="BundleParametros.v19.log_imp_hog_eec"
                                                     text="v19"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1136,6 +1165,7 @@
                                                     binding="#{LogImpHogEec6.labelV201}"
                                                     id="labelV201"
                                                     for="campoV201"
+                                                    toolTip="BundleParametros.v20.log_imp_hog_eec"
                                                     text="v20"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1168,6 +1198,7 @@
                                                     binding="#{LogImpHogEec6.labelV211}"
                                                     id="labelV211"
                                                     for="campoV211"
+                                                    toolTip="BundleParametros.v21.log_imp_hog_eec"
                                                     text="v21"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1200,6 +1231,7 @@
                                                     binding="#{LogImpHogEec6.labelV221}"
                                                     id="labelV221"
                                                     for="campoV221"
+                                                    toolTip="BundleParametros.v22.log_imp_hog_eec"
                                                     text="v22"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1232,6 +1264,7 @@
                                                     binding="#{LogImpHogEec6.labelV231}"
                                                     id="labelV231"
                                                     for="campoV231"
+                                                    toolTip="BundleParametros.v23.log_imp_hog_eec"
                                                     text="v23"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1264,6 +1297,7 @@
                                                     binding="#{LogImpHogEec6.labelV241}"
                                                     id="labelV241"
                                                     for="campoV241"
+                                                    toolTip="BundleParametros.v24.log_imp_hog_eec"
                                                     text="v24"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1296,6 +1330,7 @@
                                                     binding="#{LogImpHogEec6.labelV251}"
                                                     id="labelV251"
                                                     for="campoV251"
+                                                    toolTip="BundleParametros.v25.log_imp_hog_eec"
                                                     text="v25"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1328,6 +1363,7 @@
                                                     binding="#{LogImpHogEec6.labelV261}"
                                                     id="labelV261"
                                                     for="campoV261"
+                                                    toolTip="BundleParametros.v26.log_imp_hog_eec"
                                                     text="v26"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1360,6 +1396,7 @@
                                                     binding="#{LogImpHogEec6.labelV26espCelular1}"
                                                     id="labelV26espCelular1"
                                                     for="campoV26espCelular1"
+                                                    toolTip="BundleParametros.v26esp_celular.log_imp_hog_eec"
                                                     text="v26esp celular"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1392,6 +1429,7 @@
                                                     binding="#{LogImpHogEec6.labelV271}"
                                                     id="labelV271"
                                                     for="campoV271"
+                                                    toolTip="BundleParametros.v27.log_imp_hog_eec"
                                                     text="v27"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1424,6 +1462,7 @@
                                                     binding="#{LogImpHogEec6.labelV27espLinea1}"
                                                     id="labelV27espLinea1"
                                                     for="campoV27espLinea1"
+                                                    toolTip="BundleParametros.v27esp_linea.log_imp_hog_eec"
                                                     text="v27esp linea"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1456,6 +1495,7 @@
                                                     binding="#{LogImpHogEec6.labelV2811}"
                                                     id="labelV2811"
                                                     for="campoV2811"
+                                                    toolTip="BundleParametros.v28_1.log_imp_hog_eec"
                                                     text="v28 1"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1488,6 +1528,7 @@
                                                     binding="#{LogImpHogEec6.labelV2821}"
                                                     id="labelV2821"
                                                     for="campoV2821"
+                                                    toolTip="BundleParametros.v28_2.log_imp_hog_eec"
                                                     text="v28 2"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1520,6 +1561,7 @@
                                                     binding="#{LogImpHogEec6.labelV2831}"
                                                     id="labelV2831"
                                                     for="campoV2831"
+                                                    toolTip="BundleParametros.v28_3.log_imp_hog_eec"
                                                     text="v28 3"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1552,6 +1594,7 @@
                                                     binding="#{LogImpHogEec6.labelV2841}"
                                                     id="labelV2841"
                                                     for="campoV2841"
+                                                    toolTip="BundleParametros.v28_4.log_imp_hog_eec"
                                                     text="v28 4"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1584,6 +1627,7 @@
                                                     binding="#{LogImpHogEec6.labelV2851}"
                                                     id="labelV2851"
                                                     for="campoV2851"
+                                                    toolTip="BundleParametros.v28_5.log_imp_hog_eec"
                                                     text="v28 5"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1616,6 +1660,7 @@
                                                     binding="#{LogImpHogEec6.labelV2861}"
                                                     id="labelV2861"
                                                     for="campoV2861"
+                                                    toolTip="BundleParametros.v28_6.log_imp_hog_eec"
                                                     text="v28 6"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1648,6 +1693,7 @@
                                                     binding="#{LogImpHogEec6.labelV2871}"
                                                     id="labelV2871"
                                                     for="campoV2871"
+                                                    toolTip="BundleParametros.v28_7.log_imp_hog_eec"
                                                     text="v28 7"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1680,6 +1726,7 @@
                                                     binding="#{LogImpHogEec6.labelV2881}"
                                                     id="labelV2881"
                                                     for="campoV2881"
+                                                    toolTip="BundleParametros.v28_8.log_imp_hog_eec"
                                                     text="v28 8"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1712,6 +1759,7 @@
                                                     binding="#{LogImpHogEec6.labelV29nombreJefe1}"
                                                     id="labelV29nombreJefe1"
                                                     for="campoV29nombreJefe1"
+                                                    toolTip="BundleParametros.v29nombre_jefe.log_imp_hog_eec"
                                                     text="v29nombre jefe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1744,6 +1792,7 @@
                                                     binding="#{LogImpHogEec6.labelCedulajefe1}"
                                                     id="labelCedulajefe1"
                                                     for="campoCedulajefe1"
+                                                    toolTip="BundleParametros.cedulajefe.log_imp_hog_eec"
                                                     text="cedulajefe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1776,6 +1825,7 @@
                                                     binding="#{LogImpHogEec6.labelVar000011}"
                                                     id="labelVar000011"
                                                     for="campoVar000011"
+                                                    toolTip="BundleParametros.var00001.log_imp_hog_eec"
                                                     text="var00001"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1808,6 +1858,7 @@
                                                     binding="#{LogImpHogEec6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_hog_eec"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1839,6 +1890,7 @@
                                                     binding="#{LogImpHogEec6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_hog_eec"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1871,6 +1923,7 @@
                                                     binding="#{LogImpHogEec6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_hog_eec"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1903,6 +1956,7 @@
                                                     binding="#{LogImpHogEec6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_hog_eec"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1941,6 +1995,7 @@
                                                     binding="#{LogImpHogEec6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_hog_eec"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

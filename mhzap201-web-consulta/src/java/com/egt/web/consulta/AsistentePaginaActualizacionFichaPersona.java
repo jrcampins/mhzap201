@@ -56,6 +56,7 @@ import com.egt.core.util.STP;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
 import com.egt.ejb.business.message.DesvincularFichaPersonaMessage;
 import com.egt.ejb.business.process.FichaPersonaBusinessProcessLocal;
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
 import com.sun.data.provider.RowKey;
 import com.sun.webui.jsf.model.Option;
 import java.math.BigDecimal;
@@ -93,7 +94,8 @@ public class AsistentePaginaActualizacionFichaPersona {
         String etiquetaSeleccioneUnaOpcion = bean == null ? "" : bean.getGestor().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion();
         Option[] opciones = new Option[]{
         //  new Option("", etiquetaSeleccioneUnaOpcion),
-        //  new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA, BundleWebui.getString("desvincular_ficha_persona"))
+        //  new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA, BundleWebui.getString("desvincular_ficha_persona")),
+        //  new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA, BundleWebui.getString("emitir_ficha_persona_importada"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -117,6 +119,8 @@ public class AsistentePaginaActualizacionFichaPersona {
         if (!esFilaAutorizada) {
         } else if (f == FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA) {
             this.desvincularFichaPersona(rowKey);
+        } else if (f == FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA) {
+            this.emitirFichaPersonaImportada(rowKey);
         }
     }
 
@@ -130,6 +134,63 @@ public class AsistentePaginaActualizacionFichaPersona {
             this.getFichaPersonaBusinessProcess().desvincularFichaPersona(message);
         } else {
             this.requestReply(message);
+        }
+        return true;
+    }
+
+    private boolean emitirFichaPersonaImportada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirFichaPersonaImportada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Integer esFichaPersonaImportada = null;
+        Date fechaImportacionDesde = null;
+        Date fechaImportacionHasta = null;
+        String report = FichaPersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
+        long function = FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("es_ficha_persona_importada", esFichaPersonaImportada);
+        parameters.put("fecha_importacion_desde", fechaImportacionDesde);
+        parameters.put("fecha_importacion_hasta", fechaImportacionHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from ficha_persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (esFichaPersonaImportada != null) {
+            args.add(esFichaPersonaImportada);
+            search += " and es_ficha_persona_importada=?";
+        }
+        if (fechaImportacionDesde != null) {
+            args.add(fechaImportacionDesde);
+            search += " and fecha_importacion>=?";
+        }
+        if (fechaImportacionHasta != null) {
+            args.add(fechaImportacionHasta);
+            search += " and fecha_importacion<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
         }
         return true;
     }
@@ -710,6 +771,10 @@ public class AsistentePaginaActualizacionFichaPersona {
 
     public Object getOpcionesListaNumeroTipoRelacionLab1() {
         return JSF.getListaOpciones(EnumTipoRelacionLab.values(), true, false);
+    }
+
+    public Object getOpcionesListaEsFichaPersonaImportada1() {
+        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
     }
 
     // </editor-fold>
@@ -3262,6 +3327,24 @@ public class AsistentePaginaActualizacionFichaPersona {
         return value != null && value.equals(EnumTipoRelacionLab.EMPLEADO_A_DOMESTICO_A.intValue());
     }
 
+   public boolean isEsFichaPersonaImportada() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getEsFichaPersonaImportada(rowKey);
+        return BitUtils.valueOf(value);
+    }
+
+    public boolean isNoEsFichaPersonaImportada() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getEsFichaPersonaImportada(rowKey);
+        return !BitUtils.valueOf(value);
+    }
+
     public boolean isGridIdFichaPersonaRendered() {
         return true;
     }
@@ -3785,6 +3868,20 @@ public class AsistentePaginaActualizacionFichaPersona {
         return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
     }
 
+    public boolean isGridEsFichaPersonaImportadaRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
+    public boolean isGridFechaImportacionRendered() {
+        if (bean == null) {
+            return true;
+        }
+        return bean.getGestor().isFilaProcesada() && isSeccionOtrosRendered();
+    }
+
     public boolean isSeccionAntecedentes1Rendered() {
         return true;
     }
@@ -3868,6 +3965,10 @@ public class AsistentePaginaActualizacionFichaPersona {
 
     private BusinessProcessMessengerLocal getMessenger() {
         return (BusinessProcessMessengerLocal) bean.getMessenger();
+    }
+
+    private ReporterBrokerLocal getReporter() {
+        return (ReporterBrokerLocal) bean.getReporter();
     }
 
     private AbstractMessage requestReply(AbstractMessage message) throws Exception {

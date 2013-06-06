@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdFichaHogar1}"
+                                                    toolTip="BundleParametros.id_ficha_hogar.ficha_hogar"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFichaHogar1" rendered="false"
                                                     sort="id_ficha_hogar">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnCodigoFichaHogar1}"
+                                                    toolTip="BundleParametros.codigo_ficha_hogar.ficha_hogar"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoFichaHogar1"
                                                     sort="codigo_ficha_hogar">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnFechaEntrevista1}"
+                                                    toolTip="BundleParametros.fecha_entrevista.ficha_hogar"
                                                     headerText="fecha entrevista"
                                                     id="tableColumnFechaEntrevista1"
                                                     sort="fecha_entrevista">
@@ -262,6 +265,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdFuncionarioCensista1}"
+                                                    toolTip="BundleParametros.id_funcionario_censista.ficha_hogar"
                                                     headerText="funcionario censista"
                                                     id="tableColumnIdFuncionarioCensista1" rendered="false"
                                                     sort="codigo_funcionario_1x1y3">
@@ -327,6 +331,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdFuncionarioSupervisor1}"
+                                                    toolTip="BundleParametros.id_funcionario_supervisor.ficha_hogar"
                                                     headerText="funcionario supervisor"
                                                     id="tableColumnIdFuncionarioSupervisor1" rendered="false"
                                                     sort="codigo_funcionario_1x2y3">
@@ -392,6 +397,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdFuncionarioCriticoDeco1}"
+                                                    toolTip="BundleParametros.id_funcionario_critico_deco.ficha_hogar"
                                                     headerText="funcionario critico decodificador"
                                                     id="tableColumnIdFuncionarioCriticoDeco1" rendered="false"
                                                     sort="codigo_funcionario_1x3y3">
@@ -457,6 +463,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdFuncionarioDigitador1}"
+                                                    toolTip="BundleParametros.id_funcionario_digitador.ficha_hogar"
                                                     headerText="funcionario digitador"
                                                     id="tableColumnIdFuncionarioDigitador1" rendered="false"
                                                     sort="codigo_funcionario_1x4y3">
@@ -522,6 +529,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnObservaciones1}"
+                                                    toolTip="BundleParametros.observaciones.ficha_hogar"
                                                     headerText="observaciones"
                                                     id="tableColumnObservaciones1" rendered="false"
                                                     sort="observaciones">
@@ -548,6 +556,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnHusoUtm1}"
+                                                    toolTip="BundleParametros.huso_utm.ficha_hogar"
                                                     headerText="huso utm"
                                                     id="tableColumnHusoUtm1" rendered="false"
                                                     sort="huso_utm">
@@ -574,6 +583,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnFranjaUtm1}"
+                                                    toolTip="BundleParametros.franja_utm.ficha_hogar"
                                                     headerText="franja utm"
                                                     id="tableColumnFranjaUtm1" rendered="false"
                                                     sort="franja_utm">
@@ -601,6 +611,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnDistanciaEsteUtm1}"
+                                                    toolTip="BundleParametros.distancia_este_utm.ficha_hogar"
                                                     headerText="distancia este utm"
                                                     id="tableColumnDistanciaEsteUtm1" rendered="false"
                                                     sort="distancia_este_utm">
@@ -627,6 +638,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnDistanciaNorteUtm1}"
+                                                    toolTip="BundleParametros.distancia_norte_utm.ficha_hogar"
                                                     headerText="distancia norte utm"
                                                     id="tableColumnDistanciaNorteUtm1" rendered="false"
                                                     sort="distancia_norte_utm">
@@ -653,6 +665,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroFormulario1}"
+                                                    toolTip="BundleParametros.numero_formulario.ficha_hogar"
                                                     headerText="n&#250;mero formulario"
                                                     id="tableColumnNumeroFormulario1"
                                                     sort="numero_formulario">
@@ -679,6 +692,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroVivienda1}"
+                                                    toolTip="BundleParametros.numero_vivienda.ficha_hogar"
                                                     headerText="n&#250;mero vivienda"
                                                     id="tableColumnNumeroVivienda1"
                                                     sort="numero_vivienda">
@@ -705,6 +719,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroHogar1}"
+                                                    toolTip="BundleParametros.numero_hogar.ficha_hogar"
                                                     headerText="n&#250;mero hogar"
                                                     id="tableColumnNumeroHogar1"
                                                     sort="numero_hogar">
@@ -731,6 +746,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.ficha_hogar"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x5y3">
@@ -796,6 +812,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.ficha_hogar"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x6y3">
@@ -861,6 +878,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area.ficha_hogar"
                                                     headerText="tipo area"
                                                     id="tableColumnNumeroTipoArea1" rendered="false"
                                                     sort="codigo_tipo_area_1x7y2">
@@ -887,6 +905,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.ficha_hogar"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x8y3">
@@ -952,6 +971,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnManzana1}"
+                                                    toolTip="BundleParametros.manzana.ficha_hogar"
                                                     headerText="manzana"
                                                     id="tableColumnManzana1" rendered="false"
                                                     sort="manzana">
@@ -979,6 +999,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.ficha_hogar"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -1005,6 +1026,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnTotalPersonas1}"
+                                                    toolTip="BundleParametros.total_personas.ficha_hogar"
                                                     headerText="total personas"
                                                     id="tableColumnTotalPersonas1" rendered="false"
                                                     sort="total_personas">
@@ -1031,6 +1053,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnTotalHombres1}"
+                                                    toolTip="BundleParametros.total_hombres.ficha_hogar"
                                                     headerText="total hombres"
                                                     id="tableColumnTotalHombres1" rendered="false"
                                                     sort="total_hombres">
@@ -1057,6 +1080,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnTotalMujeres1}"
+                                                    toolTip="BundleParametros.total_mujeres.ficha_hogar"
                                                     headerText="total mujeres"
                                                     id="tableColumnTotalMujeres1" rendered="false"
                                                     sort="total_mujeres">
@@ -1083,6 +1107,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoMatParedes1}"
+                                                    toolTip="BundleParametros.numero_tipo_mat_paredes.ficha_hogar"
                                                     headerText="tipo material paredes"
                                                     id="tableColumnNumeroTipoMatParedes1" rendered="false"
                                                     sort="codigo_tipo_mat_paredes_1x10y2">
@@ -1109,6 +1134,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoMatPiso1}"
+                                                    toolTip="BundleParametros.numero_tipo_mat_piso.ficha_hogar"
                                                     headerText="tipo material piso"
                                                     id="tableColumnNumeroTipoMatPiso1" rendered="false"
                                                     sort="codigo_tipo_mat_piso_1x11y2">
@@ -1135,6 +1161,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoMatTecho1}"
+                                                    toolTip="BundleParametros.numero_tipo_mat_techo.ficha_hogar"
                                                     headerText="tipo material techo"
                                                     id="tableColumnNumeroTipoMatTecho1" rendered="false"
                                                     sort="codigo_tipo_mat_techo_1x12y2">
@@ -1161,6 +1188,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoOcupacionViv1}"
+                                                    toolTip="BundleParametros.numero_tipo_ocupacion_viv.ficha_hogar"
                                                     headerText="tipo ocupaci&#243;n vivienda"
                                                     id="tableColumnNumeroTipoOcupacionViv1" rendered="false"
                                                     sort="codigo_tipo_ocupacion_v_1x13y2">
@@ -1187,6 +1215,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnOtroTipoOcupacionViv1}"
+                                                    toolTip="BundleParametros.otro_tipo_ocupacion_viv.ficha_hogar"
                                                     headerText="otro tipo ocupaci&#243;n vivienda"
                                                     id="tableColumnOtroTipoOcupacionViv1" rendered="false"
                                                     sort="otro_tipo_ocupacion_viv">
@@ -1214,6 +1243,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnCantidadPiezas1}"
+                                                    toolTip="BundleParametros.cantidad_piezas.ficha_hogar"
                                                     headerText="cantidad piezas"
                                                     id="tableColumnCantidadPiezas1" rendered="false"
                                                     sort="cantidad_piezas">
@@ -1240,6 +1270,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnCantidadDormitorios1}"
+                                                    toolTip="BundleParametros.cantidad_dormitorios.ficha_hogar"
                                                     headerText="cantidad dormitorios"
                                                     id="tableColumnCantidadDormitorios1" rendered="false"
                                                     sort="cantidad_dormitorios">
@@ -1266,6 +1297,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoPiezaCocina1}"
+                                                    toolTip="BundleParametros.numero_siono_pieza_cocina.ficha_hogar"
                                                     headerText="pieza cocina"
                                                     id="tableColumnNumeroSionoPiezaCocina1" rendered="false"
                                                     sort="codigo_siono_1x14y2">
@@ -1292,6 +1324,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoCombustible1}"
+                                                    toolTip="BundleParametros.numero_tipo_combustible.ficha_hogar"
                                                     headerText="tipo combustible"
                                                     id="tableColumnNumeroTipoCombustible1" rendered="false"
                                                     sort="codigo_tipo_combustible_1x15y2">
@@ -1318,6 +1351,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoPiezaBano1}"
+                                                    toolTip="BundleParametros.numero_tipo_pieza_bano.ficha_hogar"
                                                     headerText="tipo pieza ba&#241;o"
                                                     id="tableColumnNumeroTipoPiezaBano1" rendered="false"
                                                     sort="codigo_tipo_pieza_bano_1x16y2">
@@ -1344,6 +1378,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoServicioSan1}"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_san.ficha_hogar"
                                                     headerText="tipo servicio sanitario"
                                                     id="tableColumnNumeroTipoServicioSan1" rendered="false"
                                                     sort="codigo_tipo_servicio_sa_1x17y2">
@@ -1370,6 +1405,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoServicioAgua1}"
+                                                    toolTip="BundleParametros.numero_tipo_servicio_agua.ficha_hogar"
                                                     headerText="tipo servicio agua"
                                                     id="tableColumnNumeroTipoServicioAgua1" rendered="false"
                                                     sort="codigo_tipo_servicio_ag_1x18y2">
@@ -1396,6 +1432,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoAbaAgua1}"
+                                                    toolTip="BundleParametros.numero_tipo_aba_agua.ficha_hogar"
                                                     headerText="tipo abastecimiento agua"
                                                     id="tableColumnNumeroTipoAbaAgua1" rendered="false"
                                                     sort="codigo_tipo_aba_agua_1x19y2">
@@ -1422,6 +1459,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoCorrienteElec1}"
+                                                    toolTip="BundleParametros.numero_siono_corriente_elec.ficha_hogar"
                                                     headerText="corriente el&#233;ctrica"
                                                     id="tableColumnNumeroSionoCorrienteElec1" rendered="false"
                                                     sort="codigo_siono_1x20y2">
@@ -1448,6 +1486,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTipoDesechoBas1}"
+                                                    toolTip="BundleParametros.numero_tipo_desecho_bas.ficha_hogar"
                                                     headerText="tipo desecho basura"
                                                     id="tableColumnNumeroTipoDesechoBas1" rendered="false"
                                                     sort="codigo_tipo_desecho_bas_1x21y2">
@@ -1474,6 +1513,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoTelefonoCelular1}"
+                                                    toolTip="BundleParametros.numero_siono_telefono_celular.ficha_hogar"
                                                     headerText="tel&#233;fono celular"
                                                     id="tableColumnNumeroSionoTelefonoCelular1" rendered="false"
                                                     sort="codigo_siono_1x22y2">
@@ -1500,6 +1540,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTelefonoCelular1}"
+                                                    toolTip="BundleParametros.numero_telefono_celular.ficha_hogar"
                                                     headerText="n&#250;mero tel&#233;fono celular"
                                                     id="tableColumnNumeroTelefonoCelular1" rendered="false"
                                                     sort="numero_telefono_celular">
@@ -1527,6 +1568,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoTlfLineaBaja1}"
+                                                    toolTip="BundleParametros.numero_siono_tlf_linea_baja.ficha_hogar"
                                                     headerText="tel&#233;fono linea baja"
                                                     id="tableColumnNumeroSionoTlfLineaBaja1" rendered="false"
                                                     sort="codigo_siono_1x23y2">
@@ -1553,6 +1595,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroTelefonoLineaBaja1}"
+                                                    toolTip="BundleParametros.numero_telefono_linea_baja.ficha_hogar"
                                                     headerText="n&#250;mero tel&#233;fono linea baja"
                                                     id="tableColumnNumeroTelefonoLineaBaja1" rendered="false"
                                                     sort="numero_telefono_linea_baja">
@@ -1580,6 +1623,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispHeladera1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_heladera.ficha_hogar"
                                                     headerText="disponibilidad heladera"
                                                     id="tableColumnNumeroSionoDispHeladera1" rendered="false"
                                                     sort="codigo_siono_1x24y2">
@@ -1606,6 +1650,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispLavarropas1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_lavarropas.ficha_hogar"
                                                     headerText="disponibilidad lavarropas"
                                                     id="tableColumnNumeroSionoDispLavarropas1" rendered="false"
                                                     sort="codigo_siono_1x25y2">
@@ -1632,6 +1677,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispTermo1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_termo.ficha_hogar"
                                                     headerText="disponibilidad termo"
                                                     id="tableColumnNumeroSionoDispTermo1" rendered="false"
                                                     sort="codigo_siono_1x26y2">
@@ -1658,6 +1704,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispAireAcon1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_aire_acon.ficha_hogar"
                                                     headerText="disponibilidad aire acondicionado"
                                                     id="tableColumnNumeroSionoDispAireAcon1" rendered="false"
                                                     sort="codigo_siono_1x27y2">
@@ -1684,6 +1731,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispAutomovil1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_automovil.ficha_hogar"
                                                     headerText="disponibilidad automovil"
                                                     id="tableColumnNumeroSionoDispAutomovil1" rendered="false"
                                                     sort="codigo_siono_1x28y2">
@@ -1710,6 +1758,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispCamion1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_camion.ficha_hogar"
                                                     headerText="disponibilidad cami&#243;n"
                                                     id="tableColumnNumeroSionoDispCamion1" rendered="false"
                                                     sort="codigo_siono_1x29y2">
@@ -1736,6 +1785,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroSionoDispMotocicleta1}"
+                                                    toolTip="BundleParametros.numero_siono_disp_motocicleta.ficha_hogar"
                                                     headerText="disponibilidad motocicleta"
                                                     id="tableColumnNumeroSionoDispMotocicleta1" rendered="false"
                                                     sort="codigo_siono_1x30y2">
@@ -1762,6 +1812,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNombreJefeHogar1}"
+                                                    toolTip="BundleParametros.nombre_jefe_hogar.ficha_hogar"
                                                     headerText="nombre jefe hogar"
                                                     id="tableColumnNombreJefeHogar1"
                                                     sort="nombre_jefe_hogar">
@@ -1789,6 +1840,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroCedulaJefeHogar1}"
+                                                    toolTip="BundleParametros.numero_cedula_jefe_hogar.ficha_hogar"
                                                     headerText="n&#250;mero c&#233;dula jefe hogar"
                                                     id="tableColumnNumeroCedulaJefeHogar1" rendered="false"
                                                     sort="numero_cedula_jefe_hogar">
@@ -1815,6 +1867,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnLetraCedulaJefeHogar1}"
+                                                    toolTip="BundleParametros.letra_cedula_jefe_hogar.ficha_hogar"
                                                     headerText="letra c&#233;dula jefe hogar"
                                                     id="tableColumnLetraCedulaJefeHogar1" rendered="false"
                                                     sort="letra_cedula_jefe_hogar">
@@ -1842,6 +1895,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroOrdenIdenJefeHogar1}"
+                                                    toolTip="BundleParametros.numero_orden_iden_jefe_hogar.ficha_hogar"
                                                     headerText="n&#250;mero orden identificaci&#243;n jefe hogar"
                                                     id="tableColumnNumeroOrdenIdenJefeHogar1" rendered="false"
                                                     sort="numero_orden_iden_jefe_hogar">
@@ -1868,6 +1922,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNombreRespondente1}"
+                                                    toolTip="BundleParametros.nombre_respondente.ficha_hogar"
                                                     headerText="nombre respondente"
                                                     id="tableColumnNombreRespondente1" rendered="false"
                                                     sort="nombre_respondente">
@@ -1895,6 +1950,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroCedulaRespondente1}"
+                                                    toolTip="BundleParametros.numero_cedula_respondente.ficha_hogar"
                                                     headerText="n&#250;mero c&#233;dula respondente"
                                                     id="tableColumnNumeroCedulaRespondente1" rendered="false"
                                                     sort="numero_cedula_respondente">
@@ -1921,6 +1977,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnLetraCedulaRespondente1}"
+                                                    toolTip="BundleParametros.letra_cedula_respondente.ficha_hogar"
                                                     headerText="letra c&#233;dula respondente"
                                                     id="tableColumnLetraCedulaRespondente1" rendered="false"
                                                     sort="letra_cedula_respondente">
@@ -1948,6 +2005,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnNumeroOrdenIdenRespondente1}"
+                                                    toolTip="BundleParametros.numero_orden_iden_respondente.ficha_hogar"
                                                     headerText="n&#250;mero orden identificaci&#243;n respondente"
                                                     id="tableColumnNumeroOrdenIdenRespondente1" rendered="false"
                                                     sort="numero_orden_iden_respondente">
@@ -1974,6 +2032,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIdProveedorDatExt1}"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.ficha_hogar"
                                                     headerText="proveedor datos externos"
                                                     id="tableColumnIdProveedorDatExt1" rendered="false"
                                                     sort="codigo_proveedor_dat_ex_1x31y3">
@@ -2039,6 +2098,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.ficha_hogar"
                                                     headerText="indice calidad vida"
                                                     id="tableColumnIndiceCalidadVida1" rendered="false"
                                                     sort="indice_calidad_vida">
@@ -2066,6 +2126,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FichaHogar5.tableColumnEsFichaHogarInactiva1}"
+                                                    toolTip="BundleParametros.es_ficha_hogar_inactiva.ficha_hogar"
                                                     headerText="inactiva"
                                                     id="tableColumnEsFichaHogarInactiva1"
                                                     sort="es_ficha_hogar_inactiva">

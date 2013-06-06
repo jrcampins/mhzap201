@@ -208,6 +208,7 @@
                                                     binding="#{PotencialBen6.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
+                                                    toolTip="BundleParametros.id_potencial_ben.potencial_ben"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{PotencialBen6.labelCodigoPotencialBen1}"
                                                     id="labelCodigoPotencialBen1"
                                                     for="campoCodigoPotencialBen1"
+                                                    toolTip="BundleParametros.codigo_potencial_ben.potencial_ben"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{PotencialBen6.labelNombrePotencialBen1}"
                                                     id="labelNombrePotencialBen1"
                                                     for="campoNombrePotencialBen1"
+                                                    toolTip="BundleParametros.nombre_potencial_ben.potencial_ben"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -307,6 +310,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoRegPotBen1}"
                                                     id="labelNumeroTipoRegPotBen1"
                                                     for="listaNumeroTipoRegPotBen1"
+                                                    toolTip="BundleParametros.numero_tipo_reg_pot_ben.potencial_ben"
                                                     text="tipo registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -341,6 +345,7 @@
                                                     binding="#{PotencialBen6.labelFechaRegistroPotBen1}"
                                                     id="labelFechaRegistroPotBen1"
                                                     for="campoFechaRegistroPotBen1"
+                                                    toolTip="BundleParametros.fecha_registro_pot_ben.potencial_ben"
                                                     text="fecha registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -374,6 +379,7 @@
                                                     binding="#{PotencialBen6.labelIdUsuarioRegPotBen1}"
                                                     id="labelIdUsuarioRegPotBen1"
                                                     for="campoIdUsuarioRegPotBen1"
+                                                    toolTip="BundleParametros.id_usuario_reg_pot_ben.potencial_ben"
                                                     text="usuario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -434,6 +440,7 @@
                                                     binding="#{PotencialBen6.labelEsPotencialBenInactivo1}"
                                                     id="labelEsPotencialBenInactivo1"
                                                     for="listaEsPotencialBenInactivo1"
+                                                    toolTip="BundleParametros.es_potencial_ben_inactivo.potencial_ben"
                                                     text="inactivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -465,6 +472,7 @@
                                                     binding="#{PotencialBen6.labelEsPotencialBenMigrado1}"
                                                     id="labelEsPotencialBenMigrado1"
                                                     for="listaEsPotencialBenMigrado1"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"
                                                     text="migrado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +504,7 @@
                                                     binding="#{PotencialBen6.labelLote1}"
                                                     id="labelLote1"
                                                     for="campoLote1"
+                                                    toolTip="BundleParametros.lote.potencial_ben"
                                                     text="lote"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -529,6 +538,7 @@
                                                     binding="#{PotencialBen6.labelIdPersona1}"
                                                     id="labelIdPersona1"
                                                     for="campoIdPersona1"
+                                                    toolTip="BundleParametros.id_persona.potencial_ben"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +602,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCedula1}"
                                                     id="labelNumeroCedula1"
                                                     for="campoNumeroCedula1"
+                                                    toolTip="BundleParametros.numero_cedula.potencial_ben"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +635,7 @@
                                                     binding="#{PotencialBen6.labelLetraCedula1}"
                                                     id="labelLetraCedula1"
                                                     for="campoLetraCedula1"
+                                                    toolTip="BundleParametros.letra_cedula.potencial_ben"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -657,6 +669,7 @@
                                                     binding="#{PotencialBen6.labelFechaExpedicionCedula1}"
                                                     id="labelFechaExpedicionCedula1"
                                                     for="campoFechaExpedicionCedula1"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.potencial_ben"
                                                     text="fecha expedici&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -690,6 +703,7 @@
                                                     binding="#{PotencialBen6.labelFechaVencimientoCedula1}"
                                                     id="labelFechaVencimientoCedula1"
                                                     for="campoFechaVencimientoCedula1"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.potencial_ben"
                                                     text="fecha vencimiento c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -724,6 +738,7 @@
                                                     binding="#{PotencialBen6.labelPrimerNombre1}"
                                                     id="labelPrimerNombre1"
                                                     for="campoPrimerNombre1"
+                                                    toolTip="BundleParametros.primer_nombre.potencial_ben"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -759,6 +774,7 @@
                                                     binding="#{PotencialBen6.labelSegundoNombre1}"
                                                     id="labelSegundoNombre1"
                                                     for="campoSegundoNombre1"
+                                                    toolTip="BundleParametros.segundo_nombre.potencial_ben"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -794,6 +810,7 @@
                                                     binding="#{PotencialBen6.labelPrimerApellido1}"
                                                     id="labelPrimerApellido1"
                                                     for="campoPrimerApellido1"
+                                                    toolTip="BundleParametros.primer_apellido.potencial_ben"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -829,6 +846,7 @@
                                                     binding="#{PotencialBen6.labelSegundoApellido1}"
                                                     id="labelSegundoApellido1"
                                                     for="campoSegundoApellido1"
+                                                    toolTip="BundleParametros.segundo_apellido.potencial_ben"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -864,6 +882,7 @@
                                                     binding="#{PotencialBen6.labelApellidoCasada1}"
                                                     id="labelApellidoCasada1"
                                                     for="campoApellidoCasada1"
+                                                    toolTip="BundleParametros.apellido_casada.potencial_ben"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -899,6 +918,7 @@
                                                     binding="#{PotencialBen6.labelApodo1}"
                                                     id="labelApodo1"
                                                     for="campoApodo1"
+                                                    toolTip="BundleParametros.apodo.potencial_ben"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -934,6 +954,7 @@
                                                     binding="#{PotencialBen6.labelFechaNacimiento1}"
                                                     id="labelFechaNacimiento1"
                                                     for="campoFechaNacimiento1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.potencial_ben"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -969,6 +990,7 @@
                                                     binding="#{PotencialBen6.labelEdad1}"
                                                     id="labelEdad1"
                                                     for="campoEdad1"
+                                                    toolTip="BundleParametros.edad.potencial_ben"
                                                     text="edad"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1003,6 +1025,7 @@
                                                     binding="#{PotencialBen6.labelEsParaguayoNatural1}"
                                                     id="labelEsParaguayoNatural1"
                                                     for="listaEsParaguayoNatural1"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.potencial_ben"
                                                     text="paraguayo natural"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1036,6 +1059,7 @@
                                                     binding="#{PotencialBen6.labelEsIndigena1}"
                                                     id="labelEsIndigena1"
                                                     for="listaEsIndigena1"
+                                                    toolTip="BundleParametros.es_indigena.potencial_ben"
                                                     text="indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1069,6 +1093,7 @@
                                                     binding="#{PotencialBen6.labelIdEtniaIndigena1}"
                                                     id="labelIdEtniaIndigena1"
                                                     for="campoIdEtniaIndigena1"
+                                                    toolTip="BundleParametros.id_etnia_indigena.potencial_ben"
                                                     text="etnia indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1133,6 +1158,7 @@
                                                     binding="#{PotencialBen6.labelNombreComunidadIndigena1}"
                                                     id="labelNombreComunidadIndigena1"
                                                     for="campoNombreComunidadIndigena1"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.potencial_ben"
                                                     text="nombre comunidad indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1168,6 +1194,7 @@
                                                     binding="#{PotencialBen6.labelIdDepartamento1}"
                                                     id="labelIdDepartamento1"
                                                     for="campoIdDepartamento1"
+                                                    toolTip="BundleParametros.id_departamento.potencial_ben"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1232,6 +1259,7 @@
                                                     binding="#{PotencialBen6.labelIdDistrito1}"
                                                     id="labelIdDistrito1"
                                                     for="campoIdDistrito1"
+                                                    toolTip="BundleParametros.id_distrito.potencial_ben"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1295,6 +1323,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoArea1}"
                                                     id="labelNumeroTipoArea1"
                                                     for="listaNumeroTipoArea1"
+                                                    toolTip="BundleParametros.numero_tipo_area.potencial_ben"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1328,6 +1357,7 @@
                                                     binding="#{PotencialBen6.labelIdBarrio1}"
                                                     id="labelIdBarrio1"
                                                     for="campoIdBarrio1"
+                                                    toolTip="BundleParametros.id_barrio.potencial_ben"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1392,6 +1422,7 @@
                                                     binding="#{PotencialBen6.labelManzana1}"
                                                     id="labelManzana1"
                                                     for="campoManzana1"
+                                                    toolTip="BundleParametros.manzana.potencial_ben"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1427,6 +1458,7 @@
                                                     binding="#{PotencialBen6.labelCompania1}"
                                                     id="labelCompania1"
                                                     for="campoCompania1"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
                                                     text="compa&#241;ia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1462,6 +1494,7 @@
                                                     binding="#{PotencialBen6.labelDireccion1}"
                                                     id="labelDireccion1"
                                                     for="campoDireccion1"
+                                                    toolTip="BundleParametros.direccion.potencial_ben"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1496,6 +1529,7 @@
                                                     binding="#{PotencialBen6.labelReferenciaDireccion1}"
                                                     id="labelReferenciaDireccion1"
                                                     for="campoReferenciaDireccion1"
+                                                    toolTip="BundleParametros.referencia_direccion.potencial_ben"
                                                     text="referencia direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1530,6 +1564,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConJubilacion1}"
                                                     id="labelEsPersonaConJubilacion1"
                                                     for="listaEsPersonaConJubilacion1"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.potencial_ben"
                                                     text="persona con jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1563,6 +1598,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConPension1}"
                                                     id="labelEsPersonaConPension1"
                                                     for="listaEsPersonaConPension1"
+                                                    toolTip="BundleParametros.es_persona_con_pension.potencial_ben"
                                                     text="persona con pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1596,6 +1632,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConSubsidio1}"
                                                     id="labelEsPersonaConSubsidio1"
                                                     for="listaEsPersonaConSubsidio1"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.potencial_ben"
                                                     text="persona con subsidio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1629,6 +1666,7 @@
                                                     binding="#{PotencialBen6.labelNombreResponsableHogar1}"
                                                     id="labelNombreResponsableHogar1"
                                                     for="campoNombreResponsableHogar1"
+                                                    toolTip="BundleParametros.nombre_responsable_hogar.potencial_ben"
                                                     text="nombre responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1664,6 +1702,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoRespHogar1}"
                                                     id="labelNumeroTelefonoRespHogar1"
                                                     for="campoNumeroTelefonoRespHogar1"
+                                                    toolTip="BundleParametros.numero_telefono_resp_hogar.potencial_ben"
                                                     text="n&#250;mero tel&#233;fono responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1699,6 +1738,7 @@
                                                     binding="#{PotencialBen6.labelNombreReferente1}"
                                                     id="labelNombreReferente1"
                                                     for="campoNombreReferente1"
+                                                    toolTip="BundleParametros.nombre_referente.potencial_ben"
                                                     text="nombre referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1734,6 +1774,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoReferente1}"
                                                     id="labelNumeroTelefonoReferente1"
                                                     for="campoNumeroTelefonoReferente1"
+                                                    toolTip="BundleParametros.numero_telefono_referente.potencial_ben"
                                                     text="n&#250;mero tel&#233;fono referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1768,6 +1809,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionCenso1}"
                                                     id="labelNumeroCondicionCenso1"
                                                     for="listaNumeroCondicionCenso1"
+                                                    toolTip="BundleParametros.numero_condicion_censo.potencial_ben"
                                                     text="condici&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1800,6 +1842,7 @@
                                                     binding="#{PotencialBen6.labelFechaValidacionCenso1}"
                                                     id="labelFechaValidacionCenso1"
                                                     for="campoFechaValidacionCenso1"
+                                                    toolTip="BundleParametros.fecha_validacion_censo.potencial_ben"
                                                     text="fecha validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1833,6 +1876,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen1}"
                                                     id="labelIdFuncionarioValidacionCen1"
                                                     for="campoIdFuncionarioValidacionCen1"
+                                                    toolTip="BundleParametros.id_funcionario_validacion_cen.potencial_ben"
                                                     text="funcionario validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1893,6 +1937,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaInvCenso1}"
                                                     id="labelNumeroCausaInvCenso1"
                                                     for="listaNumeroCausaInvCenso1"
+                                                    toolTip="BundleParametros.numero_causa_inv_censo.potencial_ben"
                                                     text="causa invalidaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1925,6 +1970,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaInvCenso1}"
                                                     id="labelOtraCausaInvCenso1"
                                                     for="campoOtraCausaInvCenso1"
+                                                    toolTip="BundleParametros.otra_causa_inv_censo.potencial_ben"
                                                     text="otra causa invalidaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1958,6 +2004,7 @@
                                                     binding="#{PotencialBen6.labelComentariosValidacionCenso1}"
                                                     id="labelComentariosValidacionCenso1"
                                                     for="campoComentariosValidacionCenso1"
+                                                    toolTip="BundleParametros.comentarios_validacion_censo.potencial_ben"
                                                     text="comentarios validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1990,6 +2037,7 @@
                                                     binding="#{PotencialBen6.labelIdFichaPersona1}"
                                                     id="labelIdFichaPersona1"
                                                     for="campoIdFichaPersona1"
+                                                    toolTip="BundleParametros.id_ficha_persona.potencial_ben"
                                                     text="ficha persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2050,6 +2098,7 @@
                                                     binding="#{PotencialBen6.labelIndiceCalidadVida1}"
                                                     id="labelIndiceCalidadVida1"
                                                     for="campoIndiceCalidadVida1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2083,6 +2132,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionReclCen1}"
                                                     id="labelNumeroCondicionReclCen1"
                                                     for="listaNumeroCondicionReclCen1"
+                                                    toolTip="BundleParametros.numero_condicion_recl_cen.potencial_ben"
                                                     text="condici&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2115,6 +2165,7 @@
                                                     binding="#{PotencialBen6.labelFechaReclamoCenso1}"
                                                     id="labelFechaReclamoCenso1"
                                                     for="campoFechaReclamoCenso1"
+                                                    toolTip="BundleParametros.fecha_reclamo_censo.potencial_ben"
                                                     text="fecha reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2148,6 +2199,7 @@
                                                     binding="#{PotencialBen6.labelComentariosReclamoCenso1}"
                                                     id="labelComentariosReclamoCenso1"
                                                     for="campoComentariosReclamoCenso1"
+                                                    toolTip="BundleParametros.comentarios_reclamo_censo.potencial_ben"
                                                     text="comentarios reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2180,6 +2232,7 @@
                                                     binding="#{PotencialBen6.labelFechaAprobacionReclamoCenso1}"
                                                     id="labelFechaAprobacionReclamoCenso1"
                                                     for="campoFechaAprobacionReclamoCenso1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reclamo_censo.potencial_ben"
                                                     text="fecha aprobaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2213,6 +2266,7 @@
                                                     binding="#{PotencialBen6.labelComentariosAprReclCen1}"
                                                     id="labelComentariosAprReclCen1"
                                                     for="campoComentariosAprReclCen1"
+                                                    toolTip="BundleParametros.comentarios_apr_recl_cen.potencial_ben"
                                                     text="comentarios aprobaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2245,6 +2299,7 @@
                                                     binding="#{PotencialBen6.labelFechaDenegacionReclamoCenso1}"
                                                     id="labelFechaDenegacionReclamoCenso1"
                                                     for="campoFechaDenegacionReclamoCenso1"
+                                                    toolTip="BundleParametros.fecha_denegacion_reclamo_censo.potencial_ben"
                                                     text="fecha denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2278,6 +2333,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaDenReclCen1}"
                                                     id="labelNumeroCausaDenReclCen1"
                                                     for="listaNumeroCausaDenReclCen1"
+                                                    toolTip="BundleParametros.numero_causa_den_recl_cen.potencial_ben"
                                                     text="causa denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2310,6 +2366,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaDenReclCen1}"
                                                     id="labelOtraCausaDenReclCen1"
                                                     for="campoOtraCausaDenReclCen1"
+                                                    toolTip="BundleParametros.otra_causa_den_recl_cen.potencial_ben"
                                                     text="otra causa denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2343,6 +2400,7 @@
                                                     binding="#{PotencialBen6.labelComentariosDenReclCen1}"
                                                     id="labelComentariosDenReclCen1"
                                                     for="campoComentariosDenReclCen1"
+                                                    toolTip="BundleParametros.comentarios_den_recl_cen.potencial_ben"
                                                     text="comentarios denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2375,6 +2433,7 @@
                                                     binding="#{PotencialBen6.labelFechaUltimaVisitaCenso1}"
                                                     id="labelFechaUltimaVisitaCenso1"
                                                     for="campoFechaUltimaVisitaCenso1"
+                                                    toolTip="BundleParametros.fecha_ultima_visita_censo.potencial_ben"
                                                     text="fecha ultima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2408,6 +2467,7 @@
                                                     binding="#{PotencialBen6.labelObservacionesUltVisitaCen1}"
                                                     id="labelObservacionesUltVisitaCen1"
                                                     for="campoObservacionesUltVisitaCen1"
+                                                    toolTip="BundleParametros.observaciones_ult_visita_cen.potencial_ben"
                                                     text="observaciones &#250;ltima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2440,6 +2500,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen1}"
                                                     id="labelIdFuncionarioUltVisitaCen1"
                                                     for="campoIdFuncionarioUltVisitaCen1"
+                                                    toolTip="BundleParametros.id_funcionario_ult_visita_cen.potencial_ben"
                                                     text="funcionario &#250;ltima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2522,6 +2583,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoRegPotBen1x1}"
                                                     id="labelNumeroTipoRegPotBen1x1"
                                                     for="listaNumeroTipoRegPotBen1x1"
+                                                    toolTip="BundleParametros.numero_tipo_reg_pot_ben.potencial_ben"
                                                     text="tipo registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2555,6 +2617,7 @@
                                                     binding="#{PotencialBen6.labelFechaRegistroPotBen1x1}"
                                                     id="labelFechaRegistroPotBen1x1"
                                                     for="campoFechaRegistroPotBen1x1"
+                                                    toolTip="BundleParametros.fecha_registro_pot_ben.potencial_ben"
                                                     text="fecha registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2588,6 +2651,7 @@
                                                     binding="#{PotencialBen6.labelIdUsuarioRegPotBen1x1}"
                                                     id="labelIdUsuarioRegPotBen1x1"
                                                     for="campoIdUsuarioRegPotBen1x1"
+                                                    toolTip="BundleParametros.id_usuario_reg_pot_ben.potencial_ben"
                                                     text="usuario registro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2650,6 +2714,7 @@
                                                     binding="#{PotencialBen6.labelEsPotencialBenInactivo1x1}"
                                                     id="labelEsPotencialBenInactivo1x1"
                                                     for="listaEsPotencialBenInactivo1x1"
+                                                    toolTip="BundleParametros.es_potencial_ben_inactivo.potencial_ben"
                                                     text="inactivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2681,6 +2746,7 @@
                                                     binding="#{PotencialBen6.labelEsPotencialBenMigrado1x1}"
                                                     id="labelEsPotencialBenMigrado1x1"
                                                     for="listaEsPotencialBenMigrado1x1"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"
                                                     text="migrado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2712,6 +2778,7 @@
                                                     binding="#{PotencialBen6.labelLote1x1}"
                                                     id="labelLote1x1"
                                                     for="campoLote1x1"
+                                                    toolTip="BundleParametros.lote.potencial_ben"
                                                     text="lote"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2761,6 +2828,7 @@
                                                     binding="#{PotencialBen6.labelIdPersona1x1}"
                                                     id="labelIdPersona1x1"
                                                     for="campoIdPersona1x1"
+                                                    toolTip="BundleParametros.id_persona.potencial_ben"
                                                     text="persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2823,6 +2891,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCedula1x1}"
                                                     id="labelNumeroCedula1x1"
                                                     for="campoNumeroCedula1x1"
+                                                    toolTip="BundleParametros.numero_cedula.potencial_ben"
                                                     text="n&#250;mero c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2855,6 +2924,7 @@
                                                     binding="#{PotencialBen6.labelLetraCedula1x1}"
                                                     id="labelLetraCedula1x1"
                                                     for="campoLetraCedula1x1"
+                                                    toolTip="BundleParametros.letra_cedula.potencial_ben"
                                                     text="letra c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2888,6 +2958,7 @@
                                                     binding="#{PotencialBen6.labelFechaExpedicionCedula1x1}"
                                                     id="labelFechaExpedicionCedula1x1"
                                                     for="campoFechaExpedicionCedula1x1"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.potencial_ben"
                                                     text="fecha expedici&#243;n c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2921,6 +2992,7 @@
                                                     binding="#{PotencialBen6.labelFechaVencimientoCedula1x1}"
                                                     id="labelFechaVencimientoCedula1x1"
                                                     for="campoFechaVencimientoCedula1x1"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.potencial_ben"
                                                     text="fecha vencimiento c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2971,6 +3043,7 @@
                                                     binding="#{PotencialBen6.labelPrimerNombre1x1}"
                                                     id="labelPrimerNombre1x1"
                                                     for="campoPrimerNombre1x1"
+                                                    toolTip="BundleParametros.primer_nombre.potencial_ben"
                                                     text="primer nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3004,6 +3077,7 @@
                                                     binding="#{PotencialBen6.labelSegundoNombre1x1}"
                                                     id="labelSegundoNombre1x1"
                                                     for="campoSegundoNombre1x1"
+                                                    toolTip="BundleParametros.segundo_nombre.potencial_ben"
                                                     text="segundo nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3037,6 +3111,7 @@
                                                     binding="#{PotencialBen6.labelPrimerApellido1x1}"
                                                     id="labelPrimerApellido1x1"
                                                     for="campoPrimerApellido1x1"
+                                                    toolTip="BundleParametros.primer_apellido.potencial_ben"
                                                     text="primer apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3070,6 +3145,7 @@
                                                     binding="#{PotencialBen6.labelSegundoApellido1x1}"
                                                     id="labelSegundoApellido1x1"
                                                     for="campoSegundoApellido1x1"
+                                                    toolTip="BundleParametros.segundo_apellido.potencial_ben"
                                                     text="segundo apellido"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3103,6 +3179,7 @@
                                                     binding="#{PotencialBen6.labelApellidoCasada1x1}"
                                                     id="labelApellidoCasada1x1"
                                                     for="campoApellidoCasada1x1"
+                                                    toolTip="BundleParametros.apellido_casada.potencial_ben"
                                                     text="apellido casada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3136,6 +3213,7 @@
                                                     binding="#{PotencialBen6.labelApodo1x1}"
                                                     id="labelApodo1x1"
                                                     for="campoApodo1x1"
+                                                    toolTip="BundleParametros.apodo.potencial_ben"
                                                     text="apodo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3169,6 +3247,7 @@
                                                     binding="#{PotencialBen6.labelFechaNacimiento1x1}"
                                                     id="labelFechaNacimiento1x1"
                                                     for="campoFechaNacimiento1x1"
+                                                    toolTip="BundleParametros.fecha_nacimiento.potencial_ben"
                                                     text="fecha nacimiento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3202,6 +3281,7 @@
                                                     binding="#{PotencialBen6.labelEdad1x1}"
                                                     id="labelEdad1x1"
                                                     for="campoEdad1x1"
+                                                    toolTip="BundleParametros.edad.potencial_ben"
                                                     text="edad"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3251,6 +3331,7 @@
                                                     binding="#{PotencialBen6.labelEsParaguayoNatural1x1}"
                                                     id="labelEsParaguayoNatural1x1"
                                                     for="listaEsParaguayoNatural1x1"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.potencial_ben"
                                                     text="paraguayo natural"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3282,6 +3363,7 @@
                                                     binding="#{PotencialBen6.labelEsIndigena1x1}"
                                                     id="labelEsIndigena1x1"
                                                     for="listaEsIndigena1x1"
+                                                    toolTip="BundleParametros.es_indigena.potencial_ben"
                                                     text="indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3313,6 +3395,7 @@
                                                     binding="#{PotencialBen6.labelIdEtniaIndigena1x1}"
                                                     id="labelIdEtniaIndigena1x1"
                                                     for="campoIdEtniaIndigena1x1"
+                                                    toolTip="BundleParametros.id_etnia_indigena.potencial_ben"
                                                     text="etnia indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3375,6 +3458,7 @@
                                                     binding="#{PotencialBen6.labelNombreComunidadIndigena1x1}"
                                                     id="labelNombreComunidadIndigena1x1"
                                                     for="campoNombreComunidadIndigena1x1"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.potencial_ben"
                                                     text="nombre comunidad indigena"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3425,6 +3509,7 @@
                                                     binding="#{PotencialBen6.labelIdDepartamento1x1}"
                                                     id="labelIdDepartamento1x1"
                                                     for="campoIdDepartamento1x1"
+                                                    toolTip="BundleParametros.id_departamento.potencial_ben"
                                                     text="departamento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3487,6 +3572,7 @@
                                                     binding="#{PotencialBen6.labelIdDistrito1x1}"
                                                     id="labelIdDistrito1x1"
                                                     for="campoIdDistrito1x1"
+                                                    toolTip="BundleParametros.id_distrito.potencial_ben"
                                                     text="distrito"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3549,6 +3635,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTipoArea1x1}"
                                                     id="labelNumeroTipoArea1x1"
                                                     for="listaNumeroTipoArea1x1"
+                                                    toolTip="BundleParametros.numero_tipo_area.potencial_ben"
                                                     text="tipo area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3581,6 +3668,7 @@
                                                     binding="#{PotencialBen6.labelIdBarrio1x1}"
                                                     id="labelIdBarrio1x1"
                                                     for="campoIdBarrio1x1"
+                                                    toolTip="BundleParametros.id_barrio.potencial_ben"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3643,6 +3731,7 @@
                                                     binding="#{PotencialBen6.labelManzana1x1}"
                                                     id="labelManzana1x1"
                                                     for="campoManzana1x1"
+                                                    toolTip="BundleParametros.manzana.potencial_ben"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3676,6 +3765,7 @@
                                                     binding="#{PotencialBen6.labelCompania1x1}"
                                                     id="labelCompania1x1"
                                                     for="campoCompania1x1"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
                                                     text="compa&#241;ia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3709,6 +3799,7 @@
                                                     binding="#{PotencialBen6.labelDireccion1x1}"
                                                     id="labelDireccion1x1"
                                                     for="campoDireccion1x1"
+                                                    toolTip="BundleParametros.direccion.potencial_ben"
                                                     text="direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3741,6 +3832,7 @@
                                                     binding="#{PotencialBen6.labelReferenciaDireccion1x1}"
                                                     id="labelReferenciaDireccion1x1"
                                                     for="campoReferenciaDireccion1x1"
+                                                    toolTip="BundleParametros.referencia_direccion.potencial_ben"
                                                     text="referencia direcci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3790,6 +3882,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConJubilacion1x1}"
                                                     id="labelEsPersonaConJubilacion1x1"
                                                     for="listaEsPersonaConJubilacion1x1"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.potencial_ben"
                                                     text="persona con jubilaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3821,6 +3914,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConPension1x1}"
                                                     id="labelEsPersonaConPension1x1"
                                                     for="listaEsPersonaConPension1x1"
+                                                    toolTip="BundleParametros.es_persona_con_pension.potencial_ben"
                                                     text="persona con pensi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3852,6 +3946,7 @@
                                                     binding="#{PotencialBen6.labelEsPersonaConSubsidio1x1}"
                                                     id="labelEsPersonaConSubsidio1x1"
                                                     for="listaEsPersonaConSubsidio1x1"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.potencial_ben"
                                                     text="persona con subsidio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3900,6 +3995,7 @@
                                                     binding="#{PotencialBen6.labelNombreResponsableHogar1x1}"
                                                     id="labelNombreResponsableHogar1x1"
                                                     for="campoNombreResponsableHogar1x1"
+                                                    toolTip="BundleParametros.nombre_responsable_hogar.potencial_ben"
                                                     text="nombre responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3933,6 +4029,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoRespHogar1x1}"
                                                     id="labelNumeroTelefonoRespHogar1x1"
                                                     for="campoNumeroTelefonoRespHogar1x1"
+                                                    toolTip="BundleParametros.numero_telefono_resp_hogar.potencial_ben"
                                                     text="n&#250;mero tel&#233;fono responsable hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -3983,6 +4080,7 @@
                                                     binding="#{PotencialBen6.labelNombreReferente1x1}"
                                                     id="labelNombreReferente1x1"
                                                     for="campoNombreReferente1x1"
+                                                    toolTip="BundleParametros.nombre_referente.potencial_ben"
                                                     text="nombre referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4016,6 +4114,7 @@
                                                     binding="#{PotencialBen6.labelNumeroTelefonoReferente1x1}"
                                                     id="labelNumeroTelefonoReferente1x1"
                                                     for="campoNumeroTelefonoReferente1x1"
+                                                    toolTip="BundleParametros.numero_telefono_referente.potencial_ben"
                                                     text="n&#250;mero tel&#233;fono referente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4066,6 +4165,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionCenso1x1}"
                                                     id="labelNumeroCondicionCenso1x1"
                                                     for="listaNumeroCondicionCenso1x1"
+                                                    toolTip="BundleParametros.numero_condicion_censo.potencial_ben"
                                                     text="condici&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4098,6 +4198,7 @@
                                                     binding="#{PotencialBen6.labelFechaValidacionCenso1x1}"
                                                     id="labelFechaValidacionCenso1x1"
                                                     for="campoFechaValidacionCenso1x1"
+                                                    toolTip="BundleParametros.fecha_validacion_censo.potencial_ben"
                                                     text="fecha validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4131,6 +4232,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioValidacionCen1x1}"
                                                     id="labelIdFuncionarioValidacionCen1x1"
                                                     for="campoIdFuncionarioValidacionCen1x1"
+                                                    toolTip="BundleParametros.id_funcionario_validacion_cen.potencial_ben"
                                                     text="funcionario validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4193,6 +4295,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaInvCenso1x1}"
                                                     id="labelNumeroCausaInvCenso1x1"
                                                     for="listaNumeroCausaInvCenso1x1"
+                                                    toolTip="BundleParametros.numero_causa_inv_censo.potencial_ben"
                                                     text="causa invalidaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4225,6 +4328,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaInvCenso1x1}"
                                                     id="labelOtraCausaInvCenso1x1"
                                                     for="campoOtraCausaInvCenso1x1"
+                                                    toolTip="BundleParametros.otra_causa_inv_censo.potencial_ben"
                                                     text="otra causa invalidaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4258,6 +4362,7 @@
                                                     binding="#{PotencialBen6.labelComentariosValidacionCenso1x1}"
                                                     id="labelComentariosValidacionCenso1x1"
                                                     for="campoComentariosValidacionCenso1x1"
+                                                    toolTip="BundleParametros.comentarios_validacion_censo.potencial_ben"
                                                     text="comentarios validaci&#243;n censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4290,6 +4395,7 @@
                                                     binding="#{PotencialBen6.labelIdFichaPersona1x1}"
                                                     id="labelIdFichaPersona1x1"
                                                     for="campoIdFichaPersona1x1"
+                                                    toolTip="BundleParametros.id_ficha_persona.potencial_ben"
                                                     text="ficha persona"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4352,6 +4458,7 @@
                                                     binding="#{PotencialBen6.labelIndiceCalidadVida1x1}"
                                                     id="labelIndiceCalidadVida1x1"
                                                     for="campoIndiceCalidadVida1x1"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
                                                     text="indice calidad vida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4402,6 +4509,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCondicionReclCen1x1}"
                                                     id="labelNumeroCondicionReclCen1x1"
                                                     for="listaNumeroCondicionReclCen1x1"
+                                                    toolTip="BundleParametros.numero_condicion_recl_cen.potencial_ben"
                                                     text="condici&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4434,6 +4542,7 @@
                                                     binding="#{PotencialBen6.labelFechaReclamoCenso1x1}"
                                                     id="labelFechaReclamoCenso1x1"
                                                     for="campoFechaReclamoCenso1x1"
+                                                    toolTip="BundleParametros.fecha_reclamo_censo.potencial_ben"
                                                     text="fecha reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4467,6 +4576,7 @@
                                                     binding="#{PotencialBen6.labelComentariosReclamoCenso1x1}"
                                                     id="labelComentariosReclamoCenso1x1"
                                                     for="campoComentariosReclamoCenso1x1"
+                                                    toolTip="BundleParametros.comentarios_reclamo_censo.potencial_ben"
                                                     text="comentarios reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4499,6 +4609,7 @@
                                                     binding="#{PotencialBen6.labelFechaAprobacionReclamoCenso1x1}"
                                                     id="labelFechaAprobacionReclamoCenso1x1"
                                                     for="campoFechaAprobacionReclamoCenso1x1"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reclamo_censo.potencial_ben"
                                                     text="fecha aprobaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4532,6 +4643,7 @@
                                                     binding="#{PotencialBen6.labelComentariosAprReclCen1x1}"
                                                     id="labelComentariosAprReclCen1x1"
                                                     for="campoComentariosAprReclCen1x1"
+                                                    toolTip="BundleParametros.comentarios_apr_recl_cen.potencial_ben"
                                                     text="comentarios aprobaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4564,6 +4676,7 @@
                                                     binding="#{PotencialBen6.labelFechaDenegacionReclamoCenso1x1}"
                                                     id="labelFechaDenegacionReclamoCenso1x1"
                                                     for="campoFechaDenegacionReclamoCenso1x1"
+                                                    toolTip="BundleParametros.fecha_denegacion_reclamo_censo.potencial_ben"
                                                     text="fecha denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4597,6 +4710,7 @@
                                                     binding="#{PotencialBen6.labelNumeroCausaDenReclCen1x1}"
                                                     id="labelNumeroCausaDenReclCen1x1"
                                                     for="listaNumeroCausaDenReclCen1x1"
+                                                    toolTip="BundleParametros.numero_causa_den_recl_cen.potencial_ben"
                                                     text="causa denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4629,6 +4743,7 @@
                                                     binding="#{PotencialBen6.labelOtraCausaDenReclCen1x1}"
                                                     id="labelOtraCausaDenReclCen1x1"
                                                     for="campoOtraCausaDenReclCen1x1"
+                                                    toolTip="BundleParametros.otra_causa_den_recl_cen.potencial_ben"
                                                     text="otra causa denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4662,6 +4777,7 @@
                                                     binding="#{PotencialBen6.labelComentariosDenReclCen1x1}"
                                                     id="labelComentariosDenReclCen1x1"
                                                     for="campoComentariosDenReclCen1x1"
+                                                    toolTip="BundleParametros.comentarios_den_recl_cen.potencial_ben"
                                                     text="comentarios denegaci&#243;n reclamo censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4711,6 +4827,7 @@
                                                     binding="#{PotencialBen6.labelFechaUltimaVisitaCenso1x1}"
                                                     id="labelFechaUltimaVisitaCenso1x1"
                                                     for="campoFechaUltimaVisitaCenso1x1"
+                                                    toolTip="BundleParametros.fecha_ultima_visita_censo.potencial_ben"
                                                     text="fecha ultima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4744,6 +4861,7 @@
                                                     binding="#{PotencialBen6.labelObservacionesUltVisitaCen1x1}"
                                                     id="labelObservacionesUltVisitaCen1x1"
                                                     for="campoObservacionesUltVisitaCen1x1"
+                                                    toolTip="BundleParametros.observaciones_ult_visita_cen.potencial_ben"
                                                     text="observaciones &#250;ltima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -4776,6 +4894,7 @@
                                                     binding="#{PotencialBen6.labelIdFuncionarioUltVisitaCen1x1}"
                                                     id="labelIdFuncionarioUltVisitaCen1x1"
                                                     for="campoIdFuncionarioUltVisitaCen1x1"
+                                                    toolTip="BundleParametros.id_funcionario_ult_visita_cen.potencial_ben"
                                                     text="funcionario &#250;ltima visita censo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

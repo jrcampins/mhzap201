@@ -96,6 +96,7 @@ import javax.faces.validator.ValidatorException;
 import javax.ejb.EJB;
 import com.egt.ejb.business.jms.BusinessProcessMessengerLocal;
 import com.egt.ejb.business.process.FichaPersonaBusinessProcessLocal;
+import com.egt.ejb.core.reporter.ReporterBrokerLocal;
 
 public class FichaPersona5 extends AbstractPageBean
         implements PaginaActualizacionFichaPersona, PaginaActualizacionConAccionMultiple, PaginaActualizacionConEdicionMultiple, PaginaConsultaConFiltro, PaginaConsultaConTabla {
@@ -206,6 +207,8 @@ public class FichaPersona5 extends AbstractPageBean
         converterTotalIngresoMensual1.setMaxFractionDigits(3);
         validatorTotalIngresoMensual1.setMinimum(0.0);
         validatorTotalIngresoMensual1.setMaximum(1.0E13);
+        converterFechaImportacion1.setPattern("dd/MM/yyyy");
+        converterFechaImportacion1.setType("date");
         fichaPersonaDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.fichaPersonaRowSet}"));
         fichaHogarReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.fichaHogarReferenceRowSet}"));
         ubicacionReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.ubicacionReferenceRowSet}"));
@@ -6143,6 +6146,147 @@ public class FichaPersona5 extends AbstractPageBean
         this.campoIdPotencialBen1Hiper1 = component;
     }
 
+    private TableColumn tableColumnEsFichaPersonaImportada1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnEsFichaPersonaImportada1() {
+        return tableColumnEsFichaPersonaImportada1;
+    }
+
+    public void setTableColumnEsFichaPersonaImportada1(TableColumn component) {
+        this.tableColumnEsFichaPersonaImportada1 = component;
+    }
+
+    private Label labelEsFichaPersonaImportada1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEsFichaPersonaImportada1() {
+        return labelEsFichaPersonaImportada1;
+    }
+
+    public void setLabelEsFichaPersonaImportada1(Label l) {
+        this.labelEsFichaPersonaImportada1 = l;
+    }
+
+    private DropDown listaEsFichaPersonaImportada1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    @Override
+    public DropDown getListaEsFichaPersonaImportada1() {
+        return listaEsFichaPersonaImportada1;
+    }
+
+    public void setListaEsFichaPersonaImportada1(DropDown component) {
+        this.listaEsFichaPersonaImportada1 = component;
+    }
+
+    private DropDown listaEsFichaPersonaImportada1x1 = new com.egt.core.jsf.component.ListaDesplegable();
+
+    public DropDown getListaEsFichaPersonaImportada1x1() {
+        return listaEsFichaPersonaImportada1x1;
+    }
+
+    public void setListaEsFichaPersonaImportada1x1(DropDown component) {
+        this.listaEsFichaPersonaImportada1x1 = component;
+    }
+
+    private StaticText listaEsFichaPersonaImportada1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsFichaPersonaImportada1Texto1() {
+        return listaEsFichaPersonaImportada1Texto1;
+    }
+
+    public void setListaEsFichaPersonaImportada1Texto1(StaticText component) {
+        this.listaEsFichaPersonaImportada1Texto1 = component;
+    }
+
+    private StaticText listaEsFichaPersonaImportada1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getListaEsFichaPersonaImportada1x1Texto1() {
+        return listaEsFichaPersonaImportada1x1Texto1;
+    }
+
+    public void setListaEsFichaPersonaImportada1x1Texto1(StaticText component) {
+        this.listaEsFichaPersonaImportada1x1Texto1 = component;
+    }
+
+    private IntegerConverter converterEsFichaPersonaImportada1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEsFichaPersonaImportada1() {
+        return converterEsFichaPersonaImportada1;
+    }
+  
+    public void setConverterEsFichaPersonaImportada1(IntegerConverter converter) {
+        this.converterEsFichaPersonaImportada1 = converter;
+    }
+  
+    private TableColumn tableColumnFechaImportacion1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnFechaImportacion1() {
+        return tableColumnFechaImportacion1;
+    }
+
+    public void setTableColumnFechaImportacion1(TableColumn component) {
+        this.tableColumnFechaImportacion1 = component;
+    }
+
+    private Label labelFechaImportacion1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelFechaImportacion1() {
+        return labelFechaImportacion1;
+    }
+
+    public void setLabelFechaImportacion1(Label l) {
+        this.labelFechaImportacion1 = l;
+    }
+
+    private TextField campoFechaImportacion1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaImportacion1() {
+        return campoFechaImportacion1;
+    }
+
+    public void setCampoFechaImportacion1(TextField component) {
+        this.campoFechaImportacion1 = component;
+    }
+
+    private TextField campoFechaImportacion1x1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoFechaImportacion1x1() {
+        return campoFechaImportacion1x1;
+    }
+
+    public void setCampoFechaImportacion1x1(TextField component) {
+        this.campoFechaImportacion1x1 = component;
+    }
+
+    private StaticText campoFechaImportacion1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaImportacion1Texto1() {
+        return campoFechaImportacion1Texto1;
+    }
+
+    public void setCampoFechaImportacion1Texto1(StaticText component) {
+        this.campoFechaImportacion1Texto1 = component;
+    }
+
+    private StaticText campoFechaImportacion1x1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoFechaImportacion1x1Texto1() {
+        return campoFechaImportacion1x1Texto1;
+    }
+
+    public void setCampoFechaImportacion1x1Texto1(StaticText component) {
+        this.campoFechaImportacion1x1Texto1 = component;
+    }
+
+    private SqlTimestampConverter converterFechaImportacion1 = new SqlTimestampConverter();
+  
+    public SqlTimestampConverter getConverterFechaImportacion1() {
+        return converterFechaImportacion1;
+    }
+  
+    public void setConverterFechaImportacion1(SqlTimestampConverter converter) {
+        this.converterFechaImportacion1 = converter;
+    }
+  
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getEtiquetaTextoFilasPorPagina1() {
@@ -6565,6 +6709,11 @@ public class FichaPersona5 extends AbstractPageBean
         return this.getCampoFechaNacimiento1();
     }
 
+    @Override
+    public TextField getTextFieldCampoFechaImportacion1() {
+        return this.getCampoFechaImportacion1();
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="propiedad gestor de pagina de actualizacion con tabla">
@@ -6943,6 +7092,14 @@ public class FichaPersona5 extends AbstractPageBean
     @Override
     public Object getMessenger() {
         return messenger;
+    }
+
+    @EJB
+    private ReporterBrokerLocal reporter;
+
+    @Override
+    public Object getReporter() {
+        return reporter;
     }
 
     String footnote = "a partir de aqui coloque el codigo especifico de la pagina";

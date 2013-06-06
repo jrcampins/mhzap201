@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnIdLogImpPot1}"
+                                                    toolTip="BundleParametros.id_log_imp_pot.log_imp_pot"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogImpPot1" rendered="false"
                                                     sort="id_log_imp_pot">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnDepartamento1}"
+                                                    toolTip="BundleParametros.departamento.log_imp_pot"
                                                     headerText="departamento"
                                                     id="tableColumnDepartamento1" rendered="false"
                                                     sort="departamento">
@@ -235,6 +237,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnDistrito1}"
+                                                    toolTip="BundleParametros.distrito.log_imp_pot"
                                                     headerText="distrito"
                                                     id="tableColumnDistrito1" rendered="false"
                                                     sort="distrito">
@@ -261,6 +264,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnNombresApellidos1}"
+                                                    toolTip="BundleParametros.nombres_apellidos.log_imp_pot"
                                                     headerText="nombres apellidos"
                                                     id="tableColumnNombresApellidos1"
                                                     sort="nombres_apellidos">
@@ -287,6 +291,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnApodo1}"
+                                                    toolTip="BundleParametros.apodo.log_imp_pot"
                                                     headerText="apodo"
                                                     id="tableColumnApodo1" rendered="false"
                                                     sort="apodo">
@@ -313,6 +318,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnEdadALaFecha1}"
+                                                    toolTip="BundleParametros.edad_a_la_fecha.log_imp_pot"
                                                     headerText="edad a la fecha"
                                                     id="tableColumnEdadALaFecha1" rendered="false"
                                                     sort="edad_a_la_fecha">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnNacimiento1}"
+                                                    toolTip="BundleParametros.nacimiento.log_imp_pot"
                                                     headerText="nacimiento"
                                                     id="tableColumnNacimiento1" rendered="false"
                                                     sort="nacimiento">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnCedula1}"
+                                                    toolTip="BundleParametros.cedula.log_imp_pot"
                                                     headerText="c&#233;dula"
                                                     id="tableColumnCedula1"
                                                     sort="cedula">
@@ -391,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnTelefono1}"
+                                                    toolTip="BundleParametros.telefono.log_imp_pot"
                                                     headerText="tel&#233;fono"
                                                     id="tableColumnTelefono1" rendered="false"
                                                     sort="telefono">
@@ -417,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.log_imp_pot"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -443,6 +453,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnReferencia1}"
+                                                    toolTip="BundleParametros.referencia.log_imp_pot"
                                                     headerText="referencia"
                                                     id="tableColumnReferencia1" rendered="false"
                                                     sort="referencia">
@@ -469,6 +480,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnBarrio1}"
+                                                    toolTip="BundleParametros.barrio.log_imp_pot"
                                                     headerText="barrio"
                                                     id="tableColumnBarrio1" rendered="false"
                                                     sort="barrio">
@@ -495,6 +507,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnNombreReferente1}"
+                                                    toolTip="BundleParametros.nombre_referente.log_imp_pot"
                                                     headerText="nombre referente"
                                                     id="tableColumnNombreReferente1" rendered="false"
                                                     sort="nombre_referente">
@@ -521,6 +534,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnTelefonoReferente1}"
+                                                    toolTip="BundleParametros.telefono_referente.log_imp_pot"
                                                     headerText="tel&#233;fono referente"
                                                     id="tableColumnTelefonoReferente1" rendered="false"
                                                     sort="telefono_referente">
@@ -547,6 +561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnEsImportado1}"
+                                                    toolTip="BundleParametros.es_importado.log_imp_pot"
                                                     headerText="importado"
                                                     id="tableColumnEsImportado1"
                                                     sort="es_importado">
@@ -572,6 +587,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_imp_pot"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -598,6 +614,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_pot"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
@@ -624,6 +641,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnNombreArchivo1}"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_pot"
                                                     headerText="nombre archivo"
                                                     id="tableColumnNombreArchivo1" rendered="false"
                                                     sort="nombre_archivo">
@@ -665,6 +683,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpPot5.tableColumnCodigoArchivo1}"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_pot"
                                                     headerText="c&#243;digo archivo"
                                                     id="tableColumnCodigoArchivo1" rendered="false"
                                                     sort="codigo_archivo">

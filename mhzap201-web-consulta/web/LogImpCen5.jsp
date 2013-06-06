@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnIdLogImpCen1}"
+                                                    toolTip="BundleParametros.id_log_imp_cen.log_imp_cen"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogImpCen1" rendered="false"
                                                     sort="id_log_imp_cen">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnOrden1}"
+                                                    toolTip="BundleParametros.orden.log_imp_cen"
                                                     headerText="orden"
                                                     id="tableColumnOrden1" rendered="false"
                                                     sort="orden">
@@ -235,6 +237,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnBarrio1}"
+                                                    toolTip="BundleParametros.barrio.log_imp_cen"
                                                     headerText="barrio"
                                                     id="tableColumnBarrio1" rendered="false"
                                                     sort="barrio">
@@ -261,6 +264,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.log_imp_cen"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -287,6 +291,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnTelefono1}"
+                                                    toolTip="BundleParametros.telefono.log_imp_cen"
                                                     headerText="tel&#233;fono"
                                                     id="tableColumnTelefono1" rendered="false"
                                                     sort="telefono">
@@ -313,6 +318,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnPrimerNombre1}"
+                                                    toolTip="BundleParametros.primer_nombre.log_imp_cen"
                                                     headerText="primer nombre"
                                                     id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnSegundoNombre1}"
+                                                    toolTip="BundleParametros.segundo_nombre.log_imp_cen"
                                                     headerText="segundo nombre"
                                                     id="tableColumnSegundoNombre1" rendered="false"
                                                     sort="segundo_nombre">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnPrimerApellido1}"
+                                                    toolTip="BundleParametros.primer_apellido.log_imp_cen"
                                                     headerText="primer apellido"
                                                     id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
@@ -391,6 +399,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnSegundoApellido1}"
+                                                    toolTip="BundleParametros.segundo_apellido.log_imp_cen"
                                                     headerText="segundo apellido"
                                                     id="tableColumnSegundoApellido1" rendered="false"
                                                     sort="segundo_apellido">
@@ -417,6 +426,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnEdadALaFecha1}"
+                                                    toolTip="BundleParametros.edad_a_la_fecha.log_imp_cen"
                                                     headerText="edad a la fecha"
                                                     id="tableColumnEdadALaFecha1" rendered="false"
                                                     sort="edad_a_la_fecha">
@@ -443,6 +453,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnSexo1}"
+                                                    toolTip="BundleParametros.sexo.log_imp_cen"
                                                     headerText="sexo"
                                                     id="tableColumnSexo1" rendered="false"
                                                     sort="sexo">
@@ -469,6 +480,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnParentesco1}"
+                                                    toolTip="BundleParametros.parentesco.log_imp_cen"
                                                     headerText="parentesco"
                                                     id="tableColumnParentesco1" rendered="false"
                                                     sort="parentesco">
@@ -495,6 +507,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnCedula1}"
+                                                    toolTip="BundleParametros.cedula.log_imp_cen"
                                                     headerText="c&#233;dula"
                                                     id="tableColumnCedula1"
                                                     sort="cedula">
@@ -521,6 +534,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnNombreJefeHogar1}"
+                                                    toolTip="BundleParametros.nombre_jefe_hogar.log_imp_cen"
                                                     headerText="nombre jefe hogar"
                                                     id="tableColumnNombreJefeHogar1" rendered="false"
                                                     sort="nombre_jefe_hogar">
@@ -547,6 +561,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnCedulaJefeHogar1}"
+                                                    toolTip="BundleParametros.cedula_jefe_hogar.log_imp_cen"
                                                     headerText="c&#233;dula jefe hogar"
                                                     id="tableColumnCedulaJefeHogar1" rendered="false"
                                                     sort="cedula_jefe_hogar">
@@ -573,6 +588,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnIcv1}"
+                                                    toolTip="BundleParametros.icv.log_imp_cen"
                                                     headerText="icv"
                                                     id="tableColumnIcv1" rendered="false"
                                                     sort="icv">
@@ -599,6 +615,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnValidado1}"
+                                                    toolTip="BundleParametros.validado.log_imp_cen"
                                                     headerText="validado"
                                                     id="tableColumnValidado1" rendered="false"
                                                     sort="validado">
@@ -625,6 +642,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnObservaciones1}"
+                                                    toolTip="BundleParametros.observaciones.log_imp_cen"
                                                     headerText="observaciones"
                                                     id="tableColumnObservaciones1" rendered="false"
                                                     sort="observaciones">
@@ -651,6 +669,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnFuncionario1}"
+                                                    toolTip="BundleParametros.funcionario.log_imp_cen"
                                                     headerText="funcionario"
                                                     id="tableColumnFuncionario1" rendered="false"
                                                     sort="funcionario">
@@ -677,6 +696,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnCausaInvalidacion1}"
+                                                    toolTip="BundleParametros.causa_invalidacion.log_imp_cen"
                                                     headerText="causa invalidaci&#243;n"
                                                     id="tableColumnCausaInvalidacion1" rendered="false"
                                                     sort="causa_invalidacion">
@@ -703,6 +723,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnEsImportado1}"
+                                                    toolTip="BundleParametros.es_importado.log_imp_cen"
                                                     headerText="importado"
                                                     id="tableColumnEsImportado1"
                                                     sort="es_importado">
@@ -728,6 +749,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_imp_cen"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -754,6 +776,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_cen"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">
@@ -780,6 +803,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnNombreArchivo1}"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_cen"
                                                     headerText="nombre archivo"
                                                     id="tableColumnNombreArchivo1" rendered="false"
                                                     sort="nombre_archivo">
@@ -821,6 +845,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogImpCen5.tableColumnCodigoArchivo1}"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_cen"
                                                     headerText="c&#243;digo archivo"
                                                     id="tableColumnCodigoArchivo1" rendered="false"
                                                     sort="codigo_archivo">

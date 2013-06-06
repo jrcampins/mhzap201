@@ -180,6 +180,10 @@ public interface PaginaActualizacionFichaPersona extends PaginaActualizacion {
 
     TextField getCampoIdPotencialBen1();
 
+    DropDown getListaEsFichaPersonaImportada1();
+
+    TextField getTextFieldCampoFechaImportacion1();
+
     Button getBotonAplicar1();
 
     FichaPersonaCachedRowSetDataProvider2 getFichaPersonaDataProvider();
@@ -193,4 +197,6 @@ public interface PaginaActualizacionFichaPersona extends PaginaActualizacion {
     Object getFichaPersonaBusinessProcess();
 
     Object getMessenger();
+
+    Object getReporter();
 }

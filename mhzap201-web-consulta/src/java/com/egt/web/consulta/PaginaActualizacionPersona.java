@@ -81,17 +81,15 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getTextFieldCampoFechaCertificadoVida1();
 
-    DropDown getListaEsCertificadoVidaAnulado1();
+    TextField getCampoDiasVigenciaCertificadoVida1();
 
-    TextArea getCampoComentariosAnulCerVida1();
+    DropDown getListaEsCertificadoVidaAnulado1();
 
     TextField getCampoCertificadoDefuncion1();
 
     TextField getTextFieldCampoFechaCertificadoDefuncion1();
 
     DropDown getListaEsCerDefuncionAnulado1();
-
-    TextArea getCampoComentariosAnulCerDefuncion1();
 
     DropDown getListaEsPersonaConEmpleo1();
 
@@ -159,6 +157,10 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getCampoOtraCausaRevPension1();
 
+    TextField getCampoNumeroResolucionRevPen1();
+
+    TextField getTextFieldCampoFechaResolucionRevPen1();
+
     TextArea getCampoComentariosRevocacionPension1();
 
     DropDown getListaNumeroCondicionRecoPen1();
@@ -211,7 +213,11 @@ public interface PaginaActualizacionPersona extends PaginaActualizacion {
 
     TextField getCampoCodigoSime1();
 
+    TextField getCampoCodigoSimeRecoPen1();
+
     TextArea getCampoComentariosEntregaDocumentos1();
+
+    TextArea getCampoComentariosInsercionJupe1();
 
     Button getBotonAplicar1();
 

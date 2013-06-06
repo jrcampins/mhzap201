@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnIdEtniaIndigena1}"
+                                                    toolTip="BundleParametros.id_etnia_indigena.etnia_indigena"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdEtniaIndigena1" rendered="false"
                                                     sort="id_etnia_indigena">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnCodigoEtniaIndigena1}"
+                                                    toolTip="BundleParametros.codigo_etnia_indigena.etnia_indigena"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoEtniaIndigena1"
                                                     sort="codigo_etnia_indigena">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnNombreEtniaIndigena1}"
+                                                    toolTip="BundleParametros.nombre_etnia_indigena.etnia_indigena"
                                                     headerText="nombre"
                                                     id="tableColumnNombreEtniaIndigena1"
                                                     sort="nombre_etnia_indigena">
@@ -263,6 +266,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{EtniaIndigena5.tableColumnDescripcionEtniaIndigena1}"
+                                                    toolTip="BundleParametros.descripcion_etnia_indigena.etnia_indigena"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionEtniaIndigena1" rendered="false"
                                                     sort="descripcion_etnia_indigena">

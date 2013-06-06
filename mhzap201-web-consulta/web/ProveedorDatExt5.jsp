@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ProveedorDatExt5.tableColumnIdProveedorDatExt1}"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.proveedor_dat_ext"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdProveedorDatExt1" rendered="false"
                                                     sort="id_proveedor_dat_ext">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ProveedorDatExt5.tableColumnCodigoProveedorDatExt1}"
+                                                    toolTip="BundleParametros.codigo_proveedor_dat_ext.proveedor_dat_ext"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoProveedorDatExt1"
                                                     sort="codigo_proveedor_dat_ext">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ProveedorDatExt5.tableColumnNombreProveedorDatExt1}"
+                                                    toolTip="BundleParametros.nombre_proveedor_dat_ext.proveedor_dat_ext"
                                                     headerText="nombre"
                                                     id="tableColumnNombreProveedorDatExt1"
                                                     sort="nombre_proveedor_dat_ext">

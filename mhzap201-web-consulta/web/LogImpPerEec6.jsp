@@ -208,6 +208,7 @@
                                                     binding="#{LogImpPerEec6.labelIdLogImpPerEec1}"
                                                     id="labelIdLogImpPerEec1"
                                                     for="campoIdLogImpPerEec1"
+                                                    toolTip="BundleParametros.id_log_imp_per_eec.log_imp_per_eec"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{LogImpPerEec6.labelDptod1}"
                                                     id="labelDptod1"
                                                     for="campoDptod1"
+                                                    toolTip="BundleParametros.dptod.log_imp_per_eec"
                                                     text="dptod"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -272,6 +274,7 @@
                                                     binding="#{LogImpPerEec6.labelDistritod1}"
                                                     id="labelDistritod1"
                                                     for="campoDistritod1"
+                                                    toolTip="BundleParametros.distritod.log_imp_per_eec"
                                                     text="distritod"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -304,6 +307,7 @@
                                                     binding="#{LogImpPerEec6.labelDistripg1}"
                                                     id="labelDistripg1"
                                                     for="campoDistripg1"
+                                                    toolTip="BundleParametros.distripg.log_imp_per_eec"
                                                     text="distripg"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -336,6 +340,7 @@
                                                     binding="#{LogImpPerEec6.labelArea1}"
                                                     id="labelArea1"
                                                     for="campoArea1"
+                                                    toolTip="BundleParametros.area.log_imp_per_eec"
                                                     text="area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -368,6 +373,7 @@
                                                     binding="#{LogImpPerEec6.labelBarrio1}"
                                                     id="labelBarrio1"
                                                     for="campoBarrio1"
+                                                    toolTip="BundleParametros.barrio.log_imp_per_eec"
                                                     text="barrio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{LogImpPerEec6.labelManzana1}"
                                                     id="labelManzana1"
                                                     for="campoManzana1"
+                                                    toolTip="BundleParametros.manzana.log_imp_per_eec"
                                                     text="manzana"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{LogImpPerEec6.labelFormulario1}"
                                                     id="labelFormulario1"
                                                     for="campoFormulario1"
+                                                    toolTip="BundleParametros.formulario.log_imp_per_eec"
                                                     text="formulario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -464,6 +472,7 @@
                                                     binding="#{LogImpPerEec6.labelVivi1}"
                                                     id="labelVivi1"
                                                     for="campoVivi1"
+                                                    toolTip="BundleParametros.vivi.log_imp_per_eec"
                                                     text="vivi"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -496,6 +505,7 @@
                                                     binding="#{LogImpPerEec6.labelHogar1}"
                                                     id="labelHogar1"
                                                     for="campoHogar1"
+                                                    toolTip="BundleParametros.hogar.log_imp_per_eec"
                                                     text="hogar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -528,6 +538,7 @@
                                                     binding="#{LogImpPerEec6.labelOrden1}"
                                                     id="labelOrden1"
                                                     for="campoOrden1"
+                                                    toolTip="BundleParametros.orden.log_imp_per_eec"
                                                     text="orden"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -560,6 +571,7 @@
                                                     binding="#{LogImpPerEec6.labelP301}"
                                                     id="labelP301"
                                                     for="campoP301"
+                                                    toolTip="BundleParametros.p30.log_imp_per_eec"
                                                     text="p30"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -592,6 +604,7 @@
                                                     binding="#{LogImpPerEec6.labelP311}"
                                                     id="labelP311"
                                                     for="campoP311"
+                                                    toolTip="BundleParametros.p31.log_imp_per_eec"
                                                     text="p31"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -624,6 +637,7 @@
                                                     binding="#{LogImpPerEec6.labelP321}"
                                                     id="labelP321"
                                                     for="campoP321"
+                                                    toolTip="BundleParametros.p32.log_imp_per_eec"
                                                     text="p32"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -656,6 +670,7 @@
                                                     binding="#{LogImpPerEec6.labelP331}"
                                                     id="labelP331"
                                                     for="campoP331"
+                                                    toolTip="BundleParametros.p33.log_imp_per_eec"
                                                     text="p33"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -688,6 +703,7 @@
                                                     binding="#{LogImpPerEec6.labelP341}"
                                                     id="labelP341"
                                                     for="campoP341"
+                                                    toolTip="BundleParametros.p34.log_imp_per_eec"
                                                     text="p34"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -720,6 +736,7 @@
                                                     binding="#{LogImpPerEec6.labelP351}"
                                                     id="labelP351"
                                                     for="campoP351"
+                                                    toolTip="BundleParametros.p35.log_imp_per_eec"
                                                     text="p35"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -752,6 +769,7 @@
                                                     binding="#{LogImpPerEec6.labelP36OrdenConyugue1}"
                                                     id="labelP36OrdenConyugue1"
                                                     for="campoP36OrdenConyugue1"
+                                                    toolTip="BundleParametros.p36_orden_conyugue.log_imp_per_eec"
                                                     text="p36 orden conyugue"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -784,6 +802,7 @@
                                                     binding="#{LogImpPerEec6.labelP36OrdenPadre1}"
                                                     id="labelP36OrdenPadre1"
                                                     for="campoP36OrdenPadre1"
+                                                    toolTip="BundleParametros.p36_orden_padre.log_imp_per_eec"
                                                     text="p36 orden padre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -816,6 +835,7 @@
                                                     binding="#{LogImpPerEec6.labelP36OrdenMadre1}"
                                                     id="labelP36OrdenMadre1"
                                                     for="campoP36OrdenMadre1"
+                                                    toolTip="BundleParametros.p36_orden_madre.log_imp_per_eec"
                                                     text="p36 orden madre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -848,6 +868,7 @@
                                                     binding="#{LogImpPerEec6.labelP371}"
                                                     id="labelP371"
                                                     for="campoP371"
+                                                    toolTip="BundleParametros.p37.log_imp_per_eec"
                                                     text="p37"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -880,6 +901,7 @@
                                                     binding="#{LogImpPerEec6.labelP37Cedula1}"
                                                     id="labelP37Cedula1"
                                                     for="campoP37Cedula1"
+                                                    toolTip="BundleParametros.p37_cedula.log_imp_per_eec"
                                                     text="p37 c&#233;dula"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -912,6 +934,7 @@
                                                     binding="#{LogImpPerEec6.labelP38Dia1}"
                                                     id="labelP38Dia1"
                                                     for="campoP38Dia1"
+                                                    toolTip="BundleParametros.p38_dia.log_imp_per_eec"
                                                     text="p38 dia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -944,6 +967,7 @@
                                                     binding="#{LogImpPerEec6.labelP38Mes1}"
                                                     id="labelP38Mes1"
                                                     for="campoP38Mes1"
+                                                    toolTip="BundleParametros.p38_mes.log_imp_per_eec"
                                                     text="p38 mes"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -976,6 +1000,7 @@
                                                     binding="#{LogImpPerEec6.labelP38Ano1}"
                                                     id="labelP38Ano1"
                                                     for="campoP38Ano1"
+                                                    toolTip="BundleParametros.p38_ano.log_imp_per_eec"
                                                     text="p38 a&#241;o"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1008,6 +1033,7 @@
                                                     binding="#{LogImpPerEec6.labelP39pais1}"
                                                     id="labelP39pais1"
                                                     for="campoP39pais1"
+                                                    toolTip="BundleParametros.p39pais.log_imp_per_eec"
                                                     text="p39pais"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1040,6 +1066,7 @@
                                                     binding="#{LogImpPerEec6.labelP39dpto1}"
                                                     id="labelP39dpto1"
                                                     for="campoP39dpto1"
+                                                    toolTip="BundleParametros.p39dpto.log_imp_per_eec"
                                                     text="p39dpto"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1072,6 +1099,7 @@
                                                     binding="#{LogImpPerEec6.labelP39dist1}"
                                                     id="labelP39dist1"
                                                     for="campoP39dist1"
+                                                    toolTip="BundleParametros.p39dist.log_imp_per_eec"
                                                     text="p39dist"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1104,6 +1132,7 @@
                                                     binding="#{LogImpPerEec6.labelP39area1}"
                                                     id="labelP39area1"
                                                     for="campoP39area1"
+                                                    toolTip="BundleParametros.p39area.log_imp_per_eec"
                                                     text="p39area"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1136,6 +1165,7 @@
                                                     binding="#{LogImpPerEec6.labelP40Idioma1}"
                                                     id="labelP40Idioma1"
                                                     for="campoP40Idioma1"
+                                                    toolTip="BundleParametros.p40_idioma.log_imp_per_eec"
                                                     text="p40 idioma"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1168,6 +1198,7 @@
                                                     binding="#{LogImpPerEec6.labelP40otr1}"
                                                     id="labelP40otr1"
                                                     for="campoP40otr1"
+                                                    toolTip="BundleParametros.p40otr.log_imp_per_eec"
                                                     text="p40otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1200,6 +1231,7 @@
                                                     binding="#{LogImpPerEec6.labelP411}"
                                                     id="labelP411"
                                                     for="campoP411"
+                                                    toolTip="BundleParametros.p41.log_imp_per_eec"
                                                     text="p41"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1232,6 +1264,7 @@
                                                     binding="#{LogImpPerEec6.labelP421}"
                                                     id="labelP421"
                                                     for="campoP421"
+                                                    toolTip="BundleParametros.p42.log_imp_per_eec"
                                                     text="p42"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1264,6 +1297,7 @@
                                                     binding="#{LogImpPerEec6.labelP431}"
                                                     id="labelP431"
                                                     for="campoP431"
+                                                    toolTip="BundleParametros.p43.log_imp_per_eec"
                                                     text="p43"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1296,6 +1330,7 @@
                                                     binding="#{LogImpPerEec6.labelP4445t1}"
                                                     id="labelP4445t1"
                                                     for="campoP4445t1"
+                                                    toolTip="BundleParametros.p44_45t.log_imp_per_eec"
                                                     text="p44 45t"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1328,6 +1363,7 @@
                                                     binding="#{LogImpPerEec6.labelP441}"
                                                     id="labelP441"
                                                     for="campoP441"
+                                                    toolTip="BundleParametros.p44.log_imp_per_eec"
                                                     text="p44"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1360,6 +1396,7 @@
                                                     binding="#{LogImpPerEec6.labelP451}"
                                                     id="labelP451"
                                                     for="campoP451"
+                                                    toolTip="BundleParametros.p45.log_imp_per_eec"
                                                     text="p45"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1392,6 +1429,7 @@
                                                     binding="#{LogImpPerEec6.labelP461}"
                                                     id="labelP461"
                                                     for="campoP461"
+                                                    toolTip="BundleParametros.p46.log_imp_per_eec"
                                                     text="p46"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1424,6 +1462,7 @@
                                                     binding="#{LogImpPerEec6.labelP471}"
                                                     id="labelP471"
                                                     for="campoP471"
+                                                    toolTip="BundleParametros.p47.log_imp_per_eec"
                                                     text="p47"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1456,6 +1495,7 @@
                                                     binding="#{LogImpPerEec6.labelP481}"
                                                     id="labelP481"
                                                     for="campoP481"
+                                                    toolTip="BundleParametros.p48.log_imp_per_eec"
                                                     text="p48"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1488,6 +1528,7 @@
                                                     binding="#{LogImpPerEec6.labelP491}"
                                                     id="labelP491"
                                                     for="campoP491"
+                                                    toolTip="BundleParametros.p49.log_imp_per_eec"
                                                     text="p49"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1520,6 +1561,7 @@
                                                     binding="#{LogImpPerEec6.labelP49Otr1}"
                                                     id="labelP49Otr1"
                                                     for="campoP49Otr1"
+                                                    toolTip="BundleParametros.p49_otr.log_imp_per_eec"
                                                     text="p49 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1552,6 +1594,7 @@
                                                     binding="#{LogImpPerEec6.labelP501}"
                                                     id="labelP501"
                                                     for="campoP501"
+                                                    toolTip="BundleParametros.p50.log_imp_per_eec"
                                                     text="p50"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1584,6 +1627,7 @@
                                                     binding="#{LogImpPerEec6.labelP50Otr1}"
                                                     id="labelP50Otr1"
                                                     for="campoP50Otr1"
+                                                    toolTip="BundleParametros.p50_otr.log_imp_per_eec"
                                                     text="p50 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1616,6 +1660,7 @@
                                                     binding="#{LogImpPerEec6.labelP511}"
                                                     id="labelP511"
                                                     for="campoP511"
+                                                    toolTip="BundleParametros.p51.log_imp_per_eec"
                                                     text="p51"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1648,6 +1693,7 @@
                                                     binding="#{LogImpPerEec6.labelP521}"
                                                     id="labelP521"
                                                     for="campoP521"
+                                                    toolTip="BundleParametros.p52.log_imp_per_eec"
                                                     text="p52"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1680,6 +1726,7 @@
                                                     binding="#{LogImpPerEec6.labelP52Otr1}"
                                                     id="labelP52Otr1"
                                                     for="campoP52Otr1"
+                                                    toolTip="BundleParametros.p52_otr.log_imp_per_eec"
                                                     text="p52 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1712,6 +1759,7 @@
                                                     binding="#{LogImpPerEec6.labelP531}"
                                                     id="labelP531"
                                                     for="campoP531"
+                                                    toolTip="BundleParametros.p53.log_imp_per_eec"
                                                     text="p53"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1744,6 +1792,7 @@
                                                     binding="#{LogImpPerEec6.labelP541}"
                                                     id="labelP541"
                                                     for="campoP541"
+                                                    toolTip="BundleParametros.p54.log_imp_per_eec"
                                                     text="p54"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1776,6 +1825,7 @@
                                                     binding="#{LogImpPerEec6.labelP54a1}"
                                                     id="labelP54a1"
                                                     for="campoP54a1"
+                                                    toolTip="BundleParametros.p54a.log_imp_per_eec"
                                                     text="p54a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1808,6 +1858,7 @@
                                                     binding="#{LogImpPerEec6.labelP54Otr1}"
                                                     id="labelP54Otr1"
                                                     for="campoP54Otr1"
+                                                    toolTip="BundleParametros.p54_otr.log_imp_per_eec"
                                                     text="p54 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1840,6 +1891,7 @@
                                                     binding="#{LogImpPerEec6.labelP551}"
                                                     id="labelP551"
                                                     for="campoP551"
+                                                    toolTip="BundleParametros.p55.log_imp_per_eec"
                                                     text="p55"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1872,6 +1924,7 @@
                                                     binding="#{LogImpPerEec6.labelP55Otr1}"
                                                     id="labelP55Otr1"
                                                     for="campoP55Otr1"
+                                                    toolTip="BundleParametros.p55_otr.log_imp_per_eec"
                                                     text="p55 otr"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1904,6 +1957,7 @@
                                                     binding="#{LogImpPerEec6.labelP561}"
                                                     id="labelP561"
                                                     for="campoP561"
+                                                    toolTip="BundleParametros.p56.log_imp_per_eec"
                                                     text="p56"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1936,6 +1990,7 @@
                                                     binding="#{LogImpPerEec6.labelP571}"
                                                     id="labelP571"
                                                     for="campoP571"
+                                                    toolTip="BundleParametros.p57.log_imp_per_eec"
                                                     text="p57"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1968,6 +2023,7 @@
                                                     binding="#{LogImpPerEec6.labelP581}"
                                                     id="labelP581"
                                                     for="campoP581"
+                                                    toolTip="BundleParametros.p58.log_imp_per_eec"
                                                     text="p58"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2000,6 +2056,7 @@
                                                     binding="#{LogImpPerEec6.labelP591}"
                                                     id="labelP591"
                                                     for="campoP591"
+                                                    toolTip="BundleParametros.p59.log_imp_per_eec"
                                                     text="p59"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2032,6 +2089,7 @@
                                                     binding="#{LogImpPerEec6.labelP601}"
                                                     id="labelP601"
                                                     for="campoP601"
+                                                    toolTip="BundleParametros.p60.log_imp_per_eec"
                                                     text="p60"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2064,6 +2122,7 @@
                                                     binding="#{LogImpPerEec6.labelP611}"
                                                     id="labelP611"
                                                     for="campoP611"
+                                                    toolTip="BundleParametros.p61.log_imp_per_eec"
                                                     text="p61"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2096,6 +2155,7 @@
                                                     binding="#{LogImpPerEec6.labelP621}"
                                                     id="labelP621"
                                                     for="campoP621"
+                                                    toolTip="BundleParametros.p62.log_imp_per_eec"
                                                     text="p62"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2128,6 +2188,7 @@
                                                     binding="#{LogImpPerEec6.labelP631}"
                                                     id="labelP631"
                                                     for="campoP631"
+                                                    toolTip="BundleParametros.p63.log_imp_per_eec"
                                                     text="p63"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2160,6 +2221,7 @@
                                                     binding="#{LogImpPerEec6.labelP63Especificar1}"
                                                     id="labelP63Especificar1"
                                                     for="campoP63Especificar1"
+                                                    toolTip="BundleParametros.p63_especificar.log_imp_per_eec"
                                                     text="p63 especificar"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2192,6 +2254,7 @@
                                                     binding="#{LogImpPerEec6.labelP64des1}"
                                                     id="labelP64des1"
                                                     for="campoP64des1"
+                                                    toolTip="BundleParametros.p64des.log_imp_per_eec"
                                                     text="p64des"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2224,6 +2287,7 @@
                                                     binding="#{LogImpPerEec6.labelP64c1}"
                                                     id="labelP64c1"
                                                     for="campoP64c1"
+                                                    toolTip="BundleParametros.p64c.log_imp_per_eec"
                                                     text="p64c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2256,6 +2320,7 @@
                                                     binding="#{LogImpPerEec6.labelP65des1}"
                                                     id="labelP65des1"
                                                     for="campoP65des1"
+                                                    toolTip="BundleParametros.p65des.log_imp_per_eec"
                                                     text="p65des"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2288,6 +2353,7 @@
                                                     binding="#{LogImpPerEec6.labelP65c1}"
                                                     id="labelP65c1"
                                                     for="campoP65c1"
+                                                    toolTip="BundleParametros.p65c.log_imp_per_eec"
                                                     text="p65c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2320,6 +2386,7 @@
                                                     binding="#{LogImpPerEec6.labelP661}"
                                                     id="labelP661"
                                                     for="campoP661"
+                                                    toolTip="BundleParametros.p66.log_imp_per_eec"
                                                     text="p66"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2352,6 +2419,7 @@
                                                     binding="#{LogImpPerEec6.labelP67a1}"
                                                     id="labelP67a1"
                                                     for="campoP67a1"
+                                                    toolTip="BundleParametros.p67a.log_imp_per_eec"
                                                     text="p67a"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2384,6 +2452,7 @@
                                                     binding="#{LogImpPerEec6.labelP67b1}"
                                                     id="labelP67b1"
                                                     for="campoP67b1"
+                                                    toolTip="BundleParametros.p67b.log_imp_per_eec"
                                                     text="p67b"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2416,6 +2485,7 @@
                                                     binding="#{LogImpPerEec6.labelP67c1}"
                                                     id="labelP67c1"
                                                     for="campoP67c1"
+                                                    toolTip="BundleParametros.p67c.log_imp_per_eec"
                                                     text="p67c"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2448,6 +2518,7 @@
                                                     binding="#{LogImpPerEec6.labelP67d1}"
                                                     id="labelP67d1"
                                                     for="campoP67d1"
+                                                    toolTip="BundleParametros.p67d.log_imp_per_eec"
                                                     text="p67d"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2480,6 +2551,7 @@
                                                     binding="#{LogImpPerEec6.labelP67e1}"
                                                     id="labelP67e1"
                                                     for="campoP67e1"
+                                                    toolTip="BundleParametros.p67e.log_imp_per_eec"
                                                     text="p67e"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2512,6 +2584,7 @@
                                                     binding="#{LogImpPerEec6.labelP67f1}"
                                                     id="labelP67f1"
                                                     for="campoP67f1"
+                                                    toolTip="BundleParametros.p67f.log_imp_per_eec"
                                                     text="p67f"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2544,6 +2617,7 @@
                                                     binding="#{LogImpPerEec6.labelP67g1}"
                                                     id="labelP67g1"
                                                     for="campoP67g1"
+                                                    toolTip="BundleParametros.p67g.log_imp_per_eec"
                                                     text="p67g"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2576,6 +2650,7 @@
                                                     binding="#{LogImpPerEec6.labelP67h1}"
                                                     id="labelP67h1"
                                                     for="campoP67h1"
+                                                    toolTip="BundleParametros.p67h.log_imp_per_eec"
                                                     text="p67h"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2608,6 +2683,7 @@
                                                     binding="#{LogImpPerEec6.labelP67i1}"
                                                     id="labelP67i1"
                                                     for="campoP67i1"
+                                                    toolTip="BundleParametros.p67i.log_imp_per_eec"
                                                     text="p67i"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2640,6 +2716,7 @@
                                                     binding="#{LogImpPerEec6.labelP67j1}"
                                                     id="labelP67j1"
                                                     for="campoP67j1"
+                                                    toolTip="BundleParametros.p67j.log_imp_per_eec"
                                                     text="p67j"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2672,6 +2749,7 @@
                                                     binding="#{LogImpPerEec6.labelP67k1}"
                                                     id="labelP67k1"
                                                     for="campoP67k1"
+                                                    toolTip="BundleParametros.p67k.log_imp_per_eec"
                                                     text="p67k"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2704,6 +2782,7 @@
                                                     binding="#{LogImpPerEec6.labelP67l1}"
                                                     id="labelP67l1"
                                                     for="campoP67l1"
+                                                    toolTip="BundleParametros.p67l.log_imp_per_eec"
                                                     text="p67l"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2736,6 +2815,7 @@
                                                     binding="#{LogImpPerEec6.labelP67tot1}"
                                                     id="labelP67tot1"
                                                     for="campoP67tot1"
+                                                    toolTip="BundleParametros.p67tot.log_imp_per_eec"
                                                     text="p67tot"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2768,6 +2848,7 @@
                                                     binding="#{LogImpPerEec6.labelEsImportado1}"
                                                     id="labelEsImportado1"
                                                     for="listaEsImportado1"
+                                                    toolTip="BundleParametros.es_importado.log_imp_per_eec"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2799,6 +2880,7 @@
                                                     binding="#{LogImpPerEec6.labelObservacion1}"
                                                     id="labelObservacion1"
                                                     for="campoObservacion1"
+                                                    toolTip="BundleParametros.observacion.log_imp_per_eec"
                                                     text="observaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2831,6 +2913,7 @@
                                                     binding="#{LogImpPerEec6.labelFechaHoraTransaccion1}"
                                                     id="labelFechaHoraTransaccion1"
                                                     for="campoFechaHoraTransaccion1"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_imp_per_eec"
                                                     text="fecha hora transacci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2863,6 +2946,7 @@
                                                     binding="#{LogImpPerEec6.labelNombreArchivo1}"
                                                     id="labelNombreArchivo1"
                                                     for="campoNombreArchivo1"
+                                                    toolTip="BundleParametros.nombre_archivo.log_imp_per_eec"
                                                     text="nombre archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -2901,6 +2985,7 @@
                                                     binding="#{LogImpPerEec6.labelCodigoArchivo1}"
                                                     id="labelCodigoArchivo1"
                                                     for="campoCodigoArchivo1"
+                                                    toolTip="BundleParametros.codigo_archivo.log_imp_per_eec"
                                                     text="c&#243;digo archivo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

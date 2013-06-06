@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdLogProAcrPotBen1}"
+                                                    toolTip="BundleParametros.id_log_pro_acr_pot_ben.log_pro_acr_pot_ben"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdLogProAcrPotBen1" rendered="false"
                                                     sort="id_log_pro_acr_pot_ben">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdPotencialBen1}"
+                                                    toolTip="BundleParametros.id_potencial_ben.log_pro_acr_pot_ben"
                                                     headerText="potencial beneficiario"
                                                     id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="codigo_potencial_ben_1x1y3">
@@ -274,6 +276,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnNombrePotencialBen1}"
+                                                    toolTip="BundleParametros.nombre_potencial_ben.log_pro_acr_pot_ben"
                                                     headerText="nombre potencial beneficiario"
                                                     id="tableColumnNombrePotencialBen1" rendered="false"
                                                     sort="nombre_potencial_ben">
@@ -301,6 +304,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnCodigoPotencialBen1}"
+                                                    toolTip="BundleParametros.codigo_potencial_ben.log_pro_acr_pot_ben"
                                                     headerText="c&#243;digo potencial beneficiario"
                                                     id="tableColumnCodigoPotencialBen1"
                                                     sort="codigo_potencial_ben">
@@ -328,6 +332,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnFechaRegistroPotBen1}"
+                                                    toolTip="BundleParametros.fecha_registro_pot_ben.log_pro_acr_pot_ben"
                                                     headerText="fecha registro potencial beneficiario"
                                                     id="tableColumnFechaRegistroPotBen1" rendered="false"
                                                     sort="fecha_registro_pot_ben">
@@ -354,6 +359,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.log_pro_acr_pot_ben"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x2y3">
@@ -419,6 +425,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnNombrePersona1}"
+                                                    toolTip="BundleParametros.nombre_persona.log_pro_acr_pot_ben"
                                                     headerText="nombre persona"
                                                     id="tableColumnNombrePersona1" rendered="false"
                                                     sort="nombre_persona">
@@ -446,6 +453,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnCodigoPersona1}"
+                                                    toolTip="BundleParametros.codigo_persona.log_pro_acr_pot_ben"
                                                     headerText="c&#243;digo persona"
                                                     id="tableColumnCodigoPersona1" rendered="false"
                                                     sort="codigo_persona">
@@ -473,6 +481,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.log_pro_acr_pot_ben"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x3y3">
@@ -538,6 +547,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.log_pro_acr_pot_ben"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -603,6 +613,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.log_pro_acr_pot_ben"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x5y3">
@@ -668,6 +679,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdFichaPersona1}"
+                                                    toolTip="BundleParametros.id_ficha_persona.log_pro_acr_pot_ben"
                                                     headerText="ficha persona"
                                                     id="tableColumnIdFichaPersona1" rendered="false"
                                                     sort="codigo_ficha_persona_1x6y3">
@@ -733,6 +745,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnCodigoFichaPersona1}"
+                                                    toolTip="BundleParametros.codigo_ficha_persona.log_pro_acr_pot_ben"
                                                     headerText="c&#243;digo ficha persona"
                                                     id="tableColumnCodigoFichaPersona1" rendered="false"
                                                     sort="codigo_ficha_persona">
@@ -760,6 +773,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnNombreFichaPersona1}"
+                                                    toolTip="BundleParametros.nombre_ficha_persona.log_pro_acr_pot_ben"
                                                     headerText="nombre ficha persona"
                                                     id="tableColumnNombreFichaPersona1" rendered="false"
                                                     sort="nombre_ficha_persona">
@@ -787,6 +801,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIdFichaHogar1}"
+                                                    toolTip="BundleParametros.id_ficha_hogar.log_pro_acr_pot_ben"
                                                     headerText="ficha hogar"
                                                     id="tableColumnIdFichaHogar1" rendered="false"
                                                     sort="codigo_ficha_hogar_1x7y3">
@@ -850,6 +865,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnCodigoFichaHogar1}"
+                                                    toolTip="BundleParametros.codigo_ficha_hogar.log_pro_acr_pot_ben"
                                                     headerText="c&#243;digo ficha hogar"
                                                     id="tableColumnCodigoFichaHogar1" rendered="false"
                                                     sort="codigo_ficha_hogar">
@@ -877,6 +893,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.log_pro_acr_pot_ben"
                                                     headerText="indice calidad vida"
                                                     id="tableColumnIndiceCalidadVida1" rendered="false"
                                                     sort="indice_calidad_vida">
@@ -904,6 +921,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnEsProcesado1}"
+                                                    toolTip="BundleParametros.es_procesado.log_pro_acr_pot_ben"
                                                     headerText="procesado"
                                                     id="tableColumnEsProcesado1"
                                                     sort="es_procesado">
@@ -929,6 +947,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnObservacion1}"
+                                                    toolTip="BundleParametros.observacion.log_pro_acr_pot_ben"
                                                     headerText="observaci&#243;n"
                                                     id="tableColumnObservacion1"
                                                     sort="observacion">
@@ -955,6 +974,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{LogProAcrPotBen5.tableColumnFechaHoraTransaccion1}"
+                                                    toolTip="BundleParametros.fecha_hora_transaccion.log_pro_acr_pot_ben"
                                                     headerText="fecha hora transacci&#243;n"
                                                     id="tableColumnFechaHoraTransaccion1"
                                                     sort="fecha_hora_transaccion">

@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdPotencialBen1}"
+                                                    toolTip="BundleParametros.id_potencial_ben.potencial_ben"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdPotencialBen1" rendered="false"
                                                     sort="id_potencial_ben">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnCodigoPotencialBen1}"
+                                                    toolTip="BundleParametros.codigo_potencial_ben.potencial_ben"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoPotencialBen1"
                                                     sort="codigo_potencial_ben">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNombrePotencialBen1}"
+                                                    toolTip="BundleParametros.nombre_potencial_ben.potencial_ben"
                                                     headerText="nombre"
                                                     id="tableColumnNombrePotencialBen1"
                                                     sort="nombre_potencial_ben">
@@ -263,6 +266,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTipoRegPotBen1}"
+                                                    toolTip="BundleParametros.numero_tipo_reg_pot_ben.potencial_ben"
                                                     headerText="tipo registro"
                                                     id="tableColumnNumeroTipoRegPotBen1"
                                                     sort="codigo_tipo_reg_pot_ben_1x1y2">
@@ -290,6 +294,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.potencial_ben"
                                                     headerText="persona"
                                                     id="tableColumnIdPersona1" rendered="false"
                                                     sort="codigo_persona_1x2y3">
@@ -355,6 +360,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCedula1}"
+                                                    toolTip="BundleParametros.numero_cedula.potencial_ben"
                                                     headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
@@ -381,6 +387,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnLetraCedula1}"
+                                                    toolTip="BundleParametros.letra_cedula.potencial_ben"
                                                     headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
@@ -408,6 +415,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaExpedicionCedula1}"
+                                                    toolTip="BundleParametros.fecha_expedicion_cedula.potencial_ben"
                                                     headerText="fecha expedici&#243;n c&#233;dula"
                                                     id="tableColumnFechaExpedicionCedula1" rendered="false"
                                                     sort="fecha_expedicion_cedula">
@@ -434,6 +442,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaVencimientoCedula1}"
+                                                    toolTip="BundleParametros.fecha_vencimiento_cedula.potencial_ben"
                                                     headerText="fecha vencimiento c&#233;dula"
                                                     id="tableColumnFechaVencimientoCedula1" rendered="false"
                                                     sort="fecha_vencimiento_cedula">
@@ -460,6 +469,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnPrimerNombre1}"
+                                                    toolTip="BundleParametros.primer_nombre.potencial_ben"
                                                     headerText="primer nombre"
                                                     id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
@@ -487,6 +497,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnSegundoNombre1}"
+                                                    toolTip="BundleParametros.segundo_nombre.potencial_ben"
                                                     headerText="segundo nombre"
                                                     id="tableColumnSegundoNombre1" rendered="false"
                                                     sort="segundo_nombre">
@@ -514,6 +525,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnPrimerApellido1}"
+                                                    toolTip="BundleParametros.primer_apellido.potencial_ben"
                                                     headerText="primer apellido"
                                                     id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
@@ -541,6 +553,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnSegundoApellido1}"
+                                                    toolTip="BundleParametros.segundo_apellido.potencial_ben"
                                                     headerText="segundo apellido"
                                                     id="tableColumnSegundoApellido1" rendered="false"
                                                     sort="segundo_apellido">
@@ -568,6 +581,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnApellidoCasada1}"
+                                                    toolTip="BundleParametros.apellido_casada.potencial_ben"
                                                     headerText="apellido casada"
                                                     id="tableColumnApellidoCasada1" rendered="false"
                                                     sort="apellido_casada">
@@ -595,6 +609,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnApodo1}"
+                                                    toolTip="BundleParametros.apodo.potencial_ben"
                                                     headerText="apodo"
                                                     id="tableColumnApodo1" rendered="false"
                                                     sort="apodo">
@@ -622,6 +637,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaNacimiento1}"
+                                                    toolTip="BundleParametros.fecha_nacimiento.potencial_ben"
                                                     headerText="fecha nacimiento"
                                                     id="tableColumnFechaNacimiento1" rendered="false"
                                                     sort="fecha_nacimiento">
@@ -648,6 +664,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEdad1}"
+                                                    toolTip="BundleParametros.edad.potencial_ben"
                                                     headerText="edad"
                                                     id="tableColumnEdad1" rendered="false"
                                                     sort="edad">
@@ -674,6 +691,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsParaguayoNatural1}"
+                                                    toolTip="BundleParametros.es_paraguayo_natural.potencial_ben"
                                                     headerText="paraguayo natural"
                                                     id="tableColumnEsParaguayoNatural1" rendered="false"
                                                     sort="es_paraguayo_natural">
@@ -699,6 +717,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsIndigena1}"
+                                                    toolTip="BundleParametros.es_indigena.potencial_ben"
                                                     headerText="indigena"
                                                     id="tableColumnEsIndigena1" rendered="false"
                                                     sort="es_indigena">
@@ -724,6 +743,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdEtniaIndigena1}"
+                                                    toolTip="BundleParametros.id_etnia_indigena.potencial_ben"
                                                     headerText="etnia indigena"
                                                     id="tableColumnIdEtniaIndigena1" rendered="false"
                                                     sort="codigo_etnia_indigena_1x3y3">
@@ -789,6 +809,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNombreComunidadIndigena1}"
+                                                    toolTip="BundleParametros.nombre_comunidad_indigena.potencial_ben"
                                                     headerText="nombre comunidad indigena"
                                                     id="tableColumnNombreComunidadIndigena1" rendered="false"
                                                     sort="nombre_comunidad_indigena">
@@ -816,6 +837,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdDepartamento1}"
+                                                    toolTip="BundleParametros.id_departamento.potencial_ben"
                                                     headerText="departamento"
                                                     id="tableColumnIdDepartamento1" rendered="false"
                                                     sort="codigo_ubicacion_1x4y3">
@@ -881,6 +903,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdDistrito1}"
+                                                    toolTip="BundleParametros.id_distrito.potencial_ben"
                                                     headerText="distrito"
                                                     id="tableColumnIdDistrito1" rendered="false"
                                                     sort="codigo_ubicacion_1x5y3">
@@ -946,6 +969,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTipoArea1}"
+                                                    toolTip="BundleParametros.numero_tipo_area.potencial_ben"
                                                     headerText="tipo area"
                                                     id="tableColumnNumeroTipoArea1" rendered="false"
                                                     sort="codigo_tipo_area_1x6y2">
@@ -972,6 +996,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdBarrio1}"
+                                                    toolTip="BundleParametros.id_barrio.potencial_ben"
                                                     headerText="barrio"
                                                     id="tableColumnIdBarrio1" rendered="false"
                                                     sort="codigo_ubicacion_1x7y3">
@@ -1037,6 +1062,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnManzana1}"
+                                                    toolTip="BundleParametros.manzana.potencial_ben"
                                                     headerText="manzana"
                                                     id="tableColumnManzana1" rendered="false"
                                                     sort="manzana">
@@ -1064,6 +1090,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnCompania1}"
+                                                    toolTip="BundleParametros.compania.potencial_ben"
                                                     headerText="compa&#241;ia"
                                                     id="tableColumnCompania1" rendered="false"
                                                     sort="compania">
@@ -1091,6 +1118,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnDireccion1}"
+                                                    toolTip="BundleParametros.direccion.potencial_ben"
                                                     headerText="direcci&#243;n"
                                                     id="tableColumnDireccion1" rendered="false"
                                                     sort="direccion">
@@ -1117,6 +1145,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNombreResponsableHogar1}"
+                                                    toolTip="BundleParametros.nombre_responsable_hogar.potencial_ben"
                                                     headerText="nombre responsable hogar"
                                                     id="tableColumnNombreResponsableHogar1" rendered="false"
                                                     sort="nombre_responsable_hogar">
@@ -1144,6 +1173,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTelefonoRespHogar1}"
+                                                    toolTip="BundleParametros.numero_telefono_resp_hogar.potencial_ben"
                                                     headerText="n&#250;mero tel&#233;fono responsable hogar"
                                                     id="tableColumnNumeroTelefonoRespHogar1" rendered="false"
                                                     sort="numero_telefono_resp_hogar">
@@ -1171,6 +1201,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPersonaConJubilacion1}"
+                                                    toolTip="BundleParametros.es_persona_con_jubilacion.potencial_ben"
                                                     headerText="persona con jubilaci&#243;n"
                                                     id="tableColumnEsPersonaConJubilacion1" rendered="false"
                                                     sort="es_persona_con_jubilacion">
@@ -1196,6 +1227,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPersonaConPension1}"
+                                                    toolTip="BundleParametros.es_persona_con_pension.potencial_ben"
                                                     headerText="persona con pensi&#243;n"
                                                     id="tableColumnEsPersonaConPension1" rendered="false"
                                                     sort="es_persona_con_pension">
@@ -1221,6 +1253,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPersonaConSubsidio1}"
+                                                    toolTip="BundleParametros.es_persona_con_subsidio.potencial_ben"
                                                     headerText="persona con subsidio"
                                                     id="tableColumnEsPersonaConSubsidio1" rendered="false"
                                                     sort="es_persona_con_subsidio">
@@ -1246,6 +1279,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNombreReferente1}"
+                                                    toolTip="BundleParametros.nombre_referente.potencial_ben"
                                                     headerText="nombre referente"
                                                     id="tableColumnNombreReferente1" rendered="false"
                                                     sort="nombre_referente">
@@ -1273,6 +1307,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroTelefonoReferente1}"
+                                                    toolTip="BundleParametros.numero_telefono_referente.potencial_ben"
                                                     headerText="n&#250;mero tel&#233;fono referente"
                                                     id="tableColumnNumeroTelefonoReferente1" rendered="false"
                                                     sort="numero_telefono_referente">
@@ -1300,6 +1335,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCondicionCenso1}"
+                                                    toolTip="BundleParametros.numero_condicion_censo.potencial_ben"
                                                     headerText="condici&#243;n censo"
                                                     id="tableColumnNumeroCondicionCenso1" rendered="false"
                                                     sort="codigo_condicion_censo_1x9y2">
@@ -1326,6 +1362,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaValidacionCenso1}"
+                                                    toolTip="BundleParametros.fecha_validacion_censo.potencial_ben"
                                                     headerText="fecha validaci&#243;n censo"
                                                     id="tableColumnFechaValidacionCenso1" rendered="false"
                                                     sort="fecha_validacion_censo">
@@ -1352,6 +1389,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioValidacionCen1}"
+                                                    toolTip="BundleParametros.id_funcionario_validacion_cen.potencial_ben"
                                                     headerText="funcionario validaci&#243;n censo"
                                                     id="tableColumnIdFuncionarioValidacionCen1" rendered="false"
                                                     sort="codigo_funcionario_1x10y3">
@@ -1417,6 +1455,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCausaInvCenso1}"
+                                                    toolTip="BundleParametros.numero_causa_inv_censo.potencial_ben"
                                                     headerText="causa invalidaci&#243;n censo"
                                                     id="tableColumnNumeroCausaInvCenso1" rendered="false"
                                                     sort="codigo_causa_inv_censo_1x11y2">
@@ -1443,6 +1482,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnOtraCausaInvCenso1}"
+                                                    toolTip="BundleParametros.otra_causa_inv_censo.potencial_ben"
                                                     headerText="otra causa invalidaci&#243;n censo"
                                                     id="tableColumnOtraCausaInvCenso1" rendered="false"
                                                     sort="otra_causa_inv_censo">
@@ -1470,6 +1510,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosValidacionCenso1}"
+                                                    toolTip="BundleParametros.comentarios_validacion_censo.potencial_ben"
                                                     headerText="comentarios validaci&#243;n censo"
                                                     id="tableColumnComentariosValidacionCenso1" rendered="false"
                                                     sort="comentarios_validacion_censo">
@@ -1496,6 +1537,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdFichaPersona1}"
+                                                    toolTip="BundleParametros.id_ficha_persona.potencial_ben"
                                                     headerText="ficha persona"
                                                     id="tableColumnIdFichaPersona1" rendered="false"
                                                     sort="codigo_ficha_persona_1x12y3">
@@ -1561,6 +1603,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCondicionReclCen1}"
+                                                    toolTip="BundleParametros.numero_condicion_recl_cen.potencial_ben"
                                                     headerText="condici&#243;n reclamo censo"
                                                     id="tableColumnNumeroCondicionReclCen1" rendered="false"
                                                     sort="codigo_condicion_recl_c_1x13y2">
@@ -1587,6 +1630,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaReclamoCenso1}"
+                                                    toolTip="BundleParametros.fecha_reclamo_censo.potencial_ben"
                                                     headerText="fecha reclamo censo"
                                                     id="tableColumnFechaReclamoCenso1" rendered="false"
                                                     sort="fecha_reclamo_censo">
@@ -1613,6 +1657,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosReclamoCenso1}"
+                                                    toolTip="BundleParametros.comentarios_reclamo_censo.potencial_ben"
                                                     headerText="comentarios reclamo censo"
                                                     id="tableColumnComentariosReclamoCenso1" rendered="false"
                                                     sort="comentarios_reclamo_censo">
@@ -1639,6 +1684,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaAprobacionReclamoCenso1}"
+                                                    toolTip="BundleParametros.fecha_aprobacion_reclamo_censo.potencial_ben"
                                                     headerText="fecha aprobaci&#243;n reclamo censo"
                                                     id="tableColumnFechaAprobacionReclamoCenso1" rendered="false"
                                                     sort="fecha_aprobacion_reclamo_censo">
@@ -1665,6 +1711,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosAprReclCen1}"
+                                                    toolTip="BundleParametros.comentarios_apr_recl_cen.potencial_ben"
                                                     headerText="comentarios aprobaci&#243;n reclamo censo"
                                                     id="tableColumnComentariosAprReclCen1" rendered="false"
                                                     sort="comentarios_apr_recl_cen">
@@ -1691,6 +1738,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaDenegacionReclamoCenso1}"
+                                                    toolTip="BundleParametros.fecha_denegacion_reclamo_censo.potencial_ben"
                                                     headerText="fecha denegaci&#243;n reclamo censo"
                                                     id="tableColumnFechaDenegacionReclamoCenso1" rendered="false"
                                                     sort="fecha_denegacion_reclamo_censo">
@@ -1717,6 +1765,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnNumeroCausaDenReclCen1}"
+                                                    toolTip="BundleParametros.numero_causa_den_recl_cen.potencial_ben"
                                                     headerText="causa denegaci&#243;n reclamo censo"
                                                     id="tableColumnNumeroCausaDenReclCen1" rendered="false"
                                                     sort="codigo_causa_den_recl_c_1x14y2">
@@ -1743,6 +1792,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnOtraCausaDenReclCen1}"
+                                                    toolTip="BundleParametros.otra_causa_den_recl_cen.potencial_ben"
                                                     headerText="otra causa denegaci&#243;n reclamo censo"
                                                     id="tableColumnOtraCausaDenReclCen1" rendered="false"
                                                     sort="otra_causa_den_recl_cen">
@@ -1770,6 +1820,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnComentariosDenReclCen1}"
+                                                    toolTip="BundleParametros.comentarios_den_recl_cen.potencial_ben"
                                                     headerText="comentarios denegaci&#243;n reclamo censo"
                                                     id="tableColumnComentariosDenReclCen1" rendered="false"
                                                     sort="comentarios_den_recl_cen">
@@ -1796,6 +1847,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaRegistroPotBen1}"
+                                                    toolTip="BundleParametros.fecha_registro_pot_ben.potencial_ben"
                                                     headerText="fecha registro"
                                                     id="tableColumnFechaRegistroPotBen1" rendered="false"
                                                     sort="fecha_registro_pot_ben">
@@ -1822,6 +1874,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdUsuarioRegPotBen1}"
+                                                    toolTip="BundleParametros.id_usuario_reg_pot_ben.potencial_ben"
                                                     headerText="usuario registro"
                                                     id="tableColumnIdUsuarioRegPotBen1" rendered="false"
                                                     sort="codigo_usuario_1x15y3">
@@ -1887,6 +1940,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPotencialBenInactivo1}"
+                                                    toolTip="BundleParametros.es_potencial_ben_inactivo.potencial_ben"
                                                     headerText="inactivo"
                                                     id="tableColumnEsPotencialBenInactivo1"
                                                     sort="es_potencial_ben_inactivo">
@@ -1912,6 +1966,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnFechaUltimaVisitaCenso1}"
+                                                    toolTip="BundleParametros.fecha_ultima_visita_censo.potencial_ben"
                                                     headerText="fecha ultima visita censo"
                                                     id="tableColumnFechaUltimaVisitaCenso1" rendered="false"
                                                     sort="fecha_ultima_visita_censo">
@@ -1938,6 +1993,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnObservacionesUltVisitaCen1}"
+                                                    toolTip="BundleParametros.observaciones_ult_visita_cen.potencial_ben"
                                                     headerText="observaciones &#250;ltima visita censo"
                                                     id="tableColumnObservacionesUltVisitaCen1" rendered="false"
                                                     sort="observaciones_ult_visita_cen">
@@ -1964,6 +2020,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIdFuncionarioUltVisitaCen1}"
+                                                    toolTip="BundleParametros.id_funcionario_ult_visita_cen.potencial_ben"
                                                     headerText="funcionario &#250;ltima visita censo"
                                                     id="tableColumnIdFuncionarioUltVisitaCen1" rendered="false"
                                                     sort="codigo_funcionario_1x16y3">
@@ -2029,6 +2086,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnReferenciaDireccion1}"
+                                                    toolTip="BundleParametros.referencia_direccion.potencial_ben"
                                                     headerText="referencia direcci&#243;n"
                                                     id="tableColumnReferenciaDireccion1" rendered="false"
                                                     sort="referencia_direccion">
@@ -2055,6 +2113,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnIndiceCalidadVida1}"
+                                                    toolTip="BundleParametros.indice_calidad_vida.potencial_ben"
                                                     headerText="indice calidad vida"
                                                     id="tableColumnIndiceCalidadVida1" rendered="false"
                                                     sort="indice_calidad_vida">
@@ -2082,6 +2141,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnEsPotencialBenMigrado1}"
+                                                    toolTip="BundleParametros.es_potencial_ben_migrado.potencial_ben"
                                                     headerText="migrado"
                                                     id="tableColumnEsPotencialBenMigrado1" rendered="false"
                                                     sort="es_potencial_ben_migrado">
@@ -2107,6 +2167,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PotencialBen5.tableColumnLote1}"
+                                                    toolTip="BundleParametros.lote.potencial_ben"
                                                     headerText="lote"
                                                     id="tableColumnLote1" rendered="false"
                                                     sort="lote">
