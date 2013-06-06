@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnIdVisitaCenso1}"
+                                                    toolTip="BundleParametros.id_visita_censo.visita_censo"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdVisitaCenso1" rendered="false"
                                                     sort="id_visita_censo">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnIdPotencialBen1}"
+                                                    toolTip="BundleParametros.id_potencial_ben.visita_censo"
                                                     headerText="potencial beneficiario"
                                                     id="tableColumnIdPotencialBen1"
                                                     sort="codigo_potencial_ben_1x1y3">
@@ -276,6 +278,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnIdFuncionarioCensista1}"
+                                                    toolTip="BundleParametros.id_funcionario_censista.visita_censo"
                                                     headerText="funcionario censista"
                                                     id="tableColumnIdFuncionarioCensista1"
                                                     sort="codigo_funcionario_1x2y3">
@@ -343,6 +346,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnFechaVisita1}"
+                                                    toolTip="BundleParametros.fecha_visita.visita_censo"
                                                     headerText="fecha visita"
                                                     id="tableColumnFechaVisita1"
                                                     sort="fecha_visita">
@@ -369,6 +373,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{VisitaCenso1.tableColumnObservaciones1}"
+                                                    toolTip="BundleParametros.observaciones.visita_censo"
                                                     headerText="observaciones"
                                                     id="tableColumnObservaciones1" rendered="false"
                                                     sort="observaciones">

@@ -208,6 +208,7 @@
                                                     binding="#{VisitaCenso2.labelIdVisitaCenso1}"
                                                     id="labelIdVisitaCenso1"
                                                     for="campoIdVisitaCenso1"
+                                                    toolTip="BundleParametros.id_visita_censo.visita_censo"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{VisitaCenso2.labelIdPotencialBen1}"
                                                     id="labelIdPotencialBen1"
                                                     for="campoIdPotencialBen1"
+                                                    toolTip="BundleParametros.id_potencial_ben.visita_censo"
                                                     text="potencial beneficiario"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +304,7 @@
                                                     binding="#{VisitaCenso2.labelIdFuncionarioCensista1}"
                                                     id="labelIdFuncionarioCensista1"
                                                     for="campoIdFuncionarioCensista1"
+                                                    toolTip="BundleParametros.id_funcionario_censista.visita_censo"
                                                     text="funcionario censista"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -364,6 +367,7 @@
                                                     binding="#{VisitaCenso2.labelFechaVisita1}"
                                                     id="labelFechaVisita1"
                                                     for="campoFechaVisita1"
+                                                    toolTip="BundleParametros.fecha_visita.visita_censo"
                                                     text="fecha visita"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -397,6 +401,7 @@
                                                     binding="#{VisitaCenso2.labelObservaciones1}"
                                                     id="labelObservaciones1"
                                                     for="campoObservaciones1"
+                                                    toolTip="BundleParametros.observaciones.visita_censo"
                                                     text="observaciones"/>
                                             </h:panelGrid>
                                             <h:panelGrid
