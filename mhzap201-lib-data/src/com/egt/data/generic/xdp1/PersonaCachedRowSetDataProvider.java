@@ -87,19 +87,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_ID_DISTRITO = "id_distrito";
     public static final String COLUMNA_NUMERO_TIPO_AREA = "numero_tipo_area";
     public static final String COLUMNA_ID_BARRIO = "id_barrio";
-    public static final String COLUMNA_ID_MANZANA = "id_manzana";
-    public static final String COLUMNA_MANZANA = "manzana";
     public static final String COLUMNA_DIRECCION = "direccion";
     public static final String COLUMNA_NUMERO_TELEFONO_LINEA_BAJA = "numero_telefono_linea_baja";
     public static final String COLUMNA_NUMERO_TELEFONO_CELULAR = "numero_telefono_celular";
     public static final String COLUMNA_CERTIFICADO_VIDA = "certificado_vida";
     public static final String COLUMNA_FECHA_CERTIFICADO_VIDA = "fecha_certificado_vida";
+    public static final String COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA = "dias_vigencia_certificado_vida";
     public static final String COLUMNA_ES_CERTIFICADO_VIDA_ANULADO = "es_certificado_vida_anulado";
-    public static final String COLUMNA_COMENTARIOS_ANUL_CER_VIDA = "comentarios_anul_cer_vida";
     public static final String COLUMNA_CERTIFICADO_DEFUNCION = "certificado_defuncion";
     public static final String COLUMNA_FECHA_CERTIFICADO_DEFUNCION = "fecha_certificado_defuncion";
     public static final String COLUMNA_ES_CER_DEFUNCION_ANULADO = "es_cer_defuncion_anulado";
-    public static final String COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION = "comentarios_anul_cer_defuncion";
     public static final String COLUMNA_ES_PERSONA_CON_EMPLEO = "es_persona_con_empleo";
     public static final String COLUMNA_ES_PERSONA_CON_JUBILACION = "es_persona_con_jubilacion";
     public static final String COLUMNA_ES_PERSONA_CON_PENSION = "es_persona_con_pension";
@@ -114,7 +111,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_ES_PERSONA_CON_DECLARACION_JUR = "es_persona_con_declaracion_jur";
     public static final String COLUMNA_MONTO_PENSION = "monto_pension";
     public static final String COLUMNA_NUMERO_CONDICION_PENSION = "numero_condicion_pension";
-    public static final String COLUMNA_LUGAR_SOLICITUD_PENSION = "lugar_solicitud_pension";
     public static final String COLUMNA_FECHA_SOLICITUD_PENSION = "fecha_solicitud_pension";
     public static final String COLUMNA_COMENTARIOS_SOLICITUD_PENSION = "comentarios_solicitud_pension";
     public static final String COLUMNA_FECHA_APROBACION_PENSION = "fecha_aprobacion_pension";
@@ -134,6 +130,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_FECHA_REVOCACION_PENSION = "fecha_revocacion_pension";
     public static final String COLUMNA_NUMERO_CAUSA_REV_PENSION = "numero_causa_rev_pension";
     public static final String COLUMNA_OTRA_CAUSA_REV_PENSION = "otra_causa_rev_pension";
+    public static final String COLUMNA_NUMERO_RESOLUCION_REV_PEN = "numero_resolucion_rev_pen";
+    public static final String COLUMNA_FECHA_RESOLUCION_REV_PEN = "fecha_resolucion_rev_pen";
     public static final String COLUMNA_COMENTARIOS_REVOCACION_PENSION = "comentarios_revocacion_pension";
     public static final String COLUMNA_NUMERO_CONDICION_RECO_PEN = "numero_condicion_reco_pen";
     public static final String COLUMNA_FECHA_SOLICITUD_RECO_PEN = "fecha_solicitud_reco_pen";
@@ -160,7 +158,9 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     public static final String COLUMNA_FECHA_HORA_ULT_ACT_JUPE = "fecha_hora_ult_act_jupe";
     public static final String COLUMNA_LOTE = "lote";
     public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
+    public static final String COLUMNA_CODIGO_SIME_RECO_PEN = "codigo_sime_reco_pen";
     public static final String COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS = "comentarios_entrega_documentos";
+    public static final String COLUMNA_COMENTARIOS_INSERCION_JUPE = "comentarios_insercion_jupe";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_PERSONA, Long.class);
@@ -188,19 +188,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_DISTRITO, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TIPO_AREA, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_BARRIO, Long.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_MANZANA, Long.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_MANZANA, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_DIRECCION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TELEFONO_LINEA_BAJA, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_TELEFONO_CELULAR, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CERTIFICADO_VIDA, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_CERTIFICADO_VIDA, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_CERTIFICADO_VIDA_ANULADO, Integer.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CERTIFICADO_DEFUNCION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_CERTIFICADO_DEFUNCION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_CER_DEFUNCION_ANULADO, Integer.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_PERSONA_CON_EMPLEO, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_PERSONA_CON_JUBILACION, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_PERSONA_CON_PENSION, Integer.class);
@@ -215,7 +212,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_PERSONA_CON_DECLARACION_JUR, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_MONTO_PENSION, BigDecimal.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CONDICION_PENSION, Integer.class);
-        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LUGAR_SOLICITUD_PENSION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_SOLICITUD_PENSION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_SOLICITUD_PENSION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_APROBACION_PENSION, Timestamp.class);
@@ -235,6 +231,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_REVOCACION_PENSION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CAUSA_REV_PENSION, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OTRA_CAUSA_REV_PENSION, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_RESOLUCION_REV_PEN, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_RESOLUCION_REV_PEN, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_REVOCACION_PENSION, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NUMERO_CONDICION_RECO_PEN, Integer.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_SOLICITUD_RECO_PEN, Timestamp.class);
@@ -261,7 +259,9 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_LOTE, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_SIME, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_SIME_RECO_PEN, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_COMENTARIOS_INSERCION_JUPE, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -291,19 +291,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_ID_DISTRITO, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TIPO_AREA, true);
         this.setColumnasInsertables(COLUMNA_ID_BARRIO, true);
-        this.setColumnasInsertables(COLUMNA_ID_MANZANA, true);
-        this.setColumnasInsertables(COLUMNA_MANZANA, true);
         this.setColumnasInsertables(COLUMNA_DIRECCION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TELEFONO_LINEA_BAJA, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_TELEFONO_CELULAR, true);
         this.setColumnasInsertables(COLUMNA_CERTIFICADO_VIDA, true);
         this.setColumnasInsertables(COLUMNA_FECHA_CERTIFICADO_VIDA, true);
+        this.setColumnasInsertables(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, true);
         this.setColumnasInsertables(COLUMNA_ES_CERTIFICADO_VIDA_ANULADO, true);
-        this.setColumnasInsertables(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, true);
         this.setColumnasInsertables(COLUMNA_CERTIFICADO_DEFUNCION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_CERTIFICADO_DEFUNCION, true);
         this.setColumnasInsertables(COLUMNA_ES_CER_DEFUNCION_ANULADO, true);
-        this.setColumnasInsertables(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, true);
         this.setColumnasInsertables(COLUMNA_ES_PERSONA_CON_EMPLEO, true);
         this.setColumnasInsertables(COLUMNA_ES_PERSONA_CON_JUBILACION, true);
         this.setColumnasInsertables(COLUMNA_ES_PERSONA_CON_PENSION, true);
@@ -318,7 +315,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_ES_PERSONA_CON_DECLARACION_JUR, true);
         this.setColumnasInsertables(COLUMNA_MONTO_PENSION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_CONDICION_PENSION, true);
-        this.setColumnasInsertables(COLUMNA_LUGAR_SOLICITUD_PENSION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_SOLICITUD_PENSION, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_SOLICITUD_PENSION, true);
         this.setColumnasInsertables(COLUMNA_FECHA_APROBACION_PENSION, true);
@@ -338,6 +334,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_FECHA_REVOCACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_CAUSA_REV_PENSION, true);
         this.setColumnasInsertables(COLUMNA_OTRA_CAUSA_REV_PENSION, true);
+        this.setColumnasInsertables(COLUMNA_NUMERO_RESOLUCION_REV_PEN, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_RESOLUCION_REV_PEN, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_REVOCACION_PENSION, true);
         this.setColumnasInsertables(COLUMNA_NUMERO_CONDICION_RECO_PEN, true);
         this.setColumnasInsertables(COLUMNA_FECHA_SOLICITUD_RECO_PEN, true);
@@ -364,7 +362,9 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
         this.setColumnasInsertables(COLUMNA_LOTE, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_SIME, true);
+        this.setColumnasInsertables(COLUMNA_CODIGO_SIME_RECO_PEN, true);
         this.setColumnasInsertables(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, true);
+        this.setColumnasInsertables(COLUMNA_COMENTARIOS_INSERCION_JUPE, true);
     }
 
     protected void setColumnasModificables() {
@@ -394,19 +394,16 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_ID_DISTRITO, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TIPO_AREA, true);
         this.setColumnasModificables(COLUMNA_ID_BARRIO, true);
-        this.setColumnasModificables(COLUMNA_ID_MANZANA, true);
-        this.setColumnasModificables(COLUMNA_MANZANA, true);
         this.setColumnasModificables(COLUMNA_DIRECCION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TELEFONO_LINEA_BAJA, true);
         this.setColumnasModificables(COLUMNA_NUMERO_TELEFONO_CELULAR, true);
         this.setColumnasModificables(COLUMNA_CERTIFICADO_VIDA, true);
         this.setColumnasModificables(COLUMNA_FECHA_CERTIFICADO_VIDA, true);
+        this.setColumnasModificables(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, true);
         this.setColumnasModificables(COLUMNA_ES_CERTIFICADO_VIDA_ANULADO, true);
-        this.setColumnasModificables(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, true);
         this.setColumnasModificables(COLUMNA_CERTIFICADO_DEFUNCION, true);
         this.setColumnasModificables(COLUMNA_FECHA_CERTIFICADO_DEFUNCION, true);
         this.setColumnasModificables(COLUMNA_ES_CER_DEFUNCION_ANULADO, true);
-        this.setColumnasModificables(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, true);
         this.setColumnasModificables(COLUMNA_ES_PERSONA_CON_EMPLEO, true);
         this.setColumnasModificables(COLUMNA_ES_PERSONA_CON_JUBILACION, true);
         this.setColumnasModificables(COLUMNA_ES_PERSONA_CON_PENSION, true);
@@ -421,7 +418,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_ES_PERSONA_CON_DECLARACION_JUR, true);
         this.setColumnasModificables(COLUMNA_MONTO_PENSION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_CONDICION_PENSION, true);
-        this.setColumnasModificables(COLUMNA_LUGAR_SOLICITUD_PENSION, true);
         this.setColumnasModificables(COLUMNA_FECHA_SOLICITUD_PENSION, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_SOLICITUD_PENSION, true);
         this.setColumnasModificables(COLUMNA_FECHA_APROBACION_PENSION, true);
@@ -441,6 +437,8 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_FECHA_REVOCACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_CAUSA_REV_PENSION, true);
         this.setColumnasModificables(COLUMNA_OTRA_CAUSA_REV_PENSION, true);
+        this.setColumnasModificables(COLUMNA_NUMERO_RESOLUCION_REV_PEN, true);
+        this.setColumnasModificables(COLUMNA_FECHA_RESOLUCION_REV_PEN, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_REVOCACION_PENSION, true);
         this.setColumnasModificables(COLUMNA_NUMERO_CONDICION_RECO_PEN, true);
         this.setColumnasModificables(COLUMNA_FECHA_SOLICITUD_RECO_PEN, true);
@@ -467,7 +465,9 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         this.setColumnasModificables(COLUMNA_FECHA_HORA_ULT_ACT_JUPE, true);
         this.setColumnasModificables(COLUMNA_LOTE, true);
         this.setColumnasModificables(COLUMNA_CODIGO_SIME, true);
+        this.setColumnasModificables(COLUMNA_CODIGO_SIME_RECO_PEN, true);
         this.setColumnasModificables(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, true);
+        this.setColumnasModificables(COLUMNA_COMENTARIOS_INSERCION_JUPE, true);
     }
 
     public Long getIdPersona() {
@@ -795,32 +795,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_ID_BARRIO, rowKey, valor);
     }
 
-    public Long getIdManzana() {
-        return (Long) super.getValue(COLUMNA_ID_MANZANA);
-    }
-    public Long getIdManzana(RowKey rowKey) {
-        return (Long) super.getValue(COLUMNA_ID_MANZANA, rowKey);
-    }
-    public void setIdManzana(Long valor) {
-        super.setValue(COLUMNA_ID_MANZANA, valor);
-    }
-    public void setIdManzana(RowKey rowKey, Long valor) {
-        super.setValue(COLUMNA_ID_MANZANA, rowKey, valor);
-    }
-
-    public String getManzana() {
-        return (String) super.getValue(COLUMNA_MANZANA);
-    }
-    public String getManzana(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_MANZANA, rowKey);
-    }
-    public void setManzana(String valor) {
-        super.setValue(COLUMNA_MANZANA, valor);
-    }
-    public void setManzana(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_MANZANA, rowKey, valor);
-    }
-
     public String getDireccion() {
         return (String) super.getValue(COLUMNA_DIRECCION);
     }
@@ -886,6 +860,19 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_FECHA_CERTIFICADO_VIDA, rowKey, valor);
     }
 
+    public Integer getDiasVigenciaCertificadoVida() {
+        return (Integer) super.getValue(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA);
+    }
+    public Integer getDiasVigenciaCertificadoVida(RowKey rowKey) {
+        return (Integer) super.getValue(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, rowKey);
+    }
+    public void setDiasVigenciaCertificadoVida(Integer valor) {
+        super.setValue(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, valor);
+    }
+    public void setDiasVigenciaCertificadoVida(RowKey rowKey, Integer valor) {
+        super.setValue(COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA, rowKey, valor);
+    }
+
     public Integer getEsCertificadoVidaAnulado() {
         return (Integer) super.getValue(COLUMNA_ES_CERTIFICADO_VIDA_ANULADO);
     }
@@ -897,19 +884,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setEsCertificadoVidaAnulado(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_ES_CERTIFICADO_VIDA_ANULADO, rowKey, valor);
-    }
-
-    public String getComentariosAnulCerVida() {
-        return (String) super.getValue(COLUMNA_COMENTARIOS_ANUL_CER_VIDA);
-    }
-    public String getComentariosAnulCerVida(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, rowKey);
-    }
-    public void setComentariosAnulCerVida(String valor) {
-        super.setValue(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, valor);
-    }
-    public void setComentariosAnulCerVida(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_COMENTARIOS_ANUL_CER_VIDA, rowKey, valor);
     }
 
     public String getCertificadoDefuncion() {
@@ -949,19 +923,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setEsCerDefuncionAnulado(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_ES_CER_DEFUNCION_ANULADO, rowKey, valor);
-    }
-
-    public String getComentariosAnulCerDefuncion() {
-        return (String) super.getValue(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION);
-    }
-    public String getComentariosAnulCerDefuncion(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, rowKey);
-    }
-    public void setComentariosAnulCerDefuncion(String valor) {
-        super.setValue(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, valor);
-    }
-    public void setComentariosAnulCerDefuncion(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION, rowKey, valor);
     }
 
     public Integer getEsPersonaConEmpleo() {
@@ -1144,19 +1105,6 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setNumeroCondicionPension(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_NUMERO_CONDICION_PENSION, rowKey, valor);
-    }
-
-    public String getLugarSolicitudPension() {
-        return (String) super.getValue(COLUMNA_LUGAR_SOLICITUD_PENSION);
-    }
-    public String getLugarSolicitudPension(RowKey rowKey) {
-        return (String) super.getValue(COLUMNA_LUGAR_SOLICITUD_PENSION, rowKey);
-    }
-    public void setLugarSolicitudPension(String valor) {
-        super.setValue(COLUMNA_LUGAR_SOLICITUD_PENSION, valor);
-    }
-    public void setLugarSolicitudPension(RowKey rowKey, String valor) {
-        super.setValue(COLUMNA_LUGAR_SOLICITUD_PENSION, rowKey, valor);
     }
 
     public Timestamp getFechaSolicitudPension() {
@@ -1404,6 +1352,32 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setOtraCausaRevPension(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_OTRA_CAUSA_REV_PENSION, rowKey, valor);
+    }
+
+    public String getNumeroResolucionRevPen() {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_REV_PEN);
+    }
+    public String getNumeroResolucionRevPen(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_NUMERO_RESOLUCION_REV_PEN, rowKey);
+    }
+    public void setNumeroResolucionRevPen(String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_REV_PEN, valor);
+    }
+    public void setNumeroResolucionRevPen(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_NUMERO_RESOLUCION_REV_PEN, rowKey, valor);
+    }
+
+    public Timestamp getFechaResolucionRevPen() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_REV_PEN);
+    }
+    public Timestamp getFechaResolucionRevPen(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_RESOLUCION_REV_PEN, rowKey);
+    }
+    public void setFechaResolucionRevPen(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_REV_PEN, valor);
+    }
+    public void setFechaResolucionRevPen(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_RESOLUCION_REV_PEN, rowKey, valor);
     }
 
     public String getComentariosRevocacionPension() {
@@ -1744,6 +1718,19 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
         super.setValue(COLUMNA_CODIGO_SIME, rowKey, valor);
     }
 
+    public String getCodigoSimeRecoPen() {
+        return (String) super.getValue(COLUMNA_CODIGO_SIME_RECO_PEN);
+    }
+    public String getCodigoSimeRecoPen(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_CODIGO_SIME_RECO_PEN, rowKey);
+    }
+    public void setCodigoSimeRecoPen(String valor) {
+        super.setValue(COLUMNA_CODIGO_SIME_RECO_PEN, valor);
+    }
+    public void setCodigoSimeRecoPen(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_CODIGO_SIME_RECO_PEN, rowKey, valor);
+    }
+
     public String getComentariosEntregaDocumentos() {
         return (String) super.getValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS);
     }
@@ -1755,6 +1742,19 @@ public class PersonaCachedRowSetDataProvider extends RecursoCachedRowSetDataProv
     }
     public void setComentariosEntregaDocumentos(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS, rowKey, valor);
+    }
+
+    public String getComentariosInsercionJupe() {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_INSERCION_JUPE);
+    }
+    public String getComentariosInsercionJupe(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_COMENTARIOS_INSERCION_JUPE, rowKey);
+    }
+    public void setComentariosInsercionJupe(String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_INSERCION_JUPE, valor);
+    }
+    public void setComentariosInsercionJupe(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_COMENTARIOS_INSERCION_JUPE, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";

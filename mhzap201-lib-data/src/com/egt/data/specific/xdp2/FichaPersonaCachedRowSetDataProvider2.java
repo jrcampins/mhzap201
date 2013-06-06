@@ -73,12 +73,15 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
     public static final long FUNCION_VINCULAR_FICHA_PERSONA = 320200151L;
     public static final long FUNCION_DESVINCULAR_FICHA_PERSONA = 320200152L;
     public static final long FUNCION_CONSULTAR_FICHA_PERSONA = 320200101L;
+    public static final long FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = 320200153L;
     public static final long FUNCION_CREAR_FICHA_PERSONA = 320200102L;
     public static final long FUNCION_MODIFICAR_FICHA_PERSONA = 320200103L;
     public static final long FUNCION_ELIMINAR_FICHA_PERSONA = 320200104L;
 
     public static final String PROCESO_FUNCION_VINCULAR_FICHA_PERSONA = "ficha_persona_vincular";
     public static final String PROCESO_FUNCION_DESVINCULAR_FICHA_PERSONA = "ficha_persona_desvincular";
+
+    public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = "ficha_persona_importada";
 
     protected static final long PARAMETRO_ID_FICHA_PERSONA = 20342L;
     protected static final long PARAMETRO_ID_POTENCIAL_BEN = 20571L;
@@ -158,6 +161,13 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
     protected static final long PARAMETRO_MONTO_INGRESO_ADICIONAL = 20348L;
     protected static final long PARAMETRO_TOTAL_INGRESO_MENSUAL = 20439L;
     protected static final long PARAMETRO_ES_FICHA_PERSONA_INACTIVA = 20600L;
+    protected static final long PARAMETRO_ES_FICHA_PERSONA_IMPORTADA = 21006L;
+    protected static final long PARAMETRO_FECHA_IMPORTACION = 21008L;
+    protected static final long PARAMETRO_ID_DEPARTAMENTO = 20336L;
+    protected static final long PARAMETRO_ID_DISTRITO = 20339L;
+    protected static final long PARAMETRO_ID_BARRIO = 20333L;
+    protected static final long PARAMETRO_FECHA_IMPORTACION_DESDE = 10019L;
+    protected static final long PARAMETRO_FECHA_IMPORTACION_HASTA = 10020L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_POTENCIAL_BEN = 320400101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
@@ -597,6 +607,8 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
         rastro.addParametro(PARAMETRO_TOTAL_INGRESO_MENSUAL, this.getTotalIngresoMensual(rowKey));
         rastro.addParametro(PARAMETRO_ID_POTENCIAL_BEN, this.getIdPotencialBen(rowKey));
         rastro.addParametro(PARAMETRO_ES_FICHA_PERSONA_INACTIVA, this.getEsFichaPersonaInactiva(rowKey));
+        rastro.addParametro(PARAMETRO_ES_FICHA_PERSONA_IMPORTADA, this.getEsFichaPersonaImportada(rowKey));
+        rastro.addParametro(PARAMETRO_FECHA_IMPORTACION, this.getFechaImportacion(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -681,6 +693,8 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
         rastro.addParametro(PARAMETRO_TOTAL_INGRESO_MENSUAL, this.getTotalIngresoMensual(rowKey));
         rastro.addParametro(PARAMETRO_ID_POTENCIAL_BEN, this.getIdPotencialBen(rowKey));
         rastro.addParametro(PARAMETRO_ES_FICHA_PERSONA_INACTIVA, this.getEsFichaPersonaInactiva(rowKey));
+        rastro.addParametro(PARAMETRO_ES_FICHA_PERSONA_IMPORTADA, this.getEsFichaPersonaImportada(rowKey));
+        rastro.addParametro(PARAMETRO_FECHA_IMPORTACION, this.getFechaImportacion(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -708,5 +722,6 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
         this.setEsRespondente(rowKey, 0);
         this.setNumeroSionoMiembroHogar(rowKey, 1);
         this.setEsFichaPersonaInactiva(rowKey, 0);
+        this.setEsFichaPersonaImportada(rowKey, 0);
     }
 }

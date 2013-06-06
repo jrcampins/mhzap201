@@ -141,6 +141,8 @@ public class FichaPersonaCachedRowSetDataProvider extends RecursoCachedRowSetDat
     public static final String COLUMNA_TOTAL_INGRESO_MENSUAL = "total_ingreso_mensual";
     public static final String COLUMNA_ID_POTENCIAL_BEN = "id_potencial_ben";
     public static final String COLUMNA_ES_FICHA_PERSONA_INACTIVA = "es_ficha_persona_inactiva";
+    public static final String COLUMNA_ES_FICHA_PERSONA_IMPORTADA = "es_ficha_persona_importada";
+    public static final String COLUMNA_FECHA_IMPORTACION = "fecha_importacion";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_FICHA_PERSONA, Long.class);
@@ -221,6 +223,8 @@ public class FichaPersonaCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_TOTAL_INGRESO_MENSUAL, BigDecimal.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_POTENCIAL_BEN, Long.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_FICHA_PERSONA_INACTIVA, Integer.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, Integer.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_IMPORTACION, Timestamp.class);
     }
 
     protected void setColumnasInsertables() {
@@ -303,6 +307,8 @@ public class FichaPersonaCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasInsertables(COLUMNA_TOTAL_INGRESO_MENSUAL, true);
         this.setColumnasInsertables(COLUMNA_ID_POTENCIAL_BEN, true);
         this.setColumnasInsertables(COLUMNA_ES_FICHA_PERSONA_INACTIVA, true);
+        this.setColumnasInsertables(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_IMPORTACION, true);
     }
 
     protected void setColumnasModificables() {
@@ -385,6 +391,8 @@ public class FichaPersonaCachedRowSetDataProvider extends RecursoCachedRowSetDat
         this.setColumnasModificables(COLUMNA_TOTAL_INGRESO_MENSUAL, true);
         this.setColumnasModificables(COLUMNA_ID_POTENCIAL_BEN, true);
         this.setColumnasModificables(COLUMNA_ES_FICHA_PERSONA_INACTIVA, true);
+        this.setColumnasModificables(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, true);
+        this.setColumnasModificables(COLUMNA_FECHA_IMPORTACION, true);
     }
 
     public Long getIdFichaPersona() {
@@ -1399,6 +1407,32 @@ public class FichaPersonaCachedRowSetDataProvider extends RecursoCachedRowSetDat
     }
     public void setEsFichaPersonaInactiva(RowKey rowKey, Integer valor) {
         super.setValue(COLUMNA_ES_FICHA_PERSONA_INACTIVA, rowKey, valor);
+    }
+
+    public Integer getEsFichaPersonaImportada() {
+        return (Integer) super.getValue(COLUMNA_ES_FICHA_PERSONA_IMPORTADA);
+    }
+    public Integer getEsFichaPersonaImportada(RowKey rowKey) {
+        return (Integer) super.getValue(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, rowKey);
+    }
+    public void setEsFichaPersonaImportada(Integer valor) {
+        super.setValue(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, valor);
+    }
+    public void setEsFichaPersonaImportada(RowKey rowKey, Integer valor) {
+        super.setValue(COLUMNA_ES_FICHA_PERSONA_IMPORTADA, rowKey, valor);
+    }
+
+    public Timestamp getFechaImportacion() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_IMPORTACION);
+    }
+    public Timestamp getFechaImportacion(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_IMPORTACION, rowKey);
+    }
+    public void setFechaImportacion(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_IMPORTACION, valor);
+    }
+    public void setFechaImportacion(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_IMPORTACION, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_ficha_persona";

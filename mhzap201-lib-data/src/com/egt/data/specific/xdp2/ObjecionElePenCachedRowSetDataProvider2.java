@@ -69,9 +69,13 @@ public class ObjecionElePenCachedRowSetDataProvider2 extends ObjecionElePenCache
 
     public static final long FUNCION_CONSULTAR_RECURSO = 324500101L;
 
+    public static final long FUNCION_ANULAR_OBJECION_ELE_PEN = 324500151L;
     public static final long FUNCION_CONSULTAR_OBJECION_ELE_PEN = 324500101L;
 
+    public static final String PROCESO_FUNCION_ANULAR_OBJECION_ELE_PEN = "objecion_ele_pen_anular";
+
     protected static final long PARAMETRO_ID_OBJECION_ELE_PEN = 20668L;
+    protected static final long PARAMETRO_OBSERVACIONES_ANULACION = 21014L;
     protected static final long PARAMETRO_VERSION_OBJECION_ELE_PEN = 20671L;
     protected static final long PARAMETRO_ID_PERSONA = 20002L;
     protected static final long PARAMETRO_ID_PROVEEDOR_DAT_EXT = 20269L;
@@ -80,6 +84,7 @@ public class ObjecionElePenCachedRowSetDataProvider2 extends ObjecionElePenCache
     protected static final long PARAMETRO_FECHA_ULTIMA_ACTUALIZACION = 20667L;
     protected static final long PARAMETRO_NOMBRE_ARCHIVO_ULTIMA_ACT = 20669L;
     protected static final long PARAMETRO_OBSERVACIONES = 20433L;
+    protected static final long PARAMETRO_FECHA_ANULACION = 21013L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_PROVEEDOR_DAT_EXT = 312100101L;

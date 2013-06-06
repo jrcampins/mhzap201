@@ -69,6 +69,8 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
     public static final String COLUMNA_FECHA_ULTIMA_ACTUALIZACION = "fecha_ultima_actualizacion";
     public static final String COLUMNA_NOMBRE_ARCHIVO_ULTIMA_ACT = "nombre_archivo_ultima_act";
     public static final String COLUMNA_OBSERVACIONES = "observaciones";
+    public static final String COLUMNA_FECHA_ANULACION = "fecha_anulacion";
+    public static final String COLUMNA_OBSERVACIONES_ANULACION = "observaciones_anulacion";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_OBJECION_ELE_PEN, Long.class);
@@ -80,6 +82,8 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_ULTIMA_ACTUALIZACION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_ARCHIVO_ULTIMA_ACT, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_ANULACION, Timestamp.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES_ANULACION, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -93,6 +97,8 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.setColumnasInsertables(COLUMNA_FECHA_ULTIMA_ACTUALIZACION, true);
         this.setColumnasInsertables(COLUMNA_NOMBRE_ARCHIVO_ULTIMA_ACT, true);
         this.setColumnasInsertables(COLUMNA_OBSERVACIONES, true);
+        this.setColumnasInsertables(COLUMNA_FECHA_ANULACION, true);
+        this.setColumnasInsertables(COLUMNA_OBSERVACIONES_ANULACION, true);
     }
 
     protected void setColumnasModificables() {
@@ -106,6 +112,8 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.setColumnasModificables(COLUMNA_FECHA_ULTIMA_ACTUALIZACION, true);
         this.setColumnasModificables(COLUMNA_NOMBRE_ARCHIVO_ULTIMA_ACT, true);
         this.setColumnasModificables(COLUMNA_OBSERVACIONES, true);
+        this.setColumnasModificables(COLUMNA_FECHA_ANULACION, true);
+        this.setColumnasModificables(COLUMNA_OBSERVACIONES_ANULACION, true);
     }
 
     public Long getIdObjecionElePen() {
@@ -223,6 +231,32 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
     }
     public void setObservaciones(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_OBSERVACIONES, rowKey, valor);
+    }
+
+    public Timestamp getFechaAnulacion() {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_ANULACION);
+    }
+    public Timestamp getFechaAnulacion(RowKey rowKey) {
+        return (Timestamp) super.getValue(COLUMNA_FECHA_ANULACION, rowKey);
+    }
+    public void setFechaAnulacion(Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_ANULACION, valor);
+    }
+    public void setFechaAnulacion(RowKey rowKey, Timestamp valor) {
+        super.setValue(COLUMNA_FECHA_ANULACION, rowKey, valor);
+    }
+
+    public String getObservacionesAnulacion() {
+        return (String) super.getValue(COLUMNA_OBSERVACIONES_ANULACION);
+    }
+    public String getObservacionesAnulacion(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_OBSERVACIONES_ANULACION, rowKey);
+    }
+    public void setObservacionesAnulacion(String valor) {
+        super.setValue(COLUMNA_OBSERVACIONES_ANULACION, valor);
+    }
+    public void setObservacionesAnulacion(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_OBSERVACIONES_ANULACION, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_objecion_ele_pen";

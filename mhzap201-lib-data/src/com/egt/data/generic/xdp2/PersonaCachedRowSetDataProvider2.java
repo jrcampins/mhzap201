@@ -75,30 +75,45 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     public static final long FUNCION_REGISTRAR_CER_DEFUN_PERSONA = 201000153L;
     public static final long FUNCION_ANULAR_CER_DEFUN_PERSONA = 201000154L;
     public static final long FUNCION_APROBAR_PENSION_PERSONA = 201000155L;
-    public static final long FUNCION_OBJETAR_PENSION_PERSONA = 201000156L;
-    public static final long FUNCION_REVOCAR_PENSION_PERSONA = 201000157L;
-    public static final long FUNCION_OTORGAR_PENSION_PERSONA = 201000158L;
-    public static final long FUNCION_DENEGAR_PENSION_PERSONA = 201000159L;
-    public static final long FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = 201000160L;
-    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA = 201000161L;
-    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA = 201000162L;
-    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA = 201000163L;
-    public static final long FUNCION_REGISTRAR_DENU_PEN_PERSONA = 201000164L;
-    public static final long FUNCION_CONFIRMAR_DENU_PEN_PERSONA = 201000165L;
-    public static final long FUNCION_DESMENTIR_DENU_PEN_PERSONA = 201000166L;
-    public static final long FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = 201000167L;
-    public static final long FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = 201000168L;
+    public static final long FUNCION_ANULAR_APROBACION_PEN_PERSONA = 201000156L;
+    public static final long FUNCION_OBJETAR_PENSION_PERSONA = 201000157L;
+    public static final long FUNCION_REVOCAR_PENSION_PERSONA = 201000158L;
+    public static final long FUNCION_OTORGAR_PENSION_PERSONA = 201000159L;
+    public static final long FUNCION_DENEGAR_PENSION_PERSONA = 201000160L;
+    public static final long FUNCION_ANULAR_DENEGACION_PEN_PERSONA = 201000161L;
+    public static final long FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = 201000162L;
+    public static final long FUNCION_INCLUIR_PERSONA_EN_JUPE = 201000163L;
+    public static final long FUNCION_ASIGNAR_MONTO_PENSION_PERSONA = 201000164L;
+    public static final long FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = 201000165L;
+    public static final long FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = 201000166L;
+    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA = 201000167L;
+    public static final long FUNCION_ASIGNAR_RECO_PEN_PERSONA = 201000168L;
+    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA = 201000169L;
+    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA = 201000170L;
+    public static final long FUNCION_REGISTRAR_DENU_PEN_PERSONA = 201000171L;
+    public static final long FUNCION_CONFIRMAR_DENU_PEN_PERSONA = 201000172L;
+    public static final long FUNCION_DESMENTIR_DENU_PEN_PERSONA = 201000173L;
+    public static final long FUNCION_ANOTAR_PERSONA = 201000174L;
+    public static final long FUNCION_BORRAR_PERSONA = 201000175L;
+    public static final long FUNCION_BORRAR_PERSONA_OTRO = 201000176L;
+    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL = 201000177L;
+    public static final long FUNCION_ASIGNAR_RECO_PEN_PERSONA_SEL = 201000178L;
+    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA_SEL = 201000179L;
+    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL = 201000180L;
     public static final long FUNCION_CONSULTAR_PERSONA = 201000101L;
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = 201000169L;
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000170L;
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000171L;
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000172L;
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000173L;
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000174L;
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000175L;
-    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = 201000176L;
-    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000177L;
-    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000178L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = 201000181L;
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000182L;
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000183L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000184L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000185L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000186L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000187L;
+    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = 201000188L;
+    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA = 201000189L;
+    public static final long FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE = 201000190L;
+    public static final long FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE = 201000191L;
+    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000192L;
+    public static final long FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA = 201000193L;
     public static final long FUNCION_CREAR_PERSONA = 201000102L;
     public static final long FUNCION_MODIFICAR_PERSONA = 201000103L;
     public static final long FUNCION_ELIMINAR_PERSONA = 201000104L;
@@ -108,19 +123,31 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     public static final String PROCESO_FUNCION_REGISTRAR_CER_DEFUN_PERSONA = "persona_registrar_cer_defun";
     public static final String PROCESO_FUNCION_ANULAR_CER_DEFUN_PERSONA = "persona_anular_cer_defun";
     public static final String PROCESO_FUNCION_APROBAR_PENSION_PERSONA = "persona_aprobar_pension";
+    public static final String PROCESO_FUNCION_ANULAR_APROBACION_PEN_PERSONA = "persona_anular_aprobacion_pen";
     public static final String PROCESO_FUNCION_OBJETAR_PENSION_PERSONA = "persona_objetar_pension";
     public static final String PROCESO_FUNCION_REVOCAR_PENSION_PERSONA = "persona_revocar_pension";
     public static final String PROCESO_FUNCION_OTORGAR_PENSION_PERSONA = "persona_otorgar_pension";
     public static final String PROCESO_FUNCION_DENEGAR_PENSION_PERSONA = "persona_denegar_pension";
+    public static final String PROCESO_FUNCION_ANULAR_DENEGACION_PEN_PERSONA = "persona_anular_denegacion_pen";
     public static final String PROCESO_FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = "persona_registrar_entrega_doc";
+    public static final String PROCESO_FUNCION_INCLUIR_PERSONA_EN_JUPE = "persona_incluir_en_jupe";
+    public static final String PROCESO_FUNCION_ASIGNAR_MONTO_PENSION_PERSONA = "persona_asignar_monto_pension";
+    public static final String PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = "persona_act_fec_ult_cob_pen";
+    public static final String PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = "persona_anul_fec_ult_cob_pen";
     public static final String PROCESO_FUNCION_SOLICITAR_RECO_PEN_PERSONA = "persona_solicitar_reco_pen";
+    public static final String PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA = "persona_asignar_reco_pen";
     public static final String PROCESO_FUNCION_APROBAR_RECO_PEN_PERSONA = "persona_aprobar_reco_pen";
     public static final String PROCESO_FUNCION_DENEGAR_RECO_PEN_PERSONA = "persona_denegar_reco_pen";
     public static final String PROCESO_FUNCION_REGISTRAR_DENU_PEN_PERSONA = "persona_registrar_denu_pen";
     public static final String PROCESO_FUNCION_CONFIRMAR_DENU_PEN_PERSONA = "persona_confirmar_denu_pen";
     public static final String PROCESO_FUNCION_DESMENTIR_DENU_PEN_PERSONA = "persona_desmentir_denu_pen";
-    public static final String PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = "persona_act_fec_ult_cob_pen";
-    public static final String PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = "persona_anul_fec_ult_cob_pen";
+    public static final String PROCESO_FUNCION_ANOTAR_PERSONA = "persona_anotar";
+    public static final String PROCESO_FUNCION_BORRAR_PERSONA = "persona_borrar";
+    public static final String PROCESO_FUNCION_BORRAR_PERSONA_OTRO = "persona_borrar_otro";
+    public static final String PROCESO_FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL = "persona_solicitar_reco_pen_sel";
+    public static final String PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA_SEL = "persona_asignar_reco_pen_sel";
+    public static final String PROCESO_FUNCION_APROBAR_RECO_PEN_PERSONA_SEL = "persona_aprobar_reco_pen_sel";
+    public static final String PROCESO_FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL = "persona_denegar_reco_pen_sel";
 
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = "persona_con_pension_solicitada";
     public static final String INFORME_FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = "persona_acreditada_sin_objeciones";
@@ -130,18 +157,20 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = "persona_con_pension_revocada";
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = "persona_con_pension_otorgada";
     public static final String INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = "persona_documentos_pension_otorgada";
-    public static final String INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = "persona_ultima_actualizacion_en_jupe";
+    public static final String INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA = "persona_documentos_pension_denegada";
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE = "persona_incluida_en_jupe";
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE = "persona_excluida_de_jupe";
     public static final String INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = "persona_cuadro_resumen_pension";
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA = "persona_con_reconsideracion_solicitada";
 
     protected static final long PARAMETRO_ID_PERSONA = 20002L;
     protected static final long PARAMETRO_CERTIFICADO_VIDA = 20112L;
     protected static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
-    protected static final long PARAMETRO_COMENTARIOS_ANUL_CER_VIDA = 20260L;
+    protected static final long PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA = 21020L;
     protected static final long PARAMETRO_ES_CERTIFICADO_VIDA_ANULADO = 20263L;
     protected static final long PARAMETRO_ES_PERSONA_CON_CER_VIDA = 20580L;
     protected static final long PARAMETRO_CERTIFICADO_DEFUNCION = 20111L;
     protected static final long PARAMETRO_FECHA_CERTIFICADO_DEFUNCION = 20121L;
-    protected static final long PARAMETRO_COMENTARIOS_ANUL_CER_DEFUNCION = 20258L;
     protected static final long PARAMETRO_ES_CER_DEFUNCION_ANULADO = 20261L;
     protected static final long PARAMETRO_COMENTARIOS_APROBACION_PENSION = 20228L;
     protected static final long PARAMETRO_NUMERO_CONDICION_PENSION = 20169L;
@@ -164,9 +193,13 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_ES_PERSONA_CON_COPIA_CEDULA = 20679L;
     protected static final long PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR = 20680L;
     protected static final long PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS = 21003L;
+    protected static final long PARAMETRO_MONTO_PENSION = 20197L;
+    protected static final long PARAMETRO_FECHA_ULTIMO_COBRO_PENSION = 20635L;
+    protected static final long PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN = 20655L;
     protected static final long PARAMETRO_COMENTARIOS_SOLICITUD_RECO_PEN = 20237L;
     protected static final long PARAMETRO_NUMERO_CONDICION_RECO_PEN = 20170L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_RECO_PEN = 20247L;
+    protected static final long PARAMETRO_CODIGO_SIME_RECO_PEN = 21015L;
     protected static final long PARAMETRO_COMENTARIOS_APR_RECO_PEN = 20229L;
     protected static final long PARAMETRO_FECHA_APROBACION_RECO_PEN = 20239L;
     protected static final long PARAMETRO_NUMERO_CAUSA_DEN_RECO_PEN = 20248L;
@@ -180,8 +213,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_FECHA_CONFIRMACION_DENU_PEN = 20240L;
     protected static final long PARAMETRO_COMENTARIOS_DES_DENU_PEN = 20233L;
     protected static final long PARAMETRO_FECHA_DESMENTIDO_DENUNCIA_PEN = 20243L;
-    protected static final long PARAMETRO_FECHA_ULTIMO_COBRO_PENSION = 20635L;
-    protected static final long PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN = 20655L;
+    protected static final long PARAMETRO_ID_USUARIO = 1379L;
+    protected static final long PARAMETRO_OBSERVACION = 20738L;
     protected static final long PARAMETRO_VERSION_PERSONA = 20004L;
     protected static final long PARAMETRO_CODIGO_PERSONA = 20001L;
     protected static final long PARAMETRO_NOMBRE_PERSONA = 20003L;
@@ -206,8 +239,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_ID_DISTRITO = 20339L;
     protected static final long PARAMETRO_NUMERO_TIPO_AREA = 20412L;
     protected static final long PARAMETRO_ID_BARRIO = 20333L;
-    protected static final long PARAMETRO_ID_MANZANA = 20344L;
-    protected static final long PARAMETRO_MANZANA = 20664L;
     protected static final long PARAMETRO_DIRECCION = 20326L;
     protected static final long PARAMETRO_NUMERO_TELEFONO_LINEA_BAJA = 20410L;
     protected static final long PARAMETRO_NUMERO_TELEFONO_CELULAR = 20409L;
@@ -220,11 +251,11 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_ES_PERSONA_CON_CARTA_RENUNCIA = 20579L;
     protected static final long PARAMETRO_ES_PERSONA_ELEGIBLE_PARA_PEN = 20149L;
     protected static final long PARAMETRO_ES_PERSONA_ACREDITADA_PARA_PEN = 20147L;
-    protected static final long PARAMETRO_MONTO_PENSION = 20197L;
-    protected static final long PARAMETRO_LUGAR_SOLICITUD_PENSION = 20289L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION = 20246L;
     protected static final long PARAMETRO_COMENTARIOS_SOLICITUD_PENSION = 20236L;
     protected static final long PARAMETRO_FECHA_OTORGAMIENTO_PEN = 20663L;
+    protected static final long PARAMETRO_NUMERO_RESOLUCION_REV_PEN = 21011L;
+    protected static final long PARAMETRO_FECHA_RESOLUCION_REV_PEN = 21009L;
     protected static final long PARAMETRO_ID_FICHA_PERSONA = 20342L;
     protected static final long PARAMETRO_FECHA_FICHA_PERSONA = 20621L;
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA = 20219L;
@@ -232,6 +263,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_FECHA_HORA_ULT_ACT_JUPE = 20654L;
     protected static final long PARAMETRO_LOTE = 20997L;
     protected static final long PARAMETRO_CODIGO_SIME = 20996L;
+    protected static final long PARAMETRO_COMENTARIOS_INSERCION_JUPE = 21005L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_DESDE = 10001L;
     protected static final long PARAMETRO_FECHA_SOLICITUD_PENSION_HASTA = 10002L;
     protected static final long PARAMETRO_FECHA_APROBACION_PENSION_DESDE = 10003L;
@@ -244,6 +276,10 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     protected static final long PARAMETRO_FECHA_OTORGAMIENTO_PEN_HASTA = 10018L;
     protected static final long PARAMETRO_FECHA_HORA_ULT_ACT_JUPE_DESDE = 10009L;
     protected static final long PARAMETRO_FECHA_HORA_ULT_ACT_JUPE_HASTA = 10010L;
+    protected static final long PARAMETRO_FECHA_SOLICITUD_RECO_PEN_DESDE = 10023L;
+    protected static final long PARAMETRO_FECHA_SOLICITUD_RECO_PEN_HASTA = 10024L;
+    protected static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN_DESDE = 10025L;
+    protected static final long PARAMETRO_FECHA_RESOLUCION_DEN_PEN_HASTA = 10026L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_PENSION = 311300101L;
@@ -252,6 +288,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_RECO_PEN = 311400101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_CAUSA_DEN_RECO_PEN = 311620101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_CONDICION_DENU_PEN = 311500101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_USUARIO = 106100101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_SEXO_PERSONA = 201200101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_ESTADO_CIVIL = 201100101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_ETNIA_INDIGENA = 301100101L;
@@ -267,6 +304,7 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_CONDICION_RECO_PEN = {"condicion_reco_pen", "numero_condicion_reco_pen", "", ""};
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_CAUSA_DEN_RECO_PEN = {"causa_den_reco_pen", "numero_causa_den_reco_pen", "", ""};
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_CONDICION_DENU_PEN = {"condicion_denu_pen", "numero_condicion_denu_pen", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_USUARIO = {"usuario", "id_usuario", "", ""};
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_SEXO_PERSONA = {"sexo_persona", "numero_sexo_persona", "", ""};
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_ESTADO_CIVIL = {"estado_civil", "numero_estado_civil", "", ""};
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_ETNIA_INDIGENA = {"etnia_indigena", "id_etnia_indigena", "", ""};
@@ -519,13 +557,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
                         TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_BARRIO + ">");
                     }
                 }
-                if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_MANZANA)) {
-                    ok = TLC.getControlador().esReferenciaAutorizada(this.getIdManzana(rowKey), FUNCION_REFERENCIA_CONSULTAR_UBICACION, STRINGS_REFERENCIA_CONSULTAR_UBICACION);
-                    es &= ok;
-                    if (!ok) {
-                        TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_MANZANA + ">");
-                    }
-                }
                 if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FICHA_PERSONA)) {
                     ok = TLC.getControlador().esReferenciaAutorizada(this.getIdFichaPersona(rowKey), FUNCION_REFERENCIA_CONSULTAR_FICHA_PERSONA, STRINGS_REFERENCIA_CONSULTAR_FICHA_PERSONA);
                     es &= ok;
@@ -573,13 +604,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
                     es &= ok;
                     if (!ok) {
                         TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_BARRIO + ">");
-                    }
-                }
-                if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_MANZANA)) {
-                    ok = TLC.getControlador().esReferenciaAutorizada(this.getIdManzana(rowKey), FUNCION_REFERENCIA_CONSULTAR_UBICACION, STRINGS_REFERENCIA_CONSULTAR_UBICACION);
-                    es &= ok;
-                    if (!ok) {
-                        TLC.getBitacora().error(CBM2.RECURSO_NO_REFERENCIABLE, "<" + COLUMNA_ID_MANZANA + ">");
                     }
                 }
                 if (this.getCachedRowSet().columnUpdated(COLUMNA_ID_FICHA_PERSONA)) {
@@ -642,19 +666,16 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_ID_DISTRITO, this.getIdDistrito(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
         rastro.addParametro(PARAMETRO_ID_BARRIO, this.getIdBarrio(rowKey));
-        rastro.addParametro(PARAMETRO_ID_MANZANA, this.getIdManzana(rowKey));
-        rastro.addParametro(PARAMETRO_MANZANA, this.getManzana(rowKey));
         rastro.addParametro(PARAMETRO_DIRECCION, this.getDireccion(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_LINEA_BAJA, this.getNumeroTelefonoLineaBaja(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_CELULAR, this.getNumeroTelefonoCelular(rowKey));
         rastro.addParametro(PARAMETRO_CERTIFICADO_VIDA, this.getCertificadoVida(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_CERTIFICADO_VIDA, this.getFechaCertificadoVida(rowKey));
+        rastro.addParametro(PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA, this.getDiasVigenciaCertificadoVida(rowKey));
         rastro.addParametro(PARAMETRO_ES_CERTIFICADO_VIDA_ANULADO, this.getEsCertificadoVidaAnulado(rowKey));
-        rastro.addParametro(PARAMETRO_COMENTARIOS_ANUL_CER_VIDA, this.getComentariosAnulCerVida(rowKey));
         rastro.addParametro(PARAMETRO_CERTIFICADO_DEFUNCION, this.getCertificadoDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_CERTIFICADO_DEFUNCION, this.getFechaCertificadoDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_ES_CER_DEFUNCION_ANULADO, this.getEsCerDefuncionAnulado(rowKey));
-        rastro.addParametro(PARAMETRO_COMENTARIOS_ANUL_CER_DEFUNCION, this.getComentariosAnulCerDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_EMPLEO, this.getEsPersonaConEmpleo(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_JUBILACION, this.getEsPersonaConJubilacion(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_PENSION, this.getEsPersonaConPension(rowKey));
@@ -669,7 +690,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR, this.getEsPersonaConDeclaracionJur(rowKey));
         rastro.addParametro(PARAMETRO_MONTO_PENSION, this.getMontoPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CONDICION_PENSION, this.getNumeroCondicionPension(rowKey));
-        rastro.addParametro(PARAMETRO_LUGAR_SOLICITUD_PENSION, this.getLugarSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_SOLICITUD_PENSION, this.getFechaSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_SOLICITUD_PENSION, this.getComentariosSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_APROBACION_PENSION, this.getFechaAprobacionPension(rowKey));
@@ -689,6 +709,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_REVOCACION_PENSION, this.getFechaRevocacionPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CAUSA_REV_PENSION, this.getNumeroCausaRevPension(rowKey));
         rastro.addParametro(PARAMETRO_OTRA_CAUSA_REV_PENSION, this.getOtraCausaRevPension(rowKey));
+        rastro.addParametro(PARAMETRO_NUMERO_RESOLUCION_REV_PEN, this.getNumeroResolucionRevPen(rowKey));
+        rastro.addParametro(PARAMETRO_FECHA_RESOLUCION_REV_PEN, this.getFechaResolucionRevPen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_REVOCACION_PENSION, this.getComentariosRevocacionPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CONDICION_RECO_PEN, this.getNumeroCondicionRecoPen(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_SOLICITUD_RECO_PEN, this.getFechaSolicitudRecoPen(rowKey));
@@ -715,7 +737,9 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
         rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_SIME_RECO_PEN, this.getCodigoSimeRecoPen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS, this.getComentariosEntregaDocumentos(rowKey));
+        rastro.addParametro(PARAMETRO_COMENTARIOS_INSERCION_JUPE, this.getComentariosInsercionJupe(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
@@ -747,19 +771,16 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_ID_DISTRITO, this.getIdDistrito(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TIPO_AREA, this.getNumeroTipoArea(rowKey));
         rastro.addParametro(PARAMETRO_ID_BARRIO, this.getIdBarrio(rowKey));
-        rastro.addParametro(PARAMETRO_ID_MANZANA, this.getIdManzana(rowKey));
-        rastro.addParametro(PARAMETRO_MANZANA, this.getManzana(rowKey));
         rastro.addParametro(PARAMETRO_DIRECCION, this.getDireccion(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_LINEA_BAJA, this.getNumeroTelefonoLineaBaja(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_TELEFONO_CELULAR, this.getNumeroTelefonoCelular(rowKey));
         rastro.addParametro(PARAMETRO_CERTIFICADO_VIDA, this.getCertificadoVida(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_CERTIFICADO_VIDA, this.getFechaCertificadoVida(rowKey));
+        rastro.addParametro(PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA, this.getDiasVigenciaCertificadoVida(rowKey));
         rastro.addParametro(PARAMETRO_ES_CERTIFICADO_VIDA_ANULADO, this.getEsCertificadoVidaAnulado(rowKey));
-        rastro.addParametro(PARAMETRO_COMENTARIOS_ANUL_CER_VIDA, this.getComentariosAnulCerVida(rowKey));
         rastro.addParametro(PARAMETRO_CERTIFICADO_DEFUNCION, this.getCertificadoDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_CERTIFICADO_DEFUNCION, this.getFechaCertificadoDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_ES_CER_DEFUNCION_ANULADO, this.getEsCerDefuncionAnulado(rowKey));
-        rastro.addParametro(PARAMETRO_COMENTARIOS_ANUL_CER_DEFUNCION, this.getComentariosAnulCerDefuncion(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_EMPLEO, this.getEsPersonaConEmpleo(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_JUBILACION, this.getEsPersonaConJubilacion(rowKey));
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_PENSION, this.getEsPersonaConPension(rowKey));
@@ -774,7 +795,6 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR, this.getEsPersonaConDeclaracionJur(rowKey));
         rastro.addParametro(PARAMETRO_MONTO_PENSION, this.getMontoPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CONDICION_PENSION, this.getNumeroCondicionPension(rowKey));
-        rastro.addParametro(PARAMETRO_LUGAR_SOLICITUD_PENSION, this.getLugarSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_SOLICITUD_PENSION, this.getFechaSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_SOLICITUD_PENSION, this.getComentariosSolicitudPension(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_APROBACION_PENSION, this.getFechaAprobacionPension(rowKey));
@@ -794,6 +814,8 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_REVOCACION_PENSION, this.getFechaRevocacionPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CAUSA_REV_PENSION, this.getNumeroCausaRevPension(rowKey));
         rastro.addParametro(PARAMETRO_OTRA_CAUSA_REV_PENSION, this.getOtraCausaRevPension(rowKey));
+        rastro.addParametro(PARAMETRO_NUMERO_RESOLUCION_REV_PEN, this.getNumeroResolucionRevPen(rowKey));
+        rastro.addParametro(PARAMETRO_FECHA_RESOLUCION_REV_PEN, this.getFechaResolucionRevPen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_REVOCACION_PENSION, this.getComentariosRevocacionPension(rowKey));
         rastro.addParametro(PARAMETRO_NUMERO_CONDICION_RECO_PEN, this.getNumeroCondicionRecoPen(rowKey));
         rastro.addParametro(PARAMETRO_FECHA_SOLICITUD_RECO_PEN, this.getFechaSolicitudRecoPen(rowKey));
@@ -820,7 +842,9 @@ public class PersonaCachedRowSetDataProvider2 extends PersonaCachedRowSetDataPro
         rastro.addParametro(PARAMETRO_FECHA_HORA_ULT_ACT_JUPE, this.getFechaHoraUltActJupe(rowKey));
         rastro.addParametro(PARAMETRO_LOTE, this.getLote(rowKey));
         rastro.addParametro(PARAMETRO_CODIGO_SIME, this.getCodigoSime(rowKey));
+        rastro.addParametro(PARAMETRO_CODIGO_SIME_RECO_PEN, this.getCodigoSimeRecoPen(rowKey));
         rastro.addParametro(PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS, this.getComentariosEntregaDocumentos(rowKey));
+        rastro.addParametro(PARAMETRO_COMENTARIOS_INSERCION_JUPE, this.getComentariosInsercionJupe(rowKey));
         TLC.getControlador().grabarRastroFuncion(rastro);
     }
 
