@@ -9,6 +9,7 @@
  */
 package com.egt.core.jsf.component;
 
+import com.egt.base.util.BundleParametros;
 import com.egt.core.jsf.JSF;
 import com.sun.webui.jsf.component.Label;
 import com.sun.webui.jsf.component.WebuiInput;
@@ -41,7 +42,9 @@ public class Etiqueta extends Label {
         return super.getFor();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object getValue() {
         Object superobj = super.getValue();
@@ -50,6 +53,15 @@ public class Etiqueta extends Label {
             return superobj;
         } else if (getValueExpression("value") != null) {
             return superobj;
+        }
+        String supertip = super.getToolTip();
+        if (supertip != null && getValueExpression("toolTip") == null && supertip.startsWith("BundleParametros.")) {
+            int i = supertip.indexOf('.');
+            String key = supertip.substring(i + 1);
+            String str = BundleParametros.getString(key, BundleParametros.TOOLTIP, true);
+            if (str != null) {
+                return str;
+            }
         }
         String webuistr = JSF.getWebuiString(this, "text");
         if (webuistr == null) {
@@ -63,7 +75,9 @@ public class Etiqueta extends Label {
         return webuistr == null ? superobj : webuistr;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getToolTip() {
         String superstr = super.getToolTip();
@@ -71,8 +85,13 @@ public class Etiqueta extends Label {
             return superstr;
         } else if (getValueExpression("toolTip") != null) {
             return superstr;
+        } else if (superstr.startsWith("BundleParametros.")) {
+            int i = superstr.indexOf('.');
+            String key = superstr.substring(i + 1);
+            return BundleParametros.getToolTip(key);
         }
         String webuistr = JSF.getWebuiString(this, "toolTip");
         return webuistr == null ? superstr : webuistr;
     }
+
 }
