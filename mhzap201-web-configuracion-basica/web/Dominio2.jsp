@@ -204,6 +204,7 @@
                                                     binding="#{Dominio2.labelIdDominio1}"
                                                     id="labelIdDominio1"
                                                     for="campoIdDominio1"
+                                                    toolTip="BundleParametros.id_dominio.dominio"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Dominio2.labelCodigoDominio1}"
                                                     id="labelCodigoDominio1"
                                                     for="campoCodigoDominio1"
+                                                    toolTip="BundleParametros.codigo_dominio.dominio"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Dominio2.labelNombreDominio1}"
                                                     id="labelNombreDominio1"
                                                     for="campoNombreDominio1"
+                                                    toolTip="BundleParametros.nombre_dominio.dominio"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Dominio2.labelDescripcionDominio1}"
                                                     id="labelDescripcionDominio1"
                                                     for="campoDescripcionDominio1"
+                                                    toolTip="BundleParametros.descripcion_dominio.dominio"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{Dominio2.labelNombreTabla1}"
                                                     id="labelNombreTabla1"
                                                     for="campoNombreTabla1"
+                                                    toolTip="BundleParametros.nombre_tabla.dominio"
                                                     text="nombre tabla"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -367,6 +372,7 @@
                                                     binding="#{Dominio2.labelNumeroTipoDominio1}"
                                                     id="labelNumeroTipoDominio1"
                                                     for="listaNumeroTipoDominio1"
+                                                    toolTip="BundleParametros.numero_tipo_dominio.dominio"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -399,6 +405,7 @@
                                                     binding="#{Dominio2.labelIdClaseRecurso1}"
                                                     id="labelIdClaseRecurso1"
                                                     for="campoIdClaseRecurso1"
+                                                    toolTip="BundleParametros.id_clase_recurso.dominio"
                                                     text="clase recurso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -461,6 +468,7 @@
                                                     binding="#{Dominio2.labelIdFuncionSeleccion1}"
                                                     id="labelIdFuncionSeleccion1"
                                                     for="campoIdFuncionSeleccion1"
+                                                    toolTip="BundleParametros.id_funcion_seleccion.dominio"
                                                     text="funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -523,6 +531,7 @@
                                                     binding="#{Dominio2.labelIdDominioSegmento1}"
                                                     id="labelIdDominioSegmento1"
                                                     for="campoIdDominioSegmento1"
+                                                    toolTip="BundleParametros.id_dominio_segmento.dominio"
                                                     text="dominio segmento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -585,6 +594,7 @@
                                                     binding="#{Dominio2.labelIdPaquete1}"
                                                     id="labelIdPaquete1"
                                                     for="campoIdPaquete1"
+                                                    toolTip="BundleParametros.id_paquete.dominio"
                                                     text="paquete"/>
                                             </h:panelGrid>
                                             <h:panelGrid

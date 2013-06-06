@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnIdPaginaFuncion1}"
+                                                    toolTip="BundleParametros.id_pagina_funcion.pagina_funcion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdPaginaFuncion1"
                                                     sort="id_pagina_funcion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnIdFuncion1}"
+                                                    toolTip="BundleParametros.id_funcion.pagina_funcion"
                                                     headerText="funci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="codigo_funcion_1x2y3">
@@ -272,6 +274,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnEsFuncionInicial1}"
+                                                    toolTip="BundleParametros.es_funcion_inicial.pagina_funcion"
                                                     headerText="funci&#243;n inicial"
                                                     id="tableColumnEsFuncionInicial1" rendered="false"
                                                     sort="es_funcion_inicial">
@@ -297,6 +300,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaFuncionPorPagina1.tableColumnControlPaginaFuncion1}"
+                                                    toolTip="BundleParametros.control_pagina_funcion.pagina_funcion"
                                                     headerText="control"
                                                     id="tableColumnControlPaginaFuncion1" rendered="false"
                                                     sort="control_pagina_funcion">

@@ -204,6 +204,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelIdPaginaFuncion1}"
                                                     id="labelIdPaginaFuncion1"
                                                     for="campoIdPaginaFuncion1"
+                                                    toolTip="BundleParametros.id_pagina_funcion.pagina_funcion"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelIdFuncion1}"
                                                     id="labelIdFuncion1"
                                                     for="campoIdFuncion1"
+                                                    toolTip="BundleParametros.id_funcion.pagina_funcion"
                                                     text="funci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -298,6 +300,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelEsFuncionInicial1}"
                                                     id="labelEsFuncionInicial1"
                                                     for="listaEsFuncionInicial1"
+                                                    toolTip="BundleParametros.es_funcion_inicial.pagina_funcion"
                                                     text="funci&#243;n inicial"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -329,6 +332,7 @@
                                                     binding="#{PaginaFuncionPorPagina2.labelControlPaginaFuncion1}"
                                                     id="labelControlPaginaFuncion1"
                                                     for="campoControlPaginaFuncion1"
+                                                    toolTip="BundleParametros.control_pagina_funcion.pagina_funcion"
                                                     text="control"/>
                                             </h:panelGrid>
                                             <h:panelGrid

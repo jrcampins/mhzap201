@@ -204,6 +204,7 @@
                                                     binding="#{Aplicacion2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
+                                                    toolTip="BundleParametros.id_aplicacion.aplicacion"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Aplicacion2.labelCodigoAplicacion1}"
                                                     id="labelCodigoAplicacion1"
                                                     for="campoCodigoAplicacion1"
+                                                    toolTip="BundleParametros.codigo_aplicacion.aplicacion"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Aplicacion2.labelNombreAplicacion1}"
                                                     id="labelNombreAplicacion1"
                                                     for="campoNombreAplicacion1"
+                                                    toolTip="BundleParametros.nombre_aplicacion.aplicacion"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Aplicacion2.labelDescripcionAplicacion1}"
                                                     id="labelDescripcionAplicacion1"
                                                     for="campoDescripcionAplicacion1"
+                                                    toolTip="BundleParametros.descripcion_aplicacion.aplicacion"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{Aplicacion2.labelServidorAplicacion1}"
                                                     id="labelServidorAplicacion1"
                                                     for="campoServidorAplicacion1"
+                                                    toolTip="BundleParametros.servidor_aplicacion.aplicacion"
                                                     text="servidor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -367,6 +372,7 @@
                                                     binding="#{Aplicacion2.labelPuertoAplicacion1}"
                                                     id="labelPuertoAplicacion1"
                                                     for="campoPuertoAplicacion1"
+                                                    toolTip="BundleParametros.puerto_aplicacion.aplicacion"
                                                     text="puerto"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -400,6 +406,7 @@
                                                     binding="#{Aplicacion2.labelUrlAplicacion1}"
                                                     id="labelUrlAplicacion1"
                                                     for="campoUrlAplicacion1"
+                                                    toolTip="BundleParametros.url_aplicacion.aplicacion"
                                                     text="url"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -432,6 +439,7 @@
                                                     binding="#{Aplicacion2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
+                                                    toolTip="BundleParametros.es_publica.aplicacion"
                                                     text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -463,6 +471,7 @@
                                                     binding="#{Aplicacion2.labelIdGrupoAplicacion1}"
                                                     id="labelIdGrupoAplicacion1"
                                                     for="campoIdGrupoAplicacion1"
+                                                    toolTip="BundleParametros.id_grupo_aplicacion.aplicacion"
                                                     text="grupo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

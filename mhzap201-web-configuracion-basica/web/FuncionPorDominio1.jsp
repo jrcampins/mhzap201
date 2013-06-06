@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnIdFuncion1}"
+                                                    toolTip="BundleParametros.id_funcion.funcion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncion1"
                                                     sort="id_funcion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnCodigoFuncion1}"
+                                                    toolTip="BundleParametros.codigo_funcion.funcion"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoFuncion1"
                                                     sort="codigo_funcion">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnNombreFuncion1}"
+                                                    toolTip="BundleParametros.nombre_funcion.funcion"
                                                     headerText="nombre"
                                                     id="tableColumnNombreFuncion1"
                                                     sort="nombre_funcion">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnDescripcionFuncion1}"
+                                                    toolTip="BundleParametros.descripcion_funcion.funcion"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionFuncion1" rendered="false"
                                                     sort="descripcion_funcion">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnNumeroTipoFuncion1}"
+                                                    toolTip="BundleParametros.numero_tipo_funcion.funcion"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoFuncion1"
                                                     sort="codigo_tipo_funcion_1x1y2">
@@ -311,6 +316,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnNumeroTipoRastroFun1}"
+                                                    toolTip="BundleParametros.numero_tipo_rastro_fun.funcion"
                                                     headerText="tipo rastro"
                                                     id="tableColumnNumeroTipoRastroFun1" rendered="false"
                                                     sort="codigo_tipo_rastro_fun_1x2y2">
@@ -337,6 +343,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnClausulaWhere1}"
+                                                    toolTip="BundleParametros.clausula_where.funcion"
                                                     headerText="clausula where"
                                                     id="tableColumnClausulaWhere1" rendered="false"
                                                     sort="clausula_where">
@@ -363,6 +370,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnClausulaOrder1}"
+                                                    toolTip="BundleParametros.clausula_order.funcion"
                                                     headerText="clausula order"
                                                     id="tableColumnClausulaOrder1" rendered="false"
                                                     sort="clausula_order">
@@ -389,6 +397,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsPublica1}"
+                                                    toolTip="BundleParametros.es_publica.funcion"
                                                     headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">
@@ -414,6 +423,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsProgramatica1}"
+                                                    toolTip="BundleParametros.es_programatica.funcion"
                                                     headerText="program&#225;tica"
                                                     id="tableColumnEsProgramatica1" rendered="false"
                                                     sort="es_programatica">
@@ -439,6 +449,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsPersonalizada1}"
+                                                    toolTip="BundleParametros.es_personalizada.funcion"
                                                     headerText="personalizada"
                                                     id="tableColumnEsPersonalizada1" rendered="false"
                                                     sort="es_personalizada">
@@ -464,6 +475,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnEsSegmentada1}"
+                                                    toolTip="BundleParametros.es_segmentada.funcion"
                                                     headerText="segmentada"
                                                     id="tableColumnEsSegmentada1" rendered="false"
                                                     sort="es_segmentada">
@@ -489,6 +501,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionPorDominio1.tableColumnIdGrupoProceso1}"
+                                                    toolTip="BundleParametros.id_grupo_proceso.funcion"
                                                     headerText="grupo proceso"
                                                     id="tableColumnIdGrupoProceso1" rendered="false"
                                                     sort="codigo_grupo_proceso_1x4y3">

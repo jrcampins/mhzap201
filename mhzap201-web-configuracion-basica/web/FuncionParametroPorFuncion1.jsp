@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdFuncionParametro1}"
+                                                    toolTip="BundleParametros.id_funcion_parametro.funcion_parametro"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncionParametro1"
                                                     sort="id_funcion_parametro">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdParametro1}"
+                                                    toolTip="BundleParametros.id_parametro.funcion_parametro"
                                                     headerText="parametro"
                                                     id="tableColumnIdParametro1"
                                                     sort="codigo_parametro_1x2y3">
@@ -272,6 +274,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnNumeroTipoParametro1}"
+                                                    toolTip="BundleParametros.numero_tipo_parametro.funcion_parametro"
                                                     headerText="tipo parametro"
                                                     id="tableColumnNumeroTipoParametro1"
                                                     sort="codigo_tipo_parametro_1x3y2">
@@ -298,6 +301,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnNumeroTipoComparacion1}"
+                                                    toolTip="BundleParametros.numero_tipo_comparacion.funcion_parametro"
                                                     headerText="tipo comparaci&#243;n"
                                                     id="tableColumnNumeroTipoComparacion1" rendered="false"
                                                     sort="codigo_tipo_comparacion_1x4y2">
@@ -324,6 +328,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdFuncionReferencia1}"
+                                                    toolTip="BundleParametros.id_funcion_referencia.funcion_parametro"
                                                     headerText="funci&#243;n referencia"
                                                     id="tableColumnIdFuncionReferencia1" rendered="false"
                                                     sort="codigo_funcion_1x5y3">
@@ -389,6 +394,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnNumeroTipoValor1}"
+                                                    toolTip="BundleParametros.numero_tipo_valor.funcion_parametro"
                                                     headerText="tipo valor"
                                                     id="tableColumnNumeroTipoValor1" rendered="false"
                                                     sort="codigo_tipo_valor_1x6y2">
@@ -415,6 +421,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdListaValor1}"
+                                                    toolTip="BundleParametros.id_lista_valor.funcion_parametro"
                                                     headerText="identificaci&#243;n lista valor"
                                                     id="tableColumnIdListaValor1" rendered="false"
                                                     sort="id_lista_valor">
@@ -441,6 +448,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdClaseObjetoValor1}"
+                                                    toolTip="BundleParametros.id_clase_objeto_valor.funcion_parametro"
                                                     headerText="identificaci&#243;n clase objeto valor"
                                                     id="tableColumnIdClaseObjetoValor1" rendered="false"
                                                     sort="id_clase_objeto_valor">
@@ -467,6 +475,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnIdClaseRecursoValor1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_valor.funcion_parametro"
                                                     headerText="clase recurso valor"
                                                     id="tableColumnIdClaseRecursoValor1" rendered="false"
                                                     sort="codigo_clase_recurso_1x7y3">
@@ -532,6 +541,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnValorMinimo1}"
+                                                    toolTip="BundleParametros.valor_minimo.funcion_parametro"
                                                     headerText="valor minimo"
                                                     id="tableColumnValorMinimo1" rendered="false"
                                                     sort="valor_minimo">
@@ -559,6 +569,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnValorMaximo1}"
+                                                    toolTip="BundleParametros.valor_maximo.funcion_parametro"
                                                     headerText="valor maximo"
                                                     id="tableColumnValorMaximo1" rendered="false"
                                                     sort="valor_maximo">
@@ -586,6 +597,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnValorOmision1}"
+                                                    toolTip="BundleParametros.valor_omision.funcion_parametro"
                                                     headerText="valor omisi&#243;n"
                                                     id="tableColumnValorOmision1" rendered="false"
                                                     sort="valor_omision">
@@ -613,6 +625,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnEsParametroSinRastro1}"
+                                                    toolTip="BundleParametros.es_parametro_sin_rastro.funcion_parametro"
                                                     headerText="parametro sin rastro"
                                                     id="tableColumnEsParametroSinRastro1" rendered="false"
                                                     sort="es_parametro_sin_rastro">
@@ -638,6 +651,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FuncionParametroPorFuncion1.tableColumnEsParametroSegmento1}"
+                                                    toolTip="BundleParametros.es_parametro_segmento.funcion_parametro"
                                                     headerText="parametro segmento"
                                                     id="tableColumnEsParametroSegmento1" rendered="false"
                                                     sort="es_parametro_segmento">

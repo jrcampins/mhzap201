@@ -204,6 +204,7 @@
                                                     binding="#{Mensaje2.labelIdMensaje1}"
                                                     id="labelIdMensaje1"
                                                     for="campoIdMensaje1"
+                                                    toolTip="BundleParametros.id_mensaje.mensaje"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Mensaje2.labelCodigoMensaje1}"
                                                     id="labelCodigoMensaje1"
                                                     for="campoCodigoMensaje1"
+                                                    toolTip="BundleParametros.codigo_mensaje.mensaje"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Mensaje2.labelPatronMensaje1}"
                                                     id="labelPatronMensaje1"
                                                     for="campoPatronMensaje1"
+                                                    toolTip="BundleParametros.patron_mensaje.mensaje"
                                                     text="patr&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -301,6 +304,7 @@
                                                     binding="#{Mensaje2.labelDescripcionMensaje1}"
                                                     id="labelDescripcionMensaje1"
                                                     for="campoDescripcionMensaje1"
+                                                    toolTip="BundleParametros.descripcion_mensaje.mensaje"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

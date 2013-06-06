@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdOpcionMenu1}"
+                                                    toolTip="BundleParametros.id_opcion_menu.opcion_menu"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdOpcionMenu1"
                                                     sort="id_opcion_menu">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnCodigoOpcionMenu1}"
+                                                    toolTip="BundleParametros.codigo_opcion_menu.opcion_menu"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoOpcionMenu1"
                                                     sort="codigo_opcion_menu">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnNombreOpcionMenu1}"
+                                                    toolTip="BundleParametros.nombre_opcion_menu.opcion_menu"
                                                     headerText="nombre"
                                                     id="tableColumnNombreOpcionMenu1"
                                                     sort="nombre_opcion_menu">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnDescripcionOpcionMenu1}"
+                                                    toolTip="BundleParametros.descripcion_opcion_menu.opcion_menu"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionOpcionMenu1" rendered="false"
                                                     sort="descripcion_opcion_menu">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnUrlOpcionMenu1}"
+                                                    toolTip="BundleParametros.url_opcion_menu.opcion_menu"
                                                     headerText="url"
                                                     id="tableColumnUrlOpcionMenu1" rendered="false"
                                                     sort="url_opcion_menu">
@@ -311,6 +316,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdAplicacion1}"
+                                                    toolTip="BundleParametros.id_aplicacion.opcion_menu"
                                                     headerText="aplicaci&#243;n"
                                                     id="tableColumnIdAplicacion1" rendered="false"
                                                     sort="codigo_aplicacion_1x1y3">
@@ -376,6 +382,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdPagina1}"
+                                                    toolTip="BundleParametros.id_pagina.opcion_menu"
                                                     headerText="p&#225;gina"
                                                     id="tableColumnIdPagina1" rendered="false"
                                                     sort="codigo_pagina_1x2y3">
@@ -441,6 +448,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnIdOpcionMenuSuperior1}"
+                                                    toolTip="BundleParametros.id_opcion_menu_superior.opcion_menu"
                                                     headerText="opci&#243;n men&#250; superior"
                                                     id="tableColumnIdOpcionMenuSuperior1"
                                                     sort="codigo_opcion_menu_1x3y3">
@@ -508,6 +516,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnEsOpcionMenuInactiva1}"
+                                                    toolTip="BundleParametros.es_opcion_menu_inactiva.opcion_menu"
                                                     headerText="inactiva"
                                                     id="tableColumnEsOpcionMenuInactiva1"
                                                     sort="es_opcion_menu_inactiva">
@@ -533,6 +542,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{OpcionMenu1.tableColumnEsOpcionMenuSincronizada1}"
+                                                    toolTip="BundleParametros.es_opcion_menu_sincronizada.opcion_menu"
                                                     headerText="sincronizada"
                                                     id="tableColumnEsOpcionMenuSincronizada1" rendered="false"
                                                     sort="es_opcion_menu_sincronizada">

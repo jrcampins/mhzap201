@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnIdParametro1}"
+                                                    toolTip="BundleParametros.id_parametro.parametro"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdParametro1"
                                                     sort="id_parametro">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnCodigoParametro1}"
+                                                    toolTip="BundleParametros.codigo_parametro.parametro"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoParametro1"
                                                     sort="codigo_parametro">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnNombreParametro1}"
+                                                    toolTip="BundleParametros.nombre_parametro.parametro"
                                                     headerText="nombre"
                                                     id="tableColumnNombreParametro1"
                                                     sort="nombre_parametro">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnDetalleParametro1}"
+                                                    toolTip="BundleParametros.detalle_parametro.parametro"
                                                     headerText="detalle"
                                                     id="tableColumnDetalleParametro1" rendered="false"
                                                     sort="detalle_parametro">
@@ -286,6 +290,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnDescripcionParametro1}"
+                                                    toolTip="BundleParametros.descripcion_parametro.parametro"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionParametro1" rendered="false"
                                                     sort="descripcion_parametro">
@@ -312,6 +317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnNumeroTipoDatoPar1}"
+                                                    toolTip="BundleParametros.numero_tipo_dato_par.parametro"
                                                     headerText="tipo dato par"
                                                     id="tableColumnNumeroTipoDatoPar1"
                                                     sort="codigo_tipo_dato_par_1x1y2">
@@ -338,6 +344,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Parametro1.tableColumnAliasParametro1}"
+                                                    toolTip="BundleParametros.alias_parametro.parametro"
                                                     headerText="alias"
                                                     id="tableColumnAliasParametro1" rendered="false"
                                                     sort="alias_parametro">

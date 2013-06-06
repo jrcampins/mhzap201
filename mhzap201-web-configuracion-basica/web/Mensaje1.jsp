@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnIdMensaje1}"
+                                                    toolTip="BundleParametros.id_mensaje.mensaje"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdMensaje1"
                                                     sort="id_mensaje">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnCodigoMensaje1}"
+                                                    toolTip="BundleParametros.codigo_mensaje.mensaje"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoMensaje1"
                                                     sort="codigo_mensaje">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnPatronMensaje1}"
+                                                    toolTip="BundleParametros.patron_mensaje.mensaje"
                                                     headerText="patr&#243;n"
                                                     id="tableColumnPatronMensaje1"
                                                     sort="patron_mensaje">
@@ -258,6 +261,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Mensaje1.tableColumnDescripcionMensaje1}"
+                                                    toolTip="BundleParametros.descripcion_mensaje.mensaje"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionMensaje1" rendered="false"
                                                     sort="descripcion_mensaje">

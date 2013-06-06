@@ -204,6 +204,7 @@
                                                     binding="#{Paquete2.labelIdPaquete1}"
                                                     id="labelIdPaquete1"
                                                     for="campoIdPaquete1"
+                                                    toolTip="BundleParametros.id_paquete.paquete"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Paquete2.labelCodigoPaquete1}"
                                                     id="labelCodigoPaquete1"
                                                     for="campoCodigoPaquete1"
+                                                    toolTip="BundleParametros.codigo_paquete.paquete"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid

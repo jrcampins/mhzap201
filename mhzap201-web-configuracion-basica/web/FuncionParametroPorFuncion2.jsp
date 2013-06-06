@@ -204,6 +204,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncionParametro1}"
                                                     id="labelIdFuncionParametro1"
                                                     for="campoIdFuncionParametro1"
+                                                    toolTip="BundleParametros.id_funcion_parametro.funcion_parametro"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
+                                                    toolTip="BundleParametros.id_parametro.funcion_parametro"
                                                     text="parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -298,6 +300,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelNumeroTipoParametro1}"
                                                     id="labelNumeroTipoParametro1"
                                                     for="listaNumeroTipoParametro1"
+                                                    toolTip="BundleParametros.numero_tipo_parametro.funcion_parametro"
                                                     text="tipo parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -330,6 +333,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelNumeroTipoComparacion1}"
                                                     id="labelNumeroTipoComparacion1"
                                                     for="listaNumeroTipoComparacion1"
+                                                    toolTip="BundleParametros.numero_tipo_comparacion.funcion_parametro"
                                                     text="tipo comparaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -362,6 +366,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdFuncionReferencia1}"
                                                     id="labelIdFuncionReferencia1"
                                                     for="campoIdFuncionReferencia1"
+                                                    toolTip="BundleParametros.id_funcion_referencia.funcion_parametro"
                                                     text="funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -424,6 +429,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelNumeroTipoValor1}"
                                                     id="labelNumeroTipoValor1"
                                                     for="listaNumeroTipoValor1"
+                                                    toolTip="BundleParametros.numero_tipo_valor.funcion_parametro"
                                                     text="tipo valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -456,6 +462,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdListaValor1}"
                                                     id="labelIdListaValor1"
                                                     for="campoIdListaValor1"
+                                                    toolTip="BundleParametros.id_lista_valor.funcion_parametro"
                                                     text="identificaci&#243;n lista valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -488,6 +495,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdClaseObjetoValor1}"
                                                     id="labelIdClaseObjetoValor1"
                                                     for="campoIdClaseObjetoValor1"
+                                                    toolTip="BundleParametros.id_clase_objeto_valor.funcion_parametro"
                                                     text="identificaci&#243;n clase objeto valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -520,6 +528,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelIdClaseRecursoValor1}"
                                                     id="labelIdClaseRecursoValor1"
                                                     for="campoIdClaseRecursoValor1"
+                                                    toolTip="BundleParametros.id_clase_recurso_valor.funcion_parametro"
                                                     text="clase recurso valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -582,6 +591,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelValorMinimo1}"
                                                     id="labelValorMinimo1"
                                                     for="campoValorMinimo1"
+                                                    toolTip="BundleParametros.valor_minimo.funcion_parametro"
                                                     text="valor minimo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -615,6 +625,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelValorMaximo1}"
                                                     id="labelValorMaximo1"
                                                     for="campoValorMaximo1"
+                                                    toolTip="BundleParametros.valor_maximo.funcion_parametro"
                                                     text="valor maximo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -648,6 +659,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelValorOmision1}"
                                                     id="labelValorOmision1"
                                                     for="campoValorOmision1"
+                                                    toolTip="BundleParametros.valor_omision.funcion_parametro"
                                                     text="valor omisi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -681,6 +693,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelEsParametroSinRastro1}"
                                                     id="labelEsParametroSinRastro1"
                                                     for="listaEsParametroSinRastro1"
+                                                    toolTip="BundleParametros.es_parametro_sin_rastro.funcion_parametro"
                                                     text="parametro sin rastro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -712,6 +725,7 @@
                                                     binding="#{FuncionParametroPorFuncion2.labelEsParametroSegmento1}"
                                                     id="labelEsParametroSegmento1"
                                                     for="listaEsParametroSegmento1"
+                                                    toolTip="BundleParametros.es_parametro_segmento.funcion_parametro"
                                                     text="parametro segmento"/>
                                             </h:panelGrid>
                                             <h:panelGrid

@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolAplicacionPorAplicacion1.tableColumnIdRolAplicacion1}"
+                                                    toolTip="BundleParametros.id_rol_aplicacion.rol_aplicacion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdRolAplicacion1"
                                                     sort="id_rol_aplicacion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{RolAplicacionPorAplicacion1.tableColumnIdRol1}"
+                                                    toolTip="BundleParametros.id_rol.rol_aplicacion"
                                                     headerText="rol"
                                                     id="tableColumnIdRol1"
                                                     sort="codigo_rol_1x1y3">

@@ -204,6 +204,7 @@
                                                     binding="#{OpcionMenu2.labelIdOpcionMenu1}"
                                                     id="labelIdOpcionMenu1"
                                                     for="campoIdOpcionMenu1"
+                                                    toolTip="BundleParametros.id_opcion_menu.opcion_menu"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{OpcionMenu2.labelCodigoOpcionMenu1}"
                                                     id="labelCodigoOpcionMenu1"
                                                     for="campoCodigoOpcionMenu1"
+                                                    toolTip="BundleParametros.codigo_opcion_menu.opcion_menu"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{OpcionMenu2.labelNombreOpcionMenu1}"
                                                     id="labelNombreOpcionMenu1"
                                                     for="campoNombreOpcionMenu1"
+                                                    toolTip="BundleParametros.nombre_opcion_menu.opcion_menu"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{OpcionMenu2.labelDescripcionOpcionMenu1}"
                                                     id="labelDescripcionOpcionMenu1"
                                                     for="campoDescripcionOpcionMenu1"
+                                                    toolTip="BundleParametros.descripcion_opcion_menu.opcion_menu"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{OpcionMenu2.labelUrlOpcionMenu1}"
                                                     id="labelUrlOpcionMenu1"
                                                     for="campoUrlOpcionMenu1"
+                                                    toolTip="BundleParametros.url_opcion_menu.opcion_menu"
                                                     text="url"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -366,6 +371,7 @@
                                                     binding="#{OpcionMenu2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
+                                                    toolTip="BundleParametros.id_aplicacion.opcion_menu"
                                                     text="aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -428,6 +434,7 @@
                                                     binding="#{OpcionMenu2.labelIdPagina1}"
                                                     id="labelIdPagina1"
                                                     for="campoIdPagina1"
+                                                    toolTip="BundleParametros.id_pagina.opcion_menu"
                                                     text="p&#225;gina"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -490,6 +497,7 @@
                                                     binding="#{OpcionMenu2.labelIdOpcionMenuSuperior1}"
                                                     id="labelIdOpcionMenuSuperior1"
                                                     for="campoIdOpcionMenuSuperior1"
+                                                    toolTip="BundleParametros.id_opcion_menu_superior.opcion_menu"
                                                     text="opci&#243;n men&#250; superior"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -552,6 +560,7 @@
                                                     binding="#{OpcionMenu2.labelEsOpcionMenuInactiva1}"
                                                     id="labelEsOpcionMenuInactiva1"
                                                     for="listaEsOpcionMenuInactiva1"
+                                                    toolTip="BundleParametros.es_opcion_menu_inactiva.opcion_menu"
                                                     text="inactiva"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -583,6 +592,7 @@
                                                     binding="#{OpcionMenu2.labelEsOpcionMenuSincronizada1}"
                                                     id="labelEsOpcionMenuSincronizada1"
                                                     for="listaEsOpcionMenuSincronizada1"
+                                                    toolTip="BundleParametros.es_opcion_menu_sincronizada.opcion_menu"
                                                     text="sincronizada"/>
                                             </h:panelGrid>
                                             <h:panelGrid

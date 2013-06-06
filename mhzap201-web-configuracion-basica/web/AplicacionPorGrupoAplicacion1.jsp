@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnIdAplicacion1}"
+                                                    toolTip="BundleParametros.id_aplicacion.aplicacion"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdAplicacion1"
                                                     sort="id_aplicacion">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnCodigoAplicacion1}"
+                                                    toolTip="BundleParametros.codigo_aplicacion.aplicacion"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoAplicacion1"
                                                     sort="codigo_aplicacion">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnNombreAplicacion1}"
+                                                    toolTip="BundleParametros.nombre_aplicacion.aplicacion"
                                                     headerText="nombre"
                                                     id="tableColumnNombreAplicacion1"
                                                     sort="nombre_aplicacion">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnDescripcionAplicacion1}"
+                                                    toolTip="BundleParametros.descripcion_aplicacion.aplicacion"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionAplicacion1" rendered="false"
                                                     sort="descripcion_aplicacion">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnServidorAplicacion1}"
+                                                    toolTip="BundleParametros.servidor_aplicacion.aplicacion"
                                                     headerText="servidor"
                                                     id="tableColumnServidorAplicacion1"
                                                     sort="servidor_aplicacion">
@@ -312,6 +317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnPuertoAplicacion1}"
+                                                    toolTip="BundleParametros.puerto_aplicacion.aplicacion"
                                                     headerText="puerto"
                                                     id="tableColumnPuertoAplicacion1"
                                                     sort="puerto_aplicacion">
@@ -339,6 +345,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnUrlAplicacion1}"
+                                                    toolTip="BundleParametros.url_aplicacion.aplicacion"
                                                     headerText="url"
                                                     id="tableColumnUrlAplicacion1" rendered="false"
                                                     sort="url_aplicacion">
@@ -365,6 +372,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{AplicacionPorGrupoAplicacion1.tableColumnEsPublica1}"
+                                                    toolTip="BundleParametros.es_publica.aplicacion"
                                                     headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">

@@ -204,6 +204,7 @@
                                                     binding="#{ClaseRecurso2.labelIdClaseRecurso1}"
                                                     id="labelIdClaseRecurso1"
                                                     for="campoIdClaseRecurso1"
+                                                    toolTip="BundleParametros.id_clase_recurso.clase_recurso"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{ClaseRecurso2.labelCodigoClaseRecurso1}"
                                                     id="labelCodigoClaseRecurso1"
                                                     for="campoCodigoClaseRecurso1"
+                                                    toolTip="BundleParametros.codigo_clase_recurso.clase_recurso"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{ClaseRecurso2.labelNombreClaseRecurso1}"
                                                     id="labelNombreClaseRecurso1"
                                                     for="campoNombreClaseRecurso1"
+                                                    toolTip="BundleParametros.nombre_clase_recurso.clase_recurso"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{ClaseRecurso2.labelDescripcionClaseRecurso1}"
                                                     id="labelDescripcionClaseRecurso1"
                                                     for="campoDescripcionClaseRecurso1"
+                                                    toolTip="BundleParametros.descripcion_clase_recurso.clase_recurso"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoIndependiente1}"
                                                     id="labelEsClaseRecursoIndependiente1"
                                                     for="listaEsClaseRecursoIndependiente1"
+                                                    toolTip="BundleParametros.es_clase_recurso_independiente.clase_recurso"
                                                     text="independiente"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -365,6 +370,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoSinDetalle1}"
                                                     id="labelEsClaseRecursoSinDetalle1"
                                                     for="listaEsClaseRecursoSinDetalle1"
+                                                    toolTip="BundleParametros.es_clase_recurso_sin_detalle.clase_recurso"
                                                     text="sin detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -396,6 +402,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoConArbol1}"
                                                     id="labelEsClaseRecursoConArbol1"
                                                     for="listaEsClaseRecursoConArbol1"
+                                                    toolTip="BundleParametros.es_clase_recurso_con_arbol.clase_recurso"
                                                     text="con arbol"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -427,6 +434,7 @@
                                                     binding="#{ClaseRecurso2.labelNumeroTipoClaseRecurso1}"
                                                     id="labelNumeroTipoClaseRecurso1"
                                                     for="listaNumeroTipoClaseRecurso1"
+                                                    toolTip="BundleParametros.numero_tipo_clase_recurso.clase_recurso"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -459,6 +467,7 @@
                                                     binding="#{ClaseRecurso2.labelNumeroTipoRecurso1}"
                                                     id="labelNumeroTipoRecurso1"
                                                     for="listaNumeroTipoRecurso1"
+                                                    toolTip="BundleParametros.numero_tipo_recurso.clase_recurso"
                                                     text="tipo recurso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -491,6 +500,7 @@
                                                     binding="#{ClaseRecurso2.labelIdFuncionSeleccion1}"
                                                     id="labelIdFuncionSeleccion1"
                                                     for="campoIdFuncionSeleccion1"
+                                                    toolTip="BundleParametros.id_funcion_seleccion.clase_recurso"
                                                     text="funci&#243;n selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -553,6 +563,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaSeleccion1}"
                                                     id="labelIdPaginaSeleccion1"
                                                     for="campoIdPaginaSeleccion1"
+                                                    toolTip="BundleParametros.id_pagina_seleccion.clase_recurso"
                                                     text="p&#225;gina selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -615,6 +626,7 @@
                                                     binding="#{ClaseRecurso2.labelIdPaginaDetalle1}"
                                                     id="labelIdPaginaDetalle1"
                                                     for="campoIdPaginaDetalle1"
+                                                    toolTip="BundleParametros.id_pagina_detalle.clase_recurso"
                                                     text="p&#225;gina detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -677,6 +689,7 @@
                                                     binding="#{ClaseRecurso2.labelIdClaseRecursoMaestro1}"
                                                     id="labelIdClaseRecursoMaestro1"
                                                     for="campoIdClaseRecursoMaestro1"
+                                                    toolTip="BundleParametros.id_clase_recurso_maestro.clase_recurso"
                                                     text="clase recurso maestro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -739,6 +752,7 @@
                                                     binding="#{ClaseRecurso2.labelIdClaseRecursoSegmento1}"
                                                     id="labelIdClaseRecursoSegmento1"
                                                     for="campoIdClaseRecursoSegmento1"
+                                                    toolTip="BundleParametros.id_clase_recurso_segmento.clase_recurso"
                                                     text="clase recurso segmento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -801,6 +815,7 @@
                                                     binding="#{ClaseRecurso2.labelIdClaseRecursoBase1}"
                                                     id="labelIdClaseRecursoBase1"
                                                     for="campoIdClaseRecursoBase1"
+                                                    toolTip="BundleParametros.id_clase_recurso_base.clase_recurso"
                                                     text="clase recurso base"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -863,6 +878,7 @@
                                                     binding="#{ClaseRecurso2.labelIdGrupoAplicacion1}"
                                                     id="labelIdGrupoAplicacion1"
                                                     for="campoIdGrupoAplicacion1"
+                                                    toolTip="BundleParametros.id_grupo_aplicacion.clase_recurso"
                                                     text="grupo aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -925,6 +941,7 @@
                                                     binding="#{ClaseRecurso2.labelIdAplicacionWeb1}"
                                                     id="labelIdAplicacionWeb1"
                                                     for="campoIdAplicacionWeb1"
+                                                    toolTip="BundleParametros.id_aplicacion_web.clase_recurso"
                                                     text="identificaci&#243;n aplicaci&#243;n web"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -957,6 +974,7 @@
                                                     binding="#{ClaseRecurso2.labelLimiteFilasConsulta1}"
                                                     id="labelLimiteFilasConsulta1"
                                                     for="campoLimiteFilasConsulta1"
+                                                    toolTip="BundleParametros.limite_filas_consulta.clase_recurso"
                                                     text="limite filas consulta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -989,6 +1007,7 @@
                                                     binding="#{ClaseRecurso2.labelLimiteFilasInforme1}"
                                                     id="labelLimiteFilasInforme1"
                                                     for="campoLimiteFilasInforme1"
+                                                    toolTip="BundleParametros.limite_filas_informe.clase_recurso"
                                                     text="limite filas informe"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1021,6 +1040,7 @@
                                                     binding="#{ClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
+                                                    toolTip="BundleParametros.orden_presentacion.clase_recurso"
                                                     text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1053,6 +1073,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoInsertable1}"
                                                     id="labelEsClaseRecursoInsertable1"
                                                     for="listaEsClaseRecursoInsertable1"
+                                                    toolTip="BundleParametros.es_clase_recurso_insertable.clase_recurso"
                                                     text="insertable"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1084,6 +1105,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoModificable1}"
                                                     id="labelEsClaseRecursoModificable1"
                                                     for="listaEsClaseRecursoModificable1"
+                                                    toolTip="BundleParametros.es_clase_recurso_modificable.clase_recurso"
                                                     text="modificable"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1115,6 +1137,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoEliminable1}"
                                                     id="labelEsClaseRecursoEliminable1"
                                                     for="listaEsClaseRecursoEliminable1"
+                                                    toolTip="BundleParametros.es_clase_recurso_eliminable.clase_recurso"
                                                     text="eliminable"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1146,6 +1169,7 @@
                                                     binding="#{ClaseRecurso2.labelEsClaseRecursoExtendida1}"
                                                     id="labelEsClaseRecursoExtendida1"
                                                     for="listaEsClaseRecursoExtendida1"
+                                                    toolTip="BundleParametros.es_clase_recurso_extendida.clase_recurso"
                                                     text="extendida"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1177,6 +1201,7 @@
                                                     binding="#{ClaseRecurso2.labelEtiquetaHipervinculo1}"
                                                     id="labelEtiquetaHipervinculo1"
                                                     for="campoEtiquetaHipervinculo1"
+                                                    toolTip="BundleParametros.etiqueta_hipervinculo.clase_recurso"
                                                     text="etiqueta hipervinculo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1210,6 +1235,7 @@
                                                     binding="#{ClaseRecurso2.labelEsEnumeradorConNumero1}"
                                                     id="labelEsEnumeradorConNumero1"
                                                     for="listaEsEnumeradorConNumero1"
+                                                    toolTip="BundleParametros.es_enumerador_con_numero.clase_recurso"
                                                     text="enumerador con n&#250;mero"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1241,6 +1267,7 @@
                                                     binding="#{ClaseRecurso2.labelAliasClaseRecurso1}"
                                                     id="labelAliasClaseRecurso1"
                                                     for="campoAliasClaseRecurso1"
+                                                    toolTip="BundleParametros.alias_clase_recurso.clase_recurso"
                                                     text="alias"/>
                                             </h:panelGrid>
                                             <h:panelGrid

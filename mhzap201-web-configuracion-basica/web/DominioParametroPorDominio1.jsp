@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioParametroPorDominio1.tableColumnIdDominioParametro1}"
+                                                    toolTip="BundleParametros.id_dominio_parametro.dominio_parametro"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdDominioParametro1"
                                                     sort="id_dominio_parametro">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioParametroPorDominio1.tableColumnIdParametro1}"
+                                                    toolTip="BundleParametros.id_parametro.dominio_parametro"
                                                     headerText="parametro"
                                                     id="tableColumnIdParametro1"
                                                     sort="codigo_parametro_1x2y3">
@@ -272,6 +274,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioParametroPorDominio1.tableColumnNumeroTipoParametroDom1}"
+                                                    toolTip="BundleParametros.numero_tipo_parametro_dom.dominio_parametro"
                                                     headerText="tipo parametro dom"
                                                     id="tableColumnNumeroTipoParametroDom1"
                                                     sort="codigo_tipo_parametro_do_1x3y2">
@@ -298,6 +301,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioParametroPorDominio1.tableColumnEtiquetaParametro1}"
+                                                    toolTip="BundleParametros.etiqueta_parametro.dominio_parametro"
                                                     headerText="etiqueta parametro"
                                                     id="tableColumnEtiquetaParametro1" rendered="false"
                                                     sort="etiqueta_parametro">

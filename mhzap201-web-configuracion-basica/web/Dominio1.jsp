@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdDominio1}"
+                                                    toolTip="BundleParametros.id_dominio.dominio"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdDominio1"
                                                     sort="id_dominio">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnCodigoDominio1}"
+                                                    toolTip="BundleParametros.codigo_dominio.dominio"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoDominio1"
                                                     sort="codigo_dominio">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnNombreDominio1}"
+                                                    toolTip="BundleParametros.nombre_dominio.dominio"
                                                     headerText="nombre"
                                                     id="tableColumnNombreDominio1"
                                                     sort="nombre_dominio">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnDescripcionDominio1}"
+                                                    toolTip="BundleParametros.descripcion_dominio.dominio"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionDominio1" rendered="false"
                                                     sort="descripcion_dominio">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnNombreTabla1}"
+                                                    toolTip="BundleParametros.nombre_tabla.dominio"
                                                     headerText="nombre tabla"
                                                     id="tableColumnNombreTabla1" rendered="false"
                                                     sort="nombre_tabla">
@@ -312,6 +317,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnNumeroTipoDominio1}"
+                                                    toolTip="BundleParametros.numero_tipo_dominio.dominio"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoDominio1"
                                                     sort="codigo_tipo_dominio_1x1y2">
@@ -338,6 +344,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdClaseRecurso1}"
+                                                    toolTip="BundleParametros.id_clase_recurso.dominio"
                                                     headerText="clase recurso"
                                                     id="tableColumnIdClaseRecurso1"
                                                     sort="codigo_clase_recurso_1x2y3">
@@ -405,6 +412,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdFuncionSeleccion1}"
+                                                    toolTip="BundleParametros.id_funcion_seleccion.dominio"
                                                     headerText="funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion1" rendered="false"
                                                     sort="codigo_funcion_1x3y3">
@@ -470,6 +478,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdDominioSegmento1}"
+                                                    toolTip="BundleParametros.id_dominio_segmento.dominio"
                                                     headerText="dominio segmento"
                                                     id="tableColumnIdDominioSegmento1" rendered="false"
                                                     sort="codigo_dominio_1x4y3">
@@ -535,6 +544,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Dominio1.tableColumnIdPaquete1}"
+                                                    toolTip="BundleParametros.id_paquete.dominio"
                                                     headerText="paquete"
                                                     id="tableColumnIdPaquete1" rendered="false"
                                                     sort="codigo_paquete_1x5y3">

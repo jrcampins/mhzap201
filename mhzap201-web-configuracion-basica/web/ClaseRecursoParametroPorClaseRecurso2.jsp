@@ -204,6 +204,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoPar1}"
                                                     id="labelIdClaseRecursoPar1"
                                                     for="campoIdClaseRecursoPar1"
+                                                    toolTip="BundleParametros.id_clase_recurso_par.clase_recurso_par"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
+                                                    toolTip="BundleParametros.id_parametro.clase_recurso_par"
                                                     text="parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -298,6 +300,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelNumeroTipoParametro1}"
                                                     id="labelNumeroTipoParametro1"
                                                     for="listaNumeroTipoParametro1"
+                                                    toolTip="BundleParametros.numero_tipo_parametro.clase_recurso_par"
                                                     text="tipo parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -330,6 +333,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelNumeroTipoComparacion1}"
                                                     id="labelNumeroTipoComparacion1"
                                                     for="listaNumeroTipoComparacion1"
+                                                    toolTip="BundleParametros.numero_tipo_comparacion.clase_recurso_par"
                                                     text="tipo comparaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -362,6 +366,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdFuncionReferencia1}"
                                                     id="labelIdFuncionReferencia1"
                                                     for="campoIdFuncionReferencia1"
+                                                    toolTip="BundleParametros.id_funcion_referencia.clase_recurso_par"
                                                     text="funci&#243;n referencia"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -424,6 +429,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelNumeroTipoValor1}"
                                                     id="labelNumeroTipoValor1"
                                                     for="listaNumeroTipoValor1"
+                                                    toolTip="BundleParametros.numero_tipo_valor.clase_recurso_par"
                                                     text="tipo valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -456,6 +462,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdListaValor1}"
                                                     id="labelIdListaValor1"
                                                     for="campoIdListaValor1"
+                                                    toolTip="BundleParametros.id_lista_valor.clase_recurso_par"
                                                     text="identificaci&#243;n lista valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -488,6 +495,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseObjetoValor1}"
                                                     id="labelIdClaseObjetoValor1"
                                                     for="campoIdClaseObjetoValor1"
+                                                    toolTip="BundleParametros.id_clase_objeto_valor.clase_recurso_par"
                                                     text="identificaci&#243;n clase objeto valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -520,6 +528,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoValor1}"
                                                     id="labelIdClaseRecursoValor1"
                                                     for="campoIdClaseRecursoValor1"
+                                                    toolTip="BundleParametros.id_clase_recurso_valor.clase_recurso_par"
                                                     text="clase recurso valor"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -582,6 +591,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelValorMinimo1}"
                                                     id="labelValorMinimo1"
                                                     for="campoValorMinimo1"
+                                                    toolTip="BundleParametros.valor_minimo.clase_recurso_par"
                                                     text="valor minimo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -615,6 +625,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelValorMaximo1}"
                                                     id="labelValorMaximo1"
                                                     for="campoValorMaximo1"
+                                                    toolTip="BundleParametros.valor_maximo.clase_recurso_par"
                                                     text="valor maximo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -648,6 +659,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelValorOmision1}"
                                                     id="labelValorOmision1"
                                                     for="campoValorOmision1"
+                                                    toolTip="BundleParametros.valor_omision.clase_recurso_par"
                                                     text="valor omisi&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -681,6 +693,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroOmisible1}"
                                                     id="labelEsParametroOmisible1"
                                                     for="listaEsParametroOmisible1"
+                                                    toolTip="BundleParametros.es_parametro_omisible.clase_recurso_par"
                                                     text="parametro omisible"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -712,6 +725,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroInmutable1}"
                                                     id="labelEsParametroInmutable1"
                                                     for="listaEsParametroInmutable1"
+                                                    toolTip="BundleParametros.es_parametro_inmutable.clase_recurso_par"
                                                     text="parametro inmutable"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -743,6 +757,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroSubmit1}"
                                                     id="labelEsParametroSubmit1"
                                                     for="listaEsParametroSubmit1"
+                                                    toolTip="BundleParametros.es_parametro_submit.clase_recurso_par"
                                                     text="parametro submit"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -774,6 +789,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroPrimordial1}"
                                                     id="labelEsParametroPrimordial1"
                                                     for="listaEsParametroPrimordial1"
+                                                    toolTip="BundleParametros.es_parametro_primordial.clase_recurso_par"
                                                     text="parametro primordial"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -805,6 +821,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroMaestro1}"
                                                     id="labelEsParametroMaestro1"
                                                     for="listaEsParametroMaestro1"
+                                                    toolTip="BundleParametros.es_parametro_maestro.clase_recurso_par"
                                                     text="parametro maestro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -836,6 +853,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroSegmento1}"
                                                     id="labelEsParametroSegmento1"
                                                     for="listaEsParametroSegmento1"
+                                                    toolTip="BundleParametros.es_parametro_segmento.clase_recurso_par"
                                                     text="parametro segmento"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -867,6 +885,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroSinRastro1}"
                                                     id="labelEsParametroSinRastro1"
                                                     for="listaEsParametroSinRastro1"
+                                                    toolTip="BundleParametros.es_parametro_sin_rastro.clase_recurso_par"
                                                     text="parametro sin rastro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -898,6 +917,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsParametroSincronizado1}"
                                                     id="labelEsParametroSincronizado1"
                                                     for="listaEsParametroSincronizado1"
+                                                    toolTip="BundleParametros.es_parametro_sincronizado.clase_recurso_par"
                                                     text="parametro sincronizado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -929,6 +949,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
+                                                    toolTip="BundleParametros.orden_presentacion.clase_recurso_par"
                                                     text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -961,6 +982,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoSec1}"
                                                     id="labelIdClaseRecursoSec1"
                                                     for="campoIdClaseRecursoSec1"
+                                                    toolTip="BundleParametros.id_clase_recurso_sec.clase_recurso_par"
                                                     text="clase recurso sec"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1021,6 +1043,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelEsReferenciaAlternativa1}"
                                                     id="labelEsReferenciaAlternativa1"
                                                     for="listaEsReferenciaAlternativa1"
+                                                    toolTip="BundleParametros.es_referencia_alternativa.clase_recurso_par"
                                                     text="referencia alternativa"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1052,6 +1075,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelNumeroTipoValorAlternativo1}"
                                                     id="labelNumeroTipoValorAlternativo1"
                                                     for="listaNumeroTipoValorAlternativo1"
+                                                    toolTip="BundleParametros.numero_tipo_valor_alternativo.clase_recurso_par"
                                                     text="tipo valor alternativo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1084,6 +1108,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdFuncionReferenciaAlt1}"
                                                     id="labelIdFuncionReferenciaAlt1"
                                                     for="campoIdFuncionReferenciaAlt1"
+                                                    toolTip="BundleParametros.id_funcion_referencia_alt.clase_recurso_par"
                                                     text="identificaci&#243;n funci&#243;n referencia alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1116,6 +1141,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdListaValorAlternativa1}"
                                                     id="labelIdListaValorAlternativa1"
                                                     for="campoIdListaValorAlternativa1"
+                                                    toolTip="BundleParametros.id_lista_valor_alternativa.clase_recurso_par"
                                                     text="identificaci&#243;n lista valor alternativa"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1148,6 +1174,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseObjetoValorAlt1}"
                                                     id="labelIdClaseObjetoValorAlt1"
                                                     for="campoIdClaseObjetoValorAlt1"
+                                                    toolTip="BundleParametros.id_clase_objeto_valor_alt.clase_recurso_par"
                                                     text="identificaci&#243;n clase objeto valor alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1180,6 +1207,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelIdClaseRecursoValorAlt1}"
                                                     id="labelIdClaseRecursoValorAlt1"
                                                     for="campoIdClaseRecursoValorAlt1"
+                                                    toolTip="BundleParametros.id_clase_recurso_valor_alt.clase_recurso_par"
                                                     text="identificaci&#243;n clase recurso valor alt"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -1212,6 +1240,7 @@
                                                     binding="#{ClaseRecursoParametroPorClaseRecurso2.labelOrdenPaginaSeleccion1}"
                                                     id="labelOrdenPaginaSeleccion1"
                                                     for="campoOrdenPaginaSeleccion1"
+                                                    toolTip="BundleParametros.orden_pagina_seleccion.clase_recurso_par"
                                                     text="orden p&#225;gina selecci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

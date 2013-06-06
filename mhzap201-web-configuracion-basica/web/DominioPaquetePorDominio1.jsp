@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioPaquetePorDominio1.tableColumnIdDominioPaquete1}"
+                                                    toolTip="BundleParametros.id_dominio_paquete.dominio_paquete"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdDominioPaquete1"
                                                     sort="id_dominio_paquete">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{DominioPaquetePorDominio1.tableColumnIdPaquete1}"
+                                                    toolTip="BundleParametros.id_paquete.dominio_paquete"
                                                     headerText="paquete"
                                                     id="tableColumnIdPaquete1"
                                                     sort="codigo_paquete_1x2y3">

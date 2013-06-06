@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdClaseRecurso1}"
+                                                    toolTip="BundleParametros.id_clase_recurso.clase_recurso"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdClaseRecurso1"
                                                     sort="id_clase_recurso">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnCodigoClaseRecurso1}"
+                                                    toolTip="BundleParametros.codigo_clase_recurso.clase_recurso"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoClaseRecurso1"
                                                     sort="codigo_clase_recurso">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnNombreClaseRecurso1}"
+                                                    toolTip="BundleParametros.nombre_clase_recurso.clase_recurso"
                                                     headerText="nombre"
                                                     id="tableColumnNombreClaseRecurso1"
                                                     sort="nombre_clase_recurso">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnDescripcionClaseRecurso1}"
+                                                    toolTip="BundleParametros.descripcion_clase_recurso.clase_recurso"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionClaseRecurso1" rendered="false"
                                                     sort="descripcion_clase_recurso">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoIndependiente1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_independiente.clase_recurso"
                                                     headerText="independiente"
                                                     id="tableColumnEsClaseRecursoIndependiente1" rendered="false"
                                                     sort="es_clase_recurso_independiente">
@@ -310,6 +315,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoSinDetalle1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_sin_detalle.clase_recurso"
                                                     headerText="sin detalle"
                                                     id="tableColumnEsClaseRecursoSinDetalle1" rendered="false"
                                                     sort="es_clase_recurso_sin_detalle">
@@ -335,6 +341,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoConArbol1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_con_arbol.clase_recurso"
                                                     headerText="con arbol"
                                                     id="tableColumnEsClaseRecursoConArbol1" rendered="false"
                                                     sort="es_clase_recurso_con_arbol">
@@ -360,6 +367,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnNumeroTipoClaseRecurso1}"
+                                                    toolTip="BundleParametros.numero_tipo_clase_recurso.clase_recurso"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoClaseRecurso1" rendered="false"
                                                     sort="codigo_tipo_clase_recurs_1x1y2">
@@ -386,6 +394,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnNumeroTipoRecurso1}"
+                                                    toolTip="BundleParametros.numero_tipo_recurso.clase_recurso"
                                                     headerText="tipo recurso"
                                                     id="tableColumnNumeroTipoRecurso1"
                                                     sort="codigo_tipo_recurso_1x2y2">
@@ -412,6 +421,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdFuncionSeleccion1}"
+                                                    toolTip="BundleParametros.id_funcion_seleccion.clase_recurso"
                                                     headerText="funci&#243;n selecci&#243;n"
                                                     id="tableColumnIdFuncionSeleccion1" rendered="false"
                                                     sort="codigo_funcion_1x3y3">
@@ -477,6 +487,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaSeleccion1}"
+                                                    toolTip="BundleParametros.id_pagina_seleccion.clase_recurso"
                                                     headerText="p&#225;gina selecci&#243;n"
                                                     id="tableColumnIdPaginaSeleccion1" rendered="false"
                                                     sort="codigo_pagina_1x4y3">
@@ -542,6 +553,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdPaginaDetalle1}"
+                                                    toolTip="BundleParametros.id_pagina_detalle.clase_recurso"
                                                     headerText="p&#225;gina detalle"
                                                     id="tableColumnIdPaginaDetalle1" rendered="false"
                                                     sort="codigo_pagina_1x5y3">
@@ -607,6 +619,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdClaseRecursoMaestro1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_maestro.clase_recurso"
                                                     headerText="clase recurso maestro"
                                                     id="tableColumnIdClaseRecursoMaestro1" rendered="false"
                                                     sort="codigo_clase_recurso_1x6y3">
@@ -672,6 +685,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdClaseRecursoSegmento1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_segmento.clase_recurso"
                                                     headerText="clase recurso segmento"
                                                     id="tableColumnIdClaseRecursoSegmento1" rendered="false"
                                                     sort="codigo_clase_recurso_1x7y3">
@@ -737,6 +751,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdClaseRecursoBase1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_base.clase_recurso"
                                                     headerText="clase recurso base"
                                                     id="tableColumnIdClaseRecursoBase1" rendered="false"
                                                     sort="codigo_clase_recurso_1x8y3">
@@ -802,6 +817,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdGrupoAplicacion1}"
+                                                    toolTip="BundleParametros.id_grupo_aplicacion.clase_recurso"
                                                     headerText="grupo aplicaci&#243;n"
                                                     id="tableColumnIdGrupoAplicacion1" rendered="false"
                                                     sort="codigo_grupo_aplicacion_1x9y3">
@@ -867,6 +883,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnIdAplicacionWeb1}"
+                                                    toolTip="BundleParametros.id_aplicacion_web.clase_recurso"
                                                     headerText="identificaci&#243;n aplicaci&#243;n web"
                                                     id="tableColumnIdAplicacionWeb1" rendered="false"
                                                     sort="id_aplicacion_web">
@@ -893,6 +910,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnLimiteFilasConsulta1}"
+                                                    toolTip="BundleParametros.limite_filas_consulta.clase_recurso"
                                                     headerText="limite filas consulta"
                                                     id="tableColumnLimiteFilasConsulta1" rendered="false"
                                                     sort="limite_filas_consulta">
@@ -919,6 +937,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnLimiteFilasInforme1}"
+                                                    toolTip="BundleParametros.limite_filas_informe.clase_recurso"
                                                     headerText="limite filas informe"
                                                     id="tableColumnLimiteFilasInforme1" rendered="false"
                                                     sort="limite_filas_informe">
@@ -945,6 +964,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnOrdenPresentacion1}"
+                                                    toolTip="BundleParametros.orden_presentacion.clase_recurso"
                                                     headerText="orden presentaci&#243;n"
                                                     id="tableColumnOrdenPresentacion1" rendered="false"
                                                     sort="orden_presentacion">
@@ -971,6 +991,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoInsertable1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_insertable.clase_recurso"
                                                     headerText="insertable"
                                                     id="tableColumnEsClaseRecursoInsertable1" rendered="false"
                                                     sort="es_clase_recurso_insertable">
@@ -996,6 +1017,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoModificable1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_modificable.clase_recurso"
                                                     headerText="modificable"
                                                     id="tableColumnEsClaseRecursoModificable1" rendered="false"
                                                     sort="es_clase_recurso_modificable">
@@ -1021,6 +1043,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoEliminable1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_eliminable.clase_recurso"
                                                     headerText="eliminable"
                                                     id="tableColumnEsClaseRecursoEliminable1" rendered="false"
                                                     sort="es_clase_recurso_eliminable">
@@ -1046,6 +1069,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsClaseRecursoExtendida1}"
+                                                    toolTip="BundleParametros.es_clase_recurso_extendida.clase_recurso"
                                                     headerText="extendida"
                                                     id="tableColumnEsClaseRecursoExtendida1" rendered="false"
                                                     sort="es_clase_recurso_extendida">
@@ -1071,6 +1095,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEtiquetaHipervinculo1}"
+                                                    toolTip="BundleParametros.etiqueta_hipervinculo.clase_recurso"
                                                     headerText="etiqueta hipervinculo"
                                                     id="tableColumnEtiquetaHipervinculo1" rendered="false"
                                                     sort="etiqueta_hipervinculo">
@@ -1098,6 +1123,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnEsEnumeradorConNumero1}"
+                                                    toolTip="BundleParametros.es_enumerador_con_numero.clase_recurso"
                                                     headerText="enumerador con n&#250;mero"
                                                     id="tableColumnEsEnumeradorConNumero1" rendered="false"
                                                     sort="es_enumerador_con_numero">
@@ -1123,6 +1149,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecurso1.tableColumnAliasClaseRecurso1}"
+                                                    toolTip="BundleParametros.alias_clase_recurso.clase_recurso"
                                                     headerText="alias"
                                                     id="tableColumnAliasClaseRecurso1" rendered="false"
                                                     sort="alias_clase_recurso">

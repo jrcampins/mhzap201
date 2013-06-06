@@ -204,6 +204,7 @@
                                                     binding="#{Pagina2.labelIdPagina1}"
                                                     id="labelIdPagina1"
                                                     for="campoIdPagina1"
+                                                    toolTip="BundleParametros.id_pagina.pagina"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Pagina2.labelCodigoPagina1}"
                                                     id="labelCodigoPagina1"
                                                     for="campoCodigoPagina1"
+                                                    toolTip="BundleParametros.codigo_pagina.pagina"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Pagina2.labelNombrePagina1}"
                                                     id="labelNombrePagina1"
                                                     for="campoNombrePagina1"
+                                                    toolTip="BundleParametros.nombre_pagina.pagina"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Pagina2.labelDescripcionPagina1}"
                                                     id="labelDescripcionPagina1"
                                                     for="campoDescripcionPagina1"
+                                                    toolTip="BundleParametros.descripcion_pagina.pagina"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{Pagina2.labelUrlPagina1}"
                                                     id="labelUrlPagina1"
                                                     for="campoUrlPagina1"
+                                                    toolTip="BundleParametros.url_pagina.pagina"
                                                     text="url"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -366,6 +371,7 @@
                                                     binding="#{Pagina2.labelIdAplicacion1}"
                                                     id="labelIdAplicacion1"
                                                     for="campoIdAplicacion1"
+                                                    toolTip="BundleParametros.id_aplicacion.pagina"
                                                     text="aplicaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -428,6 +434,7 @@
                                                     binding="#{Pagina2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
+                                                    toolTip="BundleParametros.es_publica.pagina"
                                                     text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -459,6 +466,7 @@
                                                     binding="#{Pagina2.labelNumeroTipoPagina1}"
                                                     id="labelNumeroTipoPagina1"
                                                     for="listaNumeroTipoPagina1"
+                                                    toolTip="BundleParametros.numero_tipo_pagina.pagina"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -491,6 +499,7 @@
                                                     binding="#{Pagina2.labelIdDominio1}"
                                                     id="labelIdDominio1"
                                                     for="campoIdDominio1"
+                                                    toolTip="BundleParametros.id_dominio.pagina"
                                                     text="dominio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -553,6 +562,7 @@
                                                     binding="#{Pagina2.labelIdDominioMaestro1}"
                                                     id="labelIdDominioMaestro1"
                                                     for="campoIdDominioMaestro1"
+                                                    toolTip="BundleParametros.id_dominio_maestro.pagina"
                                                     text="dominio maestro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -615,6 +625,7 @@
                                                     binding="#{Pagina2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
+                                                    toolTip="BundleParametros.id_parametro.pagina"
                                                     text="parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid

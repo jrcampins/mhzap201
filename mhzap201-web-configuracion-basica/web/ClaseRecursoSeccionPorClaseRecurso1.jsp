@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnIdClaseRecursoSec1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_sec.clase_recurso_sec"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdClaseRecursoSec1"
                                                     sort="id_clase_recurso_sec">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnEtiquetaClaseRecursoSec1}"
+                                                    toolTip="BundleParametros.etiqueta_clase_recurso_sec.clase_recurso_sec"
                                                     headerText="etiqueta"
                                                     id="tableColumnEtiquetaClaseRecursoSec1"
                                                     sort="etiqueta_clase_recurso_sec">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnDescripcionClaseRecursoSec1}"
+                                                    toolTip="BundleParametros.descripcion_clase_recurso_sec.clase_recurso_sec"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionClaseRecursoSec1" rendered="false"
                                                     sort="descripcion_clase_recurso_sec">
@@ -258,6 +261,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnOrdenPresentacion1}"
+                                                    toolTip="BundleParametros.orden_presentacion.clase_recurso_sec"
                                                     headerText="orden presentaci&#243;n"
                                                     id="tableColumnOrdenPresentacion1" rendered="false"
                                                     sort="orden_presentacion">
@@ -284,6 +288,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso1.tableColumnEsPestanaDetalle1}"
+                                                    toolTip="BundleParametros.es_pestana_detalle.clase_recurso_sec"
                                                     headerText="pestana detalle"
                                                     id="tableColumnEsPestanaDetalle1" rendered="false"
                                                     sort="es_pestana_detalle">

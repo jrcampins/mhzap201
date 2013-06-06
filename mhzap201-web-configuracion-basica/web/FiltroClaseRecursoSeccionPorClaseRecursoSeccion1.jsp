@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoSeccionPorClaseRecursoSeccion1.tableColumnIdFiltroClaRecSec1}"
+                                                    toolTip="BundleParametros.id_filtro_cla_rec_sec.filtro_cla_rec_sec"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFiltroClaRecSec1"
                                                     sort="id_filtro_cla_rec_sec">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoSeccionPorClaseRecursoSeccion1.tableColumnIdClaseRecursoParColumna1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_par_columna.filtro_cla_rec_sec"
                                                     headerText="clase recurso par columna"
                                                     id="tableColumnIdClaseRecursoParColumna1"
                                                     sort="id_clase_recurso_par_columna">
@@ -269,6 +271,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoSeccionPorClaseRecursoSeccion1.tableColumnNumeroOperadorCom1}"
+                                                    toolTip="BundleParametros.numero_operador_com.filtro_cla_rec_sec"
                                                     headerText="operador com"
                                                     id="tableColumnNumeroOperadorCom1"
                                                     sort="codigo_operador_com_1x3y2">
@@ -295,6 +298,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoSeccionPorClaseRecursoSeccion1.tableColumnIdClaseRecursoParValor1}"
+                                                    toolTip="BundleParametros.id_clase_recurso_par_valor.filtro_cla_rec_sec"
                                                     headerText="clase recurso par valor"
                                                     id="tableColumnIdClaseRecursoParValor1"
                                                     sort="id_clase_recurso_par_valor">
@@ -359,6 +363,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{FiltroClaseRecursoSeccionPorClaseRecursoSeccion1.tableColumnValor1}"
+                                                    toolTip="BundleParametros.valor.filtro_cla_rec_sec"
                                                     headerText="valor"
                                                     id="tableColumnValor1"
                                                     sort="valor">

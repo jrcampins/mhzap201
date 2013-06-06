@@ -204,6 +204,7 @@
                                                     binding="#{GrupoAplicacion2.labelIdGrupoAplicacion1}"
                                                     id="labelIdGrupoAplicacion1"
                                                     for="campoIdGrupoAplicacion1"
+                                                    toolTip="BundleParametros.id_grupo_aplicacion.grupo_aplicacion"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{GrupoAplicacion2.labelCodigoGrupoAplicacion1}"
                                                     id="labelCodigoGrupoAplicacion1"
                                                     for="campoCodigoGrupoAplicacion1"
+                                                    toolTip="BundleParametros.codigo_grupo_aplicacion.grupo_aplicacion"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{GrupoAplicacion2.labelNombreGrupoAplicacion1}"
                                                     id="labelNombreGrupoAplicacion1"
                                                     for="campoNombreGrupoAplicacion1"
+                                                    toolTip="BundleParametros.nombre_grupo_aplicacion.grupo_aplicacion"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{GrupoAplicacion2.labelDescripcionGrupoAplicacion1}"
                                                     id="labelDescripcionGrupoAplicacion1"
                                                     for="campoDescripcionGrupoAplicacion1"
+                                                    toolTip="BundleParametros.descripcion_grupo_aplicacion.grupo_aplicacion"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

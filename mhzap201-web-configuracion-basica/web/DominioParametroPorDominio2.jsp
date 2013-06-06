@@ -204,6 +204,7 @@
                                                     binding="#{DominioParametroPorDominio2.labelIdDominioParametro1}"
                                                     id="labelIdDominioParametro1"
                                                     for="campoIdDominioParametro1"
+                                                    toolTip="BundleParametros.id_dominio_parametro.dominio_parametro"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{DominioParametroPorDominio2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
+                                                    toolTip="BundleParametros.id_parametro.dominio_parametro"
                                                     text="parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -298,6 +300,7 @@
                                                     binding="#{DominioParametroPorDominio2.labelNumeroTipoParametroDom1}"
                                                     id="labelNumeroTipoParametroDom1"
                                                     for="listaNumeroTipoParametroDom1"
+                                                    toolTip="BundleParametros.numero_tipo_parametro_dom.dominio_parametro"
                                                     text="tipo parametro dom"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -330,6 +333,7 @@
                                                     binding="#{DominioParametroPorDominio2.labelEtiquetaParametro1}"
                                                     id="labelEtiquetaParametro1"
                                                     for="campoEtiquetaParametro1"
+                                                    toolTip="BundleParametros.etiqueta_parametro.dominio_parametro"
                                                     text="etiqueta parametro"/>
                                             </h:panelGrid>
                                             <h:panelGrid

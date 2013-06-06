@@ -179,6 +179,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnIdPagina1}"
+                                                    toolTip="BundleParametros.id_pagina.pagina"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdPagina1"
                                                     sort="id_pagina">
@@ -205,6 +206,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnCodigoPagina1}"
+                                                    toolTip="BundleParametros.codigo_pagina.pagina"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoPagina1"
                                                     sort="codigo_pagina">
@@ -232,6 +234,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnNombrePagina1}"
+                                                    toolTip="BundleParametros.nombre_pagina.pagina"
                                                     headerText="nombre"
                                                     id="tableColumnNombrePagina1"
                                                     sort="nombre_pagina">
@@ -259,6 +262,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnDescripcionPagina1}"
+                                                    toolTip="BundleParametros.descripcion_pagina.pagina"
                                                     headerText="descripci&#243;n"
                                                     id="tableColumnDescripcionPagina1" rendered="false"
                                                     sort="descripcion_pagina">
@@ -285,6 +289,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnUrlPagina1}"
+                                                    toolTip="BundleParametros.url_pagina.pagina"
                                                     headerText="url"
                                                     id="tableColumnUrlPagina1" rendered="false"
                                                     sort="url_pagina">
@@ -311,6 +316,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnEsPublica1}"
+                                                    toolTip="BundleParametros.es_publica.pagina"
                                                     headerText="p&#250;blica"
                                                     id="tableColumnEsPublica1" rendered="false"
                                                     sort="es_publica">
@@ -336,6 +342,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnNumeroTipoPagina1}"
+                                                    toolTip="BundleParametros.numero_tipo_pagina.pagina"
                                                     headerText="tipo"
                                                     id="tableColumnNumeroTipoPagina1" rendered="false"
                                                     sort="codigo_tipo_pagina_1x2y2">
@@ -362,6 +369,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnIdDominio1}"
+                                                    toolTip="BundleParametros.id_dominio.pagina"
                                                     headerText="dominio"
                                                     id="tableColumnIdDominio1" rendered="false"
                                                     sort="codigo_dominio_1x3y3">
@@ -427,6 +435,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnIdDominioMaestro1}"
+                                                    toolTip="BundleParametros.id_dominio_maestro.pagina"
                                                     headerText="dominio maestro"
                                                     id="tableColumnIdDominioMaestro1" rendered="false"
                                                     sort="codigo_dominio_1x4y3">
@@ -492,6 +501,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{PaginaPorAplicacion1.tableColumnIdParametro1}"
+                                                    toolTip="BundleParametros.id_parametro.pagina"
                                                     headerText="parametro"
                                                     id="tableColumnIdParametro1" rendered="false"
                                                     sort="codigo_parametro_1x5y3">

@@ -204,6 +204,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelIdClaseRecursoSec1}"
                                                     id="labelIdClaseRecursoSec1"
                                                     for="campoIdClaseRecursoSec1"
+                                                    toolTip="BundleParametros.id_clase_recurso_sec.clase_recurso_sec"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelEtiquetaClaseRecursoSec1}"
                                                     id="labelEtiquetaClaseRecursoSec1"
                                                     for="campoEtiquetaClaseRecursoSec1"
+                                                    toolTip="BundleParametros.etiqueta_clase_recurso_sec.clase_recurso_sec"
                                                     text="etiqueta"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelDescripcionClaseRecursoSec1}"
                                                     id="labelDescripcionClaseRecursoSec1"
                                                     for="campoDescripcionClaseRecursoSec1"
+                                                    toolTip="BundleParametros.descripcion_clase_recurso_sec.clase_recurso_sec"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -301,6 +304,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelOrdenPresentacion1}"
                                                     id="labelOrdenPresentacion1"
                                                     for="campoOrdenPresentacion1"
+                                                    toolTip="BundleParametros.orden_presentacion.clase_recurso_sec"
                                                     text="orden presentaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -333,6 +337,7 @@
                                                     binding="#{ClaseRecursoSeccionPorClaseRecurso2.labelEsPestanaDetalle1}"
                                                     id="labelEsPestanaDetalle1"
                                                     for="listaEsPestanaDetalle1"
+                                                    toolTip="BundleParametros.es_pestana_detalle.clase_recurso_sec"
                                                     text="pestana detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid

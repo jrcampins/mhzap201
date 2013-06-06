@@ -204,6 +204,7 @@
                                                     binding="#{Parametro2.labelIdParametro1}"
                                                     id="labelIdParametro1"
                                                     for="campoIdParametro1"
+                                                    toolTip="BundleParametros.id_parametro.parametro"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Parametro2.labelCodigoParametro1}"
                                                     id="labelCodigoParametro1"
                                                     for="campoCodigoParametro1"
+                                                    toolTip="BundleParametros.codigo_parametro.parametro"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Parametro2.labelNombreParametro1}"
                                                     id="labelNombreParametro1"
                                                     for="campoNombreParametro1"
+                                                    toolTip="BundleParametros.nombre_parametro.parametro"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Parametro2.labelDetalleParametro1}"
                                                     id="labelDetalleParametro1"
                                                     for="campoDetalleParametro1"
+                                                    toolTip="BundleParametros.detalle_parametro.parametro"
                                                     text="detalle"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -335,6 +339,7 @@
                                                     binding="#{Parametro2.labelDescripcionParametro1}"
                                                     id="labelDescripcionParametro1"
                                                     for="campoDescripcionParametro1"
+                                                    toolTip="BundleParametros.descripcion_parametro.parametro"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -367,6 +372,7 @@
                                                     binding="#{Parametro2.labelNumeroTipoDatoPar1}"
                                                     id="labelNumeroTipoDatoPar1"
                                                     for="listaNumeroTipoDatoPar1"
+                                                    toolTip="BundleParametros.numero_tipo_dato_par.parametro"
                                                     text="tipo dato par"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -399,6 +405,7 @@
                                                     binding="#{Parametro2.labelAliasParametro1}"
                                                     id="labelAliasParametro1"
                                                     for="campoAliasParametro1"
+                                                    toolTip="BundleParametros.alias_parametro.parametro"
                                                     text="alias"/>
                                             </h:panelGrid>
                                             <h:panelGrid

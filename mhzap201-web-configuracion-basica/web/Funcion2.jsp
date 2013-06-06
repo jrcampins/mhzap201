@@ -204,6 +204,7 @@
                                                     binding="#{Funcion2.labelIdFuncion1}"
                                                     id="labelIdFuncion1"
                                                     for="campoIdFuncion1"
+                                                    toolTip="BundleParametros.id_funcion.funcion"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -236,6 +237,7 @@
                                                     binding="#{Funcion2.labelCodigoFuncion1}"
                                                     id="labelCodigoFuncion1"
                                                     for="campoCodigoFuncion1"
+                                                    toolTip="BundleParametros.codigo_funcion.funcion"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -269,6 +271,7 @@
                                                     binding="#{Funcion2.labelNombreFuncion1}"
                                                     id="labelNombreFuncion1"
                                                     for="campoNombreFuncion1"
+                                                    toolTip="BundleParametros.nombre_funcion.funcion"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -302,6 +305,7 @@
                                                     binding="#{Funcion2.labelDescripcionFuncion1}"
                                                     id="labelDescripcionFuncion1"
                                                     for="campoDescripcionFuncion1"
+                                                    toolTip="BundleParametros.descripcion_funcion.funcion"
                                                     text="descripci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -334,6 +338,7 @@
                                                     binding="#{Funcion2.labelNumeroTipoFuncion1}"
                                                     id="labelNumeroTipoFuncion1"
                                                     for="listaNumeroTipoFuncion1"
+                                                    toolTip="BundleParametros.numero_tipo_funcion.funcion"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -366,6 +371,7 @@
                                                     binding="#{Funcion2.labelNumeroTipoRastroFun1}"
                                                     id="labelNumeroTipoRastroFun1"
                                                     for="listaNumeroTipoRastroFun1"
+                                                    toolTip="BundleParametros.numero_tipo_rastro_fun.funcion"
                                                     text="tipo rastro"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -398,6 +404,7 @@
                                                     binding="#{Funcion2.labelIdDominio1}"
                                                     id="labelIdDominio1"
                                                     for="campoIdDominio1"
+                                                    toolTip="BundleParametros.id_dominio.funcion"
                                                     text="dominio"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -460,6 +467,7 @@
                                                     binding="#{Funcion2.labelClausulaWhere1}"
                                                     id="labelClausulaWhere1"
                                                     for="campoClausulaWhere1"
+                                                    toolTip="BundleParametros.clausula_where.funcion"
                                                     text="clausula where"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -492,6 +500,7 @@
                                                     binding="#{Funcion2.labelClausulaOrder1}"
                                                     id="labelClausulaOrder1"
                                                     for="campoClausulaOrder1"
+                                                    toolTip="BundleParametros.clausula_order.funcion"
                                                     text="clausula order"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -524,6 +533,7 @@
                                                     binding="#{Funcion2.labelEsPublica1}"
                                                     id="labelEsPublica1"
                                                     for="listaEsPublica1"
+                                                    toolTip="BundleParametros.es_publica.funcion"
                                                     text="p&#250;blica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -555,6 +565,7 @@
                                                     binding="#{Funcion2.labelEsProgramatica1}"
                                                     id="labelEsProgramatica1"
                                                     for="listaEsProgramatica1"
+                                                    toolTip="BundleParametros.es_programatica.funcion"
                                                     text="program&#225;tica"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -586,6 +597,7 @@
                                                     binding="#{Funcion2.labelEsPersonalizada1}"
                                                     id="labelEsPersonalizada1"
                                                     for="listaEsPersonalizada1"
+                                                    toolTip="BundleParametros.es_personalizada.funcion"
                                                     text="personalizada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -617,6 +629,7 @@
                                                     binding="#{Funcion2.labelEsSegmentada1}"
                                                     id="labelEsSegmentada1"
                                                     for="listaEsSegmentada1"
+                                                    toolTip="BundleParametros.es_segmentada.funcion"
                                                     text="segmentada"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -648,6 +661,7 @@
                                                     binding="#{Funcion2.labelIdGrupoProceso1}"
                                                     id="labelIdGrupoProceso1"
                                                     for="campoIdGrupoProceso1"
+                                                    toolTip="BundleParametros.id_grupo_proceso.funcion"
                                                     text="grupo proceso"/>
                                             </h:panelGrid>
                                             <h:panelGrid
