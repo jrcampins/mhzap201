@@ -66,10 +66,6 @@ public class PersonaConstants {
 
     public static final String COLUMNA_ID_BARRIO = "id_barrio";
 
-    public static final String COLUMNA_ID_MANZANA = "id_manzana";
-
-    public static final String COLUMNA_MANZANA = "manzana";
-
     public static final String COLUMNA_DIRECCION = "direccion";
 
     public static final String COLUMNA_NUMERO_TELEFONO_LINEA_BAJA = "numero_telefono_linea_baja";
@@ -80,17 +76,15 @@ public class PersonaConstants {
 
     public static final String COLUMNA_FECHA_CERTIFICADO_VIDA = "fecha_certificado_vida";
 
-    public static final String COLUMNA_ES_CERTIFICADO_VIDA_ANULADO = "es_certificado_vida_anulado";
+    public static final String COLUMNA_DIAS_VIGENCIA_CERTIFICADO_VIDA = "dias_vigencia_certificado_vida";
 
-    public static final String COLUMNA_COMENTARIOS_ANUL_CER_VIDA = "comentarios_anul_cer_vida";
+    public static final String COLUMNA_ES_CERTIFICADO_VIDA_ANULADO = "es_certificado_vida_anulado";
 
     public static final String COLUMNA_CERTIFICADO_DEFUNCION = "certificado_defuncion";
 
     public static final String COLUMNA_FECHA_CERTIFICADO_DEFUNCION = "fecha_certificado_defuncion";
 
     public static final String COLUMNA_ES_CER_DEFUNCION_ANULADO = "es_cer_defuncion_anulado";
-
-    public static final String COLUMNA_COMENTARIOS_ANUL_CER_DEFUNCION = "comentarios_anul_cer_defuncion";
 
     public static final String COLUMNA_ES_PERSONA_CON_EMPLEO = "es_persona_con_empleo";
 
@@ -119,8 +113,6 @@ public class PersonaConstants {
     public static final String COLUMNA_MONTO_PENSION = "monto_pension";
 
     public static final String COLUMNA_NUMERO_CONDICION_PENSION = "numero_condicion_pension";
-
-    public static final String COLUMNA_LUGAR_SOLICITUD_PENSION = "lugar_solicitud_pension";
 
     public static final String COLUMNA_FECHA_SOLICITUD_PENSION = "fecha_solicitud_pension";
 
@@ -159,6 +151,10 @@ public class PersonaConstants {
     public static final String COLUMNA_NUMERO_CAUSA_REV_PENSION = "numero_causa_rev_pension";
 
     public static final String COLUMNA_OTRA_CAUSA_REV_PENSION = "otra_causa_rev_pension";
+
+    public static final String COLUMNA_NUMERO_RESOLUCION_REV_PEN = "numero_resolucion_rev_pen";
+
+    public static final String COLUMNA_FECHA_RESOLUCION_REV_PEN = "fecha_resolucion_rev_pen";
 
     public static final String COLUMNA_COMENTARIOS_REVOCACION_PENSION = "comentarios_revocacion_pension";
 
@@ -212,7 +208,11 @@ public class PersonaConstants {
 
     public static final String COLUMNA_CODIGO_SIME = "codigo_sime";
 
+    public static final String COLUMNA_CODIGO_SIME_RECO_PEN = "codigo_sime_reco_pen";
+
     public static final String COLUMNA_COMENTARIOS_ENTREGA_DOCUMENTOS = "comentarios_entrega_documentos";
+
+    public static final String COLUMNA_COMENTARIOS_INSERCION_JUPE = "comentarios_insercion_jupe";
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_persona";
 
@@ -240,51 +240,81 @@ public class PersonaConstants {
 
     public static final long FUNCION_APROBAR_PENSION_PERSONA = 201000155L;
 
-    public static final long FUNCION_OBJETAR_PENSION_PERSONA = 201000156L;
+    public static final long FUNCION_ANULAR_APROBACION_PEN_PERSONA = 201000156L;
 
-    public static final long FUNCION_REVOCAR_PENSION_PERSONA = 201000157L;
+    public static final long FUNCION_OBJETAR_PENSION_PERSONA = 201000157L;
 
-    public static final long FUNCION_OTORGAR_PENSION_PERSONA = 201000158L;
+    public static final long FUNCION_REVOCAR_PENSION_PERSONA = 201000158L;
 
-    public static final long FUNCION_DENEGAR_PENSION_PERSONA = 201000159L;
+    public static final long FUNCION_OTORGAR_PENSION_PERSONA = 201000159L;
 
-    public static final long FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = 201000160L;
+    public static final long FUNCION_DENEGAR_PENSION_PERSONA = 201000160L;
 
-    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA = 201000161L;
+    public static final long FUNCION_ANULAR_DENEGACION_PEN_PERSONA = 201000161L;
 
-    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA = 201000162L;
+    public static final long FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = 201000162L;
 
-    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA = 201000163L;
+    public static final long FUNCION_INCLUIR_PERSONA_EN_JUPE = 201000163L;
 
-    public static final long FUNCION_REGISTRAR_DENU_PEN_PERSONA = 201000164L;
+    public static final long FUNCION_ASIGNAR_MONTO_PENSION_PERSONA = 201000164L;
 
-    public static final long FUNCION_CONFIRMAR_DENU_PEN_PERSONA = 201000165L;
+    public static final long FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = 201000165L;
 
-    public static final long FUNCION_DESMENTIR_DENU_PEN_PERSONA = 201000166L;
+    public static final long FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = 201000166L;
 
-    public static final long FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = 201000167L;
+    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA = 201000167L;
 
-    public static final long FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = 201000168L;
+    public static final long FUNCION_ASIGNAR_RECO_PEN_PERSONA = 201000168L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = 201000169L;
+    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA = 201000169L;
 
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000170L;
+    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA = 201000170L;
 
-    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000171L;
+    public static final long FUNCION_REGISTRAR_DENU_PEN_PERSONA = 201000171L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000172L;
+    public static final long FUNCION_CONFIRMAR_DENU_PEN_PERSONA = 201000172L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000173L;
+    public static final long FUNCION_DESMENTIR_DENU_PEN_PERSONA = 201000173L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000174L;
+    public static final long FUNCION_ANOTAR_PERSONA = 201000174L;
 
-    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000175L;
+    public static final long FUNCION_BORRAR_PERSONA = 201000175L;
 
-    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = 201000176L;
+    public static final long FUNCION_BORRAR_PERSONA_OTRO = 201000176L;
 
-    public static final long FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = 201000177L;
+    public static final long FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL = 201000177L;
 
-    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000178L;
+    public static final long FUNCION_ASIGNAR_RECO_PEN_PERSONA_SEL = 201000178L;
+
+    public static final long FUNCION_APROBAR_RECO_PEN_PERSONA_SEL = 201000179L;
+
+    public static final long FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL = 201000180L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = 201000181L;
+
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_SIN_OBJECIONES = 201000182L;
+
+    public static final long FUNCION_EMITIR_PERSONA_ACREDITADA_CON_OBJECIONES = 201000183L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_APROBADA = 201000184L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA = 201000185L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_REVOCADA = 201000186L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA = 201000187L;
+
+    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = 201000188L;
+
+    public static final long FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA = 201000189L;
+
+    public static final long FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE = 201000190L;
+
+    public static final long FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE = 201000191L;
+
+    public static final long FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = 201000192L;
+
+    public static final long FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA = 201000193L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_SEXO_PERSONA = 201200101L;
 
@@ -314,6 +344,8 @@ public class PersonaConstants {
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_TIPO_ACT_JUPE = 324300101L;
 
+    public static final long FUNCION_REFERENCIA_CONSULTAR_USUARIO = 106100101L;
+
     public static final String PROCESO_FUNCION_REGISTRAR_CER_VIDA_PERSONA = "persona_registrar_cer_vida";
 
     public static final String PROCESO_FUNCION_ANULAR_CER_VIDA_PERSONA = "persona_anular_cer_vida";
@@ -324,6 +356,8 @@ public class PersonaConstants {
 
     public static final String PROCESO_FUNCION_APROBAR_PENSION_PERSONA = "persona_aprobar_pension";
 
+    public static final String PROCESO_FUNCION_ANULAR_APROBACION_PEN_PERSONA = "persona_anular_aprobacion_pen";
+
     public static final String PROCESO_FUNCION_OBJETAR_PENSION_PERSONA = "persona_objetar_pension";
 
     public static final String PROCESO_FUNCION_REVOCAR_PENSION_PERSONA = "persona_revocar_pension";
@@ -332,9 +366,21 @@ public class PersonaConstants {
 
     public static final String PROCESO_FUNCION_DENEGAR_PENSION_PERSONA = "persona_denegar_pension";
 
+    public static final String PROCESO_FUNCION_ANULAR_DENEGACION_PEN_PERSONA = "persona_anular_denegacion_pen";
+
     public static final String PROCESO_FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA = "persona_registrar_entrega_doc";
 
+    public static final String PROCESO_FUNCION_INCLUIR_PERSONA_EN_JUPE = "persona_incluir_en_jupe";
+
+    public static final String PROCESO_FUNCION_ASIGNAR_MONTO_PENSION_PERSONA = "persona_asignar_monto_pension";
+
+    public static final String PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = "persona_act_fec_ult_cob_pen";
+
+    public static final String PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = "persona_anul_fec_ult_cob_pen";
+
     public static final String PROCESO_FUNCION_SOLICITAR_RECO_PEN_PERSONA = "persona_solicitar_reco_pen";
+
+    public static final String PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA = "persona_asignar_reco_pen";
 
     public static final String PROCESO_FUNCION_APROBAR_RECO_PEN_PERSONA = "persona_aprobar_reco_pen";
 
@@ -346,9 +392,19 @@ public class PersonaConstants {
 
     public static final String PROCESO_FUNCION_DESMENTIR_DENU_PEN_PERSONA = "persona_desmentir_denu_pen";
 
-    public static final String PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA = "persona_act_fec_ult_cob_pen";
+    public static final String PROCESO_FUNCION_ANOTAR_PERSONA = "persona_anotar";
 
-    public static final String PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA = "persona_anul_fec_ult_cob_pen";
+    public static final String PROCESO_FUNCION_BORRAR_PERSONA = "persona_borrar";
+
+    public static final String PROCESO_FUNCION_BORRAR_PERSONA_OTRO = "persona_borrar_otro";
+
+    public static final String PROCESO_FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL = "persona_solicitar_reco_pen_sel";
+
+    public static final String PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA_SEL = "persona_asignar_reco_pen_sel";
+
+    public static final String PROCESO_FUNCION_APROBAR_RECO_PEN_PERSONA_SEL = "persona_aprobar_reco_pen_sel";
+
+    public static final String PROCESO_FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL = "persona_denegar_reco_pen_sel";
 
     public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_SOLICITADA = "persona_con_pension_solicitada";
 
@@ -366,7 +422,13 @@ public class PersonaConstants {
 
     public static final String INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_OTORGADA = "persona_documentos_pension_otorgada";
 
-    public static final String INFORME_FUNCION_EMITIR_ULTIMA_ACTUALIZACION_PERSONA_EN_JUPE = "persona_ultima_actualizacion_en_jupe";
+    public static final String INFORME_FUNCION_EMITIR_DOCUMENTOS_PERSONA_PENSION_DENEGADA = "persona_documentos_pension_denegada";
+
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_INCLUIDA_EN_JUPE = "persona_incluida_en_jupe";
+
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_EXCLUIDA_DE_JUPE = "persona_excluida_de_jupe";
 
     public static final String INFORME_FUNCION_EMITIR_CUADRO_RESUMEN_PENSION_PERSONA = "persona_cuadro_resumen_pension";
+
+    public static final String INFORME_FUNCION_EMITIR_PERSONA_CON_RECONSIDERACION_SOLICITADA = "persona_con_reconsideracion_solicitada";
 }

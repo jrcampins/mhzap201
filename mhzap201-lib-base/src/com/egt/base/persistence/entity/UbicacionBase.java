@@ -166,10 +166,6 @@ public interface UbicacionBase {
 //
 //  public void setPersonaIdBarrioCollection(Collection<? extends PersonaBase> collection);
 
-    public Collection<? extends PersonaBase> getPersonaIdManzanaCollection();
-//
-//  public void setPersonaIdManzanaCollection(Collection<? extends PersonaBase> collection);
-
     public Collection<? extends PotencialBenBase> getPotencialBenIdDepartamentoCollection();
 //
 //  public void setPotencialBenIdDepartamentoCollection(Collection<? extends PotencialBenBase> collection);

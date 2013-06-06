@@ -197,6 +197,14 @@ public interface FichaPersonaBase {
 //
 //  public void setEsFichaPersonaInactiva(int esFichaPersonaInactiva);
 
+    public int getEsFichaPersonaImportada();
+//
+//  public void setEsFichaPersonaImportada(int esFichaPersonaImportada);
+
+    public Date getFechaImportacion();
+//
+//  public void setFechaImportacion(Date fechaImportacion);
+
     public FichaHogarBase getFichaHogarIdFichaHogar();
 //
 //  public void setFichaHogarIdFichaHogar(FichaHogarBase fichaHogar);

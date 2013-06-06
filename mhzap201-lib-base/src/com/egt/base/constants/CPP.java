@@ -200,6 +200,8 @@ public class CPP { // Clave Parametro Peticion
 
     public static final String ID_PERSONA = "id_persona"; // Persona
 
+    public static final String ID_PERSONA_ANOTADA = "id_persona_anotada"; // Persona Anotada
+
     public static final String ID_POTENCIAL_BEN = "id_potencial_ben"; // Potencial Beneficiario
 
     public static final String ID_PROCESO = "id_proceso"; // Proceso

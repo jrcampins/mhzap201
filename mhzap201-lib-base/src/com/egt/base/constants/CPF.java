@@ -38,6 +38,10 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CEDULA = 20697L; // Cedula
 
+    public static final Long CEDULA_DESDE = 10029L; // Cedula
+
+    public static final Long CEDULA_HASTA = 10030L; // Cedula
+
     public static final Long CEDULA_JEFE_HOGAR = 20888L; // Cedula Jefe Hogar
 
     public static final Long CEDULAJEFE = 20903L; // Cedulajefe
@@ -330,6 +334,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_SIME = 20996L; // Codigo Sime
 
+    public static final Long CODIGO_SIME_RECO_PEN = 21015L; // Codigo Sime Reconsideracion Pension
+
     public static final Long CODIGO_SIONO = 20306L; // Codigo Si o No
 
     public static final Long CODIGO_TIPO_ABA_AGUA = 20307L; // Codigo Tipo Abastecimiento Agua
@@ -434,10 +440,6 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long CODIGO_USUARIO = 1207L; // Codigo Usuario
 
-    public static final Long COMENTARIOS_ANUL_CER_DEFUNCION = 20258L; // Comentarios Anulacion Certificado Defuncion
-
-    public static final Long COMENTARIOS_ANUL_CER_VIDA = 20260L; // Comentarios Anulacion Certificado Vida
-
     public static final Long COMENTARIOS_APR_RECL_CEN = 20630L; // Comentarios Aprobacion Reclamo Censo
 
     public static final Long COMENTARIOS_APR_RECO_PEN = 20229L; // Comentarios Aprobacion Reconsideracion Pension
@@ -455,6 +457,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long COMENTARIOS_DES_DENU_PEN = 20233L; // Comentarios Desmentido Denuncia Pension
 
     public static final Long COMENTARIOS_ENTREGA_DOCUMENTOS = 21003L; // Comentarios Entrega Documentos
+
+    public static final Long COMENTARIOS_INSERCION_JUPE = 21005L; // Comentarios Insercion JUPE
 
     public static final Long COMENTARIOS_OBJECION_PENSION = 20896L; // Comentarios Objecion Pension
 
@@ -524,6 +528,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long DIA = 20904L; // Dia
 
+    public static final Long DIAS_VIGENCIA_CERTIFICADO_VIDA = 21020L; // Dias Vigencia Certificado Vida
+
     public static final Long DIGITOS_NIVEL_OPCION_MENU = 1240L; // Digitos Nivel Opcion Menu
 
     public static final Long DIGITOS_NIVEL_UBICACION = 20512L; // Digitos Nivel Ubicacion
@@ -545,6 +551,10 @@ public class CPF { // Clave Parametro Funcion
     public static final Long EDAD = 20578L; // Edad
 
     public static final Long EDAD_A_LA_FECHA = 20705L; // Edad A la Fecha
+
+    public static final Long EDAD_DESDE = 10027L; // Edad
+
+    public static final Long EDAD_HASTA = 10028L; // Edad
 
     public static final Long ES_ARCHIVO_DATOS_EXT_IMPORTADO = 20282L; // Archivo Datos Externos Importado
 
@@ -577,6 +587,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long ES_ENUMERADOR_CON_NUMERO = 20617L; // Enumerador con Numero
 
     public static final Long ES_FICHA_HOGAR_INACTIVA = 20599L; // Ficha Hogar Inactiva
+
+    public static final Long ES_FICHA_PERSONA_IMPORTADA = 21006L; // Ficha Persona Importada
 
     public static final Long ES_FICHA_PERSONA_INACTIVA = 20600L; // Ficha Persona Inactiva
 
@@ -676,6 +688,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA = 20908L; // Fecha
 
+    public static final Long FECHA_ANULACION = 21013L; // Fecha Anulacion
+
     public static final Long FECHA_APROBACION_PENSION = 20238L; // Fecha Aprobacion Pension
 
     public static final Long FECHA_APROBACION_PENSION_DESDE = 10003L; // Fecha Aprobacion Pension
@@ -716,6 +730,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_HORA_INICIO_EJECUCION = 1291L; // Fecha Hora Inicio Ejecucion
 
+    public static final Long FECHA_HORA_SELECCION = 21007L; // Fecha Hora Seleccion
+
     public static final Long FECHA_HORA_TRANSACCION = 20709L; // Fecha Hora Transaccion
 
     public static final Long FECHA_HORA_ULT_ACT_JUPE = 20654L; // Fecha Hora Ultima Actualizacion JUPE
@@ -727,6 +743,12 @@ public class CPF { // Clave Parametro Funcion
     public static final Long FECHA_HORA_ULTIMA_CARGA = 20283L; // Fecha Hora Ultima Carga
 
     public static final Long FECHA_HORA_ULTIMA_IMPORTACION = 20284L; // Fecha Hora Ultima Importacion
+
+    public static final Long FECHA_IMPORTACION = 21008L; // Fecha Importacion
+
+    public static final Long FECHA_IMPORTACION_DESDE = 10019L; // Fecha Importacion
+
+    public static final Long FECHA_IMPORTACION_HASTA = 10020L; // Fecha Importacion
 
     public static final Long FECHA_NACIMIENTO = 20067L; // Fecha Nacimiento
 
@@ -750,7 +772,17 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long FECHA_RESOLUCION_DEN_PEN = 20681L; // Fecha Resolucion Denegacion Pension
 
+    public static final Long FECHA_RESOLUCION_DEN_PEN_DESDE = 10025L; // Fecha Resolucion Denegacion Pension
+
+    public static final Long FECHA_RESOLUCION_DEN_PEN_HASTA = 10026L; // Fecha Resolucion Denegacion Pension
+
     public static final Long FECHA_RESOLUCION_OTOR_PEN = 20672L; // Fecha Resolucion Otorgamiento Pension
+
+    public static final Long FECHA_RESOLUCION_REV_PEN = 21009L; // Fecha Resolucion Revocacion Pension
+
+    public static final Long FECHA_RESOLUCION_REV_PEN_DESDE = 10021L; // Fecha Resolucion Revocacion Pension
+
+    public static final Long FECHA_RESOLUCION_REV_PEN_HASTA = 10022L; // Fecha Resolucion Revocacion Pension
 
     public static final Long FECHA_REVOCACION_PENSION = 20245L; // Fecha Revocacion Pension
 
@@ -765,6 +797,10 @@ public class CPF { // Clave Parametro Funcion
     public static final Long FECHA_SOLICITUD_PENSION_HASTA = 10002L; // Fecha Solicitud Pension
 
     public static final Long FECHA_SOLICITUD_RECO_PEN = 20247L; // Fecha Solicitud Reconsideracion Pension
+
+    public static final Long FECHA_SOLICITUD_RECO_PEN_DESDE = 10023L; // Fecha Solicitud Reconsideracion Pension
+
+    public static final Long FECHA_SOLICITUD_RECO_PEN_HASTA = 10024L; // Fecha Solicitud Reconsideracion Pension
 
     public static final Long FECHA_TRANSACCION = 1990L; // Fecha Hora Transaccion
 
@@ -992,6 +1028,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long ID_PERSONA = 20002L; // Persona
 
+    public static final Long ID_PERSONA_ANOTADA = 21018L; // Persona Anotada
+
     public static final Long ID_POTENCIAL_BEN = 20571L; // Potencial Beneficiario
 
     public static final Long ID_PROCESO = 20253L; // Proceso
@@ -1081,8 +1119,6 @@ public class CPF { // Clave Parametro Funcion
     public static final Long LOTE = 20997L; // Lote
 
     public static final Long LUGAR_NACIMIENTO = 20731L; // Lugar Nacimiento
-
-    public static final Long LUGAR_SOLICITUD_PENSION = 20289L; // Lugar Solicitud Pension
 
     public static final Long MANZANA = 20664L; // Manzana
 
@@ -1352,6 +1388,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long NUMERO_RESOLUCION_OTOR_PEN = 20675L; // Numero Resolucion Otorgamiento Pension
 
+    public static final Long NUMERO_RESOLUCION_REV_PEN = 21011L; // Numero Resolucion Revocacion Pension
+
     public static final Long NUMERO_SEXO_PERSONA = 20099L; // Sexo Persona
 
     public static final Long NUMERO_SIONO = 20382L; // Si o No
@@ -1489,6 +1527,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long OBSERVACION = 20738L; // Observacion
 
     public static final Long OBSERVACIONES = 20433L; // Observaciones
+
+    public static final Long OBSERVACIONES_ANULACION = 21014L; // Observaciones Anulacion
 
     public static final Long OBSERVACIONES_ULT_VISITA_CEN = 20676L; // Observaciones Ultima Visita Censo
 
@@ -2139,6 +2179,8 @@ public class CPF { // Clave Parametro Funcion
     public static final Long VERSION_PARAMETRO = 1579L; // Version Parametro
 
     public static final Long VERSION_PERSONA = 20004L; // Version Persona
+
+    public static final Long VERSION_PERSONA_ANOTADA = 21019L; // Version Persona Anotada
 
     public static final Long VERSION_POTENCIAL_BEN = 20575L; // Version Potencial Beneficiario
 

@@ -43,6 +43,14 @@ public interface ObjecionElePenBase {
 //
 //  public void setObservaciones(String observaciones);
 
+    public Date getFechaAnulacion();
+//
+//  public void setFechaAnulacion(Date fechaAnulacion);
+
+    public String getObservacionesAnulacion();
+//
+//  public void setObservacionesAnulacion(String observacionesAnulacion);
+
     public PersonaBase getPersonaIdPersona();
 //
 //  public void setPersonaIdPersona(PersonaBase persona);

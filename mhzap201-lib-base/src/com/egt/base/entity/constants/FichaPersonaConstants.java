@@ -177,6 +177,10 @@ public class FichaPersonaConstants {
 
     public static final String COLUMNA_ES_FICHA_PERSONA_INACTIVA = "es_ficha_persona_inactiva";
 
+    public static final String COLUMNA_ES_FICHA_PERSONA_IMPORTADA = "es_ficha_persona_importada";
+
+    public static final String COLUMNA_FECHA_IMPORTACION = "fecha_importacion";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_ficha_persona";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_ficha_persona";
@@ -198,6 +202,8 @@ public class FichaPersonaConstants {
     public static final long FUNCION_VINCULAR_FICHA_PERSONA = 320200151L;
 
     public static final long FUNCION_DESVINCULAR_FICHA_PERSONA = 320200152L;
+
+    public static final long FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = 320200153L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
 
@@ -246,4 +252,6 @@ public class FichaPersonaConstants {
     public static final String PROCESO_FUNCION_VINCULAR_FICHA_PERSONA = "ficha_persona_vincular";
 
     public static final String PROCESO_FUNCION_DESVINCULAR_FICHA_PERSONA = "ficha_persona_desvincular";
+
+    public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = "ficha_persona_importada";
 }

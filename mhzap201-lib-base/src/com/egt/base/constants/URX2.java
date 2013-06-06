@@ -62,6 +62,8 @@ public class URX2 extends URX {
 
     public static final String TABLA_PERSONA = "/mhzap201-web-gestion-pension/faces/Persona1.jsp";
 
+    public static final String TABLA_PERSONA_ANOTADA = "/mhzap201-web-gestion-pension/faces/PersonaAnotada1.jsp";
+
     public static final String TABLA_FICHA_HOGAR = "/mhzap201-web-gestion-censo/faces/FichaHogar1.jsp";
 
     public static final String TABLA_POTENCIAL_BEN = "/mhzap201-web-gestion-censo/faces/PotencialBen1.jsp";
@@ -110,6 +112,8 @@ public class URX2 extends URX {
 
     public static final String DETALLE_PERSONA = "/mhzap201-web-gestion-pension/faces/Persona2.jsp";
 
+    public static final String DETALLE_PERSONA_ANOTADA = "/mhzap201-web-gestion-pension/faces/PersonaAnotada2.jsp";
+
     public static final String DETALLE_FICHA_HOGAR = "/mhzap201-web-gestion-censo/faces/FichaHogar2.jsp";
 
     public static final String DETALLE_POTENCIAL_BEN = "/mhzap201-web-gestion-censo/faces/PotencialBen2.jsp";
@@ -128,6 +132,8 @@ public class URX2 extends URX {
 
     public static final String COMANDO_PERSONA = "/mhzap201-web-proceso/faces/Persona4.jsp";
 
+    public static final String COMANDO_PERSONA_ANOTADA = "/mhzap201-web-proceso/faces/PersonaAnotada4.jsp";
+
     public static final String COMANDO_UBICACION = "/mhzap201-web-proceso/faces/Ubicacion4.jsp";
 
     public static final String COMANDO_ARCHIVO_DATOS_EXT = "/mhzap201-web-proceso/faces/ArchivoDatosExt4.jsp";
@@ -138,7 +144,11 @@ public class URX2 extends URX {
 
     public static final String COMANDO_POTENCIAL_BEN = "/mhzap201-web-proceso/faces/PotencialBen4.jsp";
 
+    public static final String COMANDO_OBJECION_ELE_PEN = "/mhzap201-web-proceso/faces/ObjecionElePen4.jsp";
+
     public static final String CONSULTA_TABLA_PERSONA = "/mhzap201-web-consulta/faces/Persona5.jsp";
+
+    public static final String CONSULTA_TABLA_PERSONA_ANOTADA = "/mhzap201-web-consulta/faces/PersonaAnotada5.jsp";
 
     public static final String CONSULTA_TABLA_UBICACION = "/mhzap201-web-consulta/faces/Ubicacion5.jsp";
 
@@ -201,6 +211,8 @@ public class URX2 extends URX {
     public static final String CONSULTA_TABLA_LOG_PRO_ACT_JUPE = "/mhzap201-web-consulta/faces/LogProActJupe5.jsp";
 
     public static final String CONSULTA_DETALLE_PERSONA = "/mhzap201-web-consulta/faces/Persona6.jsp";
+
+    public static final String CONSULTA_DETALLE_PERSONA_ANOTADA = "/mhzap201-web-consulta/faces/PersonaAnotada6.jsp";
 
     public static final String CONSULTA_DETALLE_UBICACION = "/mhzap201-web-consulta/faces/Ubicacion6.jsp";
 

@@ -23,32 +23,42 @@ public class BundleParametros {
     }
 
     public static String getString(String key) {
+        return getString(key, false);
+    }
+
+    public static String getString(String key, boolean nullIfMissing) {
         if (key == null) {
             return null;
         }
+        String defaultString = nullIfMissing ? null : key;
         try {
             String string = resourceBundle.getString(key);
-            return string == null || string.trim().equals("") ? key : string;
+            return string == null || string.trim().equals("") ? defaultString : string;
         } catch (MissingResourceException e) {
-            return key;
+            return defaultString;
         }
     }
 
     public static String getString(String key, String suffix) {
+        return getString(key, suffix, false);
+    }
+
+    public static String getString(String key, String suffix, boolean nullIfMissing) {
         if (key == null || suffix == null) {
             return null;
         }
+        String defaultString = nullIfMissing ? null : key;
         try {
             String string = resourceBundle.getString(key + '.' + suffix);
-            return string == null || string.trim().equals("") ? key : string;
+            return string == null || string.trim().equals("") ? defaultString : string;
         } catch (MissingResourceException e) {
-            return key;
+            return defaultString;
         }
     }
 
-    private static final String INLINE_HELP = "inline_help";
+    public static final String INLINE_HELP = "inline_help";
 
-    private static final String TOOLTIP = "tooltip";
+    public static final String TOOLTIP = "tooltip";
 
     public static String getInlineHelp(String key) {
         String subkey;
@@ -83,4 +93,5 @@ public class BundleParametros {
             return string;
         }
     }
+
 }

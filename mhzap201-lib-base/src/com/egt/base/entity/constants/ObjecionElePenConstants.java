@@ -39,6 +39,10 @@ public class ObjecionElePenConstants {
 
     public static final String COLUMNA_OBSERVACIONES = "observaciones";
 
+    public static final String COLUMNA_FECHA_ANULACION = "fecha_anulacion";
+
+    public static final String COLUMNA_OBSERVACIONES_ANULACION = "observaciones_anulacion";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_objecion_ele_pen";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_objecion_ele_pen";
@@ -47,6 +51,8 @@ public class ObjecionElePenConstants {
 
     public static final long FUNCION_CONSULTAR_OBJECION_ELE_PEN = 324500101L;
 
+    public static final long FUNCION_ANULAR_OBJECION_ELE_PEN = 324500151L;
+
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_PROVEEDOR_DAT_EXT = 312100101L;
@@ -54,4 +60,6 @@ public class ObjecionElePenConstants {
     public static final long FUNCION_REFERENCIA_CONSULTAR_TIPO_OBJ_ELE_PEN = 324600101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+
+    public static final String PROCESO_FUNCION_ANULAR_OBJECION_ELE_PEN = "objecion_ele_pen_anular";
 }

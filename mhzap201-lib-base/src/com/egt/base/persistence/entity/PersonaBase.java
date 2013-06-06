@@ -88,10 +88,6 @@ public interface PersonaBase {
 //
 //  public void setNombreComunidadIndigena(String nombreComunidadIndigena);
 
-    public String getManzana();
-//
-//  public void setManzana(String manzana);
-
     public String getDireccion();
 //
 //  public void setDireccion(String direccion);
@@ -112,13 +108,13 @@ public interface PersonaBase {
 //
 //  public void setFechaCertificadoVida(Date fechaCertificadoVida);
 
+    public Integer getDiasVigenciaCertificadoVida();
+//
+//  public void setDiasVigenciaCertificadoVida(Integer diasVigenciaCertificadoVida);
+
     public int getEsCertificadoVidaAnulado();
 //
 //  public void setEsCertificadoVidaAnulado(int esCertificadoVidaAnulado);
-
-    public String getComentariosAnulCerVida();
-//
-//  public void setComentariosAnulCerVida(String comentariosAnulCerVida);
 
     public String getCertificadoDefuncion();
 //
@@ -131,10 +127,6 @@ public interface PersonaBase {
     public int getEsCerDefuncionAnulado();
 //
 //  public void setEsCerDefuncionAnulado(int esCerDefuncionAnulado);
-
-    public String getComentariosAnulCerDefuncion();
-//
-//  public void setComentariosAnulCerDefuncion(String comentariosAnulCerDefuncion);
 
     public int getEsPersonaConEmpleo();
 //
@@ -187,10 +179,6 @@ public interface PersonaBase {
     public BigDecimal getMontoPension();
 //
 //  public void setMontoPension(BigDecimal montoPension);
-
-    public String getLugarSolicitudPension();
-//
-//  public void setLugarSolicitudPension(String lugarSolicitudPension);
 
     public Date getFechaSolicitudPension();
 //
@@ -259,6 +247,14 @@ public interface PersonaBase {
     public String getOtraCausaRevPension();
 //
 //  public void setOtraCausaRevPension(String otraCausaRevPension);
+
+    public String getNumeroResolucionRevPen();
+//
+//  public void setNumeroResolucionRevPen(String numeroResolucionRevPen);
+
+    public Date getFechaResolucionRevPen();
+//
+//  public void setFechaResolucionRevPen(Date fechaResolucionRevPen);
 
     public String getComentariosRevocacionPension();
 //
@@ -344,9 +340,17 @@ public interface PersonaBase {
 //
 //  public void setCodigoSime(String codigoSime);
 
+    public String getCodigoSimeRecoPen();
+//
+//  public void setCodigoSimeRecoPen(String codigoSimeRecoPen);
+
     public String getComentariosEntregaDocumentos();
 //
 //  public void setComentariosEntregaDocumentos(String comentariosEntregaDocumentos);
+
+    public String getComentariosInsercionJupe();
+//
+//  public void setComentariosInsercionJupe(String comentariosInsercionJupe);
 
     public SexoPersonaBase getSexoPersonaNumeroSexoPersona();
 //
@@ -375,10 +379,6 @@ public interface PersonaBase {
     public UbicacionBase getUbicacionIdBarrio();
 //
 //  public void setUbicacionIdBarrio(UbicacionBase ubicacion);
-
-    public UbicacionBase getUbicacionIdManzana();
-//
-//  public void setUbicacionIdManzana(UbicacionBase ubicacion);
 
     public CondicionPensionBase getCondicionPensionNumeroCondicionPension();
 //
