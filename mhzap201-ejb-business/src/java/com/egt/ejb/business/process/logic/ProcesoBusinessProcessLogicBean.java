@@ -17,12 +17,19 @@ import com.egt.commons.util.TimeUtils;
 import com.egt.core.util.STP;
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMontoPensionMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
+import com.egt.ejb.business.message.ProcesoVerificarElePenJupeMessage;
+import com.egt.ejb.business.message.ProcesoRevocarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoAprobarExclusionPenMessage;
+import com.egt.ejb.business.message.ProcesoExpPenAprMessage;
+import com.egt.ejb.business.message.ProcesoExpPenDenMessage;
+import com.egt.ejb.business.message.ProcesoExpPenRevMessage;
 import com.egt.ejb.persistence.entity.Proceso;
 import com.egt.ejb.persistence.facade.ProcesoFacadeLocal;
 import java.math.BigDecimal;
@@ -56,6 +63,19 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     public void procesoAcreditarPotBen(ProcesoAcreditarPotBenMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoAcreditarPotBenMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoAsignarMesa(ProcesoAsignarMesaMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoAsignarMesaMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());
@@ -118,6 +138,19 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     }
 
     @Override
+    public void procesoAsignarMontoPension(ProcesoAsignarMontoPensionMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoAsignarMontoPensionMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
     public void procesoVerificarElePen(ProcesoVerificarElePenMessage message, Proceso proceso) throws Exception {
         if (message == null) {
             throw new EJBException(ProcesoVerificarElePenMessage.class.getSimpleName());
@@ -131,9 +164,74 @@ public class ProcesoBusinessProcessLogicBean implements ProcesoBusinessProcessLo
     }
 
     @Override
-    public void procesoAsignarMesa(ProcesoAsignarMesaMessage message, Proceso proceso) throws Exception {
+    public void procesoVerificarElePenJupe(ProcesoVerificarElePenJupeMessage message, Proceso proceso) throws Exception {
         if (message == null) {
-            throw new EJBException(ProcesoAsignarMesaMessage.class.getSimpleName());
+            throw new EJBException(ProcesoVerificarElePenJupeMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoRevocarPensionesApr(ProcesoRevocarPensionesAprMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoRevocarPensionesAprMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoAprobarExclusionPen(ProcesoAprobarExclusionPenMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoAprobarExclusionPenMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoExpPenApr(ProcesoExpPenAprMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoExpPenAprMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoExpPenDen(ProcesoExpPenDenMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoExpPenDenMessage.class.getSimpleName());
+        }
+        if (proceso == null) {
+            throw new EJBException(Proceso.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void procesoExpPenRev(ProcesoExpPenRevMessage message, Proceso proceso) throws Exception {
+        if (message == null) {
+            throw new EJBException(ProcesoExpPenRevMessage.class.getSimpleName());
         }
         if (proceso == null) {
             throw new EJBException(Proceso.class.getSimpleName());

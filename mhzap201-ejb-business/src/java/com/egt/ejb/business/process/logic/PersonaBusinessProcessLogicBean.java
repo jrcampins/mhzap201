@@ -20,19 +20,31 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularAprobacionPenPersonaMessage;
 import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularDenegacionPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
+import com.egt.ejb.business.message.IncluirPersonaEnJupeMessage;
+import com.egt.ejb.business.message.AsignarMontoPensionPersonaMessage;
+import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnotarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaOtroMessage;
+import com.egt.ejb.business.message.SolicitarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AprobarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.DenegarRecoPenPersonaSelMessage;
 import com.egt.ejb.persistence.entity.Persona;
 import com.egt.ejb.persistence.facade.PersonaFacadeLocal;
 import com.egt.ejb.persistence.facade.SexoPersonaFacadeLocal;
@@ -114,7 +126,7 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         persona.setCertificadoVida(message.getCertificadoVida());
         persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
-        persona.setComentariosAnulCerVida(null);
+        persona.setDiasVigenciaCertificadoVida(message.getDiasVigenciaCertificadoVida());
         persona.setEsCertificadoVidaAnulado(IntUtils.FALSE);
         persona.setEsPersonaConCerVida(IntUtils.TRUE);
     }
@@ -130,7 +142,6 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         // TODO: comprobar la logica del proceso de negocio
         //
-        persona.setComentariosAnulCerVida(message.getComentariosAnulCerVida());
         persona.setEsCertificadoVidaAnulado(IntUtils.TRUE);
     }
 
@@ -147,7 +158,6 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         persona.setCertificadoDefuncion(message.getCertificadoDefuncion());
         persona.setFechaCertificadoDefuncion(message.getFechaCertificadoDefuncion());
-        persona.setComentariosAnulCerDefuncion(null);
         persona.setEsCerDefuncionAnulado(IntUtils.FALSE);
     }
 
@@ -162,7 +172,6 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         // TODO: comprobar la logica del proceso de negocio
         //
-        persona.setComentariosAnulCerDefuncion(message.getComentariosAnulCerDefuncion());
         persona.setEsCerDefuncionAnulado(IntUtils.TRUE);
     }
 
@@ -180,6 +189,19 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setComentariosAprobacionPension(message.getComentariosAprobacionPension());
         persona.setCondicionPensionNumeroCondicionPension(this.condicionPensionFacade.find(com.egt.base.enums.EnumCondicionPension.APROBADA.intValue()));
         persona.setFechaAprobacionPension((Date) TimeUtils.currentDate());
+    }
+
+    @Override
+    public void anularAprobacionPenPersona(AnularAprobacionPenPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AnularAprobacionPenPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
     }
 
     @Override
@@ -255,6 +277,19 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     }
 
     @Override
+    public void anularDenegacionPenPersona(AnularDenegacionPenPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AnularDenegacionPenPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
     public void registrarEntregaDocPersona(RegistrarEntregaDocPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
             throw new EJBException(RegistrarEntregaDocPersonaMessage.class.getSimpleName());
@@ -274,6 +309,61 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     }
 
     @Override
+    public void incluirPersonaEnJupe(IncluirPersonaEnJupeMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(IncluirPersonaEnJupeMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void asignarMontoPensionPersona(AsignarMontoPensionPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AsignarMontoPensionPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setMontoPension(message.getMontoPension());
+    }
+
+    @Override
+    public void actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(ActFecUltCobPenPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setFechaUltimoCobroPension(message.getFechaUltimoCobroPension());
+    }
+
+    @Override
+    public void anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AnulFecUltCobPenPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setNotasAnulFecUltCobPen(message.getNotasAnulFecUltCobPen());
+    }
+
+    @Override
     public void solicitarRecoPenPersona(SolicitarRecoPenPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
             throw new EJBException(SolicitarRecoPenPersonaMessage.class.getSimpleName());
@@ -287,6 +377,20 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setComentariosSolicitudRecoPen(message.getComentariosSolicitudRecoPen());
         persona.setCondicionRecoPenNumeroCondicionRecoPen(this.condicionRecoPenFacade.find(com.egt.base.enums.EnumCondicionRecoPen.SOLICITADA.intValue()));
         persona.setFechaSolicitudRecoPen((Date) TimeUtils.currentDate());
+    }
+
+    @Override
+    public void asignarRecoPenPersona(AsignarRecoPenPersonaMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AsignarRecoPenPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: comprobar la logica del proceso de negocio
+        //
+        persona.setCodigoSimeRecoPen(message.getCodigoSimeRecoPen());
     }
 
     @Override
@@ -380,23 +484,61 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
     }
 
     @Override
-    public void actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+    public void anotarPersona(AnotarPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
-            throw new EJBException(ActFecUltCobPenPersonaMessage.class.getSimpleName());
+            throw new EJBException(AnotarPersonaMessage.class.getSimpleName());
         }
         if (persona == null) {
             throw new EJBException(Persona.class.getSimpleName());
         }
         //
-        // TODO: comprobar la logica del proceso de negocio
+        // TODO: codificar la logica del proceso de negocio
         //
-        persona.setFechaUltimoCobroPension(message.getFechaUltimoCobroPension());
     }
 
     @Override
-    public void anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+    public void borrarPersona(BorrarPersonaMessage message, Persona persona) throws Exception {
         if (message == null) {
-            throw new EJBException(AnulFecUltCobPenPersonaMessage.class.getSimpleName());
+            throw new EJBException(BorrarPersonaMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void borrarPersonaOtro(BorrarPersonaOtroMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(BorrarPersonaOtroMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void solicitarRecoPenPersonaSel(SolicitarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(SolicitarRecoPenPersonaSelMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void asignarRecoPenPersonaSel(AsignarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AsignarRecoPenPersonaSelMessage.class.getSimpleName());
         }
         if (persona == null) {
             throw new EJBException(Persona.class.getSimpleName());
@@ -404,6 +546,32 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         //
         // TODO: comprobar la logica del proceso de negocio
         //
-        persona.setNotasAnulFecUltCobPen(message.getNotasAnulFecUltCobPen());
+        persona.setCodigoSimeRecoPen(message.getCodigoSimeRecoPen());
+    }
+
+    @Override
+    public void aprobarRecoPenPersonaSel(AprobarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(AprobarRecoPenPersonaSelMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
+    }
+
+    @Override
+    public void denegarRecoPenPersonaSel(DenegarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        if (message == null) {
+            throw new EJBException(DenegarRecoPenPersonaSelMessage.class.getSimpleName());
+        }
+        if (persona == null) {
+            throw new EJBException(Persona.class.getSimpleName());
+        }
+        //
+        // TODO: codificar la logica del proceso de negocio
+        //
     }
 }

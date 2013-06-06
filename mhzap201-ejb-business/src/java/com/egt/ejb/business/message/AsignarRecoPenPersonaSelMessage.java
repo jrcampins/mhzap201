@@ -13,23 +13,23 @@ package com.egt.ejb.business.message;
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
 
-public class AnularCerDefunPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class AsignarRecoPenPersonaSelMessage extends BusinessProcessMessage implements Serializable {
 
-    public static final long PARAMETRO_ID_PERSONA = 20002L;
+    public static final long PARAMETRO_CODIGO_SIME_RECO_PEN = 21015L;
 
-    protected Long idPersona;
+    protected String codigoSimeRecoPen;
 
-    public AnularCerDefunPersonaMessage(Long idPersona) {
+    public AsignarRecoPenPersonaSelMessage(String codigoSimeRecoPen) {
         this.init();
-        this.funcion = 201000154L;
-        this.idPersona = idPersona;
+        this.funcion = 201000178L;
+        this.codigoSimeRecoPen = codigoSimeRecoPen;
     }
 
-    public Long getIdPersona() {
-        return idPersona;
+    public String getCodigoSimeRecoPen() {
+        return codigoSimeRecoPen;
     }
 
-    public void setIdPersona(Long idPersona) {
-        this.idPersona = idPersona;
+    public void setCodigoSimeRecoPen(String codigoSimeRecoPen) {
+        this.codigoSimeRecoPen = codigoSimeRecoPen;
     }
 }

@@ -13,23 +13,10 @@ package com.egt.ejb.business.message;
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
 
-public class AnularCerDefunPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class BorrarPersonaMessage extends BusinessProcessMessage implements Serializable {
 
-    public static final long PARAMETRO_ID_PERSONA = 20002L;
-
-    protected Long idPersona;
-
-    public AnularCerDefunPersonaMessage(Long idPersona) {
+    public BorrarPersonaMessage() {
         this.init();
-        this.funcion = 201000154L;
-        this.idPersona = idPersona;
-    }
-
-    public Long getIdPersona() {
-        return idPersona;
-    }
-
-    public void setIdPersona(Long idPersona) {
-        this.idPersona = idPersona;
+        this.funcion = 201000175L;
     }
 }

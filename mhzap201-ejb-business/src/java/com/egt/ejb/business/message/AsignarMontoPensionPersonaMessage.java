@@ -12,23 +12,23 @@ package com.egt.ejb.business.message;
 
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
-import java.util.Date;
+import java.math.BigDecimal;
 
-public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class AsignarMontoPensionPersonaMessage extends BusinessProcessMessage implements Serializable {
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
-    public static final long PARAMETRO_COMENTARIOS_DES_DENU_PEN = 20233L;
+    public static final long PARAMETRO_MONTO_PENSION = 20197L;
 
     protected Long idPersona;
 
-    protected String comentariosDesDenuPen;
+    protected BigDecimal montoPension;
 
-    public DesmentirDenuPenPersonaMessage(Long idPersona, String comentariosDesDenuPen) {
+    public AsignarMontoPensionPersonaMessage(Long idPersona, BigDecimal montoPension) {
         this.init();
-        this.funcion = 201000173L;
+        this.funcion = 201000164L;
         this.idPersona = idPersona;
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
+        this.montoPension = montoPension;
     }
 
     public Long getIdPersona() {
@@ -39,11 +39,11 @@ public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage imple
         this.idPersona = idPersona;
     }
 
-    public String getComentariosDesDenuPen() {
-        return comentariosDesDenuPen;
+    public BigDecimal getMontoPension() {
+        return montoPension;
     }
 
-    public void setComentariosDesDenuPen(String comentariosDesDenuPen) {
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
+    public void setMontoPension(BigDecimal montoPension) {
+        this.montoPension = montoPension;
     }
 }

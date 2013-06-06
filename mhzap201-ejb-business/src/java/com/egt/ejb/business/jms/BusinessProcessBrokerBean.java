@@ -29,30 +29,51 @@ import com.egt.ejb.business.message.PropagarFavoritosRolMessage;
 import com.egt.ejb.business.message.CancelarGrupoProcesoMessage;
 import com.egt.ejb.business.message.ProcesoImportarArchivosExtMessage;
 import com.egt.ejb.business.message.ProcesoAcreditarPotBenMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
 import com.egt.ejb.business.message.ProcesoPrepararProxPagoPenMessage;
 import com.egt.ejb.business.message.ProcesoOtorgarPensionesAprMessage;
 import com.egt.ejb.business.message.ProcesoDenegarPensionesObjMessage;
 import com.egt.ejb.business.message.ProcesoActualizarPenEnJupeMessage;
+import com.egt.ejb.business.message.ProcesoAsignarMontoPensionMessage;
 import com.egt.ejb.business.message.ProcesoVerificarElePenMessage;
-import com.egt.ejb.business.message.ProcesoAsignarMesaMessage;
+import com.egt.ejb.business.message.ProcesoVerificarElePenJupeMessage;
+import com.egt.ejb.business.message.ProcesoRevocarPensionesAprMessage;
+import com.egt.ejb.business.message.ProcesoAprobarExclusionPenMessage;
+import com.egt.ejb.business.message.ProcesoExpPenAprMessage;
+import com.egt.ejb.business.message.ProcesoExpPenDenMessage;
+import com.egt.ejb.business.message.ProcesoExpPenRevMessage;
 import com.egt.ejb.business.message.RegistrarCerVidaPersonaMessage;
 import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularAprobacionPenPersonaMessage;
 import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularDenegacionPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
+import com.egt.ejb.business.message.IncluirPersonaEnJupeMessage;
+import com.egt.ejb.business.message.AsignarMontoPensionPersonaMessage;
+import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnotarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaOtroMessage;
+import com.egt.ejb.business.message.SolicitarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AprobarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.DenegarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.BorrarPersonaAnotadaMessage;
+import com.egt.ejb.business.message.BorrarPersonaAnotadaOtroMessage;
 import com.egt.ejb.business.message.ReconstruirUbicacionMessage;
 import com.egt.ejb.business.message.CargarArchivoDatosExtMessage;
 import com.egt.ejb.business.message.ImportarArchivoDatosExtMessage;
@@ -71,16 +92,19 @@ import com.egt.ejb.business.message.AprobarReclCenPotencialBenMessage;
 import com.egt.ejb.business.message.DenegarReclCenPotencialBenMessage;
 import com.egt.ejb.business.message.AcreditarPotencialBenMessage;
 import com.egt.ejb.business.message.RegUltVisCenPotencialBenMessage;
+import com.egt.ejb.business.message.AnularObjecionElePenMessage;
 import com.egt.ejb.business.process.UsuarioBusinessProcessLocal;
 import com.egt.ejb.business.process.RolBusinessProcessLocal;
 import com.egt.ejb.business.process.GrupoProcesoBusinessProcessLocal;
 import com.egt.ejb.business.process.ProcesoBusinessProcessLocal;
 import com.egt.ejb.business.process.PersonaBusinessProcessLocal;
+import com.egt.ejb.business.process.PersonaAnotadaBusinessProcessLocal;
 import com.egt.ejb.business.process.UbicacionBusinessProcessLocal;
 import com.egt.ejb.business.process.ArchivoDatosExtBusinessProcessLocal;
 import com.egt.ejb.business.process.FichaHogarBusinessProcessLocal;
 import com.egt.ejb.business.process.FichaPersonaBusinessProcessLocal;
 import com.egt.ejb.business.process.PotencialBenBusinessProcessLocal;
+import com.egt.ejb.business.process.ObjecionElePenBusinessProcessLocal;
 import com.egt.ejb.core.AuditorLocal;
 import com.egt.ejb.persistence.entity.RastroProceso;
 import com.egt.ejb.persistence.facade.RastroProcesoFacadeLocal;
@@ -108,6 +132,9 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
     private PersonaBusinessProcessLocal persona;
 
     @EJB
+    private PersonaAnotadaBusinessProcessLocal personaAnotada;
+
+    @EJB
     private UbicacionBusinessProcessLocal ubicacion;
 
     @EJB
@@ -121,6 +148,9 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
 
     @EJB
     private PotencialBenBusinessProcessLocal potencialBen;
+
+    @EJB
+    private ObjecionElePenBusinessProcessLocal objecionElePen;
 
     @EJB
     private AuditorLocal auditor;
@@ -165,6 +195,8 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = proceso.procesoImportarArchivosExt((ProcesoImportarArchivosExtMessage) message);
                 } else if (message instanceof ProcesoAcreditarPotBenMessage) {
                     message = proceso.procesoAcreditarPotBen((ProcesoAcreditarPotBenMessage) message);
+                } else if (message instanceof ProcesoAsignarMesaMessage) {
+                    message = proceso.procesoAsignarMesa((ProcesoAsignarMesaMessage) message);
                 } else if (message instanceof ProcesoPrepararProxPagoPenMessage) {
                     message = proceso.procesoPrepararProxPagoPen((ProcesoPrepararProxPagoPenMessage) message);
                 } else if (message instanceof ProcesoOtorgarPensionesAprMessage) {
@@ -173,10 +205,22 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = proceso.procesoDenegarPensionesObj((ProcesoDenegarPensionesObjMessage) message);
                 } else if (message instanceof ProcesoActualizarPenEnJupeMessage) {
                     message = proceso.procesoActualizarPenEnJupe((ProcesoActualizarPenEnJupeMessage) message);
+                } else if (message instanceof ProcesoAsignarMontoPensionMessage) {
+                    message = proceso.procesoAsignarMontoPension((ProcesoAsignarMontoPensionMessage) message);
                 } else if (message instanceof ProcesoVerificarElePenMessage) {
                     message = proceso.procesoVerificarElePen((ProcesoVerificarElePenMessage) message);
-                } else if (message instanceof ProcesoAsignarMesaMessage) {
-                    message = proceso.procesoAsignarMesa((ProcesoAsignarMesaMessage) message);
+                } else if (message instanceof ProcesoVerificarElePenJupeMessage) {
+                    message = proceso.procesoVerificarElePenJupe((ProcesoVerificarElePenJupeMessage) message);
+                } else if (message instanceof ProcesoRevocarPensionesAprMessage) {
+                    message = proceso.procesoRevocarPensionesApr((ProcesoRevocarPensionesAprMessage) message);
+                } else if (message instanceof ProcesoAprobarExclusionPenMessage) {
+                    message = proceso.procesoAprobarExclusionPen((ProcesoAprobarExclusionPenMessage) message);
+                } else if (message instanceof ProcesoExpPenAprMessage) {
+                    message = proceso.procesoExpPenApr((ProcesoExpPenAprMessage) message);
+                } else if (message instanceof ProcesoExpPenDenMessage) {
+                    message = proceso.procesoExpPenDen((ProcesoExpPenDenMessage) message);
+                } else if (message instanceof ProcesoExpPenRevMessage) {
+                    message = proceso.procesoExpPenRev((ProcesoExpPenRevMessage) message);
                 } else if (message instanceof RegistrarCerVidaPersonaMessage) {
                     message = persona.registrarCerVidaPersona((RegistrarCerVidaPersonaMessage) message);
                 } else if (message instanceof AnularCerVidaPersonaMessage) {
@@ -187,6 +231,8 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = persona.anularCerDefunPersona((AnularCerDefunPersonaMessage) message);
                 } else if (message instanceof AprobarPensionPersonaMessage) {
                     message = persona.aprobarPensionPersona((AprobarPensionPersonaMessage) message);
+                } else if (message instanceof AnularAprobacionPenPersonaMessage) {
+                    message = persona.anularAprobacionPenPersona((AnularAprobacionPenPersonaMessage) message);
                 } else if (message instanceof ObjetarPensionPersonaMessage) {
                     message = persona.objetarPensionPersona((ObjetarPensionPersonaMessage) message);
                 } else if (message instanceof RevocarPensionPersonaMessage) {
@@ -195,10 +241,22 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = persona.otorgarPensionPersona((OtorgarPensionPersonaMessage) message);
                 } else if (message instanceof DenegarPensionPersonaMessage) {
                     message = persona.denegarPensionPersona((DenegarPensionPersonaMessage) message);
+                } else if (message instanceof AnularDenegacionPenPersonaMessage) {
+                    message = persona.anularDenegacionPenPersona((AnularDenegacionPenPersonaMessage) message);
                 } else if (message instanceof RegistrarEntregaDocPersonaMessage) {
                     message = persona.registrarEntregaDocPersona((RegistrarEntregaDocPersonaMessage) message);
+                } else if (message instanceof IncluirPersonaEnJupeMessage) {
+                    message = persona.incluirPersonaEnJupe((IncluirPersonaEnJupeMessage) message);
+                } else if (message instanceof AsignarMontoPensionPersonaMessage) {
+                    message = persona.asignarMontoPensionPersona((AsignarMontoPensionPersonaMessage) message);
+                } else if (message instanceof ActFecUltCobPenPersonaMessage) {
+                    message = persona.actFecUltCobPenPersona((ActFecUltCobPenPersonaMessage) message);
+                } else if (message instanceof AnulFecUltCobPenPersonaMessage) {
+                    message = persona.anulFecUltCobPenPersona((AnulFecUltCobPenPersonaMessage) message);
                 } else if (message instanceof SolicitarRecoPenPersonaMessage) {
                     message = persona.solicitarRecoPenPersona((SolicitarRecoPenPersonaMessage) message);
+                } else if (message instanceof AsignarRecoPenPersonaMessage) {
+                    message = persona.asignarRecoPenPersona((AsignarRecoPenPersonaMessage) message);
                 } else if (message instanceof AprobarRecoPenPersonaMessage) {
                     message = persona.aprobarRecoPenPersona((AprobarRecoPenPersonaMessage) message);
                 } else if (message instanceof DenegarRecoPenPersonaMessage) {
@@ -209,10 +267,24 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = persona.confirmarDenuPenPersona((ConfirmarDenuPenPersonaMessage) message);
                 } else if (message instanceof DesmentirDenuPenPersonaMessage) {
                     message = persona.desmentirDenuPenPersona((DesmentirDenuPenPersonaMessage) message);
-                } else if (message instanceof ActFecUltCobPenPersonaMessage) {
-                    message = persona.actFecUltCobPenPersona((ActFecUltCobPenPersonaMessage) message);
-                } else if (message instanceof AnulFecUltCobPenPersonaMessage) {
-                    message = persona.anulFecUltCobPenPersona((AnulFecUltCobPenPersonaMessage) message);
+                } else if (message instanceof AnotarPersonaMessage) {
+                    message = persona.anotarPersona((AnotarPersonaMessage) message);
+                } else if (message instanceof BorrarPersonaMessage) {
+                    message = persona.borrarPersona((BorrarPersonaMessage) message);
+                } else if (message instanceof BorrarPersonaOtroMessage) {
+                    message = persona.borrarPersonaOtro((BorrarPersonaOtroMessage) message);
+                } else if (message instanceof SolicitarRecoPenPersonaSelMessage) {
+                    message = persona.solicitarRecoPenPersonaSel((SolicitarRecoPenPersonaSelMessage) message);
+                } else if (message instanceof AsignarRecoPenPersonaSelMessage) {
+                    message = persona.asignarRecoPenPersonaSel((AsignarRecoPenPersonaSelMessage) message);
+                } else if (message instanceof AprobarRecoPenPersonaSelMessage) {
+                    message = persona.aprobarRecoPenPersonaSel((AprobarRecoPenPersonaSelMessage) message);
+                } else if (message instanceof DenegarRecoPenPersonaSelMessage) {
+                    message = persona.denegarRecoPenPersonaSel((DenegarRecoPenPersonaSelMessage) message);
+                } else if (message instanceof BorrarPersonaAnotadaMessage) {
+                    message = personaAnotada.borrarPersonaAnotada((BorrarPersonaAnotadaMessage) message);
+                } else if (message instanceof BorrarPersonaAnotadaOtroMessage) {
+                    message = personaAnotada.borrarPersonaAnotadaOtro((BorrarPersonaAnotadaOtroMessage) message);
                 } else if (message instanceof ReconstruirUbicacionMessage) {
                     message = ubicacion.reconstruirUbicacion((ReconstruirUbicacionMessage) message);
                 } else if (message instanceof CargarArchivoDatosExtMessage) {
@@ -249,6 +321,8 @@ public class BusinessProcessBrokerBean implements BusinessProcessBrokerLocal {
                     message = potencialBen.acreditarPotencialBen((AcreditarPotencialBenMessage) message);
                 } else if (message instanceof RegUltVisCenPotencialBenMessage) {
                     message = potencialBen.regUltVisCenPotencialBen((RegUltVisCenPotencialBenMessage) message);
+                } else if (message instanceof AnularObjecionElePenMessage) {
+                    message = objecionElePen.anularObjecionElePen((AnularObjecionElePenMessage) message);
                 } else {
                     message.setCondicion(EnumCondicionEjeFun.EJECUCION_CANCELADA);
                     message.setMensaje(TLC.getBitacora().error(CBM2.PROCESS_EXECUTION_ABEND, message.getRastro() + "(" + message.getClass().getName() + ")"));

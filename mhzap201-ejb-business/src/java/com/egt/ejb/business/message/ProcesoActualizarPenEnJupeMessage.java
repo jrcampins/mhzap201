@@ -25,7 +25,7 @@ public class ProcesoActualizarPenEnJupeMessage extends BusinessProcessMessage im
 
     public ProcesoActualizarPenEnJupeMessage(String codigoSime, Long idUbicacion) {
         this.init();
-        this.funcion = 200200156L;
+        this.funcion = 200200157L;
         this.codigoSime = codigoSime;
         this.idUbicacion = idUbicacion;
     }

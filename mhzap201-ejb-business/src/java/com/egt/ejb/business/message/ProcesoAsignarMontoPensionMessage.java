@@ -12,30 +12,23 @@ package com.egt.ejb.business.message;
 
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
-public class ProcesoVerificarElePenMessage extends BusinessProcessMessage implements Serializable {
-
-    public static final long PARAMETRO_ID_UBICACION = 20513L;
+public class ProcesoAsignarMontoPensionMessage extends BusinessProcessMessage implements Serializable {
 
     public static final long PARAMETRO_CODIGO_SIME = 20996L;
 
-    protected Long idUbicacion;
+    public static final long PARAMETRO_MONTO_PENSION = 20197L;
 
     protected String codigoSime;
 
-    public ProcesoVerificarElePenMessage(Long idUbicacion, String codigoSime) {
+    protected BigDecimal montoPension;
+
+    public ProcesoAsignarMontoPensionMessage(String codigoSime, BigDecimal montoPension) {
         this.init();
-        this.funcion = 200200159L;
-        this.idUbicacion = idUbicacion;
+        this.funcion = 200200158L;
         this.codigoSime = codigoSime;
-    }
-
-    public Long getIdUbicacion() {
-        return idUbicacion;
-    }
-
-    public void setIdUbicacion(Long idUbicacion) {
-        this.idUbicacion = idUbicacion;
+        this.montoPension = montoPension;
     }
 
     public String getCodigoSime() {
@@ -44,5 +37,13 @@ public class ProcesoVerificarElePenMessage extends BusinessProcessMessage implem
 
     public void setCodigoSime(String codigoSime) {
         this.codigoSime = codigoSime;
+    }
+
+    public BigDecimal getMontoPension() {
+        return montoPension;
+    }
+
+    public void setMontoPension(BigDecimal montoPension) {
+        this.montoPension = montoPension;
     }
 }

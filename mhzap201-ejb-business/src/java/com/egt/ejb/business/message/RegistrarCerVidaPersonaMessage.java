@@ -22,18 +22,23 @@ public class RegistrarCerVidaPersonaMessage extends BusinessProcessMessage imple
 
     public static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
 
+    public static final long PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA = 21020L;
+
     protected Long idPersona;
 
     protected String certificadoVida;
 
     protected Date fechaCertificadoVida;
 
-    public RegistrarCerVidaPersonaMessage(Long idPersona, String certificadoVida, Date fechaCertificadoVida) {
+    protected Integer diasVigenciaCertificadoVida;
+
+    public RegistrarCerVidaPersonaMessage(Long idPersona, String certificadoVida, Date fechaCertificadoVida, Integer diasVigenciaCertificadoVida) {
         this.init();
         this.funcion = 201000151L;
         this.idPersona = idPersona;
         this.certificadoVida = certificadoVida;
         this.fechaCertificadoVida = fechaCertificadoVida;
+        this.diasVigenciaCertificadoVida = diasVigenciaCertificadoVida;
     }
 
     public Long getIdPersona() {
@@ -58,5 +63,13 @@ public class RegistrarCerVidaPersonaMessage extends BusinessProcessMessage imple
 
     public void setFechaCertificadoVida(Date fechaCertificadoVida) {
         this.fechaCertificadoVida = fechaCertificadoVida;
+    }
+
+    public Integer getDiasVigenciaCertificadoVida() {
+        return diasVigenciaCertificadoVida;
+    }
+
+    public void setDiasVigenciaCertificadoVida(Integer diasVigenciaCertificadoVida) {
+        this.diasVigenciaCertificadoVida = diasVigenciaCertificadoVida;
     }
 }

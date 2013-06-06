@@ -34,7 +34,7 @@ public class ObjetarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public ObjetarPensionPersonaMessage(Long idPersona, Integer numeroCausaDenPension, String otraCausaDenPension, String comentariosObjecionPension) {
         this.init();
-        this.funcion = 201000156L;
+        this.funcion = 201000157L;
         this.idPersona = idPersona;
         this.numeroCausaDenPension = numeroCausaDenPension;
         this.otraCausaDenPension = otraCausaDenPension;

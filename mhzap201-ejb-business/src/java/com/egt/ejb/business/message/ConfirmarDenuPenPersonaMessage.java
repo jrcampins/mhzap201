@@ -34,7 +34,7 @@ public class ConfirmarDenuPenPersonaMessage extends BusinessProcessMessage imple
 
     public ConfirmarDenuPenPersonaMessage(Long idPersona, Integer numeroCausaRevPension, String otraCausaRevPension, String comentariosConfDenuPen) {
         this.init();
-        this.funcion = 201000165L;
+        this.funcion = 201000172L;
         this.idPersona = idPersona;
         this.numeroCausaRevPension = numeroCausaRevPension;
         this.otraCausaRevPension = otraCausaRevPension;

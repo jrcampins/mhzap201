@@ -34,7 +34,7 @@ public class DenegarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public DenegarPensionPersonaMessage(Long idPersona, String numeroResolucionDenPen, Date fechaResolucionDenPen, String comentariosDenegacionPension) {
         this.init();
-        this.funcion = 201000159L;
+        this.funcion = 201000160L;
         this.idPersona = idPersona;
         this.numeroResolucionDenPen = numeroResolucionDenPen;
         this.fechaResolucionDenPen = fechaResolucionDenPen;

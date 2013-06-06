@@ -22,18 +22,28 @@ public class ProcesoAcreditarPotBenMessage extends BusinessProcessMessage implem
 
     public static final long PARAMETRO_FECHA_REGISTRO_POT_BEN_HASTA = 10012L;
 
+    public static final long PARAMETRO_EDAD_DESDE = 10027L;
+
+    public static final long PARAMETRO_EDAD_HASTA = 10028L;
+
     protected Long idUbicacion;
 
     protected Date fechaRegistroPotBenDesde;
 
     protected Date fechaRegistroPotBenHasta;
 
-    public ProcesoAcreditarPotBenMessage(Long idUbicacion, Date fechaRegistroPotBenDesde, Date fechaRegistroPotBenHasta) {
+    protected Integer edadDesde;
+
+    protected Integer edadHasta;
+
+    public ProcesoAcreditarPotBenMessage(Long idUbicacion, Date fechaRegistroPotBenDesde, Date fechaRegistroPotBenHasta, Integer edadDesde, Integer edadHasta) {
         this.init();
         this.funcion = 200200152L;
         this.idUbicacion = idUbicacion;
         this.fechaRegistroPotBenDesde = fechaRegistroPotBenDesde;
         this.fechaRegistroPotBenHasta = fechaRegistroPotBenHasta;
+        this.edadDesde = edadDesde;
+        this.edadHasta = edadHasta;
     }
 
     public Long getIdUbicacion() {
@@ -58,5 +68,21 @@ public class ProcesoAcreditarPotBenMessage extends BusinessProcessMessage implem
 
     public void setFechaRegistroPotBenHasta(Date fechaRegistroPotBenHasta) {
         this.fechaRegistroPotBenHasta = fechaRegistroPotBenHasta;
+    }
+
+    public Integer getEdadDesde() {
+        return edadDesde;
+    }
+
+    public void setEdadDesde(Integer edadDesde) {
+        this.edadDesde = edadDesde;
+    }
+
+    public Integer getEdadHasta() {
+        return edadHasta;
+    }
+
+    public void setEdadHasta(Integer edadHasta) {
+        this.edadHasta = edadHasta;
     }
 }

@@ -34,7 +34,7 @@ public class RevocarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public RevocarPensionPersonaMessage(Long idPersona, Integer numeroCausaRevPension, String otraCausaRevPension, String comentariosRevocacionPension) {
         this.init();
-        this.funcion = 201000157L;
+        this.funcion = 201000158L;
         this.idPersona = idPersona;
         this.numeroCausaRevPension = numeroCausaRevPension;
         this.otraCausaRevPension = otraCausaRevPension;

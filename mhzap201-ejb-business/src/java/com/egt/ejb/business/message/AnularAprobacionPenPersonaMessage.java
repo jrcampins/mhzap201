@@ -12,23 +12,17 @@ package com.egt.ejb.business.message;
 
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
-import java.util.Date;
 
-public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class AnularAprobacionPenPersonaMessage extends BusinessProcessMessage implements Serializable {
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
-    public static final long PARAMETRO_COMENTARIOS_DES_DENU_PEN = 20233L;
-
     protected Long idPersona;
 
-    protected String comentariosDesDenuPen;
-
-    public DesmentirDenuPenPersonaMessage(Long idPersona, String comentariosDesDenuPen) {
+    public AnularAprobacionPenPersonaMessage(Long idPersona) {
         this.init();
-        this.funcion = 201000173L;
+        this.funcion = 201000156L;
         this.idPersona = idPersona;
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
     }
 
     public Long getIdPersona() {
@@ -37,13 +31,5 @@ public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage imple
 
     public void setIdPersona(Long idPersona) {
         this.idPersona = idPersona;
-    }
-
-    public String getComentariosDesDenuPen() {
-        return comentariosDesDenuPen;
-    }
-
-    public void setComentariosDesDenuPen(String comentariosDesDenuPen) {
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
     }
 }

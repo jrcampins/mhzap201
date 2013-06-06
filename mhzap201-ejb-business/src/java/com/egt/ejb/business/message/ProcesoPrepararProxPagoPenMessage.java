@@ -34,7 +34,7 @@ public class ProcesoPrepararProxPagoPenMessage extends BusinessProcessMessage im
 
     public ProcesoPrepararProxPagoPenMessage(String codigoSime, Long idUbicacion, Date fechaSolicitudPensionDesde, Date fechaSolicitudPensionHasta) {
         this.init();
-        this.funcion = 200200153L;
+        this.funcion = 200200154L;
         this.codigoSime = codigoSime;
         this.idUbicacion = idUbicacion;
         this.fechaSolicitudPensionDesde = fechaSolicitudPensionDesde;

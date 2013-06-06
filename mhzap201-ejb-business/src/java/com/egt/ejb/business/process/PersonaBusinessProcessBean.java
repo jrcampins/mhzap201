@@ -24,19 +24,31 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularAprobacionPenPersonaMessage;
 import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularDenegacionPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
+import com.egt.ejb.business.message.IncluirPersonaEnJupeMessage;
+import com.egt.ejb.business.message.AsignarMontoPensionPersonaMessage;
+import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnotarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaOtroMessage;
+import com.egt.ejb.business.message.SolicitarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AprobarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.DenegarRecoPenPersonaSelMessage;
 import com.egt.ejb.business.process.logic.PersonaBusinessProcessLogicLocal;
 import com.egt.ejb.core.sqlagent.SqlAgentBrokerLocal;
 import com.egt.ejb.persistence.entity.Persona;
@@ -141,11 +153,12 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         String sql = PersonaConstants.PROCESO_FUNCION_REGISTRAR_CER_VIDA_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[4]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[5]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
             args[index++] = message.getCertificadoVida();
             args[index++] = message.getFechaCertificadoVida();
+            args[index++] = message.getDiasVigenciaCertificadoVida();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -159,6 +172,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         rastro.addParametro(RegistrarCerVidaPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
         rastro.addParametro(RegistrarCerVidaPersonaMessage.PARAMETRO_CERTIFICADO_VIDA, STP.getString(message.getCertificadoVida()));
         rastro.addParametro(RegistrarCerVidaPersonaMessage.PARAMETRO_FECHA_CERTIFICADO_VIDA, STP.getString(message.getFechaCertificadoVida()));
+        rastro.addParametro(RegistrarCerVidaPersonaMessage.PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA, STP.getString(message.getDiasVigenciaCertificadoVida()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -190,10 +204,9 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         String sql = PersonaConstants.PROCESO_FUNCION_ANULAR_CER_VIDA_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
-            args[index++] = message.getComentariosAnulCerVida();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -205,7 +218,6 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     protected Long grabarRastroFuncion(AnularCerVidaPersonaMessage message, Persona persona) {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
         rastro.addParametro(AnularCerVidaPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
-        rastro.addParametro(AnularCerVidaPersonaMessage.PARAMETRO_COMENTARIOS_ANUL_CER_VIDA, STP.getString(message.getComentariosAnulCerVida()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -286,10 +298,9 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         String sql = PersonaConstants.PROCESO_FUNCION_ANULAR_CER_DEFUN_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
-            args[index++] = message.getComentariosAnulCerDefuncion();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
@@ -301,7 +312,6 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     protected Long grabarRastroFuncion(AnularCerDefunPersonaMessage message, Persona persona) {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
         rastro.addParametro(AnularCerDefunPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
-        rastro.addParametro(AnularCerDefunPersonaMessage.PARAMETRO_COMENTARIOS_ANUL_CER_DEFUNCION, STP.getString(message.getComentariosAnulCerDefuncion()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -349,6 +359,51 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
         rastro.addParametro(AprobarPensionPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
         rastro.addParametro(AprobarPensionPersonaMessage.PARAMETRO_COMENTARIOS_APROBACION_PENSION, STP.getString(message.getComentariosAprobacionPension()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AnularAprobacionPenPersonaMessage anularAprobacionPenPersona(AnularAprobacionPenPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.anularAprobacionPenPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void anularAprobacionPenPersona(AnularAprobacionPenPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ANULAR_APROBACION_PEN_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.anularAprobacionPenPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AnularAprobacionPenPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AnularAprobacionPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -557,6 +612,51 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     }
 
     @Override
+    public AnularDenegacionPenPersonaMessage anularDenegacionPenPersona(AnularDenegacionPenPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.anularDenegacionPenPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void anularDenegacionPenPersona(AnularDenegacionPenPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ANULAR_DENEGACION_PEN_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.anularDenegacionPenPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AnularDenegacionPenPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AnularDenegacionPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
     public RegistrarEntregaDocPersonaMessage registrarEntregaDocPersona(RegistrarEntregaDocPersonaMessage message) {
         Long idPersona = null;
         Persona persona = null;
@@ -614,6 +714,192 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     }
 
     @Override
+    public IncluirPersonaEnJupeMessage incluirPersonaEnJupe(IncluirPersonaEnJupeMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.incluirPersonaEnJupe(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void incluirPersonaEnJupe(IncluirPersonaEnJupeMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_INCLUIR_PERSONA_EN_JUPE;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.incluirPersonaEnJupe(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(IncluirPersonaEnJupeMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(IncluirPersonaEnJupeMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AsignarMontoPensionPersonaMessage asignarMontoPensionPersona(AsignarMontoPensionPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.asignarMontoPensionPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void asignarMontoPensionPersona(AsignarMontoPensionPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ASIGNAR_MONTO_PENSION_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            args[index++] = message.getMontoPension();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.asignarMontoPensionPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AsignarMontoPensionPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AsignarMontoPensionPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(AsignarMontoPensionPersonaMessage.PARAMETRO_MONTO_PENSION, STP.getString(message.getMontoPension()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public ActFecUltCobPenPersonaMessage actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.actFecUltCobPenPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            args[index++] = message.getFechaUltimoCobroPension();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.actFecUltCobPenPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(ActFecUltCobPenPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(ActFecUltCobPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(ActFecUltCobPenPersonaMessage.PARAMETRO_FECHA_ULTIMO_COBRO_PENSION, STP.getString(message.getFechaUltimoCobroPension()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AnulFecUltCobPenPersonaMessage anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.anulFecUltCobPenPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            args[index++] = message.getNotasAnulFecUltCobPen();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.anulFecUltCobPenPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AnulFecUltCobPenPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AnulFecUltCobPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(AnulFecUltCobPenPersonaMessage.PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN, STP.getString(message.getNotasAnulFecUltCobPen()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
     public SolicitarRecoPenPersonaMessage solicitarRecoPenPersona(SolicitarRecoPenPersonaMessage message) {
         Long idPersona = null;
         Persona persona = null;
@@ -657,6 +943,53 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
         rastro.addParametro(SolicitarRecoPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
         rastro.addParametro(SolicitarRecoPenPersonaMessage.PARAMETRO_COMENTARIOS_SOLICITUD_RECO_PEN, STP.getString(message.getComentariosSolicitudRecoPen()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AsignarRecoPenPersonaMessage asignarRecoPenPersona(AsignarRecoPenPersonaMessage message) {
+        Long idPersona = null;
+        Persona persona = null;
+        try {
+            idPersona = message.getIdPersona();
+            persona = facade.find(idPersona, true);
+            if (persona == null) {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+            } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.asignarRecoPenPersona(message, persona);
+                this.grabarRastroFuncion(message, persona);
+            }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void asignarRecoPenPersona(AsignarRecoPenPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdPersona();
+            args[index++] = message.getCodigoSimeRecoPen();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+            logician.asignarRecoPenPersona(message, persona);
+            facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AsignarRecoPenPersonaMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AsignarRecoPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
+        rastro.addParametro(AsignarRecoPenPersonaMessage.PARAMETRO_CODIGO_SIME_RECO_PEN, STP.getString(message.getCodigoSimeRecoPen()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
@@ -904,7 +1237,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
     }
 
     @Override
-    public ActFecUltCobPenPersonaMessage actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message) {
+    public AnotarPersonaMessage anotarPersona(AnotarPersonaMessage message) {
         Long idPersona = null;
         Persona persona = null;
         try {
@@ -916,7 +1249,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
             } else {
                 message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
                 message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
-                this.actFecUltCobPenPersona(message, persona);
+                this.anotarPersona(message, persona);
                 this.grabarRastroFuncion(message, persona);
             }
         } catch (Exception ex) {
@@ -927,45 +1260,43 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         return message;
     }
 
-    protected void actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
-        String sql = PersonaConstants.PROCESO_FUNCION_ACT_FEC_ULT_COB_PEN_PERSONA;
+    protected void anotarPersona(AnotarPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ANOTAR_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
-            args[index++] = message.getFechaUltimoCobroPension();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
-            logician.actFecUltCobPenPersona(message, persona);
+            logician.anotarPersona(message, persona);
             facade.flush();
         }
     }
 
-    protected Long grabarRastroFuncion(ActFecUltCobPenPersonaMessage message, Persona persona) {
+    protected Long grabarRastroFuncion(AnotarPersonaMessage message, Persona persona) {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
-        rastro.addParametro(ActFecUltCobPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
-        rastro.addParametro(ActFecUltCobPenPersonaMessage.PARAMETRO_FECHA_ULTIMO_COBRO_PENSION, STP.getString(message.getFechaUltimoCobroPension()));
+        rastro.addParametro(AnotarPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 
     @Override
-    public AnulFecUltCobPenPersonaMessage anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message) {
-        Long idPersona = null;
+    public BorrarPersonaMessage borrarPersona(BorrarPersonaMessage message) {
+        Object idPersona = null;
         Persona persona = null;
         try {
-            idPersona = message.getIdPersona();
-            persona = facade.find(idPersona, true);
-            if (persona == null) {
-                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
-                message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
-            } else {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
                 message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
                 message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
-                this.anulFecUltCobPenPersona(message, persona);
+                this.borrarPersona(message, persona);
                 this.grabarRastroFuncion(message, persona);
-            }
+//          }
         } catch (Exception ex) {
             Auditor.grabarRastroProceso(message, ex);
             TLC.getBitacora().fatal(message.getMensaje());
@@ -974,26 +1305,247 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         return message;
     }
 
-    protected void anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message, Persona persona) throws Exception {
-        String sql = PersonaConstants.PROCESO_FUNCION_ANUL_FEC_ULT_COB_PEN_PERSONA;
+    protected void borrarPersona(BorrarPersonaMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_BORRAR_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[3]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[1]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
-            args[index++] = message.getIdPersona();
-            args[index++] = message.getNotasAnulFecUltCobPen();
             sqlAgent.executeProcedure(sql, args);
             message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
         } else {
-            logician.anulFecUltCobPenPersona(message, persona);
-            facade.flush();
+//          logician.borrarPersona(message, persona);
+//          facade.flush();
         }
     }
 
-    protected Long grabarRastroFuncion(AnulFecUltCobPenPersonaMessage message, Persona persona) {
+    protected Long grabarRastroFuncion(BorrarPersonaMessage message, Persona persona) {
         RastroFuncion rastro = this.getRastroFuncion(message, persona);
-        rastro.addParametro(AnulFecUltCobPenPersonaMessage.PARAMETRO_ID_PERSONA, STP.getString(message.getIdPersona()));
-        rastro.addParametro(AnulFecUltCobPenPersonaMessage.PARAMETRO_NOTAS_ANUL_FEC_ULT_COB_PEN, STP.getString(message.getNotasAnulFecUltCobPen()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public BorrarPersonaOtroMessage borrarPersonaOtro(BorrarPersonaOtroMessage message) {
+        Object idPersona = null;
+        Persona persona = null;
+        try {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.borrarPersonaOtro(message, persona);
+                this.grabarRastroFuncion(message, persona);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void borrarPersonaOtro(BorrarPersonaOtroMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_BORRAR_PERSONA_OTRO;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getIdUsuario();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.borrarPersonaOtro(message, persona);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(BorrarPersonaOtroMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(BorrarPersonaOtroMessage.PARAMETRO_ID_USUARIO, STP.getString(message.getIdUsuario()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public SolicitarRecoPenPersonaSelMessage solicitarRecoPenPersonaSel(SolicitarRecoPenPersonaSelMessage message) {
+        Object idPersona = null;
+        Persona persona = null;
+        try {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.solicitarRecoPenPersonaSel(message, persona);
+                this.grabarRastroFuncion(message, persona);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void solicitarRecoPenPersonaSel(SolicitarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_SOLICITAR_RECO_PEN_PERSONA_SEL;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getObservacion();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.solicitarRecoPenPersonaSel(message, persona);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(SolicitarRecoPenPersonaSelMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(SolicitarRecoPenPersonaSelMessage.PARAMETRO_OBSERVACION, STP.getString(message.getObservacion()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AsignarRecoPenPersonaSelMessage asignarRecoPenPersonaSel(AsignarRecoPenPersonaSelMessage message) {
+        Object idPersona = null;
+        Persona persona = null;
+        try {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.asignarRecoPenPersonaSel(message, persona);
+                this.grabarRastroFuncion(message, persona);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void asignarRecoPenPersonaSel(AsignarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_ASIGNAR_RECO_PEN_PERSONA_SEL;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getCodigoSimeRecoPen();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.asignarRecoPenPersonaSel(message, persona);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AsignarRecoPenPersonaSelMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AsignarRecoPenPersonaSelMessage.PARAMETRO_CODIGO_SIME_RECO_PEN, STP.getString(message.getCodigoSimeRecoPen()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public AprobarRecoPenPersonaSelMessage aprobarRecoPenPersonaSel(AprobarRecoPenPersonaSelMessage message) {
+        Object idPersona = null;
+        Persona persona = null;
+        try {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.aprobarRecoPenPersonaSel(message, persona);
+                this.grabarRastroFuncion(message, persona);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void aprobarRecoPenPersonaSel(AprobarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_APROBAR_RECO_PEN_PERSONA_SEL;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getObservacion();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.aprobarRecoPenPersonaSel(message, persona);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(AprobarRecoPenPersonaSelMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(AprobarRecoPenPersonaSelMessage.PARAMETRO_OBSERVACION, STP.getString(message.getObservacion()));
+        return Auditor.grabarRastroFuncion(rastro);
+    }
+
+    @Override
+    public DenegarRecoPenPersonaSelMessage denegarRecoPenPersonaSel(DenegarRecoPenPersonaSelMessage message) {
+        Object idPersona = null;
+        Persona persona = null;
+        try {
+//          idPersona = message.getIdPersona();
+//          persona = facade.find(idPersona, true);
+//          if (persona == null) {
+//              message.setCondicion(EnumCondicionEjeFun.EJECUTADO_CON_ERRORES);
+//              message.setMensaje(TLC.getBitacora().error(CBM2.RECURSO_NO_EXISTE, idPersona));
+//          } else {
+                message.setCondicion(EnumCondicionEjeFun.EJECUTADO_SIN_ERRORES);
+                message.setMensaje(TLC.getBitacora().info(CBM2.PROCESS_EXECUTION_END, message.getIdRastro()));
+                this.denegarRecoPenPersonaSel(message, persona);
+                this.grabarRastroFuncion(message, persona);
+//          }
+        } catch (Exception ex) {
+            Auditor.grabarRastroProceso(message, ex);
+            TLC.getBitacora().fatal(message.getMensaje());
+            throw ex instanceof EJBException ? (EJBException) ex : new EJBException(ex);
+        }
+        return message;
+    }
+
+    protected void denegarRecoPenPersonaSel(DenegarRecoPenPersonaSelMessage message, Persona persona) throws Exception {
+        String sql = PersonaConstants.PROCESO_FUNCION_DENEGAR_RECO_PEN_PERSONA_SEL;
+        if (sqlAgent.isStoredProcedure(sql)) {
+            int index = 0;
+            Object[] args = new Object[2]; /* el procedimiento actualiza el rastro */
+            args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
+            args[index++] = message.getObservacion();
+            sqlAgent.executeProcedure(sql, args);
+            message.setGrabarRastroPendiente(false); /* el procedimiento actualiza el rastro */
+        } else {
+//          logician.denegarRecoPenPersonaSel(message, persona);
+//          facade.flush();
+        }
+    }
+
+    protected Long grabarRastroFuncion(DenegarRecoPenPersonaSelMessage message, Persona persona) {
+        RastroFuncion rastro = this.getRastroFuncion(message, persona);
+        rastro.addParametro(DenegarRecoPenPersonaSelMessage.PARAMETRO_OBSERVACION, STP.getString(message.getObservacion()));
         return Auditor.grabarRastroFuncion(rastro);
     }
 

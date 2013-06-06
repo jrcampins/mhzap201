@@ -46,7 +46,7 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public RegistrarEntregaDocPersonaMessage(Long idPersona, Integer esPersonaConCerVida, String certificadoVida, Date fechaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur, String comentariosEntregaDocumentos) {
         this.init();
-        this.funcion = 201000160L;
+        this.funcion = 201000162L;
         this.idPersona = idPersona;
         this.esPersonaConCerVida = esPersonaConCerVida;
         this.certificadoVida = certificadoVida;

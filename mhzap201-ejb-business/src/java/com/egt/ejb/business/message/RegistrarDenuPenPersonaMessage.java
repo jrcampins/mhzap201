@@ -26,7 +26,7 @@ public class RegistrarDenuPenPersonaMessage extends BusinessProcessMessage imple
 
     public RegistrarDenuPenPersonaMessage(Long idPersona, String comentariosRegistroDenuPen) {
         this.init();
-        this.funcion = 201000164L;
+        this.funcion = 201000171L;
         this.idPersona = idPersona;
         this.comentariosRegistroDenuPen = comentariosRegistroDenuPen;
     }

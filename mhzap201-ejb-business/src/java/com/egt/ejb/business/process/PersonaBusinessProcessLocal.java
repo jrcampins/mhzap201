@@ -15,19 +15,31 @@ import com.egt.ejb.business.message.AnularCerVidaPersonaMessage;
 import com.egt.ejb.business.message.RegistrarCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AnularCerDefunPersonaMessage;
 import com.egt.ejb.business.message.AprobarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularAprobacionPenPersonaMessage;
 import com.egt.ejb.business.message.ObjetarPensionPersonaMessage;
 import com.egt.ejb.business.message.RevocarPensionPersonaMessage;
 import com.egt.ejb.business.message.OtorgarPensionPersonaMessage;
 import com.egt.ejb.business.message.DenegarPensionPersonaMessage;
+import com.egt.ejb.business.message.AnularDenegacionPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarEntregaDocPersonaMessage;
+import com.egt.ejb.business.message.IncluirPersonaEnJupeMessage;
+import com.egt.ejb.business.message.AsignarMontoPensionPersonaMessage;
+import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
 import com.egt.ejb.business.message.SolicitarRecoPenPersonaMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.AprobarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.DenegarRecoPenPersonaMessage;
 import com.egt.ejb.business.message.RegistrarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.ConfirmarDenuPenPersonaMessage;
 import com.egt.ejb.business.message.DesmentirDenuPenPersonaMessage;
-import com.egt.ejb.business.message.ActFecUltCobPenPersonaMessage;
-import com.egt.ejb.business.message.AnulFecUltCobPenPersonaMessage;
+import com.egt.ejb.business.message.AnotarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaMessage;
+import com.egt.ejb.business.message.BorrarPersonaOtroMessage;
+import com.egt.ejb.business.message.SolicitarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AsignarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.AprobarRecoPenPersonaSelMessage;
+import com.egt.ejb.business.message.DenegarRecoPenPersonaSelMessage;
 import javax.ejb.Local;
 
 @Local
@@ -43,6 +55,8 @@ public interface PersonaBusinessProcessLocal {
 
     public AprobarPensionPersonaMessage aprobarPensionPersona(AprobarPensionPersonaMessage message);
 
+    public AnularAprobacionPenPersonaMessage anularAprobacionPenPersona(AnularAprobacionPenPersonaMessage message);
+
     public ObjetarPensionPersonaMessage objetarPensionPersona(ObjetarPensionPersonaMessage message);
 
     public RevocarPensionPersonaMessage revocarPensionPersona(RevocarPensionPersonaMessage message);
@@ -51,9 +65,21 @@ public interface PersonaBusinessProcessLocal {
 
     public DenegarPensionPersonaMessage denegarPensionPersona(DenegarPensionPersonaMessage message);
 
+    public AnularDenegacionPenPersonaMessage anularDenegacionPenPersona(AnularDenegacionPenPersonaMessage message);
+
     public RegistrarEntregaDocPersonaMessage registrarEntregaDocPersona(RegistrarEntregaDocPersonaMessage message);
 
+    public IncluirPersonaEnJupeMessage incluirPersonaEnJupe(IncluirPersonaEnJupeMessage message);
+
+    public AsignarMontoPensionPersonaMessage asignarMontoPensionPersona(AsignarMontoPensionPersonaMessage message);
+
+    public ActFecUltCobPenPersonaMessage actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message);
+
+    public AnulFecUltCobPenPersonaMessage anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message);
+
     public SolicitarRecoPenPersonaMessage solicitarRecoPenPersona(SolicitarRecoPenPersonaMessage message);
+
+    public AsignarRecoPenPersonaMessage asignarRecoPenPersona(AsignarRecoPenPersonaMessage message);
 
     public AprobarRecoPenPersonaMessage aprobarRecoPenPersona(AprobarRecoPenPersonaMessage message);
 
@@ -65,7 +91,17 @@ public interface PersonaBusinessProcessLocal {
 
     public DesmentirDenuPenPersonaMessage desmentirDenuPenPersona(DesmentirDenuPenPersonaMessage message);
 
-    public ActFecUltCobPenPersonaMessage actFecUltCobPenPersona(ActFecUltCobPenPersonaMessage message);
+    public AnotarPersonaMessage anotarPersona(AnotarPersonaMessage message);
 
-    public AnulFecUltCobPenPersonaMessage anulFecUltCobPenPersona(AnulFecUltCobPenPersonaMessage message);
+    public BorrarPersonaMessage borrarPersona(BorrarPersonaMessage message);
+
+    public BorrarPersonaOtroMessage borrarPersonaOtro(BorrarPersonaOtroMessage message);
+
+    public SolicitarRecoPenPersonaSelMessage solicitarRecoPenPersonaSel(SolicitarRecoPenPersonaSelMessage message);
+
+    public AsignarRecoPenPersonaSelMessage asignarRecoPenPersonaSel(AsignarRecoPenPersonaSelMessage message);
+
+    public AprobarRecoPenPersonaSelMessage aprobarRecoPenPersonaSel(AprobarRecoPenPersonaSelMessage message);
+
+    public DenegarRecoPenPersonaSelMessage denegarRecoPenPersonaSel(DenegarRecoPenPersonaSelMessage message);
 }

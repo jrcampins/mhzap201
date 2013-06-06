@@ -12,23 +12,22 @@ package com.egt.ejb.business.message;
 
 import com.egt.ejb.business.jms.BusinessProcessMessage;
 import java.io.Serializable;
-import java.util.Date;
 
-public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage implements Serializable {
+public class AsignarRecoPenPersonaMessage extends BusinessProcessMessage implements Serializable {
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
-    public static final long PARAMETRO_COMENTARIOS_DES_DENU_PEN = 20233L;
+    public static final long PARAMETRO_CODIGO_SIME_RECO_PEN = 21015L;
 
     protected Long idPersona;
 
-    protected String comentariosDesDenuPen;
+    protected String codigoSimeRecoPen;
 
-    public DesmentirDenuPenPersonaMessage(Long idPersona, String comentariosDesDenuPen) {
+    public AsignarRecoPenPersonaMessage(Long idPersona, String codigoSimeRecoPen) {
         this.init();
-        this.funcion = 201000173L;
+        this.funcion = 201000168L;
         this.idPersona = idPersona;
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
+        this.codigoSimeRecoPen = codigoSimeRecoPen;
     }
 
     public Long getIdPersona() {
@@ -39,11 +38,11 @@ public class DesmentirDenuPenPersonaMessage extends BusinessProcessMessage imple
         this.idPersona = idPersona;
     }
 
-    public String getComentariosDesDenuPen() {
-        return comentariosDesDenuPen;
+    public String getCodigoSimeRecoPen() {
+        return codigoSimeRecoPen;
     }
 
-    public void setComentariosDesDenuPen(String comentariosDesDenuPen) {
-        this.comentariosDesDenuPen = comentariosDesDenuPen;
+    public void setCodigoSimeRecoPen(String codigoSimeRecoPen) {
+        this.codigoSimeRecoPen = codigoSimeRecoPen;
     }
 }

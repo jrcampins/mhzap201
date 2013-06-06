@@ -17,17 +17,12 @@ public class AnularCerVidaPersonaMessage extends BusinessProcessMessage implemen
 
     public static final long PARAMETRO_ID_PERSONA = 20002L;
 
-    public static final long PARAMETRO_COMENTARIOS_ANUL_CER_VIDA = 20260L;
-
     protected Long idPersona;
 
-    protected String comentariosAnulCerVida;
-
-    public AnularCerVidaPersonaMessage(Long idPersona, String comentariosAnulCerVida) {
+    public AnularCerVidaPersonaMessage(Long idPersona) {
         this.init();
         this.funcion = 201000152L;
         this.idPersona = idPersona;
-        this.comentariosAnulCerVida = comentariosAnulCerVida;
     }
 
     public Long getIdPersona() {
@@ -36,13 +31,5 @@ public class AnularCerVidaPersonaMessage extends BusinessProcessMessage implemen
 
     public void setIdPersona(Long idPersona) {
         this.idPersona = idPersona;
-    }
-
-    public String getComentariosAnulCerVida() {
-        return comentariosAnulCerVida;
-    }
-
-    public void setComentariosAnulCerVida(String comentariosAnulCerVida) {
-        this.comentariosAnulCerVida = comentariosAnulCerVida;
     }
 }

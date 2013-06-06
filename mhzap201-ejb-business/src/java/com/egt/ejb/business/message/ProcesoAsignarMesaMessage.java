@@ -25,7 +25,7 @@ public class ProcesoAsignarMesaMessage extends BusinessProcessMessage implements
 
     public ProcesoAsignarMesaMessage(Long lote, String codigoSime) {
         this.init();
-        this.funcion = 200200158L;
+        this.funcion = 200200153L;
         this.lote = lote;
         this.codigoSime = codigoSime;
     }

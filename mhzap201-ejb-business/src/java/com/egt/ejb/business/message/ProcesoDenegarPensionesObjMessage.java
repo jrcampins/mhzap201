@@ -24,6 +24,10 @@ public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_CODIGO_SIME = 20996L;
 
+    public static final long PARAMETRO_CEDULA_DESDE = 10029L;
+
+    public static final long PARAMETRO_CEDULA_HASTA = 10030L;
+
     protected Long idUbicacion;
 
     protected String numeroResolucionDenPen;
@@ -32,13 +36,19 @@ public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage im
 
     protected String codigoSime;
 
-    public ProcesoDenegarPensionesObjMessage(Long idUbicacion, String numeroResolucionDenPen, Date fechaResolucionDenPen, String codigoSime) {
+    protected String cedulaDesde;
+
+    protected String cedulaHasta;
+
+    public ProcesoDenegarPensionesObjMessage(Long idUbicacion, String numeroResolucionDenPen, Date fechaResolucionDenPen, String codigoSime, String cedulaDesde, String cedulaHasta) {
         this.init();
-        this.funcion = 200200155L;
+        this.funcion = 200200156L;
         this.idUbicacion = idUbicacion;
         this.numeroResolucionDenPen = numeroResolucionDenPen;
         this.fechaResolucionDenPen = fechaResolucionDenPen;
         this.codigoSime = codigoSime;
+        this.cedulaDesde = cedulaDesde;
+        this.cedulaHasta = cedulaHasta;
     }
 
     public Long getIdUbicacion() {
@@ -71,5 +81,21 @@ public class ProcesoDenegarPensionesObjMessage extends BusinessProcessMessage im
 
     public void setCodigoSime(String codigoSime) {
         this.codigoSime = codigoSime;
+    }
+
+    public String getCedulaDesde() {
+        return cedulaDesde;
+    }
+
+    public void setCedulaDesde(String cedulaDesde) {
+        this.cedulaDesde = cedulaDesde;
+    }
+
+    public String getCedulaHasta() {
+        return cedulaHasta;
+    }
+
+    public void setCedulaHasta(String cedulaHasta) {
+        this.cedulaHasta = cedulaHasta;
     }
 }

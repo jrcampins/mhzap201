@@ -34,7 +34,7 @@ public class OtorgarPensionPersonaMessage extends BusinessProcessMessage impleme
 
     public OtorgarPensionPersonaMessage(Long idPersona, String numeroResolucionOtorPen, Date fechaResolucionOtorPen, String comentariosOtorgamientoPen) {
         this.init();
-        this.funcion = 201000158L;
+        this.funcion = 201000159L;
         this.idPersona = idPersona;
         this.numeroResolucionOtorPen = numeroResolucionOtorPen;
         this.fechaResolucionOtorPen = fechaResolucionOtorPen;
