@@ -208,6 +208,7 @@
                                                     binding="#{ArchivoDatosExt2.labelIdArchivoDatosExt1}"
                                                     id="labelIdArchivoDatosExt1"
                                                     for="campoIdArchivoDatosExt1"
+                                                    toolTip="BundleParametros.id_archivo_datos_ext.archivo_datos_ext"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{ArchivoDatosExt2.labelCodigoArchivoDatosExt1}"
                                                     id="labelCodigoArchivoDatosExt1"
                                                     for="campoCodigoArchivoDatosExt1"
+                                                    toolTip="BundleParametros.codigo_archivo_datos_ext.archivo_datos_ext"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{ArchivoDatosExt2.labelNombreArchivoDatosExt1}"
                                                     id="labelNombreArchivoDatosExt1"
                                                     for="campoNombreArchivoDatosExt1"
+                                                    toolTip="BundleParametros.nombre_archivo_datos_ext.archivo_datos_ext"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -312,6 +315,7 @@
                                                     binding="#{ArchivoDatosExt2.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.archivo_datos_ext"
                                                     text="proveedor datos externos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -374,6 +378,7 @@
                                                     binding="#{ArchivoDatosExt2.labelNumeroTipoArcDatExt1}"
                                                     id="labelNumeroTipoArcDatExt1"
                                                     for="listaNumeroTipoArcDatExt1"
+                                                    toolTip="BundleParametros.numero_tipo_arc_dat_ext.archivo_datos_ext"
                                                     text="tipo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -406,6 +411,7 @@
                                                     binding="#{ArchivoDatosExt2.labelEsArchivoDatosExtImportado1}"
                                                     id="labelEsArchivoDatosExtImportado1"
                                                     for="listaEsArchivoDatosExtImportado1"
+                                                    toolTip="BundleParametros.es_archivo_datos_ext_importado.archivo_datos_ext"
                                                     text="importado"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -437,6 +443,7 @@
                                                     binding="#{ArchivoDatosExt2.labelFechaHoraUltimaCarga1}"
                                                     id="labelFechaHoraUltimaCarga1"
                                                     for="campoFechaHoraUltimaCarga1"
+                                                    toolTip="BundleParametros.fecha_hora_ultima_carga.archivo_datos_ext"
                                                     text="fecha hora ultima carga"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -469,6 +476,7 @@
                                                     binding="#{ArchivoDatosExt2.labelIdUsuarioUltimaCarga1}"
                                                     id="labelIdUsuarioUltimaCarga1"
                                                     for="campoIdUsuarioUltimaCarga1"
+                                                    toolTip="BundleParametros.id_usuario_ultima_carga.archivo_datos_ext"
                                                     text="usuario ultima carga"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -531,6 +539,7 @@
                                                     binding="#{ArchivoDatosExt2.labelNombreArchivoDatos1}"
                                                     id="labelNombreArchivoDatos1"
                                                     for="campoNombreArchivoDatos1"
+                                                    toolTip="BundleParametros.nombre_archivo_datos.archivo_datos_ext"
                                                     text="nombre archivo datos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -569,6 +578,7 @@
                                                     binding="#{ArchivoDatosExt2.labelNombreOriginalArchivoDatos1}"
                                                     id="labelNombreOriginalArchivoDatos1"
                                                     for="campoNombreOriginalArchivoDatos1"
+                                                    toolTip="BundleParametros.nombre_original_archivo_datos.archivo_datos_ext"
                                                     text="nombre original archivo datos"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -601,6 +611,7 @@
                                                     binding="#{ArchivoDatosExt2.labelFechaHoraUltimaImportacion1}"
                                                     id="labelFechaHoraUltimaImportacion1"
                                                     for="campoFechaHoraUltimaImportacion1"
+                                                    toolTip="BundleParametros.fecha_hora_ultima_importacion.archivo_datos_ext"
                                                     text="fecha hora ultima importaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -633,6 +644,7 @@
                                                     binding="#{ArchivoDatosExt2.labelIdUsuarioUltimaImportacion1}"
                                                     id="labelIdUsuarioUltimaImportacion1"
                                                     for="campoIdUsuarioUltimaImportacion1"
+                                                    toolTip="BundleParametros.id_usuario_ultima_importacion.archivo_datos_ext"
                                                     text="usuario ultima importaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid

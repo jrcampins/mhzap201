@@ -208,6 +208,7 @@
                                                     binding="#{ProveedorDatExt2.labelIdProveedorDatExt1}"
                                                     id="labelIdProveedorDatExt1"
                                                     for="campoIdProveedorDatExt1"
+                                                    toolTip="BundleParametros.id_proveedor_dat_ext.proveedor_dat_ext"
                                                     text="identificaci&#243;n"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -240,6 +241,7 @@
                                                     binding="#{ProveedorDatExt2.labelCodigoProveedorDatExt1}"
                                                     id="labelCodigoProveedorDatExt1"
                                                     for="campoCodigoProveedorDatExt1"
+                                                    toolTip="BundleParametros.codigo_proveedor_dat_ext.proveedor_dat_ext"
                                                     text="c&#243;digo"/>
                                             </h:panelGrid>
                                             <h:panelGrid
@@ -273,6 +275,7 @@
                                                     binding="#{ProveedorDatExt2.labelNombreProveedorDatExt1}"
                                                     id="labelNombreProveedorDatExt1"
                                                     for="campoNombreProveedorDatExt1"
+                                                    toolTip="BundleParametros.nombre_proveedor_dat_ext.proveedor_dat_ext"
                                                     text="nombre"/>
                                             </h:panelGrid>
                                             <h:panelGrid

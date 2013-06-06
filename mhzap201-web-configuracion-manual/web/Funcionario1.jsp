@@ -183,6 +183,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnIdFuncionario1}"
+                                                    toolTip="BundleParametros.id_funcionario.funcionario"
                                                     headerText="identificaci&#243;n"
                                                     id="tableColumnIdFuncionario1" rendered="false"
                                                     sort="id_funcionario">
@@ -209,6 +210,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnCodigoFuncionario1}"
+                                                    toolTip="BundleParametros.codigo_funcionario.funcionario"
                                                     headerText="c&#243;digo"
                                                     id="tableColumnCodigoFuncionario1"
                                                     sort="codigo_funcionario">
@@ -236,6 +238,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnNombreFuncionario1}"
+                                                    toolTip="BundleParametros.nombre_funcionario.funcionario"
                                                     headerText="nombre"
                                                     id="tableColumnNombreFuncionario1"
                                                     sort="nombre_funcionario">
@@ -263,6 +266,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnNumeroCedula1}"
+                                                    toolTip="BundleParametros.numero_cedula.funcionario"
                                                     headerText="n&#250;mero c&#233;dula"
                                                     id="tableColumnNumeroCedula1" rendered="false"
                                                     sort="numero_cedula">
@@ -289,6 +293,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnLetraCedula1}"
+                                                    toolTip="BundleParametros.letra_cedula.funcionario"
                                                     headerText="letra c&#233;dula"
                                                     id="tableColumnLetraCedula1" rendered="false"
                                                     sort="letra_cedula">
@@ -316,6 +321,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnPrimerNombre1}"
+                                                    toolTip="BundleParametros.primer_nombre.funcionario"
                                                     headerText="primer nombre"
                                                     id="tableColumnPrimerNombre1" rendered="false"
                                                     sort="primer_nombre">
@@ -343,6 +349,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnSegundoNombre1}"
+                                                    toolTip="BundleParametros.segundo_nombre.funcionario"
                                                     headerText="segundo nombre"
                                                     id="tableColumnSegundoNombre1" rendered="false"
                                                     sort="segundo_nombre">
@@ -370,6 +377,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnPrimerApellido1}"
+                                                    toolTip="BundleParametros.primer_apellido.funcionario"
                                                     headerText="primer apellido"
                                                     id="tableColumnPrimerApellido1" rendered="false"
                                                     sort="primer_apellido">
@@ -397,6 +405,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnSegundoApellido1}"
+                                                    toolTip="BundleParametros.segundo_apellido.funcionario"
                                                     headerText="segundo apellido"
                                                     id="tableColumnSegundoApellido1" rendered="false"
                                                     sort="segundo_apellido">
@@ -424,6 +433,7 @@
                                                 </webuijsf:tableColumn>
                                                 <webuijsf:tableColumn
                                                     binding="#{Funcionario1.tableColumnApellidoCasada1}"
+                                                    toolTip="BundleParametros.apellido_casada.funcionario"
                                                     headerText="apellido casada"
                                                     id="tableColumnApellidoCasada1" rendered="false"
                                                     sort="apellido_casada">

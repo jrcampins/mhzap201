@@ -10,8 +10,6 @@
  */
 package com.egt.web.configuracion.manual;
 
-import com.egt.base.enums.EnumTipoNodo;
-import com.egt.base.enums.EnumNivelUbicacion;
 import com.egt.base.enums.EnumTipoArea;
 import com.egt.data.generic.xdp2.UbicacionCachedRowSetDataProvider2;
 import com.egt.base.constants.URX2;
@@ -229,14 +227,6 @@ public class AsistentePaginaActualizacionUbicacion {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
-    public Object getOpcionesListaNumeroTipoNodo1() {
-        return JSF.getListaOpciones(EnumTipoNodo.values(), true, false);
-    }
-
-    public Object getOpcionesListaNumeroNivelUbicacion1() {
-        return JSF.getListaOpciones(EnumNivelUbicacion.values(), true, false);
-    }
-
     public Object getOpcionesListaNumeroTipoArea1() {
         return JSF.getListaOpciones(EnumTipoArea.values(), true, false);
     }
@@ -244,204 +234,6 @@ public class AsistentePaginaActualizacionUbicacion {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer la propiedad rendered">
-    public boolean isNullNumeroTipoNodo() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroTipoNodo(rowKey);
-        return value == null;
-    }
-
-    public boolean isNotNullNumeroTipoNodo() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroTipoNodo(rowKey);
-        return value != null;
-    }
-
-    public boolean isNumeroTipoNodoRaiz() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroTipoNodo(rowKey);
-        return value != null && value.equals(EnumTipoNodo.RAIZ.intValue());
-    }
-
-    public boolean isNumeroTipoNodoRama() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroTipoNodo(rowKey);
-        return value != null && value.equals(EnumTipoNodo.RAMA.intValue());
-    }
-
-    public boolean isNumeroTipoNodoHoja() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroTipoNodo(rowKey);
-        return value != null && value.equals(EnumTipoNodo.HOJA.intValue());
-    }
-
-    public boolean isNullNumeroNivelUbicacion() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value == null;
-    }
-
-    public boolean isNotNullNumeroNivelUbicacion() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null;
-    }
-
-    public boolean isNumeroNivelUbicacionDepartamento() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.DEPARTAMENTO.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionDistritoMunicipio() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.DISTRITO_MUNICIPIO.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionBarrioLocalidad() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.BARRIO_LOCALIDAD.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionManzana() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.MANZANA.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel05() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_05.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel06() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_06.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel07() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_07.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel08() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_08.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel09() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_09.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel10() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_10.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel11() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_11.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel12() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_12.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel13() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_13.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel14() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_14.intValue());
-    }
-
-    public boolean isNumeroNivelUbicacionNivel15() {
-        if (bean == null) {
-            return true;
-        }
-        RowKey rowKey = bean.getGestor().getCurrentRowKey();
-        Integer value = bean.getUbicacionDataProvider().getNumeroNivelUbicacion(rowKey);
-        return value != null && value.equals(EnumNivelUbicacion.NIVEL_15.intValue());
-    }
-
     public boolean isNullNumeroTipoArea() {
         if (bean == null) {
             return true;
@@ -491,22 +283,6 @@ public class AsistentePaginaActualizacionUbicacion {
     }
 
     public boolean isGridIdUbicacionSuperiorRendered() {
-        return true;
-    }
-
-    public boolean isGridNumeroTipoNodoRendered() {
-        return true;
-    }
-
-    public boolean isGridNumeroNivelUbicacionRendered() {
-        return true;
-    }
-
-    public boolean isGridSecuenciaUbicacionRendered() {
-        return true;
-    }
-
-    public boolean isGridClaveUbicacionRendered() {
         return true;
     }
 

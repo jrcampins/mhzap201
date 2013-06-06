@@ -28,14 +28,6 @@ public interface PaginaActualizacionUbicacion extends PaginaActualizacion {
 
     TextField getCampoIdUbicacionSuperior1();
 
-    DropDown getListaNumeroTipoNodo1();
-
-    DropDown getListaNumeroNivelUbicacion1();
-
-    TextField getCampoSecuenciaUbicacion1();
-
-    TextField getCampoClaveUbicacion1();
-
     DropDown getListaNumeroTipoArea1();
 
     TextField getCampoCodigoUbicacionJupe1();
