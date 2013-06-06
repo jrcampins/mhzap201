@@ -97,7 +97,7 @@ begin
        existe:=val_xml.existsNode('//return');
       IF existe=0 THEN
         --RETURN 'TRUE';
-        RETURN 'ERROR';
+        RETURN 'Error';
       END IF;
 
      -- return val_xml.extract('//return').getStringVal();

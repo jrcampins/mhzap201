@@ -10,3 +10,5 @@ INSERT INTO condicion_pension (numero_condicion_pension, codigo_condicion_pensio
 VALUES (5, 'Otorgada');
 INSERT INTO condicion_pension (numero_condicion_pension, codigo_condicion_pension)
 VALUES (6, 'Denegada');
+INSERT INTO condicion_pension (numero_condicion_pension, codigo_condicion_pension)
+VALUES (7, 'A excluir JUPE');

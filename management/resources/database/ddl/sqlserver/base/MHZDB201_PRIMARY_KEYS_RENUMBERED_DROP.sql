@@ -166,6 +166,8 @@ ALTER TABLE parametro_global DROP CONSTRAINT PK_parametro_global___
 GO
 ALTER TABLE persona DROP CONSTRAINT PK_persona___
 GO
+ALTER TABLE persona_anotada DROP CONSTRAINT PK_persona_anotada___
+GO
 ALTER TABLE potencial_ben DROP CONSTRAINT PK_potencial_ben___
 GO
 ALTER TABLE proceso DROP CONSTRAINT PK_proceso___

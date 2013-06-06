@@ -205,7 +205,6 @@ ALTER TABLE persona DROP (CONSTRAINT FK_persona_012___);
 ALTER TABLE persona DROP (CONSTRAINT FK_persona_013___);
 ALTER TABLE persona DROP (CONSTRAINT FK_persona_014___);
 ALTER TABLE persona DROP (CONSTRAINT FK_persona_015___);
-ALTER TABLE persona DROP (CONSTRAINT FK_persona_016___);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_001___);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_002___);
 ALTER TABLE potencial_ben DROP (CONSTRAINT FK_potencial_ben_003___);

@@ -410,9 +410,7 @@ ALTER TABLE persona ADD CONSTRAINT FK_persona_013___ FOREIGN KEY (id_ficha_perso
 GO
 ALTER TABLE persona ADD CONSTRAINT FK_persona_014___ FOREIGN KEY (numero_tipo_area) REFERENCES tipo_area (numero_tipo_area) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
-ALTER TABLE persona ADD CONSTRAINT FK_persona_015___ FOREIGN KEY (id_manzana) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION
-GO
-ALTER TABLE persona ADD CONSTRAINT FK_persona_016___ FOREIGN KEY (numero_tipo_act_jupe) REFERENCES tipo_act_jupe (numero_tipo_act_jupe) ON DELETE NO ACTION ON UPDATE NO ACTION
+ALTER TABLE persona ADD CONSTRAINT FK_persona_015___ FOREIGN KEY (numero_tipo_act_jupe) REFERENCES tipo_act_jupe (numero_tipo_act_jupe) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_001___ FOREIGN KEY (id_etnia_indigena) REFERENCES etnia_indigena (id_etnia_indigena) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO

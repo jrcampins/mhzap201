@@ -328,6 +328,8 @@
     <field name="es_potencial_ben_migra_1x34y67" class="java.lang.Integer"/>
     <field name="lote_1x34y68" class="java.lang.Long"/>
     <field name="es_ficha_persona_inactiva" class="java.lang.Integer"/>
+    <field name="es_ficha_persona_importada" class="java.lang.Integer"/>
+    <field name="fecha_importacion" class="java.util.Date"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

@@ -478,7 +478,9 @@ CREATE TABLE ficha_persona
 	monto_ingreso_adicional decimal(16,2),
 	total_ingreso_mensual decimal(16,2),
 	id_potencial_ben bigint,
-	es_ficha_persona_inactiva int NOT NULL
+	es_ficha_persona_inactiva int NOT NULL,
+	es_ficha_persona_importada int NOT NULL,
+	fecha_importacion smalldatetime
 	)
 	ON [PRIMARY]
 GO
@@ -1422,7 +1424,9 @@ CREATE TABLE objecion_ele_pen
 	es_objecion_ele_pen_inactiva int NOT NULL,
 	fecha_ultima_actualizacion smalldatetime,
 	nombre_archivo_ultima_act varchar(200),
-	observaciones varchar(256)
+	observaciones varchar(256),
+	fecha_anulacion smalldatetime,
+	observaciones_anulacion varchar(256)
 	)
 	ON [PRIMARY]
 GO
@@ -1661,19 +1665,16 @@ CREATE TABLE persona
 	id_distrito bigint,
 	numero_tipo_area int,
 	id_barrio bigint,
-	id_manzana bigint,
-	manzana varchar(30),
 	direccion varchar(256),
 	numero_telefono_linea_baja varchar(50),
 	numero_telefono_celular varchar(50),
 	certificado_vida varchar(30),
 	fecha_certificado_vida smalldatetime,
+	dias_vigencia_certificado_vida int,
 	es_certificado_vida_anulado int NOT NULL,
-	comentarios_anul_cer_vida varchar(256),
 	certificado_defuncion varchar(30),
 	fecha_certificado_defuncion smalldatetime,
 	es_cer_defuncion_anulado int NOT NULL,
-	comentarios_anul_cer_defuncion varchar(256),
 	es_persona_con_empleo int NOT NULL,
 	es_persona_con_jubilacion int NOT NULL,
 	es_persona_con_pension int NOT NULL,
@@ -1688,7 +1689,6 @@ CREATE TABLE persona
 	es_persona_con_declaracion_jur int NOT NULL,
 	monto_pension decimal(16,2),
 	numero_condicion_pension int,
-	lugar_solicitud_pension varchar(100),
 	fecha_solicitud_pension smalldatetime,
 	comentarios_solicitud_pension varchar(256),
 	fecha_aprobacion_pension smalldatetime,
@@ -1708,6 +1708,8 @@ CREATE TABLE persona
 	fecha_revocacion_pension smalldatetime,
 	numero_causa_rev_pension int,
 	otra_causa_rev_pension varchar(100),
+	numero_resolucion_rev_pen varchar(50),
+	fecha_resolucion_rev_pen smalldatetime,
 	comentarios_revocacion_pension varchar(256),
 	numero_condicion_reco_pen int,
 	fecha_solicitud_reco_pen smalldatetime,
@@ -1734,7 +1736,24 @@ CREATE TABLE persona
 	fecha_hora_ult_act_jupe datetime,
 	lote bigint,
 	codigo_sime varchar(50),
-	comentarios_entrega_documentos varchar(256)
+	codigo_sime_reco_pen varchar(50),
+	comentarios_entrega_documentos varchar(256),
+	comentarios_insercion_jupe varchar(256)
+	)
+	ON [PRIMARY]
+GO
+
+CREATE TABLE persona_anotada
+	(
+	id_persona_anotada bigint NOT NULL,
+	version_persona_anotada bigint NOT NULL,
+	id_persona bigint NOT NULL,
+	codigo_persona varchar(30) NOT NULL,
+	nombre_persona varchar(100) NOT NULL,
+	id_usuario bigint NOT NULL,
+	codigo_usuario varchar(30) NOT NULL,
+	nombre_usuario varchar(100),
+	fecha_hora_seleccion datetime NOT NULL
 	)
 	ON [PRIMARY]
 GO

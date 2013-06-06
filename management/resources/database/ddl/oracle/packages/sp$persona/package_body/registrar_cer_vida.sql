@@ -25,7 +25,7 @@ begin
     --Persona tiene certificado de defunción registrado: Será necesario anular el certificado de defunción para poder registrar el certificado de vida.
     --
     elsif row_persona.certificado_defuncion is not null and row_persona.es_cer_defuncion_anulado=0 then
-        msg_string := 'ERROR: Persona tiene Certificado de Defuncion Registrado (id='|| persona_consultada||')';
+        msg_string := 'Error: Persona tiene Certificado de Defuncion Registrado (id='|| persona_consultada||')';
         raise_application_error(err_number, msg_string, true);
     --
     --Persona tiene certificado de vida: Se reemplaza por el nuevo certificado.

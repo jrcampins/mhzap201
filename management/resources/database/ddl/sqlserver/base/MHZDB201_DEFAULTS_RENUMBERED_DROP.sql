@@ -84,6 +84,8 @@ ALTER TABLE ficha_persona DROP CONSTRAINT DF_ficha_persona_003___
 GO
 ALTER TABLE ficha_persona DROP CONSTRAINT DF_ficha_persona_004___
 GO
+ALTER TABLE ficha_persona DROP CONSTRAINT DF_ficha_persona_005___
+GO
 ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT DF_filtro_cla_rec_fun_001___
 GO
 ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT DF_filtro_cla_rec_fun_002___
@@ -341,6 +343,8 @@ GO
 ALTER TABLE persona DROP CONSTRAINT DF_persona_016___
 GO
 ALTER TABLE persona DROP CONSTRAINT DF_persona_017___
+GO
+ALTER TABLE persona_anotada DROP CONSTRAINT DF_persona_anotada_001___
 GO
 ALTER TABLE potencial_ben DROP CONSTRAINT DF_potencial_ben_001___
 GO

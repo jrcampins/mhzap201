@@ -82,6 +82,7 @@ DROP TABLE paquete CASCADE;
 DROP TABLE parametro CASCADE;
 DROP TABLE parametro_global CASCADE;
 DROP TABLE persona CASCADE;
+DROP TABLE persona_anotada CASCADE;
 DROP TABLE potencial_ben CASCADE;
 DROP TABLE proceso CASCADE;
 DROP TABLE proveedor_dat_ext CASCADE;

@@ -82,6 +82,7 @@ ALTER TABLE paquete ADD CONSTRAINT PK_paquete___ PRIMARY KEY (id_paquete);
 ALTER TABLE parametro ADD CONSTRAINT PK_parametro___ PRIMARY KEY (id_parametro);
 ALTER TABLE parametro_global ADD CONSTRAINT PK_parametro_global___ PRIMARY KEY (numero_parametro_global);
 ALTER TABLE persona ADD CONSTRAINT PK_persona___ PRIMARY KEY (id_persona);
+ALTER TABLE persona_anotada ADD CONSTRAINT PK_persona_anotada___ PRIMARY KEY (id_persona_anotada);
 ALTER TABLE potencial_ben ADD CONSTRAINT PK_potencial_ben___ PRIMARY KEY (id_potencial_ben);
 ALTER TABLE proceso ADD CONSTRAINT PK_proceso___ PRIMARY KEY (id_proceso);
 ALTER TABLE proveedor_dat_ext ADD CONSTRAINT PK_proveedor_dat_ext___ PRIMARY KEY (id_proveedor_dat_ext);

@@ -83,7 +83,7 @@ BEGIN
          detalle :=  val_xml.extract('//return/item['||Lcntr||']/detalle//text()').getStringVal() ;
 
 
-         IF detalle = 'ERROR: Could not transmit message' THEN
+         IF detalle = 'Error: Could not transmit message' THEN
            --RETURN 'FALSE';
           -- RAISE_APPLICATION_ERROR(-20000,'FALSE');
            RETURN 'FALSE';
@@ -142,8 +142,8 @@ RETURN 'FALSE';
 
 EXCEPTION
  WHEN OTHERS THEN
- --RAISE_APPLICATION_ERROR(-20000, 'ERROR'||SQLERRM);
- RETURN 'ERROR';
- --RETURN 'ERROR';
+ --RAISE_APPLICATION_ERROR(-20000, 'Error'||SQLERRM);
+ RETURN 'Error';
+ --RETURN 'Error';
 
 END;

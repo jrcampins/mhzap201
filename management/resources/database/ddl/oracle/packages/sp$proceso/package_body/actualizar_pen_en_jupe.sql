@@ -256,7 +256,7 @@ function actualizar_pen_en_jupe(param varchar2, sime varchar2) return varchar2 i
                 IF existe=0 THEN
                     anno:=null;
                     mes:=null;
-                    RETURN 'ERROR';
+                    RETURN 'Error';
                  END IF;
 
                  -- return val_xml.extract('//return').getStringVal();

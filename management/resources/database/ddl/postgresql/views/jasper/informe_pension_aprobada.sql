@@ -22,5 +22,4 @@ from
     left outer join  ubicacion ubicacion_1x5 on ubicacion_1x5.id_ubicacion = persona.id_distrito
     left outer join tipo_area tipo_area_1x6 on tipo_area_1x6.numero_tipo_area = persona.numero_tipo_area
     left outer join ubicacion ubicacion_1x7 on ubicacion_1x7.id_ubicacion = persona.id_barrio
-    left outer join ubicacion ubicacion_1x8 on ubicacion_1x8.id_ubicacion = persona.id_manzana
 where persona.es_persona_acreditada_para_pen=1;

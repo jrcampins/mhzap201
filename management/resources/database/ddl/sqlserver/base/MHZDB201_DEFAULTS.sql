@@ -84,6 +84,8 @@ ALTER TABLE ficha_persona ADD CONSTRAINT DF_ficha_persona_003___ DEFAULT (1) FOR
 GO
 ALTER TABLE ficha_persona ADD CONSTRAINT DF_ficha_persona_004___ DEFAULT (0) FOR es_ficha_persona_inactiva
 GO
+ALTER TABLE ficha_persona ADD CONSTRAINT DF_ficha_persona_005___ DEFAULT (0) FOR es_ficha_persona_importada
+GO
 ALTER TABLE filtro_cla_rec_fun ADD CONSTRAINT DF_filtro_cla_rec_fun_001___ DEFAULT (0) FOR version_filtro_cla_rec_fun
 GO
 ALTER TABLE filtro_cla_rec_fun ADD CONSTRAINT DF_filtro_cla_rec_fun_002___ DEFAULT (11) FOR numero_operador_com
@@ -341,6 +343,8 @@ GO
 ALTER TABLE persona ADD CONSTRAINT DF_persona_016___ DEFAULT (0) FOR es_persona_con_copia_cedula
 GO
 ALTER TABLE persona ADD CONSTRAINT DF_persona_017___ DEFAULT (0) FOR es_persona_con_declaracion_jur
+GO
+ALTER TABLE persona_anotada ADD CONSTRAINT DF_persona_anotada_001___ DEFAULT (0) FOR version_persona_anotada
 GO
 ALTER TABLE potencial_ben ADD CONSTRAINT DF_potencial_ben_001___ DEFAULT (0) FOR version_potencial_ben
 GO

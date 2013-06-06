@@ -204,8 +204,7 @@ ALTER TABLE persona ADD CONSTRAINT FK_persona_011___ FOREIGN KEY (numero_causa_r
 ALTER TABLE persona ADD CONSTRAINT FK_persona_012___ FOREIGN KEY (numero_causa_den_reco_pen) REFERENCES causa_den_reco_pen (numero_causa_den_reco_pen) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE persona ADD CONSTRAINT FK_persona_013___ FOREIGN KEY (id_ficha_persona) REFERENCES ficha_persona (id_ficha_persona) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE persona ADD CONSTRAINT FK_persona_014___ FOREIGN KEY (numero_tipo_area) REFERENCES tipo_area (numero_tipo_area) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE persona ADD CONSTRAINT FK_persona_015___ FOREIGN KEY (id_manzana) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE persona ADD CONSTRAINT FK_persona_016___ FOREIGN KEY (numero_tipo_act_jupe) REFERENCES tipo_act_jupe (numero_tipo_act_jupe) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE persona ADD CONSTRAINT FK_persona_015___ FOREIGN KEY (numero_tipo_act_jupe) REFERENCES tipo_act_jupe (numero_tipo_act_jupe) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_001___ FOREIGN KEY (id_etnia_indigena) REFERENCES etnia_indigena (id_etnia_indigena) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_002___ FOREIGN KEY (id_departamento) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE potencial_ben ADD CONSTRAINT FK_potencial_ben_003___ FOREIGN KEY (id_distrito) REFERENCES ubicacion (id_ubicacion) ON DELETE NO ACTION ON UPDATE NO ACTION;

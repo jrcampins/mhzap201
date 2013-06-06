@@ -210,11 +210,577 @@ GO
 exec sp_addextendedproperty N'MS_Description', N'Monto total del ingreso mensual que habitualmente recibe por cualquier fuente (suma de todos los montos anteriores)', N'user', N'dbo', N'table', N'ficha_persona', N'column', N'total_ingreso_mensual'
 GO
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- log_imp_deu
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Número de NIS (Si aplica)', N'user', N'dbo', N'table', N'log_imp_deu', N'column', N'referencia'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- log_imp_hog
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Día de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p20d'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Mes de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p20m'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Año de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p20a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Funcionario censista', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p17'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Funcionario cupervisor', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p18'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Funcionario crítico decodificador', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'var00001'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Funcionario Digitador', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p19'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Observaciones de Campo', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'observaciones'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de Zona ó Huso de la ubicación de la vivienda (según GPS)', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'utm'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Banda ó Franja de la ubicación de la vivienda (según GPS)  ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'gps'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Distancia vertical al Norte de la ubicación de la vivienda (según GPS) ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'orden'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Distancia horizontal al Este de la ubicación de la vivienda (según GPS)', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'coordx'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código Departamento', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p01a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código Distrito', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p01b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código Barrio', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p01c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número Formulario', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p01d'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número Vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p02'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número Hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p03'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre Departamento', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p04'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre Distrito', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p05'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de Área', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p06'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre de Barrio', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p08'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre de Manzana', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p07'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dirección de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p09'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de personas que viven en el hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p14'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de hombres que viven en el hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p15'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de mujeres que viven el hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p16'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en las paredes exteriores', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p24'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en el piso ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p25'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en el techo', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p26'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Condición de ocupación de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p27'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra condición de ocupación de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p27e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de piezas de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p28a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de dormitorios de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p28b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene pieza para cocinar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p29'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Combustible que se utiliza en forma habitual para cocinar  ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p30'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de pieza para bañarse', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p31'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de desagüe que tiene el baño ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p32'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Procedencia del agua que se utiliza en l a vivienda  ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p33'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Lugar de abastecimiento del agua que se utiliza en l a vivienda  ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p34'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de luz eléctrica', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p35'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Forma de desechar la basura ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p36'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene teléfono celular  ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p37'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de teléfono celular', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'nro_celular'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene teléfono línea baja', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p38'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de teléfono línea baja', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'nro_linea_baja'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de heladera en el hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p391'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de lavarropas en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p392'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de termocalefón en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p393'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de aire acondicionado en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p394'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de automóvil o camioneta en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p395'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de camión en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p396'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de motocicleta en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p397'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p42n'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de cédula del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p42ci'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Letra de cédula del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'letra_ci'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p43'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre del respondente', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'var00002'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de cédula del respondente', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'var00003'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Letra de cédula del respondente', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'var00004'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del respondente', N'user', N'dbo', N'table', N'log_imp_hog', N'column', N'p104'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- log_imp_hog_eec
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Código de departamento', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'dptod'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de distrito', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'distritod'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de departamento+distrito', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'distripg'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de area', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'area'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código del barrio', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'barrio'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre de la manzana', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'manzana'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de formulario', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'formulario'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'vivi'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'hogar'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dirección de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'direccion'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de la casa', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'nro_de'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de teléfono', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'telefono'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Fecha de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'fecha'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Día de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'dia'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Mes de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'mes'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Año de la entrevista', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'ano'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de personas que viven en el hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v10t'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de hombres que viven en el hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v11'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Total de mujeres que viven el hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v12'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en las paredes exteriores', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v13'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en el piso ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v14'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Material predominante en el techo', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v15'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Condición de ocupación de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v16'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra condición de ocupación de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v16_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de piezas de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v17a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de dormitorios de la vivienda', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v17b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene pieza para cocinar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v18'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Combustible que se utiliza en forma habitual para cocinar  ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v19'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de pieza para bañarse', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v20'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de desagüe que tiene el baño ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v21'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Procedencia del agua que se utiliza en l a vivienda  ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v22'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Lugar de abastecimiento del agua que se utiliza en l a vivienda  ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v23'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de luz eléctrica', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v24'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Forma de desechar la basura ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v25'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene teléfono celular  ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v26'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de teléfono celular', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v26esp_celular'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene teléfono línea baja', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v27'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de teléfono línea baja', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v27esp_linea'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de heladera en el hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_1'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de lavarropas en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_2'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de termocalefón en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_3'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de aire acondicionado en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_4'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de automóvil o camioneta en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_5'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de camión en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_6'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Dispone de motocicleta en el hogar ', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_7'
+GO
+exec sp_addextendedproperty N'MS_Description', N'No dispone de ninguno de los otros bienes', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v28_8'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'v29nombre_jefe'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de cédula del jefe del hogar', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'cedulajefe'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de ficha persona', N'user', N'dbo', N'table', N'log_imp_hog_eec', N'column', N'var00001'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- log_imp_per
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Código del departamento', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p01a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código del distrito', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p01b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código del barrio', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p01c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de formulario', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p01d'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de vivienda', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p02'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de hogar', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p03'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del respondente', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p104'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden de la persona censada', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p43'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Primer nombre de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p45a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Segundo nombre de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p45b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Primer apellido de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p44a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Segundo apellido de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p44b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Apellido de casada de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00001'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Apodo de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00002'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Edad de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p46'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Sexo de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p47'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Estado civil de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00030'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Parentesco de la persona con el jefe del hogar', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p48'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Es la persona miembro del hogar', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p49'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del cónyuge de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p50a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del padre de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p50b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden de la madre de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p50c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de cédula de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p51'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Letra de la cédula de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00003'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de excepción de cédula de identidad de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00004'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Día de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p52d'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Mes de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p52m'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Año de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p52a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Departamento en que nació la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p53a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Distrito en que nació la persona', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p53b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código del distrito de nacimiento', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p53c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de área del lugar de nacimiento', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p53z'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Idioma que habla mayormente', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p54'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otro idioma', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p54e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Asistió a clases el año pasado', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p56'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Por qué no asistió a clases el año pasado', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p58'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otro motivo de no asistencia', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p58e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Piensa matricularse este año', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p59'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Último grado o curso aprobado', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p60'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nivel del último grado o curso aprobado', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p61'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Realizó curso no formal', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p62'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene seguro médico vigente', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p63'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Estuvo enfermo o accidentado', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p64'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Que enfermedad tuvo', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p65'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra enfermedad', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p65e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Qué enfermedad crónica padece', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p66'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra enfermedad crónica', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p66e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Recibió atención por la enfermedad o accidente', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p67'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Por qué no recibió atención', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p68'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otro motivo de no atención', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p68e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene carné de vacunación', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p73'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Clase de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p74'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra clase de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00006'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de causa de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00007'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra causa de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00008'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para caminar', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00009'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para vestirse', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00010'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para bañarse', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00011'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para comer', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00031'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para ir a la cama', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00012'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para ir al baño', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00013'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Realizó alguna actividad económica', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p86'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Razón por la que no trabajó', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p87'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra razón por la que no trabajó', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p87e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Ocupación principal', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p88'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra ocupación principal', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p88e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo Relación laboral', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p91'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ocupación principal', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00017'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ocupacion secundaria', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00018'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto  de ingreso por otras ocupaciones', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00019'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por alquileres', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00020'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por intereses', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00021'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ayuda familiar dentro del país', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00022'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ayuda familiar del exterior', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00023'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por jubilacion', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00024'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por pensiones', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00025'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por tekopora', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00026'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por otros programas', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00027'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso adicional', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'var00028'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Ingreso total mensual', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'p92'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Indice Calidad Vida', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'icv'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Ficha Activa', N'user', N'dbo', N'table', N'log_imp_per', N'column', N'ficha_activa'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- log_imp_per_eec
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Código de departamento', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'dptod'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de distrito', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'distritod'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de departamento+distrito', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'distripg'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de area', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'area'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código del barrio', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'barrio'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombre de la manzana', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'manzana'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de formulario', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'formulario'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de vivienda', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'vivi'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de hogar', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'hogar'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del respondente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'orden'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nombres de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p30'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Apellidos de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p31'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Edad de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p32'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Sexo de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p33'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Parentesco de la persona con el jefe del hogar', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p34'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Es la persona miembro del hogar', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p35'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del cónyuge de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p36_orden_conyugue'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden del padre de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p36_orden_padre'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Orden de la madre de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p36_orden_madre'
+GO
+exec sp_addextendedproperty N'MS_Description', N'N° control', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p37'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de cédula de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p37_cedula'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Día de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p38_dia'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Mes de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p38_mes'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Año de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p38_ano'
+GO
+exec sp_addextendedproperty N'MS_Description', N'País de nacimiento de la persona', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p39pais'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de departamento', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p39dpto'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de distrito', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p39dist'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo de área del lugar de nacimiento', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p39area'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Idioma que habla mayormente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p40_idioma'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otro idioma', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p40otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Asistió a clases el año pasado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p41'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Por qué no asistió a clases el año pasado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p42'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Está matriculado actualmente en una Institución Educativa', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p43'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Grado+nivel último curso aprobado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p44_45t'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Último grado o curso aprobado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p44'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Nivel del último grado o curso aprobado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p45'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Realizó curso no formal', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p46'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene seguro médico vigente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p47'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Estuvo enfermo o accidentado', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p48'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Que enfermedad tuvo', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p49'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra enfermedad', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p49_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Qué enfermedad crónica padece', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p50'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra enfermedad crónica', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p50_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Recibió atención por la enfermedad o accidente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p51'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Por qué no recibió atención', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p52'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otro motivo de no atención', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p52_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene carné de vacunación', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p53'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene impedimento físico de forma permanente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p54'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Impedimento físico permanente', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p54a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra clase de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p54_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Número de causa de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p55'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra causa de impedimento físico', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p55_otr'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para caminar', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p56'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para vestirse', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p57'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para bañarse', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p58'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para comer', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p59'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para ir a la cama', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p60'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tiene dificultad para ir al baño', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p61'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Realizó alguna actividad económica', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p62'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Razón por la que no trabajó', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p63'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Otra razón por la que no trabajó', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p63_especificar'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Ocupación principal', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p64des'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de ocupación principal', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p64c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Negocio lugar de trabajo', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p65des'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Código de rama de actividades', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p65c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Tipo Relación laboral', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p66'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ocupación principal', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67a'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ocupacion secundaria', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67b'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto  de ingreso por otras ocupaciones', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67c'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por alquileres', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67d'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por intereses', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67e'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ayuda familiar dentro del país', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67f'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por ayuda familiar del exterior', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67g'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por jubilacion', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67h'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por pensiones', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67i'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por tekopora', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67j'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso por otros programas', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67k'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Monto de ingreso adicional', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67l'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Ingreso total mensual', N'user', N'dbo', N'table', N'log_imp_per_eec', N'column', N'p67tot'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- nivel_educativo
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 exec sp_addextendedproperty N'MS_Description', N'Número del primer curso del nivel', N'user', N'dbo', N'table', N'nivel_educativo', N'column', N'primer_curso'
 GO
 exec sp_addextendedproperty N'MS_Description', N'Número del último curso del nivel', N'user', N'dbo', N'table', N'nivel_educativo', N'column', N'ultimo_curso'
+GO
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- objecion_ele_pen
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+exec sp_addextendedproperty N'MS_Description', N'Fecha de anulación de la objeción', N'user', N'dbo', N'table', N'objecion_ele_pen', N'column', N'fecha_anulacion'
+GO
+exec sp_addextendedproperty N'MS_Description', N'Motivo por el cual se anula la objeción', N'user', N'dbo', N'table', N'objecion_ele_pen', N'column', N'observaciones_anulacion'
 GO
 -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- persona

@@ -412,8 +412,6 @@ ALTER TABLE persona DROP CONSTRAINT FK_persona_014___
 GO
 ALTER TABLE persona DROP CONSTRAINT FK_persona_015___
 GO
-ALTER TABLE persona DROP CONSTRAINT FK_persona_016___
-GO
 ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_001___
 GO
 ALTER TABLE potencial_ben DROP CONSTRAINT FK_potencial_ben_002___

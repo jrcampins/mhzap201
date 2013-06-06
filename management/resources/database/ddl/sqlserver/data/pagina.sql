@@ -171,6 +171,16 @@ VALUES (201000005, 11, 'Persona5', 'Consulta de Personas', 'Consulta de Personas
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (201000006, 11, 'Persona6', 'Consulta de Personas', 'Consulta de Personas', '/faces/Persona6.jsp', 52000, 0, 6, 2010001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (201300001, 1, 'PersonaAnotada1', 'Registro de Personas anotadas', 'Registro de Personas anotadas', '/faces/PersonaAnotada1.jsp', 42110, 0, 1, 2013001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (201300002, 1, 'PersonaAnotada2', 'Registro de Personas anotadas', 'Registro de Personas anotadas', '/faces/PersonaAnotada2.jsp', 42110, 0, 2, 2013001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (201300004, 10, 'PersonaAnotada4', 'Ejecución de Procesos de Personas anotadas', 'Ejecución de Procesos de Personas anotadas', '/faces/PersonaAnotada4.jsp', 51000, 0, 4, 2013001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (201300005, 11, 'PersonaAnotada5', 'Consulta de Personas anotadas', 'Consulta de Personas anotadas', '/faces/PersonaAnotada5.jsp', 52000, 0, 5, 2013001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (201300006, 11, 'PersonaAnotada6', 'Consulta de Personas anotadas', 'Consulta de Personas anotadas', '/faces/PersonaAnotada6.jsp', 52000, 0, 6, 2013001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (202000001, 1, 'Ubicacion1', 'Registro de Ubicaciones', 'Registro de Ubicaciones', '/faces/Ubicacion1.jsp', 41300, 0, 1, 2020001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (202000002, 1, 'Ubicacion2', 'Registro de Ubicaciones', 'Registro de Ubicaciones', '/faces/Ubicacion2.jsp', 41300, 0, 2, 2020001, NULL, NULL);
@@ -260,6 +270,8 @@ INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, des
 VALUES (324000005, 11, 'VisitaCenso5', 'Consulta de VisItas de Censo', 'Consulta de VisItas de Censo', '/faces/VisitaCenso5.jsp', 52000, 0, 5, 3240001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (324000006, 11, 'VisitaCenso6', 'Consulta de VisItas de Censo', 'Consulta de VisItas de Censo', '/faces/VisitaCenso6.jsp', 52000, 0, 6, 3240001, NULL, NULL);
+INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
+VALUES (324500004, 10, 'ObjecionElePen4', 'Ejecución de Procesos de Objeciones de Elegibilidad de Pensión', 'Ejecución de Procesos de Objeciones de Elegibilidad de Pensión', '/faces/ObjecionElePen4.jsp', 51000, 0, 4, 3245001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)
 VALUES (324500005, 11, 'ObjecionElePen5', 'Consulta de Objeciones de Elegibilidad de Pensión', 'Consulta de Objeciones de Elegibilidad de Pensión', '/faces/ObjecionElePen5.jsp', 52000, 0, 5, 3245001, NULL, NULL);
 INSERT INTO pagina (id_pagina, version_pagina, codigo_pagina, nombre_pagina, descripcion_pagina, url_pagina, id_aplicacion, es_publica, numero_tipo_pagina, id_dominio, id_dominio_maestro, id_parametro)

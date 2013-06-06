@@ -64,6 +64,7 @@ ALTER TABLE ficha_persona ADD CONSTRAINT CC_ficha_persona_003___ CHECK (numero_c
 ALTER TABLE ficha_persona ADD CONSTRAINT CC_ficha_persona_004___ CHECK (letra_cedula is null or letra_cedula >= 'A');
 ALTER TABLE ficha_persona ADD CONSTRAINT CC_ficha_persona_005___ CHECK (letra_cedula is null or letra_cedula <= 'Z');
 ALTER TABLE ficha_persona ADD CONSTRAINT CC_ficha_persona_006___ CHECK (es_ficha_persona_inactiva >= 0 and es_ficha_persona_inactiva <= 1);
+ALTER TABLE ficha_persona ADD CONSTRAINT CC_ficha_persona_007___ CHECK (es_ficha_persona_importada >= 0 and es_ficha_persona_importada <= 1);
 ALTER TABLE filtro_cla_rec_fun ADD CONSTRAINT TC_filtro_cla_rec_fun_001___ CHECK (id_clase_recurso_par_valor is null or valor is null);
 ALTER TABLE filtro_cla_rec_par ADD CONSTRAINT TC_filtro_cla_rec_par_001___ CHECK (id_clase_recurso_par_valor is null or valor is null);
 ALTER TABLE filtro_cla_rec_sec ADD CONSTRAINT TC_filtro_cla_rec_sec_001___ CHECK (id_clase_recurso_par_valor is null or valor is null);

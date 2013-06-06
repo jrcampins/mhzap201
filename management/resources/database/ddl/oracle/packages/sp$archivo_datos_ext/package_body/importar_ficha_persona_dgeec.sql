@@ -367,7 +367,7 @@ begin
             new_ficha_persona.edad:=to_number(replace(current_row.P32,'.'));
             --Sexo (P33)
             new_ficha_persona.numero_sexo_persona:=sp$utils.extract_sexo_ficha_persona(current_row.P33);
-            --Estado civil (VAR00030) ERROR DE EQUIVALENCIA
+            --Estado civil (VAR00030) Error de equivalencia
             new_ficha_persona.numero_estado_civil:=null;
             --Parentesco con el Jefe del Hogar (P48)
             new_ficha_persona.numero_tipo_persona_hogar :=sp$utils.extract_tipo_persona_hogar(current_row.P34);
@@ -418,7 +418,7 @@ begin
                 --Otro motivo de inasistencia (P58E)
                 new_ficha_persona.otro_motivo_ina_esc:='No especificado';
             end if;
-            --Piensa Matricularse este año (P59) ERROR DE EQUIVALENCIA
+            --Piensa Matricularse este año (P59) Error de equivalencia
             new_ficha_persona.numero_siono_matriculacion_esc:=sp$utils.extract_siono(current_row.p43);
             --Ultimo grado aprobado (P60)
             new_ficha_persona.ultimo_curso_aprobado:=sp$utils.extract_ultimo_curso_aprobado(current_row.p44);
@@ -458,7 +458,7 @@ begin
                 --Otra clase de impedimento (VAR00006)
                 new_ficha_persona.otra_clase_impedimento  :=current_row.p54a;
             end if;
-            --Causa de impedimento (VAR00007) ERROR DE EQUIVALENCIA
+            --Causa de impedimento (VAR00007) Error de equivalencia
             new_ficha_persona.numero_causa_impedimento  :=sp$utils.extract_causa_impedimento(current_row.p55);
             if new_ficha_persona.numero_causa_impedimento=5 then
                 --Otra causa de impedimento (VAR00008)
@@ -488,7 +488,7 @@ begin
             new_ficha_persona.descripcion_ocupacion_prin:=current_row.p64des;
             --Descripción de dedicacion principal (P88E)
             new_ficha_persona.descripcion_dedicacion_prin:=current_row.p65des;
-            --Tipo de relacion laboral (P91) ERROR DE EQUIVALENCIA
+            --Tipo de relacion laboral (P91) Error de equivalencia
             new_ficha_persona.numero_tipo_relacion_lab:=sp$utils.extract_tipo_relacion_lab(current_row.P66);
             --Monto de Ingreso ocupacion principal (VAR00017)
             new_ficha_persona.monto_ingreso_ocupacion_prin:=to_number(replace(current_row.p67a,'.'));

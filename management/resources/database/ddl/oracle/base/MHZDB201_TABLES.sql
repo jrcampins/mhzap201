@@ -565,7 +565,9 @@ CREATE TABLE ficha_persona
 	monto_ingreso_adicional NUMBER(16,2),
 	total_ingreso_mensual NUMBER(16,2),
 	id_potencial_ben NUMBER(19),
-	es_ficha_persona_inactiva NUMBER(10) NOT NULL
+	es_ficha_persona_inactiva NUMBER(10) NOT NULL,
+	es_ficha_persona_importada NUMBER(10) NOT NULL,
+	fecha_importacion DATE
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
@@ -1635,7 +1637,9 @@ CREATE TABLE objecion_ele_pen
 	es_objecion_ele_pen_inactiva NUMBER(10) NOT NULL,
 	fecha_ultima_actualizacion DATE,
 	nombre_archivo_ultima_act VARCHAR2(400),
-	observaciones VARCHAR2(4000)
+	observaciones VARCHAR2(4000),
+	fecha_anulacion DATE,
+	observaciones_anulacion VARCHAR2(4000)
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
@@ -1910,19 +1914,16 @@ CREATE TABLE persona
 	id_distrito NUMBER(19),
 	numero_tipo_area NUMBER(10),
 	id_barrio NUMBER(19),
-	id_manzana NUMBER(19),
-	manzana VARCHAR2(60),
 	direccion VARCHAR2(4000),
 	numero_telefono_linea_baja VARCHAR2(100),
 	numero_telefono_celular VARCHAR2(100),
 	certificado_vida VARCHAR2(60),
 	fecha_certificado_vida DATE,
+	dias_vigencia_certificado_vida NUMBER(10),
 	es_certificado_vida_anulado NUMBER(10) NOT NULL,
-	comentarios_anul_cer_vida VARCHAR2(4000),
 	certificado_defuncion VARCHAR2(60),
 	fecha_certificado_defuncion DATE,
 	es_cer_defuncion_anulado NUMBER(10) NOT NULL,
-	comentarios_anul_cer_defuncion VARCHAR2(4000),
 	es_persona_con_empleo NUMBER(10) NOT NULL,
 	es_persona_con_jubilacion NUMBER(10) NOT NULL,
 	es_persona_con_pension NUMBER(10) NOT NULL,
@@ -1937,7 +1938,6 @@ CREATE TABLE persona
 	es_persona_con_declaracion_jur NUMBER(10) NOT NULL,
 	monto_pension NUMBER(16,2),
 	numero_condicion_pension NUMBER(10),
-	lugar_solicitud_pension VARCHAR2(200),
 	fecha_solicitud_pension DATE,
 	comentarios_solicitud_pension VARCHAR2(4000),
 	fecha_aprobacion_pension DATE,
@@ -1957,6 +1957,8 @@ CREATE TABLE persona
 	fecha_revocacion_pension DATE,
 	numero_causa_rev_pension NUMBER(10),
 	otra_causa_rev_pension VARCHAR2(200),
+	numero_resolucion_rev_pen VARCHAR2(100),
+	fecha_resolucion_rev_pen DATE,
 	comentarios_revocacion_pension VARCHAR2(4000),
 	numero_condicion_reco_pen NUMBER(10),
 	fecha_solicitud_reco_pen DATE,
@@ -1983,7 +1985,27 @@ CREATE TABLE persona
 	fecha_hora_ult_act_jupe DATE,
 	lote NUMBER(19),
 	codigo_sime VARCHAR2(100),
-	comentarios_entrega_documentos VARCHAR2(4000)
+	codigo_sime_reco_pen VARCHAR2(100),
+	comentarios_entrega_documentos VARCHAR2(4000),
+	comentarios_insercion_jupe VARCHAR2(4000)
+	)
+SEGMENT CREATION IMMEDIATE
+PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+TABLESPACE MHZAP201TS1;
+
+CREATE TABLE persona_anotada
+	(
+	id_persona_anotada NUMBER(19) NOT NULL,
+	version_persona_anotada NUMBER(19) NOT NULL,
+	id_persona NUMBER(19) NOT NULL,
+	codigo_persona VARCHAR2(60) NOT NULL,
+	nombre_persona VARCHAR2(200) NOT NULL,
+	id_usuario NUMBER(19) NOT NULL,
+	codigo_usuario VARCHAR2(60) NOT NULL,
+	nombre_usuario VARCHAR2(200),
+	fecha_hora_seleccion DATE NOT NULL
 	)
 SEGMENT CREATION IMMEDIATE
 PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING

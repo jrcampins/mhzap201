@@ -166,6 +166,8 @@ DROP TABLE parametro_global
 GO
 DROP TABLE persona
 GO
+DROP TABLE persona_anotada
+GO
 DROP TABLE potencial_ben
 GO
 DROP TABLE proceso

@@ -137,7 +137,7 @@ begin
                 where id_log_pro_acr_pot_ben=table_log(i).id_log_pro_acr_pot_ben;
             end if;
         exception when others then
-            mensaje:='ERROR: '||SQLERRM;
+            mensaje:='Error: '||SQLERRM;
             update log_pro_acr_pot_ben 
                 set es_procesado=1, 
                 observacion=mensaje,

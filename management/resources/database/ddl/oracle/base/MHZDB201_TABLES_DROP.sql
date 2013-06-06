@@ -82,6 +82,7 @@ exec xsp.dropone('TABLE','paquete');
 exec xsp.dropone('TABLE','parametro');
 exec xsp.dropone('TABLE','parametro_global');
 exec xsp.dropone('TABLE','persona');
+exec xsp.dropone('TABLE','persona_anotada');
 exec xsp.dropone('TABLE','potencial_ben');
 exec xsp.dropone('TABLE','proceso');
 exec xsp.dropone('TABLE','proveedor_dat_ext');

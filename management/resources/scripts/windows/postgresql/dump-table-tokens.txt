@@ -1,5 +1,6 @@
 ficha_hogar  
 ficha_persona  
 persona  
+persona_anotada  
 potencial_ben  
 visita_censo  

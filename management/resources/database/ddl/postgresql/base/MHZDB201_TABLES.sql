@@ -420,7 +420,9 @@ CREATE TABLE ficha_persona
 	monto_ingreso_adicional decimal(16,2),
 	total_ingreso_mensual decimal(16,2),
 	id_potencial_ben bigint,
-	es_ficha_persona_inactiva int NOT NULL
+	es_ficha_persona_inactiva int NOT NULL,
+	es_ficha_persona_importada int NOT NULL,
+	fecha_importacion timestamp with time zone
 	);
 
 CREATE TABLE filtro_cla_rec_fun
@@ -1280,7 +1282,9 @@ CREATE TABLE objecion_ele_pen
 	es_objecion_ele_pen_inactiva int NOT NULL,
 	fecha_ultima_actualizacion timestamp with time zone,
 	nombre_archivo_ultima_act varchar(200),
-	observaciones varchar
+	observaciones varchar,
+	fecha_anulacion timestamp with time zone,
+	observaciones_anulacion varchar
 	);
 
 CREATE TABLE opcion_binaria
@@ -1495,19 +1499,16 @@ CREATE TABLE persona
 	id_distrito bigint,
 	numero_tipo_area int,
 	id_barrio bigint,
-	id_manzana bigint,
-	manzana varchar(30),
 	direccion varchar,
 	numero_telefono_linea_baja varchar(50),
 	numero_telefono_celular varchar(50),
 	certificado_vida varchar(30),
 	fecha_certificado_vida timestamp with time zone,
+	dias_vigencia_certificado_vida int,
 	es_certificado_vida_anulado int NOT NULL,
-	comentarios_anul_cer_vida varchar,
 	certificado_defuncion varchar(30),
 	fecha_certificado_defuncion timestamp with time zone,
 	es_cer_defuncion_anulado int NOT NULL,
-	comentarios_anul_cer_defuncion varchar,
 	es_persona_con_empleo int NOT NULL,
 	es_persona_con_jubilacion int NOT NULL,
 	es_persona_con_pension int NOT NULL,
@@ -1522,7 +1523,6 @@ CREATE TABLE persona
 	es_persona_con_declaracion_jur int NOT NULL,
 	monto_pension decimal(16,2),
 	numero_condicion_pension int,
-	lugar_solicitud_pension varchar(100),
 	fecha_solicitud_pension timestamp with time zone,
 	comentarios_solicitud_pension varchar,
 	fecha_aprobacion_pension timestamp with time zone,
@@ -1542,6 +1542,8 @@ CREATE TABLE persona
 	fecha_revocacion_pension timestamp with time zone,
 	numero_causa_rev_pension int,
 	otra_causa_rev_pension varchar(100),
+	numero_resolucion_rev_pen varchar(50),
+	fecha_resolucion_rev_pen timestamp with time zone,
 	comentarios_revocacion_pension varchar,
 	numero_condicion_reco_pen int,
 	fecha_solicitud_reco_pen timestamp with time zone,
@@ -1568,7 +1570,22 @@ CREATE TABLE persona
 	fecha_hora_ult_act_jupe timestamp with time zone,
 	lote bigint,
 	codigo_sime varchar(50),
-	comentarios_entrega_documentos varchar
+	codigo_sime_reco_pen varchar(50),
+	comentarios_entrega_documentos varchar,
+	comentarios_insercion_jupe varchar
+	);
+
+CREATE TABLE persona_anotada
+	(
+	id_persona_anotada bigint NOT NULL,
+	version_persona_anotada bigint NOT NULL,
+	id_persona bigint NOT NULL,
+	codigo_persona varchar(30) NOT NULL,
+	nombre_persona varchar(100) NOT NULL,
+	id_usuario bigint NOT NULL,
+	codigo_usuario varchar(30) NOT NULL,
+	nombre_usuario varchar(100),
+	fecha_hora_seleccion timestamp with time zone NOT NULL
 	);
 
 CREATE TABLE potencial_ben

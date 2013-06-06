@@ -17,8 +17,6 @@ VALUES (20100230001, 0, 201002300, 202000500, 11, 201002200, NULL);
 INSERT INTO filtro_cla_rec_par (id_filtro_cla_rec_par, version_filtro_cla_rec_par, id_clase_recurso_par, id_clase_recurso_par_columna, numero_operador_com, id_clase_recurso_par_valor, valor)
 VALUES (20100250001, 0, 201002500, 202000500, 11, 201002300, NULL);
 INSERT INTO filtro_cla_rec_par (id_filtro_cla_rec_par, version_filtro_cla_rec_par, id_clase_recurso_par, id_clase_recurso_par_columna, numero_operador_com, id_clase_recurso_par_valor, valor)
-VALUES (20100260001, 0, 201002600, 202000500, 11, 201002500, NULL);
-INSERT INTO filtro_cla_rec_par (id_filtro_cla_rec_par, version_filtro_cla_rec_par, id_clase_recurso_par, id_clase_recurso_par_columna, numero_operador_com, id_clase_recurso_par_valor, valor)
 VALUES (32010170001, 0, 320101700, 202000500, 1, NULL, NULL);
 INSERT INTO filtro_cla_rec_par (id_filtro_cla_rec_par, version_filtro_cla_rec_par, id_clase_recurso_par, id_clase_recurso_par_columna, numero_operador_com, id_clase_recurso_par_valor, valor)
 VALUES (32010180001, 0, 320101800, 202000500, 11, 320101700, NULL);

@@ -82,6 +82,7 @@ ALTER TABLE paquete DROP CONSTRAINT PK_paquete___;
 ALTER TABLE parametro DROP CONSTRAINT PK_parametro___;
 ALTER TABLE parametro_global DROP CONSTRAINT PK_parametro_global___;
 ALTER TABLE persona DROP CONSTRAINT PK_persona___;
+ALTER TABLE persona_anotada DROP CONSTRAINT PK_persona_anotada___;
 ALTER TABLE potencial_ben DROP CONSTRAINT PK_potencial_ben___;
 ALTER TABLE proceso DROP CONSTRAINT PK_proceso___;
 ALTER TABLE proveedor_dat_ext DROP CONSTRAINT PK_proveedor_dat_ext___;

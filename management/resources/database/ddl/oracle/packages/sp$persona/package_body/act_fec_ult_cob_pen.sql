@@ -22,7 +22,7 @@ begin
     --Persona debe tener pensión aprobada
     --
     elsif row_persona.numero_condicion_pension is null or row_persona.numero_condicion_pension<>2 then
-        msg_string := 'ERROR: Persona no tiene pensión aprobada (id='|| persona_consultada||')';
+        msg_string := 'Error: Persona no tiene pensión aprobada (id='|| persona_consultada||')';
         raise_application_error(err_number, msg_string, true);
     --
     --Se reemplaza la fecha de cobro por la recibida

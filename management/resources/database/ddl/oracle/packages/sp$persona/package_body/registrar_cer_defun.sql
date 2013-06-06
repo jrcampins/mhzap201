@@ -25,7 +25,7 @@ begin
     --Persona ya tiene certificado de defuncion: no hay nada que procesar.
     --
     elsif row_persona.certificado_defuncion is not null and row_persona.es_cer_defuncion_anulado=0 then
-        mensaje := 'ERROR: Persona ya tiene Certificado de Defunción Registrado ';
+        mensaje := 'Error: Persona ya tiene Certificado de Defunción Registrado ';
     --
     --Pension ya aprobada: Se revoca por fallecimiento
     --

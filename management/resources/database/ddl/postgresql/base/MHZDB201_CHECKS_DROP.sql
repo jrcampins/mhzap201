@@ -64,6 +64,7 @@ ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_003___;
 ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_004___;
 ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_005___;
 ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_006___;
+ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_007___;
 ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT TC_filtro_cla_rec_fun_001___;
 ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT TC_filtro_cla_rec_par_001___;
 ALTER TABLE filtro_cla_rec_sec DROP CONSTRAINT TC_filtro_cla_rec_sec_001___;

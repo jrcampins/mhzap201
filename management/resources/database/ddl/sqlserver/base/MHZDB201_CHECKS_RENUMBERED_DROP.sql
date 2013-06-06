@@ -130,6 +130,8 @@ ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_005___
 GO
 ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_006___
 GO
+ALTER TABLE ficha_persona DROP CONSTRAINT CC_ficha_persona_007___
+GO
 ALTER TABLE filtro_cla_rec_fun DROP CONSTRAINT TC_filtro_cla_rec_fun_001___
 GO
 ALTER TABLE filtro_cla_rec_par DROP CONSTRAINT TC_filtro_cla_rec_par_001___

@@ -258,7 +258,9 @@ SELECT
 		potencial_ben_1x34.indice_calidad_vida AS indice_calidad_vida_1x34y66,
 		potencial_ben_1x34.es_potencial_ben_migrado AS es_potencial_ben_migra_1x34y67,
 		potencial_ben_1x34.lote AS lote_1x34y68,
-	ficha_persona.es_ficha_persona_inactiva AS es_ficha_persona_inactiva
+	ficha_persona.es_ficha_persona_inactiva AS es_ficha_persona_inactiva,
+	ficha_persona.es_ficha_persona_importada AS es_ficha_persona_importada,
+	ficha_persona.fecha_importacion AS fecha_importacion
 FROM
 	ficha_persona ficha_persona
 	INNER JOIN ficha_hogar ficha_hogar_1x1 ON ficha_hogar_1x1.id_ficha_hogar = ficha_persona.id_ficha_hogar
