@@ -160,7 +160,6 @@ begin
                     p.id_distrito=row_ficha_hogar.id_distrito,
                     p.id_barrio=row_ficha_hogar.id_barrio,
                     p.numero_tipo_area=row_ficha_hogar.numero_tipo_area,
-                    p.manzana=row_potencial_ben.manzana,
                     p.direccion=row_potencial_ben.direccion,
                     p.numero_telefono_linea_baja=row_ficha_hogar.numero_telefono_linea_baja,
                     p.numero_telefono_celular=row_ficha_hogar.numero_telefono_celular,
@@ -175,7 +174,6 @@ begin
                     p.id_distrito=row_potencial_ben.id_distrito,
                     p.id_barrio=row_potencial_ben.id_barrio,
                     p.numero_tipo_area=row_potencial_ben.numero_tipo_area,
-                    p.manzana=row_potencial_ben.manzana,
                     p.direccion=row_potencial_ben.direccion,
                     p.lote=numero_lote
                     where p.id_persona=row_potencial_ben.id_persona;

@@ -5,11 +5,11 @@
 --@param comentarios_anulacion: Comentarios donde el usuario indica las razones de la anulacion
 --@return: 0 si no se produjo ninguna excepción.
 --
-create or replace function persona_anular_cer_defun(rastro number, persona_consultada number, comentarios varchar2) return number is
+create or replace function persona_anular_cer_defun(rastro number, persona_consultada number) return number is
     mensaje varchar2(200);
     retcode number;
 begin
-    mensaje:=sp$persona.anular_cer_defun(persona_consultada,comentarios);
+    mensaje:=sp$persona.anular_cer_defun(persona_consultada);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

@@ -4,7 +4,7 @@
 --@param comentarios_anulacion: Comentarios donde el usuario indica las razones de la anulacion
 --@return: Mensaje indicando que se actualizó la persona, si no se produjo ninguna excepción.
 --
-function anular_cer_defun(persona_consultada number, comentarios varchar2) return varchar2 is
+function anular_cer_defun(persona_consultada number) return varchar2 is
     mensaje varchar2(200);
     row_persona persona%rowtype;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
@@ -35,8 +35,7 @@ begin
             comentarios_revocacion_pension=null,
             certificado_defuncion=null,
             fecha_certificado_defuncion=null,
-            es_cer_defuncion_anulado=1,
-            comentarios_anul_cer_defuncion=comentarios
+            es_cer_defuncion_anulado=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Anulado. Pensión vuelve a estado aprobada';
     --
@@ -50,8 +49,7 @@ begin
             comentarios_denegacion_pension=null,
             certificado_defuncion=null,
             fecha_certificado_defuncion=null,
-            es_cer_defuncion_anulado=1,
-            comentarios_anul_cer_defuncion=comentarios
+            es_cer_defuncion_anulado=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Anulado. Pensión vuelve a estado solicitada';
     --
@@ -61,8 +59,7 @@ begin
         update persona 
         set certificado_defuncion=null,
             fecha_certificado_defuncion=null,
-            es_cer_defuncion_anulado=1,
-            comentarios_anul_cer_defuncion=comentarios
+            es_cer_defuncion_anulado=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Anulado';
     end if;

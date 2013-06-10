@@ -4,7 +4,7 @@
 --@param comentarios_anulacion: Comentarios donde el usuario indica las razones de la anulacion
 --@return: Mensaje indicando que se actualizó la persona, si no se produjo ninguna excepción.
 --
-function anular_cer_vida(persona_consultada number, comentarios varchar2) return varchar2 is
+function anular_cer_vida(persona_consultada number) return varchar2 is
     mensaje varchar2(200);
     row_persona persona%rowtype;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
@@ -31,8 +31,7 @@ begin
         update persona 
         set certificado_vida=null,
             fecha_certificado_vida=null,
-            es_certificado_vida_anulado=1,
-            comentarios_anul_cer_vida=comentarios
+            es_certificado_vida_anulado=1
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Vida Anulado para Persona '||row_persona.id_persona;
     end if;

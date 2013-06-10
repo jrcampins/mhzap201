@@ -71,9 +71,6 @@ begin
         if (:new.id_barrio is null) then
             :new.id_barrio := row_persona.id_barrio; 
         end if;
-        if (:new.manzana is null) then
-            :new.manzana := row_persona.manzana;
-        end if;
         if (:new.direccion is null) then
             :new.direccion := row_persona.direccion;
         end if;
@@ -144,9 +141,7 @@ begin
         xnew.id_departamento := :new.id_departamento;                              
         xnew.id_distrito := :new.id_distrito;                                      
         xnew.numero_tipo_area := :new.numero_tipo_area;                            
-        xnew.id_barrio := :new.id_barrio;                                          
-        xnew.id_manzana := :new.id_manzana;                                        
-        xnew.manzana := :new.manzana;                                              
+        xnew.id_barrio := :new.id_barrio;                                                                                       
         xnew.direccion := :new.direccion;                                          
         xnew.nombre_responsable_hogar := :new.nombre_responsable_hogar;            
         xnew.numero_telefono_resp_hogar := :new.numero_telefono_resp_hogar;        

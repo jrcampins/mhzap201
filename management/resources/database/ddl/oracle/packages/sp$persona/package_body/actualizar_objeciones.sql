@@ -457,8 +457,7 @@ begin
                         update persona
                         set fecha_certificado_defuncion = p_fecha_defuncion,
                         certificado_defuncion = 'S/N',
-                        es_cer_defuncion_anulado =0,
-                        comentarios_anul_cer_defuncion=null
+                        es_cer_defuncion_anulado =0
                         where  id_persona = id_persona_act;
                         --Se inserta como nueva
                         row_objecion.id_objecion_ele_pen:=utils.bigintid();

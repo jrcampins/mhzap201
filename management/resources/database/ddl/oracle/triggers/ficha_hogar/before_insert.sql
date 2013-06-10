@@ -40,9 +40,7 @@ begin
     xnew.id_departamento := :new.id_departamento;                              
     xnew.id_distrito := :new.id_distrito;                                      
     xnew.numero_tipo_area := :new.numero_tipo_area;                            
-    xnew.id_barrio := :new.id_barrio;                                          
-    xnew.id_manzana := :new.id_manzana;                                        
-    xnew.manzana := :new.manzana;                                              
+    xnew.id_barrio := :new.id_barrio;                                                                                                                            
     xnew.direccion := :new.direccion;                                          
     xnew.total_personas := :new.total_personas;                                
     xnew.total_hombres := :new.total_hombres;                                  

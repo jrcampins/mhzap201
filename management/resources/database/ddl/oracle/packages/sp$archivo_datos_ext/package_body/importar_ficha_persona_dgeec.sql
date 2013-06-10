@@ -251,6 +251,8 @@ begin
             --Reiniciar los valores de la nueva ficha para cada registro a importar
             new_ficha_persona.id_ficha_persona:=utils.bigintid();
             new_ficha_persona.version_ficha_persona:=0;
+            new_ficha_persona.es_ficha_persona_importada:=0;
+            new_ficha_persona.fecha_importacion:=null;
             new_ficha_persona.id_departamento_nacimiento:=null;
             new_ficha_persona.id_distrito_nacimiento:=null;
             new_ficha_persona.numero_tipo_area_lugar_nac:=null;
@@ -519,13 +521,29 @@ begin
             --Se copia el id de ficha hogar
             new_ficha_persona.id_ficha_hogar:=row_ficha_hogar.id_ficha_hogar;
             --Si hay que actualizar, se actualiza la ficha hogar
-            
-                --Se inserta la ficha persona
+            new_ficha_persona.es_ficha_persona_importada:=1;
+            new_ficha_persona.fecha_importacion:=current_timestamp;
+            --Se inserta la ficha persona
             insert into ficha_persona values new_ficha_persona;
                 --Se incrementa el numero de insertados
             retorno:=retorno+1;
             
-            update log_imp_per_eec set es_importado=1, 
+            begin
+                select codigo_ficha_persona into mensaje 
+                from ficha_persona 
+                where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+            exception
+                when no_data_found then
+                msg_string := 'Error insertando ficha_persona (id= '||new_ficha_persona.id_ficha_persona;
+                raise_application_error(err_number, msg_string, true);
+            end;
+            if sql%found then
+                mensaje := 'Insertada Ficha Persona '||mensaje;
+            end if;
+
+            update log_imp_per_eec set es_importado=1,
+                                id_ficha_persona=new_ficha_persona.id_ficha_persona,
+                                observacion=mensaje,
                                 nombre_archivo=archivo, 
                                 codigo_archivo=codigo, 
                                 fecha_hora_transaccion= current_timestamp 
@@ -533,7 +551,7 @@ begin
         exception
                 when others then
                     mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_per_eec set es_importado=0, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
+                    update log_imp_per_eec set es_importado=0, id_ficha_persona=null, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
                 continue;
         end;
     end loop;

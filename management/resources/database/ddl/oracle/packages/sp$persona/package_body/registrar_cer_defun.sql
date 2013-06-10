@@ -34,8 +34,7 @@ begin
         update persona 
         set fecha_certificado_defuncion = fecha_certificado,
             certificado_defuncion = certificado,
-            es_cer_defuncion_anulado =0,
-            comentarios_anul_cer_defuncion=null
+            es_cer_defuncion_anulado =0
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Registrado. Pensión Revocada por Fallecimiento';
     --
@@ -46,8 +45,7 @@ begin
         update persona 
         set fecha_certificado_defuncion = fecha_certificado,
             certificado_defuncion = certificado,
-            es_cer_defuncion_anulado =0,
-            comentarios_anul_cer_defuncion=null
+            es_cer_defuncion_anulado =0
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Registrado. Pensión Denegada por Fallecimiento';
 
@@ -58,8 +56,7 @@ begin
         update persona
         set fecha_certificado_defuncion = fecha_certificado,
             certificado_defuncion = certificado,
-            es_cer_defuncion_anulado =0,
-            comentarios_anul_cer_defuncion=null
+            es_cer_defuncion_anulado =0
         where  id_persona = persona_consultada;
         mensaje:='Certificado de Defunción Registrado';
     end if;

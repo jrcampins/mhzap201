@@ -1,4 +1,4 @@
-function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp, lote number) return varchar2;
+function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp, lote number, edad_desde number, edad_hasta number) return varchar2;
 function verificar_ele_pen(ubicacion_consultada number) return varchar2;
 function asignar_mesa(lote number,sime varchar2) return varchar2;
 function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp) return varchar2;

@@ -8,7 +8,7 @@
 --@param lote: Numero de lote
 --@return: mensaje indicando el resultado de la acreditación
 --
-function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp, lote number) return varchar2 is
+function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fecha_registro_hasta timestamp, lote number, edad_desde number, edad_hasta number) return varchar2 is
     mensaje varchar2(2000);
     total number:=0;
     total_no_acreditados number:=0;
@@ -24,6 +24,7 @@ function acreditar_pot_ben(ubicacion number,fecha_registro_desde timestamp, fech
           id_persona number,
           nombre_persona varchar2(4000),
           codigo_persona varchar2 (4000),
+          edad number,
           id_departamento number,
           id_distrito number,
           id_barrio number,
@@ -54,21 +55,36 @@ begin
     end if;
     --Determinamos si la fecha sera un parametro a consultar 
     if fecha_registro_desde is not null then
-        if segmento_consulta<>'' then
+        if segmento_consulta is not null then
             segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben >= '''||to_char(fecha_registro_desde,'dd/mm/yyyy')||''' ';
         else
             segmento_consulta:=' where fecha_registro_pot_ben >= '''||to_char(fecha_registro_desde,'dd/mm/yyyy')||''' ';
         end if;
     end if;
     if fecha_registro_hasta is not null then
-        if segmento_consulta<>'' then
+        if segmento_consulta is not null then
             segmento_consulta:=segmento_consulta||' and fecha_registro_pot_ben <= '''||to_char(fecha_registro_hasta,'dd/mm/yyyy')||''' ';
         else
             segmento_consulta:=' where fecha_registro_pot_ben <= '''||to_char(fecha_registro_hasta,'dd/mm/yyyy')||''' ';
         end if;
     end if;
-
-    --dbms_output.put_line('select * from "vista_log_pro_acr_pot_ben"'||segmento_consulta);
+    --Determinamos si la edad será un parámetro a consultar
+    if edad_desde is not null then
+        if segmento_consulta is not null then
+            segmento_consulta:=segmento_consulta||' and edad >= '||edad_desde||' ';
+        else
+            segmento_consulta:=' where edad >= '||edad_desde||' ';
+        end if;
+    end if;
+    --Determinamos si la edad será un parámetro a consultar
+    if edad_hasta is not null then
+        if segmento_consulta is not null then
+            segmento_consulta:=segmento_consulta||' and edad <= '||edad_hasta||' ';
+        else
+            segmento_consulta:=' where edad <= '||edad_hasta||' ';
+        end if;
+    end if;
+    dbms_output.put_line(segmento_consulta);
     --Se insertan los registros a procesar en la tabla temporal 
 --     select count(id_potencial_ben) into conta from vista_log_pro_acr_pot_ben;
 --     if conta =0 then
