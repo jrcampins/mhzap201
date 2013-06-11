@@ -5,7 +5,7 @@
 --@param comentarios: Comentarios de la solicitud
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function persona_asignar_reco_pen_sel(rastro number, sime varchar2) return number is
+create or replace function persona_denegar_reco_pen_sel(rastro number, observaciones varchar2) return number is
     mensaje varchar2(200);
     retcode number;
     usuario_proceso number;
@@ -21,7 +21,7 @@ begin
         msg_string := 'Rastro de proceso no existe (id='||rastro||')';
         raise_application_error(err_number, msg_string, true);
     end if;
-    mensaje:=sp$persona.asignar_reco_pen_sel(usuario_proceso,sime);
+    mensaje:=sp$persona.denegar_reco_pen_sel(usuario_proceso,observaciones);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

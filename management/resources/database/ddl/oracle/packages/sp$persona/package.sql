@@ -32,3 +32,6 @@ function get_last_ficha_persona(xrow persona%rowtype) return number;
 function anotar(persona_consultada number, usuario_consultado number)return varchar2;
 function borrar(usuario_consultado number) return varchar2;
 function asignar_reco_pen_sel(usuario_proceso number,sime varchar2) return varchar2;
+function solicitar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
+function aprobar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
+function denegar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
