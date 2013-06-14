@@ -15,7 +15,6 @@ alter table log_imp_pot add CONSTRAINT fk_log_imp_pot_001
     FOREIGN KEY (id_potencial_ben)
     REFERENCES potencial_ben(id_potencial_ben);
 
-
 CREATE OR REPLACE VIEW ficha_persona_importada
 AS
 SELECT

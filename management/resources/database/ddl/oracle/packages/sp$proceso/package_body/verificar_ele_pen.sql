@@ -5,10 +5,10 @@
 --@param ubicacion_consultada: Identificador de la ubicacion a consultar
 --@return: mensaje indicando la cantidad de personas elegibles y no elegibles
 --
-function verificar_ele_pen(ubicacion_consultada number) return varchar2 is
+function verificar_ele_pen(ubicacion_consultada number, codigo_sime varchar2) return varchar2 is
      mensaje varchar2(4000):='';
      mensaje_retorno varchar2(4000):='';
-     segmento_consulta_ubicacion varchar2(2000):=' ';
+     segmento_consulta varchar2(2000):=' ';
      reproceso_pension_activo number:=0;
      condicion_elegibilidad number;
      condicion_vigencia number;
@@ -29,6 +29,7 @@ function verificar_ele_pen(ubicacion_consultada number) return varchar2 is
           id_departamento number,
           id_distrito number,
           id_barrio number,
+          codigo_sime varchar2(100),
           indice_calidad_vida number,
           numero_condicion_pension number,
           numero_condicion_denu_pen number,
@@ -42,12 +43,24 @@ function verificar_ele_pen(ubicacion_consultada number) return varchar2 is
      err_number  constant number := -20000; -- an integer in the range -20000..-20999
      msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    --El sime es obligatorio
+    if codigo_sime is null then
+        msg_string := 'Código SIME no puede ser vacío';
+        raise_application_error(err_number, msg_string, true);
+    end if;
     --Determinamos si la ubicación sera un parametro para filtrar los registros
     if ubicacion_consultada is not null then
-        segmento_consulta_ubicacion:='where (id_departamento='||ubicacion_consultada 
-                                       ||'or id_distrito='||ubicacion_consultada
-                                       ||'or id_barrio='||ubicacion_consultada||')';     
+        segmento_consulta:=' where (id_departamento='||ubicacion_consultada 
+                                       ||' or id_distrito='||ubicacion_consultada
+                                       ||' or id_barrio='||ubicacion_consultada||')';     
     end if;
+    --Se agrega al segmento consulta el código de sime
+    if segmento_consulta =' ' then
+        segmento_consulta:='where codigo_sime='''||codigo_sime||'''';
+    else
+        segmento_consulta:=segmento_consulta||' and codigo_sime='''||codigo_sime||'''';
+    end if;
+    dbms_output.put_line(segmento_consulta);
     --Determinamos si se van a reprocesar las pensiones ya aprobadas
     select es_control_reproceso_pen_activ 
     into reproceso_pension_activo 
@@ -59,10 +72,10 @@ begin
 --         if conta =0 then
 --             return 'No hay Personas para verificar elegibilidad';
 --         end if;
-        execute immediate 'select   * from vista_log_pro_ver_ele_pen_1 '||segmento_consulta_ubicacion 
+        execute immediate 'select   * from vista_log_pro_ver_ele_pen_1 '||segmento_consulta 
         bulk collect into vista_ele;
         if vista_ele.count=0 then
-            return'No hay Personas pendientes por consultar elegibilidad';
+            return'No hay Personas pendientes por consultar elegibilidad para el código de SIME: '||codigo_sime;
         end if;
         for i in vista_ele.first..vista_ele.last loop
             id_reg:=utils.bigintid();
@@ -91,10 +104,10 @@ begin
 --         if conta =0 then
 --             return 'No hay Personas para verificar elegibilidad';
 --         end if;
-        execute immediate 'select   * from vista_log_pro_ver_ele_pen_2 '||segmento_consulta_ubicacion 
+        execute immediate 'select   * from vista_log_pro_ver_ele_pen_2 '||segmento_consulta 
         bulk collect into vista_ele;
         if vista_ele.count=0 then
-            return'No hay Personas pendientes por consultar elegibilidad';
+            return'No hay Personas pendientes por consultar elegibilidad para el código de SIME: '||codigo_sime;
         end if;
         for i in vista_ele.first..vista_ele.last loop
             id_reg:=utils.bigintid();
@@ -124,7 +137,7 @@ begin
     execute immediate 'select * from log_pro_ver_ele_pen where es_procesado=0 and observacion is null '
     bulk collect into table_log;
     if table_log.count=0 then
-        return 'No hay registros de personas pendientes por procesar';
+        return 'No hay registros de personas pendientes por procesar para el código de SIME'||codigo_sime;
     end if;
     for i in table_log.first..table_log.last loop
         begin
@@ -218,7 +231,4 @@ begin
                      ', Total No Vigentes: '||total_no_vigentes||
                      ', Total Excepciones: '||total_errores;
     return mensaje_retorno;
-exception when others then
-            mensaje:=SQLERRM;
-            dbms_output.put_line('error'||mensaje);
 end;

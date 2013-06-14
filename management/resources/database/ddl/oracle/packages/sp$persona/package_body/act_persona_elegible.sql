@@ -23,7 +23,7 @@ begin
             raise_application_error(err_number, msg_string, true);
     end;
     --Nuevo: Actualizar las objeciones de una persona
-    objeciones:=actualizar_objeciones(row_persona.codigo_persona,row_persona.id_persona);
+    objeciones:=actualizar_objeciones(row_persona.id_persona);
     --dbms_output.put_line('total de objeciones recibidas'||objeciones);
     --Nuevo: Se verifican objeciones de elegibilidad utilizando WS
     resultado:=verif_ws_sinarh_jupe(row_persona.codigo_persona,row_persona.id_persona);
@@ -96,7 +96,6 @@ begin
     elsif conta_objeciones>1 then
         condicion:=99;
     end if;
-    dbms_output.put_line('retornando'||condicion);
     --Se retorna la condicion de objeción a la elegibilidad
     return condicion;
 end;

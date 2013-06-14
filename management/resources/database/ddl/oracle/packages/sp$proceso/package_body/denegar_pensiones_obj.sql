@@ -5,13 +5,14 @@
 --@param fecha_resolucion: fecha de la resolución en la que se otorga la pensión
 --@return: mensaje indicando el numero de pensiones otorgadas
 --
-function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2) return varchar2 is
+function denegar_pensiones_obj(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2, cedula_desde varchar2, cedula_hasta varchar2) return varchar2 is
 
     mensaje varchar2(2000):='';
     mensaje_retorno varchar2(2000):='';
-    segmento_consulta_ubicacion varchar2(2000):='';
+    segmento_consulta varchar2(2000):='';
     total number:=0;
     total_denegados number:=0;
+    total_no_denegados number:=0;
     total_errores number:=0;
     type pen_den is record(
           id_persona number,
@@ -45,11 +46,18 @@ begin
     end if;
     --Determinamos si la ubicación sera un parametro a consultar o no
     if ubicacion_consultada is not null then
-        segmento_consulta_ubicacion:='and (id_departamento='||ubicacion_consultada 
+        segmento_consulta:='and (id_departamento='||ubicacion_consultada 
                                        ||'or id_distrito='||ubicacion_consultada
                                        ||'or id_barrio='||ubicacion_consultada||')';
     else
-         segmento_consulta_ubicacion:='';
+         segmento_consulta:='';
+    end if;
+    --Determinamos si la cédula será un parámetro a consultar o no
+    if cedula_desde is not null then
+        segmento_consulta:=segmento_consulta||' and numero_cedula>='''||cedula_desde||'''';
+    end if;
+    if cedula_hasta is not null then
+        segmento_consulta:=segmento_consulta||' and numero_cedula<='''||cedula_hasta||'''';
     end if;
     --llenamos la tabla log con los registros a procesar
     --Se procesan los registros que hayan sido 
@@ -64,7 +72,7 @@ begin
                               numero_causa_den_pension
                        from persona 
                        where codigo_sime='''||valor_sime||'''
-                       and numero_condicion_pension=3 '||segmento_consulta_ubicacion
+                       and numero_condicion_pension=3 '||segmento_consulta
     bulk collect into vista_pen_den;
     if vista_pen_den.count=0 then
         return 'No hay Personas pendientes por resolución denegatoria';
@@ -99,7 +107,7 @@ begin
             if(mensaje like '%Pensión Denegada%') then
                 total_denegados:=total_denegados+1;
             else
-                total_errores:=total_errores+1;
+                total_no_denegados:=total_no_denegados+1;
             end if;
             execute immediate 'update log_pro_den_pen_obj
                      set es_procesado=1, observacion='''||mensaje||
@@ -109,10 +117,11 @@ begin
             mensaje:=SQLERRM;
             execute immediate 'update log_pro_den_pen_obj
                      set es_procesado=1, observacion='''||mensaje||
-                     ''' where id_log_pro_oto_pen_apr='||table_log(i).id_log_pro_den_pen_obj;
+                     ''' where id_log_pro_den_pen_obj='||table_log(i).id_log_pro_den_pen_obj;
         end;
         mensaje_retorno:='Total de Personas Procesadas: '||total
                       ||', Pensiones Denegadas: '||total_denegados
+                      ||', No Denegadas: '||total_no_denegados
                       ||', Total Excepciones: '||total_errores ;
      end loop;
      return mensaje_retorno;                 

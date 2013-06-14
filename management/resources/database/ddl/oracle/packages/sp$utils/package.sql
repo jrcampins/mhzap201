@@ -67,3 +67,4 @@ function extract_numero_from_cedula(ced varchar2) return number;
 function extract_letra_from_cedula(ced varchar2) return char;
 function get_id_departamento_sw(departamento varchar2) return number;
 function get_id_distrito_sw(departamento varchar2,distrito varchar2) return number;
+function concat_objecion(objecion varchar2,referencia varchar2) return varchar2;

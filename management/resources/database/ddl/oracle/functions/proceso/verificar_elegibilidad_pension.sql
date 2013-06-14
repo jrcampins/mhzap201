@@ -5,11 +5,11 @@
 --@param ubicacion_consultada: Identificador de la ubicacion a consultar
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function proceso_verificar_ele_pen(rastro number,ubicacion_consultada number) return number is
+create or replace function proceso_verificar_ele_pen(rastro number,ubicacion_consultada number, codigo_sime varchar2) return number is
     mensaje varchar2(2000);
     retcode number;
 begin
-    mensaje:=sp$proceso.verificar_ele_pen(ubicacion_consultada);
+    mensaje:=sp$proceso.verificar_ele_pen(ubicacion_consultada, codigo_sime);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

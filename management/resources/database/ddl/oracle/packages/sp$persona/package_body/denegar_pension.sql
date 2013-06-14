@@ -7,7 +7,7 @@
 --@return: mensaje indicando la condición de ejecución del proceso
 --
 function denegar_pension(persona_consultada number, numero_res varchar2, fecha_res timestamp, comentarios varchar2) return varchar2 is
-    mensaje_denegacion_pension varchar2(200):='';
+    mensaje_denegacion_pension varchar2(200):='Causa no especificada';
     mensaje varchar2 (200):='';
     row_persona persona%rowtype;
     err_number  constant number := -20000; -- an integer in the range -20000..-20999
@@ -31,16 +31,16 @@ begin
     --Se determina el mensaje de denegacion de la pensión
     --
     else
-        begin
-            select cdp.codigo_causa_den_pension
-            into mensaje_denegacion_pension
-            from causa_den_pension cdp
-            where cdp.numero_causa_den_pension = row_persona.numero_causa_den_pension;
-        exception
-            when no_data_found then
-                msg_string := 'Causa de denegación inválida (código='||row_persona.numero_causa_den_pension||')';
-                raise_application_error(err_number, msg_string, true);
-        end;
+         begin
+             select cdp.codigo_causa_den_pension
+             into mensaje_denegacion_pension
+             from causa_den_pension cdp
+             where cdp.numero_causa_den_pension = row_persona.numero_causa_den_pension;
+         exception
+             when no_data_found then
+                 msg_string := 'Causa de denegación inválida (código='||row_persona.numero_causa_den_pension||')';
+                 raise_application_error(err_number, msg_string, true);
+         end;
         --
         update persona 
         set    numero_condicion_pension = 6,

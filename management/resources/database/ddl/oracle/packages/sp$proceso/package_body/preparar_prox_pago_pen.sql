@@ -143,11 +143,11 @@ begin
                      total_aprobados:=total_aprobados+1;
                 --Si no se aprobo fue por no elegibilidad, en otro caso se generaría una excepción
                 else
-                    dbms_output.put_line('mensaje: '||mensaje);
+                    --dbms_output.put_line('mensaje: '||mensaje);
                     total_denegados:=total_denegados+1;
                     --Se determina la causa de no elegibilidad
                     condicion_elegibilidad:=sp$persona.consultar_objeciones(table_log(i).id_persona);
-                    dbms_output.put_line('condición: '||condicion_elegibilidad);
+                    --dbms_output.put_line('condición: '||condicion_elegibilidad);
                     if condicion_elegibilidad=99 then
                        causa_denegacion:=99;
                        otra_causa_denegacion:='Pensión con varias objeciones';
@@ -157,6 +157,7 @@ begin
                     end if;
                     --Se deniega la pensión
                     mensaje:=sp$persona.objetar_pension(table_log(i).id_persona,causa_denegacion,otra_causa_denegacion,'Pensión Objetada Automáticamente');
+                    --dbms_output.put_line('mensaje: '||mensaje);
                 end if;
             --Procesamos las reconsideraciones solicitadas
             elsif table_log(i).numero_condicion_reco_pen=1 then

@@ -5,11 +5,11 @@
 --@param fecha_resolucion: fecha de la resolución en la que se otorga la pensión
 --@return: mensaje indicando el numero de pensiones otorgadas
 --
-function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2) return varchar2 is
+function otorgar_pensiones_apr(ubicacion_consultada number,numero_resolucion varchar2, fecha_resolucion timestamp, sime varchar2, cedula_desde varchar2, cedula_hasta varchar2) return varchar2 is
 
     mensaje varchar2(2000):='';
     mensaje_retorno varchar2(2000):='';
-    segmento_consulta_ubicacion varchar2(2000):='';
+    segmento_consulta varchar2(2000):='';
     total number:=0;
     total_otorgados number:=0;
     total_rechazados number:=0;
@@ -46,11 +46,18 @@ begin
     end if;
     --Determinamos si la ubicación sera un parametro a consultar o no
     if ubicacion_consultada is not null then
-        segmento_consulta_ubicacion:='and (id_departamento='||ubicacion_consultada 
+        segmento_consulta:=' and (id_departamento='||ubicacion_consultada 
                                        ||'or id_distrito='||ubicacion_consultada
                                        ||'or id_barrio='||ubicacion_consultada||')';
     else
-         segmento_consulta_ubicacion:='';
+         segmento_consulta:='';
+    end if;
+    --Determinamos si la cédula será un parámetro a consultar o no
+    if cedula_desde is not null then
+        segmento_consulta:=segmento_consulta||' and numero_cedula>='''||cedula_desde||'''';
+    end if;
+    if cedula_hasta is not null then
+        segmento_consulta:=segmento_consulta||' and numero_cedula<='''||cedula_hasta||'''';
     end if;
     --llenamos la tabla log con los registros a procesar
     --Se procesan los registros que hayan sido 
@@ -64,8 +71,8 @@ begin
                               id_barrio , 
                               numero_condicion_pension
                        from persona 
-                       where codigo_sime='''||valor_sime||'''
-                       and numero_condicion_pension=2 '||segmento_consulta_ubicacion
+                       where codigo_sime='''||sime||'''
+                       and numero_condicion_pension=2 '||segmento_consulta
     bulk collect into vista_pen_oto;
     if vista_pen_oto.count=0 then
         return 'No hay Personas pendientes por otorgar pensión';

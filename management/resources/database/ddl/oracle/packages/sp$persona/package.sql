@@ -1,4 +1,4 @@
-function actualizar_objeciones(codigo varchar2,persona_consultada number) return number;
+function actualizar_objeciones(persona_consultada number) return number;
 function consultar_objeciones(persona_consultada number) return number;
 function concat_codigo(xrow persona%rowtype) return varchar2;
 function concat_nombre(xrow persona%rowtype) return varchar2;
