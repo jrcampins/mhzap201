@@ -202,8 +202,13 @@ begin
                 end if;
                 --Si hay motivos para revocar la pensión, se revoca
                 if causa_revocacion<>0 then
-                    total_revocadas:=total_revocadas+1;
-                    mensaje:=sp$persona.revocar_pension(table_log(i).id_persona,causa_revocacion,null,'Pensión Revocada Automáticamente');                    
+                    if causa_revocacion<>99 then
+                        total_revocadas:=total_revocadas+1;
+                        mensaje:=sp$persona.revocar_pension(table_log(i).id_persona,causa_revocacion,null,'Pensión Revocada Automáticamente');                    
+                    else
+                        total_revocadas:=total_revocadas+1;
+                        mensaje:=sp$persona.revocar_pension(table_log(i).id_persona,causa_revocacion,'Otra causa','Pensión Revocada Automáticamente');          
+                    end if;
                 else
                     total_no_revocadas:=total_no_revocadas+1;
                 end if;

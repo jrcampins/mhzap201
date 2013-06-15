@@ -35,3 +35,4 @@ function asignar_reco_pen_sel(usuario_proceso number,sime varchar2) return varch
 function solicitar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
 function aprobar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
 function denegar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
+function consultar_cedula_cvr(persona_consultada number) return varchar2;

@@ -22,12 +22,23 @@ begin
             msg_string := 'persona ' || persona_consultada || ' no existe ';
             raise_application_error(err_number, msg_string, true);
     end;
-    --Nuevo: Actualizar las objeciones de una persona
+    --Actualizar las objeciones de una persona
     objeciones:=actualizar_objeciones(row_persona.id_persona);
     --dbms_output.put_line('total de objeciones recibidas'||objeciones);
     --Nuevo: Se verifican objeciones de elegibilidad utilizando WS
     resultado:=verif_ws_sinarh_jupe(row_persona.codigo_persona,row_persona.id_persona);
-    --Se buscan las objeciones que tiene la persona (Nuevo: solo si hay objeciones que buscar)
+    --Nuevo: Se reinician las objeciones de la persona:
+    update persona 
+    set es_persona_elegible_para_pen=1,
+        es_persona_con_empleo=0,
+        es_persona_con_jubilacion=0,
+        es_persona_con_deuda=0,
+        es_persona_con_pena_judicial=0,
+        es_persona_con_pension=0,
+        es_persona_con_subsidio=0
+    where id_persona=persona_consultada;
+    --dbms_output.put_line('objeciones '||objeciones);
+    --Se buscan las objeciones que tiene la persona (Nuevo: solo si hay objeciones que buscar)    
     if objeciones>0 then
         for row_objecion in (
             select * from objecion_ele_pen 
@@ -86,12 +97,22 @@ begin
                 condicion:=26;
             end if;
         end loop;
-    end if;
-    --Si no hay objeciones se coloca la persona como elegible
-    if conta_objeciones=0 then
-        update persona 
-        set es_persona_elegible_para_pen=1 
-        where id_persona=persona_consultada;
+    --Si no hay objeciones se cambia el estado de la pensión
+    elsif conta_objeciones=0 then
+        --Nuevo: actualizar la persona en caso de que no tenga objeciones
+        if row_persona.numero_condicion_pension=7 then
+            update persona 
+            set numero_condicion_pension=5,
+            fecha_otorgamiento_pen=sysdate,
+            comentarios_otorgamiento_pen='Pensión otorgada por objeciones anuladas.'
+            where id_persona=persona_consultada;
+        elsif row_persona.numero_condicion_pension=3 then
+            update persona 
+            set numero_condicion_pension=1,
+            fecha_solicitud_pension=sysdate,
+            comentarios_solicitud_pension='Pensión solicitada por objeciones anuladas.'
+            where id_persona=persona_consultada;
+        end if;
     --Si hay mas de una objecion se retorna condicion 99=otra_causa
     elsif conta_objeciones>1 then
         condicion:=99;

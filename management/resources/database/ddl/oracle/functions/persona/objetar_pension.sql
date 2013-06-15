@@ -7,7 +7,7 @@
 --@param comentarios: Comentarios de la denegacion
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function persona_objetar_pension(rastro number, persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return integer is
+create or replace function persona_objetar_pension(rastro number, persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return number is
     mensaje varchar2(200);
     retcode number;
 begin

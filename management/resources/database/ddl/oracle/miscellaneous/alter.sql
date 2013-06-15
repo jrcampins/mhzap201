@@ -14,6 +14,7 @@ alter table log_imp_ids add CONSTRAINT fk_log_imp_ids_001
 alter table log_imp_pot add CONSTRAINT fk_log_imp_pot_001
     FOREIGN KEY (id_potencial_ben)
     REFERENCES potencial_ben(id_potencial_ben);
+insert into causa_den_pension values(15,'Persona con cédula vencida');
 
 CREATE OR REPLACE VIEW ficha_persona_importada
 AS

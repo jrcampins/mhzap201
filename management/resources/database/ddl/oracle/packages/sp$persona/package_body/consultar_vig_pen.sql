@@ -67,7 +67,7 @@ begin
     end if;
     if vigencia_cvr=1 then
         --Si no hay registro de certificado de vida y residencia, no se hace nada.
-        if row_persona.fecha_certificado_vida is not null then
+        if row_persona.fecha_certificado_vida is not null and row_persona.dias_vigencia_certificado_vida is not null   then
             --Calculo meses desde ultimo certificado de vida
             meses_transcurridos:=months_between(sysdate,row_persona.fecha_certificado_vida);
             --Persona se presume fallecida

@@ -8,6 +8,7 @@
 function verificar_ele_pen(ubicacion_consultada number, codigo_sime varchar2) return varchar2 is
      mensaje varchar2(4000):='';
      mensaje_retorno varchar2(4000):='';
+     mensaje_vigencia varchar2(4000):='';
      segmento_consulta varchar2(2000):=' ';
      reproceso_pension_activo number:=0;
      condicion_elegibilidad number;
@@ -60,7 +61,6 @@ begin
     else
         segmento_consulta:=segmento_consulta||' and codigo_sime='''||codigo_sime||'''';
     end if;
-    dbms_output.put_line(segmento_consulta);
     --Determinamos si se van a reprocesar las pensiones ya aprobadas
     select es_control_reproceso_pen_activ 
     into reproceso_pension_activo 
@@ -72,7 +72,7 @@ begin
 --         if conta =0 then
 --             return 'No hay Personas para verificar elegibilidad';
 --         end if;
-        execute immediate 'select   * from vista_log_pro_ver_ele_pen_1 '||segmento_consulta 
+        execute immediate 'select * from vista_log_pro_ver_ele_pen_1 '||segmento_consulta 
         bulk collect into vista_ele;
         if vista_ele.count=0 then
             return'No hay Personas pendientes por consultar elegibilidad para el código de SIME: '||codigo_sime;
@@ -207,6 +207,17 @@ begin
                     total_no_vigentes:=total_no_vigentes+1;
                 end if;
             end if;
+            mensaje_vigencia:=sp$persona.consultar_cedula_cvr(table_log(i).id_persona);
+            --dbms_output.put_line('vigencia1 '||mensaje_vigencia);
+            if mensaje_vigencia is not null then
+                --dbms_output.put_line('entro');
+                if mensaje is null then
+                    mensaje:='Observación: '||mensaje_vigencia;
+                else
+                    mensaje:=mensaje||'. Observación: '||mensaje_vigencia;
+                end if;  
+            end if;
+            --dbms_output.put_line('vigencia2 '||mensaje_vigencia);
             execute immediate 'update log_pro_ver_ele_pen
                      set es_procesado=1, observacion='''||mensaje||
                      ''',fecha_hora_transaccion=CURRENT_TIMESTAMP 
