@@ -4,7 +4,7 @@
 --@param ubicacion_consultada:
 --@return: mensaje indicando el numero de registros procesados, aprobados y denegados
 -- 
-function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp) return varchar2 is
+function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp, codigo_sime varchar2) return varchar2 is
      mensaje varchar2(2000):='';
      mensaje_retorno varchar2(2000):='';
      segmento_consulta varchar2(2000):='';
@@ -35,13 +35,21 @@ function preparar_prox_pago_pen(ubicacion_consultada number,fecha_solicitud_desd
           numero_condicion_pension number,
           fecha_solicitud_pen timestamp,
           numero_condicion_denu_pen number,
-          numero_condicion_reco_pen number);
+          numero_condicion_reco_pen number,
+          codigo_sime varchar2(100));
      type cons_prox_pag is table of prox_pag;
      id_reg number;
      vista_prox_pag cons_prox_pag;
      type log_proceso is table of log_pro_pre_pro_pag%rowtype;
      table_log log_proceso;
+     err_number  constant number := -20000; -- an integer in the range -20000..-20999
+     msg_string  varchar2(2000); -- a character string of at most 2048 bytes
 begin
+    --El sime es obligatorio
+    if codigo_sime is null then
+        msg_string := 'Código SIME no puede ser vacío';
+        raise_application_error(err_number, msg_string, true);
+    end if;
      --Determinamos si la ubicación sera un parametro a consultar o no
     if ubicacion_consultada is not null then
         segmento_consulta:='and (id_departamento='||ubicacion_consultada 
@@ -54,6 +62,12 @@ begin
     end if;
     if fecha_solicitud_hasta is not null then
             segmento_consulta:=segmento_consulta||' and fecha_solicitud_pension <= '''||to_char(fecha_solicitud_hasta,'dd/mm/yyyy')||''' ';
+    end if;
+    --Se agrega al segmento consulta el código de sime
+    if segmento_consulta =' ' then
+        segmento_consulta:='where codigo_sime='''||codigo_sime||'''';
+    else
+        segmento_consulta:=segmento_consulta||' and codigo_sime='''||codigo_sime||'''';
     end if;
      --Determinamos si se van a reprocesar las pensiones ya aprobadas
     select es_control_reproceso_pen_activ 

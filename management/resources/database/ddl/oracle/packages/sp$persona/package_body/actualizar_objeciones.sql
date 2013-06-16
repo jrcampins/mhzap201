@@ -1,7 +1,6 @@
 --
 --Descripción: Este procedimiento actualiza las objeciones que puede tener una persona a la obtención de una pensión y actualiza la elegibilidad de la persona, para ello verifica si se cumplen las condiciones que excluyen el pago de pensiones.
 --@param id_persona: id de la persona sobre la que se ejecutara la funcion
---@param codigo: codigo de la persona sobre la que se ejecutara
 --@return: 0 si no hubo ninguna objeción, en caso de que haya habido una objeción, retorna el número de causa de no elegibilidad (De acuerdo a la tabla causa_den_pension)
 --
 function actualizar_objeciones(persona_consultada number) return number is
@@ -42,14 +41,17 @@ begin
         raise_application_error(err_number, msg_string, true);
     end if;
     codigo:=row_persona.codigo_persona;
-    --Nuevo: Como no conozco las objeciones que tiene la persona en el instante t
-    --se desactivan las objeciones anteriores de la persona
-    --update objecion_ele_pen
-    --set es_objecion_ele_pen_inactiva=1,
-    --fecha_ultima_actualizacion=sysdate
-    --where id_persona=row_persona.id_persona;
+    --Nuevo: En cada instante de tiempo la persona cambia sus objeciones, 
+    --por lo que se comienza desactivando las objeciones anteriores (excepto las defunciones)
+    update objecion_ele_pen
+    set es_objecion_ele_pen_inactiva=1,
+    fecha_ultima_actualizacion=sysdate
+    where id_persona=row_persona.id_persona
+    and numero_tipo_obj_ele_pen!=12
+    and es_objecion_ele_pen_inactiva=0
+    and fecha_anulacion is  null;
     --1. Buscamos todas las deudas que tiene la persona
-    for row_log_deu in (select * from log_imp_deu where cedula=codigo and observacion!='Objeción actualizada') 
+    for row_log_deu in (select * from log_imp_deu where cedula=codigo ) 
     loop
         row_objecion:=null;
         --1.0 Verificamos que la persona del archivo sea la misma persona que estoy buscando
@@ -75,48 +77,47 @@ begin
         loop
             id_proveedor:=row_Archivo.id_proveedor_dat_ext;
             --1.3 Verificamos cuantas objeciones tiene el archivo asociadas a la persona.
-            begin
-                select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                where numero_tipo_obj_ele_pen=23
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            exception when no_data_found then null;
-            end;
-            --1.4 si conseguímos más de una objeción de deuda de la persona con ese proveedor: desactivamos las objeciones
-            if conta_objeciones>0 then
-                --1.4.1 Para desactivar debo saber que registro exacto debo desactivar: Con NIS
-                if(referencia_nis is not null) then
-                    update objecion_ele_pen
-                    set es_objecion_ele_pen_inactiva=1,
-                    fecha_ultima_actualizacion=trunc(current_timestamp)
-                    where id_persona=persona_consultada
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and numero_tipo_obj_ele_pen=23
-                    and referencia=referencia_nis
-                    and id_proveedor_dat_ext=id_proveedor;
-                -- 1.4.2 Sin NIS
-                else
-                    update objecion_ele_pen
-                    set es_objecion_ele_pen_inactiva=1,
-                    fecha_ultima_actualizacion=trunc(current_timestamp)
-                    where id_persona=persona_consultada
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and numero_tipo_obj_ele_pen=23
-                    and referencia is null
-                    and id_proveedor_dat_ext=id_proveedor;
-                end if;
-            end if;
-            --1.5 Determino si es una objeción ya existente para desactivarla
+--             begin
+--                 select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                 where numero_tipo_obj_ele_pen=23
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             exception when no_data_found then null;
+--             end;
+--             --1.4 si conseguímos más de una objeción de deuda de la persona con ese proveedor: desactivamos las objeciones
+--             if conta_objeciones>0 then
+--                 --1.4.1 Para desactivar debo saber que registro exacto debo desactivar: Con NIS
+--                 if(referencia_nis is not null) then
+--                     update objecion_ele_pen
+--                     set es_objecion_ele_pen_inactiva=1,
+--                     fecha_ultima_actualizacion=trunc(current_timestamp)
+--                     where id_persona=persona_consultada
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and numero_tipo_obj_ele_pen=23
+--                     and referencia=referencia_nis
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 -- 1.4.2 Sin NIS
+--                 else
+--                     update objecion_ele_pen
+--                     set es_objecion_ele_pen_inactiva=1,
+--                     fecha_ultima_actualizacion=trunc(current_timestamp)
+--                     where id_persona=persona_consultada
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and numero_tipo_obj_ele_pen=23
+--                     and referencia is null
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 end if;
+--             end if;
+            --1.3 Determino si es una objeción ya existente para luego reactivarla
             begin
                 if referencia_nis is not null then
                     begin
                         select * into row_objecion from objecion_ele_pen 
                         where id_persona=id_persona_act
-                        and es_objecion_ele_pen_inactiva=0
                         and fecha_anulacion is  null
                         and numero_tipo_obj_ele_pen=23
                         and referencia = referencia_nis
@@ -128,7 +129,6 @@ begin
                     begin
                         select * into row_objecion from objecion_ele_pen 
                         where id_persona=id_persona_act
-                        and es_objecion_ele_pen_inactiva=0
                         and fecha_anulacion is  null
                         and numero_tipo_obj_ele_pen=23
                         and referencia is null
@@ -138,24 +138,25 @@ begin
                 end if;
             --Debería haber una sola objeción con la referencia
             exception 
-            when no_data_found then null;
             when others then
                 msg_string := 'Error recuperando la objeción: '||SQLERRM;
                 raise_application_error(err_number, msg_string, true);
             end;
-            --1.6 Si consigue la objecion la mantiene activa
+            --1.4 Si consigue la objecion la mantiene activa
             if sql%found then
                 update objecion_ele_pen
                 set es_objecion_ele_pen_inactiva=0,
+                nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos,
                 fecha_ultima_actualizacion=trunc(current_timestamp)
                 where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
+                --Se actualiza el log de importación
                 update log_imp_deu set es_importado=1,  
                 nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                 codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                 fecha_hora_transaccion= current_timestamp,
                 observacion='Objeción actualizada'
                 where id_log_imp_deu=row_log_deu.id_log_imp_deu;
-            --1.7 Si no la consigue, la inserta como nueva
+            --1.5 Si no la consigue, la inserta como nueva
             else 
                 row_objecion.id_objecion_ele_pen:=utils.bigintid();
                 row_objecion.version_objecion_ele_pen:=0;
@@ -172,22 +173,22 @@ begin
                     row_objecion.referencia:=null;
                 end if;
                 insert into objecion_ele_pen values row_objecion;
+                --Se mantiene el log
                 update log_imp_deu set es_importado=1,  
                 nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                 codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                 fecha_hora_transaccion= current_timestamp,
-                observacion='Objeción actualizada'
+                observacion='Objeción insertada'
                 where id_log_imp_deu=row_log_deu.id_log_imp_deu;
            end if;
-            --Se actualiza el log para que la observación diga que la objeción se actualizó
         end loop;
     end loop;
 
     --2. Buscar codigos en log de empleados
-    for row_log_emp in (select * from log_imp_emp where cedula=codigo and observacion!='Objeción actualizada') 
+    for row_log_emp in (select * from log_imp_emp where cedula=codigo) 
     loop
         row_objecion:=null;
-        --1.0 Verificamos que la persona del archivo sea la misma persona que estoy buscando
+        --2.0 Verificamos que la persona del archivo sea la misma persona que estoy buscando
         id_persona_act:=sp$utils.extract_id_persona(row_log_emp.cedula,
                                                         row_log_emp.primer_nombre,
                                                         row_log_emp.segundo_nombre,
@@ -199,49 +200,49 @@ begin
                 continue;
         end if;
         --dbms_output.put_line('objecion de empleo de '||codigo);
-        --1.2 buscamos el proveedor de datos externos
+        --2.1 buscamos el proveedor de datos externos
         for row_archivo in (select * from archivo_datos_ext where codigo_archivo_datos_ext=row_log_emp.codigo_archivo)
         loop
             id_proveedor:=row_Archivo.id_proveedor_dat_ext;
             --2.3 Verificamos cuantas objeciones tiene el archivo asociadas a la persona.
-            begin
-                select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                where numero_tipo_obj_ele_pen=21
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            exception when no_data_found then null;
-            end;
-            --2.4 si conseguímos más de una objeción de empleo de la persona con ese proveedor: desactivamos las objeciones
-            if conta_objeciones>0 then
-                update objecion_ele_pen
-                set es_objecion_ele_pen_inactiva=1,
-                fecha_ultima_actualizacion=trunc(current_timestamp)
-                where numero_tipo_obj_ele_pen=21
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            end if;
-            --Se selecciona la persona a actualizar
+--             begin
+--                 select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                 where numero_tipo_obj_ele_pen=21
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             exception when no_data_found then null;
+--             end;
+--             --2.4 si conseguímos más de una objeción de empleo de la persona con ese proveedor: desactivamos las objeciones
+--             if conta_objeciones>0 then
+--                 update objecion_ele_pen
+--                 set es_objecion_ele_pen_inactiva=1,
+--                 fecha_ultima_actualizacion=trunc(current_timestamp)
+--                 where numero_tipo_obj_ele_pen=21
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             end if;
+            --2.2 Se selecciona la persona a actualizar
             begin
                  select * into row_objecion from objecion_ele_pen 
                  where id_persona=id_persona_act
-                 and es_objecion_ele_pen_inactiva=0
                  and fecha_anulacion is  null
                  and numero_tipo_obj_ele_pen=21
                  and id_proveedor_dat_ext=id_proveedor;
             exception when no_data_found then null;
                 when others then
-                msg_string := 'Error recuperando la objeción de '||SQLERRM;
+                msg_string := 'Error recuperando la objeción: '||SQLERRM;
                 raise_application_error(err_number, msg_string, true);
             end;
             if sql%found then
                  --Si consigue la objecion la mantiene activa
                  update objecion_ele_pen
                  set es_objecion_ele_pen_inactiva=0,
-                 fecha_ultima_actualizacion=trunc(current_timestamp)
+                 fecha_ultima_actualizacion=trunc(current_timestamp),
+                 nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos
                  where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                  --Se actualiza el log para que la observación diga que la objeción se actualizó
                  update log_imp_emp set es_importado=1, 
@@ -266,13 +267,13 @@ begin
                     fecha_hora_transaccion= current_timestamp,
                     nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                     codigo_archivo=row_Archivo.codigo_archivo_datos_ext,
-                    observacion='Objeción actualizada'
+                    observacion='Objeción insertada'
                  where id_log_imp_emp=row_log_emp.id_log_imp_emp;
             end if;
         end loop;
     end loop;
     --3. Buscar codigos en log de jubilados y pensionados
-    for row_log_jub in (select * from log_imp_jub where cedula=codigo and observacion!='Objeción actualizada') 
+    for row_log_jub in (select * from log_imp_jub where cedula=codigo ) 
     loop
         row_objecion:=null;
         for row_archivo in (select * from archivo_datos_ext where codigo_archivo_datos_ext=row_log_jub.codigo_archivo)
@@ -280,25 +281,25 @@ begin
             id_proveedor:=row_archivo.id_proveedor_dat_ext;
             --Jubilados
             if(upper(row_log_jub.tipo_registro) like '%JUBILADO%') then
-                begin
-                    select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                    where (numero_tipo_obj_ele_pen=22)
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and id_persona=persona_consultada
-                    and id_proveedor_dat_ext=id_proveedor;
-                exception when no_data_found then null;
-                end;
-                if conta_objeciones>0 then
-                    update objecion_ele_pen
-                    set es_objecion_ele_pen_inactiva=1,
-                    fecha_ultima_actualizacion=trunc(current_timestamp)
-                    where numero_tipo_obj_ele_pen=22
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and id_persona=persona_consultada
-                    and id_proveedor_dat_ext=id_proveedor;
-                end if;
+--                 begin
+--                     select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                     where (numero_tipo_obj_ele_pen=22)
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and id_persona=persona_consultada
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 exception when no_data_found then null;
+--                 end;
+--                 if conta_objeciones>0 then
+--                     update objecion_ele_pen
+--                     set es_objecion_ele_pen_inactiva=1,
+--                     fecha_ultima_actualizacion=trunc(current_timestamp)
+--                     where numero_tipo_obj_ele_pen=22
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and id_persona=persona_consultada
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 end if;
                 id_persona_act:=sp$utils.extract_id_persona(row_log_jub.cedula,
                                                             row_log_jub.primer_nombre,
                                                             row_log_jub.segundo_nombre,
@@ -312,16 +313,19 @@ begin
                    begin
                         select * into row_objecion from objecion_ele_pen 
                         where id_persona=id_persona_act
-                        and es_objecion_ele_pen_inactiva=0
                         and fecha_anulacion is  null
                         and numero_tipo_obj_ele_pen=22
                         and id_proveedor_dat_ext=id_proveedor;
                    exception when no_data_found then null;
+                   when others then
+                        msg_string := 'Error recuperando la objeción: '||SQLERRM;
+                        raise_application_error(err_number, msg_string, true);
                    end;
                    if sql%found then
                         --Si consigue la objecion la mantiene activa
                         update objecion_ele_pen
                         set es_objecion_ele_pen_inactiva=0,
+                        nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos,
                         fecha_ultima_actualizacion=trunc(current_timestamp)
                         where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                         
@@ -341,31 +345,31 @@ begin
                                nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                                codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                                fecha_hora_transaccion= current_timestamp,
-                               observacion='Objeción actualizada'
+                               observacion='Objeción insertada'
                         where id_log_imp_jub=row_log_jub.id_log_imp_jub;
                    end if;
                 end if;
             --Pensionados 
             elsif (upper(row_log_jub.tipo_registro) like '%PENSIONADO%') then
-                begin
-                    select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                    where (numero_tipo_obj_ele_pen=25)
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and id_persona=persona_consultada
-                    and id_proveedor_dat_ext=id_proveedor;
-                exception when no_data_found then null;
-                end;
-                if conta_objeciones>0 then
-                    update objecion_ele_pen
-                    set es_objecion_ele_pen_inactiva=1,
-                    fecha_ultima_actualizacion=trunc(current_timestamp)
-                    where numero_tipo_obj_ele_pen=25
-                    and es_objecion_ele_pen_inactiva=0
-                    and fecha_anulacion is  null
-                    and id_persona=persona_consultada
-                    and id_proveedor_dat_ext=id_proveedor;
-                end if;
+--                 begin
+--                     select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                     where (numero_tipo_obj_ele_pen=25)
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and id_persona=persona_consultada
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 exception when no_data_found then null;
+--                 end;
+--                 if conta_objeciones>0 then
+--                     update objecion_ele_pen
+--                     set es_objecion_ele_pen_inactiva=1,
+--                     fecha_ultima_actualizacion=trunc(current_timestamp)
+--                     where numero_tipo_obj_ele_pen=25
+--                     and es_objecion_ele_pen_inactiva=0
+--                     and fecha_anulacion is  null
+--                     and id_persona=persona_consultada
+--                     and id_proveedor_dat_ext=id_proveedor;
+--                 end if;
                 id_persona_act:=sp$utils.extract_id_persona(row_log_jub.cedula,
                                                             row_log_jub.primer_nombre,
                                                             row_log_jub.segundo_nombre,
@@ -379,16 +383,19 @@ begin
                    begin
                         select * into row_objecion from objecion_ele_pen 
                         where id_persona=id_persona_act
-                        and es_objecion_ele_pen_inactiva=0
                         and fecha_anulacion is  null
                         and numero_tipo_obj_ele_pen=25
                         and id_proveedor_dat_ext=id_proveedor;
                    exception when no_data_found then null;
+                   when others then
+                        msg_string := 'Error recuperando la objeción: '||SQLERRM;
+                        raise_application_error(err_number, msg_string, true);
                    end;
                    if sql%found then
                         --Si consigue la objecion la mantiene activa
                         update objecion_ele_pen
                         set es_objecion_ele_pen_inactiva=0,
+                        nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos,
                         fecha_ultima_actualizacion=trunc(current_timestamp)
                         where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                         --Se actualiza el log para que la observación diga que la objeción se actualizó
@@ -414,7 +421,7 @@ begin
                                nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                                codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                                fecha_hora_transaccion= current_timestamp,
-                               observacion='Objeción actualizada'
+                               observacion='Objeción insertada'
                         where id_log_imp_jub=row_log_jub.id_log_imp_jub;
                    end if;
                 end if;
@@ -424,31 +431,31 @@ begin
 
     --4. Buscar codigos en log de penas
 
-    for row_log_pen in (select * from log_imp_pen where cedula=codigo and observacion='Objeción actualizada') 
+    for row_log_pen in (select * from log_imp_pen where cedula=codigo) 
     loop
         row_objecion:=null;
         for row_archivo in (select * from archivo_datos_ext where codigo_archivo_datos_ext=row_log_pen.codigo_archivo)
         loop
             id_proveedor:=row_archivo.id_proveedor_dat_ext;
-            begin
-                select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                where numero_tipo_obj_ele_pen=24 
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            exception when no_data_found then null;
-            end;
-            if conta_objeciones>0 then
-                update objecion_ele_pen
-                set es_objecion_ele_pen_inactiva=1,
-                fecha_ultima_actualizacion=trunc(current_timestamp)
-                where numero_tipo_obj_ele_pen=24
-                and id_persona=persona_consultada
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_proveedor_dat_ext=id_proveedor;
-            end if;
+--             begin
+--                 select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                 where numero_tipo_obj_ele_pen=24 
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             exception when no_data_found then null;
+--             end;
+--             if conta_objeciones>0 then
+--                 update objecion_ele_pen
+--                 set es_objecion_ele_pen_inactiva=1,
+--                 fecha_ultima_actualizacion=trunc(current_timestamp)
+--                 where numero_tipo_obj_ele_pen=24
+--                 and id_persona=persona_consultada
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             end if;
             id_persona_act:=sp$utils.extract_id_persona(row_log_pen.cedula,
                                                         row_log_pen.primer_nombre,
                                                         row_log_pen.segundo_nombre,
@@ -463,15 +470,18 @@ begin
                     select * into row_objecion from objecion_ele_pen 
                     where id_persona=id_persona_act
                     and numero_tipo_obj_ele_pen=24
-                    and es_objecion_ele_pen_inactiva=0
                     and fecha_anulacion is  null
                     and id_proveedor_dat_ext=id_proveedor;
                exception when no_data_found then null;
+               when others then
+                    msg_string := 'Error recuperando la objeción: '||SQLERRM;
+                    raise_application_error(err_number, msg_string, true);
                end;
                if sql%found then
                     --Si consigue la objecion la mantiene activa
                     update objecion_ele_pen
                     set es_objecion_ele_pen_inactiva=0,
+                    nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos,
                     fecha_ultima_actualizacion=trunc(current_timestamp)
                     where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                     --Se actualiza el log para que la observación diga que la objeción se actualizó
@@ -497,7 +507,7 @@ begin
                            nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                            codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                            fecha_hora_transaccion= current_timestamp,
-                           observacion='Objeción actualizada'
+                           observacion='Objeción insertada'
                     where id_log_imp_pen=row_log_pen.id_log_imp_pen;
                end if;
             end if;
@@ -507,31 +517,31 @@ begin
     --5. Buscar codigos en log de subsidios
     --Cambiar 25 por 26
 
-    for row_log_sub in (select * from log_imp_sub where cedula=codigo and observacion='Objeción actualizada') 
+    for row_log_sub in (select * from log_imp_sub where cedula=codigo ) 
     loop
         row_objecion:=null;
         for row_archivo in (select * from archivo_datos_ext where codigo_archivo_datos_ext=row_log_sub.codigo_archivo)
         loop
             id_proveedor:=row_archivo.id_proveedor_dat_ext;
-            begin
-                select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
-                where numero_tipo_obj_ele_pen=26
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            exception when no_data_found then null;
-            end;
-            if conta_objeciones>0 then
-                update objecion_ele_pen
-                set es_objecion_ele_pen_inactiva=1,
-                fecha_ultima_actualizacion=trunc(current_timestamp)
-                where numero_tipo_obj_ele_pen=26
-                and es_objecion_ele_pen_inactiva=0
-                and fecha_anulacion is  null
-                and id_persona=persona_consultada
-                and id_proveedor_dat_ext=id_proveedor;
-            end if;
+--             begin
+--                 select count(id_objecion_ele_pen) into conta_objeciones from objecion_ele_pen 
+--                 where numero_tipo_obj_ele_pen=26
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             exception when no_data_found then null;
+--             end;
+--             if conta_objeciones>0 then
+--                 update objecion_ele_pen
+--                 set es_objecion_ele_pen_inactiva=1,
+--                 fecha_ultima_actualizacion=trunc(current_timestamp)
+--                 where numero_tipo_obj_ele_pen=26
+--                 and es_objecion_ele_pen_inactiva=0
+--                 and fecha_anulacion is  null
+--                 and id_persona=persona_consultada
+--                 and id_proveedor_dat_ext=id_proveedor;
+--             end if;
             id_persona_act:=sp$utils.extract_id_persona(row_log_sub.cedula,
                                                         row_log_sub.primer_nombre,
                                                         row_log_sub.segundo_nombre,
@@ -546,15 +556,18 @@ begin
                     select * into row_objecion from objecion_ele_pen 
                     where id_persona=id_persona_act
                     and numero_tipo_obj_ele_pen=26
-                    and es_objecion_ele_pen_inactiva=0
                     and fecha_anulacion is  null
                     and id_proveedor_dat_ext=id_proveedor;
                exception when no_data_found then null;
+                    when others then
+                        msg_string := 'Error recuperando la objeción: '||SQLERRM;
+                        raise_application_error(err_number, msg_string, true);
                end;
                if sql%found then
                     --Si consigue la objecion la mantiene activa
                     update objecion_ele_pen
                     set es_objecion_ele_pen_inactiva=0,
+                    nombre_archivo_ultima_act=row_archivo.nombre_original_archivo_datos,
                     fecha_ultima_actualizacion=trunc(current_timestamp)
                     where id_objecion_ele_pen=row_objecion.id_objecion_ele_pen;
                     --Se actualiza el log para que la observación diga que la objeción se actualizó
@@ -580,7 +593,7 @@ begin
                            nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                            codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                            fecha_hora_transaccion= current_timestamp,
-                           observacion='Objeción actualizada'
+                           observacion='Objeción insertada'
                     where id_log_imp_sub=row_log_sub.id_log_imp_sub;
                end if;
             end if;
@@ -589,7 +602,7 @@ begin
 
      --6. Buscar codigos en log de fallecidos
 
-    for row_log_fal in (select * from log_imp_fal where cedula=codigo and observacion='Objeción actualizada') 
+    for row_log_fal in (select * from log_imp_fal where cedula=codigo) 
     loop
         row_objecion:=null;
         for row_archivo in (select * from archivo_datos_ext where codigo_archivo_datos_ext=row_log_fal.codigo_archivo)
@@ -614,6 +627,9 @@ begin
                     and fecha_anulacion is  null
                     and id_proveedor_dat_ext=id_proveedor;
                 exception when no_data_found then null;
+                    when others then
+                        msg_string := 'Error recuperando la objeción: '||SQLERRM;
+                        raise_application_error(err_number, msg_string, true);
                 end;
                 if not sql%found then
                     begin
@@ -641,7 +657,7 @@ begin
                               nombre_archivo=row_Archivo.nombre_archivo_datos_ext, 
                               codigo_archivo=row_Archivo.codigo_archivo_datos_ext, 
                               fecha_hora_transaccion= current_timestamp,
-                              observacion='Objeción actualizada'
+                              observacion='Objeción insertada'
                         where id_log_imp_fal=row_log_fal.id_log_imp_fal;
                        --dbms_output.put_line('total objeciones '||total_objeciones);
                     exception when others then
