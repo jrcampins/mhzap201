@@ -29,7 +29,7 @@ begin
     --Se registra la entrega de documentación
     else
         --Se registra el certificado de vida:
-        mensaje:=registrar_cer_vida(persona_consultada, cert_vida, fecha_cert_vida);
+        mensaje:=registrar_cer_vida(persona_consultada, cert_vida, fecha_cert_vida,null);
         --Se actualiza copia_cedula y declaración jurada
         update persona 
         set    es_persona_con_copia_cedula = copia_cedula,

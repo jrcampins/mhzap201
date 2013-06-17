@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_servicio_agua:=to_number(str);
-        if tipo_servicio_agua>=1 and tipo_servicio_agua<=6 then
+        if (tipo_servicio_agua>=1 and tipo_servicio_agua<=6) or tipo_Servicio_agua=9 then
             return tipo_servicio_agua;
         else
             msg_string:='Tipo de servicio de agua inválido';

@@ -3,14 +3,14 @@
 -- @param out icv: campo en el que se almacena el valor de icv calculado con las ponderaciones
 -- @param out puntajes (): Arreglo con los 28 puntajes de cada variable. Los puntajes no influyen directamente sobre el valor de icv, se usan para comparar variables
 -- @param out ponderaciones (): Arreglo con las 28 ponderaciones de cada variable.
--- @return el valor del icv 
+-- @return el valor del icv
 
 --create or replace TYPE array_number IS VARRAY(28) OF NUMBER;
 
 procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out number, puntajes out array_number, ponderaciones out array_number) is
         --Se utiliza un cursor para explorar las fichas de personas que viven en el hogar
         cursor cursor_ficha_persona(id_hogar in number)  is
-                            select * from ficha_persona p 
+                            select * from ficha_persona p
                             where p.id_ficha_hogar=id_hogar;
         row_ficha_persona ficha_persona%ROWTYPE;
         total_miembros_hogar number:=0;
@@ -51,8 +51,8 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
         end loop;
         --Se abre el cursor para que apunte a las fichas persona asociadas
         open cursor_ficha_persona(row_ficha_hogar.id_ficha_hogar);
-        --Variable 1: Hacinamiento.  
-        hacinamiento:=row_ficha_hogar.cantidad_dormitorios/row_ficha_hogar.total_personas;
+        --Variable 1: Hacinamiento.
+        hacinamiento:=row_ficha_hogar.total_personas/row_ficha_hogar.cantidad_dormitorios;
         if hacinamiento <=3 then
             puntajes(1):=1;
             ponderaciones(1):=2.98;
@@ -185,6 +185,9 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             when 4 then
                puntajes(7):=2;
                ponderaciones(7):=2.94;
+            when 9 then
+               puntajes(7):=2;
+               ponderaciones(7):=2.94;               
             else
                puntajes(7):=1;
                ponderaciones(7):=0;
@@ -300,7 +303,7 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             else
                celular:=1;
          end case;
-         case row_ficha_hogar.numero_siono_tlf_linea_baja 
+         case row_ficha_hogar.numero_siono_tlf_linea_baja
             when 1 then
                linea_baja:=1;
             when 6 then
@@ -324,26 +327,35 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
                ponderaciones(13):=4.88;
          end case;
          --Variable 14: Heladera
-         case row_ficha_hogar.numero_siono_disp_heladera 
+         case row_ficha_hogar.numero_siono_disp_heladera
             when 1 then
                puntajes(14):=2;
                ponderaciones(14):=3.02;
+            when 9 then
+               puntajes(14):=2;
+               ponderaciones(14):=3.02;   
             else
                puntajes(14):=1;
-               ponderaciones(14):=0;
+               ponderaciones(14):=0;           
          end case;
          --Variable 15: Lavarropas
          case row_ficha_hogar.numero_siono_disp_lavarropas
             when 1 then
                puntajes(15):=2;
                ponderaciones(15):=3.36;
+            when 9 then
+               puntajes(15):=2;
+               ponderaciones(15):=3.36;
             else
                puntajes(15):=1;
                ponderaciones(15):=0;
-         end case;
+        end case;
          --Variable 16: Termocalefón
          case row_ficha_hogar.numero_siono_disp_termo
             when 1 then
+               puntajes(16):=2;
+               ponderaciones(16):=5.46;
+            when 9 then
                puntajes(16):=2;
                ponderaciones(16):=5.46;
             else
@@ -355,13 +367,19 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             when 1 then
                puntajes(17):=2;
                ponderaciones(17):=2.79;
+            when 9 then
+               puntajes(17):=2;
+               ponderaciones(17):=2.79;
             else
                puntajes(17):=1;
                ponderaciones(17):=0;
          end case;
          --Variable 18: Automovil
-         case row_ficha_hogar.numero_siono_disp_automovil 
+         case row_ficha_hogar.numero_siono_disp_automovil
             when 1 then
+               puntajes(18):=2;
+               ponderaciones(18):=3.28;
+            when 9 then
                puntajes(18):=2;
                ponderaciones(18):=3.28;
             else
@@ -371,6 +389,9 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
          --Variable 19: Camión
          case row_ficha_hogar.numero_siono_disp_camion
             when 1 then
+               puntajes(19):=2;
+               ponderaciones(19):=3.67;
+            when 9 then
                puntajes(19):=2;
                ponderaciones(19):=3.67;
             else
@@ -454,7 +475,7 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
                 --Años de Estudio del Jefe del Hogar
                 anos_estudio_jefe:=anos_estudio;
             --Se actualiza años de estudio e idioma para conyuge
-            elsif row_ficha_persona.numero_tipo_persona_hogar=2 then    
+            elsif row_ficha_persona.numero_tipo_persona_hogar=2 then
                 --Idioma del Jefe del Hogar
                 if row_ficha_persona.numero_idioma_hogar>=1 and row_ficha_persona.numero_idioma_hogar<=5 then
                     idioma_conyuge:=row_ficha_persona.numero_idioma_hogar;
@@ -464,11 +485,11 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
                 --Años de Estudio del Jefe del Hogar
                 anos_estudio_conyuge:=anos_estudio;
             --Se actualiza numero de hijos (de 6 a 24) y años de estudio perdidos por hijos
-            elsif row_ficha_persona.numero_tipo_persona_hogar=3 then            
+            elsif row_ficha_persona.numero_tipo_persona_hogar=3 then
                 if row_ficha_persona.edad>=6 and row_ficha_persona.edad<=24 then
                     numero_hijos_6a24:=numero_hijos_6a24+1;
                     total_an_est_p_h:= total_an_est_p_h+(row_ficha_persona.edad-anos_estudio-6);
-                end if;    
+                end if;
             end if;
             --Se actualiza contador de seguros
             if row_ficha_persona.numero_tipo_seguro_medico<>6 then
@@ -483,7 +504,7 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             end if;
             --Se actualiza número de vacunas
             if row_ficha_persona.edad<=5 and row_ficha_persona.numero_siono_carnet_vacunacion<>6 then
-                numero_ninos_vacunados:=numero_ninos_vacunados+1;            
+                numero_ninos_vacunados:=numero_ninos_vacunados+1;
             end if;
             --Se actualiza estado de trabajo del jefe del hogar
             if row_ficha_persona.numero_tipo_persona_hogar=1 then
@@ -501,7 +522,11 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
                         cargo_trabajo_jefe:=5;
                     end if;
                 else
-                    cargo_trabajo_jefe:=1; 
+                   if trabajo_30_dias_jefe = 6 or trabajo_30_dias_jefe = 9 then
+                        cargo_trabajo_jefe:=7;
+                    else
+                        cargo_trabajo_jefe:=1;
+                    end if;
                 end if;
             end if;
         end loop;
@@ -647,7 +672,7 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             else
                 puntajes(24):=3;
                 ponderaciones(24):=0;
-            end if; 
+            end if;
         end if;
         --Variable 25: Cobertura del Seguro
         if numero_seguros=0 then
@@ -663,12 +688,12 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
         --Variable 26: Atención Médica
         if n_enf_90_dias=0 then
             puntajes(26):=4;
-            ponderaciones(26):=1.37; 
-        elsif n_enf_90_dias>numero_asistencias_cs then
-            puntajes(26):=3;
-            ponderaciones(26):=1.5;
+            ponderaciones(26):=1.37;
         elsif n_enf_90_dias=numero_asistencias_cs then
             puntajes(26):=2;
+            ponderaciones(26):=1.5;
+        elsif n_enf_90_dias>numero_asistencias_cs then
+            puntajes(26):=3;
             ponderaciones(26):=0.77;
         elsif n_enf_90_dias>0 and numero_asistencias_cs=0 then
             puntajes(26):=1;
@@ -713,9 +738,12 @@ procedure calcular_icv_area_rural (row_ficha_hogar ficha_hogar%rowtype, icv out 
             when 6 then
                 puntajes(28):=4;
                 ponderaciones(28):=0;
-            else
+            when 7 then
                 puntajes(28):=6;
                 ponderaciones(28):=0.49;
+            when 8 then
+                puntajes(28):=5;
+                ponderaciones(28):=1.03;
         end case;
         for i in 1..ponderaciones.count() loop
             icv:=icv+ponderaciones(i);

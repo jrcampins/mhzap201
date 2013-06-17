@@ -2,7 +2,7 @@ function extract_tipo_persona_hogar(str1 varchar2) return number is
 
     retorno number:= null;
 begin
-    if to_number(str1)>=1 and to_number(str1)<=8 then
+    if to_number(str1)>=1 and to_number(str1)<=8  or to_number(str1)=9 then
         retorno:=to_number(str1);
         return retorno;
     else

@@ -5,7 +5,7 @@
 --@param ubicacion_consultada: Identificador de la ubicacion a consultar
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function proceso_preparar_prox_pago_pen(rastro number,ubicacion_consultada number,fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp, codigo_sime varchar2) return number is
+create or replace function proceso_preparar_prox_pago_pen(rastro number, codigo_sime varchar2, ubicacion_consultada number, fecha_solicitud_desde timestamp, fecha_solicitud_hasta timestamp) return number is
     mensaje varchar2(2000);
     retcode number;
 begin

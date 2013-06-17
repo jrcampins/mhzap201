@@ -18,7 +18,7 @@ function consultar_acr(persona_consultada number) return number;
 function consultar_vig_pen(persona_consultada number) return number;
 function solicitar_pension(persona_consultada number, comentarios varchar2) return varchar2;
 function revocar_pension(persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return varchar2;
-function registrar_cer_vida(persona_consultada number, certificado varchar2, fecha_certificado timestamp) return varchar2;
+function registrar_cer_vida(persona_consultada number, certificado varchar2, fecha_certificado timestamp, dias_vigencia number) return varchar2;
 function registrar_denu_pen(persona_consultada number, comentarios varchar2) return varchar2;
 function solicitar_reco_pen(persona_consultada number, comentarios varchar2) return varchar2;
 function denegar_reco_pen(persona_consultada number, numero_causa number, otra_causa varchar2, comentarios varchar2) return varchar2;
@@ -36,3 +36,5 @@ function solicitar_reco_pen_sel(usuario_proceso number,observaciones varchar2) r
 function aprobar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
 function denegar_reco_pen_sel(usuario_proceso number,observaciones varchar2) return varchar2;
 function consultar_cedula_cvr(persona_consultada number) return varchar2;
+function anular_aprobacion_pen(persona_consultada number) return varchar2;
+function anular_denegacion_pen(persona_consultada number) return varchar2;

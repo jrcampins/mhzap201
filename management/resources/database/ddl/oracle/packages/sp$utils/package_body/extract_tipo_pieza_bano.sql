@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_pieza_bano:=to_number(str);
-        if tipo_pieza_bano>=1 and tipo_pieza_bano<=6 then
+        if (tipo_pieza_bano>=1 and tipo_pieza_bano<=6) or tipo_pieza_bano=9 then
             return tipo_pieza_bano;
         else
             msg_string:='Tipo de pieza de baño inválido';

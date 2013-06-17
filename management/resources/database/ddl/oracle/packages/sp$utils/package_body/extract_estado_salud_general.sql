@@ -8,7 +8,7 @@ begin
     begin
     if str is not null then
         estado_salud:=to_number(str);
-        if estado_salud>=1 and estado_salud<=3 then
+        if (estado_salud>=1 and estado_salud<=3) or estado_salud=9 then
             return estado_salud;
         else
             return 6;

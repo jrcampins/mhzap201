@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         clase_impedimento:=to_number(str);
-        if clase_impedimento>=1 and clase_impedimento<=13 or clase_impedimento=16 then
+        if clase_impedimento>=1 and clase_impedimento<=13 or clase_impedimento=16 or clase_impedimento=99 then
             return clase_impedimento;
         else
             msg_string:='Clase de impedimento inválida';

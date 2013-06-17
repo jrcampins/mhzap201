@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_mat_paredes:=to_number(str);
-        if tipo_mat_paredes>=1 and tipo_mat_paredes<=7 then
+        if (tipo_mat_paredes>=1 and tipo_mat_paredes<=7) or tipo_mat_paredes=9 then
             return tipo_mat_paredes;
         else
             msg_string:='Tipo de material paredes inválido';

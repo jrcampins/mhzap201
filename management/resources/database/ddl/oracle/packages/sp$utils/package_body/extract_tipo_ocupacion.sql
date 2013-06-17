@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_ocupacion:=to_number(str);
-        if tipo_ocupacion>=1 and tipo_ocupacion<=6 then
+        if (tipo_ocupacion>=1 and tipo_ocupacion<=6) or tipo_ocupacion=9 then
             return tipo_ocupacion;
         else
             msg_string:='Tipo de ocupación inválido';

@@ -6,7 +6,7 @@ begin
     begin
         if str is not null then
             siono:=to_number(str);
-            if siono=1 or siono=6 then
+            if siono=1 or siono=6 or siono=9 then
                 return siono;
             else
                 return null;

@@ -7,7 +7,7 @@ begin
     begin
     if str is not null then
         idioma_hogar:=to_number(str);
-        if idioma_hogar>=1 and idioma_hogar<=5 then
+        if (idioma_hogar>=1 and idioma_hogar<=5) or idioma_hogar=9 then
             return idioma_hogar;
         else
             msg_string:='Idioma de hogar inválido';

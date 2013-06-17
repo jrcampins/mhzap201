@@ -7,7 +7,7 @@ begin
     begin
     if str is not null then
         motivo_no_trabajo:=to_number(str);
-        if motivo_no_trabajo>=1 and motivo_no_trabajo<=9 then
+        if (motivo_no_trabajo>=1 and motivo_no_trabajo<=9) or motivo_no_trabajo=99 then
             return motivo_no_trabajo;
         else
             return null;

@@ -8,7 +8,7 @@ begin
     begin
     if str is not null then
         nivel_educativo_ult:=to_number(str);
-        if nivel_educativo_ult >=0 and nivel_educativo_ult <=22 then
+        if (nivel_educativo_ult >=0 and nivel_educativo_ult <=22) or nivel_educativo_ult=99 then
             return nivel_educativo_ult;
         else
             return null;

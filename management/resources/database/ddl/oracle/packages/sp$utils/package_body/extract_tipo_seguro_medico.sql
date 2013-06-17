@@ -8,7 +8,7 @@ begin
     begin
     if str is not null then
         tipo_seguro_medico:=to_number(str);
-        if tipo_seguro_medico>=1 and tipo_seguro_medico<=4 then
+        if tipo_seguro_medico>=1 and tipo_seguro_medico<=4 or tipo_seguro_medico=9 then
             return tipo_seguro_medico;
         else
             return 6;

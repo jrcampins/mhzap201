@@ -7,7 +7,7 @@ begin
     begin
     if str is not null then
         motivo_no_atencion:=to_number(str);
-        if motivo_no_atencion>=1 and motivo_no_atencion<=9 then
+        if (motivo_no_atencion>=1 and motivo_no_atencion<=9) or motivo_no_atencion=99 then
             return motivo_no_atencion;
         else
             return null;

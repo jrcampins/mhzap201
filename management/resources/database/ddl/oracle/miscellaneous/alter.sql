@@ -98,3 +98,24 @@ FROM
   left join potencial_ben pb on fp.id_potencial_ben=pb.id_potencial_ben
   left join tipo_persona_hogar tph on fp.numero_tipo_persona_hogar=tph.numero_tipo_persona_hogar))
   order by nombre_departamento, nombre_distrito, nombre_barrio, id, nombre_persona, cedula, fecha_importacion;
+
+insert into SIONO values (9,'No reporta');
+insert into TIPO_ABA_AGUA values (9,'No reporta');
+insert into TIPO_COMBUSTIBLE values (9,'No reporta');
+insert into TIPO_DESECHO_BAS values (9, 'No reporta');
+insert into TIPO_MAT_PAREDES values (9,'No reporta');
+insert into TIPO_MAT_PISO values (9,'No reporta');
+insert into TIPO_OCUPACION_VIV values (9,'No reporta');
+insert into TIPO_SERVICIO_AGUA values (9,'No reporta');
+insert into TIPO_SERVICIO_SAN values (9,'No reporta');
+insert into TIPO_PIEZA_BANO values (9,'No reporta');
+insert into ESTADO_SALUD values (9,'No reporta');
+insert into IDIOMA_HOGAR values (9,'No reporta');
+insert into MOTIVO_NO_ATENCION values (99, 'No reporta');
+insert into MOTIVO_NO_TRABAJO values (99, 'No reporta');
+insert into CLASE_IMPEDIMENTO values (99, 'No reporta');
+insert into TIPO_PERSONA_HOGAR values (9, 'No reporta');
+insert into TIPO_SEGURO_MEDICO values (9, 'No reporta');
+insert into TIPO_MAT_TECHO values (9,'No reporta');
+insert into NIVEL_EDUCATIVO values (99,'No reporta',0,0);
+commit;

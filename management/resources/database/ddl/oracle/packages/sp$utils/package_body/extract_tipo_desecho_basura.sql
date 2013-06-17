@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_desecho_bas:=to_number(str);
-        if tipo_desecho_bas>=1 and tipo_desecho_bas<=6 then
+        if (tipo_desecho_bas>=1 and tipo_desecho_bas<=6) or tipo_desecho_bas=9 then
             return tipo_desecho_bas;
         else
             return null;

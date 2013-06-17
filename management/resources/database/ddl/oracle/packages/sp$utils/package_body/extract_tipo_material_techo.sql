@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_mat_techo:=to_number(str);
-        if tipo_mat_techo>=1 and tipo_mat_techo<=4 then
+        if (tipo_mat_techo>=1 and tipo_mat_techo<=4) or tipo_mat_techo=9 then
             return tipo_mat_techo;
         else
             msg_string:='Tipo de material techo inválido';

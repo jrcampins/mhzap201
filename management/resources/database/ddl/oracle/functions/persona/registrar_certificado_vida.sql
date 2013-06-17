@@ -6,11 +6,11 @@
 --@param fecha_certificado: Fecha del certificado de vida
 --@return: 0 si no se produjo ninguna excepcion.
 --
-create or replace function persona_registrar_cer_vida(rastro number, persona_consultada number, certificado varchar2, fecha_certificado timestamp) return number is
+create or replace function persona_registrar_cer_vida(rastro number, persona_consultada number, certificado varchar2, fecha_certificado timestamp, dias_vigencia number) return number is
     mensaje varchar2(200);
     retcode number;
 begin
-    mensaje:=sp$persona.registrar_cer_vida(persona_consultada,certificado,fecha_certificado);
+    mensaje:=sp$persona.registrar_cer_vida(persona_consultada,certificado,fecha_certificado,dias_vigencia);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

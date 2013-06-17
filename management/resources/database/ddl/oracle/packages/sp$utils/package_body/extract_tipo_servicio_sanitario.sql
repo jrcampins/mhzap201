@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_servicio_san:=to_number(str);
-        if tipo_servicio_san>=1 and tipo_servicio_san<=6 then
+        if (tipo_servicio_san>=1 and tipo_servicio_san<=6) or tipo_servicio_san=9 then
             return tipo_servicio_san;
         else
             msg_string:='Tipo de servicio sanitario inválido';
