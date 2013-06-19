@@ -118,4 +118,8 @@ insert into TIPO_PERSONA_HOGAR values (9, 'No reporta');
 insert into TIPO_SEGURO_MEDICO values (9, 'No reporta');
 insert into TIPO_MAT_TECHO values (9,'No reporta');
 insert into NIVEL_EDUCATIVO values (99,'No reporta',0,0);
+insert into CAUSA_IMPEDIMENTO values (99,'No reporta');
+insert into MOTIVO_INA_ESC values (99,'No reporta');
+insert into CLASE_ENF_ACC values (99,'No reporta');
+insert into TIPO_RELACION_LAB values (9,'No reporta');
 commit;

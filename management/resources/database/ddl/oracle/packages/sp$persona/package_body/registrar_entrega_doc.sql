@@ -7,7 +7,7 @@
 --@param declaracion_jur: bandera indicando si entrega declaracion jurada
 --@return: 0 si no se produjo ninguna excepcion.
 --
-function registrar_entrega_doc(persona_consultada number, cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number) return varchar2 is
+function registrar_entrega_doc(persona_consultada number, es_con_cert_vida number,cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number, dias_vig number, comentarios varchar2) return varchar2 is
     mensaje varchar2(200);
     mensaje_int varchar2(200);
     row_persona persona%rowtype;
@@ -23,16 +23,26 @@ begin
         msg_string := 'Persona no existe (id='||persona_consultada||')';
         raise_application_error(err_number, msg_string, true);
     --Solo se aceptan denuncias respecto a pensiones aprobadas
-    elsif row_persona.numero_condicion_pension <>5 then
-        msg_string := 'Persona no tiene pensión otorgada. No se puede registrar documentación';
+    elsif (row_persona.numero_condicion_pension <>5 and row_persona.numero_condicion_pension <>6 )then
+        msg_string := 'Persona no tiene pensión otorgada ni denegada. No se puede registrar documentación';
         raise_application_error(err_number, msg_string, true);
     --Se registra la entrega de documentación
     else
         --Se registra el certificado de vida:
-        mensaje:=registrar_cer_vida(persona_consultada, cert_vida, fecha_cert_vida,null);
+        if  es_con_cert_vida=1 then
+            if cert_vida is null then
+               msg_string := 'Número de certificado de vida no indicado';
+               raise_application_error(err_number, msg_string, true);
+            elsif fecha_cert_vida is null then
+               msg_string := 'Fecha de certificado de vida no indicado';
+               raise_application_error(err_number, msg_string, true);
+            end if;
+            mensaje:=registrar_cer_vida(persona_consultada, cert_vida, fecha_cert_vida,dias_vig);
+        end if;
         --Se actualiza copia_cedula y declaración jurada
         update persona 
         set    es_persona_con_copia_cedula = copia_cedula,
+               es_persona_con_cer_vida = es_con_cert_vida, 
                es_persona_con_declaracion_jur = declaracion_jur
         where  id_persona = persona_consultada;
         mensaje:='Documentos Registrados. '||mensaje;

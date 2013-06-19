@@ -7,7 +7,7 @@ begin
     begin
     if str is not null then
         motivo_ina_esc:=to_number(str);
-        if motivo_ina_esc>=1 and motivo_ina_esc<=25 then
+        if (motivo_ina_esc>=1 and motivo_ina_esc<=25) or motivo_ina_esc=99 then
             return motivo_ina_esc;
         else
             msg_string:='Motivo de inasistencia inválida';

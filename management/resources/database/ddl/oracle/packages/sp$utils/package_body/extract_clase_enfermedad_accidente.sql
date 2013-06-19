@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         clase_enf_acc:=to_number(str);
-        if clase_enf_acc>=11 and clase_enf_acc<=44 then
+        if (clase_enf_acc>=11 and clase_enf_acc<=44) or clase_enf_acc=99 then
             return clase_enf_acc;
         else
             msg_string:='Enfermedad/accidente inválida';

@@ -7,6 +7,8 @@ begin
             return 1;
         elsif disponibilidad_heladera=0 then
             return 6;
+        elsif disponibilidad_heladera=9 then
+            return 9;
         else
             return null;
         end if;

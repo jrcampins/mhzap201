@@ -7,12 +7,12 @@
 --@param copia_cedula: bandera indicando si entrega copia cedula
 --@param declaracion_jur: bandera indicando si entrega declaracion jurada
 --@return: 0 si no se produjo ninguna excepcion.
---
-create or replace function persona_registrar_entrega_doc(rastro number, persona_consultada number, cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number) return number is
+--TODO revisar parametros al agregar dias de cert vida
+create or replace function persona_registrar_entrega_doc(rastro number, persona_consultada number, es_con_cert_vida number, cert_vida varchar2, fecha_cert_vida timestamp, copia_cedula number, declaracion_jur number, comentarios varchar2) return number is
     mensaje varchar2(200);
     retcode number;
 begin
-    mensaje:=sp$persona.registrar_entrega_doc(persona_consultada, cert_vida, fecha_cert_vida, copia_cedula, declaracion_jur);
+    mensaje:=sp$persona.registrar_entrega_doc(persona_consultada, es_con_cert_vida, cert_vida, fecha_cert_vida, copia_cedula, declaracion_jur,null, comentarios);
     retcode := rastro_proceso_update(rastro, 21, null, mensaje);
     return retcode;
 end;

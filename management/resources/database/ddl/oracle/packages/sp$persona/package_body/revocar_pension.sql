@@ -26,7 +26,7 @@ begin
     --
     --Solo se revocan pensiones aprobadas
     --
-    elsif (row_persona.numero_condicion_pension <>2 and row_persona.numero_condicion_pension <>5) then
+    elsif (row_persona.numero_condicion_pension <>2 and row_persona.numero_condicion_pension <>5 and row_persona.numero_condicion_pension <>7) then
         msg_string := 'Persona no tiene pensión a revocar';
         raise_application_error(err_number, msg_string, true);
     --

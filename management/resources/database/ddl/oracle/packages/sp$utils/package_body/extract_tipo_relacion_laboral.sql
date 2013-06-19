@@ -6,7 +6,7 @@ begin
     begin
     if str is not null then
         tipo_relacion_lab:=to_number(str);
-        if tipo_relacion_lab>=1 and tipo_relacion_lab<=8 then
+        if (tipo_relacion_lab>=1 and tipo_relacion_lab<=8) or tipo_relacion_lab=9 then
             return tipo_relacion_lab;
         else
             msg_string:='Tipo de relación laboral inválido';

@@ -159,3 +159,6 @@ function f_ws_inserta_cedula(vCED_NROCEDULA   VARCHAR2,
 ) return VARCHAR2;
 function exportar_pen_apr(nombre_archivo varchar2, codigo_sime varchar2) return varchar2;
 function exportar_pen_den(nombre_archivo varchar2, codigo_sime varchar2) return varchar2;
+function asignar_monto_pension(sime varchar2,monto number) return varchar2;
+function verificar_ele_pen_jupe return varchar2;
+function aprobar_exclusion_pen(sime varchar2) return varchar2;

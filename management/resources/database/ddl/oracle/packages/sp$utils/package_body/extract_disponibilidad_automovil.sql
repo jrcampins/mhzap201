@@ -5,8 +5,10 @@ begin
         disponibilidad_automovil:=to_number(str);
         if disponibilidad_automovil=5 then
             return 1;
-        elsif disponibilidad_automovil=0 then
+        elsif disponibilidad_automovil=0  then
             return 6;
+        elsif disponibilidad_automovil=9 then
+            return 9;
         else
             return null;
         end if;
