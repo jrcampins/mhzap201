@@ -162,3 +162,5 @@ function exportar_pen_den(nombre_archivo varchar2, codigo_sime varchar2) return 
 function asignar_monto_pension(sime varchar2,monto number) return varchar2;
 function verificar_ele_pen_jupe return varchar2;
 function aprobar_exclusion_pen(sime varchar2) return varchar2;
+function exportar_pen_rev(nombre_archivo varchar2, codigo_sime varchar2) return varchar2;
+function revocar_pensiones_apr(sime varchar2, fecha_resolucion timestamp, numero_resolucion varchar2,  cedula_desde varchar2, cedula_hasta varchar2) return varchar2;
