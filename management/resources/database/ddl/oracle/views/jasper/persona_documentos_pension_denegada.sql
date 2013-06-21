@@ -1,12 +1,12 @@
-create or replace view persona_doc_pension_oto as
+create or replace view persona_doc_pension_den as
 SELECT persona.codigo_persona AS cedula, 
        persona.nombre_persona,
        persona.numero_cedula,
        persona.fecha_solicitud_pension, 
-       persona.fecha_aprobacion_pension,
-       persona.fecha_otorgamiento_pen,
-       persona.numero_resolucion_otor_pen,
-       persona.fecha_resolucion_otor_pen,
+       persona.fecha_objecion_pension,
+       persona.fecha_denegacion_pension,
+       persona.numero_resolucion_den_pen,
+       persona.fecha_resolucion_den_pen,
        persona.indice_calidad_vida,
        utils.years_since(persona.fecha_nacimiento) as edad,
        ubicacion_1x4.nombre_ubicacion AS departamento,
@@ -30,5 +30,5 @@ SELECT persona.codigo_persona AS cedula,
    LEFT JOIN ubicacion ubicacion_1x5 ON ubicacion_1x5.id_ubicacion = persona.id_distrito
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    JOIN condicion_pension cp ON persona.numero_condicion_pension = cp.numero_condicion_pension
-WHERE persona.numero_condicion_pension = 5  
+WHERE persona.numero_condicion_pension = 6 
 ORDER BY persona.id_departamento, persona.id_distrito,persona.fecha_solicitud_pension,persona.codigo_sime, persona.nombre_persona,persona.fecha_otorgamiento_pen, persona.id_barrio;

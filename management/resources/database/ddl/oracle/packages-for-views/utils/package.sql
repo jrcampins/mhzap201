@@ -13,3 +13,4 @@ function years_between(hasta timestamp, desde timestamp) return number;
 function years_since(desde timestamp) return number;
 function get_causa_denegacion(persona_consultada number) return varchar2;
 function get_organismo_causa(persona_consultada number) return varchar2;
+function extract_objeciones(persona_consultada number) return varchar2;

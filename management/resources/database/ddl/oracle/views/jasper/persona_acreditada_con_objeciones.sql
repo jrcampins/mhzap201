@@ -1,7 +1,9 @@
 --persona_acreditada_con_objeciones
 CREATE OR REPLACE VIEW persona_acr_con_obj 
 AS
-SELECT persona.codigo_persona AS cedula, 
+SELECT
+    distinct
+    persona.codigo_persona AS cedula, 
     persona.nombre_persona,
     utils.years_since(persona.fecha_nacimiento) as edad,
     ubicacion_1x4.nombre_ubicacion AS departamento,
@@ -22,7 +24,7 @@ SELECT persona.codigo_persona AS cedula,
     pb.nombre_referente,
     persona.codigo_sime,
     COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono,   
-    toep.codigo_tipo_obj_ele_pen||' : '||pde.nombre_proveedor_dat_ext||NVL(' '||oep.observaciones,'.') AS objeciones_elegibilidad
+    utils.extract_objeciones(persona.id_persona) as objeciones
 FROM persona persona
    LEFT JOIN potencial_ben pb ON pb.id_persona = persona.id_persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =pb.id_departamento
@@ -36,5 +38,4 @@ FROM persona persona
 WHERE  persona.es_persona_acreditada_para_pen = 1 AND
        (persona.numero_condicion_pension=1 or persona.numero_condicion_pension=3) AND
        oep.es_objecion_ele_pen_inactiva=0
-ORDER BY persona.codigo_sime,persona.nombre_persona,persona.id_departamento,
-    persona.id_distrito, persona.id_barrio;
+ORDER BY departamento, distrito, persona.fecha_solicitud_pension,persona.codigo_sime,persona.nombre_persona;

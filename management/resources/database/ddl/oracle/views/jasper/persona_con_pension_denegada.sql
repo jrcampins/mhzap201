@@ -1,6 +1,7 @@
 CREATE OR REPLACE VIEW persona_con_pension_denegada
 AS
-SELECT persona.codigo_persona AS cedula, 
+SELECT DISTINCT
+       persona.codigo_persona AS cedula, 
        persona.nombre_persona,
        utils.years_since(persona.fecha_nacimiento) as edad,
        ubicacion_1x4.nombre_ubicacion AS departamento,
@@ -22,7 +23,7 @@ SELECT persona.codigo_persona AS cedula,
        persona.numero_causa_den_pension,
        COALESCE(fh.numero_telefono_linea_baja, 
        fh.numero_telefono_celular) AS numero_telefono,
-       cd.codigo_causa_den_pension,
+       utils.extract_objeciones(persona.id_persona) as objeciones,
        persona.codigo_sime
 FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion =persona.id_departamento
@@ -32,5 +33,4 @@ FROM persona persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN causa_den_pension cd on persona.numero_causa_den_pension=cd.numero_causa_den_pension
 WHERE persona.numero_condicion_pension = 6  
-ORDER BY persona.codigo_sime,persona.fecha_denegacion_pension, persona.id_departamento,
-    persona.id_distrito, persona.id_barrio, persona.nombre_persona;
+ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.numero_Resolucion_den_pen,persona.nombre_persona;

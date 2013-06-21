@@ -31,4 +31,4 @@ from
 where
     persona.numero_condicion_pension = 5 and persona.fecha_hora_ult_act_jupe is not null
 order by
-    persona.codigo_sime,persona.id_departamento, persona.id_distrito, persona.nombre_persona;
+    persona.codigo_sime,persona.nombre_persona,persona.id_departamento, persona.id_distrito;

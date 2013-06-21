@@ -141,6 +141,7 @@ begin
     end if;
     for i in table_log.first..table_log.last loop
         begin
+            --dbms_output.put_line(total);
             total:=total+1;
             --Procesamos las pensiones solicitadas
             if (table_log(i).numero_condicion_pension=1) then

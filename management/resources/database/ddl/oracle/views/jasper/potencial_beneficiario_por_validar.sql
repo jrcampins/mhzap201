@@ -29,5 +29,5 @@ FROM potencial_ben pb
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = pb.id_barrio
    LEFT JOIN tipo_area ta ON ubicacion_1x7.numero_tipo_area=ta.numero_tipo_area
 WHERE pb.numero_condicion_censo=2 and pb.indice_calidad_vida is not null
-ORDER BY pb.fecha_registro_pot_ben, pb.id_departamento,
-    pb.id_distrito, pb.id_barrio, pb.nombre_potencial_ben;
+ORDER BY pb.nombre_potencial_ben,pb.fecha_registro_pot_ben, pb.id_departamento,
+    pb.id_distrito, pb.id_barrio;

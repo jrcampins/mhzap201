@@ -40,5 +40,5 @@ WHERE pb.indice_calidad_vida is not null
 AND pb.numero_condicion_censo is not null
 AND  pb.numero_condicion_Censo<>1
 AND pb.numero_condicion_censo<>2
-ORDER BY cc.numero_condicion_censo,fh.id_departamento,
-    fh.id_distrito, fh.id_barrio, pb.nombre_potencial_ben;
+ORDER BY pb.nombre_potencial_ben,cc.numero_condicion_censo,fh.id_departamento,
+    fh.id_distrito, fh.id_barrio;

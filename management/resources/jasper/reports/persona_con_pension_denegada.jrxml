@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona_con_pension_otorgada" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="948" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="443"/>
+	<property name="ireport.y" value="178"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -36,13 +36,13 @@
 	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
 	<field name="NUMERO_CAUSA_DEN_PENSION" class="java.math.BigDecimal"/>
 	<field name="NUMERO_TELEFONO" class="java.lang.String"/>
-	<field name="CODIGO_CAUSA_DEN_PENSION" class="java.lang.String"/>
+	<field name="OBJECIONES" class="java.lang.String"/>
 	<field name="CODIGO_SIME" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
-	<variable name="total_lote" class="java.lang.Integer" resetType="Group" resetGroup="codigo_Sime" calculation="Count">
-		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
+	<variable name="total_lote" class="java.lang.Integer" resetType="Group" resetGroup="resolucion_den" calculation="Count">
+		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
 	<group name="grupo_distrito_anho" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{DISTRITO}+$F{ANHO}]]></groupExpression>
@@ -185,12 +185,12 @@
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="codigo_Sime" isStartNewPage="true" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{CODIGO_SIME}]]></groupExpression>
+	<group name="resolucion_den" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{NUMERO_RESOLUCION_DEN_PEN}]]></groupExpression>
 		<groupHeader>
-			<band height="50">
+			<band height="38">
 				<staticText>
-					<reportElement key="staticText-8" mode="Opaque" x="11" y="30" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-8" mode="Opaque" x="11" y="17" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -199,12 +199,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Nº]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-9" mode="Opaque" x="47" y="30" width="54" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-9" mode="Opaque" x="47" y="17" width="54" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -213,12 +213,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[NRO. C.I.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-10" mode="Opaque" x="101" y="30" width="211" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-10" mode="Opaque" x="101" y="17" width="211" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -227,13 +227,13 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[NOMBRES
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-11" mode="Opaque" x="312" y="30" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-11" mode="Opaque" x="312" y="17" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -242,13 +242,13 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[EDAD
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="341" y="30" width="115" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="341" y="17" width="115" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -257,12 +257,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[BARRIO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-18" mode="Opaque" x="712" y="30" width="40" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-18" mode="Opaque" x="712" y="17" width="40" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -276,7 +276,7 @@
 					<text><![CDATA[ICV]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="456" y="30" width="86" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="455" y="17" width="86" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -290,7 +290,7 @@
 					<text><![CDATA[FECHA DENEGACIÓN]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="542" y="30" width="85" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="541" y="17" width="85" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -304,7 +304,7 @@
 					<text><![CDATA[FECHA RESOLUCIÓN DENEGATORIA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="627" y="30" width="85" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="626" y="17" width="86" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -315,10 +315,10 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="8" isBold="true"/>
 					</textElement>
-					<text><![CDATA[N°  RESOLUCIÓN DENEGATORIA]]></text>
+					<text><![CDATA[CODIGO SIME]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="752" y="30" width="188" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="752" y="17" width="188" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -332,17 +332,17 @@
 					<text><![CDATA[CAUSA DENEGACIÓN]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement key="rectangle-1" x="11" y="0" width="929" height="30" backcolor="#CCCCCC"/>
+					<reportElement key="rectangle-1" x="11" y="0" width="929" height="17" backcolor="#CCCCCC"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
 				</rectangle>
 				<textField isBlankWhenNull="true">
-					<reportElement key="textField-3" x="383" y="0" width="159" height="17"/>
+					<reportElement key="textField-3" x="341" y="0" width="294" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="10" isBold="true" isItalic="true"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA["CÓDIGO SIME: " + $F{CODIGO_SIME}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA["N° DE RESOLUCIÓN DENEGATORIA: " + $F{NUMERO_RESOLUCION_DEN_PEN}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -353,7 +353,7 @@
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de pensiones denegadas (Código SIME "+$F{CODIGO_SIME}+"):  " + $V{total_lote}]]></textFieldExpression>
+					<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de pensiones denegadas (Resolución "+$F{NUMERO_RESOLUCION_DEN_PEN}+"):  " + $V{total_lote}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement key="line-1" x="11" y="0" width="929" height="1"/>
@@ -435,18 +435,18 @@
 				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA_RESOLUCION_DEN_PEN}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" x="627" y="2" width="85" height="13"/>
+				<reportElement key="textField" x="627" y="-1" width="85" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO_RESOLUCION_DEN_PEN}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO_SIME}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField-7" x="752" y="3" width="188" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO_CAUSA_DEN_PENSION}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OBJECIONES}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
