@@ -38,4 +38,4 @@ FROM persona persona
 WHERE  persona.es_persona_acreditada_para_pen = 1 AND
        (persona.numero_condicion_pension=1 or persona.numero_condicion_pension=3) AND
        oep.es_objecion_ele_pen_inactiva=0
-ORDER BY departamento, distrito, persona.fecha_solicitud_pension,persona.codigo_sime,persona.nombre_persona;
+ORDER BY departamento, distrito, persona.fecha_solicitud_pension,persona.codigo_sime,persona.codigo_persona;

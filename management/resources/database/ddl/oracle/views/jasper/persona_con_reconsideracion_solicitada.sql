@@ -28,4 +28,4 @@ SELECT persona.codigo_persona AS cedula,
    JOIN condicion_pension cp ON persona.numero_condicion_pension = cp.numero_condicion_pension
    JOIN condicion_reco_pen cr ON persona.numero_condicion_reco_pen=cr.numero_condicion_reco_pen
 WHERE persona.numero_condicion_pension = 6 and  persona.numero_condicion_reco_pen is not null
-ORDER BY persona.id_departamento, persona.id_distrito,persona.fecha_solicitud_pension,persona.codigo_sime, persona.nombre_persona, persona.id_barrio;
+ORDER BY persona.id_departamento, persona.id_distrito,persona.fecha_solicitud_pension,persona.numero_resolucion_den_pen, persona.codigo_persona, persona.id_barrio;

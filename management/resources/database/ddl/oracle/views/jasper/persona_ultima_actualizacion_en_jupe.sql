@@ -21,7 +21,8 @@ select
     persona.indice_calidad_vida,
     persona.fecha_hora_ult_act_jupe,
     persona.numero_tipo_act_jupe,
-    persona.codigo_sime
+    persona.codigo_sime,
+    persona.comentarios_insercion_jupe
 from
     persona
     left join ubicacion ubicacion1 on persona.id_departamento=ubicacion1.id_ubicacion
@@ -31,4 +32,4 @@ from
 where
     persona.numero_condicion_pension = 5 and persona.fecha_hora_ult_act_jupe is not null
 order by
-    persona.codigo_sime,persona.nombre_persona,persona.id_departamento, persona.id_distrito;
+    persona.codigo_sime,persona.id_departamento, persona.id_distrito,persona.codigo_persona;

@@ -33,4 +33,4 @@ FROM persona persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN causa_den_pension cd on persona.numero_causa_den_pension=cd.numero_causa_den_pension
 WHERE persona.numero_condicion_pension = 6  
-ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.numero_Resolucion_den_pen,persona.nombre_persona;
+ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.numero_Resolucion_den_pen,persona.codigo_persona;

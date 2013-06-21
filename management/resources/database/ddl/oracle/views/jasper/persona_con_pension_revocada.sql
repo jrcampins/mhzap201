@@ -14,8 +14,9 @@ SELECT DISTINCT
     persona.numero_condicion_pension,
     persona.numero_cedula,
     persona.fecha_solicitud_pension, 
-    fecha_revocacion_pension,
+    persona.fecha_revocacion_pension,
     persona.numero_causa_rev_pension,
+    cd.codigo_causa_Rev_pension,
     persona.numero_resolucion_rev_pen,
     persona.fecha_resolucion_rev_pen,
     extract(year from persona.fecha_solicitud_pension) AS anho, 
@@ -34,4 +35,4 @@ FROM persona persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
    LEFT JOIN causa_rev_pension cd ON persona.numero_causa_rev_pension=cd.numero_causa_rev_pension
 WHERE persona.numero_condicion_pension = 4
-ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.numero_resolucion_rev_pen,persona.nombre_persona;
+ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.numero_resolucion_rev_pen,persona.codigo_persona;

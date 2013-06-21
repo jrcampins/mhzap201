@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="310"/>
+	<property name="ireport.x" value="36"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -37,6 +37,7 @@
 	<field name="FECHA_HORA_ULT_ACT_JUPE" class="java.sql.Timestamp"/>
 	<field name="NUMERO_TIPO_ACT_JUPE" class="java.math.BigDecimal"/>
 	<field name="CODIGO_SIME" class="java.lang.String"/>
+	<field name="COMENTARIOS_INSERCION_JUPE" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_distrito_anho" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
@@ -184,7 +185,7 @@
 			<band splitType="Stretch"/>
 		</groupFooter>
 	</group>
-	<group name="codigo_Sime">
+	<group name="codigo_Sime" isStartNewPage="true">
 		<groupExpression><![CDATA[$F{CODIGO_SIME}]]></groupExpression>
 		<groupHeader>
 			<band height="42">
@@ -295,35 +296,7 @@
 					<text><![CDATA[DEPARTAMENTO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="703" y="22" width="69" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
-					<box>
-						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="8"/>
-					</textElement>
-					<text><![CDATA[FECHA APROBACIÓN]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="772" y="22" width="70" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
-					<box>
-						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="8"/>
-					</textElement>
-					<text><![CDATA[FECHA RESOLUCIÓN]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="842" y="22" width="67" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="704" y="22" width="67" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -356,6 +329,20 @@
 						<font fontName="Arial" size="9"/>
 					</textElement>
 					<text><![CDATA[Nº]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-12" mode="Opaque" x="771" y="22" width="138" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="8"/>
+					</textElement>
+					<text><![CDATA[OBSERVACIONES]]></text>
 				</staticText>
 			</band>
 		</groupHeader>
@@ -447,26 +434,19 @@
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
 			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" x="704" y="0" width="69" height="13"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA_APROBACION_PENSION}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField" x="773" y="0" width="70" height="13"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA_RESOLUCION_PENSION}]]></textFieldExpression>
-			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField" x="843" y="0" width="66" height="13"/>
+				<reportElement key="textField" x="704" y="0" width="66" height="13"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{NUMERO_RESOLUCION_PENSION}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z" isBlankWhenNull="true">
+				<reportElement key="textField" x="773" y="1" width="136" height="12"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{COMENTARIOS_INSERCION_JUPE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

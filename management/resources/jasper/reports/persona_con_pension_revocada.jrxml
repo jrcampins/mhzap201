@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="280"/>
+	<property name="ireport.x" value="310"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -30,6 +30,7 @@
 	<field name="FECHA_SOLICITUD_PENSION" class="java.sql.Timestamp"/>
 	<field name="FECHA_REVOCACION_PENSION" class="java.sql.Timestamp"/>
 	<field name="NUMERO_CAUSA_REV_PENSION" class="java.math.BigDecimal"/>
+	<field name="CODIGO_CAUSA_REV_PENSION" class="java.lang.String"/>
 	<field name="NUMERO_RESOLUCION_REV_PEN" class="java.lang.String"/>
 	<field name="FECHA_RESOLUCION_REV_PEN" class="java.sql.Timestamp"/>
 	<field name="ANHO" class="java.math.BigDecimal"/>
@@ -331,7 +332,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9" isBold="true"/>
 					</textElement>
-					<text><![CDATA[CAUSA REVOCACIÓN]]></text>
+					<text><![CDATA[OBJECIONES]]></text>
 				</staticText>
 				<rectangle>
 					<reportElement key="rectangle-1" x="11" y="0" width="929" height="17" backcolor="#CCCCCC"/>

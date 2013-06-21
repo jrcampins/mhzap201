@@ -1,6 +1,7 @@
-CREATE OR REPLACE VIEW persona_con_pension_aprobada
+CREATE OR REPLACE VIEW persona_excluir_jupe
 AS
-SELECT persona.codigo_persona AS cedula, 
+SELECT DISTINCT
+    persona.codigo_persona AS cedula, 
     persona.nombre_persona,
     utils.years_since(persona.fecha_nacimiento) as edad,
     ubicacion_1x4.nombre_ubicacion AS departamento,
@@ -9,15 +10,17 @@ SELECT persona.codigo_persona AS cedula,
     ubicacion_1x5.id_ubicacion AS id_distrito,
     ubicacion_1x7.nombre_ubicacion AS barrio, 
     ubicacion_1x7.id_ubicacion AS id_barrio,
-    persona.direccion, persona.numero_cedula,
+    persona.direccion, 
+    persona.numero_condicion_pension,
+    persona.numero_cedula,
     persona.fecha_solicitud_pension, 
-    persona.fecha_aprobacion_pension,
+    persona.fecha_otorgamiento_pen,
+    persona.numero_resolucion_otor_pen,
+    persona.fecha_resolucion_otor_pen,
     extract(year from persona.fecha_solicitud_pension) AS anho, 
     persona.indice_calidad_vida,
-    fh.nombre_jefe_hogar, 
-    fh.numero_cedula_jefe_hogar, fh.direccion AS referencia_casa,
-    COALESCE(fh.numero_telefono_linea_baja, 
-    fh.numero_telefono_celular) AS numero_telefono, fh.observaciones,
+    COALESCE(fh.numero_telefono_linea_baja, fh.numero_telefono_celular) AS numero_telefono, 
+    utils.extract_objeciones(persona.id_persona) as objeciones,
     persona.codigo_sime
 FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = persona.id_departamento
@@ -25,5 +28,6 @@ FROM persona persona
    LEFT JOIN ubicacion ubicacion_1x7 ON ubicacion_1x7.id_ubicacion = persona.id_barrio
    LEFT JOIN ficha_persona fp ON persona.id_ficha_persona = fp.id_ficha_persona
    LEFT JOIN ficha_hogar fh ON fp.id_ficha_hogar = fh.id_ficha_hogar
-WHERE persona.numero_condicion_pension = 2  
-ORDER BY departamento, distrito, persona.fecha_solicitud_pension,persona.codigo_sime,persona.codigo_persona;
+   LEFT JOIN causa_rev_pension cd ON persona.numero_causa_rev_pension=cd.numero_causa_rev_pension
+WHERE persona.numero_condicion_pension = 7
+ORDER BY id_distrito, persona.fecha_solicitud_pension,persona.codigo_sime,persona.codigo_persona;
