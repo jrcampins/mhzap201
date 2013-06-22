@@ -26,3 +26,5 @@ INSERT INTO clase_impedimento (numero_clase_impedimento, codigo_clase_impediment
 VALUES (13, 'Otros (especificar)');
 INSERT INTO clase_impedimento (numero_clase_impedimento, codigo_clase_impedimento)
 VALUES (16, 'Habla con mucha dificultad');
+INSERT INTO clase_impedimento (numero_clase_impedimento, codigo_clase_impedimento)
+VALUES (99, 'No reporta');

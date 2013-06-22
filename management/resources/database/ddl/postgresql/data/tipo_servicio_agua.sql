@@ -12,3 +12,5 @@ INSERT INTO tipo_servicio_agua (numero_tipo_servicio_agua, codigo_tipo_servicio_
 VALUES (6, 'Youa,Manantial');
 INSERT INTO tipo_servicio_agua (numero_tipo_servicio_agua, codigo_tipo_servicio_agua)
 VALUES (7, 'Arroyo,Río');
+INSERT INTO tipo_servicio_agua (numero_tipo_servicio_agua, codigo_tipo_servicio_agua)
+VALUES (9, 'No reporta');

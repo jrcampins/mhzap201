@@ -818,7 +818,8 @@ CREATE TABLE log_imp_ids
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL,
 	nombre_archivo varchar,
-	codigo_archivo varchar
+	codigo_archivo varchar,
+	id_persona bigint
 	);
 
 CREATE TABLE log_imp_jub
@@ -946,7 +947,8 @@ CREATE TABLE log_imp_per
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL,
 	nombre_archivo varchar,
-	codigo_archivo varchar
+	codigo_archivo varchar,
+	id_ficha_persona bigint
 	);
 
 CREATE TABLE log_imp_per_eec
@@ -1036,7 +1038,8 @@ CREATE TABLE log_imp_per_eec
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL,
 	nombre_archivo varchar,
-	codigo_archivo varchar
+	codigo_archivo varchar,
+	id_ficha_persona bigint
 	);
 
 CREATE TABLE log_imp_pot
@@ -1060,7 +1063,8 @@ CREATE TABLE log_imp_pot
 	observacion varchar,
 	fecha_hora_transaccion timestamp with time zone NOT NULL,
 	nombre_archivo varchar,
-	codigo_archivo varchar
+	codigo_archivo varchar,
+	id_potencial_ben bigint
 	);
 
 CREATE TABLE log_imp_sub
@@ -1284,7 +1288,8 @@ CREATE TABLE objecion_ele_pen
 	nombre_archivo_ultima_act varchar(200),
 	observaciones varchar,
 	fecha_anulacion timestamp with time zone,
-	observaciones_anulacion varchar
+	observaciones_anulacion varchar,
+	referencia varchar
 	);
 
 CREATE TABLE opcion_binaria

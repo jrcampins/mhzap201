@@ -7,6 +7,8 @@ VALUES (13, 'Persona no es natural');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (14, 'Persona no es mayor de 65 años');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
+VALUES (15, 'Persona con cédula vencida');
+INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (21, 'Persona con empleo');
 INSERT INTO causa_den_pension (numero_causa_den_pension, codigo_causa_den_pension)
 VALUES (22, 'Persona con jubilación');

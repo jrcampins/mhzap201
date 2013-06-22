@@ -120,7 +120,8 @@ SELECT
 	objecion_ele_pen.nombre_archivo_ultima_act AS nombre_archivo_ultima_act,
 	objecion_ele_pen.observaciones AS observaciones,
 	objecion_ele_pen.fecha_anulacion AS fecha_anulacion,
-	objecion_ele_pen.observaciones_anulacion AS observaciones_anulacion
+	objecion_ele_pen.observaciones_anulacion AS observaciones_anulacion,
+	objecion_ele_pen.referencia AS referencia
 FROM
 	objecion_ele_pen objecion_ele_pen
 	INNER JOIN persona persona_1x1 ON persona_1x1.id_persona = objecion_ele_pen.id_persona

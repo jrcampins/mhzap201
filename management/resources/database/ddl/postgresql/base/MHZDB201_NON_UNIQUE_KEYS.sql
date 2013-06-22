@@ -98,11 +98,15 @@ CREATE INDEX IX_log_imp_emp_version_log_imp_emp ON log_imp_emp (version_log_imp_
 CREATE INDEX IX_log_imp_fal_version_log_imp_fal ON log_imp_fal (version_log_imp_fal);
 CREATE INDEX IX_log_imp_hog_version_log_imp_hog ON log_imp_hog (version_log_imp_hog);
 CREATE INDEX IX_log_imp_hog_eec_version_log_imp_hog_eec ON log_imp_hog_eec (version_log_imp_hog_eec);
+CREATE INDEX IX_log_imp_ids_id_persona ON log_imp_ids (id_persona);
 CREATE INDEX IX_log_imp_ids_version_log_imp_ids ON log_imp_ids (version_log_imp_ids);
 CREATE INDEX IX_log_imp_jub_version_log_imp_jub ON log_imp_jub (version_log_imp_jub);
 CREATE INDEX IX_log_imp_pen_version_log_imp_pen ON log_imp_pen (version_log_imp_pen);
+CREATE INDEX IX_log_imp_per_id_ficha_persona ON log_imp_per (id_ficha_persona);
 CREATE INDEX IX_log_imp_per_version_log_imp_per ON log_imp_per (version_log_imp_per);
+CREATE INDEX IX_log_imp_per_eec_id_ficha_persona ON log_imp_per_eec (id_ficha_persona);
 CREATE INDEX IX_log_imp_per_eec_version_log_imp_per_eec ON log_imp_per_eec (version_log_imp_per_eec);
+CREATE INDEX IX_log_imp_pot_id_potencial_ben ON log_imp_pot (id_potencial_ben);
 CREATE INDEX IX_log_imp_pot_version_log_imp_pot ON log_imp_pot (version_log_imp_pot);
 CREATE INDEX IX_log_imp_sub_version_log_imp_sub ON log_imp_sub (version_log_imp_sub);
 CREATE INDEX IX_log_imp_ubi_version_log_imp_ubi ON log_imp_ubi (version_log_imp_ubi);

@@ -183,6 +183,7 @@
     <field name="observaciones" class="java.lang.String"/>
     <field name="fecha_anulacion" class="java.util.Date"/>
     <field name="observaciones_anulacion" class="java.lang.String"/>
+    <field name="referencia" class="java.lang.String"/>
 
 
 <group name="reportGroup1" isReprintHeaderOnEachPage="false" minHeightToStartNewPage="132">

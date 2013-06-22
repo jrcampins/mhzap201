@@ -68,4 +68,6 @@ INSERT INTO clase_enf_acc (numero_clase_enf_acc, codigo_clase_enf_acc)
 VALUES (43, 'Pulmonía');
 INSERT INTO clase_enf_acc (numero_clase_enf_acc, codigo_clase_enf_acc)
 VALUES (44, 'Otros (especificar)');
+INSERT INTO clase_enf_acc (numero_clase_enf_acc, codigo_clase_enf_acc)
+VALUES (99, 'No reporta');
 GO

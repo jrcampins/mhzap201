@@ -6,3 +6,5 @@ INSERT INTO tipo_mat_techo (numero_tipo_mat_techo, codigo_tipo_mat_techo)
 VALUES (3, 'Ethernit');
 INSERT INTO tipo_mat_techo (numero_tipo_mat_techo, codigo_tipo_mat_techo)
 VALUES (4, 'Zinc');
+INSERT INTO tipo_mat_techo (numero_tipo_mat_techo, codigo_tipo_mat_techo)
+VALUES (9, 'No reporta');

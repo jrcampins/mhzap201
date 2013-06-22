@@ -10,4 +10,6 @@ INSERT INTO tipo_seguro_medico (numero_tipo_seguro_medico, codigo_tipo_seguro_me
 VALUES (4, 'Militar,policial');
 INSERT INTO tipo_seguro_medico (numero_tipo_seguro_medico, codigo_tipo_seguro_medico)
 VALUES (6, 'No tiene');
+INSERT INTO tipo_seguro_medico (numero_tipo_seguro_medico, codigo_tipo_seguro_medico)
+VALUES (9, 'No reporta');
 GO

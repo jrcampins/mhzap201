@@ -18,4 +18,6 @@ INSERT INTO motivo_no_trabajo (numero_motivo_no_trabajo, codigo_motivo_no_trabaj
 VALUES (8, 'Pensionado/a');
 INSERT INTO motivo_no_trabajo (numero_motivo_no_trabajo, codigo_motivo_no_trabajo)
 VALUES (9, 'Otros');
+INSERT INTO motivo_no_trabajo (numero_motivo_no_trabajo, codigo_motivo_no_trabajo)
+VALUES (99, 'No reporta');
 GO

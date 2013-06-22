@@ -14,4 +14,6 @@ INSERT INTO tipo_mat_paredes (numero_tipo_mat_paredes, codigo_tipo_mat_paredes)
 VALUES (6, 'Chapa,Tela,Carton,Latas,otros');
 INSERT INTO tipo_mat_paredes (numero_tipo_mat_paredes, codigo_tipo_mat_paredes)
 VALUES (7, 'Sin paredes');
+INSERT INTO tipo_mat_paredes (numero_tipo_mat_paredes, codigo_tipo_mat_paredes)
+VALUES (9, 'No reporta');
 GO

@@ -266,6 +266,14 @@ ALTER TABLE funcion_parametro ADD CONSTRAINT FK_funcion_parametro_007___ FOREIGN
 GO
 ALTER TABLE grupo_proceso ADD CONSTRAINT FK_grupo_proceso_001___ FOREIGN KEY (numero_condicion_eje_fun) REFERENCES condicion_eje_fun (numero_condicion_eje_fun) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
+ALTER TABLE log_imp_ids ADD CONSTRAINT FK_log_imp_ids_001___ FOREIGN KEY (id_persona) REFERENCES persona (id_persona) ON DELETE NO ACTION ON UPDATE NO ACTION
+GO
+ALTER TABLE log_imp_per ADD CONSTRAINT FK_log_imp_per_001___ FOREIGN KEY (id_ficha_persona) REFERENCES ficha_persona (id_ficha_persona) ON DELETE NO ACTION ON UPDATE NO ACTION
+GO
+ALTER TABLE log_imp_per_eec ADD CONSTRAINT FK_log_imp_per_eec_001___ FOREIGN KEY (id_ficha_persona) REFERENCES ficha_persona (id_ficha_persona) ON DELETE NO ACTION ON UPDATE NO ACTION
+GO
+ALTER TABLE log_imp_pot ADD CONSTRAINT FK_log_imp_pot_001___ FOREIGN KEY (id_potencial_ben) REFERENCES potencial_ben (id_potencial_ben) ON DELETE NO ACTION ON UPDATE NO ACTION
+GO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_001___ FOREIGN KEY (id_ficha_hogar) REFERENCES ficha_hogar (id_ficha_hogar) ON DELETE NO ACTION ON UPDATE NO ACTION
 GO
 ALTER TABLE log_pro_acr_pot_ben ADD CONSTRAINT FK_log_pro_acr_pot_ben_002___ FOREIGN KEY (id_ficha_persona) REFERENCES ficha_persona (id_ficha_persona) ON DELETE NO ACTION ON UPDATE NO ACTION

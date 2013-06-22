@@ -12,4 +12,6 @@ INSERT INTO tipo_servicio_san (numero_tipo_servicio_san, codigo_tipo_servicio_sa
 VALUES (5, 'Desagüe en rio, arroyo, laguna');
 INSERT INTO tipo_servicio_san (numero_tipo_servicio_san, codigo_tipo_servicio_san)
 VALUES (6, 'No tiene');
+INSERT INTO tipo_servicio_san (numero_tipo_servicio_san, codigo_tipo_servicio_san)
+VALUES (9, 'No reporta');
 GO

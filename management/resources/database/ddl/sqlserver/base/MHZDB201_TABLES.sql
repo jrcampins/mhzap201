@@ -916,7 +916,8 @@ CREATE TABLE log_imp_ids
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL,
 	nombre_archivo varchar(256),
-	codigo_archivo varchar(256)
+	codigo_archivo varchar(256),
+	id_persona bigint
 	)
 	ON [PRIMARY]
 GO
@@ -1050,7 +1051,8 @@ CREATE TABLE log_imp_per
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL,
 	nombre_archivo varchar(256),
-	codigo_archivo varchar(256)
+	codigo_archivo varchar(256),
+	id_ficha_persona bigint
 	)
 	ON [PRIMARY]
 GO
@@ -1142,7 +1144,8 @@ CREATE TABLE log_imp_per_eec
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL,
 	nombre_archivo varchar(256),
-	codigo_archivo varchar(256)
+	codigo_archivo varchar(256),
+	id_ficha_persona bigint
 	)
 	ON [PRIMARY]
 GO
@@ -1168,7 +1171,8 @@ CREATE TABLE log_imp_pot
 	observacion varchar(256),
 	fecha_hora_transaccion datetime NOT NULL,
 	nombre_archivo varchar(256),
-	codigo_archivo varchar(256)
+	codigo_archivo varchar(256),
+	id_potencial_ben bigint
 	)
 	ON [PRIMARY]
 GO
@@ -1426,7 +1430,8 @@ CREATE TABLE objecion_ele_pen
 	nombre_archivo_ultima_act varchar(200),
 	observaciones varchar(256),
 	fecha_anulacion smalldatetime,
-	observaciones_anulacion varchar(256)
+	observaciones_anulacion varchar(256),
+	referencia varchar(256)
 	)
 	ON [PRIMARY]
 GO

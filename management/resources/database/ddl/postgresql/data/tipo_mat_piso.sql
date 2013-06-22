@@ -12,3 +12,5 @@ INSERT INTO tipo_mat_piso (numero_tipo_mat_piso, codigo_tipo_mat_piso)
 VALUES (6, 'Cerámica,Alfombra,Vinilo,otros');
 INSERT INTO tipo_mat_piso (numero_tipo_mat_piso, codigo_tipo_mat_piso)
 VALUES (7, 'Granito,Parquet,Mármol');
+INSERT INTO tipo_mat_piso (numero_tipo_mat_piso, codigo_tipo_mat_piso)
+VALUES (9, 'No reporta');

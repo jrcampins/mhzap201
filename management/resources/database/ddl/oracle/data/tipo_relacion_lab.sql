@@ -14,3 +14,5 @@ INSERT INTO tipo_relacion_lab (numero_tipo_relacion_lab, codigo_tipo_relacion_la
 VALUES (7, 'Trabajador no remunerado');
 INSERT INTO tipo_relacion_lab (numero_tipo_relacion_lab, codigo_tipo_relacion_lab)
 VALUES (8, 'Empleado/a doméstico/a');
+INSERT INTO tipo_relacion_lab (numero_tipo_relacion_lab, codigo_tipo_relacion_lab)
+VALUES (9, 'No reporta');

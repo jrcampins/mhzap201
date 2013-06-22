@@ -12,4 +12,6 @@ INSERT INTO tipo_combustible (numero_tipo_combustible, codigo_tipo_combustible)
 VALUES (5, 'Electricidad');
 INSERT INTO tipo_combustible (numero_tipo_combustible, codigo_tipo_combustible)
 VALUES (6, 'No cocina');
+INSERT INTO tipo_combustible (numero_tipo_combustible, codigo_tipo_combustible)
+VALUES (9, 'No reporta');
 GO

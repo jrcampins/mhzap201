@@ -12,4 +12,6 @@ INSERT INTO tipo_ocupacion_viv (numero_tipo_ocupacion_viv, codigo_tipo_ocupacion
 VALUES (5, 'Cedida');
 INSERT INTO tipo_ocupacion_viv (numero_tipo_ocupacion_viv, codigo_tipo_ocupacion_viv)
 VALUES (6, 'Otros');
+INSERT INTO tipo_ocupacion_viv (numero_tipo_ocupacion_viv, codigo_tipo_ocupacion_viv)
+VALUES (9, 'No reporta');
 GO

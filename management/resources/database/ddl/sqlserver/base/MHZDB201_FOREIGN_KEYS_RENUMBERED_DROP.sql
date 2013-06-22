@@ -266,6 +266,14 @@ ALTER TABLE funcion_parametro DROP CONSTRAINT FK_funcion_parametro_007___
 GO
 ALTER TABLE grupo_proceso DROP CONSTRAINT FK_grupo_proceso_001___
 GO
+ALTER TABLE log_imp_ids DROP CONSTRAINT FK_log_imp_ids_001___
+GO
+ALTER TABLE log_imp_per DROP CONSTRAINT FK_log_imp_per_001___
+GO
+ALTER TABLE log_imp_per_eec DROP CONSTRAINT FK_log_imp_per_eec_001___
+GO
+ALTER TABLE log_imp_pot DROP CONSTRAINT FK_log_imp_pot_001___
+GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_001___
 GO
 ALTER TABLE log_pro_acr_pot_ben DROP CONSTRAINT FK_log_pro_acr_pot_ben_002___

@@ -16,3 +16,5 @@ INSERT INTO motivo_no_atencion (numero_motivo_no_atencion, codigo_motivo_no_aten
 VALUES (8, 'No confía en los médicos');
 INSERT INTO motivo_no_atencion (numero_motivo_no_atencion, codigo_motivo_no_atencion)
 VALUES (9, 'Otros');
+INSERT INTO motivo_no_atencion (numero_motivo_no_atencion, codigo_motivo_no_atencion)
+VALUES (99, 'No reporta');

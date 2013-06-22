@@ -12,4 +12,6 @@ INSERT INTO tipo_desecho_bas (numero_tipo_desecho_bas, codigo_tipo_desecho_bas)
 VALUES (5, 'Tira en zanja,arroyo,rio,etc');
 INSERT INTO tipo_desecho_bas (numero_tipo_desecho_bas, codigo_tipo_desecho_bas)
 VALUES (6, 'Recoge en carrito');
+INSERT INTO tipo_desecho_bas (numero_tipo_desecho_bas, codigo_tipo_desecho_bas)
+VALUES (9, 'No reporta');
 GO

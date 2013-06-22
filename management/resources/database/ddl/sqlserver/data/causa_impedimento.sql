@@ -10,4 +10,6 @@ INSERT INTO causa_impedimento (numero_causa_impedimento, codigo_causa_impediment
 VALUES (4, 'Por edad avanzada');
 INSERT INTO causa_impedimento (numero_causa_impedimento, codigo_causa_impedimento)
 VALUES (5, 'Otros (especificar)');
+INSERT INTO causa_impedimento (numero_causa_impedimento, codigo_causa_impedimento)
+VALUES (99, 'No reporta');
 GO

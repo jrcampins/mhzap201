@@ -10,4 +10,6 @@ INSERT INTO tipo_pieza_bano (numero_tipo_pieza_bano, codigo_tipo_pieza_bano)
 VALUES (4, 'Pieza sin ducha');
 INSERT INTO tipo_pieza_bano (numero_tipo_pieza_bano, codigo_tipo_pieza_bano)
 VALUES (6, 'No  tiene pieza para bañarse');
+INSERT INTO tipo_pieza_bano (numero_tipo_pieza_bano, codigo_tipo_pieza_bano)
+VALUES (9, 'No reporta');
 GO

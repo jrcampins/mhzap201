@@ -48,4 +48,6 @@ INSERT INTO motivo_ina_esc (numero_motivo_ina_esc, codigo_motivo_ina_esc)
 VALUES (24, 'Servicio Militar');
 INSERT INTO motivo_ina_esc (numero_motivo_ina_esc, codigo_motivo_ina_esc)
 VALUES (25, 'Otros (especificar)');
+INSERT INTO motivo_ina_esc (numero_motivo_ina_esc, codigo_motivo_ina_esc)
+VALUES (99, 'No reporta');
 GO

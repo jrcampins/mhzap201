@@ -44,3 +44,5 @@ INSERT INTO nivel_educativo (numero_nivel_educativo, codigo_nivel_educativo, pri
 VALUES (21, 'Formación Militar/Policial', 1, 4);
 INSERT INTO nivel_educativo (numero_nivel_educativo, codigo_nivel_educativo, primer_curso, ultimo_curso)
 VALUES (22, 'Superior Universitaria', 1, 6);
+INSERT INTO nivel_educativo (numero_nivel_educativo, codigo_nivel_educativo, primer_curso, ultimo_curso)
+VALUES (99, 'No reporta', 0, 0);

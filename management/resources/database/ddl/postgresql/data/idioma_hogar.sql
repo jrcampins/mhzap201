@@ -8,3 +8,5 @@ INSERT INTO idioma_hogar (numero_idioma_hogar, codigo_idioma_hogar)
 VALUES (4, 'Otro idioma');
 INSERT INTO idioma_hogar (numero_idioma_hogar, codigo_idioma_hogar)
 VALUES (5, 'No habla');
+INSERT INTO idioma_hogar (numero_idioma_hogar, codigo_idioma_hogar)
+VALUES (9, 'No reporta');

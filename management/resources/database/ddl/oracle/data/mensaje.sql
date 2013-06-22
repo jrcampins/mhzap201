@@ -1033,865 +1033,881 @@ VALUES (516, 0, 'fk_grupo_proceso_001___', '*no existe un recurso de la clase "c
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (517, 0, 'fk_grupo_proceso_001____1', '*existen recursos de la clase "grupo proceso" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (518, 0, 'fk_log_pro_acr_pot_ben_001___', '*no existe un recurso de la clase "ficha hogar" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (518, 0, 'fk_log_imp_ids_001___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (519, 0, 'fk_log_pro_acr_pot_ben_001____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (519, 0, 'fk_log_imp_ids_001____1', '*existen recursos de la clase "log imp ids" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (520, 0, 'fk_log_pro_acr_pot_ben_002___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (520, 0, 'fk_log_imp_per_001___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (521, 0, 'fk_log_pro_acr_pot_ben_002____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (521, 0, 'fk_log_imp_per_001____1', '*existen recursos de la clase "log imp per" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (522, 0, 'fk_log_pro_acr_pot_ben_003___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (522, 0, 'fk_log_imp_per_eec_001___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (523, 0, 'fk_log_pro_acr_pot_ben_003____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (523, 0, 'fk_log_imp_per_eec_001____1', '*existen recursos de la clase "log imp per eec" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (524, 0, 'fk_log_pro_acr_pot_ben_004___', '*no existe un recurso de la clase "potencial ben" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (524, 0, 'fk_log_imp_pot_001___', '*no existe un recurso de la clase "potencial ben" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (525, 0, 'fk_log_pro_acr_pot_ben_004____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (525, 0, 'fk_log_imp_pot_001____1', '*existen recursos de la clase "log imp pot" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (526, 0, 'fk_log_pro_acr_pot_ben_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (526, 0, 'fk_log_pro_acr_pot_ben_001___', '*no existe un recurso de la clase "ficha hogar" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (527, 0, 'fk_log_pro_acr_pot_ben_005____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (527, 0, 'fk_log_pro_acr_pot_ben_001____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (528, 0, 'fk_log_pro_acr_pot_ben_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (528, 0, 'fk_log_pro_acr_pot_ben_002___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (529, 0, 'fk_log_pro_acr_pot_ben_006____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (529, 0, 'fk_log_pro_acr_pot_ben_002____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (530, 0, 'fk_log_pro_acr_pot_ben_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (530, 0, 'fk_log_pro_acr_pot_ben_003___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (531, 0, 'fk_log_pro_acr_pot_ben_007____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (531, 0, 'fk_log_pro_acr_pot_ben_003____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (532, 0, 'fk_log_pro_act_jupe_001___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (532, 0, 'fk_log_pro_acr_pot_ben_004___', '*no existe un recurso de la clase "potencial ben" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (533, 0, 'fk_log_pro_act_jupe_001____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (533, 0, 'fk_log_pro_acr_pot_ben_004____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (534, 0, 'fk_log_pro_act_jupe_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (534, 0, 'fk_log_pro_acr_pot_ben_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (535, 0, 'fk_log_pro_act_jupe_002____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (535, 0, 'fk_log_pro_acr_pot_ben_005____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (536, 0, 'fk_log_pro_act_jupe_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (536, 0, 'fk_log_pro_acr_pot_ben_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (537, 0, 'fk_log_pro_act_jupe_003____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (537, 0, 'fk_log_pro_acr_pot_ben_006____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (538, 0, 'fk_log_pro_act_jupe_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (538, 0, 'fk_log_pro_acr_pot_ben_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (539, 0, 'fk_log_pro_act_jupe_004____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (539, 0, 'fk_log_pro_acr_pot_ben_007____1', '*existen recursos de la clase "log pro acr pot ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (540, 0, 'fk_log_pro_act_jupe_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (540, 0, 'fk_log_pro_act_jupe_001___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (541, 0, 'fk_log_pro_act_jupe_005____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (541, 0, 'fk_log_pro_act_jupe_001____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (542, 0, 'fk_log_pro_den_pen_obj_001___', '*no existe un recurso de la clase "causa den pension" identificado con el valor especificado para "causa den pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (542, 0, 'fk_log_pro_act_jupe_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (543, 0, 'fk_log_pro_den_pen_obj_001____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (543, 0, 'fk_log_pro_act_jupe_002____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (544, 0, 'fk_log_pro_den_pen_obj_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (544, 0, 'fk_log_pro_act_jupe_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (545, 0, 'fk_log_pro_den_pen_obj_002____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (545, 0, 'fk_log_pro_act_jupe_003____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (546, 0, 'fk_log_pro_den_pen_obj_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (546, 0, 'fk_log_pro_act_jupe_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (547, 0, 'fk_log_pro_den_pen_obj_003____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (547, 0, 'fk_log_pro_act_jupe_004____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (548, 0, 'fk_log_pro_den_pen_obj_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (548, 0, 'fk_log_pro_act_jupe_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (549, 0, 'fk_log_pro_den_pen_obj_004____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (549, 0, 'fk_log_pro_act_jupe_005____1', '*existen recursos de la clase "log pro act jupe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (550, 0, 'fk_log_pro_den_pen_obj_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (550, 0, 'fk_log_pro_den_pen_obj_001___', '*no existe un recurso de la clase "causa den pension" identificado con el valor especificado para "causa den pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (551, 0, 'fk_log_pro_den_pen_obj_005____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (551, 0, 'fk_log_pro_den_pen_obj_001____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (552, 0, 'fk_log_pro_imp_arc_ext_001___', '*no existe un recurso de la clase "archivo datos ext" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (552, 0, 'fk_log_pro_den_pen_obj_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (553, 0, 'fk_log_pro_imp_arc_ext_001____1', '*existen recursos de la clase "log pro imp arc ext" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (553, 0, 'fk_log_pro_den_pen_obj_002____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (554, 0, 'fk_log_pro_imp_arc_ext_002___', '*no existe un recurso de la clase "tipo arc dat ext" identificado con el valor especificado para "tipo arc dat ext"; no es posible {0} el recurso {1}', NULL);
+VALUES (554, 0, 'fk_log_pro_den_pen_obj_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (555, 0, 'fk_log_pro_imp_arc_ext_002____1', '*existen recursos de la clase "log pro imp arc ext" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (555, 0, 'fk_log_pro_den_pen_obj_003____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (556, 0, 'fk_log_pro_oto_pen_apr_001___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (556, 0, 'fk_log_pro_den_pen_obj_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (557, 0, 'fk_log_pro_oto_pen_apr_001____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (557, 0, 'fk_log_pro_den_pen_obj_004____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (558, 0, 'fk_log_pro_oto_pen_apr_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (558, 0, 'fk_log_pro_den_pen_obj_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (559, 0, 'fk_log_pro_oto_pen_apr_002____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (559, 0, 'fk_log_pro_den_pen_obj_005____1', '*existen recursos de la clase "log pro den pen obj" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (560, 0, 'fk_log_pro_oto_pen_apr_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (560, 0, 'fk_log_pro_imp_arc_ext_001___', '*no existe un recurso de la clase "archivo datos ext" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (561, 0, 'fk_log_pro_oto_pen_apr_003____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (561, 0, 'fk_log_pro_imp_arc_ext_001____1', '*existen recursos de la clase "log pro imp arc ext" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (562, 0, 'fk_log_pro_oto_pen_apr_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (562, 0, 'fk_log_pro_imp_arc_ext_002___', '*no existe un recurso de la clase "tipo arc dat ext" identificado con el valor especificado para "tipo arc dat ext"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (563, 0, 'fk_log_pro_oto_pen_apr_004____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (563, 0, 'fk_log_pro_imp_arc_ext_002____1', '*existen recursos de la clase "log pro imp arc ext" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (564, 0, 'fk_log_pro_oto_pen_apr_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (564, 0, 'fk_log_pro_oto_pen_apr_001___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (565, 0, 'fk_log_pro_oto_pen_apr_005____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (565, 0, 'fk_log_pro_oto_pen_apr_001____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (566, 0, 'fk_log_pro_pre_pro_pag_001___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (566, 0, 'fk_log_pro_oto_pen_apr_002___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (567, 0, 'fk_log_pro_pre_pro_pag_001____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (567, 0, 'fk_log_pro_oto_pen_apr_002____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (568, 0, 'fk_log_pro_pre_pro_pag_002___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (568, 0, 'fk_log_pro_oto_pen_apr_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (569, 0, 'fk_log_pro_pre_pro_pag_002____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (569, 0, 'fk_log_pro_oto_pen_apr_003____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (570, 0, 'fk_log_pro_pre_pro_pag_003___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (570, 0, 'fk_log_pro_oto_pen_apr_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (571, 0, 'fk_log_pro_pre_pro_pag_003____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (571, 0, 'fk_log_pro_oto_pen_apr_004____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (572, 0, 'fk_log_pro_pre_pro_pag_004___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (572, 0, 'fk_log_pro_oto_pen_apr_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (573, 0, 'fk_log_pro_pre_pro_pag_004____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (573, 0, 'fk_log_pro_oto_pen_apr_005____1', '*existen recursos de la clase "log pro oto pen apr" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (574, 0, 'fk_log_pro_pre_pro_pag_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (574, 0, 'fk_log_pro_pre_pro_pag_001___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (575, 0, 'fk_log_pro_pre_pro_pag_005____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (575, 0, 'fk_log_pro_pre_pro_pag_001____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (576, 0, 'fk_log_pro_pre_pro_pag_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (576, 0, 'fk_log_pro_pre_pro_pag_002___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (577, 0, 'fk_log_pro_pre_pro_pag_006____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (577, 0, 'fk_log_pro_pre_pro_pag_002____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (578, 0, 'fk_log_pro_pre_pro_pag_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (578, 0, 'fk_log_pro_pre_pro_pag_003___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (579, 0, 'fk_log_pro_pre_pro_pag_007____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (579, 0, 'fk_log_pro_pre_pro_pag_003____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (580, 0, 'fk_log_pro_ver_ele_pen_001___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (580, 0, 'fk_log_pro_pre_pro_pag_004___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (581, 0, 'fk_log_pro_ver_ele_pen_001____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (581, 0, 'fk_log_pro_pre_pro_pag_004____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (582, 0, 'fk_log_pro_ver_ele_pen_002___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (582, 0, 'fk_log_pro_pre_pro_pag_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (583, 0, 'fk_log_pro_ver_ele_pen_002____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (583, 0, 'fk_log_pro_pre_pro_pag_005____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (584, 0, 'fk_log_pro_ver_ele_pen_003___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (584, 0, 'fk_log_pro_pre_pro_pag_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (585, 0, 'fk_log_pro_ver_ele_pen_003____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (585, 0, 'fk_log_pro_pre_pro_pag_006____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (586, 0, 'fk_log_pro_ver_ele_pen_004___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (586, 0, 'fk_log_pro_pre_pro_pag_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (587, 0, 'fk_log_pro_ver_ele_pen_004____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (587, 0, 'fk_log_pro_pre_pro_pag_007____1', '*existen recursos de la clase "log pro pre pro pag" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (588, 0, 'fk_log_pro_ver_ele_pen_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (588, 0, 'fk_log_pro_ver_ele_pen_001___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (589, 0, 'fk_log_pro_ver_ele_pen_005____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (589, 0, 'fk_log_pro_ver_ele_pen_001____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (590, 0, 'fk_log_pro_ver_ele_pen_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (590, 0, 'fk_log_pro_ver_ele_pen_002___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (591, 0, 'fk_log_pro_ver_ele_pen_006____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (591, 0, 'fk_log_pro_ver_ele_pen_002____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (592, 0, 'fk_log_pro_ver_ele_pen_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (592, 0, 'fk_log_pro_ver_ele_pen_003___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (593, 0, 'fk_log_pro_ver_ele_pen_007____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (593, 0, 'fk_log_pro_ver_ele_pen_003____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (594, 0, 'fk_objecion_ele_pen_001___', '*no existe un recurso de la clase "proveedor dat ext" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (594, 0, 'fk_log_pro_ver_ele_pen_004___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (595, 0, 'fk_objecion_ele_pen_001____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (595, 0, 'fk_log_pro_ver_ele_pen_004____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (596, 0, 'fk_objecion_ele_pen_002___', '*no existe un recurso de la clase "tipo obj ele pen" identificado con el valor especificado para "tipo obj ele pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (596, 0, 'fk_log_pro_ver_ele_pen_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (597, 0, 'fk_objecion_ele_pen_002____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (597, 0, 'fk_log_pro_ver_ele_pen_005____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (598, 0, 'fk_objecion_ele_pen_003___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (598, 0, 'fk_log_pro_ver_ele_pen_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (599, 0, 'fk_objecion_ele_pen_003____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (599, 0, 'fk_log_pro_ver_ele_pen_006____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (600, 0, 'fk_opcion_menu_001___', '*no existe un recurso de la clase "nivel opcion menu" identificado con el valor especificado para "nivel opcion menu"; no es posible {0} el recurso {1}', NULL);
+VALUES (600, 0, 'fk_log_pro_ver_ele_pen_007___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (601, 0, 'fk_opcion_menu_001____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (601, 0, 'fk_log_pro_ver_ele_pen_007____1', '*existen recursos de la clase "log pro ver ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (602, 0, 'fk_opcion_menu_002___', '*no existe un recurso de la clase "opcion menu" identificado con el valor especificado para "opcion menu superior"; no es posible {0} el recurso {1}', NULL);
+VALUES (602, 0, 'fk_objecion_ele_pen_001___', '*no existe un recurso de la clase "proveedor dat ext" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (603, 0, 'fk_opcion_menu_002____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (603, 0, 'fk_objecion_ele_pen_001____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (604, 0, 'fk_opcion_menu_003___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
+VALUES (604, 0, 'fk_objecion_ele_pen_002___', '*no existe un recurso de la clase "tipo obj ele pen" identificado con el valor especificado para "tipo obj ele pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (605, 0, 'fk_opcion_menu_003____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (605, 0, 'fk_objecion_ele_pen_002____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (606, 0, 'fk_opcion_menu_004___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (606, 0, 'fk_objecion_ele_pen_003___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (607, 0, 'fk_opcion_menu_004____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (607, 0, 'fk_objecion_ele_pen_003____1', '*existen recursos de la clase "objecion ele pen" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (608, 0, 'fk_opcion_menu_005___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (608, 0, 'fk_opcion_menu_001___', '*no existe un recurso de la clase "nivel opcion menu" identificado con el valor especificado para "nivel opcion menu"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (609, 0, 'fk_opcion_menu_005____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (609, 0, 'fk_opcion_menu_001____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (610, 0, 'fk_opcion_menu_plus_001___', '*no existe un recurso de la clase "nivel opcion menu" identificado con el valor especificado para "nivel opcion menu"; no es posible {0} el recurso {1}', NULL);
+VALUES (610, 0, 'fk_opcion_menu_002___', '*no existe un recurso de la clase "opcion menu" identificado con el valor especificado para "opcion menu superior"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (611, 0, 'fk_opcion_menu_plus_001____1', '*existen recursos de la clase "opcion menu plus" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (611, 0, 'fk_opcion_menu_002____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (612, 0, 'fk_opcion_menu_plus_002___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
+VALUES (612, 0, 'fk_opcion_menu_003___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (613, 0, 'fk_opcion_menu_plus_002____1', '*existen recursos de la clase "opcion menu plus" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (613, 0, 'fk_opcion_menu_003____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (614, 0, 'fk_pagina_001___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (614, 0, 'fk_opcion_menu_004___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (615, 0, 'fk_pagina_001____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (615, 0, 'fk_opcion_menu_004____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (616, 0, 'fk_pagina_002___', '*no existe un recurso de la clase "tipo pagina" identificado con el valor especificado para "tipo pagina"; no es posible {0} el recurso {1}', NULL);
+VALUES (616, 0, 'fk_opcion_menu_005___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (617, 0, 'fk_pagina_002____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (617, 0, 'fk_opcion_menu_005____1', '*existen recursos de la clase "opcion menu" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (618, 0, 'fk_pagina_003___', '*no existe un recurso de la clase "dominio" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (618, 0, 'fk_opcion_menu_plus_001___', '*no existe un recurso de la clase "nivel opcion menu" identificado con el valor especificado para "nivel opcion menu"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (619, 0, 'fk_pagina_003____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (619, 0, 'fk_opcion_menu_plus_001____1', '*existen recursos de la clase "opcion menu plus" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (620, 0, 'fk_pagina_004___', '*no existe un recurso de la clase "dominio" identificado con el valor especificado para "dominio maestro"; no es posible {0} el recurso {1}', NULL);
+VALUES (620, 0, 'fk_opcion_menu_plus_002___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (621, 0, 'fk_pagina_004____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (621, 0, 'fk_opcion_menu_plus_002____1', '*existen recursos de la clase "opcion menu plus" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (622, 0, 'fk_pagina_005___', '*no existe un recurso de la clase "parametro" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (622, 0, 'fk_pagina_001___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (623, 0, 'fk_pagina_005____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (623, 0, 'fk_pagina_001____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (624, 0, 'fk_pagina_funcion_001___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (624, 0, 'fk_pagina_002___', '*no existe un recurso de la clase "tipo pagina" identificado con el valor especificado para "tipo pagina"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (625, 0, 'fk_pagina_funcion_001____1', '*existen recursos de la clase "pagina funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (625, 0, 'fk_pagina_002____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (626, 0, 'fk_pagina_funcion_002___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (626, 0, 'fk_pagina_003___', '*no existe un recurso de la clase "dominio" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (627, 0, 'fk_pagina_funcion_002____1', '*existen recursos de la clase "pagina funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (627, 0, 'fk_pagina_003____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (628, 0, 'fk_pagina_usuario_001___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (628, 0, 'fk_pagina_004___', '*no existe un recurso de la clase "dominio" identificado con el valor especificado para "dominio maestro"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (629, 0, 'fk_pagina_usuario_001____1', '*existen recursos de la clase "pagina usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (629, 0, 'fk_pagina_004____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (630, 0, 'fk_pagina_usuario_002___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (630, 0, 'fk_pagina_005___', '*no existe un recurso de la clase "parametro" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (631, 0, 'fk_pagina_usuario_002____1', '*existen recursos de la clase "pagina usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (631, 0, 'fk_pagina_005____1', '*existen recursos de la clase "pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (632, 0, 'fk_parametro_001___', '*no existe un recurso de la clase "tipo dato par" identificado con el valor especificado para "tipo dato par"; no es posible {0} el recurso {1}', NULL);
+VALUES (632, 0, 'fk_pagina_funcion_001___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (633, 0, 'fk_parametro_001____1', '*existen recursos de la clase "parametro" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (633, 0, 'fk_pagina_funcion_001____1', '*existen recursos de la clase "pagina funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (634, 0, 'fk_persona_001___', '*no existe un recurso de la clase "estado civil" identificado con el valor especificado para "estado civil"; no es posible {0} el recurso {1}', NULL);
+VALUES (634, 0, 'fk_pagina_funcion_002___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (635, 0, 'fk_persona_001____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (635, 0, 'fk_pagina_funcion_002____1', '*existen recursos de la clase "pagina funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (636, 0, 'fk_persona_002___', '*no existe un recurso de la clase "sexo persona" identificado con el valor especificado para "sexo persona"; no es posible {0} el recurso {1}', NULL);
+VALUES (636, 0, 'fk_pagina_usuario_001___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (637, 0, 'fk_persona_002____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (637, 0, 'fk_pagina_usuario_001____1', '*existen recursos de la clase "pagina usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (638, 0, 'fk_persona_003___', '*no existe un recurso de la clase "etnia indigena" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (638, 0, 'fk_pagina_usuario_002___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (639, 0, 'fk_persona_003____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (639, 0, 'fk_pagina_usuario_002____1', '*existen recursos de la clase "pagina usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (640, 0, 'fk_persona_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (640, 0, 'fk_parametro_001___', '*no existe un recurso de la clase "tipo dato par" identificado con el valor especificado para "tipo dato par"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (641, 0, 'fk_persona_004____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (641, 0, 'fk_parametro_001____1', '*existen recursos de la clase "parametro" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (642, 0, 'fk_persona_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (642, 0, 'fk_persona_001___', '*no existe un recurso de la clase "estado civil" identificado con el valor especificado para "estado civil"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (643, 0, 'fk_persona_005____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (643, 0, 'fk_persona_001____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (644, 0, 'fk_persona_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (644, 0, 'fk_persona_002___', '*no existe un recurso de la clase "sexo persona" identificado con el valor especificado para "sexo persona"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (645, 0, 'fk_persona_006____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (645, 0, 'fk_persona_002____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (646, 0, 'fk_persona_007___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (646, 0, 'fk_persona_003___', '*no existe un recurso de la clase "etnia indigena" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (647, 0, 'fk_persona_007____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (647, 0, 'fk_persona_003____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (648, 0, 'fk_persona_008___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (648, 0, 'fk_persona_004___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (649, 0, 'fk_persona_008____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (649, 0, 'fk_persona_004____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (650, 0, 'fk_persona_009___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (650, 0, 'fk_persona_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (651, 0, 'fk_persona_009____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (651, 0, 'fk_persona_005____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (652, 0, 'fk_persona_010___', '*no existe un recurso de la clase "causa den pension" identificado con el valor especificado para "causa den pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (652, 0, 'fk_persona_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (653, 0, 'fk_persona_010____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (653, 0, 'fk_persona_006____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (654, 0, 'fk_persona_011___', '*no existe un recurso de la clase "causa rev pension" identificado con el valor especificado para "causa rev pension"; no es posible {0} el recurso {1}', NULL);
+VALUES (654, 0, 'fk_persona_007___', '*no existe un recurso de la clase "condicion pension" identificado con el valor especificado para "condicion pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (655, 0, 'fk_persona_011____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (655, 0, 'fk_persona_007____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (656, 0, 'fk_persona_012___', '*no existe un recurso de la clase "causa den reco pen" identificado con el valor especificado para "causa den reco pen"; no es posible {0} el recurso {1}', NULL);
+VALUES (656, 0, 'fk_persona_008___', '*no existe un recurso de la clase "condicion reco pen" identificado con el valor especificado para "condicion reco pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (657, 0, 'fk_persona_012____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (657, 0, 'fk_persona_008____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (658, 0, 'fk_persona_013___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (658, 0, 'fk_persona_009___', '*no existe un recurso de la clase "condicion denu pen" identificado con el valor especificado para "condicion denu pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (659, 0, 'fk_persona_013____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (659, 0, 'fk_persona_009____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (660, 0, 'fk_persona_014___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
+VALUES (660, 0, 'fk_persona_010___', '*no existe un recurso de la clase "causa den pension" identificado con el valor especificado para "causa den pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (661, 0, 'fk_persona_014____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (661, 0, 'fk_persona_010____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (662, 0, 'fk_persona_015___', '*no existe un recurso de la clase "tipo act jupe" identificado con el valor especificado para "tipo act jupe"; no es posible {0} el recurso {1}', NULL);
+VALUES (662, 0, 'fk_persona_011___', '*no existe un recurso de la clase "causa rev pension" identificado con el valor especificado para "causa rev pension"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (663, 0, 'fk_persona_015____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (663, 0, 'fk_persona_011____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (664, 0, 'fk_potencial_ben_001___', '*no existe un recurso de la clase "etnia indigena" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (664, 0, 'fk_persona_012___', '*no existe un recurso de la clase "causa den reco pen" identificado con el valor especificado para "causa den reco pen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (665, 0, 'fk_potencial_ben_001____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (665, 0, 'fk_persona_012____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (666, 0, 'fk_potencial_ben_002___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
+VALUES (666, 0, 'fk_persona_013___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (667, 0, 'fk_potencial_ben_002____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (667, 0, 'fk_persona_013____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (668, 0, 'fk_potencial_ben_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
+VALUES (668, 0, 'fk_persona_014___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (669, 0, 'fk_potencial_ben_003____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (669, 0, 'fk_persona_014____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (670, 0, 'fk_potencial_ben_004___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
+VALUES (670, 0, 'fk_persona_015___', '*no existe un recurso de la clase "tipo act jupe" identificado con el valor especificado para "tipo act jupe"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (671, 0, 'fk_potencial_ben_004____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (671, 0, 'fk_persona_015____1', '*existen recursos de la clase "persona" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (672, 0, 'fk_potencial_ben_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
+VALUES (672, 0, 'fk_potencial_ben_001___', '*no existe un recurso de la clase "etnia indigena" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (673, 0, 'fk_potencial_ben_005____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (673, 0, 'fk_potencial_ben_001____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (674, 0, 'fk_potencial_ben_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "manzana"; no es posible {0} el recurso {1}', NULL);
+VALUES (674, 0, 'fk_potencial_ben_002___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "departamento"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (675, 0, 'fk_potencial_ben_006____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (675, 0, 'fk_potencial_ben_002____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (676, 0, 'fk_potencial_ben_007___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (676, 0, 'fk_potencial_ben_003___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "distrito"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (677, 0, 'fk_potencial_ben_007____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (677, 0, 'fk_potencial_ben_003____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (678, 0, 'fk_potencial_ben_008___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (678, 0, 'fk_potencial_ben_004___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (679, 0, 'fk_potencial_ben_008____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (679, 0, 'fk_potencial_ben_004____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (680, 0, 'fk_potencial_ben_009___', '*no existe un recurso de la clase "tipo reg pot ben" identificado con el valor especificado para "tipo reg pot ben"; no es posible {0} el recurso {1}', NULL);
+VALUES (680, 0, 'fk_potencial_ben_005___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "barrio"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (681, 0, 'fk_potencial_ben_009____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (681, 0, 'fk_potencial_ben_005____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (682, 0, 'fk_potencial_ben_010___', '*no existe un recurso de la clase "causa den recl cen" identificado con el valor especificado para "causa den recl cen"; no es posible {0} el recurso {1}', NULL);
+VALUES (682, 0, 'fk_potencial_ben_006___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "manzana"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (683, 0, 'fk_potencial_ben_010____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (683, 0, 'fk_potencial_ben_006____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (684, 0, 'fk_potencial_ben_011___', '*no existe un recurso de la clase "condicion censo" identificado con el valor especificado para "condicion censo"; no es posible {0} el recurso {1}', NULL);
+VALUES (684, 0, 'fk_potencial_ben_007___', '*no existe un recurso de la clase "persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (685, 0, 'fk_potencial_ben_011____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (685, 0, 'fk_potencial_ben_007____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (686, 0, 'fk_potencial_ben_012___', '*no existe un recurso de la clase "condicion recl cen" identificado con el valor especificado para "condicion recl cen"; no es posible {0} el recurso {1}', NULL);
+VALUES (686, 0, 'fk_potencial_ben_008___', '*no existe un recurso de la clase "ficha persona" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (687, 0, 'fk_potencial_ben_012____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (687, 0, 'fk_potencial_ben_008____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (688, 0, 'fk_potencial_ben_013___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario validacion cen"; no es posible {0} el recurso {1}', NULL);
+VALUES (688, 0, 'fk_potencial_ben_009___', '*no existe un recurso de la clase "tipo reg pot ben" identificado con el valor especificado para "tipo reg pot ben"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (689, 0, 'fk_potencial_ben_013____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (689, 0, 'fk_potencial_ben_009____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (690, 0, 'fk_potencial_ben_014___', '*no existe un recurso de la clase "causa inv censo" identificado con el valor especificado para "causa inv censo"; no es posible {0} el recurso {1}', NULL);
+VALUES (690, 0, 'fk_potencial_ben_010___', '*no existe un recurso de la clase "causa den recl cen" identificado con el valor especificado para "causa den recl cen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (691, 0, 'fk_potencial_ben_014____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (691, 0, 'fk_potencial_ben_010____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (692, 0, 'fk_potencial_ben_015___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario ult visita cen"; no es posible {0} el recurso {1}', NULL);
+VALUES (692, 0, 'fk_potencial_ben_011___', '*no existe un recurso de la clase "condicion censo" identificado con el valor especificado para "condicion censo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (693, 0, 'fk_potencial_ben_015____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (693, 0, 'fk_potencial_ben_011____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (694, 0, 'fk_potencial_ben_016___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado para "usuario reg pot ben"; no es posible {0} el recurso {1}', NULL);
+VALUES (694, 0, 'fk_potencial_ben_012___', '*no existe un recurso de la clase "condicion recl cen" identificado con el valor especificado para "condicion recl cen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (695, 0, 'fk_potencial_ben_016____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (695, 0, 'fk_potencial_ben_012____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (696, 0, 'fk_rastro_funcion_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (696, 0, 'fk_potencial_ben_013___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario validacion cen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (697, 0, 'fk_rastro_funcion_001____1', '*existen recursos de la clase "rastro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (697, 0, 'fk_potencial_ben_013____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (698, 0, 'fk_rastro_funcion_par_001___', '*no existe un recurso de la clase "parametro" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (698, 0, 'fk_potencial_ben_014___', '*no existe un recurso de la clase "causa inv censo" identificado con el valor especificado para "causa inv censo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (699, 0, 'fk_rastro_funcion_par_001____1', '*existen recursos de la clase "rastro funcion par" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (699, 0, 'fk_potencial_ben_014____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (700, 0, 'fk_rastro_funcion_par_002___', '*no existe un recurso de la clase "rastro funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (700, 0, 'fk_potencial_ben_015___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario ult visita cen"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (701, 0, 'fk_rastro_funcion_par_002____1', '*existen recursos de la clase "rastro funcion par" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (701, 0, 'fk_potencial_ben_015____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (702, 0, 'fk_rastro_informe_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (702, 0, 'fk_potencial_ben_016___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado para "usuario reg pot ben"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (703, 0, 'fk_rastro_informe_001____1', '*existen recursos de la clase "rastro informe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (703, 0, 'fk_potencial_ben_016____1', '*existen recursos de la clase "potencial ben" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (704, 0, 'fk_rastro_informe_002___', '*no existe un recurso de la clase "condicion eje fun" identificado con el valor especificado para "condicion eje fun"; no es posible {0} el recurso {1}', NULL);
+VALUES (704, 0, 'fk_rastro_funcion_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (705, 0, 'fk_rastro_informe_002____1', '*existen recursos de la clase "rastro informe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (705, 0, 'fk_rastro_funcion_001____1', '*existen recursos de la clase "rastro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (706, 0, 'fk_rastro_proceso_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (706, 0, 'fk_rastro_funcion_par_001___', '*no existe un recurso de la clase "parametro" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (707, 0, 'fk_rastro_proceso_001____1', '*existen recursos de la clase "rastro proceso" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (707, 0, 'fk_rastro_funcion_par_001____1', '*existen recursos de la clase "rastro funcion par" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (708, 0, 'fk_rastro_proceso_002___', '*no existe un recurso de la clase "condicion eje fun" identificado con el valor especificado para "condicion eje fun"; no es posible {0} el recurso {1}', NULL);
+VALUES (708, 0, 'fk_rastro_funcion_par_002___', '*no existe un recurso de la clase "rastro funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (709, 0, 'fk_rastro_proceso_002____1', '*existen recursos de la clase "rastro proceso" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (709, 0, 'fk_rastro_funcion_par_002____1', '*existen recursos de la clase "rastro funcion par" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (710, 0, 'fk_rol_001___', '*no existe un recurso de la clase "grupo aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (710, 0, 'fk_rastro_informe_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (711, 0, 'fk_rol_001____1', '*existen recursos de la clase "rol" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (711, 0, 'fk_rastro_informe_001____1', '*existen recursos de la clase "rastro informe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (712, 0, 'fk_rol_002___', '*no existe un recurso de la clase "tipo rol" identificado con el valor especificado para "tipo rol"; no es posible {0} el recurso {1}', NULL);
+VALUES (712, 0, 'fk_rastro_informe_002___', '*no existe un recurso de la clase "condicion eje fun" identificado con el valor especificado para "condicion eje fun"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (713, 0, 'fk_rol_002____1', '*existen recursos de la clase "rol" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (713, 0, 'fk_rastro_informe_002____1', '*existen recursos de la clase "rastro informe" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (714, 0, 'fk_rol_aplicacion_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (714, 0, 'fk_rastro_proceso_001___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (715, 0, 'fk_rol_aplicacion_001____1', '*existen recursos de la clase "rol aplicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (715, 0, 'fk_rastro_proceso_001____1', '*existen recursos de la clase "rastro proceso" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (716, 0, 'fk_rol_aplicacion_002___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (716, 0, 'fk_rastro_proceso_002___', '*no existe un recurso de la clase "condicion eje fun" identificado con el valor especificado para "condicion eje fun"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (717, 0, 'fk_rol_aplicacion_002____1', '*existen recursos de la clase "rol aplicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (717, 0, 'fk_rastro_proceso_002____1', '*existen recursos de la clase "rastro proceso" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (718, 0, 'fk_rol_filtro_funcion_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (718, 0, 'fk_rol_001___', '*no existe un recurso de la clase "grupo aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (719, 0, 'fk_rol_filtro_funcion_001____1', '*existen recursos de la clase "rol filtro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (719, 0, 'fk_rol_001____1', '*existen recursos de la clase "rol" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (720, 0, 'fk_rol_filtro_funcion_002___', '*no existe un recurso de la clase "filtro funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (720, 0, 'fk_rol_002___', '*no existe un recurso de la clase "tipo rol" identificado con el valor especificado para "tipo rol"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (721, 0, 'fk_rol_filtro_funcion_002____1', '*existen recursos de la clase "rol filtro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (721, 0, 'fk_rol_002____1', '*existen recursos de la clase "rol" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (722, 0, 'fk_rol_funcion_001___', '*no existe un recurso de la clase "conjunto segmento" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (722, 0, 'fk_rol_aplicacion_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (723, 0, 'fk_rol_funcion_001____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (723, 0, 'fk_rol_aplicacion_001____1', '*existen recursos de la clase "rol aplicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (724, 0, 'fk_rol_funcion_002___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (724, 0, 'fk_rol_aplicacion_002___', '*no existe un recurso de la clase "aplicacion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (725, 0, 'fk_rol_funcion_002____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (725, 0, 'fk_rol_aplicacion_002____1', '*existen recursos de la clase "rol aplicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (726, 0, 'fk_rol_funcion_003___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (726, 0, 'fk_rol_filtro_funcion_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (727, 0, 'fk_rol_funcion_003____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (727, 0, 'fk_rol_filtro_funcion_001____1', '*existen recursos de la clase "rol filtro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (728, 0, 'fk_rol_pagina_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (728, 0, 'fk_rol_filtro_funcion_002___', '*no existe un recurso de la clase "filtro funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (729, 0, 'fk_rol_pagina_001____1', '*existen recursos de la clase "rol pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (729, 0, 'fk_rol_filtro_funcion_002____1', '*existen recursos de la clase "rol filtro funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (730, 0, 'fk_rol_pagina_002___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (730, 0, 'fk_rol_funcion_001___', '*no existe un recurso de la clase "conjunto segmento" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (731, 0, 'fk_rol_pagina_002____1', '*existen recursos de la clase "rol pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (731, 0, 'fk_rol_funcion_001____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (732, 0, 'fk_rol_usuario_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (732, 0, 'fk_rol_funcion_002___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (733, 0, 'fk_rol_usuario_001____1', '*existen recursos de la clase "rol usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (733, 0, 'fk_rol_funcion_002____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (734, 0, 'fk_rol_usuario_002___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (734, 0, 'fk_rol_funcion_003___', '*no existe un recurso de la clase "funcion" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (735, 0, 'fk_rol_usuario_002____1', '*existen recursos de la clase "rol usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (735, 0, 'fk_rol_funcion_003____1', '*existen recursos de la clase "rol funcion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (736, 0, 'fk_ubicacion_001___', '*no existe un recurso de la clase "nivel ubicacion" identificado con el valor especificado para "nivel ubicacion"; no es posible {0} el recurso {1}', NULL);
+VALUES (736, 0, 'fk_rol_pagina_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (737, 0, 'fk_ubicacion_001____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (737, 0, 'fk_rol_pagina_001____1', '*existen recursos de la clase "rol pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (738, 0, 'fk_ubicacion_002___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "ubicacion superior"; no es posible {0} el recurso {1}', NULL);
+VALUES (738, 0, 'fk_rol_pagina_002___', '*no existe un recurso de la clase "pagina" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (739, 0, 'fk_ubicacion_002____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (739, 0, 'fk_rol_pagina_002____1', '*existen recursos de la clase "rol pagina" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (740, 0, 'fk_ubicacion_003___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
+VALUES (740, 0, 'fk_rol_usuario_001___', '*no existe un recurso de la clase "rol" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (741, 0, 'fk_ubicacion_003____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (741, 0, 'fk_rol_usuario_001____1', '*existen recursos de la clase "rol usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (742, 0, 'fk_ubicacion_004___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
+VALUES (742, 0, 'fk_rol_usuario_002___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (743, 0, 'fk_ubicacion_004____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (743, 0, 'fk_rol_usuario_002____1', '*existen recursos de la clase "rol usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (744, 0, 'fk_usuario_001___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado para "usuario supervisor"; no es posible {0} el recurso {1}', NULL);
+VALUES (744, 0, 'fk_ubicacion_001___', '*no existe un recurso de la clase "nivel ubicacion" identificado con el valor especificado para "nivel ubicacion"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (745, 0, 'fk_usuario_001____1', '*existen recursos de la clase "usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (745, 0, 'fk_ubicacion_001____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (746, 0, 'fk_visita_censo_001___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario censista"; no es posible {0} el recurso {1}', NULL);
+VALUES (746, 0, 'fk_ubicacion_002___', '*no existe un recurso de la clase "ubicacion" identificado con el valor especificado para "ubicacion superior"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (747, 0, 'fk_visita_censo_001____1', '*existen recursos de la clase "visita censo" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (747, 0, 'fk_ubicacion_002____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (748, 0, 'fk_visita_censo_002___', '*no existe un recurso de la clase "potencial ben" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
+VALUES (748, 0, 'fk_ubicacion_003___', '*no existe un recurso de la clase "tipo nodo" identificado con el valor especificado para "tipo nodo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (749, 0, 'fk_visita_censo_002____1', '*existen recursos de la clase "visita censo" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
+VALUES (749, 0, 'fk_ubicacion_003____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (750, 0, 'cc_aplicacion_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (750, 0, 'fk_ubicacion_004___', '*no existe un recurso de la clase "tipo area" identificado con el valor especificado para "tipo area"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (751, 0, 'cc_archivo_datos_ext_001___', '*no cumple con la regla: "archivo datos ext importado es mayor o igual que 0 y archivo datos ext importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (751, 0, 'fk_ubicacion_004____1', '*existen recursos de la clase "ubicacion" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (752, 0, 'cc_archivo_datos_ext_002___', '*no cumple con la regla: "archivo datos ext inactivo es mayor o igual que 0 y archivo datos ext inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (752, 0, 'fk_usuario_001___', '*no existe un recurso de la clase "usuario" identificado con el valor especificado para "usuario supervisor"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (753, 0, 'cc_clase_recurso_001___', '*no cumple con la regla: "clase recurso independiente es mayor o igual que 0 y clase recurso independiente es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (753, 0, 'fk_usuario_001____1', '*existen recursos de la clase "usuario" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (754, 0, 'cc_clase_recurso_002___', '*no cumple con la regla: "clase recurso sin detalle es mayor o igual que 0 y clase recurso sin detalle es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (754, 0, 'fk_visita_censo_001___', '*no existe un recurso de la clase "funcionario" identificado con el valor especificado para "funcionario censista"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (755, 0, 'cc_clase_recurso_003___', '*no cumple con la regla: "clase recurso con arbol es mayor o igual que 0 y clase recurso con arbol es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (755, 0, 'fk_visita_censo_001____1', '*existen recursos de la clase "visita censo" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (756, 0, 'cc_clase_recurso_004___', '*no cumple con la regla: "clase recurso insertable es mayor o igual que 0 y clase recurso insertable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (756, 0, 'fk_visita_censo_002___', '*no existe un recurso de la clase "potencial ben" identificado con el valor especificado; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (757, 0, 'cc_clase_recurso_005___', '*no cumple con la regla: "clase recurso modificable es mayor o igual que 0 y clase recurso modificable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (757, 0, 'fk_visita_censo_002____1', '*existen recursos de la clase "visita censo" que hacen referencia a este recurso; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (758, 0, 'cc_clase_recurso_006___', '*no cumple con la regla: "clase recurso eliminable es mayor o igual que 0 y clase recurso eliminable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (758, 0, 'cc_aplicacion_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (759, 0, 'cc_clase_recurso_007___', '*no cumple con la regla: "clase recurso extendida es mayor o igual que 0 y clase recurso extendida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (759, 0, 'cc_archivo_datos_ext_001___', '*no cumple con la regla: "archivo datos ext importado es mayor o igual que 0 y archivo datos ext importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (760, 0, 'cc_clase_recurso_008___', '*no cumple con la regla: "enumerador con numero es mayor o igual que 0 y enumerador con numero es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (760, 0, 'cc_archivo_datos_ext_002___', '*no cumple con la regla: "archivo datos ext inactivo es mayor o igual que 0 y archivo datos ext inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (761, 0, 'tc_clase_recurso_par_001___', '*no cumple con la regla: "lista valor es nulo ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (761, 0, 'cc_clase_recurso_001___', '*no cumple con la regla: "clase recurso independiente es mayor o igual que 0 y clase recurso independiente es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (762, 0, 'tc_clase_recurso_par_002___', '*no cumple con la regla: "lista valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (762, 0, 'cc_clase_recurso_002___', '*no cumple con la regla: "clase recurso sin detalle es mayor o igual que 0 y clase recurso sin detalle es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (763, 0, 'tc_clase_recurso_par_003___', '*no cumple con la regla: "clase objeto valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (763, 0, 'cc_clase_recurso_003___', '*no cumple con la regla: "clase recurso con arbol es mayor o igual que 0 y clase recurso con arbol es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (764, 0, 'tc_clase_recurso_par_004___', '*no cumple con la regla: "tipo valor es igual a 21 ó lista valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (764, 0, 'cc_clase_recurso_004___', '*no cumple con la regla: "clase recurso insertable es mayor o igual que 0 y clase recurso insertable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (765, 0, 'tc_clase_recurso_par_005___', '*no cumple con la regla: "tipo valor no es igual a 21 ó lista valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (765, 0, 'cc_clase_recurso_005___', '*no cumple con la regla: "clase recurso modificable es mayor o igual que 0 y clase recurso modificable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (766, 0, 'tc_clase_recurso_par_006___', '*no cumple con la regla: "tipo valor es igual a 22 ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (766, 0, 'cc_clase_recurso_006___', '*no cumple con la regla: "clase recurso eliminable es mayor o igual que 0 y clase recurso eliminable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (767, 0, 'tc_clase_recurso_par_007___', '*no cumple con la regla: "tipo valor no es igual a 22 ó clase objeto valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (767, 0, 'cc_clase_recurso_007___', '*no cumple con la regla: "clase recurso extendida es mayor o igual que 0 y clase recurso extendida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (768, 0, 'tc_clase_recurso_par_008___', '*no cumple con la regla: "tipo valor es igual a 23 ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (768, 0, 'cc_clase_recurso_008___', '*no cumple con la regla: "enumerador con numero es mayor o igual que 0 y enumerador con numero es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (769, 0, 'tc_clase_recurso_par_009___', '*no cumple con la regla: "tipo valor no es igual a 23 ó clase recurso valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (769, 0, 'tc_clase_recurso_par_001___', '*no cumple con la regla: "lista valor es nulo ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (770, 0, 'cc_clase_recurso_par_001___', '*no cumple con la regla: "parametro omisible es mayor o igual que 0 y parametro omisible es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (770, 0, 'tc_clase_recurso_par_002___', '*no cumple con la regla: "lista valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (771, 0, 'cc_clase_recurso_par_002___', '*no cumple con la regla: "parametro inmutable es mayor o igual que 0 y parametro inmutable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (771, 0, 'tc_clase_recurso_par_003___', '*no cumple con la regla: "clase objeto valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (772, 0, 'cc_clase_recurso_par_003___', '*no cumple con la regla: "parametro submit es mayor o igual que 0 y parametro submit es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (772, 0, 'tc_clase_recurso_par_004___', '*no cumple con la regla: "tipo valor es igual a 21 ó lista valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (773, 0, 'cc_clase_recurso_par_004___', '*no cumple con la regla: "parametro primordial es mayor o igual que 0 y parametro primordial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (773, 0, 'tc_clase_recurso_par_005___', '*no cumple con la regla: "tipo valor no es igual a 21 ó lista valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (774, 0, 'cc_clase_recurso_par_005___', '*no cumple con la regla: "parametro maestro es mayor o igual que 0 y parametro maestro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (774, 0, 'tc_clase_recurso_par_006___', '*no cumple con la regla: "tipo valor es igual a 22 ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (775, 0, 'cc_clase_recurso_par_006___', '*no cumple con la regla: "parametro segmento es mayor o igual que 0 y parametro segmento es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (775, 0, 'tc_clase_recurso_par_007___', '*no cumple con la regla: "tipo valor no es igual a 22 ó clase objeto valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (776, 0, 'cc_clase_recurso_par_007___', '*no cumple con la regla: "parametro sin rastro es mayor o igual que 0 y parametro sin rastro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (776, 0, 'tc_clase_recurso_par_008___', '*no cumple con la regla: "tipo valor es igual a 23 ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (777, 0, 'cc_clase_recurso_par_008___', '*no cumple con la regla: "parametro sincronizado es mayor o igual que 0 y parametro sincronizado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (777, 0, 'tc_clase_recurso_par_009___', '*no cumple con la regla: "tipo valor no es igual a 23 ó clase recurso valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (778, 0, 'cc_clase_recurso_par_009___', '*no cumple con la regla: "orden presentacion es mayor o igual que 0 y orden presentacion es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (778, 0, 'cc_clase_recurso_par_001___', '*no cumple con la regla: "parametro omisible es mayor o igual que 0 y parametro omisible es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (779, 0, 'cc_clase_recurso_par_010___', '*no cumple con la regla: "referencia alternativa es mayor o igual que 0 y referencia alternativa es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (779, 0, 'cc_clase_recurso_par_002___', '*no cumple con la regla: "parametro inmutable es mayor o igual que 0 y parametro inmutable es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (780, 0, 'cc_clase_recurso_sec_001___', '*no cumple con la regla: "orden presentacion es mayor o igual que 0 y orden presentacion es menor o igual que 1000"; no es posible {0} el recurso {1}', NULL);
+VALUES (780, 0, 'cc_clase_recurso_par_003___', '*no cumple con la regla: "parametro submit es mayor o igual que 0 y parametro submit es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (781, 0, 'cc_clase_recurso_sec_002___', '*no cumple con la regla: "pestana detalle es mayor o igual que 0 y pestana detalle es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (781, 0, 'cc_clase_recurso_par_004___', '*no cumple con la regla: "parametro primordial es mayor o igual que 0 y parametro primordial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (782, 0, 'tc_ficha_hogar_001___', '*no cumple con la regla: "total hombres es mayor o igual que 0 y total hombres es menor o igual que total personas"; no es posible {0} el recurso {1}', NULL);
+VALUES (782, 0, 'cc_clase_recurso_par_005___', '*no cumple con la regla: "parametro maestro es mayor o igual que 0 y parametro maestro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (783, 0, 'tc_ficha_hogar_002___', '*no cumple con la regla: "total mujeres es mayor o igual que 0 y total mujeres es menor o igual que total personas"; no es posible {0} el recurso {1}', NULL);
+VALUES (783, 0, 'cc_clase_recurso_par_006___', '*no cumple con la regla: "parametro segmento es mayor o igual que 0 y parametro segmento es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (784, 0, 'tc_ficha_hogar_003___', '*no cumple con la regla: "total personas es igual a total hombres + total mujeres"; no es posible {0} el recurso {1}', NULL);
+VALUES (784, 0, 'cc_clase_recurso_par_007___', '*no cumple con la regla: "parametro sin rastro es mayor o igual que 0 y parametro sin rastro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (785, 0, 'tc_ficha_hogar_004___', '*no cumple con la regla: "tipo ocupacion viv es igual a 6 ó otro tipo ocupacion viv es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (785, 0, 'cc_clase_recurso_par_008___', '*no cumple con la regla: "parametro sincronizado es mayor o igual que 0 y parametro sincronizado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (786, 0, 'tc_ficha_hogar_005___', '*no cumple con la regla: "tipo ocupacion viv no es igual a 6 ó otro tipo ocupacion viv no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (786, 0, 'cc_clase_recurso_par_009___', '*no cumple con la regla: "orden presentacion es mayor o igual que 0 y orden presentacion es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (787, 0, 'tc_ficha_hogar_006___', '*no cumple con la regla: "cantidad dormitorios es mayor o igual que 0 y cantidad dormitorios es menor o igual que cantidad piezas"; no es posible {0} el recurso {1}', NULL);
+VALUES (787, 0, 'cc_clase_recurso_par_010___', '*no cumple con la regla: "referencia alternativa es mayor o igual que 0 y referencia alternativa es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (788, 0, 'tc_ficha_hogar_007___', '*no cumple con la regla: "telefono celular es igual a 1 ó telefono celular es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (788, 0, 'cc_clase_recurso_sec_001___', '*no cumple con la regla: "orden presentacion es mayor o igual que 0 y orden presentacion es menor o igual que 1000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (789, 0, 'tc_ficha_hogar_008___', '*no cumple con la regla: "telefono celular no es igual a 1 ó telefono celular no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (789, 0, 'cc_clase_recurso_sec_002___', '*no cumple con la regla: "pestana detalle es mayor o igual que 0 y pestana detalle es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (790, 0, 'tc_ficha_hogar_009___', '*no cumple con la regla: "tlf linea baja es igual a 1 ó telefono linea baja es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (790, 0, 'tc_ficha_hogar_001___', '*no cumple con la regla: "total hombres es mayor o igual que 0 y total hombres es menor o igual que total personas"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (791, 0, 'tc_ficha_hogar_010___', '*no cumple con la regla: "tlf linea baja no es igual a 1 ó telefono linea baja no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (791, 0, 'tc_ficha_hogar_002___', '*no cumple con la regla: "total mujeres es mayor o igual que 0 y total mujeres es menor o igual que total personas"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (792, 0, 'cc_ficha_hogar_001___', '*no cumple con la regla: "huso utm es nulo ó huso utm es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (792, 0, 'tc_ficha_hogar_003___', '*no cumple con la regla: "total personas es igual a total hombres + total mujeres"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (793, 0, 'cc_ficha_hogar_002___', '*no cumple con la regla: "huso utm es nulo ó huso utm es menor o igual que 60"; no es posible {0} el recurso {1}', NULL);
+VALUES (793, 0, 'tc_ficha_hogar_004___', '*no cumple con la regla: "tipo ocupacion viv es igual a 6 ó otro tipo ocupacion viv es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (794, 0, 'cc_ficha_hogar_003___', '*no cumple con la regla: "franja utm es nulo ó franja utm es mayor o igual que "C""; no es posible {0} el recurso {1}', NULL);
+VALUES (794, 0, 'tc_ficha_hogar_005___', '*no cumple con la regla: "tipo ocupacion viv no es igual a 6 ó otro tipo ocupacion viv no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (795, 0, 'cc_ficha_hogar_004___', '*no cumple con la regla: "franja utm es nulo ó franja utm es menor o igual que "X""; no es posible {0} el recurso {1}', NULL);
+VALUES (795, 0, 'tc_ficha_hogar_006___', '*no cumple con la regla: "cantidad dormitorios es mayor o igual que 0 y cantidad dormitorios es menor o igual que cantidad piezas"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (796, 0, 'cc_ficha_hogar_005___', '*no cumple con la regla: "franja utm es nulo ó franja utm no es igual a "I""; no es posible {0} el recurso {1}', NULL);
+VALUES (796, 0, 'tc_ficha_hogar_007___', '*no cumple con la regla: "telefono celular es igual a 1 ó telefono celular es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (797, 0, 'cc_ficha_hogar_006___', '*no cumple con la regla: "franja utm es nulo ó franja utm no es igual a "O""; no es posible {0} el recurso {1}', NULL);
+VALUES (797, 0, 'tc_ficha_hogar_008___', '*no cumple con la regla: "telefono celular no es igual a 1 ó telefono celular no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (798, 0, 'cc_ficha_hogar_007___', '*no cumple con la regla: "distancia este utm es nulo ó distancia este utm es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (798, 0, 'tc_ficha_hogar_009___', '*no cumple con la regla: "tlf linea baja es igual a 1 ó telefono linea baja es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (799, 0, 'cc_ficha_hogar_008___', '*no cumple con la regla: "distancia este utm es nulo ó distancia este utm es menor que 1000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (799, 0, 'tc_ficha_hogar_010___', '*no cumple con la regla: "tlf linea baja no es igual a 1 ó telefono linea baja no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (800, 0, 'cc_ficha_hogar_009___', '*no cumple con la regla: "distancia norte utm es nulo ó distancia norte utm es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (800, 0, 'cc_ficha_hogar_001___', '*no cumple con la regla: "huso utm es nulo ó huso utm es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (801, 0, 'cc_ficha_hogar_010___', '*no cumple con la regla: "distancia norte utm es nulo ó distancia norte utm es menor que 10000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (801, 0, 'cc_ficha_hogar_002___', '*no cumple con la regla: "huso utm es nulo ó huso utm es menor o igual que 60"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (802, 0, 'cc_ficha_hogar_011___', '*no cumple con la regla: "formulario es mayor que 0 y formulario es menor que 1000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (802, 0, 'cc_ficha_hogar_003___', '*no cumple con la regla: "franja utm es nulo ó franja utm es mayor o igual que "C""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (803, 0, 'cc_ficha_hogar_012___', '*no cumple con la regla: "vivienda es mayor que 0 y vivienda es menor que 10000"; no es posible {0} el recurso {1}', NULL);
+VALUES (803, 0, 'cc_ficha_hogar_004___', '*no cumple con la regla: "franja utm es nulo ó franja utm es menor o igual que "X""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (804, 0, 'cc_ficha_hogar_013___', '*no cumple con la regla: "hogar es mayor que 0 y hogar es menor que 100"; no es posible {0} el recurso {1}', NULL);
+VALUES (804, 0, 'cc_ficha_hogar_005___', '*no cumple con la regla: "franja utm es nulo ó franja utm no es igual a "I""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (805, 0, 'cc_ficha_hogar_014___', '*no cumple con la regla: "total personas es mayor que 0 y total personas es menor que 100"; no es posible {0} el recurso {1}', NULL);
+VALUES (805, 0, 'cc_ficha_hogar_006___', '*no cumple con la regla: "franja utm es nulo ó franja utm no es igual a "O""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (806, 0, 'cc_ficha_hogar_015___', '*no cumple con la regla: "cantidad piezas es mayor que 0 y cantidad piezas es menor que 100"; no es posible {0} el recurso {1}', NULL);
+VALUES (806, 0, 'cc_ficha_hogar_007___', '*no cumple con la regla: "distancia este utm es nulo ó distancia este utm es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (807, 0, 'cc_ficha_hogar_016___', '*no cumple con la regla: "ficha hogar inactiva es mayor o igual que 0 y ficha hogar inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (807, 0, 'cc_ficha_hogar_008___', '*no cumple con la regla: "distancia este utm es nulo ó distancia este utm es menor que 1000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (808, 0, 'tc_ficha_persona_001___', '*no cumple con la regla: "cedula es nulo ó tipo excepcion ced es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (808, 0, 'cc_ficha_hogar_009___', '*no cumple con la regla: "distancia norte utm es nulo ó distancia norte utm es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (809, 0, 'tc_ficha_persona_002___', '*no cumple con la regla: "cedula no es nulo ó tipo excepcion ced no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (809, 0, 'cc_ficha_hogar_010___', '*no cumple con la regla: "distancia norte utm es nulo ó distancia norte utm es menor que 10000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (810, 0, 'cc_ficha_persona_001___', '*no cumple con la regla: "respondente es mayor o igual que 0 y respondente es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (810, 0, 'cc_ficha_hogar_011___', '*no cumple con la regla: "formulario es mayor que 0 y formulario es menor que 1000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (811, 0, 'cc_ficha_persona_002___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (811, 0, 'cc_ficha_hogar_012___', '*no cumple con la regla: "vivienda es mayor que 0 y vivienda es menor que 10000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (812, 0, 'cc_ficha_persona_003___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (812, 0, 'cc_ficha_hogar_013___', '*no cumple con la regla: "hogar es mayor que 0 y hogar es menor que 100"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (813, 0, 'cc_ficha_persona_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
+VALUES (813, 0, 'cc_ficha_hogar_014___', '*no cumple con la regla: "total personas es mayor que 0 y total personas es menor que 100"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (814, 0, 'cc_ficha_persona_005___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
+VALUES (814, 0, 'cc_ficha_hogar_015___', '*no cumple con la regla: "cantidad piezas es mayor que 0 y cantidad piezas es menor que 100"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (815, 0, 'cc_ficha_persona_006___', '*no cumple con la regla: "ficha persona inactiva es mayor o igual que 0 y ficha persona inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (815, 0, 'cc_ficha_hogar_016___', '*no cumple con la regla: "ficha hogar inactiva es mayor o igual que 0 y ficha hogar inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (816, 0, 'cc_ficha_persona_007___', '*no cumple con la regla: "ficha persona importada es mayor o igual que 0 y ficha persona importada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (816, 0, 'tc_ficha_persona_001___', '*no cumple con la regla: "cedula es nulo ó tipo excepcion ced es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (817, 0, 'tc_filtro_cla_rec_fun_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (817, 0, 'tc_ficha_persona_002___', '*no cumple con la regla: "cedula no es nulo ó tipo excepcion ced no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (818, 0, 'tc_filtro_cla_rec_par_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (818, 0, 'cc_ficha_persona_001___', '*no cumple con la regla: "respondente es mayor o igual que 0 y respondente es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (819, 0, 'tc_filtro_cla_rec_sec_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (819, 0, 'cc_ficha_persona_002___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (820, 0, 'tc_filtro_cla_rec_vin_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (820, 0, 'cc_ficha_persona_003___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (821, 0, 'cc_filtro_funcion_001___', '*no cumple con la regla: "publico es mayor o igual que 0 y publico es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (821, 0, 'cc_ficha_persona_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (822, 0, 'tc_filtro_funcion_par_001___', '*no cumple con la regla: "valor parametro es nulo ó valor lista es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (822, 0, 'cc_ficha_persona_005___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (823, 0, 'tc_filtro_funcion_par_002___', '*no cumple con la regla: "valor parametro es nulo ó objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (823, 0, 'cc_ficha_persona_006___', '*no cumple con la regla: "ficha persona inactiva es mayor o igual que 0 y ficha persona inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (824, 0, 'tc_filtro_funcion_par_003___', '*no cumple con la regla: "valor parametro es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (824, 0, 'cc_ficha_persona_007___', '*no cumple con la regla: "ficha persona importada es mayor o igual que 0 y ficha persona importada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (825, 0, 'tc_filtro_funcion_par_004___', '*no cumple con la regla: "valor lista es nulo ó objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (825, 0, 'tc_filtro_cla_rec_fun_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (826, 0, 'tc_filtro_funcion_par_005___', '*no cumple con la regla: "valor lista es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (826, 0, 'tc_filtro_cla_rec_par_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (827, 0, 'tc_filtro_funcion_par_006___', '*no cumple con la regla: "objeto valor es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (827, 0, 'tc_filtro_cla_rec_sec_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (828, 0, 'cc_funcion_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (828, 0, 'tc_filtro_cla_rec_vin_001___', '*no cumple con la regla: "clase recurso par valor es nulo ó valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (829, 0, 'cc_funcion_002___', '*no cumple con la regla: "programatica es mayor o igual que 0 y programatica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (829, 0, 'cc_filtro_funcion_001___', '*no cumple con la regla: "publico es mayor o igual que 0 y publico es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (830, 0, 'cc_funcion_003___', '*no cumple con la regla: "personalizada es mayor o igual que 0 y personalizada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (830, 0, 'tc_filtro_funcion_par_001___', '*no cumple con la regla: "valor parametro es nulo ó valor lista es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (831, 0, 'cc_funcion_004___', '*no cumple con la regla: "segmentada es mayor o igual que 0 y segmentada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (831, 0, 'tc_filtro_funcion_par_002___', '*no cumple con la regla: "valor parametro es nulo ó objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (832, 0, 'tc_funcion_parametro_001___', '*no cumple con la regla: "lista valor es nulo ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (832, 0, 'tc_filtro_funcion_par_003___', '*no cumple con la regla: "valor parametro es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (833, 0, 'tc_funcion_parametro_002___', '*no cumple con la regla: "lista valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (833, 0, 'tc_filtro_funcion_par_004___', '*no cumple con la regla: "valor lista es nulo ó objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (834, 0, 'tc_funcion_parametro_003___', '*no cumple con la regla: "clase objeto valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (834, 0, 'tc_filtro_funcion_par_005___', '*no cumple con la regla: "valor lista es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (835, 0, 'tc_funcion_parametro_004___', '*no cumple con la regla: "tipo valor es igual a 21 ó lista valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (835, 0, 'tc_filtro_funcion_par_006___', '*no cumple con la regla: "objeto valor es nulo ó recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (836, 0, 'tc_funcion_parametro_005___', '*no cumple con la regla: "tipo valor no es igual a 21 ó lista valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (836, 0, 'cc_funcion_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (837, 0, 'tc_funcion_parametro_006___', '*no cumple con la regla: "tipo valor es igual a 22 ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (837, 0, 'cc_funcion_002___', '*no cumple con la regla: "programatica es mayor o igual que 0 y programatica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (838, 0, 'tc_funcion_parametro_007___', '*no cumple con la regla: "tipo valor no es igual a 22 ó clase objeto valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (838, 0, 'cc_funcion_003___', '*no cumple con la regla: "personalizada es mayor o igual que 0 y personalizada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (839, 0, 'tc_funcion_parametro_008___', '*no cumple con la regla: "tipo valor es igual a 23 ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (839, 0, 'cc_funcion_004___', '*no cumple con la regla: "segmentada es mayor o igual que 0 y segmentada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (840, 0, 'tc_funcion_parametro_009___', '*no cumple con la regla: "tipo valor no es igual a 23 ó clase recurso valor no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (840, 0, 'tc_funcion_parametro_001___', '*no cumple con la regla: "lista valor es nulo ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (841, 0, 'cc_funcion_parametro_001___', '*no cumple con la regla: "parametro sin rastro es mayor o igual que 0 y parametro sin rastro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (841, 0, 'tc_funcion_parametro_002___', '*no cumple con la regla: "lista valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (842, 0, 'cc_funcion_parametro_002___', '*no cumple con la regla: "parametro segmento es mayor o igual que 0 y parametro segmento es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (842, 0, 'tc_funcion_parametro_003___', '*no cumple con la regla: "clase objeto valor es nulo ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (843, 0, 'cc_funcionario_001___', '*no cumple con la regla: "cedula es mayor o igual que 1 y cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (843, 0, 'tc_funcion_parametro_004___', '*no cumple con la regla: "tipo valor es igual a 21 ó lista valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (844, 0, 'cc_funcionario_002___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
+VALUES (844, 0, 'tc_funcion_parametro_005___', '*no cumple con la regla: "tipo valor no es igual a 21 ó lista valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (845, 0, 'cc_funcionario_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
+VALUES (845, 0, 'tc_funcion_parametro_006___', '*no cumple con la regla: "tipo valor es igual a 22 ó clase objeto valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (846, 0, 'cc_log_imp_cen_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (846, 0, 'tc_funcion_parametro_007___', '*no cumple con la regla: "tipo valor no es igual a 22 ó clase objeto valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (847, 0, 'cc_log_imp_deu_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (847, 0, 'tc_funcion_parametro_008___', '*no cumple con la regla: "tipo valor es igual a 23 ó clase recurso valor es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (848, 0, 'cc_log_imp_emp_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (848, 0, 'tc_funcion_parametro_009___', '*no cumple con la regla: "tipo valor no es igual a 23 ó clase recurso valor no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (849, 0, 'cc_log_imp_fal_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (849, 0, 'cc_funcion_parametro_001___', '*no cumple con la regla: "parametro sin rastro es mayor o igual que 0 y parametro sin rastro es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (850, 0, 'cc_log_imp_hog_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (850, 0, 'cc_funcion_parametro_002___', '*no cumple con la regla: "parametro segmento es mayor o igual que 0 y parametro segmento es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (851, 0, 'cc_log_imp_hog_eec_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (851, 0, 'cc_funcionario_001___', '*no cumple con la regla: "cedula es mayor o igual que 1 y cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (852, 0, 'cc_log_imp_ids_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (852, 0, 'cc_funcionario_002___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (853, 0, 'cc_log_imp_jub_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (853, 0, 'cc_funcionario_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (854, 0, 'cc_log_imp_pen_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (854, 0, 'cc_log_imp_cen_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (855, 0, 'cc_log_imp_per_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (855, 0, 'cc_log_imp_deu_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (856, 0, 'cc_log_imp_per_eec_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (856, 0, 'cc_log_imp_emp_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (857, 0, 'cc_log_imp_pot_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (857, 0, 'cc_log_imp_fal_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (858, 0, 'cc_log_imp_sub_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (858, 0, 'cc_log_imp_hog_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (859, 0, 'cc_log_imp_ubi_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (859, 0, 'cc_log_imp_hog_eec_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (860, 0, 'cc_log_pro_acr_pot_ben_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (860, 0, 'cc_log_imp_ids_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (861, 0, 'cc_log_pro_act_jupe_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (861, 0, 'cc_log_imp_jub_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (862, 0, 'cc_log_pro_den_pen_obj_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (862, 0, 'cc_log_imp_pen_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (863, 0, 'cc_log_pro_imp_arc_ext_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (863, 0, 'cc_log_imp_per_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (864, 0, 'cc_log_pro_oto_pen_apr_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (864, 0, 'cc_log_imp_per_eec_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (865, 0, 'cc_log_pro_pre_pro_pag_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (865, 0, 'cc_log_imp_pot_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (866, 0, 'cc_log_pro_ver_ele_pen_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (866, 0, 'cc_log_imp_sub_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (867, 0, 'cc_nivel_opcion_menu_001___', '*no cumple con la regla: "digitos nivel opcion menu es mayor o igual que 2 y digitos nivel opcion menu es menor o igual que 2"; no es posible {0} el recurso {1}', NULL);
+VALUES (867, 0, 'cc_log_imp_ubi_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (868, 0, 'cc_nivel_ubicacion_001___', '*no cumple con la regla: "digitos nivel ubicacion es mayor o igual que 2 y digitos nivel ubicacion es menor o igual que 2"; no es posible {0} el recurso {1}', NULL);
+VALUES (868, 0, 'cc_log_pro_acr_pot_ben_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (869, 0, 'cc_objecion_ele_pen_001___', '*no cumple con la regla: "objecion ele pen inactiva es mayor o igual que 0 y objecion ele pen inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (869, 0, 'cc_log_pro_act_jupe_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (870, 0, 'tc_opcion_menu_001___', '*no cumple con la regla: "url opcion menu es nulo ó aplicacion es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (870, 0, 'cc_log_pro_den_pen_obj_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (871, 0, 'tc_opcion_menu_002___', '*no cumple con la regla: "url opcion menu es nulo ó pagina es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (871, 0, 'cc_log_pro_imp_arc_ext_001___', '*no cumple con la regla: "importado es mayor o igual que 0 y importado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (872, 0, 'tc_opcion_menu_003___', '*no cumple con la regla: "aplicacion es nulo ó pagina es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (872, 0, 'cc_log_pro_oto_pen_apr_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (873, 0, 'cc_opcion_menu_001___', '*no cumple con la regla: "secuencia opcion menu es nulo ó secuencia opcion menu es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (873, 0, 'cc_log_pro_pre_pro_pag_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (874, 0, 'cc_opcion_menu_002___', '*no cumple con la regla: "secuencia opcion menu es nulo ó secuencia opcion menu es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (874, 0, 'cc_log_pro_ver_ele_pen_001___', '*no cumple con la regla: "procesado es mayor o igual que 0 y procesado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (875, 0, 'cc_opcion_menu_003___', '*no cumple con la regla: "opcion menu inactiva es mayor o igual que 0 y opcion menu inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (875, 0, 'cc_nivel_opcion_menu_001___', '*no cumple con la regla: "digitos nivel opcion menu es mayor o igual que 2 y digitos nivel opcion menu es menor o igual que 2"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (876, 0, 'cc_opcion_menu_004___', '*no cumple con la regla: "opcion menu sincronizada es mayor o igual que 0 y opcion menu sincronizada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (876, 0, 'cc_nivel_ubicacion_001___', '*no cumple con la regla: "digitos nivel ubicacion es mayor o igual que 2 y digitos nivel ubicacion es menor o igual que 2"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (877, 0, 'cc_opcion_menu_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
+VALUES (877, 0, 'cc_objecion_ele_pen_001___', '*no cumple con la regla: "objecion ele pen inactiva es mayor o igual que 0 y objecion ele pen inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (878, 0, 'cc_opcion_menu_plus_002___', '*no cumple con la regla: "nivel opcion menu es mayor o igual que 0 y nivel opcion menu es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
+VALUES (878, 0, 'tc_opcion_menu_001___', '*no cumple con la regla: "url opcion menu es nulo ó aplicacion es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (879, 0, 'cc_pagina_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (879, 0, 'tc_opcion_menu_002___', '*no cumple con la regla: "url opcion menu es nulo ó pagina es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (880, 0, 'cc_pagina_funcion_001___', '*no cumple con la regla: "funcion inicial es mayor o igual que 0 y funcion inicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (880, 0, 'tc_opcion_menu_003___', '*no cumple con la regla: "aplicacion es nulo ó pagina es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (881, 0, 'cc_parametro_global_001___', '*no cumple con la regla: "control cer vida activo es mayor o igual que 0 y control cer vida activo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (881, 0, 'cc_opcion_menu_001___', '*no cumple con la regla: "secuencia opcion menu es nulo ó secuencia opcion menu es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (882, 0, 'cc_parametro_global_002___', '*no cumple con la regla: "control cobro pension activ es mayor o igual que 0 y control cobro pension activ es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (882, 0, 'cc_opcion_menu_002___', '*no cumple con la regla: "secuencia opcion menu es nulo ó secuencia opcion menu es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (883, 0, 'cc_parametro_global_003___', '*no cumple con la regla: "control reproceso pen activ es mayor o igual que 0 y control reproceso pen activ es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (883, 0, 'cc_opcion_menu_003___', '*no cumple con la regla: "opcion menu inactiva es mayor o igual que 0 y opcion menu inactiva es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (884, 0, 'tc_persona_001___', '*no cumple con la regla: "causa den reco pen es igual a 99 ó otra causa den reco pen es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (884, 0, 'cc_opcion_menu_004___', '*no cumple con la regla: "opcion menu sincronizada es mayor o igual que 0 y opcion menu sincronizada es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (885, 0, 'tc_persona_002___', '*no cumple con la regla: "causa den reco pen no es igual a 99 ó otra causa den reco pen no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (885, 0, 'cc_opcion_menu_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (886, 0, 'tc_persona_003___', '*no cumple con la regla: "causa den pension es igual a 99 ó otra causa den pension es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (886, 0, 'cc_opcion_menu_plus_002___', '*no cumple con la regla: "nivel opcion menu es mayor o igual que 0 y nivel opcion menu es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (887, 0, 'tc_persona_004___', '*no cumple con la regla: "causa den pension no es igual a 99 ó otra causa den pension no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (887, 0, 'cc_pagina_001___', '*no cumple con la regla: "publica es mayor o igual que 0 y publica es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (888, 0, 'tc_persona_005___', '*no cumple con la regla: "causa rev pension es igual a 99 ó otra causa rev pension es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (888, 0, 'cc_pagina_funcion_001___', '*no cumple con la regla: "funcion inicial es mayor o igual que 0 y funcion inicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (889, 0, 'tc_persona_006___', '*no cumple con la regla: "causa rev pension no es igual a 99 ó otra causa rev pension no es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (889, 0, 'cc_parametro_global_001___', '*no cumple con la regla: "control cer vida activo es mayor o igual que 0 y control cer vida activo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (890, 0, 'tc_persona_007___', '*no cumple con la regla: "apellido casada es nulo ó sexo persona es igual a 2"; no es posible {0} el recurso {1}', NULL);
+VALUES (890, 0, 'cc_parametro_global_002___', '*no cumple con la regla: "control cobro pension activ es mayor o igual que 0 y control cobro pension activ es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (891, 0, 'tc_persona_008___', '*no cumple con la regla: "apellido casada es nulo ó estado civil no es igual a 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (891, 0, 'cc_parametro_global_003___', '*no cumple con la regla: "control reproceso pen activ es mayor o igual que 0 y control reproceso pen activ es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (892, 0, 'tc_persona_009___', '*no cumple con la regla: "indigena es igual a 1 ó etnia indigena es nulo"; no es posible {0} el recurso {1}', NULL);
+VALUES (892, 0, 'tc_persona_001___', '*no cumple con la regla: "causa den reco pen es igual a 99 ó otra causa den reco pen es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (893, 0, 'cc_persona_001___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (893, 0, 'tc_persona_002___', '*no cumple con la regla: "causa den reco pen no es igual a 99 ó otra causa den reco pen no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (894, 0, 'cc_persona_002___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (894, 0, 'tc_persona_003___', '*no cumple con la regla: "causa den pension es igual a 99 ó otra causa den pension es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (895, 0, 'cc_persona_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
+VALUES (895, 0, 'tc_persona_004___', '*no cumple con la regla: "causa den pension no es igual a 99 ó otra causa den pension no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (896, 0, 'cc_persona_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
+VALUES (896, 0, 'tc_persona_005___', '*no cumple con la regla: "causa rev pension es igual a 99 ó otra causa rev pension es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (897, 0, 'cc_persona_005___', '*no cumple con la regla: "paraguayo natural es mayor o igual que 0 y paraguayo natural es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (897, 0, 'tc_persona_006___', '*no cumple con la regla: "causa rev pension no es igual a 99 ó otra causa rev pension no es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (898, 0, 'cc_persona_006___', '*no cumple con la regla: "indigena es mayor o igual que 0 y indigena es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (898, 0, 'tc_persona_007___', '*no cumple con la regla: "apellido casada es nulo ó sexo persona es igual a 2"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (899, 0, 'cc_persona_007___', '*no cumple con la regla: "certificado vida anulado es mayor o igual que 0 y certificado vida anulado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (899, 0, 'tc_persona_008___', '*no cumple con la regla: "apellido casada es nulo ó estado civil no es igual a 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (900, 0, 'cc_persona_008___', '*no cumple con la regla: "cer defuncion anulado es mayor o igual que 0 y cer defuncion anulado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (900, 0, 'tc_persona_009___', '*no cumple con la regla: "indigena es igual a 1 ó etnia indigena es nulo"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (901, 0, 'cc_persona_009___', '*no cumple con la regla: "persona con empleo es mayor o igual que 0 y persona con empleo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (901, 0, 'cc_persona_001___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (902, 0, 'cc_persona_010___', '*no cumple con la regla: "persona con jubilacion es mayor o igual que 0 y persona con jubilacion es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (902, 0, 'cc_persona_002___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (903, 0, 'cc_persona_011___', '*no cumple con la regla: "persona con pension es mayor o igual que 0 y persona con pension es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (903, 0, 'cc_persona_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (904, 0, 'cc_persona_012___', '*no cumple con la regla: "persona con subsidio es mayor o igual que 0 y persona con subsidio es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (904, 0, 'cc_persona_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (905, 0, 'cc_persona_013___', '*no cumple con la regla: "persona con deuda es mayor o igual que 0 y persona con deuda es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (905, 0, 'cc_persona_005___', '*no cumple con la regla: "paraguayo natural es mayor o igual que 0 y paraguayo natural es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (906, 0, 'cc_persona_014___', '*no cumple con la regla: "persona con pena judicial es mayor o igual que 0 y persona con pena judicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (906, 0, 'cc_persona_006___', '*no cumple con la regla: "indigena es mayor o igual que 0 y indigena es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (907, 0, 'cc_persona_015___', '*no cumple con la regla: "persona con cer vida es mayor o igual que 0 y persona con cer vida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (907, 0, 'cc_persona_007___', '*no cumple con la regla: "certificado vida anulado es mayor o igual que 0 y certificado vida anulado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (908, 0, 'cc_persona_016___', '*no cumple con la regla: "persona con carta renuncia es mayor o igual que 0 y persona con carta renuncia es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (908, 0, 'cc_persona_008___', '*no cumple con la regla: "cer defuncion anulado es mayor o igual que 0 y cer defuncion anulado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (909, 0, 'cc_persona_017___', '*no cumple con la regla: "persona elegible para pen es mayor o igual que 0 y persona elegible para pen es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (909, 0, 'cc_persona_009___', '*no cumple con la regla: "persona con empleo es mayor o igual que 0 y persona con empleo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (910, 0, 'cc_persona_018___', '*no cumple con la regla: "persona acreditada para pen es mayor o igual que 0 y persona acreditada para pen es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (910, 0, 'cc_persona_010___', '*no cumple con la regla: "persona con jubilacion es mayor o igual que 0 y persona con jubilacion es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (911, 0, 'cc_persona_019___', '*no cumple con la regla: "persona con copia cedula es mayor o igual que 0 y persona con copia cedula es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (911, 0, 'cc_persona_011___', '*no cumple con la regla: "persona con pension es mayor o igual que 0 y persona con pension es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (912, 0, 'cc_persona_020___', '*no cumple con la regla: "persona con declaracion jur es mayor o igual que 0 y persona con declaracion jur es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (912, 0, 'cc_persona_012___', '*no cumple con la regla: "persona con subsidio es mayor o igual que 0 y persona con subsidio es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (913, 0, 'cc_potencial_ben_001___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (913, 0, 'cc_persona_013___', '*no cumple con la regla: "persona con deuda es mayor o igual que 0 y persona con deuda es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (914, 0, 'cc_potencial_ben_002___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (914, 0, 'cc_persona_014___', '*no cumple con la regla: "persona con pena judicial es mayor o igual que 0 y persona con pena judicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (915, 0, 'cc_potencial_ben_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
+VALUES (915, 0, 'cc_persona_015___', '*no cumple con la regla: "persona con cer vida es mayor o igual que 0 y persona con cer vida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (916, 0, 'cc_potencial_ben_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
+VALUES (916, 0, 'cc_persona_016___', '*no cumple con la regla: "persona con carta renuncia es mayor o igual que 0 y persona con carta renuncia es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (917, 0, 'cc_potencial_ben_005___', '*no cumple con la regla: "paraguayo natural es mayor o igual que 0 y paraguayo natural es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (917, 0, 'cc_persona_017___', '*no cumple con la regla: "persona elegible para pen es mayor o igual que 0 y persona elegible para pen es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (918, 0, 'cc_potencial_ben_006___', '*no cumple con la regla: "indigena es mayor o igual que 0 y indigena es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (918, 0, 'cc_persona_018___', '*no cumple con la regla: "persona acreditada para pen es mayor o igual que 0 y persona acreditada para pen es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (919, 0, 'cc_potencial_ben_007___', '*no cumple con la regla: "persona con empleo es mayor o igual que 0 y persona con empleo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (919, 0, 'cc_persona_019___', '*no cumple con la regla: "persona con copia cedula es mayor o igual que 0 y persona con copia cedula es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (920, 0, 'cc_potencial_ben_008___', '*no cumple con la regla: "persona con jubilacion es mayor o igual que 0 y persona con jubilacion es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (920, 0, 'cc_persona_020___', '*no cumple con la regla: "persona con declaracion jur es mayor o igual que 0 y persona con declaracion jur es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (921, 0, 'cc_potencial_ben_009___', '*no cumple con la regla: "persona con pension es mayor o igual que 0 y persona con pension es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (921, 0, 'cc_potencial_ben_001___', '*no cumple con la regla: "cedula es nulo ó cedula es mayor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (922, 0, 'cc_potencial_ben_010___', '*no cumple con la regla: "persona con subsidio es mayor o igual que 0 y persona con subsidio es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (922, 0, 'cc_potencial_ben_002___', '*no cumple con la regla: "cedula es nulo ó cedula es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (923, 0, 'cc_potencial_ben_011___', '*no cumple con la regla: "persona con deuda es mayor o igual que 0 y persona con deuda es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (923, 0, 'cc_potencial_ben_003___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es mayor o igual que "A""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (924, 0, 'cc_potencial_ben_012___', '*no cumple con la regla: "persona con pena judicial es mayor o igual que 0 y persona con pena judicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (924, 0, 'cc_potencial_ben_004___', '*no cumple con la regla: "letra cedula es nulo ó letra cedula es menor o igual que "Z""; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (925, 0, 'cc_potencial_ben_013___', '*no cumple con la regla: "persona con cer vida es mayor o igual que 0 y persona con cer vida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (925, 0, 'cc_potencial_ben_005___', '*no cumple con la regla: "paraguayo natural es mayor o igual que 0 y paraguayo natural es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (926, 0, 'cc_potencial_ben_014___', '*no cumple con la regla: "persona con carta renuncia es mayor o igual que 0 y persona con carta renuncia es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (926, 0, 'cc_potencial_ben_006___', '*no cumple con la regla: "indigena es mayor o igual que 0 y indigena es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (927, 0, 'cc_potencial_ben_015___', '*no cumple con la regla: "potencial ben inactivo es mayor o igual que 0 y potencial ben inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (927, 0, 'cc_potencial_ben_007___', '*no cumple con la regla: "persona con empleo es mayor o igual que 0 y persona con empleo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (928, 0, 'cc_potencial_ben_016___', '*no cumple con la regla: "potencial ben migrado es mayor o igual que 0 y potencial ben migrado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (928, 0, 'cc_potencial_ben_008___', '*no cumple con la regla: "persona con jubilacion es mayor o igual que 0 y persona con jubilacion es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (929, 0, 'cc_rastro_funcion_001___', '*no cumple con la regla: "error es nulo ó error es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (929, 0, 'cc_potencial_ben_009___', '*no cumple con la regla: "persona con pension es mayor o igual que 0 y persona con pension es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (930, 0, 'cc_rastro_funcion_002___', '*no cumple con la regla: "error es nulo ó error es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (930, 0, 'cc_potencial_ben_010___', '*no cumple con la regla: "persona con subsidio es mayor o igual que 0 y persona con subsidio es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (931, 0, 'cc_rastro_proceso_001___', '*no cumple con la regla: "subprocesos es mayor o igual que 0 y subprocesos es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (931, 0, 'cc_potencial_ben_011___', '*no cumple con la regla: "persona con deuda es mayor o igual que 0 y persona con deuda es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (932, 0, 'cc_rastro_proceso_002___', '*no cumple con la regla: "subprocesos pendientes es mayor o igual que 0 y subprocesos pendientes es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (932, 0, 'cc_potencial_ben_012___', '*no cumple con la regla: "persona con pena judicial es mayor o igual que 0 y persona con pena judicial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (933, 0, 'cc_rastro_proceso_003___', '*no cumple con la regla: "subprocesos en progreso es mayor o igual que 0 y subprocesos en progreso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (933, 0, 'cc_potencial_ben_013___', '*no cumple con la regla: "persona con cer vida es mayor o igual que 0 y persona con cer vida es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (934, 0, 'cc_rastro_proceso_004___', '*no cumple con la regla: "subprocesos sin errores es mayor o igual que 0 y subprocesos sin errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (934, 0, 'cc_potencial_ben_014___', '*no cumple con la regla: "persona con carta renuncia es mayor o igual que 0 y persona con carta renuncia es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (935, 0, 'cc_rastro_proceso_005___', '*no cumple con la regla: "subprocesos con errores es mayor o igual que 0 y subprocesos con errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (935, 0, 'cc_potencial_ben_015___', '*no cumple con la regla: "potencial ben inactivo es mayor o igual que 0 y potencial ben inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (936, 0, 'cc_rastro_proceso_006___', '*no cumple con la regla: "subprocesos cancelados es mayor o igual que 0 y subprocesos cancelados es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (936, 0, 'cc_potencial_ben_016___', '*no cumple con la regla: "potencial ben migrado es mayor o igual que 0 y potencial ben migrado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (937, 0, 'cc_recurso_001___', '*no cumple con la regla: "recurso inactivo es mayor o igual que 0 y recurso inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (937, 0, 'cc_rastro_funcion_001___', '*no cumple con la regla: "error es nulo ó error es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (938, 0, 'cc_recurso_002___', '*no cumple con la regla: "recurso es mayor o igual que 0 y recurso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
+VALUES (938, 0, 'cc_rastro_funcion_002___', '*no cumple con la regla: "error es nulo ó error es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (939, 0, 'cc_ubicacion_001___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+VALUES (939, 0, 'cc_rastro_proceso_001___', '*no cumple con la regla: "subprocesos es mayor o igual que 0 y subprocesos es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (940, 0, 'cc_ubicacion_002___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es menor o igual que 100"; no es posible {0} el recurso {1}', NULL);
+VALUES (940, 0, 'cc_rastro_proceso_002___', '*no cumple con la regla: "subprocesos pendientes es mayor o igual que 0 y subprocesos pendientes es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (941, 0, 'cc_ubicacion_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
+VALUES (941, 0, 'cc_rastro_proceso_003___', '*no cumple con la regla: "subprocesos en progreso es mayor o igual que 0 y subprocesos en progreso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (942, 0, 'cc_ubicacion_plus_002___', '*no cumple con la regla: "nivel ubicacion es mayor o igual que 0 y nivel ubicacion es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
+VALUES (942, 0, 'cc_rastro_proceso_004___', '*no cumple con la regla: "subprocesos sin errores es mayor o igual que 0 y subprocesos sin errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (943, 0, 'tc_usuario_001___', '*no cumple con la regla: "usuario supervisor no es igual a usuario"; no es posible {0} el recurso {1}', NULL);
+VALUES (943, 0, 'cc_rastro_proceso_005___', '*no cumple con la regla: "subprocesos con errores es mayor o igual que 0 y subprocesos con errores es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (944, 0, 'cc_usuario_001___', '*no cumple con la regla: "super usuario es mayor o igual que 0 y super usuario es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (944, 0, 'cc_rastro_proceso_006___', '*no cumple con la regla: "subprocesos cancelados es mayor o igual que 0 y subprocesos cancelados es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (945, 0, 'cc_usuario_002___', '*no cumple con la regla: "usuario especial es mayor o igual que 0 y usuario especial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (945, 0, 'cc_recurso_001___', '*no cumple con la regla: "recurso inactivo es mayor o igual que 0 y recurso inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (946, 0, 'cc_usuario_003___', '*no cumple con la regla: "usuario inactivo es mayor o igual que 0 y usuario inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (946, 0, 'cc_recurso_002___', '*no cumple con la regla: "recurso es mayor o igual que 0 y recurso es menor o igual que 1000000000"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
-VALUES (947, 0, 'cc_usuario_004___', '*no cumple con la regla: "usuario modificado es mayor o igual que 0 y usuario modificado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+VALUES (947, 0, 'cc_ubicacion_001___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es mayor o igual que 0"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (948, 0, 'cc_ubicacion_002___', '*no cumple con la regla: "secuencia ubicacion es nulo ó secuencia ubicacion es menor o igual que 100"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (949, 0, 'cc_ubicacion_plus_001___', '*no cumple con la regla: "tipo nodo es mayor o igual que 1 y tipo nodo es menor o igual que 3"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (950, 0, 'cc_ubicacion_plus_002___', '*no cumple con la regla: "nivel ubicacion es mayor o igual que 0 y nivel ubicacion es menor o igual que 15"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (951, 0, 'tc_usuario_001___', '*no cumple con la regla: "usuario supervisor no es igual a usuario"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (952, 0, 'cc_usuario_001___', '*no cumple con la regla: "super usuario es mayor o igual que 0 y super usuario es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (953, 0, 'cc_usuario_002___', '*no cumple con la regla: "usuario especial es mayor o igual que 0 y usuario especial es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (954, 0, 'cc_usuario_003___', '*no cumple con la regla: "usuario inactivo es mayor o igual que 0 y usuario inactivo es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
+INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
+VALUES (955, 0, 'cc_usuario_004___', '*no cumple con la regla: "usuario modificado es mayor o igual que 0 y usuario modificado es menor o igual que 1"; no es posible {0} el recurso {1}', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)
 VALUES (100001101, 0, 'funcion_no_existe', 'función {0} no existe', NULL);
 INSERT INTO mensaje (id_mensaje, version_mensaje, codigo_mensaje, patron_mensaje, descripcion_mensaje)

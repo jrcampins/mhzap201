@@ -8,4 +8,6 @@ INSERT INTO estado_salud (numero_estado_salud, codigo_estado_salud)
 VALUES (3, 'Enfermo/accidentado y crónico');
 INSERT INTO estado_salud (numero_estado_salud, codigo_estado_salud)
 VALUES (6, 'Sano');
+INSERT INTO estado_salud (numero_estado_salud, codigo_estado_salud)
+VALUES (9, 'No reporta');
 GO

@@ -14,3 +14,5 @@ INSERT INTO tipo_persona_hogar (numero_tipo_persona_hogar, codigo_tipo_persona_h
 VALUES (7, 'Sin parentesco con el jefe');
 INSERT INTO tipo_persona_hogar (numero_tipo_persona_hogar, codigo_tipo_persona_hogar)
 VALUES (8, 'Empleado/a doméstico/a');
+INSERT INTO tipo_persona_hogar (numero_tipo_persona_hogar, codigo_tipo_persona_hogar)
+VALUES (9, 'No reporta');
