@@ -71,6 +71,7 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
     public static final String COLUMNA_OBSERVACIONES = "observaciones";
     public static final String COLUMNA_FECHA_ANULACION = "fecha_anulacion";
     public static final String COLUMNA_OBSERVACIONES_ANULACION = "observaciones_anulacion";
+    public static final String COLUMNA_REFERENCIA = "referencia";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_OBJECION_ELE_PEN, Long.class);
@@ -84,6 +85,7 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_ANULACION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_OBSERVACIONES_ANULACION, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_REFERENCIA, String.class);
     }
 
     protected void setColumnasInsertables() {
@@ -99,6 +101,7 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.setColumnasInsertables(COLUMNA_OBSERVACIONES, true);
         this.setColumnasInsertables(COLUMNA_FECHA_ANULACION, true);
         this.setColumnasInsertables(COLUMNA_OBSERVACIONES_ANULACION, true);
+        this.setColumnasInsertables(COLUMNA_REFERENCIA, true);
     }
 
     protected void setColumnasModificables() {
@@ -114,6 +117,7 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
         this.setColumnasModificables(COLUMNA_OBSERVACIONES, true);
         this.setColumnasModificables(COLUMNA_FECHA_ANULACION, true);
         this.setColumnasModificables(COLUMNA_OBSERVACIONES_ANULACION, true);
+        this.setColumnasModificables(COLUMNA_REFERENCIA, true);
     }
 
     public Long getIdObjecionElePen() {
@@ -257,6 +261,19 @@ public class ObjecionElePenCachedRowSetDataProvider extends RecursoCachedRowSetD
     }
     public void setObservacionesAnulacion(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_OBSERVACIONES_ANULACION, rowKey, valor);
+    }
+
+    public String getReferencia() {
+        return (String) super.getValue(COLUMNA_REFERENCIA);
+    }
+    public String getReferencia(RowKey rowKey) {
+        return (String) super.getValue(COLUMNA_REFERENCIA, rowKey);
+    }
+    public void setReferencia(String valor) {
+        super.setValue(COLUMNA_REFERENCIA, valor);
+    }
+    public void setReferencia(RowKey rowKey, String valor) {
+        super.setValue(COLUMNA_REFERENCIA, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_objecion_ele_pen";

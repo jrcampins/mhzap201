@@ -870,6 +870,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumTipoPersonaHogar.EMPLEADO_A_DOMESTICO_A.intValue());
     }
 
+    public boolean isNumeroTipoPersonaHogarNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroTipoPersonaHogar(rowKey);
+        return value != null && value.equals(EnumTipoPersonaHogar.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoMiembroHogar() {
         if (bean == null) {
             return true;
@@ -904,6 +913,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoMiembroHogar(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoMiembroHogarNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoMiembroHogar(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoExcepcionCed() {
@@ -1077,6 +1095,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumIdiomaHogar.NO_HABLA.intValue());
     }
 
+    public boolean isNumeroIdiomaHogarNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroIdiomaHogar(rowKey);
+        return value != null && value.equals(EnumIdiomaHogar.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoAsistenciaEsc() {
         if (bean == null) {
             return true;
@@ -1111,6 +1138,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoAsistenciaEsc(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoAsistenciaEscNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoAsistenciaEsc(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroMotivoInaEsc() {
@@ -1347,6 +1383,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumMotivoInaEsc.OTROS_ESPECIFICAR.intValue());
     }
 
+    public boolean isNumeroMotivoInaEscNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroMotivoInaEsc(rowKey);
+        return value != null && value.equals(EnumMotivoInaEsc.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoMatriculacionEsc() {
         if (bean == null) {
             return true;
@@ -1381,6 +1426,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoMatriculacionEsc(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoMatriculacionEscNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoMatriculacionEsc(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroNivelEduUltCurAprob() {
@@ -1608,6 +1662,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumNivelEducativo.SUPERIOR_UNIVERSITARIA.intValue());
     }
 
+    public boolean isNumeroNivelEduUltCurAprobNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroNivelEduUltCurAprob(rowKey);
+        return value != null && value.equals(EnumNivelEducativo.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoCursoNoFormal() {
         if (bean == null) {
             return true;
@@ -1642,6 +1705,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoCursoNoFormal(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoCursoNoFormalNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoCursoNoFormal(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoSeguroMedico() {
@@ -1707,6 +1779,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumTipoSeguroMedico.NO_TIENE.intValue());
     }
 
+    public boolean isNumeroTipoSeguroMedicoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroTipoSeguroMedico(rowKey);
+        return value != null && value.equals(EnumTipoSeguroMedico.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroEstadoSalud() {
         if (bean == null) {
             return true;
@@ -1759,6 +1840,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroEstadoSalud(rowKey);
         return value != null && value.equals(EnumEstadoSalud.SANO.intValue());
+    }
+
+    public boolean isNumeroEstadoSaludNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroEstadoSalud(rowKey);
+        return value != null && value.equals(EnumEstadoSalud.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroClaseEnfAcc() {
@@ -2083,6 +2173,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroClaseEnfAcc(rowKey);
         return value != null && value.equals(EnumClaseEnfAcc.OTROS_ESPECIFICAR.intValue());
+    }
+
+    public boolean isNumeroClaseEnfAccNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroClaseEnfAcc(rowKey);
+        return value != null && value.equals(EnumClaseEnfAcc.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroClaseEnfCronica() {
@@ -2436,6 +2535,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoAtencionMedicaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoAtencionMedica(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroMotivoNoAtencion() {
         if (bean == null) {
             return true;
@@ -2535,6 +2643,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumMotivoNoAtencion.OTROS.intValue());
     }
 
+    public boolean isNumeroMotivoNoAtencionNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroMotivoNoAtencion(rowKey);
+        return value != null && value.equals(EnumMotivoNoAtencion.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoCarnetVacunacion() {
         if (bean == null) {
             return true;
@@ -2569,6 +2686,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoCarnetVacunacion(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoCarnetVacunacionNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoCarnetVacunacion(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroClaseImpedimento() {
@@ -2715,6 +2841,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumClaseImpedimento.HABLA_CON_MUCHA_DIFICULTAD.intValue());
     }
 
+    public boolean isNumeroClaseImpedimentoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroClaseImpedimento(rowKey);
+        return value != null && value.equals(EnumClaseImpedimento.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroCausaImpedimento() {
         if (bean == null) {
             return true;
@@ -2778,6 +2913,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumCausaImpedimento.OTROS_ESPECIFICAR.intValue());
     }
 
+    public boolean isNumeroCausaImpedimentoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroCausaImpedimento(rowKey);
+        return value != null && value.equals(EnumCausaImpedimento.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDifParaCaminar() {
         if (bean == null) {
             return true;
@@ -2812,6 +2956,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaCaminar(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDifParaCaminarNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaCaminar(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDifParaVestirse() {
@@ -2850,6 +3003,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDifParaVestirseNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaVestirse(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDifParaBanarse() {
         if (bean == null) {
             return true;
@@ -2884,6 +3046,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaBanarse(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDifParaBanarseNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaBanarse(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDifParaComer() {
@@ -2922,6 +3093,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDifParaComerNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaComer(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDifParaLaCama() {
         if (bean == null) {
             return true;
@@ -2956,6 +3136,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaLaCama(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDifParaLaCamaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaLaCama(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDifParaElBano() {
@@ -2994,6 +3183,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDifParaElBanoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoDifParaElBano(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoTrabajo() {
         if (bean == null) {
             return true;
@@ -3028,6 +3226,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoTrabajo(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoTrabajoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroSionoTrabajo(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroMotivoNoTrabajo() {
@@ -3129,6 +3336,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         return value != null && value.equals(EnumMotivoNoTrabajo.OTROS.intValue());
     }
 
+    public boolean isNumeroMotivoNoTrabajoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroMotivoNoTrabajo(rowKey);
+        return value != null && value.equals(EnumMotivoNoTrabajo.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroTipoRelacionLab() {
         if (bean == null) {
             return true;
@@ -3217,6 +3433,15 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaPersonaDataProvider().getNumeroTipoRelacionLab(rowKey);
         return value != null && value.equals(EnumTipoRelacionLab.EMPLEADO_A_DOMESTICO_A.intValue());
+    }
+
+    public boolean isNumeroTipoRelacionLabNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaPersonaDataProvider().getNumeroTipoRelacionLab(rowKey);
+        return value != null && value.equals(EnumTipoRelacionLab.NO_REPORTA.intValue());
     }
 
    public boolean isEsFichaPersonaImportada() {

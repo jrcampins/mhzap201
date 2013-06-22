@@ -88,10 +88,13 @@ public class LogImpIdsCachedRowSetDataProvider2 extends LogImpIdsCachedRowSetDat
     protected static final long PARAMETRO_FECHA_HORA_TRANSACCION = 20709L;
     protected static final long PARAMETRO_NOMBRE_ARCHIVO = 1389L;
     protected static final long PARAMETRO_CODIGO_ARCHIVO = 20699L;
+    protected static final long PARAMETRO_ID_PERSONA = 20002L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
 
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_OPCION_BINARIA = {"opcion_binaria", "numero_opcion_binaria", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_PERSONA = {"persona", "id_persona", "", ""};
 
     @Override
     public long getFuncionConsultarRecurso() {

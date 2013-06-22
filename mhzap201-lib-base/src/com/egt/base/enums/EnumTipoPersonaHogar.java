@@ -23,7 +23,8 @@ public enum EnumTipoPersonaHogar implements ListOption {
     NIETO_A(5, "tipo_persona_hogar_nieto_a"),
     OTRO_PARENTESCO_CON_EL_JEFE(6, "tipo_persona_hogar_otro_parentesco_con_el_jefe"),
     SIN_PARENTESCO_CON_EL_JEFE(7, "tipo_persona_hogar_sin_parentesco_con_el_jefe"),
-    EMPLEADO_A_DOMESTICO_A(8, "tipo_persona_hogar_empleado_a_domestico_a");
+    EMPLEADO_A_DOMESTICO_A(8, "tipo_persona_hogar_empleado_a_domestico_a"),
+    NO_REPORTA(9, "tipo_persona_hogar_no_reporta");
 
     public static EnumTipoPersonaHogar valueOf(int i) {
         switch (i) {
@@ -43,6 +44,8 @@ public enum EnumTipoPersonaHogar implements ListOption {
                 return SIN_PARENTESCO_CON_EL_JEFE;
             case 8:
                 return EMPLEADO_A_DOMESTICO_A;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

@@ -20,6 +20,7 @@ public enum EnumCausaDenPension implements ListOption {
     PERSONA_FALLECIDA(12, "causa_den_pension_persona_fallecida"),
     PERSONA_NO_ES_NATURAL(13, "causa_den_pension_persona_no_es_natural"),
     PERSONA_NO_ES_MAYOR_DE_65_ANOS(14, "causa_den_pension_persona_no_es_mayor_de_65_anos"),
+    PERSONA_CON_CEDULA_VENCIDA(15, "causa_den_pension_persona_con_cedula_vencida"),
     PERSONA_CON_EMPLEO(21, "causa_den_pension_persona_con_empleo"),
     PERSONA_CON_JUBILACION(22, "causa_den_pension_persona_con_jubilacion"),
     PERSONA_CON_DEUDA(23, "causa_den_pension_persona_con_deuda"),
@@ -40,6 +41,8 @@ public enum EnumCausaDenPension implements ListOption {
                 return PERSONA_NO_ES_NATURAL;
             case 14:
                 return PERSONA_NO_ES_MAYOR_DE_65_ANOS;
+            case 15:
+                return PERSONA_CON_CEDULA_VENCIDA;
             case 21:
                 return PERSONA_CON_EMPLEO;
             case 22:

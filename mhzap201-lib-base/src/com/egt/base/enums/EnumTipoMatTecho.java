@@ -19,7 +19,8 @@ public enum EnumTipoMatTecho implements ListOption {
     PAJA_MADERA_TACUARA_OTROS(1, "tipo_mat_techo_paja_madera_tacuara_otros"),
     TEJA_LOSA(2, "tipo_mat_techo_teja_losa"),
     ETHERNIT(3, "tipo_mat_techo_ethernit"),
-    ZINC(4, "tipo_mat_techo_zinc");
+    ZINC(4, "tipo_mat_techo_zinc"),
+    NO_REPORTA(9, "tipo_mat_techo_no_reporta");
 
     public static EnumTipoMatTecho valueOf(int i) {
         switch (i) {
@@ -31,6 +32,8 @@ public enum EnumTipoMatTecho implements ListOption {
                 return ETHERNIT;
             case 4:
                 return ZINC;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

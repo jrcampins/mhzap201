@@ -412,6 +412,10 @@ public interface PersonaBase {
 //
 //  public void setTipoActJupeNumeroTipoActJupe(TipoActJupeBase tipoActJupe);
 
+    public Collection<? extends LogImpIdsBase> getLogImpIdsIdPersonaCollection();
+//
+//  public void setLogImpIdsIdPersonaCollection(Collection<? extends LogImpIdsBase> collection);
+
     public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdPersonaCollection();
 //
 //  public void setLogProAcrPotBenIdPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);

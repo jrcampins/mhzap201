@@ -21,7 +21,8 @@ public enum EnumTipoServicioSan implements ListOption {
     EXCUSADO_TIPO_MUNICIPAL(3, "tipo_servicio_san_excusado_tipo_municipal"),
     LETRINA_COMUN(4, "tipo_servicio_san_letrina_comun"),
     DESAGUE_EN_RIO_ARROYO_LAGUNA(5, "tipo_servicio_san_desague_en_rio_arroyo_laguna"),
-    NO_TIENE(6, "tipo_servicio_san_no_tiene");
+    NO_TIENE(6, "tipo_servicio_san_no_tiene"),
+    NO_REPORTA(9, "tipo_servicio_san_no_reporta");
 
     public static EnumTipoServicioSan valueOf(int i) {
         switch (i) {
@@ -37,6 +38,8 @@ public enum EnumTipoServicioSan implements ListOption {
                 return DESAGUE_EN_RIO_ARROYO_LAGUNA;
             case 6:
                 return NO_TIENE;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

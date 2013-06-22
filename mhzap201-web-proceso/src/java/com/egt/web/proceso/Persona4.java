@@ -3713,7 +3713,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isDiasVigenciaCertificadoVidaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_1;
+        return f == FUNCION_ACCION_1 || f == FUNCION_ACCION_12;
     }
 
     private Bit bitDiasVigenciaCertificadoVidaRendered = new Bit() {
@@ -3883,7 +3883,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isNumeroResolucionOtorPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_9;
+        return f == FUNCION_ACCION_9 || f == FUNCION_ACCION_37;
     }
 
     private Bit bitNumeroResolucionOtorPenRendered = new Bit() {
@@ -3934,7 +3934,7 @@ public class Persona4 extends AbstractPageBean
 
     public boolean isNumeroResolucionDenPenRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_10 || f == FUNCION_ACCION_43;
+        return f == FUNCION_ACCION_10 || f == FUNCION_ACCION_35 || f == FUNCION_ACCION_43;
     }
 
     private Bit bitNumeroResolucionDenPenRendered = new Bit() {
@@ -6627,10 +6627,11 @@ public class Persona4 extends AbstractPageBean
             Integer esPersonaConCerVida = this.getValorListaEsPersonaConCerVida1();
             String certificadoVida = this.getTextoCampoCertificadoVida1();
             Date fechaCertificadoVida = this.getValorCampoFechaCertificadoVida1();
+            Integer diasVigenciaCertificadoVida = (Integer) STP.getObjeto(this.getTextoCampoDiasVigenciaCertificadoVida1(), EnumTipoDatoPar.ENTERO);
             Integer esPersonaConCopiaCedula = this.getValorListaEsPersonaConCopiaCedula1();
             Integer esPersonaConDeclaracionJur = this.getValorListaEsPersonaConDeclaracionJur1();
             String comentariosEntregaDocumentos = this.getTextoCampoComentariosEntregaDocumentos1();
-            RegistrarEntregaDocPersonaMessage message = new RegistrarEntregaDocPersonaMessage(idPersona, esPersonaConCerVida, certificadoVida, fechaCertificadoVida, esPersonaConCopiaCedula, esPersonaConDeclaracionJur, comentariosEntregaDocumentos);
+            RegistrarEntregaDocPersonaMessage message = new RegistrarEntregaDocPersonaMessage(idPersona, esPersonaConCerVida, certificadoVida, fechaCertificadoVida, diasVigenciaCertificadoVida, esPersonaConCopiaCedula, esPersonaConDeclaracionJur, comentariosEntregaDocumentos);
             TLC.getControlador().ponerUsuarioEnMensaje(message);
             if (synchronously) {
                 this.personaBusinessProcess.registrarEntregaDocPersona(message);
@@ -7221,6 +7222,7 @@ public class Persona4 extends AbstractPageBean
         Date fechaDenegacionPensionHasta = this.getValorCampoFechaDenegacionPensionHasta1();
         Integer numeroCausaDenPension = this.getValorListaNumeroCausaDenPension1();
         String codigoSime = this.getTextoCampoCodigoSime1();
+        String numeroResolucionDenPen = this.getTextoCampoNumeroResolucionDenPen1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         Map parameters = new LinkedHashMap();
@@ -7231,6 +7233,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("fecha_denegacion_pension_hasta", fechaDenegacionPensionHasta);
         parameters.put("numero_causa_den_pension", numeroCausaDenPension);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("numero_resolucion_den_pen", numeroResolucionDenPen);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -7264,6 +7267,10 @@ public class Persona4 extends AbstractPageBean
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (numeroResolucionDenPen != null) {
+            args.add(numeroResolucionDenPen);
+            search += " and numero_resolucion_den_pen=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -7340,6 +7347,7 @@ public class Persona4 extends AbstractPageBean
         Date fechaOtorgamientoPenDesde = this.getValorCampoFechaOtorgamientoPenDesde1();
         Date fechaOtorgamientoPenHasta = this.getValorCampoFechaOtorgamientoPenHasta1();
         String codigoSime = this.getTextoCampoCodigoSime1();
+        String numeroResolucionOtorPen = this.getTextoCampoNumeroResolucionOtorPen1();
         String report = PersonaConstants.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaConstants.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -7349,6 +7357,7 @@ public class Persona4 extends AbstractPageBean
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("numero_resolucion_otor_pen", numeroResolucionOtorPen);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -7378,6 +7387,10 @@ public class Persona4 extends AbstractPageBean
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (numeroResolucionOtorPen != null) {
+            args.add(numeroResolucionOtorPen);
+            search += " and numero_resolucion_otor_pen=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

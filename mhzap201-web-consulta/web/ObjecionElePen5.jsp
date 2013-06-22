@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 campoReferencia1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -546,6 +546,33 @@
                                                     text="#{currentRow.value['observaciones_anulacion']}"/>
                                                 <webuijsf:message id="messageObservacionesAnulacion1"
                                                     for="campoObservacionesAnulacion1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{ObjecionElePen5.tableColumnReferencia1}"
+                                                    toolTip="BundleParametros.referencia.objecion_ele_pen"
+                                                    headerText="referencia"
+                                                    id="tableColumnReferencia1" rendered="false"
+                                                    sort="referencia">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextReferencia1"
+                                                    text="#{currentRow.value['referencia']}"
+                                                    rendered="#{ObjecionElePen5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen5.labelReferencia1}"
+                                                    id="labelReferencia1"
+                                                    for="campoReferencia1"/>
+                                                <webuijsf:textArea id="campoReferencia1"
+                                                    binding="#{ObjecionElePen5.campoReferencia1}"
+                                                    columns="50" rows="3"
+                                                    readOnly="#{ObjecionElePen5.gestor.filaNoProcesada}"
+                                                    text="#{currentRow.value['referencia']}"
+                                                    toolTip="BundleParametros.referencia.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen5.validatorReferencia1.validate}"/>
+                                                <webuijsf:staticText id="campoReferencia1Texto1"
+                                                    binding="#{ObjecionElePen5.campoReferencia1Texto1}"
+                                                    text="#{currentRow.value['referencia']}"/>
+                                                <webuijsf:message id="messageReferencia1"
+                                                    for="campoReferencia1"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

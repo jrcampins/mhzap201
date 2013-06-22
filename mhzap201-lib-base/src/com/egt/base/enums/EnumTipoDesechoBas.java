@@ -21,7 +21,8 @@ public enum EnumTipoDesechoBas implements ListOption {
     ARROJA_EN_UN_HOYO(3, "tipo_desecho_bas_arroja_en_un_hoyo"),
     TIRA_EN_EL_PATIO_DE_LA_CHACRA(4, "tipo_desecho_bas_tira_en_el_patio_de_la_chacra"),
     TIRA_EN_ZANJA_ARROYO_RIO_ETC(5, "tipo_desecho_bas_tira_en_zanja_arroyo_rio_etc"),
-    RECOGE_EN_CARRITO(6, "tipo_desecho_bas_recoge_en_carrito");
+    RECOGE_EN_CARRITO(6, "tipo_desecho_bas_recoge_en_carrito"),
+    NO_REPORTA(9, "tipo_desecho_bas_no_reporta");
 
     public static EnumTipoDesechoBas valueOf(int i) {
         switch (i) {
@@ -37,6 +38,8 @@ public enum EnumTipoDesechoBas implements ListOption {
                 return TIRA_EN_ZANJA_ARROYO_RIO_ETC;
             case 6:
                 return RECOGE_EN_CARRITO;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

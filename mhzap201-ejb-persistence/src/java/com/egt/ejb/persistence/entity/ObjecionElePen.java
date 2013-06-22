@@ -64,6 +64,9 @@ public class ObjecionElePen implements ObjecionElePenBase, Comparable, Serializa
     @Column(name = "observaciones_anulacion")
     private String observacionesAnulacion;
 
+    @Column(name = "referencia")
+    private String referencia;
+
     @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
     @ManyToOne
     private Persona personaIdPersona;
@@ -149,6 +152,15 @@ public class ObjecionElePen implements ObjecionElePenBase, Comparable, Serializa
 
     public void setObservacionesAnulacion(String observacionesAnulacion) {
         this.observacionesAnulacion = observacionesAnulacion;
+    }
+
+    @Override
+    public String getReferencia() {
+        return this.referencia;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
     }
 
     @Override

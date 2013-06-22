@@ -19,7 +19,8 @@ public enum EnumEstadoSalud implements ListOption {
     SOLO_ENFERMO_Y_O_ACCIDENTADO(1, "estado_salud_solo_enfermo_y_o_accidentado"),
     ENFERMO_CRONICO(2, "estado_salud_enfermo_cronico"),
     ENFERMO_ACCIDENTADO_Y_CRONICO(3, "estado_salud_enfermo_accidentado_y_cronico"),
-    SANO(6, "estado_salud_sano");
+    SANO(6, "estado_salud_sano"),
+    NO_REPORTA(9, "estado_salud_no_reporta");
 
     public static EnumEstadoSalud valueOf(int i) {
         switch (i) {
@@ -31,6 +32,8 @@ public enum EnumEstadoSalud implements ListOption {
                 return ENFERMO_ACCIDENTADO_Y_CRONICO;
             case 6:
                 return SANO;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

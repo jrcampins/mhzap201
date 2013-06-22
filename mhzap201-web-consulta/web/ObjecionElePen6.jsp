@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{ObjecionElePen6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdObjecionElePen1 campoIdPersona1 campoIdProveedorDatExt1 listaNumeroTipoObjElePen1 listaEsObjecionElePenInactiva1 campoFechaUltimaActualizacion1 campoNombreArchivoUltimaAct1 campoObservaciones1 campoFechaAnulacion1 campoObservacionesAnulacion1 campoReferencia1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -596,6 +596,39 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.observaciones_anulacion.objecion_ele_pen"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridReferencia1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{ObjecionElePen6.labelReferencia1}"
+                                                    id="labelReferencia1"
+                                                    for="campoReferencia1"
+                                                    toolTip="BundleParametros.referencia.objecion_ele_pen"
+                                                    text="referencia"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridReferencia2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textArea id="campoReferencia1"
+                                                    binding="#{ObjecionElePen6.campoReferencia1}"
+                                                    columns="100" rows="3"
+                                                    readOnly="#{ObjecionElePen6.gestor.filaNoProcesada}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['referencia']}"
+                                                    toolTip="BundleParametros.referencia.objecion_ele_pen"
+                                                    validatorExpression="#{ObjecionElePen6.validatorReferencia1.validate}"/>
+                                                <webuijsf:staticText id="campoReferencia1Texto1"
+                                                    binding="#{ObjecionElePen6.campoReferencia1Texto1}"
+                                                    text="#{ObjecionElePen6.objecionElePenDataProvider.value['referencia']}"/>
+                                                <webuijsf:message id="messageReferencia1"
+                                                    for="campoReferencia1"/>
+                                                <webuijsf:helpInline id="helpInlineReferencia1"
+                                                    binding="#{ObjecionElePen6.helpInlineReferencia1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.referencia.objecion_ele_pen"
                                                     type="field"/>
                                             </h:panelGrid>
                                         </h:panelGrid>

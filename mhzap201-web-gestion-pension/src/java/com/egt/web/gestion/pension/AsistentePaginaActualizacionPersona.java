@@ -579,6 +579,7 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaDenegacionPensionHasta = null;
         Integer numeroCausaDenPension = null;
         String codigoSime = null;
+        String numeroResolucionDenPen = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_DENEGADA;
         Map parameters = new LinkedHashMap();
@@ -589,6 +590,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("fecha_denegacion_pension_hasta", fechaDenegacionPensionHasta);
         parameters.put("numero_causa_den_pension", numeroCausaDenPension);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("numero_resolucion_den_pen", numeroResolucionDenPen);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -622,6 +624,10 @@ public class AsistentePaginaActualizacionPersona {
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (numeroResolucionDenPen != null) {
+            args.add(numeroResolucionDenPen);
+            search += " and numero_resolucion_den_pen=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -704,6 +710,7 @@ public class AsistentePaginaActualizacionPersona {
         Date fechaOtorgamientoPenDesde = null;
         Date fechaOtorgamientoPenHasta = null;
         String codigoSime = null;
+        String numeroResolucionOtorPen = null;
         String report = PersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         long function = PersonaCachedRowSetDataProvider2.FUNCION_EMITIR_PERSONA_CON_PENSION_OTORGADA;
         Map parameters = new LinkedHashMap();
@@ -713,6 +720,7 @@ public class AsistentePaginaActualizacionPersona {
         parameters.put("fecha_otorgamiento_pen_desde", fechaOtorgamientoPenDesde);
         parameters.put("fecha_otorgamiento_pen_hasta", fechaOtorgamientoPenHasta);
         parameters.put("codigo_sime", codigoSime);
+        parameters.put("numero_resolucion_otor_pen", numeroResolucionOtorPen);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
 //      ------------------------------------------------------------------------
@@ -742,6 +750,10 @@ public class AsistentePaginaActualizacionPersona {
         if (codigoSime != null) {
             args.add(codigoSime);
             search += " and codigo_sime=?";
+        }
+        if (numeroResolucionOtorPen != null) {
+            args.add(numeroResolucionOtorPen);
+            search += " and numero_resolucion_otor_pen=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";
@@ -2339,6 +2351,15 @@ public class AsistentePaginaActualizacionPersona {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getPersonaDataProvider().getNumeroCausaDenPension(rowKey);
         return value != null && value.equals(EnumCausaDenPension.PERSONA_NO_ES_MAYOR_DE_65_ANOS.intValue());
+    }
+
+    public boolean isNumeroCausaDenPensionPersonaConCedulaVencida() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getPersonaDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_CEDULA_VENCIDA.intValue());
     }
 
     public boolean isNumeroCausaDenPensionPersonaConEmpleo() {

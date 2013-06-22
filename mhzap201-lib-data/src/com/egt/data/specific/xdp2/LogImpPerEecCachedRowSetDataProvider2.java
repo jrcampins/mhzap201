@@ -157,10 +157,13 @@ public class LogImpPerEecCachedRowSetDataProvider2 extends LogImpPerEecCachedRow
     protected static final long PARAMETRO_FECHA_HORA_TRANSACCION = 20709L;
     protected static final long PARAMETRO_NOMBRE_ARCHIVO = 1389L;
     protected static final long PARAMETRO_CODIGO_ARCHIVO = 20699L;
+    protected static final long PARAMETRO_ID_FICHA_PERSONA = 20342L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_FICHA_PERSONA = 320200101L;
 
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_OPCION_BINARIA = {"opcion_binaria", "numero_opcion_binaria", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_FICHA_PERSONA = {"ficha_persona", "id_ficha_persona", "", ""};
 
     @Override
     public long getFuncionConsultarRecurso() {

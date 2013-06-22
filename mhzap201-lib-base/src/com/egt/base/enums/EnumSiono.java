@@ -17,7 +17,8 @@ import com.egt.commons.util.IntUtils;
 public enum EnumSiono implements ListOption {
 
     SI(1, "siono_si"),
-    NO(6, "siono_no");
+    NO(6, "siono_no"),
+    NO_REPORTA(9, "siono_no_reporta");
 
     public static EnumSiono valueOf(int i) {
         switch (i) {
@@ -25,6 +26,8 @@ public enum EnumSiono implements ListOption {
                 return SI;
             case 6:
                 return NO;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

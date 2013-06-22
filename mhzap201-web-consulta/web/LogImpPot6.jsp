@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpPot6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdLogImpPot1 campoDepartamento1 campoDistrito1 campoNombresApellidos1 campoApodo1 campoEdadALaFecha1 campoNacimiento1 campoCedula1 campoTelefono1 campoDireccion1 campoReferencia1 campoBarrio1 campoNombreReferente1 campoTelefonoReferente1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdLogImpPot1 campoDepartamento1 campoDistrito1 campoNombresApellidos1 campoApodo1 campoEdadALaFecha1 campoNacimiento1 campoCedula1 campoTelefono1 campoDireccion1 campoReferencia1 campoBarrio1 campoNombreReferente1 campoTelefonoReferente1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 campoIdPotencialBen1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -832,6 +832,69 @@
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.codigo_archivo.log_imp_pot"
                                                     type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdPotencialBen1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{LogImpPot6.labelIdPotencialBen1}"
+                                                    id="labelIdPotencialBen1"
+                                                    for="campoIdPotencialBen1"
+                                                    toolTip="BundleParametros.id_potencial_ben.log_imp_pot"
+                                                    text="potencial beneficiario"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdPotencialBen2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIdPotencialBen1"
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1}"
+                                                    readOnly="#{LogImpPot6.gestor.filaNoProcesada}"
+                                                    text="#{LogImpPot6.asistente.textoCampoIdPotencialBen1}"
+                                                    toolTip="#{LogImpPot6.asistente.toolTipCampoIdPotencialBen1}"
+                                                    validatorExpression="#{LogImpPot6.campoIdPotencialBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdPotencialBen1Texto1"
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1Texto1}"
+                                                    text="#{LogImpPot6.logImpPotDataProvider.value['codigo_potencial_ben_1x1y3']}"/>
+                                                <webuijsf:button id="campoIdPotencialBen1Boton1"
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1Boton1}"
+                                                    onClick="#{LogImpPot6.asistente.scriptCampoIdPotencialBen1Boton1}"/>
+                                                <webuijsf:button id="campoIdPotencialBen1Boton3"
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1Boton3}"
+                                                    onClick="#{LogImpPot6.asistente.scriptCampoIdPotencialBen1Boton2}"
+                                                    rendered="#{LogImpPot6.asistente.campoIdPotencialBen1Boton3Rendered}"/>
+                                                <webuijsf:message id="messageIdPotencialBen1"
+                                                    for="campoIdPotencialBen1"/>
+                                                <webuijsf:helpInline id="helpInlineIdPotencialBen1"
+                                                    binding="#{LogImpPot6.helpInlineIdPotencialBen1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.id_potencial_ben.log_imp_pot"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdPotencialBen3"
+                                                rendered="#{LogImpPot6.asistente.campoIdPotencialBen1Boton2Rendered}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{LogImpPot6.labelIdPotencialBen2}"
+                                                    id="labelIdPotencialBen2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="nombre potencial beneficiario"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdPotencialBen4"
+                                                rendered="#{LogImpPot6.asistente.campoIdPotencialBen1Boton2Rendered}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1Texto2}"
+                                                    text="#{LogImpPot6.logImpPotDataProvider.value['nombre_potencial_ben_1x1y4']}"
+                                                    id="campoIdPotencialBen1Texto2"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPot6.campoIdPotencialBen1Boton2}"
+                                                    id="campoIdPotencialBen1Boton2"
+                                                    onClick="#{LogImpPot6.asistente.scriptCampoIdPotencialBen1Boton2}"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
                                         <h:panelGrid

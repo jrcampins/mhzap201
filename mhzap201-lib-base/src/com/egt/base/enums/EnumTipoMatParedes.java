@@ -22,7 +22,8 @@ public enum EnumTipoMatParedes implements ListOption {
     LADRILLO_CEMENTO(4, "tipo_mat_paredes_ladrillo_cemento"),
     PIEDRA(5, "tipo_mat_paredes_piedra"),
     CHAPA_TELA_CARTON_LATAS_OTROS(6, "tipo_mat_paredes_chapa_tela_carton_latas_otros"),
-    SIN_PAREDES(7, "tipo_mat_paredes_sin_paredes");
+    SIN_PAREDES(7, "tipo_mat_paredes_sin_paredes"),
+    NO_REPORTA(9, "tipo_mat_paredes_no_reporta");
 
     public static EnumTipoMatParedes valueOf(int i) {
         switch (i) {
@@ -40,6 +41,8 @@ public enum EnumTipoMatParedes implements ListOption {
                 return CHAPA_TELA_CARTON_LATAS_OTROS;
             case 7:
                 return SIN_PAREDES;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

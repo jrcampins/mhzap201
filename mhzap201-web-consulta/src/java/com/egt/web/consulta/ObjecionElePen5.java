@@ -109,6 +109,7 @@ public class ObjecionElePen5 extends AbstractPageBean
         converterFechaAnulacion1.setPattern("dd/MM/yyyy");
         converterFechaAnulacion1.setType("date");
         validatorObservacionesAnulacion1.setMaximum(8160);
+        validatorReferencia1.setMaximum(8160);
         objecionElePenDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.objecionElePenRowSet}"));
         personaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.personaReferenceRowSet}"));
         proveedorDatExtReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.proveedorDatExtReferenceRowSet}"));
@@ -866,6 +867,57 @@ public class ObjecionElePen5 extends AbstractPageBean
   
     public void setValidatorObservacionesAnulacion1(LengthValidator validator) {
         this.validatorObservacionesAnulacion1 = validator;
+    }
+  
+    private TableColumn tableColumnReferencia1 = new com.egt.core.jsf.component.ColumnaTabla();
+
+    public TableColumn getTableColumnReferencia1() {
+        return tableColumnReferencia1;
+    }
+
+    public void setTableColumnReferencia1(TableColumn component) {
+        this.tableColumnReferencia1 = component;
+    }
+
+    private Label labelReferencia1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelReferencia1() {
+        return labelReferencia1;
+    }
+
+    public void setLabelReferencia1(Label l) {
+        this.labelReferencia1 = l;
+    }
+
+    private TextArea campoReferencia1 = new com.egt.core.jsf.component.AreaTexto();
+
+    @Override
+    public TextArea getCampoReferencia1() {
+        return campoReferencia1;
+    }
+
+    public void setCampoReferencia1(TextArea component) {
+        this.campoReferencia1 = component;
+    }
+
+    private StaticText campoReferencia1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoReferencia1Texto1() {
+        return campoReferencia1Texto1;
+    }
+
+    public void setCampoReferencia1Texto1(StaticText component) {
+        this.campoReferencia1Texto1 = component;
+    }
+
+    private LengthValidator validatorReferencia1 = new LengthValidator();
+  
+    public LengthValidator getValidatorReferencia1() {
+        return validatorReferencia1;
+    }
+  
+    public void setValidatorReferencia1(LengthValidator validator) {
+        this.validatorReferencia1 = validator;
     }
   
     private Label etiquetaTextoFilasPorPagina1 = new com.egt.core.jsf.component.Etiqueta();

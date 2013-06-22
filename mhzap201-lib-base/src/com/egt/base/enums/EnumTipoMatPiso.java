@@ -22,7 +22,8 @@ public enum EnumTipoMatPiso implements ListOption {
     LECHERADA(4, "tipo_mat_piso_lecherada"),
     BALDOSA(5, "tipo_mat_piso_baldosa"),
     CERAMICA_ALFOMBRA_VINILO_OTROS(6, "tipo_mat_piso_ceramica_alfombra_vinilo_otros"),
-    GRANITO_PARQUET_MARMOL(7, "tipo_mat_piso_granito_parquet_marmol");
+    GRANITO_PARQUET_MARMOL(7, "tipo_mat_piso_granito_parquet_marmol"),
+    NO_REPORTA(9, "tipo_mat_piso_no_reporta");
 
     public static EnumTipoMatPiso valueOf(int i) {
         switch (i) {
@@ -40,6 +41,8 @@ public enum EnumTipoMatPiso implements ListOption {
                 return CERAMICA_ALFOMBRA_VINILO_OTROS;
             case 7:
                 return GRANITO_PARQUET_MARMOL;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

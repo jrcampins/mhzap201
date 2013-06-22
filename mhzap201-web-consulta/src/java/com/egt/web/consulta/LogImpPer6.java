@@ -16,6 +16,7 @@
 package com.egt.web.consulta;
 
 import com.egt.data.specific.xdp2.LogImpPerCachedRowSetDataProvider2;
+import com.egt.data.specific.xdp2.FichaPersonaCachedRowSetDataProvider2;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.URX2;
 import com.egt.base.util.BundleWebui;
@@ -186,6 +187,7 @@ public class LogImpPer6 extends AbstractPageBean
         validatorNombreArchivo1.setMaximum(8160);
         validatorCodigoArchivo1.setMaximum(8160);
         logImpPerDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.logImpPerRowSet}"));
+        fichaPersonaReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.fichaPersonaReferenceRowSet}"));
     }
 
     private Form form1 = new Form();
@@ -4787,6 +4789,97 @@ public class LogImpPer6 extends AbstractPageBean
         this.validatorCodigoArchivo1 = validator;
     }
   
+    private Label labelIdFichaPersona1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFichaPersona1() {
+        return labelIdFichaPersona1;
+    }
+
+    public void setLabelIdFichaPersona1(Label l) {
+        this.labelIdFichaPersona1 = l;
+    }
+
+    private TextField campoIdFichaPersona1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoIdFichaPersona1() {
+        return campoIdFichaPersona1;
+    }
+
+    public void setCampoIdFichaPersona1(TextField component) {
+        this.campoIdFichaPersona1 = component;
+    }
+
+    private HelpInline helpInlineIdFichaPersona1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdFichaPersona1() {
+        return helpInlineIdFichaPersona1;
+    }
+
+    public void setHelpInlineIdFichaPersona1(HelpInline hi) {
+        this.helpInlineIdFichaPersona1 = hi;
+    }
+
+    private StaticText campoIdFichaPersona1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdFichaPersona1Texto1() {
+        return campoIdFichaPersona1Texto1;
+    }
+
+    public void setCampoIdFichaPersona1Texto1(StaticText component) {
+        this.campoIdFichaPersona1Texto1 = component;
+    }
+
+    private Button campoIdFichaPersona1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdFichaPersona1Boton1() {
+        return campoIdFichaPersona1Boton1;
+    }
+
+    public void setCampoIdFichaPersona1Boton1(Button component) {
+        this.campoIdFichaPersona1Boton1 = component;
+    }
+
+    private Button campoIdFichaPersona1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFichaPersona1Boton3() {
+        return campoIdFichaPersona1Boton3;
+    }
+
+    public void setCampoIdFichaPersona1Boton3(Button component) {
+        this.campoIdFichaPersona1Boton3 = component;
+    }
+
+    private Label labelIdFichaPersona2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdFichaPersona2() {
+        return labelIdFichaPersona2;
+    }
+
+    public void setLabelIdFichaPersona2(Label l) {
+        this.labelIdFichaPersona2 = l;
+    }
+
+    private StaticText campoIdFichaPersona1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdFichaPersona1Texto2() {
+        return campoIdFichaPersona1Texto2;
+    }
+
+    public void setCampoIdFichaPersona1Texto2(StaticText component) {
+        this.campoIdFichaPersona1Texto2 = component;
+    }
+
+    private Button campoIdFichaPersona1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdFichaPersona1Boton2() {
+        return campoIdFichaPersona1Boton2;
+    }
+
+    public void setCampoIdFichaPersona1Boton2(Button component) {
+        this.campoIdFichaPersona1Boton2 = component;
+    }
+
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonIrAlPrimero2() {
@@ -5011,6 +5104,17 @@ public class LogImpPer6 extends AbstractPageBean
         this.logImpPerDataProvider = crsdp;
     }
 
+    private FichaPersonaCachedRowSetDataProvider2 fichaPersonaReferenceDataProvider = new FichaPersonaCachedRowSetDataProvider2();
+
+    @Override
+    public FichaPersonaCachedRowSetDataProvider2 getFichaPersonaReferenceDataProvider() {
+        return fichaPersonaReferenceDataProvider;
+    }
+
+    public void setFichaPersonaReferenceDataProvider(FichaPersonaCachedRowSetDataProvider2 crsdp) {
+        this.fichaPersonaReferenceDataProvider = crsdp;
+    }
+
     // </editor-fold>
 /**/
     public LogImpPer6() {
@@ -5052,6 +5156,7 @@ public class LogImpPer6 extends AbstractPageBean
     //@PreDestroy
     public void destroy() {
         logImpPerDataProvider.close();
+        fichaPersonaReferenceDataProvider.close();
     }
     // </editor-fold>
 
@@ -5423,6 +5528,10 @@ public class LogImpPer6 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para validar referencias">
+    public void campoIdFichaPersona1_validate(FacesContext context, UIComponent component, Object value) {
+        this.getAsistente().campoIdFichaPersona1_validate(context, component, value);
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las acciones de los hipervinculos">

@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpPerEec6.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | campoIdLogImpPerEec1 campoDptod1 campoDistritod1 campoDistripg1 campoArea1 campoBarrio1 campoManzana1 campoFormulario1 campoVivi1 campoHogar1 campoOrden1 campoP301 campoP311 campoP321 campoP331 campoP341 campoP351 campoP36OrdenConyugue1 campoP36OrdenPadre1 campoP36OrdenMadre1 campoP371 campoP37Cedula1 campoP38Dia1 campoP38Mes1 campoP38Ano1 campoP39pais1 campoP39dpto1 campoP39dist1 campoP39area1 campoP40Idioma1 campoP40otr1 campoP411 campoP421 campoP431 campoP4445t1 campoP441 campoP451 campoP461 campoP471 campoP481 campoP491 campoP49Otr1 campoP501 campoP50Otr1 campoP511 campoP521 campoP52Otr1 campoP531 campoP541 campoP54a1 campoP54Otr1 campoP551 campoP55Otr1 campoP561 campoP571 campoP581 campoP591 campoP601 campoP611 campoP621 campoP631 campoP63Especificar1 campoP64des1 campoP64c1 campoP65des1 campoP65c1 campoP661 campoP67a1 campoP67b1 campoP67c1 campoP67d1 campoP67e1 campoP67f1 campoP67g1 campoP67h1 campoP67i1 campoP67j1 campoP67k1 campoP67l1 campoP67tot1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | campoIdLogImpPerEec1 campoDptod1 campoDistritod1 campoDistripg1 campoArea1 campoBarrio1 campoManzana1 campoFormulario1 campoVivi1 campoHogar1 campoOrden1 campoP301 campoP311 campoP321 campoP331 campoP341 campoP351 campoP36OrdenConyugue1 campoP36OrdenPadre1 campoP36OrdenMadre1 campoP371 campoP37Cedula1 campoP38Dia1 campoP38Mes1 campoP38Ano1 campoP39pais1 campoP39dpto1 campoP39dist1 campoP39area1 campoP40Idioma1 campoP40otr1 campoP411 campoP421 campoP431 campoP4445t1 campoP441 campoP451 campoP461 campoP471 campoP481 campoP491 campoP49Otr1 campoP501 campoP50Otr1 campoP511 campoP521 campoP52Otr1 campoP531 campoP541 campoP54a1 campoP54Otr1 campoP551 campoP55Otr1 campoP561 campoP571 campoP581 campoP591 campoP601 campoP611 campoP621 campoP631 campoP63Especificar1 campoP64des1 campoP64c1 campoP65des1 campoP65c1 campoP661 campoP67a1 campoP67b1 campoP67c1 campoP67d1 campoP67e1 campoP67f1 campoP67g1 campoP67h1 campoP67i1 campoP67j1 campoP67k1 campoP67l1 campoP67tot1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 campoIdFichaPersona1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | | , virtualForm3 | listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -3010,6 +3010,69 @@
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.codigo_archivo.log_imp_per_eec"
                                                     type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFichaPersona1"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{LogImpPerEec6.labelIdFichaPersona1}"
+                                                    id="labelIdFichaPersona1"
+                                                    for="campoIdFichaPersona1"
+                                                    toolTip="BundleParametros.id_ficha_persona.log_imp_per_eec"
+                                                    text="ficha persona"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFichaPersona2"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoIdFichaPersona1"
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1}"
+                                                    readOnly="#{LogImpPerEec6.gestor.filaNoProcesada}"
+                                                    text="#{LogImpPerEec6.asistente.textoCampoIdFichaPersona1}"
+                                                    toolTip="#{LogImpPerEec6.asistente.toolTipCampoIdFichaPersona1}"
+                                                    validatorExpression="#{LogImpPerEec6.campoIdFichaPersona1_validate}"/>
+                                                <webuijsf:staticText id="campoIdFichaPersona1Texto1"
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1Texto1}"
+                                                    text="#{LogImpPerEec6.logImpPerEecDataProvider.value['codigo_ficha_persona_1x1y3']}"/>
+                                                <webuijsf:button id="campoIdFichaPersona1Boton1"
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1Boton1}"
+                                                    onClick="#{LogImpPerEec6.asistente.scriptCampoIdFichaPersona1Boton1}"/>
+                                                <webuijsf:button id="campoIdFichaPersona1Boton3"
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1Boton3}"
+                                                    onClick="#{LogImpPerEec6.asistente.scriptCampoIdFichaPersona1Boton2}"
+                                                    rendered="#{LogImpPerEec6.asistente.campoIdFichaPersona1Boton3Rendered}"/>
+                                                <webuijsf:message id="messageIdFichaPersona1"
+                                                    for="campoIdFichaPersona1"/>
+                                                <webuijsf:helpInline id="helpInlineIdFichaPersona1"
+                                                    binding="#{LogImpPerEec6.helpInlineIdFichaPersona1}"
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.id_ficha_persona.log_imp_per_eec"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridIdFichaPersona3"
+                                                rendered="#{LogImpPerEec6.asistente.campoIdFichaPersona1Boton2Rendered}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{LogImpPerEec6.labelIdFichaPersona2}"
+                                                    id="labelIdFichaPersona2"
+                                                    styleClass="pdq-estilo-id-2"
+                                                    text="nombre ficha persona"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridIdFichaPersona4"
+                                                rendered="#{LogImpPerEec6.asistente.campoIdFichaPersona1Boton2Rendered}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:staticText
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1Texto2}"
+                                                    text="#{LogImpPerEec6.logImpPerEecDataProvider.value['nombre_ficha_persona_1x1y4']}"
+                                                    id="campoIdFichaPersona1Texto2"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPerEec6.campoIdFichaPersona1Boton2}"
+                                                    id="campoIdFichaPersona1Boton2"
+                                                    onClick="#{LogImpPerEec6.asistente.scriptCampoIdFichaPersona1Boton2}"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
                                         <h:panelGrid

@@ -24,7 +24,8 @@ public enum EnumMotivoNoTrabajo implements ListOption {
     RENTISTA(6, "motivo_no_trabajo_rentista"),
     JUBILADO_A(7, "motivo_no_trabajo_jubilado_a"),
     PENSIONADO_A(8, "motivo_no_trabajo_pensionado_a"),
-    OTROS(9, "motivo_no_trabajo_otros");
+    OTROS(9, "motivo_no_trabajo_otros"),
+    NO_REPORTA(99, "motivo_no_trabajo_no_reporta");
 
     public static EnumMotivoNoTrabajo valueOf(int i) {
         switch (i) {
@@ -46,6 +47,8 @@ public enum EnumMotivoNoTrabajo implements ListOption {
                 return PENSIONADO_A;
             case 9:
                 return OTROS;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

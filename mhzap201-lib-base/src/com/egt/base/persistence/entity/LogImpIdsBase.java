@@ -87,4 +87,8 @@ public interface LogImpIdsBase {
 //
 //  public void setCodigoArchivo(String codigoArchivo);
 
+    public PersonaBase getPersonaIdPersona();
+//
+//  public void setPersonaIdPersona(PersonaBase persona);
+
 }

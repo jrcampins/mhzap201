@@ -20,7 +20,8 @@ public enum EnumTipoSeguroMedico implements ListOption {
     PRIVADO_PERSONAL_FAMILIAR(2, "tipo_seguro_medico_privado_personal_familiar"),
     PRIVADO_LABORAL(3, "tipo_seguro_medico_privado_laboral"),
     MILITAR_POLICIAL(4, "tipo_seguro_medico_militar_policial"),
-    NO_TIENE(6, "tipo_seguro_medico_no_tiene");
+    NO_TIENE(6, "tipo_seguro_medico_no_tiene"),
+    NO_REPORTA(9, "tipo_seguro_medico_no_reporta");
 
     public static EnumTipoSeguroMedico valueOf(int i) {
         switch (i) {
@@ -34,6 +35,8 @@ public enum EnumTipoSeguroMedico implements ListOption {
                 return MILITAR_POLICIAL;
             case 6:
                 return NO_TIENE;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

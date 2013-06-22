@@ -22,7 +22,8 @@ public enum EnumTipoServicioAgua implements ListOption {
     POZO_SIN_BOMBA(4, "tipo_servicio_agua_pozo_sin_bomba"),
     AGUADERO_SIN_CANERIA(5, "tipo_servicio_agua_aguadero_sin_caneria"),
     YOUA_MANANTIAL(6, "tipo_servicio_agua_youa_manantial"),
-    ARROYO_RIO(7, "tipo_servicio_agua_arroyo_rio");
+    ARROYO_RIO(7, "tipo_servicio_agua_arroyo_rio"),
+    NO_REPORTA(9, "tipo_servicio_agua_no_reporta");
 
     public static EnumTipoServicioAgua valueOf(int i) {
         switch (i) {
@@ -40,6 +41,8 @@ public enum EnumTipoServicioAgua implements ListOption {
                 return YOUA_MANANTIAL;
             case 7:
                 return ARROYO_RIO;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

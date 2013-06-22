@@ -16,6 +16,7 @@
 package com.egt.web.consulta;
 
 import com.egt.data.specific.xdp2.LogImpPotCachedRowSetDataProvider2;
+import com.egt.data.specific.xdp2.PotencialBenCachedRowSetDataProvider2;
 import com.egt.base.constants.CBM2;
 import com.egt.base.constants.URX2;
 import com.egt.base.util.BundleWebui;
@@ -117,6 +118,7 @@ public class LogImpPot6 extends AbstractPageBean
         validatorNombreArchivo1.setMaximum(8160);
         validatorCodigoArchivo1.setMaximum(8160);
         logImpPotDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.logImpPotRowSet}"));
+        potencialBenReferenceDataProvider.setCachedRowSet((javax.sql.rowset.CachedRowSet) getValue("#{SessionBean1.potencialBenReferenceRowSet}"));
     }
 
     private Form form1 = new Form();
@@ -1199,6 +1201,97 @@ public class LogImpPot6 extends AbstractPageBean
         this.validatorCodigoArchivo1 = validator;
     }
   
+    private Label labelIdPotencialBen1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdPotencialBen1() {
+        return labelIdPotencialBen1;
+    }
+
+    public void setLabelIdPotencialBen1(Label l) {
+        this.labelIdPotencialBen1 = l;
+    }
+
+    private TextField campoIdPotencialBen1 = new com.egt.core.jsf.component.CampoTexto();
+
+    @Override
+    public TextField getCampoIdPotencialBen1() {
+        return campoIdPotencialBen1;
+    }
+
+    public void setCampoIdPotencialBen1(TextField component) {
+        this.campoIdPotencialBen1 = component;
+    }
+
+    private HelpInline helpInlineIdPotencialBen1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineIdPotencialBen1() {
+        return helpInlineIdPotencialBen1;
+    }
+
+    public void setHelpInlineIdPotencialBen1(HelpInline hi) {
+        this.helpInlineIdPotencialBen1 = hi;
+    }
+
+    private StaticText campoIdPotencialBen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoIdPotencialBen1Texto1() {
+        return campoIdPotencialBen1Texto1;
+    }
+
+    public void setCampoIdPotencialBen1Texto1(StaticText component) {
+        this.campoIdPotencialBen1Texto1 = component;
+    }
+
+    private Button campoIdPotencialBen1Boton1 = new com.egt.core.jsf.component.BotonBuscar();
+
+    public Button getCampoIdPotencialBen1Boton1() {
+        return campoIdPotencialBen1Boton1;
+    }
+
+    public void setCampoIdPotencialBen1Boton1(Button component) {
+        this.campoIdPotencialBen1Boton1 = component;
+    }
+
+    private Button campoIdPotencialBen1Boton3 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdPotencialBen1Boton3() {
+        return campoIdPotencialBen1Boton3;
+    }
+
+    public void setCampoIdPotencialBen1Boton3(Button component) {
+        this.campoIdPotencialBen1Boton3 = component;
+    }
+
+    private Label labelIdPotencialBen2 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelIdPotencialBen2() {
+        return labelIdPotencialBen2;
+    }
+
+    public void setLabelIdPotencialBen2(Label l) {
+        this.labelIdPotencialBen2 = l;
+    }
+
+    private StaticText campoIdPotencialBen1Texto2 = new com.egt.core.jsf.component.TextoEstaticoComplementario();
+
+    public StaticText getCampoIdPotencialBen1Texto2() {
+        return campoIdPotencialBen1Texto2;
+    }
+
+    public void setCampoIdPotencialBen1Texto2(StaticText component) {
+        this.campoIdPotencialBen1Texto2 = component;
+    }
+
+    private Button campoIdPotencialBen1Boton2 = new com.egt.core.jsf.component.BotonVerDetalle();
+
+    public Button getCampoIdPotencialBen1Boton2() {
+        return campoIdPotencialBen1Boton2;
+    }
+
+    public void setCampoIdPotencialBen1Boton2(Button component) {
+        this.campoIdPotencialBen1Boton2 = component;
+    }
+
     private Button botonIrAlPrimero2 = new com.egt.core.jsf.component.Boton();
 
     public Button getBotonIrAlPrimero2() {
@@ -1423,6 +1516,17 @@ public class LogImpPot6 extends AbstractPageBean
         this.logImpPotDataProvider = crsdp;
     }
 
+    private PotencialBenCachedRowSetDataProvider2 potencialBenReferenceDataProvider = new PotencialBenCachedRowSetDataProvider2();
+
+    @Override
+    public PotencialBenCachedRowSetDataProvider2 getPotencialBenReferenceDataProvider() {
+        return potencialBenReferenceDataProvider;
+    }
+
+    public void setPotencialBenReferenceDataProvider(PotencialBenCachedRowSetDataProvider2 crsdp) {
+        this.potencialBenReferenceDataProvider = crsdp;
+    }
+
     // </editor-fold>
 /**/
     public LogImpPot6() {
@@ -1464,6 +1568,7 @@ public class LogImpPot6 extends AbstractPageBean
     //@PreDestroy
     public void destroy() {
         logImpPotDataProvider.close();
+        potencialBenReferenceDataProvider.close();
     }
     // </editor-fold>
 
@@ -1835,6 +1940,10 @@ public class LogImpPot6 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para validar referencias">
+    public void campoIdPotencialBen1_validate(FacesContext context, UIComponent component, Object value) {
+        this.getAsistente().campoIdPotencialBen1_validate(context, component, value);
+    }
+
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las acciones de los hipervinculos">

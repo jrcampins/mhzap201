@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpIds5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpIds1 campoCedula1 campoLetraCedula1 campoApellidos1 campoNombres1 campoNacimiento1 campoSexo1 campoNacionalidad1 campoEstadoCivil1 campoLugarNacimiento1 campoIndigena1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpIds1 campoCedula1 campoLetraCedula1 campoApellidos1 campoNombres1 campoNacimiento1 campoSexo1 campoNacionalidad1 campoEstadoCivil1 campoLugarNacimiento1 campoIndigena1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 campoIdPersona1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -626,6 +626,72 @@
                                                     text="#{currentRow.value['codigo_archivo']}"/>
                                                 <webuijsf:message id="messageCodigoArchivo1"
                                                     for="campoCodigoArchivo1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{LogImpIds5.tableColumnIdPersona1}"
+                                                    toolTip="BundleParametros.id_persona.log_imp_ids"
+                                                    headerText="persona"
+                                                    id="tableColumnIdPersona1" rendered="false"
+                                                    sort="codigo_persona_1x1y3">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPersona1"
+                                                    text="#{currentRow.value['codigo_persona_1x1y3']}"
+                                                    rendered="#{LogImpIds5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpIds5.labelIdPersona1}"
+                                                    id="labelIdPersona1"
+                                                    for="campoIdPersona1"/>
+                                                <webuijsf:textField id="campoIdPersona1"
+                                                    binding="#{LogImpIds5.campoIdPersona1}"
+                                                    readOnly="#{LogImpIds5.gestor.filaNoProcesada}"
+                                                    text="#{LogImpIds5.asistente.textoCampoIdPersona1}"
+                                                    toolTip="#{LogImpIds5.asistente.toolTipCampoIdPersona1}"
+                                                    validatorExpression="#{LogImpIds5.campoIdPersona1_validate}"/>
+                                                <webuijsf:staticText id="campoIdPersona1Texto1"
+                                                    binding="#{LogImpIds5.campoIdPersona1Texto1}"
+                                                    text="#{currentRow.value['codigo_persona_1x1y3']}"/>
+                                                <webuijsf:message id="messageIdPersona1"
+                                                    for="campoIdPersona1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    id="tableColumnIdPersona3" rendered="false"
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPersona3"
+                                                    text="#{currentRow.value['id_persona']}"
+                                                    rendered="#{LogImpIds5.gestor.designing}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpIds5.campoIdPersona1Boton1}"
+                                                    id="campoIdPersona1Boton1"
+                                                    onClick="#{LogImpIds5.asistente.scriptCampoIdPersona1Boton1}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpIds5.campoIdPersona1Boton3}"
+                                                    id="campoIdPersona1Boton3"
+                                                    onClick="#{LogImpIds5.asistente.scriptCampoIdPersona1Boton2}"
+                                                    rendered="#{LogImpIds5.asistente.campoIdPersona1Boton3Rendered}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    binding="#{LogImpIds5.tableColumnIdPersona2}"
+                                                    headerText="nombre persona"
+                                                    id="tableColumnIdPersona2" rendered="false"
+                                                    sort="nombre_persona_1x1y4"
+                                                    styleClass="pdq-estilo-id-2">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPersona2"
+                                                    text="#{currentRow.value['nombre_persona_1x1y4']}"
+                                                    rendered="#{LogImpIds5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpIds5.labelIdPersona2}"
+                                                    id="labelIdPersona2"
+                                                    text=""/>
+                                                <webuijsf:imageHyperlink
+                                                    binding="#{LogImpIds5.campoIdPersona1Hiper1}"
+                                                    id="campoIdPersona1Hiper1"
+                                                    text="#{currentRow.value['nombre_persona_1x1y4']}"
+                                                    onClick="#{LogImpIds5.asistente.scriptCampoIdPersona1Boton2}"/>
+                                                <webuijsf:button
+                                                    id="campoIdPersona1Boton2"
+                                                    rendered="false"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

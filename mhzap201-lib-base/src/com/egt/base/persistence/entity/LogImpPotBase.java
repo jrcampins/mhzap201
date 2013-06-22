@@ -99,4 +99,8 @@ public interface LogImpPotBase {
 //
 //  public void setCodigoArchivo(String codigoArchivo);
 
+    public PotencialBenBase getPotencialBenIdPotencialBen();
+//
+//  public void setPotencialBenIdPotencialBen(PotencialBenBase potencialBen);
+
 }

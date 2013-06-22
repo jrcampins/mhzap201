@@ -79,6 +79,7 @@ public class LogImpPotCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     public static final String COLUMNA_FECHA_HORA_TRANSACCION = "fecha_hora_transaccion";
     public static final String COLUMNA_NOMBRE_ARCHIVO = "nombre_archivo";
     public static final String COLUMNA_CODIGO_ARCHIVO = "codigo_archivo";
+    public static final String COLUMNA_ID_POTENCIAL_BEN = "id_potencial_ben";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_LOG_IMP_POT, Long.class);
@@ -101,6 +102,7 @@ public class LogImpPotCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_TRANSACCION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_ARCHIVO, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_ARCHIVO, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_POTENCIAL_BEN, Long.class);
     }
 
     protected void setColumnasInsertables() {
@@ -125,6 +127,7 @@ public class LogImpPotCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_TRANSACCION, true);
         this.setColumnasInsertables(COLUMNA_NOMBRE_ARCHIVO, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_ARCHIVO, true);
+        this.setColumnasInsertables(COLUMNA_ID_POTENCIAL_BEN, true);
     }
 
     protected void setColumnasModificables() {
@@ -149,6 +152,7 @@ public class LogImpPotCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasModificables(COLUMNA_FECHA_HORA_TRANSACCION, true);
         this.setColumnasModificables(COLUMNA_NOMBRE_ARCHIVO, true);
         this.setColumnasModificables(COLUMNA_CODIGO_ARCHIVO, true);
+        this.setColumnasModificables(COLUMNA_ID_POTENCIAL_BEN, true);
     }
 
     public Long getIdLogImpPot() {
@@ -409,6 +413,19 @@ public class LogImpPotCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     }
     public void setCodigoArchivo(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_CODIGO_ARCHIVO, rowKey, valor);
+    }
+
+    public Long getIdPotencialBen() {
+        return (Long) super.getValue(COLUMNA_ID_POTENCIAL_BEN);
+    }
+    public Long getIdPotencialBen(RowKey rowKey) {
+        return (Long) super.getValue(COLUMNA_ID_POTENCIAL_BEN, rowKey);
+    }
+    public void setIdPotencialBen(Long valor) {
+        super.setValue(COLUMNA_ID_POTENCIAL_BEN, valor);
+    }
+    public void setIdPotencialBen(RowKey rowKey, Long valor) {
+        super.setValue(COLUMNA_ID_POTENCIAL_BEN, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_imp_pot";

@@ -91,10 +91,13 @@ public class LogImpPotCachedRowSetDataProvider2 extends LogImpPotCachedRowSetDat
     protected static final long PARAMETRO_FECHA_HORA_TRANSACCION = 20709L;
     protected static final long PARAMETRO_NOMBRE_ARCHIVO = 1389L;
     protected static final long PARAMETRO_CODIGO_ARCHIVO = 20699L;
+    protected static final long PARAMETRO_ID_POTENCIAL_BEN = 20571L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+    public static final long FUNCION_REFERENCIA_CONSULTAR_POTENCIAL_BEN = 320400101L;
 
     private static final String[] STRINGS_REFERENCIA_CONSULTAR_OPCION_BINARIA = {"opcion_binaria", "numero_opcion_binaria", "", ""};
+    private static final String[] STRINGS_REFERENCIA_CONSULTAR_POTENCIAL_BEN = {"potencial_ben", "id_potencial_ben", "", ""};
 
     @Override
     public long getFuncionConsultarRecurso() {

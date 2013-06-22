@@ -16,6 +16,7 @@
 package com.egt.web.consulta;
 
 import com.egt.data.specific.xdp2.LogImpPotCachedRowSetDataProvider2;
+import com.egt.data.specific.xdp2.PotencialBenCachedRowSetDataProvider2;
 import com.egt.core.aplicacion.web.PaginaActualizacion;
 import com.sun.webui.jsf.component.Button;
 import com.sun.webui.jsf.component.DropDown;
@@ -63,7 +64,11 @@ public interface PaginaActualizacionLogImpPot extends PaginaActualizacion {
 
     TextArea getCampoCodigoArchivo1();
 
+    TextField getCampoIdPotencialBen1();
+
     Button getBotonAplicar1();
 
     LogImpPotCachedRowSetDataProvider2 getLogImpPotDataProvider();
+
+    PotencialBenCachedRowSetDataProvider2 getPotencialBenReferenceDataProvider();
 }

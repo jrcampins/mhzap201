@@ -20,7 +20,8 @@ public enum EnumCausaImpedimento implements ListOption {
     POR_UNA_ENFERMEDAD(2, "causa_impedimento_por_una_enfermedad"),
     POR_UN_ACCIDENTE(3, "causa_impedimento_por_un_accidente"),
     POR_EDAD_AVANZADA(4, "causa_impedimento_por_edad_avanzada"),
-    OTROS_ESPECIFICAR(5, "causa_impedimento_otros_especificar");
+    OTROS_ESPECIFICAR(5, "causa_impedimento_otros_especificar"),
+    NO_REPORTA(99, "causa_impedimento_no_reporta");
 
     public static EnumCausaImpedimento valueOf(int i) {
         switch (i) {
@@ -34,6 +35,8 @@ public enum EnumCausaImpedimento implements ListOption {
                 return POR_EDAD_AVANZADA;
             case 5:
                 return OTROS_ESPECIFICAR;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

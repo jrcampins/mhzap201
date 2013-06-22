@@ -1267,6 +1267,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoMatParedes.SIN_PAREDES.intValue());
     }
 
+    public boolean isNumeroTipoMatParedesNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoMatParedes(rowKey);
+        return value != null && value.equals(EnumTipoMatParedes.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroTipoMatPiso() {
         if (bean == null) {
             return true;
@@ -1348,6 +1357,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoMatPiso.GRANITO_PARQUET_MARMOL.intValue());
     }
 
+    public boolean isNumeroTipoMatPisoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoMatPiso(rowKey);
+        return value != null && value.equals(EnumTipoMatPiso.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroTipoMatTecho() {
         if (bean == null) {
             return true;
@@ -1400,6 +1418,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroTipoMatTecho(rowKey);
         return value != null && value.equals(EnumTipoMatTecho.ZINC.intValue());
+    }
+
+    public boolean isNumeroTipoMatTechoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoMatTecho(rowKey);
+        return value != null && value.equals(EnumTipoMatTecho.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoOcupacionViv() {
@@ -1474,6 +1501,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoOcupacionViv.OTROS.intValue());
     }
 
+    public boolean isNumeroTipoOcupacionVivNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoOcupacionViv(rowKey);
+        return value != null && value.equals(EnumTipoOcupacionViv.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoPiezaCocina() {
         if (bean == null) {
             return true;
@@ -1508,6 +1544,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoPiezaCocina(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoPiezaCocinaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoPiezaCocina(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoCombustible() {
@@ -1582,6 +1627,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoCombustible.NO_COCINA.intValue());
     }
 
+    public boolean isNumeroTipoCombustibleNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoCombustible(rowKey);
+        return value != null && value.equals(EnumTipoCombustible.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroTipoPiezaBano() {
         if (bean == null) {
             return true;
@@ -1643,6 +1697,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroTipoPiezaBano(rowKey);
         return value != null && value.equals(EnumTipoPiezaBano.NO_TIENE_PIEZA_PARA_BANARSE.intValue());
+    }
+
+    public boolean isNumeroTipoPiezaBanoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoPiezaBano(rowKey);
+        return value != null && value.equals(EnumTipoPiezaBano.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoServicioSan() {
@@ -1715,6 +1778,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroTipoServicioSan(rowKey);
         return value != null && value.equals(EnumTipoServicioSan.NO_TIENE.intValue());
+    }
+
+    public boolean isNumeroTipoServicioSanNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoServicioSan(rowKey);
+        return value != null && value.equals(EnumTipoServicioSan.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoServicioAgua() {
@@ -1798,6 +1870,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoServicioAgua.ARROYO_RIO.intValue());
     }
 
+    public boolean isNumeroTipoServicioAguaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoServicioAgua(rowKey);
+        return value != null && value.equals(EnumTipoServicioAgua.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroTipoAbaAgua() {
         if (bean == null) {
             return true;
@@ -1843,6 +1924,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoAbaAgua.FUERA_DE_LA_PROPIEDAD.intValue());
     }
 
+    public boolean isNumeroTipoAbaAguaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoAbaAgua(rowKey);
+        return value != null && value.equals(EnumTipoAbaAgua.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoCorrienteElec() {
         if (bean == null) {
             return true;
@@ -1877,6 +1967,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoCorrienteElec(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoCorrienteElecNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoCorrienteElec(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroTipoDesechoBas() {
@@ -1951,6 +2050,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumTipoDesechoBas.RECOGE_EN_CARRITO.intValue());
     }
 
+    public boolean isNumeroTipoDesechoBasNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroTipoDesechoBas(rowKey);
+        return value != null && value.equals(EnumTipoDesechoBas.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoTelefonoCelular() {
         if (bean == null) {
             return true;
@@ -1985,6 +2093,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoTelefonoCelular(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoTelefonoCelularNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoTelefonoCelular(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoTlfLineaBaja() {
@@ -2023,6 +2140,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoTlfLineaBajaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoTlfLineaBaja(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDispHeladera() {
         if (bean == null) {
             return true;
@@ -2057,6 +2183,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispHeladera(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDispHeladeraNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispHeladera(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDispLavarropas() {
@@ -2095,6 +2230,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDispLavarropasNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispLavarropas(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDispTermo() {
         if (bean == null) {
             return true;
@@ -2129,6 +2273,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispTermo(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDispTermoNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispTermo(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDispAireAcon() {
@@ -2167,6 +2320,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDispAireAconNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispAireAcon(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDispAutomovil() {
         if (bean == null) {
             return true;
@@ -2201,6 +2363,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispAutomovil(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDispAutomovilNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispAutomovil(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
     public boolean isNullNumeroSionoDispCamion() {
@@ -2239,6 +2410,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         return value != null && value.equals(EnumSiono.NO.intValue());
     }
 
+    public boolean isNumeroSionoDispCamionNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispCamion(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
+    }
+
     public boolean isNullNumeroSionoDispMotocicleta() {
         if (bean == null) {
             return true;
@@ -2273,6 +2453,15 @@ public class AsistentePaginaActualizacionFichaHogar {
         RowKey rowKey = bean.getGestor().getCurrentRowKey();
         Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispMotocicleta(rowKey);
         return value != null && value.equals(EnumSiono.NO.intValue());
+    }
+
+    public boolean isNumeroSionoDispMotocicletaNoReporta() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getFichaHogarDataProvider().getNumeroSionoDispMotocicleta(rowKey);
+        return value != null && value.equals(EnumSiono.NO_REPORTA.intValue());
     }
 
    public boolean isEsFichaHogarInactiva() {

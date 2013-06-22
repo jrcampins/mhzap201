@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpPot5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpPot1 campoDepartamento1 campoDistrito1 campoNombresApellidos1 campoApodo1 campoEdadALaFecha1 campoNacimiento1 campoCedula1 campoTelefono1 campoDireccion1 campoReferencia1 campoBarrio1 campoNombreReferente1 campoTelefonoReferente1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpPot1 campoDepartamento1 campoDistrito1 campoNombresApellidos1 campoApodo1 campoEdadALaFecha1 campoNacimiento1 campoCedula1 campoTelefono1 campoDireccion1 campoReferencia1 campoBarrio1 campoNombreReferente1 campoTelefonoReferente1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 campoIdPotencialBen1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -707,6 +707,72 @@
                                                     text="#{currentRow.value['codigo_archivo']}"/>
                                                 <webuijsf:message id="messageCodigoArchivo1"
                                                     for="campoCodigoArchivo1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{LogImpPot5.tableColumnIdPotencialBen1}"
+                                                    toolTip="BundleParametros.id_potencial_ben.log_imp_pot"
+                                                    headerText="potencial beneficiario"
+                                                    id="tableColumnIdPotencialBen1" rendered="false"
+                                                    sort="codigo_potencial_ben_1x1y3">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPotencialBen1"
+                                                    text="#{currentRow.value['codigo_potencial_ben_1x1y3']}"
+                                                    rendered="#{LogImpPot5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpPot5.labelIdPotencialBen1}"
+                                                    id="labelIdPotencialBen1"
+                                                    for="campoIdPotencialBen1"/>
+                                                <webuijsf:textField id="campoIdPotencialBen1"
+                                                    binding="#{LogImpPot5.campoIdPotencialBen1}"
+                                                    readOnly="#{LogImpPot5.gestor.filaNoProcesada}"
+                                                    text="#{LogImpPot5.asistente.textoCampoIdPotencialBen1}"
+                                                    toolTip="#{LogImpPot5.asistente.toolTipCampoIdPotencialBen1}"
+                                                    validatorExpression="#{LogImpPot5.campoIdPotencialBen1_validate}"/>
+                                                <webuijsf:staticText id="campoIdPotencialBen1Texto1"
+                                                    binding="#{LogImpPot5.campoIdPotencialBen1Texto1}"
+                                                    text="#{currentRow.value['codigo_potencial_ben_1x1y3']}"/>
+                                                <webuijsf:message id="messageIdPotencialBen1"
+                                                    for="campoIdPotencialBen1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    id="tableColumnIdPotencialBen3" rendered="false"
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPotencialBen3"
+                                                    text="#{currentRow.value['id_potencial_ben']}"
+                                                    rendered="#{LogImpPot5.gestor.designing}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPot5.campoIdPotencialBen1Boton1}"
+                                                    id="campoIdPotencialBen1Boton1"
+                                                    onClick="#{LogImpPot5.asistente.scriptCampoIdPotencialBen1Boton1}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPot5.campoIdPotencialBen1Boton3}"
+                                                    id="campoIdPotencialBen1Boton3"
+                                                    onClick="#{LogImpPot5.asistente.scriptCampoIdPotencialBen1Boton2}"
+                                                    rendered="#{LogImpPot5.asistente.campoIdPotencialBen1Boton3Rendered}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    binding="#{LogImpPot5.tableColumnIdPotencialBen2}"
+                                                    headerText="nombre potencial beneficiario"
+                                                    id="tableColumnIdPotencialBen2" rendered="false"
+                                                    sort="nombre_potencial_ben_1x1y4"
+                                                    styleClass="pdq-estilo-id-2">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdPotencialBen2"
+                                                    text="#{currentRow.value['nombre_potencial_ben_1x1y4']}"
+                                                    rendered="#{LogImpPot5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpPot5.labelIdPotencialBen2}"
+                                                    id="labelIdPotencialBen2"
+                                                    text=""/>
+                                                <webuijsf:imageHyperlink
+                                                    binding="#{LogImpPot5.campoIdPotencialBen1Hiper1}"
+                                                    id="campoIdPotencialBen1Hiper1"
+                                                    text="#{currentRow.value['nombre_potencial_ben_1x1y4']}"
+                                                    onClick="#{LogImpPot5.asistente.scriptCampoIdPotencialBen1Boton2}"/>
+                                                <webuijsf:button
+                                                    id="campoIdPotencialBen1Boton2"
+                                                    rendered="false"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

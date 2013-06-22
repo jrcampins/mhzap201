@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{LogImpPerEec5.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpPerEec1 campoDptod1 campoDistritod1 campoDistripg1 campoArea1 campoBarrio1 campoManzana1 campoFormulario1 campoVivi1 campoHogar1 campoOrden1 campoP301 campoP311 campoP321 campoP331 campoP341 campoP351 campoP36OrdenConyugue1 campoP36OrdenPadre1 campoP36OrdenMadre1 campoP371 campoP37Cedula1 campoP38Dia1 campoP38Mes1 campoP38Ano1 campoP39pais1 campoP39dpto1 campoP39dist1 campoP39area1 campoP40Idioma1 campoP40otr1 campoP411 campoP421 campoP431 campoP4445t1 campoP441 campoP451 campoP461 campoP471 campoP481 campoP491 campoP49Otr1 campoP501 campoP50Otr1 campoP511 campoP521 campoP52Otr1 campoP531 campoP541 campoP54a1 campoP54Otr1 campoP551 campoP55Otr1 campoP561 campoP571 campoP581 campoP591 campoP601 campoP611 campoP621 campoP631 campoP63Especificar1 campoP64des1 campoP64c1 campoP65des1 campoP65c1 campoP661 campoP67a1 campoP67b1 campoP67c1 campoP67d1 campoP67e1 campoP67f1 campoP67g1 campoP67h1 campoP67i1 campoP67j1 campoP67k1 campoP67l1 campoP67tot1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
+                        virtualFormsConfig="virtualForm1 | checkbox1 campoIdLogImpPerEec1 campoDptod1 campoDistritod1 campoDistripg1 campoArea1 campoBarrio1 campoManzana1 campoFormulario1 campoVivi1 campoHogar1 campoOrden1 campoP301 campoP311 campoP321 campoP331 campoP341 campoP351 campoP36OrdenConyugue1 campoP36OrdenPadre1 campoP36OrdenMadre1 campoP371 campoP37Cedula1 campoP38Dia1 campoP38Mes1 campoP38Ano1 campoP39pais1 campoP39dpto1 campoP39dist1 campoP39area1 campoP40Idioma1 campoP40otr1 campoP411 campoP421 campoP431 campoP4445t1 campoP441 campoP451 campoP461 campoP471 campoP481 campoP491 campoP49Otr1 campoP501 campoP50Otr1 campoP511 campoP521 campoP52Otr1 campoP531 campoP541 campoP54a1 campoP54Otr1 campoP551 campoP55Otr1 campoP561 campoP571 campoP581 campoP591 campoP601 campoP611 campoP621 campoP631 campoP63Especificar1 campoP64des1 campoP64c1 campoP65des1 campoP65c1 campoP661 campoP67a1 campoP67b1 campoP67c1 campoP67d1 campoP67e1 campoP67f1 campoP67g1 campoP67h1 campoP67i1 campoP67j1 campoP67k1 campoP67l1 campoP67tot1 listaEsImportado1 campoObservacion1 campoFechaHoraTransaccion1 campoNombreArchivo1 campoCodigoArchivo1 campoIdFichaPersona1 textoFilasPorPagina1 listaFuncionEdicion1 listaFuncionAccion1 | , virtualForm2 | textoFilasPorPagina1 | botonRepaginar1 , virtualForm3 | checkbox1 listaFuncionEdicion1 listaFuncionAccion1 | listaFuncionEdicion1 listaFuncionAccion1 botonEditar1 botonDeshacer1 botonEliminar1 , virtualForm4 | | botonEscogerFila1 botonDetallarFila1 botonProcesarFila1 botonRetornarFila1 botonAgregar1 botonDescartar1 botonRefrescar1 botonReconsultar1 botonRetornar1 ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -2489,6 +2489,72 @@
                                                     text="#{currentRow.value['codigo_archivo']}"/>
                                                 <webuijsf:message id="messageCodigoArchivo1"
                                                     for="campoCodigoArchivo1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    binding="#{LogImpPerEec5.tableColumnIdFichaPersona1}"
+                                                    toolTip="BundleParametros.id_ficha_persona.log_imp_per_eec"
+                                                    headerText="ficha persona"
+                                                    id="tableColumnIdFichaPersona1" rendered="false"
+                                                    sort="codigo_ficha_persona_1x1y3">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFichaPersona1"
+                                                    text="#{currentRow.value['codigo_ficha_persona_1x1y3']}"
+                                                    rendered="#{LogImpPerEec5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpPerEec5.labelIdFichaPersona1}"
+                                                    id="labelIdFichaPersona1"
+                                                    for="campoIdFichaPersona1"/>
+                                                <webuijsf:textField id="campoIdFichaPersona1"
+                                                    binding="#{LogImpPerEec5.campoIdFichaPersona1}"
+                                                    readOnly="#{LogImpPerEec5.gestor.filaNoProcesada}"
+                                                    text="#{LogImpPerEec5.asistente.textoCampoIdFichaPersona1}"
+                                                    toolTip="#{LogImpPerEec5.asistente.toolTipCampoIdFichaPersona1}"
+                                                    validatorExpression="#{LogImpPerEec5.campoIdFichaPersona1_validate}"/>
+                                                <webuijsf:staticText id="campoIdFichaPersona1Texto1"
+                                                    binding="#{LogImpPerEec5.campoIdFichaPersona1Texto1}"
+                                                    text="#{currentRow.value['codigo_ficha_persona_1x1y3']}"/>
+                                                <webuijsf:message id="messageIdFichaPersona1"
+                                                    for="campoIdFichaPersona1"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn
+                                                    id="tableColumnIdFichaPersona3" rendered="false"
+                                                    align="center">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFichaPersona3"
+                                                    text="#{currentRow.value['id_ficha_persona']}"
+                                                    rendered="#{LogImpPerEec5.gestor.designing}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPerEec5.campoIdFichaPersona1Boton1}"
+                                                    id="campoIdFichaPersona1Boton1"
+                                                    onClick="#{LogImpPerEec5.asistente.scriptCampoIdFichaPersona1Boton1}"/>
+                                                <webuijsf:button
+                                                    binding="#{LogImpPerEec5.campoIdFichaPersona1Boton3}"
+                                                    id="campoIdFichaPersona1Boton3"
+                                                    onClick="#{LogImpPerEec5.asistente.scriptCampoIdFichaPersona1Boton2}"
+                                                    rendered="#{LogImpPerEec5.asistente.campoIdFichaPersona1Boton3Rendered}"/>
+                                                </webuijsf:tableColumn>
+                                                <webuijsf:tableColumn 
+                                                    binding="#{LogImpPerEec5.tableColumnIdFichaPersona2}"
+                                                    headerText="nombre ficha persona"
+                                                    id="tableColumnIdFichaPersona2" rendered="false"
+                                                    sort="nombre_ficha_persona_1x1y4"
+                                                    styleClass="pdq-estilo-id-2">
+                                                <webuijsf:staticText
+                                                    id="hiddenStaticTextIdFichaPersona2"
+                                                    text="#{currentRow.value['nombre_ficha_persona_1x1y4']}"
+                                                    rendered="#{LogImpPerEec5.gestor.designing}"/>
+                                                <webuijsf:label
+                                                    binding="#{LogImpPerEec5.labelIdFichaPersona2}"
+                                                    id="labelIdFichaPersona2"
+                                                    text=""/>
+                                                <webuijsf:imageHyperlink
+                                                    binding="#{LogImpPerEec5.campoIdFichaPersona1Hiper1}"
+                                                    id="campoIdFichaPersona1Hiper1"
+                                                    text="#{currentRow.value['nombre_ficha_persona_1x1y4']}"
+                                                    onClick="#{LogImpPerEec5.asistente.scriptCampoIdFichaPersona1Boton2}"/>
+                                                <webuijsf:button
+                                                    id="campoIdFichaPersona1Boton2"
+                                                    rendered="false"/>
                                                 </webuijsf:tableColumn>
                                             </webuijsf:tableRowGroup>
                                         </webuijsf:table>

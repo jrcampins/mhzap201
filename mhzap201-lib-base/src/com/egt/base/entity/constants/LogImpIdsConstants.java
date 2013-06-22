@@ -55,6 +55,8 @@ public class LogImpIdsConstants {
 
     public static final String COLUMNA_CODIGO_ARCHIVO = "codigo_archivo";
 
+    public static final String COLUMNA_ID_PERSONA = "id_persona";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_imp_ids";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_log_imp_ids";
@@ -62,4 +64,6 @@ public class LogImpIdsConstants {
     public static final long FUNCION_CONSULTAR_LOG_IMP_IDS = 330400101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+
+    public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
 }

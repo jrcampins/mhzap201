@@ -20,7 +20,8 @@ public enum EnumTipoPiezaBano implements ListOption {
     CON_DUCHA_ELECTRICA(2, "tipo_pieza_bano_con_ducha_electrica"),
     CON_DUCHA_COMUN(3, "tipo_pieza_bano_con_ducha_comun"),
     PIEZA_SIN_DUCHA(4, "tipo_pieza_bano_pieza_sin_ducha"),
-    NO_TIENE_PIEZA_PARA_BANARSE(6, "tipo_pieza_bano_no_tiene_pieza_para_banarse");
+    NO_TIENE_PIEZA_PARA_BANARSE(6, "tipo_pieza_bano_no_tiene_pieza_para_banarse"),
+    NO_REPORTA(9, "tipo_pieza_bano_no_reporta");
 
     public static EnumTipoPiezaBano valueOf(int i) {
         switch (i) {
@@ -34,6 +35,8 @@ public enum EnumTipoPiezaBano implements ListOption {
                 return PIEZA_SIN_DUCHA;
             case 6:
                 return NO_TIENE_PIEZA_PARA_BANARSE;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

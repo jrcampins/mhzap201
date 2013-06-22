@@ -21,7 +21,8 @@ public enum EnumTipoOcupacionViv implements ListOption {
     ALQUILADA(3, "tipo_ocupacion_viv_alquilada"),
     OCUPADA_DE_HECHO(4, "tipo_ocupacion_viv_ocupada_de_hecho"),
     CEDIDA(5, "tipo_ocupacion_viv_cedida"),
-    OTROS(6, "tipo_ocupacion_viv_otros");
+    OTROS(6, "tipo_ocupacion_viv_otros"),
+    NO_REPORTA(9, "tipo_ocupacion_viv_no_reporta");
 
     public static EnumTipoOcupacionViv valueOf(int i) {
         switch (i) {
@@ -37,6 +38,8 @@ public enum EnumTipoOcupacionViv implements ListOption {
                 return CEDIDA;
             case 6:
                 return OTROS;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

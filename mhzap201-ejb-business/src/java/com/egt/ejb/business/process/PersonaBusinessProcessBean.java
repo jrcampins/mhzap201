@@ -684,12 +684,13 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         String sql = PersonaConstants.PROCESO_FUNCION_REGISTRAR_ENTREGA_DOC_PERSONA;
         if (sqlAgent.isStoredProcedure(sql)) {
             int index = 0;
-            Object[] args = new Object[8]; /* el procedimiento actualiza el rastro */
+            Object[] args = new Object[9]; /* el procedimiento actualiza el rastro */
             args[index++] = message.getRastro(); /* el procedimiento actualiza el rastro */
             args[index++] = message.getIdPersona();
             args[index++] = message.getEsPersonaConCerVida();
             args[index++] = message.getCertificadoVida();
             args[index++] = message.getFechaCertificadoVida();
+            args[index++] = message.getDiasVigenciaCertificadoVida();
             args[index++] = message.getEsPersonaConCopiaCedula();
             args[index++] = message.getEsPersonaConDeclaracionJur();
             args[index++] = message.getComentariosEntregaDocumentos();
@@ -707,6 +708,7 @@ public class PersonaBusinessProcessBean implements PersonaBusinessProcessLocal {
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_ES_PERSONA_CON_CER_VIDA, STP.getString(message.getEsPersonaConCerVida()));
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_CERTIFICADO_VIDA, STP.getString(message.getCertificadoVida()));
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_FECHA_CERTIFICADO_VIDA, STP.getString(message.getFechaCertificadoVida()));
+        rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA, STP.getString(message.getDiasVigenciaCertificadoVida()));
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_ES_PERSONA_CON_COPIA_CEDULA, STP.getString(message.getEsPersonaConCopiaCedula()));
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR, STP.getString(message.getEsPersonaConDeclaracionJur()));
         rastro.addParametro(RegistrarEntregaDocPersonaMessage.PARAMETRO_COMENTARIOS_ENTREGA_DOCUMENTOS, STP.getString(message.getComentariosEntregaDocumentos()));

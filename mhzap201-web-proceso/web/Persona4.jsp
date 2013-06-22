@@ -569,7 +569,6 @@
                                                 <webuijsf:textField id="campoNumeroResolucionOtorPen1"
                                                     binding="#{Persona4.campoNumeroResolucionOtorPen1}"
                                                     columns="50"
-                                                     required="true"
                                                     text="#{Persona4.textoCampoNumeroResolucionOtorPen1}"
                                                     toolTip="BundleParametros.numero_resolucion_otor_pen"
                                                     validatorExpression="#{Persona4.validatorNumeroResolucionOtorPen1.validate}"/>

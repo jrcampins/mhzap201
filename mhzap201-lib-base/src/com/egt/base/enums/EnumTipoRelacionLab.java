@@ -23,7 +23,8 @@ public enum EnumTipoRelacionLab implements ListOption {
     EMPLEADOR_O_PATRON(5, "tipo_relacion_lab_empleador_o_patron"),
     TRABAJADOR_POR_CUENTA_PROPIA(6, "tipo_relacion_lab_trabajador_por_cuenta_propia"),
     TRABAJADOR_NO_REMUNERADO(7, "tipo_relacion_lab_trabajador_no_remunerado"),
-    EMPLEADO_A_DOMESTICO_A(8, "tipo_relacion_lab_empleado_a_domestico_a");
+    EMPLEADO_A_DOMESTICO_A(8, "tipo_relacion_lab_empleado_a_domestico_a"),
+    NO_REPORTA(9, "tipo_relacion_lab_no_reporta");
 
     public static EnumTipoRelacionLab valueOf(int i) {
         switch (i) {
@@ -43,6 +44,8 @@ public enum EnumTipoRelacionLab implements ListOption {
                 return TRABAJADOR_NO_REMUNERADO;
             case 8:
                 return EMPLEADO_A_DOMESTICO_A;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

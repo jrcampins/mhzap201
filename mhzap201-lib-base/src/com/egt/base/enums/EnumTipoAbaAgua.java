@@ -18,7 +18,8 @@ public enum EnumTipoAbaAgua implements ListOption {
 
     DENTRO_DE_LA_VIVIENDA(1, "tipo_aba_agua_dentro_de_la_vivienda"),
     DENTRO_DE_LA_PROPIEDAD(2, "tipo_aba_agua_dentro_de_la_propiedad"),
-    FUERA_DE_LA_PROPIEDAD(3, "tipo_aba_agua_fuera_de_la_propiedad");
+    FUERA_DE_LA_PROPIEDAD(3, "tipo_aba_agua_fuera_de_la_propiedad"),
+    NO_REPORTA(9, "tipo_aba_agua_no_reporta");
 
     public static EnumTipoAbaAgua valueOf(int i) {
         switch (i) {
@@ -28,6 +29,8 @@ public enum EnumTipoAbaAgua implements ListOption {
                 return DENTRO_DE_LA_PROPIEDAD;
             case 3:
                 return FUERA_DE_LA_PROPIEDAD;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

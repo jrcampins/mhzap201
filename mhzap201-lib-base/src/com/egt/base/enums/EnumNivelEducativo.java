@@ -38,7 +38,8 @@ public enum EnumNivelEducativo implements ListOption {
     FORMACION_DOCENTE(19, "nivel_educativo_formacion_docente"),
     PROFESIONALIZACION_DOCENTE(20, "nivel_educativo_profesionalizacion_docente"),
     FORMACION_MILITAR_POLICIAL(21, "nivel_educativo_formacion_militar_policial"),
-    SUPERIOR_UNIVERSITARIA(22, "nivel_educativo_superior_universitaria");
+    SUPERIOR_UNIVERSITARIA(22, "nivel_educativo_superior_universitaria"),
+    NO_REPORTA(99, "nivel_educativo_no_reporta");
 
     public static EnumNivelEducativo valueOf(int i) {
         switch (i) {
@@ -88,6 +89,8 @@ public enum EnumNivelEducativo implements ListOption {
                 return FORMACION_MILITAR_POLICIAL;
             case 22:
                 return SUPERIOR_UNIVERSITARIA;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

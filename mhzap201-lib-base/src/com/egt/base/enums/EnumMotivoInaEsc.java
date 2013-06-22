@@ -39,7 +39,8 @@ public enum EnumMotivoInaEsc implements ListOption {
     DEBE_CUIDAR_DE_HERMANOS_MENORES(22, "motivo_ina_esc_debe_cuidar_de_hermanos_menores"),
     OTRAS_RAZONES_FAMILIARES(23, "motivo_ina_esc_otras_razones_familiares"),
     SERVICIO_MILITAR(24, "motivo_ina_esc_servicio_militar"),
-    OTROS_ESPECIFICAR(25, "motivo_ina_esc_otros_especificar");
+    OTROS_ESPECIFICAR(25, "motivo_ina_esc_otros_especificar"),
+    NO_REPORTA(99, "motivo_ina_esc_no_reporta");
 
     public static EnumMotivoInaEsc valueOf(int i) {
         switch (i) {
@@ -91,6 +92,8 @@ public enum EnumMotivoInaEsc implements ListOption {
                 return SERVICIO_MILITAR;
             case 25:
                 return OTROS_ESPECIFICAR;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

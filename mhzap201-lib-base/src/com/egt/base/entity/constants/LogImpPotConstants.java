@@ -61,6 +61,8 @@ public class LogImpPotConstants {
 
     public static final String COLUMNA_CODIGO_ARCHIVO = "codigo_archivo";
 
+    public static final String COLUMNA_ID_POTENCIAL_BEN = "id_potencial_ben";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_imp_pot";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_log_imp_pot";
@@ -68,4 +70,6 @@ public class LogImpPotConstants {
     public static final long FUNCION_CONSULTAR_LOG_IMP_POT = 330700101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+
+    public static final long FUNCION_REFERENCIA_CONSULTAR_POTENCIAL_BEN = 320400101L;
 }

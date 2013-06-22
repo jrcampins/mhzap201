@@ -49,7 +49,8 @@ public enum EnumClaseEnfAcc implements ListOption {
     PRESION_ALTA(41, "clase_enf_acc_presion_alta"),
     ALERGIA(42, "clase_enf_acc_alergia"),
     PULMONIA(43, "clase_enf_acc_pulmonia"),
-    OTROS_ESPECIFICAR(44, "clase_enf_acc_otros_especificar");
+    OTROS_ESPECIFICAR(44, "clase_enf_acc_otros_especificar"),
+    NO_REPORTA(99, "clase_enf_acc_no_reporta");
 
     public static EnumClaseEnfAcc valueOf(int i) {
         switch (i) {
@@ -121,6 +122,8 @@ public enum EnumClaseEnfAcc implements ListOption {
                 return PULMONIA;
             case 44:
                 return OTROS_ESPECIFICAR;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

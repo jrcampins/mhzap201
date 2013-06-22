@@ -594,6 +594,15 @@ public class AsistentePaginaActualizacionLogProDenPenObj {
         return value != null && value.equals(EnumCausaDenPension.PERSONA_NO_ES_MAYOR_DE_65_ANOS.intValue());
     }
 
+    public boolean isNumeroCausaDenPensionPersonaConCedulaVencida() {
+        if (bean == null) {
+            return true;
+        }
+        RowKey rowKey = bean.getGestor().getCurrentRowKey();
+        Integer value = bean.getLogProDenPenObjDataProvider().getNumeroCausaDenPension(rowKey);
+        return value != null && value.equals(EnumCausaDenPension.PERSONA_CON_CEDULA_VENCIDA.intValue());
+    }
+
     public boolean isNumeroCausaDenPensionPersonaConEmpleo() {
         if (bean == null) {
             return true;

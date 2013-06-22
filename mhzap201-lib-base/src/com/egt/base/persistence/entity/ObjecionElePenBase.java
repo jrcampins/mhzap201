@@ -51,6 +51,10 @@ public interface ObjecionElePenBase {
 //
 //  public void setObservacionesAnulacion(String observacionesAnulacion);
 
+    public String getReferencia();
+//
+//  public void setReferencia(String referencia);
+
     public PersonaBase getPersonaIdPersona();
 //
 //  public void setPersonaIdPersona(PersonaBase persona);

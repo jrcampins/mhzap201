@@ -341,6 +341,14 @@ public interface FichaPersonaBase {
 //
 //  public void setPotencialBenIdPotencialBen(PotencialBenBase potencialBen);
 
+    public Collection<? extends LogImpPerBase> getLogImpPerIdFichaPersonaCollection();
+//
+//  public void setLogImpPerIdFichaPersonaCollection(Collection<? extends LogImpPerBase> collection);
+
+    public Collection<? extends LogImpPerEecBase> getLogImpPerEecIdFichaPersonaCollection();
+//
+//  public void setLogImpPerEecIdFichaPersonaCollection(Collection<? extends LogImpPerEecBase> collection);
+
     public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdFichaPersonaCollection();
 //
 //  public void setLogProAcrPotBenIdFichaPersonaCollection(Collection<? extends LogProAcrPotBenBase> collection);

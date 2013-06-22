@@ -303,6 +303,7 @@ public class PersonaBusinessProcessLogicBean implements PersonaBusinessProcessLo
         persona.setEsPersonaConCerVida(message.getEsPersonaConCerVida() == null ? IntUtils.FALSE : message.getEsPersonaConCerVida());
         persona.setCertificadoVida(message.getCertificadoVida());
         persona.setFechaCertificadoVida(message.getFechaCertificadoVida());
+        persona.setDiasVigenciaCertificadoVida(message.getDiasVigenciaCertificadoVida());
         persona.setEsPersonaConCopiaCedula(message.getEsPersonaConCopiaCedula() == null ? IntUtils.FALSE : message.getEsPersonaConCopiaCedula());
         persona.setEsPersonaConDeclaracionJur(message.getEsPersonaConDeclaracionJur() == null ? IntUtils.FALSE : message.getEsPersonaConDeclaracionJur());
         persona.setComentariosEntregaDocumentos(message.getComentariosEntregaDocumentos());

@@ -297,6 +297,10 @@ public interface PotencialBenBase {
 //
 //  public void setFichaPersonaIdPotencialBenCollection(Collection<? extends FichaPersonaBase> collection);
 
+    public Collection<? extends LogImpPotBase> getLogImpPotIdPotencialBenCollection();
+//
+//  public void setLogImpPotIdPotencialBenCollection(Collection<? extends LogImpPotBase> collection);
+
     public Collection<? extends LogProAcrPotBenBase> getLogProAcrPotBenIdPotencialBenCollection();
 //
 //  public void setLogProAcrPotBenIdPotencialBenCollection(Collection<? extends LogProAcrPotBenBase> collection);

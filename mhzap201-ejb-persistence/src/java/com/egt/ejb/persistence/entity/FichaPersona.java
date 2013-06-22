@@ -324,6 +324,12 @@ public class FichaPersona implements FichaPersonaBase, Comparable, Serializable 
     private PotencialBen potencialBenIdPotencialBen;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaPersonaIdFichaPersona")
+    private Collection<LogImpPer> logImpPerIdFichaPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaPersonaIdFichaPersona")
+    private Collection<LogImpPerEec> logImpPerEecIdFichaPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaPersonaIdFichaPersona")
     private Collection<LogProAcrPotBen> logProAcrPotBenIdFichaPersonaCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "fichaPersonaIdFichaPersona")
@@ -1053,6 +1059,24 @@ public class FichaPersona implements FichaPersonaBase, Comparable, Serializable 
 
     public void setPotencialBenIdPotencialBen(PotencialBen potencialBen) {
         this.potencialBenIdPotencialBen = potencialBen;
+    }
+
+    @Override
+    public Collection<LogImpPer> getLogImpPerIdFichaPersonaCollection() {
+        return this.logImpPerIdFichaPersonaCollection;
+    }
+
+    public void setLogImpPerIdFichaPersonaCollection(Collection<LogImpPer> collection) {
+        this.logImpPerIdFichaPersonaCollection = collection;
+    }
+
+    @Override
+    public Collection<LogImpPerEec> getLogImpPerEecIdFichaPersonaCollection() {
+        return this.logImpPerEecIdFichaPersonaCollection;
+    }
+
+    public void setLogImpPerEecIdFichaPersonaCollection(Collection<LogImpPerEec> collection) {
+        this.logImpPerEecIdFichaPersonaCollection = collection;
     }
 
     @Override

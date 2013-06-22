@@ -391,6 +391,9 @@ public class Persona implements PersonaBase, Comparable, Serializable {
     private TipoActJupe tipoActJupeNumeroTipoActJupe;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
+    private Collection<LogImpIds> logImpIdsIdPersonaCollection;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
     private Collection<LogProAcrPotBen> logProAcrPotBenIdPersonaCollection;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "personaIdPersona")
@@ -1306,6 +1309,15 @@ public class Persona implements PersonaBase, Comparable, Serializable {
 
     public void setTipoActJupeNumeroTipoActJupe(TipoActJupe tipoActJupe) {
         this.tipoActJupeNumeroTipoActJupe = tipoActJupe;
+    }
+
+    @Override
+    public Collection<LogImpIds> getLogImpIdsIdPersonaCollection() {
+        return this.logImpIdsIdPersonaCollection;
+    }
+
+    public void setLogImpIdsIdPersonaCollection(Collection<LogImpIds> collection) {
+        this.logImpIdsIdPersonaCollection = collection;
     }
 
     @Override

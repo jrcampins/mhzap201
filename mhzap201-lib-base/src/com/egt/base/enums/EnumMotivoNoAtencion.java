@@ -24,7 +24,8 @@ public enum EnumMotivoNoAtencion implements ListOption {
     ES_CARO(6, "motivo_no_atencion_es_caro"),
     NO_TUVO_TIEMPO(7, "motivo_no_atencion_no_tuvo_tiempo"),
     NO_CONFIA_EN_LOS_MEDICOS(8, "motivo_no_atencion_no_confia_en_los_medicos"),
-    OTROS(9, "motivo_no_atencion_otros");
+    OTROS(9, "motivo_no_atencion_otros"),
+    NO_REPORTA(99, "motivo_no_atencion_no_reporta");
 
     public static EnumMotivoNoAtencion valueOf(int i) {
         switch (i) {
@@ -46,6 +47,8 @@ public enum EnumMotivoNoAtencion implements ListOption {
                 return NO_CONFIA_EN_LOS_MEDICOS;
             case 9:
                 return OTROS;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

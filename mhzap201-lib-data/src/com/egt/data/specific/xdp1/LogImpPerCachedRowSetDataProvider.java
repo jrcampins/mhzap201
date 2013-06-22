@@ -148,6 +148,7 @@ public class LogImpPerCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     public static final String COLUMNA_FECHA_HORA_TRANSACCION = "fecha_hora_transaccion";
     public static final String COLUMNA_NOMBRE_ARCHIVO = "nombre_archivo";
     public static final String COLUMNA_CODIGO_ARCHIVO = "codigo_archivo";
+    public static final String COLUMNA_ID_FICHA_PERSONA = "id_ficha_persona";
 
     protected void setMapaTiposJava() {
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_LOG_IMP_PER, Long.class);
@@ -239,6 +240,7 @@ public class LogImpPerCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_FECHA_HORA_TRANSACCION, Timestamp.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_NOMBRE_ARCHIVO, String.class);
         this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_CODIGO_ARCHIVO, String.class);
+        this.getRecursoCachedRowSet().getColumnTypes().put(COLUMNA_ID_FICHA_PERSONA, Long.class);
     }
 
     protected void setColumnasInsertables() {
@@ -332,6 +334,7 @@ public class LogImpPerCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasInsertables(COLUMNA_FECHA_HORA_TRANSACCION, true);
         this.setColumnasInsertables(COLUMNA_NOMBRE_ARCHIVO, true);
         this.setColumnasInsertables(COLUMNA_CODIGO_ARCHIVO, true);
+        this.setColumnasInsertables(COLUMNA_ID_FICHA_PERSONA, true);
     }
 
     protected void setColumnasModificables() {
@@ -425,6 +428,7 @@ public class LogImpPerCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
         this.setColumnasModificables(COLUMNA_FECHA_HORA_TRANSACCION, true);
         this.setColumnasModificables(COLUMNA_NOMBRE_ARCHIVO, true);
         this.setColumnasModificables(COLUMNA_CODIGO_ARCHIVO, true);
+        this.setColumnasModificables(COLUMNA_ID_FICHA_PERSONA, true);
     }
 
     public Long getIdLogImpPer() {
@@ -1582,6 +1586,19 @@ public class LogImpPerCachedRowSetDataProvider extends RecursoCachedRowSetDataPr
     }
     public void setCodigoArchivo(RowKey rowKey, String valor) {
         super.setValue(COLUMNA_CODIGO_ARCHIVO, rowKey, valor);
+    }
+
+    public Long getIdFichaPersona() {
+        return (Long) super.getValue(COLUMNA_ID_FICHA_PERSONA);
+    }
+    public Long getIdFichaPersona(RowKey rowKey) {
+        return (Long) super.getValue(COLUMNA_ID_FICHA_PERSONA, rowKey);
+    }
+    public void setIdFichaPersona(Long valor) {
+        super.setValue(COLUMNA_ID_FICHA_PERSONA, valor);
+    }
+    public void setIdFichaPersona(RowKey rowKey, Long valor) {
+        super.setValue(COLUMNA_ID_FICHA_PERSONA, rowKey, valor);
     }
 
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_imp_per";

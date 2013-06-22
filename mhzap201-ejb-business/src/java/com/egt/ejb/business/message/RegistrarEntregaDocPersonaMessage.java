@@ -24,6 +24,8 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public static final long PARAMETRO_FECHA_CERTIFICADO_VIDA = 20122L;
 
+    public static final long PARAMETRO_DIAS_VIGENCIA_CERTIFICADO_VIDA = 21020L;
+
     public static final long PARAMETRO_ES_PERSONA_CON_COPIA_CEDULA = 20679L;
 
     public static final long PARAMETRO_ES_PERSONA_CON_DECLARACION_JUR = 20680L;
@@ -38,19 +40,22 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     protected Date fechaCertificadoVida;
 
+    protected Integer diasVigenciaCertificadoVida;
+
     protected Integer esPersonaConCopiaCedula;
 
     protected Integer esPersonaConDeclaracionJur;
 
     protected String comentariosEntregaDocumentos;
 
-    public RegistrarEntregaDocPersonaMessage(Long idPersona, Integer esPersonaConCerVida, String certificadoVida, Date fechaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur, String comentariosEntregaDocumentos) {
+    public RegistrarEntregaDocPersonaMessage(Long idPersona, Integer esPersonaConCerVida, String certificadoVida, Date fechaCertificadoVida, Integer diasVigenciaCertificadoVida, Integer esPersonaConCopiaCedula, Integer esPersonaConDeclaracionJur, String comentariosEntregaDocumentos) {
         this.init();
         this.funcion = 201000162L;
         this.idPersona = idPersona;
         this.esPersonaConCerVida = esPersonaConCerVida;
         this.certificadoVida = certificadoVida;
         this.fechaCertificadoVida = fechaCertificadoVida;
+        this.diasVigenciaCertificadoVida = diasVigenciaCertificadoVida;
         this.esPersonaConCopiaCedula = esPersonaConCopiaCedula;
         this.esPersonaConDeclaracionJur = esPersonaConDeclaracionJur;
         this.comentariosEntregaDocumentos = comentariosEntregaDocumentos;
@@ -86,6 +91,14 @@ public class RegistrarEntregaDocPersonaMessage extends BusinessProcessMessage im
 
     public void setFechaCertificadoVida(Date fechaCertificadoVida) {
         this.fechaCertificadoVida = fechaCertificadoVida;
+    }
+
+    public Integer getDiasVigenciaCertificadoVida() {
+        return diasVigenciaCertificadoVida;
+    }
+
+    public void setDiasVigenciaCertificadoVida(Integer diasVigenciaCertificadoVida) {
+        this.diasVigenciaCertificadoVida = diasVigenciaCertificadoVida;
     }
 
     public Integer getEsPersonaConCopiaCedula() {

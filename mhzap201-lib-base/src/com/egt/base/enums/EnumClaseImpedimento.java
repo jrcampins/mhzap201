@@ -29,7 +29,8 @@ public enum EnumClaseImpedimento implements ListOption {
     TIENE_ALGUN_RETRASO_MENTAL(11, "clase_impedimento_tiene_algun_retraso_mental"),
     TIENE_LOCURA_DEMENCIA(12, "clase_impedimento_tiene_locura_demencia"),
     OTROS_ESPECIFICAR(13, "clase_impedimento_otros_especificar"),
-    HABLA_CON_MUCHA_DIFICULTAD(16, "clase_impedimento_habla_con_mucha_dificultad");
+    HABLA_CON_MUCHA_DIFICULTAD(16, "clase_impedimento_habla_con_mucha_dificultad"),
+    NO_REPORTA(99, "clase_impedimento_no_reporta");
 
     public static EnumClaseImpedimento valueOf(int i) {
         switch (i) {
@@ -61,6 +62,8 @@ public enum EnumClaseImpedimento implements ListOption {
                 return OTROS_ESPECIFICAR;
             case 16:
                 return HABLA_CON_MUCHA_DIFICULTAD;
+            case 99:
+                return NO_REPORTA;
             default:
                 return null;
         }

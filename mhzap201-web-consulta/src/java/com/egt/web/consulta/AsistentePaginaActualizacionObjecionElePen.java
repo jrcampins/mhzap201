@@ -517,6 +517,10 @@ public class AsistentePaginaActualizacionObjecionElePen {
         return true;
     }
 
+    public boolean isGridReferenciaRendered() {
+        return true;
+    }
+
     // </editor-fold>
 
 /**/

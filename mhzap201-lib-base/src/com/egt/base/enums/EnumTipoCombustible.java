@@ -21,7 +21,8 @@ public enum EnumTipoCombustible implements ListOption {
     GAS(3, "tipo_combustible_gas"),
     KEROSENE_ALCOHOL(4, "tipo_combustible_kerosene_alcohol"),
     ELECTRICIDAD(5, "tipo_combustible_electricidad"),
-    NO_COCINA(6, "tipo_combustible_no_cocina");
+    NO_COCINA(6, "tipo_combustible_no_cocina"),
+    NO_REPORTA(9, "tipo_combustible_no_reporta");
 
     public static EnumTipoCombustible valueOf(int i) {
         switch (i) {
@@ -37,6 +38,8 @@ public enum EnumTipoCombustible implements ListOption {
                 return ELECTRICIDAD;
             case 6:
                 return NO_COCINA;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

@@ -43,6 +43,8 @@ public class ObjecionElePenConstants {
 
     public static final String COLUMNA_OBSERVACIONES_ANULACION = "observaciones_anulacion";
 
+    public static final String COLUMNA_REFERENCIA = "referencia";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_objecion_ele_pen";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_objecion_ele_pen";

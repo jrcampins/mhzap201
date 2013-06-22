@@ -375,4 +375,8 @@ public interface LogImpPerBase {
 //
 //  public void setCodigoArchivo(String codigoArchivo);
 
+    public FichaPersonaBase getFichaPersonaIdFichaPersona();
+//
+//  public void setFichaPersonaIdFichaPersona(FichaPersonaBase fichaPersona);
+
 }

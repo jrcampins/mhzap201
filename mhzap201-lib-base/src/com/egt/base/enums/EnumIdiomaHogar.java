@@ -20,7 +20,8 @@ public enum EnumIdiomaHogar implements ListOption {
     GUARANI_Y_CASTELLANO(2, "idioma_hogar_guarani_y_castellano"),
     CASTELLANO(3, "idioma_hogar_castellano"),
     OTRO_IDIOMA(4, "idioma_hogar_otro_idioma"),
-    NO_HABLA(5, "idioma_hogar_no_habla");
+    NO_HABLA(5, "idioma_hogar_no_habla"),
+    NO_REPORTA(9, "idioma_hogar_no_reporta");
 
     public static EnumIdiomaHogar valueOf(int i) {
         switch (i) {
@@ -34,6 +35,8 @@ public enum EnumIdiomaHogar implements ListOption {
                 return OTRO_IDIOMA;
             case 5:
                 return NO_HABLA;
+            case 9:
+                return NO_REPORTA;
             default:
                 return null;
         }

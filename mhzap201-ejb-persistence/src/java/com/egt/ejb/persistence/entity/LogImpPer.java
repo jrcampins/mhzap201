@@ -22,6 +22,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -304,6 +306,10 @@ public class LogImpPer implements LogImpPerBase, Comparable, Serializable {
 
     @Column(name = "codigo_archivo")
     private String codigoArchivo;
+
+    @JoinColumn(name = "id_ficha_persona", referencedColumnName = "id_ficha_persona")
+    @ManyToOne
+    private FichaPersona fichaPersonaIdFichaPersona;
 
     public LogImpPer() {
     }
@@ -1107,6 +1113,15 @@ public class LogImpPer implements LogImpPerBase, Comparable, Serializable {
 
     public void setCodigoArchivo(String codigoArchivo) {
         this.codigoArchivo = codigoArchivo;
+    }
+
+    @Override
+    public FichaPersona getFichaPersonaIdFichaPersona() {
+        return this.fichaPersonaIdFichaPersona;
+    }
+
+    public void setFichaPersonaIdFichaPersona(FichaPersona fichaPersona) {
+        this.fichaPersonaIdFichaPersona = fichaPersona;
     }
 
     @Override

@@ -199,6 +199,8 @@ public class LogImpPerConstants {
 
     public static final String COLUMNA_CODIGO_ARCHIVO = "codigo_archivo";
 
+    public static final String COLUMNA_ID_FICHA_PERSONA = "id_ficha_persona";
+
     public static final String COLUMNA_IDENTIFICACION_RECURSO = "id_log_imp_per";
 
     public static final String COLUMNA_VERSION_RECURSO = "version_log_imp_per";
@@ -206,4 +208,6 @@ public class LogImpPerConstants {
     public static final long FUNCION_CONSULTAR_LOG_IMP_PER = 331200101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
+
+    public static final long FUNCION_REFERENCIA_CONSULTAR_FICHA_PERSONA = 320200101L;
 }

@@ -85,6 +85,7 @@ public class ObjecionElePenCachedRowSetDataProvider2 extends ObjecionElePenCache
     protected static final long PARAMETRO_NOMBRE_ARCHIVO_ULTIMA_ACT = 20669L;
     protected static final long PARAMETRO_OBSERVACIONES = 20433L;
     protected static final long PARAMETRO_FECHA_ANULACION = 21013L;
+    protected static final long PARAMETRO_REFERENCIA = 20835L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_PROVEEDOR_DAT_EXT = 312100101L;
