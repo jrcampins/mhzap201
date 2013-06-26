@@ -30,7 +30,7 @@ begin
         raise_application_error(err_number, msg_string, true);
     else
         --Actualiza elegibilidad de la persona 
-        condicion_elegibilidad:=sp$persona.act_persona_elegible(persona_consultada);
+        --condicion_elegibilidad:=sp$persona.act_persona_elegible(persona_consultada);
         --La persona es elegible (condicion_elegibilidad=0): Se aprueba la pensión
         if (condicion_elegibilidad=0) then  
             update persona 

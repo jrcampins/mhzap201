@@ -31,7 +31,7 @@ begin
         --Solo se aprueban reconsideraciones de personas que cumplen con requisitos personales
         requisitos_personales:=sp$persona.consultar_req_pers(persona_consultada);
         --Solo se aprueban reconsideraciones de personas elegibles
-        condicion_elegibilidad:=sp$persona.act_persona_elegible(persona_consultada);
+        --condicion_elegibilidad:=sp$persona.act_persona_elegible(persona_consultada);
         --Cuando se aprueba una reconsideración se aprueba la pensión
         if requisitos_personales=0 and condicion_elegibilidad=0 and vigencia_pension=0 then  
             update persona 

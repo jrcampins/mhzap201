@@ -8,7 +8,7 @@ function aprobar_exclusion_pen(sime varchar2) return varchar2 is
     cod_sime varchar2(200);
     condicion_elegibilidad number;
     causa_revocacion number;
-    otra_causa_revocacion varchar2(2000);
+    otra_causa_revocacion varchar2(4000);
     mensaje varchar2(4000);
     type pen_oto is record(
           id_persona number,
@@ -51,16 +51,16 @@ begin
             for i in vista_pen_oto.first..vista_pen_oto.last loop
                 begin
                 total_procesadas:=total_procesadas+1;
-                condicion_elegibilidad:=sp$persona.act_persona_elegible(vista_pen_oto(i).id_persona);
-                if condicion_elegibilidad=0 then
-                    continue;
-                --Si persona no es elegible por un solo motivo
-                elsif condicion_elegibilidad <>99 then
-                    causa_revocacion:=condicion_elegibilidad;
-                --Si persona no es elegible por varios motivos
-                else
+                begin
+                    select * into   row_persona from persona p where  p.id_persona = vista_pen_oto(i).id_persona;
+                exception
+                    when no_data_found then continue;
+                end;
+                if row_persona.es_persona_elegible_para_pen=0 then
                     causa_revocacion:=99;
-                    otra_causa_revocacion:='Denuncia confirmada por varias objeciones';
+                    otra_causa_revocacion:='Exclusión aprobada por no elegibilidad';
+                else
+                    continue;
                 end if;
                 mensaje:=sp$persona.revocar_pension(vista_pen_oto(i).id_persona,causa_revocacion,otra_causa_revocacion,'Exclusión aprobada automáticamente');
                 if mensaje like 'Pensión Revocada%' then

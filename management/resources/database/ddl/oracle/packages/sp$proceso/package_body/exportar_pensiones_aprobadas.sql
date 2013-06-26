@@ -26,10 +26,10 @@ begin
     end if;
     begin
         begin
-            select directory_path into file_path from all_directories where directory_name='MHZAP201_SPOOLS';
+            select directory_path into file_path from all_directories where directory_name='MHZAP201_SPOOL';
         exception when others  then null;
         end;
-        output_file := utl_file.fopen('MHZAP201_SPOOLS',nombre_archivo, 'W');
+        output_file := utl_file.fopen('MHZAP201_SPOOL',nombre_archivo, 'W');
         v_str:='Cédula;Primer Nombre;Segundo Nombre;Primer Apellido;Segundo Apellido;Apellido Casada;Edad';
         utl_file.put_line(output_file,CONVERT(v_str,'WE8ISO8859P1'));
         --Se consultan las personas
@@ -64,7 +64,7 @@ begin
              RAISE_APPLICATION_ERROR(-20054, 'Operación Inválida. Verifique que el archivo no se encuentra abierto');
         when UTL_FILE.INVALID_PATH then
              UTL_FILE.FCLOSE_ALL;
-             RAISE_APPLICATION_ERROR(-20054, 'Ruta Inválida. Verifique el nombre del archivo');
+             RAISE_APPLICATION_ERROR(-20054, 'Ruta Inválida. Verifique el nombre del archivo '||file_path );
         when others then
              UTL_FILE.FCLOSE_ALL;
              RAISE_APPLICATION_ERROR(-20054, 'Error escribiendo en el archivo');

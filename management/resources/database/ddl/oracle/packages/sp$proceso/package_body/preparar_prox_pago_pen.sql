@@ -202,7 +202,7 @@ begin
                 --Si está vigente se verifica la elegibilidad
                 if condicion_vigencia=0 then
                     --Se determina si hay causa de no elegibilidad
-                    condicion_elegibilidad:=sp$persona.act_persona_elegible(table_log(i).id_persona);
+                    --condicion_elegibilidad:=sp$persona.act_persona_elegible(table_log(i).id_persona);
                     --Si sigue siendo elegible no se hace nada
                     if condicion_elegibilidad=0 then
                         mensaje:='Pensión sigue estando vigente';
