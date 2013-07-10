@@ -222,6 +222,7 @@ begin
             update log_imp_pot set es_importado=1, 
                                    nombre_archivo=archivo,
                                    codigo_archivo=codigo,
+                                   id_potencial_ben=new_potencial_ben.id_potencial_ben,
                                    fecha_hora_transaccion=current_timestamp 
             where id_log_imp_pot=registro.id_log_imp_pot;
         --Si no se pudo insertar el registro se marca el motivo

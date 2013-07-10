@@ -1,7 +1,14 @@
 procedure importar_ficha_persona_dgeec(nombre_archivo varchar2, codigo_archivo varchar2, retorno out number) as
     --retorno number:=0;
+    row_potencial_ben potencial_ben%rowtype;
+    new_potencial_ben potencial_ben%rowtype;
+    row_persona persona%rowtype;
+    codigo_pot_ben varchar2(200);
     type tabla_bigints is table of ficha_hogar.id_ficha_hogar%type      index by binary_integer;
     ids    tabla_bigints;
+    type tabla_bigints_fp is table of ficha_persona.id_ficha_persona%type      index by binary_integer;
+    ids_fp    tabla_bigints_fp;
+    limite_icv number;
     icv varchar(200);
     indice number:=0;
     archivo varchar2(2000);
@@ -527,6 +534,8 @@ begin
             insert into ficha_persona values new_ficha_persona;
                 --Se incrementa el numero de insertados
             retorno:=retorno+1;
+            --Extra: se registra el id para luego crear los potenciales beneficiarios
+            ids_fp(retorno):=new_ficha_persona.id_ficha_persona;
             
             begin
                 select codigo_ficha_persona into mensaje 
@@ -540,18 +549,19 @@ begin
             if sql%found then
                 mensaje := 'Insertada Ficha Persona '||mensaje;
             end if;
-
+            
             update log_imp_per_eec set es_importado=1,
                                 id_ficha_persona=new_ficha_persona.id_ficha_persona,
                                 observacion=mensaje,
                                 nombre_archivo=archivo, 
                                 codigo_archivo=codigo, 
                                 fecha_hora_transaccion= current_timestamp 
-            where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
+            where id_log_imp_per_eec=current_row.id_log_imp_per_eec;            
         exception
                 when others then
-                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
-                    update log_imp_per_eec set es_importado=0, id_ficha_persona=null, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
+                   mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
+                   update log_imp_per_eec set es_importado=0, id_ficha_persona=null, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
+                --raise_application_error(err_number, SQLERRM, true);
                 continue;
         end;
     end loop;
@@ -567,5 +577,165 @@ begin
                     --dbms_output.put_line('Error calculando icv '||mensaje);
                  continue;
         end;
+    end loop;
+    --Extra insertar potenciales beneficiarios
+    for i in 1..ids_fp.count loop
+        begin
+            --1. se busca la ficha persona
+            begin
+                select * into new_ficha_persona
+                from ficha_persona 
+                where id_ficha_persona=ids_fp(i);
+            exception when no_data_found then null;
+            end;
+            --2. se busca la ficha hogar
+            begin
+                select * into row_ficha_hogar
+                from ficha_hogar    
+                where id_ficha_hogar=new_ficha_persona.id_ficha_hogar;
+            exception when no_data_found then null;
+            end;
+            --3. se busca el corte del ICV
+            begin
+                select ta.limite_indice_calidad_vida into limite_icv 
+                from ubicacion u 
+                left join tipo_area ta on u.numero_tipo_area=ta.numero_tipo_area 
+                where u.id_ubicacion=row_ficha_hogar.id_barrio;
+            exception
+            when no_data_found then null;
+            end;
+            --4. Se toman los registros acreditados
+            if row_ficha_hogar.indice_Calidad_vida<=limite_icv 
+               and utils.years_since(new_ficha_persona.fecha_nacimiento)>=65 then
+                --4.1. Se verifica si el registro tiene potencial beneficiario ya asociado
+                if new_ficha_persona.id_potencial_ben is not null then
+                    begin
+                        select  observacion into mensaje
+                        from log_imp_per_eec 
+                        where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                    exception when no_data_found then null;
+                    end;
+                    if sql%found then
+                        mensaje:=mensaje||'. Ficha ya está vinculada a un Potencial Beneficiario, no se registra como nuevo.';
+                    end if;
+                    update log_imp_per_eec
+                    set observacion=mensaje
+                    where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                --4.2 Si no hay potencial beneficiario se registra uno nuevo
+                else 
+                    --4.2.1 Se identifica si la ficha está vinculada a una persona
+                    begin
+                        select * into row_persona
+                        from persona 
+                        where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                    exception when no_data_found then null;
+                    end;
+                    --4.2.2 Si consigue la persona inserta el nuevo potencial beneficiario con cédula
+                    if sql%found then
+                        new_potencial_ben.id_potencial_ben:=utils.bigintid();
+                        new_potencial_ben.version_potencial_ben:=0;
+                        new_potencial_ben.numero_tipo_reg_pot_ben:=1;
+                        new_potencial_ben.id_persona:=row_persona.id_persona;
+                        new_potencial_ben.fecha_registro_pot_ben:=sysdate;
+                        new_potencial_ben.numero_condicion_censo:=5;
+                        new_potencial_ben.es_potencial_ben_inactivo:=0;
+                        new_potencial_ben.es_potencial_ben_migrado:=0;
+                        insert into potencial_ben values new_potencial_ben;
+                    --4.2.3 Si no la consigue registra el nuevo potencial beneficiario sin cédula
+                    else
+                        new_potencial_ben.id_persona:=null;
+                        new_potencial_ben.id_potencial_ben:=utils.bigintid();
+                        new_potencial_ben.version_potencial_ben:=0;
+                        new_potencial_ben.es_paraguayo_natural:=1;
+                        new_potencial_ben.es_indigena:=0;
+                        new_potencial_ben.numero_tipo_reg_pot_ben:=2;
+                        new_potencial_ben.numero_cedula:=new_ficha_persona.numero_cedula;
+                        new_potencial_ben.letra_cedula:=new_ficha_persona.letra_cedula;
+                        new_potencial_ben.primer_nombre:=new_ficha_persona.primer_nombre;
+                        new_potencial_ben.segundo_nombre:=new_ficha_persona.segundo_nombre;
+                        new_potencial_ben.primer_apellido:=new_ficha_persona.primer_apellido;
+                        new_potencial_ben.apellido_casada:=new_ficha_persona.apellido_casada;
+                        new_potencial_ben.segundo_apellido:=new_ficha_persona.segundo_apellido;
+                        new_potencial_ben.apodo:=new_ficha_persona.apodo;
+                        new_potencial_ben.es_persona_con_empleo:=0;
+                        new_potencial_ben.es_persona_con_jubilacion:= 0;
+                        new_potencial_ben.es_persona_con_pension:=0;
+                        new_potencial_ben.es_persona_con_subsidio:=0;
+                        new_potencial_ben.es_persona_con_deuda:=0;
+                        new_potencial_ben.es_persona_con_pena_judicial:=0;
+                        new_potencial_ben.es_persona_con_cer_vida:=0;
+                        new_potencial_ben.es_persona_con_carta_renuncia:=0;
+                        new_potencial_ben.es_potencial_ben_inactivo:=0;
+                        new_potencial_ben.numero_telefono_resp_hogar:=null;
+                        new_potencial_ben.direccion:=row_ficha_hogar.direccion;
+                        new_potencial_ben.id_barrio:=row_ficha_hogar.id_barrio;
+                        new_potencial_ben.id_departamento:=row_ficha_hogar.id_departamento;
+                        new_potencial_ben.id_distrito:=row_ficha_hogar.id_distrito;
+                        new_potencial_ben.nombre_referente:=null;
+                        new_potencial_ben.numero_telefono_referente:=null;
+                        new_potencial_ben.id_ficha_persona:=new_ficha_persona.id_ficha_persona;
+                        new_potencial_ben.indice_calidad_vida:=row_ficha_hogar.indice_calidad_vida;
+                        new_potencial_ben.codigo_potencial_ben:=sp$potencial_ben.concat_codigo(new_potencial_ben);
+                        new_potencial_ben.fecha_registro_pot_ben:=sysdate;
+                        new_potencial_ben.numero_condicion_censo:=5;
+                        new_potencial_ben.es_potencial_ben_inactivo:=0;
+                        new_potencial_ben.es_potencial_ben_migrado:=0;
+                        insert into potencial_ben values new_potencial_ben;
+                    end if;
+                    begin
+                        select  observacion into mensaje
+                        from log_imp_per_eec 
+                        where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                    exception when no_data_found then null;
+                    end;
+                    if sql%found then
+                        begin
+                            select codigo_potencial_ben into codigo_pot_ben from potencial_ben where id_potencial_ben=new_potencial_ben.id_potencial_ben;
+                        exception when no_data_found then null;
+                        end;
+                        if sql%found then
+                            --mensaje:=mensaje||'. Potencial Beneficiario registrado (Código '||codigo_pot_ben||')';
+                            if new_potencial_ben.id_persona is not null then
+                                mensaje:=mensaje||'. Potencial Beneficiario registrado con cédula.';
+                            else
+                                mensaje:=mensaje||'. Potencial Beneficiario registrado sin cédula.(Código '||codigo_pot_ben||')';
+                            end if;
+                        end if;
+                    end if;
+                    update log_imp_per_eec
+                    set observacion=mensaje
+                    where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                end if;
+            else
+                begin
+                    select  observacion into mensaje
+                    from log_imp_per_eec 
+                    where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                exception when no_data_found then null;
+                end;
+                mensaje:=mensaje||'. No es Potencial Beneficiario';
+                update log_imp_per_eec
+                    set observacion=mensaje
+                where id_ficha_persona=new_ficha_persona.id_ficha_persona;                    
+            end if;
+            exception
+                when others then
+                    begin
+                        select  observacion into mensaje
+                        from log_imp_per_eec 
+                        where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                    exception when no_data_found then null;
+                    end;
+                    if new_potencial_ben.letra_cedula is not null then
+                        codigo_pot_ben:=new_potencial_ben.letra_cedula||'-'||new_potencial_ben.numero_cedula;
+                    else
+                        codigo_pot_ben:=new_potencial_ben.numero_cedula;
+                    end if;
+                    mensaje:=mensaje||'. Registro de Potencial Beneficiario duplicado (código '||codigo_pot_ben||')';
+                    update log_imp_per_eec
+                    set observacion=mensaje
+                    where id_ficha_persona=new_ficha_persona.id_ficha_persona;
+                    continue;
+                end;       
     end loop;
 end;
