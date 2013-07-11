@@ -1,6 +1,6 @@
 CREATE OR REPLACE VIEW ficha_persona_no_importada
 AS
-SELECT
+select
     es_ficha_persona_importada,
     observacion,
     fecha_importacion,
@@ -13,7 +13,7 @@ SELECT
     edad,
     parentesco,
     nombre_archivo
-FROM 
+from 
 ((select l.id_log_imp_per as id,
          'SAS' as fuente,
          l.P01A||'-'||l.P01B||'-'||l.P01C||'-'||l.P01D||'-'||l.P02||'-'||l.P03||'-'||l.p43 as codigo_ficha,

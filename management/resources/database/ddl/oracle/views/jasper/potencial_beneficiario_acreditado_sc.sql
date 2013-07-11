@@ -1,6 +1,6 @@
 CREATE OR REPLACE VIEW potencial_ben_acreditado_sc
 AS
-SELECT  
+select
     pb.nombre_potencial_ben,
     pb.codigo_potencial_ben,
     utils.years_since(pb.fecha_nacimiento) AS edad,
