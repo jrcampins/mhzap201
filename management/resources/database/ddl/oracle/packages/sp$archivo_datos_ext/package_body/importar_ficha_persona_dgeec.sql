@@ -47,11 +47,11 @@ begin
     codigo:=codigo_archivo;
     retorno:=0;
     if nombre_archivo is null then
-        msg_string := 'archivo no existe';
+        msg_string := 'Archivo no existe';
         raise_application_error(err_number, msg_string, true);
     end if;
     if codigo_archivo is null then
-        msg_string := 'codigo de archivo no existe';
+        msg_string := 'Código de archivo no existe';
         raise_application_error(err_number, msg_string, true);
     else
         begin
@@ -327,14 +327,14 @@ begin
                 --Si no hay ficha hogar, no tiene sentido procesar la ficha
                 exception
                     when no_data_found then 
-                        msg_string:= 'No hay Ficha Hogar asociada a la Persona';
+                        msg_string:= 'No se puede insertar Ficha Persona sin Ficha Hogar';
                         raise_application_error(err_number, msg_string, true);
                     when others then 
                         msg_string:= 'Error recuperando ficha hogar';
                         raise_application_error(err_number, msg_string, true);
                 end;
                 if not sql%found then
-                    msg_string:= 'No hay Ficha Hogar asociada a la Persona';
+                    msg_string:= 'No se puede insertar Ficha Persona sin Ficha Hogar';
                     raise_application_error(err_number, msg_string, true);
                 end if;
                 --Se indica que más adelante hay que actualizar
@@ -348,7 +348,7 @@ begin
             if row_ficha_hogar.id_ficha_hogar is not null then
                 new_ficha_persona.id_ficha_hogar:=row_ficha_hogar.id_ficha_hogar;
             else
-                msg_string:='No hay Id de Ficha hogar asociado a la Persona';
+                msg_string:='No se puede insertar Ficha Persona sin Ficha Hogar';
                 raise_application_error(err_number, msg_string, true);
             end if;
             --Se toma el numero del respondente
@@ -536,20 +536,7 @@ begin
             retorno:=retorno+1;
             --Extra: se registra el id para luego crear los potenciales beneficiarios
             ids_fp(retorno):=new_ficha_persona.id_ficha_persona;
-            
-            begin
-                select codigo_ficha_persona into mensaje 
-                from ficha_persona 
-                where id_ficha_persona=new_ficha_persona.id_ficha_persona;
-            exception
-                when no_data_found then
-                msg_string := 'Error insertando ficha_persona (id= '||new_ficha_persona.id_ficha_persona;
-                raise_application_error(err_number, msg_string, true);
-            end;
-            if sql%found then
-                mensaje := 'Insertada Ficha Persona '||mensaje;
-            end if;
-            
+            mensaje:='';
             update log_imp_per_eec set es_importado=1,
                                 id_ficha_persona=new_ficha_persona.id_ficha_persona,
                                 observacion=mensaje,
@@ -560,6 +547,9 @@ begin
         exception
                 when others then
                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
+                   if mensaje like '%UQ_FICHA_PERSONA_001%' then
+                        mensaje:='Error: (ORA-20000: Ficha Persona duplicada. No se puede insertar)';
+                   end if;
                    update log_imp_per_eec set es_importado=0, id_ficha_persona=null, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per_eec=current_row.id_log_imp_per_eec;
                 --raise_application_error(err_number, SQLERRM, true);
                 continue;
@@ -616,7 +606,7 @@ begin
                     exception when no_data_found then null;
                     end;
                     if sql%found then
-                        mensaje:=mensaje||'. Ficha ya está vinculada a un Potencial Beneficiario, no se registra como nuevo.';
+                        mensaje:='Ficha ya está vinculada a un Potencial Beneficiario, no se registra como nuevo.';
                     end if;
                     update log_imp_per_eec
                     set observacion=mensaje
@@ -656,6 +646,7 @@ begin
                         new_potencial_ben.primer_apellido:=new_ficha_persona.primer_apellido;
                         new_potencial_ben.apellido_casada:=new_ficha_persona.apellido_casada;
                         new_potencial_ben.segundo_apellido:=new_ficha_persona.segundo_apellido;
+                        new_potencial_ben.fecha_nacimiento:=new_ficha_persona.fecha_nacimiento;
                         new_potencial_ben.apodo:=new_ficha_persona.apodo;
                         new_potencial_ben.es_persona_con_empleo:=0;
                         new_potencial_ben.es_persona_con_jubilacion:= 0;
@@ -696,9 +687,9 @@ begin
                         if sql%found then
                             --mensaje:=mensaje||'. Potencial Beneficiario registrado (Código '||codigo_pot_ben||')';
                             if new_potencial_ben.id_persona is not null then
-                                mensaje:=mensaje||'. Potencial Beneficiario registrado con cédula.';
+                                mensaje:='';
                             else
-                                mensaje:=mensaje||'. Potencial Beneficiario registrado sin cédula.(Código '||codigo_pot_ben||')';
+                                mensaje:='Potencial Beneficiario registrado sin cédula. No hay un registro de identificaciones que coincida con los datos de la Ficha.';
                             end if;
                         end if;
                     end if;
@@ -713,7 +704,7 @@ begin
                     where id_ficha_persona=new_ficha_persona.id_ficha_persona;
                 exception when no_data_found then null;
                 end;
-                mensaje:=mensaje||'. No es Potencial Beneficiario';
+                mensaje:='';
                 update log_imp_per_eec
                     set observacion=mensaje
                 where id_ficha_persona=new_ficha_persona.id_ficha_persona;                    
@@ -731,7 +722,7 @@ begin
                     else
                         codigo_pot_ben:=new_potencial_ben.numero_cedula;
                     end if;
-                    mensaje:=mensaje||'. Registro de Potencial Beneficiario duplicado (código '||codigo_pot_ben||')';
+                    mensaje:='Registro de Potencial Beneficiario duplicado';
                     update log_imp_per_eec
                     set observacion=mensaje
                     where id_ficha_persona=new_ficha_persona.id_ficha_persona;

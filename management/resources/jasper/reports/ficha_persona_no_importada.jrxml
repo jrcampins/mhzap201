@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="potencial_ben_por_icv" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="948" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="persona_con_pension_otorgada" pageWidth="1008" pageHeight="612" orientation="Landscape" columnWidth="948" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="7"/>
+	<property name="ireport.x" value="38"/>
 	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -13,39 +13,32 @@
 	</parameter>
 	<parameter name="END_USER_CODE" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[select * from potencial_ben_por_icv]]>
+		<![CDATA[select * from ficha_persona_no_importada]]>
 	</queryString>
+	<field name="ES_FICHA_PERSONA_IMPORTADA" class="java.math.BigDecimal"/>
+	<field name="OBSERVACION" class="java.lang.String"/>
+	<field name="FECHA_IMPORTACION" class="java.sql.Timestamp"/>
+	<field name="ANHO" class="java.math.BigDecimal"/>
+	<field name="ID" class="java.math.BigDecimal"/>
+	<field name="FUENTE" class="java.lang.String"/>
+	<field name="CODIGO_FICHA" class="java.lang.String"/>
 	<field name="CEDULA" class="java.lang.String"/>
 	<field name="NOMBRE_PERSONA" class="java.lang.String"/>
-	<field name="EDAD" class="java.math.BigDecimal"/>
-	<field name="DEPARTAMENTO" class="java.lang.String"/>
-	<field name="ID_DEPARTAMENTO" class="java.math.BigDecimal"/>
-	<field name="DISTRITO" class="java.lang.String"/>
-	<field name="ID_DISTRITO" class="java.math.BigDecimal"/>
-	<field name="BARRIO" class="java.lang.String"/>
-	<field name="ID_BARRIO" class="java.math.BigDecimal"/>
-	<field name="NUMERO_TIPO_AREA" class="java.math.BigDecimal"/>
-	<field name="AREA" class="java.lang.String"/>
-	<field name="DIRECCION" class="java.lang.String"/>
-	<field name="NUMERO_CEDULA" class="java.math.BigDecimal"/>
-	<field name="FECHA_REGISTRO_POT_BEN" class="java.sql.Timestamp"/>
-	<field name="ANHO" class="java.math.BigDecimal"/>
-	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
-	<field name="NUMERO_CONDICION_CENSO" class="java.math.BigDecimal"/>
-	<field name="CODIGO_CONDICION_CENSO" class="java.lang.String"/>
-	<field name="ES_POTENCIAL_BEN_MIGRADO" class="java.lang.String"/>
-	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
-		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
+	<field name="EDAD" class="java.lang.String"/>
+	<field name="PARENTESCO" class="java.lang.String"/>
+	<field name="NOMBRE_ARCHIVO" class="java.lang.String"/>
+	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_archivo" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
 	</variable>
-	<variable name="total_potenciales_beneficiarios" class="java.lang.Integer" calculation="Count">
-		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
+	<variable name="total_fichas" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
 	</variable>
-	<group name="grupo_departamento_distrito" isStartNewPage="true" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{DEPARTAMENTO}+$F{DISTRITO}]]></groupExpression>
+	<group name="grupo_archivo" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{NOMBRE_ARCHIVO}]]></groupExpression>
 		<groupHeader>
-			<band height="150" splitType="Stretch">
+			<band height="162" splitType="Prevent">
 				<rectangle>
-					<reportElement key="rectangle-1" x="11" y="4" width="929" height="114" backcolor="#CCCCCC"/>
+					<reportElement key="rectangle-1" x="19" y="0" width="929" height="109" backcolor="#CCCCCC"/>
 					<graphicElement>
 						<pen lineWidth="1.0" lineStyle="Solid"/>
 					</graphicElement>
@@ -65,18 +58,18 @@
 					<text><![CDATA[SUB-SECRETARIA DE ESTADO DE ADMINISTRACION FINANCIERA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-3" x="153" y="53" width="620" height="17"/>
+					<reportElement key="staticText-3" x="158" y="53" width="615" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>
 					<text><![CDATA[ "PENSION ALIMENTARIA PARA LAS PERSONAS ADULTAS MAYORES EN SITUACION DE POBREZA" LEY N° 3728/09]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-4" x="292" y="69" width="364" height="17"/>
+					<reportElement key="staticText-4" x="249" y="69" width="428" height="17"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="11"/>
 					</textElement>
-					<text><![CDATA[LISTADO DE POTENCIALES BENEFICIARIOS POR ICV]]></text>
+					<text><![CDATA[LISTADO DE FICHAS NO IMPORTADAS]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-6" x="780" y="8" width="78" height="13"/>
@@ -90,7 +83,7 @@
 					<text><![CDATA[Fecha Reporte: ]]></text>
 				</staticText>
 				<image>
-					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="23" y="9" width="109" height="104"/>
+					<reportElement key="image-7" stretchType="RelativeToTallestObject" x="30" y="5" width="109" height="98"/>
 					<imageExpression class="java.lang.String"><![CDATA[$P{RESOURCES_DIR} + "logo_mh.png"]]></imageExpression>
 				</image>
 				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="false">
@@ -133,7 +126,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA[$P{END_USER_CODE}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-8" mode="Opaque" x="11" y="127" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-8" mode="Opaque" x="11" y="142" width="36" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -144,10 +137,10 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[ORDEN]]></text>
+					<text><![CDATA[Nº]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-9" mode="Opaque" x="47" y="127" width="62" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-10" mode="Opaque" x="47" y="142" width="57" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -158,25 +151,11 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[NRO. C.I.]]></text>
-				</staticText>
-				<staticText>
-					<reportElement key="staticText-10" mode="Opaque" x="109" y="127" width="173" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
-					<box>
-						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
-					</textElement>
-					<text><![CDATA[NOMBRES
+					<text><![CDATA[FUENTE
 ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-11" mode="Opaque" x="282" y="127" width="29" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-11" mode="Opaque" x="104" y="142" width="159" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -187,11 +166,10 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[EDAD
-]]></text>
+					<text><![CDATA[FICHA PERSONA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="406" y="127" width="95" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-12" mode="Opaque" x="263" y="142" width="178" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -202,29 +180,8 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[BARRIO]]></text>
+					<text><![CDATA[NOMBRE PERSONA]]></text>
 				</staticText>
-				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="585" y="127" width="188" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
-					<box>
-						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
-					</textElement>
-					<text><![CDATA[DIRECCION]]></text>
-				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement key="textField-3" x="228" y="91" width="493" height="17"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="10" isItalic="true"/>
-					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[" DEPARTAMENTO: " + $F{DEPARTAMENTO} +" DISTRITO: " + $F{DISTRITO} + " - AÑO: " + $F{ANHO}]]></textFieldExpression>
-				</textField>
 				<staticText>
 					<reportElement key="staticText-17" x="780" y="34" width="78" height="13"/>
 					<box>
@@ -262,7 +219,7 @@
 					<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="staticText-18" mode="Opaque" x="773" y="127" width="32" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="521" y="142" width="33" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -271,12 +228,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="10"/>
 					</textElement>
-					<text><![CDATA[ICV]]></text>
+					<text><![CDATA[EDAD]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="311" y="127" width="95" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="554" y="142" width="60" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -285,12 +242,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
-					<text><![CDATA[DISTRITO]]></text>
+					<text><![CDATA[PARENTESCO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-13" mode="Opaque" x="805" y="127" width="135" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="614" y="142" width="82" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -299,12 +256,12 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="8"/>
 					</textElement>
-					<text><![CDATA[PROCEDIMIENTO]]></text>
+					<text><![CDATA[FECHA IMPORTACIÓN]]></text>
 				</staticText>
 				<staticText>
-					<reportElement key="staticText-12" mode="Opaque" x="501" y="127" width="84" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<reportElement key="staticText-13" mode="Opaque" x="441" y="142" width="80" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
 					<box>
 						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -313,10 +270,31 @@
 						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="9"/>
+						<font fontName="Arial" size="10"/>
 					</textElement>
-					<text><![CDATA[TIPO DE AREA]]></text>
+					<text><![CDATA[CEDULA]]></text>
 				</staticText>
+				<staticText>
+					<reportElement key="staticText-13" mode="Opaque" x="696" y="142" width="244" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+					<text><![CDATA[OBSERVACIONES]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-3" x="219" y="86" width="493" height="17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["ARCHIVO: " +$F{NOMBRE_ARCHIVO}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -336,76 +314,69 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="15" splitType="Stretch">
-			<textField pattern="#,##0" isBlankWhenNull="true">
-				<reportElement key="textField" x="48" y="2" width="58" height="12"/>
+		<band height="19" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="47" y="0" width="57" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NUMERO_CEDULA}.intValue()]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FUENTE}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="111" y="2" width="169" height="12"/>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" x="104" y="0" width="159" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO_FICHA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="10" y="0" width="33" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{contador_item_anho_distrito}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" x="263" y="0" width="178" height="12"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{NOMBRE_PERSONA}]]></textFieldExpression>
 			</textField>
-			<textField pattern="###0" isBlankWhenNull="true">
-				<reportElement key="textField" x="286" y="2" width="23" height="12"/>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField" x="522" y="0" width="32" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Double"><![CDATA[$F{EDAD}.doubleValue()]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField" x="15" y="2" width="26" height="12"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{contador_item_anho_distrito}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EDAD}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-7" x="774" y="2" width="31" height="12"/>
+				<reportElement key="textField" x="441" y="0" width="80" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{INDICE_CALIDAD_VIDA}.toString()+$F{ES_POTENCIAL_BEN_MIGRADO}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="311" y="3" width="95" height="12"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{DISTRITO}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="406" y="2" width="95" height="12"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="9"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{BARRIO}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="585" y="3" width="188" height="12"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CEDULA}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField" x="805" y="2" width="135" height="12"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{CODIGO_CONDICION_CENSO}.toUpperCase()]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="501" y="3" width="84" height="12"/>
+				<reportElement key="textField" x="554" y="0" width="60" height="12"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{AREA}.toUpperCase()]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PARENTESCO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField" x="614" y="0" width="82" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{FECHA_IMPORTACION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="696" y="0" width="244" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OBSERVACION}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -418,11 +389,11 @@
 	<summary>
 		<band height="22" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="446" height="16" backcolor="#CCCCCC"/>
+				<reportElement key="textField-6" mode="Transparent" x="11" y="5" width="666" height="16" backcolor="#CCCCCC"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[" Cantidad de potenciales beneficiarios con  ICV:  " + $V{total_potenciales_beneficiarios}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA["Total de fichas de persona no importadas: "+$V{total_fichas}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement key="line-1" x="11" y="3" width="929" height="1"/>
@@ -430,13 +401,6 @@
 					<pen lineWidth="1.0" lineStyle="Double"/>
 				</graphicElement>
 			</line>
-			<textField isBlankWhenNull="false">
-				<reportElement key="textField-6" mode="Transparent" x="509" y="6" width="431" height="16" backcolor="#CCCCCC"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[" * Indica que el Potencial Beneficiario fue migrado"]]></textFieldExpression>
-			</textField>
 		</band>
 	</summary>
 </jasperReport>

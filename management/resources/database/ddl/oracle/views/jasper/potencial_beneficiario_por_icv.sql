@@ -20,6 +20,7 @@ SELECT
     pb.indice_calidad_vida,
     pb.numero_condicion_censo,
     cc.codigo_condicion_censo,
+    pb.numero_tipo_reg_pot_ben,
     case when pb.es_potencial_ben_migrado=1 then '*' else ' ' end as es_potencial_ben_migrado
 FROM potencial_ben pb
    LEFT JOIN ubicacion ubicacion_1x4 ON ubicacion_1x4.id_ubicacion = pb.id_departamento
@@ -28,5 +29,4 @@ FROM potencial_ben pb
    LEFT JOIN condicion_censo cc ON cc.numero_condicion_censo=pb.numero_condicion_censo
    LEFT JOIN tipo_area ta ON ubicacion_1x7.numero_tipo_area=ta.numero_tipo_area
 WHERE pb.indice_calidad_vida is not null
-ORDER BY  pb.nombre_potencial_ben,cc.numero_condicion_censo,pb.id_departamento,
-    pb.id_distrito, pb.id_barrio;
+ORDER BY  departamento, distrito, numero_cedula,pb.nombre_potencial_ben;

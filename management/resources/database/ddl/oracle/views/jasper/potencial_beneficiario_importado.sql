@@ -1,6 +1,8 @@
 CREATE OR REPLACE VIEW potencial_ben_importado
 AS
-SELECT 
+SELECT
+    pb.codigo_potencial_ben as beneficiario,
+    fp.id_ficha_persona,
     fp.nombre_ficha_persona,
     case when pb.codigo_potencial_ben is not null then pb.codigo_potencial_ben else to_char(fp.numero_cedula) end as num_cedula, 
     utils.years_since(fp.fecha_nacimiento) AS edad,

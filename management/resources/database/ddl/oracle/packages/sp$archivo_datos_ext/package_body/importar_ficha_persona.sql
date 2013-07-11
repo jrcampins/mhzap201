@@ -316,14 +316,14 @@ begin
                 --Si no hay ficha hogar, no tiene sentido procesar la ficha
                 exception
                     when no_data_found then 
-                        msg_string:= 'No hay Ficha Hogar asociada a la Persona';
+                        msg_string:= 'No se puede insertar Ficha Persona sin Ficha Hogar';
                         raise_application_error(err_number, msg_string, true);
                     when others then 
-                        msg_string:= 'Error recuperando ficha hogar';
+                        msg_string:= 'Error recuperando la Ficha Hogar';
                         raise_application_error(err_number, msg_string, true);
                 end;
                 if not sql%found then
-                    msg_string:= 'No hay Ficha Hogar asociada a la Persona';
+                    msg_string:= 'No se puede insertar Ficha Persona sin Ficha Hogar';
                     raise_application_error(err_number, msg_string, true);
                 end if;
                 --Se indica que más adelante hay que actualizar
@@ -333,7 +333,7 @@ begin
             if row_ficha_hogar.id_ficha_hogar is not null then
                 new_ficha_persona.id_ficha_hogar:=row_ficha_hogar.id_ficha_hogar;
             else
-                msg_string:='No hay Id de Ficha hogar asociado a la Persona';
+                msg_string:='No se puede insertar Ficha Persona sin Ficha Hogar';
                 raise_application_error(err_number, msg_string, true);
             end if;
             --Se toma el numero del respondente
@@ -543,7 +543,7 @@ begin
                 where id_ficha_persona=new_ficha_persona.id_ficha_persona;
             exception
                 when no_data_found then
-                msg_string := 'Error insertando ficha_persona (id= '||new_ficha_persona.id_ficha_persona;
+                msg_string := 'Error insertando ficha_persona';
                 raise_application_error(err_number, msg_string, true);
             end;
             if sql%found then
@@ -558,7 +558,10 @@ begin
             where id_log_imp_per=current_row.id_log_imp_per;
         exception
                 when others then
-                    mensaje:='Error '||SQLCODE||'('||SQLERRM||')';
+                    mensaje:='Error: ('||SQLERRM||')';
+                    if mensaje like '%UQ_FICHA_PERSONA_001%' then
+                        mensaje:='Error: (ORA-20000: Ficha Persona duplicada. No se puede insertar)';
+                    end if;
                     update log_imp_per set es_importado=0, id_ficha_persona=null, nombre_archivo=archivo, codigo_archivo=codigo, fecha_hora_transaccion= current_timestamp, observacion=mensaje where id_log_imp_per=current_row.id_log_imp_per;
                 continue;
         end;

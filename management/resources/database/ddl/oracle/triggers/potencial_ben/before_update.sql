@@ -251,7 +251,7 @@ begin
     end if;
     --Solo si cambia id_ficha_persona es que se verifica la condición de censo
     if (:old.id_ficha_persona<>:new.id_ficha_persona
-    or (:old.id_ficha_persona is null and :new.id_ficha_persona is not null)) then
+    or (:old.id_ficha_persona is null and :new.id_ficha_persona is not null and :new.numero_condicion_censo!=5)) then
         --dbms_output.put_line('cambiando condicion_Censo');
         :new.numero_condicion_censo := sp$potencial_ben.actualizar_condicion_censo(xnew);
     elsif(:old.id_ficha_persona is not null and :new.id_ficha_persona is null)then

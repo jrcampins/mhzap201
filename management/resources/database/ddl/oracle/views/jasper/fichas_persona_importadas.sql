@@ -19,7 +19,8 @@ SELECT
     edad,
     parentesco,
     icv,
-    codigo_potencial_ben
+    codigo_potencial_ben,
+    id_potencial_ben
 FROM 
 ((select l.id_log_imp_per as id,
          'SAS' as fuente,
@@ -49,7 +50,8 @@ FROM
   left join ubicacion dt on fh.id_distrito=dt.id_ubicacion
   left join ubicacion br on fh.id_barrio= br.id_ubicacion
   left join potencial_ben pb on fp.id_potencial_ben=pb.id_potencial_ben
-  left join tipo_persona_hogar tph on fp.numero_tipo_persona_hogar=tph.numero_tipo_persona_hogar) union 
+  left join tipo_persona_hogar tph on fp.numero_tipo_persona_hogar=tph.numero_tipo_persona_hogar
+  where l.es_importado=1) union 
 (select l.id_log_imp_per_eec as id,
         'DGEEC' as fuente,
         fp.numero_cedula as cedula,
@@ -78,5 +80,6 @@ FROM
   left join ubicacion dt on fh.id_distrito=dt.id_ubicacion
   left join ubicacion br on fh.id_barrio= br.id_ubicacion
   left join potencial_ben pb on fp.id_potencial_ben=pb.id_potencial_ben
-  left join tipo_persona_hogar tph on fp.numero_tipo_persona_hogar=tph.numero_tipo_persona_hogar))
+  left join tipo_persona_hogar tph on fp.numero_tipo_persona_hogar=tph.numero_tipo_persona_hogar
+  where l.es_importado=1))
   order by nombre_departamento, nombre_distrito, nombre_barrio, codigo_ficha_persona;

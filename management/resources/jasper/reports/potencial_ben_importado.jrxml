@@ -15,6 +15,8 @@
 	<queryString>
 		<![CDATA[select * from potencial_ben_importado]]>
 	</queryString>
+	<field name="BENEFICIARIO" class="java.lang.String"/>
+	<field name="ID_FICHA_PERSONA" class="java.math.BigDecimal"/>
 	<field name="NOMBRE_FICHA_PERSONA" class="java.lang.String"/>
 	<field name="NUM_CEDULA" class="java.lang.String"/>
 	<field name="EDAD" class="java.math.BigDecimal"/>
@@ -33,9 +35,14 @@
 	<field name="NUMERO_TIPO_REG_POT_BEN" class="java.math.BigDecimal"/>
 	<field name="OBSERVACION" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
-		<variableExpression><![CDATA[$F{NUM_CEDULA}]]></variableExpression>
+		<variableExpression><![CDATA[$F{ID_FICHA_PERSONA}]]></variableExpression>
 	</variable>
-	<variable name="total_beneficiarios" class="java.lang.String" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count"/>
+	<variable name="total_potenciales_beneficiarios" class="java.math.BigDecimal" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{BENEFICIARIO}]]></variableExpression>
+	</variable>
+	<variable name="total_fichas" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
+		<variableExpression><![CDATA[$F{ID_FICHA_PERSONA}]]></variableExpression>
+	</variable>
 	<group name="grupo_departamento_distrito" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{DEPARTAMENTO}+$F{DISTRITO}]]></groupExpression>
 		<groupHeader>
@@ -197,7 +204,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="9"/>
 					</textElement>
-					<text><![CDATA[CÓDIGO POT BEN]]></text>
+					<text><![CDATA[CÓDIGO/CÉDULA]]></text>
 				</staticText>
 				<staticText>
 					<reportElement key="staticText-10" mode="Opaque" x="153" y="114" width="154" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
@@ -391,6 +398,14 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="22" splitType="Stretch"/>
+		<band height="22" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" mode="Transparent" x="11" y="0" width="634" height="16" backcolor="#CCCCCC"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Total de fichas de persona importadas: "+$V{total_fichas}+". Cantidad de potenciales beneficiarios (con o sin cédula) registrados:  " + $V{total_potenciales_beneficiarios}]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>
