@@ -15,31 +15,31 @@ begin
     --Buscamos el primer nombre de la persona en potencial beneficiario
     --raise exception 'comparando % y % da %',row_persona.primer_nombre,row_potencial_ben.nombre_potencial_ben,strpos(upper(row_potencial_ben.nombre_potencial_ben),upper(row_persona.primer_nombre));
     if row_persona.primer_nombre is not null then
-	if instr(upper(xrow.nombre_potencial_ben),upper(row_persona.primer_nombre))<>0 then
+	if instr(upper(trim(xrow.nombre_potencial_ben)),upper(trim(row_persona.primer_nombre)))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
     end if;
     --Buscamos el segundo nombre de la persona en potencial beneficiario
     if row_persona.segundo_nombre is not null then
-	if instr(upper(xrow.nombre_potencial_ben),upper(row_persona.segundo_nombre))<>0 then
+	if instr(upper(trim(xrow.nombre_potencial_ben)),upper(trim(row_persona.segundo_nombre)))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
     end if;
     --Buscamos el primer apellido de la persona en potencial beneficiario
     if row_persona.primer_apellido is not null then
-	if instr(upper(xrow.nombre_potencial_ben),upper(row_persona.primer_apellido))<>0 then
+	if instr(upper(trim(xrow.nombre_potencial_ben)),upper(trim(row_persona.primer_apellido)))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
     end if;
     --Buscamos el segundo apellido de la persona en potencial beneficiario
     if row_persona.segundo_apellido is not null then
-	if instr(upper(xrow.nombre_potencial_ben),upper(row_persona.segundo_apellido))<>0 then
+	if instr(upper(trim(xrow.nombre_potencial_ben)),upper(trim(row_persona.segundo_apellido)))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
     end if;
     --Buscamos el apellido de casada en potencial_ben
     if row_persona.apellido_casada is not null then
-	if instr(upper(xrow.nombre_potencial_ben),upper(row_persona.apellido_casada))<>0 then
+	if instr(upper(trim(xrow.nombre_potencial_ben)),upper(trim(row_persona.apellido_casada)))<>0 then
             ocurrencias:=ocurrencias+1;
 	end if;
     end if;
