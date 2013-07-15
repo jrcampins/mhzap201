@@ -200,13 +200,14 @@ begin
         /**/
         /**/
         --Si cambia cualquier información que pueda desvincular a la persona
+        --dbms_output.put_line('entro?');
         cambios:=sp$ficha_persona.verificar_cambio_vinculo(xold,xnew);
         --Si no hay cambios no se hace nada
-        if(cambios<>0) then
-            --Si hay cambios se desvincula y luego se vincula
-            sp$ficha_persona.eliminar_vinculos(xold);
-            sp$ficha_persona.actualizar_vinculos(xnew);
-        end if;
+--         if(cambios<>0) then
+--             --Si hay cambios se desvincula y luego se vincula
+--             sp$ficha_persona.eliminar_vinculos(xold);
+--             sp$ficha_persona.actualizar_vinculos(xnew);
+--         end if;
 end loop;
 exception
     when others then

@@ -5,6 +5,7 @@ compound trigger
     type tabla_codigos is table of ficha_persona.codigo_ficha_persona%type  index by binary_integer;
     
     ids    tabla_bigints;
+    var number;
     codigos tabla_codigos;
     xnew ficha_persona%rowtype;
     row_ficha_persona ficha_persona%rowtype;

@@ -6,10 +6,12 @@
 --@return 0 si se ejecuto sin errores.
 procedure actualizar_vinculos(xnew ficha_persona%rowtype) is
     id_persona_actualizar number;
+    var number;
     row_persona persona%rowtype;
     row_ficha_hogar ficha_hogar%rowtype;
 begin        
     --Si la cedula no aparece registrada no se vincula
+    --dbms_output.put_line('entrando con '||xnew.nombre_ficha_persona);
     if (xnew.numero_cedula is null) then
         return;
     end if;
@@ -44,7 +46,7 @@ begin
     if((row_persona.id_ficha_persona is null) or 
        (row_persona.fecha_ficha_persona<row_ficha_hogar.fecha_entrevista 
         and  row_persona.es_persona_acreditada_para_pen=0)) then
-        --dbms_output.put_line('creando vinculo');
+        --dbms_output.put_line('creando vinculo '||row_persona.nombre_persona);
         update persona  
         set id_ficha_persona=xnew.id_ficha_persona
         where id_persona=id_persona_actualizar;
