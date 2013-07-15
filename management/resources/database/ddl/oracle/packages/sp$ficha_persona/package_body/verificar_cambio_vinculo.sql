@@ -14,7 +14,7 @@ begin
     if((id_persona_old is null and id_persona_new is not null)
     or(id_persona_old is not null and id_persona_new is null)
     or(id_persona_old <> id_persona_new)) then
-         --dbms_output.put_line('si hay cambio');
+         --dbms_output.put_line('si hay cambio '||xold.nombre_ficha_persona||' vs '||xnew.nombre_ficha_persona);
          return 1;
     end if;
     --dbms_output.put_line('no hay cambio');

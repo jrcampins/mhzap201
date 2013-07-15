@@ -626,6 +626,12 @@ begin
                         new_potencial_ben.version_potencial_ben:=0;
                         new_potencial_ben.numero_tipo_reg_pot_ben:=1;
                         new_potencial_ben.id_persona:=row_persona.id_persona;
+                        new_potencial_ben.direccion:=row_ficha_hogar.direccion;
+                        new_potencial_ben.id_barrio:=row_ficha_hogar.id_barrio;
+                        new_potencial_ben.id_departamento:=row_ficha_hogar.id_departamento;
+                        new_potencial_ben.id_distrito:=row_ficha_hogar.id_distrito;
+                        new_potencial_ben.nombre_referente:=null;
+                        new_potencial_ben.numero_telefono_referente:=null;
                         new_potencial_ben.fecha_registro_pot_ben:=sysdate;
                         new_potencial_ben.numero_condicion_censo:=5;
                         new_potencial_ben.es_potencial_ben_inactivo:=0;
