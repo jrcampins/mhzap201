@@ -33,12 +33,13 @@
 	<field name="INDICE_CALIDAD_VIDA" class="java.math.BigDecimal"/>
 	<field name="NUMERO_CONDICION_CENSO" class="java.math.BigDecimal"/>
 	<field name="CODIGO_CONDICION_CENSO" class="java.lang.String"/>
+	<field name="NUMERO_TIPO_REG_POT_BEN" class="java.math.BigDecimal"/>
 	<field name="ES_POTENCIAL_BEN_MIGRADO" class="java.lang.String"/>
 	<variable name="contador_item_anho_distrito" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
 		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
-	<variable name="total_potenciales_beneficiarios" class="java.lang.Integer" calculation="Count">
-		<variableExpression><![CDATA[$F{NUMERO_CEDULA}]]></variableExpression>
+	<variable name="total_potenciales_beneficiarios" class="java.lang.Integer" resetType="Group" resetGroup="grupo_departamento_distrito" calculation="Count">
+		<variableExpression><![CDATA[$F{CEDULA}]]></variableExpression>
 	</variable>
 	<group name="grupo_departamento_distrito" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{DEPARTAMENTO}+$F{DISTRITO}]]></groupExpression>
