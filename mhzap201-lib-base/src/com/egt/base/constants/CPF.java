@@ -24,6 +24,8 @@ public class CPF { // Clave Parametro Funcion
 
     public static final Long APODO = 20576L; // Apodo
 
+    public static final Long ARCHIVO = 1021L; // Nombre Archivo
+
     public static final Long AREA = 20902L; // Area
 
     public static final Long BARRIO = 20696L; // Barrio

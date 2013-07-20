@@ -207,6 +207,8 @@ public class PotencialBenConstants {
 
     public static final long FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO = 320400166L;
 
+    public static final long FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC = 320400167L;
+
     public static final long FUNCION_REFERENCIA_CONSULTAR_TIPO_REG_POT_BEN = 323800101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;
@@ -264,4 +266,6 @@ public class PotencialBenConstants {
     public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV = "potencial_ben_por_icv";
 
     public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO = "potencial_ben_acreditado";
+
+    public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC = "potencial_ben_acreditado_sc";
 }

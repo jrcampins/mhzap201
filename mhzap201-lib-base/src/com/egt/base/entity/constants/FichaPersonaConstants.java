@@ -205,6 +205,8 @@ public class FichaPersonaConstants {
 
     public static final long FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = 320200153L;
 
+    public static final long FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA = 320200154L;
+
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_FICHA_HOGAR = 320100101L;
@@ -254,4 +256,6 @@ public class FichaPersonaConstants {
     public static final String PROCESO_FUNCION_DESVINCULAR_FICHA_PERSONA = "ficha_persona_desvincular";
 
     public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = "ficha_persona_importada";
+
+    public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA = "ficha_persona_no_importada";
 }

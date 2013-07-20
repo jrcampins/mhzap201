@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{PotencialBen4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaNumeroTipoArea1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 listaNumeroTipoRegPotBen1 campoLote1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdPotencialBen1 campoIdPersona1 campoIdFuncionarioValidacionCen1 campoComentariosValidacionCenso1 listaNumeroCausaInvCenso1 campoOtraCausaInvCenso1 campoComentariosReclamoCenso1 campoComentariosAprReclCen1 listaNumeroCausaDenReclCen1 campoOtraCausaDenReclCen1 campoComentariosDenReclCen1 campoFechaUltimaVisitaCenso1 campoIdFuncionarioUltVisitaCen1 campoObservacionesUltVisitaCen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaNumeroTipoArea1 campoFechaRegistroPotBenDesde1 campoFechaRegistroPotBenHasta1 campoIndiceCalidadVidaDesde1 campoIndiceCalidadVidaHasta1 campoFechaValidacionCensoDesde1 campoFechaValidacionCensoHasta1 listaNumeroCondicionCenso1 campoLote1 campoEdadDesde1 campoEdadHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -1097,36 +1097,6 @@
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridNumeroTipoRegPotBen1" rendered="#{PotencialBen4.bitNumeroTipoRegPotBenRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{PotencialBen4.labelNumeroTipoRegPotBen1}"
-                                                    id="labelNumeroTipoRegPotBen1"
-                                                    for="listaNumeroTipoRegPotBen1"
-                                                    text="tipo registro"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridNumeroTipoRegPotBen2" rendered="#{PotencialBen4.bitNumeroTipoRegPotBenRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaNumeroTipoRegPotBen1"
-                                                    binding="#{PotencialBen4.listaNumeroTipoRegPotBen1}"
-                                                    converter="#{PotencialBen4.converterNumeroTipoRegPotBen1}"
-                                                    items="#{PotencialBen4.opcionesListaNumeroTipoRegPotBen1}"
-                                                    selected="#{PotencialBen4.valorListaNumeroTipoRegPotBen1}"
-                                                    toolTip="BundleParametros.numero_tipo_reg_pot_ben"/>
-                                                <webuijsf:staticText id="listaNumeroTipoRegPotBen1Texto1"
-                                                    binding="#{PotencialBen4.listaNumeroTipoRegPotBen1Texto1}"/>
-                                                <webuijsf:message id="messageNumeroTipoRegPotBen1"
-                                                    for="listaNumeroTipoRegPotBen1"/>
-                                                <webuijsf:helpInline id="helpInlineNumeroTipoRegPotBen1"
-                                                    binding="#{PotencialBen4.helpInlineNumeroTipoRegPotBen1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.numero_tipo_reg_pot_ben"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridLote1" rendered="#{PotencialBen4.bitLoteRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -1154,6 +1124,66 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.lote"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEdadDesde1" rendered="#{PotencialBen4.bitEdadDesdeRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen4.labelEdadDesde1}"
+                                                    id="labelEdadDesde1"
+                                                    for="campoEdadDesde1"
+                                                    text="edad desde"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEdadDesde2" rendered="#{PotencialBen4.bitEdadDesdeRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoEdadDesde1"
+                                                    binding="#{PotencialBen4.campoEdadDesde1}"
+                                                    converter="#{PotencialBen4.converterEdadDesde1}"
+                                                    text="#{PotencialBen4.textoCampoEdadDesde1}"
+                                                    toolTip="BundleParametros.edad_desde"
+                                                    validatorExpression="#{PotencialBen4.validatorEdadDesde1.validate}"/>
+                                                <webuijsf:staticText id="campoEdadDesde1Texto1"
+                                                    binding="#{PotencialBen4.campoEdadDesde1Texto1}"/>
+                                                <webuijsf:message id="messageEdadDesde1"
+                                                    for="campoEdadDesde1"/>
+                                                <webuijsf:helpInline id="helpInlineEdadDesde1"
+                                                    binding="#{PotencialBen4.helpInlineEdadDesde1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.edad_desde"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridEdadHasta1" rendered="#{PotencialBen4.bitEdadHastaRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{PotencialBen4.labelEdadHasta1}"
+                                                    id="labelEdadHasta1"
+                                                    for="campoEdadHasta1"
+                                                    text="edad hasta"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridEdadHasta2" rendered="#{PotencialBen4.bitEdadHastaRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoEdadHasta1"
+                                                    binding="#{PotencialBen4.campoEdadHasta1}"
+                                                    converter="#{PotencialBen4.converterEdadHasta1}"
+                                                    text="#{PotencialBen4.textoCampoEdadHasta1}"
+                                                    toolTip="BundleParametros.edad_hasta"
+                                                    validatorExpression="#{PotencialBen4.validatorEdadHasta1.validate}"/>
+                                                <webuijsf:staticText id="campoEdadHasta1Texto1"
+                                                    binding="#{PotencialBen4.campoEdadHasta1Texto1}"/>
+                                                <webuijsf:message id="messageEdadHasta1"
+                                                    for="campoEdadHasta1"/>
+                                                <webuijsf:helpInline id="helpInlineEdadHasta1"
+                                                    binding="#{PotencialBen4.helpInlineEdadHasta1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.edad_hasta"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

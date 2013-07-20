@@ -87,6 +87,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     public static final long FUNCION_EMITIR_POTENCIAL_BEN_POR_RESULTADO_VALIDACION = 320400164L;
     public static final long FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV = 320400165L;
     public static final long FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO = 320400166L;
+    public static final long FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC = 320400167L;
     public static final long FUNCION_CREAR_POTENCIAL_BEN = 320400102L;
     public static final long FUNCION_MODIFICAR_POTENCIAL_BEN = 320400103L;
     public static final long FUNCION_ELIMINAR_POTENCIAL_BEN = 320400104L;
@@ -108,6 +109,7 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_RESULTADO_VALIDACION = "potencial_ben_por_resultado_validacion";
     public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV = "potencial_ben_por_icv";
     public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO = "potencial_ben_acreditado";
+    public static final String INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC = "potencial_ben_acreditado_sc";
 
     protected static final long PARAMETRO_ID_POTENCIAL_BEN = 20571L;
     protected static final long PARAMETRO_ES_POTENCIAL_BEN_INACTIVO = 20601L;
@@ -183,6 +185,8 @@ public class PotencialBenCachedRowSetDataProvider2 extends PotencialBenCachedRow
     protected static final long PARAMETRO_INDICE_CALIDAD_VIDA_HASTA = 10016L;
     protected static final long PARAMETRO_FECHA_VALIDACION_CENSO_DESDE = 10013L;
     protected static final long PARAMETRO_FECHA_VALIDACION_CENSO_HASTA = 10014L;
+    protected static final long PARAMETRO_EDAD_DESDE = 10027L;
+    protected static final long PARAMETRO_EDAD_HASTA = 10028L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_PERSONA = 201000101L;

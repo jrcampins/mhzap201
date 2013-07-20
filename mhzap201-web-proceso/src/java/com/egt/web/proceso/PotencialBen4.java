@@ -19,7 +19,6 @@ import com.egt.base.enums.EnumCausaInvCenso;
 import com.egt.base.enums.EnumCausaDenReclCen;
 import com.egt.base.enums.EnumTipoArea;
 import com.egt.base.enums.EnumCondicionCenso;
-import com.egt.base.enums.EnumTipoRegPotBen;
 import com.egt.base.entity.constants.PotencialBenConstants;
 import com.egt.base.entity.constants.PersonaConstants;
 import com.egt.base.entity.constants.FuncionarioConstants;
@@ -162,6 +161,10 @@ public class PotencialBen4 extends AbstractPageBean
         converterFechaValidacionCensoHasta1.setType("date");
         validatorLote1.setMinimum(0L);
         validatorLote1.setMaximum(1000000000000000000L);
+        validatorEdadDesde1.setMinimum(0L);
+        validatorEdadDesde1.setMaximum(1000000000L);
+        validatorEdadHasta1.setMinimum(0L);
+        validatorEdadHasta1.setMaximum(1000000000L);
     }
 
     private Form form1 = new Form();
@@ -1787,56 +1790,6 @@ public class PotencialBen4 extends AbstractPageBean
         this.converterNumeroCondicionCenso1 = converter;
     }
   
-    private Label labelNumeroTipoRegPotBen1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelNumeroTipoRegPotBen1() {
-        return labelNumeroTipoRegPotBen1;
-    }
-
-    public void setLabelNumeroTipoRegPotBen1(Label l) {
-        this.labelNumeroTipoRegPotBen1 = l;
-    }
-
-    private DropDown listaNumeroTipoRegPotBen1 = new com.egt.core.jsf.component.ListaDesplegable();
-
-    public DropDown getListaNumeroTipoRegPotBen1() {
-        return listaNumeroTipoRegPotBen1;
-    }
-
-    public void setListaNumeroTipoRegPotBen1(DropDown component) {
-        this.listaNumeroTipoRegPotBen1 = component;
-    }
-
-    private HelpInline helpInlineNumeroTipoRegPotBen1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineNumeroTipoRegPotBen1() {
-        return helpInlineNumeroTipoRegPotBen1;
-    }
-
-    public void setHelpInlineNumeroTipoRegPotBen1(HelpInline hi) {
-        this.helpInlineNumeroTipoRegPotBen1 = hi;
-    }
-
-    private StaticText listaNumeroTipoRegPotBen1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getListaNumeroTipoRegPotBen1Texto1() {
-        return listaNumeroTipoRegPotBen1Texto1;
-    }
-
-    public void setListaNumeroTipoRegPotBen1Texto1(StaticText component) {
-        this.listaNumeroTipoRegPotBen1Texto1 = component;
-    }
-
-    private IntegerConverter converterNumeroTipoRegPotBen1 = new IntegerConverter();
-  
-    public IntegerConverter getConverterNumeroTipoRegPotBen1() {
-        return converterNumeroTipoRegPotBen1;
-    }
-  
-    public void setConverterNumeroTipoRegPotBen1(IntegerConverter converter) {
-        this.converterNumeroTipoRegPotBen1 = converter;
-    }
-  
     private Label labelLote1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelLote1() {
@@ -1895,6 +1848,126 @@ public class PotencialBen4 extends AbstractPageBean
   
     public void setValidatorLote1(LongRangeValidator validator) {
         this.validatorLote1 = validator;
+    }
+  
+    private Label labelEdadDesde1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEdadDesde1() {
+        return labelEdadDesde1;
+    }
+
+    public void setLabelEdadDesde1(Label l) {
+        this.labelEdadDesde1 = l;
+    }
+
+    private TextField campoEdadDesde1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoEdadDesde1() {
+        return campoEdadDesde1;
+    }
+
+    public void setCampoEdadDesde1(TextField component) {
+        this.campoEdadDesde1 = component;
+    }
+
+    private HelpInline helpInlineEdadDesde1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEdadDesde1() {
+        return helpInlineEdadDesde1;
+    }
+
+    public void setHelpInlineEdadDesde1(HelpInline hi) {
+        this.helpInlineEdadDesde1 = hi;
+    }
+
+    private StaticText campoEdadDesde1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoEdadDesde1Texto1() {
+        return campoEdadDesde1Texto1;
+    }
+
+    public void setCampoEdadDesde1Texto1(StaticText component) {
+        this.campoEdadDesde1Texto1 = component;
+    }
+
+    private IntegerConverter converterEdadDesde1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEdadDesde1() {
+        return converterEdadDesde1;
+    }
+  
+    public void setConverterEdadDesde1(IntegerConverter converter) {
+        this.converterEdadDesde1 = converter;
+    }
+  
+    private LongRangeValidator validatorEdadDesde1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorEdadDesde1() {
+        return validatorEdadDesde1;
+    }
+  
+    public void setValidatorEdadDesde1(LongRangeValidator validator) {
+        this.validatorEdadDesde1 = validator;
+    }
+  
+    private Label labelEdadHasta1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelEdadHasta1() {
+        return labelEdadHasta1;
+    }
+
+    public void setLabelEdadHasta1(Label l) {
+        this.labelEdadHasta1 = l;
+    }
+
+    private TextField campoEdadHasta1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoEdadHasta1() {
+        return campoEdadHasta1;
+    }
+
+    public void setCampoEdadHasta1(TextField component) {
+        this.campoEdadHasta1 = component;
+    }
+
+    private HelpInline helpInlineEdadHasta1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineEdadHasta1() {
+        return helpInlineEdadHasta1;
+    }
+
+    public void setHelpInlineEdadHasta1(HelpInline hi) {
+        this.helpInlineEdadHasta1 = hi;
+    }
+
+    private StaticText campoEdadHasta1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoEdadHasta1Texto1() {
+        return campoEdadHasta1Texto1;
+    }
+
+    public void setCampoEdadHasta1Texto1(StaticText component) {
+        this.campoEdadHasta1Texto1 = component;
+    }
+
+    private IntegerConverter converterEdadHasta1 = new IntegerConverter();
+  
+    public IntegerConverter getConverterEdadHasta1() {
+        return converterEdadHasta1;
+    }
+  
+    public void setConverterEdadHasta1(IntegerConverter converter) {
+        this.converterEdadHasta1 = converter;
+    }
+  
+    private LongRangeValidator validatorEdadHasta1 = new LongRangeValidator();
+  
+    public LongRangeValidator getValidatorEdadHasta1() {
+        return validatorEdadHasta1;
+    }
+  
+    public void setValidatorEdadHasta1(LongRangeValidator validator) {
+        this.validatorEdadHasta1 = validator;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -2090,6 +2163,8 @@ public class PotencialBen4 extends AbstractPageBean
 
     static long FUNCION_ACCION_16 = PotencialBenConstants.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
 
+    static long FUNCION_ACCION_17 = PotencialBenConstants.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC;
+
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
@@ -2109,7 +2184,8 @@ public class PotencialBen4 extends AbstractPageBean
             new Option(FUNCION_ACCION_13, BundleWebui.getString("emitir_potencial_ben_por_validar")),
             new Option(FUNCION_ACCION_14, BundleWebui.getString("emitir_potencial_ben_por_resultado_validacion")),
             new Option(FUNCION_ACCION_15, BundleWebui.getString("emitir_potencial_ben_por_icv")),
-            new Option(FUNCION_ACCION_16, BundleWebui.getString("emitir_potencial_ben_acreditado"))
+            new Option(FUNCION_ACCION_16, BundleWebui.getString("emitir_potencial_ben_acreditado")),
+            new Option(FUNCION_ACCION_17, BundleWebui.getString("emitir_potencial_ben_acreditado_sc"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -2355,7 +2431,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isIdDepartamentoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitIdDepartamentoRendered = new Bit() {
@@ -2372,7 +2448,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isIdDistritoRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitIdDistritoRendered = new Bit() {
@@ -2389,7 +2465,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isIdBarrioRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitIdBarrioRendered = new Bit() {
@@ -2406,7 +2482,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isNumeroTipoAreaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitNumeroTipoAreaRendered = new Bit() {
@@ -2423,7 +2499,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isFechaRegistroPotBenDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitFechaRegistroPotBenDesdeRendered = new Bit() {
@@ -2440,7 +2516,7 @@ public class PotencialBen4 extends AbstractPageBean
 
     public boolean isFechaRegistroPotBenHastaRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16;
+        return f == FUNCION_ACCION_12 || f == FUNCION_ACCION_13 || f == FUNCION_ACCION_14 || f == FUNCION_ACCION_15 || f == FUNCION_ACCION_16 || f == FUNCION_ACCION_17;
     }
 
     private Bit bitFechaRegistroPotBenHastaRendered = new Bit() {
@@ -2540,23 +2616,6 @@ public class PotencialBen4 extends AbstractPageBean
         return bitNumeroCondicionCensoRendered;
     }
 
-    public boolean isNumeroTipoRegPotBenRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_16;
-    }
-
-    private Bit bitNumeroTipoRegPotBenRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isNumeroTipoRegPotBenRendered();
-        }
-    };
-
-    public Bit getBitNumeroTipoRegPotBenRendered() {
-        return bitNumeroTipoRegPotBenRendered;
-    }
-
     public boolean isLoteRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_16;
@@ -2572,6 +2631,40 @@ public class PotencialBen4 extends AbstractPageBean
 
     public Bit getBitLoteRendered() {
         return bitLoteRendered;
+    }
+
+    public boolean isEdadDesdeRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_17;
+    }
+
+    private Bit bitEdadDesdeRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEdadDesdeRendered();
+        }
+    };
+
+    public Bit getBitEdadDesdeRendered() {
+        return bitEdadDesdeRendered;
+    }
+
+    public boolean isEdadHastaRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_17;
+    }
+
+    private Bit bitEdadHastaRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isEdadHastaRendered();
+        }
+    };
+
+    public Bit getBitEdadHastaRendered() {
+        return bitEdadHastaRendered;
     }
 
     // </editor-fold>
@@ -2773,6 +2866,26 @@ public class PotencialBen4 extends AbstractPageBean
 
     public void setTextoCampoLote1(String valor) {
         this.textoCampoLote1 = valor;
+    }
+
+    private String textoCampoEdadDesde1;
+
+    public String getTextoCampoEdadDesde1() {
+        return this.textoCampoEdadDesde1;
+    }
+
+    public void setTextoCampoEdadDesde1(String valor) {
+        this.textoCampoEdadDesde1 = valor;
+    }
+
+    private String textoCampoEdadHasta1;
+
+    public String getTextoCampoEdadHasta1() {
+        return this.textoCampoEdadHasta1;
+    }
+
+    public void setTextoCampoEdadHasta1(String valor) {
+        this.textoCampoEdadHasta1 = valor;
     }
 
     // </editor-fold>
@@ -3764,20 +3877,6 @@ public class PotencialBen4 extends AbstractPageBean
         this.valorListaNumeroCondicionCenso1 = valor;
     }
 
-    public Object getOpcionesListaNumeroTipoRegPotBen1() {
-        return JSF.getListaOpciones(EnumTipoRegPotBen.values(), true, false);
-    }
-
-    private Integer valorListaNumeroTipoRegPotBen1;
-
-    public Integer getValorListaNumeroTipoRegPotBen1() {
-        return this.valorListaNumeroTipoRegPotBen1;
-    }
-
-    public void setValorListaNumeroTipoRegPotBen1(Integer valor) {
-        this.valorListaNumeroTipoRegPotBen1 = valor;
-    }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="botones de accion de la plantilla #4">
@@ -3804,6 +3903,7 @@ public class PotencialBen4 extends AbstractPageBean
                 : f == FUNCION_ACCION_14 ? this.accion14(f) /* emitirPotencialBenPorResultadoValidacion */
                 : f == FUNCION_ACCION_15 ? this.accion15(f) /* emitirPotencialBenPorIcv */
                 : f == FUNCION_ACCION_16 ? this.accion16(f) /* emitirPotencialBenAcreditado */
+                : f == FUNCION_ACCION_17 ? this.accion17(f) /* emitirPotencialBenAcreditadoSc */
                 : null;
     }
     // </editor-fold>
@@ -3965,6 +4065,16 @@ public class PotencialBen4 extends AbstractPageBean
             this.emitirPotencialBenAcreditado();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_acreditado");
+        }
+        return null;
+    }
+
+    private String accion17(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirPotencialBenAcreditadoSc();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_potencial_ben_acreditado_sc");
         }
         return null;
     }
@@ -4489,7 +4599,6 @@ public class PotencialBen4 extends AbstractPageBean
         Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
         Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
         Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
-        Integer numeroTipoRegPotBen = this.getValorListaNumeroTipoRegPotBen1();
         Long lote = (Long) STP.getObjeto(this.getTextoCampoLote1(), EnumTipoDatoPar.ENTERO_GRANDE);
         String report = PotencialBenConstants.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         long function = PotencialBenConstants.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
@@ -4500,7 +4609,6 @@ public class PotencialBen4 extends AbstractPageBean
         parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
-        parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
         parameters.put("lote", lote);
 //      ------------------------------------------------------------------------
 //      this.reporter.executeReport(report, function, parameters);
@@ -4532,13 +4640,75 @@ public class PotencialBen4 extends AbstractPageBean
             args.add(fechaRegistroPotBenHasta);
             search += " and fecha_registro_pot_ben<=?";
         }
-        if (numeroTipoRegPotBen != null) {
-            args.add(numeroTipoRegPotBen);
-            search += " and numero_tipo_reg_pot_ben=?";
-        }
         if (lote != null) {
             args.add(lote);
             search += " and lote=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirPotencialBenAcreditadoSc() { /* emitir potencial ben acreditado sc */
+        Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
+        Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
+        Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
+        Integer numeroTipoArea = this.getValorListaNumeroTipoArea1();
+        Date fechaRegistroPotBenDesde = this.getValorCampoFechaRegistroPotBenDesde1();
+        Date fechaRegistroPotBenHasta = this.getValorCampoFechaRegistroPotBenHasta1();
+        Integer edadDesde = (Integer) STP.getObjeto(this.getTextoCampoEdadDesde1(), EnumTipoDatoPar.ENTERO);
+        Integer edadHasta = (Integer) STP.getObjeto(this.getTextoCampoEdadHasta1(), EnumTipoDatoPar.ENTERO);
+        String report = PotencialBenConstants.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC;
+        long function = PotencialBenConstants.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
+        parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
+        parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
+        parameters.put("edad_desde", edadDesde);
+        parameters.put("edad_hasta", edadHasta);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from potencial_ben";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
+        }
+        if (fechaRegistroPotBenDesde != null) {
+            args.add(fechaRegistroPotBenDesde);
+            search += " and fecha_registro_pot_ben>=?";
+        }
+        if (fechaRegistroPotBenHasta != null) {
+            args.add(fechaRegistroPotBenHasta);
+            search += " and fecha_registro_pot_ben<=?";
+        }
+        if (edadDesde != null) {
+            args.add(edadDesde);
+            search += " and edad>=?";
+        }
+        if (edadHasta != null) {
+            args.add(edadHasta);
+            search += " and edad<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

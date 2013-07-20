@@ -95,7 +95,8 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         Option[] opciones = new Option[]{
             new Option("", etiquetaSeleccioneUnaOpcion),
             new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_DESVINCULAR_FICHA_PERSONA, BundleWebui.getString("desvincular_ficha_persona")),
-            new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA, BundleWebui.getString("emitir_ficha_persona_importada"))
+            new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA, BundleWebui.getString("emitir_ficha_persona_importada")),
+            new Option(FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA, BundleWebui.getString("emitir_ficha_persona_no_importada"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -121,6 +122,8 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
             this.desvincularFichaPersona(rowKey);
         } else if (f == FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA) {
             this.emitirFichaPersonaImportada(rowKey);
+        } else if (f == FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA) {
+            this.emitirFichaPersonaNoImportada(rowKey);
         }
     }
 
@@ -144,7 +147,6 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         Long idDepartamento = null;
         Long idDistrito = null;
         Long idBarrio = null;
-        Integer esFichaPersonaImportada = null;
         Date fechaImportacionDesde = null;
         Date fechaImportacionHasta = null;
         String report = FichaPersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
@@ -153,7 +155,6 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("es_ficha_persona_importada", esFichaPersonaImportada);
         parameters.put("fecha_importacion_desde", fechaImportacionDesde);
         parameters.put("fecha_importacion_hasta", fechaImportacionHasta);
 //      ------------------------------------------------------------------------
@@ -174,10 +175,6 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
             args.add(idBarrio);
             search += " and id_barrio=?";
         }
-        if (esFichaPersonaImportada != null) {
-            args.add(esFichaPersonaImportada);
-            search += " and es_ficha_persona_importada=?";
-        }
         if (fechaImportacionDesde != null) {
             args.add(fechaImportacionDesde);
             search += " and fecha_importacion>=?";
@@ -185,6 +182,33 @@ public class AsistentePaginaActualizacionFichaPersonaPorFichaHogar {
         if (fechaImportacionHasta != null) {
             args.add(fechaImportacionHasta);
             search += " and fecha_importacion<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirFichaPersonaNoImportada(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirFichaPersonaNoImportada", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        String archivo = null;
+        String report = FichaPersonaCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA;
+        long function = FichaPersonaCachedRowSetDataProvider2.FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("archivo", archivo);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from ficha_persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (archivo != null) {
+            args.add(archivo);
+            search += " and archivo=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

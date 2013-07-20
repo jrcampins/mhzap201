@@ -15,7 +15,6 @@
  */
 package com.egt.web.proceso;
 
-import com.egt.base.enums.EnumOpcionBinaria;
 import com.egt.base.entity.constants.FichaPersonaConstants;
 import com.egt.base.entity.constants.PotencialBenConstants;
 import com.egt.base.entity.constants.UbicacionConstants;
@@ -121,6 +120,7 @@ public class FichaPersona4 extends AbstractPageBean
         converterFechaImportacionDesde1.setType("date");
         converterFechaImportacionHasta1.setPattern("dd/MM/yyyy");
         converterFechaImportacionHasta1.setType("date");
+        validatorArchivo1.setMaximum(2000);
     }
 
     private Form form1 = new Form();
@@ -646,56 +646,6 @@ public class FichaPersona4 extends AbstractPageBean
         this.campoIdBarrio1Boton2 = component;
     }
 
-    private Label labelEsFichaPersonaImportada1 = new com.egt.core.jsf.component.Etiqueta();
-
-    public Label getLabelEsFichaPersonaImportada1() {
-        return labelEsFichaPersonaImportada1;
-    }
-
-    public void setLabelEsFichaPersonaImportada1(Label l) {
-        this.labelEsFichaPersonaImportada1 = l;
-    }
-
-    private DropDown listaEsFichaPersonaImportada1 = new com.egt.core.jsf.component.ListaDesplegable();
-
-    public DropDown getListaEsFichaPersonaImportada1() {
-        return listaEsFichaPersonaImportada1;
-    }
-
-    public void setListaEsFichaPersonaImportada1(DropDown component) {
-        this.listaEsFichaPersonaImportada1 = component;
-    }
-
-    private HelpInline helpInlineEsFichaPersonaImportada1 = new com.egt.core.jsf.component.AyudaEnLinea();
-
-    public HelpInline getHelpInlineEsFichaPersonaImportada1() {
-        return helpInlineEsFichaPersonaImportada1;
-    }
-
-    public void setHelpInlineEsFichaPersonaImportada1(HelpInline hi) {
-        this.helpInlineEsFichaPersonaImportada1 = hi;
-    }
-
-    private StaticText listaEsFichaPersonaImportada1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
-
-    public StaticText getListaEsFichaPersonaImportada1Texto1() {
-        return listaEsFichaPersonaImportada1Texto1;
-    }
-
-    public void setListaEsFichaPersonaImportada1Texto1(StaticText component) {
-        this.listaEsFichaPersonaImportada1Texto1 = component;
-    }
-
-    private IntegerConverter converterEsFichaPersonaImportada1 = new IntegerConverter();
-  
-    public IntegerConverter getConverterEsFichaPersonaImportada1() {
-        return converterEsFichaPersonaImportada1;
-    }
-  
-    public void setConverterEsFichaPersonaImportada1(IntegerConverter converter) {
-        this.converterEsFichaPersonaImportada1 = converter;
-    }
-  
     private Label labelFechaImportacionDesde1 = new com.egt.core.jsf.component.Etiqueta();
 
     public Label getLabelFechaImportacionDesde1() {
@@ -794,6 +744,56 @@ public class FichaPersona4 extends AbstractPageBean
   
     public void setConverterFechaImportacionHasta1(SqlTimestampConverter converter) {
         this.converterFechaImportacionHasta1 = converter;
+    }
+  
+    private Label labelArchivo1 = new com.egt.core.jsf.component.Etiqueta();
+
+    public Label getLabelArchivo1() {
+        return labelArchivo1;
+    }
+
+    public void setLabelArchivo1(Label l) {
+        this.labelArchivo1 = l;
+    }
+
+    private TextField campoArchivo1 = new com.egt.core.jsf.component.CampoTexto();
+
+    public TextField getCampoArchivo1() {
+        return campoArchivo1;
+    }
+
+    public void setCampoArchivo1(TextField component) {
+        this.campoArchivo1 = component;
+    }
+
+    private HelpInline helpInlineArchivo1 = new com.egt.core.jsf.component.AyudaEnLinea();
+
+    public HelpInline getHelpInlineArchivo1() {
+        return helpInlineArchivo1;
+    }
+
+    public void setHelpInlineArchivo1(HelpInline hi) {
+        this.helpInlineArchivo1 = hi;
+    }
+
+    private StaticText campoArchivo1Texto1 = new com.egt.core.jsf.component.TextoEstaticoAlternativo();
+
+    public StaticText getCampoArchivo1Texto1() {
+        return campoArchivo1Texto1;
+    }
+
+    public void setCampoArchivo1Texto1(StaticText component) {
+        this.campoArchivo1Texto1 = component;
+    }
+
+    private LengthValidator validatorArchivo1 = new LengthValidator();
+  
+    public LengthValidator getValidatorArchivo1() {
+        return validatorArchivo1;
+    }
+  
+    public void setValidatorArchivo1(LengthValidator validator) {
+        this.validatorArchivo1 = validator;
     }
   
     private Button botonAplicar1 = new com.egt.core.jsf.component.Boton();
@@ -963,13 +963,16 @@ public class FichaPersona4 extends AbstractPageBean
 
     static long FUNCION_ACCION_3 = FichaPersonaConstants.FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
 
+    static long FUNCION_ACCION_4 = FichaPersonaConstants.FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA;
+
     @Override
     public Option[] getOpcionesListaFuncionAccion() {
         Option[] opciones = new Option[]{
             new Option("", this.getGestor().getI18n().getEtiquetaSeleccioneUnaOpcionListaFuncionAccion()),
             new Option(FUNCION_ACCION_1, BundleWebui.getString("vincular_ficha_persona")),
             new Option(FUNCION_ACCION_2, BundleWebui.getString("desvincular_ficha_persona")),
-            new Option(FUNCION_ACCION_3, BundleWebui.getString("emitir_ficha_persona_importada"))
+            new Option(FUNCION_ACCION_3, BundleWebui.getString("emitir_ficha_persona_importada")),
+            new Option(FUNCION_ACCION_4, BundleWebui.getString("emitir_ficha_persona_no_importada"))
         };
         return this.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -1060,23 +1063,6 @@ public class FichaPersona4 extends AbstractPageBean
         return bitIdBarrioRendered;
     }
 
-    public boolean isEsFichaPersonaImportadaRendered() {
-        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
-        return f == FUNCION_ACCION_3;
-    }
-
-    private Bit bitEsFichaPersonaImportadaRendered = new Bit() {
-        // override metodo isOn
-        @Override
-        public boolean isOn() {
-            return isEsFichaPersonaImportadaRendered();
-        }
-    };
-
-    public Bit getBitEsFichaPersonaImportadaRendered() {
-        return bitEsFichaPersonaImportadaRendered;
-    }
-
     public boolean isFechaImportacionDesdeRendered() {
         long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
         return f == FUNCION_ACCION_3;
@@ -1109,6 +1095,23 @@ public class FichaPersona4 extends AbstractPageBean
 
     public Bit getBitFechaImportacionHastaRendered() {
         return bitFechaImportacionHastaRendered;
+    }
+
+    public boolean isArchivoRendered() {
+        long f = LongUtils.valueOf(this.getGestor().getValorListaFuncionAccion1());
+        return f == FUNCION_ACCION_4;
+    }
+
+    private Bit bitArchivoRendered = new Bit() {
+        // override metodo isOn
+        @Override
+        public boolean isOn() {
+            return isArchivoRendered();
+        }
+    };
+
+    public Bit getBitArchivoRendered() {
+        return bitArchivoRendered;
     }
 
     // </editor-fold>
@@ -1177,6 +1180,16 @@ public class FichaPersona4 extends AbstractPageBean
 
     public void setValorCampoFechaImportacionHasta1(java.sql.Timestamp valor) {
         this.valorCampoFechaImportacionHasta1 = valor;
+    }
+
+    private String textoCampoArchivo1;
+
+    public String getTextoCampoArchivo1() {
+        return this.textoCampoArchivo1;
+    }
+
+    public void setTextoCampoArchivo1(String valor) {
+        this.textoCampoArchivo1 = valor;
     }
 
     // </editor-fold>
@@ -1819,20 +1832,6 @@ public class FichaPersona4 extends AbstractPageBean
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="metodos para establecer las opciones de las listas desplegables">
-    public Object getOpcionesListaEsFichaPersonaImportada1() {
-        return JSF.getListaOpciones(EnumOpcionBinaria.values(), true, false);
-    }
-
-    private Integer valorListaEsFichaPersonaImportada1;
-
-    public Integer getValorListaEsFichaPersonaImportada1() {
-        return this.valorListaEsFichaPersonaImportada1;
-    }
-
-    public void setValorListaEsFichaPersonaImportada1(Integer valor) {
-        this.valorListaEsFichaPersonaImportada1 = valor;
-    }
-
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="botones de accion de la plantilla #4">
@@ -1846,6 +1845,7 @@ public class FichaPersona4 extends AbstractPageBean
                 : f == FUNCION_ACCION_1 ? this.accion1(f) /* vincularFichaPersona */
                 : f == FUNCION_ACCION_2 ? this.accion2(f) /* desvincularFichaPersona */
                 : f == FUNCION_ACCION_3 ? this.accion3(f) /* emitirFichaPersonaImportada */
+                : f == FUNCION_ACCION_4 ? this.accion4(f) /* emitirFichaPersonaNoImportada */
                 : null;
     }
     // </editor-fold>
@@ -1877,6 +1877,16 @@ public class FichaPersona4 extends AbstractPageBean
             this.emitirFichaPersonaImportada();
         } else {
             TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_ficha_persona_importada");
+        }
+        return null;
+    }
+
+    private String accion4(long f) {
+        boolean esFuncionAutorizada = TLC.getControlador().esFuncionAutorizada(f);
+        if (esFuncionAutorizada) {
+            this.emitirFichaPersonaNoImportada();
+        } else {
+            TLC.getBitacora().error(CBM2.FUNCION_NO_AUTORIZADA, "emitir_ficha_persona_no_importada");
         }
         return null;
     }
@@ -1938,7 +1948,6 @@ public class FichaPersona4 extends AbstractPageBean
         Long idDepartamento = this.getUbicacionIdDepartamento() == null ? null : this.getUbicacionIdDepartamento().getIdUbicacion();
         Long idDistrito = this.getUbicacionIdDistrito() == null ? null : this.getUbicacionIdDistrito().getIdUbicacion();
         Long idBarrio = this.getUbicacionIdBarrio() == null ? null : this.getUbicacionIdBarrio().getIdUbicacion();
-        Integer esFichaPersonaImportada = this.getValorListaEsFichaPersonaImportada1();
         Date fechaImportacionDesde = this.getValorCampoFechaImportacionDesde1();
         Date fechaImportacionHasta = this.getValorCampoFechaImportacionHasta1();
         String report = FichaPersonaConstants.INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA;
@@ -1947,7 +1956,6 @@ public class FichaPersona4 extends AbstractPageBean
         parameters.put("id_departamento", idDepartamento);
         parameters.put("id_distrito", idDistrito);
         parameters.put("id_barrio", idBarrio);
-        parameters.put("es_ficha_persona_importada", esFichaPersonaImportada);
         parameters.put("fecha_importacion_desde", fechaImportacionDesde);
         parameters.put("fecha_importacion_hasta", fechaImportacionHasta);
 //      ------------------------------------------------------------------------
@@ -1968,10 +1976,6 @@ public class FichaPersona4 extends AbstractPageBean
             args.add(idBarrio);
             search += " and id_barrio=?";
         }
-        if (esFichaPersonaImportada != null) {
-            args.add(esFichaPersonaImportada);
-            search += " and es_ficha_persona_importada=?";
-        }
         if (fechaImportacionDesde != null) {
             args.add(fechaImportacionDesde);
             search += " and fecha_importacion>=?";
@@ -1979,6 +1983,30 @@ public class FichaPersona4 extends AbstractPageBean
         if (fechaImportacionHasta != null) {
             args.add(fechaImportacionHasta);
             search += " and fecha_importacion<=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.reporter.executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.reporter.executeReport(report, function);
+        }
+    }
+
+    private void emitirFichaPersonaNoImportada() { /* emitir ficha persona no importada */
+        String archivo = this.getTextoCampoArchivo1();
+        String report = FichaPersonaConstants.INFORME_FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA;
+        long function = FichaPersonaConstants.FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA;
+        Map parameters = new LinkedHashMap();
+        parameters.put("archivo", archivo);
+//      ------------------------------------------------------------------------
+//      this.reporter.executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from ficha_persona";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (archivo != null) {
+            args.add(archivo);
+            search += " and archivo=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

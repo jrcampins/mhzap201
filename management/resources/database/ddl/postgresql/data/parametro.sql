@@ -11,6 +11,8 @@ VALUES (1011, 0, 'alias_clase_recurso', 'Alias Clase Recurso', 'alias de clase d
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1012, 0, 'alias_parametro', 'Alias Parámetro', 'alias de parámetro', NULL, 1, 'alias_parametro');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
+VALUES (1021, 0, 'archivo', 'Nombre Archivo', 'nombre de archivo', NULL, 1, 'archivo');
+INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1050, 0, 'codigo_grupo_aplicacion', 'Código Grupo Aplicación', 'código de grupo de aplicaciones', NULL, 1, 'codigo_grupo_aplicacion');
 INSERT INTO parametro (id_parametro, version_parametro, codigo_parametro, nombre_parametro, detalle_parametro, descripcion_parametro, numero_tipo_dato_par, alias_parametro)
 VALUES (1051, 0, 'codigo_grupo_proceso', 'Código Grupo Proceso', 'código de grupo de procesos', NULL, 1, 'codigo_grupo_proceso');

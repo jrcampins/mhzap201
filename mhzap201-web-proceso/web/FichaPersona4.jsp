@@ -37,7 +37,7 @@
                     <webuijsf:form 
                         binding="#{FichaPersona4.form1}" 
                         id="form1" 
-                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdFichaPersona1 campoIdPotencialBen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 listaEsFichaPersonaImportada1 campoFechaImportacionDesde1 campoFechaImportacionHasta1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
+                        virtualFormsConfig="virtualForm1 | listaFuncionAccion1 campoIdFichaPersona1 campoIdPotencialBen1 campoIdDepartamento1 campoIdDistrito1 campoIdBarrio1 campoFechaImportacionDesde1 campoFechaImportacionHasta1 campoArchivo1 | , virtualForm2 | | , virtualForm3 | listaFuncionAccion1 | listaFuncionAccion1 , virtualForm4 | | ">
                         <div class="pos-div-cab-1">
                             <jsp:directive.include file="FragmentoCabeza1.jspf"/>
                         </div>
@@ -433,36 +433,6 @@
                                                     onClick="#{FichaPersona4.scriptCampoIdBarrio1Boton2}"/>
                                             </h:panelGrid>
                                             <h:panelGrid
-                                                id="gridEsFichaPersonaImportada1" rendered="#{FichaPersona4.bitEsFichaPersonaImportadaRendered.on}"
-                                                styleClass="pdq-grid-etiqueta-1">
-                                                <webuijsf:label
-                                                    binding="#{FichaPersona4.labelEsFichaPersonaImportada1}"
-                                                    id="labelEsFichaPersonaImportada1"
-                                                    for="listaEsFichaPersonaImportada1"
-                                                    text="importada"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
-                                                columns="7"
-                                                id="gridEsFichaPersonaImportada2" rendered="#{FichaPersona4.bitEsFichaPersonaImportadaRendered.on}"
-                                                styleClass="pdq-grid-elemento-1">
-                                                <webuijsf:dropDown id="listaEsFichaPersonaImportada1"
-                                                    binding="#{FichaPersona4.listaEsFichaPersonaImportada1}"
-                                                    converter="#{FichaPersona4.converterEsFichaPersonaImportada1}"
-                                                    items="#{FichaPersona4.opcionesListaEsFichaPersonaImportada1}"
-                                                    selected="#{FichaPersona4.valorListaEsFichaPersonaImportada1}"
-                                                    toolTip="BundleParametros.es_ficha_persona_importada"/>
-                                                <webuijsf:staticText id="listaEsFichaPersonaImportada1Texto1"
-                                                    binding="#{FichaPersona4.listaEsFichaPersonaImportada1Texto1}"/>
-                                                <webuijsf:message id="messageEsFichaPersonaImportada1"
-                                                    for="listaEsFichaPersonaImportada1"/>
-                                                <webuijsf:helpInline id="helpInlineEsFichaPersonaImportada1"
-                                                    binding="#{FichaPersona4.helpInlineEsFichaPersonaImportada1}"                                                    
-                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
-                                                    styleClass="pdq-helpInline-field"
-                                                    text="BundleParametros.es_ficha_persona_importada"
-                                                    type="field"/>
-                                            </h:panelGrid>
-                                            <h:panelGrid
                                                 id="gridFechaImportacionDesde1" rendered="#{FichaPersona4.bitFechaImportacionDesdeRendered.on}"
                                                 styleClass="pdq-grid-etiqueta-1">
                                                 <webuijsf:label
@@ -520,6 +490,36 @@
                                                     rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
                                                     styleClass="pdq-helpInline-field"
                                                     text="BundleParametros.fecha_importacion_hasta"
+                                                    type="field"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                id="gridArchivo1" rendered="#{FichaPersona4.bitArchivoRendered.on}"
+                                                styleClass="pdq-grid-etiqueta-1">
+                                                <webuijsf:label
+                                                    binding="#{FichaPersona4.labelArchivo1}"
+                                                    id="labelArchivo1"
+                                                    for="campoArchivo1"
+                                                    text="archivo"/>
+                                            </h:panelGrid>
+                                            <h:panelGrid
+                                                columns="7"
+                                                id="gridArchivo2" rendered="#{FichaPersona4.bitArchivoRendered.on}"
+                                                styleClass="pdq-grid-elemento-1">
+                                                <webuijsf:textField id="campoArchivo1"
+                                                    binding="#{FichaPersona4.campoArchivo1}"
+                                                    columns="50"
+                                                    text="#{FichaPersona4.textoCampoArchivo1}"
+                                                    toolTip="BundleParametros.archivo"
+                                                    validatorExpression="#{FichaPersona4.validatorArchivo1.validate}"/>
+                                                <webuijsf:staticText id="campoArchivo1Texto1"
+                                                    binding="#{FichaPersona4.campoArchivo1Texto1}"/>
+                                                <webuijsf:message id="messageArchivo1"
+                                                    for="campoArchivo1"/>
+                                                <webuijsf:helpInline id="helpInlineArchivo1"
+                                                    binding="#{FichaPersona4.helpInlineArchivo1}"                                                    
+                                                    rendered="#{SessionBean1.contextoSesion.helpInlineRendered}"
+                                                    styleClass="pdq-helpInline-field"
+                                                    text="BundleParametros.archivo"
                                                     type="field"/>
                                             </h:panelGrid>
                                             <h:panelGrid

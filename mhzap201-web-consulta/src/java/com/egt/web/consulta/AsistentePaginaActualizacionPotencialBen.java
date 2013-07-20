@@ -95,7 +95,8 @@ public class AsistentePaginaActualizacionPotencialBen {
         //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_VALIDAR, BundleWebui.getString("emitir_potencial_ben_por_validar")),
         //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_RESULTADO_VALIDACION, BundleWebui.getString("emitir_potencial_ben_por_resultado_validacion")),
         //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_POR_ICV, BundleWebui.getString("emitir_potencial_ben_por_icv")),
-        //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO, BundleWebui.getString("emitir_potencial_ben_acreditado"))
+        //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO, BundleWebui.getString("emitir_potencial_ben_acreditado")),
+        //  new Option(PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC, BundleWebui.getString("emitir_potencial_ben_acreditado_sc"))
         };
         return bean.getGestor().getOpcionesListaFuncionAccionAutorizadas(opciones);
     }
@@ -135,6 +136,8 @@ public class AsistentePaginaActualizacionPotencialBen {
             this.emitirPotencialBenPorIcv(rowKey);
         } else if (f == PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO) {
             this.emitirPotencialBenAcreditado(rowKey);
+        } else if (f == PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC) {
+            this.emitirPotencialBenAcreditadoSc(rowKey);
         }
     }
 
@@ -498,7 +501,6 @@ public class AsistentePaginaActualizacionPotencialBen {
         Integer numeroTipoArea = null;
         Date fechaRegistroPotBenDesde = null;
         Date fechaRegistroPotBenHasta = null;
-        Integer numeroTipoRegPotBen = null;
         Long lote = null;
         String report = PotencialBenCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
         long function = PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO;
@@ -509,7 +511,6 @@ public class AsistentePaginaActualizacionPotencialBen {
         parameters.put("numero_tipo_area", numeroTipoArea);
         parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
         parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
-        parameters.put("numero_tipo_reg_pot_ben", numeroTipoRegPotBen);
         parameters.put("lote", lote);
 //      ------------------------------------------------------------------------
 //      this.getReporter().executeReport(report, function, parameters);
@@ -541,13 +542,78 @@ public class AsistentePaginaActualizacionPotencialBen {
             args.add(fechaRegistroPotBenHasta);
             search += " and fecha_registro_pot_ben<=?";
         }
-        if (numeroTipoRegPotBen != null) {
-            args.add(numeroTipoRegPotBen);
-            search += " and numero_tipo_reg_pot_ben=?";
-        }
         if (lote != null) {
             args.add(lote);
             search += " and lote=?";
+        }
+        if (args.size() > 0) {
+            select += " where (" + search.substring(5) + ")";
+            this.getReporter().executeReport(report, function, select, args.toArray(), parameters);
+        } else {
+            this.getReporter().executeReport(report, function);
+        }
+        return true;
+    }
+
+    private boolean emitirPotencialBenAcreditadoSc(RowKey rowKey) throws Exception {
+        Bitacora.trace(this.getClass(), "emitirPotencialBenAcreditadoSc", rowKey);
+        bean.getGestor().setReadOnlyProcessing(true);
+        Long idDepartamento = null;
+        Long idDistrito = null;
+        Long idBarrio = null;
+        Integer numeroTipoArea = null;
+        Date fechaRegistroPotBenDesde = null;
+        Date fechaRegistroPotBenHasta = null;
+        Integer edadDesde = null;
+        Integer edadHasta = null;
+        String report = PotencialBenCachedRowSetDataProvider2.INFORME_FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC;
+        long function = PotencialBenCachedRowSetDataProvider2.FUNCION_EMITIR_POTENCIAL_BEN_ACREDITADO_SC;
+        Map parameters = new LinkedHashMap();
+        parameters.put("id_departamento", idDepartamento);
+        parameters.put("id_distrito", idDistrito);
+        parameters.put("id_barrio", idBarrio);
+        parameters.put("numero_tipo_area", numeroTipoArea);
+        parameters.put("fecha_registro_pot_ben_desde", fechaRegistroPotBenDesde);
+        parameters.put("fecha_registro_pot_ben_hasta", fechaRegistroPotBenHasta);
+        parameters.put("edad_desde", edadDesde);
+        parameters.put("edad_hasta", edadHasta);
+//      ------------------------------------------------------------------------
+//      this.getReporter().executeReport(report, function, parameters);
+//      ------------------------------------------------------------------------
+        String select = "select * from potencial_ben";
+        String search = "";
+        ArrayList args = new ArrayList();
+        if (idDepartamento != null) {
+            args.add(idDepartamento);
+            search += " and id_departamento=?";
+        }
+        if (idDistrito != null) {
+            args.add(idDistrito);
+            search += " and id_distrito=?";
+        }
+        if (idBarrio != null) {
+            args.add(idBarrio);
+            search += " and id_barrio=?";
+        }
+        if (numeroTipoArea != null) {
+            args.add(numeroTipoArea);
+            search += " and numero_tipo_area=?";
+        }
+        if (fechaRegistroPotBenDesde != null) {
+            args.add(fechaRegistroPotBenDesde);
+            search += " and fecha_registro_pot_ben>=?";
+        }
+        if (fechaRegistroPotBenHasta != null) {
+            args.add(fechaRegistroPotBenHasta);
+            search += " and fecha_registro_pot_ben<=?";
+        }
+        if (edadDesde != null) {
+            args.add(edadDesde);
+            search += " and edad>=?";
+        }
+        if (edadHasta != null) {
+            args.add(edadHasta);
+            search += " and edad<=?";
         }
         if (args.size() > 0) {
             select += " where (" + search.substring(5) + ")";

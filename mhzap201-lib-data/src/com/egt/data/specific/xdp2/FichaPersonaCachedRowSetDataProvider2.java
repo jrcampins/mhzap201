@@ -74,6 +74,7 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
     public static final long FUNCION_DESVINCULAR_FICHA_PERSONA = 320200152L;
     public static final long FUNCION_CONSULTAR_FICHA_PERSONA = 320200101L;
     public static final long FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = 320200153L;
+    public static final long FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA = 320200154L;
     public static final long FUNCION_CREAR_FICHA_PERSONA = 320200102L;
     public static final long FUNCION_MODIFICAR_FICHA_PERSONA = 320200103L;
     public static final long FUNCION_ELIMINAR_FICHA_PERSONA = 320200104L;
@@ -82,6 +83,7 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
     public static final String PROCESO_FUNCION_DESVINCULAR_FICHA_PERSONA = "ficha_persona_desvincular";
 
     public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_IMPORTADA = "ficha_persona_importada";
+    public static final String INFORME_FUNCION_EMITIR_FICHA_PERSONA_NO_IMPORTADA = "ficha_persona_no_importada";
 
     protected static final long PARAMETRO_ID_FICHA_PERSONA = 20342L;
     protected static final long PARAMETRO_ID_POTENCIAL_BEN = 20571L;
@@ -168,6 +170,7 @@ public class FichaPersonaCachedRowSetDataProvider2 extends FichaPersonaCachedRow
     protected static final long PARAMETRO_ID_BARRIO = 20333L;
     protected static final long PARAMETRO_FECHA_IMPORTACION_DESDE = 10019L;
     protected static final long PARAMETRO_FECHA_IMPORTACION_HASTA = 10020L;
+    protected static final long PARAMETRO_ARCHIVO = 1021L;
 
     public static final long FUNCION_REFERENCIA_CONSULTAR_POTENCIAL_BEN = 320400101L;
     public static final long FUNCION_REFERENCIA_CONSULTAR_OPCION_BINARIA = 100100101L;
